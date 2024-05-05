@@ -80,6 +80,16 @@ T4N_tributaries_on_title_lost = {
 						TRIBUTARY = root
 					}
 				}
+				else_if = { #Edge case of land getting passed to the suzerain
+					limit = {
+						is_landed = no
+						var:my_suzerain = scope:new_holder
+					}
+					unset_tributary_of_any_type = { #Remove the old coot as a tributary
+						SUZERAIN = root.var:my_suzerain
+						TRIBUTARY = root
+					}
+				}
 				else_if = { #Abdication; alive but no (functional) titles; pass to heir
 					limit = { is_landed = no }
 					this = { save_scope_as = the_old_tributary }
