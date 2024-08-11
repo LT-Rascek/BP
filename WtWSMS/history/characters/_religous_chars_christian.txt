@@ -2906,6 +2906,187 @@ GeorgianChurch048 = {
 }
 #Last listed because of the schism within Paulicianism makes it unclear who should take the title head
 
+##### Cypriot Archbishops
+CypriotChurch000 = { #St. Barnabas
+	name = Yosef
+	religion = rabbinism
+	culture = hebrew
+	trait = zealous
+	trait = diligent
+	trait = honest
+	disallow_random_traits = yes
+	5.1.1 = { birth = yes }
+	36.1.1 = {
+		religion = nicene
+		name = "Barnabas"
+	}
+	65.6.11 = { #Roughly same time as Paul
+		death = { death_reason = death_murder } #Killed by a Mob
+		trait = saint
+	}
+}
+CypriotChurch001 = {
+	name = "Gelasios"
+	religion = cypriot_church
+	culture = cypriot
+	308.1.1 = { birth = yes }
+	368.1.1 = { death = yes }
+}
+CypriotChurch002 = {
+	name = "Epiphanios"
+	religion = cypriot_church
+	culture = cypriot
+	disallow_random_traits = yes
+	trait = zealous
+	trait = education_learning_4
+	320.1.1 = { birth = yes }
+	403.1.1 = {
+		death = yes
+		trait = saint
+	}
+}
+CypriotChurch003 = {
+	name = "Stavrinos"
+	religion = cypriot_church
+	culture = cypriot
+	361.1.1 = { birth = yes }
+	431.1.1 = { death = yes }
+}
+CypriotChurch004 = {
+	name = "Troilos"
+	religion = cypriot_church
+	culture = cypriot
+	361.1.1 = { birth = yes }
+	431.6.1 = { death = yes }
+}
+CypriotChurch005 = {
+	name = "Reginos"
+	religion = cypriot_church
+	culture = cypriot
+	379.1.1 = { birth = yes }
+	449.1.1 = { death = yes }
+}
+CypriotChurch006 = {
+	name = "Olympios"
+	religion = cypriot_church
+	culture = cypriot
+	387.1.1 = { birth = yes }
+	457.1.1 = { death = yes }
+}
+CypriotChurch007 = {
+	name = "Stavrinos"
+	religion = cypriot_church
+	culture = cypriot
+	387.1.1 = { birth = yes }
+	457.1.1 = { death = yes }
+}
+CypriotChurch008 = {
+	name = "Anthemios"
+	religion = cypriot_church
+	culture = cypriot
+	425.1.1 = { birth = yes }
+	495.1.1 = { death = yes } #Has to be _at least_ after 488, but no precise dates
+}
+#This is teh period where I can't find dates for reign short of "under Justinian I"
+CypriotChurch009 = {
+	name = "Olympios"
+	religion = cypriot_church
+	culture = cypriot
+	460.1.1 = { birth = yes }
+	530.1.1 = { death = yes }
+}
+CypriotChurch010 = {
+	name = "Philoxenos"
+	religion = cypriot_church
+	culture = cypriot
+	467.1.1 = { birth = yes }
+	537.1.1 = { death = yes }
+}
+CypriotChurch011 = {
+	name = "Damianos"
+	religion = cypriot_church
+	culture = cypriot
+	474.1.1 = { birth = yes }
+	544.1.1 = { death = yes }
+}
+CypriotChurch012 = {
+	name = "Sophronios"
+	religion = cypriot_church
+	culture = cypriot
+	481.1.1 = { birth = yes }
+	551.1.1 = { death = yes }
+}
+CypriotChurch013 = {
+	name = "Gregorios"
+	religion = cypriot_church
+	culture = cypriot
+	488.1.1 = { birth = yes }
+	558.1.1 = { death = yes }
+}
+CypriotChurch014 = {
+	name = "Arkadios"
+	religion = cypriot_church
+	culture = cypriot
+	500.1.1 = { birth = yes }
+	570.1.1 = { death = yes }
+}
+CypriotChurch015 = {
+	name = "Theophanes"
+	religion = cypriot_church
+	culture = cypriot
+	trait = physique_good_2 #So it makes sense for him to live so long
+	540.1.1 = { birth = yes } #He'd take the Archbishopric in 570, which would be young
+	620.1.1 = { death = yes }
+}
+CypriotChurch016 = {
+	name = "Plutarch"
+	religion = cypriot_church
+	culture = cypriot
+	560.1.1 = { birth = yes }
+	630.1.1 = { death = yes }
+}
+CypriotChurch017 = {
+	name = "Arkadios"
+	religion = cypriot_church
+	culture = cypriot
+	573.1.1 = { birth = yes }
+	589.1.1 = {
+		trait = cynical #Signed the Monoergism & Monotheltism documents
+		trait = education_learning_1
+	}
+	643.1.1 = { death = yes }
+}
+CypriotChurch018 = {
+	name = "Serghios"
+	religion = cypriot_church
+	culture = cypriot
+	610.1.1 = { birth = yes }
+	681.1.1 = { death = yes }
+}
+CypriotChurch019 = {
+	name = "Epiphanios"
+	religion = cypriot_church
+	culture = cypriot
+	610.1.1 = { birth = yes }
+	681.1.1 = { death = yes }
+}
+CypriotChurch020 = {
+	name = "John"
+	religion = cypriot_church
+	culture = cypriot
+	610.1.1 = { birth = yes }
+	681.1.1 = { death = yes }
+}
+CypriotChurch021 = {
+	#My German is terrible, but this seems to come from the Prosography of the Middle Byzantine Empire
+	#https://www.degruyter.com/database/PMBZ/entry/PMBZ11566/html
+	name = "Anthemios"
+	religion = cypriot_church
+	culture = cypriot
+	670.1.1 = { birth = yes }
+	750.1.1 = { death = yes }
+}
+
 ### Others
 JerusalemChurchSpecial001 = { #St. Jude's (hypothetical) son
 	name = Yehudah
