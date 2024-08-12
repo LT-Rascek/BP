@@ -557,8 +557,8 @@ BP_start_date_minorities_476_effect = {
 				if = { #The Syrian Orthodox vs. the Maronites
 					limit = {
 						OR = {
-							this.culture = culture:aramean
-							this.culture = culture:helleno_aramean
+							this.culture = culture:syriac
+							this.culture = culture:greek
 						}
 						NOT = { this.duchy = title:d_cyprus }
 					}
