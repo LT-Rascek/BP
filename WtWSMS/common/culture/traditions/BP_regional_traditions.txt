@@ -1701,6 +1701,10 @@ tradition_assyrian_traditions = {
 			NOT = { culture_tradition:tradition_staunch_traditionalists = { is_in_list = traits } }
 		}
 		custom_tooltip = {
+			text = cannot_have_tradition_hereditary_hierarchy
+			NOT = { culture_tradition:tradition_hereditary_hierarchy = { is_in_list = traits } }
+		}
+		custom_tooltip = {
 			text = cannot_have_tradition_loyal_soldiers
 			NOT = { culture_tradition:tradition_loyal_soldiers = { is_in_list = traits } }
 		}
@@ -1716,6 +1720,10 @@ tradition_assyrian_traditions = {
 			text = cannot_have_tradition_loyal_soldiers
 			NOT = { culture_tradition:tradition_loyal_soldiers = { is_in_list = traits } }
 		}
+		custom_tooltip = {
+			text = cannot_have_tradition_hereditary_hierarchy
+			NOT = { culture_tradition:tradition_hereditary_hierarchy = { is_in_list = traits } }
+		}
 		custom_description = {
 			text = hybrid_must_have_levantine_heritage_for_tradition_aramean_traditions
 			culture_pillar:heritage_levantine = { is_in_list = traits }
@@ -1728,6 +1736,7 @@ tradition_assyrian_traditions = {
 		monolithic_culture_feature = yes
 		traditionalist_culture_feature = yes
 		#Actual features
+		poorly_educated_leaders_distrusted = yes
 		shared_with_aramaean_traditions = yes
 		doesnt_care_about_culture_faith_in_factions = yes
 		can_build_cities_in_classical_antiquity = yes
@@ -1738,9 +1747,13 @@ tradition_assyrian_traditions = {
 		controlled_province_advantage = 5
 		same_culture_opinion = 5
 		monthly_county_control_growth_add = 0.3
+		long_reign_bonus_mult = 0.25
+		tyranny_loss_mult = -0.5
 	}
 	
-	county_modifier = {}
+	county_modifier = {
+		county_opinion_add = 5
+	}
 	
 	cost = {
 		prestige = {
@@ -1797,6 +1810,10 @@ tradition_assyrian_traditions_non_dlc = {
 			NOT = { culture_tradition:tradition_staunch_traditionalists = { is_in_list = traits } }
 		}
 		custom_tooltip = {
+			text = cannot_have_tradition_hereditary_hierarchy
+			NOT = { culture_tradition:tradition_hereditary_hierarchy = { is_in_list = traits } }
+		}
+		custom_tooltip = {
 			text = cannot_have_tradition_loyal_soldiers
 			NOT = { culture_tradition:tradition_loyal_soldiers = { is_in_list = traits } }
 		}
@@ -1812,6 +1829,10 @@ tradition_assyrian_traditions_non_dlc = {
 			text = cannot_have_tradition_loyal_soldiers
 			NOT = { culture_tradition:tradition_loyal_soldiers = { is_in_list = traits } }
 		}
+		custom_tooltip = {
+			text = cannot_have_tradition_hereditary_hierarchy
+			NOT = { culture_tradition:tradition_hereditary_hierarchy = { is_in_list = traits } }
+		}
 		custom_description = {
 			text = hybrid_must_have_levantine_heritage_for_tradition_aramean_traditions
 			culture_pillar:heritage_levantine = { is_in_list = traits }
@@ -1823,6 +1844,7 @@ tradition_assyrian_traditions_non_dlc = {
 		is_a_legal_tradition = yes
 		traditionalist_culture_feature = yes
 		#Actual features
+		poorly_educated_leaders_distrusted = yes
 		shared_with_aramaean_traditions = yes
 		doesnt_care_about_culture_faith_in_factions = yes
 		can_build_cities_in_classical_antiquity = yes
@@ -1833,9 +1855,13 @@ tradition_assyrian_traditions_non_dlc = {
 		controlled_province_advantage = 5
 		same_culture_opinion = 5
 		monthly_county_control_growth_add = 0.3
+		long_reign_bonus_mult = 0.25
+		tyranny_loss_mult = -0.5
 	}
 	
-	county_modifier = {}
+	county_modifier = {
+		county_opinion_add = 5
+	}
 	
 	cost = {
 		prestige = {
