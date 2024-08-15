@@ -86,14 +86,11 @@
 	holding = church_holding #Mandean scriptural center
 }
 ###c_kufa
-4826 = {	# 4826 - Al-Hila
+5993 = {	# 5993 - An-Najaf
 	culture = khalan #Capital of Al-Hira
 	religion = nicene
-	holding = castle_holding #Very near ruins of Babylon, so it gets to be the center
+	holding = castle_holding #Really a city, but there's no space for Hira, so...
 	432.1.1 = { religion = nestorian }
-}
-5993 = {	# 5993 - An-Najaf
-	holding = none
 	791.1.1 = { holding = castle_holding }
 }
 5992 = {	# 5992 - Al-Kufa
@@ -103,13 +100,15 @@
 ###c_batiha
 6003 = {	# 6003 - Niffar
 	culture = chaldean
-	religion = nicene
+	religion = mesopotamian_pagan
 	holding = castle_holding #Aka, Nippur!
-	432.1.1 = { religion = nestorian }
 }
 # 6004 - AS-SALIQ
 6004 = {	# 6004 - As-Saliq
 	holding = church_holding #Aka, Seleucia!
+}
+4826 = {	# 4826 - Al-Hila
+	holding = none
 }
 ###c_iskaf
 4797 = {	#4797 - Iskaf
@@ -222,11 +221,11 @@
 5991 = {	# 5991 - Safata
 	culture = khalan
 	religion = doceticism
-	holding = castle_holding
+	holding = tribal_holding
 	592.1.1 = { religion = nestorian }
 }
 5990 = {	# 5990 - Ain At-Tamr
-	holding = church_holding #More known for monastaries than economics
+	holding = none #Basically nothing about it prior to the Rise of Islam
 }
 5996 = {	# 5996 - Khaffan
 	holding = none
@@ -234,7 +233,7 @@
 ###c_qadisiya
 5994 = {	# 5994 - Al-Qadisiya
 	culture = khalan
-	religion = nestorian
+	religion = doceticism
 	holding = castle_holding
 }
 5995 = {	# 5995 - Al-Udhaib
@@ -246,7 +245,7 @@
 ###c_akhadid
 6001 = {	# 6001 - As-Salman
 	culture = chaldean
-	religion = nestorian
+	religion = mesopotamian_pagan
 	holding = castle_holding
 }
 6002 = {	# 6002 - Al-Akhadid
@@ -255,22 +254,23 @@
 ###c_waqisa
 6000 = {	# 6000 - Waqisa
 	culture = adnanite
-	religion = doceticism
+	religion = semitic_pagan
 	holding = tribal_holding
-	592.1.1 = { religion = nestorian }
 }
 5999 = {	# 5999 - As-Subia
 	holding = none
 }
 ###c_karbala
-4830 = {	# 4830 - Karbala
+4833 = {	# 4833 - Hit
 	culture = chaldean
 	religion = monophysitism
-	holding = castle_holding #Extant by time of Islam
+	holding = castle_holding #Part of the wall of the Arabs
+	holding = castle_holding
 	592.1.1 = { religion = nestorian }
 }
-4833 = {	# 4833 - Hit
-	holding = city_holding
+4830 = {	# 4830 - Karbala
+	holding = none
+	680.1.1 = { holding = city_holding }
 }
 
 ## d_arbayistan ###################################
@@ -302,7 +302,7 @@
 ###c_sinjar
 4848 = {	# 4848 - Sinjar
 	culture = assyrian
-	religion = assyrian_pagan
+	religion = mesopotamian_pagan
 	holding = castle_holding
 	545.1.1 = { religion = nestorian }
 }
@@ -389,10 +389,9 @@
 ###c_ubulla
 6020 = {	# 6020 - Al-Ubulla
 	culture = chaldean
-	religion = nicene
+	religion = mesopotamian_pagan
 	holding = castle_holding
 	buildings = { common_tradeport_02 } #Major tradeport with India
-	432.1.1 = { religion = nestorian }
 }
 6021 = {	# 6021 - Matara-Iraq
 	holding = none

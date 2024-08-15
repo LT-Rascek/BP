@@ -25,12 +25,22 @@
 #https://en.wikipedia.org/wiki/Assyrian_homeland#/media/File:Tur_Abdin.svg
 # Assyro-Chaldean WWI proposal
 #https://upload.wikimedia.org/wikipedia/commons/0/00/Map_of_Assyria_Paris_Peace_Conference_1919.jpg
+#
+# Based on [5], it seems post-136, Ebionites dispersed, with communities as far as Cyprus, but most
+# locations referenced go as far south as Moab, so it seems more likely that the region east of the
+# river be Ebionite instead of Monophysite.
+#
+# With minorities, there's not reason for the Rabbinism in Ghazza; all of Israel being Samaritan
+# plays well with the Samaritan revolts that occurred in the 400s and 500s. Or, in other words,
+# Rabbinism was scattered post-Revolt, leaving the Samaritans as the largest group.
+
 
 # Other Sources:
 # [1] - Tadmur/Palmyra was likely Christian by 476: Stoneman, Richard (1994) [1992]. Palmyra and Its Empire: Zenobia's Revolt Against Rome. University of Michigan Press. pp. 189-190
 # [2] - Sergiopolis was likely Christian by 476: Frankfurter, David (1998). Pilgrimage and Holy Space in Late Antique Egypt. BRILL. p. 379
 # [3] - The Shamsīyah retained pagan beliefs until the XVIIth century
 # [4] - R. S. Peoples, Crusade of kings. Holicong, PA: Wildside, 2008, pg 68. 
+# [5] - Klijn, A.F.J.; Reinink, G.J. (1973). Patristic Evidence for Jewish-Christian Sects. Leiden: E.J. Brill. p. 29. ISBN 978-9-00403763-2. OCLC 1076236746.
 
 # k_oriens
 
@@ -84,7 +94,7 @@
 ###c_kerak
 5980 = {	# 5980 - Kerak
 	culture = nabatean
-	religion = monophysitism
+	religion = ebionite
 	holding = castle_holding
 }
 5978 = {	# 5978 - Shawbak
@@ -129,7 +139,7 @@
 ###c_jaffa
 5962 = {	# 5962 - Yaffa
 	culture = hebrew
-	religion = ebionite
+	religion = samaritan
 	holding = castle_holding
 }
 5961 = {	# 5961 - Cesarea
@@ -138,7 +148,7 @@
 ###c_ghazza
 5968 = {	# 5968 - Ghazza
 	culture = hebrew
-	religion = rabbinism
+	religion = samaritan
 	holding = castle_holding
 }
 5967 = {	# 5967 - Ascalon
@@ -147,7 +157,7 @@
 ###c_irbid
 5958 = {	# 5958 - Irbid
 	culture = nabatean
-	religion = monophysitism
+	religion = ebionite
 	holding = castle_holding
 }
 5985 = {	# 5985 - Jarash
@@ -178,29 +188,29 @@
 	holding = church_holding
 }
 ###c_balqa
-5984 = {	#AMMAN
-	culture = nabatean
-	religion = monophysitism
-	holding = castle_holding
-}
 5986 = {	#AZ-ZARQA
 	holding = none
 }
 5987 = {	#AL-AZRAQ
-	holding = city_holding
+	culture = nabatean
+	religion = monophysitism
+	holding = castle_holding #Important fort in Roman Times
 	#Important oasis hub since ancient times
 }
 ###c_maab
-5981 = {	#MAAB
+5984 = {	#AMMAN
 	culture = nabatean
-	religion = monophysitism
+	religion = ebionite
 	holding = castle_holding
+}
+5981 = {	#MAAB
+	holding = none
 }
 5982 = {	#ZAIZA
 	holding = none
 }
 5983 = {	#MUJIB
-	holding = none
+	holding = city_holding
 }
 
 ## d_phoenice ###################################
@@ -208,7 +218,7 @@
 ###c_acre
 5960 = {	# 5960 - Acre
 	culture = hebrew
-	religion = ebionite
+	religion = samaritan
 	holding = castle_holding
 }
 5921 = {	# 5921 - Tyre
@@ -453,7 +463,7 @@
 ###c_raqqa
 4876 = {	# 4876 - Raqqa
 	culture = assyrian
-	religion = assyrian_pagan
+	religion = mesopotamian_pagan
 	holding = castle_holding
 }
 4877 = {	# 4877 - Bajarwan
@@ -484,7 +494,7 @@
 ###c_khabur
 4882 = {	# 4882 - Qarqisiya
 	culture = assyrian
-	religion = assyrian_pagan
+	religion = mesopotamian_pagan
 	holding = castle_holding
 }
 4880 = {	# 4880 - Al-Khanuqa
@@ -532,7 +542,7 @@
 ###c_upper_khabur
 4853 = {	# 4853 - Ras al-ain, Upper Khabur / Raisena/Ressaina/Resain
 	culture = assyrian
-	religion = assyrian_pagan #[3]
+	religion = shamsi_pagan #[3]
 	holding = castle_holding
 }
 4854 = {	# 4854 - Mardin
