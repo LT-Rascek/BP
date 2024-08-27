@@ -530,7 +530,6 @@ setup_realm_and_title_succession_laws = {
 			every_held_title = {
 				limit = {
 					OR = {
-						this = title:k_masmuda
 						#Turkic Succession
 						this = title:k_al_hirah ##### TODO (Beta): Implement succ_turkish_succession law
 						this = title:k_arabia_petraea ##### TODO (Beta): Implement succ_turkish_succession law
@@ -538,6 +537,17 @@ setup_realm_and_title_succession_laws = {
 					}
 				}
 				add_title_law = tribal_elective_succession_law
+			}
+		}
+		#Berber Confederate Succession: For large Berber Tribal Confederations
+		every_ruler = {
+			limit = {
+				has_government = tribal_government
+				culture = { has_cultural_pillar = heritage_berber }
+			}
+			every_held_title = {
+				limit = { this.tier >= tier_kingdom }
+				add_title_law = berber_confederation_succession_title_law
 			}
 		}
 		
@@ -1190,6 +1200,22 @@ setup_vassal_contracts = {
 				TRIBUTARY = title:d_orleans_alans.holder
 				SUZERAIN = title:k_soissons.holder
 			}
+			#Vandals
+			make_tributary = {
+				TYPE = tributary_permanent#foederatus_tributary
+				TRIBUTARY = title:d_auresia.holder
+				SUZERAIN = title:k_vandalica.holder
+			}
+			make_tributary = {
+				TYPE = tributary_permanent#foederatus_tributary
+				TRIBUTARY = title:d_sicca_veneria.holder
+				SUZERAIN = title:k_vandalica.holder
+			}
+			make_tributary = {
+				TYPE = tributary_permanent#foederatus_tributary
+				TRIBUTARY = title:d_capsa.holder
+				SUZERAIN = title:k_vandalica.holder
+			}
 			#### Britannia
 			make_tributary = { #Deria dependence on York
 				TYPE = tributary_permanent
@@ -1615,8 +1641,7 @@ other_religion_effects = {
 ## Culture Stuff
 set_additional_parent_cultures = {
 	effect = {
-		#Additional Child Cultures
-		culture:numidian = { add_to_variable_list = { name = bastard_cultures target = flag:romano_african } }
+		#Additional Child Cultures, if we want more than two per culture
 	}
 }
 
