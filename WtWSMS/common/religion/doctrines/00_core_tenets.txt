@@ -1735,6 +1735,7 @@
 		}
 	}
 
+	##### Changed from Vanilla: Made available to Zoroastrians
 	tenet_bhakti = {
 		name = {
 			first_valid = {
@@ -1742,7 +1743,21 @@
 					trigger = { religion_tag = hinduism_religion }
 					desc = tenet_bhakti_name
 				}
+				triggered_desc = {
+					trigger = { religion_tag = zoroastrianism_religion }
+					desc = tenet_yazata_name
+				}
 				desc = tenet_bhakti_patron_god_name
+			}
+		}
+		
+		desc = {
+			first_valid = {
+				triggered_desc = {
+					trigger = { religion_tag = zoroastrianism_religion }
+					desc = tenet_yazata_desc
+				}
+				desc = tenet_bhakti_desc
 			}
 		}
 		icon = core_tenet_bhakti
@@ -3689,7 +3704,7 @@
 	#########################
 
 	tenet_apostolic_succession = {
-		icon = core_tenet_consolamentum ##### TODO (Beta): Needs Unique Icon
+		icon = core_tenet_apostolic_succession
 		
 		is_shown = { always = no }
 		
@@ -3716,7 +3731,7 @@
 	}
 	
 	tenet_autocephaly = {
-		icon = core_tenet_consolamentum ##### TODO (Beta): Needs Unique Icon
+		icon = core_tenet_apostolic_succession
 		
 		piety_cost = {
 			value = faith_tenet_cost_massive
