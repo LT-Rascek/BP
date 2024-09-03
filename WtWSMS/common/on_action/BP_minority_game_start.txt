@@ -1,0 +1,113 @@
+﻿on_game_start = {
+	on_actions = {
+		BP_set_minorities_by_date
+	}
+}
+
+BP_set_minorities_by_date = {
+	effect = {
+		if = {
+			limit = { current_date < 500.1.1 }
+			trigger_event = { on_action = BP_start_date_minorities_476_oriens }
+		}
+	}
+}
+
+BP_start_date_minorities_476_oriens = {
+	effect = {
+		# Cultures
+		
+		## Roman Colonies in Syria
+		title:c_beirut = { add_large_culture_to_county_effect = { CULTURE = culture:romano_aramean } }
+		title:c_acre = { add_large_culture_to_county_effect = { CULTURE = culture:romano_aramean } }
+		title:c_edessa = { add_small_culture_to_county_effect = { CULTURE = culture:romano_aramean } }
+		title:c_jaffa = { add_small_culture_to_county_effect = { CULTURE = culture:romano_aramean } }
+		title:c_upper_khabur = { add_small_culture_to_county_effect = { CULTURE = culture:romano_aramean } }
+		title:c_qinnasrin = { add_small_culture_to_county_effect = { CULTURE = culture:romano_aramean } }
+		#Arameans
+		every_county = { limit = { this.duchy = title:d_iudea } add_minority_culture_granular_minimum_effect = { CULTURE = culture:syriac } }
+		every_county = { limit = { this.duchy = title:d_palestinia_secunda } add_minority_culture_granular_minimum_effect = { CULTURE = culture:syriac } }
+		#Greeks
+		title:c_harran = { add_small_culture_to_county_effect = { CULTURE = culture:greek } }
+		
+		# Faiths
+		
+		## Remanant of Eastern Valentinianism
+		title:c_beirut = { add_large_faith_to_county_effect = { FAITH = faith:valentinianism } }
+		title:c_tripoli = { add_large_faith_to_county_effect = { FAITH = faith:valentinianism } }
+		title:c_antiocheia = { add_small_faith_to_county_effect = { FAITH = faith:valentinianism } }
+		title:c_alexandretta = { add_small_faith_to_county_effect = { FAITH = faith:valentinianism } }
+		title:c_baalbek = { add_small_faith_to_county_effect = { FAITH = faith:valentinianism } }
+		## Audianism
+		every_county = { limit = { this.duchy = title:d_libanensis } add_minority_faith_granular_minimum_effect = { FAITH = faith:audianism }
+		every_county = { limit = { this.duchy = title:d_syria } add_minority_faith_granular_minimum_effect = { FAITH = faith:audianism }
+		every_county = { limit = { this.duchy = title:d_syria_salutaris } add_minority_faith_granular_minimum_effect = { FAITH = faith:audianism }
+		every_county = { limit = { this.duchy = title:d_osrhoene } add_minority_faith_granular_minimum_effect = { FAITH = faith:audianism }
+		title:c_aintab = { add_small_faith_to_county_effect = { FAITH = faith:audianism } }
+		title:c_alexandretta = { add_small_faith_to_county_effect = { FAITH = faith:audianism } }
+		title:c_tall_hamid = { add_small_faith_to_county_effect = { FAITH = faith:audianism } }
+		#Apollinarism
+		title:c_beirut = { add_large_faith_to_county_effect = { FAITH = faith:apollinarism } }
+		title:c_tripoli = { add_large_faith_to_county_effect = { FAITH = faith:apollinarism } }
+		title:c_antiocheia = { add_small_faith_to_county_effect = { FAITH = faith:apollinarism } }
+		#Patripassianists
+		title:c_homs = { add_large_faith_to_county_effect = { FAITH = faith:patripassianism } }
+		title:c_shayzar = { add_large_faith_to_county_effect = { FAITH = faith:patripassianism } }
+		title:c_hama = { add_small_faith_to_county_effect = { FAITH = faith:patripassianism } }
+		title:c_qinnasrin = { add_small_faith_to_county_effect = { FAITH = faith:patripassianism } }
+		title:c_suriya = { add_small_faith_to_county_effect = { FAITH = faith:patripassianism } }
+		title:c_antiocheia = { add_small_faith_to_county_effect = { FAITH = faith:patripassianism } }
+		title:c_aleppo = { add_small_faith_to_county_effect = { FAITH = faith:patripassianism } }
+		title:c_dausar = { add_small_faith_to_county_effect = { FAITH = faith:patripassianism } }
+		title:c_edessa = { add_small_faith_to_county_effect = { FAITH = faith:patripassianism } }
+		title:c_aintab = { add_small_faith_to_county_effect = { FAITH = faith:patripassianism } }
+		#Ebionites
+		every_county = { limit = { this.duchy = title:d_iudea } add_minority_faith_granular_effect = { FAITH = faith:ebionite }
+		every_county = { limit = { this.duchy = title:d_palestinia_secunda } add_minority_faith_granular_effect = { FAITH = faith:ebionite }
+		#Monophysites
+		every_county = { limit = { this.duchy = title:d_iudea } add_minority_faith_granular_effect = { FAITH = faith:monophysitism }
+		every_county = { limit = { this.duchy = title:d_palestinia_secunda } add_minority_faith_granular_effect = { FAITH = faith:monophysitism }
+		#Maronites
+		title:c_baalbek = { add_large_faith_to_county_effect = { FAITH = faith:maronite_church } }
+		title:c_antiocheia = { add_small_faith_to_county_effect = { FAITH = faith:maronite_church } }
+		#West Syriacs
+		title:c_antiocheia = { add_large_faith_to_county_effect = { FAITH = faith:syrian_orthodox } }
+		title:c_dausar = { add_large_faith_to_county_effect = { FAITH = faith:syrian_orthodox } }
+		title:c_beirut = { add_large_faith_to_county_effect = { FAITH = faith:syrian_orthodox } }
+		title:c_baalbek = { add_large_faith_to_county_effect = { FAITH = faith:syrian_orthodox } }
+		
+		#Tightly coupled cultures and religions
+		title:c_tiberias = {
+			add_large_culture_to_county_effect = { CULTURE = culture:judean }
+			add_large_faith_to_county_effect = { FAITH = faith:rabbinism }
+		}
+		title:c_jaffa = {
+			add_small_culture_to_county_effect = { CULTURE = culture:samaritan_culture }
+			add_small_faith_to_county_effect = { FAITH = faith:samaritan }
+		}
+		title:c_ghazza = {
+			add_small_culture_to_county_effect = { CULTURE = culture:judean }
+			add_small_faith_to_county_effect = { FAITH = faith:rabbinism }
+		}
+		title:c_jaffa = {
+			add_small_culture_to_county_effect = { CULTURE = culture:judean }
+			add_small_faith_to_county_effect = { FAITH = faith:rabbinism }
+		}
+		title:c_jerusalem = {
+			add_small_culture_to_county_effect = { CULTURE = culture:samaritan_culture }
+			add_small_faith_to_county_effect = { FAITH = faith:samaritan }
+		}
+		title:c_baniyas = {
+			add_small_culture_to_county_effect = { CULTURE = culture:samaritan_culture }
+			add_small_faith_to_county_effect = { FAITH = faith:samaritan }
+		}
+		title:c_acre = {
+			add_small_culture_to_county_effect = { CULTURE = culture:samaritan_culture }
+			add_small_faith_to_county_effect = { FAITH = faith:samaritan }
+		}
+		title:c_ghazza = {
+			add_small_culture_to_county_effect = { CULTURE = culture:persian }
+			add_small_faith_to_county_effect = { FAITH = faith:mazdayasna }
+		}
+	}
+}
