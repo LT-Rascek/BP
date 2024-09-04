@@ -8,8 +8,108 @@ BP_set_minorities_by_date = {
 	effect = {
 		if = {
 			limit = { current_date < 500.1.1 }
+			trigger_event = { on_action = BP_start_date_minorities_476_asoritsan }
+			trigger_event = { on_action = BP_start_date_minorities_476_northwest_africa }
 			trigger_event = { on_action = BP_start_date_minorities_476_oriens_cilicia }
 		}
+	}
+}
+
+BP_start_date_minorities_476_northwest_africa = {
+	effect = {
+		# Cultures
+		
+		## Romano-African
+		every_county = { limit = { this.kingdom = title:k_africa } add_minority_culture_granular_minimum_effect = { CULTURE = culture:romano_african } }
+		every_county = { limit = { this.kingdom = title:k_mauretania } add_minority_culture_granular_effect = { CULTURE = culture:romano_african } }
+		every_county = { limit = { this.duchy = title:d_gaetulia } add_minority_culture_granular_effect = { CULTURE = culture:romano_african } }
+		title:c_orania = { add_large_culture_to_county_effect = { CULTURE = culture:romano_african } }
+		title:c_hunyan = { add_small_culture_to_county_effect = { CULTURE = culture:romano_african } }
+		## Romano-Hispanic
+		title:c_hunyan = { add_large_culture_to_county_effect = { CULTURE = culture:romano_hispanic } }
+		title:c_orania = { add_small_culture_to_county_effect = { CULTURE = culture:romano_hispanic } }
+		## Mauritanian
+		every_county = { limit = { this.kingdom = title:k_africa } add_minority_culture_granular_minimum_effect = { CULTURE = culture:mauritanian } }
+		every_county = { limit = { this.kingdom = title:k_mauretania } add_minority_culture_granular_minimum_effect = { CULTURE = culture:mauritanian } }
+		## Mauri
+		every_county = { limit = { this.duchy = title:d_tingitana } add_minority_culture_granular_minimum_effect = { CULTURE = culture:mauri } }
+		##Punics
+		title:c_tunis = { add_large_culture_to_county_effect = { CULTURE = culture:punic } }
+		title:c_satfura = { add_large_culture_to_county_effect = { CULTURE = culture:punic } }
+		title:c_kairwan = { add_large_culture_to_county_effect = { CULTURE = culture:punic } }
+		title:c_mahdiya = { add_large_culture_to_county_effect = { CULTURE = culture:punic } }
+		title:c_sfax = { add_large_culture_to_county_effect = { CULTURE = culture:punic } }
+		title:c_gabes = { add_small_culture_to_county_effect = { CULTURE = culture:punic } }
+		title:c_annaba = { add_small_culture_to_county_effect = { CULTURE = culture:punic } }
+		title:c_constantine = { add_small_culture_to_county_effect = { CULTURE = culture:punic } }
+		title:c_sicca_veneria = { add_small_culture_to_county_effect = { CULTURE = culture:punic } }
+		title:c_west_qamuda = { add_small_culture_to_county_effect = { CULTURE = culture:punic } }
+		
+		# Faiths
+		
+		## Donatism and African Christianity
+		every_county = { limit = { this.kingdom = title:k_africa } add_minority_faith_granular_minimum_effect = { FAITH = faith:african_church } }
+		every_county = { limit = { this.kingdom = title:k_mauretania } add_minority_faith_granular_minimum_effect = { FAITH = faith:african_church } }
+		every_county = { limit = { this.kingdom = title:k_africa } add_minority_faith_granular_minimum_effect = { FAITH = faith:donatism } }
+		every_county = { limit = { this.kingdom = title:k_mauretania } add_minority_faith_granular_minimum_effect = { FAITH = faith:donatism } }
+		## Cybellianism
+		title:c_satif = { add_large_faith_to_county_effect = { FAITH = faith:cybelian } } #Still only 100 years since the temple burnt down
+		## Manicheanism
+		title:c_tunis = { add_small_faith_to_county_effect = { FAITH = faith:manichean } }
+		## Hellenic Pagans
+		title:c_tunis = { add_small_faith_to_county_effect = { FAITH = faith:hellenic_pagan } }
+		
+		#Culture/Religion tightly coupled
+		
+		## Vandals
+		title:c_satfura = {
+			add_small_culture_to_county_effect = { CULTURE = culture:vandalic }
+			add_small_faith_to_county_effect = { FAITH = faith:arian }
+			add_small_faith_to_county_effect = { FAITH = faith:germanic_pagan }
+		}
+		title:c_tunis = {
+			add_small_culture_to_county_effect = { CULTURE = culture:vandalic }
+			add_small_faith_to_county_effect = { FAITH = faith:arian }
+			add_small_faith_to_county_effect = { FAITH = faith:germanic_pagan }
+		}
+		title:c_mahdiya = {
+			add_small_culture_to_county_effect = { CULTURE = culture:vandalic }
+			add_small_faith_to_county_effect = { FAITH = faith:arian }
+			add_small_faith_to_county_effect = { FAITH = faith:germanic_pagan }
+		}
+		title:c_sfax = {
+			add_small_culture_to_county_effect = { CULTURE = culture:vandalic }
+			add_small_faith_to_county_effect = { FAITH = faith:arian }
+		}
+		title:c_gabes = {
+			add_small_culture_to_county_effect = { CULTURE = culture:vandalic }
+			add_small_faith_to_county_effect = { FAITH = faith:arian }
+		}
+		title:c_annaba = {
+			add_small_culture_to_county_effect = { CULTURE = culture:vandalic }
+			add_small_faith_to_county_effect = { FAITH = faith:arian }
+		}
+		#Alan(o-Vandal)s
+		title:c_bejaia = {
+			add_small_culture_to_county_effect = { CULTURE = culture:alano_vandalic }
+			add_small_faith_to_county_effect = { FAITH = faith:arian }
+			add_small_faith_to_county_effect = { FAITH = faith:scythian_pagan }
+		}
+		title:c_algier = {
+			add_small_culture_to_county_effect = { CULTURE = culture:alano_vandalic }
+			add_small_faith_to_county_effect = { FAITH = faith:arian }
+			add_small_faith_to_county_effect = { FAITH = faith:scythian_pagan }
+		}
+		title:c_tanas = {
+			add_small_culture_to_county_effect = { CULTURE = culture:alano_vandalic }
+			add_small_faith_to_county_effect = { FAITH = faith:arian }
+			add_small_faith_to_county_effect = { FAITH = faith:scythian_pagan }
+		}
+	}
+}
+
+BP_start_date_minorities_476_asoritsan = {
+	effect = {
 	}
 }
 
@@ -83,7 +183,7 @@ BP_start_date_minorities_476_oriens_cilicia = {
 		title:c_beirut = { add_small_faith_to_county_effect = { FAITH = faith:syrian_orthodox } }
 		title:c_tall_hamid = { add_small_faith_to_county_effect = { FAITH = faith:syrian_orthodox } }
 		
-		#Tightly coupled cultures and religions
+		#Culture/Religion tightly coupled
 		title:c_tiberias = {
 			add_large_culture_to_county_effect = { CULTURE = culture:judean }
 			add_large_faith_to_county_effect = { FAITH = faith:rabbinism }

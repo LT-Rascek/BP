@@ -882,81 +882,81 @@ BP_start_date_minorities_476_effect_old = {
 		#Mali: None
 		#Mongolia: None
 		
-		#North Africa
-		every_county = {
-			limit = { this.empire = title:e_north_africa }
-			
-			#Africa
-			if = {
-				limit = { this.kingdom = title:k_africa }
-				add_minority_faith_granular_minimum_effect = { FAITH = faith:african_church }
-				add_minority_faith_granular_minimum_effect = { FAITH = faith:donatism }
-			}
-			#Mauretania
-			if = {
-				limit = {
-					this.kingdom = title:k_mauretania
-					OR = {
-						is_coastal_county = yes
-						this.faith = faith:valentinianism
-						this = title:c_satif
-					}
-				}
-				add_minority_faith_granular_minimum_effect = { FAITH = faith:african_church }
-			}
-			#Cultures
-			if = {
-				limit = {
-					OR = {
-						this.kingdom = title:k_africa
-						this.kingdom = title:k_mauretania
-					}
-				}
-				add_minority_culture_granular_effect = { CULTURE = culture:romano_african }
-			}
-			#Berber admixing
-			if = {
-				limit = {
-					this.empire = title:e_north_africa
-					this.culture = culture:romano_african
-				}
-				add_minority_culture_granular_effect = { CULTURE = culture:mauri }
-				add_minority_culture_granular_effect = { CULTURE = culture:mauritanian }
-			}
-			
-			#Vandals and Alans
-			if = { #Alans
-				limit = {
-					OR = {
-						this = title:c_bejaia
-						this = title:c_algier
-					}
-				}
-				add_small_culture_to_county_effect = { CULTURE = culture:alano_vandalic }
-				add_small_faith_to_county_effect = { FAITH = faith:arian }
-				add_small_faith_to_county_effect = { FAITH = faith:scythian_pagan }
-			}
-			if = {
-				limit = {
-					OR = {
-						this.duchy = title:d_carthago
-						this.duchy = title:d_tripolitania
-						this.duchy = title:d_byzacena
-					}
-					NOT = { this = title:c_tripolitana }
-					is_coastal_county = yes
-				}
-				add_small_culture_to_county_effect = { CULTURE = culture:vandalic }
-				add_small_faith_to_county_effect = { FAITH = faith:arian }
-				add_small_faith_to_county_effect = { FAITH = faith:germanic_pagan }
-			}
-		}
-		title:c_satif = { add_small_faith_to_county_effect = { FAITH = faith:cybelian } } #Still only 100 years since the temple burnt down
-		title:c_tunis = {
-			add_large_culture_to_county_effect = { CULTURE = culture:punic }
-			add_small_faith_to_county_effect = { FAITH = faith:manichean }
-		}
-		title:c_kairwan = { add_large_culture_to_county_effect = { CULTURE = culture:punic } }
+####		#North Africa
+####		every_county = {
+####			limit = { this.empire = title:e_north_africa }
+####			
+####			#Africa
+####			if = {
+####				limit = { this.kingdom = title:k_africa }
+####				add_minority_faith_granular_minimum_effect = { FAITH = faith:african_church }
+####				add_minority_faith_granular_minimum_effect = { FAITH = faith:donatism }
+####			}
+####			#Mauretania
+####			if = {
+####				limit = {
+####					this.kingdom = title:k_mauretania
+####					OR = {
+####						is_coastal_county = yes
+####						this.faith = faith:valentinianism
+####						this = title:c_satif
+####					}
+####				}
+####				add_minority_faith_granular_minimum_effect = { FAITH = faith:african_church }
+####			}
+####			#Cultures
+####			if = {
+####				limit = {
+####					OR = {
+####						this.kingdom = title:k_africa
+####						this.kingdom = title:k_mauretania
+####					}
+####				}
+####				add_minority_culture_granular_effect = { CULTURE = culture:romano_african }
+####			}
+####			#Berber admixing
+####			if = {
+####				limit = {
+####					this.empire = title:e_north_africa
+####					this.culture = culture:romano_african
+####				}
+####				add_minority_culture_granular_effect = { CULTURE = culture:mauri }
+####				add_minority_culture_granular_effect = { CULTURE = culture:mauritanian }
+####			}
+####			
+####			#Vandals and Alans
+####			if = { #Alans
+####				limit = {
+####					OR = {
+####						this = title:c_bejaia
+####						this = title:c_algier
+####					}
+####				}
+####				add_small_culture_to_county_effect = { CULTURE = culture:alano_vandalic }
+####				add_small_faith_to_county_effect = { FAITH = faith:arian }
+####				add_small_faith_to_county_effect = { FAITH = faith:scythian_pagan }
+####			}
+####			if = {
+####				limit = {
+####					OR = {
+####						this.duchy = title:d_carthago
+####						this.duchy = title:d_tripolitania
+####						this.duchy = title:d_byzacena
+####					}
+####					NOT = { this = title:c_tripolitana }
+####					is_coastal_county = yes
+####				}
+####				add_small_culture_to_county_effect = { CULTURE = culture:vandalic }
+####				add_small_faith_to_county_effect = { FAITH = faith:arian }
+####				add_small_faith_to_county_effect = { FAITH = faith:germanic_pagan }
+####			}
+####		}
+####		title:c_satif = { add_small_faith_to_county_effect = { FAITH = faith:cybelian } } #Still only 100 years since the temple burnt down
+####		title:c_tunis = {
+####			add_large_culture_to_county_effect = { CULTURE = culture:punic }
+####			add_small_faith_to_county_effect = { FAITH = faith:manichean }
+####		}
+####		title:c_kairwan = { add_large_culture_to_county_effect = { CULTURE = culture:punic } }
 		
 		#Persia
 		every_county = {
