@@ -962,50 +962,50 @@ BP_start_date_minorities_476_effect_old = {
 		every_county = {
 			limit = { this.empire = title:e_persia }
 			
-			#Southern Asoristan
-			if = {
-				limit = {
-					OR = {
-						this.duchy = title:d_asoristan
-						this.duchy = title:d_mesan
-						this.duchy = title:d_khuzestan
-						this.duchy = title:d_hira
-						#Khuzestan
-						this = title:c_abbadan
-						this = title:c_ahvaz
-						this = title:c_dawraq
-					}
-				}
-				add_minority_faith_granular_minimum_effect = { FAITH = faith:mandeaism }
-				add_small_faith_to_county_effect = { FAITH = faith:manichean }
-				add_minority_faith_granular_effect = { FAITH = faith:mazdayasna }
-				add_minority_faith_granular_effect = { FAITH = faith:nestorian }
-				add_minority_culture_granular_effect = { CULTURE = culture:aramean }
-			}
-			#Khuzis
-			if = {
-				limit = { this.culture = culture:elymaean }
-				add_minority_culture_granular_effect = { CULTURE = culture:persian }
-			}
-			if = {
-				limit = { this.duchy = title:d_khuzestan }
-				add_minority_culture_granular_effect = { CULTURE = culture:elymaean }
-			}
-			#Northern Asoristan
-			if = {
-				limit = {
-					OR = {
-						this.duchy = title:d_beth_garami
-						this.duchy = title:d_arbayistan
-						this.duchy = title:d_euphrates
-						this.duchy = title:d_adiabene
-					}
-				}
-				add_minority_faith_granular_effect = { FAITH = faith:mesopotamian_pagan }
-				add_minority_culture_granular_effect = { CULTURE = culture:cyrtian }
-				add_minority_faith_granular_effect = { FAITH = faith:nestorian }
-				add_minority_faith_granular_effect = { FAITH = faith:kitebacilweism }
-			}
+####			#Southern Asoristan
+####			if = {
+####				limit = {
+####					OR = {
+####						this.duchy = title:d_asoristan
+####						this.duchy = title:d_mesan
+####						this.duchy = title:d_khuzestan
+####						this.duchy = title:d_hira
+####						#Khuzestan
+####						this = title:c_abbadan
+####						this = title:c_ahvaz
+####						this = title:c_dawraq
+####					}
+####				}
+####				add_minority_faith_granular_minimum_effect = { FAITH = faith:mandeaism }
+####				add_small_faith_to_county_effect = { FAITH = faith:manichean }
+####				add_minority_faith_granular_effect = { FAITH = faith:mazdayasna }
+####				add_minority_faith_granular_effect = { FAITH = faith:nestorian }
+####				add_minority_culture_granular_effect = { CULTURE = culture:aramean }
+####			}
+####			#Khuzis
+####			if = {
+####				limit = { this.culture = culture:elymaean }
+####				add_minority_culture_granular_effect = { CULTURE = culture:persian }
+####			}
+####			if = {
+####				limit = { this.duchy = title:d_khuzestan }
+####				add_minority_culture_granular_effect = { CULTURE = culture:elymaean }
+####			}
+####			#Northern Asoristan
+####			if = {
+####				limit = {
+####					OR = {
+####						this.duchy = title:d_beth_garami
+####						this.duchy = title:d_arbayistan
+####						this.duchy = title:d_euphrates
+####						this.duchy = title:d_adiabene
+####					}
+####				}
+####				add_minority_faith_granular_effect = { FAITH = faith:mesopotamian_pagan }
+####				add_minority_culture_granular_effect = { CULTURE = culture:cyrtian }
+####				add_minority_faith_granular_effect = { FAITH = faith:nestorian }
+####				add_minority_faith_granular_effect = { FAITH = faith:kitebacilweism }
+####			}
 			#West Daylam and Media Minor
 			if = {
 				limit = {
@@ -1092,30 +1092,30 @@ BP_start_date_minorities_476_effect_old = {
 				add_minority_faith_granular_minimum_effect = { FAITH = faith:khurmazta }
 			}
 		}
-		title:c_baghdad = {
-			add_small_culture_to_county_effect = { CULTURE = culture:persian }
-			add_small_culture_to_county_effect = { CULTURE = culture:greek }
-			add_small_faith_to_county_effect = { FAITH = faith:nicene }
-			add_small_faith_to_county_effect = { FAITH = faith:mazdayasna }
-			add_small_faith_to_county_effect = { FAITH = faith:manichean }
-		}
-		title:c_tustar = {
-			add_small_faith_to_county_effect = { FAITH = faith:manichean }
-			#Greco-Roman POWs
-			add_small_faith_to_county_effect = { FAITH = faith:nicene }
-			add_small_culture_to_county_effect = { CULTURE = culture:romano_aramean }
-			add_small_culture_to_county_effect = { CULTURE = culture:greek }
-		}
+####		title:c_baghdad = {
+####			add_small_culture_to_county_effect = { CULTURE = culture:persian }
+####			add_small_culture_to_county_effect = { CULTURE = culture:greek }
+####			add_small_faith_to_county_effect = { FAITH = faith:nicene }
+####			add_small_faith_to_county_effect = { FAITH = faith:mazdayasna }
+####			add_small_faith_to_county_effect = { FAITH = faith:manichean }
+####		}
+####		title:c_tustar = {
+####			add_small_faith_to_county_effect = { FAITH = faith:manichean }
+####			#Greco-Roman POWs
+####			add_small_faith_to_county_effect = { FAITH = faith:nicene }
+####			add_small_culture_to_county_effect = { CULTURE = culture:romano_aramean }
+####			add_small_culture_to_county_effect = { CULTURE = culture:greek }
+####		}
 		title:c_talish = { add_small_faith_to_county_effect = { FAITH = faith:manichean } }
-		#Mesan: Our last Greek holdout of the Seleucids....
-		title:c_basra = {
-			add_small_culture_to_county_effect = { CULTURE = culture:greek }
-			add_small_faith_to_county_effect = { FAITH = faith:hellenic_pagan }
-		}
-		title:c_ubulla = {
-			add_small_culture_to_county_effect = { CULTURE = culture:greek }
-			add_small_faith_to_county_effect = { FAITH = faith:hellenic_pagan }
-		}
+####		#Mesan: Our last Greek holdout of the Seleucids....
+####		title:c_basra = {
+####			add_small_culture_to_county_effect = { CULTURE = culture:greek }
+####			add_small_faith_to_county_effect = { FAITH = faith:hellenic_pagan }
+####		}
+####		title:c_ubulla = {
+####			add_small_culture_to_county_effect = { CULTURE = culture:greek }
+####			add_small_faith_to_county_effect = { FAITH = faith:hellenic_pagan }
+####		}
 		#Medians
 		title:c_nihawand = { add_small_culture_to_county_effect = { CULTURE = culture:median } }
 		title:c_hamadan = { add_small_culture_to_county_effect = { CULTURE = culture:median } }

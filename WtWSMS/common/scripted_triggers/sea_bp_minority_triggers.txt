@@ -29,7 +29,7 @@ jewish_culture_in_palestine_trigger = { #County Scope
 }
 jewish_faith_in_palestine_trigger = { #County Scope
 	trigger_if = {
-		limit = { this.faith.religion = { religion_tag = judaism_religion } }
+		limit = { this.faith = { religion_tag = judaism_religion } }
 		OR = {
 			this.duchy = title:d_iudea
 			this.duchy = title:d_palestinia_secunda
