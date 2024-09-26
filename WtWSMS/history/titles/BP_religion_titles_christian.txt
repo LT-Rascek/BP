@@ -2,7 +2,7 @@
 d_papal_state = {
 	10.1.1={
 		liege="e_roman_empire"
-		government = theocracy_government
+		government = tmp_government
 	}
 	42.1.1={
 		holder = 145292
@@ -307,14 +307,14 @@ d_papal_state = {
 }
 
 d_iconoclast = {
-	20.1.1 = { government = theocracy_government }
+	20.1.1 = { government = tmp_government }
 	766.11.16 = { holder = 70560 }
 	780.2.7 = { holder = 0 }
 }
 
 d_paulician = {
 	660.1.1 = {
-		government = theocracy_government
+		government = tmp_government
 		holder = 14001200
 	}
 	684.1.1 = { holder = 14001201 }
@@ -323,7 +323,7 @@ d_paulician = {
 }
 
 d_patriarchate_in_the_east = {
-	1.1.1 = { government = theocracy_government }
+	1.1.1 = { government = tmp_government }
 	35.1.1={
 		holder_ignore_head_of_faith_requirement=166236
 	}
@@ -510,7 +510,7 @@ d_patriarchate_in_the_east = {
 d_miaphysite = {
 	43.1.1={
 		holder_ignore_head_of_faith_requirement = 161518 #Markos I
-		government = theocracy_government
+		government = tmp_government
 		liege = e_roman_empire
 	}
 	300.1.10 = {
@@ -580,7 +580,7 @@ d_miaphysite = {
 }
 
 d_arian = {
-	20.1.1= { government = theocracy_government }
+	20.1.1= { government = tmp_government }
 }
 
 d_gothic_church = {
@@ -589,21 +589,21 @@ d_gothic_church = {
 }
 
 d_ebionites = {
-	1.1.1 = { government = theocracy_government }
+	1.1.1 = { government = tmp_government }
 	30.1.1 = { holder_ignore_head_of_faith_requirement = JerusalemChurch000 } #They held James the Just in high esteem
 	62.1.1 = { holder = 0 }
 }
 
 d_marcionism = {
 	144.1.1= {
-		government = theocracy_government
+		government = tmp_government
 		holder = 14001400
 	}
 	160.1.1 = { holder = 0 } #Suppresses "Hole in History" error
 }
 
 d_donatism = {
-	20.1.1= { government = theocracy_government }
+	20.1.1= { government = tmp_government }
 	248.1.1 = { holder_ignore_head_of_faith_requirement = 14001300 }
 	300.1.1 = { holder_ignore_head_of_faith_requirement = 14001301 }
 	311.1.1 = { holder = 14001302 }
@@ -618,7 +618,7 @@ d_donatism = {
 d_georgian_orthodox = {
 	326.1.1 = {
 		holder = GeorgianChurch000
-		government = theocracy_government
+		government = tmp_government
 		liege = k_iberia
 	}
 	363.1.1 = { holder = GeorgianChurch001 }
@@ -672,11 +672,11 @@ d_georgian_orthodox = {
 }
 
 d_monophysite = {
-	20.1.1= { government = theocracy_government }
+	20.1.1= { government = tmp_government }
 }
 
 d_aquileia_church = {
-	475.1.1 = { government = theocracy_government }
+	475.1.1 = { government = tmp_government }
 	539.1.1 = {
 		holder = 1301247 # Macedonius
 		liege = e_byzantium
@@ -704,7 +704,7 @@ k_melchisedechianism = {
 }
 
 d_apostolic_church = {
-	1.1.1 = { government = theocracy_government }
+	1.1.1 = { government = tmp_government }
 	1.1.1 = {
 		#St. Thaddeus the Apostle (1–50); omitted for regnal numbering purposes.
 	}
@@ -943,17 +943,17 @@ d_apostolic_church = {
 #### From Vanilla Titles ####
 
 k_papal_state = {
-	10.1.1={ government = theocracy_government }
+	10.1.1={ government = tmp_government }
 }
 
 k_orthodox = {
-	10.1.1={ government = theocracy_government }
+	10.1.1={ government = tmp_government }
 }
 
 d_coptic_papacy = {
-	10.1.1={ government = theocracy_government }
+	10.1.1={ government = tmp_government }
 }
 
 d_conversos = {
-	10.1.1 = { government = theocracy_government }
+	10.1.1 = { government = tmp_government }
 }

@@ -1,6 +1,6 @@
 ﻿e_hunnic_empire = {
 	100.1.1={
-		government = nomad_government
+		government = tmp_government
 	}
 	360.1.1={
 		holder = 76 # Balamber
@@ -39,13 +39,13 @@
 k_tuldilanids = { #Tuldila's host
 	454.1.1 = {
 		holder = TuldilaHost000
-		government = nomad_government
+		government = tmp_government
 	}
 	458.1.1 = { holder = TuldilaHost001 }
 }
 e_rouran = {
 	20.1.1={
-		government = nomad_government
+		government = tmp_government
 	}
 	330.1.1={ 
 		holder=4404 # Yujiulü Mugulü
@@ -116,7 +116,7 @@ e_rouran = {
 e_avar = {
 	562.1.1={
 		holder = 155185 # Khagan Bayan I
-		government = nomad_government
+		government = tmp_government
 	}
 	602.1.1={
 		holder = 33081 # Khagan Bayan II
@@ -124,7 +124,7 @@ e_avar = {
 }
 e_turkestan = {
 	20.1.1={
-		government = nomad_government
+		government = tmp_government
 	}
 	551.1.1={
 		holder=36001 # Bumin
@@ -157,7 +157,7 @@ e_turkestan = {
 k_magyar = {
 	465.1.1={
 		holder=152
-		government = nomad_government
+		government = tmp_government
 	}
 	497.1.1={
 		holder=190087
@@ -166,7 +166,7 @@ k_magyar = {
 k_chuban = {
 	450.1.1={
 		holder = 96048
-		government = nomad_government
+		government = tmp_government
 	}
 	510.1.1={
 		holder = 96049
@@ -176,7 +176,7 @@ k_tuyuhun = { #swapped with xixia history
 	#Tuyuhun Kingdom
 	284.1.1={
 		holder = 247346
-		government = nomad_government
+		government = tmp_government
 	}
 	317.1.1={
 		holder = 247347
@@ -257,7 +257,7 @@ d_ikh_bogdh = {
 k_khazaria = {
 	740.1.1={
 		holder=74018
-		government = nomad_government
+		government = tmp_government
 	}
 	765.1.1={
 		holder=74019
@@ -270,7 +270,7 @@ k_khazaria = {
 d_utigurs = {
 	466.1.1={
 		holder = 112 # Isperikh
-		government = nomad_government
+		government = tmp_government
 	} 
 	500.1.1={
 		holder = 33084 # Dristar Isperikhid
@@ -285,19 +285,19 @@ d_utigurs = {
 d_saragurs = {
 	466.1.1={
 		holder = 114
-		government = nomad_government
+		government = tmp_government
 	}
 }
 d_ogurs = {
 	466.1.1={
 		holder = 113
-		government = nomad_government
+		government = tmp_government
 	}
 }
 d_kutrigurs = {
 	470.1.1={
 		holder = 108 # Batir 
-		government = nomad_government
+		government = tmp_government
 	}
 	500.1.1={
 		holder = 33082 # Apskhih Batirid
@@ -312,13 +312,13 @@ d_kutrigurs = {
 d_acatiri = {
 	465.1.1={
 		holder=107
-		government = nomad_government
+		government = tmp_government
 	}
 }
 d_sabirs = {
 	466.1.1={
 		holder = 115 # Sabil aml Rouen di Juan-li
-		government = nomad_government
+		government = tmp_government
 	}
 	500.1.1={
 		holder = 33086  # Sabil II aml Rouen di Juan-li
@@ -331,19 +331,19 @@ d_sabirs = {
 	}
 }
 d_bulgars = { ##### TODO (BETA): Make use of d_bulgars for Great Old Bulgaria
-	1.1.1={ government = nomad_government }
+	1.1.1={ government = tmp_government }
 }
 d_barsils = {
 	450.1.1={
 		holder = 109734
-		government = nomad_government
+		government = tmp_government
 	}
 }
 #Other Turks under Rouran Domination
 k_ashina = {
 	420.1.1 = {
 		holder = 36000_father #Tuwu's father
-		government = nomad_government
+		government = tmp_government
 		liege = e_rouran
 	}
 	486.1.1 = { holder = 36000 } #Tuwu Ashina
@@ -352,7 +352,7 @@ k_ashina = {
 k_gaoche = {
 	420.1.1 = {
 		holder = tieleGaoche000
-		government = nomad_government
+		government = tmp_government
 		liege = e_rouran
 	}
 	450.1.1 = { holder = tieleGaoche001 }
@@ -360,7 +360,7 @@ k_gaoche = {
 k_uighur = { #Proto-Uyghurs, Kirghiz under Ninrun domination
 	470.1.1 = {
 		holder = Uighur000
-		government = nomad_government
+		government = tmp_government
 		liege = e_rouran
 	}
 	492.1.1 = { holder = Uighur001 }
@@ -368,7 +368,7 @@ k_uighur = { #Proto-Uyghurs, Kirghiz under Ninrun domination
 k_dubuo = { #Proto-Tuvans, Eastern Sayan to Tannu-Ola region
 	442.1.1 = {
 		holder = Dubuo000
-		government = tribal_government #Their too far from the steppe to be actual nomads
+		government = tmp_government #Their too far from the steppe to be actual nomads
 		liege = e_rouran
 	}
 	491.1.1 = { holder = Dubuo001 }
@@ -376,7 +376,7 @@ k_dubuo = { #Proto-Tuvans, Eastern Sayan to Tannu-Ola region
 d_tiele = { #Fulfuluo Clan
 	450.1.1={ 
 		holder=4442 # Mi'etu
-		government = nomad_government
+		government = tmp_government
 		liege = e_rouran
 	}
 	520.1.1={ 
@@ -390,7 +390,7 @@ d_tiele = { #Fulfuluo Clan
 d_chuyue = { #proto Shatuos, part of Yueban in 476
 	460.1.1 = {
 		holder = tieleChuyue000
-		government = nomad_government
+		government = tmp_government
 		liege = k_chuban
 	}
 	490.1.1 = { holder = tieleChuyue001 }
@@ -398,7 +398,7 @@ d_chuyue = { #proto Shatuos, part of Yueban in 476
 d_chumukun = {
 	420.1.1 = {
 		holder = tieleChumukun000
-		government = nomad_government
+		government = tmp_government
 		liege = k_chuban
 	}
 	450.1.1 = { holder = tieleChumukun001 }
@@ -406,7 +406,7 @@ d_chumukun = {
 d_chumi = {
 	420.1.1={
 		holder = tieleChumi000
-		government = nomad_government
+		government = tmp_government
 		liege = k_chuban
 	}
 	450.1.1={ holder = tieleChumi001 }
