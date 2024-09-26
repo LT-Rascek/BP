@@ -11,7 +11,7 @@ To-Fix Files:
 Notes:
 ----------------------
 * Roman Empire doesn't count as an Emperor in the Senate GUI
-* "Challenge Character" Fix/Replace
+* "Challenge Character" Fix/Replace/Remove
 * Remove minor migrations, should be a landless char thing instead.
 * Port in Marauders vassal_stance stuff
 
@@ -44,9 +44,8 @@ Remove all references to these terms:
 	* vassals_must_give_titles_to_dynasty_members
 
 Remove these things:
-	* clerical_influence
 	* vassal contracts
-	* all refs to gubernatorial_government, bureaucratic_government
+	* all refs to gubernatorial_government, bureaucratic_government refs
 
 Remove everything in these files, then the files themselves:
 	* common/laws/the_various_laws....
@@ -58,6 +57,9 @@ TODO:
 * Re-add Eranshar can only give titles, but to "STATE FAITH" chars now
 * Have Rajamandala only able to grant to families
 * Review all wars for Crown Authority-like effects and extend as appropriate
+
+Government Features to Readd:
+* Clerical Influence temporal condemnation for Eranshar?
 
 Ideas:
 * Create notion of primitive government (casus belli subjugations)?
