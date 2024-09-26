@@ -29,9 +29,8 @@
 
 	# Use flags instead of has_government for moddability if possible (i.e., wherever not visible to the player).
 	
-	color = hsv{ 1.00 1.00 1.00 }
+	color = { 1.00 1.00 1.00 }
 }
-
 
 prefeudal_government = {
 	government_rules = {
@@ -183,7 +182,11 @@ subroman_government = {
 }
 
 #Roman-centric governments
-roman_administrative_non_dlc_government = {
+
+# "Real" Roman administrative color:  color = hsv{ 0.902 0.980 0.400 } #Tyrian Purple
+
+##### TO REMOVE: ######
+gubernatorial_government = {
 	government_rules = {
 		create_cadet_branches = yes
 		rulers_should_have_dynasty = yes
@@ -212,10 +215,41 @@ roman_administrative_non_dlc_government = {
 		use_legends = yes
 	}
 
-	flag = may_elevate_co_monarch
 	# Use flags instead of has_government for moddability if possible (i.e., wherever not visible to the player).
-	flag = government_is_feudal
-	color = color = hsv{ 0.902 0.500 0.650 } #Tyrian Purple - Desaturated 50%, Brightened 25%; old gubernatorial government color
+	
+	color = hsv{ 1.00 1.00 1.00 }
 }
 
-# "Real" Roman administrative color:  color = hsv{ 0.902 0.980 0.400 } #Tyrian Purple
+bureaucratic_government = {
+	government_rules = {
+		create_cadet_branches = yes
+		rulers_should_have_dynasty = yes
+		dynasty_named_realms = yes
+		royal_court = yes
+		legitimacy = yes
+	}
+
+	primary_holding = castle_holding
+	required_county_holdings = { castle_holding city_holding church_holding }
+
+	vassal_contract = {
+		feudal_government_taxes
+		feudal_government_levies
+		special_contract
+		religious_rights
+		fortification_rights
+		coinage_rights
+		succession_rights
+		war_declaration_rights
+		council_rights
+		title_revocation_rights
+	}
+
+	ai = {
+		use_legends = yes
+	}
+
+	# Use flags instead of has_government for moddability if possible (i.e., wherever not visible to the player).
+	
+	color = hsv{ 1.00 1.00 1.00 }
+}
