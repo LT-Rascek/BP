@@ -102,7 +102,7 @@ convert_to_roman_government_decision = {
 		is_independent_ruler = yes #Must be independent
 		highest_held_title_tier >= tier_kingdom #Must be a kingdom or empire
 		prestige_level >= 4
-		capital_province.county = { development_level >= convert_to_bureaucratic_development_requirement }
+		capital_province.county = { development_level >= convert_to_roman_government_development_requirement }
 		
 		#Tribal Innovations
 		custom_description = {
@@ -151,7 +151,7 @@ convert_to_feudalism_decision = {
 			has_government = prefeudal_government
 			has_government = high_tribal_government
 		}
-		#TODO: Fix to match the Clan/Bureaucratic/&c. Gov't decisions so we don't get a case where a player has no conversion decision
+		#TODO: Fix to match the other govs Gov't decisions so we don't get a case where a player has no conversion decision
 		#OR = {
 		#	culture = { has_cultural_parameter = right_to_rule_feudal }
 		#	faith = { has_doctrine_parameter = right_to_rule_feudal }
