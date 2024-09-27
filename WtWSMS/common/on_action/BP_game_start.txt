@@ -838,10 +838,6 @@ game_start_fix_barony_government = {
 					limit = { this.county.holder = { has_government = rajamandala_government } }
 					this.holder = { convert_realm_to_gupta_effect = yes }
 				}
-				else_if = {
-					limit = { this.county.holder = { has_bureaucratic_government_type_trigger = yes } }
-					this.holder = { convert_realm_to_gubernatorial_effect = yes }
-				}
 			}
 			#Handle cases of lay clergy faiths holding temples as well
 			else_if = {
@@ -886,10 +882,6 @@ game_start_fix_barony_government = {
 				else_if = {
 					limit = { this.county.holder = { has_government = rajamandala_government } }
 					this.holder = { convert_realm_to_gupta_effect = yes }
-				}
-				else_if = {
-					limit = { this.county.holder = { has_bureaucratic_government_type_trigger = yes } }
-					this.holder = { convert_realm_to_gubernatorial_effect = yes }
 				}
 			}
 		}

@@ -1377,7 +1377,6 @@ tradition_persian_traditions = {
 		else_if = { #Not Persian government, so *ick*; NB: this is intentional
 			limit = {
 				OR = {
-					scope:character = { has_government = bureaucratic_government }
 					scope:character = { has_government = non_dlc_roman_administrative_government }
 					scope:character = { has_government = subroman_government }
 					scope:character = { has_government = rajamandala_government }
@@ -1480,7 +1479,6 @@ tradition_persian_traditions_non_dlc = {
 		else_if = { #Not Persian government, so *ick*; NB: this is intentional
 			limit = {
 				OR = {
-					scope:character = { has_government = bureaucratic_government }
 					scope:character = { has_government = non_dlc_roman_administrative_government }
 					scope:character = { has_government = subroman_government }
 					scope:character = { has_government = rajamandala_government }

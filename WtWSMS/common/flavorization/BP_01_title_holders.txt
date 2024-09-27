@@ -90,21 +90,21 @@ barony_church_holding_bureaucratic = {
 	priority = 9
 	holding = church_holding
 	top_liege = no
-	governments = { bureaucratic_government non_dlc_roman_administrative_government subroman_government }
+	governments = { non_dlc_roman_administrative_government subroman_government }
 }
 barony_city_holding_bureaucratic = {
 	type = title
 	tier = barony
 	priority = 9
 	holding = city_holding
-	governments = { bureaucratic_government non_dlc_roman_administrative_government subroman_government }
+	governments = { non_dlc_roman_administrative_government subroman_government }
 }
 barony_castle_holding_bureaucratic = {
 	type = title
 	tier = barony
 	priority = 9
 	holding = castle_holding
-	governments = { bureaucratic_government non_dlc_roman_administrative_government subroman_government }
+	governments = { non_dlc_roman_administrative_government subroman_government }
 }
 barony_church_holding_bureaucratic_heritage_byzantine = {
 	type = title
@@ -112,7 +112,7 @@ barony_church_holding_bureaucratic_heritage_byzantine = {
 	priority = 9
 	holding = church_holding
 	top_liege = no
-	governments = { bureaucratic_government non_dlc_roman_administrative_government subroman_government }
+	governments = { non_dlc_roman_administrative_government subroman_government }
 	heritages = { heritage_byzantine }
 }
 barony_city_holding_bureaucratic_heritage_byzantine = {
@@ -120,7 +120,7 @@ barony_city_holding_bureaucratic_heritage_byzantine = {
 	tier = barony
 	priority = 9
 	holding = city_holding
-	governments = { bureaucratic_government non_dlc_roman_administrative_government subroman_government }
+	governments = { non_dlc_roman_administrative_government subroman_government }
 	heritages = { heritage_byzantine }
 }
 barony_castle_holding_bureaucratic_heritage_byzantine = {
@@ -128,7 +128,7 @@ barony_castle_holding_bureaucratic_heritage_byzantine = {
 	tier = barony
 	priority = 9
 	holding = castle_holding
-	governments = { bureaucratic_government non_dlc_roman_administrative_government subroman_government }
+	governments = { non_dlc_roman_administrative_government subroman_government }
 	heritages = { heritage_byzantine }
 }
 
@@ -245,7 +245,7 @@ king_bureaucratic_male_byzantine = {
 	tier = kingdom
 	priority = 49
 	only_independent = yes
-	governments = { bureaucratic_government }
+	governments = { }
 	heritages = { heritage_byzantine }
 }
 king_bureaucratic_female_byzantine = {
@@ -255,7 +255,7 @@ king_bureaucratic_female_byzantine = {
 	tier = kingdom
 	priority = 49
 	only_independent = yes
-	governments = { bureaucratic_government }
+	governments = { }
 	heritages = { heritage_byzantine }
 }
 kingdom_bureaucratic_byzantine = {
@@ -263,7 +263,7 @@ kingdom_bureaucratic_byzantine = {
 	tier = kingdom
 	priority = 49
 	only_independent = yes
-	governments = { bureaucratic_government }
+	governments = { }
 	heritages = { heritage_byzantine }
 }
 emperor_bureaucratic_male_byzantine = {
@@ -273,7 +273,7 @@ emperor_bureaucratic_male_byzantine = {
 	tier = empire
 	priority = 103
 	only_independent = yes
-	governments = { bureaucratic_government }
+	governments = { }
 	heritages = { heritage_byzantine }
 }
 emperor_bureaucratic_female_byzantine = {
@@ -283,7 +283,7 @@ emperor_bureaucratic_female_byzantine = {
 	tier = empire
 	priority = 103
 	only_independent = yes
-	governments = { bureaucratic_government }
+	governments = { }
 	heritages = { heritage_byzantine }
 }
 empire_bureaucratic_byzantine = {
@@ -291,7 +291,7 @@ empire_bureaucratic_byzantine = {
 	tier = empire
 	priority = 103
 	only_independent = yes
-	governments = { bureaucratic_government }
+	governments = { }
 	heritages = { heritage_byzantine }
 }
 #Gubernatorial
@@ -396,7 +396,7 @@ king_bureaucratic_male = {
 	tier = kingdom
 	priority = 49
 	only_independent = yes
-	governments = { bureaucratic_government }
+	governments = { }
 }
 king_bureaucratic_female = {
 	type = character
@@ -405,14 +405,14 @@ king_bureaucratic_female = {
 	tier = kingdom
 	priority = 49
 	only_independent = yes
-	governments = { bureaucratic_government }
+	governments = { }
 }
 kingdom_bureaucratic = {
 	type = title
 	tier = kingdom
 	priority = 49
 	only_independent = yes
-	governments = { bureaucratic_government }
+	governments = { }
 }
 emperor_bureaucratic_male = {
 	type = character
@@ -421,7 +421,7 @@ emperor_bureaucratic_male = {
 	tier = empire
 	priority = 103
 	only_independent = yes
-	governments = { bureaucratic_government }
+	governments = { }
 }
 emperor_bureaucratic_female = {
 	type = character
@@ -430,14 +430,14 @@ emperor_bureaucratic_female = {
 	tier = empire
 	priority = 103
 	only_independent = yes
-	governments = { bureaucratic_government }
+	governments = { }
 }
 empire_bureaucratic = {
 	type = title
 	tier = empire
 	priority = 103
 	only_independent = yes
-	governments = { bureaucratic_government }
+	governments = { }
 }
 
 #Subroman Titles: Byzantine

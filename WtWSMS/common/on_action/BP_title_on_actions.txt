@@ -44,7 +44,7 @@ BP_set_court_langauge = {
 		if = {
 			limit = {
 				has_royal_court = yes
-				has_government = bureaucratic_government
+				has_government = non_dlc_roman_administrative_government
 				scope:title.tier >= tier_kingdom
 				scope:title = root.primary_title #Fire only once per succession
 				primary_title = { has_variable = court_language }
