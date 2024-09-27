@@ -11,6 +11,11 @@ To-Fix Files:
 * common/name_equivalency/00_names.txt
 * common/culture/traditions/BP_*.txt - taking advantage of new DLC stuff
 
+To-Fix database items
+----------------------
+* petition_liege_construct_city_trigger
+* petition_liege_construct_temple_trigger
+
 Notes:
 ----------------------
 * Roman Empire doesn't count as an Emperor in the Senate GUI
@@ -18,6 +23,8 @@ Notes:
 * Remove minor migrations, should be a landless char thing instead.
 * Port in Marauders vassal_stance stuff
 * Make Fall of Rome/Constantinople a unique memory
+* Replace is_landed with is_playable_character globally
+* Replace as much as possible, has_government with government flag checking
 
 Buildings:
 ----------------------

@@ -1,6 +1,8 @@
 ﻿reclaim_albania_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
-	major = yes
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	}
+	decision_group_type = major
 	ai_check_interval = 60
 	desc = reclaim_albania_decision_desc
 	selection_tooltip = reclaim_albania_decision_tooltip
@@ -70,8 +72,10 @@
 }
 
 form_frankish_kingdom_decision = {
-	picture = "gfx/interface/illustrations/decisions/pharamond_on_a_shield.dds"
-	major = yes
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/pharamond_on_a_shield.dds"
+	}
+	decision_group_type = major
 	ai_check_interval = 60
 	desc = form_frankish_kingdom_decision_desc
 	selection_tooltip = form_frankish_kingdom_decision_tooltip
@@ -132,13 +136,15 @@ form_frankish_kingdom_decision = {
 }
 
 establish_de_jure_kingdom_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_found_kingdom.dds"
+	}
+	decision_group_type = major
+	
 	title = establish_de_jure_kingdom_decision_title
-	picture = "gfx/interface/illustrations/decisions/decision_found_kingdom.dds"
 	desc = establish_de_jure_kingdom_decision_desc
 	selection_tooltip = establish_de_jure_kingdom_decision_tooltip
 	sort_order = 90
-
-	major = yes
 
 	is_shown = {
 		is_independent_ruler = yes
@@ -309,13 +315,15 @@ establish_de_jure_kingdom_decision = {
 }
 
 swap_roman_province_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_found_kingdom.dds"
+	}
+	decision_group_type = major
+
 	title = swap_roman_province_decision_title
-	picture = "gfx/interface/illustrations/decisions/decision_found_kingdom.dds"
 	desc = swap_roman_province_decision_desc
 	selection_tooltip = swap_roman_province_decision_tooltip
 	sort_order = 80
-
-	major = yes
 
 	is_shown = {
 		is_independent_ruler = yes
@@ -488,13 +496,16 @@ swap_roman_province_decision = {
 }
 
 establish_de_jure_empire_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_found_kingdom.dds"
+	}
+	decision_group_type = major
+	
 	title = establish_de_jure_empire_decision_title
-	picture = "gfx/interface/illustrations/decisions/decision_found_kingdom.dds"
 	desc = establish_de_jure_empire_decision_desc
 	selection_tooltip = establish_de_jure_empire_decision_tooltip
 	sort_order = 90
 
-	major = yes
 
 	is_shown = {
 		is_independent_ruler = yes
@@ -670,13 +681,16 @@ establish_de_jure_empire_decision = {
 
 #For the edge case where a Roman Empire is titular
 establish_de_jure_empire_roman_decision = { #TODO: The script values should be scopable for localization instead of using separate counters for Italy, Byz, &c.
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/roman_emperor_salute.dds"
+	}
+	decision_group_type = major
+	
 	title = establish_de_jure_empire_roman_decision_title
-	picture = "gfx/interface/illustrations/decisions/roman_emperor_salute.dds"
 	desc = establish_de_jure_empire_roman_decision_desc
 	selection_tooltip = establish_de_jure_empire_roman_decision_tooltip
 	sort_order = 1000
 
-	major = yes
 
 	is_shown = {
 		is_independent_ruler = yes
