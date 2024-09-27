@@ -8,7 +8,12 @@ To-Fix Files:
 * common/culture/traditions/BP_*.txt - taking advantage of new DLC stuff
 * common/flavorization/00_title_holders.txt - add in admin goverment refs
 * common/flavorization/*.txt - review after government is done
+* common/scripted_triggers/00_law_triggers.txt - review after government is done
+* common/scripted_triggers/00_legal_triggers.txt - review after government is done
+* common/scripted_triggers/BP_elective_triggers.txt - review after government is done (ties into elections)
 
+* common/scripted_triggers/00_scripted_rule_triggers_BP_overwrite.txt - Might have obviated `culture_can_raid_even_if_feudal` tradition parameter with `culture_can_raid_over_land_even_if_feudal_no_restrictions`, but might not have...
+* common/scripted_triggers/BP_interaction_triggers.txt - Need to tie with new State Religion concept
 
 * common/landed_titles/*.txt - fix some disjoint counties in Byzantium
 	* Isauria, Kyzistra (might just be a map_data issue though)
@@ -24,6 +29,8 @@ To-Fix database items
 * valid_for_maa_trigger - for all the maa changes (like cataphracts)
 * BP_degrade_roman_government
 * Landed titles rule_title_creation_imperial_power_projection_title_creation_trigger addition
+* should_apply_tribal_development_penalty_trigger
+* building_requirement_tribal
 
 Notes:
 ----------------------
@@ -38,6 +45,7 @@ Notes:
 * Review title bootstrapping code (especially in migrations)
 * Fix Seas being filled in as plains...
 * Review Peregrinition in light of vows of poverty et al having voluntary landlessness
+* Remove Bastard Cultures and related notions
 
 Buildings:
 ----------------------
