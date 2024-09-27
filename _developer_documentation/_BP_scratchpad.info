@@ -14,6 +14,7 @@ To-Fix database items
 * petition_liege_construct_city_trigger
 * petition_liege_construct_temple_trigger
 * valid_for_maa_trigger - for all the maa changes (like cataphracts)
+* BP_degrade_roman_government
 
 Notes:
 ----------------------
@@ -24,6 +25,8 @@ Notes:
 * Make Fall of Rome/Constantinople a unique memory
 * Replace is_landed with is_playable_character globally
 * Replace as much as possible, has_government with government flag checking
+* See if we can make Orestes entrenched without waiting a day
+* Review title bootstrapping code (especially in migrations)
 
 Buildings:
 ----------------------
@@ -71,6 +74,7 @@ TODO:
 * Revamp imperial elective succession if acclaimation can't be extended; if it can, remove it
 * Review applicability of factions again
 * Review title & realm succession law unlocks again
+* Readd fixing custom character governments code
 
 Government Features to Readd:
 * Clerical Influence temporal condemnation for Eranshar?
