@@ -321,6 +321,17 @@ diverge_culture = {
 				desc = "culture_size_in_realm"
 			}
 		}
+		#EVENTS
+		if = {
+			limit = {
+				has_character_flag = diverging_culture_discount
+			}
+			multiply = {
+				value = 0.66
+				desc = "contented_distant_governor"
+			}
+		}
+		
 		##### Changed from Vanilla vvvvv
 		
 		#Monolithic culture makes diverging/hybridizing harder
