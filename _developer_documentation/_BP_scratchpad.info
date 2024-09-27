@@ -9,12 +9,21 @@ To-Fix Files:
 * common/flavorization/00_title_holders.txt - add in admin goverment refs
 * common/flavorization/*.txt - review after government is done
 
+
+* common/landed_titles/*.txt - fix some disjoint counties in Byzantium
+	* Isauria, Kyzistra (might just be a map_data issue though)
+
+* gui/faith_view - all screwed up
+* gui/character_view - completely overhauled
+* gui/hud - things are messed up
+
 To-Fix database items
 ----------------------
 * petition_liege_construct_city_trigger
 * petition_liege_construct_temple_trigger
 * valid_for_maa_trigger - for all the maa changes (like cataphracts)
 * BP_degrade_roman_government
+* Landed titles rule_title_creation_imperial_power_projection_title_creation_trigger addition
 
 Notes:
 ----------------------
@@ -27,6 +36,7 @@ Notes:
 * Replace as much as possible, has_government with government flag checking
 * See if we can make Orestes entrenched without waiting a day
 * Review title bootstrapping code (especially in migrations)
+* Fix Seas being filled in as plains...
 
 Buildings:
 ----------------------
