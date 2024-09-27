@@ -18,7 +18,7 @@ d_armenia_prima = { #d_coloneia history
 	# Development
 	330.1.1={
 		liege = "e_byzantium"
-		government = tmp_government
+		government = gubernatorial_government
 	}
 	450.1.1 = {
 		holder = 1301019 # Vasak, dux utriusque Armeniae
@@ -124,14 +124,14 @@ c_theodosiopolis = {
 	471.1.1 = {
 		holder = Artabanes1
 		liege = d_armenia_prima
-		government = tmp_government
+		government = prefeudal_government
 	}
 	480.1.1 = {
 		liege = k_pontus
 	}
 	505.1.1 = {
 		holder = IoannesArsacid1
-		government = tmp_government
+		government = prefeudal_government
 	}
 	539.1.1={
 		holder=6859
@@ -198,7 +198,7 @@ c_tzani = {
 d_armenia_secunda = { ##### TODO (Alpha): Find any historical rulers of Armenia II
 	470.1.1 = {
 		holder = FictionalArmeniaSecunda000
-		government = tmp_government
+		government = gubernatorial_government
 		liege = k_pontus
 	}
 }

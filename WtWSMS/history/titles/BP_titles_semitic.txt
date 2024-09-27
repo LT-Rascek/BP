@@ -10,7 +10,7 @@ d_judham  = {
 	250.1.1={
 		holder=461711 # Judham
 		liege="k_arabia_petraea"
-		government = tmp_government
+		government = tribal_government
 	}
 	340.1.1={
 		holder=462 # 'Amr
@@ -41,7 +41,7 @@ d_amela  = {
 	250.1.1={
 		holder=470030 # Amela
 		liege="k_arabia_petraea"
-		government = tmp_government
+		government = tribal_government
 	}
 	300.1.1={
 		holder=470031 # Husayn
@@ -67,7 +67,7 @@ d_amela  = {
 }
 k_al_hirah = {
 	100.1.1={
-		government = tmp_government
+		government = tribal_government
 	}
 	268.1.1={
 		holder=137
@@ -151,7 +151,7 @@ k_al_hirah = {
 d_taghlebi = {
 	460.1.1={
 		holder = 187007 # Abdul-Jaleel Tahglebid
-		government = tmp_government
+		government = tribal_government
 	}
 	490.1.1 = { liege = 0 } #Rabi'a Tribes reject Amr al-Maqsur
 	510.1.1={
@@ -170,7 +170,7 @@ d_taghlebi = {
 d_al_qays = {
 	460.1.1={
 		holder = 187011 # Burhanaddin al-Qaysid
-		government = tmp_government
+		government = tribal_government
 	}
 	510.1.1={
 		holder = 187012 # Qawurd al-Qaysid
@@ -190,7 +190,7 @@ d_kalb = {
 	250.1.1={
 		holder=470038 # Kalb
 		liege="k_arabia_petraea"
-		government = tmp_government
+		government = tribal_government
 	}
 	320.1.1={
 		holder=470039 # Wahab
@@ -216,7 +216,7 @@ d_kalb = {
 }
 k_qaryat_dhat_kahil = {
 	100.1.1={
-		government = tmp_government
+		government = tribal_government
 	}
 	425.1.1={
 		holder = 106557 # Akil al-Murar ibn Amr banu Hajr-Amr
@@ -237,7 +237,7 @@ k_qaryat_dhat_kahil = {
 d_yathrib = {
 	466.1.1={
 		holder = 361 # Khaireddin Qurayza
-		government = tmp_government
+		government = republic_government
 	}
 	510.1.1={
 		holder = 362 # Ubayd ibn Khaireddin Qurayza
@@ -252,7 +252,7 @@ d_yathrib = {
 d_quraysh = {
 	420.1.1 = {
 		holder = 36474 # Qusai ibn Kilab banu Qusai 
-		government = tmp_government
+		government = republic_government
 	}
 	480.1.1 = {
 		holder = 36481 # Abd Manaf ibn Qusai banu Qusai 
@@ -273,7 +273,7 @@ d_quraysh = {
 d_thaqif  = {
 	450.1.1={
 		holder=40712 # Mas'ud Thaqif
-		government = tmp_government #No castle/city holdings, so can't be subroman
+		government = tribal_government #No castle/city holdings, so can't be subroman
 	}
 	510.1.1={
 		holder=40713 # Abd-Ya-Layl ibn Mas'ud Thaqif
@@ -285,7 +285,7 @@ d_thaqif  = {
 d_hawazin  = {
 	450.1.1={
 		holder=41010 # Mansour Hawazinid
-		government = tmp_government
+		government = tribal_government
 		liege = k_qaryat_dhat_kahil
 	}
 	510.1.1={
@@ -298,7 +298,7 @@ d_hawazin  = {
 d_ghifar  = {
 	450.1.1={
 		holder=41718  # Moudir Ghifarid
-		government = tmp_government
+		government = tribal_government
 	}
 	510.1.1={
 		holder=41719 # Napyot ibn Moudir Ghifarid
@@ -310,7 +310,7 @@ d_ghifar  = {
 d_tamim = {
 	460.1.1={
 		holder = AdnantieTamim000
-		government = tmp_government
+		government = tribal_government
 	}
 	490.1.1 = { liege = 0 } #Rabi'a Tribes reject Amr al-Maqsur
 	510.1.1={ holder = AdnantieTamim001 }
@@ -319,7 +319,7 @@ d_bakr = {
 	460.1.1={
 		holder = AdnantieBakr000
 		liege="e_persia"
-		government = tmp_government
+		government = tribal_government
 	}
 	510.1.1={ holder = AdnantieBakr001 }
 }
@@ -327,14 +327,14 @@ d_hanzalah = {
 	460.1.1={
 		holder = AdnantieHanzalah000
 		liege="e_persia"
-		government = tmp_government
+		government = tribal_government
 	}
 	510.1.1={ holder = AdnantieHanzalah001 }
 }
 k_salihid = {
 	400.1.1 = { #Hamata/Zokomos/Duj'um
 		holder = Salihid002
-		government = tmp_government
+		government = tribal_government
 	}
 	410.1.1 = { holder = SalihidAwfid000 } #Awf, son of Zokomos
 	430.1.1 = { holder = SalihidAwfid001 } #Amr, son of Awf

@@ -1,6 +1,4 @@
-﻿In the middle of events/dlc/fp2/fp2_struggle_events.txt
-
-RtP Stuff
+﻿RtP Stuff
 ======================
 To-Fix Files:
 ----------------------
@@ -17,6 +15,7 @@ To-Fix Files:
 * common/scripted_triggers/BP_elective_triggers.txt - review after government is done (ties into elections)
 * common/succession_elections/* - review after governments are overhauled
 * events/global_religion_events.txt - review after governments are overhauled
+
 
 * common/scripted_triggers/00_scripted_rule_triggers_BP_overwrite.txt - Might have obviated `culture_can_raid_even_if_feudal` tradition parameter with `culture_can_raid_over_land_even_if_feudal_no_restrictions`, but might not have...
 * common/scripted_triggers/BP_interaction_triggers.txt - Need to tie with new State Religion concept
@@ -40,6 +39,8 @@ To-Fix database items
 
 Notes:
 ----------------------
+* Fix the weirdness near Tarsus on the map
+
 * Roman Empire doesn't count as an Emperor in the Senate GUI
 * "Challenge Character" Fix/Replace/Remove
 * Remove minor migrations, should be a landless char thing instead.

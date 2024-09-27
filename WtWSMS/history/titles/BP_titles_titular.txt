@@ -4,7 +4,7 @@
 d_moesia_superior = { #476: Andronikos Maurikios (e_byzantium)
 	465.1.1={
 		holder=215002 
-		government = tmp_government
+		government = gubernatorial_government
 	}
 	#LT-Rascek: Moving liege year here makes it properly register. Don't know why.
 	470.1.2 = { liege = "k_illyria_prefect" }
@@ -22,7 +22,7 @@ k_sarir = { #476: Vitsahm Sarir (k_sarir)
 # Sarir Kings of the Golden Throne # 
 	452.1.1={ #Let's say post-Battle of Avarayr
 		holder=131726
-		government = tmp_government #No castle/city holdings, so can't be eranshar
+		government = high_tribal_government #No castle/city holdings, so can't be eranshar
 	}
 	510.1.1={
 		holder=131727
@@ -35,28 +35,28 @@ d_najran = {
 	466.1.1={
 		holder=109741
 		liege="k_yemen"
-		government = tmp_government
+		government = prefeudal_government
 	}
 }
 d_azal = {
 	466.1.1={
 		holder=109739
 		liege="k_yemen"
-		government = tmp_government
+		government = prefeudal_government
 	}
 }
 d_wabar = { #d_mahara history (replaces d_mahara history because of map disagreement)
 	466.1.1={
 		holder=109738
 		liege="k_yemen"
-		government = tmp_government
+		government = prefeudal_government
 	}
 }
 ### Garamantes
 d_murzuk = {
 	450.1.1={ 
 		holder=109790
-		government = tmp_government
+		government = prefeudal_government
 	}
 	490.1.1={ 
 		holder=20814 # Cucunq
@@ -65,7 +65,7 @@ d_murzuk = {
 d_adkaddakhe = {
 	450.1.1={ 
 		holder=109786
-		government = tmp_government
+		government = prefeudal_government
 	}
 	490.1.1={ 
 		holder=20814 # Cucunq
@@ -75,7 +75,7 @@ d_adkaddakhe = {
 k_manipura = {
 	430.1.1={
 		holder = 520 # Naophangba Ningthouja
-		government = tmp_government
+		government = tribal_government
 	}
 	495.1.1={
 		holder = 522 # Nongda Lairen Ningthouja
@@ -90,7 +90,7 @@ k_manipura = {
 k_south_kosala = {
 	400.1.1={
 		holder = 36176 # Vrishadhvaja Nala
-		government = tmp_government
+		government = rajamandala_government
 	}
 	420.1.1={
 		holder = 36177 # Varahajara Nala
@@ -112,7 +112,7 @@ k_western_kshatrapas = {
 	460.1.1={
 		holder = 96024 # Ghsamotika Vonones
 		liege="e_deccan"
-		government = tmp_government
+		government = rajamandala_government
 	}
 	510.1.1={
 		holder = 96025 # Bhratadarman Vonones
@@ -122,7 +122,7 @@ d_triparvatha = {
 	425.1.1={
 		holder=36212 # Krishna Varma Kadamba 
 		liege = k_maharastra
-		government = tmp_government
+		government = rajamandala_government
 	}
 	465.1.1={
 		holder=36213 # Vishnuvarna Kadamba 
@@ -150,7 +150,7 @@ k_kalachuri = {
 	460.1.1={
 		holder = 96026 # Raghunathrao Kalachuris
 		liege="e_deccan"
-		government = tmp_government
+		government = rajamandala_government
 	}
 	510.1.1={
 		holder = 96027 # Lakshmandeva Kalachuris
@@ -170,7 +170,7 @@ d_tel_river = {
 	# Parvatadvarka # 
 	440.1.1={
 		holder= 36182 # Sobhanaraja 
-		government = tmp_government
+		government = rajamandala_government
 	}
 	500.1.1={
 		holder= 36183 # Tustikara 
@@ -183,7 +183,7 @@ d_viraja = {
 	460.1.1={
 		holder = 96012 # Sambhaji Chhadvaidam
 		liege="e_rajastan"
-		government = tmp_government
+		government = rajamandala_government
 	}
 	510.1.1={
 		holder = 96014 # Kapardin Chhadvaidam
@@ -195,7 +195,7 @@ d_viraja = {
 ### Tarim Basin
 k_kucha = {
 	100.1.1={
-		government = tmp_government
+		government = prefeudal_government
 	}
 	390.1.1={ 
 		holder=219525 # Megabyzus
@@ -237,7 +237,7 @@ k_kucha = {
 k_shanshan = {
 	390.1.1={ 
 		holder=219513 # Bilong
-		government = tmp_government
+		government = prefeudal_government
 	}
 	450.1.1={ 
 		holder=219515 # Martiya
@@ -255,7 +255,7 @@ k_shanshan = {
 k_gaochang = { #Gaochang commandery and successor kingdom
 	439.1.1={ 
 		holder=219017 # Juqu Wuhui
-		government = tmp_government
+		government = prefeudal_government
 	}
 	444.1.1={ 
 		holder=219018 # Juqu Anzhou
@@ -305,7 +305,7 @@ k_gaochang = { #Gaochang commandery and successor kingdom
 d_maingmaw = {
 	460.1.1 = {
 		holder = PyuMaingmaw000
-		government = tmp_government
+		government = prefeudal_government
 	}
 	490.1.1 = { holder = PyuMaingmaw001 }
 	520.1.1 = { holder = PyuMaingmaw002 }
@@ -319,7 +319,7 @@ d_maingmaw = {
 d_binnaka = {
 	420.1.1={
 		holder = PyuBinnaka000
-		government = tmp_government
+		government = prefeudal_government
 	}
 	450.1.1={ holder = PyuBinnaka001 }
 	500.1.1={ holder = PyuBinnaka002 }
@@ -330,7 +330,7 @@ d_binnaka = {
 d_halin = {
 	442.1.1 = {
 		holder = PyuHalin000
-		government = tmp_government
+		government = prefeudal_government
 	}
 	491.1.1 = { holder = PyuHalin001 }
 	503.1.1 = { holder = PyuHalin002 }
@@ -344,7 +344,7 @@ d_halin = {
 k_thaton = {
 	420.1.1={
 		holder = MonThaton000
-		government = tmp_government
+		government = tribal_government
 	}
 	450.1.1={ holder = MonThaton001 }
 	500.1.1={ holder = MonThaton002 }
@@ -363,22 +363,22 @@ k_thaton = {
 d_sophene = {
 	450.1.1 = {
 		holder = ArmenianSatrapBakriya000
-		government = tmp_government
+		government = prefeudal_government
 		liege = e_byzantium
 	}
 	486.1.1 = {
-		government = tmp_government
+		government = gubernatorial_government
 		liege = k_pontus
 	}
 }
 d_sophanene = {
 	450.1.1 = {
 		holder = ArmenianSatrapMayyafariqin000
-		government = tmp_government
+		government = prefeudal_government
 		liege = e_byzantium
 	}
 	486.1.1 = {
-		government = tmp_government
+		government = gubernatorial_government
 		liege = k_pontus
 	}
 	500.1.1 = {
@@ -391,7 +391,7 @@ d_sophanene = {
 d_suyab = {
 	430.1.1 = {
 		holder = SogdianSuyab000
-		government = tmp_government
+		government = prefeudal_government
 	}
 	450.1.1 = { holder = SogdianSuyab001 }
 	501.1.1 = { holder = SogdianSuyab002 }
