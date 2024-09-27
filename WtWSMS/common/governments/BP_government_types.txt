@@ -149,10 +149,7 @@ subroman_government = {
 
 #Roman-centric governments
 
-# "Real" Roman administrative color:  color = hsv{ 0.902 0.980 0.400 } #Tyrian Purple
-
-##### TO REMOVE: ######
-gubernatorial_government = {
+non_dlc_roman_administrative_government = {
 	government_rules = {
 		create_cadet_branches = yes
 		rulers_should_have_dynasty = yes
@@ -181,11 +178,15 @@ gubernatorial_government = {
 		use_legends = yes
 	}
 
+	flag = may_elevate_co_monarch
 	# Use flags instead of has_government for moddability if possible (i.e., wherever not visible to the player).
 	
-	color = hsv{ 1.00 1.00 1.00 }
+	color = hsv{ 0.902 0.980 0.400 } #Tyrian Purple
 }
 
+# "Real" Roman administrative color:  color = hsv{ 0.902 0.980 0.400 } #Tyrian Purple
+
+##### TO REMOVE: ######
 bureaucratic_government = {
 	government_rules = {
 		create_cadet_branches = yes

@@ -149,32 +149,17 @@
  
  subroman_government_character_modifier: "[domain|E] [taxes|E]: #P +15%#!\n$EFFECT_LIST_BULLET$ [vassal|E] Tax Contributions: #P +15%#!\n$EFFECT_LIST_BULLET$ [levy|E] Size: #N -25%#!\n$EFFECT_LIST_BULLET$ [vassal|E] [levy|E] Contribution: #N -25%#!\n\n"
  
- #Guernatorial
- gubernatorial_government: "Gubernatorial"
- gubernatorial_government_adjective: "Gubernatorial"
- gubernatorial_government_realm: "Gubernatorial Province"
- gubernatorial_government_desc: "$game_concept_gubernatorial_government_desc$"
- gubernatorial_taxes: "[GetGovernment( 'gubernatorial_government' ).GetNameNoTooltip] [taxes|U]"
- gubernatorial_tax_exempt: "[tax|E] Exempt"
- gubernatorial_tax_exempt_short: "Exempt"
- gubernatorial_tax_low: "Low $game_concept_taxes$"
- gubernatorial_tax_low_short: "Low"
- gubernatorial_tax_normal: "Normal $game_concept_taxes$"
- gubernatorial_tax_normal_short: "Normal"
- gubernatorial_tax_high: "High $game_concept_taxes$"
- gubernatorial_tax_high_short: "High"
- gubernatorial_tax_extortionate: "Extortionate $game_concept_taxes$"
- gubernatorial_tax_extortionate_short: "Extortionate"
- 
- gubernatorial_government_character_modifier: "[domain|E] limit: #P +4#!\n$EFFECT_LIST_BULLET$[levy|E] Size: #N -50%#!\n\n"
+ #Roman Administrative
+ non_dlc_roman_administrative_government: "$game_concept_non_dlc_roman_administrative_government$"
+ non_dlc_roman_administrative_government_adjective: "$game_concept_non_dlc_roman_administrative_noun$"
+ non_dlc_roman_administrative_government_realm: "$game_concept_non_dlc_roman_administrative_noun$ Realm"
+ non_dlc_roman_administrative_government_desc: "$game_concept_non_dlc_roman_administrative_government_desc$"
  
  #Bureaucratic
  bureaucratic_government: "Bureaucratic"
  bureaucratic_government_adjective: "Bureaucratic"
  bureaucratic_government_realm: "Bureaucratic Realm"
  bureaucratic_government_desc: "$game_concept_bureaucratic_government_desc$"
- 
- bureacratic_government_character_modifier: "[domain|E] Limit: #P +5#!\n$EFFECT_LIST_BULLET$ [vassal|E] Limit: #P +10#!\n$EFFECT_LIST_BULLET$ [levy|E] Size: #N -50%#!\n$EFFECT_LIST_BULLET$ [men_at_arms|E] Limit: #P +5#!\n\n"
  
  bureaucratic_special_contract: "[Concept( 'feudal_contract', 'Special Contract' )|B|color_black|U]"
  bureaucratic_special_contract_none: "No Special Contract"

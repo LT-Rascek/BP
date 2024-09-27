@@ -682,7 +682,7 @@ setup_administrative_languages = {
 					}
 				}
 			every_vassal_or_below = {
-				limit = { has_government = gubernatorial_government }
+				limit = { has_government = non_dlc_roman_administrative_government }
 				if = {
 					limit = { current_date < 610.10.5 }
 					if = {

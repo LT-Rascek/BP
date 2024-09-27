@@ -322,7 +322,7 @@ window = {
 				enabled = "[Character.CanAdoptCourtLanguage( CulturePillar.Self )]"
 				tooltip = "[Character.GetCanAdoptCourtLanguageText( CulturePillar.Self )]"
 				size = { 300 34 }
-				visible = "[And(Not(Character.IsCharacterCourtLanguage(CulturePillar.Self)),Not(Or(Character.GetGovernment.IsType('gupta_government'),Character.GetGovernment.IsType('gubernatorial_government'))))]"
+				visible = "[And(Not(Character.IsCharacterCourtLanguage(CulturePillar.Self)),Not(Or(Character.GetGovernment.IsType('gupta_government'),Character.GetGovernment.IsType('non_dlc_roman_administrative_government'))))]"
 			}
 			button_standard = {
 				text = "ADOPT_COURT_LANGUAGE_GUPTAS"
@@ -338,7 +338,7 @@ window = {
 				enabled = "[EqualTo_int32('(int32)0','(int32)1')]"
 				tooltip = "ADOPT_COURT_LANGUAGE_GUBERNATORIAL_TOOLTIP"
 				size = { 300 34 }
-				visible = "[And(Not(Character.IsCharacterCourtLanguage(CulturePillar.Self)),Character.GetGovernment.IsType('gubernatorial_government'))]"
+				visible = "[And(Not(Character.IsCharacterCourtLanguage(CulturePillar.Self)),Character.GetGovernment.IsType('non_dlc_roman_administrative_government'))]"
 			}
 			##### Changed from Vanilla ^^^^^
 		}

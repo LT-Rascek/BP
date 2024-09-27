@@ -151,8 +151,6 @@ establish_de_jure_kingdom_decision = {
 		highest_held_title_tier = tier_kingdom
 		root.primary_title = { is_titular = yes }
 		root.number_of_not_titular_kingdoms = 0 #On the off-chance we have a de-jure title, we don't get to do this
-		#No Subordinate Chars
-		NOT = { has_government = gubernatorial_government }
 		#Roman Chars do things differently if it's within the Roman Empire
 		trigger_if = {
 			limit = { culture = { has_cultural_parameter = can_restore_roman_empire } }
@@ -330,8 +328,6 @@ swap_roman_province_decision = {
 		highest_held_title_tier = tier_kingdom
 		root.primary_title = { is_titular = yes }
 		root.number_of_not_titular_kingdoms = 0 #On the off-chance we have a de-jure title, we don't get to do this
-		#No Subordinate Chars
-		NOT = { has_government = gubernatorial_government }
 		#Roman Chars do things differently if its within the Roman Empire
 		culture = { has_cultural_parameter = can_restore_roman_empire }
 		root.capital_county.title_province = { geographical_region = historic_roman_empire }
@@ -512,8 +508,6 @@ establish_de_jure_empire_decision = {
 		highest_held_title_tier = tier_empire
 		root.primary_title = { is_titular = yes }
 		root.number_of_not_titular_empires = 0 #On the off-chance we have a de-jure title, we don't get to do this
-		#No Subordinate Chars
-		NOT = { has_government = gubernatorial_government }
 		#Roman Empires are special
 		NOT = { has_title = title:e_wre }
 		NOT = { has_title = title:e_byzantium }
@@ -701,8 +695,6 @@ establish_de_jure_empire_roman_decision = { #TODO: The script values should be s
 		}
 		root.primary_title = { is_titular = yes }
 		root.number_of_not_titular_empires = 0 #On the off-chance we have a de-jure title, we don't get to do this
-		#No Subordinate Chars
-		NOT = { has_government = gubernatorial_government }
 		#Can't be a different universality if we're Roman...
 		NOT = { has_government = rajamandala_government }
 		NOT = { has_government = eranshar_government }
