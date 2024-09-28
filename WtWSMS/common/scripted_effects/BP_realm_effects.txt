@@ -123,17 +123,3 @@ increase_feudal_transition_effect_macro = {
 	}
 	#Else, do nothing; we've hit the max
 }
-
-#Should be title-scoped
-remove_all_title_laws_effect = {
-	if = { limit = { has_title_law = feudal_elective_succession_law } remove_title_law = feudal_elective_succession_law }
-	if = { limit = { has_title_law = princely_elective_succession_law } remove_title_law = princely_elective_succession_law }
-	if = { limit = { has_title_law = saxon_elective_succession_law } remove_title_law = saxon_elective_succession_law }
-	if = { limit = { has_title_law = scandinavian_elective_succession_law } remove_title_law = scandinavian_elective_succession_law }
-	if = { limit = { has_title_law = gaelic_elective_succession_law } remove_title_law = gaelic_elective_succession_law }
-	if = { limit = { has_title_law = mahestan_elective_succession_law } remove_title_law = mahestan_elective_succession_law }
-	if = { limit = { has_title_law = kurultai_elective_succession_law } remove_title_law = kurultai_elective_succession_law }
-	if = { limit = { has_title_law = eldership_elective_succession_law } remove_title_law = eldership_elective_succession_law }
-	if = { limit = { has_title_law = tribal_elective_succession_law } remove_title_law = tribal_elective_succession_law }
-	if = { limit = { has_title_law = imperial_elective_succession_law } remove_title_law = imperial_elective_succession_law }
-}

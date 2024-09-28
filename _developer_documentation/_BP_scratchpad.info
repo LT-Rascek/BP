@@ -1,5 +1,11 @@
 ﻿RtP Stuff
 ======================
+
+
+
+
+====================================================================================
+
 Government Overhaul
 ----------------------
 To-Fix Files:
@@ -17,6 +23,12 @@ To-Fix database items
 vvvvvvvvvvvvvvvvvvvvvvvv
 * convert_realm_to_bureaucratic_effect - government overhaul
 * degrade_roman_government_effect - government overhaul
+* BP_degrade_roman_government - on-action stuff
+
+Other Gov't Related Things:
+* common/script_values/BP_government_values.txt - Reimplement Sub-Roman Transition hand off code (so that you breaking free/replacing the old head keeps the old progression).
+
+====================================================================================
 
 To-Fix Files:
 ----------------------
@@ -42,7 +54,6 @@ To-Fix database items
 * petition_liege_construct_city_trigger
 * petition_liege_construct_temple_trigger
 * valid_for_maa_trigger - for all the maa changes (like cataphracts)
-* BP_degrade_roman_government
 * Landed titles rule_title_creation_imperial_power_projection_title_creation_trigger addition
 * should_apply_tribal_development_penalty_trigger
 * building_requirement_tribal
