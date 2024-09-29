@@ -8,10 +8,10 @@
 	}
 
 	supply_limit_mult_for_others = -0.5
-	primary_holding = tribal_holding
-	required_county_holdings = { tribal_holding }
+	primary_holding = castle_holding
+	required_county_holdings = { castle_holding city_holding church_holding }
 
-	valid_holdings = { castle_holding }
+	valid_holdings = { castle_holding tribal_holding }
 
 	prestige_opinion_override = { -10 0 3 5 10 20 }
 	always_use_patronym = yes
@@ -41,6 +41,7 @@
 	flag = may_elevate_co_monarch
 	# Use flags instead of has_government for moddability if possible (i.e., wherever not visible to the player).
 	flag = government_is_tribal
+	flag = government_uses_high_tribal_organization
 	
 	##### Kept Old Flags vvvvv
 	flag = can_hold_castles_and_tribes
