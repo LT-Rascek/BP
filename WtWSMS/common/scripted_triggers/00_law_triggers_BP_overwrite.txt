@@ -34,13 +34,12 @@ can_have_confederate_partition_succession_law_trigger = {
 can_have_partition_succession_law_trigger = {
 	OR = {
 		AND = {
-			culture = {
-				has_innovation = innovation_hereditary_rule
-			}
+			culture = { has_innovation = innovation_hereditary_rule }
 			custom_description = {
 				text = succession_laws_must_have_organised_government_tooltip
 				OR = {
 					government_has_flag = government_is_feudal
+					has_realm_law_flag = can_change_partition_succession_laws
 				}
 			}
 		}
@@ -64,6 +63,7 @@ can_have_high_partition_succession_law_trigger = {
 				text = succession_laws_must_have_organised_government_tooltip
 				OR = {
 					government_has_flag = government_is_feudal
+					has_realm_law_flag = can_change_partition_succession_laws
 				}
 			}
 		}
