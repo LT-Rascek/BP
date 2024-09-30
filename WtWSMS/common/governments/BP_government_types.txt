@@ -32,6 +32,8 @@
 	flag = can_hold_castles_and_tribes #Just informative
 	flag = cannot_advance_beyond_late_antiquity_era #Just informative
 	
+	flag = government_is_feudal
+	
 	color = hsv{ 0.67 0.50 0.78 } #Feudal Color, 50% Saturation
 }
 
@@ -95,6 +97,8 @@ eranshar_government = {
 	required_county_holdings = { castle_holding city_holding church_holding }
 	valid_holdings = { castle_holding city_holding }
 
+	tax_slot_type = clan_tax_slot
+
 	vassal_contract = {
 		eranshar_government_obligations
 		special_contract
@@ -118,6 +122,7 @@ eranshar_government = {
 		domain_limit = 2
 		#From WtWSMS-CK2
 		men_at_arms_maintenance = -0.5
+		clan_tax_slot_add  = 1
 	}
 
 	flag = may_elevate_co_monarch
