@@ -2,7 +2,7 @@
 	government_rules = {
 		create_cadet_branches = yes
 		rulers_should_have_dynasty = yes
-		dynasty_named_realms = yes
+		dynasty_named_realms = no
 		royal_court = yes
 		legitimacy = yes
 		use_as_base_on_landed = yes #Avoiding a bunch of jank code with this
@@ -29,7 +29,7 @@
 	# Use flags instead of has_government for moddability if possible (i.e., wherever not visible to the player).
 	flag = government_is_feudal
 	flag = government_uses_prefeudal_authority
-	flag = can_hold_castles_and_tribes
+	flag = can_hold_castles_and_tribes  #Just informative
 	flag = cannot_advance_beyond_late_antiquity_era
 	
 	color = hsv{ 0.67 0.50 0.78 } #Feudal Color, 50% Saturation
@@ -93,27 +93,42 @@ eranshar_government = {
 
 	primary_holding = castle_holding
 	required_county_holdings = { castle_holding city_holding church_holding }
+	valid_holdings = { castle_holding city_holding }
 
 	vassal_contract = {
-		feudal_government_taxes
-		feudal_government_levies
+		eranshar_government_obligations
 		special_contract
 		religious_rights
 		fortification_rights
 		coinage_rights
 		succession_rights
 		war_declaration_rights
-		council_rights
 		title_revocation_rights
+		#Other contracts
+		eranshar_marzban_contract
 	}
 
 	ai = {
 		use_legends = yes
 	}
 
+	character_modifier = {
+		#Gives eranshar_government characters an extra 2-5 domain, depending on their secular
+		#authority
+		domain_limit = 2
+		#From WtWSMS-CK2
+		men_at_arms_maintenance = -0.5
+	}
+
 	flag = may_elevate_co_monarch
 	# Use flags instead of has_government for moddability if possible (i.e., wherever not visible to the player).
 	flag = government_is_advanced
+	flag = government_uses_eranshar_authority
+	flag = government_uses_civil_service
+	flag = can_hold_castles_and_cities #Just informative
+	
+	flag = eranshar_government_character_modifier
+	
 	color = {1.000 0.500 0.000}
 }
 

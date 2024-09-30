@@ -9,7 +9,7 @@
  government_uses_civil_service: "[landed|UE] [vassals|E] cannot be [councillors|E]"
  
  #Tribal government
- tribal_character_modifiers: "[title|E] creation cost: #P -50%#!\n$EFFECT_LIST_BULLET$ Army Maintenance #P -50%#!\n$EFFECT_LIST_BULLET$ Armies use [prestige|E] instead of [gold|E]\n$EFFECT_LIST_BULLET$ Development Growth #N -50%#!\n$EFFECT_LIST_BULLET$ [organized_government|E] (except [high_tribal_short|E]) [vassals|E] have a #N -20#! Opinion Modifier\n$EFFECT_LIST_BULLET$ [high_tribal_short|E] [vassals|E] have a #n -10#! Opinion Modifier\n\n"
+ tribal_character_modifiers: "[title|E] creation cost: #P -50%#!\n$EFFECT_LIST_BULLET$ Army Maintenance #P -50%#!\n$EFFECT_LIST_BULLET$ Armies use [prestige|E] instead of [gold|E]\n$EFFECT_LIST_BULLET$ Development Growth #N -50%#!\n$EFFECT_LIST_BULLET$ [organized_government|E] (except [high_tribal_short|E]) [vassals|E] have a #N -20#! Opinion Modifier\n$EFFECT_LIST_BULLET$ [high_tribal_short|E] [vassals|E] have a #n -10#! Opinion Modifier"
  
  #High Tribal
  high_tribal_government: "High Tribal"
@@ -53,7 +53,7 @@
  GOVERNMENT_NOMAD_NOT_ALLIED_POWERFUL: "No [alliance|E] as powerful Nomadic [vassal|E]"
  GOVERNMENT_NOMAD_NOT_ALLIED: "No [alliance|E] as Nomadic [vassal|E]"
  
- nomad_government_character_modifier: "[title|E] creation cost: #P -50%#!\n$EFFECT_LIST_BULLET$ Army Maintenance #P -50%#!\n$EFFECT_LIST_BULLET$ Armies use [prestige|E] instead of [gold|E]\n$EFFECT_LIST_BULLET$ [men_at_arms|E] Capacity: #P +1#!\n$EFFECT_LIST_BULLET$ [domain|E] [levies|E]: #P +25%#!\n$EFFECT_LIST_BULLET$ [domain|E] [taxes|E]: #N -25%#!\n$EFFECT_LIST_BULLET$ Development Growth #N -85%#!\n$EFFECT_LIST_BULLET$ [organized_government|E] [vassals|E] have a #N -20#! Opinion Modifier\n\n"
+ nomad_government_character_modifier: "[title|E] creation cost: #P -50%#!\n$EFFECT_LIST_BULLET$ Army Maintenance #P -50%#!\n$EFFECT_LIST_BULLET$ Armies use [prestige|E] instead of [gold|E]\n$EFFECT_LIST_BULLET$ [men_at_arms|E] Capacity: #P +1#!\n$EFFECT_LIST_BULLET$ [domain|E] [levies|E]: #P +25%#!\n$EFFECT_LIST_BULLET$ [domain|E] [taxes|E]: #N -25%#!\n$EFFECT_LIST_BULLET$ Development Growth #N -85%#!\n$EFFECT_LIST_BULLET$ [organized_government|E] [vassals|E] have a #N -20#! Opinion Modifier"
  
  #Rajamandala Government
  rajamandala_government: "Rajamandala"
@@ -65,7 +65,7 @@
  government_uses_rajamandala_authority: "Government uses [rajamandala_authority|E]"
  vassals_must_give_titles_to_dynasty_members: "[vassal|E] $rajamandala_government$ rulers must grant titles to [dynasty|E] members, if possible"
  
- rajamandala_government_character_modifier: "[development|E] Growth: #P +25%#!\n$EFFECT_LIST_BULLET$ Monthly [control|E] Gain: #P 0.1#!\n\n"
+ rajamandala_government_character_modifier: "[development|E] Growth: #P +25%#!\n$EFFECT_LIST_BULLET$ Monthly [control|E] Gain: #P 0.1#!"
  
  rajamandala_government_taxes: "[GetGovernment( 'rajamandala_government' ).GetNameNoTooltip] [taxes|U]"
  rajamandala_tax_exempt: "No Taxes"
@@ -92,11 +92,15 @@
  rajamandala_levies_extortionate_short: "Extortionate"
  
  #Eranshar
- eranshar_government: "Eranshar"
+ eranshar_government: "Eranshar Administration"
+ eranshar_government_with_icon: "@government_type_eranshar! $eranshar_government$"
  eranshar_government_adjective: "Eranshar"
  eranshar_government_realm: "Eranshar Realm"
  eranshar_government_vassals_label: "$eranshar_government$ [obligations|E] are based on [opinion|E]"
  eranshar_government_desc: "$game_concept_eranshar_government_desc$"
+ government_uses_eranshar_authority: "Government uses [eranshar_authority|E]"
+ 
+ eranshar_government_character_modifier:  "[domain|E] Limit: #P +2#!\n$EFFECT_LIST_BULLET$ [men_at_arms|E] maintenance: #P -50%#!"
  
  eranshar_government_obligations: "From [opinion|E]"
  eranshar_government_tax_contribution_postfix: " (max [FixedPointToProgressbarValue(EmptyScope.ScriptValue('eranshar_government_tax_max_possible'))|1V])"

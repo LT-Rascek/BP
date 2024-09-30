@@ -210,7 +210,7 @@ setup_realm_laws = {
 			add_realm_law_skip_effects = subroman_taxation_3
 		}
 		#Setup e_persia's clerical/shah authority
-		#Initally strong Clerical Influence and weak Secular Authority
+		#Initally strong Clerical Influence and somewhat decent Secular Authority
 		if = {
 			limit = { current_date >= 476.2.2 }
 			every_ruler = {
@@ -219,6 +219,11 @@ setup_realm_laws = {
 					limit = { NOT = { has_realm_law = clerical_influence_1 } }
 					add_realm_law = clerical_influence_1
 					remove_variable = clerical_influence_cooldown
+				}
+				if = {
+					limit = { NOT = { has_realm_law = eranshar_authority_1 } }
+					add_realm_law = eranshar_authority_1
+					remove_variable = crown_authority_cooldown
 				}
 			}
 		}
