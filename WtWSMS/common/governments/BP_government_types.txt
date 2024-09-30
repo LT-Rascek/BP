@@ -29,8 +29,8 @@
 	# Use flags instead of has_government for moddability if possible (i.e., wherever not visible to the player).
 	flag = government_is_feudal
 	flag = government_uses_prefeudal_authority
-	flag = can_hold_castles_and_tribes  #Just informative
-	flag = cannot_advance_beyond_late_antiquity_era
+	flag = can_hold_castles_and_tribes #Just informative
+	flag = cannot_advance_beyond_late_antiquity_era #Just informative
 	
 	color = hsv{ 0.67 0.50 0.78 } #Feudal Color, 50% Saturation
 }
@@ -72,7 +72,7 @@ rajamandala_government = {
 	flag = government_is_advanced
 	# Use flags instead of has_government for moddability if possible (i.e., wherever not visible to the player).
 	flag = government_uses_rajamandala_authority
-	flag = government_uses_civil_service
+	flag = government_uses_indian_civil_service
 	flag = vassals_must_give_titles_to_dynasty_members
 	
 	flag = rajamandala_government_character_modifier
@@ -124,8 +124,8 @@ eranshar_government = {
 	# Use flags instead of has_government for moddability if possible (i.e., wherever not visible to the player).
 	flag = government_is_advanced
 	flag = government_uses_eranshar_authority
-	flag = government_uses_civil_service
 	flag = can_hold_castles_and_cities #Just informative
+	flag = may_appoint_viziers #aka the Framadar
 	
 	flag = eranshar_government_character_modifier
 	
