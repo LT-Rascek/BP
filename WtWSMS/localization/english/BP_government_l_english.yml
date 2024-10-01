@@ -100,7 +100,7 @@
  eranshar_government_desc: "$game_concept_eranshar_government_desc$"
  government_uses_eranshar_authority: "Government uses [eranshar_authority|E]"
  
- eranshar_government_character_modifier: "[domain|E] Limit: #P +2#!\n$EFFECT_LIST_BULLET$ [men_at_arms|E] maintenance: #P -50%#!\n$EFFECT_LIST_BULLET$Available [tax_jurisdictions|E]: #P +1#!"
+ eranshar_government_character_modifier: "[domain|E] Limit: #P +2#!\n$EFFECT_LIST_BULLET$ [men_at_arms|E] maintenance: #P -50%#!"
  
  eranshar_government_obligations: "From [opinion|E]"
  eranshar_government_tax_contribution_postfix: " (max [FixedPointToProgressbarValue(EmptyScope.ScriptValue('eranshar_government_tax_max_possible'))|1V])"
@@ -120,6 +120,9 @@
  wuzurgan_special_rights_tax_collector: "#italic Wuzurgan#! Status"
  wuzurgan_special_rights_tax_collector_desc: "#emphasis #bold [vassal|E] Privilege:#!#!\nThe [vassal|E] cannot join the #V $nation_fracturing_faction$#!."
  wuzurgan_special_rights_tax_collector_flavor_desc: "The #italic Wuzurgan#!, meaning 'Grandees' or 'Great Ones', were the upper echelon of Sasanid aristocracy. These nobles enjoyed significant autonomy which the Shahanshah's of the Sasanid Empire sought to bring to heel."
+ 
+ deqhan_wtwsms_special_rights_tax_collector: "#italic Deqhan#! Status"
+ deqhan_wtwsms_special_rights_tax_collector_flavor_desc: "This class of Persian magnate arose late in the Sasanid era along the periphery. Small landholders, they provide more taxes and fewer levies, but enhance the prestige and legitamacy of the Emperor."
  
  #Sub-Roman
  subroman_government: "Sub-Roman"

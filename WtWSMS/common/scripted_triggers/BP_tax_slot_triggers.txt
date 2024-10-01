@@ -14,6 +14,23 @@ is_wuzurgan_trigger = {
 	}
 	OR = { #Have to have a lot of land
 		this.primary_title.tier >= tier_duchy
-		this.domain_size >= 4
+		this.domain_size >= 5
+	}
+}
+
+is_deqhan_trigger = {
+	government_has_flag = government_uses_eranshar_authority
+	#Cannot have much land
+	this.primary_title.tier < tier_duchy
+		this.domain_size <= 4
+}
+
+can_only_have_num_jurisdictions_of_this_type_trigger = {
+	$LIEGE$ = {
+		any_tax_slot = {
+			count < $NUMBER$
+			NOT = { this = $TAX_SLOT$ }
+			this = { is_active_obligation = $TAX_SLOT_TYPE$ }
+		}
 	}
 }

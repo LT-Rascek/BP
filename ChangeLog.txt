@@ -19,16 +19,21 @@ Major Changes:
       - Pre-Feudal Authority 3 now makes vassal refusal a crime
       - Has access to religious rights
    - Rajamandala Government
-      - Can now grant baronies to non-family members, but counties and higher must go to family members
-      - Cannot use the County View to grant titles, given the difficulties in building the necessary triggers
+      - Can now grant baronies to non-family members, but counties and higher must go to family members if possible
+      - Cannot use the County View to grant titles, given the difficulties in building the necessary triggers in the GUI
       - Civil Service flag explicitly marks landed vassals as unemployable as councillors
    - Eranshar Government
       - Removed Republican tax & levy buff from Eranshar Government
       - Gets a Vizerate (the Framadar being the inspiration for the later Islamic Vizerate)
-      - Uses Tax Jurisdictions with a few non-basic statuses
+         - Therefore, does not get Co-Monarchy
+      - Uses Tax Jurisdictions with a few non-basic jurisdictions
          - Wuzurgan for powerful or well-established families
               - Liege gets increased tyranny, legitimacy, vassal limit, and renown; and decreased prestige and enemy hostile scheme success
               - Vassals get increased prestige, domain limit, owned hostile scheme success chance, and liege opinion, and cannot join the dissolution faction
+         - Deqhan available with the new Deqhan Innovation for the growth of smallholders
+            - Increases taxes and decreases levies provided
+            - Increases liege prestige per month
+            - Increase vassal prestige gain and development
 
 Minor Changes:
 - Removed old Succession Expanded Co-Emperors in light of Vanilla Diarchy changes
