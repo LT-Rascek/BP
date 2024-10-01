@@ -1,7 +1,7 @@
 ﻿#For when the high nobles are powerful; nerfs taxes being paid and other annoyances in exchange for dissolution protection
 wuzurgan_special_rights_tax_collector = {
 	is_shown = {
-		can_have_wuzurgan_trigger = yes
+		scope:liege = { can_have_wuzurgan_trigger = yes }
 		#Can only have one of these slots, period
 		can_only_have_num_jurisdictions_of_this_type_trigger = {
 			LIEGE = scope:liege
@@ -35,11 +35,9 @@ wuzurgan_special_rights_tax_collector = {
 	}
 	
 	flag = cannot_join_dissolution_faction
-	flag = only_one_wuzurgan_tax_slot
 
 	ai_will_do = {
-		value = tax_obligation_base_ai_will_do
-		add = 5
+		value = 1000
 	}
 }
 
@@ -47,7 +45,7 @@ wuzurgan_special_rights_tax_collector = {
 deqhan_wtwsms_special_rights_tax_collector = {
 	is_shown = {
 		scope:liege = { government_has_flag = government_uses_eranshar_authority }
-		#can_have_wuzurgan_trigger = yes #Only for the big empires; you need the decentralization
+		scope:liege = { can_have_wuzurgan_trigger = yes } #Only for the big empires; you need the decentralization
 	}
 	
 	is_valid = { scope:liege.culture = { has_innovation = innovation_deqhan } }

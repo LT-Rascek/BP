@@ -99,8 +99,9 @@
  eranshar_government_vassals_label: "$eranshar_government$ [obligations|E] are based on [opinion|E]"
  eranshar_government_desc: "$game_concept_eranshar_government_desc$"
  government_uses_eranshar_authority: "Government uses [eranshar_authority|E]"
+ only_wuzurgan_can_be_councillors: "If has access to the $wuzurgan_special_rights_tax_collector$ [tax_decree|E], only those [vassals|E] may be [councillors|E]"
  
- eranshar_government_character_modifier: "[domain|E] Limit: #P +2#!\n$EFFECT_LIST_BULLET$ [men_at_arms|E] maintenance: #P -50%#!"
+ eranshar_government_character_modifier: "[domain|E] Limit: #P +2#!\n$EFFECT_LIST_BULLET$ [men_at_arms|E] maintenance: #P -50%#!\n$EFFECT_LIST_BULLET$ Available [tax_jurisdictions|E]: #P +1#!"
  
  eranshar_government_obligations: "From [opinion|E]"
  eranshar_government_tax_contribution_postfix: " (max [FixedPointToProgressbarValue(EmptyScope.ScriptValue('eranshar_government_tax_max_possible'))|1V])"
