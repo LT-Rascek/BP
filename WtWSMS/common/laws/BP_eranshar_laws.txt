@@ -11,7 +11,9 @@ eranshar_authority = {
 		modifier = {
 			minority_opinion = -10
 		}
+		flag = title_revocation_allowed
 		flag = titles_cannot_leave_realm_on_succession # Hardcoded flag
+		flag = title_revocation_wuzurgan_massive_tyranny
 		
 		can_keep = {
 			realm_law_use_eranshahr_authority_trigger = yes
@@ -43,7 +45,9 @@ eranshar_authority = {
 			courtly_opinion = -10
 			minority_opinion = -20
 		}
+		flag = title_revocation_allowed
 		flag = titles_cannot_leave_realm_on_succession # Hardcoded flag
+		flag = title_revocation_wuzurgan_major_tyranny
 		
 		can_keep = {
 			realm_law_use_eranshahr_authority_trigger = yes
@@ -95,7 +99,9 @@ eranshar_authority = {
 			courtly_opinion = -20
 			minority_opinion = -30
 		}
+		flag = title_revocation_allowed
 		flag = titles_cannot_leave_realm_on_succession # Hardcoded flag
+		flag = title_revocation_wuzurgan_moderate_tyranny
 		flag = vassal_internal_wars_banned
 		
 		can_keep = {
@@ -144,7 +150,9 @@ eranshar_authority = {
 			courtly_opinion = -30
 			minority_opinion = -40
 		}
+		flag = title_revocation_allowed
 		flag = titles_cannot_leave_realm_on_succession # Hardcoded flag
+		flag = title_revocation_wuzurgan_minimal_tyranny
 		flag = vassal_all_wars_banned
 		
 		can_keep = {
