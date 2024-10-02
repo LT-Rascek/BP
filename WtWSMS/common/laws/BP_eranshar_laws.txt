@@ -210,8 +210,12 @@ clerical_influence = {
 			zealot_opinion = -10
 			minority_opinion = 20
 		}
+		flag = clerical_appointment_ruler
 		
-		can_keep = { realm_law_use_clerical_influence_trigger = yes }
+		can_keep = {
+			realm_law_use_clerical_influence_trigger = yes
+			realm_law_match_liege_law_level_trigger = { LAW = clerical_influence_0 }
+		}
 		
 		can_pass = {
 			trigger_if = {
@@ -222,12 +226,7 @@ clerical_influence = {
 					NOT = { has_variable = clerical_influence_cooldown }
 				}
 			}
-			trigger_else = {
-				custom_description = {
-					text = must_change_adjacent
-					always = no
-				}
-			}
+			realm_law_vassal_has_liege_law_level_trigger = { LAW = clerical_influence_0 }
 		}
 		
 		pass_cost = {
@@ -246,39 +245,16 @@ clerical_influence = {
 		}
 		
 		on_pass = {
-			religion:zoroastrianism_religion = {
-				every_faith = {
-					limit = {
-						this.religious_head = ROOT.faith.religious_head
-						NOT = { has_doctrine = doctrine_clerical_succession_temporal_appointment }
-					}
-					replace_current_clerical_succession_effect = { THE_NEW_DOCTRINE = doctrine_clerical_succession_temporal_appointment }
-				}
-			}
 			if = {
-				limit = { has_realm_law = clerical_influence_1 }
-				save_scope_as = ruler
-				#All priests are pissed you lowered their influence
-				every_vassal_or_below = {
-					limit = {
-						has_government = theocracy_government
-						faith = { has_doctrine = doctrine_major_branch_behdin }
+				limit = {
+					OR = {
+						has_realm_law = clerical_influence_1
+						has_realm_law = clerical_influence_2
+						has_realm_law = clerical_influence_3
 					}
-					if = {
-						limit = { this = scope:ruler.faith.religious_head }
-						add_opinion = {
-							modifier = hof_vassal_reduced_influence_modifier
-							target = root
-							years = 25
-						}
-					}
-					else = {
-						add_opinion = {
-							modifier = clerical_vassal_reduced_influence_modifier
-							target = root
-							years = 25
-						}
-					}
+				}
+				clerical_authory_angry_at_reduced_clerical_influence_effect = {
+					TOP_LIEGE = root.top_liege
 				}
 			}
 			set_variable = {
@@ -297,10 +273,15 @@ clerical_influence = {
 			domain_limit = 1
 			#Opinions
 			zealot_opinion = 10
-			minority_opinion = 10
+			minority_opinion = -10
 		}
+		flag = clerical_appointment_ruler
+		flag = clerical_appointment_fixed
 		
-		can_keep = { realm_law_use_clerical_influence_trigger = yes }
+		can_keep = {
+			realm_law_use_clerical_influence_trigger = yes
+			realm_law_match_liege_law_level_trigger = { LAW = clerical_influence_1 }
+		}
 		
 		can_pass = {
 			trigger_if = {
@@ -322,6 +303,7 @@ clerical_influence = {
 					always = no
 				}
 			}
+			realm_law_vassal_has_liege_law_level_trigger = { LAW = clerical_influence_1 }
 		}
 		
 		pass_cost = {
@@ -345,44 +327,20 @@ clerical_influence = {
 		}
 		
 		on_pass = {
-			religion:zoroastrianism_religion = {
-				every_faith = {
-					limit = {
-						this.religious_head = ROOT.faith.religious_head
-						NOT = { has_doctrine = doctrine_clerical_succession_spiritual_appointment }
+			if = {
+				limit = {
+					OR = {
+						has_realm_law = clerical_influence_2
+						has_realm_law = clerical_influence_3
 					}
-					replace_current_clerical_succession_effect = { THE_NEW_DOCTRINE = doctrine_clerical_succession_spiritual_appointment }
+				}
+				clerical_authory_angry_at_reduced_clerical_influence_effect = {
+					TOP_LIEGE = root.top_liege
 				}
 			}
 			set_variable = {
 				name = clerical_influence_cooldown
 				years = @clerical_influence_cooldown_years
-			}
-			if = {
-				limit = { has_realm_law = clerical_influence_2 }
-				save_scope_as = ruler
-				#All priests are pissed you lowered their influence
-				every_vassal_or_below = {
-					limit = {
-						has_government = theocracy_government
-						faith = { has_doctrine = doctrine_major_branch_behdin }
-					}
-					if = {
-						limit = { this = scope:ruler.faith.religious_head }
-						add_opinion = {
-							modifier = hof_vassal_reduced_influence_modifier
-							target = root
-							years = 25
-						}
-					}
-					else = {
-						add_opinion = {
-							modifier = clerical_vassal_reduced_influence_modifier
-							target = root
-							years = 25
-						}
-					}
-				}
 			}
 		}
 	}
@@ -396,12 +354,15 @@ clerical_influence = {
 			different_faith_county_opinion_mult = 0.25 #Inverse of adaptive
 			domain_limit = 2
 			#Opinions
-			zealot_opinion = 10
-			minority_opinion = -10
+			zealot_opinion = 20
+			minority_opinion = -20
 		}
-		flag = enables_temporal_condemnation
+		flag = clerical_appointment_fixed
 		
-		can_keep = { realm_law_use_clerical_influence_trigger = yes }
+		can_keep = {
+			realm_law_use_clerical_influence_trigger = yes
+			realm_law_match_liege_law_level_trigger = { LAW = clerical_influence_2 }
+		}
 		
 		can_pass = {
 			trigger_if = {
@@ -423,6 +384,7 @@ clerical_influence = {
 					always = no
 				}
 			}
+			realm_law_vassal_has_liege_law_level_trigger = { LAW = clerical_influence_2 }
 		}
 		
 		pass_cost = {
@@ -446,44 +408,15 @@ clerical_influence = {
 		}
 		
 		on_pass = {
-			religion:zoroastrianism_religion = {
-				every_faith = {
-					limit = {
-						this.religious_head = ROOT.faith.religious_head
-						NOT = { has_doctrine = doctrine_clerical_succession_spiritual_appointment }
-					}
-					replace_current_clerical_succession_effect = { THE_NEW_DOCTRINE = doctrine_clerical_succession_spiritual_appointment }
+			if = {
+				limit = { has_realm_law = clerical_influence_3 }
+				clerical_authory_angry_at_reduced_clerical_influence_effect = {
+					TOP_LIEGE = root.top_liege
 				}
 			}
 			set_variable = {
 				name = clerical_influence_cooldown
 				years = @clerical_influence_cooldown_years
-			}
-			if = {
-				limit = { has_realm_law = clerical_influence_3 }
-				save_scope_as = ruler
-				#All priests are pissed you lowered their influence
-				every_vassal_or_below = {
-					limit = {
-						has_government = theocracy_government
-						faith = { has_doctrine = doctrine_major_branch_behdin }
-					}
-					if = {
-						limit = { this = scope:ruler.faith.religious_head }
-						add_opinion = {
-							modifier = hof_vassal_reduced_influence_modifier
-							target = root
-							years = 25
-						}
-					}
-					else = {
-						add_opinion = {
-							modifier = clerical_vassal_reduced_influence_modifier
-							target = root
-							years = 25
-						}
-					}
-				}
 			}
 		}
 	}
@@ -495,14 +428,16 @@ clerical_influence = {
 			theocracy_government_tax_contribution_add = 0.00 #i.e., 00%-55%, depending on devotion
 			theocracy_government_levy_contribution_add = 0.00 #i.e., 00%-50%, depending on devotion
 			different_faith_county_opinion_mult = 0.50 #4x Adaptive
-			domain_limit = 3
+			domain_limit = 4
 			#Opinions
 			zealot_opinion = 30
 			minority_opinion = -30
 		}
-		flag = enables_temporal_condemnation
 		
-		can_keep = { realm_law_use_clerical_influence_trigger = yes }
+		can_keep = {
+			realm_law_use_clerical_influence_trigger = yes
+			realm_law_match_liege_law_level_trigger = { LAW = clerical_influence_3 }
+		}
 		
 		pass_cost = {
 			prestige = {
@@ -528,18 +463,10 @@ clerical_influence = {
 					always = no
 				}
 			}
+			realm_law_vassal_has_liege_law_level_trigger = { LAW = clerical_influence_3 }
 		}
 		
 		on_pass = {
-			religion:zoroastrianism_religion = {
-				every_faith = {
-					limit = {
-						this.religious_head = ROOT.faith.religious_head
-						NOT = { has_doctrine = doctrine_clerical_succession_spiritual_fixed_appointment }
-					}
-					replace_current_clerical_succession_effect = { THE_NEW_DOCTRINE = doctrine_clerical_succession_spiritual_fixed_appointment }
-				}
-			}
 			set_variable = {
 				name = clerical_influence_cooldown
 				years = @clerical_influence_cooldown_years
