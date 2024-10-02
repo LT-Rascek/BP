@@ -1,11 +1,14 @@
 ﻿l_english:
  #Generic
- can_hold_castles_and_cities: "Can hold [castle_holding|E] and [city_holding|E]"
- can_hold_castles_and_tribes: "Can hold [castle_holding|E] and [tribal_holding|E]"
  cannot_advance_beyond_late_antiquity_era: "#N Cannot#! advance beyond $culture_era_late_antiquity$ [innovations|E]"
  cannot_advance_beyond_tribal_era: "#N Cannot#! advance beyond $culture_era_tribal$ [innovations|E]"
  government_is_advanced: "Is an advanced government"
  government_can_migrate: "Has access to the [migration_war|E] [casus_bellis|E]"
+ 
+ #Flavor (handled elsewhere in code)
+ government_titles_do_not_leave_realm: "Vassals' [titles|E] cannot be inherited by Characters outside the [realm|E]#!"
+ can_hold_castles_and_cities: "Can hold [castle_holding|E] and [city_holding|E]"
+ can_hold_castles_and_tribes: "Can hold [castle_holding|E] and [tribal_holding|E]"
  
  #Tribal government
  tribal_character_modifiers: "[title|E] creation cost: #P -50%#!\n$EFFECT_LIST_BULLET$ Army Maintenance #P -50%#!\n$EFFECT_LIST_BULLET$ Armies use [prestige|E] instead of [gold|E]\n$EFFECT_LIST_BULLET$ Development Growth #N -50%#!\n$EFFECT_LIST_BULLET$ [organized_government|E] (except [high_tribal_short|E]) [vassals|E] have a #N -20#! Opinion Modifier\n$EFFECT_LIST_BULLET$ [high_tribal_short|E] [vassals|E] have a #n -10#! Opinion Modifier"

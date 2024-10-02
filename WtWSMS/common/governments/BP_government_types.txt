@@ -122,13 +122,14 @@ eranshar_government = {
 		domain_limit = 2
 		#From WtWSMS-CK2
 		men_at_arms_maintenance = -0.5
-		tax_slot_add  = 1
+		tax_slot_add = 1
 	}
 
 	# Use flags instead of has_government for moddability if possible (i.e., wherever not visible to the player).
+	flag = government_titles_do_not_leave_realm #Flavor
+	flag = can_hold_castles_and_cities #Just informative
 	flag = government_is_advanced
 	flag = government_uses_eranshar_authority
-	flag = can_hold_castles_and_cities #Just informative
 	flag = only_wuzurgan_can_be_councillors
 	flag = may_appoint_viziers #aka the Framadar
 	

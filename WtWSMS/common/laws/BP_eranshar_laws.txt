@@ -1,23 +1,32 @@
 ﻿@eranshar_authority_cooldown_years = 10
 @clerical_influence_cooldown_years = 25
 
-#Eranshar Governmnet Secular Authority
+#Eranshar Government Secular Authority
 eranshar_authority = {
-	default = eranshar_authority_1 #Should actually be slightly higher by default on account of centralization
+	default = eranshar_authority_1
 	cumulative = no
 	flag = realm_law
 	
 	eranshar_authority_0 = {
-		modifier = {}
+		modifier = {
+			minority_opinion = -10
+		}
 		flag = titles_cannot_leave_realm_on_succession # Hardcoded flag
 		
-		can_keep = { realm_law_use_eranshahr_authority_trigger = yes }
+		can_keep = {
+			realm_law_use_eranshahr_authority_trigger = yes
+			realm_law_match_liege_law_level_trigger = { LAW = eranshar_authority_0 }
+		}
 		
-		can_pass = {}
+		can_pass = {
+			realm_law_vassal_has_liege_law_level_trigger = { LAW = eranshar_authority_0 }
+		}
 		
 		pass_cost = {}
 		
 		on_pass = {
+			#Remove modifiers
+			remove_law_related_modifiers_effect = yes
 			set_variable = {
 				name = eranshar_authority_cooldown
 				years = @eranshar_authority_cooldown_years
@@ -28,15 +37,18 @@ eranshar_authority = {
 		modifier = {
 			direct_vassal_opinion = -5
 			powerful_vassal_opinion = -5
-			domain_limit = 1
 			#Opinions
 			glory_hound_opinion = -10
 			parochial_opinion = -10
 			courtly_opinion = -10
+			minority_opinion = -20
 		}
 		flag = titles_cannot_leave_realm_on_succession # Hardcoded flag
 		
-		can_keep = { realm_law_use_eranshahr_authority_trigger = yes }
+		can_keep = {
+			realm_law_use_eranshahr_authority_trigger = yes
+			realm_law_match_liege_law_level_trigger = { LAW = eranshar_authority_1 }
+		}
 		
 		can_pass = {
 			trigger_if = {
@@ -47,6 +59,7 @@ eranshar_authority = {
 					NOT = { has_variable = crown_authority_cooldown }
 				}
 			}
+			realm_law_vassal_has_liege_law_level_trigger = { LAW = eranshar_authority_1 }
 		}
 		
 		pass_cost = {
@@ -64,6 +77,8 @@ eranshar_authority = {
 		}
 		
 		on_pass = {
+			#Remove modifiers
+			remove_law_related_modifiers_effect = yes
 			set_variable = {
 				name = eranshar_authority_cooldown
 				years = @eranshar_authority_cooldown_years
@@ -74,16 +89,19 @@ eranshar_authority = {
 		modifier = {
 			direct_vassal_opinion = -10
 			powerful_vassal_opinion = -10
-			domain_limit = 2
 			#Opinions
 			glory_hound_opinion = -20
 			parochial_opinion = -20
 			courtly_opinion = -20
+			minority_opinion = -30
 		}
 		flag = titles_cannot_leave_realm_on_succession # Hardcoded flag
 		flag = vassal_internal_wars_banned
 		
-		can_keep = { realm_law_use_eranshahr_authority_trigger = yes }
+		can_keep = {
+			realm_law_use_eranshahr_authority_trigger = yes
+			realm_law_match_liege_law_level_trigger = { LAW = eranshar_authority_2 }
+		}
 		
 		can_pass = {
 			trigger_if = {
@@ -95,6 +113,7 @@ eranshar_authority = {
 					NOT = { has_variable = eranshar_authority_cooldown }
 				}
 			}
+			realm_law_vassal_has_liege_law_level_trigger = { LAW = eranshar_authority_2 }
 		}
 		
 		pass_cost = {
@@ -107,6 +126,8 @@ eranshar_authority = {
 		}
 		
 		on_pass = {
+			#Remove modifiers
+			remove_law_related_modifiers_effect = yes
 			set_variable = {
 				name = eranshar_authority_cooldown
 				years = @eranshar_authority_cooldown_years
@@ -115,18 +136,21 @@ eranshar_authority = {
 	}
 	eranshar_authority_3 = {
 		modifier = {
-			direct_vassal_opinion = -15
-			powerful_vassal_opinion = -15
-			domain_limit = 3
+			direct_vassal_opinion = -20
+			powerful_vassal_opinion = -20
 			#Opinions
 			glory_hound_opinion = -30
 			parochial_opinion = -30
 			courtly_opinion = -30
+			minority_opinion = -40
 		}
 		flag = titles_cannot_leave_realm_on_succession # Hardcoded flag
 		flag = vassal_all_wars_banned
 		
-		can_keep = { realm_law_use_eranshahr_authority_trigger = yes }
+		can_keep = {
+			realm_law_use_eranshahr_authority_trigger = yes
+			realm_law_match_liege_law_level_trigger = { LAW = eranshar_authority_3 }
+		}
 		
 		can_pass = {
 			has_realm_law = eranshar_authority_2
@@ -135,6 +159,7 @@ eranshar_authority = {
 				text = "has_crown_authority_cooldown"
 				NOT = { has_variable = eranshar_authority_cooldown }
 			}
+			realm_law_vassal_has_liege_law_level_trigger = { LAW = eranshar_authority_3 }
 		}
 		
 		pass_cost = {
@@ -147,6 +172,8 @@ eranshar_authority = {
 		}
 		
 		on_pass = {
+			#Remove modifiers
+			remove_law_related_modifiers_effect = yes
 			set_variable = {
 				name = eranshar_authority_cooldown
 				years = @eranshar_authority_cooldown_years

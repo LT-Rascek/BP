@@ -35,3 +35,22 @@ realm_law_use_rajamandala_authority_trigger = {
 realm_law_use_eranshahr_authority_trigger = {
 	government_has_flag = government_uses_eranshar_authority
 }
+
+realm_law_match_liege_law_level_trigger = { #can_keep
+	trigger_if = { #See Vanilla Imperial Authority
+		limit = { is_independent_ruler = no }
+		liege = { has_realm_law = $LAW$ }
+	}
+}
+realm_law_vassal_has_liege_law_level_trigger = { #can_pass
+	trigger_if = { #See Vanilla Imperial Authority
+		limit = {
+			is_independent_ruler = no
+			liege = { has_realm_law = $LAW$ }
+		}
+		custom_tooltip = {
+			text = imperial_bureaucracy_pending_law_change
+			always = no
+		}
+	}
+}
