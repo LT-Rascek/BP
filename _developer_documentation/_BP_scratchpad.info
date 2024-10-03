@@ -1,12 +1,5 @@
 ﻿RtP Stuff
 ======================
-Culture:
-	* Remove Medio-Persian "No dissolution against Persian Empire" parameter
-	* Block enlightened magnates wrt persian traditions
-	* Rename Medio-Persian traditions as in new branch
-
-* Rename Eranshar Government to Iranian Dynastic (to compare with Iranian Administrative)
-* Fix Peroz et al being negative prestige at start
 
 ----------------------
 
@@ -52,6 +45,8 @@ Other Gov't Related Things:
 * Re-use `increase_centralization_prestige_cost` and remove it as an exception in script values
 * Re-use `primitives_cannot_make_titles_de_jure` and `feudalization_is_at_least_level_4_on_roman_territory` and remove it an as exception in trigger locs
 * Remove the BP_law_triggers for crown authority likes? Only used in one place?
+* Re-Implement baronial government conversion at game start
+* Fix-up/reimplement Roman and Iranian succession laws
 * Remove inprocess errors and cleanup
 
 ====================================================================================

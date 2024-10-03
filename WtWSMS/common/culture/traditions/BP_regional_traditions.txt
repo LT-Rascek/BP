@@ -1280,7 +1280,7 @@ tradition_persian_traditions = {
 		4 = king.dds
 	}
 	
-	is_shown = { always = no } #TODO (NOW): Replicate Roman Traditions
+	is_shown = { always = no }
 	can_pick = {
 		traditions_legal_tradition_is_in_list_trigger = { TRADITION = culture_tradition:tradition_persian_traditions }
 		traditions_monolithic_culture_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_persian_traditions }
@@ -1324,7 +1324,6 @@ tradition_persian_traditions = {
 		traditionalist_culture_feature = yes
 		same_religion_inheritance_only = yes
 		right_to_rule_sassanid = yes
-		cannot_dissolve_the_persian_empire = yes
 		characters_are_better_tax_collector = yes
 		unlock_tax_obligation_deqhan = yes
 		unlock_persian_urbanization = yes
@@ -1430,7 +1429,6 @@ tradition_persian_traditions_non_dlc = {
 		traditionalist_culture_feature = yes
 		same_religion_inheritance_only = yes
 		right_to_rule_sassanid = yes
-		cannot_dissolve_the_persian_empire = yes
 	}
 	character_modifier = {
 		monthly_county_control_growth_add = 0.3
