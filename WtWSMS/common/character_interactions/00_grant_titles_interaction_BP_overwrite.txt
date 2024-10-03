@@ -1,5 +1,6 @@
 ﻿##### Changed from Vanilla: Modified is_valid_showing_failures_only, can_be_picked_title
 ##### Changed from Vanilla: Applied Wuzurgan opinion modifiers
+##### Changed from Vanilla: Applied Aneran/Eran connotations to title grants
 
 #be aware that the actual granting of the title happens in code!
 grant_titles_interaction = {
@@ -147,6 +148,7 @@ grant_titles_interaction = {
 	}
 	##### Changed from Vanilla ^^^^^
 
+	##### Changed from Vanilla vvvvv
 	can_send = {
 		trigger_if = {
 			limit = {
@@ -165,9 +167,11 @@ grant_titles_interaction = {
 			}
 		}
 	}
+	##### Changed from Vanilla ^^^^^
 
 	##### Changed from Vanilla vvvvv
 	can_be_picked_title = {
+		##### Changed from Vanilla vvvvv
 		scope:target = {
 			is_leased_out = no
 
@@ -298,7 +302,22 @@ grant_titles_interaction = {
 				scope:target = { has_variable = wagered_county }
 			}
 		}
+		
+		##### Changed from Vanilla vvvvv
+		trigger_if = {
+			limit = {
+				scope:actor = { government_has_flag = righteous_counties_to_rightous_characters }
+				scope:target.tier = tier_county
+				scope:actor.faith = { faith_hostility_level  = { target = scope:target.faith value <= 1 } }
+			}
+			custom_description = {
+				text = must_consider_the_chars_faith_to_be_righteous_or_astray
+				scope:actor.faith = { faith_hostility_level = { target = scope:recipient.faith value <= 1 } }
+			}
+		}
+		##### Changed from Vanilla ^^^^^
 	}
+	##### Changed from Vanilla ^^^^^
 
 	auto_accept = yes
 

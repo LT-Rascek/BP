@@ -63,8 +63,10 @@
  theocracy_government_levy_contribution_add: "[theocracy|E] [vassal|E] [levy|E] [modifier_base_contribution|E]"
  MUST_CHANGE_ADJACENT: "May only change $game_concept_clerical_influence$ by one step at a time."
  you_are_pious_tooltip: "You are pious"
- faithful_counties: "Faithful Counties"
- infidel_counties: "(Organized) Infidel Counties"
+ faithful_counties: "Righteous Counties"
+ astray_counties: "Astray Counties"
+ hostile_counties: "Hostile Counties"
+ evil_counties: "Evil Counties"
  CLERICAL_INFLUENCE_IS_ON_COOLDOWN: "You recently changed $game_concept_clerical_influence$. Can be increased again after [GetCurrentDateWithDiff( GetVarTimeRemaining( CHARACTER.MakeScope, 'clerical_influence_cooldown') )]"
  
  ### Not done yet vvvvv
