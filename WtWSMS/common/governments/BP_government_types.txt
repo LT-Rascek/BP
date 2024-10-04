@@ -144,7 +144,6 @@ roman_dynastic_government = {
 	government_rules = {
 		create_cadet_branches = yes
 		rulers_should_have_dynasty = yes
-		dynasty_named_realms = yes
 		royal_court = yes
 		legitimacy = yes
 		use_as_base_on_landed = yes #Avoiding a bunch of jank code with this
@@ -157,23 +156,25 @@ roman_dynastic_government = {
 	vassal_contract = {
 		feudal_government_taxes
 		feudal_government_levies
-		special_contract
-		religious_rights
-		fortification_rights
-		coinage_rights
-		succession_rights
-		war_declaration_rights
-		council_rights
-		title_revocation_rights
 	}
 
 	ai = {
 		use_legends = yes
 	}
 
+	character_modifier = {
+		levy_size = -0.50
+		domain_limit = 4
+		men_at_arms_cap = 5 #i.e., double total number of maa in innovations
+	}
+
 	flag = may_elevate_co_monarch
 	flag = government_is_advanced
 	# Use flags instead of has_government for moddability if possible (i.e., wherever not visible to the player).
+	flag = titles_revert_to_top_liege_on_death
+	flag = title_revocation_could_be_tyranny_free
+	
+	flag = roman_dynastic_goverment_character_modifier
 	
 	color = hsv{ 0.902 0.980 0.400 } #Tyrian Purple
 }
