@@ -1,13 +1,13 @@
-﻿@eranshar_authority_cooldown_years = 10
+﻿@iranian_dynastic_authority_cooldown_years = 10
 @clerical_influence_cooldown_years = 25
 
-#Eranshar Government Secular Authority
-eranshar_authority = {
-	default = eranshar_authority_1
+#Iranian_Dynastic Government Secular Authority
+iranian_dynastic_authority = {
+	default = iranian_dynastic_authority_1
 	cumulative = no
 	flag = realm_law
 	
-	eranshar_authority_0 = {
+	iranian_dynastic_authority_0 = {
 		modifier = {
 			minority_opinion = -10
 		}
@@ -16,12 +16,12 @@ eranshar_authority = {
 		flag = title_revocation_wuzurgan_massive_tyranny
 		
 		can_keep = {
-			realm_law_use_eranshahr_authority_trigger = yes
-			realm_law_match_liege_law_level_trigger = { LAW = eranshar_authority_0 }
+			realm_law_use_iranian_dynastic_authority_trigger = yes
+			realm_law_match_liege_law_level_trigger = { LAW = iranian_dynastic_authority_0 }
 		}
 		
 		can_pass = {
-			realm_law_vassal_has_liege_law_level_trigger = { LAW = eranshar_authority_0 }
+			realm_law_vassal_has_liege_law_level_trigger = { LAW = iranian_dynastic_authority_0 }
 		}
 		
 		pass_cost = {}
@@ -30,12 +30,12 @@ eranshar_authority = {
 			#Remove modifiers
 			remove_law_related_modifiers_effect = yes
 			set_variable = {
-				name = eranshar_authority_cooldown
-				years = @eranshar_authority_cooldown_years
+				name = iranian_dynastic_authority_cooldown
+				years = @iranian_dynastic_authority_cooldown_years
 			}
 		}
 	}
-	eranshar_authority_1 = {
+	iranian_dynastic_authority_1 = {
 		modifier = {
 			direct_vassal_opinion = -5
 			powerful_vassal_opinion = -5
@@ -50,20 +50,20 @@ eranshar_authority = {
 		flag = title_revocation_wuzurgan_major_tyranny
 		
 		can_keep = {
-			realm_law_use_eranshahr_authority_trigger = yes
-			realm_law_match_liege_law_level_trigger = { LAW = eranshar_authority_1 }
+			realm_law_use_iranian_dynastic_authority_trigger = yes
+			realm_law_match_liege_law_level_trigger = { LAW = iranian_dynastic_authority_1 }
 		}
 		
 		can_pass = {
 			trigger_if = {
-				limit = { has_realm_law = eranshar_authority_0 }
+				limit = { has_realm_law = iranian_dynastic_authority_0 }
 				custom_description = {
 					subject = root
-					text = "has_eranshar_authority_cooldown"
+					text = "has_iranian_dynastic_authority_cooldown"
 					NOT = { has_variable = crown_authority_cooldown }
 				}
 			}
-			realm_law_vassal_has_liege_law_level_trigger = { LAW = eranshar_authority_1 }
+			realm_law_vassal_has_liege_law_level_trigger = { LAW = iranian_dynastic_authority_1 }
 		}
 		
 		pass_cost = {
@@ -71,8 +71,8 @@ eranshar_authority = {
 				if = {
 					limit = {
 						NOR = {
-							has_realm_law = eranshar_authority_2
-							has_realm_law = eranshar_authority_3
+							has_realm_law = iranian_dynastic_authority_2
+							has_realm_law = iranian_dynastic_authority_3
 						}
 					}
 					add = increase_crown_authority_prestige_cost
@@ -84,12 +84,12 @@ eranshar_authority = {
 			#Remove modifiers
 			remove_law_related_modifiers_effect = yes
 			set_variable = {
-				name = eranshar_authority_cooldown
-				years = @eranshar_authority_cooldown_years
+				name = iranian_dynastic_authority_cooldown
+				years = @iranian_dynastic_authority_cooldown_years
 			}
 		}
 	}
-	eranshar_authority_2 = {
+	iranian_dynastic_authority_2 = {
 		modifier = {
 			direct_vassal_opinion = -10
 			powerful_vassal_opinion = -10
@@ -105,27 +105,27 @@ eranshar_authority = {
 		flag = vassal_internal_wars_banned
 		
 		can_keep = {
-			realm_law_use_eranshahr_authority_trigger = yes
-			realm_law_match_liege_law_level_trigger = { LAW = eranshar_authority_2 }
+			realm_law_use_iranian_dynastic_authority_trigger = yes
+			realm_law_match_liege_law_level_trigger = { LAW = iranian_dynastic_authority_2 }
 		}
 		
 		can_pass = {
 			trigger_if = {
-				limit = { NOT = { has_realm_law = eranshar_authority_3 } }
-				has_realm_law = eranshar_authority_1
+				limit = { NOT = { has_realm_law = iranian_dynastic_authority_3 } }
+				has_realm_law = iranian_dynastic_authority_1
 				custom_description = {
 					subject = root
 					text = "has_crown_authority_cooldown"
-					NOT = { has_variable = eranshar_authority_cooldown }
+					NOT = { has_variable = iranian_dynastic_authority_cooldown }
 				}
 			}
-			realm_law_vassal_has_liege_law_level_trigger = { LAW = eranshar_authority_2 }
+			realm_law_vassal_has_liege_law_level_trigger = { LAW = iranian_dynastic_authority_2 }
 		}
 		
 		pass_cost = {
 			prestige = {
 				if = {
-					limit = { NOT = { has_realm_law = eranshar_authority_3 } }
+					limit = { NOT = { has_realm_law = iranian_dynastic_authority_3 } }
 					add = increase_crown_authority_prestige_cost
 				}
 			}
@@ -135,12 +135,12 @@ eranshar_authority = {
 			#Remove modifiers
 			remove_law_related_modifiers_effect = yes
 			set_variable = {
-				name = eranshar_authority_cooldown
-				years = @eranshar_authority_cooldown_years
+				name = iranian_dynastic_authority_cooldown
+				years = @iranian_dynastic_authority_cooldown_years
 			}
 		}
 	}
-	eranshar_authority_3 = {
+	iranian_dynastic_authority_3 = {
 		modifier = {
 			direct_vassal_opinion = -20
 			powerful_vassal_opinion = -20
@@ -156,24 +156,24 @@ eranshar_authority = {
 		flag = vassal_all_wars_banned
 		
 		can_keep = {
-			realm_law_use_eranshahr_authority_trigger = yes
-			realm_law_match_liege_law_level_trigger = { LAW = eranshar_authority_3 }
+			realm_law_use_iranian_dynastic_authority_trigger = yes
+			realm_law_match_liege_law_level_trigger = { LAW = iranian_dynastic_authority_3 }
 		}
 		
 		can_pass = {
-			has_realm_law = eranshar_authority_2
+			has_realm_law = iranian_dynastic_authority_2
 			custom_description = {
 				subject = root
 				text = "has_crown_authority_cooldown"
-				NOT = { has_variable = eranshar_authority_cooldown }
+				NOT = { has_variable = iranian_dynastic_authority_cooldown }
 			}
-			realm_law_vassal_has_liege_law_level_trigger = { LAW = eranshar_authority_3 }
+			realm_law_vassal_has_liege_law_level_trigger = { LAW = iranian_dynastic_authority_3 }
 		}
 		
 		pass_cost = {
 			prestige = {
 				if = {
-					limit = { NOT = { has_realm_law = eranshar_authority_3 } }
+					limit = { NOT = { has_realm_law = iranian_dynastic_authority_3 } }
 					add = increase_crown_authority_prestige_cost
 				}
 			}
@@ -183,14 +183,14 @@ eranshar_authority = {
 			#Remove modifiers
 			remove_law_related_modifiers_effect = yes
 			set_variable = {
-				name = eranshar_authority_cooldown
-				years = @eranshar_authority_cooldown_years
+				name = iranian_dynastic_authority_cooldown
+				years = @iranian_dynastic_authority_cooldown_years
 			}
 		}
 	}
 }
 
-#Eranshar Government Religious Authority
+#Iranian_Dynastic Government Religious Authority
 #Directly influences Zoroastrian doctrines for Asavan faiths
 clerical_influence = {
 	default = clerical_influence_0

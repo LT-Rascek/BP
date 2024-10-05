@@ -310,11 +310,11 @@ decrease_clerical_influence_piety_cost = {
 }
 
 #Prestige Cost
-eranshar_county_realm_size_scaling = 5
-eranshar_realm_size_modifier = {
+iranian_dynastic_county_realm_size_scaling = 5
+iranian_dynastic_realm_size_modifier = {
 	value = 0
 	every_realm_county = { add = 1 }
-	multiply = eranshar_county_realm_size_scaling
+	multiply = iranian_dynastic_county_realm_size_scaling
 }
 
 #Modifiers for action direction
@@ -330,7 +330,7 @@ change_clerical_influence_prestige_cost = {
 	add = {
 		desc = "realm_size"
 		format = "BREAKDOWN_FORMAT_REALM_SIZE_GOLD_COST"
-		value = eranshar_realm_size_modifier
+		value = iranian_dynastic_realm_size_modifier
 	}
 	
 	# Learning Modifier (2% more expensive for each skill point below 8 Learning)

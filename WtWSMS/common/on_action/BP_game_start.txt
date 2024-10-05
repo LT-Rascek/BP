@@ -221,8 +221,8 @@ setup_realm_laws = {
 					remove_variable = clerical_influence_cooldown
 				}
 				if = {
-					limit = { NOT = { has_realm_law = eranshar_authority_1 } }
-					add_realm_law = eranshar_authority_1
+					limit = { NOT = { has_realm_law = iranian_dynastic_authority_1 } }
+					add_realm_law = iranian_dynastic_authority_1
 					remove_variable = crown_authority_cooldown
 				}
 			}
@@ -596,8 +596,8 @@ game_start_fix_barony_government = {
 					this.holder = { convert_realm_to_subroman_effect = yes }
 				}
 				else_if = {
-					limit = { this.county.holder = { has_government = eranshar_government } }
-					this.holder = { change_government = eranshar_government }
+					limit = { this.county.holder = { has_government = iranian_dynastic_government } }
+					this.holder = { change_government = iranian_dynastic_government }
 				}
 				else_if = {
 					limit = { this.county.holder = { has_government = rajamandala_government } }
@@ -641,8 +641,8 @@ game_start_fix_barony_government = {
 					this.holder = { convert_realm_to_subroman_effect = yes }
 				}
 				else_if = {
-					limit = { this.county.holder = { has_government = eranshar_government } }
-					this.holder = { change_government = eranshar_government }
+					limit = { this.county.holder = { has_government = iranian_dynastic_government } }
+					this.holder = { change_government = iranian_dynastic_government }
 				}
 				else_if = {
 					limit = { this.county.holder = { has_government = rajamandala_government } }

@@ -389,7 +389,7 @@ revoke_title_interaction_effect = {
 	##### Changed from Vanilla ^^^^^
 }
 
-##### Changed from Vanilla: Added intersection of revocation tyranny and Eranshar Government
+##### Changed from Vanilla: Added intersection of revocation tyranny and Iranian_Dynastic Government
 revocation_tyranny_effect = {
 	save_scope_as = liege_temp_scope
 	if = {
@@ -404,8 +404,8 @@ revocation_tyranny_effect = {
 	##### Changed from Vanilla vvvvv
 	else_if = {
 		limit = {
-			scope:liege_temp_scope = { government_has_flag = government_uses_eranshar_authority }
-			$VASSAL$ = { government_has_flag = government_uses_eranshar_authority }
+			scope:liege_temp_scope = { government_has_flag = government_uses_iranian_dynastic_authority }
+			$VASSAL$ = { government_has_flag = government_uses_iranian_dynastic_authority }
 			$VASSAL$ = { vassal_contract_has_flag = title_revocation_increased_tyranny }
 		}
 		if = {

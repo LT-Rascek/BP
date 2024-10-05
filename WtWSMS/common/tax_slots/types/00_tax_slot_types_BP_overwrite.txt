@@ -23,10 +23,10 @@ clan_tax_slot = { #Can only have the one...
 			desc = tax_slot_vassal_level_base_desc
 		}
 		if = {
-			limit = { scope:liege = { government_has_flag = government_uses_eranshar_authority } }
+			limit = { scope:liege = { government_has_flag = government_uses_iranian_dynastic_authority } }
 			add = {
 				value = 8
-				desc = tax_slot_vassal_level_eranshahr_desc
+				desc = tax_slot_vassal_level_iranian_dynastic_desc
 			}
 		}
 	}

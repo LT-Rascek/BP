@@ -94,27 +94,27 @@
  rajamandala_levies_extortionate: "Extortionate Contribution"
  rajamandala_levies_extortionate_short: "Extortionate"
  
- #Eranshar
- eranshar_government: "Eranshar Administration"
- eranshar_government_with_icon: "@government_type_eranshar! $eranshar_government$"
- eranshar_government_adjective: "Eranshar"
- eranshar_government_realm: "Eranshar Realm"
- eranshar_government_vassals_label: "$eranshar_government$ [obligations|E] are based on [opinion|E]"
- eranshar_government_desc: "$game_concept_eranshar_government_desc$"
- government_uses_eranshar_authority: "Government uses [eranshar_authority|E]"
+ #Iranian Dynastic
+ iranian_dynastic_government: "Iranian Dynastic"
+ iranian_dynastic_government_with_icon: "@government_type_iranian_dynastic! $iranian_dynastic_government$"
+ iranian_dynastic_government_adjective: "$iranian_dynastic_government$"
+ iranian_dynastic_government_realm: "$iranian_dynastic_government$ Realm"
+ iranian_dynastic_government_vassals_label: "$iranian_dynastic_government$ [obligations|E] are based on [opinion|E]"
+ iranian_dynastic_government_desc: "$game_concept_iranian_dynastic_government_desc$"
+ government_uses_iranian_dynastic_authority: "Government uses [iranian_dynastic_authority|E]"
  only_wuzurgan_can_be_councillors: "If has access to the $wuzurgan_special_rights_tax_collector$ [tax_decree|E], only those [vassals|E] may be [councillors|E]"
  righteous_counties_to_rightous_characters: "Counties that are condiered righteous or astray by the ruler's [faith|E] must be given to characters considered righteous or astray"
  
- eranshar_government_character_modifier: "[domain|E] Limit: #P +2#!\n$EFFECT_LIST_BULLET$ [men_at_arms|E] maintenance: #P -50%#!\n$EFFECT_LIST_BULLET$ Available [tax_jurisdictions|E]: #P +1#!"
+ iranian_dynastic_government_character_modifier: "[domain|E] Limit: #P +2#!\n$EFFECT_LIST_BULLET$ [men_at_arms|E] maintenance: #P -50%#!\n$EFFECT_LIST_BULLET$ Available [tax_jurisdictions|E]: #P +1#!"
  
- eranshar_government_obligations: "From [opinion|E]"
- eranshar_government_tax_contribution_postfix: " (max [FixedPointToProgressbarValue(EmptyScope.ScriptValue('eranshar_government_tax_max_possible'))|1V])"
- eranshar_government_levies_contribution_postfix: " (max [FixedPointToProgressbarValue(EmptyScope.ScriptValue('eranshar_government_levies_max_possible'))|1V])"
- eranshar_government_unclamped_contribution_label: "Based on [opinion|E] of me"
- eranshar_government_min_contribution_label: "[eranshar_authority|E] minimum"
+ iranian_dynastic_government_obligations: "From [opinion|E]"
+ iranian_dynastic_government_tax_contribution_postfix: " (max [FixedPointToProgressbarValue(EmptyScope.ScriptValue('iranian_dynastic_government_tax_max_possible'))|1V])"
+ iranian_dynastic_government_levies_contribution_postfix: " (max [FixedPointToProgressbarValue(EmptyScope.ScriptValue('iranian_dynastic_government_levies_max_possible'))|1V])"
+ iranian_dynastic_government_unclamped_contribution_label: "Based on [opinion|E] of me"
+ iranian_dynastic_government_min_contribution_label: "[iranian_dynastic_authority|E] minimum"
  
- eranshar_marzban_contract: "Marzban Contract"
- eranshar_marzban_contract_short: "Marzban"
+ iranian_dynastic_marzban_contract: "Marzban Contract"
+ iranian_dynastic_marzban_contract_short: "Marzban"
  marzban_contract: "Marzban" ##### TODO (Alpha): Why is this line required?
  marzban_contract_none: "No $marzban_contract$"
  marzban_contract_none_short: "None"

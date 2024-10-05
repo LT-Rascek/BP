@@ -83,7 +83,7 @@ rajamandala_government = {
 }
 
 #Iranian Government Types
-eranshar_government = {
+iranian_dynastic_government = {
 	government_rules = {
 		create_cadet_branches = yes
 		rulers_should_have_dynasty = yes
@@ -100,7 +100,7 @@ eranshar_government = {
 	tax_slot_type = clan_tax_slot
 
 	vassal_contract = {
-		eranshar_government_obligations
+		iranian_dynastic_government_obligations
 		special_contract
 		religious_rights
 		fortification_rights
@@ -109,7 +109,7 @@ eranshar_government = {
 		war_declaration_rights
 		title_revocation_rights
 		#Other contracts
-		eranshar_marzban_contract
+		iranian_dynastic_marzban_contract
 	}
 
 	ai = {
@@ -117,7 +117,7 @@ eranshar_government = {
 	}
 
 	character_modifier = {
-		#Gives eranshar_government characters an extra 2-5 domain, depending on their secular
+		#Gives iranian_dynastic_government characters an extra 2-5 domain, depending on their secular
 		#authority
 		domain_limit = 2
 		#From WtWSMS-CK2
@@ -129,12 +129,12 @@ eranshar_government = {
 	flag = government_titles_do_not_leave_realm #Flavor
 	flag = can_hold_castles_and_cities #Just informative
 	flag = government_is_advanced
-	flag = government_uses_eranshar_authority
+	flag = government_uses_iranian_dynastic_authority
 	flag = only_wuzurgan_can_be_councillors
 	flag = righteous_counties_to_rightous_characters
 	flag = may_appoint_viziers #aka the Framadar
 	
-	flag = eranshar_government_character_modifier
+	flag = iranian_dynastic_government_character_modifier
 	
 	color = {1.000 0.500 0.000}
 }

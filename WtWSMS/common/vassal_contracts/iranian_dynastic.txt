@@ -1,7 +1,7 @@
 ﻿@ai_standard_liege_desire = 2
 @ai_standard_vassal_desire = 1
 
-eranshar_government_obligations = {
+iranian_dynastic_government_obligations = {
 	obligation_levels = {
 		default = {
 			levies = 0.25
@@ -10,11 +10,11 @@ eranshar_government_obligations = {
 	}
 }
 
-eranshar_marzban_contract = {
+iranian_dynastic_marzban_contract = {
 	display_mode = radiobutton
 	is_shown = {
-		scope:vassal = { has_government = eranshar_government }
-		scope:liege = { has_government = eranshar_government }
+		scope:vassal = { has_government = iranian_dynastic_government }
+		scope:liege = { has_government = iranian_dynastic_government }
 		scope:vassal.primary_title.tier >= tier_duchy
 	}
 	obligation_levels = {
