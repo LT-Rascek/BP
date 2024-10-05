@@ -191,7 +191,6 @@ subroman_dynastic_government = {
 	government_rules = {
 		create_cadet_branches = yes
 		rulers_should_have_dynasty = yes
-		dynasty_named_realms = yes
 		royal_court = yes
 		legitimacy = yes
 		use_as_base_on_landed = yes #Avoiding a bunch of jank code with this
@@ -202,9 +201,7 @@ subroman_dynastic_government = {
 	valid_holdings = { castle_holding city_holding }
 
 	vassal_contract = {
-		feudal_government_taxes
-		feudal_government_levies
-		special_contract
+		roman_dynastic_government_obligations
 		religious_rights
 		fortification_rights
 		coinage_rights
@@ -221,6 +218,9 @@ subroman_dynastic_government = {
 	flag = may_elevate_co_monarch
 	flag = government_is_centralized
 	# Use flags instead of has_government for moddability if possible (i.e., wherever not visible to the player).
+	flag = government_uses_roman_dynastic_authority
+	flag = cannot_dissolve_same_government_type
+	flag = cannot_seek_indepednence_same_government_type
 	
 	color = hsv{0.000 1.000 0.630 } #Roman culture color
 }
