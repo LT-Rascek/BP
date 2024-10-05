@@ -101,13 +101,11 @@ iranian_dynastic_government = {
 
 	vassal_contract = {
 		iranian_dynastic_government_obligations
-		special_contract
 		religious_rights
 		fortification_rights
 		coinage_rights
 		succession_rights
 		war_declaration_rights
-		title_revocation_rights
 		#Other contracts
 		iranian_dynastic_marzban_contract
 	}
@@ -155,8 +153,7 @@ roman_dynastic_government = {
 	valid_holdings = { castle_holding city_holding }
 
 	vassal_contract = {
-		feudal_government_taxes
-		feudal_government_levies
+		roman_dynastic_government_obligations
 	}
 
 	ai = {
