@@ -178,8 +178,8 @@ roman_dynastic_government = {
 	flag = title_revocation_could_be_tyranny_free
 	flag = government_uses_roman_dynastic_authority
 	flag = government_only_valid_for_kingdoms_empires
-	flag = cannot_dissolve_same_government_type
-	flag = cannot_seek_indepednence_same_government_type
+	flag = cannot_dissolve_roman_government
+	flag = cannot_seek_indepdence_roman_government
 	
 	flag = roman_dynastic_goverment_character_modifier
 	
@@ -219,8 +219,8 @@ subroman_dynastic_government = {
 	flag = government_is_centralized
 	# Use flags instead of has_government for moddability if possible (i.e., wherever not visible to the player).
 	flag = government_uses_roman_dynastic_authority
-	flag = cannot_dissolve_same_government_type
-	flag = cannot_seek_indepednence_same_government_type
+	flag = cannot_dissolve_roman_government
+	flag = cannot_seek_indepdence_roman_government
 	
 	color = hsv{0.000 1.000 0.630 } #Roman culture color
 }
