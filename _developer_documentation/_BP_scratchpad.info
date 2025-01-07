@@ -3,11 +3,25 @@
 Maybe not bugs:
 * Add an on-action to flip governments that can't hold cites & such to appropriate governments for feudals and clans and theocracies like
 
+Symmachus Work:
+* Fixup governments from Symmachus' stuff
+* Merge in his dynasty names into the master file
+* Make all dynp and dyns to dynn_pat and dynn_suf (or whatever)
+
 0.1.6:
 * Tamp down migration rate and block it from converting your own provinces which are of your faith/religion
 * Review tributary acceptance rates; might be too high.
+* Make nicknames have cool tooltip thingies
+	* Make "Augustulus: Little Augustus" one of those cool byz tooltip thingies
+	* TODO: Kyriakos, Rhinotmetos, Salophakiolos, Simhavikrantagami, &c.
+	* TODO: Make Latin/Greek/Georgian: nick_the_wolf_head, nick_the_roman_lover, 
+* Harmonize dynasty, character files
+
+Notes:
+* Long-Running feature branch:  move everything into their own files as much as possible to avoid constant collisions
 
 0.1.7:
+* Shunned Marriage doctrine (talk to RE team) for pre-celebacy faiths
 * Migration overhaul; should become easier, minor migrations should become more common
    * Letting migrants settle should block a realm from further minor migration for a while
 

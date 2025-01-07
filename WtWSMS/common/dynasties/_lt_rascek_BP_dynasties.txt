@@ -1,22 +1,22 @@
 ﻿### Start at 1.5M
 1500002 = {
-	name = "dynn_Opone"
+	name = "Opone"
 	culture = somali
 }
 1500003 = {
-	name = "dynn_Sarapion"
+	name = "Sarapion"
 	culture = somali
 }
 1500004 = {
-	name = "dynn_Tabae"
+	name = "Tabae"
 	culture = somali
 }
 1500005 = {
-	name = "dynn_Essina"
+	name = "Essina"
 	culture = somali
 }
 1500006 = {
-	name = "dynn_of_Dacia"
+	name = "of Dacia"
 	culture = dacian
 }
 #####
@@ -24,7 +24,7 @@
 #Special Religion Dynasties to avoid CTDs
 timothy_2_alexandria_dynasty = {
 	name = dynn_Quolta
-	culture = copt
+	culture = coptic
 }
 anastasius_dynasty = {
 	name = dynn_Grammatikos
@@ -40,7 +40,7 @@ peter_the_fuller_dynasty = {
 #Armenian Non-Dynastic Dynasties
 armenia_dynn_ariobarzanid = {
 	name = dynn_Ariobarzanid
-	culture = persian
+	culture = median
 }
 
 #####
@@ -71,24 +71,6 @@ kru_dynn_wenyon = {
 	culture = kru
 }
 
-#Arabian Dynasties
-adnanite_dynn_tamim = {
-	name = dynn_Tamim
-	culture = adnanite
-}
-adnanite_dynn_bakr = {
-	name = dynn_Bakr
-	culture = adnanite
-}
-adnanite_dynn_hanzalah = {
-	name = dyn_Hanzalah
-	culture = adnanite
-}
-adnanite_dynn_hanifa = {
-	name = dyn_Hanzalah
-	culture = adnanite
-}
-
 #Austro Asiatic Dynasties
 mon_dynn_tharrawaddy = {
 	name = "dynn_Tharrawaddy"
@@ -97,7 +79,7 @@ mon_dynn_tharrawaddy = {
 
 #Balto-Finnic Dynasties
 samoyed_dynn_aaninen = {
-	name = "dynn_Varakid"
+	name="Varakid"
 	culture = samoyed
 }
 finnish_dynn_tavast_tribe = {
@@ -146,38 +128,34 @@ zaghawa_dynn_zaghawa = {
 	name = dynn_Zaghawa
 	culture = zaghawa
 }
-mauri_dynn_hintata = {
+tamazight_dynn_hintata = {
 	name = dynn_Hintata
-	culture = mauri
+	culture = tamazight
 }
-mauri_dynn_baquates = {
+tamazight_dynn_baquates = {
 	name = dynn_Baquates
-	culture = mauri
-}
-dynn_berber_arzugis = { #Ifrinids originated in this province, so have them extant
-	#This should match the Vanilla CK3 dynasty 1048004
-	#Which eventually formed the Emirate of Tlecemen in the VIIIth century
-	name = dynn_Ifrinid
-	culture = libyan
+	culture = tamazight
 }
 
 #Byzantine Dynasties
-greek_dynasty_ptolemaid = {
+macedonian_dynasty_ptolemaid = {
 	name = dynn_Ptolemaid
-	culture = greek
+	culture = macedonian
 }
 greek_dynn_DiodotosTryphon = {
-	name = dynn_Bua_Spatas
+	name = dynn_Diodotid
 	culture = greek
 }
 
 #Caucasian Dynasties
 georgian_dynn_Mtskheta = {
-	name = "dynn_ve_Mtskheta"
+	prefix = "dynnp_ve"
+	name = "Mtskheta"
 	culture = georgian
 }
 georgian_dynn_Iberia = {
-	name = "dynn_ve_Iberia"
+	prefix = "dynnp_ve"
+	name = "Iberia"
 	culture = georgian
 }
 armenian_dynn_Herat = {
@@ -187,24 +165,6 @@ armenian_dynn_Herat = {
 corduenian_dynn_hakkari = {
 	name = dynn_Vzur
 	culture = corduenian
-}
-dynn_svan_svan = {
-	name = dynn_Sanni
-	culture = svan
-}
-
-#Celtic Dynasties
-pictish_dynn_fidach = {
-	name = dynn_Fidach
-	culture = pictish
-}
-pictish_dynn_fib = {
-	name = dynn_Fib
-	culture = pictish
-}
-pictish_dynn_cirinn = {
-	name = dynn_Circinn
-	culture = pictish
 }
 
 #Central African Dynasties
@@ -241,14 +201,24 @@ nok_dynn_kebbi = {
 	culture = hausa
 }
 
+#Central Semitic Dynasties
+adnanite_dynn_tamim = {
+	name = dynn_Tamim
+	culture = adnanite
+}
+adnanite_dynn_bakr = {
+	name = dynn_Bakr
+	culture = adnanite
+}
+adnanite_dynn_hanzalah = {
+	name = dyn_Hanzalah
+	culture = adnanite
+}
+
 #Central Germanic Dynasties
 dynn_buri_monterrei = {
 	name = dynn_Agriulfuming
 	culture = buri
-}
-thuringian_dynn_bassina = {
-	name = dynn_Geating
-	culture = thuringian
 }
 
 #East Germanic Dynasties
@@ -260,15 +230,19 @@ taifal_dynasty_thifalia = {
 	name = dynn_Shodila
 	culture = taifal
 }
-thracian_gothic_dynasty_scythia = {
-	name = dynn_Greuthungi
-	culture = thracian_gothic
-}
 
 #East Iranian Dynasties
+sakan_dynn_gaumatasid = {
+	name = dynn_Gaumatasid
+	culture = sakan
+}
 sakan_dynn_muyunkum = {
 	name = dynn_Nambedid
-	culture = saka
+	culture = sakan
+}
+nuristani_dynn_sangama = {
+	name = dynn_Sangama
+	culture = nuristani
 }
 bactrian_dynn_merv = {
 	name = "dynn_Vakhshufrita"
@@ -277,14 +251,6 @@ bactrian_dynn_merv = {
 bactrian_dynn_orontid = {
 	name = dynn_Orontid
 	culture = bactrian
-}
-alan_dynn_scytia = {
-	name = dynn_DzebysatA_
-	culture = alan
-}
-sogdian_dynn_suyab = {
-	name = dynn_Namdar
-	culture = sogdian
 }
 
 #Guianean Uplanders
@@ -364,24 +330,36 @@ kasmiri_dynn_001 = {
 	name = "dynn_Karkota"
 	culture = kashmiri
 }
+kasmiri_dynn_002 = {
+	name = "dynn_Kichlu"
+	culture = kashmiri
+}
 
 #Indo-Aryan Dynasties
 bengal_dynn_chandras = {
 	name = dynn_Chandra
-	culture = bengali
+	culture = eastern_indo_aryan
 }
-gurjari_indo_aryan_pratihara = { #Links to 1042066
+western_indo_aryan_pratihara = { #Links to 1042066
 	name = dynn_Pratihara
 	culture = indo_scythian
 }
-oriya_dynn_vasistha = {
+eastern_indo_aryan_dynn_vasistha = {
 	name = "dynn_Vasistha"
-	culture = oriya
+	culture = eastern_indo_aryan
 }
 
 #Iranian Dynasties
 iranianian_dynn_madigid = {
 	name = dynn_Madigid
+	culture = persian
+}
+iranianian_dynn_mafaza = {
+	name = dynn_Ajami
+	culture = persian
+}
+iranianian_dynn_parthava = {
+	name = dynn_Saffari
 	culture = persian
 }
 iranian_dynn_achaemenid = {
@@ -408,41 +386,38 @@ roman_dynasty_marius = { #Gaius Marius' dynasty
 	name = dynn_Marius
 	culture = roman
 }
-roman_dynasty_cornelius_1 = { #Cornelii Sullae
+roman_dynasty_cornelius_2 = {
 	name = dynn_Cornelius
 	culture = roman
 }
-roman_dynasty_antonius = {
+roman_dynasty_antonius_1 = {
 	name = dynn_Antonius
 	culture = roman
 }
-roman_dynasty_iulius_1 = { #Julii Caesares (later divided into two branches)
+roman_dynasty_iulius_1 = {
 	name = dynn_Iulius
 	culture = roman
 }
-roman_dynasty_iunius_1 = { #Junii Bruti
+roman_dynasty_iunius_1 = {
 	name = dynn_Iunius
 	culture = roman
 }
-roman_dynasty_avidius = {
+romano_aramean_dynasty_avidius = {
 	name = dynn_Avidius
-	culture = roman
+	culture = romano_aramean
 }
 roman_dynn_euphratensis = {
 	name = dynn_Pegasus
 	culture = roman
 }
 roman_dynn_orestes_wife = {
+	prefix = dynnp_of
 	name = dynn_Neapolis #Based on Barbaria living there when Romulus was exiled
 	culture = roman
 }
 roman_dynn_gabinius = {
 	name = dynn_Gabinius
-	culture = romano_thracian
-}
-romano_british_dynn_leicestershire = {
-	name = dynn_Ratae
-	culture = romano_british
+	culture = roman
 }
 
 #North Germanic Dynasties
@@ -463,12 +438,6 @@ norse_dynn_adogit = {
 aramean_dynn_abahu = {
 	name = dynn_Marcellinus
 	culture = aramean
-}
-
-#Peristani dynnasties
-pamiri_dynn_gilgit = {
-	name = dynn_Paramara
-	culture = pamiri
 }
 
 #Proto-Carpathian Dynasties
@@ -682,10 +651,6 @@ tiele_dynn_chumi = {
 	name = dynn_Chumi
 	culture = tiele
 }
-hunnic_dynn_tudila = {
-	name = dynn_Tudilali
-	culture = hunnic
-}
 
 #Urgo-Permian Dynasties
 khanty_dynn_ala_tau = {
@@ -752,10 +717,6 @@ udmurt_dynn_udmurt = {
 	name = dynn_Udmurt
 	culture = udmurt
 }
-udmurt_dynn_volga_bulgaria = {
-	name = dynn_Chokmorskon
-	culture = udmurt
-}
 
 #Vasconic Dynasties
 basque_dynn_andorra = {
@@ -785,7 +746,6 @@ merya_dynn_merya = {
 igbo_dynn_igbo = {
 	name = dynn_Osomari
 	culture = igbo
-	motto = igbo_dynn_igbo_motto
 }
 edo_dynn_benin = {
 	name = dynn_Edo
@@ -852,24 +812,4 @@ welayta_dynn_001 = {
 zaghawa_dynn_00 = {
 	name = "dynn_Kegi"
 	culture = zaghawa
-}
-
-#West Germanic
-old_frankish_dynn_ragnachar = {
-	name = dynn_Ragnaching
-	culture = old_frankish
-}
-old_frankish_dynn_sigobert = {
-	name = dynn_Sigobing
-	culture = old_frankish
-}
-old_frankish_dynn_chararic = {
-	name = dynn_Charing
-	culture = old_frankish
-}
-
-##### 0.1.6 Dynasties
-persian_dynn_satya = {
-	name = dynn_Satya
-	culture = parthian #### Last Remnant of Indo-Parthia
 }
