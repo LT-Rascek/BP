@@ -4,10 +4,15 @@ Maybe not bugs:
 * Add an on-action to flip governments that can't hold cites & such to appropriate governments for feudals and clans and theocracies like
 
 Symmachus Work:
-* Long, involved titles todo: bp_k_oriens, bp_k_septem_provinciae
-
-* Merge in his dynasty names into the master file
-* Make all dynp and dyns to dynn_pat and dynn_suf (or whatever)
+* Landed Title Cultural Name list changes
+* Fixup any additional map errors
+	* Moesia Superior is not a vassal of Byzantium
+	* c_troyes should be under Soissons
+	* NW African Romans are messed up
+	* Some governments are incorrect in Europe
+	* Conversion resistance scaling in Strong Believers is off (0.4% instead of 40%)
+	* Put all the name change code for patriarchs back; it's required to not have new regnal names spawned
+* Tamp down resulting errors
 
 0.1.6:
 * Tamp down migration rate and block it from converting your own provinces which are of your faith/religion
@@ -17,8 +22,13 @@ Symmachus Work:
 	* TODO: Kyriakos, Rhinotmetos, Salophakiolos, Simhavikrantagami, &c.
 	* TODO: Make Latin/Greek/Georgian: nick_the_wolf_head, nick_the_roman_lover, 
 * Harmonize dynasty, character files
+* Make all dynp and dyns to dynn_pat and dynn_suf (or whatever)
 * Make sure culture titles are properly referencing new governments
 * Deal with BP_dynasty_names_RESORT_l_english.yml file
+* Update bookmark structure
+* Nepos should be Roman Dynastic government
+* Alexander the great should have conqueror trait
+* Valens should have been killed at Adrianople
 
 Notes:
 * Long-Running feature branch:  move everything into their own files as much as possible to avoid constant collisions
