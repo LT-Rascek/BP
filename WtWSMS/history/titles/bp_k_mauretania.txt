@@ -33,7 +33,7 @@ d_tingitana = {
 		##vice_royalty = yes
 		holder = 1301125 # Lucillus Constantius
 		liege = e_roman_empire
-		government = prefeudal_government
+		government = roman_dynastic_government
 	}#end in 366 or before
 	370.1.1 = { holder = 0 }
 }
@@ -44,9 +44,9 @@ c_tangiers = {
 	}#end in 366 or before
 	450.1.1={
 		holder=109770
-		liege=d_tangiers
 		government = subroman_dynastic_government
 	}
+	460.1.1 = { liege = d_tangiers }
 	534.1.1={
 		holder=36554 # Iulius Laelius Sabinianus   
 		liege = e_byzantium

@@ -4,18 +4,14 @@ Maybe not bugs:
 * Add an on-action to flip governments that can't hold cites & such to appropriate governments for feudals and clans and theocracies like
 
 Symmachus Work:
-* Fixup any additional map errors
-	* Moesia Superior is not a vassal of Byzantium
-	* c_troyes should be under Soissons
-	* NW African Romans are messed up
-	* Some governments are incorrect in Europe
-	* Conversion resistance scaling in Strong Believers is off (0.4% instead of 40%)
+* Fixup any additional errors
 	* Put all the name change code for patriarchs back; it's required to not have new regnal names spawned
 * Tamp down resulting errors
 
 0.1.6:
 * Tamp down migration rate and block it from converting your own provinces which are of your faith/religion
 * Review tributary acceptance rates; might be too high.
+* Conversion resistance scaling in Strong Believers is off (0.4% instead of 40%)
 * Make nicknames have cool tooltip thingies
 	* Make "Augustulus: Little Augustus" one of those cool byz tooltip thingies
 	* TODO: Kyriakos, Rhinotmetos, Salophakiolos, Simhavikrantagami, &c.
@@ -41,6 +37,9 @@ Notes:
 
 Symmachus Branch for 0.1.7:
 	* Landed title changes need a deep review and work.
+	"- Replaced the default title localization for Gaul, Spain, Italy, Africa, Egypt, Oriens and parts of Balkans with the ancient names, as they are much more appropriate for almost every culture"
+		* common/landed_titles
+		* localization/english/replace/BP_titles_l_english.yml
 
 FUTURE IDEAS
 ======================
