@@ -176,7 +176,7 @@ Ptolemy12Auletes = { #Ptolemy XII Auletes
 	culture = "macedonian"
 	trait = lustful
 	trait = deceitful
-	trait = reveler_1
+	trait = lifestyle_reveler
 	trait = drunkard
 	trait = education_intrigue_1
 	father = Ptolemy9Soter
@@ -202,12 +202,12 @@ Cleopatra7 = { #Cleopatra
 }
 CleopatraSelene2 = { #Cleopatra Selene II, daughter of Antony and Cleopatra and wife of Juba II
 	name = "Selene"
+	female = yes
 	dynasty = macedonian_dynasty_ptolemaid
 	religion = "hellenic_pagan"
 	culture = "macedonian"
 	trait = twin
 	trait = education_diplomacy_4
-	female = yes
 	father = MarcAntony
 	mother = Cleopatra7
 	-40.6.1 = { birth = yes }
@@ -8614,7 +8614,7 @@ SaloniusOfGeneva = { #Salonius, bishop of Geneva
 	dynasty = romano_gallic_dynasty_eucherius
 	religion = "nicene"
 	culture = "romano_gallic"
-	trait = mystic_1
+	trait = lifestyle_mystic
 	father = 1001106
 	mother = GallaWifeOfEucheriusOfLyon
 	400.1.1 = { birth = yes }
@@ -10403,7 +10403,7 @@ Fabiola = { #PLRE vol. 1 Fabiola, saint
 	dynasty = roman_dynasty_fabius_2
 	religion = "nicene"
 	culture = "roman"
-	trait = physician_2
+	trait = lifestyle_physician
 	trait = compassionate
 	trait = temperate
 	trait = generous	
@@ -10411,6 +10411,19 @@ Fabiola = { #PLRE vol. 1 Fabiola, saint
 	female = yes
 	father = FabiusMaximus
 	350.1.1 = { birth = yes }
+	366.1.1 = {
+		effect = {
+			add_trait_xp = {
+				trait = lifestyle_physician
+				value = {
+					integer_range = {
+						min = small_lifestyle_random_xp_high
+						max = small_lifestyle_random_xp_high
+					}
+				}
+			}
+		}
+	}
 	399.12.27 = {
 		death = yes
 		trait = saint
@@ -12199,13 +12212,26 @@ Asclepigeneia1 = { #PLRE vol. 2 Asclepigeneia 1, theurgist
 	dynasty = greek_dynasty_iounios
 	religion = "platonism"
 	culture = "greek"
-	trait = mystic_2
+	trait = lifestyle_mystic
 	trait = scholar	
 	trait = erudite
 	trait = education_learning_3
 	female = yes
 	father = Plutarch4
 	385.1.1 = { birth = yes }
+	401.1.1 = {
+		effect = {
+			add_trait_xp = {
+				trait = lifestyle_mystic
+				value = {
+					integer_range = {
+						min = small_lifestyle_random_xp_high
+						max = small_lifestyle_random_xp_high
+					}
+				}
+			}
+		}
+	}
 	485.1.1 = { death = yes }
 }
 Archiadas1 = { #PLRE vol. 2 Archiadas, Athenian notable
@@ -14384,7 +14410,7 @@ ClodiaPulchraTertia = { #Clodia Pulchra Tertia, wife of Metellus Celer and Lesbi
 	culture = "roman"
 	trait = beauty_good_1
 	trait = poet
-	trait = reveler_1	
+	trait = lifestyle_reveler	
 	trait = education_diplomacy_4
 	trait = lustful
 	trait = fickle
@@ -17917,11 +17943,11 @@ MariaSeverina = { #Maria Severina, wife of Boethius
 	485.1.1 = { death = yes }
 }
 FaustaWifeOfSeverinus = { #Fausta, wife of Severinus
-	name = "Fausta"	
+	name = "Fausta"
+	female = yes
 	dynasty = 1042365
 	religion = "nicene"
 	culture = "roman"
-	female = yes
 	father = 1300537
 	mother = 1008325
 	440.1.1 = { birth = yes }
@@ -19060,11 +19086,24 @@ ThrasyllusOfMendes = { #Astrologer
 	dynasty = helleno_coptic_dynasty_klaudios
 	religion = "hellenic_pagan"
 	culture = "helleno_coptic"
-	trait = mystic_2
+	trait = lifestyle_mystic
 	trait = scholar	
 	trait = erudite
 	trait = education_learning_4
 	-30.1.1 = { birth = yes }
+	-14.1.1 = {
+		effect = {
+			add_trait_xp = {
+				trait = lifestyle_mystic
+				value = {
+					integer_range = {
+						min = small_lifestyle_random_xp_high
+						max = small_lifestyle_random_xp_high
+					}
+				}
+			}
+		}
+	}
 	3.1.1 = { add_spouse = Aka2OfCommagene }
 	36.1.1 = { death = yes }
 }
@@ -19083,13 +19122,26 @@ TiberiusClaudiusBalbillus = { #Astrologer
 	dynasty = helleno_coptic_dynasty_klaudios
 	religion = "hellenic_pagan"
 	culture = "helleno_coptic"
-	trait = mystic_2
+	trait = lifestyle_mystic
 	trait = scholar	
 	trait = erudite
 	trait = education_learning_4
 	father = ThrasyllusOfMendes
 	mother = Aka2OfCommagene
 	3.1.1 = { birth = yes }
+	19.1.1 = {
+		effect = {
+			add_trait_xp = {
+				trait = lifestyle_mystic
+				value = {
+					integer_range = {
+						min = small_lifestyle_random_xp_high
+						max = small_lifestyle_random_xp_high
+					}
+				}
+			}
+		}
+	}
 	79.1.1 = { death = yes }
 }
 TiberiusClaudiusCapitolinus = { #Placeholder
@@ -20130,7 +20182,7 @@ Alcibiades4 = { #Alcibiades
 	culture = "greek"
 	trait = intellect_good_2
 	trait = beauty_good_1
-	trait = reveler_1
+	trait = lifestyle_reveler
 	trait = legendary_leader
 	trait = erudite
 	trait = diligent
@@ -20786,7 +20838,7 @@ Demetrius1Poliorcetes = { #Demetrius Poliorcetes
 	dynasty = macedonian_dynasty_antigonid
 	religion = "hellenic_pagan"
 	culture = "macedonian"
-	trait = "reveler_1"
+	trait = "lifestyle_reveler"
 	trait = "brave"
 	trait = "ambitious"
 	trait = "arbitrary"
@@ -22700,6 +22752,7 @@ EnnodiusPlaceholder1 = { #Placeholder
 }
 UnnamedWifeOfEnnodius = { #Sister of Ruricius, wife of Ennodius
 	name = "Gaia"
+	female = yes
 	dynasty = romano_gallic_dynasty_pontius
 	religion = "nicene"
 	culture = "romano_gallic"
