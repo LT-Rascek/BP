@@ -8971,16 +8971,6 @@ Audentia = { #PLRE vol. 2 Audentia 1, wife of Hesychius of Vienne
 	430.1.1 = { birth = yes }
 	490.1.1 = { death = yes }
 }
-ApollinarisOfValence = { #PLRE vol. 2 Apollinaris 5, grandson of emperor Avitus and bishop of Valence
-	name = "Apollinaris"
-	dynasty = romano_gallic_dynasty_hesychius
-	religion = "nicene"
-	culture = "romano_gallic"
-	father = 1007001
-	mother = Audentia
-	453.1.1 = { birth = yes }
-	520.1.1 = { death = yes }
-}
 Fuscina = { #PLRE vol. 2 Fuscina, nun
 	name = "Fuscina"
 	dynasty = romano_gallic_dynasty_hesychius
@@ -17991,10 +17981,7 @@ HadrianaWifeOfRufiusPostumiusFestus = { #Hadriana, wife of Rufius Postumius Fest
 	culture = "roman"
 	female = yes
 	father = HadrianusSonOfPPOHadrianus
-	415.1.1 = {
-		birth = yes
-		effect = { learn_language = language_latin }
-	}
+	415.1.1 = { birth = yes }
 	480.1.1 = { death = yes }
 }
 LuciusJuliusLibo = { #Consul of 267
@@ -19748,8 +19735,8 @@ Eucles4 = { #Athenian notable
 	culture = "greek"
 	father = Eucles3
 	-40.1.1 = { birth = yes }
-	-5.1.1 = { add_spouse = UnnamedWifeOfEukles }
-	-20.1.1 = { death = yes }
+	-20.1.1 = { add_spouse = UnnamedWifeOfEukles }
+	-5.1.1 = { death = yes }
 }
 UnnamedWifeOfEukles = { #Placeholder
 	name = "Hypatia"
