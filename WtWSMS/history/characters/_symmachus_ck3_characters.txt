@@ -22800,3 +22800,44 @@ ApamaWifeOfAchaeus = { #Wife of Achaeus
 	-323.1.1 = { birth = yes }
 	-255.1.1 = { death = yes }
 }
+MarcusVinicius3 = {
+	name = "Marcus"
+	#Marcus Vinicius, Consul of AD 30
+	dynasty = roman_dynasty_vinicius
+	religion = "hellenic_pagan"
+	culture = "roman"
+	-5.1.1 = { birth = yes }
+	34.1.1 = { add_spouse = IuliaLivilla }
+	46.1.1 = { death = yes }
+}
+IuliaLivilla = {
+	name = "Livilla"
+	female = yes
+	#Iulia Livilla, sister of Nero and wife of Consul 30
+	dynasty = 1022232
+	religion = "hellenic_pagan"
+	culture = "roman"
+	mother = 1103004
+	father = 1102515
+	18.1.1 = { birth = yes }
+	41.1.1 = { death = yes }
+}
+LuciusCaesenniusSospes = {
+	name = "Lucius"
+	dynasty = roman_dynasty_caesennius
+	religion = "hellenic_pagan"
+	culture = "roman"
+	father = LuciusJuniusCaesenniusPaetus1
+	mother = FlaviaSabina
+	60.1.1 = { birth = yes }
+	130.1.1 = { death = yes }
+}
+CaeliusFelix3 = {
+	name = "Marcus"
+	#Caelius Felix, Governor of Arabia 246
+	dynasty = roman_dynasty_caelius
+	religion = "hellenic_pagan"
+	culture = "roman"
+	210.1.1 = { birth = yes }
+	260.1.1 = { death = yes }
+}
