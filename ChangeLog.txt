@@ -193,6 +193,7 @@ Localization:
 - Fixed some typos
 
 Tweaks:
+- Halved rate of minority migration and reduced growth rate by a third
 - Set more capitals at game start to match history
 - Rulers of Gaetulia are African Solar pagans instead of Amazighist pagans, aligning with the faith of their counties
 - Tweaked AI logic so it's less inclined to change capitals if it holds both Rome and Constantinople, or if the Romes are to underdeveloped
@@ -211,6 +212,7 @@ Bug Fixes:
 - Fixed a bug in Vanilla where in a Rite controlling 3 or more holy sites creates its own HOF instead of inheriting the previous HOF
 - Fixed baronies having improper governments at start
 - Fixed a bug with core tenets causing error log spam
+- Fixed a bug where minorities could usurp the majority culture/faith even if the ruler was of the county's culture/faith
 - Fixed a bug where converting to organized governments during migration was available when it shouldn't have been
 
 2024-12-30 v0.1.5.3
