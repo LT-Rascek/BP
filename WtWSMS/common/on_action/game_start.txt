@@ -552,7 +552,12 @@ on_game_start_after_lobby = {
 			every_independent_ruler = {
 				limit = {
 					is_landless_adventurer = yes
-					NOT = { this = character:55 } #Odoacer
+					##### Changed from Vanilla vvvvv
+					NOR = {
+						this = character:55 #Odoacer
+						this = character:70515 #Zeno
+					}
+					##### Changed from Vanilla ^^^^^
 				}
 				# Cash.
 				add_gold = {
@@ -625,7 +630,12 @@ on_game_start_after_lobby = {
 				if = {
 					limit = {
 						is_ai = no
-						NOT = { this = character:55 } ##### Changed from Vanilla: Don't apply for Odoacer
+						##### Changed from Vanilla vvvvv
+						NOR = {
+							this = character:55 #Odoacer
+							this = character:70515 #Zeno
+						}
+						##### Changed from Vanilla ^^^^^
 					}
 					# Set up additional firing contracts.
 					player_adventurer_contract_generation_on_wait_in_place_effect = yes
@@ -788,4 +798,4 @@ on_game_start_after_lobby = {
 #			}
 #		}
 
-﻿##### Removed a number of inapplicable events and such
+##### Removed a number of inapplicable events and such

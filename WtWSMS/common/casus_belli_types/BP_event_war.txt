@@ -412,14 +412,14 @@ zenos_claim_cb = { #Like a claim_cb, but has war-scoped special troops
 	on_declaration = {
 		on_declared_war = yes
 		scope:attacker = {
-			create_zeno_army_effect = { LOCATION = 759 } #c_lycanonia
-			create_zeno_army_effect = { LOCATION = 759 } #c_lycanonia
 			create_zeno_army_effect = { LOCATION = 5672 } #c_isauria
 			create_zeno_army_effect = { LOCATION = 5672 } #c_isauria
-			create_zeno_army_effect = { LOCATION = 758 } #c_seleucia
-			create_zeno_army_effect = { LOCATION = 758 } #c_seleucia
-			create_zeno_army_effect = { LOCATION = 5637 } #c_pamphylia
-			create_zeno_army_effect = { LOCATION = 5637 } #c_pamphylia
+			create_zeno_army_effect = { LOCATION = 5672 } #c_isauria
+			create_zeno_army_effect = { LOCATION = 5672 } #c_isauria
+			create_zeno_army_effect = { LOCATION = 5672 } #c_isauria
+			create_zeno_army_effect = { LOCATION = 5672 } #c_isauria
+			create_zeno_army_effect = { LOCATION = 5672 } #c_isauria
+			create_zeno_army_effect = { LOCATION = 5672 } #c_isauria
 		}
 	}
 
@@ -582,6 +582,15 @@ zenos_claim_cb = { #Like a claim_cb, but has war-scoped special troops
 
 		# FP1: note the victory for future memorialisation via stele (if applicable).
 		scope:attacker = { fp1_remember_recent_conquest_victory_effect = yes }
+		
+		#Imprison Basilicus
+		scope:defender = {
+			#Imprison Odacer
+			hard_imprison_character_effect = {
+				TARGET = this
+				IMPRISONER = scope:attacker
+			}
+		}
 	}
 
 	on_white_peace_desc = {
