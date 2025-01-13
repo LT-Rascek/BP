@@ -21,6 +21,7 @@ bp_game_start = {
 		setup_realm_and_title_succession_laws
 		game_start_fix_barony_government
 		setup_vassal_contracts
+		setup_landless_purposes
 		#Other Title effects
 		other_title_effects
 		#Religious Stuff
@@ -1085,6 +1086,11 @@ setup_vassal_contracts = {
 				SUZERAIN = title:d_esseaxena.holder
 			}
 		}
+	}
+}
+setup_landless_purposes = {
+	effect = {
+		title:k_laamp_odoacer.holder = { add_realm_law_skip_effects = camp_purpose_mercenaries }
 	}
 }
 other_title_effects = {

@@ -550,7 +550,10 @@ on_game_start_after_lobby = {
 			### EP3 LAAMP SETUP ###
 			# Resources.
 			every_independent_ruler = {
-				limit = { is_landless_adventurer = yes }
+				limit = {
+					is_landless_adventurer = yes
+					NOT = { this = character:55 } #Odoacer
+				}
 				# Cash.
 				add_gold = {
 					value = {
@@ -620,7 +623,10 @@ on_game_start_after_lobby = {
 				domicile = { change_provisions = starting_provisions_value }
 				# Contracts
 				if = {
-					limit = { is_ai = no }
+					limit = {
+						is_ai = no
+						NOT = { this = character:55 } ##### Changed from Vanilla: Don't apply for Odoacer
+					}
 					# Set up additional firing contracts.
 					player_adventurer_contract_generation_on_wait_in_place_effect = yes
 					#generate contracts if you are far away from your previous location

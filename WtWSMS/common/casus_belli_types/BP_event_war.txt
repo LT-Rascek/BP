@@ -70,6 +70,21 @@ odoacer_takeover_war = { #Cribbed from invasion wars
 			save_scope_as = change
 			add_claim_on_loss = yes
 		}
+		create_title_and_vassal_change = {
+			type = created
+			save_scope_as = title_change
+			add_claim_on_loss = no
+		}
+		
+		#Create the titular kingdom of Italy & give to Odoacer
+		title:k_italy = {
+			change_title_holder = {
+				holder = scope:attacker
+				change = scope:title_change
+			}
+		}
+		resolve_title_and_vassal_change = scope:title_change
+		
 		scope:defender = {
 			#Parse out what to do with Romulus' titles
 			every_held_title = {
@@ -138,6 +153,14 @@ odoacer_takeover_war = { #Cribbed from invasion wars
 		}
 		scope:attacker = { set_realm_capital = title:c_ravenna }
 		scope:attacker = { change_government = roman_dynastic_government }
+		hidden_effect = { #Fix govenrment flipping issues
+			scope:attacker = {
+				every_vassal_or_below = {
+					limit = { has_government = subroman_dynastic_government }
+					change_government = roman_dynastic_government
+				}
+			}
+		}
 	}
 
 #Included only for error suppression
