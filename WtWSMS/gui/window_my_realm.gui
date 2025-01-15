@@ -40,6 +40,10 @@ window = {
 		##### Changed from Vanilla vvvvv
 		on_start = "[PdxGuiTabs.AddTabIf( 'other_laws', Not( IsLandlessAdventurer( GetPlayer ) ) )]"
 		on_start = "[PdxGuiTabs.RemoveTabIf( 'other_laws', IsLandlessAdventurer( GetPlayer ) )]"
+		## WtWSMS landless playable vvvvv
+		on_start = "[PdxGuiTabs.RemoveTabIf( 'other_laws', GetPlayer.GetGovernment.IsType('migrating_tribe_government') )]"
+		on_start = "[PdxGuiTabs.RemoveTabIf( 'vassals', GetPlayer.GetGovernment.IsType('migrating_tribe_government') )]"
+		on_start = "[PdxGuiTabs.AddTabIf( 'succession', GetPlayer.GetGovernment.IsType('migrating_tribe_government') )]"
 		##### Changed from Vanilla ^^^^^
 	}
 
@@ -97,23 +101,31 @@ window = {
 						hbox = {
 							spacing = 20
 
+							##### Changed from Vanilla vvvvv
 							text_single = {
 								visible = "[IsLandlessAdventurer( GetPlayer )]"
 								name = "realm_type_adv"
 								text = "you_are_an_adventurer_tt"
 							}
+							
+							text_single = {
+								visible = "[GetPlayer.GetGovernment.IsType('migrating_tribe_government')]"
+								name = "realm_type_mig_chief"
+								text = "you_are_a_migrating_chief"
+							}
 
 							text_single = {
-								visible = "[Not( IsLandlessAdventurer( GetPlayer ) )]"
+								visible = "[Not(Or(IsLandlessAdventurer( GetPlayer ),GetPlayer.GetGovernment.IsType('migrating_tribe_government')))]"
 								name = "realm_type"
 								text = "MY_REALM_WINDOW_TYPE"
 							}
 
 							text_single = {
-								visible = "[Not( IsLandlessAdventurer( GetPlayer ) )]"
+								visible = "[Not(Or(IsLandlessAdventurer( GetPlayer ),GetPlayer.GetGovernment.IsType('migrating_tribe_government')))]"
 								text = "REALM_WINDOW_SIZE"
 								tooltip = "REALM_WINDOW_SIZE_TT"
 							}
+							##### Changed from Vanilla ^^^^^
 						}
 
 						spacer = {
@@ -455,7 +467,9 @@ window = {
 					layoutpolicy_vertical = expanding
 
 					background = {
-						visible = "[IsLandlessAdventurer( GetPlayer )]"
+						##### Changed from Vanilla vvvvv
+						visible = "[Or(IsLandlessAdventurer( GetPlayer ),GetPlayer.GetGovernment.IsType('migrating_tribe_government') )]"
+						##### Changed from Vanilla ^^^^^
 						texture = "gfx/interface/skinned/illustrations/camp_bg.dds"
 						fittype = end
 						alpha = 0.5

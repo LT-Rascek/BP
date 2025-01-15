@@ -1,0 +1,53 @@
+﻿migrating_tribe_government = {
+	government_rules = {
+		landless_playable = yes
+		#Dynastic Structure
+		court_generate_spouses = yes
+		create_cadet_branches = yes
+		rulers_should_have_dynasty = yes
+		#Government Structure
+		allow_out_of_realm_inheritance = no
+		inherit_from_dynastic_government = no
+		use_title_tier_modifiers = no
+		royal_court = no #Not unless we build a whole event chain and gfx for it.
+		#Military Structure
+		conditional_maa_refill = yes
+		mercenary = yes
+		regiments_prestige_as_gold = yes
+		#Other Features
+		council = no
+	}
+
+	domicile_type = camp
+	court_generate_commanders = yes
+
+	can_get_government = {
+		any_held_title = {
+			tier >= tier_duchy
+			is_landless_type_title = yes
+		}
+	}
+
+	valid_holdings = { tribal_holding church_holding castle_holding city_holding }
+
+	character_modifier = {
+		active_accolades = -100
+		character_travel_speed = 20
+		mercenary_hire_cost_mult = 1
+		domicile_travel_speed = -0.75
+		monthly_wanderer_lifestyle_xp_gain_mult = 0.15
+	}
+
+	ai = {
+		use_goals = no
+		use_scripted_guis = no
+		perform_religious_reformation = no
+		use_legends = no
+	}
+
+	# Use flags instead of has_government for moddability if possible (i.e., wherever not visible to the player).
+	#flag = government_is_landless_adventurer
+	flag = government_is_migratory_tribe
+	flag = government_can_raid_rule
+	color = hsv{ 0.00 0.00 0.66 }
+}

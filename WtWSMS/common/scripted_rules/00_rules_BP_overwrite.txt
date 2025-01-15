@@ -140,3 +140,77 @@ can_hybridize_culture = {
 	}
 	##### Changed from Vanilla ^^^^^
 }
+
+##### Changed from Vanilla: Made migrating tribes playable
+
+# Is a character allowed to be a player
+# (they might get changed once a player takes control, such as becoming a landless adventurer)
+is_character_allowed_to_be_player = {
+	trigger_if = {
+		limit = {
+			scope:will_override_government = no
+		}
+		custom_description = {
+			text = "GAME_OVER_CANNOT_PLAY_THEOCRACY"
+			NOT = { government_has_flag = government_is_theocracy }
+		}
+
+		custom_description = {
+			text = "GAME_OVER_CANNOT_PLAY_REPUBLIC"
+			NOT = { government_has_flag = government_is_republic }
+		}
+
+		custom_description = {
+			text = "GAME_OVER_CANNOT_PLAY_MERCENARY"
+			NOT = { government_has_flag = government_is_mercenary }
+		}
+		
+		custom_description = {
+			text = "GAME_OVER_CANNOT_PLAY_HOLY_ORDER"
+			NOT = { government_has_flag = government_is_holy_order }
+		}
+
+		trigger_if = {
+			limit = {
+				NOT = { has_dlc_feature = admin_gov }
+			}
+			custom_description = {
+				text = "GAME_OVER_CANNOT_PLAY_ADMIN"
+				NOT = { government_has_flag = government_is_administrative }
+			}
+		}
+
+		# We cannot become landless adventurers
+		trigger_if = {
+			limit = { NOT = { has_dlc_feature = landless_playable } }
+			custom_description = {
+				text = "GAME_OVER_CANNOT_PLAY_ADVENTURER"
+				NOT = { government_has_flag = government_is_landless_adventurer }
+			}
+			##### Changed from Vanilla vvvvv
+			custom_description = {
+				text = "GAME_OVER_CANNOT_PLAY_ADVENTURER"
+				NOT = { government_has_flag = government_is_migratory_tribe }
+			}
+			##### Changed from Vanilla ^^^^^
+			custom_description = {
+				text = "GAME_OVER_CANNOT_PLAY_BARON"
+				NOT = { highest_held_title_tier = tier_barony }
+			}
+			# This is a generic "catch all", we should have caught it before this
+			is_playable_character = yes
+		}
+		# We can become landless adventurers
+		trigger_else = {
+			# This is a generic "catch all", we should have caught it before this
+			OR = {
+				AND = {
+					is_ruler = no # We're not a ruler, but we can become a landless adventurer
+					is_valid_for_laampdom = yes
+				}
+				is_playable_character = yes # General catch-all, we can continue playing
+			}
+			NOT = { has_character_flag = declined_become_laamp }
+		}
+	}
+}

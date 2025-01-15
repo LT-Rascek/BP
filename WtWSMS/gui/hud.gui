@@ -248,7 +248,9 @@ widget = {
 
 				widget_hud_main_tab = {
 					name = "tab_council"
-					visible = "[Not( IsLandlessAdventurer( GetPlayer ) )]"
+					##### Changed from Vanilla vvvvv
+					visible = "[Not( Or(IsLandlessAdventurer( GetPlayer ), GetPlayer.GetGovernment.IsType( 'migrating_tribe_government' ) ) )]"
+					##### Changed from Vanilla ^^^^^
 
 					blockoverride "maintab_button"
 					{
@@ -308,7 +310,9 @@ widget = {
 
 				widget_hud_main_tab = {
 					name = "tab_factions"
-					visible = "[Or( Not( IsLandlessAdventurer( GetPlayer ) ), GetPlayer.IsInAFaction)]"
+					##### Changed from Vanilla vvvvv
+					visible = "[Or( Not( Or(IsLandlessAdventurer( GetPlayer ),GetPlayer.GetGovernment.IsType('migrating_tribe_government') ) ), GetPlayer.IsInAFaction)]"
+					##### Changed from Vanilla ^^^^^
 
 					blockoverride "maintab_button"
 					{
@@ -387,7 +391,9 @@ widget = {
 					datacontext = "[LocalPlayerCachedData.AccessNewArtifacts]"
 					datacontext = "[LocalPlayerCachedData.AccessCourtEvents]"
 					datacontext = "[Character.GetCourtGrandeurData]"
-					visible = "[And(And( And( Not( IsPauseMenuShown ), And(Or(Not(IsObserver), GetPlayer.IsValid), IsDefaultGUIMode)), HasDlcFeature( 'court_room_view' )), Not( IsLandlessAdventurer( GetPlayer ) ))]"
+					##### Changed from Vanilla vvvvv
+					visible = "[And(And( And( Not( IsPauseMenuShown ), And(Or(Not(IsObserver), GetPlayer.IsValid), IsDefaultGUIMode)), HasDlcFeature( 'court_room_view' )), Not( Or(IsLandlessAdventurer( GetPlayer ),GetPlayer.GetGovernment.IsType('migrating_tribe_government')) ))]"
+					##### Changed from Vanilla ^^^^^
 					enabled = "[Character.HasRoyalCourt]"
 
 					allow_outside = yes
@@ -5282,7 +5288,9 @@ types HUD
 
 					widget = {
 						name = "provisions"
-						visible = "[IsLandlessAdventurer( GetPlayer )]"
+						##### Changed from Vanilla vvvvv
+						visible = "[Or(IsLandlessAdventurer( GetPlayer ), GetPlayer.GetGovernment.IsType( 'migrating_tribe_government' ) )]"
+						##### Changed from Vanilla ^^^^^
 						size = { 112 70 }
 
 						widget = {
@@ -5615,7 +5623,9 @@ types HUD
 
 					widget = {
 						name = "domain_limit"
-						visible = "[Not( IsLandlessAdventurer( GetPlayer ) )]"
+						##### Changed from Vanilla vvvvv
+						visible = "[Not( Or(IsLandlessAdventurer( GetPlayer ),GetPlayer.GetGovernment.IsType('migrating_tribe_government')) )]"
+						##### Changed from Vanilla ^^^^^
 
 						layoutpolicy_vertical = expanding
 

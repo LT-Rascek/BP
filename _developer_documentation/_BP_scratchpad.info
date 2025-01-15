@@ -3,9 +3,82 @@
 Maybe not bugs:
 * Add an on-action to flip governments that can't hold cites & such to appropriate governments for feudals and clans and theocracies like
 
+Design for migrating tribe government:
+-------
+Step 1:
+* Get the basics worked out
+	- That is, the model for the Goths, Vandals, and Slavs during their migration
+	- Features:
+		- GFX:
+			- Custom government icon and necessary title hat
+		- Ability to raid, no ability to checkout settlements, passive gaining of provisions in exchange for development
+		- Review of camp buildings and addition of whatever is needed for them
+		- Adventurer type trait that gets inherited by non-landed kin/those in line for succession
+		- Use standard landed type succession laws
+		- Various types of CBs for conquest
+		- Negotiatable peace with landed rulers
+
+Step 1A:
+- Get basic stuff working with new flag
+	- Realm GUI should only have succession and domain tabs (DONE)
+	- Both adventerers and migratory tribes should NOT have minority policies (DONE)
+	- Senate buttons need to be disabled for adventer governments and migratory tribes (DONE)
+	- Ability to raid (DONE)
+	- Not able to checkout settlements or get contracts (DONE)
+	- Gathering provisions button and related decisions
+		- No cooldown for gathering provisions
+	- Decision to become a migratory tribe
+	- Use standard landed type succession laws
+
+Step 1B:
+- Passive gaining of provisions in exchange for development
+- Various types of CBs for conquest
+- Negotiatable peace with landed rulers, which should block raiding (not possible, but prevents that specific raider)
+
+Step 1C:
+- Adventurer type trait that gets inherited by non-landed kin/those in line for succession (to enable further migration after settling)
+	- Use Campeador trait gfx for the leader and followers
+- Review of camp buildings and addition of whatever is needed for them
+- Provision gathering should be more expensive than adventerers
+
+Step 2:
+* Landless vassal mechanics
+	- That is, have various federates make up the army
+		- Features:
+			- Ability to petition liege
+				- For provisions, gold, honors, and land
+			- Legitmacy mechanics
+			- Ability to 
+
+Step 3:
+* Landless vassals having vassals
+	- E.g., letting the Vandal-Alan situation occur
+	- Features:
+		- Ability to make unlanded kingdoms
+		- Unlanded tribes getting to have sub-tribes
+		- Handle migration title distributions
+
+Additional Ideas:
+- Implement council for them, a unique one for whatever abilities are needed
+- Legitmacy mechanics
+- Population instead of provisions
+	- Passively grows
+	- Able to spend gold to make some (converting slaves to freemen sort of thing)
+
+Last Step:
+* Historic landless chars:
+	- Theodoric and Ostrogoths
+	- Withemir son of Withemir Amaling and his Italian/Gaulish tribe
+	- Various Byzantine Huns (see early wars)
+	- Some of the Berbers (Frexes, &c.)
+	- The various Arab groups (in Byzantinium and Persia)
+	- Isaurians under Zeno
+	- Vandals should get seniority succession as a tradition
+
 Current Effort:
 * Figure out how to make it _possible_ for Romulus, Basilicus to win their wars
 * Approved by the Senate modifier should be removed when no longer top liege
+* Withemir, son of Withemir and cousin of Theodoric, should be an adventerer in Italy/Gaul (Wolfram)
 
 0.1.7:
 * Remove CK3 CS color system as it is borked.

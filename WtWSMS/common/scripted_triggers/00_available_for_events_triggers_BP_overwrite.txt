@@ -1,0 +1,11 @@
+﻿##### Changed from Vanilla: Applied to migratory tribes
+
+# Checks if a character is either landed, a landless house head within an admin realm, or a landless adventurer
+is_playable_character = {
+	OR = {
+		is_landed = yes
+		is_landless_administrative = yes
+		is_landless_adventurer = yes
+		is_landless_migratory_tribe_trigger = yes
+	}
+}

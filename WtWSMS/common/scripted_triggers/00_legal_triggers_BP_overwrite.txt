@@ -30,6 +30,13 @@ can_change_succession_laws_realm_flag_trigger = {
 	}
 	##### Changed from Vanilla vvvvv
 	trigger_else_if = {
+		limit = { government_has_flag = government_is_migratory_tribe }
+		custom_tooltip = {
+			text = is_a_migrating_tribe
+			always = yes
+		}
+	}
+	trigger_else_if = {
 		limit = { government_has_flag = government_is_centralized }
 		custom_tooltip = {
 			text = has_advanced_gov
@@ -117,5 +124,14 @@ can_change_partition_succession_law_trigger = {
 				opposes_succession_law_change_trigger = yes
 			}
 		}
+	}
+}
+
+##### Changed from Vanilla: Extended to migratory tribes
+can_have_confederate_partition_succession_law_trigger = {
+	OR = {
+		government_has_flag = government_is_feudal
+		government_has_flag = government_is_tribal
+		government_has_flag = government_is_migratory_tribe
 	}
 }

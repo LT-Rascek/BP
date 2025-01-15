@@ -7,6 +7,8 @@
 settled_government_trigger = {
 	NOT = { government_has_flag = government_is_tribal }
 	NOT = { government_has_flag = government_can_migrate }
+	NOT = { government_has_flag = government_is_migratory_tribe }
+	NOT = { government_has_flag = government_is_landless_adventurer }
 }
 valid_government_foederatus_special_trigger = { #1.13.0*: We leave this because we might want to revisit later
 	government_has_flag = government_is_tribal
@@ -21,4 +23,13 @@ can_have_religious_rights_trigger = { #No nice flags, have to set this manually
 		has_government = high_tribal_government
 		has_government = subroman_dynastic_government
 	}
+}
+# This trigger checks if a character is a landless adventurer
+is_landless_migratory_tribe_trigger = {
+	government_has_flag = government_is_migratory_tribe
+	is_landed = no
+	is_ruler = yes
+}
+realm_law_use_migratory_authority_trigger = {
+	government_has_flag = government_is_migratory_tribe
 }

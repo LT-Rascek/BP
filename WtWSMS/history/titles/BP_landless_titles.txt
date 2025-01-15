@@ -26,3 +26,12 @@ k_laamp_zeno = {
 	}
 	476.8.30 = { holder = 0 }
 }
+d_testing_tribe = {
+	476.2.2 = {
+		holder = testing_migrator
+		government = migrating_tribe_government
+		succession_laws = { landless_adventurer_succession_law }
+		#No variable; don't need the trait
+		destroy_landless_title_no_dlc_effect = { DATE = 476.2.2 }
+	}
+}
