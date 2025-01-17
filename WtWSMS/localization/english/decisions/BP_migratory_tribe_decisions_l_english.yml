@@ -9,7 +9,9 @@
  become_migratory_tribe_decision_title_created_tt: "#negative_value All your [landed|E] [titles|E] pass to a new local [ruler|E]#!"
  
  become_migratory_tribe_tt: "#mixed_value #BER [THIS.Char.GetShortUIName|U] will become a [migratory_tribe|E]#!#!"
- migratory_tribe_name_001: "[new_landless_adventurer.GetFirstNamePossessiveNoTooltip] [new_landless_adventurer.GetCulture.GetCollectiveNoun]"
+ migratory_tribe_name_001: "[new_landless_adventurer.GetHouse.GetBaseNameNoTooltip] [new_landless_adventurer.GetCulture.GetCollectiveNounNoTooltip]"
+ 
+ nearby_migratory_tribe_created_message_title: "A New Migrating Tribe"
  nearby_migratory_tribe_created_message_fallback_tt: "[new_migratory_tribe_leader.GetShortUIName|U] has create a [migratory_tribe|E]"
  
  #TODO (0.1.7): Move to its own file

@@ -32,7 +32,7 @@ BP_create_landless_adventurer_title_effect = {
 		create_adventurer_title = { ##### Changed from Vanilla: Removed long list of names
 			name = migratory_tribe_name_001
 			holder = scope:new_landless_adventurer
-			article = DEFAULT_TITLE_NAME_ARTICLE
+			#article = DEFAULT_TITLE_NAME_ARTICLE
 			save_scope_as = new_title
 		}
 		create_title_and_vassal_change = {
@@ -121,27 +121,27 @@ BP_create_landless_adventurer_title_effect = {
 		}
 	}
 	custom_tooltip = laamp_become_adventurer_tt
-	if = {
-		limit = {
-			OR = {
-				scope:adventurer_creation_reason = flag:deposition
-				scope:adventurer_creation_reason = flag:conquest
-				scope:adventurer_creation_reason = flag:exile
-			}
-		}
-		add_opinion = {
-			target = $FLAVOR_CHAR$
-			modifier = demanded_eviction_opinion
-		}
-		remove_laamp_from_exiled_county_automatically_effect = {
-			PROVINCE = scope:new_landless_adventurer.location
-			LAAMP = scope:new_landless_adventurer
-		}
-		save_scope_value_as = {
-			name = expelled
-			value = yes
-		}
-	}
+#	if = {
+#		limit = {
+#			OR = {
+#				scope:adventurer_creation_reason = flag:deposition
+#				scope:adventurer_creation_reason = flag:conquest
+#				scope:adventurer_creation_reason = flag:exile
+#			}
+#		}
+#		add_opinion = {
+#			target = $FLAVOR_CHAR$
+#			modifier = demanded_eviction_opinion
+#		}
+#		remove_laamp_from_exiled_county_automatically_effect = {
+#			PROVINCE = scope:new_landless_adventurer.location
+#			LAAMP = scope:new_landless_adventurer
+#		}
+#		save_scope_value_as = {
+#			name = expelled
+#			value = yes
+#		}
+#	}
 	hidden_effect = {
 #		if = {
 #			limit = {
@@ -210,13 +210,13 @@ BP_create_landless_adventurer_title_effect = {
 			#}
 		}
 		#trigger_event = { id = misc.0001 days = 1 }
-		local_arbitration_boon_change_purpose_effect = yes
+		#local_arbitration_boon_change_purpose_effect = yes
 	}
 	add_to_global_variable_list = {
 		name = laamps_tally
 		target = scope:new_landless_adventurer.primary_title
 	}
-	set_variable = flavourise_camp_purpose_wanderers
+	#set_variable = flavourise_camp_purpose_wanderers
 }
 convert_adventurer_to_landless_tribe_effect = {
 	$CHAR$ = {
@@ -230,11 +230,74 @@ convert_adventurer_to_landless_tribe_effect = {
 			add_realm_law = confederate_partition_succession_law
 		}
 		remove_all_realm_laws_effect = yes
+		#Destroy the old duchy/kingdom
+		scope:land_inheritor = {
+			every_held_title = {
+				limit = { this.tier = tier_duchy }
+				prev = { destroy_title = prev }
+			}
+		}
+		#Create new holders for all the counties
+		create_title_and_vassal_change = {
+			type = created
+			save_scope_as = change
+			add_claim_on_loss = no
+		}
+		scope:land_inheritor = {
+			every_held_title = {
+				limit = {
+					this.tier = tier_county
+					NOT = { this = prev.capital_county }
+				}
+				create_character = {
+					template = laamp_inheritor_template
+					culture = root.capital_county.culture
+					faith = root.capital_county.faith
+					dynasty = generate
+					location = root.capital_province
+					after_creation = { save_scope_as = new_holder }
+				}
+				change_title_holder = {
+					holder = scope:new_holder
+					change = scope:change
+				}
+			}
+		}
+		resolve_title_and_vassal_change = scope:change
 		#Create courtiers if needed
 		#Clean up variables that were attached
-		
-		
-		
+		primary_title = {
+			remove_variable = adventurer_creation_reason
+			remove_variable = adventurer_flavor_char
+		}
 		#Make announcements
+		every_player = {
+			limit = {
+				NOR = {
+					root ?= this
+					this = scope:migrator
+				}
+				OR = {
+					# Either they're important to us.
+					is_close_or_extended_family_of = scope:migrator
+					is_consort_of = scope:migrator
+					has_important_relationship_with_character_trigger = { CHARACTER = scope:migrator }
+					# Or they're just close enough.
+					AND = {
+						capital_province = { "squared_distance(scope:migrator.location)" <= squared_distance_medium }
+						OR = {
+							top_liege = root.top_liege
+							any_neighboring_and_across_water_top_liege_realm_owner = { this = root.top_liege }
+						}
+					}
+				}
+			}
+			send_interface_message = {
+				type = msg_landless_adventurer_nearby
+				title = nearby_migratory_tribe_created_message_title
+				left_icon = scope:migrator
+				custom_tooltip = nearby_migratory_tribe_created_message_fallback_tt
+			}
+		}
 	}
 }

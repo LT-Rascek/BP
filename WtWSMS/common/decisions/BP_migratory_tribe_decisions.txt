@@ -48,30 +48,17 @@ become_migratory_tribe_decision = {
 
 	effect = {
 		save_scope_as = migrator
-		if = {
-			limit = { is_independent_ruler = no }
-			liege = {
-				save_scope_as = land_liege
-				save_scope_as = land_inheritor
-				custom_tooltip = become_migratory_tribe_decision_title_scope_tt
-			}
-		}
-		else = {
-			custom_tooltip = become_migratory_tribe_decision_title_created_tt
-			if = {
-				limit = { NOT = { exists = scope:land_inheritor } }
-				hidden_effect_new_object = {
-					create_character = {
-						template = laamp_inheritor_template
-						culture = root.capital_county.culture
-						faith = root.capital_county.faith
-						dynasty = generate
-						location = root.capital_province
-						after_creation = {
-							save_scope_as = land_inheritor
-							add_character_flag = new_laamp_inheritor
-						}
-					}
+		custom_tooltip = become_migratory_tribe_decision_title_created_tt
+		hidden_effect_new_object = {
+			create_character = {
+				template = laamp_inheritor_template
+				culture = root.capital_county.culture
+				faith = root.capital_county.faith
+				dynasty = generate
+				location = root.capital_province
+				after_creation = {
+					save_scope_as = land_inheritor
+					add_character_flag = new_laamp_inheritor
 				}
 			}
 		}
