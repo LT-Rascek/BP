@@ -3,6 +3,11 @@
 Maybe not bugs:
 * Add an on-action to flip governments that can't hold cites & such to appropriate governments for feudals and clans and theocracies like
 
+FINISH MIGRATORY EVENT!!!!
+
+Border Raid CBs
+* Titular titles should be kept and new ones created
+
 Design for migrating tribe government:
 -------
 Step 1:
@@ -28,9 +33,15 @@ Step 1A:
 	- Gathering provisions button and related decisions
 		- No cooldown for gathering provisions
 	- Decision to become a migratory tribe
-	- Use standard landed type succession laws
+	- Use Camp Succession Law
+	- Migratory Tribe decision:
+		- Cost for becoming migratory tribe
+		- AI Logic for become migratory tribe
+		- Limitations
+		- All titles should go to new holders, but if vassal, they stay vassals of the liege (and top title destroyed)
 
 Step 1B:
+- Migration should shatter the whole realm when you leave if not going to a liege.
 - Passive gaining of provisions in exchange for development
 - Various types of CBs for conquest
 - Negotiatable peace with landed rulers, which should block raiding (not possible, but prevents that specific raider)
@@ -45,10 +56,9 @@ Step 2:
 * Landless vassal mechanics
 	- That is, have various federates make up the army
 		- Features:
-			- Ability to petition liege
-				- For provisions, gold, honors, and land
+			- Ability to petition liege for:  provisions, gold, honors, and land
 			- Legitmacy mechanics
-			- Ability to 
+	- Separatist Uprising Decision (duplicate) for landless migrating tribe vassals
 
 Step 3:
 * Landless vassals having vassals
@@ -57,12 +67,19 @@ Step 3:
 		- Ability to make unlanded kingdoms
 		- Unlanded tribes getting to have sub-tribes
 		- Handle migration title distributions
+		- Fights and place in succession if adult and available
 
 Additional Ideas:
+- Ability to have landless siblings migrate
+- Levies men at arms type
+	- Able to very cheaply fill/build
+	- Marginally better than default levies (motivated)
 - Implement council for them, a unique one for whatever abilities are needed
 - Legitmacy mechanics
 - Population instead of provisions
-	- Passively grows
+	- Should passively grow
+	- Uses different costs than adventurer
+		- Update the gather_provisions_tribe_decision to reflect his
 	- Able to spend gold to make some (converting slaves to freemen sort of thing)
 
 Last Step:
@@ -74,6 +91,7 @@ Last Step:
 	- The various Arab groups (in Byzantinium and Persia)
 	- Isaurians under Zeno
 	- Vandals should get seniority succession as a tradition
+	- Rule allowing looser migration requirements
 
 Current Effort:
 * Figure out how to make it _possible_ for Romulus, Basilicus to win their wars

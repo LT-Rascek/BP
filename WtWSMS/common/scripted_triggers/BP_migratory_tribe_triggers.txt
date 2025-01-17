@@ -1,0 +1,61 @@
+﻿able_to_migrate_base_requirements_trigger = {
+	#Temporal Restrictions
+	current_year <= 800
+}
+able_to_migrate_base_requirements_government_trigger = {
+	#Governmental Restrictions
+	trigger_if = {
+		limit = { is_landed = yes }
+		government_has_flag = government_can_migrate
+		primary_title.tier >= tier_county
+	}
+	trigger_else = { always = no }
+}
+able_to_migrate_base_requirements_culture_religion_trigger = {
+	#Ethno-Religious trigger
+	OR = {
+		faith.religion = religion:tengrism_religion
+		faith.religion = religion:slavic_religion
+		faith.religion = religion:germanic_religion
+		culture = { has_cultural_pillar = heritage_sarmatian }
+	}
+	#We want AI Franks to conquer, not migrate
+	trigger_if = {
+		limit = { is_ai = yes }
+		NOT = { culture = { the_culture_or_parent_or_above_with_heritage_is_trigger = { CULTURE = culture:old_frankish } } }
+	}
+}
+is_valid_for_tribal_migration_trigger = {
+	custom_tooltip = {
+		text = adventurer_not_nf_head_trigger_tt
+		NOT = { any_held_title = { is_noble_family_title = yes } }
+	}
+	save_temporary_scope_as = potential_laamp_temp
+	is_landless_ruler = no # Admin gov vassals should not become laamps
+	trigger_if = {
+		limit = { is_ai = yes }
+		trigger_if = {
+			limit = { NOT = { exists = scope:allow_imprisoned_landless } }
+			is_imprisoned = no # Must be free
+		}
+		is_adult = yes # Old enough to venture forth
+		#age < 60 # Young enough to venture forth
+		#health >= fine_health # Healthy enough to venture forth
+		OR = {
+			highest_skill_value >= decent_skill_rating
+			prowess >= decent_skill_rating
+		}
+		# Can't be completely unwilling to go outside.
+		OR = {
+			ai_boldness >= low_negative_ai_value
+			ai_energy >= low_negative_ai_value
+		}
+		NOR = {
+			has_trait = content # Too chill to adventure
+			has_trait = craven # Too scared to adventure
+			has_trait = lazy # Too lazy to adventure
+		}
+		# Block admin members of noble families
+		NOT = { house ?= { any_house_member = { any_held_title = { is_noble_family_title = yes } } } }
+	}
+}

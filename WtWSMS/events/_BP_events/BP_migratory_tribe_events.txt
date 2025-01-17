@@ -1,0 +1,113 @@
+﻿namespace = migratory_tribe_events
+
+##################################################
+# Become Migratory Tribe
+# 0100-0199
+##################################################
+
+migratory_tribe_events.0100 = {
+	type = character_event
+	window = fullscreen_event
+	title = migratory_tribe_events.0100.t
+	desc = {
+		desc = migratory_tribe_events.0100.desc
+		first_valid = {
+			triggered_desc = {
+				trigger = { exists = scope:land_liege }
+				desc = migratory_tribe_events.0100.liege
+			}
+			desc = migratory_tribe_events.0100.new
+		}
+	}
+	theme = realm
+	left_portrait = {
+		character = root
+		animation = marshal
+	}
+	lower_right_portrait = scope:land_inheritor
+	override_background = { reference = ep3_fullscreen_adventurer_positive }
+	cooldown = { days = 5 }
+
+	trigger = { exists = scope:land_inheritor }
+
+	immediate = {
+		# Save scopes for loc
+		primary_title = { save_scope_as = old_primary_title }
+		capital_province = { save_scope_as = old_capital_province }
+		if = {
+			limit = { is_independent_ruler = no }
+			liege = { save_scope_as = old_liege }
+		}
+		# Transfer landed titles
+		every_held_title = {
+			limit = {
+				is_landless_type_title = no
+				tier > tier_barony
+			}
+			add_to_list = target_titles
+		}
+		create_title_and_vassal_change = {
+			type = conquest
+			save_scope_as = change
+			add_claim_on_loss = no
+		}
+		hidden_effect = {
+			every_in_list = {
+				list = target_titles
+				change_title_holder_include_vassals = {
+					holder = scope:land_inheritor
+					change = scope:change
+				}
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+		# Create Adventurer
+		BP_create_landless_adventurer_title_effect = {
+			REASON = flag:voluntary
+			FLAVOR_CHAR = scope:land_inheritor
+		}
+		#Apply our changes
+		convert_adventurer_to_landless_tribe_effect = { CHAR = root }
+		
+		scope:land_inheritor = {
+			# Tooltip for player
+			custom_tooltip = become_migratory_tribe_decision_title_scope_tt
+			# Create a loving family so inheritance isn't so borked
+			if = {
+				limit = { has_character_flag = new_land_inheritor }
+				trigger_event = game_rule.1001
+				remove_character_flag = new_land_inheritor
+			}
+		}
+		scope:old_liege ?= { trigger_event = migratory_tribe_events.0101 }
+		adventurer_prestige_reset_effect = yes
+	}
+
+	option = {
+		name = migratory_tribe_events.0100.a
+		create_migratory_tribe_title_tooltip_effect = yes
+		add_prestige = medium_prestige_gain
+		add_character_modifier = {
+			modifier = ep3_voluntary_laamp_character_modifier
+			years = 5
+		}
+	}
+}
+
+# Liege event
+migratory_tribe_events.0101 = {
+	type = letter_event
+	opening = migratory_tribe_events.0101.opening
+	desc = migratory_tribe_events.0101.desc
+	sender = scope:migrator
+
+	trigger = { is_ai = no }
+
+	immediate = {
+		scope:migrator = { create_migratory_tribe_title_tooltip_effect = yes }
+	}
+
+	option = {
+		name = migratory_tribe_events.0101.a
+	}
+}
