@@ -10,6 +10,63 @@
 
 #Carbon copy of Vanilla's create_landless_adventurer_title_effect without messaging
 BP_create_landless_adventurer_title_effect = {
+	$CHAR$.capital_county = { save_scope_as = old_capital }
+	# Transfer landed titles to a new single holder
+	every_held_title = {
+		limit = {
+			is_landless_type_title = no
+			tier > tier_barony
+		}
+		add_to_list = target_titles
+	}
+	create_title_and_vassal_change = {
+		type = conquest
+		save_scope_as = change_handOverOldLand
+		add_claim_on_loss = no
+	}
+	hidden_effect = {
+		every_in_list = {
+			list = target_titles
+			change_title_holder_include_vassals = {
+				holder = scope:land_inheritor
+				change = scope:change_handOverOldLand
+			}
+		}
+		resolve_title_and_vassal_change = scope:change_handOverOldLand
+	}
+	#Shatter old Realm
+	create_title_and_vassal_change = {
+		type = created
+		save_scope_as = change_shatterRealm
+		add_claim_on_loss = no
+	}
+	scope:land_inheritor = {
+		every_held_title = {
+			limit = { tier >= tier_duchy }
+			prev = { destroy_title = prev }
+		}
+		every_held_title = {
+			limit = {
+				this.tier = tier_county
+				NOT = { this = prev.capital_county }
+			}
+			create_character = {
+				template = laamp_inheritor_template
+				culture = prev.culture
+				faith = prev.faith
+				dynasty = generate
+				location = prev.capital_province
+				after_creation = { save_scope_as = new_holder }
+			}
+			change_title_holder = {
+				holder = scope:new_holder
+				change = scope:change_shatterRealm
+			}
+		}
+	}
+	resolve_title_and_vassal_change = scope:change_shatterRealm
+	
+	#Create new title
 	$CHAR$ = {
 		save_scope_as = migrator
 		#Create the new title
@@ -20,13 +77,13 @@ BP_create_landless_adventurer_title_effect = {
 		}
 		create_title_and_vassal_change = {
 			type = created
-			save_scope_as = change1
+			save_scope_as = change_createNewTitle
 			add_claim_on_loss = no
 		}
 		scope:new_title = {
-			set_capital_county = title:c_roma
+			set_capital_county = scope:old_capital
 			set_landless_title = yes
-			set_coa = title:e_wre
+			set_coa = $CHAR$.house
 			set_destroy_if_invalid_heir = yes
 			set_destroy_on_gain_same_tier = yes
 			set_delete_on_destroy = yes
@@ -35,36 +92,11 @@ BP_create_landless_adventurer_title_effect = {
 			set_can_be_named_after_dynasty = no
 			change_title_holder = {
 				holder = scope:migrator
-				change = scope:change1
+				change = scope:change_createNewTitle
 			}
 		}
 		
-		#Hand over old titles
-		create_title_and_vassal_change = {
-			type = created
-			save_scope_as = change2
-			add_claim_on_loss = no
-		}
-		this = {
-			every_held_title = {
-				limit = { this.tier = tier_county }
-				create_character = {
-					template = laamp_inheritor_template
-					culture = root.capital_county.culture
-					faith = root.capital_county.faith
-					dynasty = generate
-					location = root.capital_province
-					after_creation = { save_scope_as = new_holder }
-				}
-				change_title_holder = {
-					holder = scope:new_holder
-					change = scope:change2
-				}
-			}
-		}
-		
-		resolve_title_and_vassal_change = scope:change1
-		resolve_title_and_vassal_change = scope:change2
+		resolve_title_and_vassal_change = scope:change_createNewTitle
 		scope:migrator = { change_government = migrating_tribe_government }
 	}
 }
