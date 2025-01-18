@@ -9,7 +9,18 @@
 }
 
 #Carbon copy of Vanilla's create_landless_adventurer_title_effect without messaging
-BP_create_landless_adventurer_title_effect = {
+BP_create_migratory_tribe_title_effect = {
+	$CHAR$ = {
+		save_scope_as = migrator
+		switch = { #Track which type of tribe to make
+			trigger = primary_title.tier
+			tier_county = {}
+			tier_duchy = {}
+			tier_kingdom = { $CHAR$ = { set_variable = { name = title_tier_kingdom } } }
+			tier_empire = { $CHAR$ = { set_variable = { name = title_tier_kingdom} } }
+			fallback = {}
+		}
+	}
 	$CHAR$.capital_county = { save_scope_as = old_capital }
 	# Transfer landed titles to a new single holder
 	every_held_title = {
@@ -41,6 +52,7 @@ BP_create_landless_adventurer_title_effect = {
 		add_claim_on_loss = no
 	}
 	scope:land_inheritor = {
+		add_to_list = new_chars
 		every_held_title = {
 			limit = { tier >= tier_duchy }
 			prev = { destroy_title = prev }
@@ -48,7 +60,7 @@ BP_create_landless_adventurer_title_effect = {
 		every_held_title = {
 			limit = {
 				this.tier = tier_county
-				NOT = { this = prev.capital_county }
+				NOT = { this = prev.capital_county } #Don't take the old inheritor's capital
 			}
 			create_character = {
 				template = laamp_inheritor_template
@@ -56,7 +68,10 @@ BP_create_landless_adventurer_title_effect = {
 				faith = prev.faith
 				dynasty = generate
 				location = prev.capital_province
-				after_creation = { save_scope_as = new_holder }
+				after_creation = {
+					save_scope_as = new_holder
+					add_to_list = new_chars
+				}
 			}
 			change_title_holder = {
 				holder = scope:new_holder
@@ -64,16 +79,31 @@ BP_create_landless_adventurer_title_effect = {
 			}
 		}
 	}
+	every_in_list = { #Everybody has a family to start
+		list = new_chars
+		trigger_event = game_rule.1001
+		remove_from_list = new_chars
+	}
 	resolve_title_and_vassal_change = scope:change_shatterRealm
 	
 	#Create new title
 	$CHAR$ = {
-		save_scope_as = migrator
 		#Create the new title
-		create_dynamic_title = {
-			tier = kingdom
-			name = migratory_tribe_name_001
-			adj = migratory_tribe_name_001_adj
+		if = {
+			limit = { has_variable = title_tier_kingdom }
+			create_dynamic_title = {
+				tier = kingdom
+				name = migratory_tribe_name_001
+				adj = migratory_tribe_name_001_adj
+			}
+			remove_variable = title_tier_kingdom
+		}
+		else = {
+			create_dynamic_title = {
+				tier = duchy
+				name = migratory_tribe_name_001
+				adj = migratory_tribe_name_001_adj
+			}
 		}
 		create_title_and_vassal_change = {
 			type = created

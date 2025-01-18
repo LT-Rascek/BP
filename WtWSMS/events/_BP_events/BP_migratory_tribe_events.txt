@@ -35,18 +35,8 @@ migratory_tribe_events.0100 = {
 			limit = { is_independent_ruler = no }
 			liege = { save_scope_as = old_liege }
 		}
-		BP_create_landless_adventurer_title_effect = { CHAR = root }
+		BP_create_migratory_tribe_title_effect = { CHAR = root }
 		
-		scope:land_inheritor = {
-			# Tooltip for player
-			custom_tooltip = become_migratory_tribe_decision_title_scope_tt
-			# Create a loving family so inheritance isn't so borked
-			if = {
-				limit = { has_character_flag = new_land_inheritor }
-				trigger_event = game_rule.1001
-				remove_character_flag = new_land_inheritor
-			}
-		}
 		scope:old_liege ?= { trigger_event = migratory_tribe_events.0101 }
 		adventurer_prestige_reset_effect = yes
 	}
