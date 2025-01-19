@@ -551,3 +551,28 @@ BP_is_valid_to_diverge_conditions_trigger = {
 		}
 	}
 }
+
+#Culture scope
+BP_historical_migrators_trigger = { #Aka, cultures who meet the requirements but never really migrated ever after formation
+	OR = {
+		#West Germans
+		$TARGET_CULTURE$ = culture:old_frankish
+		$TARGET_CULTURE$ = culture:chatti
+		$TARGET_CULTURE$ = culture:old_frisian
+		#East Germans
+		$TARGET_CULTURE$ = culture:gepid
+		$TARGET_CULTURE$ = culture:przeworsk
+		$TARGET_CULTURE$ = culture:vidivarii
+		$TARGET_CULTURE$ = culture:gustow
+		$TARGET_CULTURE$ = culture:denziner
+		#Sarmatians
+		$TARGET_CULTURE$ = culture:iazyges
+		$TARGET_CULTURE$ = culture:romano_alan
+		#Central Germans
+		$TARGET_CULTURE$ = culture:lebus
+		$TARGET_CULTURE$ = culture:alamannian
+		$TARGET_CULTURE$ = culture:danube_suebi
+		$TARGET_CULTURE$ = culture:warnic
+		$TARGET_CULTURE$ = culture:thuringian
+	}
+}

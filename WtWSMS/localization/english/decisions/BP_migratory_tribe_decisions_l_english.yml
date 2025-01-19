@@ -4,9 +4,9 @@
  become_migratory_tribe_decision_tooltip: "Abandon your [landed|E] [realm|E] and become a [migratory_tribe|E]"
  become_migratory_tribe_decision_confirm: "Go forth!"
  become_migratory_tribe_decision_hof_tt: "You must not be a [head_of_faith|E]"
- become_migratory_tribe_culture_religion_requirements_tt: "You must be a $tengrism_religion$, $slavic_religion$, $germanic_religion$, or a $heritage_sarmatian$ culture."
- become_migratory_tribe_decision_title_scope_tt: "#negative_value All your [landed|E] [titles|E] and [vassals|E] pass to [THIS.Char.GetName]#!"
- become_migratory_tribe_decision_title_created_tt: "#negative_value All your [landed|E] [titles|E] pass to a new local [ruler|E]#!"
+ become_migratory_tribe_culture_religion_requirements_tt: "You must be a $tengrism_religion$, $slavic_religion$, or $germanic_religion$ [religion|E], or a $heritage_sarmatian_name$ [heritage|E] culture."
+ become_migratory_tribe_decision_title_scope_tt: "#negative_value All your [landed|E] [titles|E] and [vassals|E] pass to new local [rulers|E]#!"
+ become_migratory_tribe_decision_title_created_tt: "#negative_value All your [landed|E] [titles|E] pass to new local [rulers|E]#!"
  
  become_migratory_tribe_tt: "#mixed_value #BER [THIS.Char.GetShortUIName|U] will become a [migratory_tribe|E]#!#!"
  migratory_tribe_name_001: "[migrator.GetHouse.GetBaseNameNoTooltip] [migrator.GetCulture.GetCollectiveNounNoTooltip]"
@@ -17,12 +17,12 @@
  
  #TODO (0.1.7): Move to its own file
  migratory_tribe_events.0100.t: "Beyond [old_primary_title.GetBaseNameNoTierNoTooltip]"
- migratory_tribe_events.0100.desc: "With life becoming increasingly difficultu in [old_capital_province.GetNameNoTooltip], we have elected to seek our fortunes elsewhere. Where we are going, I know not, when we will get there, I can scarce guess. But we must seek our fortunes elsewhere.\n\n"
+ migratory_tribe_events.0100.desc: "With life becoming increasingly difficult in [old_capital_province.GetNameNoTooltip], we have elected to seek our fortunes elsewhere. Where we are going, I know not, when we will get there, I can scarce guess. But we must seek our fortunes elsewhere.\n\n"
  migratory_tribe_events.0100.new: "Local chieftains have now taken over for us."
  migratory_tribe_events.0100.liege: "The oppressive rule of [land_liege.GetName|U] has driven us from our old lands."
  migratory_tribe_events.0100.a: "Well, what we are we waiting for?"
- migratory_tribe_events.0101.opening: "[adventurer.Custom2('AppropriateGreetingPositive', ROOT.Char)]"
- migratory_tribe_events.0101.desc: "A more thrilling life, traveling the world, calls to me. After long deliberation, I have decided to forfeit my lands to you, my liege, to keep as your own. I will shortly depart [old_primary_title.GetBaseNameNoTierNoTooltip] for the open road."
+ migratory_tribe_events.0101.opening: "[migrator.Custom2('AppropriateGreetingPositive', ROOT.Char)]"
+ migratory_tribe_events.0101.desc: "We can no longer stand the conditions in our old lands in [old_primary_title.GetBaseNameNoTierNoTooltip] and opt to leave."
  migratory_tribe_events.0101.a: "A bold move, some might call foolish."
  
  #Gathering Provisions (Migratory Tribe)

@@ -124,3 +124,138 @@ percent_controlled_counties_in_byzantium = {
 	value = number_of_controlled_counties_in_byzantium
 	divide = number_of_counties_in_byzantium
 }
+
+#Migration Decisions
+migrating_tribe_feature_values = {
+	value = 0
+	add = { value = sum_of_all_skills_and_prowess_value divide = 4 }
+	add = { value = prestige_level multiply = 2 } # Fame
+	# Age
+	if = {
+		limit = { age < 25 }
+		add = 3
+	}
+	else_if = {
+		limit = { age > 50 }
+		subtract = 3
+	}
+	# Personality
+	## Matched Personality Traits
+	if = {
+		limit = { has_trait = ambitious }
+		add = 7
+	}
+	if = {
+		limit = { has_trait = content }
+		subtract = 5
+	}
+	if = {
+		limit = { has_trait = brave }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = craven }
+		subtract = 3
+	}
+	## Unmatched Personality Traits
+	if = {
+		limit = { has_trait = stubborn }
+		subtract = 3
+	}
+	if = {
+		limit = { has_trait = arrogant }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = greedy }
+		add = 7
+	}
+	
+	# Fame/Lifestyle/Commander
+	every_trait_in_category = {
+		category = commander
+		add = 5
+	}
+	# Education
+	if = {
+		limit = { has_trait = education_martial }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = education_martial_prowess }
+		add = 5
+	}
+	# Culture/Faith
+	if = {
+		limit = { culture = { has_cultural_parameter = more_likely_to_create_migrating_tribes } }
+		add = 25
+	}
+	#Vassals under nomads are much more likely
+	if = {
+		limit = { is_independent_ruler = no }
+		
+		if = {
+			limit = { this.liege = { government_has_flag = government_is_nomadic } }
+			if = {
+				limit = { NOT = { this.liege.religion = root.religion } }
+				add = 15
+			}
+			if = {
+				limit = { NOT = { this.liege.culture = { has_same_culture_heritage = root.culture } } }
+				add = 15
+			}
+		}
+		else_if = { #Tribal but not high tribal
+			limit = {
+				this.liege = {
+					government_has_flag = government_is_tribal
+					NOT = { government_has_flag = government_uses_high_tribal_organization }
+				}
+			}
+			if = {
+				limit = { NOT = { this.liege.religion = root.religion } }
+				add = 7
+			}
+			if = {
+				limit = { NOT = { this.liege.culture = { has_same_culture_heritage = root.culture } } }
+				add = 7
+			}
+		}
+		#Same Religion/Culture vassals are disinclined to migrate
+		if = {
+			limit = { this.liege.religion = root.religion }
+			add = -10
+		}
+		if = {
+			limit = { this.liege.culture = { has_same_culture_heritage = root.culture } }
+			add = -10
+		}
+	}
+	if = { #Independent rulers only migrate in specific conditions
+		limit = { is_independent_ruler = yes }
+		#Some neighbor is tribal and really big compared to me, I should get going...
+		if = {
+			limit = {
+				any_neighboring_top_liege_realm_owner = {
+					government_has_flag = government_is_tribal
+					NOT = { government_has_flag = government_uses_high_tribal_organization }
+					this.max_military_strength > root.five_times_my_max_military_strength
+				}
+			}
+		}
+	}
+	# Stop streaks
+	every_held_title = {
+		limit = {
+			previous_holder ?= {
+				is_alive = yes
+				government_has_flag = government_is_migratory_tribe
+			}
+		}
+		add = -75
+	}
+}
+five_times_my_max_military_strength = {
+	value = max_military_strength
+	multiply = 5
+}

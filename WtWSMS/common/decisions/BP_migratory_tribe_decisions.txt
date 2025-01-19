@@ -13,6 +13,7 @@ become_migratory_tribe_decision = {
 	is_shown = {
 		#DLC check.
 		has_ep3_dlc_trigger = yes
+		primary_title.tier >= tier_county
 		OR = {
 			ai_can_valid_to_create_laamp_trigger = yes
 			is_ai = no
@@ -36,6 +37,75 @@ become_migratory_tribe_decision = {
 		custom_tooltip = {
 			text = become_migratory_tribe_culture_religion_requirements_tt
 			able_to_migrate_base_requirements_culture_religion_trigger = yes
+		}
+		become_migrating_tribe_title_and_culture_trigger = yes
+	}
+
+	cost = {
+		#prestige = root.migrating_tribe_prestige_cost
+		prestige = {
+			value = 100
+			#Size of the whole realm, weighted by culture
+			every_held_title = {
+				limit = { tier = tier_county }
+				save_temporary_scope_as = the_county
+				add = {
+					value = 10
+					multiply = {
+						value = 1
+						multiply = {
+							value = 1
+							if = {
+								limit = {
+									root.faith = scope:the_county.faith
+									root.culture = scope:the_county.culture
+								}
+								add = 2
+							}
+							else_if = {
+								limit = {
+									OR = {
+										root.faith = scope:the_county.faith
+										root.culture = scope:the_county.culture
+									}
+								}
+								add = 2
+							}
+							else = { subtract = 0 } #Zero out counties which aren't of the faith or culture
+						}
+					}
+				}
+			}
+			#Bigger the rank, the more costly it is
+			if = {
+				limit = { root.primary_title.tier = tier_county }
+				multiply = 1
+			}
+			else_if = {
+				limit = { root.primary_title.tier = tier_duchy }
+				multiply = 2.5
+			}
+			else = { multiply = 5 }
+			#Historical mega-migrators do it cheaper
+			if = {
+				limit = { root.culture = { has_cultural_parameter = more_likely_to_create_migrating_tribes } }
+				multiply = 0.5
+			}
+			#If not independent, it's cheaper
+			if = {
+				limit = { is_independent_ruler = no }
+				multiply = 0.5
+			}
+			#If we are a legendary leader, it's very cheap
+			if = {
+				limit = { has_trait_with_flag = much_cheaper_migration_cost }
+				multiply = 0.25
+			}
+			
+			#Being more famous makes things cheaper
+			divide = root.prestige_level
+			min = 0
+			max = 2500
 		}
 	}
 
@@ -63,8 +133,6 @@ become_migratory_tribe_decision = {
 			}
 		}
 		create_migratory_tribe_title_tooltip_effect = yes
-		
-		show_as_tooltip = { add_prestige = medium_prestige_gain }
 		
 		trigger_event = { id = migratory_tribe_events.0100 }
 		# Debug tracking
@@ -102,21 +170,13 @@ become_migratory_tribe_decision = {
 		base = -75
 		modifier = { add = ep3_laamp_chance_score_value }
 		modifier = { # If we don't have this, everyone will leave your realm constantly
-			add = -45
-			culture = { has_cultural_parameter = much_more_likely_to_be_laamps }
-		}
-		modifier = { # If we don't have this, everyone will leave your realm constantly
 			add = -20
-			culture = { has_cultural_parameter = more_likely_to_be_laamps }
+			culture = { has_cultural_parameter = more_likely_to_create_migrating_tribes }
 		}
 		modifier = {
 			factor = 0
-			OR = {
-				#Stahp it, John de Courcy
-				this = character:214000
-				#No adventurer should want to be one again... right?
-				has_variable = adventurer_creation_reason
-			}
+			#Historical non-migrators should not migrate
+			BP_historical_migrators_trigger = { TARGET_CULTURE = root.culture }
 		}
 	}
 }

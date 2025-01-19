@@ -91,6 +91,7 @@ tradition_nubian_warrior_queens = {
 }
 
 ##### Changed from Vanilla: made available to Sarmatian,Sakan-descended and Xiongnu-descended cultures as well
+##### Changed from Vanilla: tied into migratory tribes mechanic
 tradition_horse_lords = {
 	category = regional
 
@@ -125,13 +126,16 @@ tradition_horse_lords = {
 		}
 	}
 
+	##### Changed from Vanilla vvvvv
 	parameters = {
 		unlock_maa_horse_archers = yes
 		can_recruit_open_specialist = yes
 		unlock_horse_pastures_building = yes
 		steppe_hunt_success_chance = yes
 		unlock_voluntary_laampdom = yes
+		more_likely_to_create_migrating_tribes = yes
 	}
+	##### Changed from Vanilla ^^^^^
 
 	character_modifier = {
 		light_cavalry_damage_mult = 0.1

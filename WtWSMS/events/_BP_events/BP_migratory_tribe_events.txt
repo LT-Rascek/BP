@@ -31,6 +31,8 @@ migratory_tribe_events.0100 = {
 	trigger = { exists = scope:land_inheritor }
 
 	immediate = {
+		primary_title = { save_scope_as = old_primary_title }
+		capital_province = { save_scope_as = old_capital_province }
 		if = {
 			limit = { is_independent_ruler = no }
 			liege = { save_scope_as = old_liege }
@@ -44,7 +46,6 @@ migratory_tribe_events.0100 = {
 	option = {
 		name = migratory_tribe_events.0100.a
 		create_migratory_tribe_title_tooltip_effect = yes
-		add_prestige = medium_prestige_gain
 	}
 }
 
