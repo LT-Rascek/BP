@@ -20,6 +20,17 @@ BP_create_migratory_tribe_title_effect = {
 			tier_empire = { $CHAR$ = { set_variable = { name = title_tier_kingdom} } }
 			fallback = {}
 		}
+		#Apply the appropriate county modifiers
+		every_held_title = {
+			limit = {
+				this.tier = tier_county
+				OR = {
+					this.culture = prev.culture
+					this.faith = prev.faith
+				}
+			}
+			add_county_modifier = { modifier = county_migrated_away_all_modifier years = root.migration_time_to_denude }
+		}
 	}
 	$CHAR$.capital_county = { save_scope_as = old_capital }
 	# Transfer landed titles to a new single holder
@@ -62,15 +73,18 @@ BP_create_migratory_tribe_title_effect = {
 				this.tier = tier_county
 				NOT = { this = prev.capital_county } #Don't take the old inheritor's capital
 			}
+			this = { save_temporary_scope_as = the_county }
 			create_character = {
 				template = laamp_inheritor_template
-				culture = prev.culture
-				faith = prev.faith
+				culture = scope:the_county.culture
+				faith = scope:the_county.faith
 				dynasty = generate
-				location = prev.capital_province
+				location = scope:the_county.title_province
 				after_creation = {
 					save_scope_as = new_holder
 					add_to_list = new_chars
+					#Make them relatively obscure peasants
+					add_prestige_level = -1
 				}
 			}
 			change_title_holder = {
