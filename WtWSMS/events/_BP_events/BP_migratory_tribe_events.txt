@@ -37,7 +37,7 @@ migratory_tribe_events.0100 = {
 			limit = { is_independent_ruler = no }
 			liege = { save_scope_as = old_liege }
 		}
-		BP_create_migratory_tribe_title_effect = { CHAR = root }
+		BP_create_migratory_tribe_effect = { CHAR = root }
 		
 		scope:old_liege ?= { trigger_event = migratory_tribe_events.0101 }
 		adventurer_prestige_reset_effect = yes
