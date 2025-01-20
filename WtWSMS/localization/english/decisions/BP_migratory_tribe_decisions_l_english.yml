@@ -6,6 +6,9 @@
  become_migratory_tribe_decision_hof_tt: "You must not be a [head_of_faith|E]"
  become_migratory_tribe_culture_religion_requirements_tt: "You must be a $tengrism_religion$, $slavic_religion$, or $germanic_religion$ [religion|E], or a $heritage_sarmatian_name$ [heritage|E] culture."
  become_migratory_tribe_denude_areas_tt: "Every owned [county|E] with [migrator.GetCulture.GetName] [culture|E] or [migrator.GetFaith.GetName] [faith|E] will get the [GetModifier('county_recently_migrated_away_minor_modifier').GetNameWithTooltip] modifier for [EmptyScope.ScriptValue('migration_time_to_denude')] years"
+ become_migratory_tribe_gold_tt: "Some of the [development|E] of counties with [migrator.GetCulture.GetName] [culture|E] or [migrator.GetFaith.GetName] [faith|E] will be converted to [gold|E]"
+ become_migratory_tribe_armies_tt: "Some of the [development|E] of counties with [migrator.GetCulture.GetName] [culture|E] or [migrator.GetFaith.GetName] [faith|E] will be converted to [men_at_arms|E]"
+ become_migratory_tribe_buildings_in_camp_tt: "You will recieve buildings in your [camp|E] in proportion to your [rank|E]"
  become_migratory_tribe_decision_title_scope_tt: "#negative_value All your [landed|E] [titles|E] and [vassals|E] pass to new local [rulers|E]#!"
  become_migratory_tribe_decision_title_created_tt: "#negative_value All your [landed|E] [titles|E] pass to new local [rulers|E]#!"
  

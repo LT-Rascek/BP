@@ -8,7 +8,6 @@
 	}
 }
 
-#Carbon copy of Vanilla's create_landless_adventurer_title_effect without messaging
 BP_create_migratory_tribe_effect = {
 	#Update all the migration effects
 	BP_apply_migration_variables_effect = { CHAR = $CHAR$ }
@@ -24,6 +23,10 @@ BP_create_migratory_tribe_effect = {
 	#Shatter old Realm
 	BP_shatter_realm_effect = { INTERITOR = scope:land_inheritor }
 	
+	#Setup Domicile and Armies
+	BP_setup_migratory_domicile_effect = { CHAR = $CHAR$ }
+	BP_create_migratory_armies_effect = { CHAR = $CHAR$ }
+	
 	#Clear variables
 	BP_clear_migation_variables_effect = { CHAR = $CHAR$ }
 }
@@ -32,26 +35,39 @@ BP_apply_migration_variables_effect = {
 		save_scope_as = migrator
 		switch = { #Track which type of tribe to make
 			trigger = primary_title.tier
-			tier_county = {}
-			tier_duchy = {}
+			tier_county = { $CHAR$ = { set_variable = { name = title_tier_county } } }
+			tier_duchy = { $CHAR$ = { set_variable = { name = title_tier_duchy } } }
 			tier_kingdom = { $CHAR$ = { set_variable = { name = title_tier_kingdom } } }
-			tier_empire = { $CHAR$ = { set_variable = { name = title_tier_kingdom} } }
-			fallback = {}
+			tier_empire = { $CHAR$ = { set_variable = { name = title_tier_empire } } }
+			fallback = { $CHAR$ = { set_variable = { name = title_tier_county } } }
 		}
 		this.capital_county = { save_scope_as = old_capital }
+		set_variable = { name = migration_gold value = migration_gold_to_extract_value }
+		set_variable = { name = migration_maa_pool value = migration_men_at_arms_availability_value }
 	}
 }
 BP_apply_county_changes_effect = {
-	$CHAR$ = {
-		every_held_title = {
-			limit = {
-				this.tier = tier_county
-				OR = {
-					this.culture = prev.culture
-					this.faith = prev.faith
+	hidden_effect = {
+		$CHAR$ = {
+			every_held_title = {
+				limit = {
+					this.tier = tier_county
+					OR = {
+						this.culture = prev.culture
+						this.faith = prev.faith
+					}
+				}
+				add_county_modifier = { modifier = county_migrated_away_all_modifier years = migration_time_to_denude }
+				#Degrade Development
+				if = {
+					limit = { this.culture = prev.culture }
+					change_development_level = negative_one_forth_development_level
+				}
+				if = {
+					limit = { this.faith = prev.faith }
+					change_development_level = negative_one_forth_development_level
 				}
 			}
-			add_county_modifier = { modifier = county_migrated_away_all_modifier years = root.migration_time_to_denude }
 		}
 	}
 }
@@ -60,13 +76,17 @@ BP_create_migratory_tribe_title_effect = {
 	$CHAR$ = {
 		#Create the new title
 		if = {
-			limit = { has_variable = title_tier_kingdom }
+			limit = {
+				OR = {
+					has_variable = title_tier_kingdom
+					has_variable = title_tier_empire
+				}
+			}
 			create_dynamic_title = {
 				tier = kingdom
 				name = migratory_tribe_name_001
 				adj = migratory_tribe_name_001_adj
 			}
-			remove_variable = title_tier_kingdom
 		}
 		else = {
 			create_dynamic_title = {
@@ -170,8 +190,123 @@ BP_shatter_realm_effect = {
 	}
 	resolve_title_and_vassal_change = scope:change_shatterRealm
 }
+BP_setup_migratory_domicile_effect = {
+	$CHAR$ = {
+		if = {
+			limit = { has_variable = title_tier_county }
+			this.domicile = {
+				add_domicile_building = camp_main_01
+				add_domicile_building = supply_tent_01
+				add_domicile_building = baggage_train_01
+			}
+		}
+		else_if = {
+			limit = { has_variable = title_tier_duchy }
+			this.domicile = {
+				add_domicile_building = camp_main_02
+				add_domicile_building = supply_tent_01
+				add_domicile_building = baggage_train_01
+			}
+		}
+		else_if = {
+			limit = { has_variable = title_tier_kingdom }
+			this.domicile = {
+				add_domicile_building = camp_main_03
+				add_domicile_building = supply_tent_02
+				add_domicile_building = baggage_train_02
+			}
+		}
+		else_if = {
+			limit = { has_variable = title_tier_empire }
+			this.domicile = {
+				add_domicile_building = camp_main_04
+				add_domicile_building = supply_tent_02
+				add_domicile_building = baggage_train_02
+			}
+		}
+		else = {
+			this.domicile = {
+				add_domicile_building = camp_main_01
+				add_domicile_building = supply_tent_01
+				add_domicile_building = baggage_train_01
+			}
+		}
+		this.domicile = { change_provisions = starting_provisions_value }
+	}
+}
+add_regiment_of_type_effect = {
+	create_maa_regiment = {
+		type = $TYPE$
+		check_can_recruit = yes
+		size = 1
+	}
+}
+get_a_random_maa_effect = {
+	random_list = {
+		10 = { add_regiment_of_type_effect = { TYPE = light_footmen } }
+		10 = { add_regiment_of_type_effect = { TYPE = bowmen } }
+		10 = { add_regiment_of_type_effect = { TYPE = pikemen_unit } }
+		10 = {
+			trigger = { this.culture = { has_innovation = innovation_quilted_armor } }
+			add_regiment_of_type_effect = { TYPE = armored_footmen }
+		}
+		60 = {
+			trigger = { culture = { has_cultural_parameter = unlock_maa_horse_archers } }
+			add_regiment_of_type_effect = { TYPE = horse_archers }
+			modifier = {
+				number_maa_regiments_of_type = {
+					type = horse_archers
+					value > 1
+				}
+				factor = 0.5
+			}
+			modifier = {
+				number_maa_regiments_of_type = {
+					type = horse_archers
+					value > 2
+				}
+				factor = 0.5
+			}
+		}
+	}
+}
+BP_create_migratory_armies_effect = {
+	$CHAR$ = {
+		#Clear the old regiments, if any
+		every_maa_regiment = { destroy_maa_regiment = yes }
+		#Create a new list of regiments
+		if = {
+			limit = { has_variable = title_tier_county }
+			get_a_random_maa_effect  = yes
+		}
+		else_if = {
+			limit = { has_variable = title_tier_duchy }
+			get_a_random_maa_effect  = yes
+			get_a_random_maa_effect  = yes
+		}
+		else_if = {
+			limit = { has_variable = title_tier_kingdom }
+			get_a_random_maa_effect  = yes
+			get_a_random_maa_effect  = yes
+			get_a_random_maa_effect  = yes
+		}
+		else_if = {
+			limit = { has_variable = title_tier_empire }
+			get_a_random_maa_effect  = yes
+			get_a_random_maa_effect  = yes
+			get_a_random_maa_effect  = yes
+			get_a_random_maa_effect  = yes
+		}
+		else = { get_a_random_maa_effect  = yes }
+		#Fill them up
+		every_maa_regiment = { change_maa_regiment_size = { size = 2 reinforce = yes } }
+	}
+}
 BP_clear_migation_variables_effect = {
 	$CHAR$ = {
+		cleanup_variable_effect = { VAR = title_tier_county }
+		cleanup_variable_effect = { VAR = title_tier_duchy }
 		cleanup_variable_effect = { VAR = title_tier_kingdom }
+		cleanup_variable_effect = { VAR = title_tier_empire }
 	}
 }

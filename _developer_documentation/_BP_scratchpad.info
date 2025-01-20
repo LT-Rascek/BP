@@ -8,6 +8,8 @@ FINISH MIGRATORY EVENT!!!!
 Border Raid CBs
 Ambusher trait features
 Old Saxons, Angles, Jutes, Suebian, Suevian, Buri should have migratory culture weights traditions
+* Cobmine migration effects, trigger, script value files
+* Kingdom migration is borked
 
 Design for migrating tribe government:
 -------
@@ -43,13 +45,16 @@ Step 1A:
 		- Limitations on becoming a migratory tribe (DONE)
 		- All titles should go to new holders, but if vassal, they stay vassals of the liege (and top title destroyed) [DONE]
 		- Generate provisions, gold, levies, and MAA at start *****
+		- Copy old title history for titular non-migratory titles *****
+			- set_delete_on_destroy
 
 Step 1B:
 - Migration should shatter the whole realm when you leave if not going to a liege (DONE)
+- Enable recruit with gold in tribal counties
+- Various types of CBs for conquest
 - Passive gaining of provisions in exchange for development
 	- Able to sign peace deals with holders for repreive
 	- Block being able to arrest landless tribes and instead CBing them and forcing them away
-- Various types of CBs for conquest
 - Negotiatable peace with landed rulers, which should block raiding (not possible, but prevents that specific raider)
 
 Step 1C:

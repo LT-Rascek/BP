@@ -135,3 +135,38 @@ five_times_my_max_military_strength = {
 migration_time_to_denude = { #years
 	value = 25
 }
+negative_one_forth_development_level = {
+	value = this.development_level
+	multiply = -0.75
+}
+available_development_to_convert_value ={
+	value = 0
+	every_held_title = {
+		limit = { this.tier = tier_county }
+		if = {
+			limit = { this.culture = prev.culture }
+			add = {
+				value = 1
+				add = development_level
+				divide = 2
+			}
+		}
+		if = {
+			limit = { this.faith = prev.faith }
+			add = {
+				value = 1
+				add = development_level
+				divide = 2
+			}
+		}
+	}
+	divide = 2 #Account for the fact we're cannibalizing half the development
+}
+migration_gold_to_extract_value = { #Measured in counties of the same faith/culture
+	value = available_development_to_convert_value
+	multiply = 20
+}
+migration_men_at_arms_availability_value = {
+	value = available_development_to_convert_value
+	multiply = 1000
+}
