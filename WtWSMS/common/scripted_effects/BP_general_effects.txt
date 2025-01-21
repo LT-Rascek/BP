@@ -5,6 +5,12 @@ cleanup_variable_effect = {
 		remove_variable = $VAR$
 	}
 }
+clean_character_flag_effect = {
+	if = {
+		limit = { has_character_flag = $FLAG$ }
+		remove_character_flag = $FLAG$
+	}
+}
 add_law_if_not_having_it_effect = { #char scope
 	if = {
 		limit = { has_realm_law = $LAW$ }

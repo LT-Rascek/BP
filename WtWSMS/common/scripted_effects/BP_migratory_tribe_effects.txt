@@ -35,17 +35,75 @@ BP_create_migratory_tribe_effect = {
 		BP_clear_migation_variables_effect = { CHAR = $CHAR$ }
 	}
 }
+government_tracking_effect = {
+	$CHAR$ = {
+		#Vanilla Governments
+		if = {
+			limit = { has_government = feudal_government }
+			add_character_flag = feudal_government
+		}
+		else_if = {
+			limit = { has_government = republic_government }
+			add_character_flag = republic_government
+		}
+		else_if = {
+			limit = { has_government = clan_government }
+			add_character_flag = clan_government
+		}
+		else_if = {
+			limit = { has_government = theocracy_government }
+			add_character_flag = theocracy_government
+		}
+		
+		#BP Governments
+		else_if = {
+			limit = { has_government = prefeudal_government }
+			add_character_flag = prefeudal_government
+		}
+		else_if = {
+			limit = { has_government = rajamandala_government }
+			add_character_flag = rajamandala_government
+		}
+		else_if = {
+			limit = { has_government = iranian_dynastic_government }
+			add_character_flag = iranian_dynastic_government
+		}
+		else_if = {
+			limit = { has_government = roman_dynastic_government }
+			add_character_flag = subroman_dynastic_government
+		}
+		else_if = {
+			limit = { has_government = subroman_dynastic_government }
+			add_character_flag = subroman_dynastic_government
+		}
+		
+		#Primitive Governments
+		else_if = {
+			limit = { has_government = high_tribal_government }
+			add_character_flag = high_tribal_government
+		}
+		else_if = {
+			limit = { has_government = tribal_government }
+			add_character_flag = tribal_government
+		}
+		else_if = {
+			limit = { has_government = nomad_government }
+			add_character_flag = nomad_government
+		}
+	}
+}
 BP_apply_migration_variables_effect = {
 	$CHAR$ = {
 		save_scope_as = migrator
 		switch = { #Track which type of tribe to make
 			trigger = primary_title.tier
-			tier_county = { $CHAR$ = { set_variable = { name = title_tier_county } } }
-			tier_duchy = { $CHAR$ = { set_variable = { name = title_tier_duchy } } }
-			tier_kingdom = { $CHAR$ = { set_variable = { name = title_tier_kingdom } } }
-			tier_empire = { $CHAR$ = { set_variable = { name = title_tier_empire } } }
-			fallback = { $CHAR$ = { set_variable = { name = title_tier_county } } }
+			tier_county = { scope:migrator = { set_variable = { name = title_tier_county } } }
+			tier_duchy = { scope:migrator = { set_variable = { name = title_tier_duchy } } }
+			tier_kingdom = { scope:migrator = { set_variable = { name = title_tier_kingdom } } }
+			tier_empire = { scope:migrator = { set_variable = { name = title_tier_empire } } }
+			fallback = { scope:migrator = { set_variable = { name = title_tier_county } } }
 		}
+		government_tracking_effect = { CHAR = $CHAR$ }
 		set_variable = { name = migration_gold value = migration_gold_to_extract_value }
 		set_variable = { name = migration_maa_pool value = migration_population_availability_value }
 		this.capital_county = { save_scope_as = old_capital }
@@ -164,6 +222,61 @@ BP_create_migratory_tribe_title_effect = {
 		change_government = migrating_tribe_government
 	}
 }
+match_government_effect = {
+	#Vanilla Governments
+	if = {
+		limit = { $SOURCE_CHAR$ = { has_character_flag = feudal_government } }
+		$TARGET_CHAR$ = { change_government = feudal_government }
+	}
+	else_if = {
+		limit = { $SOURCE_CHAR$ = { has_character_flag = republic_government } }
+		$TARGET_CHAR$ = { change_government = republic_government }
+	}
+	else_if = {
+		limit = { $SOURCE_CHAR$ = { has_character_flag = clan_government } }
+		$TARGET_CHAR$ = { change_government = clan_government }
+	}
+	else_if = {
+		limit = { $SOURCE_CHAR$ = { has_character_flag = theocracy_government } }
+		$TARGET_CHAR$ = { change_government = theocracy_government }
+	}
+	
+	#BP Governments
+	else_if = {
+		limit = { $SOURCE_CHAR$ = { has_character_flag = prefeudal_government } }
+		$TARGET_CHAR$ = { change_government = prefeudal_government }
+	}
+	else_if = {
+		limit = { $SOURCE_CHAR$ = { has_character_flag = rajamandala_government } }
+		$TARGET_CHAR$ = { change_government = rajamandala_government }
+	}
+	else_if = {
+		limit = { $SOURCE_CHAR$ = { has_character_flag = iranian_dynastic_government } }
+		$TARGET_CHAR$ = { change_government = iranian_dynastic_government }
+	}
+	else_if = {
+		limit = { $SOURCE_CHAR$ = { has_character_flag = roman_dynastic_government } }
+		$TARGET_CHAR$ = { change_government = subroman_dynastic_government }
+	}
+	else_if = {
+		limit = { $SOURCE_CHAR$ = { has_character_flag = subroman_dynastic_government } }
+		$TARGET_CHAR$ = { change_government = subroman_dynastic_government }
+	}
+	
+	#Primitive Governments
+	else_if = {
+		limit = { $SOURCE_CHAR$ = { has_character_flag = high_tribal_government } }
+		$TARGET_CHAR$ = { change_government = high_tribal_government }
+	}
+	else_if = {
+		limit = { $SOURCE_CHAR$ = { has_character_flag = tribal_government } }
+		$TARGET_CHAR$ = { change_government = tribal_government }
+	}
+	else_if = {
+		limit = { $SOURCE_CHAR$ = { has_character_flag = nomad_government } }
+		$TARGET_CHAR$ = { change_government = nomad_government }
+	}
+}
 BP_transfer_titles_to_single_holder_effect = {
 	$CHAR$ = {
 		every_held_title = {
@@ -186,6 +299,10 @@ BP_transfer_titles_to_single_holder_effect = {
 			}
 		}
 		resolve_title_and_vassal_change = scope:change_handOverOldLand
+	}
+	match_government_effect = {
+		SOURCE_CHAR = $CHAR$
+		TARGET_CHAR = scope:land_inheritor
 	}
 }
 BP_shatter_realm_effect = {
@@ -229,6 +346,10 @@ BP_shatter_realm_effect = {
 	every_in_list = { #Everybody has a family to start
 		list = new_chars
 		trigger_event = game_rule.1001
+		match_government_effect = {
+			SOURCE_CHAR = scope:land_inheritor
+			TARGET_CHAR = this
+		}
 		remove_from_list = new_chars
 	}
 	resolve_title_and_vassal_change = scope:change_shatterRealm
@@ -381,5 +502,20 @@ BP_clear_migation_variables_effect = {
 		cleanup_variable_effect = { VAR = title_tier_duchy }
 		cleanup_variable_effect = { VAR = title_tier_kingdom }
 		cleanup_variable_effect = { VAR = title_tier_empire }
+		cleanup_variable_effect = { VAR = migration_gold }
+		cleanup_variable_effect = { VAR = migration_maa_pool }
+		
+		clean_character_flag_effect = { FLAG = feudal_government }
+		clean_character_flag_effect = { FLAG = republic_government }
+		clean_character_flag_effect = { FLAG = clan_government }
+		clean_character_flag_effect = { FLAG = theocracy_government }
+		clean_character_flag_effect = { FLAG = prefeudal_government }
+		clean_character_flag_effect = { FLAG = rajamandala_government }
+		clean_character_flag_effect = { FLAG = iranian_dynastic_government }
+		clean_character_flag_effect = { FLAG = roman_dynastic_government }
+		clean_character_flag_effect = { FLAG = subroman_dynastic_government }
+		clean_character_flag_effect = { FLAG = high_tribal_government }
+		clean_character_flag_effect = { FLAG = tribal_government }
+		clean_character_flag_effect = { FLAG = nomad_government }
 	}
 }
