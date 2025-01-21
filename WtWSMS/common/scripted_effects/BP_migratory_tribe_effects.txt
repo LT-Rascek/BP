@@ -9,26 +9,31 @@
 }
 
 BP_create_migratory_tribe_effect = {
-	#Update all the migration effects
-	BP_apply_migration_variables_effect = { CHAR = $CHAR$ }
-	
-	#Apply all the changes to the counties effected
-	BP_apply_county_changes_effect = { CHAR = $CHAR$ }
-	
-	BP_create_migratory_tribe_title_effect = { CHAR = $CHAR$ }
-	
-	# Transfer landed titles to a new single holder
-	BP_transfer_titles_to_single_holder_effect = { CHAR = $CHAR$ }
-	
-	#Shatter old Realm
-	BP_shatter_realm_effect = { INTERITOR = scope:land_inheritor }
-	
-	#Setup Domicile and Armies
-	BP_setup_migratory_domicile_effect = { CHAR = $CHAR$ }
-	BP_create_migratory_armies_effect = { CHAR = $CHAR$ }
-	
-	#Clear variables
-	BP_clear_migation_variables_effect = { CHAR = $CHAR$ }
+	hidden_effect = {
+		#Update all the migration effects
+		BP_apply_migration_variables_effect = { CHAR = $CHAR$ }
+		
+		#Apply all the changes to the counties effected
+		BP_apply_county_changes_effect = { CHAR = $CHAR$ }
+		
+		BP_liberate_existing_vassals = { CHAR = $CHAR$ }
+		
+		BP_create_migratory_tribe_title_effect = { CHAR = $CHAR$ }
+		
+		# Transfer landed titles to a new single holder
+		BP_transfer_titles_to_single_holder_effect = { CHAR = $CHAR$ }
+		
+		#Shatter old Realm
+		BP_shatter_realm_effect = { INTERITOR = scope:land_inheritor }
+		
+		#Setup Domicile and Armies & resources
+		BP_setup_migratory_domicile_effect = { CHAR = $CHAR$ }
+		BP_create_migratory_armies_effect = { CHAR = $CHAR$ }
+		BP_get_resources_effect = { CHAR = $CHAR$ }
+		
+		#Clear variables
+		BP_clear_migation_variables_effect = { CHAR = $CHAR$ }
+	}
 }
 BP_apply_migration_variables_effect = {
 	$CHAR$ = {
@@ -41,33 +46,63 @@ BP_apply_migration_variables_effect = {
 			tier_empire = { $CHAR$ = { set_variable = { name = title_tier_empire } } }
 			fallback = { $CHAR$ = { set_variable = { name = title_tier_county } } }
 		}
-		this.capital_county = { save_scope_as = old_capital }
 		set_variable = { name = migration_gold value = migration_gold_to_extract_value }
-		set_variable = { name = migration_maa_pool value = migration_men_at_arms_availability_value }
+		set_variable = { name = migration_maa_pool value = migration_population_availability_value }
+		this.capital_county = { save_scope_as = old_capital }
 	}
 }
 BP_apply_county_changes_effect = {
-	hidden_effect = {
-		$CHAR$ = {
-			every_held_title = {
-				limit = {
-					this.tier = tier_county
-					OR = {
-						this.culture = prev.culture
-						this.faith = prev.faith
-					}
-				}
-				add_county_modifier = { modifier = county_migrated_away_all_modifier years = migration_time_to_denude }
-				#Degrade Development
-				if = {
-					limit = { this.culture = prev.culture }
-					change_development_level = negative_one_forth_development_level
-				}
-				if = {
-					limit = { this.faith = prev.faith }
-					change_development_level = negative_one_forth_development_level
+	$CHAR$ = {
+		every_held_title = {
+			limit = {
+				this.tier = tier_county
+				OR = {
+					this.culture = prev.culture
+					this.faith = prev.faith
 				}
 			}
+			add_county_modifier = { modifier = county_migrated_away_all_modifier years = migration_time_to_denude }
+			#Degrade Development
+			if = {
+				limit = { this.culture = prev.culture }
+				change_development_level = negative_one_forth_development_level
+			}
+			if = {
+				limit = { this.faith = prev.faith }
+				change_development_level = negative_one_forth_development_level
+			}
+		}
+	}
+}
+BP_liberate_existing_vassals = {
+	$CHAR$ = {
+		create_title_and_vassal_change = {
+			type = independency
+			save_scope_as = change_releaseVassals
+			add_claim_on_loss = no
+		}
+		every_vassal = {
+			limit = { this.primary_title.tier >= tier_county }
+			becomes_independent = { change = scope:change_releaseVassals }
+		}
+		resolve_title_and_vassal_change = scope:change_releaseVassals
+	}
+}
+create_migratory_title_by_tier_effect = {
+	if = {
+		limit = { this.primary_title = { is_titular = no } }
+		create_dynamic_title = {
+			tier = $TIER$
+			name = migratory_tribe_name_001
+			adj = migratory_tribe_name_001_adj
+		}
+	}
+	else = {
+		$CHAR$ = { save_scope_as = the_char }
+		create_dynamic_title = {
+			tier = $TIER$
+			name = OLD_TRIBE_NAME
+			adj = OLD_TRIBE_ADJ
 		}
 	}
 }
@@ -82,17 +117,15 @@ BP_create_migratory_tribe_title_effect = {
 					has_variable = title_tier_empire
 				}
 			}
-			create_dynamic_title = {
-				tier = kingdom
-				name = migratory_tribe_name_001
-				adj = migratory_tribe_name_001_adj
+			create_migratory_title_by_tier_effect = {
+				TIER = kingdom
+				CHAR = $CHAR$
 			}
 		}
 		else = {
-			create_dynamic_title = {
-				tier = duchy
-				name = migratory_tribe_name_001
-				adj = migratory_tribe_name_001_adj
+			create_migratory_title_by_tier_effect = {
+				TIER = duchy
+				CHAR = $CHAR$
 			}
 		}
 		create_title_and_vassal_change = {
@@ -100,23 +133,34 @@ BP_create_migratory_tribe_title_effect = {
 			save_scope_as = change_createNewTitle
 			add_claim_on_loss = no
 		}
+		if = {
+			limit = { this.primary_title = { is_titular = no } }
+			$CHAR$.house = { save_scope_as = coa_target }
+		}
+		else = { this.primary_title = { save_scope_as = coa_target } }
 		scope:new_title = {
-			set_capital_county = title:c_roma #scope:old_capital
+			set_capital_county = scope:old_capital
 			set_landless_title = yes
-			set_coa = $CHAR$.house
+			set_coa = scope:coa_target
 			set_destroy_if_invalid_heir = yes
 			set_destroy_on_gain_same_tier = yes
 			set_delete_on_destroy = yes
 			set_no_automatic_claims = yes
 			set_definitive_form = yes
 			set_can_be_named_after_dynasty = no
+			
 			change_title_holder = {
 				holder = scope:migrator
 				change = scope:change_createNewTitle
 			}
 		}
-		
 		resolve_title_and_vassal_change = scope:change_createNewTitle
+		
+		if = {
+			limit = { this.primary_title = { is_titular = yes } }
+			scope:new_title = { copy_title_history = $CHAR$.primary_title }
+		}
+		
 		change_government = migrating_tribe_government
 	}
 }
@@ -134,16 +178,14 @@ BP_transfer_titles_to_single_holder_effect = {
 			save_scope_as = change_handOverOldLand
 			add_claim_on_loss = no
 		}
-		hidden_effect = {
-			every_in_list = {
-				list = target_titles
-				change_title_holder_include_vassals = {
-					holder = scope:land_inheritor
-					change = scope:change_handOverOldLand
-				}
+		every_in_list = {
+			list = target_titles
+			change_title_holder_include_vassals = {
+				holder = scope:land_inheritor
+				change = scope:change_handOverOldLand
 			}
-			resolve_title_and_vassal_change = scope:change_handOverOldLand
 		}
+		resolve_title_and_vassal_change = scope:change_handOverOldLand
 	}
 }
 BP_shatter_realm_effect = {
@@ -154,6 +196,7 @@ BP_shatter_realm_effect = {
 	}
 	$INTERITOR$ = {
 		add_to_list = new_chars
+		#Remove all titular titles held (if possible; not currently possible in 1.14.2.2, as set_delete_on_destroy cannot apply to non-dynamic titles)
 		every_held_title = {
 			limit = { tier >= tier_duchy }
 			prev = { destroy_title = prev }
@@ -195,7 +238,6 @@ BP_setup_migratory_domicile_effect = {
 		if = {
 			limit = { has_variable = title_tier_county }
 			this.domicile = {
-				add_domicile_building = camp_main_01
 				add_domicile_building = supply_tent_01
 				add_domicile_building = baggage_train_01
 			}
@@ -211,22 +253,29 @@ BP_setup_migratory_domicile_effect = {
 		else_if = {
 			limit = { has_variable = title_tier_kingdom }
 			this.domicile = {
+				add_domicile_building = camp_main_02
 				add_domicile_building = camp_main_03
+				add_domicile_building = supply_tent_01
 				add_domicile_building = supply_tent_02
+				add_domicile_building = baggage_train_01
 				add_domicile_building = baggage_train_02
 			}
 		}
 		else_if = {
 			limit = { has_variable = title_tier_empire }
 			this.domicile = {
+				add_domicile_building = camp_main_01
+				add_domicile_building = camp_main_02
+				add_domicile_building = camp_main_03
 				add_domicile_building = camp_main_04
+				add_domicile_building = supply_tent_01
 				add_domicile_building = supply_tent_02
+				add_domicile_building = baggage_train_01
 				add_domicile_building = baggage_train_02
 			}
 		}
 		else = {
 			this.domicile = {
-				add_domicile_building = camp_main_01
 				add_domicile_building = supply_tent_01
 				add_domicile_building = baggage_train_01
 			}
@@ -249,6 +298,23 @@ get_a_random_maa_effect = {
 		10 = {
 			trigger = { this.culture = { has_innovation = innovation_quilted_armor } }
 			add_regiment_of_type_effect = { TYPE = armored_footmen }
+		}
+		10 = {
+			add_regiment_of_type_effect = { TYPE = light_horsemen }
+			modifier = { #Historical Cavalrymen get more horses
+				OR = {
+					this.culture = { has_cultural_pillar = heritage_sarmatian }
+					this.culture = { has_cultural_pillar = heritage_sakan }
+					this.culture = { has_cultural_pillar = heritage_turkic }
+					this.culture = { has_cultural_pillar = heritage_mongolic }
+					this.culture = { has_cultural_pillar = heritage_yugrian }
+				}
+				factor = 3
+			}
+			modifier = { #Goths get a bump, Chernyakov's you know...
+				this.culture = { the_culture_or_parent_is_with_heritage_trigger = { CULTURE = culture:gothic } }
+				factor = 1.5
+			}
 		}
 		60 = {
 			trigger = { culture = { has_cultural_parameter = unlock_maa_horse_archers } }
@@ -300,6 +366,13 @@ BP_create_migratory_armies_effect = {
 		else = { get_a_random_maa_effect  = yes }
 		#Fill them up
 		every_maa_regiment = { change_maa_regiment_size = { size = 2 reinforce = yes } }
+	}
+}
+BP_get_resources_effect = {
+	$CHAR$ = {
+		save_scope_as = the_char
+		add_gold = this.var:migration_gold #1.14.2.2: Spams error log but works
+		domicile = { change_provisions = prev.var:migration_maa_pool }
 	}
 }
 BP_clear_migation_variables_effect = {

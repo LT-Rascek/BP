@@ -10,6 +10,7 @@ Ambusher trait features
 Old Saxons, Angles, Jutes, Suebian, Suevian, Buri should have migratory culture weights traditions
 * Cobmine migration effects, trigger, script value files
 * Kingdom migration is borked
+* Levies need to be removed from migratory tribal government field OR add levies via building
 
 Design for migrating tribe government:
 -------
@@ -44,9 +45,10 @@ Step 1A:
 		- AI Logic for become migratory tribe (DONE)
 		- Limitations on becoming a migratory tribe (DONE)
 		- All titles should go to new holders, but if vassal, they stay vassals of the liege (and top title destroyed) [DONE]
-		- Generate provisions, gold, levies, and MAA at start *****
-		- Copy old title history for titular non-migratory titles *****
-			- set_delete_on_destroy
+		- Generate provisions, gold, levies, and MAA at start (DONE)
+		- Copy old title history for titular non-migratory titles (DONE)
+		- County, needs to work *****
+		- Migration event tooltip needs to not show some things (DONE)
 
 Step 1B:
 - Migration should shatter the whole realm when you leave if not going to a liege (DONE)
