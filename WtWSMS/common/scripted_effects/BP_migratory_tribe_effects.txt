@@ -508,9 +508,16 @@ BP_create_migratory_armies_effect = {
 }
 BP_get_resources_effect = {
 	$CHAR$ = {
-		save_scope_as = the_char
-		add_gold = this.var:migration_gold #1.14.2.2: Spams error log but works
-		domicile = { change_provisions = prev.var:migration_maa_pool }
+		#1.14.2.2: Need the if statements because some issues with building tooltips, even behind hidden_effect
+		if = {
+			limit = { exists = this.var:migration_gold }
+			add_gold = this.var:migration_gold
+		}
+		#1.14.2.2: Need the if statements because some issues with building tooltips, even behind hidden_effect
+		if = {
+			limit = { exists = this.var:migration_maa_pool }
+			domicile = { change_provisions = prev.var:migration_maa_pool }
+		}
 	}
 }
 BP_clear_migation_variables_effect = {
