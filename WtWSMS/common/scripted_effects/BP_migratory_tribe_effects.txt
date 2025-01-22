@@ -18,11 +18,16 @@ BP_create_migratory_tribe_effect = {
 		
 		BP_liberate_existing_vassals = { CHAR = $CHAR$ }
 		
-		BP_create_migratory_tribe_title_effect = { CHAR = $CHAR$ }
-		
-		# Transfer landed titles to a new single holder
-		BP_transfer_titles_to_single_holder_effect = { CHAR = $CHAR$ }
-		
+		#There's some handoff awkwardness if you are just a count, so we split it like so
+		if = {
+			limit = { $CHAR$ = { highest_held_title_tier >= tier_duchy } }
+			BP_create_migratory_tribe_title_effect = { CHAR = $CHAR$ }
+			BP_transfer_titles_to_single_holder_effect = { CHAR = $CHAR$ }
+		}
+		else = {
+			BP_transfer_titles_to_single_holder_effect = { CHAR = $CHAR$ }
+			BP_create_migratory_tribe_title_effect = { CHAR = $CHAR$ }
+		}
 		#Shatter old Realm
 		BP_shatter_realm_effect = { INTERITOR = scope:land_inheritor }
 		
@@ -148,7 +153,13 @@ BP_liberate_existing_vassals = {
 }
 create_migratory_title_by_tier_effect = {
 	if = {
-		limit = { this.primary_title = { is_titular = no } }
+		limit = {
+			OR = {
+				this.primary_title = { is_titular = no }
+				this.primary_title = { is_landless_type_title = no }
+				NOT = { exists = this.primary_title }
+			}
+		}
 		create_dynamic_title = {
 			tier = $TIER$
 			name = migratory_tribe_name_001
@@ -192,7 +203,13 @@ BP_create_migratory_tribe_title_effect = {
 			add_claim_on_loss = no
 		}
 		if = {
-			limit = { this.primary_title = { is_titular = no } }
+			limit = {
+				OR = {
+					this.primary_title = { is_titular = no }
+					this.primary_title = { is_landless_type_title = no }
+					NOT = { exists = this.primary_title }
+				}
+			}
 			$CHAR$.house = { save_scope_as = coa_target }
 		}
 		else = { this.primary_title = { save_scope_as = coa_target } }
