@@ -13,7 +13,7 @@ bp_global_setup = {
 		BP_set_religion_effects_by_date
 		BP_realm_capitals_by_date
 		BP_learn_capital_languages
-		BP_set_admin_domicile_locations
+		BP_setup_iranian_administrative
 		#Other Fixes
 		BP_convert_admin_governments_to_dynastic
 	}
@@ -207,8 +207,9 @@ BP_learn_capital_languages = {
 	}
 }
 
-BP_set_admin_domicile_locations = {
+BP_setup_iranian_administrative = {
 	effect = {
+		primary_title = { set_state_faith = faith:mazdayasna }
 		#Move domiciles to their historic locations
 	}
 }
