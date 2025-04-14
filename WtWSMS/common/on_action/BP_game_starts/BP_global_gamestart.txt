@@ -13,6 +13,7 @@ bp_global_setup = {
 		BP_set_religion_effects_by_date
 		BP_realm_capitals_by_date
 		BP_learn_capital_languages
+		BP_convert_admin_governments_to_dynastic
 	}
 }
 
@@ -199,6 +200,18 @@ BP_learn_capital_languages = {
 			if = {
 				limit = { NOT = { knows_language_of_culture = this.capital_county.culture } }
 				learn_language_of_culture = this.capital_county.culture
+			}
+		}
+	}
+}
+
+BP_convert_admin_governments_to_dynastic = {
+	effect = {
+		if = {
+			limit = { NOT = { has_dlc_feature = roads_to_power } }
+			every_player = {
+				limit = { has_government = iranian_administrative_government }
+				change_government = iranian_dynastic_government
 			}
 		}
 	}

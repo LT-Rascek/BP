@@ -1,0 +1,50 @@
+﻿#Iranian Government Types
+iranian_administrative_government = {
+	government_rules = {
+		create_cadet_branches = yes
+		rulers_should_have_dynasty = yes
+		dynasty_named_realms = no
+		royal_court = yes
+		administrative = yes
+		landless_playable = yes
+		legitimacy = yes
+		state_faith = yes
+		use_as_base_on_landed = yes #Avoiding a bunch of jank code with this
+		use_as_base_on_rank_up = yes
+		inherit_from_dynastic_government = no
+	}
+
+	domicile_type = estate
+
+	primary_holding = castle_holding
+	required_county_holdings = { castle_holding city_holding church_holding }
+	valid_holdings = { castle_holding city_holding }
+
+	vassal_contract = {
+		administrative_obligations
+		administrative_themes
+	}
+
+	ai = {
+		use_legends = yes
+	}
+
+	character_modifier = {}
+
+	# Use flags instead of has_government for moddability if possible (i.e., wherever not visible to the player).
+	flag = government_is_wtwsms_administrative
+	flag = government_is_centralized
+	#flag = only_wuzurgan_can_be_councillors
+	flag = righteous_counties_to_rightous_characters
+	flag = may_appoint_viziers #aka the Framadar
+
+	# These flags only exist for loc and in-game descriptions
+	flag = government_has_influence
+	flag = government_has_title_men_at_arms
+	flag = government_has_powerful_families
+
+	# Use flags instead of has_government for moddability if possible (i.e., wherever not visible to the player).
+	flag = government_titles_do_not_leave_realm #Flavor
+	
+	color = {1.000 0.500 0.000}
+}
