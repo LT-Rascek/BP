@@ -20,3 +20,8 @@ can_have_religious_rights_trigger = { #No nice flags, have to set this manually
 		has_government = subroman_dynastic_government
 	}
 }
+wuzurgun_family_trigger = {
+	$VASSAL$.house = { is_powerful_family = yes }
+	$VASSAL$.religion = $VASSAL$.top_liege.religion
+	$VASSAL$.culture = { has_same_culture_heritage = $VASSAL$.top_liege.culture }
+}

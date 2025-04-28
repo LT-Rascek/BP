@@ -3,7 +3,7 @@ iranian_administrative_government = {
 	government_rules = {
 		create_cadet_branches = yes
 		rulers_should_have_dynasty = yes
-		dynasty_named_realms = no
+		dynasty_named_realms = yes
 		royal_court = yes
 		administrative = yes
 		landless_playable = yes
@@ -21,8 +21,8 @@ iranian_administrative_government = {
 	valid_holdings = { castle_holding city_holding }
 
 	vassal_contract = {
-		administrative_obligations
-		administrative_themes
+		iranian_administrative_obligations
+		iranian_administrative_themes
 	}
 
 	ai = {

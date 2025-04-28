@@ -209,8 +209,11 @@ BP_learn_capital_languages = {
 
 BP_setup_iranian_administrative = {
 	effect = {
-		primary_title = { set_state_faith = faith:mazdayasna }
-		#Move domiciles to their historic locations
+		if = {
+			limit = { has_dlc_feature = roads_to_power }
+			title:e_persia = { set_state_faith = faith:mazdayasna }
+			#Move domiciles to their historic locations
+		}
 	}
 }
 
