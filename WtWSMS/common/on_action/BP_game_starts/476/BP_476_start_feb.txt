@@ -18,6 +18,8 @@ bp_game_start_476 = {
 		#Tributaries
 		BP_setup_tributaries_476_feb
 		BP_setup_confederations_476_feb
+		#Situations
+		BP_setup_situations_476_feb
 	}
 }
 
@@ -962,5 +964,12 @@ BP_reduce_hunnic_herd_476 = {
 				multiply = -0.50
 			}
 		}
+	}
+}
+
+#Situations
+BP_setup_situations_476_feb = {
+	effect = {
+		start_matter_of_britain_situation_effect = yes
 	}
 }
