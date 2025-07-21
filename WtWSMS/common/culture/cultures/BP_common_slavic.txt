@@ -39,3 +39,40 @@ old_slavic = {
 		10 = slavic_northern_dark_hair
 	}
 }
+venedi = { #Proto-West-Slavs; mechanics means the early slavic branch off seems likely
+	color = venedi
+	
+	parents = { old_slavic }
+	created = 475.1.1
+	#history_loc_override = venedi_history_loc
+	
+	ethos = ethos_communal
+	heritage = heritage_common_slavic
+	language = language_common_slavic
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_domain
+	traditions = {
+		#Societal Traditions
+		#Regional Traditions
+		#Ritual Traditions
+		#Realm Traditions
+		tradition_forest_folk
+		tradition_early_slavic_traditions
+		#Combat Traditions
+		tradition_early_slavic_warfare
+	}
+	
+	name_list = name_list_old_slavic
+	
+	coa_gfx = { west_slavic_group_coa_gfx western_coa_gfx }
+	building_gfx = { western_building_gfx }
+	clothing_gfx = { northern_clothing_gfx }
+	unit_gfx = { eastern_unit_gfx }
+	
+	ethnicities = {
+		60 = slavic_northern_blond
+		5 = slavic_northern_ginger
+		25 = slavic_northern_brown_hair
+		10 = slavic_northern_dark_hair
+	}
+}
