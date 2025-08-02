@@ -1,5 +1,6 @@
 ﻿##### Changed from Vanilla: Increased count of lifetime subjugations allowed
 ##### Changed from Vanilla: Destroys any captured titular titles
+##### Changed from Vanilla: Applied cb_lower_prestige_level_requirement for situation effect
 tribal_subjugation_cb = {
 	icon = vassalization
 	group = subjugation
@@ -28,6 +29,8 @@ tribal_subjugation_cb = {
 		}
 	}
 	
+	##### Changed from Vanilla vvvvv
+	
 	# Root is the title
 	# scope:attacker is the attacker
 	# scope:defender is the defender
@@ -53,8 +56,15 @@ tribal_subjugation_cb = {
 					}
 					trigger_if = {
 						limit = {
-							culture = {
-								has_cultural_parameter = cb_lower_prestige_level_requirement
+							OR = {
+								culture = {
+									has_cultural_parameter = cb_lower_prestige_level_requirement
+								}
+								bp_have_same_situation_and_parameter_trigger = {
+									PARAMETER = cb_lower_prestige_level_requirement
+									ACTOR = this
+									TARGET = scope:defender
+								}
 							}
 						}
 						prestige_level >= 1
@@ -101,8 +111,15 @@ tribal_subjugation_cb = {
 							house ?= {
 								has_house_unity_stage = antagonistic
 							}
-							culture = {
-								has_cultural_parameter = cb_lower_prestige_level_requirement
+							OR = {
+								culture = {
+									has_cultural_parameter = cb_lower_prestige_level_requirement
+								}
+								bp_have_same_situation_and_parameter_trigger = {
+									PARAMETER = cb_lower_prestige_level_requirement
+									ACTOR = this
+									TARGET = scope:defender
+								}
 							}
 						}
 						prestige_level >= 2
@@ -116,8 +133,15 @@ tribal_subjugation_cb = {
 										has_house_unity_stage = antagonistic
 									}
 								}
-								culture = {
-									has_cultural_parameter = cb_lower_prestige_level_requirement
+								OR = {
+									culture = {
+										has_cultural_parameter = cb_lower_prestige_level_requirement
+									}
+									bp_have_same_situation_and_parameter_trigger = {
+										PARAMETER = cb_lower_prestige_level_requirement
+										ACTOR = this
+										TARGET = scope:defender
+									}
 								}
 							}
 						}
@@ -127,7 +151,6 @@ tribal_subjugation_cb = {
 						prestige_level >= 4
 					}
 				}
-				##### Changed from Vanilla vvvvv
 				custom_description = {
 					text = has_used_lifetime_subjugation
 					subject = scope:attacker
@@ -136,10 +159,10 @@ tribal_subjugation_cb = {
 						scope:attacker.var:used_lifetime_subjugation < scope:attacker.total_available_subjugations
 					}
 				}
-				##### Changed from Vanilla ^^^^^
 			}
 		}
 	}
+	##### Changed from Vanilla ^^^^^
 	
 	allowed_against_character = {
 		scope:attacker = {
