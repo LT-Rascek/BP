@@ -3,6 +3,7 @@
 # fp1_scandi_adventurer_conquest is kept in event wars due to being AI-only & for performance reasons.
 
 ##### Changed from Vanilla: Added some additional restrictions to allow_for_character
+##### Changed from Vanilla: Applied cb_lower_prestige_level_requirement for situation effect
 fp1_varangian_adventurer_conquest = {
 	icon = fp1_varangian_adventurer_conquest
 	group = conquest
@@ -53,6 +54,7 @@ fp1_varangian_adventurer_conquest = {
 	}
 	##### Changed from Vanilla ^^^^^
 
+	##### Changed from Vanilla vvvvv
 	allowed_for_character_display_regardless = {
 		# Ensure that this is only done every now and then.
 		is_independent_ruler = yes
@@ -61,8 +63,15 @@ fp1_varangian_adventurer_conquest = {
 			limit = { is_ai = no }
 			trigger_if = {
 				limit = {
-					culture = {
-						has_cultural_parameter = cb_lower_prestige_level_requirement
+					OR = {
+						culture = {
+							has_cultural_parameter = cb_lower_prestige_level_requirement
+						}
+						bp_have_same_situation_and_parameter_trigger = {
+							PARAMETER = cb_lower_prestige_level_requirement
+							ACTOR = this
+							TARGET = scope:defender
+						}
 					}
 				}
 				prestige_level >= 1
@@ -74,8 +83,15 @@ fp1_varangian_adventurer_conquest = {
 		trigger_else = {
 			trigger_if = {
 				limit = {
-					culture = {
-						has_cultural_parameter = cb_lower_prestige_level_requirement
+					OR = {
+						culture = {
+							has_cultural_parameter = cb_lower_prestige_level_requirement
+						}
+						bp_have_same_situation_and_parameter_trigger = {
+							PARAMETER = cb_lower_prestige_level_requirement
+							ACTOR = this
+							TARGET = scope:defender
+						}
 					}
 				}
 				prestige_level >= 0
@@ -86,6 +102,7 @@ fp1_varangian_adventurer_conquest = {
 		}
 		is_at_war = no
 	}
+	##### Changed from Vanilla ^^^^^
 
 	allowed_against_character = {
 		# Cannot adventure against other adventuring cultures.
