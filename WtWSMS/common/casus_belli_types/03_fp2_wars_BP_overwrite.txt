@@ -24,15 +24,20 @@ fp2_border_raid = {
 			always = yes
 		}
 		trigger_else = {
-			can_use_struggle_cbs_trigger = yes
-			# Attacker must be Involved in Struggle during correct phase
 			OR = {
-				any_character_struggle = {
-					involvement = involved
-					has_struggle_phase_parameter = unlocks_border_raid_casus_belli
+				# Attacker must be Involved in Struggle during correct phase
+				AND = {
+					can_use_struggle_cbs_trigger = yes
+					any_character_struggle = {
+						involvement = involved
+						has_struggle_phase_parameter = unlocks_border_raid_casus_belli
+					}
 				}
-				any_character_situation = {
-					has_situation_top_phase_parameter = unlocks_border_raid_casus_belli
+				#Attacker must be in situation with correct phase
+				any_character_situation ?= {
+					any_situation_sub_region = {
+						has_sub_region_phase_parameter = unlocks_border_raid_casus_belli
+					}
 				}
 			}
 			NOT = {
@@ -86,12 +91,14 @@ fp2_border_raid = {
 			trigger_else = { always = no }
 		}
 		trigger_else = {
-			can_use_struggle_cbs_trigger = yes
 			# Defender must be Involved in Struggle during correct phase
 			OR = {
-				any_character_struggle = {
-					involvement = involved
-					has_struggle_phase_parameter = unlocks_border_raid_casus_belli
+				AND = {
+					can_use_struggle_cbs_trigger = yes
+					any_character_struggle = {
+						involvement = involved
+						has_struggle_phase_parameter = unlocks_border_raid_casus_belli
+					}
 				}
 				bp_have_same_situation_and_parameter_trigger = {
 					PARAMETER = unlocks_border_raid_casus_belli
