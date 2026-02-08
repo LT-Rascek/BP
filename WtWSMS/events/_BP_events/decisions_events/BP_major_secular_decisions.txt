@@ -7,15 +7,16 @@ BP_establish_de_jure_decisions.0100 = {
 	desc = BP_establish_de_jure_decisions.0100.desc
 	theme = realm
 	
-	right_portrait = {
+	left_portrait = {
 		character = scope:new_kingdom_or_empire_former
 		animation = personality_bold
 	}
 	
-	option = {
-		trigger = { this = scope:new_kingdom_or_empire_former }
-		name = BP_establish_de_jure_decisions.0100.the_king
-		
+	immediate = {
+		scope:new_kingdom_or_empire_former = {
+			save_scope_as = bg_override_char
+		}
+		#We show as tooltip so that it appears as "has happened" to others.
 		if = {
 			limit = { scope:new_kingdom_or_empire_former.primary_title.tier = tier_kingdom }
 			show_as_tooltip = { establish_de_jure_kingdom_decision_effect = { FORMER = scope:new_kingdom_or_empire_former } }
@@ -23,9 +24,14 @@ BP_establish_de_jure_decisions.0100 = {
 		else = {
 			show_as_tooltip = { establish_de_jure_empire_decision_effect = { FORMER = scope:new_kingdom_or_empire_former } }
 		}
+	}
+	
+	option = {
+		trigger = { this = scope:new_kingdom_or_empire_former }
+		name = BP_establish_de_jure_decisions.0100.the_king
 		
 		#Every relatively close ruler gets informed
-		every_ruler = {
+		every_player = {
 			limit = {
 				OR = {
 					realm_to_title_distance_squared = { target = root.primary_title value <= squared_distance_medium }
@@ -49,13 +55,6 @@ BP_establish_de_jure_decisions.0100 = {
 			NOT = { culture = { has_cultural_parameter = can_restore_roman_empire } }
 		}
 		name = BP_establish_de_jure_decisions.0100.good
-		if = {
-			limit = { scope:new_kingdom_or_empire_former.primary_title.tier = tier_kingdom }
-			show_as_tooltip = { establish_de_jure_kingdom_decision_effect = { FORMER = scope:new_kingdom_or_empire_former } }
-		}
-		else = {
-			show_as_tooltip = { establish_de_jure_empire_decision_effect = { FORMER = scope:new_kingdom_or_empire_former } }
-		}
 	}
 	option = { #Bad, if I'm Roman
 		trigger = {
@@ -69,13 +68,6 @@ BP_establish_de_jure_decisions.0100 = {
 			}
 		}
 		name = BP_establish_de_jure_decisions.0100.bad
-		if = {
-			limit = { scope:new_kingdom_or_empire_former.primary_title.tier = tier_kingdom }
-			show_as_tooltip = { establish_de_jure_kingdom_decision_effect = { FORMER = scope:new_kingdom_or_empire_former } }
-		}
-		else = {
-			show_as_tooltip = { establish_de_jure_empire_decision_effect = { FORMER = scope:new_kingdom_or_empire_former } }
-		}
 	}
 	option = { #"Who the hell does he think he is?" if I have the empires
 		trigger = {
@@ -88,13 +80,6 @@ BP_establish_de_jure_decisions.0100 = {
 			}
 		}
 		name = BP_establish_de_jure_decisions.0100.how_dare_he
-		if = {
-			limit = { scope:new_kingdom_or_empire_former.primary_title.tier = tier_kingdom }
-			show_as_tooltip = { establish_de_jure_kingdom_decision_effect = { FORMER = scope:new_kingdom_or_empire_former } }
-		}
-		else = {
-			show_as_tooltip = { establish_de_jure_empire_decision_effect = { FORMER = scope:new_kingdom_or_empire_former } }
-		}
 	}
 	#The fallback option
 	option = {
@@ -104,13 +89,6 @@ BP_establish_de_jure_decisions.0100 = {
 			NOT = { scope:new_kingdom_or_empire_former.capital_county.title_province = { geographical_region = historic_roman_empire } }
 		}
 		name = BP_establish_de_jure_decisions.0100.neutral
-		if = {
-			limit = { scope:new_kingdom_or_empire_former.primary_title.tier = tier_kingdom }
-			show_as_tooltip = { establish_de_jure_kingdom_decision_effect = { FORMER = scope:new_kingdom_or_empire_former } }
-		}
-		else = {
-			show_as_tooltip = { establish_de_jure_empire_decision_effect = { FORMER = scope:new_kingdom_or_empire_former } }
-		}
 	}
 }
 
@@ -122,19 +100,25 @@ BP_establish_de_jure_decisions.0101 = {
 	theme = realm
 	content_source = dlc_WtWSMS
 	
-	right_portrait = {
+	left_portrait = {
 		character = scope:new_kingdom_former
 		animation = personality_bold
+	}
+	
+	immediate = {
+		scope:new_kingdom_former = {
+			save_scope_as = bg_override_char
+		}
+		show_as_tooltip = { swap_de_jure_kingdom_decision_effect = { FORMER = scope:new_kingdom_former } }
 	}
 	
 	option = {
 		trigger = { this = scope:new_kingdom_former }
 		name = BP_establish_de_jure_decisions.0101.the_king
 		
-		show_as_tooltip = { swap_de_jure_kingdom_decision_effect = { FORMER = scope:new_kingdom_former } }
 		
 		#Every relatively close ruler gets informed
-		every_ruler = {
+		every_player = {
 			limit = {
 				OR = {
 					realm_to_title_distance_squared = { target = root.primary_title value <= squared_distance_medium }
@@ -157,14 +141,12 @@ BP_establish_de_jure_decisions.0101 = {
 			}
 		}
 		name = BP_establish_de_jure_decisions.0101.concern
-		show_as_tooltip = { establish_de_jure_kingdom_decision_effect = { FORMER = scope:new_kingdom_former } }
 	}
 	#The fallback option
 	option = {
 		fallback = yes
 		trigger = { NOT = { this = scope:new_kingdom_former } }
 		name = BP_establish_de_jure_decisions.0101.neutral
-		show_as_tooltip = { establish_de_jure_kingdom_decision_effect = { FORMER = scope:new_kingdom_former } }
 	}
 }
 
@@ -192,23 +174,25 @@ BP_establish_de_jure_decisions.0102 = {
 	theme = realm
 	content_source = dlc_WtWSMS
 	
-	right_portrait = {
+	left_portrait = {
 		character = scope:new_empire_former
-		animation = personality_bold
+		animation = acknowledging
+	}
+	
+	immediate = {
+		scope:new_empire_former = {
+			save_scope_as = bg_override_char
+		}
+		show_as_tooltip = { establish_de_jure_empire_decision_effect = { FORMER = scope:new_empire_former } }
 	}
 	
 	option = { #The Emperor himself
 		trigger = { this = scope:new_empire_former }
 		name = BP_establish_de_jure_decisions.0102.the_emperor
 		
-		show_as_tooltip = { establish_de_jure_empire_decision_effect = { FORMER = scope:new_empire_former } }
-		
 		#Every relatively close ruler gets informed
-		every_ruler = {
-			limit = {
-				is_ai = no
-				NOT = { this = scope:new_empire_former }
-			}
+		every_player = {
+			limit = { NOT = { this = scope:new_empire_former } }
 			trigger_event = { id = BP_establish_de_jure_decisions.0102 }
 		}
 	}
@@ -222,7 +206,6 @@ BP_establish_de_jure_decisions.0102 = {
 			}
 		}
 		name = BP_establish_de_jure_decisions.0102.other_emperors
-		show_as_tooltip = { establish_de_jure_empire_decision_effect = { FORMER = scope:new_empire_former } }
 	}
 	option = { #Persians
 		trigger = {
@@ -230,7 +213,6 @@ BP_establish_de_jure_decisions.0102 = {
 			has_title = title:e_persia
 		}
 		name = BP_establish_de_jure_decisions.0102.e_persia
-		show_as_tooltip = { establish_de_jure_empire_decision_effect = { FORMER = scope:new_empire_former } }
 	}
 	option = { #Other Romans
 		trigger = {
@@ -243,7 +225,6 @@ BP_establish_de_jure_decisions.0102 = {
 			culture = { has_cultural_parameter = can_restore_roman_empire }
 		}
 		name = BP_establish_de_jure_decisions.0102.good
-		show_as_tooltip = { establish_de_jure_empire_decision_effect = { FORMER = scope:new_empire_former } }
 	}
 	option = { #Non-Romans on Roman Soil
 		trigger = {
@@ -257,7 +238,6 @@ BP_establish_de_jure_decisions.0102 = {
 			root.capital_county.title_province = { geographical_region = historic_roman_empire }
 		}
 		name = BP_establish_de_jure_decisions.0102.bad
-		show_as_tooltip = { establish_de_jure_empire_decision_effect = { FORMER = scope:new_empire_former } }
 	}
 	option = { #The fallback option
 		fallback = yes
@@ -266,6 +246,5 @@ BP_establish_de_jure_decisions.0102 = {
 			NOT = { root.capital_county.title_province = { geographical_region = historic_roman_empire } }
 		}
 		name = BP_establish_de_jure_decisions.0102.neutral
-		show_as_tooltip = { establish_de_jure_empire_decision_effect = { FORMER = scope:new_empire_former } }
 	}
 }

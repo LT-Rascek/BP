@@ -64,8 +64,8 @@ tani_religion = {
 	}
 
 	holy_order_names = {
-		{ name = "holy_order_warriors_of_mother_sun" }
-		{ name = "holy_order_warriors_of_father_moon" }
+		#{ name = "holy_order_warriors_of_mother_sun" }
+		#{ name = "holy_order_warriors_of_father_moon" }
 		{ name = "holy_order_warriors_of_highgod" }
 		{ name = "holy_order_warriors_of_the_temple_of_place" }
 	}
@@ -263,6 +263,11 @@ tani_religion = {
 			doctrine = tenet_religious_legal_pronouncements
 			doctrine = tenet_communal_identity
 			doctrine = tenet_ancestor_worship
+			
+			holy_order_names = {
+				{ name = "holy_order_warriors_of_mother_sun" }
+				{ name = "holy_order_warriors_of_father_moon" }
+			}
 		}
 		
 		#Actually sanamahism; WtWSMS no Umangais to deal with
@@ -282,6 +287,10 @@ tani_religion = {
 			doctrine = tenet_sanctity_of_nature
 			doctrine = tenet_ethnic_religion
 			doctrine = tenet_ancestor_worship
+			
+			holy_order_names = {
+				{ name = "holy_order_blessed_of_ema_pnathoibi" }
+			}
 			
 			localization = {
 				#HighGod
@@ -450,6 +459,11 @@ tani_religion = {
 			doctrine = tenet_sanctity_of_nature
 			doctrine = tenet_ethnic_religion
 			doctrine = tenet_inner_journey
+			
+			
+			holy_order_names = {
+				{ name = "holy_order_warriors_of_the_symbol" }
+			}
 			
 			localization = {
 				#HighGod

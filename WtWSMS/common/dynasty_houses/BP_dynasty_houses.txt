@@ -41,6 +41,16 @@ house_gushnaspid = {
 	name = dynn_Gushnasp
 	dynasty = 1042070
 }
+#Sassanian Houses
+10424547 = {
+	name = "dynn_Mihrabanid" #Changed from CK2: Sarir is a Medieval reference to the throne, so it doesn't fit as a name yet
+	dynasty = 1029100
+}
+#Achaemenid Houses
+iranian_dynn_pharnakid = {
+	name = dynn_Pharnakid
+	dynasty = iranian_dynn_achaemenid
+}
 
 #Other Houses
 house_agilolfing_old_frankish = {
@@ -76,18 +86,54 @@ house_eoganacht_locha_lein = { #Replaces 9230
 	name = "dynn_EO_ganacht-A_ine"
 	dynasty = 100003
 }
+1029133 = {
+	name = "dynn_Powys"
+	dynasty = 1029132 #Caerloyw
+}
+1029003 = {
+	name = "dynn_Gwerthrynion"
+	dynasty = 1029132 #Caerloyw
+}
+1029129 = {
+	name = "dynn_Gwent"
+	dynasty = 1029001 #Prydain
+}
 house_dyfed_briton = { #Replaces 1029134
 	name = dynn_Dyfed
-	dynasty = 1029129 #Gwent Dynasty
+	dynasty = 1029001 #Prydain
 	#Branched off at Gloitguin ap Ednyfed (159817; briton.txt)
+}
+1042292 = {
+	name =  "dynn_Meriadoc"
+	dynasty = 1029001 #Prydain
+}
+20124 = {
+	name="dynn_Breizh"
+	dynasty = 1029001 #Prydain
+}
+1029101 = {
+	name = "dynn_Domnonea"
+	dynasty = 1029001 #Prydain
+}
+1302037 = {
+	name =  "dynn_Meirch"
+	dynasty = 1029001 #Prydain
 }
 house_brycheiniog_irish = { #Replaces 1029032
 	name = dynn_Brycheiniog
 	dynasty = 1029031 #Dal Fiachrach Suighe Dynasty
 }
+1302034 = {
+	name =  "dynn_Fiachrach-Aidhne"
+	dynasty = 1062197 #Fiachrach
+}
+1302035 = {
+	name =  "dynn_Fiachrach-Muaidhe"
+	dynasty = 1062197 #Fiachrach
+}
 #Indians
 house_aulikari_second = {
-	name = dynn_Aulikari
+	name = dynn_Dhana-Aulikari #Prefix added to distinguish
 	dynasty = 1042493
 }
 
@@ -114,8 +160,12 @@ house_decius = {
 }
 
 house_syagrius = {
-	name =  "dynn_Syagrius"
+	name = "dynn_Syagrius"
 	dynasty = roman_dynasty_flavius_2
+}
+house_pupienus_tarrutenius = {
+	name = dynn_Tarrutenius
+	dynasty = 1022213 #Pupienus
 }
 
 #Huns
@@ -158,4 +208,47 @@ dynasty_house_elmet = {
 dynasty_house_iceling = {
 	name = dynn_Iclingas
 	dynasty = 10424250
+}
+
+#Quraysh
+1042498 = {
+	name = "dynn_Makhzumid"
+	dynasty = 1042500
+}
+1042501 = {
+	name = "dynn_Taymid"
+	dynasty = 1042500
+}
+1042502 = {
+	name = "dynn_Zuhrahid"
+	dynasty = 1042500
+}
+1042503 = {
+	name = "dynn_Abd_ad-Dardid"
+	dynasty = 1042500
+}
+1042504 = {
+	name = "dynn_Uzzayad"
+	dynasty = 1042500
+}
+1042505 = {
+	name =  "dynn_Abd_Shamsid"
+	dynasty = 1042500
+}
+1042506 = {
+	name = "dynn_Qusaid"
+	dynasty = 1042500
+}
+1042507 = {
+	name = "dynn_Muttalibid"
+	dynasty = 1042500
+}
+1042508 = {
+	name = "dynn_Halaid"
+	dynasty = 1042500
+}
+7296 = {
+	name = "dynn_Hashimid"
+	dynasty = 1042500
+	forced_coa_religiongroup = "muslim"
 }

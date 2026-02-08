@@ -110,6 +110,12 @@ create_ostrogothic_culture_effect = {
 					target = culture:thracian_gothic
 					value = 100
 				}
+				reset_culture_creation_date = yes
+				get_all_innovations_from = culture:gothic
+			}
+			culture:thracian_gothic = {
+				reset_culture_creation_date = yes
+				get_all_innovations_from = culture:gothic
 			}
 		}
 	}

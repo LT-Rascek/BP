@@ -127,6 +127,9 @@ bp_narrative_events.0010 = { #CK2 id: historical_wtwsms.6
 			#You maniacs! You blew it up! Damn you all to hell...!
 			destroy_title = scope:destroyed_roman_empire
 		}
+		scope:last_roman_emperor = {
+			save_scope_as = bg_override_char
+		}
 	}
 	
 	title = bp_narrative_events.0010.name

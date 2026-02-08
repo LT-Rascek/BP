@@ -5,13 +5,15 @@
 e_britannia = {
 	color = { 172 22 22 }
 	capital = c_middlesex
-	
+
 	cultural_names = {
 		#Roman Cultures
 		name_list_roman = cn_albion
 		name_list_romano_gallic = cn_albion
+		name_list_gallo_romance = cn_albion
 		name_list_romano_hispanic = cn_albion
 		name_list_romano_british = cn_albion
+		name_list_british_romance = cn_albion
 		name_list_romano_african = cn_albion
 		name_list_romano_raetian = cn_albion
 		name_list_romano_thracian = cn_albion
@@ -35,7 +37,7 @@ e_britannia = {
 		#Goedlic Cultures
 		name_list_gaelic = cn_alba
 	}
-	
+
 	ai_primary_priority = {
 		if = {
 			limit = {
@@ -49,13 +51,13 @@ e_britannia = {
 			add = @correct_culture_primary_score
 		}
 	}
-	
+
 	can_create = { general_empire_title_creation_trigger = yes }
-	
+
 	k_england = {
 		color={ 241 15 63 }
 		capital = c_middlesex
-		
+
 		ai_primary_priority = {
 			if = {
 				limit = {
@@ -67,13 +69,15 @@ e_britannia = {
 				add = @correct_culture_primary_score
 			}
 		}
-		
+
 		cultural_names = {
 			#Roman Cultures
 			name_list_roman = cn_maxima_caesariensis
 			name_list_romano_gallic = cn_maxima_caesariensis
+			name_list_gallo_romance = cn_maxima_caesariensis
 			name_list_romano_hispanic = cn_maxima_caesariensis
 			name_list_romano_british = cn_maxima_caesariensis
+			name_list_british_romance = cn_maxima_caesariensis
 			name_list_romano_african = cn_maxima_caesariensis
 			name_list_romano_raetian = cn_maxima_caesariensis
 			name_list_romano_thracian = cn_maxima_caesariensis
@@ -120,19 +124,21 @@ e_britannia = {
 			name_list_manx = cn_sostyn
 			##### TODO (Beta): add brittonic_jute = "Great Kent"
 		}
-		
+
 		can_create = { general_kingdom_title_creation_trigger = yes }
-		
+
 		d_canterbury = { # Kent
 			color={ 38 102 140 }
 			capital = c_kent # Dover
-			
+
 			cultural_names = {
 				#Roman Cultures
 				name_list_roman = cn_cantiaci
 				name_list_romano_gallic = cn_cantiaci
+				name_list_gallo_romance = cn_cantiaci
 				name_list_romano_hispanic = cn_cantiaci
 				name_list_romano_british = cn_cantiaci
+				name_list_british_romance = cn_cantiaci
 				name_list_romano_african = cn_cantiaci
 				name_list_romano_raetian = cn_cantiaci
 				name_list_romano_thracian = cn_cantiaci
@@ -151,16 +157,18 @@ e_britannia = {
 				name_list_jute = cn_kentland
 				#name_list_brittonic_jute = cn_kentland
 			}
-			
+
 			c_kent = {
 				color = { 245 105 20 }
-				
+
 				cultural_names = {
 					#Roman Cultures
 					name_list_roman = cn_cantiaci
 					name_list_romano_gallic = cn_cantiaci
+					name_list_gallo_romance = cn_cantiaci
 					name_list_romano_hispanic = cn_cantiaci
 					name_list_romano_british = cn_cantiaci
+					name_list_british_romance = cn_cantiaci
 					name_list_romano_african = cn_cantiaci
 					name_list_romano_raetian = cn_cantiaci
 					name_list_romano_thracian = cn_cantiaci
@@ -180,15 +188,17 @@ e_britannia = {
 					name_list_briton = cn_ceint
 					#name_list_brittonic_jute = cn_kentland
 				}
-				
+
 				b_dover = {
 					province = 1502
 					cultural_names = {
 						#Roman Cultures
 						name_list_roman = cn_portus_dubris
 						name_list_romano_gallic = cn_portus_dubris
+						name_list_gallo_romance = cn_portus_dubris
 						name_list_romano_hispanic = cn_portus_dubris
 						name_list_romano_british = cn_portus_dubris
+						name_list_british_romance = cn_portus_dubris
 						name_list_romano_african = cn_portus_dubris
 						name_list_romano_raetian = cn_portus_dubris
 						name_list_romano_thracian = cn_portus_dubris
@@ -211,8 +221,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_durovernum
 						name_list_romano_gallic = cn_durovernum
+						name_list_gallo_romance = cn_durovernum
 						name_list_romano_hispanic = cn_durovernum
 						name_list_romano_british = cn_durovernum
+						name_list_british_romance = cn_durovernum
 						name_list_romano_african = cn_durovernum
 						name_list_romano_raetian = cn_durovernum
 						name_list_romano_thracian = cn_durovernum
@@ -238,8 +250,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_durobrivae
 						name_list_romano_gallic = cn_durobrivae
+						name_list_gallo_romance = cn_durobrivae
 						name_list_romano_hispanic = cn_durobrivae
 						name_list_romano_british = cn_durobrivae
+						name_list_british_romance = cn_durobrivae
 						name_list_romano_african = cn_durobrivae
 						name_list_romano_raetian = cn_durobrivae
 						name_list_romano_thracian = cn_durobrivae
@@ -273,13 +287,15 @@ e_britannia = {
 			}
 			c_surrey = {
 				color = { 225 80 20 }
-				
+
 				cultural_names = {
 					#Roman Cultures
 					name_list_roman = cn_atrebates
 					name_list_romano_gallic = cn_atrebates
+					name_list_gallo_romance = cn_atrebates
 					name_list_romano_hispanic = cn_atrebates
 					name_list_romano_british = cn_atrebates
+					name_list_british_romance = cn_atrebates
 					name_list_romano_african = cn_atrebates
 					name_list_romano_raetian = cn_atrebates
 					name_list_romano_thracian = cn_atrebates
@@ -298,15 +314,17 @@ e_britannia = {
 					name_list_briton = cn_cair_celemion
 					name_list_welsh = cn_cynfenlini
 				}
-				
+
 				b_chertsey = {
 					province = 1510
 					cultural_names = {
 						#Roman Cultures
 						name_list_roman = cn_pontibus
 						name_list_romano_gallic = cn_pontibus
+						name_list_gallo_romance = cn_pontibus
 						name_list_romano_hispanic = cn_pontibus
 						name_list_romano_british = cn_pontibus
+						name_list_british_romance = cn_pontibus
 						name_list_romano_african = cn_pontibus
 						name_list_romano_raetian = cn_pontibus
 						name_list_romano_thracian = cn_pontibus
@@ -330,8 +348,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_vadum_aureum
 						name_list_romano_gallic = cn_vadum_aureum
+						name_list_gallo_romance = cn_vadum_aureum
 						name_list_romano_hispanic = cn_vadum_aureum
 						name_list_romano_british = cn_vadum_aureum
+						name_list_british_romance = cn_vadum_aureum
 						name_list_romano_african = cn_vadum_aureum
 						name_list_romano_raetian = cn_vadum_aureum
 						name_list_romano_thracian = cn_vadum_aureum
@@ -357,8 +377,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_regiodunum
 						name_list_romano_gallic = cn_regiodunum
+						name_list_gallo_romance = cn_regiodunum
 						name_list_romano_hispanic = cn_regiodunum
 						name_list_romano_british = cn_regiodunum
+						name_list_british_romance = cn_regiodunum
 						name_list_romano_african = cn_regiodunum
 						name_list_romano_raetian = cn_regiodunum
 						name_list_romano_thracian = cn_regiodunum
@@ -380,13 +402,15 @@ e_britannia = {
 			}
 			c_sussex = {
 				color = { 225 105 10 }
-				
+
 				cultural_names = {
 					#Roman Cultures
 					name_list_roman = cn_anderida
 					name_list_romano_gallic = cn_anderida
+					name_list_gallo_romance = cn_anderida
 					name_list_romano_hispanic = cn_anderida
 					name_list_romano_british = cn_anderida
+					name_list_british_romance = cn_anderida
 					name_list_romano_african = cn_anderida
 					name_list_romano_raetian = cn_anderida
 					name_list_romano_thracian = cn_anderida
@@ -405,14 +429,16 @@ e_britannia = {
 					#Celtic Cultures
 					name_list_briton = cn_rhegin
 				}
-				
+
 				b_lewes = {
 					province = 1506
 					cultural_names = {
 						name_list_roman = cn_mutuantonis
 						name_list_romano_gallic = cn_mutuantonis
+						name_list_gallo_romance = cn_mutuantonis
 						name_list_romano_hispanic = cn_mutuantonis
 						name_list_romano_british = cn_mutuantonis
+						name_list_british_romance = cn_mutuantonis
 						name_list_romano_african = cn_mutuantonis
 						name_list_romano_raetian = cn_mutuantonis
 						name_list_romano_thracian = cn_mutuantonis
@@ -437,8 +463,10 @@ e_britannia = {
 					cultural_names = {
 						name_list_roman = cn_noviomagus
 						name_list_romano_gallic = cn_noviomagus
+						name_list_gallo_romance = cn_noviomagus
 						name_list_romano_hispanic = cn_noviomagus
 						name_list_romano_british = cn_noviomagus
+						name_list_british_romance = cn_noviomagus
 						name_list_romano_african = cn_noviomagus
 						name_list_romano_raetian = cn_noviomagus
 						name_list_romano_thracian = cn_noviomagus
@@ -463,8 +491,10 @@ e_britannia = {
 					cultural_names = {
 						name_list_roman = cn_leucomagno
 						name_list_romano_gallic = cn_leucomagno
+						name_list_gallo_romance = cn_leucomagno
 						name_list_romano_hispanic = cn_leucomagno
 						name_list_romano_british = cn_leucomagno
+						name_list_british_romance = cn_leucomagno
 						name_list_romano_african = cn_leucomagno
 						name_list_romano_raetian = cn_leucomagno
 						name_list_romano_thracian = cn_leucomagno
@@ -499,13 +529,15 @@ e_britannia = {
 		d_bedford = { # Essex
 			color={ 241 15 15 }
 			capital = c_middlesex
-			
+
 			cultural_names = {
 				#Roman Cultures
 				name_list_roman = cn_maxima_caesariensis
 				name_list_romano_gallic = cn_maxima_caesariensis
+				name_list_gallo_romance = cn_maxima_caesariensis
 				name_list_romano_hispanic = cn_maxima_caesariensis
 				name_list_romano_british = cn_maxima_caesariensis
+				name_list_british_romance = cn_maxima_caesariensis
 				name_list_romano_african = cn_maxima_caesariensis
 				name_list_romano_raetian = cn_maxima_caesariensis
 				name_list_romano_thracian = cn_maxima_caesariensis
@@ -525,16 +557,18 @@ e_britannia = {
 				#Celtic Cultures
 				name_list_briton = cn_cair_lundem
 			}
-			
+
 			c_middlesex = {
 				color = { 230 5 5 }
-				
+
 				cultural_names = {
 					#Roman Cultures
 					name_list_roman = cn_londinium
 					name_list_romano_gallic = cn_londinium
+					name_list_gallo_romance = cn_londinium
 					name_list_romano_hispanic = cn_londinium
 					name_list_romano_british = cn_londinium
+					name_list_british_romance = cn_londinium
 					name_list_romano_african = cn_londinium
 					name_list_romano_raetian = cn_londinium
 					name_list_romano_thracian = cn_londinium
@@ -560,15 +594,17 @@ e_britannia = {
 					name_list_manx = cn_lunnin
 					name_list_gaelic = cn_llundain
 				}
-				
+
 				b_london = {
 					province = 1527
 					cultural_names = {
 						#Roman Cultures
 						name_list_roman = cn_londinium
 						name_list_romano_gallic = cn_londinium
+						name_list_gallo_romance = cn_londinium
 						name_list_romano_hispanic = cn_londinium
 						name_list_romano_british = cn_londinium
+						name_list_british_romance = cn_londinium
 						name_list_romano_african = cn_londinium
 						name_list_romano_raetian = cn_londinium
 						name_list_romano_thracian = cn_londinium
@@ -610,8 +646,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_landini
 						name_list_romano_gallic = cn_landini
+						name_list_gallo_romance = cn_landini
 						name_list_romano_hispanic = cn_landini
 						name_list_romano_british = cn_landini
+						name_list_british_romance = cn_landini
 						name_list_romano_african = cn_landini
 						name_list_romano_raetian = cn_landini
 						name_list_romano_thracian = cn_landini
@@ -639,8 +677,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_sulloniacis
 						name_list_romano_gallic = cn_sulloniacis
+						name_list_gallo_romance = cn_sulloniacis
 						name_list_romano_hispanic = cn_sulloniacis
 						name_list_romano_british = cn_sulloniacis
+						name_list_british_romance = cn_sulloniacis
 						name_list_romano_african = cn_sulloniacis
 						name_list_romano_raetian = cn_sulloniacis
 						name_list_romano_thracian = cn_sulloniacis
@@ -661,8 +701,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_brinavis
 						name_list_romano_gallic = cn_brinavis
+						name_list_gallo_romance = cn_brinavis
 						name_list_romano_hispanic = cn_brinavis
 						name_list_romano_british = cn_brinavis
+						name_list_british_romance = cn_brinavis
 						name_list_romano_african = cn_brinavis
 						name_list_romano_raetian = cn_brinavis
 						name_list_romano_thracian = cn_brinavis
@@ -680,13 +722,15 @@ e_britannia = {
 			}
 			c_essex = {
 				color = { 220 20 30 }
-				
+
 				cultural_names = {
 					#Roman Cultures
 					name_list_roman = cn_camulodunum
 					name_list_romano_gallic = cn_camulodunum
+					name_list_gallo_romance = cn_camulodunum
 					name_list_romano_hispanic = cn_camulodunum
 					name_list_romano_british = cn_camulodunum
+					name_list_british_romance = cn_camulodunum
 					name_list_romano_african = cn_camulodunum
 					name_list_romano_raetian = cn_camulodunum
 					name_list_romano_thracian = cn_camulodunum
@@ -710,15 +754,17 @@ e_britannia = {
 					#Celtic cultures
 					name_list_briton = cn_cair_colun
 				}
-				
+
 				b_colchester = {
 					province = 1514
 					cultural_names = {
 						#Roman Cultures
 						name_list_roman = cn_camulodunum
 						name_list_romano_gallic = cn_camulodunum
+						name_list_gallo_romance = cn_camulodunum
 						name_list_romano_hispanic = cn_camulodunum
 						name_list_romano_british = cn_camulodunum
+						name_list_british_romance = cn_camulodunum
 						name_list_romano_african = cn_camulodunum
 						name_list_romano_raetian = cn_camulodunum
 						name_list_romano_thracian = cn_camulodunum
@@ -750,8 +796,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_canonium
 						name_list_romano_gallic = cn_canonium
+						name_list_gallo_romance = cn_canonium
 						name_list_romano_hispanic = cn_canonium
 						name_list_romano_british = cn_canonium
+						name_list_british_romance = cn_canonium
 						name_list_romano_african = cn_canonium
 						name_list_romano_raetian = cn_canonium
 						name_list_romano_thracian = cn_canonium
@@ -772,8 +820,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_caesaromagus
 						name_list_romano_gallic = cn_caesaromagus
+						name_list_gallo_romance = cn_caesaromagus
 						name_list_romano_hispanic = cn_caesaromagus
 						name_list_romano_british = cn_caesaromagus
+						name_list_british_romance = cn_caesaromagus
 						name_list_romano_african = cn_caesaromagus
 						name_list_romano_raetian = cn_caesaromagus
 						name_list_romano_thracian = cn_caesaromagus
@@ -805,7 +855,7 @@ e_britannia = {
 			}
 			c_bedford = {
 				color = { 205 20 15 }
-				
+
 				cultural_names = {
 					#Germanic Cultures
 					name_list_old_saxon = cn_gilfa_hicca
@@ -815,7 +865,7 @@ e_britannia = {
 					#Celtic Cultures
 					name_list_briton = cn_rhydwely
 				}
-				
+
 				b_bedford = {
 					province = 1538
 					cultural_names = {
@@ -847,13 +897,15 @@ e_britannia = {
 			}
 			c_hertfordshire = {
 				color = { 250 35 35 }
-				
+
 				cultural_names = {
 					#Roman Cultures
 					name_list_roman = cn_verulamium
 					name_list_romano_gallic = cn_verulamium
+					name_list_gallo_romance = cn_verulamium
 					name_list_romano_hispanic = cn_verulamium
 					name_list_romano_british = cn_verulamium
+					name_list_british_romance = cn_verulamium
 					name_list_romano_african = cn_verulamium
 					name_list_romano_raetian = cn_verulamium
 					name_list_romano_thracian = cn_verulamium
@@ -872,15 +924,17 @@ e_britannia = {
 					name_list_anglo = cn_heortsforda
 					name_list_anglo_saxon = cn_herutford
 				}
-				
+
 				b_saint_albans = {
 					province = 1532
 					cultural_names = {
 						#Roman Cultures
 						name_list_roman = cn_verulamium
 						name_list_romano_gallic = cn_verulamium
+						name_list_gallo_romance = cn_verulamium
 						name_list_romano_hispanic = cn_verulamium
 						name_list_romano_british = cn_verulamium
+						name_list_british_romance = cn_verulamium
 						name_list_romano_african = cn_verulamium
 						name_list_romano_raetian = cn_verulamium
 						name_list_romano_thracian = cn_verulamium
@@ -907,8 +961,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_bearroc
 						name_list_romano_gallic = cn_bearroc
+						name_list_gallo_romance = cn_bearroc
 						name_list_romano_hispanic = cn_bearroc
 						name_list_romano_british = cn_bearroc
+						name_list_british_romance = cn_bearroc
 						name_list_romano_african = cn_bearroc
 						name_list_romano_raetian = cn_bearroc
 						name_list_romano_thracian = cn_bearroc
@@ -934,8 +990,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_vadum_cervinum
 						name_list_romano_gallic = cn_vadum_cervinum
+						name_list_gallo_romance = cn_vadum_cervinum
 						name_list_romano_hispanic = cn_vadum_cervinum
 						name_list_romano_british = cn_vadum_cervinum
+						name_list_british_romance = cn_vadum_cervinum
 						name_list_romano_african = cn_vadum_cervinum
 						name_list_romano_raetian = cn_vadum_cervinum
 						name_list_romano_thracian = cn_vadum_cervinum
@@ -959,13 +1017,15 @@ e_britannia = {
 			}
 			c_buckinghamshire = {
 				color = { 200 25 25 }
-				
+
 				cultural_names = {
 					#Roman Cultures
 					name_list_roman = cn_alauna
 					name_list_romano_gallic = cn_alauna
+					name_list_gallo_romance = cn_alauna
 					name_list_romano_hispanic = cn_alauna
 					name_list_romano_british = cn_alauna
+					name_list_british_romance = cn_alauna
 					name_list_romano_african = cn_alauna
 					name_list_romano_raetian = cn_alauna
 					name_list_romano_thracian = cn_alauna
@@ -982,15 +1042,17 @@ e_britannia = {
 					name_list_anglo = cn_buccaham
 					name_list_anglo_saxon = cn_buccingahamm
 				}
-				
+
 				b_newport = {
 					province = 1553
 					cultural_names = {
 						#Roman Cultures
 						name_list_roman = cn_novus_portus
 						name_list_romano_gallic = cn_novus_portus
+						name_list_gallo_romance = cn_novus_portus
 						name_list_romano_hispanic = cn_novus_portus
 						name_list_romano_british = cn_novus_portus
+						name_list_british_romance = cn_novus_portus
 						name_list_romano_african = cn_novus_portus
 						name_list_romano_raetian = cn_novus_portus
 						name_list_romano_thracian = cn_novus_portus
@@ -1013,8 +1075,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_alauna
 						name_list_romano_gallic = cn_alauna
+						name_list_gallo_romance = cn_alauna
 						name_list_romano_hispanic = cn_alauna
 						name_list_romano_british = cn_alauna
+						name_list_british_romance = cn_alauna
 						name_list_romano_african = cn_alauna
 						name_list_romano_raetian = cn_alauna
 						name_list_romano_thracian = cn_alauna
@@ -1047,8 +1111,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_vicis
 						name_list_romano_gallic = cn_vicis
+						name_list_gallo_romance = cn_vicis
 						name_list_romano_hispanic = cn_vicis
 						name_list_romano_british = cn_vicis
+						name_list_british_romance = cn_vicis
 						name_list_romano_african = cn_vicis
 						name_list_romano_raetian = cn_vicis
 						name_list_romano_thracian = cn_vicis
@@ -1066,13 +1132,15 @@ e_britannia = {
 			}
 			c_huntingdonshire = {
 				color = { 175 40 55 }
-				
+
 				cultural_names = {
 					#Roman Cultures
 					name_list_roman = cn_durovigutum
 					name_list_romano_gallic = cn_durovigutum
+					name_list_gallo_romance = cn_durovigutum
 					name_list_romano_hispanic = cn_durovigutum
 					name_list_romano_british = cn_durovigutum
+					name_list_british_romance = cn_durovigutum
 					name_list_romano_african = cn_durovigutum
 					name_list_romano_raetian = cn_durovigutum
 					name_list_romano_thracian = cn_durovigutum
@@ -1087,15 +1155,17 @@ e_britannia = {
 					#Germanics
 					name_list_anglo_saxon = cn_huntandun
 				}
-				
+
 				b_peterborough = {
 					province = 1601
 					cultural_names = {
 						#Roman Cultures
 						name_list_roman = cn_durobrivae
 						name_list_romano_gallic = cn_durobrivae
+						name_list_gallo_romance = cn_durobrivae
 						name_list_romano_hispanic = cn_durobrivae
 						name_list_romano_british = cn_durobrivae
+						name_list_british_romance = cn_durobrivae
 						name_list_romano_african = cn_durobrivae
 						name_list_romano_raetian = cn_durobrivae
 						name_list_romano_thracian = cn_durobrivae
@@ -1128,8 +1198,10 @@ e_britannia = {
 					cultural_names = {
 						name_list_roman = cn_durovigutum
 						name_list_romano_gallic = cn_durovigutum
+						name_list_gallo_romance = cn_durovigutum
 						name_list_romano_hispanic = cn_durovigutum
 						name_list_romano_british = cn_durovigutum
+						name_list_british_romance = cn_durovigutum
 						name_list_romano_african = cn_durovigutum
 						name_list_romano_raetian = cn_durovigutum
 						name_list_romano_thracian = cn_durovigutum
@@ -1147,13 +1219,15 @@ e_britannia = {
 			}
 			c_northamptonshire = {
 				color = { 125 5 5 }
-				
+
 				cultural_names = {
 					#Roman Cultures
 					name_list_roman = cn_antona
 					name_list_romano_gallic = cn_antona
+					name_list_gallo_romance = cn_antona
 					name_list_romano_hispanic = cn_antona
 					name_list_romano_british = cn_antona
+					name_list_british_romance = cn_antona
 					name_list_romano_african = cn_antona
 					name_list_romano_raetian = cn_antona
 					name_list_romano_thracian = cn_antona
@@ -1171,15 +1245,17 @@ e_britannia = {
 					#Celtic cultures
 					name_list_briton = cn_cynwidion
 				}
-				
+
 				b_northampton = {
 					province = 1600
 					cultural_names = {
 						#Roman Cultures
 						name_list_roman = cn_antona
 						name_list_romano_gallic = cn_antona
+						name_list_gallo_romance = cn_antona
 						name_list_romano_hispanic = cn_antona
 						name_list_romano_british = cn_antona
+						name_list_british_romance = cn_antona
 						name_list_romano_african = cn_antona
 						name_list_romano_raetian = cn_antona
 						name_list_romano_thracian = cn_antona
@@ -1214,13 +1290,15 @@ e_britannia = {
 		d_norfolk = { #East Anglia
 			color={ 90 90 90 }
 			capital = c_norfolk # Norwich
-			
+
 			cultural_names = {
 				#Roman Cultures
 				name_list_roman = cn_iceni
 				name_list_romano_gallic = cn_iceni
+				name_list_gallo_romance = cn_iceni
 				name_list_romano_hispanic = cn_iceni
 				name_list_romano_british = cn_iceni
+				name_list_british_romance = cn_iceni
 				name_list_romano_african = cn_iceni
 				name_list_romano_raetian = cn_iceni
 				name_list_romano_thracian = cn_iceni
@@ -1243,16 +1321,18 @@ e_britannia = {
 				#Celtic Cultures
 				name_list_briton = cn_cair_went
 			}
-			
+
 			c_norfolk = {
 				color = { 210 100 0 }
-				
+
 				cultural_names = {
 					#Roman Cultures
 					name_list_roman = cn_iceni
 					name_list_romano_gallic = cn_iceni
+					name_list_gallo_romance = cn_iceni
 					name_list_romano_hispanic = cn_iceni
 					name_list_romano_british = cn_iceni
+					name_list_british_romance = cn_iceni
 					name_list_romano_african = cn_iceni
 					name_list_romano_raetian = cn_iceni
 					name_list_romano_thracian = cn_iceni
@@ -1273,15 +1353,17 @@ e_britannia = {
 					#Celtic
 					name_list_briton = cn_cair_went
 				}
-				
+
 				b_norwich = {
 					province = 1522
 					cultural_names = {
 						#Roman Cultures
 						name_list_roman = cn_venta_icenorum
 						name_list_romano_gallic = cn_venta_icenorum
+						name_list_gallo_romance = cn_venta_icenorum
 						name_list_romano_hispanic = cn_venta_icenorum
 						name_list_romano_british = cn_venta_icenorum
+						name_list_british_romance = cn_venta_icenorum
 						name_list_romano_african = cn_venta_icenorum
 						name_list_romano_raetian = cn_venta_icenorum
 						name_list_romano_thracian = cn_venta_icenorum
@@ -1310,8 +1392,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_sitomagus
 						name_list_romano_gallic = cn_sitomagus
+						name_list_gallo_romance = cn_sitomagus
 						name_list_romano_hispanic = cn_sitomagus
 						name_list_romano_british = cn_sitomagus
+						name_list_british_romance = cn_sitomagus
 						name_list_romano_african = cn_sitomagus
 						name_list_romano_raetian = cn_sitomagus
 						name_list_romano_thracian = cn_sitomagus
@@ -1339,8 +1423,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_lignum
 						name_list_romano_gallic = cn_lignum
+						name_list_gallo_romance = cn_lignum
 						name_list_romano_hispanic = cn_lignum
 						name_list_romano_british = cn_lignum
+						name_list_british_romance = cn_lignum
 						name_list_romano_african = cn_lignum
 						name_list_romano_raetian = cn_lignum
 						name_list_romano_thracian = cn_lignum
@@ -1363,13 +1449,15 @@ e_britannia = {
 			}
 			c_suffolk = {
 				color = { 215 125 10 }
-				
+
 				cultural_names = {
 					#Roman Cultures
 					name_list_roman = cn_trinovantes
 					name_list_romano_gallic = cn_trinovantes
+					name_list_gallo_romance = cn_trinovantes
 					name_list_romano_hispanic = cn_trinovantes
 					name_list_romano_british = cn_trinovantes
+					name_list_british_romance = cn_trinovantes
 					name_list_romano_african = cn_trinovantes
 					name_list_romano_raetian = cn_trinovantes
 					name_list_romano_thracian = cn_trinovantes
@@ -1389,7 +1477,7 @@ e_britannia = {
 					#Celtic
 					name_list_briton = cn_ansrum
 				}
-				
+
 				b_ipswich = {
 					province = 1518
 					cultural_names = {
@@ -1418,8 +1506,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_villa_faustini
 						name_list_romano_gallic = cn_villa_faustini
+						name_list_gallo_romance = cn_villa_faustini
 						name_list_romano_hispanic = cn_villa_faustini
 						name_list_romano_british = cn_villa_faustini
+						name_list_british_romance = cn_villa_faustini
 						name_list_romano_african = cn_villa_faustini
 						name_list_romano_raetian = cn_villa_faustini
 						name_list_romano_thracian = cn_villa_faustini
@@ -1437,13 +1527,15 @@ e_britannia = {
 			}
 			c_cambridgeshire = {
 				color = { 205 145 5 }
-				
+
 				cultural_names = {
 					#Roman Cultures
 					name_list_roman = cn_durolipons
 					name_list_romano_gallic = cn_durolipons
+					name_list_gallo_romance = cn_durolipons
 					name_list_romano_hispanic = cn_durolipons
 					name_list_romano_british = cn_durolipons
+					name_list_british_romance = cn_durolipons
 					name_list_romano_african = cn_durolipons
 					name_list_romano_raetian = cn_durolipons
 					name_list_romano_thracian = cn_durolipons
@@ -1461,15 +1553,17 @@ e_britannia = {
 					#Celtic
 					name_list_briton = cn_cair_grauth
 				}
-				
+
 				b_cambridge = {
 					province = 1534
 					cultural_names = {
 						#Roman Cultures
 						name_list_roman = cn_durolipons
 						name_list_romano_gallic = cn_durolipons
+						name_list_gallo_romance = cn_durolipons
 						name_list_romano_hispanic = cn_durolipons
 						name_list_romano_british = cn_durolipons
+						name_list_british_romance = cn_durolipons
 						name_list_romano_african = cn_durolipons
 						name_list_romano_raetian = cn_durolipons
 						name_list_romano_thracian = cn_durolipons
@@ -1503,8 +1597,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_elysium
 						name_list_romano_gallic = cn_elysium
+						name_list_gallo_romance = cn_elysium
 						name_list_romano_hispanic = cn_elysium
 						name_list_romano_british = cn_elysium
+						name_list_british_romance = cn_elysium
 						name_list_romano_african = cn_elysium
 						name_list_romano_raetian = cn_elysium
 						name_list_romano_thracian = cn_elysium
@@ -1530,19 +1626,21 @@ e_britannia = {
 	k_britannia_secunda = {
 		color={ 206 130 15 }
 		capital = c_north_riding
-		
+
 		can_create = { general_kingdom_title_creation_trigger = yes }
-		
+
 		d_york = {
 			color={ 41 188 98 }
 			capital = c_north_riding # York
-			
+
 			cultural_names = {
 				#Roman Cultures
 				name_list_roman = cn_eboracum
 				name_list_romano_gallic = cn_eboracum
+				name_list_gallo_romance = cn_eboracum
 				name_list_romano_hispanic = cn_eboracum
 				name_list_romano_british = cn_eboracum
+				name_list_british_romance = cn_eboracum
 				name_list_romano_african = cn_eboracum
 				name_list_romano_raetian = cn_eboracum
 				name_list_romano_thracian = cn_eboracum
@@ -1573,23 +1671,25 @@ e_britannia = {
 				name_list_old_frankish = cn_yourke
 				name_list_old_frisian = cn_yerke
 			}
-			
+
 			ai_primary_priority = {
 				if = {
 					limit = { culture = culture:norse }
 					add = @better_than_the_alternatives_score
 				}
 			}
-			
+
 			c_north_riding = {
 				color = { 255 95 20 }
-					
+
 				cultural_names = {
 					#Roman Cultures
 					name_list_roman = cn_isuria_septentrionalis
 					name_list_romano_gallic = cn_isuria_septentrionalis
+					name_list_gallo_romance = cn_isuria_septentrionalis
 					name_list_romano_hispanic = cn_isuria_septentrionalis
 					name_list_romano_british = cn_isuria_septentrionalis
+					name_list_british_romance = cn_isuria_septentrionalis
 					name_list_romano_african = cn_isuria_septentrionalis
 					name_list_romano_raetian = cn_isuria_septentrionalis
 					name_list_romano_thracian = cn_isuria_septentrionalis
@@ -1614,8 +1714,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_eboracum
 						name_list_romano_gallic = cn_eboracum
+						name_list_gallo_romance = cn_eboracum
 						name_list_romano_hispanic = cn_eboracum
 						name_list_romano_british = cn_eboracum
+						name_list_british_romance = cn_eboracum
 						name_list_romano_african = cn_eboracum
 						name_list_romano_raetian = cn_eboracum
 						name_list_romano_thracian = cn_eboracum
@@ -1654,8 +1756,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_caesaroburgum
 						name_list_romano_gallic = cn_caesaroburgum
+						name_list_gallo_romance = cn_caesaroburgum
 						name_list_romano_hispanic = cn_caesaroburgum
 						name_list_romano_british = cn_caesaroburgum
+						name_list_british_romance = cn_caesaroburgum
 						name_list_romano_african = cn_caesaroburgum
 						name_list_romano_raetian = cn_caesaroburgum
 						name_list_romano_thracian = cn_caesaroburgum
@@ -1681,8 +1785,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_dictium
 						name_list_romano_gallic = cn_dictium
+						name_list_gallo_romance = cn_dictium
 						name_list_romano_hispanic = cn_dictium
 						name_list_romano_british = cn_dictium
+						name_list_british_romance = cn_dictium
 						name_list_romano_african = cn_dictium
 						name_list_romano_raetian = cn_dictium
 						name_list_romano_thracian = cn_dictium
@@ -1703,8 +1809,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_cataractonium
 						name_list_romano_gallic = cn_cataractonium
+						name_list_gallo_romance = cn_cataractonium
 						name_list_romano_hispanic = cn_cataractonium
 						name_list_romano_british = cn_cataractonium
+						name_list_british_romance = cn_cataractonium
 						name_list_romano_african = cn_cataractonium
 						name_list_romano_raetian = cn_cataractonium
 						name_list_romano_thracian = cn_cataractonium
@@ -1732,8 +1840,10 @@ e_britannia = {
 					#Roman Cultures
 					name_list_roman = cn_isuria_orientalis
 					name_list_romano_gallic = cn_isuria_orientalis
+					name_list_gallo_romance = cn_isuria_orientalis
 					name_list_romano_hispanic = cn_isuria_orientalis
 					name_list_romano_british = cn_isuria_orientalis
+					name_list_british_romance = cn_isuria_orientalis
 					name_list_romano_african = cn_isuria_orientalis
 					name_list_romano_raetian = cn_isuria_orientalis
 					name_list_romano_thracian = cn_isuria_orientalis
@@ -1752,8 +1862,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_delgovicia
 						name_list_romano_gallic = cn_delgovicia
+						name_list_gallo_romance = cn_delgovicia
 						name_list_romano_hispanic = cn_delgovicia
 						name_list_romano_british = cn_delgovicia
+						name_list_british_romance = cn_delgovicia
 						name_list_romano_african = cn_delgovicia
 						name_list_romano_raetian = cn_delgovicia
 						name_list_romano_thracian = cn_delgovicia
@@ -1778,8 +1890,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_cet
 						name_list_romano_gallic = cn_cet
+						name_list_gallo_romance = cn_cet
 						name_list_romano_hispanic = cn_cet
 						name_list_romano_british = cn_cet
+						name_list_british_romance = cn_cet
 						name_list_romano_african = cn_cet
 						name_list_romano_raetian = cn_cet
 						name_list_romano_thracian = cn_cet
@@ -1800,8 +1914,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_praetorium
 						name_list_romano_gallic = cn_praetorium
+						name_list_gallo_romance = cn_praetorium
 						name_list_romano_hispanic = cn_praetorium
 						name_list_romano_british = cn_praetorium
+						name_list_british_romance = cn_praetorium
 						name_list_romano_african = cn_praetorium
 						name_list_romano_raetian = cn_praetorium
 						name_list_romano_thracian = cn_praetorium
@@ -1823,8 +1939,10 @@ e_britannia = {
 					#Roman Cultures
 					name_list_roman = cn_isuria_occidentalis
 					name_list_romano_gallic = cn_isuria_occidentalis
+					name_list_gallo_romance = cn_isuria_occidentalis
 					name_list_romano_hispanic = cn_isuria_occidentalis
 					name_list_romano_british = cn_isuria_occidentalis
+					name_list_british_romance = cn_isuria_occidentalis
 					name_list_romano_african = cn_isuria_occidentalis
 					name_list_romano_raetian = cn_isuria_occidentalis
 					name_list_romano_thracian = cn_isuria_occidentalis
@@ -1851,8 +1969,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_cambodunum
 						name_list_romano_gallic = cn_cambodunum
+						name_list_gallo_romance = cn_cambodunum
 						name_list_romano_hispanic = cn_cambodunum
 						name_list_romano_british = cn_cambodunum
+						name_list_british_romance = cn_cambodunum
 						name_list_romano_african = cn_cambodunum
 						name_list_romano_raetian = cn_cambodunum
 						name_list_romano_thracian = cn_cambodunum
@@ -1863,7 +1983,7 @@ e_britannia = {
 						name_list_romano_gothic = cn_cambodunum
 						name_list_romano_dacian = cn_cambodunum
 						name_list_romano_aramean = cn_cambodunum
-						name_list_romano_vandalic = cn_cambodunum	
+						name_list_romano_vandalic = cn_cambodunum
 						#Celtic Cultures
 						name_list_briton = cn_ladenses
 						name_list_welsh = cn_ladenses
@@ -1881,8 +2001,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_danum
 						name_list_romano_gallic = cn_danum
+						name_list_gallo_romance = cn_danum
 						name_list_romano_hispanic = cn_danum
 						name_list_romano_british = cn_danum
+						name_list_british_romance = cn_danum
 						name_list_romano_african = cn_danum
 						name_list_romano_raetian = cn_danum
 						name_list_romano_thracian = cn_danum
@@ -1905,8 +2027,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_hortonium
 						name_list_romano_gallic = cn_hortonium
+						name_list_gallo_romance = cn_hortonium
 						name_list_romano_hispanic = cn_hortonium
 						name_list_romano_british = cn_hortonium
+						name_list_british_romance = cn_hortonium
 						name_list_romano_african = cn_hortonium
 						name_list_romano_raetian = cn_hortonium
 						name_list_romano_thracian = cn_hortonium
@@ -1927,8 +2051,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_bannovallum
 						name_list_romano_gallic = cn_bannovallum
+						name_list_gallo_romance = cn_bannovallum
 						name_list_romano_hispanic = cn_bannovallum
 						name_list_romano_british = cn_bannovallum
+						name_list_british_romance = cn_bannovallum
 						name_list_romano_african = cn_bannovallum
 						name_list_romano_raetian = cn_bannovallum
 						name_list_romano_thracian = cn_bannovallum
@@ -1964,8 +2090,10 @@ e_britannia = {
 					#Roman Cultures
 					name_list_roman = cn_lindum
 					name_list_romano_gallic = cn_lindum
+					name_list_gallo_romance = cn_lindum
 					name_list_romano_hispanic = cn_lindum
 					name_list_romano_british = cn_lindum
+					name_list_british_romance = cn_lindum
 					name_list_romano_african = cn_lindum
 					name_list_romano_raetian = cn_lindum
 					name_list_romano_thracian = cn_lindum
@@ -1987,8 +2115,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_lindum
 						name_list_romano_gallic = cn_lindum
+						name_list_gallo_romance = cn_lindum
 						name_list_romano_hispanic = cn_lindum
 						name_list_romano_british = cn_lindum
+						name_list_british_romance = cn_lindum
 						name_list_romano_african = cn_lindum
 						name_list_romano_raetian = cn_lindum
 						name_list_romano_thracian = cn_lindum
@@ -2014,8 +2144,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_vadum_saxi
 						name_list_romano_gallic = cn_vadum_saxi
+						name_list_gallo_romance = cn_vadum_saxi
 						name_list_romano_hispanic = cn_vadum_saxi
 						name_list_romano_british = cn_vadum_saxi
+						name_list_british_romance = cn_vadum_saxi
 						name_list_romano_african = cn_vadum_saxi
 						name_list_romano_raetian = cn_vadum_saxi
 						name_list_romano_thracian = cn_vadum_saxi
@@ -2055,8 +2187,10 @@ e_britannia = {
 					#Roman Cultures
 					name_list_roman = cn_ratae
 					name_list_romano_gallic = cn_ratae
+					name_list_gallo_romance = cn_ratae
 					name_list_romano_hispanic = cn_ratae
 					name_list_romano_british = cn_ratae
+					name_list_british_romance = cn_ratae
 					name_list_romano_african = cn_ratae
 					name_list_romano_raetian = cn_ratae
 					name_list_romano_thracian = cn_ratae
@@ -2080,8 +2214,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_ratae
 						name_list_romano_gallic = cn_ratae
+						name_list_gallo_romance = cn_ratae
 						name_list_romano_hispanic = cn_ratae
 						name_list_romano_british = cn_ratae
+						name_list_british_romance = cn_ratae
 						name_list_romano_african = cn_ratae
 						name_list_romano_raetian = cn_ratae
 						name_list_romano_thracian = cn_ratae
@@ -2107,8 +2243,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_mediodunum
 						name_list_romano_gallic = cn_mediodunum
+						name_list_gallo_romance = cn_mediodunum
 						name_list_romano_hispanic = cn_mediodunum
 						name_list_romano_british = cn_mediodunum
+						name_list_british_romance = cn_mediodunum
 						name_list_romano_african = cn_mediodunum
 						name_list_romano_raetian = cn_mediodunum
 						name_list_romano_thracian = cn_mediodunum
@@ -2130,7 +2268,7 @@ e_britannia = {
 				}
 				b_rutland = {
 					province = 1613
-	
+
 					color = { 130 5 25 }
 				}
 			}
@@ -2141,8 +2279,10 @@ e_britannia = {
 					#Roman Cultures
 					name_list_roman = cn_speluncarum_domus
 					name_list_romano_gallic = cn_speluncarum_domus
+					name_list_gallo_romance = cn_speluncarum_domus
 					name_list_romano_hispanic = cn_speluncarum_domus
 					name_list_romano_british = cn_speluncarum_domus
+					name_list_british_romance = cn_speluncarum_domus
 					name_list_romano_african = cn_speluncarum_domus
 					name_list_romano_raetian = cn_speluncarum_domus
 					name_list_romano_thracian = cn_speluncarum_domus
@@ -2164,11 +2304,13 @@ e_britannia = {
 				b_nottingham = {
 					province = 1618
 					cultural_names = {
-					#Roman Cultures
+						#Roman Cultures
 						name_list_roman = cn_speluncarum_domus
 						name_list_romano_gallic = cn_speluncarum_domus
+						name_list_gallo_romance = cn_speluncarum_domus
 						name_list_romano_hispanic = cn_speluncarum_domus
 						name_list_romano_british = cn_speluncarum_domus
+						name_list_british_romance = cn_speluncarum_domus
 						name_list_romano_african = cn_speluncarum_domus
 						name_list_romano_raetian = cn_speluncarum_domus
 						name_list_romano_thracian = cn_speluncarum_domus
@@ -2194,8 +2336,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_ad_pontem
 						name_list_romano_gallic = cn_ad_pontem
+						name_list_gallo_romance = cn_ad_pontem
 						name_list_romano_hispanic = cn_ad_pontem
 						name_list_romano_british = cn_ad_pontem
+						name_list_british_romance = cn_ad_pontem
 						name_list_romano_african = cn_ad_pontem
 						name_list_romano_raetian = cn_ad_pontem
 						name_list_romano_thracian = cn_ad_pontem
@@ -2218,8 +2362,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_vadum_rubrum
 						name_list_romano_gallic = cn_vadum_rubrum
+						name_list_gallo_romance = cn_vadum_rubrum
 						name_list_romano_hispanic = cn_vadum_rubrum
 						name_list_romano_british = cn_vadum_rubrum
+						name_list_british_romance = cn_vadum_rubrum
 						name_list_romano_african = cn_vadum_rubrum
 						name_list_romano_raetian = cn_vadum_rubrum
 						name_list_romano_thracian = cn_vadum_rubrum
@@ -2239,13 +2385,15 @@ e_britannia = {
 		d_northumberland = {
 			color={ 110 130 70 }
 			capital = c_northumberland # Bamburgh, Bernicia
-			
+
 			cultural_names = {
 				#Roman Cultures
 				name_list_roman = cn_bernicia
 				name_list_romano_gallic = cn_bernicia
+				name_list_gallo_romance = cn_bernicia
 				name_list_romano_hispanic = cn_bernicia
 				name_list_romano_british = cn_bryneich
+				name_list_british_romance = cn_bryneich
 				name_list_romano_african = cn_bernicia
 				name_list_romano_raetian = cn_bernicia
 				name_list_romano_thracian = cn_bernicia
@@ -2260,28 +2408,30 @@ e_britannia = {
 				#Celtic Cultures
 				name_list_briton = cn_bryneich
 				#Central Germanic Cultures
-				name_list_anglo = cn_beornice 
+				name_list_anglo = cn_beornice
 				name_list_old_saxon = cn_beornice
-				name_list_saxon = cn_northumbria 
+				name_list_saxon = cn_northumbria
 				#North Germanic Cultures
 				name_list_jute = cn_beornice
 			}
-		
+
 			ai_primary_priority = {
 				if = {
 					limit = { culture = culture:anglo_saxon }
 					add = @better_than_the_alternatives_score
 				}
 			}
-			
+
 			c_northumberland = {
 				color = { 245 0 0 }
 				cultural_names = {
 					#Roman Cultures
 					name_list_roman = cn_olcaclavis
 					name_list_romano_gallic = cn_olcaclavis
+					name_list_gallo_romance = cn_olcaclavis
 					name_list_romano_hispanic = cn_olcaclavis
 					name_list_romano_british = cn_olcaclavis
+					name_list_british_romance = cn_olcaclavis
 					name_list_romano_african = cn_olcaclavis
 					name_list_romano_raetian = cn_olcaclavis
 					name_list_romano_thracian = cn_olcaclavis
@@ -2297,20 +2447,22 @@ e_britannia = {
 					name_list_briton = cn_bryneich
 					name_list_irish = cn_northumbarlann
 					#Central Germanic Cultures
-					name_list_anglo = cn_beornice 
+					name_list_anglo = cn_beornice
 					name_list_old_saxon = cn_beornice
-					name_list_saxon = cn_northumbria 
+					name_list_saxon = cn_northumbria
 					#North Germanic Cultures
 					name_list_jute = cn_beornice
-				}			
+				}
 				b_bamburgh = {
 					province = 1609
 					cultural_names = {
 						#Roman Cultures
 						name_list_roman = cn_olcaclavis
 						name_list_romano_gallic = cn_olcaclavis
+						name_list_gallo_romance = cn_olcaclavis
 						name_list_romano_hispanic = cn_olcaclavis
 						name_list_romano_british = cn_olcaclavis
+						name_list_british_romance = cn_olcaclavis
 						name_list_romano_african = cn_olcaclavis
 						name_list_romano_raetian = cn_olcaclavis
 						name_list_romano_thracian = cn_olcaclavis
@@ -2330,14 +2482,14 @@ e_britannia = {
 						name_list_cornish = cn_din_guarie
 						name_list_breton = cn_din_guarie
 						#Central Germanic Cultures
-						name_list_anglo = cn_bebbanburg 
+						name_list_anglo = cn_bebbanburg
 						name_list_old_saxon = cn_bebbanburg
 						#North Germanic Cultures
 						name_list_norse = cn_bamborg
 						name_list_norwegian = cn_bamborg
 						name_list_swedish = cn_bamborg
 						name_list_danish = cn_bamborg
-					}	
+					}
 					color = { 245 0 0 }
 				}
 				b_rothbury = {
@@ -2346,8 +2498,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_saxoburgum
 						name_list_romano_gallic = cn_saxoburgum
+						name_list_gallo_romance = cn_saxoburgum
 						name_list_romano_hispanic = cn_saxoburgum
 						name_list_romano_british = cn_saxoburgum
+						name_list_british_romance = cn_saxoburgum
 						name_list_romano_african = cn_saxoburgum
 						name_list_romano_raetian = cn_saxoburgum
 						name_list_romano_thracian = cn_saxoburgum
@@ -2368,8 +2522,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_medicata
 						name_list_romano_gallic = cn_medicata
+						name_list_gallo_romance = cn_medicata
 						name_list_romano_hispanic = cn_medicata
 						name_list_romano_british = cn_medicata
+						name_list_british_romance = cn_medicata
 						name_list_romano_african = cn_medicata
 						name_list_romano_raetian = cn_medicata
 						name_list_romano_thracian = cn_medicata
@@ -2400,8 +2556,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_briga
 						name_list_romano_gallic = cn_briga
+						name_list_gallo_romance = cn_briga
 						name_list_romano_hispanic = cn_briga
 						name_list_romano_british = cn_briga
+						name_list_british_romance = cn_briga
 						name_list_romano_african = cn_briga
 						name_list_romano_raetian = cn_briga
 						name_list_romano_thracian = cn_briga
@@ -2414,7 +2572,7 @@ e_britannia = {
 						name_list_romano_aramean = cn_briga
 						name_list_romano_vandalic = cn_briga
 						#Central Germanic Cultures
-						name_list_anglo = cn_hagustaldes_ea 
+						name_list_anglo = cn_hagustaldes_ea
 						name_list_old_saxon = cn_hagustaldes_ea
 					}
 					color = { 245 0 0 }
@@ -2426,8 +2584,10 @@ e_britannia = {
 					#Roman Cultures
 					name_list_roman = cn_concangis
 					name_list_romano_gallic = cn_concangis
+					name_list_gallo_romance = cn_concangis
 					name_list_romano_hispanic = cn_concangis
 					name_list_romano_british = cn_concangis
+					name_list_british_romance = cn_concangis
 					name_list_romano_african = cn_concangis
 					name_list_romano_raetian = cn_concangis
 					name_list_romano_thracian = cn_concangis
@@ -2442,9 +2602,9 @@ e_britannia = {
 					#Celtic Cultures
 					name_list_briton = cn_gwen_ystrat
 					#Central Germanic Cultures
-					name_list_anglo = cn_derenrice 
+					name_list_anglo = cn_derenrice
 					name_list_old_saxon = cn_derenrice
-					name_list_saxon = cn_northumbria 
+					name_list_saxon = cn_northumbria
 					#North Germanic Cultures
 					name_list_norse = cn_dunholm
 					name_list_swedish = cn_dunholm
@@ -2463,8 +2623,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_concangis
 						name_list_romano_gallic = cn_concangis
+						name_list_gallo_romance = cn_concangis
 						name_list_romano_hispanic = cn_concangis
 						name_list_romano_british = cn_concangis
+						name_list_british_romance = cn_concangis
 						name_list_romano_african = cn_concangis
 						name_list_romano_raetian = cn_concangis
 						name_list_romano_thracian = cn_concangis
@@ -2479,9 +2641,9 @@ e_britannia = {
 						#Celtic Cultures
 						name_list_briton = cn_gwen_ystrat
 						#Central Germanic Cultures
-						name_list_anglo = cn_derenrice 
+						name_list_anglo = cn_derenrice
 						name_list_old_saxon = cn_derenrice
-						name_list_saxon = cn_northumbria 
+						name_list_saxon = cn_northumbria
 						#North Germanic Cultures
 						name_list_norse = cn_ulfreksfjordr
 						name_list_swedish = cn_ulfreksfjordr
@@ -2502,8 +2664,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_ulucium
 						name_list_romano_gallic = cn_ulucium
+						name_list_gallo_romance = cn_ulucium
 						name_list_romano_hispanic = cn_ulucium
 						name_list_romano_british = cn_ulucium
+						name_list_british_romance = cn_ulucium
 						name_list_romano_african = cn_ulucium
 						name_list_romano_raetian = cn_ulucium
 						name_list_romano_thracian = cn_ulucium
@@ -2535,8 +2699,10 @@ e_britannia = {
 					#Roman Cultures
 					name_list_roman = cn_civitas_carvetiorum
 					name_list_romano_gallic = cn_civitas_carvetiorum
+					name_list_gallo_romance = cn_civitas_carvetiorum
 					name_list_romano_hispanic = cn_civitas_carvetiorum
 					name_list_romano_british = cn_civitas_carvetiorum
+					name_list_british_romance = cn_civitas_carvetiorum
 					name_list_romano_african = cn_civitas_carvetiorum
 					name_list_romano_raetian = cn_civitas_carvetiorum
 					name_list_romano_thracian = cn_civitas_carvetiorum
@@ -2551,7 +2717,7 @@ e_britannia = {
 					#Celtic Cultures
 					name_list_briton = cn_rheged
 					#Central Germanic Cultures
-					name_list_anglo = cn_cumbraland 
+					name_list_anglo = cn_cumbraland
 					name_list_old_saxon = cn_cumbraland
 				}
 
@@ -2561,15 +2727,17 @@ e_britannia = {
 						add = @correct_culture_primary_score
 					}
 				}
-	
+
 				b_carlisle = {
 					province = 1635
 					cultural_names = {
 						#Roman Cultures
 						name_list_roman = cn_luguvalium
 						name_list_romano_gallic = cn_luguvalium
+						name_list_gallo_romance = cn_luguvalium
 						name_list_romano_hispanic = cn_luguvalium
 						name_list_romano_british = cn_luguvalium
+						name_list_british_romance = cn_luguvalium
 						name_list_romano_african = cn_luguvalium
 						name_list_romano_raetian = cn_luguvalium
 						name_list_romano_thracian = cn_luguvalium
@@ -2591,7 +2759,7 @@ e_britannia = {
 						name_list_gaelic = cn_cathair_luail
 						name_list_irish = cn_cathair_luail
 						#Central Germanic Cultures
-						name_list_anglo = cn_carlisle 
+						name_list_anglo = cn_carlisle
 						name_list_old_saxon = cn_carleol
 					}
 					color = { 240 25 25 }
@@ -2602,8 +2770,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_portus_albus
 						name_list_romano_gallic = cn_portus_albus
+						name_list_gallo_romance = cn_portus_albus
 						name_list_romano_hispanic = cn_portus_albus
 						name_list_romano_british = cn_portus_albus
+						name_list_british_romance = cn_portus_albus
 						name_list_romano_african = cn_portus_albus
 						name_list_romano_raetian = cn_portus_albus
 						name_list_romano_thracian = cn_portus_albus
@@ -2634,8 +2804,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_maglona
 						name_list_romano_gallic = cn_maglona
+						name_list_gallo_romance = cn_maglona
 						name_list_romano_hispanic = cn_maglona
 						name_list_romano_british = cn_maglona
+						name_list_british_romance = cn_maglona
 						name_list_romano_african = cn_maglona
 						name_list_romano_raetian = cn_maglona
 						name_list_romano_thracian = cn_maglona
@@ -2655,13 +2827,15 @@ e_britannia = {
 		d_lancaster = {
 			color={ 70 140 115 }
 			capital = c_lancashire # Lancaster
-			
+
 			cultural_names = {
 				#Roman Cultures
 				name_list_roman = cn_calunium
 				name_list_romano_gallic = cn_calunium
+				name_list_gallo_romance = cn_calunium
 				name_list_romano_hispanic = cn_calunium
 				name_list_romano_british = cn_calunium
+				name_list_british_romance = cn_calunium
 				name_list_romano_african = cn_calunium
 				name_list_romano_raetian = cn_calunium
 				name_list_romano_thracian = cn_calunium
@@ -2681,20 +2855,22 @@ e_britannia = {
 				name_list_welsh = cn_rheged
 				name_list_pictish = cn_rheged
 				#Central Germanic Cultures
-				name_list_anglo = cn_lonceasterscir 
+				name_list_anglo = cn_lonceasterscir
 				name_list_old_saxon = cn_lonceasterscir
-				name_list_saxon = cn_lancaester  
+				name_list_saxon = cn_lancaester
 			}
-			
+
 			c_lancashire = {
 				color = { 250 55 5 }
-				
+
 				cultural_names = {
 					#Roman Cultures
 					name_list_roman = cn_calunium
 					name_list_romano_gallic = cn_calunium
+					name_list_gallo_romance = cn_calunium
 					name_list_romano_hispanic = cn_calunium
 					name_list_romano_british = cn_calunium
+					name_list_british_romance = cn_calunium
 					name_list_romano_african = cn_calunium
 					name_list_romano_raetian = cn_calunium
 					name_list_romano_thracian = cn_calunium
@@ -2707,17 +2883,19 @@ e_britannia = {
 					name_list_romano_aramean = cn_calunium
 					name_list_romano_vandalic = cn_calunium
 					#Celtic Cultures
-					name_list_briton = cn_cair_hirfryn		
+					name_list_briton = cn_cair_hirfryn
 				}
-			
+
 				b_lancaster = {
 					province = 1639
 					cultural_names = {
 						#Roman Cultures
 						name_list_roman = cn_calunium
 						name_list_romano_gallic = cn_calunium
+						name_list_gallo_romance = cn_calunium
 						name_list_romano_hispanic = cn_calunium
 						name_list_romano_british = cn_calunium
+						name_list_british_romance = cn_calunium
 						name_list_romano_african = cn_calunium
 						name_list_romano_raetian = cn_calunium
 						name_list_romano_thracian = cn_calunium
@@ -2743,8 +2921,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_mamucium
 						name_list_romano_gallic = cn_mamucium
+						name_list_gallo_romance = cn_mamucium
 						name_list_romano_hispanic = cn_mamucium
 						name_list_romano_british = cn_mamucium
+						name_list_british_romance = cn_mamucium
 						name_list_romano_african = cn_mamucium
 						name_list_romano_raetian = cn_mamucium
 						name_list_romano_thracian = cn_mamucium
@@ -2771,8 +2951,10 @@ e_britannia = {
 					#Roman Cultures
 					name_list_roman = cn_medibogdo
 					name_list_romano_gallic = cn_medibogdo
+					name_list_gallo_romance = cn_medibogdo
 					name_list_romano_hispanic = cn_medibogdo
 					name_list_romano_british = cn_medibogdo
+					name_list_british_romance = cn_medibogdo
 					name_list_romano_african = cn_medibogdo
 					name_list_romano_raetian = cn_medibogdo
 					name_list_romano_thracian = cn_medibogdo
@@ -2787,7 +2969,7 @@ e_britannia = {
 					#Celtic Cultures
 					name_list_briton = cn_regio_dununinga
 					#Central Germanic Cultures
-					name_list_anglo = cn_westmoringaland 
+					name_list_anglo = cn_westmoringaland
 					name_list_old_saxon = cn_westmoringaland
 					name_list_saxon = cn_westmereland
 				}
@@ -2797,8 +2979,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_medibogdo
 						name_list_romano_gallic = cn_medibogdo
+						name_list_gallo_romance = cn_medibogdo
 						name_list_romano_hispanic = cn_medibogdo
 						name_list_romano_british = cn_medibogdo
+						name_list_british_romance = cn_medibogdo
 						name_list_romano_african = cn_medibogdo
 						name_list_romano_raetian = cn_medibogdo
 						name_list_romano_thracian = cn_medibogdo
@@ -2809,7 +2993,7 @@ e_britannia = {
 						name_list_romano_gothic = cn_medibogdo
 						name_list_romano_dacian = cn_medibogdo
 						name_list_romano_aramean = cn_medibogdo
-						name_list_romano_vandalic = cn_medibogdo 
+						name_list_romano_vandalic = cn_medibogdo
 						#Celtic Cultures
 						name_list_briton = cn_kirbie_kendal
 						#Central Germanic Cultures
@@ -2824,8 +3008,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_bravoniacum
 						name_list_romano_gallic = cn_bravoniacum
+						name_list_gallo_romance = cn_bravoniacum
 						name_list_romano_hispanic = cn_bravoniacum
 						name_list_romano_british = cn_bravoniacum
+						name_list_british_romance = cn_bravoniacum
 						name_list_romano_african = cn_bravoniacum
 						name_list_romano_raetian = cn_bravoniacum
 						name_list_romano_thracian = cn_bravoniacum
@@ -2841,15 +3027,17 @@ e_britannia = {
 					color = { 210 35 10 }
 				}
 			}
-			c_cheshire = { #Wikipedia cites this as Legeceasterscir; did not add but let me know if I can. 
+			c_cheshire = { #Wikipedia cites this as Legeceasterscir; did not add but let me know if I can.
 				color = { 255 127 15 }
-			
+
 				cultural_names = {
 					#Roman Cultures
 					name_list_roman = cn_deva_victrix
 					name_list_romano_gallic = cn_deva_victrix
+					name_list_gallo_romance = cn_deva_victrix
 					name_list_romano_hispanic = cn_deva_victrix
 					name_list_romano_british = cn_deva_victrix
+					name_list_british_romance = cn_deva_victrix
 					name_list_romano_african = cn_deva_victrix
 					name_list_romano_raetian = cn_deva_victrix
 					name_list_romano_thracian = cn_deva_victrix
@@ -2860,19 +3048,21 @@ e_britannia = {
 					name_list_romano_gothic = cn_deva_victrix
 					name_list_romano_dacian = cn_deva_victrix
 					name_list_romano_aramean = cn_deva_victrix
-					name_list_romano_vandalic = cn_deva_victrix 
+					name_list_romano_vandalic = cn_deva_victrix
 					#Celtic Cultures
 					name_list_briton = cn_cair_legion
 				}
-			
+
 				b_chester = {
 					province = 1643
 					cultural_names = {
 						#Roman Cultures
 						name_list_roman = cn_deva_victrix
 						name_list_romano_gallic = cn_deva_victrix
+						name_list_gallo_romance = cn_deva_victrix
 						name_list_romano_hispanic = cn_deva_victrix
 						name_list_romano_british = cn_deva_victrix
+						name_list_british_romance = cn_deva_victrix
 						name_list_romano_african = cn_deva_victrix
 						name_list_romano_raetian = cn_deva_victrix
 						name_list_romano_thracian = cn_deva_victrix
@@ -2883,7 +3073,7 @@ e_britannia = {
 						name_list_romano_gothic = cn_deva_victrix
 						name_list_romano_dacian = cn_deva_victrix
 						name_list_romano_aramean = cn_deva_victrix
-						name_list_romano_vandalic = cn_deva_victrix 
+						name_list_romano_vandalic = cn_deva_victrix
 						#Celtic Cultures
 						name_list_briton = cn_cair_legion
 						#Central Germanic Cultures
@@ -2898,8 +3088,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_condate
 						name_list_romano_gallic = cn_condate
+						name_list_gallo_romance = cn_condate
 						name_list_romano_hispanic = cn_condate
 						name_list_romano_british = cn_condate
+						name_list_british_romance = cn_condate
 						name_list_romano_african = cn_condate
 						name_list_romano_raetian = cn_condate
 						name_list_romano_thracian = cn_condate
@@ -2910,7 +3102,7 @@ e_britannia = {
 						name_list_romano_gothic = cn_condate
 						name_list_romano_dacian = cn_condate
 						name_list_romano_aramean = cn_condate
-						name_list_romano_vandalic = cn_condate 
+						name_list_romano_vandalic = cn_condate
 						#Celtic Cultures
 						name_list_briton = cn_yr_heledd_ddu
 					}
@@ -2931,8 +3123,10 @@ e_britannia = {
 					#Roman Cultures
 					name_list_roman = cn_derventio
 					name_list_romano_gallic = cn_derventio
+					name_list_gallo_romance = cn_derventio
 					name_list_romano_hispanic = cn_derventio
 					name_list_romano_british = cn_derventio
+					name_list_british_romance = cn_derventio
 					name_list_romano_african = cn_derventio
 					name_list_romano_raetian = cn_derventio
 					name_list_romano_thracian = cn_derventio
@@ -2947,7 +3141,7 @@ e_britannia = {
 					#Celtic Cultures
 					name_list_briton = cn_derwent
 					#Central Germanic Cultures
-					name_list_anglo = cn_pecsaet 
+					name_list_anglo = cn_pecsaet
 					name_list_old_saxon = cn_pecsaet
 					name_list_saxon = cn_deoraby
 					#North Germanic Cultures
@@ -2962,8 +3156,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_derventio
 						name_list_romano_gallic = cn_derventio
+						name_list_gallo_romance = cn_derventio
 						name_list_romano_hispanic = cn_derventio
 						name_list_romano_british = cn_derventio
+						name_list_british_romance = cn_derventio
 						name_list_romano_african = cn_derventio
 						name_list_romano_raetian = cn_derventio
 						name_list_romano_thracian = cn_derventio
@@ -2978,7 +3174,7 @@ e_britannia = {
 						#Celtic Cultures
 						name_list_briton = cn_derwent
 						#Central Germanic Cultures
-						name_list_anglo = cn_pecsaet 
+						name_list_anglo = cn_pecsaet
 						name_list_old_saxon = cn_pecsaet
 						name_list_saxon = cn_deoraby
 						#North Germanic Cultures
@@ -2995,8 +3191,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_lutudarum
 						name_list_romano_gallic = cn_lutudarum
+						name_list_gallo_romance = cn_lutudarum
 						name_list_romano_hispanic = cn_lutudarum
 						name_list_romano_british = cn_lutudarum
+						name_list_british_romance = cn_lutudarum
 						name_list_romano_african = cn_lutudarum
 						name_list_romano_raetian = cn_lutudarum
 						name_list_romano_thracian = cn_lutudarum
@@ -3009,7 +3207,7 @@ e_britannia = {
 						name_list_romano_aramean = cn_lutudarum
 						name_list_romano_vandalic = cn_lutudarum
 						#Central Germanic Cultures
-						name_list_anglo = cn_caesterfeld 
+						name_list_anglo = cn_caesterfeld
 						name_list_old_saxon = cn_caesterfeld
 						#Celtic Cultures
 						name_list_briton = cn_cair_maes
@@ -3020,7 +3218,7 @@ e_britannia = {
 					province = 1623
 					cultural_names = {
 						#Central Germanic Cultures
-						name_list_anglo = cn_pechesers #Pechesers 
+						name_list_anglo = cn_pechesers #Pechesers
 						name_list_old_saxon = cn_pechesers
 						#Celtic Cultures
 						name_list_briton = cn_castell-din
@@ -3032,13 +3230,15 @@ e_britannia = {
 		d_lothian = {
 			color = { 16 62 157 }
 			capital = c_lothian # Edinburgh
-			
+
 			cultural_names = {
 				#Roman Cultures
 				name_list_roman = cn_votadinia
 				name_list_romano_gallic = cn_votadinia
+				name_list_gallo_romance = cn_votadinia
 				name_list_romano_hispanic = cn_votadinia
 				name_list_romano_british = cn_votadinia
+				name_list_british_romance = cn_votadinia
 				name_list_romano_african = cn_votadinia
 				name_list_romano_raetian = cn_votadinia
 				name_list_romano_thracian = cn_votadinia
@@ -3058,15 +3258,17 @@ e_britannia = {
 				name_list_cumbrian = cn_gododdin
 				name_list_welsh = cn_gododdin
 			}
-			
+
 			c_lothian = {
 				color = { 185 90 25 }
 				cultural_names = {
 					#Roman Cultures
 					name_list_roman = cn_lugus
 					name_list_romano_gallic = cn_lugus
+					name_list_gallo_romance = cn_lugus
 					name_list_romano_hispanic = cn_lugus
 					name_list_romano_british = cn_lugus
+					name_list_british_romance = cn_lugus
 					name_list_romano_african = cn_lugus
 					name_list_romano_raetian = cn_lugus
 					name_list_romano_thracian = cn_lugus
@@ -3092,8 +3294,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_coria
 						name_list_romano_gallic = cn_coria
+						name_list_gallo_romance = cn_coria
 						name_list_romano_hispanic = cn_coria
 						name_list_romano_british = cn_coria
+						name_list_british_romance = cn_coria
 						name_list_romano_african = cn_coria
 						name_list_romano_raetian = cn_coria
 						name_list_romano_thracian = cn_coria
@@ -3126,13 +3330,15 @@ e_britannia = {
 			}
 			c_dunbar = {
 				color = { 190 75 30 }
-				
+
 				cultural_names = {
 					#Roman Cultures
 					name_list_roman = cn_rumabo
 					name_list_romano_gallic = cn_rumabo
+					name_list_gallo_romance = cn_rumabo
 					name_list_romano_hispanic = cn_rumabo
 					name_list_romano_british = cn_rumabo
+					name_list_british_romance = cn_rumabo
 					name_list_romano_african = cn_rumabo
 					name_list_romano_raetian = cn_rumabo
 					name_list_romano_thracian = cn_rumabo
@@ -3145,15 +3351,17 @@ e_britannia = {
 					name_list_romano_aramean = cn_rumabo
 					name_list_romano_vandalic = cn_rumabo
 				}
-				
+
 				b_dunbar = {
 					province = 1676
 					cultural_names = {
 						#Roman Cultures
 						name_list_roman = cn_rumabo
 						name_list_romano_gallic = cn_rumabo
+						name_list_gallo_romance = cn_rumabo
 						name_list_romano_hispanic = cn_rumabo
 						name_list_romano_british = cn_rumabo
+						name_list_british_romance = cn_rumabo
 						name_list_romano_african = cn_rumabo
 						name_list_romano_raetian = cn_rumabo
 						name_list_romano_thracian = cn_rumabo
@@ -3179,8 +3387,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_venutio
 						name_list_romano_gallic = cn_venutio
+						name_list_gallo_romance = cn_venutio
 						name_list_romano_hispanic = cn_venutio
 						name_list_romano_british = cn_venutio
+						name_list_british_romance = cn_venutio
 						name_list_romano_african = cn_venutio
 						name_list_romano_raetian = cn_venutio
 						name_list_romano_thracian = cn_venutio
@@ -3201,15 +3411,17 @@ e_britannia = {
 			}
 			c_teviotdale = {
 				color = { 198 70 23 }
-				
+
 				b_kelso = {
 					province = 1677
 					cultural_names = {
 						#Roman Cultures
 						name_list_roman = cn_trimontium
 						name_list_romano_gallic = cn_trimontium
+						name_list_gallo_romance = cn_trimontium
 						name_list_romano_hispanic = cn_trimontium
 						name_list_romano_british = cn_trimontium
+						name_list_british_romance = cn_trimontium
 						name_list_romano_african = cn_trimontium
 						name_list_romano_raetian = cn_trimontium
 						name_list_romano_thracian = cn_trimontium
@@ -3224,7 +3436,7 @@ e_britannia = {
 						#Celtic Cultures
 						name_list_briton = cn_calchow
 						#Central Germanic Cultures
-						name_list_anglo = cn_kelsae 
+						name_list_anglo = cn_kelsae
 						name_list_old_saxon = cn_kelsae
 					}
 					color = { 198 70 23 }
@@ -3246,7 +3458,7 @@ e_britannia = {
 			}
 			c_linlithgowshire = {
 				color = { 185 115 25 }
-	
+
 				b_linlithgow = {
 					province = 1731
 
@@ -3267,13 +3479,15 @@ e_britannia = {
 		d_galloway = {
 			color={ 77 116 208 }
 			capital = c_lennox # Lennox
-			
+
 			cultural_names = {
 				#Roman Cultures
 				name_list_roman = cn_novantia
 				name_list_romano_gallic = cn_novantia
+				name_list_gallo_romance = cn_novantia
 				name_list_romano_hispanic = cn_novantia
 				name_list_romano_british = cn_novantia
+				name_list_british_romance = cn_novantia
 				name_list_romano_african = cn_novantia
 				name_list_romano_raetian = cn_novantia
 				name_list_romano_thracian = cn_novantia
@@ -3292,7 +3506,7 @@ e_britannia = {
 				name_list_welsh = cn_strathclyde
 				name_list_gaelic = cn_galloway
 				name_list_irish = cn_galloway
-				#Central Germanic Cultures 
+				#Central Germanic Cultures
 				name_list_saxon = cn_rhinns
 				name_list_thuringian = cn_galenauslandischen
 				#North Germanic Cultures
@@ -3301,7 +3515,7 @@ e_britannia = {
 				#Germanic Cultures
 				name_list_german = cn_galenauslandischen
 			}
-			
+
 			ai_primary_priority = {
 				if = {
 					limit = { culture = culture:cumbrian }
@@ -3316,7 +3530,7 @@ e_britannia = {
 					add = @better_than_the_alternatives_score
 				}
 			}
-			
+
 			c_lennox = {
 				color = { 230 150 50 }
 				cultural_names = {
@@ -3342,8 +3556,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_demerosessa
 						name_list_romano_gallic = cn_demerosessa
+						name_list_gallo_romance = cn_demerosessa
 						name_list_romano_hispanic = cn_demerosessa
 						name_list_romano_british = cn_demerosessa
+						name_list_british_romance = cn_demerosessa
 						name_list_romano_african = cn_demerosessa
 						name_list_romano_raetian = cn_demerosessa
 						name_list_romano_thracian = cn_demerosessa
@@ -3362,7 +3578,7 @@ e_britannia = {
 						name_list_welsh = cn_alclud
 						name_list_cornish = cn_alclud
 						name_list_cumbrian = cn_alclud
-						#Central Germanic Cultures 
+						#Central Germanic Cultures
 						name_list_anglo = cn_bretburg
 						name_list_old_saxon = cn_bretburg
 					}
@@ -3374,8 +3590,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_cathures
 						name_list_romano_gallic = cn_cathures
+						name_list_gallo_romance = cn_cathures
 						name_list_romano_hispanic = cn_cathures
 						name_list_romano_british = cn_cathures
+						name_list_british_romance = cn_cathures
 						name_list_romano_african = cn_cathures
 						name_list_romano_raetian = cn_cathures
 						name_list_romano_thracian = cn_cathures
@@ -3389,7 +3607,7 @@ e_britannia = {
 						name_list_romano_vandalic = cn_cathures
 						#Celtic Cultures
 						name_list_briton = cn_glascau
-						#Central Germanic Cultures 
+						#Central Germanic Cultures
 						name_list_anglo = cn_glesca
 						name_list_old_saxon = cn_glesca
 					}
@@ -3407,8 +3625,10 @@ e_britannia = {
 					#Roman Cultures
 					name_list_roman = cn_novantia
 					name_list_romano_gallic = cn_novantia
+					name_list_gallo_romance = cn_novantia
 					name_list_romano_hispanic = cn_novantia
 					name_list_romano_british = cn_novantia
+					name_list_british_romance = cn_novantia
 					name_list_romano_african = cn_novantia
 					name_list_romano_raetian = cn_novantia
 					name_list_romano_thracian = cn_novantia
@@ -3421,12 +3641,12 @@ e_britannia = {
 					name_list_romano_aramean = cn_novantia
 					name_list_romano_vandalic = cn_novantia
 					#Celtic Cultures
-					name_list_briton = cn_strathclyde 
+					name_list_briton = cn_strathclyde
 					name_list_pictish = cn_gall_ghaidhealaibh
 					name_list_breton = cn_galwyddel
 					name_list_manx = cn_galwyddel
 					name_list_welsh = cn_galwyddel
-					#Central Germanic Cultures 
+					#Central Germanic Cultures
 					name_list_saxon = cn_rhinns
 					name_list_thuringian = cn_galenauslandischen
 					#North Germanic Cultures
@@ -3437,12 +3657,12 @@ e_britannia = {
 				}
 				b_kilcudbrite = {
 					province = 1682
-					
+
 					color = { 230 120 65 }
 				}
 				b_sanquhar = {
 					province = 1683
-					
+
 					color = { 230 120 65 }
 				}
 				b_wigtown = {
@@ -3451,8 +3671,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_lucopibia
 						name_list_romano_gallic = cn_lucopibia
+						name_list_gallo_romance = cn_lucopibia
 						name_list_romano_hispanic = cn_lucopibia
 						name_list_romano_british = cn_lucopibia
+						name_list_british_romance = cn_lucopibia
 						name_list_romano_african = cn_lucopibia
 						name_list_romano_raetian = cn_lucopibia
 						name_list_romano_thracian = cn_lucopibia
@@ -3486,8 +3708,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_celyphium
 						name_list_romano_gallic = cn_celyphium
+						name_list_gallo_romance = cn_celyphium
 						name_list_romano_hispanic = cn_celyphium
 						name_list_romano_british = cn_celyphium
+						name_list_british_romance = cn_celyphium
 						name_list_romano_african = cn_celyphium
 						name_list_romano_raetian = cn_celyphium
 						name_list_romano_thracian = cn_celyphium
@@ -3509,8 +3733,10 @@ e_britannia = {
 					#Roman Cultures
 					name_list_roman = cn_ayrus
 					name_list_romano_gallic = cn_ayrus
+					name_list_gallo_romance = cn_ayrus
 					name_list_romano_hispanic = cn_ayrus
 					name_list_romano_british = cn_ayrus
+					name_list_british_romance = cn_ayrus
 					name_list_romano_african = cn_ayrus
 					name_list_romano_raetian = cn_ayrus
 					name_list_romano_thracian = cn_ayrus
@@ -3528,12 +3754,12 @@ e_britannia = {
 					name_list_welsh = cn_aeron
 					name_list_breton = cn_aeron
 					name_list_cornish = cn_aeron
-					#Central Germanic Cultures 
+					#Central Germanic Cultures
 					name_list_thuringian = cn_landerayr
 					#Germanic Cultures
 					name_list_german = cn_landerayr
 				}
-				
+
 				b_kyle = {
 					province = 1686
 
@@ -3598,8 +3824,10 @@ e_britannia = {
 			#Roman Cultures
 			name_list_roman = cn_britannia_prima
 			name_list_romano_gallic = cn_britannia_prima
+			name_list_gallo_romance = cn_britannia_prima
 			name_list_romano_hispanic = cn_britannia_prima
 			name_list_romano_british = cn_britannia_prima
+			name_list_british_romance = cn_britannia_prima
 			name_list_romano_african = cn_britannia_prima
 			name_list_romano_raetian = cn_britannia_prima
 			name_list_romano_thracian = cn_britannia_prima
@@ -3630,9 +3858,9 @@ e_britannia = {
 			name_list_english = cn_wales
 			name_list_old_frankish = cn_bretaigne
 		}
-		
+
 		can_create = { general_kingdom_title_creation_trigger = yes }
-		
+
 		d_hereford = { # Mercia
 			color={ 125 208 209 }
 			capital = c_warwickshire # Warwick
@@ -3640,8 +3868,10 @@ e_britannia = {
 				#Roman Cultures
 				name_list_roman = cn_coritani
 				name_list_romano_gallic = cn_coritani
+				name_list_gallo_romance = cn_coritani
 				name_list_romano_hispanic = cn_coritani
 				name_list_romano_british = cn_coritani
+				name_list_british_romance = cn_coritani
 				name_list_romano_african = cn_coritani
 				name_list_romano_raetian = cn_coritani
 				name_list_romano_thracian = cn_coritani
@@ -3670,15 +3900,17 @@ e_britannia = {
 					add = @better_than_the_alternatives_score
 				}
 			}
-			
+
 			c_warwickshire = {
 				color = { 190 30 30 }
 				cultural_names = {
 					#Roman Cultures
 					name_list_roman = cn_praesidium
 					name_list_romano_gallic = cn_praesidium
+					name_list_gallo_romance = cn_praesidium
 					name_list_romano_hispanic = cn_praesidium
 					name_list_romano_british = cn_praesidium
+					name_list_british_romance = cn_praesidium
 					name_list_romano_african = cn_praesidium
 					name_list_romano_raetian = cn_praesidium
 					name_list_romano_thracian = cn_praesidium
@@ -3697,8 +3929,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_praesidium
 						name_list_romano_gallic = cn_praesidium
+						name_list_gallo_romance = cn_praesidium
 						name_list_romano_hispanic = cn_praesidium
 						name_list_romano_british = cn_praesidium
+						name_list_british_romance = cn_praesidium
 						name_list_romano_african = cn_praesidium
 						name_list_romano_raetian = cn_praesidium
 						name_list_romano_thracian = cn_praesidium
@@ -3721,8 +3955,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_conventranum
 						name_list_romano_gallic = cn_conventranum
+						name_list_gallo_romance = cn_conventranum
 						name_list_romano_hispanic = cn_conventranum
 						name_list_romano_british = cn_conventranum
+						name_list_british_romance = cn_conventranum
 						name_list_romano_african = cn_conventranum
 						name_list_romano_raetian = cn_conventranum
 						name_list_romano_thracian = cn_conventranum
@@ -3755,8 +3991,10 @@ e_britannia = {
 					#Roman Cultures
 					name_list_roman = cn_pennocrucium
 					name_list_romano_gallic = cn_pennocrucium
+					name_list_gallo_romance = cn_pennocrucium
 					name_list_romano_hispanic = cn_pennocrucium
 					name_list_romano_british = cn_pennocrucium
+					name_list_british_romance = cn_pennocrucium
 					name_list_romano_african = cn_pennocrucium
 					name_list_romano_raetian = cn_pennocrucium
 					name_list_romano_thracian = cn_pennocrucium
@@ -3778,8 +4016,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_pennocrucium
 						name_list_romano_gallic = cn_pennocrucium
+						name_list_gallo_romance = cn_pennocrucium
 						name_list_romano_hispanic = cn_pennocrucium
 						name_list_romano_british = cn_pennocrucium
+						name_list_british_romance = cn_pennocrucium
 						name_list_romano_african = cn_pennocrucium
 						name_list_romano_raetian = cn_pennocrucium
 						name_list_romano_thracian = cn_pennocrucium
@@ -3807,8 +4047,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_ratecorion
 						name_list_romano_gallic = cn_ratecorion
+						name_list_gallo_romance = cn_ratecorion
 						name_list_romano_hispanic = cn_ratecorion
 						name_list_romano_british = cn_ratecorion
+						name_list_british_romance = cn_ratecorion
 						name_list_romano_african = cn_ratecorion
 						name_list_romano_raetian = cn_ratecorion
 						name_list_romano_thracian = cn_ratecorion
@@ -3830,8 +4072,10 @@ e_britannia = {
 					#Roman Cultures
 					name_list_roman = cn_vertis
 					name_list_romano_gallic = cn_vertis
+					name_list_gallo_romance = cn_vertis
 					name_list_romano_hispanic = cn_vertis
 					name_list_romano_british = cn_vertis
+					name_list_british_romance = cn_vertis
 					name_list_romano_african = cn_vertis
 					name_list_romano_raetian = cn_vertis
 					name_list_romano_thracian = cn_vertis
@@ -3846,7 +4090,7 @@ e_britannia = {
 					#Celtic Cultures
 					name_list_briton = cn_cair_guiragon
 					#Central Germanic Cultures
-					name_list_anglo = cn_weorgoranceaster 
+					name_list_anglo = cn_weorgoranceaster
 					name_list_old_saxon = cn_weorgoranceaster
 				}
 				b_worcester = {
@@ -3855,8 +4099,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_vertis
 						name_list_romano_gallic = cn_vertis
+						name_list_gallo_romance = cn_vertis
 						name_list_romano_hispanic = cn_vertis
 						name_list_romano_british = cn_vertis
+						name_list_british_romance = cn_vertis
 						name_list_romano_african = cn_vertis
 						name_list_romano_raetian = cn_vertis
 						name_list_romano_thracian = cn_vertis
@@ -3871,7 +4117,7 @@ e_britannia = {
 						#Celtic Cultures
 						name_list_briton = cn_cair_guiragon
 						#Central Germanic Cultures
-						name_list_anglo = cn_weorgoranceaster 
+						name_list_anglo = cn_weorgoranceaster
 						name_list_old_saxon = cn_weorgoranceaster
 					}
 					color = { 160 20 5 }
@@ -3882,7 +4128,7 @@ e_britannia = {
 						#Celtic Cultures
 						name_list_briton = cn_cair_afon
 						#Central Germanic Cultures
-						name_list_anglo = cn_eofhomme 
+						name_list_anglo = cn_eofhomme
 						name_list_old_saxon = cn_eofhomme
 					}
 					color = { 160 20 5 }
@@ -3893,7 +4139,7 @@ e_britannia = {
 						#Celtic Cultures
 						name_list_briton = cn_llangydr
 						#Central Germanic Cultures
-						name_list_anglo = cn_husmerae 
+						name_list_anglo = cn_husmerae
 						name_list_old_saxon = cn_husmerae
 					}
 					color = { 160 20 5 }
@@ -3905,8 +4151,10 @@ e_britannia = {
 					#Roman Cultures
 					name_list_roman = cn_viroconium
 					name_list_romano_gallic = cn_viroconium
+					name_list_gallo_romance = cn_viroconium
 					name_list_romano_hispanic = cn_viroconium
 					name_list_romano_british = cn_viroconium
+					name_list_british_romance = cn_viroconium
 					name_list_romano_african = cn_viroconium
 					name_list_romano_raetian = cn_viroconium
 					name_list_romano_thracian = cn_viroconium
@@ -3928,8 +4176,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_viroconium
 						name_list_romano_gallic = cn_viroconium
+						name_list_gallo_romance = cn_viroconium
 						name_list_romano_hispanic = cn_viroconium
 						name_list_romano_british = cn_viroconium
+						name_list_british_romance = cn_viroconium
 						name_list_romano_african = cn_viroconium
 						name_list_romano_raetian = cn_viroconium
 						name_list_romano_thracian = cn_viroconium
@@ -3966,8 +4216,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_clonna
 						name_list_romano_gallic = cn_clonna
+						name_list_gallo_romance = cn_clonna
 						name_list_romano_hispanic = cn_clonna
 						name_list_romano_british = cn_clonna
+						name_list_british_romance = cn_clonna
 						name_list_romano_african = cn_clonna
 						name_list_romano_raetian = cn_clonna
 						name_list_romano_thracian = cn_clonna
@@ -3988,12 +4240,14 @@ e_britannia = {
 			}
 			c_hereford = {
 				color = { 110 45 35 }
-				cultural_names = { #Added Welsh localization to this file. 
+				cultural_names = { #Added Welsh localization to this file.
 					#Roman Cultures
 					name_list_roman = cn_magnis
 					name_list_romano_gallic = cn_magnis
+					name_list_gallo_romance = cn_magnis
 					name_list_romano_hispanic = cn_magnis
 					name_list_romano_british = cn_magnis
+					name_list_british_romance = cn_magnis
 					name_list_romano_african = cn_magnis
 					name_list_romano_raetian = cn_magnis
 					name_list_romano_thracian = cn_magnis
@@ -4010,7 +4264,7 @@ e_britannia = {
 					name_list_welsh = cn_ergyng
 					name_list_cumbrian = cn_ergyng
 					#Central Germanic Cultures
-					name_list_anglo = cn_westerna 
+					name_list_anglo = cn_westerna
 					name_list_old_saxon = cn_westerna
 				}
 				b_hereford = {
@@ -4019,8 +4273,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_ariconium
 						name_list_romano_gallic = cn_ariconium
+						name_list_gallo_romance = cn_ariconium
 						name_list_romano_hispanic = cn_ariconium
 						name_list_romano_british = cn_ariconium
+						name_list_british_romance = cn_ariconium
 						name_list_romano_african = cn_ariconium
 						name_list_romano_raetian = cn_ariconium
 						name_list_romano_thracian = cn_ariconium
@@ -4046,7 +4302,7 @@ e_britannia = {
 
 				b_wigmore = {
 					province = 1633
-				
+
 					color = { 110 45 35 }
 				}
 
@@ -4064,8 +4320,10 @@ e_britannia = {
 				#Roman Cultures
 				name_list_roman = cn_britannia_prima
 				name_list_romano_gallic = cn_britannia_prima
+				name_list_gallo_romance = cn_britannia_prima
 				name_list_romano_hispanic = cn_britannia_prima
 				name_list_romano_british = cn_britannia_prima
+				name_list_british_romance = cn_britannia_prima
 				name_list_romano_african = cn_britannia_prima
 				name_list_romano_raetian = cn_britannia_prima
 				name_list_romano_thracian = cn_britannia_prima
@@ -4094,8 +4352,10 @@ e_britannia = {
 					#Roman Cultures
 					name_list_roman = cn_glevum
 					name_list_romano_gallic = cn_glevum
+					name_list_gallo_romance = cn_glevum
 					name_list_romano_hispanic = cn_glevum
 					name_list_romano_british = cn_glevum
+					name_list_british_romance = cn_glevum
 					name_list_romano_african = cn_glevum
 					name_list_romano_raetian = cn_glevum
 					name_list_romano_thracian = cn_glevum
@@ -4123,8 +4383,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_glevum
 						name_list_romano_gallic = cn_glevum
+						name_list_gallo_romance = cn_glevum
 						name_list_romano_hispanic = cn_glevum
 						name_list_romano_british = cn_glevum
+						name_list_british_romance = cn_glevum
 						name_list_romano_african = cn_glevum
 						name_list_romano_raetian = cn_glevum
 						name_list_romano_thracian = cn_glevum
@@ -4150,8 +4412,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_abona
 						name_list_romano_gallic = cn_abona
+						name_list_gallo_romance = cn_abona
 						name_list_romano_hispanic = cn_abona
 						name_list_romano_british = cn_abona
+						name_list_british_romance = cn_abona
 						name_list_romano_african = cn_abona
 						name_list_romano_raetian = cn_abona
 						name_list_romano_thracian = cn_abona
@@ -4182,8 +4446,10 @@ e_britannia = {
 					#Roman Cultures
 					name_list_roman = cn_belgae
 					name_list_romano_gallic = cn_belgae
+					name_list_gallo_romance = cn_belgae
 					name_list_romano_hispanic = cn_belgae
 					name_list_romano_british = cn_belgae
+					name_list_british_romance = cn_belgae
 					name_list_romano_african = cn_belgae
 					name_list_romano_raetian = cn_belgae
 					name_list_romano_thracian = cn_belgae
@@ -4204,8 +4470,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_sorviodunum
 						name_list_romano_gallic = cn_sorviodunum
+						name_list_gallo_romance = cn_sorviodunum
 						name_list_romano_hispanic = cn_sorviodunum
 						name_list_romano_british = cn_sorviodunum
+						name_list_british_romance = cn_sorviodunum
 						name_list_romano_african = cn_sorviodunum
 						name_list_romano_raetian = cn_sorviodunum
 						name_list_romano_thracian = cn_sorviodunum
@@ -4231,8 +4499,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_ellandunum
 						name_list_romano_gallic = cn_ellandunum
+						name_list_gallo_romance = cn_ellandunum
 						name_list_romano_hispanic = cn_ellandunum
 						name_list_romano_british = cn_ellandunum
+						name_list_british_romance = cn_ellandunum
 						name_list_romano_african = cn_ellandunum
 						name_list_romano_raetian = cn_ellandunum
 						name_list_romano_thracian = cn_ellandunum
@@ -4245,7 +4515,7 @@ e_britannia = {
 						name_list_romano_aramean = cn_ellandunum
 						name_list_romano_vandalic = cn_ellandunum
 						#Central Germanic Cultures
-						name_list_anglo = cn_wiltun 
+						name_list_anglo = cn_wiltun
 						name_list_old_saxon = cn_wiltun
 					}
 					color = { 250 55 15 }
@@ -4256,8 +4526,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_corvina
 						name_list_romano_gallic = cn_corvina
+						name_list_gallo_romance = cn_corvina
 						name_list_romano_hispanic = cn_corvina
 						name_list_romano_british = cn_corvina
+						name_list_british_romance = cn_corvina
 						name_list_romano_african = cn_corvina
 						name_list_romano_raetian = cn_corvina
 						name_list_romano_thracian = cn_corvina
@@ -4270,7 +4542,7 @@ e_britannia = {
 						name_list_romano_aramean = cn_corvina
 						name_list_romano_vandalic = cn_corvina
 						#Central Germanic Cultures
-						name_list_anglo = cn_ramsbyrig 
+						name_list_anglo = cn_ramsbyrig
 						name_list_old_saxon = cn_ramsbyrig
 					}
 					color = { 250 55 15 }
@@ -4281,8 +4553,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_meldunum
 						name_list_romano_gallic = cn_meldunum
+						name_list_gallo_romance = cn_meldunum
 						name_list_romano_hispanic = cn_meldunum
 						name_list_romano_british = cn_meldunum
+						name_list_british_romance = cn_meldunum
 						name_list_romano_african = cn_meldunum
 						name_list_romano_raetian = cn_meldunum
 						name_list_romano_thracian = cn_meldunum
@@ -4309,8 +4583,10 @@ e_britannia = {
 					#Roman Cultures
 					name_list_roman = cn_vadum_bovum
 					name_list_romano_gallic = cn_vadum_bovum
+					name_list_gallo_romance = cn_vadum_bovum
 					name_list_romano_hispanic = cn_vadum_bovum
 					name_list_romano_british = cn_vadum_bovum
+					name_list_british_romance = cn_vadum_bovum
 					name_list_romano_african = cn_vadum_bovum
 					name_list_romano_raetian = cn_vadum_bovum
 					name_list_romano_thracian = cn_vadum_bovum
@@ -4349,8 +4625,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_vadum_bovum
 						name_list_romano_gallic = cn_vadum_bovum
+						name_list_gallo_romance = cn_vadum_bovum
 						name_list_romano_hispanic = cn_vadum_bovum
 						name_list_romano_british = cn_vadum_bovum
+						name_list_british_romance = cn_vadum_bovum
 						name_list_romano_african = cn_vadum_bovum
 						name_list_romano_raetian = cn_vadum_bovum
 						name_list_romano_thracian = cn_vadum_bovum
@@ -4391,7 +4669,7 @@ e_britannia = {
 						#Celtic Cultures
 						name_list_briton = cn_bwrch-ban
 						#Central Germanic Cultures
-						name_list_anglo = cn_banesbyrig 
+						name_list_anglo = cn_banesbyrig
 						name_list_old_saxon = cn_banesbyrig
 					}
 					color = { 255 115 15 }
@@ -4406,21 +4684,23 @@ e_britannia = {
 				color = { 255 100 25 }
 				cultural_names = {
 					#Roman Cultures
-						name_list_roman = cn_venta_atrebatum
-						name_list_romano_gallic = cn_venta_atrebatum
-						name_list_romano_hispanic = cn_venta_atrebatum
-						name_list_romano_british = cn_venta_atrebatum
-						name_list_romano_african = cn_venta_atrebatum
-						name_list_romano_raetian = cn_venta_atrebatum
-						name_list_romano_thracian = cn_venta_atrebatum
-						name_list_romano_illyrian = cn_venta_atrebatum
-						name_list_romano_pannonian = cn_venta_atrebatum
-						name_list_dalmatian = cn_venta_atrebatum
-						name_list_romano_noric = cn_venta_atrebatum
-						name_list_romano_gothic = cn_venta_atrebatum
-						name_list_romano_dacian = cn_venta_atrebatum
-						name_list_romano_aramean = cn_venta_atrebatum
-						name_list_romano_vandalic = cn_venta_atrebatum
+					name_list_roman = cn_venta_atrebatum
+					name_list_romano_gallic = cn_venta_atrebatum
+					name_list_gallo_romance = cn_venta_atrebatum
+					name_list_romano_hispanic = cn_venta_atrebatum
+					name_list_romano_british = cn_venta_atrebatum
+					name_list_british_romance = cn_venta_atrebatum
+					name_list_romano_african = cn_venta_atrebatum
+					name_list_romano_raetian = cn_venta_atrebatum
+					name_list_romano_thracian = cn_venta_atrebatum
+					name_list_romano_illyrian = cn_venta_atrebatum
+					name_list_romano_pannonian = cn_venta_atrebatum
+					name_list_dalmatian = cn_venta_atrebatum
+					name_list_romano_noric = cn_venta_atrebatum
+					name_list_romano_gothic = cn_venta_atrebatum
+					name_list_romano_dacian = cn_venta_atrebatum
+					name_list_romano_aramean = cn_venta_atrebatum
+					name_list_romano_vandalic = cn_venta_atrebatum
 				}
 				b_newbury = {
 					province = 1556
@@ -4428,8 +4708,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_spinis
 						name_list_romano_gallic = cn_spinis
+						name_list_gallo_romance = cn_spinis
 						name_list_romano_hispanic = cn_spinis
 						name_list_romano_british = cn_spinis
+						name_list_british_romance = cn_spinis
 						name_list_romano_african = cn_spinis
 						name_list_romano_raetian = cn_spinis
 						name_list_romano_thracian = cn_spinis
@@ -4468,8 +4750,10 @@ e_britannia = {
 				#Roman Cultures
 				name_list_roman = cn_belgae
 				name_list_romano_gallic = cn_belgae
+				name_list_gallo_romance = cn_belgae
 				name_list_romano_hispanic = cn_belgae
 				name_list_romano_british = cn_glastenning
+				name_list_british_romance = cn_glastenning
 				name_list_romano_african = cn_belgae
 				name_list_romano_raetian = cn_belgae
 				name_list_romano_thracian = cn_belgae
@@ -4497,15 +4781,17 @@ e_britannia = {
 					add = @better_than_the_alternatives_score
 				}
 			}
-			
+
 			c_hampton = {
 				color = { 230 15 55 }
 				cultural_names = {
 					#Roman Cultures
 					name_list_roman = cn_clausentum
 					name_list_romano_gallic = cn_clausentum
+					name_list_gallo_romance = cn_clausentum
 					name_list_romano_hispanic = cn_clausentum
 					name_list_romano_british = cn_clausentum
+					name_list_british_romance = cn_clausentum
 					name_list_romano_african = cn_clausentum
 					name_list_romano_raetian = cn_clausentum
 					name_list_romano_thracian = cn_clausentum
@@ -4529,8 +4815,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_venta_belgarum
 						name_list_romano_gallic = cn_venta_belgarum
+						name_list_gallo_romance = cn_venta_belgarum
 						name_list_romano_hispanic = cn_venta_belgarum
 						name_list_romano_british = cn_venta_belgarum
+						name_list_british_romance = cn_venta_belgarum
 						name_list_romano_african = cn_venta_belgarum
 						name_list_romano_raetian = cn_venta_belgarum
 						name_list_romano_thracian = cn_venta_belgarum
@@ -4556,8 +4844,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_portus_magnus
 						name_list_romano_gallic = cn_portus_magnus
+						name_list_gallo_romance = cn_portus_magnus
 						name_list_romano_hispanic = cn_portus_magnus
 						name_list_romano_british = cn_portus_magnus
+						name_list_british_romance = cn_portus_magnus
 						name_list_romano_african = cn_portus_magnus
 						name_list_romano_raetian = cn_portus_magnus
 						name_list_romano_thracian = cn_portus_magnus
@@ -4580,8 +4870,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_calleva_atrebatum
 						name_list_romano_gallic = cn_calleva_atrebatum
+						name_list_gallo_romance = cn_calleva_atrebatum
 						name_list_romano_hispanic = cn_calleva_atrebatum
 						name_list_romano_british = cn_calleva_atrebatum
+						name_list_british_romance = cn_calleva_atrebatum
 						name_list_romano_african = cn_calleva_atrebatum
 						name_list_romano_raetian = cn_calleva_atrebatum
 						name_list_romano_thracian = cn_calleva_atrebatum
@@ -4607,8 +4899,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_clausentum
 						name_list_romano_gallic = cn_clausentum
+						name_list_gallo_romance = cn_clausentum
 						name_list_romano_hispanic = cn_clausentum
 						name_list_romano_british = cn_clausentum
+						name_list_british_romance = cn_clausentum
 						name_list_romano_african = cn_clausentum
 						name_list_romano_raetian = cn_clausentum
 						name_list_romano_thracian = cn_clausentum
@@ -4632,8 +4926,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_ecclesia_christi
 						name_list_romano_gallic = cn_ecclesia_christi
+						name_list_gallo_romance = cn_ecclesia_christi
 						name_list_romano_hispanic = cn_ecclesia_christi
 						name_list_romano_british = cn_ecclesia_christi
+						name_list_british_romance = cn_ecclesia_christi
 						name_list_romano_african = cn_ecclesia_christi
 						name_list_romano_raetian = cn_ecclesia_christi
 						name_list_romano_thracian = cn_ecclesia_christi
@@ -4658,8 +4954,10 @@ e_britannia = {
 					#Roman Cultures
 					name_list_roman = cn_vectis
 					name_list_romano_gallic = cn_vectis
+					name_list_gallo_romance = cn_vectis
 					name_list_romano_hispanic = cn_vectis
 					name_list_romano_british = cn_vectis
+					name_list_british_romance = cn_vectis
 					name_list_romano_african = cn_vectis
 					name_list_romano_raetian = cn_vectis
 					name_list_romano_thracian = cn_vectis
@@ -4687,8 +4985,10 @@ e_britannia = {
 					#Roman Cultures
 					name_list_roman = cn_durotriges
 					name_list_romano_gallic = cn_durotriges
+					name_list_gallo_romance = cn_durotriges
 					name_list_romano_hispanic = cn_durotriges
 					name_list_romano_british = cn_glastenning
+					name_list_british_romance = cn_glastenning
 					name_list_romano_african = cn_durotriges
 					name_list_romano_raetian = cn_durotriges
 					name_list_romano_thracian = cn_durotriges
@@ -4723,8 +5023,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_vindocladia
 						name_list_romano_gallic = cn_vindocladia
+						name_list_gallo_romance = cn_vindocladia
 						name_list_romano_hispanic = cn_vindocladia
 						name_list_romano_british = cn_vindocladia
+						name_list_british_romance = cn_vindocladia
 						name_list_romano_african = cn_vindocladia
 						name_list_romano_raetian = cn_vindocladia
 						name_list_romano_thracian = cn_vindocladia
@@ -4747,8 +5049,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_melezo
 						name_list_romano_gallic = cn_melezo
+						name_list_gallo_romance = cn_melezo
 						name_list_romano_hispanic = cn_melezo
 						name_list_romano_british = cn_melezo
+						name_list_british_romance = cn_melezo
 						name_list_romano_african = cn_melezo
 						name_list_romano_raetian = cn_melezo
 						name_list_romano_thracian = cn_melezo
@@ -4774,8 +5078,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_lima
 						name_list_romano_gallic = cn_lima
+						name_list_gallo_romance = cn_lima
 						name_list_romano_hispanic = cn_lima
 						name_list_romano_british = cn_lima
+						name_list_british_romance = cn_lima
 						name_list_romano_african = cn_lima
 						name_list_romano_raetian = cn_lima
 						name_list_romano_thracian = cn_lima
@@ -4802,8 +5108,10 @@ e_britannia = {
 					#Roman Cultures
 					name_list_roman = cn_aquae_sulis
 					name_list_romano_gallic = cn_aquae_sulis
+					name_list_gallo_romance = cn_aquae_sulis
 					name_list_romano_hispanic = cn_aquae_sulis
 					name_list_romano_british = cn_aquae_sulis
+					name_list_british_romance = cn_aquae_sulis
 					name_list_romano_african = cn_aquae_sulis
 					name_list_romano_raetian = cn_aquae_sulis
 					name_list_romano_thracian = cn_aquae_sulis
@@ -4830,8 +5138,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_aquae_sulis
 						name_list_romano_gallic = cn_aquae_sulis
+						name_list_gallo_romance = cn_aquae_sulis
 						name_list_romano_hispanic = cn_aquae_sulis
 						name_list_romano_british = cn_aquae_sulis
+						name_list_british_romance = cn_aquae_sulis
 						name_list_romano_african = cn_aquae_sulis
 						name_list_romano_raetian = cn_aquae_sulis
 						name_list_romano_thracian = cn_aquae_sulis
@@ -4862,8 +5172,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_lindinis
 						name_list_romano_gallic = cn_lindinis
+						name_list_gallo_romance = cn_lindinis
 						name_list_romano_hispanic = cn_lindinis
 						name_list_romano_british = cn_lindinis
+						name_list_british_romance = cn_lindinis
 						name_list_romano_african = cn_lindinis
 						name_list_romano_raetian = cn_lindinis
 						name_list_romano_thracian = cn_lindinis
@@ -4886,8 +5198,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_cantia
 						name_list_romano_gallic = cn_cantia
+						name_list_gallo_romance = cn_cantia
 						name_list_romano_hispanic = cn_cantia
 						name_list_romano_british = cn_cantia
+						name_list_british_romance = cn_cantia
 						name_list_romano_african = cn_cantia
 						name_list_romano_raetian = cn_cantia
 						name_list_romano_thracian = cn_cantia
@@ -4914,8 +5228,10 @@ e_britannia = {
 				#Roman Cultures
 				name_list_roman = cn_dumnonia
 				name_list_romano_gallic = cn_dumnonia
+				name_list_gallo_romance = cn_dumnonia
 				name_list_romano_hispanic = cn_dumnonia
 				name_list_romano_british = cn_dumnonia
+				name_list_british_romance = cn_dumnonia
 				name_list_romano_african = cn_dumnonia
 				name_list_romano_raetian = cn_dumnonia
 				name_list_romano_thracian = cn_dumnonia
@@ -4940,15 +5256,17 @@ e_britannia = {
 					add = @correct_culture_primary_score
 				}
 			}
-			
+
 			c_devon = {
 				color = { 170 60 10 }
 				cultural_names = {
 					#Roman Cultures
 					name_list_roman = cn_isca_dumnoniorum
 					name_list_romano_gallic = cn_isca_dumnoniorum
+					name_list_gallo_romance = cn_isca_dumnoniorum
 					name_list_romano_hispanic = cn_isca_dumnoniorum
 					name_list_romano_british = cn_isca_dumnoniorum
+					name_list_british_romance = cn_isca_dumnoniorum
 					name_list_romano_african = cn_isca_dumnoniorum
 					name_list_romano_raetian = cn_isca_dumnoniorum
 					name_list_romano_thracian = cn_isca_dumnoniorum
@@ -4975,15 +5293,17 @@ e_britannia = {
 						add = @better_than_the_alternatives_score
 					}
 				}
-				
+
 				b_exeter = {
 					province = 1569
 					cultural_names = {
 						#Roman Cultures
 						name_list_roman = cn_isca_dumnoniorum
 						name_list_romano_gallic = cn_isca_dumnoniorum
+						name_list_gallo_romance = cn_isca_dumnoniorum
 						name_list_romano_hispanic = cn_isca_dumnoniorum
 						name_list_romano_british = cn_isca_dumnoniorum
+						name_list_british_romance = cn_isca_dumnoniorum
 						name_list_romano_african = cn_isca_dumnoniorum
 						name_list_romano_raetian = cn_isca_dumnoniorum
 						name_list_romano_thracian = cn_isca_dumnoniorum
@@ -5009,8 +5329,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_milidunum
 						name_list_romano_gallic = cn_milidunum
+						name_list_gallo_romance = cn_milidunum
 						name_list_romano_hispanic = cn_milidunum
 						name_list_romano_british = cn_milidunum
+						name_list_british_romance = cn_milidunum
 						name_list_romano_african = cn_milidunum
 						name_list_romano_raetian = cn_milidunum
 						name_list_romano_thracian = cn_milidunum
@@ -5031,8 +5353,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_melamoni
 						name_list_romano_gallic = cn_melamoni
+						name_list_gallo_romance = cn_melamoni
 						name_list_romano_hispanic = cn_melamoni
 						name_list_romano_british = cn_melamoni
+						name_list_british_romance = cn_melamoni
 						name_list_romano_african = cn_melamoni
 						name_list_romano_raetian = cn_melamoni
 						name_list_romano_thracian = cn_melamoni
@@ -5053,8 +5377,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_elconio
 						name_list_romano_gallic = cn_elconio
+						name_list_gallo_romance = cn_elconio
 						name_list_romano_hispanic = cn_elconio
 						name_list_romano_british = cn_elconio
+						name_list_british_romance = cn_elconio
 						name_list_romano_african = cn_elconio
 						name_list_romano_raetian = cn_elconio
 						name_list_romano_thracian = cn_elconio
@@ -5076,8 +5402,10 @@ e_britannia = {
 					#Roman Cultures
 					name_list_roman = cn_dumnonii
 					name_list_romano_gallic = cn_dumnonii
+					name_list_gallo_romance = cn_dumnonii
 					name_list_romano_hispanic = cn_dumnonii
 					name_list_romano_british = cn_dumnonii
+					name_list_british_romance = cn_dumnonii
 					name_list_romano_african = cn_dumnonii
 					name_list_romano_raetian = cn_dumnonii
 					name_list_romano_thracian = cn_dumnonii
@@ -5090,7 +5418,7 @@ e_britannia = {
 					name_list_romano_aramean = cn_dumnonii
 					name_list_romano_vandalic = cn_dumnonii
 					#Celtic Cultures
-					name_list_briton = cn_cornubia 
+					name_list_briton = cn_cornubia
 					#Central Germanic Cultures
 					name_list_anglo = cn_corn_walum
 					name_list_old_saxon = cn_corn_walum
@@ -5103,15 +5431,17 @@ e_britannia = {
 						add = @correct_culture_primary_score
 					}
 				}
-				
+
 				b_tintagel = {
 					province = 1574
 					cultural_names = {
 						#Roman Cultures
 						name_list_roman = cn_pilais
 						name_list_romano_gallic = cn_pilais
+						name_list_gallo_romance = cn_pilais
 						name_list_romano_hispanic = cn_pilais
 						name_list_romano_british = cn_pilais
+						name_list_british_romance = cn_pilais
 						name_list_romano_african = cn_pilais
 						name_list_romano_raetian = cn_pilais
 						name_list_romano_thracian = cn_pilais
@@ -5134,8 +5464,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_tamaris
 						name_list_romano_gallic = cn_tamaris
+						name_list_gallo_romance = cn_tamaris
 						name_list_romano_hispanic = cn_tamaris
 						name_list_romano_british = cn_tamaris
+						name_list_british_romance = cn_tamaris
 						name_list_romano_african = cn_tamaris
 						name_list_romano_raetian = cn_tamaris
 						name_list_romano_thracian = cn_tamaris
@@ -5164,8 +5496,10 @@ e_britannia = {
 				#Roman Cultures
 				name_list_roman = cn_venedotia
 				name_list_romano_gallic = cn_venedotia
+				name_list_gallo_romance = cn_venedotia
 				name_list_romano_hispanic = cn_venedotia
 				name_list_romano_british = cn_venedotia
+				name_list_british_romance = cn_venedotia
 				name_list_romano_african = cn_venedotia
 				name_list_romano_raetian = cn_venedotia
 				name_list_romano_thracian = cn_venedotia
@@ -5196,8 +5530,10 @@ e_britannia = {
 					#Roman Cultures
 					name_list_roman = cn_ceretica
 					name_list_romano_gallic = cn_ceretica
+					name_list_gallo_romance = cn_ceretica
 					name_list_romano_hispanic = cn_ceretica
 					name_list_romano_british = cn_ceretica
+					name_list_british_romance = cn_ceretica
 					name_list_romano_african = cn_ceretica
 					name_list_romano_raetian = cn_ceretica
 					name_list_romano_thracian = cn_ceretica
@@ -5223,8 +5559,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_ceretica
 						name_list_romano_gallic = cn_ceretica
+						name_list_gallo_romance = cn_ceretica
 						name_list_romano_hispanic = cn_ceretica
 						name_list_romano_british = cn_ceretica
+						name_list_british_romance = cn_ceretica
 						name_list_romano_african = cn_ceretica
 						name_list_romano_raetian = cn_ceretica
 						name_list_romano_thracian = cn_ceretica
@@ -5281,8 +5619,10 @@ e_britannia = {
 					#Roman Cultures
 					name_list_roman = cn_segontium
 					name_list_romano_gallic = cn_segontium
+					name_list_gallo_romance = cn_segontium
 					name_list_romano_hispanic = cn_segontium
 					name_list_romano_british = cn_segontium
+					name_list_british_romance = cn_segontium
 					name_list_romano_african = cn_segontium
 					name_list_romano_raetian = cn_segontium
 					name_list_romano_thracian = cn_segontium
@@ -5305,8 +5645,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_segontium
 						name_list_romano_gallic = cn_segontium
+						name_list_gallo_romance = cn_segontium
 						name_list_romano_hispanic = cn_segontium
 						name_list_romano_british = cn_segontium
+						name_list_british_romance = cn_segontium
 						name_list_romano_african = cn_segontium
 						name_list_romano_raetian = cn_segontium
 						name_list_romano_thracian = cn_segontium
@@ -5320,7 +5662,7 @@ e_britannia = {
 						name_list_romano_vandalic = cn_segontium
 						#Celtic Cultures
 						name_list_briton = cn_cair_seoint
-						#Central Germanic Cultures 
+						#Central Germanic Cultures
 						name_list_anglo = cn_custoient
 						name_list_old_saxon = cn_custoient
 					}
@@ -5343,8 +5685,10 @@ e_britannia = {
 					#Roman Cultures
 					name_list_roman = cn_mona
 					name_list_romano_gallic = cn_mona
+					name_list_gallo_romance = cn_mona
 					name_list_romano_hispanic = cn_mona
 					name_list_romano_british = cn_mona
+					name_list_british_romance = cn_mona
 					name_list_romano_african = cn_mona
 					name_list_romano_raetian = cn_mona
 					name_list_romano_thracian = cn_mona
@@ -5367,8 +5711,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_mona
 						name_list_romano_gallic = cn_mona
+						name_list_gallo_romance = cn_mona
 						name_list_romano_hispanic = cn_mona
 						name_list_romano_british = cn_mona
+						name_list_british_romance = cn_mona
 						name_list_romano_african = cn_mona
 						name_list_romano_raetian = cn_mona
 						name_list_romano_thracian = cn_mona
@@ -5405,8 +5751,10 @@ e_britannia = {
 					#Roman Cultures
 					name_list_roman = cn_deceangi
 					name_list_romano_gallic = cn_deceangi
+					name_list_gallo_romance = cn_deceangi
 					name_list_romano_hispanic = cn_deceangi
 					name_list_romano_british = cn_deceangi
+					name_list_british_romance = cn_deceangi
 					name_list_romano_african = cn_deceangi
 					name_list_romano_raetian = cn_deceangi
 					name_list_romano_thracian = cn_deceangi
@@ -5441,8 +5789,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_denbiga
 						name_list_romano_gallic = cn_denbiga
+						name_list_gallo_romance = cn_denbiga
 						name_list_romano_hispanic = cn_denbiga
 						name_list_romano_british = cn_denbiga
+						name_list_british_romance = cn_denbiga
 						name_list_romano_african = cn_denbiga
 						name_list_romano_raetian = cn_denbiga
 						name_list_romano_thracian = cn_denbiga
@@ -5494,12 +5844,14 @@ e_britannia = {
 					province = 1663
 					cultural_names = {
 						#Technically a different town: Welshpool is Y Trallwng, whereas b_welshpool is currently Mathrafal, historic seat of the Princes of Powys.
-						
+
 						#Roman Cultures
 						name_list_roman = cn_macatonio
 						name_list_romano_gallic = cn_macatonio
+						name_list_gallo_romance = cn_macatonio
 						name_list_romano_hispanic = cn_macatonio
 						name_list_romano_british = cn_macatonio
+						name_list_british_romance = cn_macatonio
 						name_list_romano_african = cn_macatonio
 						name_list_romano_raetian = cn_macatonio
 						name_list_romano_thracian = cn_macatonio
@@ -5523,15 +5875,17 @@ e_britannia = {
 					province = 1664
 
 					color = { 110 25 25 }
-					
+
 					cultural_names = {
 						#Technically a different settlement, as Newtown wouldn't be founded till the 1300s, but b_newtown is currently Machynlleth, which was a more important Welsh site previously.
-						
+
 						#Roman Cultures
 						name_list_roman = cn_epossessa
 						name_list_romano_gallic = cn_epossessa
+						name_list_gallo_romance = cn_epossessa
 						name_list_romano_hispanic = cn_epossessa
 						name_list_romano_british = cn_epossessa
+						name_list_british_romance = cn_epossessa
 						name_list_romano_african = cn_epossessa
 						name_list_romano_raetian = cn_epossessa
 						name_list_romano_thracian = cn_epossessa
@@ -5562,8 +5916,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_alabum
 						name_list_romano_gallic = cn_alabum
+						name_list_gallo_romance = cn_alabum
 						name_list_romano_hispanic = cn_alabum
 						name_list_romano_british = cn_alabum
+						name_list_british_romance = cn_alabum
 						name_list_romano_african = cn_alabum
 						name_list_romano_raetian = cn_alabum
 						name_list_romano_thracian = cn_alabum
@@ -5603,8 +5959,10 @@ e_britannia = {
 				#Roman Cultures
 				name_list_roman = cn_glevenses
 				name_list_romano_gallic = cn_glevenses
+				name_list_gallo_romance = cn_glevenses
 				name_list_romano_hispanic = cn_glevenses
 				name_list_romano_british = cn_cernyw
+				name_list_british_romance = cn_cernyw
 				name_list_romano_african = cn_glevenses
 				name_list_romano_raetian = cn_glevenses
 				name_list_romano_thracian = cn_glevenses
@@ -5635,8 +5993,10 @@ e_britannia = {
 					#Roman Cultures
 					name_list_roman = cn_demetae
 					name_list_romano_gallic = cn_demetae
+					name_list_gallo_romance = cn_demetae
 					name_list_romano_hispanic = cn_demetae
 					name_list_romano_british = cn_demetae
+					name_list_british_romance = cn_demetae
 					name_list_romano_african = cn_demetae
 					name_list_romano_raetian = cn_demetae
 					name_list_romano_thracian = cn_demetae
@@ -5649,7 +6009,7 @@ e_britannia = {
 					name_list_romano_aramean = cn_demetae
 					name_list_romano_vandalic = cn_demetae
 					#Celtic Cultures
-					name_list_briton = cn_garthmadrun 
+					name_list_briton = cn_garthmadrun
 					name_list_breton = cn_deisi
 					name_list_irish = cn_deisi
 					name_list_welsh = cn_garthmadrun
@@ -5671,8 +6031,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_moridunum
 						name_list_romano_gallic = cn_moridunum
+						name_list_gallo_romance = cn_moridunum
 						name_list_romano_hispanic = cn_moridunum
 						name_list_romano_british = cn_moridunum
+						name_list_british_romance = cn_moridunum
 						name_list_romano_african = cn_moridunum
 						name_list_romano_raetian = cn_moridunum
 						name_list_romano_thracian = cn_moridunum
@@ -5733,8 +6095,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_sanctus_davidus
 						name_list_romano_gallic = cn_sanctus_davidus
+						name_list_gallo_romance = cn_sanctus_davidus
 						name_list_romano_hispanic = cn_sanctus_davidus
 						name_list_romano_british = cn_sanctus_davidus
+						name_list_british_romance = cn_sanctus_davidus
 						name_list_romano_african = cn_sanctus_davidus
 						name_list_romano_raetian = cn_sanctus_davidus
 						name_list_romano_thracian = cn_sanctus_davidus
@@ -5778,8 +6142,10 @@ e_britannia = {
 					#Roman Cultures
 					name_list_roman = cn_glevenses
 					name_list_romano_gallic = cn_glevenses
+					name_list_gallo_romance = cn_glevenses
 					name_list_romano_hispanic = cn_glevenses
 					name_list_romano_british = cn_glevenses
+					name_list_british_romance = cn_glevenses
 					name_list_romano_african = cn_glevenses
 					name_list_romano_raetian = cn_glevenses
 					name_list_romano_thracian = cn_glevenses
@@ -5791,7 +6157,7 @@ e_britannia = {
 					name_list_romano_dacian = cn_glevenses
 					name_list_romano_aramean = cn_glevenses
 					name_list_romano_vandalic = cn_glevenses
-					#Celtic Cultures 
+					#Celtic Cultures
 					name_list_briton = cn_glywysing
 					name_list_welsh = cn_morganngw
 					#North Germanic Cultures
@@ -5813,8 +6179,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_tamion
 						name_list_romano_gallic = cn_tamion
+						name_list_gallo_romance = cn_tamion
 						name_list_romano_hispanic = cn_tamion
 						name_list_romano_british = cn_tamion
+						name_list_british_romance = cn_tamion
 						name_list_romano_african = cn_tamion
 						name_list_romano_raetian = cn_tamion
 						name_list_romano_thracian = cn_tamion
@@ -5856,8 +6224,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_bannium
 						name_list_romano_gallic = cn_bannium
+						name_list_gallo_romance = cn_bannium
 						name_list_romano_hispanic = cn_bannium
 						name_list_romano_british = cn_bannium
+						name_list_british_romance = cn_bannium
 						name_list_romano_african = cn_bannium
 						name_list_romano_raetian = cn_bannium
 						name_list_romano_thracian = cn_bannium
@@ -5885,8 +6255,10 @@ e_britannia = {
 					#Roman Cultures
 					name_list_roman = cn_siluria
 					name_list_romano_gallic = cn_silures
+					name_list_gallo_romance = cn_silures
 					name_list_romano_hispanic = cn_siluria
 					name_list_romano_british = cn_silures
+					name_list_british_romance = cn_silures
 					name_list_romano_african = cn_siluria
 					name_list_romano_raetian = cn_siluria
 					name_list_romano_thracian = cn_siluria
@@ -5898,7 +6270,7 @@ e_britannia = {
 					name_list_romano_dacian = cn_siluria
 					name_list_romano_aramean = cn_siluria
 					name_list_romano_vandalic = cn_siluria
-					#Celtic Cultures 
+					#Celtic Cultures
 					name_list_briton = cn_guent
 					name_list_gallic = cn_siluria
 					#North Germanic Cultures
@@ -5921,8 +6293,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_isca_augusta
 						name_list_romano_gallic = cn_silures
+						name_list_gallo_romance = cn_silures
 						name_list_romano_hispanic = cn_isca_augusta
 						name_list_romano_british = cn_silures
+						name_list_british_romance = cn_silures
 						name_list_romano_african = cn_isca_augusta
 						name_list_romano_raetian = cn_isca_augusta
 						name_list_romano_thracian = cn_isca_augusta
@@ -5948,8 +6322,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_blestium
 						name_list_romano_gallic = cn_blestium
+						name_list_gallo_romance = cn_blestium
 						name_list_romano_hispanic = cn_blestium
 						name_list_romano_british = cn_blestium
+						name_list_british_romance = cn_blestium
 						name_list_romano_african = cn_blestium
 						name_list_romano_raetian = cn_blestium
 						name_list_romano_thracian = cn_blestium
@@ -5961,7 +6337,7 @@ e_britannia = {
 						name_list_romano_dacian = cn_blestium
 						name_list_romano_aramean = cn_blestium
 						name_list_romano_vandalic = cn_blestium
-						#Celtic Cultures 
+						#Celtic Cultures
 						name_list_briton = cn_abermynwy
 						#Central Germanic Cultures
 						name_list_anglo = cn_monnowmuda
@@ -5988,8 +6364,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_cicucium
 						name_list_romano_gallic = cn_cicucium
+						name_list_gallo_romance = cn_cicucium
 						name_list_romano_hispanic = cn_cicucium
 						name_list_romano_british = cn_cicucium
+						name_list_british_romance = cn_cicucium
 						name_list_romano_african = cn_cicucium
 						name_list_romano_raetian = cn_cicucium
 						name_list_romano_thracian = cn_cicucium
@@ -6001,7 +6379,7 @@ e_britannia = {
 						name_list_romano_dacian = cn_cicucium
 						name_list_romano_aramean = cn_cicucium
 						name_list_romano_vandalic = cn_cicucium
-						#Celtic Cultures 
+						#Celtic Cultures
 						name_list_briton = cn_aberhonddu
 						#Central Germanic Cultures
 						name_list_anglo = cn_brychan
@@ -6028,8 +6406,10 @@ e_britannia = {
 			#Roman Cultures
 			name_list_roman = cn_caledonia
 			name_list_romano_gallic = cn_caledonia
+			name_list_gallo_romance = cn_caledonia
 			name_list_romano_hispanic = cn_caledonia
 			name_list_romano_british = cn_caledonia
+			name_list_british_romance = cn_caledonia
 			name_list_romano_african = cn_caledonia
 			name_list_romano_raetian = cn_caledonia
 			name_list_romano_thracian = cn_caledonia
@@ -6041,7 +6421,7 @@ e_britannia = {
 			name_list_romano_dacian = cn_caledonia
 			name_list_romano_aramean = cn_caledonia
 			name_list_romano_vandalic = cn_caledonia
-			#Celtic Cultures 
+			#Celtic Cultures
 			name_list_briton = cn_alban
 			name_list_breton = cn_alba
 			name_list_irish = cn_alba
@@ -6057,7 +6437,7 @@ e_britannia = {
 			name_list_anglo = cn_scottiscland
 			name_list_old_saxon = cn_scottiscland
 		}
-		
+
 		ai_primary_priority = {
 			if = {
 				limit = {
@@ -6074,9 +6454,9 @@ e_britannia = {
 				add = @better_than_the_alternatives_score
 			}
 		}
-		
+
 		can_create = { general_kingdom_title_creation_trigger = yes }
-		
+
 		d_albany = {
 			color = { 220 130 0 }
 			capital = c_gowrie # Perth/St Johnston
@@ -6090,10 +6470,10 @@ e_britannia = {
 				name_list_cornish = cn_circinn
 				name_list_breton = cn_circinn
 			}
-			
+
 			c_gowrie = {
 				color = { 220 130 0 }
-				
+
 				b_st_johnston = {
 					province = 1741
 
@@ -6121,7 +6501,7 @@ e_britannia = {
 
 					color = { 210 115 5 }
 				}
-				
+
 				b_kircaldy = {
 					province = 1725
 
@@ -6135,7 +6515,7 @@ e_britannia = {
 			}
 			c_strathearn = {
 				color = { 245 130 0 }
-				
+
 				b_stirling = {
 					province = 1734
 
@@ -6154,7 +6534,7 @@ e_britannia = {
 			}
 			c_atholl = {
 				color = { 225 155 20 }
-				
+
 				b_dunkeld = {
 					province = 1743
 
@@ -6168,15 +6548,17 @@ e_britannia = {
 			}
 			c_angus = {
 				color = { 225 125 20 }
-				
+
 				b_dundee = {
 					province = 1720
 					cultural_names = {
 						#Roman Cultures
 						name_list_roman = cn_tava
 						name_list_romano_gallic = cn_tava
+						name_list_gallo_romance = cn_tava
 						name_list_romano_hispanic = cn_tava
 						name_list_romano_british = cn_tava
+						name_list_british_romance = cn_tava
 						name_list_romano_african = cn_tava
 						name_list_romano_raetian = cn_tava
 						name_list_romano_thracian = cn_tava
@@ -6233,7 +6615,7 @@ e_britannia = {
 
 			c_moray = {
 				color = { 255 180 60 }
-				
+
 				b_elgin = {
 					province = 1715
 
@@ -6280,7 +6662,7 @@ e_britannia = {
 			}
 			c_buchan = {
 				color = { 255 175 75 }
-				
+
 				b_banff = {
 					province = 1712
 
@@ -6336,7 +6718,7 @@ e_britannia = {
 					name_list_danish = cn_katanaes
 					name_list_norwegian = cn_katanes
 					name_list_swedish = cn_katanaes
-				}	
+				}
 				b_thurso = {
 					province = 1707
 					cultural_names = {
@@ -6380,12 +6762,12 @@ e_britannia = {
 				}
 				b_urquhart = {
 					province = 8775
-				
+
 					color = { 240 160 45 }
 				}
 				b_glenelg = {
 					province = 8776
-				
+
 					color = { 240 160 45 }
 				}
 			}
@@ -6401,15 +6783,17 @@ e_britannia = {
 				name_list_norse = cn_mon
 				name_list_norwegian = cn_mon
 			}
-			
+
 			c_isle_of_man = {
 				color = { 180 90 0 }
 				cultural_names = {
 					#Roman Cultures
 					name_list_roman = cn_manavia
 					name_list_romano_gallic = cn_manavia
+					name_list_gallo_romance = cn_manavia
 					name_list_romano_hispanic = cn_manavia
 					name_list_romano_british = cn_manavia
+					name_list_british_romance = cn_manavia
 					name_list_romano_african = cn_manavia
 					name_list_romano_raetian = cn_manavia
 					name_list_romano_thracian = cn_manavia
@@ -6421,7 +6805,7 @@ e_britannia = {
 					name_list_romano_dacian = cn_manavia
 					name_list_romano_aramean = cn_manavia
 					name_list_romano_vandalic = cn_manavia
-					#Celtic Cultures 
+					#Celtic Cultures
 					name_list_briton = cn_menev
 					name_list_irish = cn_eubonia
 					name_list_pictish = cn_monadh
@@ -6479,8 +6863,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_malea
 						name_list_romano_gallic = cn_malea
+						name_list_gallo_romance = cn_malea
 						name_list_romano_hispanic = cn_malea
 						name_list_romano_british = cn_malea
+						name_list_british_romance = cn_malea
 						name_list_romano_african = cn_malea
 						name_list_romano_raetian = cn_malea
 						name_list_romano_thracian = cn_malea
@@ -6530,8 +6916,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_mogantia
 						name_list_romano_gallic = cn_mogantia
+						name_list_gallo_romance = cn_mogantia
 						name_list_romano_hispanic = cn_mogantia
 						name_list_romano_british = cn_mogantia
+						name_list_british_romance = cn_mogantia
 						name_list_romano_african = cn_mogantia
 						name_list_romano_raetian = cn_mogantia
 						name_list_romano_thracian = cn_mogantia
@@ -6555,8 +6943,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_dumna
 						name_list_romano_gallic = cn_dumna
+						name_list_gallo_romance = cn_dumna
 						name_list_romano_hispanic = cn_dumna
 						name_list_romano_british = cn_dumna
+						name_list_british_romance = cn_dumna
 						name_list_romano_african = cn_dumna
 						name_list_romano_raetian = cn_dumna
 						name_list_romano_thracian = cn_dumna
@@ -6586,13 +6976,15 @@ e_britannia = {
 			}
 			c_argyll = {
 				color = { 215 200 15 }
-				
+
 				cultural_names = {
 					#Roman Cultures
 					name_list_roman = cn_castra_funiculus
 					name_list_romano_gallic = cn_castra_funiculus
+					name_list_gallo_romance = cn_castra_funiculus
 					name_list_romano_hispanic = cn_castra_funiculus
 					name_list_romano_british = cn_castra_funiculus
+					name_list_british_romance = cn_castra_funiculus
 					name_list_romano_african = cn_castra_funiculus
 					name_list_romano_raetian = cn_castra_funiculus
 					name_list_romano_thracian = cn_castra_funiculus
@@ -6604,7 +6996,7 @@ e_britannia = {
 					name_list_romano_dacian = cn_castra_funiculus
 					name_list_romano_aramean = cn_castra_funiculus
 					name_list_romano_vandalic = cn_castra_funiculus
-					#Celtic Cultures 
+					#Celtic Cultures
 					name_list_irish = cn_dal_riata
 					name_list_pictish = cn_airer_goidel
 					#North Germanic Cultures
@@ -6615,7 +7007,7 @@ e_britannia = {
 					#Germanic Cultures
 					name_list_german = cn_kuestegael
 				}
-				
+
 				b_kilmarten = {
 					province = 1700
 					cultural_names = {
@@ -6661,8 +7053,10 @@ e_britannia = {
 			#Roman Cultures
 			name_list_roman = cn_hibernia
 			name_list_romano_gallic = cn_hibernia
+			name_list_gallo_romance = cn_hibernia
 			name_list_romano_hispanic = cn_hibernia
 			name_list_romano_british = cn_hibernia
+			name_list_british_romance = cn_hibernia
 			name_list_romano_african = cn_hibernia
 			name_list_romano_raetian = cn_hibernia
 			name_list_romano_thracian = cn_hibernia
@@ -6674,7 +7068,7 @@ e_britannia = {
 			name_list_romano_dacian = cn_hibernia
 			name_list_romano_aramean = cn_hibernia
 			name_list_romano_vandalic = cn_hibernia
-			#Celtic Cultures 
+			#Celtic Cultures
 			name_list_irish = cn_eire
 			name_list_briton = cn_iwerddon
 			name_list_welsh = cn_iwerddon
@@ -6690,7 +7084,7 @@ e_britannia = {
 			name_list_anglo = cn_iraland
 			name_list_old_saxon = cn_iraland
 		}
-		
+
 		ai_primary_priority = {
 			if = {
 				limit = {
@@ -6705,14 +7099,14 @@ e_britannia = {
 				add = @better_than_the_alternatives_score
 			}
 		}
-		
+
 		can_create = { general_kingdom_title_creation_trigger = yes }
-		
+
 		d_meath = {
 			color = { 49 249 72 }
 			capital = c_dublin # Dublin
 			cultural_names = {
-				#Celtic Cultures 
+				#Celtic Cultures
 				name_list_irish = cn_mide
 				name_list_briton = cn_mide
 				name_list_welsh = cn_mide
@@ -6725,15 +7119,17 @@ e_britannia = {
 				name_list_norwegian = cn_dublin
 				name_list_danish = cn_dublin
 				name_list_swedish = cn_dublin
-			}	
+			}
 			c_dublin = {
 				color = { 55 250 85 }
 				cultural_names = {
 					#Roman Cultures
 					name_list_roman = cn_eblana
 					name_list_romano_gallic = cn_eblana
+					name_list_gallo_romance = cn_eblana
 					name_list_romano_hispanic = cn_eblana
 					name_list_romano_british = cn_eblana
+					name_list_british_romance = cn_eblana
 					name_list_romano_african = cn_eblana
 					name_list_romano_raetian = cn_eblana
 					name_list_romano_thracian = cn_eblana
@@ -6745,7 +7141,7 @@ e_britannia = {
 					name_list_romano_dacian = cn_eblana
 					name_list_romano_aramean = cn_eblana
 					name_list_romano_vandalic = cn_eblana
-					#Celtic Cultures 
+					#Celtic Cultures
 					name_list_irish = cn_iomghain
 					name_list_briton = cn_teamhair
 					name_list_welsh = cn_dulyn
@@ -6757,15 +7153,17 @@ e_britannia = {
 					#North Germanic Cultures
 					name_list_norse = cn_dyflinn
 					name_list_norwegian = cn_dyflinn
-				}	
+				}
 				b_dublin = {
 					province = 28
 					cultural_names = {
 						#Roman Cultures
 						name_list_roman = cn_eblana
 						name_list_romano_gallic = cn_eblana
+						name_list_gallo_romance = cn_eblana
 						name_list_romano_hispanic = cn_eblana
 						name_list_romano_british = cn_eblana
+						name_list_british_romance = cn_eblana
 						name_list_romano_african = cn_eblana
 						name_list_romano_raetian = cn_eblana
 						name_list_romano_thracian = cn_eblana
@@ -6776,9 +7174,9 @@ e_britannia = {
 						name_list_romano_gothic = cn_eblana
 						name_list_romano_dacian = cn_eblana
 						name_list_romano_aramean = cn_eblana
-						name_list_romano_vandalic = cn_eblana					
-						#Celtic Cultures 
-						name_list_irish = cn_duibhlinn 
+						name_list_romano_vandalic = cn_eblana
+						#Celtic Cultures
+						name_list_irish = cn_duibhlinn
 						name_list_briton = cn_duibhlinn
 						name_list_welsh = cn_dulyn
 						name_list_breton = cn_duibhlinn
@@ -6789,14 +7187,14 @@ e_britannia = {
 						#North Germanic Cultures
 						name_list_norse = cn_dyflinn
 						name_list_norwegian = cn_dyflinn
-					}	
+					}
 					color = { 55 250 85 }
 				}
 				b_wicklow = {
 					province = 29
 					cultural_names = {
-						#Celtic Cultures 
-						name_list_irish = cn_cill_mhantain 
+						#Celtic Cultures
+						name_list_irish = cn_cill_mhantain
 						name_list_briton = cn_cill_mhantain
 						name_list_welsh = cn_cill_mhantain
 						name_list_breton = cn_cill_mhantain
@@ -6810,8 +7208,8 @@ e_britannia = {
 				b_kildare = { #Historical note: monastery
 					province = 30
 					cultural_names = {
-						#Celtic Cultures 
-						name_list_irish = cn_cill_dara 
+						#Celtic Cultures
+						name_list_irish = cn_cill_dara
 						name_list_briton = cn_cill_dara
 						name_list_welsh = cn_cill_dara
 						name_list_breton = cn_cill_dara
@@ -6825,8 +7223,8 @@ e_britannia = {
 				b_trim = { #historical note: monastery/important church
 					province = 31
 					cultural_names = {
-						#Celtic Cultures 
-						name_list_irish = cn_baile_atha_troim 
+						#Celtic Cultures
+						name_list_irish = cn_baile_atha_troim
 						name_list_briton = cn_baile_atha_troim
 						name_list_welsh = cn_baile_atha_troim
 						name_list_breton = cn_baile_atha_troim
@@ -6840,8 +7238,8 @@ e_britannia = {
 				b_drogheda = { #Two conflicting localisations for Irish; those being Droichead Atha and Tredagh. Picked cn_droichead_atha for Irish and Tredagh for all others.
 					province = 32
 					cultural_names = {
-						#Celtic Cultures 
-						name_list_irish = cn_droichead_atha 
+						#Celtic Cultures
+						name_list_irish = cn_droichead_atha
 						name_list_briton = cn_tredagh
 						name_list_welsh = cn_tredagh
 						name_list_breton = cn_tredagh
@@ -6856,7 +7254,7 @@ e_britannia = {
 			c_athlone = {
 				color = { 40 230 65 }
 				cultural_names = {
-					#Celtic Cultures 
+					#Celtic Cultures
 					name_list_irish = cn_atha_luain
 					name_list_briton = cn_atha_luain
 					name_list_welsh = cn_atha_luain
@@ -6869,7 +7267,7 @@ e_britannia = {
 				b_athlone = {
 					province = 34
 					cultural_names = {
-						#Celtic Cultures 
+						#Celtic Cultures
 						name_list_irish = cn_atha_luain
 						name_list_briton = cn_atha_luain
 						name_list_welsh = cn_atha_luain
@@ -6897,7 +7295,7 @@ e_britannia = {
 			color = { 5 222 31 }
 			capital = c_ulster # Downpatrick
 			cultural_names = {
-				#Celtic Cultures 
+				#Celtic Cultures
 				name_list_irish = cn_ulaid
 				name_list_briton = cn_wledd
 				name_list_welsh = cn_wledd
@@ -6914,7 +7312,7 @@ e_britannia = {
 			c_ulster = {
 				color = { 25 230 35 }
 				cultural_names = {
-					#Celtic Cultures 
+					#Celtic Cultures
 					name_list_irish = cn_ulaid
 					name_list_briton = cn_wledd
 					name_list_welsh = cn_wledd
@@ -6932,7 +7330,7 @@ e_britannia = {
 				b_downpatrick = {
 					province = 15
 					cultural_names = {
-						#Celtic Cultures 
+						#Celtic Cultures
 						name_list_irish = cn_dun_padraig
 						name_list_briton = cn_dun_padraig
 						name_list_welsh = cn_dun_padraig
@@ -6957,7 +7355,7 @@ e_britannia = {
 				b_carrickfergus = {
 					province = 14
 					cultural_names = {
-						#Celtic Cultures 
+						#Celtic Cultures
 						name_list_irish = cn_carraig_fhearghais
 						name_list_briton = cn_carraig_fhearghais
 						name_list_welsh = cn_carraig_fhearghais
@@ -6972,7 +7370,7 @@ e_britannia = {
 				b_bangor = {
 					province = 8741
 					cultural_names = {
-						#Celtic Cultures 
+						#Celtic Cultures
 						name_list_irish = cn_beannchar
 						name_list_briton = cn_beannchar
 						name_list_welsh = cn_beannchor
@@ -6991,8 +7389,10 @@ e_britannia = {
 					#Roman Cultures
 					name_list_roman = cn_ergallia
 					name_list_romano_gallic = cn_ergallia
+					name_list_gallo_romance = cn_ergallia
 					name_list_romano_hispanic = cn_ergallia
 					name_list_romano_british = cn_ergallia
+					name_list_british_romance = cn_ergallia
 					name_list_romano_african = cn_ergallia
 					name_list_romano_raetian = cn_ergallia
 					name_list_romano_thracian = cn_ergallia
@@ -7004,7 +7404,7 @@ e_britannia = {
 					name_list_romano_dacian = cn_ergallia
 					name_list_romano_aramean = cn_ergallia
 					name_list_romano_vandalic = cn_ergallia
-					#Celtic Cultures 
+					#Celtic Cultures
 					name_list_irish = cn_airgialla
 					name_list_briton = cn_airgialla
 					name_list_welsh = cn_airgialla
@@ -7012,11 +7412,11 @@ e_britannia = {
 					name_list_manx = cn_airgialla
 					name_list_pictish = cn_airgialla
 					name_list_gaelic = cn_airgialla
-				}	
+				}
 				b_dundalk = {
 					province = 18
 					cultural_names = {
-						#Celtic Cultures 
+						#Celtic Cultures
 						name_list_irish = cn_sraid_bhaile
 						name_list_briton = cn_sraid_bhaile
 						name_list_welsh = cn_sraid_bhaile
@@ -7035,7 +7435,7 @@ e_britannia = {
 				b_armagh = { #cn_ard_mhacha
 					province = 17
 					cultural_names = {
-						#Celtic Cultures 
+						#Celtic Cultures
 						name_list_irish = cn_eamnhain_mhacha
 						name_list_briton = cn_eamnhain_mhacha
 						name_list_welsh = cn_eamnhain_mhacha
@@ -7049,7 +7449,7 @@ e_britannia = {
 				b_ardee = { #cn_baile_atha_fhirdhia
 					province = 19
 					cultural_names = {
-						#Celtic Cultures 
+						#Celtic Cultures
 						name_list_irish = cn_ath_fhirdia
 						name_list_briton = cn_ath_fhirdia
 						name_list_welsh = cn_ath_fhirdia
@@ -7063,7 +7463,7 @@ e_britannia = {
 				b_clogher = {
 					province = 8742
 					cultural_names = {
-						#Celtic Cultures 
+						#Celtic Cultures
 						name_list_irish = cn_clochar
 						name_list_briton = cn_clochar
 						name_list_welsh = cn_clochar
@@ -7077,7 +7477,7 @@ e_britannia = {
 				b_dungannon = {
 					province = 8743
 					cultural_names = {
-						#Celtic Cultures 
+						#Celtic Cultures
 						name_list_irish = cn_dun_geanainn
 						name_list_briton = cn_dun_geanainn
 						name_list_welsh = cn_dun_geanainn
@@ -7099,7 +7499,7 @@ e_britannia = {
 				b_donegal = {
 					province = 9
 					cultural_names = {
-						#Celtic Cultures 
+						#Celtic Cultures
 						name_list_irish = cn_dun_na_ngall
 						name_list_briton = cn_dun_na_ngall
 						name_list_welsh = cn_dun_na_ngall
@@ -7113,7 +7513,7 @@ e_britannia = {
 				b_raphoe = { #historical note: monastery
 					province = 10
 					cultural_names = {
-						#Celtic Cultures 
+						#Celtic Cultures
 						name_list_irish = cn_rath_bhoth
 						name_list_briton = cn_rath_bhoth
 						name_list_welsh = cn_rath_bhoth
@@ -7127,7 +7527,7 @@ e_britannia = {
 				b_fahan = {
 					province = 11
 					cultural_names = {
-						#Celtic Cultures 
+						#Celtic Cultures
 						name_list_irish = cn_fathain_mura
 						name_list_briton = cn_fathain_mura
 						name_list_welsh = cn_fathain_mura
@@ -7141,7 +7541,7 @@ e_britannia = {
 				b_derry = { #cn_daire_coluimb_chille
 					province = 12
 					cultural_names = {
-						#Celtic Cultures 
+						#Celtic Cultures
 						name_list_irish = cn_doire_calgach
 						name_list_briton = cn_doire_calgach
 						name_list_welsh = cn_doire_calgach
@@ -7161,7 +7561,7 @@ e_britannia = {
 			color = { 43 229 108 }
 			capital = c_mayo # Cruachu
 			cultural_names = {
-				#Celtic Cultures 
+				#Celtic Cultures
 				name_list_irish = cn_connachta
 				name_list_briton = cn_chonnacht
 				name_list_welsh = cn_chonnacht
@@ -7177,8 +7577,10 @@ e_britannia = {
 					#Roman Cultures
 					name_list_roman = cn_galvia
 					name_list_romano_gallic = cn_galvia
+					name_list_gallo_romance = cn_galvia
 					name_list_romano_hispanic = cn_galvia
 					name_list_romano_british = cn_galvia
+					name_list_british_romance = cn_galvia
 					name_list_romano_african = cn_galvia
 					name_list_romano_raetian = cn_galvia
 					name_list_romano_thracian = cn_galvia
@@ -7190,7 +7592,7 @@ e_britannia = {
 					name_list_romano_dacian = cn_galvia
 					name_list_romano_aramean = cn_galvia
 					name_list_romano_vandalic = cn_galvia
-					#Celtic Cultures 
+					#Celtic Cultures
 					name_list_irish = cn_connachta
 					name_list_briton = cn_chonnacht
 					name_list_welsh = cn_chonnacht
@@ -7199,15 +7601,17 @@ e_britannia = {
 					name_list_pictish = cn_connachta
 					name_list_gaelic = cn_chonnacht
 					name_list_armorican = cn_chonnacht
-				}			
+				}
 				b_galway = {
 					province = 20
 					cultural_names = { #cn_dun_bhun_na_gaillimhe
 						#Roman Cultures
 						name_list_roman = cn_galvia
 						name_list_romano_gallic = cn_galvia
+						name_list_gallo_romance = cn_galvia
 						name_list_romano_hispanic = cn_galvia
 						name_list_romano_british = cn_galvia
+						name_list_british_romance = cn_galvia
 						name_list_romano_african = cn_galvia
 						name_list_romano_raetian = cn_galvia
 						name_list_romano_thracian = cn_galvia
@@ -7219,7 +7623,7 @@ e_britannia = {
 						name_list_romano_dacian = cn_galvia
 						name_list_romano_aramean = cn_galvia
 						name_list_romano_vandalic = cn_galvia
-						#Celtic Cultures 
+						#Celtic Cultures
 						name_list_irish = cn_dun_bhun_na_gaillimhe
 						name_list_briton = cn_gaillimh
 						name_list_welsh = cn_gaillimh
@@ -7239,7 +7643,7 @@ e_britannia = {
 				b_tuam = {
 					province = 8746
 					cultural_names = {
-						#Celtic Cultures 
+						#Celtic Cultures
 						name_list_irish = cn_tuaim
 						name_list_briton = cn_tuaim
 						name_list_welsh = cn_tuaim
@@ -7255,11 +7659,11 @@ e_britannia = {
 					province = 8747
 
 					color = { 45 230 70 }
-				}				
+				}
 			}
 			c_mayo = {
 				color = { 15 190 70 }
-				
+
 				b_cruachu = {
 					province = 8745
 
@@ -7281,8 +7685,10 @@ e_britannia = {
 						#Roman Cultures
 						name_list_roman = cn_alladenis
 						name_list_romano_gallic = cn_alladenis
+						name_list_gallo_romance = cn_alladenis
 						name_list_romano_hispanic = cn_alladenis
 						name_list_romano_british = cn_alladenis
+						name_list_british_romance = cn_alladenis
 						name_list_romano_african = cn_alladenis
 						name_list_romano_raetian = cn_alladenis
 						name_list_romano_thracian = cn_alladenis
@@ -7294,7 +7700,7 @@ e_britannia = {
 						name_list_romano_dacian = cn_alladenis
 						name_list_romano_aramean = cn_alladenis
 						name_list_romano_vandalic = cn_alladenis
-						#Celtic Cultures 
+						#Celtic Cultures
 						name_list_irish = cn_cill_ala
 						name_list_briton = cn_cill_ala
 						name_list_welsh = cn_cill_ala
@@ -7313,8 +7719,10 @@ e_britannia = {
 					#Roman Cultures
 					name_list_roman = cn_erdinia
 					name_list_romano_gallic = cn_erdinia
+					name_list_gallo_romance = cn_erdinia
 					name_list_romano_hispanic = cn_erdinia
 					name_list_romano_british = cn_erdinia
+					name_list_british_romance = cn_erdinia
 					name_list_romano_african = cn_erdinia
 					name_list_romano_raetian = cn_erdinia
 					name_list_romano_thracian = cn_erdinia
@@ -7338,7 +7746,7 @@ e_britannia = {
 				b_dromahair = {
 					province = 24
 					cultural_names = { #cn_droim_ath_thiar
-						#Celtic Cultures 
+						#Celtic Cultures
 						name_list_irish = cn_droim_dha_thiar
 						name_list_briton = cn_droim_dha_thiar
 						name_list_welsh = cn_droim_dha_thiar
@@ -7358,7 +7766,7 @@ e_britannia = {
 				b_longford = {
 					province = 26
 					cultural_names = { #cn_an_longphort
-						#Celtic Cultures 
+						#Celtic Cultures
 						name_list_irish = cn_an_longphort
 						name_list_briton = cn_an_longphort
 						name_list_welsh = cn_an_longphort
@@ -7373,7 +7781,7 @@ e_britannia = {
 				b_cavan = {
 					province = 27
 					cultural_names = {
-						#Celtic Cultures 
+						#Celtic Cultures
 						name_list_irish = cn_an_cabhan
 						name_list_briton = cn_an_cabhan
 						name_list_welsh = cn_an_cabhan
@@ -7390,13 +7798,13 @@ e_britannia = {
 
 					color = { 95 221 121 }
 				}
-			}	
+			}
 		}
 		d_leinster = {
 			color = { 85 211 27 }
 			capital = c_leinster # Leinster
 			cultural_names = {
-				#Celtic Cultures 
+				#Celtic Cultures
 				name_list_irish = cn_laigin
 				name_list_briton = cn_laighean
 				name_list_welsh = cn_laighean
@@ -7414,7 +7822,7 @@ e_britannia = {
 			c_leinster = {
 				color = { 68 156 28 }
 				cultural_names = {
-					#Celtic Cultures 
+					#Celtic Cultures
 					name_list_irish = cn_laigin
 					name_list_briton = cn_laighean
 					name_list_welsh = cn_laighean
@@ -7432,7 +7840,7 @@ e_britannia = {
 				b_wexford = {
 					province = 37
 					cultural_names = {
-						#Celtic Cultures 
+						#Celtic Cultures
 						name_list_irish = cn_loch_garman
 						name_list_briton = cn_loch_garman
 						name_list_welsh = cn_loch_garman
@@ -7452,7 +7860,7 @@ e_britannia = {
 				b_enniscorthy = {
 					province = 38
 					cultural_names = {
-						#Celtic Cultures 
+						#Celtic Cultures
 						name_list_irish = cn_inis_corthaidh
 						name_list_briton = cn_inis_corthaidh
 						name_list_welsh = cn_inis_corthaidh
@@ -7467,7 +7875,7 @@ e_britannia = {
 				b_ferns = {
 					province = 39
 					cultural_names = { #cn_fearna_mor_maedhog
-						#Celtic Cultures 
+						#Celtic Cultures
 						name_list_irish = cn_fearna_mor_maedhog
 						name_list_briton = cn_fearna_mor_maedhog
 						name_list_welsh = cn_fearna_mor_maedhog
@@ -7482,8 +7890,8 @@ e_britannia = {
 				b_carlow = {
 					province = 40
 					cultural_names = {
-						#Celtic Cultures 
-						name_list_irish = cn_ceatharlach 
+						#Celtic Cultures
+						name_list_irish = cn_ceatharlach
 						name_list_briton = cn_ceatharlach
 						name_list_welsh = cn_ceatharlach
 						name_list_breton = cn_ceatharlach
@@ -7505,8 +7913,8 @@ e_britannia = {
 			}
 			c_ossory = {
 				color = { 93 166 15 }
-				cultural_names = { 
-					#Celtic Cultures 
+				cultural_names = {
+					#Celtic Cultures
 					name_list_irish = cn_osraige
 					name_list_briton = cn_osraige
 					name_list_welsh = cn_osraige
@@ -7518,8 +7926,8 @@ e_britannia = {
 				}
 				b_gowran = {
 					province = 43
-					cultural_names = { 
-						#Celtic Cultures 
+					cultural_names = {
+						#Celtic Cultures
 						name_list_irish = cn_gabhran
 						name_list_briton = cn_gabhran
 						name_list_welsh = cn_gabhran
@@ -7533,8 +7941,8 @@ e_britannia = {
 				}
 				b_kilkenny = { #Historical note: major monastic centre / cn_cill_chainnigh
 					province = 41
-					cultural_names = { 
-						#Celtic Cultures 
+					cultural_names = {
+						#Celtic Cultures
 						name_list_irish = cn_cill_chainnigh
 						name_list_briton = cn_cill_chainnigh
 						name_list_welsh = cn_cill_chainnigh
@@ -7551,7 +7959,7 @@ e_britannia = {
 
 					color = { 93 166 15 }
 				}
-				b_carrick = { 
+				b_carrick = {
 					province = 44
 
 					color = { 93 166 15 }
@@ -7561,8 +7969,8 @@ e_britannia = {
 		d_munster = {
 			color = { 16 157 12 }
 			capital = c_thomond # Thomond
-			cultural_names = { 
-				#Celtic Cultures 
+			cultural_names = {
+				#Celtic Cultures
 				name_list_irish = cn_mhumhain
 				name_list_briton = cn_mhumhain
 				name_list_welsh = cn_mhumhain
@@ -7579,8 +7987,8 @@ e_britannia = {
 			}
 			c_thomond = {
 				color = { 3 128 0 }
-				cultural_names = { 
-					#Celtic Cultures 
+				cultural_names = {
+					#Celtic Cultures
 					name_list_irish = cn_tuadh_mhumhain
 					name_list_briton = cn_tuadh_mhumhain
 					name_list_welsh = cn_tuadh_mhumhain
@@ -7598,7 +8006,7 @@ e_britannia = {
 				b_limerick = {
 					province = 45
 					cultural_names = { #cn_luimneach
-						#Celtic Cultures  
+						#Celtic Cultures
 						name_list_irish = cn_inis_sibhtonn
 						name_list_briton = cn_inis_sibhtonn
 						name_list_welsh = cn_inis_sibhtonn
@@ -7618,7 +8026,7 @@ e_britannia = {
 				b_nenagh = {
 					province = 47
 					cultural_names = { #cn_aonach_urmhumhan
-						#Celtic Cultures  
+						#Celtic Cultures
 						name_list_irish = cn_aonach_urmhumhan
 						name_list_briton = cn_an_taonachn
 						name_list_welsh = cn_an_taonachn
@@ -7633,7 +8041,7 @@ e_britannia = {
 				b_roscrea = { #Historical note: important trading town
 					province = 48
 					cultural_names = {
-						#Celtic Cultures  
+						#Celtic Cultures
 						name_list_irish = cn_ros_cre
 						name_list_briton = cn_ros_cre
 						name_list_welsh = cn_ros_cre
@@ -7654,7 +8062,7 @@ e_britannia = {
 			c_ennis = {
 				color = { 32 115 30 }
 				cultural_names = {
-					#Celtic Cultures  
+					#Celtic Cultures
 					name_list_irish = cn_inis_corthaidh
 					name_list_briton = cn_inis_corthaidh
 					name_list_welsh = cn_inis_corthaidh
@@ -7667,7 +8075,7 @@ e_britannia = {
 				b_ennis = {
 					province = 46
 					cultural_names = { #cn_inis
-						#Celtic Cultures  
+						#Celtic Cultures
 						name_list_irish = cn_inis_corthaidh
 						name_list_briton = cn_inis_corthaidh
 						name_list_welsh = cn_inis_corthaidh
@@ -7687,8 +8095,8 @@ e_britannia = {
 			}
 			c_ormond = {
 				color = { 0 80 20 }
-				cultural_names = { 
-					#Celtic Cultures 
+				cultural_names = {
+					#Celtic Cultures
 					name_list_irish = cn_urumhain
 					name_list_briton = cn_urumhain
 					name_list_welsh = cn_urumhain
@@ -7705,8 +8113,8 @@ e_britannia = {
 				}
 				b_waterford = {
 					province = 49
-					cultural_names = { 
-						#Celtic Cultures 
+					cultural_names = {
+						#Celtic Cultures
 						name_list_irish = cn_port_lairge
 						name_list_briton = cn_port_lairge
 						name_list_welsh = cn_port_lairge
@@ -7725,8 +8133,8 @@ e_britannia = {
 				}
 				b_emly = { #Historical note: monastery / cn_imleach_iubhair
 					province = 50
-					cultural_names = { 
-						#Celtic Cultures 
+					cultural_names = {
+						#Celtic Cultures
 						name_list_irish = cn_medon_mairtine
 						name_list_briton = cn_medon_mairtine
 						name_list_welsh = cn_medon_mairtine
@@ -7740,8 +8148,8 @@ e_britannia = {
 				}
 				b_clonmel = {
 					province = 51
-					cultural_names = { 
-						#Celtic Cultures 
+					cultural_names = {
+						#Celtic Cultures
 						name_list_irish = cn_cluain_meala
 						name_list_briton = cn_cluain_meala
 						name_list_welsh = cn_cluain_meala
@@ -7756,8 +8164,8 @@ e_britannia = {
 			}
 			c_desmond = {
 				color = { 10 137 35 }
-				cultural_names = { 
-					#Celtic Cultures 
+				cultural_names = {
+					#Celtic Cultures
 					name_list_irish = cn_deasmhumhain
 					name_list_briton = cn_deasmhumhain
 					name_list_welsh = cn_deasmhumhain
@@ -7774,8 +8182,8 @@ e_britannia = {
 				}
 				b_cork = { #Historical note: important trading town
 					province = 53
-					cultural_names = { 
-						#Celtic Cultures 
+					cultural_names = {
+						#Celtic Cultures
 						name_list_irish = cn_corcaigh
 						name_list_briton = cn_corcaigh
 						name_list_welsh = cn_corcaigh

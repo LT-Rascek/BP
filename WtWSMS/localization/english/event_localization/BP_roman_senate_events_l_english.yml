@@ -2,8 +2,8 @@
  #General Text
  prestige_is_distributed_to_senators_west: "Each character with trait [GetTrait('senator_west').GetName( GetNullCharacter )] in Rome gains #P 10#! [prestige|E]"
  prestige_is_distributed_to_senators_east: "Each character with trait [GetTrait('senator_east').GetName( GetNullCharacter )] in Constantinople gains #P 10#! [prestige|E]"
- prestige_is_taken_from_senators_west: "Each character with trait [GetTrait('senator_west').GetName( GetNullCharacter )] in Rome looses #N 10#! [prestige|E]"
- prestige_is_taken_from_senators_east: "Each character with trait [GetTrait('senator_east').GetName( GetNullCharacter )] in Rome looses #N 10#! [prestige|E]"
+ prestige_is_taken_from_senators_west: "Each character with trait [GetTrait('senator_west').GetName( GetNullCharacter )] in Rome loses #N 10#! [prestige|E]"
+ prestige_is_taken_from_senators_east: "Each character with trait [GetTrait('senator_east').GetName( GetNullCharacter )] in Constantinople loses #N 10#! [prestige|E]"
  
  # West Senate Events
  
@@ -23,34 +23,36 @@
  ## Asking Senate for Approval Chain
  ### Ask the Senate for Approval
  BP_roman_senate_events.0011.t: "Senate Approval"
- BP_roman_senate_events.0011.desc: "While the power of the Roman Senate has been waning with time, it is still a prestigious institution within the [the_liege_west.GetPrimaryTitle.GetBaseNameNoTooltip] which from time to time enjoys more significant influence. With your ascension to the throne of [the_liege_west.GetPrimaryTitle.GetBaseNameNoTooltip], you could profit from the Senate by symbolically requesting it to approve you as the new rightful ruler in exchange for some money."
+ BP_roman_senate_events.0011.desc: "While the power of the Roman Senate has been waning with time, it is still a prestigious institution within the [the_liege_west.GetPrimaryTitle.GetBaseNameNoTooltip] which from time to time enjoys more significant influence. With your ascension to the throne of the [the_liege_west.GetPrimaryTitle.GetBaseNameNoTooltip], you could profit from the Senate by symbolically requesting it to approve you as the new rightful ruler in exchange for some money."
  BP_roman_senate_events.0011.seek_approval: "The Senate holds the keys to Rome."
- BP_roman_senate_events.0011.seek_approval.tootip: "#weak The [GetModifier('approved_by_the_senate').GetNameWithTooltip|L] modifier immediately negates the short-term reign opinion modifier and increases the opinion that Senators hold of you#!"
+ BP_roman_senate_events.0011.seek_approval.tooltip: "The Consul will deliberate with the Senate over this proposal"
+ BP_roman_senate_events.0011.seek_approval.flavor: "#weak The [GetModifier('approved_by_the_senate').GetNameWithTooltip|L] modifier immediately negates the short-term reign opinion modifier and increases the opinion that Senators hold of you.#!"
  BP_roman_senate_events.0011.dismiss_the_senate: "I do not need any approval from these buffoons in #italic togae#!!"
- BP_roman_senate_events.0011.dismiss_the_senate.tooltip: "#weak The [GetModifier('ignored_the_senate').GetNameWithTooltip|L] modifier reduces the opinion of Senators while raising your own prestige#!"
+ BP_roman_senate_events.0011.dismiss_the_senate.flavor: "#weak The [GetModifier('ignored_the_senate').GetNameWithTooltip|L] modifier reduces the opinion of Senators while raising your own prestige.#!"
  BP_roman_senate_events.0011.wait: "I should consider more carefully..."
  BP_roman_senate_events.0011.wait.tooltip: "You'll be able to make this request again"
  ### The Senate deliberates
- BP_roman_senate_events.0012.t: "[the_liege_west.GetTitledName] Seeks our Approval"
- BP_roman_senate_events.0012.desc: "[the_liege_west.GetTitledName], having recently acquired the throne of [the_liege_west.GetBaseName], is now symbolically asking for the Senate's recognition, which would legitimate [the_liege_west.GetHerHis] rule."
+ BP_roman_senate_events.0012.t: "[the_liege_west.GetTitledFirstNameNoTooltip] Seeks our Approval"
+ BP_roman_senate_events.0012.desc: "[the_liege_west.GetTitledFirstName], having recently acquired the throne of the [the_liege_west.GetPrimaryTitle.GetBaseName], is now symbolically asking for the Senate's recognition, which would legitimate [the_liege_west.GetHerHis] rule."
  BP_roman_senate_events.0012.approve: "Grant the Senate's approval to the new ruler"
- BP_roman_senate_events.0012.disapprove: "[the_liege_west.GetTitledName] is not a worthy ruler!"
+ BP_roman_senate_events.0012.disapprove: "[the_liege_west.GetTitledFirstNameNoTooltip] is not a worthy ruler!"
  ### The Senate Approves!
  BP_roman_senate_events.0013.opening: "[the_consul_west.Custom2('AppropriateGreeting', ROOT.Char)]"
- BP_roman_senate_events.0013.desc: "The Senate has recognised you as the rightful and legitimate ruler of [the_liege_west.GetPrimaryTitle.GetBaseNameNoTooltip]."
+ BP_roman_senate_events.0013.desc: "The Senate has recognised you as the rightful and legitimate ruler of the [the_liege_west.GetPrimaryTitle.GetBaseNameNoTooltip]."
  BP_roman_senate_events.0013.a: "A wise decision."
  ### The Senate Rejects!
  BP_roman_senate_events.0014.opening: "[the_consul_west.Custom2('AppropriateGreeting', ROOT.Char)]"
- BP_roman_senate_events.0014.desc: "The Senate has rejected your demand and proclaimed that you are a usurper of [the_liege_west.GetPrimaryTitle.GetBaseNameNoTooltip]."
+ BP_roman_senate_events.0014.desc: "The Senate has rejected your demand and proclaimed that you are a usurper of the [the_liege_west.GetPrimaryTitle.GetBaseNameNoTooltip]."
  BP_roman_senate_events.0014.a: "A bunch of fools!"
  
  ### The Senate requests you seek their support
  BP_roman_senate_events.0020.opening: "[the_consul_west.Custom2('AppropriateGreeting', ROOT.Char)]"
  BP_roman_senate_events.0020.desc: "As you now rule over Rome, it is customary that you request the Senate's approval for your rule. I trust you will not disappoint us."
  BP_roman_senate_events.0020.seek_approval: "I will, of course, seek the Senate's approval"
- BP_roman_senate_events.0020.seek_approval.tootip: "$BP_roman_senate_events.0011.seek_approval.tootip$"
+ BP_roman_senate_events.0020.seek_approval.tooltip: "$BP_roman_senate_events.0011.seek_approval.tooltip$"
+ BP_roman_senate_events.0020.seek_approval.flavor: "$BP_roman_senate_events.0011.seek_approval.flavor$"
  BP_roman_senate_events.0020.ignore_the_senate: "I have no need for your approval to rule!"
- BP_roman_senate_events.0020.dismiss_the_senate.tooltip: "$BP_roman_senate_events.0011.dismiss_the_senate.tooltip$"
+ BP_roman_senate_events.0020.dismiss_the_senate.flavor: "$BP_roman_senate_events.0011.dismiss_the_senate.flavor$"
  BP_roman_senate_events.0020.stall: "I will take it under advisement..."
  
  ## You turn 25, so you are a Senator now
@@ -76,7 +78,7 @@
  BP_roman_senate_events.0061.a: "See it is done."
  BP_roman_senate_events.0061.b: "No, I cannot grant you these lands."
  BP_roman_senate_events.0062.opening: "[rome_holder.Custom2('AppropriateGreeting', ROOT.Char)]"
- BP_roman_senate_events.0062.desc: "Having heard your request, I have elected to grant [the_unlanded.GetName] the lands around [target_barony.GetName]. I trust this is sufficient."
+ BP_roman_senate_events.0062.desc: "Having heard your request, I have elected to grant [the_unlanded.GetName] the lands around the [target_barony.GetName]. I trust this is sufficient."
  BP_roman_senate_events.0062.a: "Good."
  BP_roman_senate_events.0063.opening: "[rome_holder.Custom2('AppropriateGreeting', ROOT.Char)]"
  BP_roman_senate_events.0063.desc: "It saddens me that I cannot fulfill your request at this time."
@@ -99,32 +101,34 @@
  ## Asking Senate for Approval Chain
  ### Ask the Senate for Approval
  BP_roman_senate_events.1011.t: "Senate Approval"
- BP_roman_senate_events.1011.desc: "While the power of the Constantinopolitan Senate has been waning with time, it is still a prestigious institution within the [the_liege_east.GetPrimaryTitle.GetBaseNameNoTooltip] which from time to time enjoys more significant influence. With your ascension to the throne of [the_liege_east.GetPrimaryTitle.GetBaseNameNoTooltip], you could profit from the Senate by symbolically requesting it to approve you as the new rightful ruler in exchange for some money."
+ BP_roman_senate_events.1011.desc: "While the power of the Constantinopolitan Senate has been waning with time, it is still a prestigious institution within the [the_liege_east.GetPrimaryTitle.GetBaseNameNoTooltip] which from time to time enjoys more significant influence. With your ascension to the throne of the [the_liege_east.GetPrimaryTitle.GetBaseNameNoTooltip], you could profit from the Senate by symbolically requesting it to approve you as the new rightful ruler in exchange for some money."
  BP_roman_senate_events.1011.seek_approval: "The Senate holds the keys to New Rome."
- BP_roman_senate_events.1011.seek_approval.tootip: "#weak The [GetModifier('approved_by_the_senate').GetNameWithTooltip|L] modifier immediately negates the short-term reign opinion modifier and buffs vassal opinion at the cost of income and prestige#!"
+ BP_roman_senate_events.1011.seek_approval.flavor: "$BP_roman_senate_events.0020.dismiss_the_senate.flavor$"
+ BP_roman_senate_events.1011.seek_approval.tooltip: "$BP_roman_senate_events.0020.seek_approval.tooltip$"
  BP_roman_senate_events.1011.dismiss_the_senate: "I do not need any approval from these buffoons in #italic togae#!!"
- BP_roman_senate_events.1011.dismiss_the_senate.tooltip: "#weak The [GetModifier('ignored_the_senate').GetNameWithTooltip|L] modifier reduces vassal opinion but strengthens your prestige#!"
+ BP_roman_senate_events.1011.dismiss_the_senate.flavor: "$BP_roman_senate_events.0020.dismiss_the_senate.flavor$"
  BP_roman_senate_events.1011.wait: "I should consider more carefully..."
  BP_roman_senate_events.1011.wait.tooltip: "You'll be able to make this request again"
  ### The Senate deliberates
- BP_roman_senate_events.1012.t: "[the_liege_east.GetTitledName] Seeks our Approval"
- BP_roman_senate_events.1012.desc: "[the_liege_east.GetTitledName], having recently acquired the throne of [the_liege_east.GetBaseName], is now symbolically asking for the Senate's recognition, which would legitimate [the_liege_east.GetHerHis] rule."
+ BP_roman_senate_events.1012.t: "[the_liege_east.GetTitledFirstNameNoTooltip] Seeks our Approval"
+ BP_roman_senate_events.1012.desc: "[the_liege_east.GetTitledFirstName], having recently acquired the throne of the [the_liege_east.GetPrimaryTitle.GetBaseName], is now symbolically asking for the Senate's recognition, which would legitimate [the_liege_east.GetHerHis] rule."
  BP_roman_senate_events.1012.approve: "Grant the Senate's approval to the new ruler"
- BP_roman_senate_events.1012.disapprove: "[the_liege_east.GetTitledName] is not a worthy ruler!"
+ BP_roman_senate_events.1012.disapprove: "[the_liege_east.GetTitledFirstNameNoTooltip] is not a worthy ruler!"
  ### The Senate Approves!
  BP_roman_senate_events.1013.opening: "[the_consul_east.Custom2('AppropriateGreeting', ROOT.Char)]"
- BP_roman_senate_events.1013.desc: "The Senate has recognised you as the rightful and legitimate ruler of [the_liege_east.GetPrimaryTitle.GetBaseNameNoTooltip]."
+ BP_roman_senate_events.1013.desc: "The Senate has recognised you as the rightful and legitimate ruler of the [the_liege_east.GetPrimaryTitle.GetBaseNameNoTooltip]."
  BP_roman_senate_events.1013.a: "A wise decision."
  ### The Senate Rejects!
  BP_roman_senate_events.1014.opening: "[the_consul_east.Custom2('AppropriateGreeting', ROOT.Char)]"
- BP_roman_senate_events.1014.desc: "The Senate has rejected your demand and proclaimed that you are a usurper of [the_liege_east.GetPrimaryTitle.GetBaseNameNoTooltip]."
+ BP_roman_senate_events.1014.desc: "The Senate has rejected your demand and proclaimed that you are a usurper of the [the_liege_east.GetPrimaryTitle.GetBaseNameNoTooltip]."
  BP_roman_senate_events.1014.a: "A bunch of fools!"
  
  ### The Senate requests you seek their support
  BP_roman_senate_events.1020.opening: "[the_consul_east.Custom2('AppropriateGreeting', ROOT.Char)]"
  BP_roman_senate_events.1020.desc: "As you now rule over New Rome, it is customary that you request the Constantinopolitan Senate's approval for your rule. I trust you will not disappoint us."
  BP_roman_senate_events.1020.seek_approval: "I will, of course, seek the Senate's approval"
- BP_roman_senate_events.1020.seek_approval.tootip: "$BP_roman_senate_events.1011.seek_approval.tootip$"
+ BP_roman_senate_events.1020.seek_approval.flavor: "$BP_roman_senate_events.1011.seek_approval.flavor$"
+ BP_roman_senate_events.1020.seek_approval.tooltip: "$BP_roman_senate_events.1011.seek_approval.tooltip$"
  BP_roman_senate_events.1020.ignore_the_senate: "I have no need for your approval to rule!"
  BP_roman_senate_events.1020.dismiss_the_senate.tooltip: "$BP_roman_senate_events.1011.dismiss_the_senate.tooltip$"
  BP_roman_senate_events.1020.stall: "I will take it under advisement..."
@@ -167,10 +171,10 @@
  BP_roman_senate_events.2002.desc: "As you no longer rule either Rome or Constantinople, you no longer have the support of the Senate, and that support is withdrawn."
  BP_roman_senate_events.2002.a: "Those fools in #italic togae#!!"
  ## Collapse of the Senate from 0 Senators
- BP_roman_senate_events.2012.t: "Collapse of the [the_city.GetAdjectiveNoTooltip] Senate"
+ BP_roman_senate_events.2012.t: "Collapse of the Roman Senate"
  BP_roman_senate_events.2012.desc: "With the decline of the Senate as an institution, there is no one left in [GetTitleByKey('b_roma').GetName] to carry out the duties of the Roman Senate. The instution, which began with Romulus, has finally ended."
  BP_roman_senate_events.2012.a: "$BP_roman_senate_events.0001.do_it$"
- BP_roman_senate_events.2013.t: "Collapse of the [the_city.GetAdjectiveNoTooltip] Senate"
+ BP_roman_senate_events.2013.t: "Collapse of the Constantinopolitan Senate"
  BP_roman_senate_events.2013.desc: "With the decline of the Senate as an institution, there is no one left in [GetTitleByKey('b_constantinople').GetName] to carry out the duties of the Constantinopolitan Senate. The instution, which began with Romulus, has finally ended."
  BP_roman_senate_events.2013.a: "$BP_roman_senate_events.0001.do_it$"
  
