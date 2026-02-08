@@ -32,7 +32,7 @@
 	unit_gfx = { mena_unit_gfx }
 	house_coa_frame = house_frame_16
 	
-	ethnicities = { 10 = arab }
+	ethnicities = { 100 = arab }
 }
 samaritan_culture = {
 	color = samaritan_culture
@@ -72,7 +72,7 @@ samaritan_culture = {
 	unit_gfx = { mena_unit_gfx }
 	house_coa_frame = house_frame_16
 	
-	ethnicities = { 10 = arab }
+	ethnicities = { 100 = arab }
 }
 judean = {
 	color = judean
@@ -112,7 +112,7 @@ judean = {
 	unit_gfx = { mena_unit_gfx }
 	house_coa_frame = house_frame_16
 	
-	ethnicities = { 10 = arab }
+	ethnicities = { 100 = arab }
 }
 juhuro = { #Mountain Jews
 	color = juhuro
@@ -151,12 +151,14 @@ juhuro = { #Mountain Jews
 	clothing_gfx = { byzantine_clothing_gfx }
 	clothing_gfx = { mena_clothing_gfx }
 	unit_gfx = { mena_unit_gfx }
-	house_coa_frame = house_frame_16
+	house_coa_frame = house_frame_23
+	house_coa_mask_offset = { 0.0 0.03 }
+	house_coa_mask_scale = { 0.9 0.9 }
 	
 	ethnicities = {
-		8 = arab
-		3 = mediterranean
-		3 = mediterranean_byzantine
+		84 = arab
+		33 = mediterranean
+		33 = mediterranean_byzantine
 	}
 }
 kochinim = {
@@ -168,7 +170,7 @@ kochinim = {
 	
 	ethos = ethos_communal
 	heritage = heritage_israelite
-	language = language_israelite
+	language = language_tamil
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_domain
 	traditions = {
@@ -184,9 +186,98 @@ kochinim = {
 	building_gfx = { indian_building_gfx } 
 	clothing_gfx = { indian_clothing_gfx }
 	unit_gfx = { indian_unit_gfx }
-	house_coa_frame = house_frame_16
+	house_coa_frame = house_frame_23
+	house_coa_mask_offset = { 0.0 0.03 }
+	house_coa_mask_scale = { 0.9 0.9 }
 
-	ethnicities = {
-		10 = south_indian
+	ethnicities = { 100 = south_indian }
+}
+
+romaniote = { #Byzantine/Yanniote/Yevanic Jews
+	color = { 0.35 0.45 0.35 }
+	
+	parents = { hebrew greek }
+	created = 1.1.1
+	history_loc_override = romaniote_history_loc
+	
+	ethos = ethos_communal
+	heritage = heritage_israelite
+	language = language_greek
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_domain
+	traditions = {
+		#Societal Traditions
+		tradition_diasporic
+		#Regional Traditions
+		tradition_mobile_guards
+		#Ritual Traditions
+		tradition_music_theory # Known for hymns
+		#Realm Traditions
+		#Combat Traditions
 	}
+	
+	dlc_tradition = {
+		trait = tradition_staunch_traditionalists
+		requires_dlc_flag = hybridize_culture
+	}
+	
+	dlc_tradition = { # Improved philosopher culture
+		trait = tradition_fp3_beacon_of_learning
+		requires_dlc_flag = legacy_of_persia
+		fallback = tradition_philosopher_culture
+	}
+	
+	name_list = name_list_romaniote
+	
+	coa_gfx = { israelite_group_coa_gfx }
+	building_gfx = { mediterranean_building_gfx }
+	clothing_gfx = { byzantine_clothing_gfx }
+	unit_gfx = { eastern_unit_gfx }
+	house_coa_frame = house_frame_23
+	house_coa_mask_offset = { 0.0 0.03 }
+	house_coa_mask_scale = { 0.9 0.9 }
+	
+	ethnicities = {
+		84 = arab
+		33 = mediterranean
+		33 = mediterranean_byzantine
+	}
+}
+
+tzarfati = { # Jews in France/Gaul
+	color = { 0.1 0.1 0.1 }
+	
+	parents = { hebrew romano_gallic }
+	created = 400.1.1
+	history_loc_override = tzarfati_history_loc
+	
+	ethos = ethos_egalitarian
+	heritage = heritage_israelite
+	language = language_latin
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_domain
+	traditions = {
+		#Societal Traditions
+		tradition_diasporic
+		tradition_philosopher_culture
+		#Regional Traditions
+		tradition_mobile_guards
+		tradition_caravaneers
+		#Ritual Traditions
+		tradition_religion_blending # Judaization, intermarriage more prominent in Gaul
+		#Realm Traditions
+		#Combat Traditions
+	}
+	
+	name_list = name_list_radhanite # May be the origin of Radhanites
+	
+	coa_gfx = { israelite_group_coa_gfx }
+	building_gfx = { mediterranean_building_gfx }
+	clothing_gfx = { byzantine_clothing_gfx }
+	unit_gfx = { mena_unit_gfx }
+	house_coa_frame = house_frame_23
+	house_coa_mask_offset = { 0.0 0.03 }
+	house_coa_mask_scale = { 0.9 0.9 }
+	
+	ethnicities = { 100 = arab }
 }

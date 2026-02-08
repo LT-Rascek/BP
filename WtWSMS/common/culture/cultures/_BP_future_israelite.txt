@@ -1,9 +1,13 @@
-﻿ashkenazi = { ##### FIXME (Beta): Incomplete Culture: ashkenazi
+﻿ashkenazi = {
 	color = ashkenazi
+	
+	parents = { hebrew german }
+	created = 900.1.1
+	history_loc_override = ashkenazi_history_loc
 	
 	ethos = ethos_communal
 	heritage = heritage_israelite
-	language = language_israelite
+	language = language_aramaic # Replace on creation event
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_domain
 	traditions = {
@@ -28,11 +32,16 @@
 		100 = arab
 	}
 }
-radhanite = { ##### FIXME (Beta): Incomplete Culture: radhanite
+radhanite = {
+	color = { 0.5 0.2 0.7 }
 
+	parents = { hebrew khazar }
+	created = 800.1.1
+	history_loc_override = radhanite_history_loc
+	
 	ethos = ethos_egalitarian
 	heritage = heritage_israelite
-	language = language_israelite
+	language = language_aramaic # Replace on creation event
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_domain
 	traditions = {
@@ -42,8 +51,6 @@ radhanite = { ##### FIXME (Beta): Incomplete Culture: radhanite
 		tradition_xenophilic
 		tradition_mobile_guards
 	}
-	
-	color = { 0.5 0.2 0.7 }
 
 	name_list = name_list_radhanite
 
@@ -59,12 +66,16 @@ radhanite = { ##### FIXME (Beta): Incomplete Culture: radhanite
 		100 = arab
 	}
 }
-sephardi = { ##### FIXME (Beta): Incomplete Culture: sephardi
+sephardi = {
 	color = { 0.7 0.2 0.7 }
+	
+	parents = { hebrew romano_hispanic }
+	created = 400.1.1
+	history_loc_override = sephardi_history_loc
 	
 	ethos = ethos_communal
 	heritage = heritage_israelite
-	language = language_israelite
+	language = language_latin
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_domain
 	traditions = {
