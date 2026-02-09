@@ -695,6 +695,14 @@ scripted_effect shift_language_effect = {
 	teach_chars_new_language = yes
 }
 
+#For testing, sets to the root character
+scripted_effect debug_set_shift_culture = {
+	if = {
+		limit = { NOT = { exists = scope:shift_culture } }
+		root.culture = { save_scope_as = shift_culture }
+	}
+}
+
 ####### ACTUAL EVENTS
 
 bp_heritage_linguistic_drift.0001 = {
@@ -703,6 +711,7 @@ bp_heritage_linguistic_drift.0001 = {
 	content_source = dlc_WtWSMS
 	
 	immediate = {
+		debug_set_shift_culture = yes
 		#If the culture head exists, inform him/her first
 		if = {
 			limit = { exists = scope:shift_culture.culture_head }
@@ -744,13 +753,14 @@ bp_heritage_linguistic_drift.0002 = {
 	
 	theme = culture_change
 	content_source = dlc_WtWSMS
-	right_portrait = root
+	override_background = { reference = BP_shift_culture_city }
+	left_portrait = root
 	
 	immediate = { hidden_effect = { shift_language_effect = yes } }
 	
 	option = {
 		name = bp_heritage_linguistic_drift.0002.accept
-		every_ruler = {
+		every_player = {
 			limit = {
 				ruler_is_valid_to_hear_about_culture_shift_trigger = {
 					HAS_SAME_LANGUAGE_HERITAGE_TRIGGER = has_same_culture_language
@@ -783,27 +793,35 @@ bp_heritage_linguistic_drift.0003 = {
 	}
 	theme = culture_change
 	content_source = dlc_WtWSMS
-	left_portrait = scope:chosen_character
-	right_portrait = root
+	override_background = { reference = BP_shift_culture_city }
+	left_portrait = scope:bg_override_char
+	lower_right_portrait = scope:my_portrait
 	
 	immediate = {
 		if = {
 			limit = { exists = scope:shift_culture.culture_head }
-			scope:shift_culture.culture_head = { save_scope_as = chosen_character }
+			scope:shift_culture.culture_head = { save_scope_as = bg_override_char }
 		}
 		else_if = {
 			limit = {
 				any_ruler = {
 					culture = scope:shift_culture
-					NOT = { government_has_flag = government_is_mercenary } #Keep it to chars functionally on the map please
+					NOR = { #Keep it to chars functionally on the map please
+						government_has_flag = cannot_be_vassal_or_liege
+						government_has_flag = government_is_herder
+					}
 				}
 			}
 			random_ruler = {
 				limit = { culture = scope:shift_culture }
-				save_scope_as = chosen_character
+				save_scope_as = bg_override_char
 			}
 		}
-		#Fallback, don't show anything
+		# Add your portrait if your culture matches
+		if = {
+			limit = { root.culture = scope:shift_culture }
+			save_scope_as = my_portrait
+		}
 	}
 	
 	#For other rulers of the culture
@@ -1010,6 +1028,7 @@ bp_heritage_linguistic_drift.0101 = {
 	content_source = dlc_WtWSMS
 	
 	immediate = {
+		debug_set_shift_culture = yes
 		#If the culture head exists, inform him/her first
 		if = {
 			limit = { exists = scope:shift_culture.culture_head }
@@ -1058,7 +1077,7 @@ bp_heritage_linguistic_drift.0102 = {
 	
 	option = {
 		name = bp_heritage_linguistic_drift.0102.accept
-		every_ruler = {
+		every_player = {
 			limit = {
 				ruler_is_valid_to_hear_about_culture_shift_trigger = {
 					HAS_SAME_LANGUAGE_HERITAGE_TRIGGER = has_same_culture_heritage
@@ -1087,26 +1106,34 @@ bp_heritage_linguistic_drift.0103 = {
 	}
 	theme = culture_change
 	content_source = dlc_WtWSMS
-	left_portrait = scope:chosen_character
+	left_portrait = scope:bg_override_char
+	lower_right_portrait = scope:my_portrait
 	
 	immediate = {
 		if = {
 			limit = { exists = scope:shift_culture.culture_head }
-			scope:shift_culture.culture_head = { save_scope_as = chosen_character }
+			scope:shift_culture.culture_head = { save_scope_as = bg_override_char }
 		}
 		else_if = {
 			limit = {
 				any_ruler = {
 					culture = scope:shift_culture
-					NOT = { government_has_flag = government_is_mercenary } #Keep it to chars functionally on the map please
+					NOR = { #Keep it to chars functionally on the map please
+						government_has_flag = cannot_be_vassal_or_liege
+						government_has_flag = government_is_herder
+					}
 				}
 			}
 			random_ruler = {
 				limit = { culture = scope:shift_culture }
-				save_scope_as = chosen_character
+				save_scope_as = bg_override_char
 			}
 		}
-		#Fallback, don't show anything
+		# Add your portrait if your culture matches
+		if = {
+			limit = { root.culture = scope:shift_culture }
+			save_scope_as = my_portrait
+		}
 	}
 	
 	#For other rulers of the culture

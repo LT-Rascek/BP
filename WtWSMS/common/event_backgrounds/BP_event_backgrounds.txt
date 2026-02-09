@@ -1,8 +1,8 @@
 ﻿frankish_kingdom_elevation = {
 	background = {
-		reference = "gfx/interface/illustrations/event_story/frankish_kingdom_elevation.dds"
+		reference = "gfx/interface/illustrations/decisions/pharamond_on_a_shield.dds"
 		environment = "environment_event_fp1_throneroom_tribal"
-		ambience = "event:/DLC/FP1/SFX/Events/event_throneroom"
+		ambience = "event:/SFX/Events/Backgrounds/mountains_day"
 	}
 }
 aures_kingdom_elevation = {
@@ -24,5 +24,129 @@ sack_of_city = {
 		reference = "gfx/interface/illustrations/event_story/sack_of_city.dds"
 		environment = "environment_event_battlefield"
 		ambience = "event:/SFX/Events/Backgrounds/battlefield_gloomy"
+	}
+}
+BP_tour_arrival_norse_welcome = {
+	background = {
+		reference = "gfx/interface/illustrations/activity_splash_screens/tour_arrival_norse_welcome.dds"
+		environment = "environment_ep2_tour_arrival_norse_neutral"
+		ambience = "event:/SFX/Events/Backgrounds/camp_generic_day"
+	}
+}
+BP_ashkenazi_event_story = {
+	background = {
+		reference = "gfx/interface/illustrations/decisions/expel.dds"
+		environment = "environment_ep2_tour_arrival_western_suspicious"
+		ambience = "event:/DLC/EP2/SFX/Events/Grand_Activities/Tours/ep2_event_grand_tour_arrival_neutral"
+	}
+}
+BP_senate = {
+	background = {
+		reference = "gfx/interface/illustrations/senate_background.dds"
+		environment = "environment_cw_fp2_iberian"
+		ambience = "event:/SFX/Events/Backgrounds/corner_of_tavern"
+	}
+}
+BP_shift_culture_city = {
+	background = {
+		trigger = {
+			scope:shift_culture = { has_graphical_african_culture_group_trigger = yes }
+		}
+		reference = "gfx/interface/illustrations/event_scenes/ep2_feast_sub_saharan.dds"
+		environment = "environment_sub-saharan_feast"
+		ambience = "event:/DLC/EP2/SFX/Events/Backgrounds/evn_background_steppe"
+	}
+	background = {
+		trigger = {
+			scope:shift_culture = { 
+				OR = {
+					has_cultural_pillar = heritage_caucasian
+					has_building_gfx = iranian_building_gfx
+				}
+			}
+		}
+		reference = "gfx/interface/illustrations/holding_types/fp3_city_iranian.dds"
+		environment = "environment_generic_holy_site_mena"
+		ambience = "event:/SFX/Events/Backgrounds/town_market_middleeastern_day"
+	}
+	background = {
+		trigger = {
+			scope:shift_culture = {
+				OR = {
+					has_graphical_steppe_culture_group_trigger = yes
+					culture_head = { government_has_flag = government_is_nomadic }
+				}
+				NOR = {
+					has_building_gfx = mena_building_gfx
+					has_building_gfx = berber_building_gfx
+				}
+			}
+		}
+		reference = "gfx/interface/illustrations/activity_splash_screens/tour_arrival_tribal_neutral.dds"
+		environment = "environment_ep2_tour_arrival_tribal_neutral"
+		ambience = "event:/SFX/Events/Backgrounds/camp_generic_day"
+	}
+	background = {
+		trigger = {
+			scope:shift_culture = { has_graphical_mena_culture_group_trigger = yes }
+		}
+		reference = "gfx/interface/illustrations/activity_splash_screens/tour_arrival_mena_neutral.dds"
+		environment = "environment_ep2_tour_arrival_mena_neutral"
+		ambience = "event:/SFX/Events/Backgrounds/town_market_middleeastern_day"
+	}
+	background = {
+		trigger = {
+			scope:shift_culture = {
+				has_graphical_india_culture_group_trigger = yes
+				culture_head = { government_has_flag = government_is_tribal }
+			}
+		}
+		reference = "gfx/interface/illustrations/holding_types/tgp_tgp_city_se_asia.dds"
+		environment = "environment_mpo_rural_village_asian"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_rural_village_asian"
+	}
+	background = {
+		trigger = {
+			scope:shift_culture = { has_graphical_india_culture_group_trigger = yes }
+		}
+		reference = "gfx/interface/illustrations/activity_splash_screens/tour_arrival_indian_neutral.dds"
+		environment = "environment_ep2_tour_arrival_indian_neutral"
+		ambience = "event:/DLC/EP4/SFX/Events/Event_Backgrounds/tgp_alley_day_asia"
+	}
+	background = {
+		trigger = {
+			scope:shift_culture = { has_graphical_east_asia_culture_group_trigger = yes }
+		}
+		reference = "gfx/interface/illustrations/activity_splash_screens/tour_arrival_asia_neutral.dds"
+		environment = "environment_tgp_courtyard_asia"
+		ambience = "event:/DLC/EP4/SFX/Events/Event_Backgrounds/tgp_alley_day_asia"
+	}
+	background = { # Western tribals
+		trigger = {
+			scope:shift_culture = {
+				culture_head = { government_has_flag = government_is_tribal }
+			}
+		}
+		reference = "gfx/interface/illustrations/activity_splash_screens/tour_arrival_norse_neutral.dds"
+		environment = "environment_ep2_tour_arrival_norse_neutral"
+		ambience = "event:/SFX/Events/Backgrounds/camp_generic_day"
+	}
+	background = {
+		trigger = {
+			scope:shift_culture = {
+				OR = {
+					has_graphical_iberian_culture_group_trigger = yes
+					has_graphical_mediterranean_culture_group_trigger = yes
+				}
+			}
+		}
+		reference = "gfx/interface/illustrations/activity_splash_screens/tour_arrival_iberian_neutral.dds"
+		environment = "environment_ep2_tour_arrival_iberian_neutral"
+		ambience = "event:/SFX/Events/Backgrounds/city_alley_day_western"
+	}
+	background = {
+		reference = "gfx/interface/illustrations/activity_splash_screens/tour_arrival_western_neutral.dds"
+		environment = "environment_ep2_tour_arrival_western_neutral"
+		ambience = "event:/SFX/Events/Backgrounds/city_alley_day_western"
 	}
 }

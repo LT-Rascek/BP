@@ -8,27 +8,28 @@
 #Formation of the Frankish Kingdom information decision (0010 & 0011)
 BP_claim_kingdom_decisions.0010 = {
 	type = character_event
-	window = fullscreen_event
 	title = BP_claim_kingdom_decisions.0010.t
 	desc = BP_claim_kingdom_decisions.0010.desc
 	theme = realm
-	override_background = { reference = frankish_kingdom_elevation }
+	override_background = { reference = BP_tour_arrival_norse_welcome }
 	content_source = dlc_WtWSMS
 	
-	right_portrait = {
+	left_portrait = {
 		character = scope:the_frankish_former
-		animation = personality_bold
+		animation = celebrate_sword
 	}
+	
+	immediate = { form_frankish_kingdom_effect = yes }
 	
 	option = {
 		trigger = { this = scope:the_frankish_former }
 		name = BP_claim_kingdom_decisions.0010.the_king
-		form_frankish_kingdom_effect = yes
 		
-		every_ruler = {
+		every_player = {
 			limit = {
-				#is_ai = no
-				#NOT = { this = root }
+				is_ai = no
+				NOT = { this = root }
+				this = { in_diplomatic_range = root }
 			}
 			trigger_event = { id = BP_claim_kingdom_decisions.0011 } #Inform the rest
 		}
@@ -39,11 +40,12 @@ BP_claim_kingdom_decisions.0011 = {
 	title = BP_claim_kingdom_decisions.0011.t
 	desc = BP_claim_kingdom_decisions.0011.desc
 	theme = realm
+	override_background = { reference = BP_tour_arrival_norse_welcome }
 	content_source = dlc_WtWSMS
 	
-	right_portrait = {
+	left_portrait = {
 		character = scope:the_frankish_former
-		animation = personality_bold
+		animation = celebrate_sword
 	}
 	
 	option = {
@@ -78,28 +80,28 @@ BP_claim_kingdom_decisions.0011 = {
 #Formation of Aures Kingdom information decision
 BP_claim_kingdom_decisions.0020 = {
 	type = character_event
-	window = fullscreen_event
 	title = BP_claim_kingdom_decisions.0020.t
 	desc = BP_claim_kingdom_decisions.0020.desc
 	theme = realm
-	override_background = { reference = aures_kingdom_elevation }
+	override_background = { reference = ep3_city_gate }
 	content_source = dlc_WtWSMS
 	
-	right_portrait = {
+	left_portrait = {
 		character = scope:the_k_aures_former
-		animation = personality_bold
+		animation = personality_callous
 	}
+	
+	immediate = { form_k_aures_effect = yes }
 	
 	option = {
 		fallback = yes
 		trigger = { this = scope:the_k_aures_former }
 		name = BP_claim_kingdom_decisions.0020.the_king
-		form_k_aures_effect = yes
 		
 		#Every relatively close ruler gets informed
 		every_ruler = {
 			limit = {
-				realm_to_title_distance_squared = { target = root.primary_title  value <= squared_distance_medium }
+				this = { in_diplomatic_range = root }
 				NOT = { this = scope:the_k_aures_former }
 			}
 			trigger_event = { id = BP_claim_kingdom_decisions.0021 }
@@ -111,11 +113,12 @@ BP_claim_kingdom_decisions.0021 = {
 	title = BP_claim_kingdom_decisions.0021.t
 	desc = BP_claim_kingdom_decisions.0021.desc
 	theme = realm
+	override_background = { reference = ep3_city_gate }
 	content_source = dlc_WtWSMS
 	
-	right_portrait = {
+	left_portrait = {
 		character = scope:the_k_aures_former
-		animation = personality_bold
+		animation = personality_callous
 	}
 	
 	option = {

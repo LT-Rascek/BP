@@ -544,6 +544,18 @@ bp_cultural_helmet = {
 	selection_behavior = weighted_random
 	priority = 4
 	
+	senator_no_helmet = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = no_headgear
+				value = 0
+			}
+		}
+		outfit_tags = { senate_outfit }
+		weight = 0
+	}
 	dacian_helmet_low = { #Phrygian helmet with nasal
 		dna_modifiers = {
 			accessory = {
@@ -641,6 +653,18 @@ bp_cultural_cloaks = {
 	
 	default_cloak = {
 		weight = 10
+	}
+	senator_cloak = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = no_cloak
+				value = 0
+			}
+		}
+		outfit_tags = { senate_outfit }
+		weight = 0
 	}
 	chernyakhov_cloak_fp1 = {
 		dna_modifiers = {
