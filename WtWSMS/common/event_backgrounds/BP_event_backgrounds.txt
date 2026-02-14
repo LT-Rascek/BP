@@ -35,9 +35,16 @@ BP_tour_arrival_norse_welcome = {
 }
 BP_ashkenazi_event_story = {
 	background = {
-		reference = "gfx/interface/illustrations/decisions/expel.dds"
+		reference = "gfx/interface/illustrations/decisions/decision_expel.dds"
 		environment = "environment_ep2_tour_arrival_western_suspicious"
-		ambience = "event:/DLC/EP2/SFX/Events/Grand_Activities/Tours/ep2_event_grand_tour_arrival_neutral"
+		ambience = "event:/SFX/Events/Backgrounds/city_alley_day_western"
+	}
+}
+BP_silk_road_event_story = {
+	background = {
+		reference = "gfx/interface/illustrations/decisions/tgp_silk_road.dds"
+		environment = "environment_tgp_courtyard_asia"
+		ambience = "event:/SFX/Events/Backgrounds/town_market_middleeastern_day"
 	}
 }
 BP_senate = {

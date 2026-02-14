@@ -560,7 +560,11 @@ BP_minorities_476_gaul = {
 	effect = {
 		#Very special counties
 		title:c_provence = { add_small_culture_to_county_effect = { CULTURE = culture:massalian } }
-		title:c_cologne = { add_small_culture_to_county_tribal_effect = { CULTURE = culture:romano_gallic } }
+		title:c_cologne = {
+			add_small_culture_to_county_tribal_effect = { CULTURE = culture:romano_gallic }
+			add_small_culture_to_county_tribal_effect = { CULTURE = culture:tzarfati }
+			add_small_faith_to_county_tribal_effect = { CULTURE = culture:rabbinism }
+		}
 		title:c_koblenz = { add_small_culture_to_county_tribal_effect = { CULTURE = culture:romano_gallic } }
 		#Septem Provincae is a bit special
 		every_county = {
@@ -710,6 +714,24 @@ BP_minorities_476_gaul = {
 			add_small_faith_to_county_effect = { FAITH = faith:arian }
 			add_small_culture_to_county_effect = { CULTURE = culture:burgundian }
 		}
+		
+		#Jews
+		title:c_orleans = {
+			add_small_faith_to_county_effect = { FAITH = faith:rabbinism }
+			add_small_culture_to_county_effect = { CULTURE = culture:tzarfati }
+		}
+		title:c_bordeaux = {
+			add_small_faith_to_county_effect = { FAITH = faith:rabbinism }
+			add_small_culture_to_county_effect = { CULTURE = culture:tzarfati }
+		}
+		title:c_carcassonne = {
+			add_small_faith_to_county_effect = { FAITH = faith:rabbinism }
+			add_small_culture_to_county_effect = { CULTURE = culture:tzarfati }
+		}
+		title:c_lyon = {
+			add_small_faith_to_county_effect = { FAITH = faith:rabbinism }
+			add_small_culture_to_county_effect = { CULTURE = culture:tzarfati }
+		}
 	}
 }
 
@@ -720,6 +742,7 @@ BP_minorities_476_italy = {
 			add_large_faith_to_county_effect = { FAITH = faith:manichean }
 			add_small_faith_to_county_effect = { FAITH = faith:arian }
 			add_small_faith_to_county_effect = { FAITH = faith:pelagianism }
+			add_small_faith_to_county_effect = { FAITH = faith:rabbinism }
 		}
 		#General Spread of Religion
 		every_county = {
@@ -912,6 +935,23 @@ BP_minorities_476_hispania = {
 		title:c_coruna = {
 			add_small_culture_to_county_effect = { CULTURE = culture:marcomanni }
 			add_small_faith_to_county_effect = { FAITH = faith:irimonic_pagan }
+		}
+		# Jews
+		title:c_merida = {
+			add_small_culture_to_county_effect = { CULTURE = culture:sephardi }
+			add_small_faith_to_county_effect = { FAITH = faith:rabbinism }
+		}
+		title:c_toledo = {
+			add_small_culture_to_county_effect = { CULTURE = culture:sephardi }
+			add_small_faith_to_county_effect = { FAITH = faith:rabbinism }
+		}
+		title:c_sevilla = {
+			add_small_culture_to_county_effect = { CULTURE = culture:sephardi }
+			add_small_faith_to_county_effect = { FAITH = faith:rabbinism }
+		}
+		title:c_tarragona = {
+			add_small_culture_to_county_effect = { CULTURE = culture:sephardi }
+			add_small_faith_to_county_effect = { FAITH = faith:rabbinism }
 		}
 	}
 }

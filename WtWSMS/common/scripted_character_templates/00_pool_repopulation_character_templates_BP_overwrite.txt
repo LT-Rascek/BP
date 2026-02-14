@@ -8,7 +8,7 @@ pool_repopulate_local_flavor = {
 	random_culture = {
 		culture:ashkenazi = {
 			trigger = {
-				always = no
+				has_global_variable = ashkenazi_culture_already_exists
 				NOT = {
 					root.faith = { religion = { is_in_family = rf_pagan } }
 				}
@@ -40,6 +40,7 @@ pool_repopulate_local_flavor = {
 		}
 		culture:radhanite = {
 			trigger = {
+				has_global_variable = radhanite_culture_already_exists
 				root.capital_province = {
 					OR = {
 						geographical_region = world_steppe
@@ -232,19 +233,6 @@ pool_repopulate_local_flavor = {
 		}
 		### WtWSMS Cultures
 		
-		culture:samaritan_culture = {
-			trigger = {
-				NOT = {
-					root.faith = { religion = { is_in_family = rf_pagan } }
-				}
-				root.capital_province = {
-					OR = {
-						geographical_region = world_europe_south_east
-						geographical_region = world_asia_minor
-					}
-				}
-			}
-		}
 		culture:romaniote = {
 			trigger = {
 				root.capital_province = {
@@ -256,11 +244,10 @@ pool_repopulate_local_flavor = {
 			}
 		}
 		culture:tzarfati = {
-			trigger = {
-				root.capital_province = {
-					geographical_region = world_roman_empire_west_gaulia
-				}
-			}
+			trigger = { root.capital_province = { geographical_region = world_roman_empire_west_gaulia } }
+		}
+		culture:juhuro = {
+			trigger = { root.capital_province = { geographical_region = world_caucasus } }
 		}
 	}
 	
@@ -330,6 +317,12 @@ pool_repopulate_local_flavor = {
 						culture = culture:samaritan_culture
 					}
 					set_character_faith = faith:samaritan
+				}
+				90 = {
+					trigger = {
+						culture = culture:juhuro
+					}
+					set_character_faith = faith:tzadikite
 				}
 				### ^^^
 				### vvv WtWSMS: Added era trigger

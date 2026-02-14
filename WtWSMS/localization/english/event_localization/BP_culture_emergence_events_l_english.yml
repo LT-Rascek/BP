@@ -19,3 +19,10 @@
  bp_culture_emergence_events.1001.desc: "The mixing of the people of [parent_1.GetName] and [parent_2.GetName] has produced an unexpected fusion of the two cultures, to the point a new naming practices have taken hold. Now, the $name_list_east_celtic$ practices have taken root, replacing our older ways."
  bp_culture_emergence_events.1001.response: "Our mores change more and more..."
  
+ bp_culture_emergence_events.1100.t: "The [GetCultureByKey('ashkenazi').GetName] Diaspora"
+ bp_culture_emergence_events.1100.desc: "Since antiquity, the Jewish people have taken refuge in the civilized places of the world. They have seen masters come and go, adapting to their ways yet never relinquishing their own viewpoint. With the rise of [patron_culture.GetName] power, the lands of [Glossary('#italic Ashkenaz#!','ASHKENAZ_GLOSS')] have become a beacon of stability in a chaotic world.\n\nCommunities of [GetCultureByKey('ashkenazi').GetCollectiveNoun] are slowly establishing a foothold across Europe. Some come from the west, others across the Alps, but they are united through a shared heritage."
+ bp_culture_emergence_events.1100.a: "How distant the gates of Jerusalem must seem..."
+ ASHKENAZ_GLOSS: "Among the medieval Jewry, it became customary to equate Biblical names to the realms of Europe. Germany was known as #italic Ashkenaz#!, Spain as #italic Sepharad#!, France as #italic Tzarfat#!, and Bohemia as #italic Canaan#!."
+ bp_culture_emergence_events.1101.t: "The [GetCultureByKey('radhanite').GetName] Traders"
+ bp_culture_emergence_events.1101.desc: "The Silk Road"
+ bp_culture_emergence_events.1101.a: "$bp_culture_emergence_events.1100.a$"

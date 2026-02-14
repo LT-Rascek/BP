@@ -137,3 +137,104 @@ yearly_culture_pulse = {
 		bp_change_tradition_events.0003 #Zealous Pagans Tradition Removal
 	}
 }
+
+yearly_global_pulse = {
+	on_actions = {
+		historical_culture_ashkenazi
+	}
+}
+
+historical_culture_ashkenazi = {
+	effect = {
+		# Check for a non-Romance culture in Europe in the early middle ages
+		random_culture_global = {
+			limit = {
+				NOT = { has_global_variable = ashkenazi_culture_already_exists }
+				exists = this.culture_head
+				# Early medieval era
+				has_cultural_era_or_later = culture_era_early_medieval
+				# Needs to be culturally distinct - not Roman or Jewish
+				NOR = {
+					has_cultural_pillar = heritage_byzantine
+					has_cultural_pillar = language_greek
+					has_cultural_pillar = heritage_latin
+					has_cultural_parameter = language_group_romance
+					has_cultural_pillar = heritage_israelite
+				}
+				# Must be in central Europe
+				any_culture_county = {
+					percent >= 0.5
+					OR = {
+						geographical_region = world_europe_west_germania
+						geographical_region = custom_europe_eastern_germany
+						geographical_region = custom_lotharingia
+					}
+				}
+			}
+			save_scope_as = patron_culture
+			set_global_variable = ashkenazi_culture_already_exists
+			
+			# Set up culture
+			change_cultural_acceptance = {
+				target = culture:ashkenazi
+				value = 100
+			}
+			culture:ashkenazi = {
+				reset_culture_creation_date = yes
+				get_all_innovations_from = culture:tzarfati
+				get_all_innovations_from = scope:patron_culture
+				set_language_from = scope:patron_culture
+			}
+			every_culture_global = {
+				limit = { has_cultural_pillar = heritage_israelite }
+				change_cultural_acceptance = {
+					target = culture:ashkenazi
+					value = 100
+				}
+			}
+			# Add minorities and exiles (inviting Ashkenazim occured historically)
+			scope:patron_culture.culture_head.capital_province = {
+				save_scope_as = patron_county
+				add_small_culture_to_county_tribal_effect = { culture = culture:ashkenazi }
+				add_small_faith_to_county_tribal_effect = { culture = culture:rabbinism }
+			}
+			faith:rabbinism = {
+				set_variable = {
+					name = associated_county
+					value = scope:patron_county
+				}
+				set_variable = {
+					name = associated_culture
+					value = culture:ashkenazi
+				}
+				if = {
+					limit = {
+						NOT = { has_variable = converted_development }
+					}
+					set_variable = {
+						name = converted_development
+						value = scope:patron_county.convert_faith_development_value
+					}
+				}
+				else = {
+					change_variable = {
+						name = converted_development
+						add = scope:patron_county.convert_faith_development_value
+					}
+				}
+			}
+			
+			every_ruler = {
+				limit = { # Courtiers spawn in this region
+					capital_province = {
+						OR = {
+							geographical_region = world_europe
+							geographical_region = world_asia_minor
+						}
+					}
+				}
+				trigger_event = bp_culture_emergence_events.1100
+			}
+		}
+	}
+}
