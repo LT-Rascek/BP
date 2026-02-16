@@ -164,11 +164,7 @@ historical_culture_ashkenazi = {
 				# Must be in central Europe
 				any_culture_county = {
 					percent >= 0.5
-					OR = {
-						geographical_region = world_europe_west_germania
-						geographical_region = custom_europe_eastern_germany
-						geographical_region = custom_lotharingia
-					}
+					geographical_region = custom_ashkenaz
 				}
 			}
 			save_scope_as = patron_culture
@@ -193,43 +189,95 @@ historical_culture_ashkenazi = {
 				}
 			}
 			# Add minorities and exiles (inviting Ashkenazim occured historically)
-			scope:patron_culture.culture_head.capital_province = {
-				save_scope_as = patron_county
-				add_small_culture_to_county_tribal_effect = { culture = culture:ashkenazi }
-				add_small_faith_to_county_tribal_effect = { culture = culture:rabbinism }
-			}
-			faith:rabbinism = {
-				set_variable = {
-					name = associated_county
-					value = scope:patron_county
+			scope:patron_culture.culture_head.capital_county = {
+				add_culture_minority_effect = {
+					CULTURE = culture:ashkenazi
+					SIZE = small
+					COUNTY = this
 				}
-				set_variable = {
-					name = associated_culture
-					value = culture:ashkenazi
+				add_faith_minority_effect = {
+					FAITH = faith:rabbinism
+					SIZE = small
+					COUNTY = this
 				}
 				if = {
-					limit = {
-						NOT = { has_variable = converted_development }
+					limit = { NOT = { faith.religion = religion:judaism_religion } }
+					
+					add_to_variable_list = {
+						name = faiths_converted_in_the_county
+						target = faith:rabbinism
+						years = 40
 					}
-					set_variable = {
-						name = converted_development
-						value = scope:patron_county.convert_faith_development_value
+					save_scope_as = patron_county
+					faith:rabbinism = {
+						set_variable = {
+							name = associated_county
+							value = scope:patron_county
+						}
+						set_variable = {
+							name = associated_culture
+							value = culture:ashkenazi
+						}
+						if = {
+							limit = {
+								NOT = { has_variable = converted_development }
+							}
+							set_variable = {
+								name = converted_development
+								value = scope:patron_county.convert_faith_development_value
+							}
+						}
+						else = {
+							change_variable = {
+								name = converted_development
+								add = scope:patron_county.convert_faith_development_value
+							}
+						}
 					}
 				}
-				else = {
-					change_variable = {
-						name = converted_development
-						add = scope:patron_county.convert_faith_development_value
+			}
+			
+			#Flip tzarfati minorities in counties that speak the same language
+			hidden_effect = {
+				every_county = {
+					limit = {
+						county_has_specific_minority_culture_trigger = { CULTURE = culture:tzarfati }
+						culture = { has_same_language_group_as_trigger = { CULTURE = scope:patron_culture } }
+					}
+					if = {
+						limit = { county_has_specific_large_minority_culture_trigger = { CULTURE = culture:tzarfati } }
+						remove_list_variable = {
+							name = culture_minorities_large
+							target = culture:tzarfati
+						}
+						add_to_variable_list = {
+							name = culture_minorities_large
+							target = culture:ashkenazi
+						}
+					}
+					else = {
+						remove_list_variable = {
+							name = culture_minorities_small
+							target = culture:tzarfati
+						}
+						add_to_variable_list = {
+							name = culture_minorities_small
+							target = culture:ashkenazi
+						}
 					}
 				}
 			}
 			
 			every_ruler = {
-				limit = { # Courtiers spawn in this region
-					capital_province = {
-						OR = {
-							geographical_region = world_europe
-							geographical_region = world_asia_minor
+				limit = {
+					OR = {
+						broadly_jewish_character_trigger = yes
+						# Courtiers spawn in this region
+						capital_province = {
+							OR = {
+								geographical_region = world_europe
+								geographical_region = world_asia_minor
+							}
 						}
 					}
 				}

@@ -614,6 +614,19 @@ has_any_ecumenical_doctrine_trigger = {
 		has_doctrine = doctrine_major_branch_behdin
 	}
 }
+
+broadly_jewish_character_trigger = {
+	OR = {
+		culture = { has_cultural_pillar = heritage_israelite }
+		faith = {
+			OR = {
+				this.religion = religion:judaism_religion
+				has_doctrine_parameter = jewish_syncretic_actor_opinion_active
+			}
+		}
+	}
+}
+
 #Various triggers for cultural religions (Autocephaly and Ethnic Religion)
 #Probably could simplify this block of code's logic, but left intact for simplicity
 actor_is_faith_culture_for_cultural_religions_trigger = {
