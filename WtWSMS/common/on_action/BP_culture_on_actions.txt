@@ -346,7 +346,7 @@ historical_culture_radhanite = {
 						has_cultural_era_or_later = culture_era_early_medieval
 						# Must be along the western head of the Silk Road
 						any_culture_county = {
-							percent >= 0.5
+							percent >= 0.25
 							geographical_region = tgp_silk_road_occident_region
 						}
 					}
@@ -355,7 +355,7 @@ historical_culture_radhanite = {
 						modifier = { add = this.total_counties }
 					}
 					save_scope_as = patron_culture
-					set_global_variable = ashkenazi_culture_already_exists
+					set_global_variable = radhanite_culture_already_exists
 					
 					# Set up culture
 					culture:radhanite = {
