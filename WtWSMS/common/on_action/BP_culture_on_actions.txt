@@ -86,6 +86,7 @@ on_game_start = {
 create_list_of_historic_hybrids = {
 	effect = {
 		#Hybrids in 476
+		add_to_global_variable_list = { name = hybrid_cultures target = culture:ashkenazi }
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:balasakan }
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:carpodaci }
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:denziner }
@@ -103,6 +104,8 @@ create_list_of_historic_hybrids = {
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:mauritanian }
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:ninrun }
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:numidian }
+		add_to_global_variable_list = { name = hybrid_cultures target = culture:radhanite }
+		add_to_global_variable_list = { name = hybrid_cultures target = culture:romaniote }
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:romano_african }
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:romano_aramean }
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:romano_british }
@@ -112,10 +115,12 @@ create_list_of_historic_hybrids = {
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:romano_hispanic }
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:romano_illyrian }
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:romano_thracian }
+		add_to_global_variable_list = { name = hybrid_cultures target = culture:sephardi }
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:sinhala }
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:sistani }
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:syriac }
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:taifal }
+		add_to_global_variable_list = { name = hybrid_cultures target = culture:tzarfati }
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:vidivarii }
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:wielbark }
 	}
@@ -140,148 +145,263 @@ yearly_culture_pulse = {
 
 yearly_global_pulse = {
 	on_actions = {
+		delay = { days = { 1 365 } }
 		historical_culture_ashkenazi
+		delay = { days = { 1 365 } }
+		historical_culture_radhanite
 	}
 }
 
 historical_culture_ashkenazi = {
 	effect = {
-		# Check for a non-Romance culture in Europe in the early middle ages
-		random_culture_global = {
-			limit = {
-				NOT = { has_global_variable = ashkenazi_culture_already_exists }
-				exists = this.culture_head
-				# Early medieval era
-				has_cultural_era_or_later = culture_era_early_medieval
-				# Needs to be culturally distinct - not Roman or Jewish
-				NOR = {
-					has_cultural_pillar = heritage_byzantine
-					has_cultural_pillar = language_greek
-					has_cultural_pillar = heritage_latin
-					has_cultural_parameter = language_group_romance
-					has_cultural_pillar = heritage_israelite
-				}
-				# Must be in central Europe
-				any_culture_county = {
-					percent >= 0.5
-					geographical_region = custom_ashkenaz
-				}
-			}
-			save_scope_as = patron_culture
-			set_global_variable = ashkenazi_culture_already_exists
-			
-			# Set up culture
-			change_cultural_acceptance = {
-				target = culture:ashkenazi
-				value = 100
-			}
-			culture:ashkenazi = {
-				reset_culture_creation_date = yes
-				get_all_innovations_from = culture:tzarfati
-				get_all_innovations_from = scope:patron_culture
-				set_language_from = scope:patron_culture
-			}
-			every_culture_global = {
-				limit = { has_cultural_pillar = heritage_israelite }
-				change_cultural_acceptance = {
-					target = culture:ashkenazi
-					value = 100
-				}
-			}
-			# Add minorities and exiles (inviting Ashkenazim occured historically)
-			scope:patron_culture.culture_head.capital_county = {
-				add_culture_minority_effect = {
-					CULTURE = culture:ashkenazi
-					SIZE = small
-					COUNTY = this
-				}
-				add_faith_minority_effect = {
-					FAITH = faith:rabbinism
-					SIZE = small
-					COUNTY = this
-				}
-				if = {
-					limit = { NOT = { faith.religion = religion:judaism_religion } }
-					
-					add_to_variable_list = {
-						name = faiths_converted_in_the_county
-						target = faith:rabbinism
-						years = 40
-					}
-					save_scope_as = patron_county
-					faith:rabbinism = {
-						set_variable = {
-							name = associated_county
-							value = scope:patron_county
+		if = {
+			limit = { NOT = { has_global_variable = ashkenazi_culture_already_exists } }
+			random = {
+				chance = 0
+				# Melting pot logic
+				save_temporary_scope_value_as = { name = shift_start_year value = 750 }
+				save_temporary_scope_value_as = { name = shift_period_years value = 150 }
+				modifier = { add = 0.25 current_year >= shift_start_year_0_period }
+				modifier = { add = 0.25 current_year >= shift_start_year_1_period }
+				modifier = { add = 0.50 current_year >= shift_start_year_2_period }
+				modifier = { add = 1.00 current_year >= shift_start_year_3_period }
+				modifier = { add = 2.00 current_year >= shift_start_year_4_period }
+				modifier = { add = 2.00 current_year >= shift_start_year_5_period }
+				modifier = { add = 3.00 current_year >= shift_start_year_6_period }
+				modifier = { add = 5.00 current_year >= shift_start_year_7_period }
+				# Accelerate timeline if Crusades have been called for
+				modifier = { multiply = 2 religion:christianity_religion = { exists = var:variable_ghw_unlocked } }
+				
+				# Check for a non-Romance culture in Europe in the early middle ages
+				random_culture_global = {
+					limit = {
+						exists = this.culture_head
+						# Early medieval era
+						has_cultural_era_or_later = culture_era_early_medieval
+						# Needs to be culturally distinct - not Roman or Jewish
+						NOR = {
+							has_cultural_pillar = heritage_byzantine
+							has_cultural_pillar = language_greek
+							has_cultural_pillar = heritage_latin
+							has_cultural_parameter = language_group_romance
+							has_cultural_pillar = heritage_israelite
 						}
-						set_variable = {
-							name = associated_culture
-							value = culture:ashkenazi
+						# Must be in central Europe
+						any_culture_county = {
+							percent >= 0.5
+							geographical_region = custom_ashkenaz
+						}
+					}
+					weight = {
+						base = 1
+						modifier = { add = this.total_counties }
+					}
+					save_scope_as = patron_culture
+					set_global_variable = ashkenazi_culture_already_exists
+					
+					# Set up culture
+					change_cultural_acceptance = {
+						target = culture:ashkenazi
+						value = 100
+					}
+					culture:ashkenazi = {
+						reset_culture_creation_date = yes
+						get_all_innovations_from = culture:tzarfati
+						get_all_innovations_from = scope:patron_culture
+						set_language_from = scope:patron_culture
+					}
+					every_culture_global = {
+						limit = { has_cultural_pillar = heritage_israelite }
+						change_cultural_acceptance = {
+							target = culture:ashkenazi
+							value = 100
+						}
+					}
+					# Add minorities and exiles (inviting Ashkenazim occured historically)
+					scope:patron_culture.culture_head.capital_county = {
+						add_culture_minority_effect = {
+							CULTURE = culture:ashkenazi
+							SIZE = small
+							COUNTY = this
+						}
+						add_faith_minority_effect = {
+							FAITH = faith:rabbinism
+							SIZE = small
+							COUNTY = this
 						}
 						if = {
+							limit = { NOT = { faith.religion = religion:judaism_religion } }
+							
+							add_to_variable_list = {
+								name = faiths_converted_in_the_county
+								target = faith:rabbinism
+								years = 40
+							}
+							save_scope_as = patron_county
+							faith:rabbinism = {
+								set_variable = {
+									name = associated_county
+									value = scope:patron_county
+								}
+								set_variable = {
+									name = associated_culture
+									value = culture:ashkenazi
+								}
+								if = {
+									limit = {
+										NOT = { has_variable = converted_development }
+									}
+									set_variable = {
+										name = converted_development
+										value = scope:patron_county.convert_faith_development_value
+									}
+								}
+								else = {
+									change_variable = {
+										name = converted_development
+										add = scope:patron_county.convert_faith_development_value
+									}
+								}
+							}
+						}
+					}
+					
+					#Flip tzarfati minorities in counties that speak the same language
+					hidden_effect = {
+						every_county = {
 							limit = {
-								NOT = { has_variable = converted_development }
+								county_has_specific_minority_culture_trigger = { CULTURE = culture:tzarfati }
+								culture = { has_same_language_group_as_trigger = { CULTURE = scope:patron_culture } }
 							}
-							set_variable = {
-								name = converted_development
-								value = scope:patron_county.convert_faith_development_value
+							if = {
+								limit = { county_has_specific_large_minority_culture_trigger = { CULTURE = culture:tzarfati } }
+								remove_list_variable = {
+									name = culture_minorities_large
+									target = culture:tzarfati
+								}
+								add_to_variable_list = {
+									name = culture_minorities_large
+									target = culture:ashkenazi
+								}
+							}
+							else = {
+								remove_list_variable = {
+									name = culture_minorities_small
+									target = culture:tzarfati
+								}
+								add_to_variable_list = {
+									name = culture_minorities_small
+									target = culture:ashkenazi
+								}
 							}
 						}
-						else = {
-							change_variable = {
-								name = converted_development
-								add = scope:patron_county.convert_faith_development_value
-							}
-						}
 					}
-				}
-			}
-			
-			#Flip tzarfati minorities in counties that speak the same language
-			hidden_effect = {
-				every_county = {
-					limit = {
-						county_has_specific_minority_culture_trigger = { CULTURE = culture:tzarfati }
-						culture = { has_same_language_group_as_trigger = { CULTURE = scope:patron_culture } }
-					}
-					if = {
-						limit = { county_has_specific_large_minority_culture_trigger = { CULTURE = culture:tzarfati } }
-						remove_list_variable = {
-							name = culture_minorities_large
-							target = culture:tzarfati
-						}
-						add_to_variable_list = {
-							name = culture_minorities_large
-							target = culture:ashkenazi
-						}
-					}
-					else = {
-						remove_list_variable = {
-							name = culture_minorities_small
-							target = culture:tzarfati
-						}
-						add_to_variable_list = {
-							name = culture_minorities_small
-							target = culture:ashkenazi
-						}
-					}
-				}
-			}
-			
-			every_ruler = {
-				limit = {
-					OR = {
-						broadly_jewish_character_trigger = yes
-						# Courtiers spawn in this region
-						capital_province = {
+					
+					every_ruler = {
+						limit = {
 							OR = {
-								geographical_region = world_europe
-								geographical_region = world_asia_minor
+								broadly_jewish_character_trigger = yes
+								# Courtiers spawn in this region
+								capital_province = {
+									OR = {
+										geographical_region = world_europe
+										geographical_region = world_asia_minor
+									}
+								}
 							}
 						}
+						trigger_event = bp_culture_emergence_events.1100
 					}
 				}
-				trigger_event = bp_culture_emergence_events.1100
+			}
+		}
+	}
+}
+
+historical_culture_radhanite = {
+	effect = {
+		if = {
+			limit = { NOT = { has_global_variable = radhanite_culture_already_exists } }
+			random = {
+				chance = 0
+				# Melting pot logic
+				save_temporary_scope_value_as = { name = shift_start_year value = 850 }
+				save_temporary_scope_value_as = { name = shift_period_years value = 150 }
+				modifier = { add = 0.25 current_year >= shift_start_year_0_period }
+				modifier = { add = 0.25 current_year >= shift_start_year_1_period }
+				modifier = { add = 0.50 current_year >= shift_start_year_2_period }
+				modifier = { add = 1.00 current_year >= shift_start_year_3_period }
+				modifier = { add = 2.00 current_year >= shift_start_year_4_period }
+				modifier = { add = 2.00 current_year >= shift_start_year_5_period }
+				modifier = { add = 3.00 current_year >= shift_start_year_6_period }
+				modifier = { add = 5.00 current_year >= shift_start_year_7_period }
+				# Accelerate timeline if Crusades have been called for
+				modifier = { multiply = 2 religion:christianity_religion = { exists = var:variable_ghw_unlocked } }
+				
+				# Check for a culture in the early middle ages
+				random_culture_global = {
+					limit = {
+						exists = this.culture_head
+						# Early medieval era
+						has_cultural_era_or_later = culture_era_early_medieval
+						# Must be along the western head of the Silk Road
+						any_culture_county = {
+							percent >= 0.5
+							geographical_region = tgp_silk_road_occident_region
+						}
+					}
+					weight = {
+						base = 1
+						modifier = { add = this.total_counties }
+					}
+					save_scope_as = patron_culture
+					set_global_variable = ashkenazi_culture_already_exists
+					
+					# Set up culture
+					culture:radhanite = {
+						reset_culture_creation_date = yes
+						get_all_innovations_from = culture:tzarfati #France is notable as their endpoint
+						get_all_innovations_from = scope:patron_culture
+						set_language_from = scope:patron_culture
+					}
+					every_culture_global = {
+						limit = { has_cultural_pillar = heritage_israelite }
+						change_cultural_acceptance = {
+							target = culture:radhanite
+							value = 100
+						}
+					}
+					# Add minorities
+					scope:patron_culture.culture_head.capital_county = {
+						add_culture_minority_effect = {
+							CULTURE = culture:radhanite
+							SIZE = small
+							COUNTY = this
+						}
+						add_faith_minority_effect = {
+							FAITH = faith:rabbinism
+							SIZE = small
+							COUNTY = this
+						}
+					}
+					
+					every_ruler = {
+						limit = {
+							OR = {
+								culture = scope:patron_culture 
+								broadly_jewish_character_trigger = yes
+								# Courtiers spawn in this region
+								capital_province = {
+									OR = {
+										geographical_region = world_steppe
+										geographical_region = world_india
+									}
+								}
+							}
+						}
+						trigger_event = bp_culture_emergence_events.1101
+					}
+				}
 			}
 		}
 	}
