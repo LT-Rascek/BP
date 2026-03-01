@@ -609,6 +609,21 @@ make_senate_noble_family_effect = {
 		}
 	}
 	
+	# Specific character overrides
+	if = {
+		limit = { this = character:AquilinusOfLyon }
+		title:k_burgundians.holder = { save_temporary_scope_as = new_liege }
+	}
+	else_if = {
+		limit = { this = character:PlaceholderFatherOfImpetratusAndLeocadia }
+		title:k_soissons.holder = { save_temporary_scope_as = new_liege }
+	}
+	# If in sub-Roman lands, work for them
+	#else_if = {
+	#	limit = { employer = { government_has_flag = government_is_subroman_administrative } }
+	#	employer = { save_temporary_scope_as = new_liege }
+	#}
+	
 	# Create title
 	give_noble_family_title = {
 		name = noble_family_name
@@ -619,16 +634,23 @@ make_senate_noble_family_effect = {
 	}
 	
 	# Set liege
-	create_title_and_vassal_change = {
-		type = granted
-		save_scope_as = change
+	if = {
+		limit = { is_landed = no }
+		create_title_and_vassal_change = {
+			type = granted
+			save_scope_as = change
+		}
+		change_liege = {
+			liege = scope:new_liege
+			change = scope:change
+		}
+		resolve_title_and_vassal_change = scope:change
 	}
-	change_liege = {
-		liege = scope:new_liege
-		change = scope:change
+	# Match Roman government
+	if = {
+		limit = { this.liege = { government_has_flag = government_is_subroman_administrative } }
+		change_government = subroman_administrative_government
 	}
-	resolve_title_and_vassal_change = scope:change
-	
 	# Move to capital if outside of realm
 	if = {
 		limit = { NOT = { default_location.holder.top_liege = this.top_liege } }
