@@ -399,6 +399,28 @@ hegemony_roman_government_byzantine = {
 	}
 }
 #roman_government
+estate_holder_roman_government_male = {
+	type = character
+	gender = male
+	special = domicile
+    domicile_type = estate
+	priority = 13
+	governments = { roman_administrative_government subroman_administrative_government roman_federate_government }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+estate_holder_roman_government_female = {
+	type = character
+	gender = female
+	special = domicile
+    domicile_type = estate
+	priority = 13
+	governments = { roman_administrative_government subroman_administrative_government roman_federate_government }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
 baron_roman_government_male = {
 	type = character
 	gender = male
@@ -650,6 +672,59 @@ empire_roman_praetor_uncreated = {
 	type = title
 	priority = 100
 	titles = { e_praetorian_prefecture_africa e_praetorian_prefecture_italy e_praetorian_prefecture_illyria e_praetorian_prefecture_east e_praetorian_prefecture_gaul }
+	flavourization_rules = {
+		top_liege = no
+		independent = no
+	}
+}
+emperor_roman_magister_military_male = {
+	type = title
+	gender = male
+	priority = 500
+	special = holder
+	titles = { e_magister_military_wre e_magister_military_ere }
+	flavourization_rules = {
+		only_holder = yes
+		spouse_takes_title = no
+	}
+}
+emperor_roman_magister_military_female = {
+	type = title
+	gender = female
+	priority = 500
+	special = holder
+	titles = { e_magister_military_wre e_magister_military_ere }
+	flavourization_rules = {
+		only_holder = yes
+		spouse_takes_title = no
+	}
+}
+emperor_roman_magister_offices_male = {
+	type = title
+	gender = male
+	priority = 500
+	special = holder
+	titles = { e_magister_offices_wre e_magister_offices_ere }
+	flavourization_rules = {
+		only_holder = yes
+		spouse_takes_title = no
+	}
+}
+emperor_roman_magister_offices_female = {
+	type = title
+	gender = female
+	priority = 500
+	special = holder
+	titles = { e_magister_offices_wre e_magister_offices_ere }
+	flavourization_rules = {
+		only_holder = yes
+		spouse_takes_title = no
+	}
+}
+empire_roman_magister = {
+	type = title
+	priority = 500
+	titles = { e_magister_offices_wre e_magister_military_wre e_magister_offices_ere e_magister_military_ere }
 	flavourization_rules = {
 		top_liege = no
 		independent = no
