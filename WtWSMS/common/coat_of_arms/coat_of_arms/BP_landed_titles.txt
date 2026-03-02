@@ -17,7 +17,7 @@ h_western_roman_empire = {
 	color2 = "yellow"
 	colored_emblem = {
 		texture = "ce_laurels.dds"
-		color1 = yellow_light
+		color1 = yellow
 		instance = { position = { 0.5 0.4 } scale = { 0.7 0.7 } }
 	}
 	colored_emblem = {
@@ -27,22 +27,22 @@ h_western_roman_empire = {
 	}
 	colored_emblem = {
 		texture = "ce_letter_s.dds"
-		color1 = yellow_light
+		color1 = yellow
 		instance = { position = { 0.3 0.75 } scale = { 0.25 0.25 } }
 	}
 	colored_emblem = {
 		texture = "ce_letter_p.dds"
-		color1 = yellow_light
+		color1 = yellow
 		instance = { position = { 0.425 0.75 } scale = { 0.25 0.25 } }
 	}
 	colored_emblem = {
 		texture = "ce_letter_q.dds"
-		color1 = yellow_light
+		color1 = yellow
 		instance = { position = { 0.575 0.75 } scale = { 0.25 0.25 } }
 	}
 	colored_emblem = {
 		texture = "ce_letter_r.dds"
-		color1 = yellow_light
+		color1 = yellow
 		instance = { position = { 0.725 0.75 } scale = { 0.25 0.25 } }
 	}
 }
@@ -374,6 +374,18 @@ d_senate_east = {
 e_praetorian_prefecture_africa = e_africa
 e_praetorian_prefecture_east = e_oriens
 e_praetorian_prefecture_illyria = e_illyria
+d_raetia_curiensis = {
+	pattern = "pattern_solid.dds"
+	color1 = white
+	color2 = black
+	colored_emblem = {
+		texture = "ce_goat_rampant.dds"
+		color1 = "black"
+		color2 = "black"
+		color3 = "red"
+		instance = { position={ 0.5 0.5 } scale={ 0.8 0.8 } }
+	}
+}
 #e_italy titles
 k_dalmatia = {
 	pattern = "pattern_vertical_split_01.dds"
@@ -460,11 +472,34 @@ k_egypt = {
 		instance = { position = { 0.5 0.425 } scale = { 0.1 0.1 } }
 	}
 }
+k_yemen = {
+	pattern = "pattern_solid.dds"
+	color1 = "red"
+	color2 = "white"
+	colored_emblem = {
+		texture = "ce_block_02.dds"
+		color1 = "white"
+		color2 = "white"
+		instance = { position = { 0.5 0.144 } scale = { 1.0 0.03 }  }
+		instance = { position = { 0.5 0.248 } scale = { 1.0 0.03 }  }
+		instance = { position = { 0.5 0.672 } scale = { 1.0 0.03 }  }
+		instance = { position = { 0.5 0.776 } scale = { 1.0 0.03 }  }
+	}
+	colored_emblem = {
+		texture = "ce_mena_ceremonial_sword.dds"
+		color1 = "white"
+		color2 = "white"
+		instance = { position = { 0.5 0.46 } scale = { 0.9 0.9 }  }
+	}
+}
 
 h_italy = k_italy
 
 #Persian Titles
-h_persia = e_persia
+h_persia_sassanid = 1029100
+h_persia_arsacid = 100685
+h_persia_achaemenid = iranian_dynn_achaemenid
+h_persia = h_persia_sassanid
 
 #e_armenia titles
 k_lazica = {
@@ -681,12 +716,12 @@ k_burgundians = {
 	color1 = red
 	colored_emblem = {
 		texture = "ce_rune_futhark_fe.dds"
-		color1 = yellow_light
+		color1 = yellow
 		instance = { position = { 0.4 0.5 } scale = { 0.35 0.5 } }
 	}
 	colored_emblem = {
 		texture = "ce_pagan_circle_frame.dds"
-		color1 = yellow_light
+		color1 = yellow
 		instance = { position = { 0.5 0.5 } scale = { 0.9 0.9 } }
 	}
 }
@@ -789,6 +824,31 @@ k_suebia={
 
 }
 
+k_france={ #Christian Merovingian banner instead of Capetian
+	pattern="pattern_solid.dds"
+	color1=red
+	color2=yellow
+	colored_emblem={
+		color1=yellow_light
+		color2=yellow
+		color3=yellow
+		texture="ce_bee.dds"
+		instance = { position = { 0.065 0.02 } scale = { 0.36 0.36 }  }
+		instance = { position = { 0.355 0.02 } scale = { 0.36 0.36 }  }
+		instance = { position = { 0.645 0.02 } scale = { 0.36 0.36 }  }
+		instance = { position = { 0.935 0.02 } scale = { 0.36 0.36 }  }
+		instance = { position = { 0.21 0.28 } scale = { 0.36 0.36 }  }
+		instance = { position = { 0.50 0.28 } scale = { 0.36 0.36 }  }
+		instance = { position = { 0.79 0.28 } scale = { 0.36 0.36 }  }
+		instance = { position = { 0.065 0.54 } scale = { 0.36 0.36 }  }
+		instance = { position = { 0.355 0.54 } scale = { 0.36 0.36 }  }
+		instance = { position = { 0.645 0.54 } scale = { 0.36 0.36 }  }
+		instance = { position = { 0.935 0.54 } scale = { 0.36 0.36 }  }
+		instance = { position = { 0.21 0.80 } scale = { 0.36 0.36 }  }
+		instance = { position = { 0.50 0.80 } scale = { 0.36 0.36 }  }
+		instance = { position = { 0.79 0.80 } scale = { 0.36 0.36 }
+	}
+}
 d_salia = {
 	pattern = "pattern_solid.dds"
 	color1 = yellow
@@ -899,6 +959,26 @@ d_exilarch = {
 		instance = { position = { 0.5 0.8 } scale = { 1 1 } }
 	}
 }
+
+h_macedon = {
+	pattern = "pattern_solid.dds"
+	color1 = red
+	colored_emblem = {
+		texture = "ce_macedonian_sun.dds"
+		color1 = yellow
+		instance = { position = { 0.5 0.5 } }
+	}
+}
+h_seleucid = {
+	pattern = "pattern_solid.dds"
+	color1 = blue
+	colored_emblem = {
+		texture = "ce_macedonian_sun.dds"
+		color1 = white
+		instance = { position = { 0.5 0.5 } }
+	}
+}
+
 #Tribal Titles
 k_amr_confederacy = {
 	pattern = "pattern_diagonal_split_01.dds"
@@ -1357,7 +1437,7 @@ d_cybelian_pagan = {
 		instance = { position = { 0.75 0.35 } scale = { 0.7 0.7 } rotation = 90 }
 	}
 	colored_emblem = {
-		texture = "ce_rising_sun.dds"
+		texture = "ce_macedonian_sun.dds"
 		color1 = yellow
 		color2 = "yellow"
 		color3 = "yellow"
