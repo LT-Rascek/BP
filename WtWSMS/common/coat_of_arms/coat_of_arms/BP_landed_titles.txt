@@ -61,7 +61,6 @@ e_magister_offices_wre={ #ND 106#5
 	}
 	colored_emblem={
 		color1=blue
-		color2=blue_light
 		texture="ce_circle_mask.dds"
 		instance={
 			position={ 0.74 0.32 }
@@ -76,7 +75,7 @@ e_magister_offices_wre={ #ND 106#5
 			scale={ 0.27 0.27 }
 		}
 		instance={
-			scale={ 0.49 0.51 }
+			scale={ 0.5 0.5 }
 		}
 	}
 	colored_emblem={
@@ -162,7 +161,6 @@ e_magister_offices_ere={ #ND 22#4
 	}
 	colored_emblem={
 		color1=blue
-		color2=blue_light
 		texture="ce_circle_mask.dds"
 		instance={
 			position={ 0.74 0.32 }
@@ -177,7 +175,7 @@ e_magister_offices_ere={ #ND 22#4
 			scale={ 0.27 0.27 }
 		}
 		instance={
-			scale={ 0.49 0.51 }
+			scale={ 0.5 0.5 }
 		}
 	}
 	colored_emblem={
@@ -846,7 +844,7 @@ k_france={ #Christian Merovingian banner instead of Capetian
 		instance = { position = { 0.935 0.54 } scale = { 0.36 0.36 }  }
 		instance = { position = { 0.21 0.80 } scale = { 0.36 0.36 }  }
 		instance = { position = { 0.50 0.80 } scale = { 0.36 0.36 }  }
-		instance = { position = { 0.79 0.80 } scale = { 0.36 0.36 }
+		instance = { position = { 0.79 0.80 } scale = { 0.36 0.36 } }
 	}
 }
 d_salia = {
@@ -1056,19 +1054,148 @@ k_khazaria = {
 }
 
 #Berber Titles
-k_altava = {
-	pattern="pattern_tricolor_horizontal_01.dds"
-	color1=blue_light
-	color2=hsv360{85 70 55}
-	color3=yellow
+k_mauretania={ #Mauri osismiacii ND 97#14
+	pattern="pattern_solid.dds"
+	color1=yellow
+	color2=green
 	colored_emblem={
-		color1={ 0.76 0.1 0.15 }
-		texture="ce_chi_rho.dds"
+		color1=black
+		texture="ce_block_02.dds"
+	}
+	colored_emblem={
+		color1=yellow
+		color2=orange
+		texture="ce_tamgha_roundel_frame.dds"
+		instance={ scale={ 0.8 0.8 } }
+	}
+	colored_emblem={
+		color1=green
+		color2=green
+		texture="ce_religion_taoism.dds"
 		instance={
-			scale={ 0.7 0.7 }
+			scale={ 0.8 0.8 }
+			rotation=-45
 		}
 	}
 }
+d_sitifensis={ #Flavia victrix Constantina 96#19
+	pattern="pattern_solid.dds"
+	color1=red
+	color2=yellow
+	colored_emblem={
+		color1=yellow
+		texture="ce_pagan_circle_frame.dds"
+	}
+	colored_emblem={
+		color1=yellow
+		color2=blue
+		texture="ce_cross_portugal.dds"
+	}
+	colored_emblem={
+		color1=red
+		texture="ce_circle.dds"
+		instance={ scale={ 0.3 0.3 } }
+	}
+	colored_emblem={
+		color1=yellow
+		texture="ce_annulet.dds"
+		instance={ scale={ 0.3 0.3 } }
+	}
+}
+k_altava={ #Prima flavia pacis 96#16
+	pattern="pattern_solid.dds"
+	color1=purple
+	colored_emblem={
+		color1=white
+		texture="ce_annulet_cross_patty.dds"
+	}
+	colored_emblem={
+		color1=purple
+		texture="ce_circle.dds"
+		instance={ scale={ 0.2 0.2 } }
+	}
+}
+d_ouarsenis={ #Segunda flavia pacis 96#17
+	pattern="pattern_solid.dds"
+	color1=red
+	color2=white
+	colored_emblem={
+		color1=yellow
+		texture="ce_circle_mask.dds"
+		instance={ scale={ 0.74 0.74 } }
+	}
+	colored_emblem={
+		color1=white
+		texture="ce_annulet.dds"
+	}
+	colored_emblem={
+		color1=red
+		texture="ce_religion_bogomilist.dds"
+		instance={ scale={ 0.26 0.26 } }
+	}
+	colored_emblem={
+		color1=white
+		texture="ce_circle.dds"
+		instance={ scale={ 0.26 0.26 } }
+	}
+}
+d_hodna={ #Tertia flavia pacis 96#18
+	pattern="pattern_solid.dds"
+	color1=red
+	color2=persian_indigo
+	colored_emblem={
+		color1=persian_indigo
+		texture="ce_circle_mask.dds"
+		instance={ scale={ 0.7 0.7 } }
+	}
+	colored_emblem={
+		color1=yellow
+		texture="ce_pagan_circle_frame.dds"
+	}
+	colored_emblem={
+		color1=yellow
+		color2=persian_indigo
+		texture="ce_cross_portugal.dds"
+	}
+	colored_emblem={
+		color1=red
+		texture="ce_circle.dds"
+		instance={ scale={ 0.3 0.3 } }
+	}
+	colored_emblem={
+		color1=yellow
+		texture="ce_annulet.dds"
+		instance={ scale={ 0.3 0.3 } }
+	}
+}
+k_septem_provincae={ #Septimani seniores ND 95#16
+	pattern="pattern_solid.dds"
+	color1=red
+	color2=white
+	colored_emblem={
+		color1=blue
+		color2=white
+		texture="ce_tamgha_roundel_frame.dds"
+		instance={ scale={ 0.8 0.8 } }
+	}
+	colored_emblem={
+		color1=white
+		color2=yellow
+		texture="ce_mena_sun.dds"
+		instance={ scale={ 0.7 0.7 } }
+	}
+}
+d_tangiers ={ #Septimani iuniores ND 96#9
+	pattern="pattern_checkers_06.dds"
+	color1=white
+	color2=red
+	colored_emblem={
+		color1=white
+		color2=red
+		texture="ce_gironny_12.dds"
+	}
+}
+
 d_auresia = 10424656
 
 d_triveria={

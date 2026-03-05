@@ -255,7 +255,7 @@ scripted_effect more_feudalization_effect = {
 		if = {
 			limit = { is_ai = no }
 			send_interface_message = {
-				type = event_generic_neutral
+				type = msg_governor_duties
 				title = feudal_transition_accelerates_tt
 				desc = feudal_transition_accelerates_desc
 			}
@@ -588,13 +588,17 @@ BP_admin_to_feudal_events.0110 = {
 	theme = diplomacy
 	content_source = dlc_WtWSMS
 	
-	right_portrait = {
+	left_portrait = {
 		character = ROOT
 		animation = steward
 	}
+	right_portrait = scope:the_top_liege
 	
 	immediate = {
-		ROOT.top_liege = { save_scope_as = the_top_liege }
+		ROOT.top_liege = {
+			save_scope_as = the_top_liege
+			save_scope_as = bg_override_char
+		}
 	}
 	
 	option = {
@@ -830,9 +834,12 @@ BP_admin_to_feudal_events.0210 = {
 	theme = martial
 	content_source = dlc_WtWSMS
 	
-	right_portrait = {
+	left_portrait = {
 		character = ROOT
 		animation = marshal
+	}
+	right_portrait = {
+		character = scope:the_top_liege
 	}
 	
 	immediate = {
@@ -889,7 +896,7 @@ BP_admin_to_feudal_events.0210 = {
 				government_has_flag = government_is_subroman_administrative
 			}
 			send_interface_message = {
-				type = event_generic_neutral
+				type = msg_governor_duties
 				title = subroman_centralized_military_declines_tt
 				desc = subroman_centralized_military_declines_desc
 			}
@@ -1155,9 +1162,12 @@ BP_admin_to_feudal_events.0310 = {
 	theme = stewardship
 	content_source = dlc_WtWSMS
 	
-	right_portrait = {
+	left_portrait = {
 		character = ROOT
 		animation = steward
+	}
+	bottom_right_portrait = {
+		character = scope:the_top_liege
 	}
 	
 	immediate = {
@@ -1210,7 +1220,7 @@ BP_admin_to_feudal_events.0310 = {
 				government_has_flag = government_is_subroman_administrative
 			}
 			send_interface_message = {
-				type = event_generic_neutral
+				type = msg_governor_duties
 				title = roman_taxation_infrastructure_declines_tt
 				desc = roman_taxation_infrastructure_declines_desc
 			}
