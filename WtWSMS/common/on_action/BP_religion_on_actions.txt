@@ -46,9 +46,9 @@ BP_change_faith_dynasty_coa = {
 	effect = {
 		if = {
 			limit = {
-				is_dynasty_head = yes
 				NOT = { root.dynasty = { has_variable = BP_changed_faith_dynasty_coa } }
 				root.dynasty = dynasty:1042151
+				root.dynast = root
 				root.faith.religion = religion:christianity_religion
 			}
 			dynasty = {
