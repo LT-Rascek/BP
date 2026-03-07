@@ -1358,40 +1358,6 @@ setup_governments_based_on_dlc = {
 			destroy_PP_title_if_ai_effect = { TITLE = title:e_praetorian_prefecture_gaul }
 			destroy_PP_title_if_ai_effect = { TITLE = title:e_praetorian_prefecture_italy }
 			
-			#Set office holders as vanilla council
-			every_ruler = {
-				limit = {
-					OR = {
-						has_title = title:e_magister_offices_roman_empire
-						has_title = title:e_magister_offices_wre
-						has_title = title:e_magister_offices_ere
-						has_title = title:e_magister_offices_italy
-					}
-				}
-				liege = {
-					make_councilor_of_type_if_not_already_effect = {
-						POSITION = councillor_chancellor
-						TARGET_CHAR = prev
-					}
-				}
-			}
-			every_ruler = {
-				limit = {
-					OR = {
-						has_title = title:e_magister_military_roman_empire
-						has_title = title:e_magister_military_wre
-						has_title = title:e_magister_military_ere
-						has_title = title:e_magister_military_italy
-					}
-				}
-				liege = {
-					make_councilor_of_type_if_not_already_effect = {
-						POSITION = councillor_chancellor
-						TARGET_CHAR = prev
-					}
-				}
-			}
-			
 			#Destroy Roman Offices
 			destroy_title_if_landless_effect = { TITLE = title:e_magister_offices_roman_empire }
 			destroy_title_if_landless_effect = { TITLE = title:e_magister_offices_wre }
@@ -1470,8 +1436,8 @@ setup_governments_based_on_dlc = {
 						this = this.house.house_head
 						OR = {
 							this.primary_title.tier >= tier_duchy #Don't want nf running counties...
-							dynasty = { has_dynasty_modifer = roman_senate_family_east }
-							dynasty = { has_dynasty_modifer = roman_senate_family_west }
+							this.dynasty = { has_dynasty_modifer = roman_senate_family_east }
+							this.dynasty = { has_dynasty_modifer = roman_senate_family_west }
 						}
 						any_held_title = { count < 1 is_noble_family_title = yes }
 					}

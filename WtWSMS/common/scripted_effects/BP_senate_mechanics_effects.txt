@@ -577,7 +577,7 @@ make_senate_noble_families_effect = {
 			limit = {
 				is_house_head = yes
 				any_held_title = { count < 1 is_noble_family_title = yes }
-				is_playable = no
+				this.primary_title.tier < tier_duchy
 			}
 			make_senate_noble_family_effect = yes
 		}
@@ -630,7 +630,7 @@ make_senate_noble_family_effect = {
 		tier = county
 		article = DEFAULT_TITLE_NAME_ARTICLE
 		government = roman_administrative_government
-		save_temporary_scope_as = new_title
+		save_scope_as = new_title
 	}
 	
 	# Set liege
@@ -653,7 +653,7 @@ make_senate_noble_family_effect = {
 	}
 	# Move to capital if outside of realm
 	if = {
-		limit = { NOT = { default_location.holder.top_liege = this.top_liege } }
+		limit = { NOT = { default_location.barony_controller.top_liege = this.top_liege } }
 		
 		# Prefer Rome over Ravenna
 		if = {
