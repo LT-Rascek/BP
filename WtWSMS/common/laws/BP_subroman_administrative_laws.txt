@@ -51,7 +51,10 @@ non_roman_minority_rule_law = {
 			}
 			influence = {
 				if = { #Only the top liege pays for this
-					limit = { top_liege = this }
+					limit = {
+						top_liege = this
+						government_has_flag = government_has_influence
+					}
 					add = change_non_roman_minority_rule_law_basic_cost
 				}
 			}
@@ -237,7 +240,10 @@ non_roman_minority_rule_law = {
 			}
 			influence = {
 				if = { #Only the top liege pays for this
-					limit = { top_liege = this }
+					limit = {
+						top_liege = this
+						government_has_flag = government_has_influence
+					}
 					add = change_non_roman_minority_rule_law_basic_cost
 				}
 			}
@@ -484,7 +490,10 @@ non_roman_minority_rule_law = {
 			}
 			influence = {
 				if = { #Only the top liege pays for this
-					limit = { top_liege = this }
+					limit = {
+						top_liege = this
+						government_has_flag = government_has_influence
+					}
 					add = change_non_roman_minority_rule_law_basic_cost
 				}
 			}
@@ -700,7 +709,10 @@ non_roman_minority_rule_law = {
 			}
 			influence = {
 				if = { #Only the top liege pays for this
-					limit = { top_liege = this }
+					limit = {
+						top_liege = this
+						government_has_flag = government_has_influence
+					}
 					add = change_non_roman_minority_rule_law_basic_cost
 				}
 			}
@@ -963,7 +975,10 @@ non_roman_minority_rule_law = {
 			}
 			influence = {
 				if = { #Only the top liege pays for this
-					limit = { top_liege = this }
+					limit = {
+						top_liege = this
+						government_has_flag = government_has_influence
+					}
 					add = change_non_roman_minority_rule_law_basic_cost
 				}
 			}
