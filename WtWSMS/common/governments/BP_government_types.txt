@@ -202,7 +202,19 @@ subroman_dynastic_government = {
 		use_legends = yes
 	}
 
-	character_modifier = {}
+	character_modifier = {
+		#Admin-style modifiers
+		levy_size = -0.5
+		men_at_arms_cap = -3
+		men_at_arms_limit = -3
+		knight_limit = -5
+		active_accolades = -1
+		title_creation_cost_mult = -0.5
+		mercenary_hire_cost_mult = 2
+		men_at_arms_maintenance = 0.5
+		
+		monthly_prestige_gain_mult = -0.40 #You're not actually a true roman government
+	}
 
 	flags = {
 		may_elevate_co_monarch

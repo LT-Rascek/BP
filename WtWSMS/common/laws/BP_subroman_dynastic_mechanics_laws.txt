@@ -11,12 +11,9 @@ subroman_dynastic_military_centralization_top_liege_law = {
 	subroman_dynastic_military_centralization_top_liege_law_0 = {
 		modifier = {
 			#Imperial Troops
-			#men_at_arms_title_limit = 3
-			#men_at_arms_title_cap = 3
-			
-			#Personal Troops
 			men_at_arms_limit = 0
-			men_at_arms_cap = 0
+			men_at_arms_cap = 8 # - 3 = 5, Roman dynastic value
+			knight_limit = 0
 			
 			levy_size = 0.0
 			men_at_arms_maintenance = 0.0
@@ -47,11 +44,9 @@ subroman_dynastic_military_centralization_top_liege_law = {
 	subroman_dynastic_military_centralization_top_liege_law_1 = {
 		modifier = {
 			#Imperial Troops
-			#men_at_arms_title_limit = 2
-			#men_at_arms_title_cap = 2
-			#Personal Troops
 			men_at_arms_limit = 1
-			men_at_arms_cap = 0
+			men_at_arms_cap = 7
+			knight_limit = 1
 			
 			levy_size = 0.1
 			men_at_arms_maintenance = -0.10
@@ -82,11 +77,9 @@ subroman_dynastic_military_centralization_top_liege_law = {
 	subroman_dynastic_military_centralization_top_liege_law_2 = {
 		modifier = {
 			#Imperial Troops
-			#men_at_arms_title_limit = 1
-			#men_at_arms_title_cap = 1
-			#Personal Troops
 			men_at_arms_limit = 1
-			men_at_arms_cap = 1
+			men_at_arms_cap = 6
+			knight_limit = 2
 			
 			levy_size = 0.2
 			
@@ -118,11 +111,9 @@ subroman_dynastic_military_centralization_top_liege_law = {
 	subroman_dynastic_military_centralization_top_liege_law_3 = {
 		modifier = {
 			#Imperial Troops
-			#men_at_arms_title_limit = -1
-			#men_at_arms_title_cap = -1
-			#Personal Troops
 			men_at_arms_limit = 2
-			men_at_arms_cap = 1
+			men_at_arms_cap = 5
+			knight_limit = 3
 			
 			levy_size = 0.3
 			
@@ -154,11 +145,9 @@ subroman_dynastic_military_centralization_top_liege_law = {
 	subroman_dynastic_military_centralization_top_liege_law_4 = {
 		modifier = {
 			#Imperial Troops
-			#men_at_arms_title_limit = -3
-			#men_at_arms_title_cap = -3
-			#Personal Troops
 			men_at_arms_limit = 2
-			men_at_arms_cap = 2
+			men_at_arms_cap = 4
+			knight_limit = 4
 			
 			levy_size = 0.4
 			
@@ -190,11 +179,10 @@ subroman_dynastic_military_centralization_top_liege_law = {
 	subroman_dynastic_military_centralization_top_liege_law_5 = {
 		modifier = {
 			#Imperial Troops
-			#men_at_arms_title_limit = -6
-			#men_at_arms_title_cap = -6
-			#Personal Troops
 			men_at_arms_limit = 3
 			men_at_arms_cap = 3
+			knight_limit = 5
+			active_accolades = 1
 			
 			levy_size = 0.5
 			
@@ -263,6 +251,7 @@ subroman_dynastic_military_centralization_vassal_law = {
 			#Personal Troops
 			men_at_arms_limit = 1
 			men_at_arms_cap = 0
+			knight_limit = 1
 			
 			levy_size = 0.1
 			men_at_arms_maintenance = -0.10
@@ -290,6 +279,7 @@ subroman_dynastic_military_centralization_vassal_law = {
 			#Personal Troops
 			men_at_arms_limit = 1
 			men_at_arms_cap = 1
+			knight_limit = 2
 			
 			levy_size = 0.2
 			
@@ -318,6 +308,7 @@ subroman_dynastic_military_centralization_vassal_law = {
 			#Personal Troops
 			men_at_arms_limit = 2
 			men_at_arms_cap = 1
+			knight_limit = 3
 			
 			levy_size = 0.3
 			
@@ -346,6 +337,8 @@ subroman_dynastic_military_centralization_vassal_law = {
 			#Personal Troops
 			men_at_arms_limit = 2
 			men_at_arms_cap = 2
+			knight_limit = 4
+			active_accolades = 1 #Available one step earlier for vassals
 			
 			levy_size = 0.4
 			
@@ -374,6 +367,8 @@ subroman_dynastic_military_centralization_vassal_law = {
 			#Personal Troops
 			men_at_arms_limit = 3
 			men_at_arms_cap = 3
+			knight_limit = 5
+			active_accolades = 1
 			
 			levy_size = 0.5
 			

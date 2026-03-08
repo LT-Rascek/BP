@@ -359,7 +359,7 @@ scripted_effect vassals_transiton_government_effect = {
 		}
 		else_if = {
 			limit = { this.top_liege = { government_has_flag = government_is_clan } }
-			add_character_flag = transition_to_feudal_government
+			add_character_flag = transition_to_clan_government
 			shift_government_effect = yes
 		}
 		else = {
@@ -440,6 +440,8 @@ BP_admin_to_feudal_events.0060 = {
 	desc = BP_admin_to_feudal_events.0060.desc
 	
 	theme = realm
+	window = fullscreen_event
+	override_background = BP_feudal_mutation
 	content_source = dlc_WtWSMS
 	
 	right_portrait = {
