@@ -2,10 +2,11 @@
 @non_roman_minority_rule_law_cooldown = 30
 
 #Covers Non-Romans ruling a Roman Realm; Visigothica, Ostrogothica, Vandalica, Italia, &c. ...
+#Also used by Dynastic without changes
 non_roman_minority_rule_law = {
 	default = non_roman_minority_rule_law_2
 	cumulative = no
-	flag = imperial_policy
+	flag = succession_gender_laws #For UI positioning
 	
 	non_roman_minority_rule_law_0 = { #Oppression; see Vandals
 		can_keep = {
@@ -1861,6 +1862,7 @@ subroman_admin_aristocracy_law = {
 		}
 		flag = succession_weight_dynastic_1
 		flag = governor_efficency_weight_1
+		flag = subroman_admin_aristocracy_law_0
 		
 		can_keep = {
 			bp_realm_law_use_subroman_administrative_aristocracy_trigger = yes
@@ -1924,7 +1926,7 @@ subroman_admin_aristocracy_law = {
 							chance = subroman_chance_vassal_gets_aristocratic_law_decline_one_level
 							decline_aristocracy_law_one_level_effect = yes
 							send_interface_message = {
-								type = event_generic_neutral
+								type = msg_liege_passed_law
 								title = top_liege_makes_aristocracy_less_powerful_tt
 								desc = top_liege_makes_aristocracy_less_powerful_desc
 							}
@@ -1960,6 +1962,7 @@ subroman_admin_aristocracy_law = {
 		flag = revocation_of_governorship_costs_more_influence_1
 		flag = succession_weight_dynastic_2
 		flag = governor_efficency_weight_2
+		flag = subroman_admin_aristocracy_law_1
 		
 		can_keep = {
 			bp_realm_law_use_subroman_administrative_aristocracy_trigger = yes
@@ -2028,7 +2031,7 @@ subroman_admin_aristocracy_law = {
 							chance = subroman_chance_vassal_gets_aristocratic_law_improve_one_level
 							improve_aristocracy_law_one_level_effect = yes
 							send_interface_message = {
-								type = event_generic_neutral
+								type = msg_liege_passed_law
 								title = top_liege_makes_aristocracy_more_powerful_tt
 								desc = top_liege_makes_aristocracy_more_powerful_desc
 							}
@@ -2047,7 +2050,7 @@ subroman_admin_aristocracy_law = {
 							chance = subroman_chance_vassal_gets_aristocratic_law_decline_one_level
 							decline_aristocracy_law_one_level_effect = yes
 							send_interface_message = {
-								type = event_generic_neutral
+								type = msg_liege_passed_law
 								title = top_liege_makes_aristocracy_less_powerful_tt
 								desc = top_liege_makes_aristocracy_less_powerful_desc
 							}
@@ -2093,6 +2096,7 @@ subroman_admin_aristocracy_law = {
 		flag = revocation_of_governorship_costs_more_influence_2
 		flag = succession_weight_dynastic_3
 		flag = governor_efficency_weight_3
+		flag = subroman_admin_aristocracy_law_2
 		
 		can_keep = {
 			bp_realm_law_use_subroman_administrative_aristocracy_trigger = yes
@@ -2161,7 +2165,7 @@ subroman_admin_aristocracy_law = {
 							chance = subroman_chance_vassal_gets_aristocratic_law_improve_one_level
 							improve_aristocracy_law_one_level_effect = yes
 							send_interface_message = {
-								type = event_generic_neutral
+								type = msg_liege_passed_law
 								title = top_liege_makes_aristocracy_more_powerful_tt
 								desc = top_liege_makes_aristocracy_more_powerful_desc
 							}
@@ -2180,7 +2184,7 @@ subroman_admin_aristocracy_law = {
 							chance = subroman_chance_vassal_gets_aristocratic_law_decline_one_level
 							decline_aristocracy_law_one_level_effect = yes
 							send_interface_message = {
-								type = event_generic_neutral
+								type = msg_liege_passed_law
 								title = top_liege_makes_aristocracy_less_powerful_tt
 								desc = top_liege_makes_aristocracy_less_powerful_desc
 							}
@@ -2226,6 +2230,7 @@ subroman_admin_aristocracy_law = {
 		flag = revocation_of_governorship_costs_more_influence_3
 		flag = succession_weight_dynastic_4
 		flag = governor_efficency_weight_4
+		flag = subroman_admin_aristocracy_law_3
 		
 		can_keep = {
 			bp_realm_law_use_subroman_administrative_aristocracy_trigger = yes
@@ -2294,7 +2299,7 @@ subroman_admin_aristocracy_law = {
 							chance = subroman_chance_vassal_gets_aristocratic_law_improve_one_level
 							improve_aristocracy_law_one_level_effect = yes
 							send_interface_message = {
-								type = event_generic_neutral
+								type = msg_liege_passed_law
 								title = top_liege_makes_aristocracy_more_powerful_tt
 								desc = top_liege_makes_aristocracy_more_powerful_desc
 							}
@@ -2313,7 +2318,7 @@ subroman_admin_aristocracy_law = {
 							chance = subroman_chance_vassal_gets_aristocratic_law_decline_one_level
 							decline_aristocracy_law_one_level_effect = yes
 							send_interface_message = {
-								type = event_generic_neutral
+								type = msg_liege_passed_law
 								title = top_liege_makes_aristocracy_less_powerful_tt
 								desc = top_liege_makes_aristocracy_less_powerful_desc
 							}
@@ -2357,6 +2362,7 @@ subroman_admin_aristocracy_law = {
 		}
 		flag = governorship_cannot_be_revoked_freely
 		flag = succession_is_purely_dynastic
+		flag = subroman_admin_aristocracy_law_4
 		
 		can_keep = {
 			bp_realm_law_use_subroman_administrative_aristocracy_trigger = yes
@@ -2408,7 +2414,7 @@ subroman_admin_aristocracy_law = {
 							chance = subroman_chance_vassal_gets_aristocratic_law_improve_one_level
 							improve_aristocracy_law_one_level_effect = yes
 							send_interface_message = {
-								type = event_generic_neutral
+								type = msg_liege_passed_law
 								title = top_liege_makes_aristocracy_more_powerful_tt
 								desc = top_liege_makes_aristocracy_more_powerful_desc
 							}
