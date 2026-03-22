@@ -85,7 +85,7 @@ Landed Titles:
 - Removed Titles
    - Removed Titular Moesia Superior title as it is rendered superfluous on the CK3 map
 
-Causus Belli:
+Causus Bellorum:
 - Revamped Odoacer's Take Over War to better integrate with landless vassal mechanics
 
 Decision:
@@ -100,7 +100,9 @@ Casus Belli:
 - Odoacer's Takeover War will cede land to the Visigoths and gain land from the Vandals and secure truces, so long as the Visigoths and Vandals are AI players, respectively
 
 Culture:
-- "Legal Codex" Late Antiquity Innovation no longer unlocks Roman Imperial Reconquests
+- Innovations:
+   - "Legal Codex" Late Antiquity Innovation no longer unlocks Roman Imperial Reconquests
+   - Roman Concrete, Chinese Urbanization, Indian Urbanization, Persian Urbanization, and Ancient Urbanites unlock the first 3 levels of main domicile buildings
 - Changed Taifal culture COA frame to be Chernyakhov instead of Sarmatian
 - Burgundian Culture has "Family Business" Tradition
 - Fashion and Dynasty Frames:
@@ -126,8 +128,12 @@ Decisions:
 - Removed the "Embrace Heresy" decision as it is cursed with WtWSMS religion system
 
 Laws:
+- Added "Non-Roman Rule" Law for Sub-Roman and Federate Governments, modeling the degree of integration of barbarians with the local Roman populace
+   - At its most oppressive, strongly weights in favor of ruling culture, enables conversion of Roman faith county, and enables Roman rulers to have the Minority Vassal Stance
+   - Middling and better disables the Minority Vassal Stance for Roman vassal
+   - At its most permissive, improves cultural acceptance, disables conversion of Roman faith counties, and blocks Roman Characters form having the Minority Vassal Stance
 - Roman Dynastic Laws unlock an increasing ability for Roman and Sub-Roman states to launch wars for Former Roman Territory
-- At maximum Roman State Authority, Sub-Roman realms can attack the Roman Empire, modeling some of the mid-Vth Century Wars of Suebia and Visigothica
+   - At maximum Roman State Authority, Sub-Roman realms can attack the Roman Empire, modeling some of the mid-Vth Century Wars of Suebia and Visigothica
 
 History:
 - Updated large parts of history to tie into the new hegemonies and empire structures
@@ -155,6 +161,8 @@ GFX:
 - Updated GFX for a number of faiths
 
 Tweaks:
+- All WtWSMS use either gold or treasury as is appropriate
+- House Power only suffers a state faith malus if the state faith considers your faith to be Astray or worse
 - Made the "Offer Foederatus" interaction simpler in that it shows only available titles to offer a federate
 - Romulus Augustulus starts as "Uncrowned" as he is younger than 12 years old
 - Skirian and Roman cultural acceptance starts at 20 in the post-Odoacer War bookmark

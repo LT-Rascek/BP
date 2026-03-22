@@ -40,7 +40,7 @@ roman_federate_liege_taxes = {
 						scope:subject = {
 							AND = {
 								government_has_flag = government_is_roman_federate
-								vassal_contract_obligation_level:feudal_government_taxes <= 0
+								vassal_contract_obligation_level:roman_federate_liege_taxes <= 0
 							}
 						}
 					}
@@ -68,7 +68,7 @@ roman_federate_liege_taxes = {
 						scope:subject = {
 							AND = {
 								government_has_flag = government_is_feudal
-								vassal_contract_obligation_level:feudal_government_taxes <= feudal_tax_low_level
+								vassal_contract_obligation_level:roman_federate_liege_taxes <= 1
 							}
 						}
 					}
@@ -95,7 +95,7 @@ roman_federate_liege_taxes = {
 						scope:subject = {
 							AND = {
 								government_has_flag = government_is_roman_federate
-								vassal_contract_obligation_level:feudal_government_taxes <= 1
+								vassal_contract_obligation_level:roman_federate_liege_taxes <= 2
 							}
 						}
 					}
@@ -123,7 +123,7 @@ roman_federate_liege_taxes = {
 						scope:subject = {
 							AND = {
 								government_has_flag = government_is_roman_federate
-								vassal_contract_obligation_level:feudal_government_taxes <= 1
+								vassal_contract_obligation_level:roman_federate_liege_taxes <= 3
 							}
 						}
 					}

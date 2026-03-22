@@ -1067,3 +1067,382 @@ governor_efficiency = {
 		##### Changed from Vanilla ^^^^^
 	}
 }
+
+##### Changed from Vanilla: Tweaked state faith mechanics a bit; being righteous is ok now
+
+# Powerful Family Rating
+# House power score is used in code to enable bonuses from powerful houses
+# root - house under evaluation
+house_power_score = {
+	value = {
+		value = 0
+
+		save_temporary_scope_as = target_house
+		# Add a small amount of score for each house member within the realm (less for Japan)
+		if = {
+			limit = {
+				exists = house_head
+			}
+			if = {
+				limit = {
+					house_head = { government_is_japanese_trigger = yes }
+				}
+				add = {
+					every_house_member = {
+						limit = { top_liege = scope:target_house.house_head.top_liege }
+						add = 1.5
+					}
+					desc = members_in_realm_desc
+				}
+			}
+			else = {
+				add = {
+					every_house_member = {
+						limit = { top_liege = scope:target_house.house_head.top_liege }
+						add = 3
+					}
+					desc = members_in_realm_desc
+				}
+			}
+
+			# Add scoring based on the House Head's Level of Influence
+			if = {
+				limit = {
+					house_head = {
+						NOT = { government_has_flag = government_has_merit }
+						influence_level >= 1
+					}
+				}
+				add = {
+					value = house_head.influence_level
+					multiply = 5
+					desc = house_head_influence_level_desc
+				}
+			}
+			
+			# Add scoring based on the House head's Merit Rank
+			if = {
+				limit = {
+					house_head = {
+						government_has_flag = government_has_merit
+						merit_level >= 1
+					}
+				}
+				add = {
+					value = house_head.merit_level
+					multiply = 5
+					desc = house_head_merit_level_desc
+				}
+			}
+			
+			# House head is a movement leader
+			if = {
+				limit = {
+					house_head = {
+						any_character_situation = { situation_type = dynastic_cycle }
+						is_any_movement_leader = yes
+					}
+				}
+				add = {
+					value = 10
+					desc = house_head_is_movement_leader_desc
+				}
+			}
+
+			# Add scoring for every house member on top liege's council - Higher for ministers
+			if = {
+				limit = {
+					exists = house_head.top_liege
+					house_head.top_liege = {
+						any_councillor = {
+							exists = house
+							scope:target_house ?= house
+						}
+					}
+				}
+				add = {
+					house_head.top_liege = {
+						every_councillor = {
+							limit = {
+								exists = house
+								scope:target_house ?= house
+							}
+							add = 15
+						}
+						if = {
+							limit = {
+								tgp_has_access_to_ministry_trigger = yes
+							}
+							multiply = 2
+						}
+					}
+					desc = house_members_on_council_desc
+				}
+			}
+			
+			# A house member is the favored ministers
+			if = {
+				limit = {
+					house_head.top_liege ?= {
+						employs_court_position = favored_minister_court_position
+						court_position:favored_minister_court_position = {
+							house ?= scope:target_house
+						}
+					}
+				}
+				add = {
+					value = 10
+					desc = house_member_is_favored_minister_desc
+				}
+			}
+
+			##### Changed from Vanilla vvvvv
+			
+			# Malus for not practicing the state faith (or a righteous faith)
+			if = {
+				limit = {
+					house_head.top_liege ?= { government_allows = state_faith }
+					#NOT = { house_head.top_liege.primary_title.state_faith ?= scope:target_house.house_head.faith }
+					##### Changed from Vanilla vvvvv
+					house_head.top_liege.primary_title.state_faith ?= {
+						faith_hostility_level = {
+							target = scope:target_house.house_head.faith
+							value > 0
+						}
+					}
+					##### Changed from Vanilla ^^^^^
+				}
+				add = {
+					value = -25
+					desc = house_head_different_faith_powerful_family_rating
+				}
+			}
+			##### Changed from Vanilla ^^^^^
+
+			# Estate building bonuses
+			if = { # Market
+				limit = {
+					house_head.domicile ?= { has_domicile_parameter = estate_increase_powerful_family_rating_6 }
+				}
+				add = {
+					value = estate_powerful_family_rating_6_value
+					desc = estate_buildings_desc
+				}
+			}
+			else_if = {
+				limit = {
+					house_head.domicile ?= { has_domicile_parameter = estate_increase_powerful_family_rating_5 }
+				}
+				add = {
+					value = estate_powerful_family_rating_5_value
+					desc = estate_buildings_desc
+				}
+			}
+			else_if = {
+				limit = {
+					house_head.domicile ?= { has_domicile_parameter = estate_increase_powerful_family_rating_4 }
+				}
+				add = {
+					value = estate_powerful_family_rating_4_value
+					desc = estate_buildings_desc
+				}
+			}
+			else_if = {
+				limit = {
+					house_head.domicile ?= { has_domicile_parameter = estate_increase_powerful_family_rating_3 }
+				}
+				add = {
+					value = estate_powerful_family_rating_3_value
+					desc = estate_buildings_desc
+				}
+			}
+			else_if = {
+				limit = {
+					house_head.domicile ?= { has_domicile_parameter = estate_increase_powerful_family_rating_2 }
+				}
+				add = {
+					value = estate_powerful_family_rating_2_value
+					desc = estate_buildings_desc
+				}
+			}
+			else_if = {
+				limit = {
+					house_head.domicile ?= { has_domicile_parameter = estate_increase_powerful_family_rating }
+				}
+				add = {
+					value = estate_powerful_family_rating_1_value
+					desc = estate_buildings_desc
+				}
+			}
+			if = { # Catacombs
+				limit = {
+					exists = house_head.dynasty
+					house_head.domicile ?= { has_domicile_parameter = estate_powerful_family_rating_per_dynasty_level }
+				}
+				add = {
+					value = estate_increase_powerful_famil_rating_per_dynasty_level_value
+					multiply = house_head.dynasty.dynasty_prestige_level
+					desc = estate_buildings_desc
+				}
+			}
+
+			# When your estate is located in the realm's capital
+			if = {
+				limit = {
+					house_head = {
+						exists = top_liege.capital_province
+						domicile ?= {
+							is_domicile_type = estate
+							domicile_location = prev.top_liege.capital_province
+						}
+					}
+				}
+				add = {
+					value = 10
+					desc = estate_in_capital_desc
+				}
+			}
+
+			# Obligation/Theme Administration bonus
+			if = {
+				limit = {
+					house_head = { vassal_contract_has_flag = admin_prestige_obligation_bonus }
+				}
+				add = {
+					value = 10
+					desc = imperial_theme_type_desc
+				}
+			}
+
+			# Heart of the Family Diplomacy Lifestyle Perk
+			if = {
+				limit = { house_head = { has_perk = familial_familiar_perk } }
+				add = {
+					value = 10
+					desc = familial_familiar_perk_name
+				}
+			}
+
+			# Base score increase from Power is a Ladder dynasty legacy perk
+			if = {
+				limit = {
+					house_head.dynasty ?= { ep3_administrative_legacy_track_perks >= 3 }
+				}
+				add = {
+					value = 15
+					desc = house_power_ep3_administrative_legacy_3
+				}
+			}
+
+			# Merit Dynasty Legacy Perk
+			if = {
+				limit = {
+					house_head.dynasty ?= { has_dynasty_perk = tgp_chinese_legacy_4 }
+				}
+				add = {
+					value = 15
+					desc = movement_power_chinese_legacy_4
+				}
+			}
+
+			# From Mass Arrests Decision
+			if = {
+				limit = { house_head = { has_character_flag = mass_arrests_house_power_malus } }
+				add = {
+					value = -15
+					desc = ep3_mass_arrests_house_power_malus
+				}
+			}
+
+			if = {
+				limit = { house_head.confederation ?= { leading_house ?= scope:target_house } }
+				add = {
+					value = 0
+					house_head.confederation = {
+						every_confederation_member_house = { add = 10 }
+					}
+					desc = led_bloc_size_desc
+				}
+			}
+
+			# The number of governorships the house holds
+			multiply = {
+				value = 1
+				every_house_member = {
+					limit = {
+						# Using the triggers of is_governor directly to save performance
+						is_landed = yes
+						government_allows = administrative
+						top_liege != this
+						highest_held_title_tier >= main_administrative_tier
+						house.house_head.top_liege ?= top_liege
+					}
+					add = 0.4 # Let's add a multiplier to the overall score for each governorship
+				}
+				desc = held_governoships_desc
+			}
+
+			# Bonus for being the Ceremonial house
+			if = {
+				limit = { house_head = { tgp_is_in_ceremonial_house_trigger = yes } }
+				add = {
+					value = 100
+					desc = tgp_ceremonial_house_desc
+				}
+			}
+
+			# Bonus for being the imperial house (we deliberately but this at the end, behind the governorship multiplier, as an added bonus on top of everything else)
+			if = {
+				limit = {
+					any_house_member = {
+						top_liege = this
+						#primary_title.tier >= tier_empire (this is commented out because the house in power should always get this big boost)
+						house.house_head.top_liege ?= top_liege
+					}
+				}
+				add = {
+					value = 100
+					if = {
+						limit = {
+							any_house_member = {
+								top_liege = this
+								primary_title.tier < tier_empire
+								house.house_head.top_liege ?= top_liege
+							}
+						}
+						subtract = 50 #For Kings and below the bonus is not quite as high - they are not a far ahead of everyone else as an emperor
+					}
+					desc = imperial_house_desc
+				}
+			}
+
+			# Status Challenged
+			if = {
+				limit = { has_variable_list = status_challenged_by }
+				save_temporary_value_as = temp_total
+				subtract = {
+					value = scope:temp_total
+					multiply = {
+						value = 0.05
+						multiply = {
+							value = 0
+							every_in_list = {
+								variable = status_challenged_by
+								add = 1
+							}
+						}
+					}
+					desc = challenge_status_powerful_family_rating_modifier
+				}
+			}
+		}
+		else = {
+			add = {
+				value = -100
+				desc = house_is_lowborn_desc
+			}
+		}
+	}
+
+	round = yes
+}

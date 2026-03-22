@@ -49,7 +49,6 @@ ask_for_hre = {
 	}
 	
 	is_valid = {
-		gold >= 500
 		custom_tooltip = {
 			text = primary_title_must_be_empire
 			primary_title.tier = tier_empire
@@ -80,7 +79,20 @@ ask_for_hre = {
 	}
 	
 	cost = {
-		gold = massive_gold_value
+		treasury = {
+			value = 0
+			if = {
+				limit = { has_treasury = yes }
+				add = massive_gold_value
+			}
+		}
+		gold = {
+			value = 0
+			if = {
+				limit = { has_treasury = no }
+				add = massive_gold_value
+			}
+		}
 	}
 	
 	effect = {
@@ -100,7 +112,12 @@ ask_for_hre = {
 		#Won't do without enough gold
 		modifier = {
 			factor = 0
-			NOT = { gold >= massive_gold_value }
+			NOT = {
+				OR = {
+					gold >= massive_gold_value
+					treasury >= massive_gold_value
+				}
+			}
 		}
 		modifier = {
 			factor = 2.5
@@ -162,7 +179,6 @@ ask_for_wre = {
 	}
 	
 	is_valid = {
-		gold >= 500
 		custom_tooltip = {
 			text = primary_title_must_be_empire
 			primary_title.tier = tier_empire
@@ -194,7 +210,20 @@ ask_for_wre = {
 	}
 	
 	cost = {
-		gold = 1500
+		treasury = {
+			value = 0
+			if = {
+				limit = { has_treasury = yes }
+				add = 1500
+			}
+		}
+		gold = {
+			value = 0
+			if = {
+				limit = { has_treasury = no }
+				add = 1500
+			}
+		}
 	}
 	
 	effect = {
@@ -220,7 +249,12 @@ ask_for_wre = {
 		#Won't do without enough gold
 		modifier = {
 			factor = 0
-			NOT = { gold >= 500 }
+			NOT = {
+				OR = {
+					gold >= 500
+					treasury >= 500
+				}
+			}
 		}
 		modifier = {
 			factor = 2.5
@@ -283,7 +317,6 @@ sole_roman_empire = {
 	}
 	
 	is_valid = {
-		gold >= 1000
 		OR = {
 			has_trait = legendary_leader
 			AND = {
@@ -299,7 +332,20 @@ sole_roman_empire = {
 	}
 	
 	cost = {
-		gold = 1000
+		treasury = {
+			value = 0
+			if = {
+				limit = { has_treasury = yes }
+				add = 1000
+			}
+		}
+		gold = {
+			value = 0
+			if = {
+				limit = { has_treasury = no }
+				add = 1000
+			}
+		}
 		prestige = 1500
 	}
 	
@@ -365,9 +411,7 @@ unite_roman_empires = {
 		NOT = { has_global_variable = rome_restored }
 	}
 	
-	is_valid = {
-		gold >= 5000
-	}
+	is_valid = {}
 	
 	is_valid_showing_failures_only = {
 		is_available_adult = yes
@@ -375,7 +419,20 @@ unite_roman_empires = {
 	}
 	
 	cost = {
-		gold = 5000
+		treasury = {
+			value = 0
+			if = {
+				limit = { has_treasury = yes }
+				add = 5000
+			}
+		}
+		gold = {
+			value = 0
+			if = {
+				limit = { has_treasury = no }
+				add = 5000
+			}
+		}
 		prestige = 3000
 	}
 	
@@ -424,7 +481,6 @@ restore_western_roman_empire = {
 	}
 	
 	is_valid = {
-		gold >= 1500
 		completely_controls_region = world_roman_empire_west_italy
 		OR = {
 			custom_description = { text = roman_capital root.capital_county = title:c_roma }
@@ -458,7 +514,20 @@ restore_western_roman_empire = {
 	}
 	
 	cost = {
-		gold = 1500
+		treasury = {
+			value = 0
+			if = {
+				limit = { has_treasury = yes }
+				add = 1500
+			}
+		}
+		gold = {
+			value = 0
+			if = {
+				limit = { has_treasury = no }
+				add = 1500
+			}
+		}
 	}
 	
 	effect = {
@@ -523,7 +592,6 @@ restore_eastern_roman_empire = {
 	}
 	
 	is_valid = {
-		gold >= massive_gold_value
 		completely_controls_region = world_roman_empire_east_asia_minor
 		completely_controls_region = custom_diocese_hellas
 		OR = {
@@ -550,7 +618,20 @@ restore_eastern_roman_empire = {
 	}
 	
 	cost = {
-		gold = massive_gold_value
+		treasury = {
+			value = 0
+			if = {
+				limit = { has_treasury = yes }
+				add = massive_gold_value
+			}
+		}
+		gold = {
+			value = 0
+			if = {
+				limit = { has_treasury = no }
+				add = massive_gold_value
+			}
+		}
 	}
 	
 	effect = {

@@ -27,6 +27,8 @@ Roman Government (MVP)
 Bugs:
 - Block Spymaster from being able to recruit Roman MO/MM when they have the law.
 
+- Parse out Roman governments to their own files
+
 Council:
 - Fill out last 3 council tasks for legal bureau
 
@@ -37,48 +39,10 @@ Council:
 
 Later (MVP):
 -----
-Casus Belli:
-- BP_war_triggers.txt: reenable valid_reconquest_culture_trigger
-
-* Estates: Review estates, especially domicile unlock innovations
-
-* Subject Contracts: Roman Admin AI values need fixing
-
-* Decisions
-- Roman government decision as in adoption of later Admin government in late antique period
-
-* Factions:
-- Independence factions cropping up in roman governments
-
-Vassal Stances:
-- Romans should _not_ adopt minority vassal stances in Roman Governments unless their being oppressed in some way
-- At least one for Romans being dominated by non-Romans instead of pure minorities
-
-Government:
-- Retracting titles is free so long as it is not a landed military title
-- Family power vis-a-vis state faith requires tweaking relating to laws
-
-State Faith:
-- In House Power, various rites need to consider each other the same faith
-- Shouldn't demand to change to the state faith for righteous faiths
-- Should not be able to change state faith if sharing HOF
-- State Faith change decision adopts the HOF's faith instead of itself
-
-- Federate Government:
-   - Add descs to Federate obligations, as they're more fuzzy ideas now
-
-* Culture: Legal Codex needs work
-
-* Decisions:
-- Establish de jure decisions need work given uncreatable empires/kingdoms
-- Non-Romans with Roman government get option to transition to vanilla admin instead of adopt Roman government
-- New BP decisions need to use treasury appropriately
-
 * Events: Roman Senate events need a thorough cleaning; crowning should increase legitimacy by enough to make you not horrific
 
-Other:
-- Imperial titles should automatically move their capitals to match the hegemony
--  #FIXME: ICON
+CBs: 
+- Federate Raid Wars
 
 History:
 - Replace duchy placeholders in the placeholder file
@@ -94,8 +58,59 @@ Localization:
 Bookmarks: Revamp bookmarks
 
 GFX:
+- #FIXME: ICON
 * New Government Icons
 * New Council Task Icons (including the MO tasks)
+
+* Decisions: Establish de jure decisions need work given uncreatable empires/kingdoms???
+
+==========
+Tributaries / Federate Rework
+----------
+* Revamp tributaries in their entirety vis-a-vis hegemons
+
+Mechanics:
+* Apply all the stuff listed in h_eastern_roman_empire.txt, h_western_roman_empire.txt landed file (Tributaries)
+
+==========
+Roman Culture Work
+----------
+* Migratory Culture Tradition should have some recruitment bonuses as well
+* Migratory Cultures should use herd head determination that flips when lost
+
+* Visigoths et al should be Tribal in the Vth Century
+
+* Culture: Legal Codex needs work
+
+* Isaurians should have reduced marriage acceptance, especially with barbarians
+* Tsakonians should be Zealous Pagans
+
+* On action to remove Roman Admin, Legal Codex innovations from Hybridizations
+
+* Use Hertiage Continuua to block Anatolian + Caucasian/Greek Hybridization
+
+* Review culture eras; e.g., Vascon can't be in the Late Antique period
+
+* Roman Dynasty Legacy:
+	* Only available to character's with Roman/Byz Law culture and Empire+ tier, or certain Dynasties
+	* Level 1: "Roman Nostalgia": Roman Nostalgia Trait more common, more at start legitimacy
+	* Level 2: "Roman Architecture" : -5% Building Cost, -5% Building time
+	* Level 3: ???
+	* Level 4: "Roman Law": -20 Liberty, Dissolution Faction acceptance for own vassals, -20% title creation cost
+	* Level 5: "Roma Est Aeterna": Able to launch Kingdom Level War on former Roman Empire once per lifetime, regardless of drift
+	* BP_war_triggers.txt: reenable valid_reconquest_culture_trigger
+
+Reduce culture gains a bit more.
+
+==========
+Other Work
+----------
+* Hegemonies should have an empire-level CB against each other that's terribly devastating (see the Final Roman-Sassanid War or the Gothic War)
+   * Should be a great project like the Chinese have
+
+* Clean up Indian titles history
+
+- Feudal Transition Clerical stuff
 
 Stretch:
 -----
@@ -124,6 +139,8 @@ Government:
 Council: Judge of the Court needs a second task
 
 Decisions:
+- Roman government decision as in adoption of later Admin government in late antique period
+- Non-Romans with Roman government get option to transition to vanilla admin instead of adopt Roman government
 - Able to create noble family if missing one
 
 Federate Government:
@@ -134,47 +151,7 @@ Council:
 - More outcomes for:
    - promulgate_laws
 
-==========
-Tributaries / Federate Rework
-----------
-* Revamp tributaries in their entirety vis-a-vis hegemons
-
-Mechanics:
-* Apply all the stuff listed in h_eastern_roman_empire.txt, h_western_roman_empire.txt landed file (Tributaries)
-
-==========
-Roman Culture Work
-----------
-* Migratory Culture Tradition should have some recruitment bonuses as well
-* Migratory Cultures should use herd head determination that flips when lost
-
-* Visigoths et al should be Tribal in the Vth Century
-
-* Isaurians should have reduced marriage acceptance, especially with barbarians
-* Tsakonians should be Zealous Pagans
-
-* On action to remove Roman Admin, Legal Codex innovations from Hybridizations
-
-* Use Hertiage Continuua to block Anatolian + Caucasian/Greek Hybridization
-
-* Review culture eras; e.g., Vascon can't be in the Late Antique period
-
-* Roman Dynasty Legacy:
-	* Only available to character's with Roman/Byz Law culture and Empire+ tier, or certain Dynasties
-	* Level 1: "Roman Nostalgia": Roman Nostalgia Trait more common, more at start legitimacy
-	* Level 2: "Roman Architecture" : -5% Building Cost, -5% Building time
-	* Level 3: ???
-	* Level 4: "Roman Law": -20 Liberty, Dissolution Faction acceptance for own vassals, -20% title creation cost
-	* Level 5: "Roma Est Aeterna": Able to launch Kingdom Level War on former Roman Empire once per lifetime, regardless of drift
-
-Reduce culture gains a bit more.
-
-==========
-Other Work
-----------
-* Hegemonies should have an empire-level CB against each other that's terribly devastating (see the Final Roman-Sassanid War or the Gothic War)
-   * Should be a great project like the Chinese have
-
-* Clean up Indian titles history
-
-- Feudal Transition Clerical stuff
+State Faith:
+- Really needs a deep reworking (this'll tie into Zoroastrianism eventually as well)
+- Should not be able to change state faith if sharing HOF
+- State Faith change decision adopts the HOF's faith instead of itself

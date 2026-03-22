@@ -161,7 +161,20 @@
 	}
 
 	cost = {
-		gold = 500
+		treasury = {
+			value = 0
+			if = {
+				limit = { has_treasury = yes }
+				add = 500
+			}
+		}
+		gold = {
+			value = 0
+			if = {
+				limit = { has_treasury = no }
+				add = 500
+			}
+		}
 		prestige = 2500
 	}
 
@@ -326,7 +339,20 @@ swap_roman_province_decision = {
 	}
 
 	cost = {
-		gold = 500
+		treasury = {
+			value = 0
+			if = {
+				limit = { has_treasury = yes }
+				add = 500
+			}
+		}
+		gold = {
+			value = 0
+			if = {
+				limit = { has_treasury = no }
+				add = 500
+			}
+		}
 		prestige = {
 			value = 0
 			add = {
@@ -560,7 +586,20 @@ establish_de_jure_empire_decision = {
 	}
 
 	cost = {
-		gold = 750
+		treasury = {
+			value = 0
+			if = {
+				limit = { has_treasury = yes }
+				add = 750
+			}
+		}
+		gold = {
+			value = 0
+			if = {
+				limit = { has_treasury = no }
+				add = 750
+			}
+		}
 		prestige = 5000
 	}
 
@@ -752,7 +791,20 @@ establish_de_jure_hegemony_decision = {
 	}
 
 	cost = {
-		gold = 1000
+		treasury = {
+			value = 0
+			if = {
+				limit = { has_treasury = yes }
+				add = 1000
+			}
+		}
+		gold = {
+			value = 0
+			if = {
+				limit = { has_treasury = no }
+				add = 1000
+			}
+		}
 		prestige = 10000
 	}
 

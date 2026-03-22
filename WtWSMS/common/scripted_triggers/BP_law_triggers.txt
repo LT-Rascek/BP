@@ -176,3 +176,21 @@ other_law_have_minority_law_trigger = {
 	NOT = { government_has_flag = government_is_nomadic } #Nomads don't care about minorities
 	primary_title.tier >= tier_county
 }
+
+bp_can_have_roman_minority_law_trigger = {
+	OR = {
+		government_has_flag = government_is_subroman_dynastic
+		government_has_flag = government_is_subroman_administrative
+		government_has_flag = government_is_roman_federate
+	}
+	#Only valid if your top liege is not a Roman
+	NOT = { top_liege.culture = { has_cultural_parameter = greco_roman_social_tradition } }
+	#Only valid if you match your top liege or are a migratory culture
+	OR = {
+		this.culture = top_liege.culture
+		this.culture = { has_cultural_parameter = is_changed_if_enough_counties }
+	}
+	#Only for landed
+	is_landed = yes
+	this.primary_title.tier >= tier_county
+}

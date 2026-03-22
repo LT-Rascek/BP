@@ -53,7 +53,20 @@ claim_k_aures_decision = {
 	}
 	
 	cost = {
-		gold = 25
+		treasury = {
+			value = 0
+			if = {
+				limit = { has_treasury = yes }
+				add = 25
+			}
+		}
+		gold = {
+			value = 0
+			if = {
+				limit = { has_treasury = no }
+				add = 25
+			}
+		}
 		prestige = 50
 		piety = 50
 	}

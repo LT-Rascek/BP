@@ -215,7 +215,20 @@ legalize_caucasian_christianity = {
 	
 	cost = {
 		piety = 250
-		gold = tiny_gold_max_value
+		treasury = {
+			value = 0
+			if = {
+				limit = { has_treasury = yes }
+				add = tiny_gold_max_value
+			}
+		}
+		gold = {
+			value = 0
+			if = {
+				limit = { has_treasury = no }
+				add = tiny_gold_max_value
+			}
+		}
 	}
 	
 	effect = {
@@ -402,7 +415,20 @@ adopt_the_blot_decision = {
 	cost = {
 		piety = 500
 		prestige = 250
-		gold = 50
+		treasury = {
+			value = 0
+			if = {
+				limit = { has_treasury = yes }
+				add = 50
+			}
+		}
+		gold = {
+			value = 0
+			if = {
+				limit = { has_treasury = no }
+				add = 50
+			}
+		}
 	}
 
 	is_valid_showing_failures_only = {
