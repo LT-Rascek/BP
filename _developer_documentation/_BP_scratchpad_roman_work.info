@@ -27,8 +27,6 @@ Roman Government (MVP)
 Bugs:
 - Block Spymaster from being able to recruit Roman MO/MM when they have the law.
 
-- Parse out Roman governments to their own files
-
 Council:
 - Fill out last 3 council tasks for legal bureau
 
@@ -39,8 +37,6 @@ Council:
 
 Later (MVP):
 -----
-* Events: Roman Senate events need a thorough cleaning; crowning should increase legitimacy by enough to make you not horrific
-
 CBs: 
 - Federate Raid Wars
 
@@ -48,12 +44,6 @@ History:
 - Replace duchy placeholders in the placeholder file
 - Add Taifal adventurer near Tealby in England (Easter Egg)
 - Bucinobantes adventurer in/near London
-- Truce between Soissons and Visigothica to keep him alive
-
-Localization:
-* Praeses for counties (still civilian-ish)
-* ADMIN_WINDOW_THEME_GOVERNOR_EFFICIENCY_TT, ADMIN_WINDOW_THEME_GOVERNOR_EFFICIENCY_VALID_TT for new restrictions
-* Various rule-related mechanic stuff needs to be a triggered select localization
 
 Bookmarks: Revamp bookmarks
 
@@ -116,7 +106,7 @@ Stretch:
 -----
 - Clarify government_is_centralized flag
 - Request military aid interaction for MM
-- Fix Ministries having a fucking theme contract...
+- Fix Ministries having a fucking theme contract... (big oof to fix probably)
 - Tweak dynastic aristocratic control laws to push more towards decline in some manner
 - Need to force title holders to be councilors in non-DLC games
 
@@ -124,11 +114,11 @@ Character Interactions: Enable the ability to give ai-owned lands in your realm 
 
 Casus Bellis: Migration War government upgrade mechanics
 
-Great Projects:
-- Projects for Sub-Romans to fight against decay of laws.
+Great Projects: Projects for Sub-Romans to fight against decay of laws.
 
-Schemes:
-- Replace on-actions to trigger vassal law deviation with an actual scheme to fabricate papers to do so
+Schemes: Replace on-actions to trigger vassal law deviation with an actual scheme to fabricate papers to do so
+
+Various rule-related mechanic stuff needs to be a triggered select localization
 
 Government:
 - Ability for Emperor to intervene directly down the hierarchy.
@@ -155,3 +145,5 @@ State Faith:
 - Really needs a deep reworking (this'll tie into Zoroastrianism eventually as well)
 - Should not be able to change state faith if sharing HOF
 - State Faith change decision adopts the HOF's faith instead of itself
+
+Localization: Praeses for counties (still civilian-ish)

@@ -521,3 +521,54 @@ subroman_administrative_title_cost_1 = 1000
 subroman_administrative_title_cost_2 = 2000
 subroman_administrative_title_cost_3 = 4000
 subroman_administrative_title_cost_4 = 8000
+
+#Governor Efficiency Stuff
+governor_efficency_bound_value = {
+	value = 0
+	if = {
+		limit = {
+			OR = {
+				government_has_flag = government_is_roman_federate
+				government_has_flag = government_is_subroman_administrative
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					vassal_contract_has_flag = governor_efficency_weight_1
+					has_realm_law_flag = governor_efficency_weight_1
+				}
+			}
+			add = 40
+		}
+		else_if = {
+			limit = {
+				OR = {
+					vassal_contract_has_flag = governor_efficency_weight_2
+					has_realm_law_flag = governor_efficency_weight_2
+				}
+			}
+			add = 30
+		}
+		else_if = {
+			limit = {
+				OR = {
+					vassal_contract_has_flag = governor_efficency_weight_3
+					has_realm_law_flag = governor_efficency_weight_3
+				}
+			}
+			add = 20
+		}
+		else_if = {
+			limit = {
+				OR = {
+					vassal_contract_has_flag = governor_efficency_weight_4
+					has_realm_law_flag = governor_efficency_weight_4
+				}
+			}
+			add = 10
+		}
+		else = { add = 0 }
+	}
+	else = { add = 50 }
+}

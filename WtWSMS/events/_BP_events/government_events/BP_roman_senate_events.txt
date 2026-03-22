@@ -153,10 +153,10 @@ scripted_effect senate_action_legitimacy_effect = {
 		}
 		else_if = { #Otherwise, if you're a Roman culture, this still is nice
 			limit = { culture = { has_cultural_parameter = roman_cultural_trait_bonus } }
-			add_legitimacy = medium_legitimacy_$GAIN_LOSS$
+			add_legitimacy = massive_legitimacy_$GAIN_LOSS$
 		}
 		else = { #That's nice...
-			add_legitimacy = minor_legitimacy_$GAIN_LOSS$
+			add_legitimacy = major_legitimacy_$GAIN_LOSS$
 		}
 	}
 }
