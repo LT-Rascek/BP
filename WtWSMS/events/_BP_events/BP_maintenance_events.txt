@@ -13,68 +13,24 @@ BP_maintenance_events.0001 = {
 		desc = BP_maintenance_events.0001.desc.opening
 		desc = BP_maintenance_events.0001.desc.more_information
 		desc = BP_maintenance_events.0001.desc.development_info
-		#Tell Players about any special character they are playing
+		#New Features
 		desc = BP_maintenance_events.0001.section_spacer
-		desc = BP_maintenance_events.0001.character_description_intro
-		desc = BP_maintenance_events.0001.character_description
-		#Tell players about rules
+		desc = BP_maintenance_events.0001.new_features_intro
+		desc = BP_maintenance_events.0001.new_features_list_no_dlc
+		
+		desc = BP_maintenance_events.0001.sub_section_spacer
+		
+		triggered_desc = {
+			trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
+			desc = BP_maintenance_events.0001.new_features_intro_dlc
+		}
+		triggered_desc = {
+			trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
+			desc = BP_maintenance_events.0001.new_features_list_dlc
+		}
 		desc = BP_maintenance_events.0001.section_spacer
-		#Vanilla Overwrites
-		desc = BP_maintenance_events.0001.desc.wtwsms_vanilla_change_info
-		triggered_desc = {
-			trigger = { has_game_rule = strict_regional_heresy }
-			desc = BP_maintenance_events.0001.desc.changed_default_heresy_status
-		}
-		triggered_desc = {
-			trigger = { has_game_rule = bp_default_culture_conversion_speed }
-			desc = BP_maintenance_events.0001.desc.changed_default_faith_conversion_speed
-		}
-		triggered_desc = {
-			trigger = { has_game_rule = bp_default_faith_conversion_speed }
-			desc = BP_maintenance_events.0001.desc.changed_default_culture_conversion_speed
-		}
-		triggered_desc = {
-			trigger = { has_game_rule = bp_default_hybrid_and_divergence_cooldowns }
-			desc = BP_maintenance_events.0001.desc.changed_default_culture_hybrid_divergence_rate
-		}
-		desc = BP_maintenance_events.0001.sub_section_spacer
-		#WtWSMS Special Rules
-		desc = BP_maintenance_events.0001.desc.wtwsms_rule_intro
-		triggered_desc = {
-			trigger = { has_game_rule = tribal_shatter_mechanic_enabled }
-			desc = BP_maintenance_events.0001.desc.tribal_shatter
-		}
-		triggered_desc = {
-			trigger = { has_game_rule = bp_strong_believers_conversion_resistance }
-			desc = BP_maintenance_events.0001.desc.strong_believers
-		}
-		triggered_desc = {
-			trigger = { has_game_rule = custom_kingdom_creation_blocked_for_specific_cases_enabled }
-			desc = BP_maintenance_events.0001.desc.custom_kingdoms_empires
-		}
-		triggered_desc = {
-			trigger = { has_game_rule = can_not_freely_create_empires }
-			desc = BP_maintenance_events.0001.desc.can_not_freely_create_empires
-		}
-		### Titular Restrictions
-		triggered_desc = {
-			trigger = { has_game_rule = titular_titles_restricted }
-			desc = BP_maintenance_events.0001.desc.titular_title_restrictions
-		}
-		triggered_desc = {
-			trigger = { has_game_rule = ai_only_titular_titles_restricted }
-			desc = BP_maintenance_events.0001.desc.ai_only_titular_titles_restricted
-		}
-		triggered_desc = {
-			trigger = { has_game_rule = latin_succesion_tradition_access_locked }
-			desc = BP_maintenance_events.0001.desc.latin_succesion_tradition_access_locked
-		}
-		triggered_desc = {
-			trigger = { has_game_rule = latin_succesion_tradition_access_unlocked }
-			desc = BP_maintenance_events.0001.desc.latin_succesion_tradition_access_unlocked
-		}
-		desc = BP_maintenance_events.0001.sub_section_spacer
-		desc = BP_maintenance_events.0001.desc.rule_closing
+		
+		desc = BP_maintenance_events.0001.closing
 	}
 	right_portrait = { character = ROOT }
 	

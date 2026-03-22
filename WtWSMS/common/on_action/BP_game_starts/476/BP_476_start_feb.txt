@@ -4,7 +4,9 @@ bp_game_start_476 = {
 	trigger = { current_date = 476.2.2 }
 	on_actions = {
 		#Characters
-		BP_character_events_476
+		BP_character_events_476_feb
+		BP_character_events_476_feb_DLC
+		BP_setup_legitimacy_476_feb
 		BP_setup_realm_laws_476_feb
 		BP_setup_realm_laws_476_feb_DLC
 		BP_setup_vassal_contracts_476_feb
@@ -24,7 +26,7 @@ bp_game_start_476 = {
 	}
 }
 
-BP_character_events_476 = {
+BP_character_events_476_feb = {
 	effect = {
 		#Persian Emperors start with negative prestige because of Wuzurgan, so flip it
 		character:180624 = {
@@ -84,17 +86,52 @@ BP_character_events_476 = {
 			NEW_DIARCH = character:96055
 			LIEGE = character:96054
 		}
-		#Romulus is not crowned at his age
+		#Romulus is not crowned at his age, but give him a smidge of legitimacy
 		if = {
 			limit = { has_dlc_feature = coronations }
 			character:96054 = { add_realm_law_skip_effects = uncrowned }
 		}
 		
-		#Fix Persian legitimacy
-		character:180624 = { add_legitimacy = 850 }
-		
 		#Entrench Diarchies and adjust senate approval
 		trigger_event = { id = BP_maintenance_events.0002 }
+	}
+}
+BP_character_events_476_feb_DLC = {
+	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
+	effect = {
+		#Orestes and Romulus are allied
+		title:e_magister_military_wre.holder = {
+			create_alliance = {
+				target = title:h_western_roman_empire.holder
+				allied_through_owner = title:e_magister_military_wre.holder
+				allied_through_target = title:h_western_roman_empire.holder
+			}
+		}
+	}
+}
+BP_setup_legitimacy_476_feb = {
+	effect = {
+		#Romulus should be fairly illegitimate
+		title:h_western_roman_empire.holder = { add_legitimacy = -5000 }
+		title:h_western_roman_empire.holder = { add_legitimacy = 500 }
+		#Persia should be considered legitimate
+		title:h_persia.holder = { add_legitimacy = -5000 }
+		title:h_persia.holder = { add_legitimacy = 1200 }
+		#Basilicus should be fairly illegitimate
+		title:h_eastern_roman_empire.holder = { add_legitimacy = -5000 }
+		title:h_eastern_roman_empire.holder = { add_legitimacy = 500 }
+		#Nepos should be legitimate
+		title:k_dalmatia.holder = { add_legitimacy = -5000 }
+		title:k_dalmatia.holder = { add_legitimacy = 500 }
+		#Euric should be legitimate
+		title:k_visigoths.holder = { add_legitimacy = -5000 }
+		title:k_visigoths.holder = { add_legitimacy = 500 }
+		#Hermeric should be legitimate
+		title:k_suebia.holder = { add_legitimacy = -5000 }
+		title:k_suebia.holder = { add_legitimacy = 500 }
+		#Geseric should be legitimate
+		title:k_vandalica.holder = { add_legitimacy = -5000 }
+		title:k_vandalica.holder = { add_legitimacy = 500 }
 	}
 }
 ## Legal Stuff
@@ -960,7 +997,6 @@ bp_game_start_after_lobby_476_feb = {
 		BP_setup_other_councils_476_feb
 		BP_set_employers_476_feb_no_DLC
 		BP_set_armies_476_feb_DLC
-		BP_cull_MAA_476_feb
 	}
 }
 
@@ -1150,6 +1186,27 @@ BP_setup_other_councils_476_feb = {
 BP_set_armies_476_feb_DLC = {
 	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
 	effect = {
+		title:h_western_roman_empire.holder = {
+			title:h_western_roman_empire = { every_title_maa_regiment = { destroy_maa_regiment = yes } }
+			create_maa_regiment = {
+				type = praetorian
+				check_can_recruit = no
+				size = 3
+				title = title:h_western_roman_empire
+			}
+			create_maa_regiment = {
+				type = light_footmen
+				check_can_recruit = no
+				size = 3
+				title = title:h_western_roman_empire
+			}
+			create_maa_regiment = {
+				type = armored_horsemen
+				check_can_recruit = no
+				size = 2
+				title = title:h_western_roman_empire
+			}
+		}
 		title:e_magister_military_wre.holder = {
 			create_maa_regiment = {
 				type = praetorian
@@ -1268,30 +1325,5 @@ BP_set_employers_476_feb_no_DLC = {
 	#Otherwise landed chars should be sent to employers
 	effect = {
 		character:1100013 = { set_employer = character:145226 } #Basilicus
-	}
-}
-
-BP_cull_MAA_476_feb = {
-	effect = {
-		title:h_western_roman_empire.holder = {
-			#Remove the existing MAA
-			every_maa_regiment = { destroy_maa_regiment = yes }
-			#Add an honor guard, some conscripts, and a siege weapon
-			create_maa_regiment = {
-				type = praetorian
-				check_can_recruit = no
-				size = 3
-			}
-			create_maa_regiment = {
-				type = light_footmen
-				check_can_recruit = no
-				size = 2
-			}
-			create_maa_regiment = {
-				type = ballista
-				check_can_recruit = no
-				size = 1
-			}
-		}
 	}
 }

@@ -1129,7 +1129,13 @@ block_specific_chars_from_having_families = {
 trigger_needed_events = {
 	effect = {
 		#Inform all the players of the mod
-		every_player = { trigger_event = { id = BP_maintenance_events.0001 } }
+		every_player = {
+			limit = {
+				is_ai = no
+				has_game_rule = wtwsms_start_event_v020_enabled
+			}
+			trigger_event = { id = BP_maintenance_events.0001 }
+		}
 		#Fix _all_ the barony governments; has to be some ruler for some reason
 		random_ruler = { trigger_event = { id = BP_maintenance_events.0002 } }
 		#Add theocratic traits to chaplain

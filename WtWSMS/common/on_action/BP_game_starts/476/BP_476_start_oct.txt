@@ -5,6 +5,7 @@ bp_game_start_476_oct = {
 	on_actions = {
 		#Characters
 		BP_character_events_476_oct
+		BP_setup_legitimacy_476_oct
 		BP_setup_realm_laws_476_oct
 		BP_setup_realm_laws_476_oct_DLC
 		BP_setup_vassal_contracts_476_oct
@@ -89,11 +90,33 @@ BP_character_events_476_oct = {
 		#David of Rheged has Saint Patrick as a Regent; we can't make him a court chaplain anymore, so this is the second-best thing
 		character:8 = { designate_diarch = character:109758 }
 		
-		#Fix Persian legitimacy
-		character:180624 = { add_legitimacy = 850 }
-		
 		#Entrench Diarchies and adjust senate approval
 		trigger_event = { id = BP_maintenance_events.0002 }
+	}
+}
+BP_setup_legitimacy_476_oct = {
+	effect = {
+		#Odoacer should be semi-legitimate
+		title:h_italy.holder = { add_legitimacy = -5000 }
+		title:h_italy.holder = { add_legitimacy = 500 }
+		#Persia should be considered legitimate
+		title:h_persia.holder = { add_legitimacy = -5000 }
+		title:h_persia.holder = { add_legitimacy = 1200 }
+		#Zeno should be fairly illegitimate
+		title:h_eastern_roman_empire.holder = { add_legitimacy = -5000 }
+		title:h_eastern_roman_empire.holder = { add_legitimacy = 500 }
+		#Nepos should be legitimate
+		title:k_dalmatia.holder = { add_legitimacy = -5000 }
+		title:k_dalmatia.holder = { add_legitimacy = 500 }
+		#Euric should be legitimate
+		title:k_visigoths.holder = { add_legitimacy = -5000 }
+		title:k_visigoths.holder = { add_legitimacy = 500 }
+		#Hermeric should be legitimate
+		title:k_suebia.holder = { add_legitimacy = -5000 }
+		title:k_suebia.holder = { add_legitimacy = 500 }
+		#Geseric should be legitimate
+		title:k_vandalica.holder = { add_legitimacy = -5000 }
+		title:k_vandalica.holder = { add_legitimacy = 500 }
 	}
 }
 ## Legal Stuff
@@ -1096,6 +1119,7 @@ BP_set_armies_476_oct_DLC = {
 	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
 	effect = {
 		title:h_western_roman_empire.holder = {
+			title:h_western_roman_empire = { every_title_maa_regiment = { destroy_maa_regiment = yes } }
 			create_maa_regiment = {
 				type = praetorian
 				check_can_recruit = no

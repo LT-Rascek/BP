@@ -24,6 +24,9 @@ Hunter-Gatherer
 ==========
 Roman Government (MVP)
 ----------
+Bugs:
+- Block Spymaster from being able to recruit Roman MO/MM when they have the law.
+
 Council:
 - Fill out last 3 council tasks for legal bureau
 
@@ -34,12 +37,6 @@ Council:
 
 Later (MVP):
 -----
-- Add rule for start event and enable its disabling in rules
-   - Will have to change the rule reference every game iteration
-* landless chars shouldn't be minority vassal stances
-* Italy is able to raid at start???
-* Give Orestes and Romulus an alliance in the Roman Admin game to tamp down on strong vassals
-
 Casus Belli:
 - BP_war_triggers.txt: reenable valid_reconquest_culture_trigger
 
@@ -54,7 +51,7 @@ Casus Belli:
 - Independence factions cropping up in roman governments
 
 Vassal Stances:
-- Add new vassal stances???
+- Romans should _not_ adopt minority vassal stances in Roman Governments unless their being oppressed in some way
 - At least one for Romans being dominated by non-Romans instead of pure minorities
 
 Government:
@@ -98,7 +95,7 @@ Bookmarks: Revamp bookmarks
 
 GFX:
 * New Government Icons
-* New Council Task Icons
+* New Council Task Icons (including the MO tasks)
 
 Stretch:
 -----
