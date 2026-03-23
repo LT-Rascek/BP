@@ -679,7 +679,7 @@
 
 			##### Changed from Vanilla vvvvv
 			if = {
-				limit = { this.dynasty = { has_dynasty_perk = BP_roman_heritage_legacy_4 } }
+				limit = { this.dynasty ?= { has_dynasty_perk = BP_roman_heritage_legacy_4 } }
 				add = {
 					value = BP_roman_heritage_legacy_4_succession_value
 					desc = roman_politics_dynasty_legacy_impact_tt

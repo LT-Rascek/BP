@@ -271,14 +271,19 @@ massalian = { #Phocaean colony; thoroughly latinized though
 		#Realm Traditions
 		tradition_legalistic #Roman inheritance
 		#Regional Traditions
-		tradition_roman_legacy
 		tradition_greek_succession
 	}
 	
+	##### NEW #####
 	dlc_tradition = {
-		trait = tradition_hellenic_culture
-		requires_dlc_flag = hybridize_culture
-		fallback = tradition_hellenic_culture_non_dlc
+		trait = tradition_roman_politics
+		requires_dlc_flag = roads_to_power
+		fallback = tradition_roman_succession
+	}
+	dlc_tradition = {
+		trait = tradition_western_roman_military
+		requires_dlc_flag = roads_to_power
+		fallback = tradition_western_roman_legacy
 	}
 	
 	name_list = name_list_massalian

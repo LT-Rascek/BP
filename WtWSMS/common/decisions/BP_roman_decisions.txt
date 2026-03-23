@@ -479,7 +479,7 @@ restore_western_roman_empire = {
 		NOT = { exists = title:h_eastern_roman_empire.holder } #They can reform directly
 		OR = {
 			culture = { has_ability_to_reform_rome_directly_trigger = yes }
-			has_dynasty_perk = BP_roman_heritage_legacy_5
+			dynasty = { has_dynasty_perk = BP_roman_heritage_legacy_5 }
 		}
 	}
 	
@@ -593,7 +593,7 @@ restore_eastern_roman_empire = {
 		NOT = { exists = title:h_roman_empire.holder }
 		OR = {
 			culture = { has_ability_to_reform_rome_directly_trigger = yes }
-			has_dynasty_perk = BP_roman_heritage_legacy_5
+			dynasty = { has_dynasty_perk = BP_roman_heritage_legacy_5 }
 		}
 	}
 	
