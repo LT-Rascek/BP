@@ -28,10 +28,17 @@ senator_west = {
 	
 	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
 		parameter = roman_legal_traits_are_valued
-		monthly_prestige_gain_mult = 0.10
-		monthly_prestige = 0.5
-		owned_hostile_scheme_success_chance_add = 5
+		monthly_prestige_gain_mult = 0.05
+		monthly_prestige = 0.25
 		legitimacy_gain_mult = 0.05
+	}
+	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
+		parameter = roman_popular_opinion_traits_malus
+		county_opinion_add = -5
+	}
+	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
+		parameter = roman_cultural_trait_opinion_bonus
+		same_culture_opinion = 5
 	}
 	
 	ruler_designer_cost = 20
@@ -55,10 +62,17 @@ senator_east = {
 	
 	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
 		parameter = roman_legal_traits_are_valued
-		monthly_prestige_gain_mult = 0.10
-		monthly_prestige = 0.5
-		owned_hostile_scheme_success_chance_add = 5
+		monthly_prestige_gain_mult = 0.05
+		monthly_prestige = 0.25
 		legitimacy_gain_mult = 0.05
+	}
+	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
+		parameter = roman_popular_opinion_traits_malus
+		county_opinion_add = -5
+	}
+	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
+		parameter = roman_cultural_trait_opinion_bonus
+		same_culture_opinion = 5
 	}
 	
 	ruler_designer_cost = 20
@@ -84,9 +98,9 @@ former_consul_west = {
 	
 	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
 		parameter = roman_legal_traits_are_valued
+		monthly_prestige_gain_mult = 0.05
 		monthly_prestige = 0.25
-		monthly_dynasty_prestige = 0.01
-		legitimacy_gain_mult = 0.1
+		legitimacy_gain_mult = 0.05
 	}
 }
 former_consul_east = {
@@ -109,8 +123,8 @@ former_consul_east = {
 	
 	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
 		parameter = roman_legal_traits_are_valued
+		monthly_prestige_gain_mult = 0.05
 		monthly_prestige = 0.25
-		monthly_dynasty_prestige = 0.01
-		legitimacy_gain_mult = 0.1
+		legitimacy_gain_mult = 0.05
 	}
 }

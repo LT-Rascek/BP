@@ -114,6 +114,10 @@ traditions_body_status_type_is_in_list_trigger = {
 				culture_tradition:tradition_byzantine_succession = { is_in_list = traits }
 			}
 			trigger_if = {
+				limit = { NOT = { culture_tradition:tradition_byzantine_politics = $TRADITION$ } }
+				culture_tradition:tradition_byzantine_politics = { is_in_list = traits }
+			}
+			trigger_if = {
 				limit = { NOT = { culture_tradition:tradition_roman_succession = $TRADITION$ } }
 				culture_tradition:tradition_roman_succession = { is_in_list = traits }
 			}
@@ -129,7 +133,7 @@ traditions_body_status_type_is_in_list_trigger = {
 	}
 }
 
-#Cultural Combat-type tradtions are mutually exclusive
+#Cultural Combat-type traditions are mutually exclusive
 traditions_cultural_combat_type_is_in_list_trigger = {
 	custom_description = {
 		text = more_than_one_cultural_combat_tradition
@@ -137,10 +141,6 @@ traditions_cultural_combat_type_is_in_list_trigger = {
 			trigger_if = {
 				limit = { NOT = { culture_tradition:tradition_gothic_warfare = $TRADITION$ } }
 				culture_tradition:tradition_gothic_warfare = { is_in_list = traits }
-			}
-			trigger_if = {
-				limit = { NOT = { culture_tradition:tradition_vandalic_warfare = $TRADITION$ } }
-				culture_tradition:tradition_vandalic_warfare = { is_in_list = traits }
 			}
 			trigger_if = {
 				limit = { NOT = { culture_tradition:tradition_marauders = $TRADITION$ } }
@@ -155,12 +155,20 @@ traditions_cultural_combat_type_is_in_list_trigger = {
 				culture_tradition:tradition_western_roman_legacy = { is_in_list = traits }
 			}
 			trigger_if = {
+				limit = { NOT = { culture_tradition:tradition_roman_military = $TRADITION$ } }
+				culture_tradition:tradition_roman_military = { is_in_list = traits }
+			}
+			trigger_if = {
 				limit = { NOT = { culture_tradition:tradition_roman_legacy = $TRADITION$ } }
 				culture_tradition:tradition_roman_legacy = { is_in_list = traits }
 			}
 			trigger_if = {
-				limit = { NOT = { culture_tradition:tradition_early_slavic_warfare = $TRADITION$ } }
-				culture_tradition:tradition_early_slavic_warfare = { is_in_list = traits }
+				limit = { NOT = { culture_tradition:tradition_roman_legacy = $TRADITION$ } }
+				culture_tradition:tradition_roman_legacy = { is_in_list = traits }
+			}
+			trigger_if = {
+				limit = { NOT = { culture_tradition:tradition_ep3_imperial_tagmata = $TRADITION$ } }
+				culture_tradition:tradition_ep3_imperial_tagmata = { is_in_list = traits }
 			}
 		}
 	}
@@ -179,6 +187,14 @@ traditions_eunuch_status_type_is_in_list_trigger = {
 			trigger_if = {
 				limit = { NOT = { culture_tradition:tradition_byzantine_succession = $TRADITION$ } }
 				culture_tradition:tradition_byzantine_succession = { is_in_list = traits }
+			}
+			trigger_if = {
+				limit = { NOT = { culture_tradition:tradition_byzantine_politics = $TRADITION$ } }
+				culture_tradition:tradition_byzantine_politics = { is_in_list = traits }
+			}
+			trigger_if = {
+				limit = { NOT = { culture_tradition:tradition_ep3_palace_politics = $TRADITION$ } }
+				culture_tradition:tradition_ep3_palace_politics = { is_in_list = traits }
 			}
 		}
 	}
@@ -209,14 +225,6 @@ traditions_monolithic_culture_type_is_in_list_trigger = {
 			trigger_if = {
 				limit = { NOT = { culture_tradition:tradition_egyptian_traditions = $TRADITION$ } }
 				culture_tradition:tradition_egyptian_traditions = { is_in_list = traits }
-			}
-			trigger_if = {
-				limit = { NOT = { culture_tradition:tradition_hellenizers = $TRADITION$ } }
-				culture_tradition:tradition_hellenizers = { is_in_list = traits }
-			}
-			trigger_if = {
-				limit = { NOT = { culture_tradition:tradition_colonizers = $TRADITION$ } }
-				culture_tradition:tradition_colonizers = { is_in_list = traits }
 			}
 			trigger_if = {
 				limit = { NOT = { culture_tradition:tradition_romance_culture = $TRADITION$ } }
@@ -252,14 +260,6 @@ traditions_monolithic_culture_type_is_in_list_trigger = {
 				culture_tradition:tradition_egyptian_traditions_non_dlc = { is_in_list = traits }
 			}
 			trigger_if = {
-				limit = { NOT = { culture_tradition:tradition_hellenizers_non_dlc = $TRADITION$ } }
-				culture_tradition:tradition_hellenizers_non_dlc = { is_in_list = traits }
-			}
-			trigger_if = {
-				limit = { NOT = { culture_tradition:tradition_colonizers_non_dlc = $TRADITION$ } }
-				culture_tradition:tradition_colonizers_non_dlc = { is_in_list = traits }
-			}
-			trigger_if = {
 				limit = { NOT = { culture_tradition:tradition_romance_culture_non_dlc = $TRADITION$ } }
 				culture_tradition:tradition_romance_culture_non_dlc = { is_in_list = traits }
 			}
@@ -290,8 +290,8 @@ traditions_legal_tradition_is_in_list_trigger = {
 				culture_tradition:tradition_byzantine_succession = { is_in_list = traits }
 			}
 			trigger_if = {
-				limit = { NOT = { culture_tradition:tradition_latin_succession = $TRADITION$ } }
-				culture_tradition:tradition_latin_succession = { is_in_list = traits }
+				limit = { NOT = { culture_tradition:tradition_byzantine_politics = $TRADITION$ } }
+				culture_tradition:tradition_byzantine_politics = { is_in_list = traits }
 			}
 			trigger_if = {
 				limit = { NOT = { culture_tradition:tradition_roman_succession = $TRADITION$ } }
@@ -336,6 +336,10 @@ traditions_legal_tradition_is_in_list_trigger = {
 			trigger_if = {
 				limit = { NOT = { culture_tradition:tradition_early_slavic_traditions = $TRADITION$ } }
 				culture_tradition:tradition_early_slavic_traditions = { is_in_list = traits }
+			}
+			trigger_if = {
+				limit = { NOT = { culture_tradition:tradition_roman_politics = $TRADITION$ } }
+				culture_tradition:tradition_roman_politics = { is_in_list = traits }
 			}
 			#DLC Variants
 			trigger_if = {
@@ -382,8 +386,8 @@ has_same_heritage_culture_tradition_trigger = {
 			$CULTURE_2$ = { has_cultural_tradition = tradition_byzantine_succession }
 		}
 		AND = {
-			$CULTURE_1$ = { has_cultural_tradition = tradition_latin_succession }
-			$CULTURE_2$ = { has_cultural_tradition = tradition_latin_succession }
+			$CULTURE_1$ = { has_cultural_tradition = tradition_byzantine_politics }
+			$CULTURE_2$ = { has_cultural_tradition = tradition_byzantine_politics }
 		}
 		AND = {
 			$CULTURE_1$ = { has_cultural_tradition = tradition_roman_succession }
@@ -545,9 +549,7 @@ ai_will_not_convert_to_local_culture_trigger = {
 	culture = {
 		OR = {
 			has_cultural_tradition = tradition_colonizers
-			has_cultural_tradition = tradition_colonizers_non_dlc
 			has_cultural_tradition = tradition_hellenizers
-			has_cultural_tradition = tradition_hellenizers_non_dlc
 			has_cultural_tradition = tradition_armenian_traditions
 			has_cultural_tradition = tradition_armenian_traditions_non_dlc
 			has_cultural_tradition = tradition_hebrew_traditions

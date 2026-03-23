@@ -5,6 +5,8 @@
    - This will change with every major version upgrade, so the rule setting will change with each version
 
 Mechanics:
+- Decreased defined cultural acceptance gains and increased cultural acceptance losses to make cultural convergence take longer
+   - Only applies to passive values, not active values
 - Added WtWSMS as a separate rule category for easy finding of WtWSMS-specific game rules
 - Added hegemonies to the map, including the Eastern Roman Empire, the Western Roman Empire
 - Added mechanic for "Hegemony Collapse"
@@ -99,21 +101,88 @@ Casus Belli:
 - Players with Sub-Roman government can now attack other Sub-Roman (and potentially Roman) realms with a similar sort of De Jure CB
 - Odoacer's Takeover War will cede land to the Visigoths and gain land from the Vandals and secure truces, so long as the Visigoths and Vandals are AI players, respectively
 
+Traditions:
+- Redubbed Vanilla "Roman Ceremonies" to be "Byzantine Ceremonies"
+- Removed Traditions:
+   - Removed "Latin Succession" Tradition, as it has been subsumed into "Roman Succession" tradition
+   - Removed "Vandalic Warfare" Tradition, as it has been subsumed into "Gothic Warfare" tradition
+- Changed Traditions:
+   - "Roman Succession" no longer has physical disfigurement blocking inheritance
+   - "Colonizers" looses its Monolithic cultural aspects to be less Roman-specific, emphasizing ease of Hybridization
+   - "Romance Culture" acquires some aspects of "Cultivated Sophistication"
+   - "Gothic Warfare" removes Men at Arms Size and Limits changes, increases land raiding speed, and instead unlocks Cultural Men-At-Arms, is locked to "Gothic Heritage" cultures
+   - "Migratory Culture" reduces army maintenance and MAA recruitment costs, cultures with "Migratory Culture" use Herd instead of Domain Head determination
+- Added New Roman-Centric Traditions:
+   - Added "Roman Politics" Tradition:
+      - Similar to "Palace Politics" tradition
+      - Legal Tradition
+      - Increases frequency of disloyal characters
+      - Unlocks Roman Civil Innovations and Roman Restoration
+      - Unlocks Triumphs
+      - Vassal Limit: +30 and Monthly Influence: +10%
+   - Added "Roman Ceremonies" Tradition:
+      - Similar to "Roman Ceremonies" from Vanilla
+      - Enables Chariot Races
+      - Certain traits provide public opinion bonuses and maluses
+      - County Opinion: -10
+   - Added "Pontic Horsemen" Tradition
+      - Similar to "Devoted Horsemen", but unlocked "Contus Bearers" Men-At-Arms and has a reduction in Light Cavalry Men-At-Arms costs
+
 Culture:
+- Added a "Caucasian-Anatolian" Heritage Continua for Anatolian, Byzantine, and Caucasian cultures, preventing hybridization between those cultures
+- Touched up Visigothic, Suebian, Vandalic, Ostrogothic, and Burgundian culture histories, making them less advanced
 - Innovations:
    - "Legal Codex" Late Antiquity Innovation no longer unlocks Roman Imperial Reconquests
+   - Removed "Scholae", "Ballista", "Cataphracts", "Legionaries" innovations
    - Roman Concrete, Chinese Urbanization, Indian Urbanization, Persian Urbanization, and Ancient Urbanites unlock the first 3 levels of main domicile buildings
 - Culture Changes:
    - Taifal culture COA frame is Chernyakhov instead of Sarmatian, uses only Samaritan name list
    - Burgundian Culture has "Family Business" Tradition
+- Latin Culture Overhaul in light of DLC:
+   - Roman: Adds "Roman Politics"/"Roman Succession", Adds "Roman Military"/"Western Roman Legacy", Adds "Romance Culture", Adds "Roman Ceremonies" (with "Roads to Power"), Removed "Legalistic"
+   - Romano-Raetian: Adds "Roman Politics"/"Roman Succession", Adds "Roman Military"/"Western Roman Legacy", Adds "Roman Ceremonies" (with "Roads to Power")
+   - Romano-Noric: Adds "Roman Politics"/"Roman Succession", Adds "Roman Military"/"Western Roman Legacy"
+   - Romano-Gallic: Adds "Roman Politics"/"Roman Succession", Adds "Roman Military"/"Western Roman Legacy", Adds "Roman Ceremonies" (with "Roads to Power")
+   - Romano-British: Adds "Roman Politics"/"Roman Succession", Adds "Roman Military"/"Western Roman Legacy", Adds "Roman Ceremonies" (with "Roads to Power"), Removes "Concubines"
+   - Romano-African: Adds "Roman Politics"/"Latin Succession", Adds "Roman Military"/"Western Roman Legacy", Adds "Roman Ceremonies" (with "Roads to Power"), Removes "Dryland Dwellers"
+   - Romano-Hispanic: Adds "Roman Politics"/"Roman Succession", Adds "Roman Military"/"Western Roman Legacy", Adds "Roman Ceremonies" (with "Roads to Power"), Removes "Agrarian"
+   - Romano-Thracian: Adds "Roman Politics"/"Roman Succession", Adds "Roman Military"/"Western Roman Legacy", Adds "Roman Ceremonies" (with "Roads to Power")
+   - Romano-Illyrian: Adds "Roman Politics"/"Roman Succession", Adds "Roman Military"/"Western Roman Legacy"
+   - Romano-Pannonia: Adds "Roman Politics"/"Roman Succession", Adds "Roman Military"/"Western Roman Legacy"
+   - Romano-Dacian: Adds "Roman Politics"/"Roman Succession", Adds "Roman Military"/"Western Roman Legacy"
+   - Romano-Aramean: Adds "Roman Politics"/"Roman Succession", Adds "Roman Military"/"Western Roman Legacy", Removed "Legalistic", Adds "Strong Believers"
+- Greek Culture Overhaul in light of DLC:
+   - Greek: Adds "Eastern Roman Politics"/"Eastern Roman Succession", Adds "Roman Military"/"Eastern Roman Legacy", Adds "Hellenic Culture", Adds "Roman Ceremonies" (with "Roads to Power"), Removed "Formation Fighting Experts", "Legalistic"
+   - Pontic: Adds "Eastern Roman Politics"/"Eastern Roman Succession", Adds "Roman Military"/"Eastern Roman Legacy", Adds "Roman Ceremonies" (with "Roads to Power")
+   - Helleno-Thracian: Adds "Eastern Roman Politics"/"Eastern Roman Succession", Adds "Roman Military"/"Eastern Roman Legacy", Adds "Roman Ceremonies" (with "Roads to Power")
+   - Cyrenaican: Adds "Eastern Roman Politics"/"Eastern Roman Succession", Adds "Roman Military"/"Eastern Roman Legacy", Adds "Roman Ceremonies" (with "Roads to Power")
+   - Helleno-Coptic: Adds "Eastern Roman Politics"/"Eastern Roman Succession", Adds "Roman Military"/"Eastern Roman Legacy", , Adds "Roman Ceremonies" (with "Roads to Power"), Removes "Philosopher Culture"
+   - Cypriot: Adds "Eastern Roman Politics"/"Eastern Roman Succession"
+- Other Culture Changes:
+   - Sarmatian, Iazyges, Taifal, Alan, Alauni, Hunnic, Khuni, and Bolghar cultures use "Pontic Horsemanship" instead of "Devoted Horsemanship" Tradition
+   - Vandalic replaces "Vandalic Warfare" with "Gothic Warfare", adds "Practiced Pirates" Tradition
 - Fashion and Dynasty Frames:
    - Anatolian cultures use Dacian clothing Now
    - Corduenians don't have Scythian clothing
    - Romano-Pannonians use Latin Frames
    - Suavi, Romano-Hispanic use Iberian house Frames
 
+Men-at-Arms:
+- Palatini MAA are now title-only men at arms, available only to independent kingdom or higher rulers, with only a single stack able to be purchased
+- Added unique MAA:
+   - For "Roman Military": Roman Heavy Infantry (Heavy Infantry), Roman Light Infantry (Skirmishers), Roman Heavy Cavalry (Heavy Cavalry)
+   - For "Pontic Horsemen": Contus Bearers (Heavy Infantry)
+   - For "Gothic Warfare": Mekeisman (Heavy Infantry), Gothic Horsemen (Heavy Cavalry)
+
 Religion:
-- Zalmoxianism is considered a Chernyakhov faith
+- Religion Changes:
+   - Zalmoxianism is considered a Chernyakhov faith
+   - Mithraism uses "Polytheism" doctrine, "Male Only" Clergy doctrine, "Righteous" doctrine, in line with a Male-dominated priesthood and membership lists
+- Reworked Hellenic Syncretism vis-a-vis Pagan Faiths
+   - Pagan Faiths with "Hellenic Syncretism" use "Polytheistic Syncretism" doctrine instead of "Polytheism" Doctrine
+   - "Polytheistic Syncretism" cannot be used with "Fundamentalist" doctrine
+   - "Polytheistic Syncretism" doctrine considers each other Righteous
+   - Revamped Hellenic Syncretism description for Pagan Faiths
 
 Landed Titles:
 - Adjusted the border of Venetia and Liguria in Annonaria
@@ -121,6 +190,7 @@ Landed Titles:
 - The Orleans Alans start as a landed duchy after 442
 
 Decisions:
+- Unified the chariot team support decision into a decision with options
 - Added a decision to establish titular Hegemonies like for titular Empires and titular Kingdoms
 - Updated the "Ask Pope for Coronation", "Ask for Western Roman Empire", and "Reunite the two Roman Empires" decisions requirements and effects
 - Removed "Enforce our Imperium" decision as it is overcome by redesign
@@ -135,6 +205,15 @@ Laws:
    - At its most permissive, improves cultural acceptance, disables conversion of Roman faith counties, and blocks Roman Characters form having the Minority Vassal Stance
 - Roman Dynastic Laws unlock an increasing ability for Roman and Sub-Roman states to launch wars for Former Roman Territory
    - At maximum Roman State Authority, Sub-Roman realms can attack the Roman Empire, modeling some of the mid-Vth Century Wars of Suebia and Visigothica
+
+Dynasty Legacies:
+- Made Bureaucracy Dynasty Legacy available to Roman Administrative dynasts
+- Added a new Dynasty Legacy: "Romanitas", available to dynasts of cultures with Greco-Roman Social Traditions who are landed or have a noble family title
+   - Level 1: "Roman Nostalgia": Monthly Prestige per Influence Level: 2%, Monthly Influence: 5%, Legitimacy Loss: -5%
+   - Level 2: "Roman Architecture": Reduced domicile and holding build time and cost
+   - Level 3: "Roman Politics": Diplomacy per Level of Prestige: +1, Intrigue per Level of Influence: +1
+   - Level 4: "Roman Law": Dynasty members have a +20 candidate score, Powerful Vassal Opinion: +5, Vassal Limit: +10
+   - Level 5: "Roma Est Aeterna": Maximum Level of Influence +1, Unlocks the Restore Eastern & Western Empire decisions (regardless of culture), Enables adopting Roman Administrative Government for more governments
 
 History:
 - Updated large parts of history to tie into the new hegemonies and empire structures
@@ -155,6 +234,10 @@ History:
 - The Pagan Buri of the Suebi Kingdom now own a single barony in Terras de Bouro, as is proper
 
 GFX:
+- Updated the Tenet Icon for Hellenic Syncretism
+- Added new banner graphics for Hellenic and Kemetic faiths
+- Added new government icons form Roman and High Tribal Governments
+- Added new realm frames for High Tribal, Persian, and Roman governments
 - Added a number of CoAs from "Notitia Dignitatum" for several offices and locations
 - Added new CoAs for Yemen (removing the Shahada), Macedonia, Selecuia, Raetia Curiensis
 - Merovingian Dynasty CoA changes to bumble bees when the dynast changes their religion to Christianity
@@ -162,6 +245,7 @@ GFX:
 - Updated GFX for a number of faiths
 
 Tweaks:
+- "Roman Nostalgia" looses its culture-related bonuses
 - Roman Senate recognition legitimacy values increased in most cases
 - All WtWSMS use either gold or treasury as is appropriate
 - House Power only suffers a state faith malus if the state faith considers your faith to be Astray or worse

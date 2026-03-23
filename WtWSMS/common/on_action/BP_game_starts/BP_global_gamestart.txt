@@ -54,6 +54,11 @@ BP_set_global_variables_by_date = {
 }
 BP_update_culture_traditions_by_date = {
 	effect = {
+		#Migratory Cultures use Herder determination
+		every_culture_global = {
+			limit = { has_cultural_tradition = tradition_migratory_culture }
+			set_culture_pillar = head_determination_herd
+		}
 		#Change the Saami Traditions to make hybridization basically impossible.
 		culture:sami = {
 			if = {
@@ -87,6 +92,10 @@ BP_update_culture_traditions_by_date = {
 		if = { #Attaces killed and the largest Western Alans become Arian
 			limit = { current_date >= 418.1.1 }
 			culture:western_alan = { add_culture_tradition = tradition_concubines }
+		}
+		if = {
+			limit = { current_date >= 439.1.1 }
+			culture:vandalic = { add_culture_tradition = tradition_practiced_pirates }
 		}
 		if = { #Gothic becomes mostly Arian
 			limit = { current_date >= 445.1.1 }

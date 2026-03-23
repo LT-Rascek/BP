@@ -23,13 +23,19 @@ Bugs:
 - holding construction time negative should be building speed positive in taxation keeping event modifier
 
 Succession Issues:
-- Ministrial Succession seems borked; fix it dammit (that's why Andag keeps getting it)
-- MO/MM should be functionally ineligible for each other's titles
-- Block Spymaster from being able to recruit Roman MO/MM when they have the law.
-- For some reason, at start is firing multiple MO/MM officers including Andag and throw Beatus and Pierius into the role
-- Andag is becoming MO YET AGAIN!!!
+- MO/MM should be functionally ineligible for each other's titles in the succession order
+- Succession Bug: Ministrial Succession seems borked; fix it dammit (that's why Andag keeps getting it)
+   - For some reason, at start is firing multiple MO/MM officers including Andag and throw Beatus and Pierius into the role
+   - Andag is becoming MO YET AGAIN!!!
+   - Block Spymaster, Court Chaplain from being able to recruit Roman MO/MM when they have the law.
 
 - Senators should have a bonus to succession, if Rome is not being oppressed
+- Decisions: Establish de jure decisions need work given uncreatable empires/kingdoms???
+- Federates should not get a nerf to domain taxes nor a bonus in their contract
+
+History:
+- Gallic chars should be romano_celtic_pagan
+- Oland and Oland rulers should be Cimbric Pagan
 
 Council:
 - Fill out last 3 council tasks for legal bureau
@@ -39,10 +45,12 @@ Council:
 - Roman Admin Premier Power Levels
 - Premiership should not be dischargeable
 
-Later (MVP):
------
-
-* Decisions: Establish de jure decisions need work given uncreatable empires/kingdoms???
+==========
+Roman Culture Work
+----------
+Activities:
+   - Ability to host munera (theater particularly) in Roman Ceremonies
+   - Option to pay gold or treasury with slightly different rewards
 
 ==========
 Tributaries / Federate Rework
@@ -51,40 +59,6 @@ Tributaries / Federate Rework
 
 Mechanics:
 * Apply all the stuff listed in h_eastern_roman_empire.txt, h_western_roman_empire.txt landed file (Tributaries)
-
-==========
-Roman Culture Work
-----------
-* Use glosses or game concepts to give the forum link and wiki links to shrink text down
-
-* Migratory Culture Tradition should have some recruitment bonuses as well
-* Migratory Cultures should use herd head determination that flips when lost
-
-* Culture: Legal Codex needs work
-
-* Duplicate Hellenic Syncretism; one for Pagans (making Righteous) and the other for non-Pagans (making Astray)
-
-* Devoted Horsemanship needs its own MAA to replace Tarkhans (they don't fit; no steppe/plains bonus)
-* Review Goths et al Horsemanship offerings
-
-* On action to remove Roman Admin, Legal Codex innovations from Hybridizations
-
-Tradition Changes:
-- Roman Ceremonies:
-   - Ability to host munera (theater particularly) in Roman Ceremonies
-      - Option to pay gold or treasury with slightly different rewards
-   - Unify Support Greens/Blues/Reds/Whites decision with Vanilla and tweak traits
-
-* Revamp Roman MAAs to not be innovation bound
-   - unlock_innovation_byzantine_military, unlock_innovation_roman_military
-
-* MAA:
-- Need to lock praetorians to just the Roman Emperors and MMs
-- Add ERE title troops in feb 476
-
-* BP_war_triggers.txt: reenable valid_reconquest_culture_trigger
-
-* Decision for unreformed syncretics to change their syncretism (multi-choice decision)
 
 ==========
 Pre-Alpha Final:
@@ -116,6 +90,11 @@ CBs: Federate Raid Wars
 - Character Interactions: Enable the ability to give ai-owned lands in your realm to federates as an admin.
 - Great Projects: Projects for Sub-Romans to fight against decay of laws.
 - Add the other two dynasty legacies
+- Make Cataphracts recruitable again
+
+Culture:
+- Review Taifali, Heruli light horsemen (probably a cultural MAA change)
+- Legal Codex needs work
 
 Government:
 - Ability for Emperor to intervene directly down the hierarchy.
@@ -126,6 +105,8 @@ Federate Government:
 Decisions:
 - Roman government decision as in adoption of later Admin government in late antique period
 - Non-Romans with Roman government get option to transition to vanilla admin instead of adopt Roman government
+- Decision for unreformed syncretics to change their syncretism (multi-choice decision)
+- Review conditions for restoring Rome/Byzantium vis-a-vis region & restored fora...
 
 ==========
 0.2.2:

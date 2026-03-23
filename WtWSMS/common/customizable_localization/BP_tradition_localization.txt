@@ -5,7 +5,6 @@
 		trigger = {
 			OR = {
 				culture = { has_cultural_tradition = tradition_hellenizers }
-				culture = { has_cultural_tradition = tradition_hellenizers_non_dlc }
 			}
 		}
 		localization_key = "tradition_hellenizers_name"
@@ -20,12 +19,7 @@
 		localization_key = "tradition_hellenic_culture_name"
 	}
 	text = {
-		trigger = {
-			OR = {
-				culture = { has_cultural_tradition = tradition_colonizers }
-				culture = { has_cultural_tradition = tradition_colonizers_non_dlc }
-			}
-		}
+		trigger = { culture = { has_cultural_tradition = tradition_colonizers } }
 		localization_key = "tradition_colonizers_name"
 	}
 	text = {

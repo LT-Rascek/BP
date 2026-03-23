@@ -116,7 +116,31 @@ convert_to_roman_government_decision = {
 		hegemony = 36
 	}
 	
-	is_shown = { government_has_flag = is_a_transitory_roman_government }
+	is_shown = {
+		trigger_if = {
+			limit = { this.dynasty = { has_dynasty_perk = BP_roman_heritage_legacy_5 } }
+			NOR = {
+				#Not already main Roman Government
+				government_has_flag = government_is_roman_dynastic
+				government_has_flag = government_is_roman_administrative
+				#Can't be Chinese Governments
+				government_has_flag = government_is_celestial
+				government_has_flag = government_is_mandala
+				government_has_flag = government_is_steppe_admin
+				government_has_flag = government_is_meritocratic
+			}
+			#Have to be some sort of applicable government
+			OR = {
+				government_has_flag = government_is_feudal
+				government_has_flag = government_is_clan
+				government_has_flag = government_is_iranian_dynastic
+				government_has_flag = government_is_rajamandala
+				government_has_flag = government_is_administrative
+				government_has_flag = is_a_transitory_roman_government
+			}
+		}
+		trigger_else = { government_has_flag = is_a_transitory_roman_government }
+	}
 	
 	is_valid = {
 		custom_description = {

@@ -34,6 +34,8 @@
 	mechanic_type = feudal
 	
 	color = hsv{ 0.67 0.50 0.78 } #Feudal Color, 50% Saturation
+	realm_mask_offset = { 0.0 0.01 }
+	realm_mask_scale = { 1 1 }
 }
 
 #Indian Government Types
@@ -76,6 +78,8 @@ rajamandala_government = {
 	mechanic_type = feudal
 	
 	color = {0.250 0.250 0.250}
+	realm_mask_offset = { 0.0 0.01 }
+	realm_mask_scale = { 1 1 }
 }
 
 #Iranian Government Types
@@ -130,5 +134,6 @@ iranian_dynastic_government = {
 	mechanic_type = clan
 	
 	color = {1.000 0.500 0.000}
+	realm_mask_offset = { 0.0 0.1 }
+	realm_mask_scale = { 0.88 0.88 }
 }
-

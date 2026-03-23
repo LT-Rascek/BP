@@ -25,6 +25,8 @@
  high_tribal_government_vassals_label: "$high_tribal_government$ [obligations|E] are based on [prestige_level|E] of [liege|E]"
  high_tribal_government_desc: "$game_concept_high_tribal_government_desc$"
  high_tribal_character_modifiers: "[title|E] creation cost: #P -25%#!#indent_newline:3 \nArmy Maintenance #P -25%#!#!#indent_newline:3 \n[organized_government|E] [vassals|E] have a #N -10#! Opinion Modifier#!"
+ high_tribal_government_filter_option: "$high_tribal_government$"
+ high_tribal_government_filter_option_desc: "Only show characters with [high_tribal_government|E]"
  
  high_tribal_vassal: "$high_tribal_government$"
  high_tribal_obligations: "From [liege|E] [prestige_level|E]"
@@ -36,6 +38,8 @@
  prefeudal_government_realm: "Pre-Feudal Realm"
  prefeudal_government_vassals_label: "$prefeudal_government$ [obligations|E] are based on each [vassal|E]'s [feudal_contract|E]"
  prefeudal_government_desc: "$game_concept_prefeudal_government_desc$"
+ prefeudal_government_filter_option: "$prefeudal_government$"
+ prefeudal_government_filter_option_desc: "Only show characters with [prefeudal_government|E]"
  
  prefeudal_character_modifiers: "Development Growth #N -15%#!"
  
@@ -57,6 +61,8 @@
  rajamandala_government_realm: "Rajamandala Realm"
  rajamandala_government_vassals_label: "$rajamandala_government$ [obligations|E] are based on each [vassal|E]'s [feudal_contract|E]"
  rajamandala_government_desc: "$game_concept_rajamandala_government_desc$"
+ rajamandala_government_filter_option: "$rajamandala_government$"
+ rajamandala_government_filter_option_desc: "Only show characters with [rajamandala_government|E]"
  vassals_must_give_titles_to_dynasty_members: "[vassal|E] $rajamandala_government$ rulers must grant titles to [dynasty|E] members, if possible"
  
  rajamandala_government_character_modifier: "[development|E] Growth: #P +25%#!#indent_newline:3 \nMonthly [control|E] Gain: #P 0.1#!#!"
@@ -93,6 +99,8 @@
  iranian_dynastic_government_realm: "$iranian_dynastic_government$ Realm"
  iranian_dynastic_government_vassals_label: "$iranian_dynastic_government$ [obligations|E] are based on [opinion|E]"
  iranian_dynastic_government_desc: "$game_concept_iranian_dynastic_government_desc$"
+ iranian_dynastic_government_filter_option: "$iranian_dynastic_government$"
+ iranian_dynastic_government_filter_option_desc: "Only show characters with [iranian_dynastic_government|E]"
  only_wuzurgan_can_be_councillors: "If has access to the $wuzurgan_special_rights_tax_collector$ [tax_decree|E], only those [vassals|E] may be [councillors|E]"
  righteous_counties_to_rightous_characters: "Counties that are considered righteous or astray by the ruler's [faith|E] must be given to characters considered righteous or astray"
  empires_use_mahestan_succession: "[empires|EU] have the [succession_law|E] #V $mahestan_elective_succession_law$#!"
@@ -124,6 +132,8 @@
  roman_dynastic_government_adjective: "Roman Dynastic"
  roman_dynastic_government_realm: "$roman_dynastic_government_adjective$ Realm"
  roman_dynastic_government_desc: "$game_concept_roman_dynastic_government_desc$"
+ roman_dynastic_government_filter_option: "$roman_dynastic_government$"
+ roman_dynastic_government_filter_option_desc: "Only show characters with [roman_dynastic_government|E]"
  titles_revert_to_top_liege_on_death: "[duchies|EU] and [counties|EU] which are not [de_jure|E] in the same duchy as your [capital|E] revert to the top liege, as do all [kingdoms|E]"
  title_revocation_could_be_tyranny_free: "Revocation of [titles|E] not including the capital county are without [tyranny|E]"
  government_only_valid_for_empires_hegemonies: "Only valid for polities where the [top_liege|E] holds a n[empire|E] or [hegemony|E]."
@@ -141,18 +151,22 @@
  subroman_dynastic_government_realm: "$subroman_dynastic_government$ Realm"
  subroman_dynastic_government_vassals_label: "Sub-Roman [obligations|E] are fixed"
  subroman_dynastic_government_desc: "$game_concept_subroman_dynastic_government_desc$"
+ subroman_dynastic_government_filter_option: "$subroman_dynastic_government$"
+ subroman_dynastic_government_filter_option_desc: "Only show characters with [subroman_dynastic_government|E]"
  is_a_transitory_roman_government: "Is a transitory government, eventually changing into [feudal_government|E] or [clan_government|E], and becoming [roman_dynastic_government|E] if vassalized by such a government"
  
  subroman_dynastic_vassal: "$subroman_dynastic_government$"
  
  #Roman Administrative
  roman_administrative_government: "Roman Administrative"
- roman_administrative_government_with_icon: "@government_type_administrative! $roman_administrative_government$"
+ roman_administrative_government_with_icon: "@government_type_roman_dynastic! $roman_administrative_government$"
  roman_administrative_government_adjective: "Roman Administrative"
  roman_administrative_government_realm: "$roman_administrative_government_adjective$ Realm"
  roman_administrative_government_desc: "$game_concept_roman_administrative_government_desc$"
  roman_administrative_government_vassals_label: "[administrative|E] [obligations|E] are based on [GetPlayer.Custom('GetProvinceAdministrationConcept')]"
  roman_administrative_vassal: "Roman Administrative"
+ roman_administrative_government_filter_option: "$roman_administrative_government$"
+ roman_administrative_government_filter_option_desc: "Only show characters with [roman_administrative_government|E]"
  
  roman_administrative_obligations: "Roman Administrative Obligations"
  roman_administrative_themes: "Available Administration Types"
@@ -250,21 +264,25 @@
  
  #Subroman Administrative
  subroman_administrative_government: "Sub-Roman Administrative"
- subroman_administrative_government_with_icon: "@government_type_administrative! $subroman_administrative_government$"
+ subroman_administrative_government_with_icon: "@government_type_subroman_dynastic! $subroman_administrative_government$"
  subroman_administrative_government_adjective: "Sub-Roman Administrative"
  subroman_administrative_government_realm: "$roman_administrative_government_adjective$ Realm"
  subroman_administrative_government_desc: "$game_concept_subroman_administrative_government_desc$"
  subroman_administrative_government_vassals_label: "[administrative|E] [obligations|E] are based on [GetPlayer.Custom('GetProvinceAdministrationConcept')]"
  subroman_administrative_vassal: "Sub-Roman Administrative"
+ subroman_administrative_government_filter_option: "$subroman_administrative_government$"
+ subroman_administrative_government_filter_option_desc: "Only show characters with [subroman_administrative_government|E]"
  
  #Roman Federate
  roman_federate_government: "Roman Federate"
- roman_federate_government_with_icon: "@government_type_feudal! $roman_federate_government$"
+ roman_federate_government_with_icon: "@government_type_roman_federate! $roman_federate_government$"
  roman_federate_government_adjective: "Roman Federate"
  roman_federate_government_realm: "$roman_federate_government_adjective$ Realm"
  roman_federate_government_desc: "$game_concept_roman_federate_government_desc$"
  roman_federate_government_vassals_label: "[administrative|E] [obligations|E] are based on [GetPlayer.Custom('GetProvinceAdministrationConcept')]"
  roman_subordinate_federate_vassal: "Roman Federate"
+ roman_federate_government_filter_option: "$roman_federate_government$"
+ roman_federate_government_filter_option_desc: "Only show characters with [roman_federate_government|E]"
  
  roman_federate: "$roman_federate_government$"
  

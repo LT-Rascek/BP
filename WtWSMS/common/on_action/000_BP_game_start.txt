@@ -32,7 +32,6 @@ bp_game_start = {
 		#Culture Stuff
 		subromans_learn_latin_if_not_already
 		learn_liturgical_language_if_not_already
-		add_innovations_as_required
 		#Family Stuff
 		set_historical_dynasty_renown
 		block_specific_chars_from_having_families
@@ -1080,19 +1079,6 @@ learn_liturgical_language_if_not_already = {
 		every_ruler = {
 			limit = { government_has_flag = government_is_theocracy }
 			bp_learn_liturgical_language_effect = yes
-		}
-	}
-}
-add_innovations_as_required = {
-	effect = {
-		if = { #Armenians should have Cataphracts if you don't have the DLC for their Vanilla MAA
-			limit = {
-				NOR = {
-					has_ep3_dlc_trigger = yes
-					has_dlc_feature = hybridize_culture
-				}
-			}
-			culture:armenian = { add_innovation = innovation_cataphracts }
 		}
 	}
 }

@@ -1108,7 +1108,7 @@ BP_setup_federate_troops_476_feb_DLC = {
 				title = title:d_orleans
 			}
 			create_maa_regiment = {
-				type = light_footmen
+				type = sarmatian_lancers
 				check_can_recruit = no
 				size = 2
 				title = title:d_orleans
@@ -1195,7 +1195,7 @@ BP_set_armies_476_feb_DLC = {
 				size = 3
 			}
 			create_maa_regiment = {
-				type = light_footmen
+				type = roman_light_infantry
 				check_can_recruit = no
 				size = 3
 			}
@@ -1207,13 +1207,13 @@ BP_set_armies_476_feb_DLC = {
 		}
 		title:e_magister_military_wre.holder = {
 			create_maa_regiment = {
-				type = praetorian
+				type = roman_heavy_infantry
 				check_can_recruit = no
 				size = 4
 				title = title:e_magister_military_wre
 			}
 			create_maa_regiment = {
-				type = light_footmen
+				type = roman_light_infantry
 				check_can_recruit = no
 				size = 4
 				title = title:e_magister_military_wre
@@ -1232,21 +1232,21 @@ BP_set_armies_476_feb_DLC = {
 			}
 		}
 		title:e_magister_military_ere.holder = {
-			#Create the WRE MM Army
+			#Create the ERE MM Army
 			create_maa_regiment = {
-				type = praetorian
+				type = roman_heavy_infantry
 				check_can_recruit = no
 				size = 8
 				title = title:e_magister_military_ere
 			}
 			create_maa_regiment = {
-				type = praetorian
+				type = roman_heavy_infantry
 				check_can_recruit = no
 				size = 8
 				title = title:e_magister_military_ere
 			}
 			create_maa_regiment = {
-				type = light_footmen
+				type = roman_light_infantry
 				check_can_recruit = no
 				size = 8
 				title = title:e_magister_military_ere
@@ -1291,13 +1291,13 @@ BP_set_armies_476_feb_DLC = {
 		title:k_soissons.holder = {
 			title:k_soissons = { every_title_maa_regiment = { destroy_maa_regiment = yes } }
 			create_maa_regiment = {
-				type = praetorian
+				type = roman_heavy_infantry
 				check_can_recruit = no
 				size = 5
 				title = title:k_soissons
 			}
 			create_maa_regiment = {
-				type = light_footmen
+				type = roman_light_infantry
 				check_can_recruit = no
 				size = 5
 				title = title:k_soissons

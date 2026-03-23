@@ -2850,8 +2850,9 @@
 					doctrine:tenet_jewish_syncretism = { is_in_list = selected_doctrines }
 					doctrine:tenet_hellenic_syncretism = { is_in_list = selected_doctrines }
 					doctrine:tenet_zoroastrian_syncretism = { is_in_list = selected_doctrines }
-					doctrine:tenet_egyptian_syncretism = { is_in_list = selected_doctrines }
 					doctrine:tenet_sinitic_syncretism = { is_in_list = selected_doctrines }
+					doctrine:tenet_egyptian_syncretism_pagan_only = { is_in_list = selected_doctrines }
+					doctrine:tenet_hellenic_syncretism_pagan_only = { is_in_list = selected_doctrines }
 				}
 			}
 		}
@@ -2918,8 +2919,9 @@
 					doctrine:tenet_jewish_syncretism = { is_in_list = selected_doctrines }
 					doctrine:tenet_hellenic_syncretism = { is_in_list = selected_doctrines }
 					doctrine:tenet_zoroastrian_syncretism = { is_in_list = selected_doctrines }
-					doctrine:tenet_egyptian_syncretism = { is_in_list = selected_doctrines }
 					doctrine:tenet_sinitic_syncretism = { is_in_list = selected_doctrines }
+					doctrine:tenet_egyptian_syncretism_pagan_only = { is_in_list = selected_doctrines }
+					doctrine:tenet_hellenic_syncretism_pagan_only = { is_in_list = selected_doctrines }
 				}
 			}
 		}
@@ -2973,8 +2975,9 @@
 					doctrine:tenet_jewish_syncretism = { is_in_list = selected_doctrines }
 					doctrine:tenet_hellenic_syncretism = { is_in_list = selected_doctrines }
 					doctrine:tenet_zoroastrian_syncretism = { is_in_list = selected_doctrines }
-					doctrine:tenet_egyptian_syncretism = { is_in_list = selected_doctrines }
 					doctrine:tenet_sinitic_syncretism = { is_in_list = selected_doctrines }
+					doctrine:tenet_egyptian_syncretism_pagan_only = { is_in_list = selected_doctrines }
+					doctrine:tenet_hellenic_syncretism_pagan_only = { is_in_list = selected_doctrines }
 				}
 			}
 		}
@@ -3033,8 +3036,9 @@
 					doctrine:tenet_jewish_syncretism = { is_in_list = selected_doctrines }
 					doctrine:tenet_hellenic_syncretism = { is_in_list = selected_doctrines }
 					doctrine:tenet_zoroastrian_syncretism = { is_in_list = selected_doctrines }
-					doctrine:tenet_egyptian_syncretism = { is_in_list = selected_doctrines }
 					doctrine:tenet_sinitic_syncretism = { is_in_list = selected_doctrines }
+					doctrine:tenet_egyptian_syncretism_pagan_only = { is_in_list = selected_doctrines }
+					doctrine:tenet_hellenic_syncretism_pagan_only = { is_in_list = selected_doctrines }
 				}
 			}
 		}
@@ -3095,8 +3099,9 @@
 					doctrine:tenet_islamic_syncretism = { is_in_list = selected_doctrines }
 					doctrine:tenet_hellenic_syncretism = { is_in_list = selected_doctrines }
 					doctrine:tenet_zoroastrian_syncretism = { is_in_list = selected_doctrines }
-					doctrine:tenet_egyptian_syncretism = { is_in_list = selected_doctrines }
 					doctrine:tenet_sinitic_syncretism = { is_in_list = selected_doctrines }
+					doctrine:tenet_egyptian_syncretism_pagan_only = { is_in_list = selected_doctrines }
+					doctrine:tenet_hellenic_syncretism_pagan_only = { is_in_list = selected_doctrines }
 				}
 			}
 		}
@@ -3116,14 +3121,10 @@
 	}
 
 	tenet_hellenic_syncretism = {
-		icon = core_tenet_hellenic_syncretism
+		icon = core_tenet_household_gods
 
 		piety_cost = {
-			if = {
-				limit = { religion_tag = north_african_religion } 
-				value = faith_tenet_cost_low
-			}
-			else = { value = faith_tenet_cost_mid }
+			value = faith_tenet_cost_mid
 
 			# Multiplier for keeping same tenet
 			if = {
@@ -3133,13 +3134,7 @@
 		}
 
 		is_shown = {
-			OR = {
-				NOT = { religion = religion:hellenism_religion }
-				OR = {
-					has_doctrine = pagan_hostility_doctrine
-					has_doctrine = mazdan_hostility_doctrine
-				}
-			}
+			NOT = { religion = religion:hellenism_religion }
 		}
 		can_pick = {
 			custom_description = {
@@ -3151,16 +3146,17 @@
 					doctrine:tenet_islamic_syncretism = { is_in_list = selected_doctrines }
 					doctrine:tenet_jewish_syncretism = { is_in_list = selected_doctrines }
 					doctrine:tenet_zoroastrian_syncretism = { is_in_list = selected_doctrines }
-					doctrine:tenet_egyptian_syncretism = { is_in_list = selected_doctrines }
 					doctrine:tenet_sinitic_syncretism = { is_in_list = selected_doctrines }
+					doctrine:tenet_egyptian_syncretism_pagan_only = { is_in_list = selected_doctrines }
+					doctrine:tenet_hellenic_syncretism_pagan_only = { is_in_list = selected_doctrines }
 				}
 			}
 		}
 
 		parameters = {
-			hostility_override_special_doctrine_is_hellenic_faith = 1
+			hostility_override_special_doctrine_is_hellenic_faith = 2
 			hellenism_syncretic_actor_opinion_active = yes
-			opinion_of_hellenism_syncretic_recipient_opinion_active = 10 #Sync this to syncretic_mutual_opinion_bonus_value
+			opinion_of_hellenism_syncretic_recipient_opinion_active = 30 #Sync this to syncretic_mutual_opinion_bonus_value
 		}
 
 		traits = {
@@ -3189,8 +3185,9 @@
 					doctrine:tenet_islamic_syncretism = { is_in_list = selected_doctrines }
 					doctrine:tenet_jewish_syncretism = { is_in_list = selected_doctrines }
 					doctrine:tenet_hellenic_syncretism = { is_in_list = selected_doctrines }
-					doctrine:tenet_egyptian_syncretism = { is_in_list = selected_doctrines }
 					doctrine:tenet_sinitic_syncretism = { is_in_list = selected_doctrines }
+					doctrine:tenet_egyptian_syncretism_pagan_only = { is_in_list = selected_doctrines }
+					doctrine:tenet_hellenic_syncretism_pagan_only = { is_in_list = selected_doctrines }
 				}
 			}
 		}
@@ -3225,54 +3222,6 @@
 		}
 	}
 	
-	tenet_egyptian_syncretism = {
-		icon = eye_of_horus
-		is_shown = {
-			has_doctrine = pagan_hostility_doctrine
-			NOT = { religion = religion:kushitism_religion }
-		}
-		
-		can_pick = {
-			custom_description = {
-				text = incompatible_tenet_other_syncretism_trigger
-				NOR = {
-					doctrine:tenet_eastern_syncretism = { is_in_list = selected_doctrines }
-					doctrine:tenet_unreformed_syncretism = { is_in_list = selected_doctrines }
-					doctrine:tenet_christian_syncretism = { is_in_list = selected_doctrines }
-					doctrine:tenet_islamic_syncretism = { is_in_list = selected_doctrines }
-					doctrine:tenet_jewish_syncretism = { is_in_list = selected_doctrines }
-					doctrine:tenet_hellenic_syncretism = { is_in_list = selected_doctrines }
-					doctrine:tenet_zoroastrian_syncretism = { is_in_list = selected_doctrines }
-					doctrine:tenet_sinitic_syncretism = { is_in_list = selected_doctrines }
-				}
-			}
-		}
-		
-		piety_cost = {
-			if = {
-				limit = { has_doctrine = pagan_hostility_doctrine }
-				value = faith_tenet_cost_low
-			}
-			else = { value = faith_tenet_cost_mid }
-
-			# Multiplier for keeping same tenet
-			if = {
-				limit = { has_doctrine = tenet_egyptian_syncretism }
-				multiply = faith_unchanged_doctrine_cost_mult
-			}
-		}
-		
-		parameters = {
-			hostility_override_special_doctrine_is_egyptian_faith = 1
-			egyptian_syncretic_actor_opinion_active = yes
-			opinion_of_egyptian_syncretic_recipient_opinion_active = 10 #Sync this to syncretic_mutual_opinion_bonus_value
-		}
-		traits = {
-			virtues = { honest temperate }
-			sins = { deceitful greedy }
-		}
-	}
-
 	tenet_sinitic_syncretism = {
 		icon = core_tenet_harmonious_society
 		piety_cost = {
@@ -3327,7 +3276,8 @@
 					doctrine:tenet_jewish_syncretism = { is_in_list = selected_doctrines }
 					doctrine:tenet_hellenic_syncretism = { is_in_list = selected_doctrines }
 					doctrine:tenet_zoroastrian_syncretism = { is_in_list = selected_doctrines }
-					doctrine:tenet_egyptian_syncretism = { is_in_list = selected_doctrines }
+					doctrine:tenet_egyptian_syncretism_pagan_only = { is_in_list = selected_doctrines }
+					doctrine:tenet_hellenic_syncretism_pagan_only = { is_in_list = selected_doctrines }
 				}
 			}
 		}
@@ -3342,6 +3292,95 @@
 		traits = {
 			virtues = { honest }
 			sins = { wrathful }
+		}
+	}
+	tenet_egyptian_syncretism_pagan_only = {
+		icon = eye_of_horus
+		is_shown = {
+			has_doctrine = pagan_hostility_doctrine
+			NOT = { religion = religion:kushitism_religion }
+		}
+		
+		can_pick = {
+			custom_description = {
+				text = incompatible_tenet_other_syncretism_trigger
+				NOR = {
+					doctrine:tenet_eastern_syncretism = { is_in_list = selected_doctrines }
+					doctrine:tenet_unreformed_syncretism = { is_in_list = selected_doctrines }
+					doctrine:tenet_christian_syncretism = { is_in_list = selected_doctrines }
+					doctrine:tenet_islamic_syncretism = { is_in_list = selected_doctrines }
+					doctrine:tenet_jewish_syncretism = { is_in_list = selected_doctrines }
+					doctrine:tenet_hellenic_syncretism = { is_in_list = selected_doctrines }
+					doctrine:tenet_zoroastrian_syncretism = { is_in_list = selected_doctrines }
+					doctrine:tenet_sinitic_syncretism = { is_in_list = selected_doctrines }
+					doctrine:tenet_hellenic_syncretism_pagan_only = { is_in_list = selected_doctrines }
+				}
+			}
+		}
+		
+		piety_cost = {
+			if = {
+				limit = { has_doctrine = pagan_hostility_doctrine }
+				value = faith_tenet_cost_low
+			}
+			else = { value = faith_tenet_cost_mid }
+
+			# Multiplier for keeping same tenet
+			if = {
+				limit = { has_doctrine = tenet_egyptian_syncretism_pagan_only }
+				multiply = faith_unchanged_doctrine_cost_mult
+			}
+		}
+		
+		parameters = {
+			hostility_override_special_doctrine_is_egyptian_faith = 1
+			egyptian_syncretic_actor_opinion_active = yes
+			opinion_of_egyptian_syncretic_recipient_opinion_active = 10 #Sync this to syncretic_mutual_opinion_bonus_value
+		}
+		traits = {
+			virtues = { honest temperate }
+			sins = { deceitful greedy }
+		}
+	}
+
+	tenet_hellenic_syncretism_pagan_only = {
+		icon = core_tenet_household_gods
+
+		piety_cost = {
+			value = faith_tenet_cost_mid
+
+			# Multiplier for keeping same tenet
+			if = {
+				limit = { has_doctrine = tenet_hellenic_syncretism_pagan_only }
+				multiply = faith_unchanged_doctrine_cost_mult
+			}
+		}
+
+		is_shown = {
+			NOT = { religion = religion:hellenism_religion }
+			has_doctrine = pagan_hostility_doctrine
+		}
+		can_pick = {
+			custom_description = {
+				text = incompatible_tenet_other_syncretism_trigger
+				NOR = {
+					doctrine:tenet_eastern_syncretism = { is_in_list = selected_doctrines }
+					doctrine:tenet_unreformed_syncretism = { is_in_list = selected_doctrines }
+					doctrine:tenet_christian_syncretism = { is_in_list = selected_doctrines }
+					doctrine:tenet_islamic_syncretism = { is_in_list = selected_doctrines }
+					doctrine:tenet_jewish_syncretism = { is_in_list = selected_doctrines }
+					doctrine:tenet_zoroastrian_syncretism = { is_in_list = selected_doctrines }
+					doctrine:tenet_sinitic_syncretism = { is_in_list = selected_doctrines }
+					doctrine:tenet_egyptian_syncretism_pagan_only = { is_in_list = selected_doctrines }
+				}
+			}
+		}
+
+		parameters = {}
+
+		traits = {
+			virtues = { athletic }
+			sins = { arbitrary greedy }
 		}
 	}
 

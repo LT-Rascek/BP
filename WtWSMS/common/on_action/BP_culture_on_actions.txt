@@ -4,7 +4,7 @@
 on_culture_created = {
 	on_actions = {
 		bp_apply_special_hybrid_cases
-		bp_devolve_certain_traditions
+		bp_remove_certain_innovations
 	}
 }
 
@@ -33,27 +33,28 @@ bp_apply_special_hybrid_cases = {
 	}
 }
 
-bp_devolve_certain_traditions = {
+bp_remove_certain_innovations = {
 	effect = {
 		if = {
-			limit = { has_cultural_tradition = tradition_colonizers }
-			remove_culture_tradition = tradition_colonizers
-			add_culture_tradition = tradition_romance_culture
+			limit = {
+				NOT = { has_cultural_parameter = unlock_innovation_roman_civil }
+				has_innovation = innovation_roman_administration
+			}
+			remove_innovation = innovation_roman_administration
 		}
 		if = {
-			limit = { has_cultural_tradition = tradition_colonizers_non_dlc }
-			remove_culture_tradition = tradition_colonizers_non_dlc
-			add_culture_tradition = tradition_romance_culture_non_dlc
+			limit = {
+				NOT = { has_cultural_parameter = unlock_innovation_roman_civil }
+				has_innovation = innovation_roman_concrete
+			}
+			remove_innovation = innovation_roman_concrete
 		}
 		if = {
-			limit = { has_cultural_tradition = tradition_hellenizers }
-			remove_culture_tradition = tradition_hellenizers
-			add_culture_tradition = tradition_hellenic_culture
-		}
-		if = {
-			limit = { has_cultural_tradition = tradition_hellenizers_non_dlc }
-			remove_culture_tradition = tradition_hellenizers_non_dlc
-			add_culture_tradition = tradition_hellenic_culture_non_dlc
+			limit = {
+				NOT = { has_cultural_parameter = unlock_innovation_roman_civil }
+				has_innovation = innovation_legal_codex
+			}
+			remove_innovation = innovation_legal_codex
 		}
 	}
 }
