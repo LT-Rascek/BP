@@ -99,6 +99,27 @@ Casus Belli:
 - Players with Sub-Roman government can now attack other Sub-Roman (and potentially Roman) realms with a similar sort of De Jure CB
 - Odoacer's Takeover War will cede land to the Visigoths and gain land from the Vandals and secure truces, so long as the Visigoths and Vandals are AI players, respectively
 
+Traditions:
+- Removed "Latin Succession" Tradition, at has been subsumed into "Roman Succession" tradition
+- Redubbed Vanilla "Roman Ceremonies" to be "Byzantine Ceremonies"
+- Changed Traditions:
+   - "Roman Succession" no longer has physical disfigurement blocking inheritance
+   - "Colonizers" looses its Monolithic cultural aspects to be less Roman-specific, emphasizing ease of Hybridization
+   - "Romance Culture" acquires some aspects of "Cultivated Sophistication"
+- Added New Roman-Centric Traditions:
+   - Added "Roman Politics" Tradition:
+      - Similar to "Palace Politics" tradition
+      - Legal Tradition
+      - Increases frequency of disloyal characters
+      - Unlocks Roman Civil Innovations and Roman Restoration
+      - Unlocks Triumphs
+      - Vassal Limit: +30 and Monthly Influence: +10%
+   - Added "Roman Ceremonies" Tradition:
+      - Similar to "Roman Ceremonies" from Vanilla
+      - Enables Chariot Races
+      - Certain traits provide public opinion bonuses and maluses
+      - County Opinion: -10
+
 Culture:
 - Added a "Caucasian-Anatolian" Heritage Continua for Anatolian, Byzantine, and Caucasian cultures, preventing hybridization between those cultures
 - Touched up Visigothic, Suebian, Vandalic, Ostrogothic, and Burgundian culture histories, making them less advanced
@@ -108,6 +129,19 @@ Culture:
 - Culture Changes:
    - Taifal culture COA frame is Chernyakhov instead of Sarmatian, uses only Samaritan name list
    - Burgundian Culture has "Family Business" Tradition
+- Latin Culture Overhaul in light of DLC:
+   - Roman: Adds "Roman Politics"/"Roman Succession", Adds "Romance Culture", Adds "Roman Ceremonies" (with "Roads to Power"), Removed "Legalistic"
+   - Romano-Raetian: Adds "Roman Politics"/"Roman Succession", Adds "Western Roman Military"/"Western Roman Legacy", Adds "Roman Ceremonies" (with "Roads to Power")
+   - Romano-Noric: Adds "Roman Politics"/"Roman Succession", Adds "Western Roman Military"/"Western Roman Legacy"
+   - Romano-Gallic: Adds "Roman Politics"/"Roman Succession", Adds "Western Roman Military"/"Western Roman Legacy", Adds "Roman Ceremonies" (with "Roads to Power")
+   - Romano-British: Adds "Roman Politics"/"Roman Succession", Adds "Western Roman Military"/"Western Roman Legacy", Adds "Roman Ceremonies" (with "Roads to Power"), Removes "Concubines"
+   - Romano-African: Adds "Roman Politics"/"Latin Succession", Adds "Western Roman Military"/"Western Roman Legacy", Adds "Roman Ceremonies" (with "Roads to Power"), Removes "Dryland Dwellers"
+   - Romano-Hispanic: Adds "Roman Politics"/"Roman Succession", Adds "Western Roman Military"/"Western Roman Legacy", Adds "Roman Ceremonies" (with "Roads to Power"), Removes "Agrarian"
+   - Romano-Thracian: Adds "Roman Politics"/"Roman Succession", Adds "Western Roman Military"/"Western Roman Legacy", Adds "Roman Ceremonies" (with "Roads to Power")
+   - Romano-Illyrian: Adds "Roman Politics"/"Roman Succession", Adds "Western Roman Military"/"Western Roman Legacy"
+   - Romano-Pannonia: Adds "Roman Politics"/"Roman Succession", Adds "Western Roman Military"/"Western Roman Legacy"
+   - Romano-Dacian: Adds "Roman Politics"/"Roman Succession", Adds "Western Roman Military"/"Western Roman Legacy"
+   - Romano-Aramean: Adds "Roman Politics"/"Roman Succession", Adds "Western Roman Military"/"Western Roman Legacy", Removed "Legalistic", Adds "Strong Believers"
 - Fashion and Dynasty Frames:
    - Anatolian cultures use Dacian clothing Now
    - Corduenians don't have Scythian clothing
@@ -173,6 +207,7 @@ GFX:
 - Updated GFX for a number of faiths
 
 Tweaks:
+- "Roman Nostalgia" looses its culture-related bonuses
 - Roman Senate recognition legitimacy values increased in most cases
 - All WtWSMS use either gold or treasury as is appropriate
 - House Power only suffers a state faith malus if the state faith considers your faith to be Astray or worse
