@@ -4,7 +4,6 @@
 on_culture_created = {
 	on_actions = {
 		bp_apply_special_hybrid_cases
-		bp_devolve_certain_traditions
 	}
 }
 
@@ -29,21 +28,6 @@ bp_apply_special_hybrid_cases = {
 				hybrid_has_new_namelist_trigger = yes
 			}
 			scope:founder = { trigger_event = bp_culture_emergence_events.1001 }
-		}
-	}
-}
-
-bp_devolve_certain_traditions = {
-	effect = {
-		if = {
-			limit = { has_cultural_tradition = tradition_hellenizers }
-			remove_culture_tradition = tradition_hellenizers
-			add_culture_tradition = tradition_hellenic_culture
-		}
-		if = {
-			limit = { has_cultural_tradition = tradition_hellenizers_non_dlc }
-			remove_culture_tradition = tradition_hellenizers_non_dlc
-			add_culture_tradition = tradition_hellenic_culture_non_dlc
 		}
 	}
 }

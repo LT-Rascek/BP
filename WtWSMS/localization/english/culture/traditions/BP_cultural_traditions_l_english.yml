@@ -115,9 +115,9 @@
  culture_parameter_removed_upon_adopting_reformed_faith: "If the [culture_head|E] does not have an [GetFaithDoctrine('unreformed_faith_doctrine').GetBaseName] faith or if a majority of the [counties|E] of this culture are not of an [GetFaithDoctrine('unreformed_faith_doctrine').GetBaseName] faith, this tradition is removed."
  culture_parameter_right_to_rule_feudal: "$doctrine_parameter_right_to_rule_feudal$"
  culture_parameter_right_to_rule_sassanid: "$doctrine_parameter_right_to_rule_sassanid$"
- culture_parameter_roman_cultural_trait_bonus_malus: "The [GetTrait('roman_nostalgia').GetName( GetNullCharacter )] and [GetTrait('augustus').GetName( GetNullCharacter )] [traits|E] give bonuses"
+ culture_parameter_roman_cultural_trait_bonus_malus: "Certain [traits|E] provide same culture opinion bonuses or maluses"
  culture_parameter_roman_legal_traits_are_valued: "Roman legal  [traits|E], such as [GetTrait('senator_east').GetName( GetNullCharacter )] and [GetTrait('former_consul_west').GetName( GetNullCharacter )] give bonuses"
- culture_parameter_roman_popular_opinion_traits: "Certain traits like [GetTrait('august').GetName( GetNullCharacter )] and [GetTrait('charioteer').GetName( GetNullCharacter )] [traits|E] give popular opinion bonuses\n$EFFECT_LIST_BULLET$Certain traits like [GetTrait('arbitrary').GetName( GetNullCharacter )] and [GetTrait('raider').GetName( GetNullCharacter )] [traits|E] give popular opinion maluses"
+ culture_parameter_roman_popular_opinion_traits: "Certain traits like [GetTrait('august').GetName( GetNullCharacter )] and [GetTrait('viking').GetName( GetNullCharacter )] [traits|E] give popular opinion bonuses and maluses"
  culture_parameter_same_religion_inheritance_only: "$same_religion_only_law_effects$"
  culture_parameter_shared_assyro_aramean_traditions: "Has a #P +[EmptyScope.ScriptValue('autochthon_baseline_acceptance_value')]#! [cultural_acceptance|E] baseline with other cultures with $tradition_aramean_traditions_name$ or $tradition_assyrian_traditions_name$"
  culture_parameter_sieging_counties_may_reduce_development: "Occupying [counties|E] may reduce [county_development|E]\n$TAB$$EFFECT_LIST_BULLET$#weak This is more likely at low development#!\n$TAB$$EFFECT_LIST_BULLET$#weak This is more likely if only tribal holdings are in the [county|E]#!"
@@ -224,7 +224,7 @@
  
  #### Ritual ####
  tradition_unblemished_rulership_name: "Unblemished Rulership"
- tradition_unblemished_rulership_desc: "Physical imperfection is a sign of disfavour by the heavens and those inflicted cannot be allowed to rule."
+ tradition_unblemished_rulership_desc: "Physical imperfection is a sign of disfavor by the heavens and those inflicted cannot be allowed to rule."
  
  #### Combat ####
  tradition_mercenary_army_name: "Mercenary Army"
@@ -235,16 +235,6 @@
  tradition_marauders_non_dlc_desc: "$tradition_marauders_desc$"
  
  #### Societal #####
- #Hellenizers (Hellenic Culture)
- tradition_hellenizers_name: "Hellenizers"
- tradition_hellenizers_desc: "This culture follows the long custom of Hellenizing the #italic barbaroi#! and as such is adept at spreading the virtues of its civilization to other cultures, even in the face of resistance. It does encourage a degree of cultural uniformity, however."
- tradition_hellenizers_non_dlc_name: "$tradition_hellenizers_name$"
- tradition_hellenizers_non_dlc_desc: "$tradition_hellenizers_desc$"
- #Hellenic Culture (Greek-Derived Culture)
- tradition_hellenic_culture_name: "Hellenic Culture"
- tradition_hellenic_culture_desc: "Hellenic Culture"
- tradition_hellenic_culture_non_dlc_name: "$tradition_hellenic_culture_name$"
- tradition_hellenic_culture_non_dlc_desc: "$tradition_hellenic_culture_desc$"
  #Zealous Pagans (Germanics, &c.)
  tradition_zealous_pagans_name: "Zealous Pagans"
  tradition_zealous_pagans_desc: "This culture has strongly tied its unreformed religious beliefs into its cultural practices, making the two practically indistinguishable. Any attempt at conversion, cultural or religious, will be strongly resisted."
@@ -273,6 +263,9 @@
  #Roman Politics
  tradition_roman_politics_name: "Roman Politics"
  tradition_roman_politics_desc: "The ancient politics of Rome run deep in this culture, emphasizing rhetoric and politicking within the halls of power. It breeds many capable politicians, scheming for their own advantages."
+ #Byzantine Politics
+ tradition_byzantine_politics_name: "Eastern Roman Politics"
+ tradition_byzantine_politics_desc: "The ancient politics of Rome run deep in this culture, emphasizing rhetoric and politicking within the halls of power, yet influenced further by the long history of the Greek Civilization. It breeds many capable politicians, scheming for their own advantages."
  #Roman Ceremonies
  tradition_roman_ceremonies_name: "Roman Ceremonies"
  tradition_roman_ceremonies_desc: "The ceremonies of ancient Rome are deeply embedded with the public of this culture. The masses expect both entertainment and ceremonies to be provided at the expense of the state and its rich citizens, and have certain expectations for those that rule them."
@@ -284,9 +277,15 @@
  #Colonizers (Roman Culture)
  tradition_colonizers_name: "Colonizers"
  tradition_colonizers_desc: "This culture has a tradition of establishing colonies in new lands to solidify control over the conquered peoples. It promotes cultural fusion with the conquered people and development of the provinces, but does little to support actual acceptance of other cultures."
+ #Hellenizers (Hellenic Culture)
+ tradition_hellenizers_name: "Hellenizers"
+ tradition_hellenizers_desc: "This culture follows the long custom of Hellenizing the #italic barbaroi#! and as such is adept at spreading the virtues of its civilization to other cultures, even in the face of resistance. It does encourage a degree of cultural uniformity, however."
  #Romance Culture
  tradition_romance_culture_name: "Romance Culture"
  tradition_romance_culture_desc: "This culture is closely associated with the social traditions of the Roman people on account of their long colonization by the Romans. Despite whatever objections may exist, they consider themselves to be truly Roman."
+ #Hellenic Culture (Greek-Derived Culture)
+ tradition_hellenic_culture_name: "Hellenic Culture"
+ tradition_hellenic_culture_desc: "This culture is closely associated with the social traditions of the Greek people on account of their long habitation and acculturation by the Greeks. Despite whatever objections may exist, they consider themselves to be truly Greek."
  tradition_romance_culture_non_dlc_name: "$tradition_romance_culture_name$"
  tradition_romance_culture_non_dlc_desc: "$tradition_romance_culture_desc$"
  impact_of_traditions: "Tradition Impact"
