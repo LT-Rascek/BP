@@ -1,0 +1,94 @@
+BP_roman_heritage_legacy_1 = { #Roman Nostalgia
+	legacy = BP_roman_heritage_legacy_track
+	
+	can_be_picked = {}
+	effect = {}
+	character_modifier = {
+		monthly_prestige_gain_per_legitimacy_level_mult = 0.02
+		monthly_influence_mult = 0.05
+		legitimacy_loss_mult = -0.05
+	}
+	
+	traits = {}
+	
+	ai_chance = {
+		value = 11
+		if = {
+			limit = { can_start_new_legacy_track_trigger = no }
+			multiply = 0
+		}
+		#AI will do this _only_ if they control a **True Roman Empire** or a claim to the Roman Empires
+		if = {
+			limit = {
+				NAND = {
+					has_title = title:h_roman_empire
+					has_title = title:h_western_roman_empire
+					has_title = title:h_eastern_roman_empire
+					
+					has_claim_on = title:h_roman_empire
+					has_claim_on = title:h_western_roman_empire
+					has_claim_on = title:h_eastern_roman_empire
+				}
+			}
+			multiply = 0
+		}
+	}
+}
+
+BP_roman_heritage_legacy_2 = { #Roman Architecture
+	legacy = BP_roman_heritage_legacy_track
+	
+	can_be_picked = {}
+	effect = {}
+	character_modifier = {
+		domicile_build_speed = -0.05
+		build_speed = -0.05
+		domicile_build_gold_cost = -0.05
+		build_gold_cost = -0.05
+	}
+	
+	traits = {}
+}
+
+BP_roman_heritage_legacy_3 = { #Roman Politics
+	legacy = BP_roman_heritage_legacy_track
+	
+	can_be_picked = {}
+	effect = {}
+	character_modifier = {
+		diplomacy_per_prestige_level = 1
+		intrigue_per_influence_level = 1
+	}
+	
+	traits = {}
+}
+
+BP_roman_heritage_legacy_4 = { #Roman Law
+	legacy = BP_roman_heritage_legacy_track
+	
+	can_be_picked = {}
+	effect = {
+		custom_description_no_bullet = { text = BP_roman_heritage_legacy_4_succession_effect } #DONE
+	}
+	character_modifier = {
+		powerful_vassal_opinion = 5
+		vassal_limit = 10
+	}
+	
+	traits = {}
+}
+
+BP_roman_heritage_legacy_5 = { #Roma Est Aeterna
+	legacy = BP_roman_heritage_legacy_track
+	
+	can_be_picked = {}
+	effect = {
+		custom_description_no_bullet = { text = BP_roman_heritage_legacy_5_restoration_effect } #DONE
+		custom_description_no_bullet = { text = BP_roman_heritage_legacy_5_government_effect } #DONE
+	}
+	character_modifier = {
+		character_max_influence_level_add = 1
+	}
+	
+	traits = {}
+}

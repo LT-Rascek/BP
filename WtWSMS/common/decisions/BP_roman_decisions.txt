@@ -477,7 +477,10 @@ restore_western_roman_empire = {
 		NOT = { exists = title:h_western_roman_empire.holder }
 		NOT = { exists = title:h_roman_empire.holder }
 		NOT = { exists = title:h_eastern_roman_empire.holder } #They can reform directly
-		culture = { has_ability_to_reform_rome_directly_trigger = yes }
+		OR = {
+			culture = { has_ability_to_reform_rome_directly_trigger = yes }
+			has_dynasty_perk = BP_roman_heritage_legacy_5
+		}
 	}
 	
 	is_valid = {
@@ -588,7 +591,10 @@ restore_eastern_roman_empire = {
 		NOT = { exists = title:h_eastern_roman_empire.holder }
 		NOT = { exists = title:h_western_roman_empire.holder }
 		NOT = { exists = title:h_roman_empire.holder }
-		culture = { has_ability_to_reform_rome_directly_trigger = yes }
+		OR = {
+			culture = { has_ability_to_reform_rome_directly_trigger = yes }
+			has_dynasty_perk = BP_roman_heritage_legacy_5
+		}
 	}
 	
 	is_valid = {
