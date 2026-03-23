@@ -1188,23 +1188,21 @@ BP_set_armies_476_feb_DLC = {
 	effect = {
 		title:h_western_roman_empire.holder = {
 			title:h_western_roman_empire = { every_title_maa_regiment = { destroy_maa_regiment = yes } }
+			every_maa_regiment = { destroy_maa_regiment = yes }
 			create_maa_regiment = {
 				type = praetorian
 				check_can_recruit = no
 				size = 3
-				title = title:h_western_roman_empire
 			}
 			create_maa_regiment = {
 				type = light_footmen
 				check_can_recruit = no
 				size = 3
-				title = title:h_western_roman_empire
 			}
 			create_maa_regiment = {
-				type = armored_horsemen
+				type = light_horsemen
 				check_can_recruit = no
-				size = 2
-				title = title:h_western_roman_empire
+				size = 1
 			}
 		}
 		title:e_magister_military_wre.holder = {
@@ -1221,7 +1219,7 @@ BP_set_armies_476_feb_DLC = {
 				title = title:e_magister_military_wre
 			}
 			create_maa_regiment = {
-				type = armored_horsemen
+				type = light_horsemen
 				check_can_recruit = no
 				size = 2
 				title = title:e_magister_military_wre
@@ -1278,7 +1276,7 @@ BP_set_armies_476_feb_DLC = {
 				title = title:e_magister_military_ere
 			}
 			create_maa_regiment = {
-				type = armored_horsemen
+				type = light_horsemen
 				check_can_recruit = no
 				size = 5
 				title = title:e_magister_military_ere
