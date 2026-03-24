@@ -55,6 +55,8 @@
 	mechanic_type = feudal
 	
 	color = hsv{ 0.333 1.000 0.250 } #Brightness reduced for more contrast with clan
+	realm_mask_offset = { 0.0 0.06 }
+	realm_mask_scale = { 0.88 0.88 }
 }
 
 tribal_government = {
@@ -111,6 +113,8 @@ tribal_government = {
 	}
 	
 	color = hsv{ 0.02 0.75 0.36 }
+	realm_mask_offset = { 0.0 0.0 }
+	realm_mask_scale = { 0.96 0.96 }
 }
 
 ### Brief: nomad_government
@@ -195,6 +199,8 @@ nomad_government = {
 
 	# These flags only exist for loc and in-game descriptions
 	color = { 255 127 80 }
+	realm_mask_offset = { 0.0 0.12 }
+	realm_mask_scale = { 0.8 0.8 }
 }
 
 ### Brief: herder_government
@@ -249,4 +255,6 @@ herder_government = {
 	is_mechanic_type_default = yes
 	
 	color = { 235 213 52 }
+	realm_mask_offset = { 0.0 0.12 }
+	realm_mask_scale = { 0.8 0.8 }
 }
