@@ -3,8 +3,6 @@
 ##### FIXME: Make portraits code et al. for heritages match the style of the language code
 ##### FIXME: Generalization of heritage shift localization
 
-##### TODO (Immediate): Gate announcement events to rulers in diplo range only
-##### TODO (Immediate): Romano-Gothic/Romano-Vandalic variant?
 ##### TODO (Immediate): Venetian, Pannonian-Romance namelist from WtWSMS.
 
 #Design Notes:
@@ -14,6 +12,38 @@
 ##### Language
 
 ##### TRIGGERS
+scripted_trigger ruler_is_valid_to_hear_about_culture_shift_trigger = { #Scope is ruler in question
+	is_ai = no #Otherwise hangs
+	OR = {
+		#Same Language/Heritage always tells your
+		this.culture = { $HAS_SAME_LANGUAGE_HERITAGE_TRIGGER$ = scope:shift_culture }
+		#Adjacent to your realm
+		any_realm_county = { any_neighboring_county = { this.culture = scope:shift_culture } }
+		#Is a small but close culture
+		AND = {
+			scope:shift_culture = { any_culture_county = { count <= 5 } }
+			scope:shift_culture = { any_culture_county = { squared_distance < 100000 } }
+		}
+		#Is a medium culture
+		AND = {
+			scope:shift_culture = { any_culture_county = { count <= 10 } }
+			scope:shift_culture = { any_culture_county = { squared_distance < 500000 } }
+		}
+		#Is a large culture
+		AND = {
+			scope:shift_culture = { any_culture_county = { count <= 15 } }
+			scope:shift_culture = { any_culture_county = { squared_distance < 1000000 } }
+		}
+		#Is a huge culture
+		AND = {
+			scope:shift_culture = { any_culture_county = { count <= 20 } }
+			scope:shift_culture = { any_culture_county = { squared_distance < 5000000 } }
+		}
+		#Gargantuan cultures you always hear about
+		scope:shift_culture = { any_culture_county = { count >= 21 } }
+	}
+}
+
 scripted_trigger has_proto_romance_language_trigger = {
 	OR = {
 		$CULTURE$ = { has_cultural_pillar = language_proto_ibero_romance }
@@ -682,7 +712,11 @@ bp_heritage_linguistic_drift.0001 = {
 		else = {
 			shift_language_effect = yes
 			every_ruler = { #Informational event
-				limit = { is_ai = no }
+				limit = {
+					ruler_is_valid_to_hear_about_culture_shift_trigger = {
+						HAS_SAME_LANGUAGE_HERITAGE_TRIGGER = has_same_culture_language
+					}
+				}
 				trigger_event = { id = bp_heritage_linguistic_drift.0003 }
 			}
 		}
@@ -718,9 +752,8 @@ bp_heritage_linguistic_drift.0002 = {
 		name = bp_heritage_linguistic_drift.0002.accept
 		every_ruler = {
 			limit = {
-				OR = {
-					this = { in_diplomatic_range = root }
-					this.culture = { has_same_culture_language = scope:shift_culture }
+				ruler_is_valid_to_hear_about_culture_shift_trigger = {
+					HAS_SAME_LANGUAGE_HERITAGE_TRIGGER = has_same_culture_language
 				}
 				NOT = { this = root }
 			}
@@ -986,7 +1019,11 @@ bp_heritage_linguistic_drift.0101 = {
 		else = {
 			shift_heritage_effect = yes
 			every_ruler = { #Informational event
-				limit = { is_ai = no }
+				limit = {
+					ruler_is_valid_to_hear_about_culture_shift_trigger = {
+						HAS_SAME_LANGUAGE_HERITAGE_TRIGGER = has_same_culture_heritage
+					}
+				}
 				trigger_event = { id = bp_heritage_linguistic_drift.0103 }
 			}
 		}
@@ -1023,9 +1060,8 @@ bp_heritage_linguistic_drift.0102 = {
 		name = bp_heritage_linguistic_drift.0102.accept
 		every_ruler = {
 			limit = {
-				OR = {
-					this = { in_diplomatic_range = root }
-					this.culture = { has_same_culture_language = scope:shift_culture }
+				ruler_is_valid_to_hear_about_culture_shift_trigger = {
+					HAS_SAME_LANGUAGE_HERITAGE_TRIGGER = has_same_culture_heritage
 				}
 				NOT = { this = root }
 			}
