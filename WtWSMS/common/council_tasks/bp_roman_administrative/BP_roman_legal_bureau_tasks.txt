@@ -2,10 +2,24 @@
 task_promote_culture_roman = { #TODO: make learning-based
 	position = councillor_legal_bureau_director
 	clone = task_promote_culture
+
+	asset = {
+		icon = "gfx/interface/icons/council_task_types/task_culture_minister.dds"
+		background = "gfx/interface/buttons/button_round_bg.dds"
+		frame = "gfx/interface/buttons/button_round_frame.dds"
+		glow = "gfx/particles/halo.dds"
+	}
 }
 task_increase_control_roman = { #TODO: make learning-based
 	position = councillor_legal_bureau_director
 	clone = task_increase_control
+	
+	asset = {
+		icon = "gfx/interface/icons/court_position_task_types/eparch_enforce_public_order.dds"
+		background = "gfx/interface/buttons/button_round_bg.dds"
+		frame = "gfx/interface/buttons/button_round_frame.dds"
+		glow = "gfx/particles/halo.dds"
+	}
 }
 task_hear_appeals = { #Clone of Domestic Affairs; TODO: Make unique, provide vassal opinion
 	default_task = yes
@@ -14,7 +28,7 @@ task_hear_appeals = { #Clone of Domestic Affairs; TODO: Make unique, provide vas
 	task_progress = task_progress_infinite
 
 	asset = {
-		icon = "gfx/interface/icons/council_task_types/task_domestic_affairs.dds"
+		icon = "gfx/interface/icons/court_position_task_types/grand_preceptor_court_position_task_propagate_civic_virtue.dds"
 		background = "gfx/interface/buttons/button_round_bg.dds"
 		frame = "gfx/interface/buttons/button_round_frame.dds"
 		glow = "gfx/particles/halo.dds"
