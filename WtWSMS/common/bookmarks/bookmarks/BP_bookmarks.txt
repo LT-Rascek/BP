@@ -19,8 +19,19 @@
 		history_id = 96054
 		position = { 775 575 }
 		
-		animation = personality_content
+		animation = prayer
 		
+		character = {
+			name = "bm_476_adventurers_odoacer"
+			relation = "BOOKMARK_RELATION_ENEMY"
+			type = male
+			birth = 435.1.2
+			culture = skirian
+			religion = arian
+			history_id = 55
+
+			animation = map_rage
+		}
 		# Orestes, his father, regent and power behind the throne, ID: 96055
 		character = {
 			name = "bm_476_wre_romulus_augustulus_alt_orestes"
@@ -31,7 +42,7 @@
 			culture = romano_pannonian
 			religion = nicene
 			history_id = 96055
-			animation = worry
+			animation = stressed_teacher
 		}
 	}
 	# Julius Nepos, Penultimate Western Roman Emperor (Dalmatia) ID: 175110
@@ -50,6 +61,16 @@
 		position = { 1100 250 }
 		
 		animation = shame
+		character = {
+			name = "bm_476_wre_romulus_augustulus"
+			relation = "BOOKMARK_RELATION_RIVAL"
+			type = male
+			birth = 468.1.1
+			culture = roman
+			religion = nicene
+			history_id = 96054
+			animation = war_over_loss
+		}
 	}
 	#Syagrius (Soissons) ID: 19
 	character = {
@@ -64,9 +85,9 @@
 		religion = gallican_church
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
 		history_id = 19
-		position = { 400 450 }
+		position = { 400 380 }
 		
-		animation = paranoia
+		animation = personality_dishonorable
 	}
 	# Emperor Basilicus ID: 145226
 	character = {
@@ -83,7 +104,17 @@
 		history_id = 145226
 		position = { 1100 775 }
 		
-		animation = personality_dishonorable
+		animation = personality_greedy
+		character = {
+			name = "bm_476_adventurers_emperor_zeno"
+			relation = "BOOKMARK_RELATION_ENEMY"
+			type = male
+			birth = 425.1.1
+			culture = isaurian
+			religion = nicene
+			history_id = 70515
+			animation = dismissal
+		}
 	}
 }
 bm_476_western_barbarians = {
@@ -105,9 +136,9 @@ bm_476_western_barbarians = {
 		religion = arian
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
 		history_id = 30
-		position = { 550 500 }
+		position = { 530 470 }
 		
-		animation = personality_honorable
+		animation = survey
 	}
 	#Suebia
 	character = {
@@ -123,7 +154,7 @@ bm_476_western_barbarians = {
 		religion = arian
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_HARD"
 		history_id = 1301275
-		position = { 250 275 }
+		position = { 250 350 }
 		
 		animation = personality_zealous
 	}
@@ -140,9 +171,9 @@ bm_476_western_barbarians = {
 		religion = arian
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
 		history_id = 20
-		position = { 900 350 }
+		position = { 820 380 }
 		
-		animation = personality_bold
+		animation = personality_callous
 	}
 	# Gaisaric and Huneric
 	character = {
@@ -157,9 +188,9 @@ bm_476_western_barbarians = {
 		religion = arian
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_EASY"
 		history_id = 93
-		position = { 1200 825 }
+		position = { 1050 650 }
 
-		animation = personality_content
+		animation = dismissal
 
 		# Huneric, the likely heir
 		character = {
@@ -171,7 +202,7 @@ bm_476_western_barbarians = {
 			culture = vandalic
 			religion = arian
 			history_id = 92
-			animation = worry
+			animation = rage
 		}
 	}
 	# Childeric, Father of Clovis, (Salian Franks) ID: 39
@@ -189,7 +220,7 @@ bm_476_western_barbarians = {
 		history_id = 39
 		position = { 450 125 }
 		
-		animation = happiness
+		animation = menacing
 		
 		# Clovis, the future king of all Franks, ID: 40
 		character = {
@@ -201,7 +232,7 @@ bm_476_western_barbarians = {
 			culture = old_frankish
 			religion = frankish_pagan
 			history_id = 40
-			animation = personality_bold
+			animation = personality_forgiving
 		}
 	}
 	# Arbogast
@@ -219,7 +250,7 @@ bm_476_western_barbarians = {
 		history_id = 144671
 		position = { 900 125 }
 
-		animation = personality_bold
+		animation = personality_honorable
 	}
 	# Masties
 	character = {
@@ -234,9 +265,19 @@ bm_476_western_barbarians = {
 		religion = african_church
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_HARD"
 		history_id = 36141
-		position = { 1050 650 }
+		position = { 1200 825 }
 
-		animation = personality_bold
+		animation = waki_gamae
+		character = {
+			name = "bm_476_western_barbarians_gaisaric"
+			relation = "BOOKMARK_RELATION_SUZERAIN"
+			type = male
+			birth = 389.1.1
+			culture = vandalic
+			religion = arian
+			history_id = 93
+			animation = rage
+		}
 	}
 	# Costantiu and Mephias
 	character = {
@@ -253,7 +294,7 @@ bm_476_western_barbarians = {
 		history_id = 2000000
 		position = { 300 800 }
 
-		animation = personality_content
+		animation = interested
 
 		# Huneric, the likely heir
 		character = {
@@ -291,7 +332,17 @@ bm_476_adventurers = {
 		history_id = 55
 		position = { 550 225 }
 
-		animation = aggressive_sword
+		animation = waki_gamae
+		character = {
+			name = "bm_476_wre_romulus_augustulus"
+			relation = "BOOKMARK_RELATION_ENEMY"
+			type = male
+			birth = 468.1.1
+			culture = roman
+			religion = nicene
+			history_id = 96054
+			animation = war_over_loss
+		}
 	}
 	# Emperor Zeno (Isauria) ID: 70515
 	character = {
@@ -308,7 +359,17 @@ bm_476_adventurers = {
 		history_id = 70515
 		position = { 1100 750 }
 		
-		animation = aggressive_sword
+		animation = map_rage
+		character = {
+			name = "bm_wre_476_emperor_basilicus"
+			relation = "BOOKMARK_RELATION_ENEMY"
+			type = male
+			birth = 430.1.1
+			culture = romano_thracian
+			religion = coptic
+			history_id = 145226
+			animation = fear
+		}
 	}
 	# Hormidak (hunnic_chieftain_2)
 	character = {
@@ -325,7 +386,7 @@ bm_476_adventurers = {
 		history_id = hunnic_chieftain_2
 		position = { 1000 250 }
 		
-		animation = personality_rational
+		animation = relaxed_spear
 	}
 	# Vidimir (Cousin of Theodoric)
 	character = {
@@ -342,7 +403,17 @@ bm_476_adventurers = {
 		history_id = 190204_nephew
 		position = { 275 250 }
 		
-		animation = personality_rational
+		animation = throne_room_conversation_3
+		character = {
+			name = "bookmark_476_theodoric"
+			relation = "BOOKMARK_RELATION_COUSIN"
+			type = male
+			birth = 450.1.1
+			culture = gothic
+			religion = arian
+			history_id = 63
+			animation = personality_bold
+		}
 	}
 }
 bm_476_caucuses = {
@@ -364,7 +435,7 @@ bm_476_caucuses = {
 		religion = albanian_apostolic
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_HARD"
 		history_id = 159591
-		position = { 1100 150 }
+		position = { 1130 380 }
 		
 		animation = reading
 		
@@ -391,7 +462,7 @@ bm_476_caucuses = {
 			culture = parthian
 			religion = albanian_apostolic
 			history_id = 159590
-			animation = throne_room_one_handed_passive_1
+			animation = happy_teacher
 		}
 	}
 	#Varsken 331149
@@ -407,9 +478,19 @@ bm_476_caucuses = {
 		religion = mazdayasna
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_HARD"
 		history_id = 331149
-		position = { 500 150 }
+		position = { 920 240 }
 		
-		animation = personality_callous
+		animation = personality_zealous
+		character = {
+			name = "bm_476_caucuses_vakhtang"
+			relation = "BOOKMARK_RELATION_LIEGE"
+			type = male
+			birth = 440.1.1
+			culture = georgian
+			religion = georgian_orthodox
+			history_id = 213
+			animation = idle
+		}
 	}
 	#Vakhtang 213
 	character = {
@@ -424,9 +505,20 @@ bm_476_caucuses = {
 		religion = georgian_orthodox
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_EASY"
 		history_id = 213
-		position = { 800 175 }
+		position = { 750 150 }
 		
 		animation = personality_dishonorable
+		
+		character = {
+			name = "bm_476_shattered_empire_peroz"
+			relation = "BOOKMARK_RELATION_SUZERAIN"
+			type = male
+			birth = 438.1.1
+			culture = persian
+			religion = zurvanism
+			history_id = 180624
+			animation = idle
+		}
 	}
 	#Adhur 331140
 	character = {
@@ -441,9 +533,20 @@ bm_476_caucuses = {
 		religion = mazdayasna
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_HARD"
 		history_id = 331140
-		position = { 250 600 }
+		position = { 420 360 }
 		
 		animation = loss_1
+		
+		character = {
+			name = "bm_476_shattered_empire_peroz"
+			relation = "BOOKMARK_RELATION_LIEGE"
+			type = male
+			birth = 438.1.1
+			culture = persian
+			religion = zurvanism
+			history_id = 180624
+			animation = idle
+		}
 	}
 	#Sahak 159926
 	character = {
@@ -458,9 +561,19 @@ bm_476_caucuses = {
 		religion = armenian_apostolic
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_HARD"
 		history_id = 159926
-		position = { 425 375 }
+		position = { 520 580 }
 		
-		animation = scheme
+		animation = throne_room_conversation_2
+		character = {
+			name = "bm_476_caucuses_adhur"
+			relation = "BOOKMARK_RELATION_LIEGE"
+			type = male
+			birth = 440.1.1
+			culture = persian
+			religion = mazdayasna
+			history_id = 159591
+			animation = 331140
+		}
 	}
 	#Vahan 159853
 	character = {
@@ -475,9 +588,19 @@ bm_476_caucuses = {
 		religion = armenian_apostolic
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
 		history_id = 159853
-		position = { 575 850 }
+		position = { 430 800 }
 		
 		animation = rage
+		character = {
+			name = "bm_476_caucuses_adhur"
+			relation = "BOOKMARK_RELATION_LIEGE"
+			type = male
+			birth = 440.1.1
+			culture = persian
+			religion = mazdayasna
+			history_id = 159591
+			animation = 331140
+		}
 	}
 	#Mihr 331154
 	character = {
@@ -492,9 +615,19 @@ bm_476_caucuses = {
 		religion = armenian_apostolic
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
 		history_id = 331154
-		position = { 1100 400 }
+		position = { 1020 600 }
 		
 		animation = dismissal
+		character = {
+			name = "bm_476_caucuses_vachagan"
+			relation = "BOOKMARK_RELATION_LIEGE"
+			type = male
+			birth = 473.1.1
+			culture = parthian
+			religion = albanian_apostolic
+			history_id = 159591
+			animation = idle
+		}
 	}
 	#Vache 159893
 	character = {
@@ -509,9 +642,19 @@ bm_476_caucuses = {
 		religion = armenian_apostolic
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
 		history_id = 159893
-		position = { 825 725 }
+		position = { 680 700 }
 		
 		animation = personality_rational
+		character = {
+			name = "bm_476_caucuses_adhur"
+			relation = "BOOKMARK_RELATION_LIEGE"
+			type = male
+			birth = 440.1.1
+			culture = persian
+			religion = mazdayasna
+			history_id = 331140
+			animation = idle
+		}
 	}
 	#Gelehon 331137
 	character = {
@@ -526,9 +669,19 @@ bm_476_caucuses = {
 		religion = mazdayasna
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
 		history_id = 331137
-		position = { 1000 625 }
+		position = { 870 800 }
 		
 		animation = shame
+		character = {
+			name = "bm_476_caucuses_adhur"
+			relation = "BOOKMARK_RELATION_LIEGE"
+			type = male
+			birth = 440.1.1
+			culture = persian
+			religion = mazdayasna
+			history_id = 331140
+			animation = idle
+		}
 	}
 	#Damnazes 184
 	character = {
@@ -543,9 +696,19 @@ bm_476_caucuses = {
 		religion = mazdayasna
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
 		history_id = 184
-		position = { 250 150 }
+		position = { 500 120 }
 		
 		animation = personality_cynical
+		character = {
+			name = "bm_wre_476_emperor_basilicus"
+			relation = "BOOKMARK_RELATION_SUZERAIN"
+			type = male
+			birth = 430.1.1
+			culture = romano_thracian
+			religion = coptic
+			history_id = 145226
+			animation = idle
+		}
 	}
 	#Artavan Artabanes1
 	character = {
@@ -560,9 +723,19 @@ bm_476_caucuses = {
 		religion = armenian_apostolic
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_HARD"
 		history_id = Artabanes1
-		position = { 500 600 }
+		position = { 220 550 }
 		
 		animation = personality_bold
+		character = {
+			name = "bm_wre_476_emperor_basilicus"
+			relation = "BOOKMARK_RELATION_LIEGE"
+			type = male
+			birth = 430.1.1
+			culture = romano_thracian
+			religion = coptic
+			history_id = 145226
+			animation = idle
+		}
 	}
 }
 bm_476_shattered_empire = {
@@ -586,7 +759,18 @@ bm_476_shattered_empire = {
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
 		history_id = 55
 		position = { 300 650 }
-		animation = personality_rational
+		animation = personality_bold
+		
+		character = {
+			name = "bm_476_wre_julius_nepos"
+			relation = "BOOKMARK_RELATION_RIVAL"
+			type = male
+			birth = 430.1.1
+			culture = romano_illyrian
+			religion = nicene
+			history_id = 175110
+			animation = shame
+		}
 	}
 	
 	# Emperor Zeno (Isauria) ID: 70515
@@ -603,8 +787,7 @@ bm_476_shattered_empire = {
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_EASY"
 		history_id = 70515
 		position = { 575 825 }
-		
-		animation = personality_rational
+		animation = marshal
 	}
 	
 	#Shahanshah Peroz I 180624
@@ -621,8 +804,7 @@ bm_476_shattered_empire = {
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_EASY"
 		history_id = 180624
 		position = { 1200 250 }
-		
-		animation = personality_rational
+		animation = rage
 	}
 	
 	# Julius Nepos, Penultimate Western Roman Emperor (Dalmatia) ID: 175110
@@ -640,6 +822,16 @@ bm_476_shattered_empire = {
 		history_id = 175110
 		position = { 550 150 }
 		
-		animation = personality_bold
+		animation = personality_cynical
+		character = {
+			name = "bm_476_shattered_empire_odoacer"
+			relation = "BOOKMARK_RELATION_RIVAL"
+			type = male
+			birth = 435.1.2
+			culture = skirian
+			religion = arian
+			history_id = 55
+			animation = map_rage
+		}
 	}
 }
