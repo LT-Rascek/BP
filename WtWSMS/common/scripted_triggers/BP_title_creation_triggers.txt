@@ -184,7 +184,7 @@ creation_trigger_k_africa_trigger = {
 		limit = { is_ai = yes }
 		OR = {
 			has_a_roman_empire_trigger = yes
-			culture = { the_culture_or_parent_or_above_with_heritage_is_trigger = { CULTURE = culture:punic } }
+			culture = { the_culture_or_parent_or_above_with_heritage_is_trigger = { CULTURE = culture:carthaginian } }
 		}
 		#Historical blockers (aka the kingdoms that duchies should drift into anyway, instead of allowing creation)
 		custom_description = {
@@ -199,7 +199,7 @@ creation_trigger_k_mauretania_trigger = {
 		OR = {
 			has_a_roman_empire_trigger = yes
 			OR = {
-				culture = { the_culture_or_parent_or_above_with_heritage_is_trigger = { CULTURE = culture:punic } }
+				culture = { the_culture_or_parent_or_above_with_heritage_is_trigger = { CULTURE = culture:carthaginian } }
 				culture = { the_culture_or_parent_or_above_with_heritage_is_trigger = { CULTURE = culture:numidian } }
 			}
 		}

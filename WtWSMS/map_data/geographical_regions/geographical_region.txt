@@ -992,6 +992,7 @@ custom_arakan_mountains = {
 	}
 }
 world_steppe = {
+	generate_modifiers = yes
 	regions = {
 		world_steppe_west world_steppe_central world_steppe_east world_steppe_tarim
 	}
@@ -2192,10 +2193,9 @@ custom_carthaginian_empire = {
 }
 
 custom_carthage = { ##### Changed from Vanilla: tweaked
-	kingdoms = {
-		k_africa
-	}
 	duchies = {
+		#Tunis
+		d_tunis d_gabes d_kairouan d_kroumerie d_jerid
 		#Scicili & Sardinia
 		d_sicily d_sardinia
 	}
@@ -2208,12 +2208,12 @@ custom_tripolitania = { ##### Changed from Vanilla: tweaked
 }
 
 custom_mauretania = { ##### Changed from Vanilla: tweaked
-	kingdoms = {
-		k_mauretania
+	duchies = {
+		d_bejaia d_zab d_alger d_tlemcen d_rif
 	}
 }
 
-custom_carthago_nova = {
+custom_carthago_nova = { ##### Changed from Vanilla
 	duchies = {
 		d_carthago_superior d_carthago_inferior d_hispalensis d_gaditanus d_urcitanensis
 	}
@@ -2221,6 +2221,15 @@ custom_carthago_nova = {
 
 custom_cumbria = {} ##### Changed from Vanilla
 
+custom_cumbria = {
+	generate_modifiers = yes
+	duchies = {
+		d_galloway
+	}
+	counties = {
+		c_westmorland c_cumberland c_lanarkshire
+	}
+}
 
 ###########################################################################
 # Graphical Regions

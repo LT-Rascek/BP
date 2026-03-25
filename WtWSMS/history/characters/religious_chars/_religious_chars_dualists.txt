@@ -1,7 +1,7 @@
 ﻿### Manicheans
 ManicheanChurch000 = {
 	name = "Mani"
-	religion = ebionite
+	religion = elcesaite
 	culture = persian
 	father = ManicheanSpecial000
 	mother = ManicheanSpecial001
@@ -61,7 +61,7 @@ ManicheanChurch002 = { #BM476 holder (fictional)
 }
 ManicheanSpecial000 = { #Mani's Father
 	name = "Patik"
-	religion = ebionite
+	religion = elcesaite
 	culture = persian
 	196.1.1 = { birth = yes }
 	215.1.1 = { add_spouse = ManicheanSpecial001 }
@@ -70,7 +70,7 @@ ManicheanSpecial000 = { #Mani's Father
 ManicheanSpecial001 = { #Mani's Mother
 	name = "Mariam"
 	female = yes
-	religion = doceticism
+	religion = elcesaite
 	culture = parthian
 	dynasty_house = house_kamsarakan
 	196.1.1 = { birth = yes }
@@ -94,4 +94,20 @@ Valentinianism000 = {
 		trait = zealous
 	}
 	160.1.1 = { death = yes }
+}
+Priscillianism000 = {
+	name = "Priscillianus"
+	religion = nicene
+	culture = romano_hispanic
+	340.1.1 = { birth = yes }
+	356.1.1 = {
+		trait = education_learning_4
+		trait = ambitious
+		trait = temperate
+		trait = generous
+	}
+	380.10.4 = { #Condemned at Saragossa
+		religion = priscillianism
+	}
+	385.1.1 = { death = { death_reason = death_execution } }
 }

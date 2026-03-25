@@ -201,10 +201,10 @@ set_court_language_from_effect = {
 	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_beja } NOT = { has_court_language = language_beja } NOT = { has_court_language = language_beja } } $CHARACTER$ = { set_court_language = language_beja } }
 	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_sidamic } NOT = { has_court_language = language_sidamic } NOT = { has_court_language = language_sidamic } } $CHARACTER$ = { set_court_language = language_sidamic } }
 	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_cushitic } NOT = { has_court_language = language_cushitic } NOT = { has_court_language = language_cushitic } } $CHARACTER$ = { set_court_language = language_cushitic } }
-	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_kemetic } NOT = { has_court_language = language_kemetic } NOT = { has_court_language = language_kemetic } } $CHARACTER$ = { set_court_language = language_kemetic } }
+	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_egyptian } NOT = { has_court_language = language_egyptian } NOT = { has_court_language = language_egyptian } } $CHARACTER$ = { set_court_language = language_egyptian } }
 	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_coptic } NOT = { has_court_language = language_coptic } NOT = { has_court_language = language_coptic } } $CHARACTER$ = { set_court_language = language_coptic } }
 	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_omotic } NOT = { has_court_language = language_omotic } NOT = { has_court_language = language_omotic } } $CHARACTER$ = { set_court_language = language_omotic } }
-	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_punic } NOT = { has_court_language = language_punic } NOT = { has_court_language = language_punic } } $CHARACTER$ = { set_court_language = language_punic } }
+	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_carthaginian } NOT = { has_court_language = language_carthaginian } NOT = { has_court_language = language_carthaginian } } $CHARACTER$ = { set_court_language = language_carthaginian } }
 	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_israelite } NOT = { has_court_language = language_israelite } NOT = { has_court_language = language_israelite } } $CHARACTER$ = { set_court_language = language_israelite } }
 	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_aramaic } NOT = { has_court_language = language_aramaic } NOT = { has_court_language = language_aramaic } } $CHARACTER$ = { set_court_language = language_aramaic } }
 	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_arabic } NOT = { has_court_language = language_arabic } NOT = { has_court_language = language_arabic } } $CHARACTER$ = { set_court_language = language_arabic } }
@@ -397,10 +397,10 @@ match_court_languages_effect = {
 	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_beja } } $CURRENT_COURT$ = { set_court_language = language_beja } }
 	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_sidamic } } $CURRENT_COURT$ = { set_court_language = language_sidamic } }
 	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_cushitic } } $CURRENT_COURT$ = { set_court_language = language_cushitic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_kemetic } } $CURRENT_COURT$ = { set_court_language = language_kemetic } }
+	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_egyptian } } $CURRENT_COURT$ = { set_court_language = language_egyptian } }
 	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_coptic } } $CURRENT_COURT$ = { set_court_language = language_coptic } }
 	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_omotic } } $CURRENT_COURT$ = { set_court_language = language_omotic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_punic } } $CURRENT_COURT$ = { set_court_language = language_punic } }
+	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_carthaginian } } $CURRENT_COURT$ = { set_court_language = language_carthaginian } }
 	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_israelite } } $CURRENT_COURT$ = { set_court_language = language_israelite } }
 	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_aramaic } } $CURRENT_COURT$ = { set_court_language = language_aramaic } }
 	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_arabic } } $CURRENT_COURT$ = { set_court_language = language_arabic } }

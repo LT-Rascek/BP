@@ -46,7 +46,7 @@ tradition_marauders = {
 		}
 		custom_description = {
 			text = hybrid_must_have_anatolian_heritage_for_tradition_marauders
-			NOT = { culture_pillar:heritage_anatolian = { is_in_list = traits } }
+			NOT = { culture_pillar:heritage_ancient_greek = { is_in_list = traits } }
 		}
 		custom_tooltip = {
 			text = cannot_have_tradition_isolationist
@@ -155,7 +155,7 @@ tradition_marauders_non_dlc = {
 		}
 		custom_description = {
 			text = hybrid_must_have_anatolian_heritage_for_tradition_marauders
-			NOT = { culture_pillar:heritage_anatolian = { is_in_list = traits } }
+			NOT = { culture_pillar:heritage_ancient_greek = { is_in_list = traits } }
 		}
 		custom_tooltip = {
 			text = cannot_have_tradition_isolationist
@@ -1058,7 +1058,7 @@ tradition_egyptian_traditions = {
 		}
 		traditions_legal_tradition_is_in_list_trigger = { TRADITION = culture_tradition:tradition_egyptian_traditions }
 		traditions_monolithic_culture_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_egyptian_traditions }
-		culture_pillar:heritage_kemetic = { is_in_list = traits }
+		culture_pillar:heritage_egyptian = { is_in_list = traits }
 	}
 	can_pick_for_hybridization = {
 		custom_tooltip = {
@@ -1073,7 +1073,7 @@ tradition_egyptian_traditions = {
 		traditions_monolithic_culture_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_egyptian_traditions }
 		custom_description = {
 			text = hybrid_must_have_kemetic_heritage_for_tradition_egyptian_traditions
-			culture_pillar:heritage_kemetic = { is_in_list = traits }
+			culture_pillar:heritage_egyptian = { is_in_list = traits }
 		}
 	}
 	
@@ -1162,7 +1162,7 @@ tradition_egyptian_traditions_non_dlc = {
 		}
 		traditions_legal_tradition_is_in_list_trigger = { TRADITION = culture_tradition:tradition_egyptian_traditions_non_dlc }
 		traditions_monolithic_culture_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_egyptian_traditions_non_dlc }
-		culture_pillar:heritage_kemetic = { is_in_list = traits }
+		culture_pillar:heritage_egyptian = { is_in_list = traits }
 	}
 	can_pick_for_hybridization = {
 		custom_tooltip = {
@@ -1177,7 +1177,7 @@ tradition_egyptian_traditions_non_dlc = {
 		traditions_monolithic_culture_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_egyptian_traditions_non_dlc }
 		custom_description = {
 			text = hybrid_must_have_kemetic_heritage_for_tradition_egyptian_traditions
-			culture_pillar:heritage_kemetic = { is_in_list = traits }
+			culture_pillar:heritage_egyptian = { is_in_list = traits }
 		}
 	}
 	
@@ -1897,8 +1897,8 @@ tradition_punic_traditions = { #Covers Punic Republican government, Polis cultur
 			NOT = { culture_tradition:tradition_legalistic = { is_in_list = traits } }
 		}
 		custom_description = {
-			text = hybrid_must_have_levantine_heritage_for_tradition_aramean_traditions
-			culture_pillar:heritage_syriac = { is_in_list = traits }
+			text = hybrid_must_have_phoenician_heritage_for_tradition_punic_traditions
+			culture_pillar:heritage_phoenician = { is_in_list = traits }
 		}
 	}
 	

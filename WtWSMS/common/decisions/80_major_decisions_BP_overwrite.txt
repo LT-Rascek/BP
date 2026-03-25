@@ -932,6 +932,7 @@ set_de_jure_capital_decision = {
 	}
 }
 
+##### Changed from Vanilla: Available for Romano-Punics
 restore_carthage_decision = {
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
@@ -956,7 +957,9 @@ restore_carthage_decision = {
 
 		OR = {
 			culture = { has_cultural_pillar = heritage_syriac }
-			culture = culture:levantine		
+			culture = { has_cultural_pillar = heritage_phoenician }
+			culture = culture:romano_punic
+			culture = culture:romano_african
 		}
 
 		# Not repeatable.
@@ -1005,6 +1008,16 @@ restore_carthage_decision = {
 
 		trigger_event = major_decisions.3300
 	}
+	
+	##### Changed from Vanilla vvvvv
+	ai_potential = {
+		#Romano-African AIs will _not_ do this
+		NOT = {
+			culture = culture:romano_african
+			any_parent_culture_or_above = { this = culture:romano_african }
+		}
+	}
+	##### Changed from Vanilla ^^^^^^
 }
 
 ##### vvvvv Removed Decisions vvvvv #####

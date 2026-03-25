@@ -135,8 +135,8 @@ port_of_carthage = {
 	
 	can_construct = {
 		OR = {
-			scope:holder.culture = culture:punic
-			scope:holder.culture = { any_parent_culture_or_above = { this = culture:punic } }
+			scope:holder.culture = culture:carthaginian
+			scope:holder.culture = { any_parent_culture_or_above = { this = culture:carthaginian } }
 		}
 		special_commerical_building_trigger = yes
 	}
@@ -208,7 +208,7 @@ mausoleum_harlicarnassus = {
 				religion = religion:hellenism_religion
 				culture = { has_cultural_pillar = heritage_byzantine }
 				culture = { has_cultural_pillar = heritage_iranian }
-				culture = { has_cultural_pillar = heritage_anatolian }
+				culture = { has_cultural_pillar = heritage_ancient_greek }
 			}
 		}
 	}
