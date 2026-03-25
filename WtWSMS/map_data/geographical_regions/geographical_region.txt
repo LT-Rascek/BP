@@ -653,7 +653,7 @@ world_middle_east_jerusalem = { ##### Changed from Vanilla
 }
 world_middle_east_arabia = { ##### Changed from Vanilla
 	duchies = {
-		#k_asoristan
+		#k_asoristan minus d_asoristan
 		d_arbayistan d_adiabene d_beth_garami d_euphrates d_hira d_mesan
 		#k_arabia_petraea
 		d_tabuk d_jawf
@@ -2193,12 +2193,34 @@ graphical_western = {
 	}
 }
 
+
 ##### Changed from Vanilla vvvvv
 graphical_mena = {
 	graphical = yes
 	color = { 255 255 0 }
 	regions = {
-		world_africa world_middle_east
+		world_africa world_middle_east_jerusalem world_middle_east_arabia
+	}
+	#Persia minus Kush mountains
+	duchies = {
+		#k_asoristan
+		d_asoristan
+		#k_daylam
+		d_atropatene d_daylam d_tabaristan
+		#k_persia
+		d_media_minor d_isfahan d_khuzestan d_fars d_kirman d_kermanshah
+		#k_parthia
+		d_parthava d_rayy d_abarshahr 
+		#k_makran
+		d_sistan d_paratan d_makran d_turan
+		#k_bactria
+		d_balkh d_herat d_ghur d_kabul d_merv #d_zabulistan
+		#k_sogdiana
+		d_soghd d_osrushana d_khuttal
+		#k_transoxiana
+		d_ferghana #d_badakhshan
+		#k_khwarezm
+		d_khorezm d_uzboy d_gurgan
 	}
 }
 ##### Changed from Vanilla ^^^^^
@@ -2210,10 +2232,10 @@ graphical_india = {
 	regions = { ##### Changed from Vanilla: Added Kabulistan
 		world_india world_tibet world_burma world_asia_southeast #world_kabulistan
 	}
+	##### Changed from Vanilla: Added Hindu Kush
+	duchies = { d_badakhshan d_zabulistan }
 }
-##### Changed from Vanilla ^^^^^
 
-##### Changed from Vanilla vvvvv
 graphical_mediterranean = {
 	graphical = yes
 	color = { 0 0 255 }
