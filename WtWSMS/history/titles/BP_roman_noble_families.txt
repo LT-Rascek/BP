@@ -24,6 +24,16 @@ c_nf_roman_dynn_Avitus = {
 	486.1.1 = { holder = k_franks }
 	510.1.1 = { holder = 0 } #End of the line...?
 }
+c_nf_roman_dynn_PLRE2Pierius5 = { #Pierius was a "Vir Illustris", so he was part of the Senate and of high standing
+	445.1.1 = {
+		holder = 470053
+		liege = h_western_roman_empire
+		government = roman_administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	476.9.4 = { liege = h_italy }
+	489.1.1 = { holder = 0 }
+}
 
 #Skirian Families
 c_nf_skirian_dynn_thorciling = {
