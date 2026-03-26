@@ -1,12 +1,6 @@
-Gylericus et al plotting Nepos death in the 480 scenario
-
-* Make Gepids less extensive/replace with Romano-Dacians?
 * Bounteous plunder event should have a chance at yielding a minority if the development is high enough
-	* Armatus should _not_ be a bastard
 * add all new languages to BP_on_action_effects.txt
-* "To Rule the World" event for conquerors - check spawn
 - Autocephaly not able to be pressed in some cases...
-- Anointment should only be permitted, not required in 476
 
 ==========
 
@@ -25,8 +19,17 @@ Hunter-Gatherer
 Roman Government (MVP)
 ----------
 Bugs:
-- Block Spymaster from being able to recruit Roman MO/MM when they have the law.
 - Fix Romulus MAA not all spawning
+- holding construction time negative should be building speed positive in taxation keeping event modifier
+
+Succession Issues:
+- Ministrial Succession seems borked; fix it dammit (that's why Andag keeps getting it)
+- MO/MM should be functionally ineligible for each other's titles
+- Block Spymaster from being able to recruit Roman MO/MM when they have the law.
+- For some reason, at start is firing multiple MO/MM officers including Andag and throw Beatus and Pierius into the role
+- Andag is becoming MO YET AGAIN!!!
+
+- Senators should have a bonus to succession, if Rome is not being oppressed
 
 Council:
 - Fill out last 3 council tasks for legal bureau
@@ -45,13 +48,13 @@ History:
 - Replace duchy placeholders in the placeholder file
 - Add Taifal adventurer near Tealby in England (Easter Egg)
 - Bucinobantes adventurer in/near London
-- Add Odoacer's Roman Buddy-Buddy who gets lots of influence to Feb 476 as landless char
+- Donatist bands in North Africa
+- Change up placement of Odoacer's Skirians to Tuscany and leave Genoa for the various listed groups
 
 Bookmarks: Revamp bookmarks
+- Gylericus et al plotting Nepos death in the 480 scenario
 
 GFX:
-- #FIXME: ICON
-* New Government Icons
 * New Council Task Icons (including the MO tasks)
 
 * Decisions: Establish de jure decisions need work given uncreatable empires/kingdoms???
@@ -67,45 +70,46 @@ Mechanics:
 ==========
 Roman Culture Work
 ----------
+* Use glosses or game concepts to give the forum link and wiki links to shrink text down
+
 * Migratory Culture Tradition should have some recruitment bonuses as well
 * Migratory Cultures should use herd head determination that flips when lost
 
-* Visigoths et al should be Tribal in the Vth Century
-
 * Culture: Legal Codex needs work
 
-* Isaurians should have reduced marriage acceptance, especially with barbarians
-* Tsakonians should be Zealous Pagans
+* Duplicate Hellenic Syncretism; one for Pagans (making Righteous) and the other for non-Pagans (making Astray)
 
 * On action to remove Roman Admin, Legal Codex innovations from Hybridizations
 
-* Use Hertiage Continuua to block Anatolian + Caucasian/Greek Hybridization
+Tradition Changes:
+- Roman Ceremonies:
+   - Ability to host munera (theater particularly) in Roman Ceremonies
+      - Option to pay gold or treasury with slightly different rewards
+   - Unify Support Greens/Blues/Reds/Whites decision with Vanilla and tweak traits
 
-* Review culture eras; e.g., Vascon can't be in the Late Antique period
+* Revamp Roman MAAs to not be innovation bound
+   - unlock_innovation_byzantine_military, unlock_innovation_roman_military
 
-* Roman Dynasty Legacy:
-	* Only available to character's with Roman/Byz Law culture and Empire+ tier, or certain Dynasties
-	* Level 1: "Roman Nostalgia": Roman Nostalgia Trait more common, more at start legitimacy
-	* Level 2: "Roman Architecture" : -5% Building Cost, -5% Building time
-	* Level 3: ???
-	* Level 4: "Roman Law": -20 Liberty, Dissolution Faction acceptance for own vassals, -20% title creation cost
-	* Level 5: "Roma Est Aeterna": Able to launch Kingdom Level War on former Roman Empire once per lifetime, regardless of drift
-	* BP_war_triggers.txt: reenable valid_reconquest_culture_trigger
+* MAA:
+- Need to lock praetorians to just the Roman Emperors and MMs
+- Add ERE title troops in feb 476
+
+* BP_war_triggers.txt: reenable valid_reconquest_culture_trigger
+
+* Decision for unreformed syncretics to change their syncretism (multi-choice decision)
 
 Reduce culture gains a bit more.
 
 ==========
-Other Work
+Stretch:
 ----------
 * Hegemonies should have an empire-level CB against each other that's terribly devastating (see the Final Roman-Sassanid War or the Gothic War)
    * Should be a great project like the Chinese have
 
+* Senators should be ranked into vir illustris, vir spectabilis, and vir clarissimus, by family renown or other mechanics
+
 * Clean up Indian titles history
-
 - Feudal Transition Clerical stuff
-
-Stretch:
------
 - Clarify government_is_centralized flag
 - Request military aid interaction for MM
 - Fix Ministries having a fucking theme contract... (big oof to fix probably)
@@ -149,3 +153,53 @@ State Faith:
 - State Faith change decision adopts the HOF's faith instead of itself
 
 Localization: Praeses for counties (still civilian-ish)
+
+Despoliation Dynasty Legacy:
+"The thicker the hay, the easier it is to mow."
+"Raþio ist þata þiqo hawi seniþan þau þata þunno!"
+- Only for:
+   - Non-Romans in Sub-Roman government
+   - Migratory cultures
+   - Meritocratic without Sinophilic Tradition or Chinese heritage
+   - Japanese Government without Japanese heritage
+- Mutually exclusive with Roman Nostalgia, Romanitas
+Level 1 'Barbarian Origins':
+   - Unlocks Raiding
+   - Reduces prestige loss from raiding/increases prestige gain as tribal
+Level 2 'Barbarian Army':
+   - Get's a dynasty modifier increasing a specific MAA type class's regiment size, toughness, & damage
+Level 3 'Barbarian Kingdom':
+   - Has CB to vassalize/conquer rulers of your heritage
+   - Relaxation on Custom Empire & Kingdom creation decisions (fewer counties needed)
+Level 4 'Barbarian Settlement':
+   - +15% promote culture speed, faith conversion speed in counties that are more advanced era than you
+   - 30 year modifier added at end of conversion that makes converting faith/culture faster (modifier opposite of action)
+Level 5 'Barbarian Future':
+   - Can reform pagan faith with only tribal innovations
+   - Adopt Clan/Feudal/Tribal Decision
+
+Roman Nostalgia: "Rome is the city of echoes, the city of illusions, and the city of yearning."
+- Only for:
+   - Non-Romans with Sub-Roman government
+   - Mutually exclusive with Despoliation
+Level 1: 'Hope for Rome'
+   - Reduces frequency of Sub-Roman degradation events
+Level 2: 'Protection of Rome'
+   - Get a 10-year dynasty modifier blocking most CBs from Roman Empires
+   - Unable to promote culture or convert Roman provinces for 30 years if not Roman (dynasty modifier)
+   - Your non-Roman vassals may shift towards feuding
+Level 3: 'Respect for Rome'
+   - Get a 10-year dynasty modifier blocking most CBs from Roman Empires
+   - Immediately maximizes non-Roman law in favor of Romans and blocks shifting downwards when your dynasty rules
+   - All Roman houses in your polity immediately shift to Faithful level of relations
+   - Your non-Roman vassals may shift towards feuding depending on relations (Despoliation always does)
+Level 4: 'Faith in Rome'
+   - Get a 10-year dynasty modifier blocking most CBs from Roman Empires
+   - You adopt the nearest Roman state faith if available, otherwise the closest Emperor's faith, else the majority faith of Romans in your realm
+   - Your polity adopts the nearest Roman state faith if available, otherwise the closest Emperor's faith, else the majority faith of Romans in your realm
+   - Your non-Roman vassals may shift towards feuding (zealous house heads not of a Righteous Roman faith always do)
+Level 5: 'Emulation of Rome'
+   - Cost to hybridize & acceptance to hybridize with Roman culture sharply reduced if a culture in your realm still has "Romance/Hellenic Culture" (only applies once)
+   - Unlocks "Romanitas" Dynastic Legacy
+   - Your non-Roman vassals may shift towards feuding
+   - Change COA frame to match Roman culture of your realm [IS THIS ACTUALLY POSSIBLE?]

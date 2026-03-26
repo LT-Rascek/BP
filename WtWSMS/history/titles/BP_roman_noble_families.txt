@@ -34,6 +34,19 @@ c_nf_roman_dynn_PLRE2Pierius5 = { #Pierius was a "Vir Illustris", so he was part
 	476.9.4 = { liege = h_italy }
 	489.1.1 = { holder = 0 }
 }
+c_nf_roman_dynn_ProbusBeatusProbus = { #Probus-Beatus-Probus Family in Liguria, mentioned by Ennodius
+	450.1.1 = {
+		holder = 470052
+		liege = h_western_roman_empire
+		government = roman_administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	476.9.4 = { liege = h_italy }
+	489.1.1 = { holder = PLRE2_Probus9 }
+	522.1.1 = { holder = PLRE2_Beatus }
+	561.1.1 = { holder = 0 }
+}
+
 
 #Skirian Families
 c_nf_skirian_dynn_thorciling = {
