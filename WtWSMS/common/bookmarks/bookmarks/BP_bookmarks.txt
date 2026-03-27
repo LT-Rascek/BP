@@ -110,7 +110,7 @@ bm_476_western_barbarians = {
 		religion = arian
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
 		history_id = 30
-		position = { 550 500 }
+		position = { 550 550 }
 		
 		animation = personality_honorable
 	}
@@ -129,7 +129,7 @@ bm_476_western_barbarians = {
 		religion = arian
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_HARD"
 		history_id = 1301275
-		position = { 250 275 }
+		position = { 300 600 }
 		
 		animation = personality_zealous
 	}
@@ -147,7 +147,7 @@ bm_476_western_barbarians = {
 		religion = arian
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
 		history_id = 20
-		position = { 900 350 }
+		position = { 800 400 }
 		
 		animation = personality_bold
 	}
@@ -165,7 +165,7 @@ bm_476_western_barbarians = {
 		religion = arian
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_EASY"
 		history_id = 93
-		position = { 1200 825 }
+		position = { 1000 825 }
 
 		animation = personality_content
 
@@ -195,7 +195,7 @@ bm_476_western_barbarians = {
 		religion = frankish_pagan
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_EASY"
 		history_id = 39
-		position = { 450 125 }
+		position = { 300 150 }
 		
 		animation = happiness
 		
@@ -226,7 +226,7 @@ bm_476_western_barbarians = {
 		religion = nicene
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_HARD"
 		history_id = 144671
-		position = { 900 125 }
+		position = { 800 125 }
 
 		animation = personality_bold
 	}
@@ -244,40 +244,9 @@ bm_476_western_barbarians = {
 		religion = african_church
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_HARD"
 		history_id = 36141
-		position = { 1050 650 }
+		position = { 450 800 }
 
 		animation = personality_bold
-	}
-	# Costantiu and Mephias
-	character = {
-		name = "bm_476_western_barbarians_costantinu"
-		dynasty = 1042250
-		dynasty_splendor_level = 1
-		type = male
-		birth = 435.1.1
-		title = k_altava
-		government = subroman_administrative_government
-		fallback_government = subroman_dynastic_government
-		culture = mauritanian
-		religion = african_church
-		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_HARD"
-		history_id = 2000000
-		position = { 300 800 }
-
-		animation = personality_content
-
-		# Huneric, the likely heir
-		character = {
-			name = "bm_476_western_barbarians_costantinu_alt_mephanias"
-			relation = "BOOKMARK_RELATION_SON"
-			dynasty = 1042250
-			type = male
-			birth = 465.1.1
-			culture = mauritanian
-			religion = african_church
-			history_id = 2000001
-			animation = worry
-		}
 	}
 }
 bm_476_adventurers = {
