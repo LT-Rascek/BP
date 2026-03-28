@@ -490,6 +490,17 @@ k_yemen = {
 		instance = { position = { 0.5 0.46 } scale = { 0.9 0.9 }  }
 	}
 }
+d_scythia = { #For Andag
+	pattern="pattern_solid.dds"
+	color1=blue
+	color2=black
+	color3=yellow
+	colored_emblem={
+		color1=yellow
+		color2=white
+		texture="ce_circle.dds"
+	}
+}
 
 h_italy = k_italy
 
@@ -820,6 +831,26 @@ k_suebia={
 
 	}
 
+}
+d_thracian_goths = {
+	pattern = "pattern_vertical_split_01.dds"
+	color1 = black
+	color2 = {105 095 135} #Roughly from k_ostrogoths.tga
+	colored_emblem = {
+		texture = "ce_ostrogothic_eagle.dds"
+		color1 = "white"
+		color2 = "white"
+		color3 = "white"
+		instance = { position = { 0.5 0.5 } scale = { 0.7 0.7 } }
+	}
+	colored_emblem = {
+		texture = "ce_pile_mask.dds"
+		color1 = {170 50 40} #Roughly from k_ostrogoths.tga
+		instance = { position = { 0.275 0.1 } scale = { 0.2 0.1 } }
+		instance = { position = { 0.425 0.1 } scale = { 0.2 0.1 } }
+		instance = { position = { 0.575 0.1 } scale = { 0.2 0.1 } }
+		instance = { position = { 0.725 0.1 } scale = { 0.2 0.1 } }
+	}
 }
 
 k_france={ #Christian Merovingian banner instead of Capetian
