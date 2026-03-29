@@ -266,6 +266,7 @@ monaspa = {
 	icon = monaspa
 }
 
+##### Changed from Vanilla: Made unrecruitable
 cataphract = {
 	type = heavy_cavalry
 	
@@ -293,7 +294,7 @@ cataphract = {
 		harsh_winter = { damage = -30 toughness = -10 }
 	}
 	
-	##### Changed from Vanilla: Unlocked by innovation
+	can_recruit = { always = no }
 
 	buy_cost = { gold = cataphract_recruitment_cost }
 	low_maintenance_cost = { gold = cataphract_low_maint_cost }

@@ -88,6 +88,10 @@ BP_update_culture_traditions_by_date = {
 			limit = { current_date >= 418.1.1 }
 			culture:western_alan = { add_culture_tradition = tradition_concubines }
 		}
+		if = {
+			limit = { current_date >= 439.1.1 }
+			culture:vandalic = { add_culture_tradition = tradition_practiced_pirates }
+		}
 		if = { #Gothic becomes mostly Arian
 			limit = { current_date >= 445.1.1 }
 			culture:gothic = { add_culture_tradition = tradition_concubines }

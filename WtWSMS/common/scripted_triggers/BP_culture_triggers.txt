@@ -143,10 +143,6 @@ traditions_cultural_combat_type_is_in_list_trigger = {
 				culture_tradition:tradition_gothic_warfare = { is_in_list = traits }
 			}
 			trigger_if = {
-				limit = { NOT = { culture_tradition:tradition_vandalic_warfare = $TRADITION$ } }
-				culture_tradition:tradition_vandalic_warfare = { is_in_list = traits }
-			}
-			trigger_if = {
 				limit = { NOT = { culture_tradition:tradition_marauders = $TRADITION$ } }
 				culture_tradition:tradition_marauders = { is_in_list = traits }
 			}

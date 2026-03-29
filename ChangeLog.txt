@@ -102,12 +102,16 @@ Casus Belli:
 - Odoacer's Takeover War will cede land to the Visigoths and gain land from the Vandals and secure truces, so long as the Visigoths and Vandals are AI players, respectively
 
 Traditions:
-- Removed "Latin Succession" Tradition, at has been subsumed into "Roman Succession" tradition
 - Redubbed Vanilla "Roman Ceremonies" to be "Byzantine Ceremonies"
+- Removed Traditions:
+   - Removed "Latin Succession" Tradition, as it has been subsumed into "Roman Succession" tradition
+   - Removed "Vandalic Warfare" Tradition, as it has been subsumed into "Gothic Warfare" tradition
 - Changed Traditions:
    - "Roman Succession" no longer has physical disfigurement blocking inheritance
    - "Colonizers" looses its Monolithic cultural aspects to be less Roman-specific, emphasizing ease of Hybridization
    - "Romance Culture" acquires some aspects of "Cultivated Sophistication"
+   - "Gothic Warfare" removes Men at Arms Size and Limits changes, increases land raiding speed, and instead unlocks Cultural Men-At-Arms, is locked to "Gothic Heritage" cultures
+   - "Migratory Culture" reduces army maintenance and MAA recruitment costs
 - Added New Roman-Centric Traditions:
    - Added "Roman Politics" Tradition:
       - Similar to "Palace Politics" tradition
@@ -121,6 +125,8 @@ Traditions:
       - Enables Chariot Races
       - Certain traits provide public opinion bonuses and maluses
       - County Opinion: -10
+   - Added "Pontic Horsemen" Tradition
+      - Similar to "Devoted Horsemen", but unlocked "Contus Bearers" Men-At-Arms and has a reduction in Light Cavalry Men-At-Arms costs
 
 Culture:
 - Added a "Caucasian-Anatolian" Heritage Continua for Anatolian, Byzantine, and Caucasian cultures, preventing hybridization between those cultures
@@ -133,18 +139,18 @@ Culture:
    - Taifal culture COA frame is Chernyakhov instead of Sarmatian, uses only Samaritan name list
    - Burgundian Culture has "Family Business" Tradition
 - Latin Culture Overhaul in light of DLC:
-   - Roman: Adds "Roman Politics"/"Roman Succession", Adds "Romance Culture", Adds "Roman Ceremonies" (with "Roads to Power"), Removed "Legalistic"
-   - Romano-Raetian: Adds "Roman Politics"/"Roman Succession", Adds "Western Roman Military"/"Western Roman Legacy", Adds "Roman Ceremonies" (with "Roads to Power")
-   - Romano-Noric: Adds "Roman Politics"/"Roman Succession", Adds "Western Roman Military"/"Western Roman Legacy"
-   - Romano-Gallic: Adds "Roman Politics"/"Roman Succession", Adds "Western Roman Military"/"Western Roman Legacy", Adds "Roman Ceremonies" (with "Roads to Power")
-   - Romano-British: Adds "Roman Politics"/"Roman Succession", Adds "Western Roman Military"/"Western Roman Legacy", Adds "Roman Ceremonies" (with "Roads to Power"), Removes "Concubines"
-   - Romano-African: Adds "Roman Politics"/"Latin Succession", Adds "Western Roman Military"/"Western Roman Legacy", Adds "Roman Ceremonies" (with "Roads to Power"), Removes "Dryland Dwellers"
-   - Romano-Hispanic: Adds "Roman Politics"/"Roman Succession", Adds "Western Roman Military"/"Western Roman Legacy", Adds "Roman Ceremonies" (with "Roads to Power"), Removes "Agrarian"
-   - Romano-Thracian: Adds "Roman Politics"/"Roman Succession", Adds "Western Roman Military"/"Western Roman Legacy", Adds "Roman Ceremonies" (with "Roads to Power")
-   - Romano-Illyrian: Adds "Roman Politics"/"Roman Succession", Adds "Western Roman Military"/"Western Roman Legacy"
-   - Romano-Pannonia: Adds "Roman Politics"/"Roman Succession", Adds "Western Roman Military"/"Western Roman Legacy"
-   - Romano-Dacian: Adds "Roman Politics"/"Roman Succession", Adds "Western Roman Military"/"Western Roman Legacy"
-   - Romano-Aramean: Adds "Roman Politics"/"Roman Succession", Adds "Western Roman Military"/"Western Roman Legacy", Removed "Legalistic", Adds "Strong Believers"
+   - Roman: Adds "Roman Politics"/"Roman Succession", Adds "Roman Military"/"Western Roman Legacy", Adds "Romance Culture", Adds "Roman Ceremonies" (with "Roads to Power"), Removed "Legalistic"
+   - Romano-Raetian: Adds "Roman Politics"/"Roman Succession", Adds "Roman Military"/"Western Roman Legacy", Adds "Roman Ceremonies" (with "Roads to Power")
+   - Romano-Noric: Adds "Roman Politics"/"Roman Succession", Adds "Roman Military"/"Western Roman Legacy"
+   - Romano-Gallic: Adds "Roman Politics"/"Roman Succession", Adds "Roman Military"/"Western Roman Legacy", Adds "Roman Ceremonies" (with "Roads to Power")
+   - Romano-British: Adds "Roman Politics"/"Roman Succession", Adds "Roman Military"/"Western Roman Legacy", Adds "Roman Ceremonies" (with "Roads to Power"), Removes "Concubines"
+   - Romano-African: Adds "Roman Politics"/"Latin Succession", Adds "Roman Military"/"Western Roman Legacy", Adds "Roman Ceremonies" (with "Roads to Power"), Removes "Dryland Dwellers"
+   - Romano-Hispanic: Adds "Roman Politics"/"Roman Succession", Adds "Roman Military"/"Western Roman Legacy", Adds "Roman Ceremonies" (with "Roads to Power"), Removes "Agrarian"
+   - Romano-Thracian: Adds "Roman Politics"/"Roman Succession", Adds "Roman Military"/"Western Roman Legacy", Adds "Roman Ceremonies" (with "Roads to Power")
+   - Romano-Illyrian: Adds "Roman Politics"/"Roman Succession", Adds "Roman Military"/"Western Roman Legacy"
+   - Romano-Pannonia: Adds "Roman Politics"/"Roman Succession", Adds "Roman Military"/"Western Roman Legacy"
+   - Romano-Dacian: Adds "Roman Politics"/"Roman Succession", Adds "Roman Military"/"Western Roman Legacy"
+   - Romano-Aramean: Adds "Roman Politics"/"Roman Succession", Adds "Roman Military"/"Western Roman Legacy", Removed "Legalistic", Adds "Strong Believers"
 - Greek Culture Overhaul in light of DLC:
    - Greek: Adds "Eastern Roman Politics"/"Eastern Roman Succession", Adds "Roman Military"/"Eastern Roman Legacy", Adds "Hellenic Culture", Adds "Roman Ceremonies" (with "Roads to Power"), Removed "Formation Fighting Experts", "Legalistic"
    - Pontic: Adds "Eastern Roman Politics"/"Eastern Roman Succession", Adds "Roman Military"/"Eastern Roman Legacy", Adds "Roman Ceremonies" (with "Roads to Power")
@@ -152,8 +158,9 @@ Culture:
    - Cyrenaican: Adds "Eastern Roman Politics"/"Eastern Roman Succession", Adds "Roman Military"/"Eastern Roman Legacy", Adds "Roman Ceremonies" (with "Roads to Power")
    - Helleno-Coptic: Adds "Eastern Roman Politics"/"Eastern Roman Succession", Adds "Roman Military"/"Eastern Roman Legacy"
    - Cypriot: Adds "Eastern Roman Politics"/"Eastern Roman Succession"
-- Sarmatian Culture Changes:
-   - Sarmatian, Iazyges, Taifal, Alan, Alauni, Hunnic, and Khuni cultures use "Pontic Horsemanship" instead of "Devoted Horsemanship" Tradition
+- Other Culture Changes:
+   - Sarmatian, Iazyges, Taifal, Alan, Alauni, Hunnic, Khuni, and Bolghar cultures use "Pontic Horsemanship" instead of "Devoted Horsemanship" Tradition
+   - Vandalic replaces "Vandalic Warfare" with "Gothic Warfare", adds "Practiced Pirates" Tradition
 - Fashion and Dynasty Frames:
    - Anatolian cultures use Dacian clothing Now
    - Corduenians don't have Scythian clothing
@@ -162,7 +169,10 @@ Culture:
 
 Men-at-Arms:
 - Palatini MAA are now title-only men at arms, available only to independent kingdom or higher rulers, with only a single stack able to be purchased
-- Added unique MAA for Roman Heavy Infantry, Roman Light Infantry, Roman Heavy Cavalry, and Samaritan Cavalry
+- Added unique MAA:
+   - For "Roman Military": Roman Heavy Infantry (Heavy Infantry), Roman Light Infantry (Skirmishers), Roman Heavy Cavalry (Heavy Cavalry)
+   - For "Pontic Horsemen": Contus Bearers (Heavy Infantry)
+   - For "Gothic Warfare": Mekeisman (Heavy Infantry), Gothic Horsemen (Heavy Cavalry)
 
 Religion:
 - Religion Changes:

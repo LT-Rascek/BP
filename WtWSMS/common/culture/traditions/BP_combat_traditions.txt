@@ -98,6 +98,8 @@ tradition_gothic_warfare = {
 		OR = {
 			this = culture:gothic
 			any_parent_culture_or_above = { this = culture:gothic }
+			this = culture:vandalic
+			any_parent_culture_or_above = { this = culture:vandalic }
 		}
 	}
 	can_pick = {
@@ -116,6 +118,8 @@ tradition_gothic_warfare = {
 	}
 	
 	parameters = {
+		unlock_maa_gothic_lancers = yes
+		unlock_maa_gothic_armored_infantry = yes
 		gain_gold_from_battles = yes
 		culture_can_raid_over_land_even_if_feudal = yes
 		not_tribal_raiding_malus = yes
@@ -126,91 +130,7 @@ tradition_gothic_warfare = {
 	character_modifier = {
 		max_loot_mult = 0.25
 		levy_size = -0.25
-		archers_max_size_add = -2
-		light_cavalry_max_size_add = -2
-		heavy_cavalry_max_size_add = 1
-		heavy_infantry_max_size_add = 2
-		men_at_arms_cap = 1
-	}
-	
-	cost = {
-		prestige = {
-			add = {
-				value = tradition_base_cost
-				desc = BASE
-				format = "BASE_VALUE_FORMAT"
-			}
-			if = {
-				limit = {
-					NOR = {
-						culture_pillar:ethos_bellicose = { is_in_list = traits }
-						culture_pillar:ethos_spiritual = { is_in_list = traits }
-					}
-				}
-				add = {
-					value = tradition_incompatible_ethos_penalty
-					desc = not_bellicose_or_spiritual_desc
-				}
-			}
-			
-			multiply = tradition_replacement_cost_if_relevant
-		}
-	}
-	
-	ai_will_do = {
-		value = 100
-		if = {
-			limit = { NOT = { culture_pillar:ethos_bellicose = { is_in_list = traits } } }
-			multiply = 0.5
-		}
-	}
-}
-
-tradition_vandalic_warfare = {
-	category = combat
-	
-	layers = {
-		0 = martial
-		1 = western
-		4 = battle.dds
-	}
-	
-	is_shown = {
-		OR = {
-			this = culture:vandalic
-			any_parent_culture_or_above = { this = culture:vandalic }
-		}
-	}
-	can_pick = {
-		custom_tooltip = {
-			text = cannot_have_tradition_practiced_pirates
-			NOT = { culture_tradition:tradition_practiced_pirates = { is_in_list = traits } }
-		}
-		traditions_cultural_combat_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_vandalic_warfare }
-	}
-	can_pick_for_hybridization = {
-		custom_tooltip = {
-			text = cannot_have_tradition_practiced_pirates
-			NOT = { culture_tradition:tradition_practiced_pirates = { is_in_list = traits } }
-		}
-		traditions_cultural_combat_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_vandalic_warfare }
-	}
-	
-	parameters = {
-		culture_can_raid_at_sea_even_if_feudal = yes
-		not_tribal_raiding_malus = yes
-	}
-	county_modifier = {
-		monthly_county_control_growth_factor = -0.25
-	}
-	character_modifier = {
-		max_loot_mult = 0.25
-		levy_size = -0.25
-		archers_max_size_add = -2
-		light_cavalry_max_size_add = -2
-		heavy_cavalry_max_size_add = 1
-		heavy_infantry_max_size_add = 2
-		men_at_arms_cap = 1
+		movement_speed_land_raiding = 0.1
 	}
 	
 	cost = {

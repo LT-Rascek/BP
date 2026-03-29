@@ -31,7 +31,7 @@ tradition_devoted_horsemanship_western_steppe = {
 
 	parameters = {
 		unlock_maa_horse_archers = yes
-		unlock_maa_samaritan_lancers = yes
+		unlock_maa_sarmatian_lancers = yes
 		can_recruit_open_specialist = yes
 		unlock_horse_pastures_building = yes
 		unlock_voluntary_laampdom = yes
@@ -42,6 +42,9 @@ tradition_devoted_horsemanship_western_steppe = {
 		movement_speed = 0.1
 		character_travel_speed_mult = 0.2
 		movement_speed_land_raiding = 0.2
+		#Rather than a special MAA
+		light_cavalry_recruitment_cost_mult = -0.25
+		light_cavalry_maintenance_mult = -0.25
 	}
 
 	cost = {
@@ -67,7 +70,7 @@ tradition_devoted_horsemanship_western_steppe = {
 
 			if = {
 				limit = {
-					culture_tradition_reduction_trigger = { TRADITION = tradition_devoted_horsemanship }
+					culture_tradition_reduction_trigger = { TRADITION = tradition_devoted_horsemanship_western_steppe }
 				}
 				multiply = {
 					value = 0.5
