@@ -86,6 +86,7 @@
  culture_parameter_unlock_maa_roman_heavy_infantry: "Can recruit [GetMaA('roman_heavy_infantry').GetName] as [men_at_arms|E]"
  culture_parameter_unlock_maa_roman_light_infantry: "Can recruit [GetMaA('roman_light_infantry').GetName] as [men_at_arms|E]"
  culture_parameter_unlock_maa_roman_heavy_cavalry: "Can recruit [GetMaA('roman_heavy_cavalry').GetName] as [men_at_arms|E]"
+  culture_parameter_unlock_maa_samaritan_lancers: "Can recruit [GetMaA('samaritan_lancers').GetName] as [men_at_arms|E]"
  
  ##### WtWSMS Cultural Parameters #####
  culture_parameter_autochthon_baseline_acceptance: "Has a #P +[EmptyScope.ScriptValue('autochthon_baseline_acceptance_value')]#! [cultural_acceptance|E] baseline with other cultures with this tradition"
@@ -133,7 +134,6 @@
  culture_parameter_sieging_counties_may_reduce_development: "Occupying [counties|E] may reduce [county_development|E]\n$TAB$$EFFECT_LIST_BULLET$#weak This is more likely at low development#!\n$TAB$$EFFECT_LIST_BULLET$#weak This is more likely if only tribal holdings are in the [county|E]#!"
  culture_parameter_traditionalist_culture_feature: "[bp_traditionalist_culture_tradition|E]"
  culture_parameter_unlock_innovation_roman_civil: "Unlocks [bp_greco_latin_classical_antiquity_civic_innovations|E] and [bp_greco_latin_late_antiquity_civic_innovations|E]"
- culture_parameter_unlock_innovation_roman_military: "Unlocks [bp_latin_classical_antiquity_military_innovations|E]"
  culture_parameter_unlock_persian_urbanization: "Unlocks $innovation_persian_urbanization$ [innovation|E] in the $culture_era_late_antiquity$ [era]"
  culture_parameter_unlocks_chariot_support: "Unlocks the ability to select a chariot #italic deme#! to support"
  culture_parameter_unlocks_desert_buildings_early: "Enables the first 3 levels of desert buildings"
@@ -210,6 +210,10 @@
  #Migratory Tribes
  tradition_migratory_culture_name: "Migratory Culture"
  tradition_migratory_culture_desc: "This culture formed as a result of a migration of peoples, creating a separate identity from their brethern. While their numbers are small, they are focused martially."
+ 
+ #### Steppe Traditions ####
+ tradition_devoted_horsemanship_western_steppe_name: "Pontic Horsemanship"
+ tradition_devoted_horsemanship_western_steppe_desc: "These people, having lived in the Pontic Steppe, cannot be kept from the saddle. Wherever they find themselves, their herds are there too, and the horses are tended to with a careful eye."
  
  #### Combat Traditions ####
  #Gothic Warfare

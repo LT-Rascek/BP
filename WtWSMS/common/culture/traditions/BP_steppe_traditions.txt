@@ -1,0 +1,85 @@
+﻿##### Variant of tradition_devoted_horsemanship, but for Western Steppe only
+tradition_devoted_horsemanship_western_steppe = {
+	category = regional
+
+	layers = {
+		0 = martial
+		1 = steppe
+		4 = audacious_cadets.dds
+	}
+
+	is_shown = {
+		scope:character.culture = { culture_overlaps_geographical_region = world_steppe_west }
+		NOT = { has_cultural_tradition = tradition_devoted_horsemanship }
+	}
+
+	can_pick = {
+		custom_description = {
+			text = half_of_counties_in_world_steppe_west
+			culture = {
+				any_culture_county = {
+					percent > 0.50
+					any_province = { geographical_region = world_steppe_west }
+				}
+			}
+		}
+		OR = {
+			scope:character = { mpo_can_recruit_nomad_maa_trigger = yes }
+			scope:character = { has_trait = nomadic_philosophy }
+		}
+	}
+
+	parameters = {
+		unlock_maa_horse_archers = yes
+		unlock_maa_samaritan_lancers = yes
+		can_recruit_open_specialist = yes
+		unlock_horse_pastures_building = yes
+		unlock_voluntary_laampdom = yes
+		stewardship_traits_give_out_cav_bonus = yes
+	}
+
+	character_modifier = {
+		movement_speed = 0.1
+		character_travel_speed_mult = 0.2
+		movement_speed_land_raiding = 0.2
+	}
+
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				multiply = 2
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_bellicose = { is_in_list = traits }
+						culture_pillar:ethos_communal = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_bellicose_or_communal_desc
+				}
+			}
+
+			if = {
+				limit = {
+					culture_tradition_reduction_trigger = { TRADITION = tradition_devoted_horsemanship }
+				}
+				multiply = {
+					value = 0.5
+					desc = inspired_by_culture_desc
+				}
+			}
+
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+
+	ai_will_do = {
+		value = 400
+	}
+}
