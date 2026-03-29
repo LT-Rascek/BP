@@ -604,12 +604,13 @@ d_venetia = { #Empty History
 		holder = d_venetia_476_holder
 		liege = h_western_roman_empire
 	}
-	476.9.4 = {
+	#Arrival of the Rugii; they'll chill here for a while and _should_ continue under the Ostrogoths
+	476.9.4={
+		holder = rugii_odoacer_contingent
 		liege = h_italy
-		holder = skiriannobleman_1
-		government = subroman_administrative_government
+		government = roman_federate_government
 	}
-	477.1.1 = { holder = 0 }
+	493.1.1 = { holder = 0 }
 }
 c_venezia = {
 	395.1.1 = {
@@ -648,776 +649,561 @@ c_venezia = {
 		holder = 96054
 	}
 	476.1.1 = { holder = d_venetia_476_holder }
-	476.9.4 = { holder = skiriannobleman_1 }
-	477.1.1 = { holder = 55 }
-	489.1.1={
-		holder = 63 # Theodoric
-		liege = k_ostrogoths
-	}
-	493.3.5 = {
-		liege = h_italy
-	}
-	526.1.1={
-		holder = 190203 # Athalarik 
-	}
-	534.10.2={
-		holder = 190215 # Theodahad 
-	}
-	536.1.1={
-		holder = 190219 # Witiges 
-	}
-	540.1.1={
-		holder = 190222 # Ildibad
-	}
-	541.1.1={
-		holder = 190116 # Eraric
-	}
-	541.6.1={
-		holder = 190118 # Totilla
-		liege=0
-	}
-	552.1.1={
-		holder = 155147 # Thila
-	}
-	553.1.1={
-		holder = 1300167 # Antiochus
-		liege = h_eastern_roman_empire
-	}
-	555.1.1 = {
-		holder = 444402 # Narses
-	}
-	568.1.1 = {
-		holder = 1300168 # Longinus
-	}
-	576.1.1 = {
-		holder = 1300169 # Maurilio
-	}
-	#exarchate of Ravenna
-	584.1.1={
-		holder = 31050 # Decius
-		liege = h_eastern_roman_empire
-	}
-	585.1.1={
-		holder = 31051 # Smaragdus
-	}
-	589.1.1={
-		holder = 31060 # Romanus
-	}
-	598.1.1={
-		holder = 31061 # Kallinikos
-	}
-	603.1.1={
-		holder = 31051 # Smaragdus
-	}
+	476.9.4 = { holder = rugii_odoacer_contingent }
+	##### 489 onwards: TBD
+	#489.1.1={ holder = 63 # Theodoric
+	#}
+	#493.3.5 = {
+	#	liege = h_italy
+	#}
+	#526.1.1={
+	#	holder = 190203 # Athalarik 
+	#}
+	#534.10.2={
+	#	holder = 190215 # Theodahad 
+	#}
+	#536.1.1={
+	#	holder = 190219 # Witiges 
+	#}
+	#540.1.1={
+	#	holder = 190222 # Ildibad
+	#}
+	#541.1.1={
+	#	holder = 190116 # Eraric
+	#}
+	#541.6.1={
+	#	holder = 190118 # Totilla
+	#	liege=0
+	#}
+	#552.1.1={
+	#	holder = 155147 # Thila
+	#}
+	#553.1.1={
+	#	holder = 1300167 # Antiochus
+	#	liege = h_eastern_roman_empire
+	#}
+	#555.1.1 = {
+	#	holder = 444402 # Narses
+	#}
+	#568.1.1 = {
+	#	holder = 1300168 # Longinus
+	#}
+	#576.1.1 = {
+	#	holder = 1300169 # Maurilio
+	#}
+	##exarchate of Ravenna
+	#584.1.1={
+	#	holder = 31050 # Decius
+	#	liege = h_eastern_roman_empire
+	#}
+	#585.1.1={
+	#	holder = 31051 # Smaragdus
+	#}
+	#589.1.1={
+	#	holder = 31060 # Romanus
+	#}
+	#598.1.1={
+	#	holder = 31061 # Kallinikos
+	#}
+	#603.1.1={
+	#	holder = 31051 # Smaragdus
+	#}
 }
 c_verona = {
-	#Development
-	#Rulers
-	395.1.1 = {
-		holder = 1300737 #Parecorius Apollinaris
-		liege = h_roman_empire
-	}
-	395.1.17 = {
-		liege = h_western_roman_empire
-	}
-	423.8.25 = {
-		holder = 145229
-		liege = 0
-	}
-	455.3.1={
-		holder = 74401
-	}
-	455.5.31={
-		holder = 74403
-	}
-	457.1.1={
-		holder = 74404 
-	}
-	461.1.1={
-		holder = 74405 
-	}
-	465.1.1={
-		holder = 74406 
-	}
-	472.1.1={
-		holder = 74415
-	}
-	473.1.1={
-		holder = 74419
-	}
-	475.1.1={
-		holder = 96054
-	}
 	476.1.1 = { holder = d_venetia_476_holder }
-	476.9.4 = { holder = skiriannobleman_1 }
-	477.1.1 = { holder = 55 }
-	489.1.1={
-		holder = 63 # Theodoric
-		liege = k_ostrogoths
-	}
-	489.4.1 = { # Appointed on April 1
-		holder = 1210005 # Tufa 
-	}
-	493.1.1 = {
-		holder = 63 # Theodoric 
-	}
-	493.3.5 = {
-		liege = h_italy
-	}
-	526.1.1={
-		holder = 190203 # Athalarik 
-	}
-	534.10.2={
-		holder = 190215 # Theodahad 
-	}
-	536.1.1={
-		holder = 190219 # Witiges 
-	}
-	540.1.1={
-		holder = 190222 # Ildibad
-	}
-	541.1.1={
-		holder = 190116 # Eraric
-	}
-	541.6.1={
-		holder = 190118 # Totilla
-		liege=0
-	}
-	552.1.1={
-		holder = 155147 # Thila
-	}
-	553.1.1={
-		holder = 1300167 # Antiochus
-		liege = h_eastern_roman_empire
-	}
-	555.1.1 = {
-		holder = 444402 # Narses
-	}
-	568.1.1={
-		holder = 31072 # Theodo Artavazding
-		liege="k_lombardia"
-	}
-	590.1.1={
-		holder = 31073 # Piutprand Artavazding
-	}
+	476.9.4 = { holder = rugii_odoacer_contingent }
+	##### 489 onwards: TBD
+	#489.1.1={ holder = 63 # Theodoric
+	#}
+	#493.3.5 = {
+	#	liege = h_italy
+	#}
+	#526.1.1={
+	#	holder = 190203 # Athalarik 
+	#}
+	#534.10.2={
+	#	holder = 190215 # Theodahad 
+	#}
+	#536.1.1={
+	#	holder = 190219 # Witiges 
+	#}
+	#540.1.1={
+	#	holder = 190222 # Ildibad
+	#}
+	#541.1.1={
+	#	holder = 190116 # Eraric
+	#}
+	#541.6.1={
+	#	holder = 190118 # Totilla
+	#	liege=0
+	#}
+	#552.1.1={
+	#	holder = 155147 # Thila
+	#}
+	#553.1.1={
+	#	holder = 1300167 # Antiochus
+	#	liege = h_eastern_roman_empire
+	#}
+	#555.1.1 = {
+	#	holder = 444402 # Narses
+	#}
+	#568.1.1 = {
+	#	holder = 1300168 # Longinus
+	#}
+	#576.1.1 = {
+	#	holder = 1300169 # Maurilio
+	#}
+	##exarchate of Ravenna
+	#584.1.1={
+	#	holder = 31050 # Decius
+	#	liege = h_eastern_roman_empire
+	#}
+	#585.1.1={
+	#	holder = 31051 # Smaragdus
+	#}
+	#589.1.1={
+	#	holder = 31060 # Romanus
+	#}
+	#598.1.1={
+	#	holder = 31061 # Kallinikos
+	#}
+	#603.1.1={
+	#	holder = 31051 # Smaragdus
+	#}
 }
 c_treviso = {
-	#Development
-	#Rulers
-	395.1.1 = {
-		holder = 1300737 #Parecorius Apollinaris
-		liege = h_roman_empire
-	}
-	395.1.17 = {
-		liege = h_western_roman_empire
-	}
-	423.8.25 = {
-		holder = 145229
-		liege = 0
-	}
-	455.3.1={
-		holder = 74401
-	}
-	455.5.31={
-		holder = 74403
-	}
-	457.1.1={
-		holder = 74404 
-	}
-	461.1.1={
-		holder = 74405 
-	}
-	465.1.1={
-		holder = 74406 
-	}
-	472.1.1={
-		holder = 74415
-	}
-	473.1.1={
-		holder = 74419
-	}
-	475.1.1={
-		holder = 96054
-	}
 	476.1.1 = { holder = d_venetia_476_holder }
-	476.9.4 = { holder = skiriannobleman_1 }
-	477.1.1 = { holder = 55 }
-	489.1.1={
-		holder = 63 # Theodoric
-		liege = k_ostrogoths
-	}
-	493.3.5 = {
-		liege = h_italy
-	}
-	526.1.1={
-		holder = 190203 # Athalarik 
-	}
-	534.10.2={
-		holder = 190215 # Theodahad 
-	}
-	536.1.1={
-		holder = 190219 # Witiges 
-	}
-	538.1.1 = {
-		holder = 190098 # Reparatus
-		liege = h_eastern_roman_empire
-	}
-	539.1.1 = {
-		holder = 90109 # Athanasius of Idriphthon 
-	}
-	542.1.1={
-		holder = 94000 # Maximinus Bassus
-	}
-	543.1.1={
-		holder = 1300166 # PLRE vol. 3 Anonymus 133
-	}
-	552.1.1 = {
-		holder = 1300167 # Antiochus
-	}
-	555.1.1 = {
-		holder = 444402 # Narses
-	}
-	568.1.1={	
-		liege = k_lombardia
-		holder = 31068 # Romauld Romaulding
-	}
-	580.1.1={
-		holder = 31069 # Aistulf Romaulding
-	}
+	476.9.4 = { holder = rugii_odoacer_contingent }
+	##### 489 onwards: TBD
+	#489.1.1={ holder = 63 # Theodoric
+	#}
+	#493.3.5 = {
+	#	liege = h_italy
+	#}
+	#526.1.1={
+	#	holder = 190203 # Athalarik 
+	#}
+	#534.10.2={
+	#	holder = 190215 # Theodahad 
+	#}
+	#536.1.1={
+	#	holder = 190219 # Witiges 
+	#}
+	#540.1.1={
+	#	holder = 190222 # Ildibad
+	#}
+	#541.1.1={
+	#	holder = 190116 # Eraric
+	#}
+	#541.6.1={
+	#	holder = 190118 # Totilla
+	#	liege=0
+	#}
+	#552.1.1={
+	#	holder = 155147 # Thila
+	#}
+	#553.1.1={
+	#	holder = 1300167 # Antiochus
+	#	liege = h_eastern_roman_empire
+	#}
+	#555.1.1 = {
+	#	holder = 444402 # Narses
+	#}
+	#568.1.1 = {
+	#	holder = 1300168 # Longinus
+	#}
+	#576.1.1 = {
+	#	holder = 1300169 # Maurilio
+	#}
+	##exarchate of Ravenna
+	#584.1.1={
+	#	holder = 31050 # Decius
+	#	liege = h_eastern_roman_empire
+	#}
+	#585.1.1={
+	#	holder = 31051 # Smaragdus
+	#}
+	#589.1.1={
+	#	holder = 31060 # Romanus
+	#}
+	#598.1.1={
+	#	holder = 31061 # Kallinikos
+	#}
+	#603.1.1={
+	#	holder = 31051 # Smaragdus
+	#}
 }
-c_padua = { #c_padova history
-	#Development
-	#Rulers
-	395.1.1 = {
-		holder = 1300737 #Parecorius Apollinaris
-		liege = h_roman_empire
-	}
-	395.1.17 = {
-		liege = h_western_roman_empire
-	}
-	423.8.25 = {
-		holder = 145229
-		liege = 0
-	}
-	455.3.1={
-		holder = 74401
-	}
-	455.5.31={
-		holder = 74403
-	}
-	457.1.1={
-		holder = 74404 
-	}
-	461.1.1={
-		holder = 74405 
-	}
-	465.1.1={
-		holder = 74406 
-	}
-	472.1.1={
-		holder = 74415
-	}
-	473.1.1={
-		holder = 74419
-	}
-	475.1.1={
-		holder = 96054
-	}
+c_padua = {
 	476.1.1 = { holder = d_venetia_476_holder }
-	476.9.4 = { holder = skiriannobleman_1 }
-	477.1.1 = { holder = 55 }
-	489.1.1={
-		holder = 63 # Theodoric
-		liege = k_ostrogoths
-	}
-	493.3.5 = {
-		liege = h_italy
-	}
-	526.1.1={
-		holder = 190203 # Athalarik 
-	}
-	534.10.2={
-		holder = 190215 # Theodahad 
-	}
-	536.1.1={
-		holder = 190219 # Witiges 
-	}
-	540.1.1={
-		holder = 190222 # Ildibad
-	}
-	541.1.1={
-		holder = 190116 # Eraric
-	}
-	541.6.1={
-		holder = 190118 # Totilla
-		liege=0
-	}
-	552.1.1={
-		holder = 155147 # Thila
-	}
-	553.1.1={
-		holder = 1300167 # Antiochus
-		liege = h_eastern_roman_empire
-	}
-	555.1.1 = {
-		holder = 444402 # Narses
-	}
-	568.1.1={
-		holder = 31072 # Theodo Artavazding
-		liege="k_lombardia"
-	}
-	590.1.1={
-		holder = 31073 # Piutprand Artavazding
-	}
+	476.9.4 = { holder = rugii_odoacer_contingent }
+	##### 489 onwards: TBD
+	#489.1.1={ holder = 63 # Theodoric
+	#}
+	#493.3.5 = {
+	#	liege = h_italy
+	#}
+	#526.1.1={
+	#	holder = 190203 # Athalarik 
+	#}
+	#534.10.2={
+	#	holder = 190215 # Theodahad 
+	#}
+	#536.1.1={
+	#	holder = 190219 # Witiges 
+	#}
+	#540.1.1={
+	#	holder = 190222 # Ildibad
+	#}
+	#541.1.1={
+	#	holder = 190116 # Eraric
+	#}
+	#541.6.1={
+	#	holder = 190118 # Totilla
+	#	liege=0
+	#}
+	#552.1.1={
+	#	holder = 155147 # Thila
+	#}
+	#553.1.1={
+	#	holder = 1300167 # Antiochus
+	#	liege = h_eastern_roman_empire
+	#}
+	#555.1.1 = {
+	#	holder = 444402 # Narses
+	#}
+	#568.1.1 = {
+	#	holder = 1300168 # Longinus
+	#}
+	#576.1.1 = {
+	#	holder = 1300169 # Maurilio
+	#}
+	##exarchate of Ravenna
+	#584.1.1={
+	#	holder = 31050 # Decius
+	#	liege = h_eastern_roman_empire
+	#}
+	#585.1.1={
+	#	holder = 31051 # Smaragdus
+	#}
+	#589.1.1={
+	#	holder = 31060 # Romanus
+	#}
+	#598.1.1={
+	#	holder = 31061 # Kallinikos
+	#}
+	#603.1.1={
+	#	holder = 31051 # Smaragdus
+	#}
 }
-c_polesine = { #c_padova history
-	#Development
-	#Rulers
-	395.1.1 = {
-		holder = 1300737 #Parecorius Apollinaris
-		liege = h_roman_empire
-	}
-	395.1.17 = {
-		liege = h_western_roman_empire
-	}
-	423.8.25 = {
-		holder = 145229
-		liege = 0
-	}
-	455.3.1={
-		holder = 74401
-	}
-	455.5.31={
-		holder = 74403
-	}
-	457.1.1={
-		holder = 74404 
-	}
-	461.1.1={
-		holder = 74405 
-	}
-	465.1.1={
-		holder = 74406 
-	}
-	472.1.1={
-		holder = 74415
-	}
-	473.1.1={
-		holder = 74419
-	}
-	475.1.1={
-		holder = 96054
-	}
+c_polesine = {
 	476.1.1 = { holder = d_venetia_476_holder }
-	476.9.4 = { holder = skiriannobleman_1 }
-	477.1.1 = { holder = 55 }
-	489.1.1={
-		holder = 63 # Theodoric
-		liege = k_ostrogoths
-	}
-	493.3.5 = {
-		liege = h_italy
-	}
-	526.1.1={
-		holder = 190203 # Athalarik 
-	}
-	534.10.2={
-		holder = 190215 # Theodahad 
-	}
-	536.1.1={
-		holder = 190219 # Witiges 
-	}
-	540.1.1={
-		holder = 190222 # Ildibad
-	}
-	541.1.1={
-		holder = 190116 # Eraric
-	}
-	541.6.1={
-		holder = 190118 # Totilla
-		liege=0
-	}
-	552.1.1={
-		holder = 155147 # Thila
-	}
-	553.1.1={
-		holder = 1300167 # Antiochus
-		liege = h_eastern_roman_empire
-	}
-	555.1.1 = {
-		holder = 444402 # Narses
-	}
-	568.1.1={
-		holder = 31072 # Theodo Artavazding
-		liege="k_lombardia"
-	}
-	590.1.1={
-		holder = 31073 # Piutprand Artavazding
-	}
+	476.9.4 = { holder = rugii_odoacer_contingent }
+	##### 489 onwards: TBD
+	#489.1.1={ holder = 63 # Theodoric
+	#}
+	#493.3.5 = {
+	#	liege = h_italy
+	#}
+	#526.1.1={
+	#	holder = 190203 # Athalarik 
+	#}
+	#534.10.2={
+	#	holder = 190215 # Theodahad 
+	#}
+	#536.1.1={
+	#	holder = 190219 # Witiges 
+	#}
+	#540.1.1={
+	#	holder = 190222 # Ildibad
+	#}
+	#541.1.1={
+	#	holder = 190116 # Eraric
+	#}
+	#541.6.1={
+	#	holder = 190118 # Totilla
+	#	liege=0
+	#}
+	#552.1.1={
+	#	holder = 155147 # Thila
+	#}
+	#553.1.1={
+	#	holder = 1300167 # Antiochus
+	#	liege = h_eastern_roman_empire
+	#}
+	#555.1.1 = {
+	#	holder = 444402 # Narses
+	#}
+	#568.1.1 = {
+	#	holder = 1300168 # Longinus
+	#}
+	#576.1.1 = {
+	#	holder = 1300169 # Maurilio
+	#}
+	##exarchate of Ravenna
+	#584.1.1={
+	#	holder = 31050 # Decius
+	#	liege = h_eastern_roman_empire
+	#}
+	#585.1.1={
+	#	holder = 31051 # Smaragdus
+	#}
+	#589.1.1={
+	#	holder = 31060 # Romanus
+	#}
+	#598.1.1={
+	#	holder = 31061 # Kallinikos
+	#}
+	#603.1.1={
+	#	holder = 31051 # Smaragdus
+	#}
 }
-c_veneto = { #c_padova history
-	#Development
-	#Rulers
-	395.1.1 = {
-		holder = 1300737 #Parecorius Apollinaris
-		liege = h_roman_empire
-	}
-	395.1.17 = {
-		liege = h_western_roman_empire
-	}
-	423.8.25 = {
-		holder = 145229
-		liege = 0
-	}
-	455.3.1={
-		holder = 74401
-	}
-	455.5.31={
-		holder = 74403
-	}
-	457.1.1={
-		holder = 74404 
-	}
-	461.1.1={
-		holder = 74405 
-	}
-	465.1.1={
-		holder = 74406 
-	}
-	472.1.1={
-		holder = 74415
-	}
-	473.1.1={
-		holder = 74419
-	}
-	475.1.1={
-		holder = 96054
-	}
+c_veneto = {
 	476.1.1 = { holder = d_venetia_476_holder }
-	476.9.4 = { holder = skiriannobleman_1 }
-	477.1.1 = { holder = 55 }
-	489.1.1={
-		holder = 63 # Theodoric
-		liege = k_ostrogoths
-	}
-	493.3.5 = {
-		liege = h_italy
-	}
-	526.1.1={
-		holder = 190203 # Athalarik 
-	}
-	534.10.2={
-		holder = 190215 # Theodahad 
-	}
-	536.1.1={
-		holder = 190219 # Witiges 
-	}
-	540.1.1={
-		holder = 190222 # Ildibad
-	}
-	541.1.1={
-		holder = 190116 # Eraric
-	}
-	541.6.1={
-		holder = 190118 # Totilla
-		liege=0
-	}
-	552.1.1={
-		holder = 155147 # Thila
-	}
-	553.1.1={
-		holder = 1300167 # Antiochus
-		liege = h_eastern_roman_empire
-	}
-	555.1.1 = {
-		holder = 444402 # Narses
-	}
-	568.1.1={
-		holder = 31072 # Theodo Artavazding
-		liege="k_lombardia"
-	}
-	590.1.1={
-		holder = 31073 # Piutprand Artavazding
-	}
+	476.9.4 = { holder = rugii_odoacer_contingent }
+	##### 489 onwards: TBD
+	#489.1.1={ holder = 63 # Theodoric
+	#}
+	#493.3.5 = {
+	#	liege = h_italy
+	#}
+	#526.1.1={
+	#	holder = 190203 # Athalarik 
+	#}
+	#534.10.2={
+	#	holder = 190215 # Theodahad 
+	#}
+	#536.1.1={
+	#	holder = 190219 # Witiges 
+	#}
+	#540.1.1={
+	#	holder = 190222 # Ildibad
+	#}
+	#541.1.1={
+	#	holder = 190116 # Eraric
+	#}
+	#541.6.1={
+	#	holder = 190118 # Totilla
+	#	liege=0
+	#}
+	#552.1.1={
+	#	holder = 155147 # Thila
+	#}
+	#553.1.1={
+	#	holder = 1300167 # Antiochus
+	#	liege = h_eastern_roman_empire
+	#}
+	#555.1.1 = {
+	#	holder = 444402 # Narses
+	#}
+	#568.1.1 = {
+	#	holder = 1300168 # Longinus
+	#}
+	#576.1.1 = {
+	#	holder = 1300169 # Maurilio
+	#}
+	##exarchate of Ravenna
+	#584.1.1={
+	#	holder = 31050 # Decius
+	#	liege = h_eastern_roman_empire
+	#}
+	#585.1.1={
+	#	holder = 31051 # Smaragdus
+	#}
+	#589.1.1={
+	#	holder = 31060 # Romanus
+	#}
+	#598.1.1={
+	#	holder = 31061 # Kallinikos
+	#}
+	#603.1.1={
+	#	holder = 31051 # Smaragdus
+	#}
 }
-c_mantua = { #c_verona history (in line with WTWSMS)
-	#Development
-	#Rulers
-	395.1.1 = {
-		holder = 1300737 #Parecorius Apollinaris
-		liege = h_roman_empire
-	}
-	395.1.17 = {
-		liege = h_western_roman_empire
-	}
-	423.8.25 = {
-		holder = 145229
-		liege = 0
-	}
-	455.3.1={
-		holder = 74401
-	}
-	455.5.31={
-		holder = 74403
-	}
-	457.1.1={
-		holder = 74404 
-	}
-	461.1.1={
-		holder = 74405 
-	}
-	465.1.1={
-		holder = 74406 
-	}
-	472.1.1={
-		holder = 74415
-	}
-	473.1.1={
-		holder = 74419
-	}
-	475.1.1={
-		holder = 96054
-	}
+c_mantua = {
 	476.1.1 = { holder = d_venetia_476_holder }
-	476.9.4 = { holder = skiriannobleman_1 }
-	477.1.1 = { holder = 55 }
-	489.1.1={
-		holder = 63 # Theodoric
-		liege = k_ostrogoths
-	}
-	489.4.1 = { # Appointed on April 1
-		holder = 1210005 # Tufa 
-	}
-	493.1.1 = {
-		holder = 63 # Theodoric 
-	}
-	493.3.5 = {
-		liege = h_italy
-	}
-	526.1.1={
-		holder = 190203 # Athalarik 
-	}
-	534.10.2={
-		holder = 190215 # Theodahad 
-	}
-	536.1.1={
-		holder = 190219 # Witiges 
-	}
-	540.1.1={
-		holder = 190222 # Ildibad
-	}
-	541.1.1={
-		holder = 190116 # Eraric
-	}
-	541.6.1={
-		holder = 190118 # Totilla
-		liege=0
-	}
-	552.1.1={
-		holder = 155147 # Thila
-	}
-	553.1.1={
-		holder = 1300167 # Antiochus
-		liege = h_eastern_roman_empire
-	}
-	555.1.1 = {
-		holder = 444402 # Narses
-	}
-	568.1.1 = {
-		holder = 1300168 # Longinus
-	}
-	576.1.1 = {
-		holder = 1300169 # Maurilio
-	}
-	#exarchate of Ravenna
-	584.1.1={
-		holder = 31050 # Decius
-		liege = h_eastern_roman_empire
-	}
-	585.1.1={
-		holder = 31051 # Smaragdus
-	}
-	589.1.1={
-		holder = 31060 # Romanus
-	}
-	598.1.1={
-		holder = 31061 # Kallinikos
-	}
-	603.1.1={
-		holder = 31051 # Smaragdus
-	}
+	476.9.4 = { holder = rugii_odoacer_contingent }
+	##### 489 onwards: TBD
+	#489.1.1={ holder = 63 # Theodoric
+	#}
+	#493.3.5 = {
+	#	liege = h_italy
+	#}
+	#526.1.1={
+	#	holder = 190203 # Athalarik 
+	#}
+	#534.10.2={
+	#	holder = 190215 # Theodahad 
+	#}
+	#536.1.1={
+	#	holder = 190219 # Witiges 
+	#}
+	#540.1.1={
+	#	holder = 190222 # Ildibad
+	#}
+	#541.1.1={
+	#	holder = 190116 # Eraric
+	#}
+	#541.6.1={
+	#	holder = 190118 # Totilla
+	#	liege=0
+	#}
+	#552.1.1={
+	#	holder = 155147 # Thila
+	#}
+	#553.1.1={
+	#	holder = 1300167 # Antiochus
+	#	liege = h_eastern_roman_empire
+	#}
+	#555.1.1 = {
+	#	holder = 444402 # Narses
+	#}
+	#568.1.1 = {
+	#	holder = 1300168 # Longinus
+	#}
+	#576.1.1 = {
+	#	holder = 1300169 # Maurilio
+	#}
+	##exarchate of Ravenna
+	#584.1.1={
+	#	holder = 31050 # Decius
+	#	liege = h_eastern_roman_empire
+	#}
+	#585.1.1={
+	#	holder = 31051 # Smaragdus
+	#}
+	#589.1.1={
+	#	holder = 31060 # Romanus
+	#}
+	#598.1.1={
+	#	holder = 31061 # Kallinikos
+	#}
+	#603.1.1={
+	#	holder = 31051 # Smaragdus
+	#}
 }
 c_trent = {
-	#Development
-	#Rulers
-	395.1.1 = {
-		holder = 1300737 #Parecorius Apollinaris
-		liege = h_roman_empire
-	}
-	395.1.17 = {
-		liege = h_western_roman_empire
-	}
-	423.8.25 = {
-		holder = 145229
-		liege = 0
-	}
-	455.3.1={
-		holder = 74401
-	}
-	455.5.31={
-		holder = 74403
-	}
-	457.1.1={
-		holder = 74404 
-	}
-	461.1.1={
-		holder = 74405 
-	}
-	465.1.1={
-		holder = 74406 
-	}
-	472.1.1={
-		holder = 74415
-	}
-	473.1.1={
-		holder = 74419
-	}
-	475.1.1={
-		holder = 96054
-	}
 	476.1.1 = { holder = d_venetia_476_holder }
-	476.9.4 = { holder = skiriannobleman_1 }
-	477.1.1 = { holder = 55 }
-	489.1.1={
-		holder = 63 # Theodoric
-		liege = k_ostrogoths
-	}
-	493.3.5 = {
-		liege = h_italy
-	}
-	526.1.1={
-		holder = 190203 # Athalarik 
-	}
-	534.10.2={
-		holder = 190215 # Theodahad 
-	}
-	536.1.1={
-		holder = 190219 # Witiges 
-	}
-	538.1.1 = {
-		holder = 190098 # Reparatus
-		liege = h_eastern_roman_empire
-	}
-	539.1.1 = {
-		holder = 90109 # Athanasius of Idriphthon 
-	}
-	542.1.1={
-		holder = 94000 # Maximinus Bassus
-	}
-	543.1.1={
-		holder = 1300166 # PLRE vol. 3 Anonymus 133
-	}
-	550.1.1={
-		holder=31064 # Widin Tribigilding
-		liege=0
-	}
-	562.1.1={
-		holder = 444402 # Narses
-		liege = h_eastern_roman_empire
-	}
-	568.1.1={
-		liege = k_lombardia
-		holder = 31070 # Euin Euining
-	}
-	595.1.1={
-		holder = 31071 # Gaidoald of Trent
-	}
+	476.9.4 = { holder = rugii_odoacer_contingent }
+	##### 489 onwards: TBD
+	#489.1.1={ holder = 63 # Theodoric
+	#}
+	#493.3.5 = {
+	#	liege = h_italy
+	#}
+	#526.1.1={
+	#	holder = 190203 # Athalarik 
+	#}
+	#534.10.2={
+	#	holder = 190215 # Theodahad 
+	#}
+	#536.1.1={
+	#	holder = 190219 # Witiges 
+	#}
+	#540.1.1={
+	#	holder = 190222 # Ildibad
+	#}
+	#541.1.1={
+	#	holder = 190116 # Eraric
+	#}
+	#541.6.1={
+	#	holder = 190118 # Totilla
+	#	liege=0
+	#}
+	#552.1.1={
+	#	holder = 155147 # Thila
+	#}
+	#553.1.1={
+	#	holder = 1300167 # Antiochus
+	#	liege = h_eastern_roman_empire
+	#}
+	#555.1.1 = {
+	#	holder = 444402 # Narses
+	#}
+	#568.1.1 = {
+	#	holder = 1300168 # Longinus
+	#}
+	#576.1.1 = {
+	#	holder = 1300169 # Maurilio
+	#}
+	##exarchate of Ravenna
+	#584.1.1={
+	#	holder = 31050 # Decius
+	#	liege = h_eastern_roman_empire
+	#}
+	#585.1.1={
+	#	holder = 31051 # Smaragdus
+	#}
+	#589.1.1={
+	#	holder = 31060 # Romanus
+	#}
+	#598.1.1={
+	#	holder = 31061 # Kallinikos
+	#}
+	#603.1.1={
+	#	holder = 31051 # Smaragdus
+	#}
 }
 c_brescia = {
-	#Development
-	#Rulers
-	395.1.1 = {
-		holder = 1300737 #Parecorius Apollinaris
-		liege = h_roman_empire
-	}
-	395.1.17 = {
-		liege = h_western_roman_empire
-	}
-	423.8.25 = {
-		holder = 145229
-		liege = 0
-	}
-	455.3.1={
-		holder = 74401
-	}
-	455.5.31={
-		holder = 74403
-	}
-	457.1.1={
-		holder = 74404 
-	}
-	461.1.1={
-		holder = 74405 
-	}
-	465.1.1={
-		holder = 74406 
-	}
-	472.1.1={
-		holder = 74415
-	}
-	473.1.1={
-		holder = 74419
-	}
-	475.1.1={
-		holder = 96054
-	}
 	476.1.1 = { holder = d_venetia_476_holder }
-	476.9.4 = { holder = skiriannobleman_1 }
-	477.1.1 = { holder = 55 }
-	489.1.1={
-		holder = 63 # Theodoric
-		liege = k_ostrogoths
-	}
-	493.3.5 = {
-		liege = h_italy
-	}
-	526.1.1={
-		holder = 190203 # Athalarik 
-	}
-	534.10.2={
-		holder = 190215 # Theodahad 
-	}
-	536.1.1={
-		holder = 190219 # Witiges 
-	}
-	538.1.1 = {
-		holder = 190098 # Reparatus
-		liege = h_eastern_roman_empire
-	}
-	539.1.1 = {
-		holder = 90109 # Athanasius of Idriphthon 
-	}
-	542.1.1={
-		holder = 94000 # Maximinus Bassus
-	}
-	543.1.1={
-		holder = 1300166 # PLRE vol. 3 Anonymus 133
-	}
-	550.1.1={
-		holder=31064 # Widin Tribigilding
-		liege=0
-	}
-	562.1.1={
-		holder = 444402 # Narses
-		liege = h_eastern_roman_empire
-	}
-	568.1.1={
-		liege = k_lombardia
-		holder = 31070 # Euin Euining
-	}
-	595.1.1={
-		holder = 31071 # Gaidoald of Trent
-	}
+	476.9.4 = { holder = rugii_odoacer_contingent }
+	##### 489 onwards: TBD
+	#489.1.1={ holder = 63 # Theodoric
+	#}
+	#493.3.5 = {
+	#	liege = h_italy
+	#}
+	#526.1.1={
+	#	holder = 190203 # Athalarik 
+	#}
+	#534.10.2={
+	#	holder = 190215 # Theodahad 
+	#}
+	#536.1.1={
+	#	holder = 190219 # Witiges 
+	#}
+	#540.1.1={
+	#	holder = 190222 # Ildibad
+	#}
+	#541.1.1={
+	#	holder = 190116 # Eraric
+	#}
+	#541.6.1={
+	#	holder = 190118 # Totilla
+	#	liege=0
+	#}
+	#552.1.1={
+	#	holder = 155147 # Thila
+	#}
+	#553.1.1={
+	#	holder = 1300167 # Antiochus
+	#	liege = h_eastern_roman_empire
+	#}
+	#555.1.1 = {
+	#	holder = 444402 # Narses
+	#}
+	#568.1.1 = {
+	#	holder = 1300168 # Longinus
+	#}
+	#576.1.1 = {
+	#	holder = 1300169 # Maurilio
+	#}
+	##exarchate of Ravenna
+	#584.1.1={
+	#	holder = 31050 # Decius
+	#	liege = h_eastern_roman_empire
+	#}
+	#585.1.1={
+	#	holder = 31051 # Smaragdus
+	#}
+	#589.1.1={
+	#	holder = 31060 # Romanus
+	#}
+	#598.1.1={
+	#	holder = 31061 # Kallinikos
+	#}
+	#603.1.1={
+	#	holder = 31051 # Smaragdus
+	#}
 }
 
 d_liguria = {
@@ -1452,8 +1238,6 @@ d_liguria = {
 	}
 }
 c_lombardia = {
-	#Development
-	#Rulers
 	385.1.1={
 		holder = 1300748 #Floridus
 		liege = h_roman_empire
@@ -1514,9 +1298,7 @@ c_lombardia = {
 		holder = 31092 # Curincpert Rodaning
 	}
 }
-c_como = { #c_lombardia history
-	#Development
-	#Rulers
+c_como = {
 	385.1.1={
 		holder = 1300748 #Floridus
 		liege = h_roman_empire
@@ -1527,59 +1309,13 @@ c_como = { #c_lombardia history
 	397.1.1={
 		holder = 1300749 #Arrianus
 	}
-	455.3.1={
-		holder = 470052
-		liege = "h_western_roman_empire"
-	}
-	476.9.4={
-		liege = h_italy
-	}
-	489.1.1={
-		holder = 63 # Theodoric
-		liege = k_ostrogoths
-	}
-	493.3.5 = {
-		liege = h_italy
-	}
-	526.1.1={
-		holder = 190203 # Athalarik
-	}
-	533.1.1={
-		holder = 1300659 #PLRE vol.3 Anonymus 38
-		liege = h_italy
-	}
-	538.1.1 = {
-		holder = 190098 # Reparatus
-		liege = h_eastern_roman_empire
-	}
-	539.1.1 = {
-		holder = 90109 # Athanasius of Idriphthon 
-	}
-	542.1.1={
-		holder = 94000 # Maximinus Bassus
-	}
-	543.1.1={
-		holder = 1300166 # PLRE vol. 3 Anonymus 133
-	}
-	550.1.1={
-		holder = 31064 # Widin Tribigilding
-		liege=0
-	}
-	562.1.1={
-		holder = 444402 # Narses
-		liege = h_eastern_roman_empire
-	}
-	568.1.1={
-		holder = 31090 # Rodanus Rodaning
-		liege="k_lombardia"
-	}
-	584.1.1={
-		holder = 31092 # Curincpert Rodaning
-	}
+	450.1.1 = { holder = PLRE3_Gaudiosus_grandfather } #Gaudiosus gens
+	450.1.1 = { liege = d_liguria }
+	515.1.1 = { holder = PLRE3_Gaudiosus_father } #Gaudiosus gens
+	540.1.1 = { holder = PLRE3_Gaudiosus }
+	#Post 540: TBD
 }
 c_pavia = {
-	#Development
-	#Rulers
 	385.1.1={
 		holder = 1300748 #Floridus
 		liege = h_roman_empire
@@ -2419,20 +2155,19 @@ c_urbino = {
 }
 
 d_genoa = {
-	476.1.1 = {
-		holder = d_genoa_476_holder
+	450.1.1 = {
+		holder = PLRE2_Faustinus_5_father
 		liege = h_western_roman_empire
+		government = roman_administrative_government
 	}
 	476.9.4={
-		holder = rugii_odoacer_contingent
 		liege = h_italy
-		government = roman_federate_government
+		government = subroman_administrative_government
 	}
-	493.1.1 = { holder = 0 }
+	495.1.1 = { holder = PLRE2_Faustinus_5 }
+	530.1.1 = { holder = 0 }
 }
 c_genoa = {
-	#Development
-	#Rulers
 	385.1.1={
 		holder = 1300748 #Floridus
 		liege = h_roman_empire
@@ -2443,24 +2178,10 @@ c_genoa = {
 	397.1.1={
 		holder = 1300749 #Arrianus
 	}
-	455.3.1={
-		holder = 470052
-	}
-	476.1.1 = { holder = d_genoa_476_holder }
-	476.9.4 = { holder = rugii_odoacer_contingent }
-	489.1.1={
-		holder = 63 # Theodoric
-		liege = k_ostrogoths
-	}
-	493.3.5 = {
-		liege = h_italy
-	}
-	526.1.1={
-		holder = 190203 # Athalarik 
-	}
+	450.1.1 = { holder = PLRE2_Faustinus_5_father } #Faustians
+	495.1.1 = { holder = PLRE2_Ambrosisus_3_fictional_brother } #To keep the region in Faustian hands
 	533.1.1={
 		holder = 1300659 #PLRE vol.3 Anonymus 38
-		liege = h_italy
 	}
 	538.1.1 = {
 		holder = 190219 # Witiges
@@ -2519,24 +2240,10 @@ c_luni = {
 	397.1.1={
 		holder = 1300749 #Arrianus
 	}
-	455.3.1={
-		holder = 470052
-	}
-	476.1.1 = { holder = d_genoa_476_holder }
-	476.9.4 = { holder = rugii_odoacer_contingent }
-	489.1.1={
-		holder = 63 # Theodoric
-		liege = k_ostrogoths
-	}
-	493.3.5 = {
-		liege = h_italy
-	}
-	526.1.1={
-		holder = 190203 # Athalarik 
-	}
+	450.1.1 = { holder = PLRE2_Faustinus_5_father } #Faustians
+	495.1.1 = { holder = PLRE2_Ambrosisus_3_fictional_brother } #To keep the region in Faustian hands
 	533.1.1={
 		holder = 1300659 #PLRE vol.3 Anonymus 38
-		liege = h_italy
 	}
 	538.1.1 = {
 		holder = 190219 # Witiges
@@ -2595,24 +2302,10 @@ c_turin = {
 	397.1.1={
 		holder = 1300749 #Arrianus
 	}
-	455.3.1={
-		holder = 470052
-	}
-	476.1.1 = { holder = d_genoa_476_holder }
-	476.9.4 = { holder = rugii_odoacer_contingent }
-	489.1.1={
-		holder = 63 # Theodoric
-		liege = k_ostrogoths
-	}
-	493.3.5 = {
-		liege = h_italy
-	}
-	526.1.1={
-		holder = 190203 # Athalarik 
-	}
+	450.1.1 = { holder = PLRE2_Faustinus_5_father } #Faustians
+	495.1.1 = { holder = PLRE2_Ambrosisus_3_fictional_brother } #To keep the region in Faustian hands
 	533.1.1={
 		holder = 1300659 #PLRE vol.3 Anonymus 38
-		liege = h_italy
 	}
 	538.1.1 = {
 		holder = 190098 # Reparatus
@@ -2652,24 +2345,10 @@ c_canavese = {
 	397.1.1={
 		holder = 1300749 #Arrianus
 	}
-	455.3.1={
-		holder = 470052
-	}
-	476.1.1 = { holder = d_genoa_476_holder }
-	476.9.4 = { holder = rugii_odoacer_contingent }
-	489.1.1={
-		holder = 63 # Theodoric
-		liege = k_ostrogoths
-	}
-	493.3.5 = {
-		liege = h_italy
-	}
-	526.1.1={
-		holder = 190203 # Athalarik 
-	}
+	450.1.1 = { holder = PLRE2_Faustinus_5_father } #Faustians
+	495.1.1 = { holder = PLRE2_Ambrosisus_3_fictional_brother } #To keep the region in Faustian hands
 	533.1.1={
 		holder = 1300659 #PLRE vol.3 Anonymus 38
-		liege = h_italy
 	}
 	538.1.1 = {
 		holder = 190098 # Reparatus
@@ -2709,24 +2388,10 @@ c_monferrato = {
 	397.1.1={
 		holder = 1300749 #Arrianus
 	}
-	455.3.1={
-		holder = 470052
-	}
-	476.1.1 = { holder = d_genoa_476_holder }
-	476.9.4 = { holder = rugii_odoacer_contingent }
-	489.1.1={
-		holder = 63 # Theodoric
-		liege = k_ostrogoths
-	}
-	493.3.5 = {
-		liege = h_italy
-	}
-	526.1.1={
-		holder = 190203 # Athalarik 
-	}
+	450.1.1 = { holder = PLRE2_Faustinus_5_father } #Faustians
+	495.1.1 = { holder = PLRE2_Ambrosisus_3_fictional_brother } #To keep the region in Faustian hands
 	533.1.1={
 		holder = 1300659 #PLRE vol.3 Anonymus 38
-		liege = h_italy
 	}
 	538.1.1 = {
 		holder = 190098 # Reparatus
@@ -2758,36 +2423,17 @@ c_monferrato = {
 c_cuneo = {
 	385.1.1={
 		holder = 1300748 #Floridus
-		liege = h_roman_empire
-	}
-	395.1.17={
-		liege = h_western_roman_empire
 	}
 	397.1.1={
 		holder = 1300749 #Arrianus
 	}
-	455.3.1={
-		holder = 470052
-	}
-	476.1.1 = { holder = d_genoa_476_holder }
-	476.9.4 = { holder = rugii_odoacer_contingent }
-	489.1.1={
-		holder = 63 # Theodoric
-		liege = k_ostrogoths
-	}
-	493.3.5 = {
-		liege = h_italy
-	}
-	526.1.1={
-		holder = 190203 # Athalarik 
-	}
+	450.1.1 = { holder = PLRE2_Faustinus_5_father } #Faustians
+	495.1.1 = { holder = PLRE2_Ambrosisus_3_fictional_brother } #To keep the region in Faustian hands
 	533.1.1={
 		holder = 1300659 #PLRE vol.3 Anonymus 38
-		liege = h_italy
 	}
 	538.1.1 = {
 		holder = 190098 # Reparatus
-		liege = h_eastern_roman_empire
 	}
 	539.1.1 = {
 		holder = 90109 # Athanasius of Idriphthon 
@@ -2823,24 +2469,10 @@ c_tortona = {
 	397.1.1={
 		holder = 1300749 #Arrianus
 	}
-	455.3.1={
-		holder = 470052
-	}
-	476.1.1 = { holder = d_genoa_476_holder }
-	476.9.4 = { holder = rugii_odoacer_contingent }
-	489.1.1={
-		holder = 63 # Theodoric
-		liege = k_ostrogoths
-	}
-	493.3.5 = {
-		liege = h_italy
-	}
-	526.1.1={
-		holder = 190203 # Athalarik 
-	}
+	450.1.1 = { holder = PLRE2_Faustinus_5_father } #Faustians
+	495.1.1 = { holder = PLRE2_Ambrosisus_3_fictional_brother } #To keep the region in Faustian hands
 	533.1.1={
 		holder = 1300659 #PLRE vol.3 Anonymus 38
-		liege = h_italy
 	}
 	538.1.1 = {
 		holder = 190098 # Reparatus

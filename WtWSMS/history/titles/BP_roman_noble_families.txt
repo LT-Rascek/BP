@@ -34,7 +34,8 @@ c_nf_roman_dynn_PLRE2Pierius5 = { #Pierius was a "Vir Illustris", so he was part
 	476.9.4 = { liege = h_italy }
 	489.1.1 = { holder = 0 }
 }
-c_nf_roman_dynn_ProbusBeatusProbus = { #Probus-Beatus-Probus Family in Liguria, mentioned by Ennodius
+#Ligurian Dynasties
+c_nf_roman_ligurian_dynn_beatus = { #Probus-Beatus-Probus Family in Liguria, mentioned by Ennodius
 	450.1.1 = {
 		holder = 470052
 		liege = h_western_roman_empire
@@ -46,7 +47,31 @@ c_nf_roman_dynn_ProbusBeatusProbus = { #Probus-Beatus-Probus Family in Liguria, 
 	522.1.1 = { holder = PLRE2_Beatus }
 	561.1.1 = { holder = 0 }
 }
-
+c_nf_roman_ligurian_dynn_gaudiosus = {
+	470.1.1 = {
+		holder = PLRE3_Gaudiosus_grandfather
+		liege = h_western_roman_empire #NB: not a direct vassal d'oh
+		government = roman_administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	476.9.4 = { liege = h_italy }
+	515.1.1 = { holder = PLRE3_Gaudiosus_father }
+	540.1.1 = { holder = PLRE3_Gaudiosus }
+	565.1.1 = { holder = 0 }
+}
+c_nf_roman_ligurian_dynn_faustinus = {
+	450.1.1 = {
+		holder = PLRE2_Faustinus_5_father
+		liege = h_western_roman_empire
+		government = roman_administrative_government
+		succession_laws = { noble_family_succession_law }
+	}
+	476.9.4 = { liege = h_italy }
+	495.1.1 = { holder = PLRE2_Faustinus_5 }
+	530.1.1 = { holder = PLRE2_Ambrosisus_3_fictional_brother }
+	555.1.1 = { holder = PLRE2_Ambrosisus_3 }
+	561.1.1 = { holder = 0 }
+}
 
 #Skirian Families
 c_nf_skirian_dynn_thorciling = {

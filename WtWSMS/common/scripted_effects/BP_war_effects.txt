@@ -76,7 +76,10 @@ land_odoacers_forces_effect = {
 			}
 		}
 		every_county = {
-			limit = { this.duchy = $LANDED_TITLE$ }
+			limit = {
+				this.duchy = $LANDED_TITLE$
+				NOT = { this.holder.primary_title = title:d_pisa }
+			}
 			change_title_holder = {
 				holder = $CHAR$
 				change = $CHANGE$

@@ -371,4 +371,75 @@ PLRE2_Beatus = {
 	561.1.1 = { death = yes }
 }
 #Gaudiosus line (cf. PLRE III-A) controlling Novum Comum
+PLRE3_Gaudiosus_grandfather = {
+	name = "Gaudiosus" #Hypothetical Father of Faustinus 5, reason they catapult to fame and power
+	dynasty = ligurian_dynn_gaudiosus
+	religion = "nicene"
+	culture = "roman"
+	450.1.1 = { birth = yes }
+	470.1.1 = { trait = senator_west }
+	515.1.1 = { death = yes }
+}
+PLRE3_Gaudiosus_father = {
+	name = "Gaudiosus" #Hypothetical Father of Faustinus 5, reason they catapult to fame and power
+	dynasty = ligurian_dynn_gaudiosus
+	religion = "nicene"
+	culture = "roman"
+	father = PLRE3_Gaudiosus_grandfather
+	475.1.1 = { birth = yes }
+	495.1.1 = { trait = senator_west }
+	540.1.1 = { death = yes }
+}
+PLRE3_Gaudiosus = { #Cancellarius of Ligurai 533/537
+	name = "Gaudiosus" #Hypothetical Father of Faustinus 5, reason they catapult to fame and power
+	dynasty = ligurian_dynn_gaudiosus
+	religion = "nicene"
+	culture = "roman"
+	father = PLRE3_Gaudiosus_father
+	500.1.1 = { birth = yes }
+	520.1.1 = { trait = senator_west }
+	565.1.1 = { death = yes }
+}
 #Faustinus line, including Ambrosius 3 (who was with Beatus in Rome)
+PLRE2_Faustinus_5_father = {
+	name = "Lucius" #Hypothetical Father of Faustinus 5, reason they catapult to fame and power
+	dynasty = ligurian_dynn_faustinus
+	religion = "nicene"
+	culture = "roman"
+	430.1.1 = { birth = yes }
+	450.1.1 = { trait = senator_west }
+	495.1.1 = { death = yes }
+}
+PLRE2_Faustinus_5 = {
+	name = "Faustinus"
+	dynasty = ligurian_dynn_faustinus
+	religion = "nicene"
+	culture = "roman"
+	father = PLRE2_Faustinus_5_father
+	#Noted v.c. ca. 511 in Liguria (Liguria and Alpes Cotes probably)
+	#So, probably in his mid-to-late 40s in the 510s
+	465.1.1 = { birth = yes }
+	485.1.1 = { trait = senator_west }
+	530.1.1 = { death = yes }
+}
+PLRE2_Ambrosisus_3_fictional_brother = { #Someone to hold Genoa while Ambrosius instead goes to Ravenna
+	name = "Valens"
+	dynasty = ligurian_dynn_faustinus
+	religion = "nicene"
+	culture = "roman"
+	father = PLRE2_Faustinus_5
+	490.1.1 = { birth = yes }
+	555.1.1 = { death = yes }
+}
+PLRE2_Ambrosisus_3 = {
+	name = "Ambrosius"
+	dynasty = ligurian_dynn_faustinus
+	religion = "nicene"
+	culture = "roman"
+	father = PLRE2_Faustinus_5
+	#Student in Rome ca. 509-512, so let him be 16 in 512
+	496.1.1 = { birth = yes }
+	#Went down a military education, became Qauestor Palatii in the 520s and PPO deputy in the 530s
+	512.1.1 = { trait = education_martial_3 }
+	561.1.1 = { death = yes }
+}

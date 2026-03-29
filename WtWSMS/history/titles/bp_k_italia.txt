@@ -34,11 +34,12 @@ d_umbria = {
 	445.1.1 = {
 		holder = 1300705 # Rogatianus
 	}
-	476.9.4 = {
-		holder = 470053 #Park Pierius here for now...
+	476.9.4 = { #Skirians go here so they get disestablished by the Ostrogoths
 		liege = h_italy
+		holder = skiriannobleman_1
+		government = subroman_administrative_government
 	}
-	489.1.1 = { holder = 0 }
+	477.1.1 = { holder = 0 }
 	507.1.1 = {
 		holder = 1310015 # Gesila
 		liege = h_italy
@@ -65,60 +66,62 @@ c_firenze = {
 	445.1.1 = {
 		holder = 1300705 # Rogatianus
 	}
-	476.9.4 = { holder = 470053 } #Park Pierius here for now...
-	489.1.1={
-		holder = 63 # Theodoric
-		liege = k_ostrogoths
-	}
-	493.3.5 = {
-		liege = h_italy
-	}
-	526.1.1={
-		holder = 190203 # Athalarik 
-	}
-	534.10.2={
-		holder = 190215 # Theodahad 
-	}
-	536.1.1={
-		holder = 190219 # Witiges 
-	}
-	537.1.1 = {
-		holder = 190097 # Fidelis
-		liege = h_eastern_roman_empire
-	}
-	538.1.1 = {
-		holder = 190098 # Reparatus
-	}
-	539.1.1 = {
-		holder = 90109 # Athanasius of Idriphthon 
-	}
-	542.1.1={
-		holder = 94000 # Maximinus Bassus
-	}
-	543.1.1={
-		holder = 190118 # Totilla
-		liege=0
-	}
-	552.1.1={
-		holder = 155147 # Thila
-	}
-	553.1.1={
-		holder = 1300167 # Antiochus
-		liege = h_eastern_roman_empire
-	}
-	555.1.1 = {
-		holder = 444402 # Narses
-	}
-	568.1.1 = {
-		holder = 1300168 # Longinus
-	}
-	569.1.1={
-		holder = 31083 # Daufari Brunting
-		liege="k_lombardia"
-	}
-	580.1.1={
-		holder = 31084 # Aistulf Brunting
-	}
+	#Skirians go here so they get disestablished by the Ostrogoths
+	476.9.4 = { holder = skiriannobleman_1 }
+	#489 onwards - TBD
+	#489.1.1={
+	#	holder = 63 # Theodoric
+	#	liege = k_ostrogoths
+	#}
+	#493.3.5 = {
+	#	liege = h_italy
+	#}
+	#526.1.1={
+	#	holder = 190203 # Athalarik 
+	#}
+	#534.10.2={
+	#	holder = 190215 # Theodahad 
+	#}
+	#536.1.1={
+	#	holder = 190219 # Witiges 
+	#}
+	#537.1.1 = {
+	#	holder = 190097 # Fidelis
+	#	liege = h_eastern_roman_empire
+	#}
+	#538.1.1 = {
+	#	holder = 190098 # Reparatus
+	#}
+	#539.1.1 = {
+	#	holder = 90109 # Athanasius of Idriphthon 
+	#}
+	#542.1.1={
+	#	holder = 94000 # Maximinus Bassus
+	#}
+	#543.1.1={
+	#	holder = 190118 # Totilla
+	#	liege=0
+	#}
+	#552.1.1={
+	#	holder = 155147 # Thila
+	#}
+	#553.1.1={
+	#	holder = 1300167 # Antiochus
+	#	liege = h_eastern_roman_empire
+	#}
+	#555.1.1 = {
+	#	holder = 444402 # Narses
+	#}
+	#568.1.1 = {
+	#	holder = 1300168 # Longinus
+	#}
+	#569.1.1={
+	#	holder = 31083 # Daufari Brunting
+	#	liege="k_lombardia"
+	#}
+	#580.1.1={
+	#	holder = 31084 # Aistulf Brunting
+	#}
 }
 c_lucca = {
 	366.1.1 = {
@@ -132,65 +135,67 @@ c_lucca = {
 	445.1.1 = {
 		holder = 1300705 # Rogatianus
 	}
-	476.9.4 = { holder = 470053 } #Park Pierius here for now...
-	489.1.1={
-		holder = 63 # Theodoric
-		liege = k_ostrogoths
-	}
-	493.3.5 = {
-		liege = h_italy
-	}
-	526.1.1={
-		holder = 190203 # Athalarik 
-	}
-	534.10.2={
-		holder = 190215 # Theodahad 
-	}
-	536.1.1={
-		holder = 190219 # Witiges 
-	}
-	540.1.1={
-		holder = 190222 # Ildibad
-	}
-	541.1.1={
-		holder = 190116 # Eraric
-	}
-	541.6.1={
-		holder = 190118 # Totilla
-		liege=0
-	}
-	552.1.1={
-		holder = 155147 # Thila
-	}
-	553.1.1={
-		holder = 1300167 # Antiochus
-		liege = h_eastern_roman_empire
-	}
-	555.1.1 = {
-		holder = 444402 # Narses
-	}
-	568.1.1 = {
-		holder = 1300168 # Longinus
-	}
-	576.1.1 = {
-		holder = 1300169 # Maurilio
-	}
-	584.1.1={
-		holder = 31050 # Decius 
-	}
-	585.1.1={
-		holder = 1310012 # Maurisio
-		liege = "k_romagna"
-	}
-	593.1.1={
-		holder = 31060 # Romanus 
-	}
-	598.1.1={
-		holder = 31061 # Kallinikos 
-	}
-	603.1.1={
-		holder = 31051 # Smaragdus 
-	}
+	#Skirians go here so they get disestablished by the Ostrogoths
+	476.9.4 = { holder = skiriannobleman_1 }
+	#489 onwards - TBD
+	#489.1.1={
+	#	holder = 63 # Theodoric
+	#	liege = k_ostrogoths
+	#}
+	#493.3.5 = {
+	#	liege = h_italy
+	#}
+	#526.1.1={
+	#	holder = 190203 # Athalarik 
+	#}
+	#534.10.2={
+	#	holder = 190215 # Theodahad 
+	#}
+	#536.1.1={
+	#	holder = 190219 # Witiges 
+	#}
+	#540.1.1={
+	#	holder = 190222 # Ildibad
+	#}
+	#541.1.1={
+	#	holder = 190116 # Eraric
+	#}
+	#541.6.1={
+	#	holder = 190118 # Totilla
+	#	liege=0
+	#}
+	#552.1.1={
+	#	holder = 155147 # Thila
+	#}
+	#553.1.1={
+	#	holder = 1300167 # Antiochus
+	#	liege = h_eastern_roman_empire
+	#}
+	#555.1.1 = {
+	#	holder = 444402 # Narses
+	#}
+	#568.1.1 = {
+	#	holder = 1300168 # Longinus
+	#}
+	#576.1.1 = {
+	#	holder = 1300169 # Maurilio
+	#}
+	#584.1.1={
+	#	holder = 31050 # Decius 
+	#}
+	#585.1.1={
+	#	holder = 1310012 # Maurisio
+	#	liege = "k_romagna"
+	#}
+	#593.1.1={
+	#	holder = 31060 # Romanus 
+	#}
+	#598.1.1={
+	#	holder = 31061 # Kallinikos 
+	#}
+	#603.1.1={
+	#	holder = 31051 # Smaragdus 
+	#}
 }
 c_arezzo = { #c_firenze history (elimination)
 	366.1.1 = {
@@ -204,60 +209,62 @@ c_arezzo = { #c_firenze history (elimination)
 	445.1.1 = {
 		holder = 1300705 # Rogatianus
 	}
-	476.9.4 = { holder = 470053 } #Park Pierius here for now...
-	489.1.1={
-		holder = 63 # Theodoric
-		liege = k_ostrogoths
-	}
-	493.3.5 = {
-		liege = h_italy
-	}
-	526.1.1={
-		holder = 190203 # Athalarik 
-	}
-	534.10.2={
-		holder = 190215 # Theodahad 
-	}
-	536.1.1={
-		holder = 190219 # Witiges 
-	}
-	537.1.1 = {
-		holder = 190097 # Fidelis
-		liege = h_eastern_roman_empire
-	}
-	538.1.1 = {
-		holder = 190098 # Reparatus
-	}
-	539.1.1 = {
-		holder = 90109 # Athanasius of Idriphthon 
-	}
-	542.1.1={
-		holder = 94000 # Maximinus Bassus
-	}
-	543.1.1={
-		holder = 190118 # Totilla
-		liege=0
-	}
-	552.1.1={
-		holder = 155147 # Thila
-	}
-	553.1.1={
-		holder = 1300167 # Antiochus
-		liege = h_eastern_roman_empire
-	}
-	555.1.1 = {
-		holder = 444402 # Narses
-	}
-	568.1.1 = {
-		holder = 1300168 # Longinus
-	}
-	569.1.1={
-		holder = 31083 # Daufari Brunting
-		liege="k_lombardia"
-	}
-	580.1.1={
-		holder = 31084 # Aistulf Brunting
-	}
+	#Skirians go here so they get disestablished by the Ostrogoths
+	476.9.4 = { holder = skiriannobleman_1 }
+	#489 onwards - TBD
+	#489.1.1={
+	#	holder = 63 # Theodoric
+	#	liege = k_ostrogoths
+	#}
+	#493.3.5 = {
+	#	liege = h_italy
+	#}
+	#526.1.1={
+	#	holder = 190203 # Athalarik 
+	#}
+	#534.10.2={
+	#	holder = 190215 # Theodahad 
+	#}
+	#536.1.1={
+	#	holder = 190219 # Witiges 
+	#}
+	#537.1.1 = {
+	#	holder = 190097 # Fidelis
+	#	liege = h_eastern_roman_empire
+	#}
+	#538.1.1 = {
+	#	holder = 190098 # Reparatus
+	#}
+	#539.1.1 = {
+	#	holder = 90109 # Athanasius of Idriphthon 
+	#}
+	#542.1.1={
+	#	holder = 94000 # Maximinus Bassus
+	#}
+	#543.1.1={
+	#	holder = 190118 # Totilla
+	#	liege=0
+	#}
+	#552.1.1={
+	#	holder = 155147 # Thila
+	#}
+	#553.1.1={
+	#	holder = 1300167 # Antiochus
+	#	liege = h_eastern_roman_empire
+	#}
+	#555.1.1 = {
+	#	holder = 444402 # Narses
+	#}
+	#568.1.1 = {
+	#	holder = 1300168 # Longinus
+	#}
+	#569.1.1={
+	#	holder = 31083 # Daufari Brunting
+	#	liege="k_lombardia"
+	#}
+	#580.1.1={
+	#	holder = 31084 # Aistulf Brunting
+	#}
 }
 c_siena = {
 	366.1.1 = {
@@ -271,62 +278,64 @@ c_siena = {
 	445.1.1 = {
 		holder = 1300705 # Rogatianus
 	}
-	476.9.4 = { holder = 470053 } #Park Pierius here for now...
-	489.1.1={
-		holder = 63 # Theodoric
-		liege = k_ostrogoths
-	}
-	493.3.5 = {
-		liege = h_italy
-	}
-	507.1.1={
-		holder = 1310015 # Gesila
-		liege = h_italy
-	}
-	512.1.1={
-		holder = 63 # Theodoric
-	}
-	526.1.1={
-		holder = 190203 # Athalarik 
-	}
-	534.10.2={
-		holder = 190215 # Theodahad 
-	}
-	536.1.1={
-		holder = 190219 # Witiges 
-	}
-	537.1.1 = {
-		holder = 190097 # Fidelis
-		liege = h_eastern_roman_empire
-	}
-	538.1.1 = {
-		holder = 190098 # Reparatus
-	}
-	539.1.1 = {
-		holder = 90109 # Athanasius of Idriphthon 
-	}
-	542.1.1={
-		holder = 94000 # Maximinus Bassus
-	}
-	543.1.1={
-		holder = 1300166 # PLRE vol. 3 Anonymus 133
-	}
-	552.1.1 = {
-		holder = 1300167 # Antiochus
-	}
-	555.1.1 = {
-		holder = 444402 # Narses
-	}
-	568.1.1 = {
-		holder = 1300168 # Longinus
-	}
-	569.1.1={
-		holder = 31083 # Daufari Brunting
-		liege="k_lombardia"
-	}
-	580.1.1={
-		holder = 31084 # Aistulf Brunting
-	}
+	#Skirians go here so they get disestablished by the Ostrogoths
+	476.9.4 = { holder = skiriannobleman_1 }
+	#489 onwards - TBD
+	#489.1.1={
+	#	holder = 63 # Theodoric
+	#	liege = k_ostrogoths
+	#}
+	#493.3.5 = {
+	#	liege = h_italy
+	#}
+	#507.1.1={
+	#	holder = 1310015 # Gesila
+	#	liege = h_italy
+	#}
+	#512.1.1={
+	#	holder = 63 # Theodoric
+	#}
+	#526.1.1={
+	#	holder = 190203 # Athalarik 
+	#}
+	#534.10.2={
+	#	holder = 190215 # Theodahad 
+	#}
+	#536.1.1={
+	#	holder = 190219 # Witiges 
+	#}
+	#537.1.1 = {
+	#	holder = 190097 # Fidelis
+	#	liege = h_eastern_roman_empire
+	#}
+	#538.1.1 = {
+	#	holder = 190098 # Reparatus
+	#}
+	#539.1.1 = {
+	#	holder = 90109 # Athanasius of Idriphthon 
+	#}
+	#542.1.1={
+	#	holder = 94000 # Maximinus Bassus
+	#}
+	#543.1.1={
+	#	holder = 1300166 # PLRE vol. 3 Anonymus 133
+	#}
+	#552.1.1 = {
+	#	holder = 1300167 # Antiochus
+	#}
+	#555.1.1 = {
+	#	holder = 444402 # Narses
+	#}
+	#568.1.1 = {
+	#	holder = 1300168 # Longinus
+	#}
+	#569.1.1={
+	#	holder = 31083 # Daufari Brunting
+	#	liege="k_lombardia"
+	#}
+	#580.1.1={
+	#	holder = 31084 # Aistulf Brunting
+	#}
 }
 c_orbetello = {
 	366.1.1 = {
@@ -340,62 +349,64 @@ c_orbetello = {
 	445.1.1 = {
 		holder = 1300705 # Rogatianus
 	}
-	476.9.4 = { holder = 470053 } #Park Pierius here for now...
-	489.1.1={
-		holder = 63 # Theodoric
-		liege = k_ostrogoths
-	}
-	493.3.5 = {
-		liege = h_italy
-	}
-	507.1.1={
-		holder = 1310015 # Gesila
-		liege = h_italy
-	}
-	512.1.1={
-		holder = 63 # Theodoric
-	}
-	526.1.1={
-		holder = 190203 # Athalarik 
-	}
-	534.10.2={
-		holder = 190215 # Theodahad 
-	}
-	536.1.1={
-		holder = 190219 # Witiges 
-	}
-	537.1.1 = {
-		holder = 190097 # Fidelis
-		liege = h_eastern_roman_empire
-	}
-	538.1.1 = {
-		holder = 190098 # Reparatus
-	}
-	539.1.1 = {
-		holder = 90109 # Athanasius of Idriphthon 
-	}
-	542.1.1={
-		holder = 94000 # Maximinus Bassus
-	}
-	543.1.1={
-		holder = 1300166 # PLRE vol. 3 Anonymus 133
-	}
-	552.1.1 = {
-		holder = 1300167 # Antiochus
-	}
-	555.1.1 = {
-		holder = 444402 # Narses
-	}
-	568.1.1 = {
-		holder = 1300168 # Longinus
-	}
-	569.1.1={
-		holder = 31083 # Daufari Brunting
-		liege="k_lombardia"
-	}
-	580.1.1={
-		holder = 31084 # Aistulf Brunting
-	}
+	#Skirians go here so they get disestablished by the Ostrogoths
+	476.9.4 = { holder = skiriannobleman_1 }
+	#489 onwards - TBD
+	#489.1.1={
+	#	holder = 63 # Theodoric
+	#	liege = k_ostrogoths
+	#}
+	#493.3.5 = {
+	#	liege = h_italy
+	#}
+	#507.1.1={
+	#	holder = 1310015 # Gesila
+	#	liege = h_italy
+	#}
+	#512.1.1={
+	#	holder = 63 # Theodoric
+	#}
+	#526.1.1={
+	#	holder = 190203 # Athalarik 
+	#}
+	#534.10.2={
+	#	holder = 190215 # Theodahad 
+	#}
+	#536.1.1={
+	#	holder = 190219 # Witiges 
+	#}
+	#537.1.1 = {
+	#	holder = 190097 # Fidelis
+	#	liege = h_eastern_roman_empire
+	#}
+	#538.1.1 = {
+	#	holder = 190098 # Reparatus
+	#}
+	#539.1.1 = {
+	#	holder = 90109 # Athanasius of Idriphthon 
+	#}
+	#542.1.1={
+	#	holder = 94000 # Maximinus Bassus
+	#}
+	#543.1.1={
+	#	holder = 1300166 # PLRE vol. 3 Anonymus 133
+	#}
+	#552.1.1 = {
+	#	holder = 1300167 # Antiochus
+	#}
+	#555.1.1 = {
+	#	holder = 444402 # Narses
+	#}
+	#568.1.1 = {
+	#	holder = 1300168 # Longinus
+	#}
+	#569.1.1={
+	#	holder = 31083 # Daufari Brunting
+	#	liege="k_lombardia"
+	#}
+	#580.1.1={
+	#	holder = 31084 # Aistulf Brunting
+	#}
 }
 c_orvieto = {
 	366.1.1 = {
@@ -409,74 +420,76 @@ c_orvieto = {
 	445.1.1 = {
 		holder = 1300705 # Rogatianus
 	}
-	476.9.4 = { holder = 470053 } #Park Pierius here for now...
-	489.1.1={
-		holder = 63 # Theodoric
-		liege = k_ostrogoths
-	}
-	493.3.5 = {
-		liege = h_italy
-	}
-	507.1.1={
-		holder = 1310015 # Gesila
-		liege = h_italy
-	}
-	512.1.1={
-		holder = 63 # Theodoric
-	}
-	526.1.1={
-		holder = 190203 # Athalarik 
-	}
-	534.10.2={
-		holder = 190215 # Theodahad 
-	}
-	536.1.1={
-		holder = 190219 # Witiges 
-	}
-	537.1.1 = {
-		holder = 190097 # Fidelis
-		liege = h_eastern_roman_empire
-	}
-	538.1.1 = {
-		holder = 190098 # Reparatus
-	}
-	539.1.1 = {
-		holder = 90109 # Athanasius of Idriphthon 
-	}
-	542.1.1={
-		holder = 94000 # Maximinus Bassus
-	}
-	543.1.1={
-		holder = 1300166 # PLRE vol. 3 Anonymus 133
-	}
-	552.1.1 = {
-		holder = 1300167 # Antiochus
-	}
-	555.1.1 = {
-		holder = 444402 # Narses
-	}
-	568.1.1 = {
-		holder = 1300168 # Longinus
-	}
-	576.1.1 = {
-		holder = 1300169 # Maurilio
-	}
-	584.1.1={
-		holder = 31050 # Decius 
-	}
-	585.1.1={
-		holder = 1310012 # Maurisio
-		liege = "k_romagna"
-	}
-	593.1.1={
-		holder = 31060 # Romanus 
-	}
-	598.1.1={
-		holder = 31061 # Kallinikos 
-	}
-	603.1.1={
-		holder = 31051 # Smaragdus 
-	}
+	#Skirians go here so they get disestablished by the Ostrogoths
+	476.9.4 = { holder = skiriannobleman_1 }
+	#489 onwards - TBD
+	#489.1.1={
+	#	holder = 63 # Theodoric
+	#	liege = k_ostrogoths
+	#}
+	#493.3.5 = {
+	#	liege = h_italy
+	#}
+	#507.1.1={
+	#	holder = 1310015 # Gesila
+	#	liege = h_italy
+	#}
+	#512.1.1={
+	#	holder = 63 # Theodoric
+	#}
+	#526.1.1={
+	#	holder = 190203 # Athalarik 
+	#}
+	#534.10.2={
+	#	holder = 190215 # Theodahad 
+	#}
+	#536.1.1={
+	#	holder = 190219 # Witiges 
+	#}
+	#537.1.1 = {
+	#	holder = 190097 # Fidelis
+	#	liege = h_eastern_roman_empire
+	#}
+	#538.1.1 = {
+	#	holder = 190098 # Reparatus
+	#}
+	#539.1.1 = {
+	#	holder = 90109 # Athanasius of Idriphthon 
+	#}
+	#542.1.1={
+	#	holder = 94000 # Maximinus Bassus
+	#}
+	#543.1.1={
+	#	holder = 1300166 # PLRE vol. 3 Anonymus 133
+	#}
+	#552.1.1 = {
+	#	holder = 1300167 # Antiochus
+	#}
+	#555.1.1 = {
+	#	holder = 444402 # Narses
+	#}
+	#568.1.1 = {
+	#	holder = 1300168 # Longinus
+	#}
+	#576.1.1 = {
+	#	holder = 1300169 # Maurilio
+	#}
+	#584.1.1={
+	#	holder = 31050 # Decius 
+	#}
+	#585.1.1={
+	#	holder = 1310012 # Maurisio
+	#	liege = "k_romagna"
+	#}
+	#593.1.1={
+	#	holder = 31060 # Romanus 
+	#}
+	#598.1.1={
+	#	holder = 31061 # Kallinikos 
+	#}
+	#603.1.1={
+	#	holder = 31051 # Smaragdus 
+	#}
 }
 c_pisa = {
 	366.1.1 = {
