@@ -518,12 +518,11 @@ tradition_roman_ceremonies = {
 	
 	parameters = {
 		hosts_chariot_races = yes
-		roman_popular_opinion_traits = yes
+		roman_popular_opinion_traits_bonus = yes
+		roman_popular_opinion_traits_malus = yes
 		unlocks_chariot_support = yes
 	}
-	county_modifier = {
-		county_opinion_add = -10
-	}
+	county_modifier = {} #Popular Opinion Nerf achieved via traits now
 	
 	cost = {
 		prestige = {
@@ -792,7 +791,8 @@ tradition_romance_culture = {
 		#Other Features
 		less_likely_to_culture_convert = yes
 		estate_building_upgrade_development_gain = yes
-		roman_cultural_trait_bonus_malus = yes
+		roman_cultural_trait_opinion_bonus = yes
+		roman_cultural_trait_opinion_malus = yes
 	}
 	culture_modifier = {
 		cultural_acceptance_gain_mult = -0.25
@@ -865,7 +865,8 @@ tradition_romance_culture_non_dlc = {
 		harder_to_convert_county_culture_without_heritage = yes
 		#Other Features
 		allows_noble_family_adoption = yes
-		roman_cultural_trait_bonus_malus = yes
+		roman_cultural_trait_opinion_bonus = yes
+		roman_cultural_trait_opinion_malus = yes
 	}
 	culture_modifier = {
 		cultural_acceptance_gain_mult = -0.25
@@ -943,7 +944,8 @@ tradition_hellenic_culture = {
 		blocks_populist_revolts_against_roman_governments = yes
 		#Other Features
 		allows_noble_family_adoption = yes
-		roman_cultural_trait_bonus_malus = yes
+		roman_cultural_trait_opinion_bonus = yes
+		roman_cultural_trait_opinion_malus = yes
 	}
 	culture_modifier = {
 		cultural_acceptance_gain_mult = 0.25
@@ -1019,7 +1021,8 @@ tradition_hellenic_culture_non_dlc = {
 		traditionalist_culture_feature = yes
 		blocks_populist_revolts_against_roman_governments = yes
 		#Other Features
-		roman_cultural_trait_bonus_malus = yes
+		roman_cultural_trait_opinion_bonus = yes
+		roman_cultural_trait_opinion_malus = yes
 	}
 	culture_modifier = {
 		cultural_acceptance_gain_mult = 0.25
@@ -1137,7 +1140,7 @@ tradition_western_roman_legacy = { #WRE military aspects
 		value = 100
 	}
 }
-tradition_western_roman_military = { #DLC Version; not really DLC-locked, but synergizes with title_maa stuff
+tradition_roman_military = { #DLC Version; not really DLC-locked, but synergizes with title_maa stuff
 	category = realm
 
 	layers = {
@@ -1148,13 +1151,21 @@ tradition_western_roman_military = { #DLC Version; not really DLC-locked, but sy
 
 	is_shown = {
 		has_ep3_dlc_trigger = yes
-		has_cultural_pillar = heritage_latin
+		OR = {
+			has_cultural_pillar = heritage_latin
+			has_cultural_pillar = heritage_byzantine
+		}
+		OR = {
+			scope:character = { has_title = title:h_eastern_roman_empire }
+			scope:character = { has_title = title:h_western_roman_empire }
+			scope:character = { has_title = title:h_roman_empire }
+		}
 	}
 	can_pick = {
-		traditions_cultural_combat_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_western_roman_military }
+		traditions_cultural_combat_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_roman_military }
 	}
 	can_pick_for_hybridization = {
-		traditions_cultural_combat_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_western_roman_military }
+		traditions_cultural_combat_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_roman_military }
 	}
 	
 	parameters = {

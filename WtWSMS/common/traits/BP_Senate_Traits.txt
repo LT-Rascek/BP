@@ -33,11 +33,11 @@ senator_west = {
 		legitimacy_gain_mult = 0.05
 	}
 	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
-		parameter = roman_popular_opinion_traits
+		parameter = roman_popular_opinion_traits_malus
 		county_opinion_add = -5
 	}
 	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
-		parameter = roman_cultural_trait_bonus_malus
+		parameter = roman_cultural_trait_opinion_bonus
 		same_culture_opinion = 5
 	}
 	
@@ -67,11 +67,11 @@ senator_east = {
 		legitimacy_gain_mult = 0.05
 	}
 	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
-		parameter = roman_popular_opinion_traits
+		parameter = roman_popular_opinion_traits_malus
 		county_opinion_add = -5
 	}
 	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
-		parameter = roman_cultural_trait_bonus_malus
+		parameter = roman_cultural_trait_opinion_bonus
 		same_culture_opinion = 5
 	}
 	

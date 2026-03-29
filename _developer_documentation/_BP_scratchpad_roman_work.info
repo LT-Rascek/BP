@@ -23,15 +23,14 @@ Bugs:
 - holding construction time negative should be building speed positive in taxation keeping event modifier
 
 Succession Issues:
-- Ministrial Succession seems borked; fix it dammit (that's why Andag keeps getting it)
-- MO/MM should be functionally ineligible for each other's titles
-- Block Spymaster from being able to recruit Roman MO/MM when they have the law.
-- For some reason, at start is firing multiple MO/MM officers including Andag and throw Beatus and Pierius into the role
-- Andag is becoming MO YET AGAIN!!!
+- MO/MM should be functionally ineligible for each other's titles in the succession order
+- Succession Bug: Ministrial Succession seems borked; fix it dammit (that's why Andag keeps getting it)
+   - For some reason, at start is firing multiple MO/MM officers including Andag and throw Beatus and Pierius into the role
+   - Andag is becoming MO YET AGAIN!!!
+   - Block Spymaster, Court Chaplain from being able to recruit Roman MO/MM when they have the law.
 
 - Senators should have a bonus to succession, if Rome is not being oppressed
-
-- Senators should have a bonus to succession, if Rome is not being oppressed
+- Decisions: Establish de jure decisions need work given uncreatable empires/kingdoms???
 
 Council:
 - Fill out last 3 council tasks for legal bureau
@@ -41,10 +40,6 @@ Council:
 - Roman Admin Premier Power Levels
 - Premiership should not be dischargeable
 
-Later (MVP):
------
-
-* Decisions: Establish de jure decisions need work given uncreatable empires/kingdoms???
 
 ==========
 Tributaries / Federate Rework
@@ -57,8 +52,11 @@ Mechanics:
 ==========
 Roman Culture Work
 ----------
+Current:
+* Revamp Roman MAAs to not be innovation bound
+   - unlock_innovation_byzantine_military, unlock_innovation_roman_military
+
 * Use glosses or game concepts to give the forum link and wiki links to shrink text down
-- Figure out which dynasties should always have access to the Roman Dynasty legacy
 
 * Migratory Culture Tradition should have some recruitment bonuses as well
 * Migratory Cultures should use herd head determination that flips when lost
@@ -69,7 +67,6 @@ Roman Culture Work
 
 * Devoted Horsemanship needs its own MAA to replace Tarkhans (they don't fit; no steppe/plains bonus)
 * Review Goths et al Horsemanship offerings
-* Isaurians should have reduced marriage acceptance, especially with barbarians
 
 * On action to remove Roman Admin, Legal Codex innovations from Hybridizations
 
@@ -79,14 +76,9 @@ Tradition Changes:
       - Option to pay gold or treasury with slightly different rewards
    - Unify Support Greens/Blues/Reds/Whites decision with Vanilla and tweak traits
 
-* Revamp Roman MAAs to not be innovation bound
-   - unlock_innovation_byzantine_military, unlock_innovation_roman_military
-
 * MAA:
 - Need to lock praetorians to just the Roman Emperors and MMs
 - Add ERE title troops in feb 476
-
-- Remove massalian culture
 
 * BP_war_triggers.txt: reenable valid_reconquest_culture_trigger
 

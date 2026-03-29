@@ -442,12 +442,8 @@ august = {
 	
 	##### Changed from Vanilla vvvvv
 	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
-		parameter = roman_popular_opinion_traits
+		parameter = roman_popular_opinion_traits_bonus
 		county_opinion_add = 5
-	}
-	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
-		parameter = roman_cultural_trait_bonus_malus
-		same_culture_opinion = 5
 	}
 	##### Changed from Vanilla ^^^^^
 }
@@ -481,12 +477,8 @@ overseer = {
 	
 	##### Changed from Vanilla vvvvv
 	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
-		parameter = roman_popular_opinion_traits
+		parameter = roman_popular_opinion_traits_bonus
 		county_opinion_add = 5
-	}
-	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
-		parameter = roman_cultural_trait_bonus_malus
-		same_culture_opinion = 5
 	}
 	##### Changed from Vanilla ^^^^^
 }
@@ -542,7 +534,7 @@ administrator = {
 	
 	##### Changed from Vanilla vvvvv
 	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
-		parameter = roman_popular_opinion_traits
+		parameter = roman_popular_opinion_traits_bonus
 		county_opinion_add = 5
 	}
 	##### Changed from Vanilla ^^^^^
@@ -573,7 +565,7 @@ torturer = {
 	
 	##### Changed from Vanilla vvvvv
 	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
-		parameter = roman_popular_opinion_traits
+		parameter = roman_popular_opinion_traits_malus
 		county_opinion_add = -5
 	}
 	##### Changed from Vanilla ^^^^^
@@ -634,11 +626,11 @@ arbitrary = {
 	
 	##### Changed from Vanilla vvvvv
 	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
-		parameter = roman_popular_opinion_traits
+		parameter = roman_popular_opinion_traits_malus
 		county_opinion_add = -5
 	}
 	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
-		parameter = roman_cultural_trait_bonus_malus
+		parameter = roman_cultural_trait_opinion_bonus
 		same_culture_opinion = 5
 	}
 	##### Changed from Vanilla ^^^^^
@@ -712,11 +704,11 @@ just = {
 	
 	##### Changed from Vanilla vvvvv
 	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
-		parameter = roman_popular_opinion_traits
+		parameter = roman_popular_opinion_traits_bonus
 		county_opinion_add = 5
 	}
 	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
-		parameter = roman_cultural_trait_bonus_malus
+		parameter = roman_cultural_trait_opinion_bonus
 		same_culture_opinion = 5
 	}
 	##### Changed from Vanilla ^^^^^
@@ -764,7 +756,7 @@ viking = {
 	
 	##### Changed from Vanilla vvvvv
 	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
-		parameter = roman_popular_opinion_traits
+		parameter = roman_popular_opinion_traits_malus
 		county_opinion_add = -5
 	}
 	##### Changed from Vanilla ^^^^^
@@ -851,8 +843,8 @@ peasant_leader = {
 	
 	##### Changed from Vanilla vvvvv
 	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
-		parameter = roman_cultural_trait_bonus_malus
-		same_culture_opinion = -5
+		parameter = roman_cultural_trait_opinion_malus
+		same_culture_opinion = -10
 	}
 	##### Changed from Vanilla ^^^^^
 }
@@ -884,8 +876,8 @@ populist_leader = {
 	
 	##### Changed from Vanilla vvvvv
 	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
-		parameter = roman_cultural_trait_bonus_malus
-		same_culture_opinion = -10
+		parameter = roman_cultural_trait_opinion_malus
+		same_culture_opinion = -20
 	}
 	##### Changed from Vanilla ^^^^^
 }

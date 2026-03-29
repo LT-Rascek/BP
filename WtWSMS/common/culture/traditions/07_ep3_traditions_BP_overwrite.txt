@@ -16,9 +16,17 @@ tradition_ep3_imperial_tagmata = {
 	}
 	can_pick = {
 		traditions_cultural_combat_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_ep3_imperial_tagmata }
+		custom_tooltip = {
+			text = cannot_have_tradition_roman_military
+			NOT = { culture_tradition:tradition_roman_military = { is_in_list = traits } }
+		}
 	}
 	can_pick_for_hybridization = {
 		traditions_cultural_combat_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_ep3_imperial_tagmata }
+		custom_tooltip = {
+			text = cannot_have_tradition_roman_military
+			NOT = { culture_tradition:tradition_roman_military = { is_in_list = traits } }
+		}
 	}
 	##### Changed from Vanilla ^^^^^
 	
