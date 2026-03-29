@@ -102,8 +102,8 @@ influence_candidacy_interaction = { #DONE
 
 	##### Changed from Vanilla vvvvv
 	is_shown = {
-		NOT = { scope:secondary_recipient = { government_has_flag = government_is_quasi_feudal } }
-		NOT = { scope:recipient = { government_has_flag = government_is_quasi_feudal } }
+		NOT = { scope:secondary_recipient ?= { government_has_flag = government_is_quasi_feudal } }
+		NOT = { scope:recipient ?= { government_has_flag = government_is_quasi_feudal } }
 	}
 	##### Changed from Vanilla ^^^^^
 
