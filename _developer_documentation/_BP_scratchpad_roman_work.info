@@ -41,22 +41,6 @@ Council:
 
 Later (MVP):
 -----
-CBs: 
-- Federate Raid Wars
-
-History:
-- Replace duchy placeholders in the placeholder file
-- Add Taifal adventurer near Tealby in England (Easter Egg)
-- Bucinobantes adventurer in/near London
-- Donatist bands in North Africa
-- Change up placement of Odoacer's Skirians to Tuscany and leave Genoa for the various listed groups
-
-Bookmarks: Revamp bookmarks
-- Gylericus et al plotting Nepos death in the 479 scenario
-- Rewrite Odoacer's adventurer bookmark desc
-
-GFX:
-* New Council Task Icons for MO tasks
 
 * Decisions: Establish de jure decisions need work given uncreatable empires/kingdoms???
 
@@ -80,6 +64,9 @@ Roman Culture Work
 
 * Duplicate Hellenic Syncretism; one for Pagans (making Righteous) and the other for non-Pagans (making Astray)
 
+* Devoted Horsemanship needs its own MAA to replace Tarkhans (they don't fit; no steppe/plains bonus)
+* Review Goths et al Horsemanship offerings
+
 * On action to remove Roman Admin, Legal Codex innovations from Hybridizations
 
 Tradition Changes:
@@ -99,61 +86,76 @@ Tradition Changes:
 
 * Decision for unreformed syncretics to change their syncretism (multi-choice decision)
 
-Reduce culture gains a bit more.
+==========
+Pre-Alpha Final:
+----------
+Bookmarks: Revamp bookmarks
+- Gylericus et al plotting Nepos death in the 479 scenario
+- Rewrite Odoacer's adventurer bookmark desc
+- Donatist bands in North Africa
+
+GFX: New Council Task Icons for MO tasks
+
+Localization:
+- Various rule-related mechanic stuff needs to be a triggered select localization
+- Praeses for counties (still civilian-ish)
 
 ==========
-Stretch:
+0.2.1:
 ----------
-* Hegemonies should have an empire-level CB against each other that's terribly devastating (see the Final Roman-Sassanid War or the Gothic War)
-   * Should be a great project like the Chinese have
+CBs: Federate Raid Wars
 
-* Senators should be ranked into vir illustris, vir spectabilis, and vir clarissimus, by family renown or other mechanics
-
-* Clean up Indian titles history
 - Feudal Transition Clerical stuff
 - Clarify government_is_centralized flag
-- Request military aid interaction for MM
-- Fix Ministries having a fucking theme contract... (big oof to fix probably)
 - Tweak dynastic aristocratic control laws to push more towards decline in some manner
 - Need to force title holders to be councilors in non-DLC games
 
-Character Interactions: Enable the ability to give ai-owned lands in your realm to federates as an admin.
+- Hegemonies should have an empire-level CB against each other that's terribly devastating (see the Final Roman-Sassanid War or the Gothic War)
+   - Should be a great project like the Chinese have
 
-Casus Bellis: Migration War government upgrade mechanics
-
-Great Projects: Projects for Sub-Romans to fight against decay of laws.
-
-Schemes: Replace on-actions to trigger vassal law deviation with an actual scheme to fabricate papers to do so
-
-Various rule-related mechanic stuff needs to be a triggered select localization
+- Character Interactions: Enable the ability to give ai-owned lands in your realm to federates as an admin.
+- Great Projects: Projects for Sub-Romans to fight against decay of laws.
+- Add the other two dynasty legacies
 
 Government:
 - Ability for Emperor to intervene directly down the hierarchy.
-- Special themes for diocese and PPs?
-- Only WRE/ERE/RE can be anointed sovereigns
-- Roman Admin Governments need their own coronation stuff
 
-Council: Judge of the Court needs a second task
+Federate Government:
+- Army call up costs should be weighted by contracts
 
 Decisions:
 - Roman government decision as in adoption of later Admin government in late antique period
 - Non-Romans with Roman government get option to transition to vanilla admin instead of adopt Roman government
-- Able to create noble family if missing one
 
-Federate Government:
-- Army call up costs should be weighted by contracts
-- Federate raiding/raid wars
+==========
+0.2.2:
+----------
+Casus Bellis: Migration War government upgrade mechanics
+Schemes: Add scheme for vassals to try and increase aristocratic control laws
 
-Council:
-- More outcomes for:
-   - promulgate_laws
+- Only WRE/ERE/RE can be anointed sovereigns
+- Special themes for diocese and PPs?
+- Council: Judge of the Court needs a second task
 
 State Faith:
-- Really needs a deep reworking (this'll tie into Zoroastrianism eventually as well)
 - Should not be able to change state faith if sharing HOF
 - State Faith change decision adopts the HOF's faith instead of itself
 
-Localization: Praeses for counties (still civilian-ish)
+==========
+Stretch:
+----------
+* Senators should be ranked into vir illustris, vir spectabilis, and vir clarissimus, by family renown or other mechanics
+
+- Fix Ministries having a fucking theme contract... (big oof to fix probably)
+
+- Coronation variant for Roman Empires???
+
+Council:
+- More outcomes for: promulgate_laws
+
+==========
+Dynasty Legacies:
+----------
 
 Despoliation Dynasty Legacy:
 "The thicker the hay, the easier it is to mow."
