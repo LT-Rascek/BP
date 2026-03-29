@@ -3,22 +3,6 @@
 ######################
 
 ##### TODO (Beta): Add WtWSMS historical hybrids
-##### culture_is_not_historical_hybrid_trigger = {
-
-##### Changed from Vanilla: Tweaked cataphract reference
-culture_has_heavy_cavalry_maa = {
-	OR = {
-		has_cultural_parameter = unlock_maa_cataphract
-		has_cultural_parameter = unlock_maa_monaspa
-		has_cultural_parameter = unlock_maa_tarkhan
-		has_cultural_parameter = unlock_maa_conrois
-		has_cultural_parameter = unlock_maa_cataphract_archers
-		has_innovation = innovation_valets #Gendarme - Later Era MAA
-		##### Changed from Vanilla vvvvv
-		has_innovation = innovation_cataphracts
-		##### Changed from Vanilla ^^^^^
-	}
-}
 
 ##### Changed from Vanilla: Prevent hybridization between Hellenizers and Colonizers
 

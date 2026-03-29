@@ -1085,7 +1085,11 @@ tradition_western_roman_legacy = { #WRE military aspects
 	}
 	
 	parameters = {
-		unlock_innovation_roman_military = yes
+		unlock_maa_ballista = yes
+		unlock_maa_praetorian = yes
+		unlock_maa_roman_heavy_infantry = yes
+		unlock_maa_roman_light_infantry = yes
+		unlock_maa_roman_heavy_cavalry = yes
 	}
 	province_modifier = {}
 	character_modifier = {
@@ -1169,14 +1173,17 @@ tradition_roman_military = { #DLC Version; not really DLC-locked, but synergizes
 	}
 	
 	parameters = {
-		unlock_innovation_roman_military = yes
+		unlock_maa_ballista = yes
+		unlock_maa_praetorian = yes
+		unlock_maa_roman_heavy_infantry = yes
+		unlock_maa_roman_light_infantry = yes
+		unlock_maa_roman_heavy_cavalry = yes
 	}
 	province_modifier = {}
 	character_modifier = {
 		knight_effectiveness_mult = -0.25
-		men_at_arms_recruitment_cost = -0.1
 		heavy_infantry_max_size_add = 2
-		light_cavalry_max_size_add = 2
+		light_cavalry_max_size_add = 1
 		men_at_arms_title_limit = 1
 	}
 	

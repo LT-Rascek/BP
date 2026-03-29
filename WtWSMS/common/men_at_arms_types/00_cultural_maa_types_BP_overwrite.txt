@@ -187,6 +187,7 @@ picchieri = {
 	icon = pikemen
 }
 
+##### Changed from Vanilla: Made unlocked by culture parameter
 praetorian = {
 	type = heavy_infantry
 	
@@ -199,6 +200,12 @@ praetorian = {
 		pikemen = 1
 		peasant_militia = 2
 	}
+	
+	##### Changed from Vanilla vvvvv
+	can_recruit = {
+		valid_for_maa_trigger = { PARAMETER = unlock_maa_praetorian }
+	}
+	##### Changed from Vanilla ^^^^^
 	
 	buy_cost = { gold = praetorian_recruitment_cost }
 	low_maintenance_cost = { gold = praetorian_low_maint_cost }

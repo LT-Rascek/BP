@@ -285,27 +285,6 @@ innovation_roman_concrete = {
 	#Functional Flags
 	flag = unlocks_first_three_domiciles
 }
-innovation_scholae = {
-	skill = martial
-	group = culture_group_military
-	culture_era = culture_era_classical_antiquity
-	icon = @maa_01
-	
-	potential = {
-		OR = {
-			has_cultural_parameter = unlock_innovation_roman_military
-			has_cultural_parameter = unlock_innovation_byzantine_military
-		}
-	}
-
-	character_modifier = {
-		men_at_arms_cap = 2
-		men_at_arms_limit = -1
-	}
-
-	flag = global_regional
-	flag = late_antiquity_era_regional
-}
 ## Persian Innovations
 innovation_marzban = {
 	skill = martial
@@ -434,53 +413,6 @@ innovation_ancient_urbanites = {
 	flag = unlocks_first_three_domiciles
 }
 #MAA Innovations
-innovation_ballista = {
-	skill = learning
-	group = culture_group_military
-	culture_era = culture_era_classical_antiquity
-	icon = @siege_weapons
-
-	potential = {
-		OR = {
-			has_cultural_parameter = unlock_innovation_roman_military
-			has_cultural_parameter = unlock_innovation_byzantine_military
-		}
-	}
-
-	unlock_maa = ballista
-
-	flag = global_regional
-	flag = late_antiquity_era_regional
-}
-innovation_cataphracts = {
-	skill = martial
-	group = culture_group_military
-	culture_era = culture_era_classical_antiquity
-	icon = @special_maa_01
-
-	potential = {
-		OR = {
-			has_cultural_parameter = unlock_innovation_byzantine_military
-			has_cultural_parameter = unlocks_cataphract_innovation
-		}
-	}
-
-	unlock_maa = cataphract
-
-	flag = global_maa
-}
-innovation_legionnaires = {
-	skill = martial
-	group = culture_group_military
-	culture_era = culture_era_classical_antiquity
-	icon = @raised_banner
-
-	potential = { has_cultural_parameter = unlock_innovation_roman_military }
-
-	unlock_maa = praetorian
-
-	flag = global_maa
-}
 innovation_repeating_crossbow = {
 	skill = martial
 	group = culture_group_military
