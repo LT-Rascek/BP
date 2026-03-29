@@ -22,6 +22,20 @@ bp_change_tradition_events.0001 = {
 			limit = { this.culture = root }
 			random_maa_regiment = { destroy_maa_regiment = yes }
 		}
+		#Change head determination, if not Turkic, Mongolic, Cushtic, Sakan, or Sarmatian heritage
+		if = {
+			limit = {
+				has_cultural_pillar = head_determination_herd
+				NOR = {
+					has_cultural_pillar = heritage_mongolic
+					has_cultural_pillar = heritage_turkic
+					has_cultural_pillar = heritage_sakan
+					has_cultural_pillar = heritage_sarmatian
+					has_cultural_pillar = heritage_somalian
+				}
+			}
+			set_culture_pillar = head_determination_domain
+		}
 	}
 }
 
