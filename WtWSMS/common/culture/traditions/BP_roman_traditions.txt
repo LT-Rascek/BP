@@ -600,7 +600,6 @@ tradition_colonizers = { #Special Roman Tradition, Emphasizing Conquest Features
 	
 	is_shown = { always = no } #Never selectable even with DLC (have to get it from extant cultures)
 	can_pick = {
-		any_parent_culture = { this = culture:roman }
 		custom_tooltip = {
 			text = cannot_have_tradition_culture_blending
 			NOT = { culture_tradition:tradition_culture_blending = { is_in_list = traits } }

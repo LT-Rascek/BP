@@ -4,6 +4,7 @@
 on_culture_created = {
 	on_actions = {
 		bp_apply_special_hybrid_cases
+		bp_remove_certain_innovations
 	}
 }
 
@@ -28,6 +29,32 @@ bp_apply_special_hybrid_cases = {
 				hybrid_has_new_namelist_trigger = yes
 			}
 			scope:founder = { trigger_event = bp_culture_emergence_events.1001 }
+		}
+	}
+}
+
+bp_remove_certain_innovations = {
+	effect = {
+		if = {
+			limit = {
+				NOT = { has_cultural_parameter = unlock_innovation_roman_civil }
+				has_innovation = innovation_roman_administration
+			}
+			remove_innovation = innovation_roman_administration
+		}
+		if = {
+			limit = {
+				NOT = { has_cultural_parameter = unlock_innovation_roman_civil }
+				has_innovation = innovation_roman_concrete
+			}
+			remove_innovation = innovation_roman_concrete
+		}
+		if = {
+			limit = {
+				NOT = { has_cultural_parameter = unlock_innovation_roman_civil }
+				has_innovation = innovation_legal_codex
+			}
+			remove_innovation = innovation_legal_codex
 		}
 	}
 }
