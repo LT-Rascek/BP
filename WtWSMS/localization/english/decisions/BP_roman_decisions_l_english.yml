@@ -46,17 +46,21 @@
  restore_eastern_roman_empire_confirm: "Rome Cannot be extinguished!"
  # Minor Decisions
  ## Support Greens
- support_greens: "Support the Greens"
- support_greens_desc: "The Greens are the chariot team for the working class, violent and hard-working are perfect words to describe Green fans."
+ support_chariot_team_decision: "Support a Chariot Team"
+ support_chariot_team_decision_desc: "The chariot teams in Roman society function as sport factions-cum-political parties. Choosing a faction to support can provide you with various boons, at the cost of opinion with the other faction."
+ support_chariot_team_decision_tooltip: "Change your chariot faction."
+ support_chariot_team_decision_confirm: "Nika! Nika! Nika!"
+ change_chariot_support_decision_confirm: "Confirm your faction choice"
+ support_greens_item_desc: "Support the Greens"
  support_greens_tooltip: "Become a Greens Supporter"
- support_greens_confirm: "Nika! Nika! Nika!"
- ## Support Blues
- support_blues: "Support the Blues"
- support_blues_desc: "The Blues are the chariot team for the nobility, centred on courtly intrigue and diplomacy."
+ add_greens_supporter: "Add [trait|E] [GetTrait('greens_supporter').GetName( GetNullCharacter )]"
+ support_blues_item_desc: "Support the Blues"
  support_blues_tooltip: "Become a Blues Supporter"
- support_blues_confirm: "Nika! Nika! Nika!"
- ## Hold a Chariot Race
- hold_a_chariot_race: "Hold a Chariot Race"
- hold_a_chariot_race_desc: "Let us hold a great chariot race like in the days of old!"
- hold_a_chariot_race_tooltip: "Hold a Chariot Race"
- hold_a_chariot_race_confirm: "Let the Race Begin!"
+ add_blues_supporter: "Add [trait|E] [GetTrait('blues_supporter').GetName( GetNullCharacter )]"
+ support_reds_item_desc: "Support the Reds"
+ support_reds_tooltip: "Become a Reds Supporter"
+ add_reds_supporter: "Add [trait|E] [GetTrait('reds_supporter').GetName( GetNullCharacter )]"
+ support_whites_item_desc: "Support the Whites"
+ support_whites_tooltip: "Become a Whites Supporter"
+ add_whites_supporter: "Add [trait|E] [GetTrait('whites_supporter').GetName( GetNullCharacter )]"
+ 

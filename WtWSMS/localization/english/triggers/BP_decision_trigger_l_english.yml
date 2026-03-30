@@ -65,3 +65,5 @@
  #Rome Restoration
  HAS_RESTORED_THE_ROMAN_FORUM: "[GetTitleByKey('b_roma').GetName] has the building #V $building_type_the_colosseum_02$#!"
  HAS_RESTORED_THE_CONSTANTINOPLE_FORUM: "[GetTitleByKey('b_constantinople').GetName] has the building #V $building_type_the_constantinople_forum_02$#!"
+ #Chariot Races
+ HAS_CHANGED_CHARIOT_SUPPORT_COOLDOWN: "You recently changed your deme.\n    @alert_icon! #alert_trial Can be changed again after [GetCurrentDateWithDiff( GetVarTimeRemaining( CHARACTER.MakeScope, 'changed_chariot_support_cooldown_months') )]#!"
