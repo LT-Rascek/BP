@@ -1504,35 +1504,91 @@ setup_governments_based_on_dlc = {
 			title:e_magister_military_roman_empire = {
 				set_variable = is_supreme_roman_military_title
 				set_variable = is_a_roman_ministry_title
+				if = {
+					limit = {
+						exists = this.holder
+						NOT = { has_title_law = roman_administrative_magister_military_appointment_succession_law }
+					}
+					add_title_law = roman_administrative_magister_military_appointment_succession_law
+				}
 			}
 			title:e_magister_military_ere = {
 				set_variable = is_supreme_roman_military_title
 				set_variable = is_a_roman_ministry_title
+				if = {
+					limit = {
+						exists = this.holder
+						NOT = { has_title_law = roman_administrative_magister_military_appointment_succession_law }
+					}
+					add_title_law = roman_administrative_magister_military_appointment_succession_law
+				}
 			}
 			title:e_magister_military_wre = {
 				set_variable = is_supreme_roman_military_title
 				set_variable = is_a_roman_ministry_title
+				if = {
+					limit = {
+						exists = this.holder
+						NOT = { has_title_law = roman_administrative_magister_military_appointment_succession_law }
+					}
+					add_title_law = roman_administrative_magister_military_appointment_succession_law
+				}
 			}
 			title:e_magister_military_italy = {
 				set_variable = is_supreme_roman_military_title
 				set_variable = is_a_roman_ministry_title
+				if = {
+					limit = {
+						exists = this.holder
+						NOT = { has_title_law = roman_administrative_magister_military_appointment_succession_law }
+					}
+					add_title_law = roman_administrative_magister_military_appointment_succession_law
+				}
 			}
 			
 			title:e_magister_offices_roman_empire = {
 				set_variable = is_supreme_roman_ministry_title
 				set_variable = is_a_roman_ministry_title
+				if = {
+					limit = {
+						exists = this.holder
+						NOT = { has_title_law = roman_administrative_ministry_appointment_succession_law }
+					}
+					add_title_law = roman_administrative_ministry_appointment_succession_law
+				}
 			}
 			title:e_magister_offices_ere = {
 				set_variable = is_supreme_roman_ministry_title
 				set_variable = is_a_roman_ministry_title
+				if = {
+					limit = {
+						exists = this.holder
+						NOT = { has_title_law = roman_administrative_ministry_appointment_succession_law }
+					}
+					add_title_law = roman_administrative_ministry_appointment_succession_law
+				}
 			}
 			title:e_magister_offices_wre = {
 				set_variable = is_supreme_roman_ministry_title
 				set_variable = is_a_roman_ministry_title
+				if = {
+					limit = {
+						exists = this.holder
+						NOT = { has_title_law = roman_administrative_ministry_appointment_succession_law }
+					}
+					add_title_law = roman_administrative_ministry_appointment_succession_law
+				}
 			}
 			title:e_magister_offices_italy = {
 				set_variable = is_supreme_roman_ministry_title
 				set_variable = is_a_roman_ministry_title
+				if = {
+					limit = {
+						exists = this.holder
+						NOT = { has_title_law = roman_administrative_ministry_appointment_succession_law }
+					}
+					add_title_law = roman_administrative_ministry_appointment_succession_law
+				}
 			}
 		}
 	}

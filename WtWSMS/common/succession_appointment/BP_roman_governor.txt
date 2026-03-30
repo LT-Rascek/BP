@@ -1250,6 +1250,34 @@
 				}
 			}
 
+			#Senators
+			if = {
+				limit = {
+					OR = {
+						has_trait = senator_west
+						has_trait = senator_east
+					}
+					NOT = { scope:title.holder.top_liege ?= { has_realm_law_flag = roman_characters_can_be_minorities } }
+				}
+				add = {
+					value = 10
+					desc = is_a_senator
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						dynasty ?= { has_dynasty_modifier = roman_senate_family_west }
+						dynasty ?= { has_dynasty_modifier = roman_senate_family_east }
+					}
+					NOT = { scope:title.holder.top_liege ?= { has_realm_law_flag = roman_characters_can_be_minorities } }
+				}
+				add = {
+					value = 10
+					desc = is_a_senate_family
+				}
+			}
+
 			##### Changed from Vanilla vvvvv
 			if = {
 				limit = {

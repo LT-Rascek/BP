@@ -24,6 +24,7 @@ roman_federate_liege_taxes = {
 			score = 2
 		}
 		roman_federate_liege_taxes_low = {
+			default = yes
 			parent = roman_federate_liege_taxes_moderate
 			position = { 1 0 }
 
@@ -51,7 +52,6 @@ roman_federate_liege_taxes = {
 			score = 1
 		}
 		roman_federate_liege_taxes_moderate = {
-			default = yes
 			parent = roman_federate_liege_taxes_moderate
 			position = { 2 0 }
 
@@ -166,7 +166,6 @@ roman_federate_military_landed = {
 				men_at_arms_maintenance = -0.25
 				men_at_arms_recruitment_cost = -0.50
 				
-				domain_tax_mult = -0.25
 			}
 			
 			liege_modifier = {
@@ -199,7 +198,6 @@ roman_federate_military_landed = {
 				men_at_arms_maintenance = -0.20
 				men_at_arms_maintenance = -0.40
 				
-				domain_tax_mult = -0.20
 			}
 			
 			liege_modifier = {
@@ -233,7 +231,6 @@ roman_federate_military_landed = {
 				men_at_arms_maintenance = -0.15
 				men_at_arms_maintenance = -0.30
 				
-				domain_tax_mult = -0.15
 			}
 			
 			liege_modifier = {
@@ -267,7 +264,6 @@ roman_federate_military_landed = {
 				men_at_arms_maintenance = -0.10
 				men_at_arms_maintenance = -0.20
 				
-				domain_tax_mult = -0.10
 			}
 			
 			liege_modifier = {
@@ -301,7 +297,6 @@ roman_federate_military_landed = {
 				men_at_arms_maintenance = -0.05
 				men_at_arms_maintenance = -0.10
 				
-				domain_tax_mult = -0.05
 			}
 			
 			liege_modifier = {
@@ -458,7 +453,6 @@ roman_federate_domestic_taxation = {
 			tax = 0.70
 			subject_modifier = {
 				domain_limit = 4
-				domain_tax_mult = 0.20
 				domicile_monthly_gold_mult = 0.0
 			}
 			liege_modifier = {}
@@ -472,7 +466,6 @@ roman_federate_domestic_taxation = {
 			tax = 0.55
 			subject_modifier = {
 				domain_limit = 3
-				domain_tax_mult = 0.15
 				domicile_monthly_gold_mult = -0.20
 			}
 			liege_modifier = {}
@@ -486,7 +479,6 @@ roman_federate_domestic_taxation = {
 			tax = 0.40
 			subject_modifier = {
 				domain_limit = 2
-				domain_tax_mult = 0.10
 				domicile_monthly_gold_mult = -0.40
 			}
 			liege_modifier = {
@@ -502,7 +494,6 @@ roman_federate_domestic_taxation = {
 			tax = 0.25
 			subject_modifier = {
 				domain_limit = 1
-				domain_tax_mult = 0.05
 				domicile_monthly_gold_mult = -0.60
 			}
 			liege_modifier = {}

@@ -1,5 +1,5 @@
 ﻿roman_admin_minister = {
-	default_candidates = { landed_vassal unlanded_noble_house_head }
+	default_candidates = { holder_close_family unlanded_noble_house_head }
 
 	allow_same_tier_candidates = yes
 
@@ -278,71 +278,23 @@
 				}
 			}
 
-			# Minister specific score
 			if = {
-				limit = {
-					scope:title = {
-						OR = {
-							this = title:e_minister_chancellor
-							this = title:e_minister_of_personnel
-						}
-					}
-				}
-				if = {
-					limit = {
-						scope:title = title:e_minister_chancellor
-						tgp_is_any_minister = yes
-					}
-					add = {
-						value = 100
-						desc = is_a_minister_desc
-					}
-				}
+				limit = { scope:title = { has_variable = is_supreme_roman_ministry_title } }
 				add = {
 					value = diplomacy
 					desc = diplomacy_concept
-				}
-			}
-			else_if = {
-				limit = {
-					scope:title = title:e_minister_censor
-				}
-				add = {
-					value = intrigue
-					desc = intrigue_concept
-				}
-			}
-			else_if = {
-				limit = {
-					scope:title = title:e_minister_of_war
 				}
 				add = {
 					value = martial
 					desc = martial_concept
 				}
-			}
-			else_if = {
-				limit = {
-					scope:title = {
-						OR = {
-							this = title:e_minister_of_revenue
-							this = title:e_minister_of_works
-						}
-					}
-				}
 				add = {
 					value = stewardship
 					desc = stewardship_concept
 				}
-			}
-			else_if = {
-				limit = {
-					scope:title = {
-						OR = {
-							this = title:e_minister_of_rites
-							this = title:e_minister_of_justice
-						}
-					}
+				add = {
+					value = intrigue
+					desc = intrigue_concept
 				}
 				add = {
 					value = learning
@@ -380,6 +332,34 @@
 					round = yes
 					min = 75
 					desc = ep3_expanded_power_base_major_modifier
+				}
+			}
+
+			#Senators
+			if = {
+				limit = {
+					OR = {
+						has_trait = senator_west
+						has_trait = senator_east
+					}
+					NOT = { scope:title.holder.top_liege ?= { has_realm_law_flag = roman_characters_can_be_minorities } }
+				}
+				add = {
+					value = 10
+					desc = is_a_senator
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						dynasty ?= { has_dynasty_modifier = roman_senate_family_west }
+						dynasty ?= { has_dynasty_modifier = roman_senate_family_east }
+					}
+					NOT = { scope:title.holder.top_liege ?= { has_realm_law_flag = roman_characters_can_be_minorities } }
+				}
+				add = {
+					value = 10
+					desc = is_a_senate_family
 				}
 			}
 
@@ -437,13 +417,33 @@
 				}
 			}
 
+			#Title-Specific stuff; making sure the MM and MO don't inherit from each other
+			if = {
+				limit = {
+					scope:title = { has_variable = is_supreme_roman_ministry_title }
+					any_held_title = { has_variable = is_supreme_roman_military_title }
+				}
+				add = {
+					value = -5000
+					desc = appointment_wrong_ministry
+				}
+			}
+
+			if = {
+				limit = { root ?= { government_has_flag = government_is_quasi_feudal } }
+				add = {
+					value = -5000
+					desc = federate_government_tt
+				}
+			}
+
 			# We remove all score from the emperor, to make sure you don't inherit governorships needlessly
 			if = {
 				limit = {
 					is_independent_ruler = yes
 				}
 				multiply = {
-					value = -1000
+					value = -5000
 					desc = appointment_is_top_liege
 				}
 			}
@@ -452,7 +452,7 @@
 }
 
 roman_admin_military = {
-	default_candidates = { direct_landed_vassal holder_close_family }
+	default_candidates = { holder_close_family unlanded_noble_house_head }
 	allow_same_tier_candidates = yes
 
 	candidate_score = {
@@ -1026,65 +1026,6 @@ roman_admin_military = {
 				}
 			}
 
-			# MOVEMENTS
-			if = {
-				limit = {
-					situation:dynastic_cycle ?= {
-						situation_participant_group:expansion_movement = {
-							participant_group_has_character = root
-							is_movement_in_power = { MOVEMENT = expansion_movement }
-						}
-					}
-				}
-				add = {
-					value = 20
-					desc = expansion_movement_is_favored_appointment_desc
-				}
-			}
-			if = {
-				limit = {
-					situation:dynastic_cycle ?= {
-						situation_participant_group:advancement_movement = {
-							participant_group_has_character = root
-							is_movement_in_power = { MOVEMENT = advancement_movement }
-						}
-					}
-				}
-				add = {
-					value = 20
-					desc = advancement_movement_is_favored_appointment_desc
-				}
-			}
-			if = {
-				limit = {
-					situation:dynastic_cycle ?= {
-						situation_participant_group:pro_hegemon_movement = {
-							participant_group_has_character = root
-							#they don't have to be in power
-						}
-					}
-				}
-				add = {
-					value = 20
-					desc = pro_hegemon_movement_appointment_desc
-				}
-			}
-			if = {
-				limit = {
-					situation:dynastic_cycle ?= {
-						situation_participant_group:conservative_movement = {
-							participant_group_has_character = root
-							NOT = { is_movement_in_power = { MOVEMENT = conservative_movement } }
-							#they have to be in power to remove the malus
-						}
-					}
-				}
-				add = {
-					value = -20
-					desc = conservative_movement_appointment_value
-				}
-			}
-			
 			### EXPANDED POWER BASE
 			save_temporary_value_as = temp_total
 			if = {
@@ -1118,6 +1059,34 @@ roman_admin_military = {
 				}
 			}
 
+			#Senators
+			if = {
+				limit = {
+					OR = {
+						has_trait = senator_west
+						has_trait = senator_east
+					}
+					NOT = { scope:title.holder.top_liege ?= { has_realm_law_flag = roman_characters_can_be_minorities } }
+				}
+				add = {
+					value = 10
+					desc = is_a_senator
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						dynasty ?= { has_dynasty_modifier = roman_senate_family_west }
+						dynasty ?= { has_dynasty_modifier = roman_senate_family_east }
+					}
+					NOT = { scope:title.holder.top_liege ?= { has_realm_law_flag = roman_characters_can_be_minorities } }
+				}
+				add = {
+					value = 10
+					desc = is_a_senate_family
+				}
+			}
+
 			# Must be eligible as a commander
 			if = {
 				limit = {
@@ -1131,6 +1100,26 @@ roman_admin_military = {
 				}
 			}
 
+			#Title-Specific stuff; making sure the MM and MO don't inherit from each other
+			if = {
+				limit = {
+					scope:title = { has_variable = is_supreme_roman_military_title }
+					any_held_title = { has_variable = is_supreme_roman_ministry_title }
+				}
+				add = {
+					value = -5000
+					desc = appointment_wrong_ministry
+				}
+			}
+
+			if = { #Federates...
+				limit = { root ?= { government_has_flag = government_is_quasi_feudal } }
+				add = {
+					value = -5000
+					desc = federate_government_tt
+				}
+			}
+
 			# We remove all score from the emperor, to make sure you don't inherit governorships needlessly
 			if = {
 				limit = {
@@ -1141,16 +1130,6 @@ roman_admin_military = {
 					desc = appointment_is_top_liege
 				}
 			}
-			
-			##### Changed from Vanilla vvvvv
-			if = {
-				limit = { root ?= { government_has_flag = government_is_quasi_feudal } }
-				add = {
-					value = -5000
-					desc = federate_government_tt
-				}
-			}
-			##### Changed from Vanilla ^^^^^
 		}
 	}
 }

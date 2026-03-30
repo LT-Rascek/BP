@@ -19,23 +19,15 @@ Hunter-Gatherer
 Roman Government (MVP)
 ----------
 Bugs:
+- Fix Negative influence at start for some sub-romans
 - Fix Romulus MAA not all spawning
+- Can't add roman_administrative_magister_military_appointment_succession_law to MM Italy
 - holding construction time negative should be building speed positive in taxation keeping event modifier
 
 Succession Issues:
-- MO/MM should be functionally ineligible for each other's titles in the succession order
-- Succession Bug: Ministrial Succession seems borked; fix it dammit (that's why Andag keeps getting it)
-   - For some reason, at start is firing multiple MO/MM officers including Andag and throw Beatus and Pierius into the role
-   - Andag is becoming MO YET AGAIN!!!
-   - Block Spymaster, Court Chaplain from being able to recruit Roman MO/MM when they have the law.
+- MO office seems to be duplicating at game start then flipping back, at least in the ERE
 
-- Senators should have a bonus to succession, if Rome is not being oppressed
 - Decisions: Establish de jure decisions need work given uncreatable empires/kingdoms???
-- Federates should not get a nerf to domain taxes nor a bonus in their contract
-
-History:
-- Gallic chars should be romano_celtic_pagan
-- Oland and Oland rulers should be Cimbric Pagan
 
 Council:
 - Fill out last 3 council tasks for legal bureau
@@ -44,13 +36,6 @@ Council:
 - Roman Admin Premier Modifiers
 - Roman Admin Premier Power Levels
 - Premiership should not be dischargeable
-
-==========
-Roman Culture Work
-----------
-Activities:
-   - Ability to host munera (theater particularly) in Roman Ceremonies
-   - Option to pay gold or treasury with slightly different rewards
 
 ==========
 Tributaries / Federate Rework
@@ -63,6 +48,10 @@ Mechanics:
 ==========
 Pre-Alpha Final:
 ----------
+Activities:
+   - Ability to host munera (theater particularly) in Roman Ceremonies
+   - Option to pay gold or treasury with slightly different rewards
+
 Bookmarks: Revamp bookmarks
 - Gylericus et al plotting Nepos death in the 479 scenario
 - Rewrite Odoacer's adventurer bookmark desc
