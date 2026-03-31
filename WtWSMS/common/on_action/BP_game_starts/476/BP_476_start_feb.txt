@@ -1193,16 +1193,19 @@ BP_set_armies_476_feb_DLC = {
 				type = praetorian
 				check_can_recruit = no
 				size = 3
+				title = title:h_western_roman_empire
 			}
 			create_maa_regiment = {
 				type = roman_light_infantry
 				check_can_recruit = no
 				size = 3
+				title = title:h_western_roman_empire
 			}
 			create_maa_regiment = {
-				type = light_horsemen
+				type = roman_heavy_cavalry
 				check_can_recruit = no
-				size = 1
+				size = 2
+				title = title:h_western_roman_empire
 			}
 		}
 		title:e_magister_military_wre.holder = {
@@ -1219,7 +1222,7 @@ BP_set_armies_476_feb_DLC = {
 				title = title:e_magister_military_wre
 			}
 			create_maa_regiment = {
-				type = light_horsemen
+				type = roman_heavy_cavalry
 				check_can_recruit = no
 				size = 2
 				title = title:e_magister_military_wre
@@ -1270,7 +1273,7 @@ BP_set_armies_476_feb_DLC = {
 				title = title:e_magister_military_ere
 			}
 			create_maa_regiment = {
-				type = light_horsemen
+				type = roman_heavy_cavalry
 				check_can_recruit = no
 				size = 5
 				title = title:e_magister_military_ere
