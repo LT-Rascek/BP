@@ -406,21 +406,6 @@ doctrine_pluralism = {
 	##### Changed from Vanilla vvvvv
 	doctrine_pluralism_pluralistic = {
 		##### Changed from Vanilla vvvvv
-		name = {
-			first_valid = {
-				triggered_desc = {
-					trigger = {
-						OR = {
-							has_doctrine = doctrine_monotheist
-							doctrine:doctrine_monotheist = { is_in_list = selected_doctrines }
-						}
-					}
-					desc = doctrine_pluralism_pluralistic_monotheistic_name
-				}
-				desc = doctrine_pluralism_pluralistic_name
-			}
-		}
-
 		desc = {
 			first_valid = {
 				triggered_desc = {
