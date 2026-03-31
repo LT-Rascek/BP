@@ -396,9 +396,6 @@ roman_administrative_themes = {
 			score = 0
 			color = { 0.2 0.2 0.7 1.0 }
 
-			tax_factor = 0.5
-			levies_factor = -0.75
-
 			subject_modifier = {}
 			
 			enable_title_maa = yes
@@ -416,9 +413,6 @@ roman_administrative_themes = {
 			
 			score = 0
 			color = { 0.2 0.2 0.7 1.0 }
-
-			tax_factor = 0.5
-			levies_factor = -0.75
 
 			subject_modifier = {}
 			
@@ -847,7 +841,7 @@ roman_administrative_ministry_obligations = {
 			subject_modifier = {
 				monthly_treasury_from_salary_budget_base = 1.0
 				
-				monthly_treasury_from_ministry_budget_base = 1.5
+				monthly_treasury_from_ministry_budget_base = 1.0
 			}
 			
 			enable_title_maa = no
