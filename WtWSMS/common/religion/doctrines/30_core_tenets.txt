@@ -5019,6 +5019,54 @@
 		}
 	}
 	
+	#The more localized, monastic-led Christian Faiths, namely Insular Celtic and Bosnian Christian
+	tenet_frontier_monastics = {
+		icon = core_tenet_pastoral_isolation
+
+		is_shown = {
+			#Only if already used
+			doctrine:tenet_frontier_monastics = { is_in_list = selected_doctrines }
+		}
+		can_pick = {
+			custom_description = {
+				text = doctrine_inverted_pluralism_pluralistic_trigger
+				NOR = {
+					doctrine:doctrine_pluralism_fundamentalist = { is_in_list = selected_doctrines }
+					doctrine:doctrine_pluralism_righteous = { is_in_list = selected_doctrines }
+				}
+			}
+			custom_description = {
+				text = incompatible_tenet_monasticism_trigger
+				NOT = { doctrine:tenet_monasticism = { is_in_list = selected_doctrines } }
+			}
+			custom_description = {
+				text = incompatible_tenet_pastoral_isolation_trigger
+				NOT = { doctrine:tenet_pastoral_isolation = { is_in_list = selected_doctrines } }
+			}
+		}
+
+		piety_cost = {
+			value = faith_tenet_cost_high
+		}
+
+		parameters = {
+			organized_conversion_nerfed = yes
+			take_vows_active = yes
+			unlock_voluntary_laampdom_faith = yes
+			monastic_schools_allowed_in_every_holding_type = yes
+			clergy_are_always_monks = yes
+		}
+
+		character_modifier = {
+			monthly_county_control_growth_factor = -0.2
+		}
+
+		traits = {
+			virtues = { temperate }
+			sins = { gluttonous }
+		}
+	}
+	
 	#####################
 	# BP Mazdan Tenets	#
 	#####################
@@ -5204,7 +5252,6 @@
 		}
 	}
 	
-
 	tenet_ethnic_religion = {
 		icon = core_tenet_communal_identity ##### TODO (Beta): Needs Unique Icon
 		piety_cost = {
