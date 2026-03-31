@@ -3,8 +3,6 @@
 ##### FIXME: Make portraits code et al. for heritages match the style of the language code
 ##### FIXME: Generalization of heritage shift localization
 
-##### TODO (Immediate): Venetian, Pannonian-Romance namelist from WtWSMS.
-
 #Design Notes:
 #0001-0100: Linguistic Drift Events
 #0101-0200: Heritage Drift Events
@@ -241,7 +239,7 @@ scripted_effect shift_language_proto_ibero_romance_to_children_effect = {
 			}
 		}
 	}
-
+	
 }
 scripted_effect shift_language_proto_gallo_romance_to_children_effect = {
 	scope:shift_culture = {
@@ -285,7 +283,6 @@ scripted_effect shift_language_proto_italian_romance_to_children_effect = {
 			}
 			else = {
 				set_culture_pillar = language_venetian
-				##### TODO (Immediate): Venetian namelist from WtWSMS.
 				ccu_culture_created_or_changed_effect = yes
 			}
 		}
@@ -324,7 +321,6 @@ scripted_effect shift_language_proto_illyrian_romance_to_children_effect = {
 scripted_effect shift_language_proto_pannonian_romance_to_children_effect = {
 	scope:shift_culture = {
 		set_culture_pillar = language_pannonian_romance
-		##### TODO (Immediate): Pannonian Romance Name List from WtWSMS.
 		ccu_culture_created_or_changed_effect = yes
 	}
 }
@@ -700,7 +696,7 @@ scripted_effect find_same_language_minorities = {
 	every_in_list = {
 		list = check_culture_minorities
 		save_scope_as = check_minority_culture
-	
+		
 		# If most are under the shift culture, save them to the persistent list
 		if = {
 			limit = {
@@ -728,7 +724,7 @@ scripted_effect propagate_language_effect = {
 			limit = { has_cultural_pillar = heritage_israelite }
 			if = {
 				limit = { has_cultural_parameter = language_dialect_continuum_gallo_romance }
-				### TODO: Needs Tzarfati name list
+				set_name_list = name_list_tzarfati
 			}
 			else_if = {
 				limit = { has_cultural_parameter = language_dialect_continuum_ibero_romance }
@@ -784,7 +780,12 @@ scripted_effect propagate_language_effect = {
 			}
 			#Romance, Italian
 			else_if = {
-				limit = { has_cultural_pillar = language_germano_italian_romance }
+				limit = {
+					OR = {
+						has_cultural_pillar = language_germano_italian_romance
+						has_cultural_pillar = language_venetian
+					}
+				}
 				set_name_list = name_list_cisalpine
 			}
 			else_if = {
@@ -812,6 +813,10 @@ scripted_effect propagate_language_effect = {
 			else_if = {
 				limit = { has_cultural_pillar = language_wallachian }
 				set_name_list = name_list_vlach
+			}
+			else_if = {
+				limit = { has_cultural_pillar = language_pannonian_romance }
+				set_name_list = name_list_pannonian_romance
 			}
 			else_if = {
 				limit = { has_cultural_pillar = language_germano_african_romance }
@@ -1426,4 +1431,4 @@ bp_heritage_linguistic_drift.0104 = {
 		trigger = { always = no }
 		fallback = yes
 	}
-}
+	}	
