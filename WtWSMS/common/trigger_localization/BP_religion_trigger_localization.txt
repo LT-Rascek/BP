@@ -99,8 +99,18 @@ incompatible_tenet_pastoral_isolation_trigger = {
 	third = INCOMPATIBLE_TENET_PASTORAL_ISOLATION_TRIGGER
 	global = INCOMPATIBLE_TENET_PASTORAL_ISOLATION_TRIGGER
 }
+incompatible_tenet_esotericism_trigger = {
+	first = INCOMPATIBLE_TENET_ESOTERICISM_TRIGGER
+	third = INCOMPATIBLE_TENET_ESOTERICISM_TRIGGER
+	global = INCOMPATIBLE_TENET_ESOTERICISM_TRIGGER
+}
+incompatible_tenet_cthonic_redoubts_trigger = {
+	first = INCOMPATIBLE_TENET_CTHONIC_REDOUBTS_TRIGGER
+	third = INCOMPATIBLE_TENET_CTHONIC_REDOUBTS_TRIGGER
+	global = INCOMPATIBLE_TENET_CTHONIC_REDOUBTS_TRIGGER
+}
 
-
+#Doctrines
 doctrine_gnosis_trigger = {
 	first_not = DOCTRINE_GNOSIS_TRIGGER
 	third_not = DOCTRINE_GNOSIS_TRIGGER
@@ -110,16 +120,6 @@ doctrine_tenet_gnosticism_trigger = {
 	first_not = DOCTRINE_TENET_GNOSTICISM_TRIGGER
 	third_not = DOCTRINE_TENET_GNOSTICISM_TRIGGER
 	global_not = DOCTRINE_TENET_GNOSTICISM_TRIGGER
-}
-incompatible_tenet_cthonic_redoubts_trigger = {
-	first = INCOMPATIBLE_TENET_CTHONIC_REDOUBTS_TRIGGER
-	third = INCOMPATIBLE_TENET_CTHONIC_REDOUBTS_TRIGGER
-	global = INCOMPATIBLE_TENET_CTHONIC_REDOUBTS_TRIGGER
-}
-saurism_is_in_selected_list = {
-	first_not = SAURISM_IS_IN_SELECTED_LIST
-	third_not = SAURISM_IS_IN_SELECTED_LIST
-	global_not = SAURISM_IS_IN_SELECTED_LIST
 }
 incompatible_tenet_changing_theism = {
 	first_not = INCOMPATIBLE_TENET_CHANGING_THEISM
@@ -381,4 +381,11 @@ doctrine_requires_polytheism = {
 	first_not = DOCTRINE_REQUIRES_POLYTHEISM
 	third_not = DOCTRINE_REQUIRES_POLYTHEISM
 	global_not = DOCTRINE_REQUIRES_POLYTHEISM
+}
+
+#Hindu Doctrines
+saurism_is_in_selected_list = {
+	first_not = SAURISM_IS_IN_SELECTED_LIST
+	third_not = SAURISM_IS_IN_SELECTED_LIST
+	global_not = SAURISM_IS_IN_SELECTED_LIST
 }

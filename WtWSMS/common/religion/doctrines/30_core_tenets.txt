@@ -5046,7 +5046,7 @@
 		}
 
 		piety_cost = {
-			value = faith_tenet_cost_high
+			value = faith_tenet_cost_massive
 		}
 
 		parameters = {
@@ -5074,7 +5074,7 @@
 	tenet_complex_exegesis = {
 		icon = core_tenet_literalism ##### TODO (Beta): Needs Unique Icon
 		
-		is_shown = { religion_tag = dualism_religion }
+		is_shown = { religion_tag = christianity_religion }
 		
 		can_pick = {
 			custom_description = {
@@ -5082,12 +5082,12 @@
 				NOT = { doctrine:tenet_literalism = { is_in_list = selected_doctrines } }
 			}
 			custom_description = {
-				text = incompatible_tenet_astrology_trigger
-				NOT = { doctrine:tenet_astrology = { is_in_list = selected_doctrines } }
+				text = incompatible_tenet_esotericism_trigger
+				NOT = { doctrine:tenet_esotericism = { is_in_list = selected_doctrines } }
 			}
 			custom_description = {
-				text = incompatible_tenet_monasticism_trigger
-				NOT = { doctrine:tenet_monasticism = { is_in_list = selected_doctrines } }
+				text = doctrine_gnosis_trigger
+				doctrine:doctrine_christian_soteriology_gnosis = { is_in_list = selected_doctrines }
 			}
 		}
 		
@@ -5100,17 +5100,20 @@
 		}
 		
 		parameters = {
-			divine_the_stars_active = yes
-			take_vows_active = yes
+			literalist_debate_enabled = yes
+			tenet_esotericism_mystic_education = yes
 		}
 		
 		character_modifier = {
-			monthly_learning_lifestyle_xp_gain_mult = 0.1
+			monthly_learning_lifestyle_xp_gain_mult = -0.1
 		}
 		
 		traits = {
-			virtues = { temperate = 2 }
-			sins = { gluttonous = 2 }
+			virtues = {
+				scholar = 1
+				lifestyle_mystic = 1
+			}
+			sins = { lazy = 1 }
 		}
 	}
 	
