@@ -37,6 +37,10 @@ scripted_trigger has_government_of_different_universality_trigger = {
 		}
 	}
 }
+scripted_trigger wear_senate_outfit_trigger = {
+	# Emperor's old clothes are higher priority
+	is_independent = no
+}
 
 scripted_effect grant_land_to_family_effect = {
 	$UNLANDED_CHAR$ = {
@@ -195,7 +199,10 @@ BP_roman_senate_events.0001 = { #Informational Event on Disestablishing the Sena
 	right_portrait = {
 		character = scope:the_consul
 		animation = shock
-		outfit_tags = { senate_outfit }
+		triggered_outfit = {
+			trigger = { wear_senate_outfit_trigger = yes }
+			outfit_tags = { senate_outfit }
+		}
 	}
 	
 	title = BP_roman_senate_events.0001.t
@@ -239,7 +246,10 @@ BP_roman_senate_events.0002 = { #Let everyone know what you did...
 	left_portrait = {
 		character = scope:the_consul
 		animation = disapproval
-		outfit_tags = { senate_outfit }
+		triggered_outfit = {
+			trigger = { wear_senate_outfit_trigger = yes }
+			outfit_tags = { senate_outfit }
+		}
 	}
 	
 	title = BP_roman_senate_events.0002.t
@@ -277,7 +287,10 @@ BP_roman_senate_events.0011 = { #Ask the Senate for Approval
 	right_portrait = {
 		character = scope:the_consul_west
 		animation = personality_forgiving
-		outfit_tags = { senate_outfit }
+		triggered_outfit = {
+			trigger = { wear_senate_outfit_trigger = yes }
+			outfit_tags = { senate_outfit }
+		}
 	}
 	
 	option = { #Ask to get Senate Approval
@@ -335,7 +348,10 @@ BP_roman_senate_events.0012 = { #The Senate deliberates
 	right_portrait = {
 		character = root
 		animation = personality_cynical
-		outfit_tags = { senate_outfit }
+		triggered_outfit = {
+			trigger = { wear_senate_outfit_trigger = yes }
+			outfit_tags = { senate_outfit }
+		}
 	}
 	option = { #Approve of the emperor
 		name = BP_roman_senate_events.0012.approve
@@ -782,7 +798,10 @@ BP_roman_senate_events.1011 = { #Ask the Senate for Approval
 	
 	right_portrait = {
 		character = scope:the_consul_east
-		outfit_tags = { senate_outfit }
+		triggered_outfit = {
+			trigger = { wear_senate_outfit_trigger = yes }
+			outfit_tags = { senate_outfit }
+		}
 	}
 	
 	option = { #Ask to get Senate Approval
@@ -840,7 +859,10 @@ BP_roman_senate_events.1012 = { #The Senate deliberates
 	right_portrait = {
 		character = root
 		animation = personality_cynical
-		outfit_tags = { senate_outfit }
+		triggered_outfit = {
+			trigger = { wear_senate_outfit_trigger = yes }
+			outfit_tags = { senate_outfit }
+		}
 	}
 	
 	option = { #Approve of the emperor

@@ -49,8 +49,24 @@ custom_breton = {
 	}
 }
 custom_ashkenaz = {
-	regions = {
-		world_europe_west_germania custom_europe_eastern_germany custom_lotharingia
+	#regions = {  world_europe_west_germania custom_lotharingia }
+	duchies = {
+		#k_germania
+		d_ostfalen d_westfalen d_angria d_nordalbingia d_teutoburgiensis d_albis d_schmalkalden d_bamberg
+		#k_vindelica
+		d_vindelica_prima d_vindelica_secunda d_vindelica_tertia d_vindelica_quarta
+		#k_danubia
+		d_danubia_prima d_danubia_secunda d_danubia_tertia d_danubia_quarta
+		#k_germania_slavica_prima
+		d_werle d_brandenburg d_lausitz d_dresden
+		#and pommerania
+		d_westpommern d_ostpommern
+		#k_frisia
+		d_westfriesland d_groningen d_frisia
+		#k_raetia & k_noricum
+		d_raetia_prima d_raetia_secunda d_noricum_mediterranum d_noricum_ripense d_tyrol
+		#Lotharingia
+		d_germania_inferior d_belgica_prima d_germania_superior d_verodunum d_vindelica_quarta
 	}
 }
 
