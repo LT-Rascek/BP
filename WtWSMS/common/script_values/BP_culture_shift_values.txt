@@ -35,3 +35,28 @@ shift_start_year_7_period = {
 	multiply = 7
 	add = scope:shift_start_year
 }
+number_of_counties_with_minority = {
+  value = 0
+  every_culture_county = {
+    if = {
+      limit = { county_has_specific_minority_culture_trigger = { CULTURE = scope:check_minority_culture } }
+      add = 1
+    }
+  }
+}
+half_number_of_counties_with_minority = {
+  value = number_of_counties_with_minority
+  divide = 2
+  floor = yes
+}
+number_of_shift_culture_counties_with_minority = {
+  value = 0
+  scope:shift_culture = {
+	every_culture_county = {
+		if = {
+		limit = { county_has_specific_minority_culture_trigger = { CULTURE = scope:check_minority_culture } }
+		add = 1
+		}
+    }
+  }
+}

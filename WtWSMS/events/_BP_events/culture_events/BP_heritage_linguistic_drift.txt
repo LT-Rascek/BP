@@ -110,11 +110,12 @@ scripted_trigger the_culture_borders_a_specific_heritage_trigger = {
 ###### EFFECTS
 
 scripted_effect teach_chars_new_language = {
+	save_temporary_scope_as = temp_language_culture
 	every_living_character = {
-		limit = { this.culture = scope:shift_culture }
+		limit = { this.culture = scope:temp_language_culture }
 		if = {
-			limit = { NOT = { knows_language_of_culture = scope:shift_culture } }
-			learn_language_of_culture = scope:shift_culture
+			limit = { NOT = { knows_language_of_culture = scope:temp_language_culture } }
+			learn_language_of_culture = scope:temp_language_culture
 		}
 	}
 }
@@ -221,7 +222,6 @@ scripted_effect shift_language_proto_ibero_romance_to_children_effect = {
 			else_if = {
 				limit = { a_culture_parent_speaks_a_semitic_language_trigger = yes }
 				set_culture_pillar = language_mozarabic
-				set_name_list = name_list_andalusian
 				ccu_culture_created_or_changed_effect = yes
 			}
 			else = { #FALLBACK
@@ -254,7 +254,6 @@ scripted_effect shift_language_proto_gallo_romance_to_children_effect = {
 			if = { #French!
 				limit = { any_parent_culture_or_above = { this = culture:old_frankish } }
 				set_culture_pillar = language_french
-				set_name_list = name_list_frankish
 				ccu_culture_created_or_changed_effect = yes
 			}
 			else_if = { #Other Germans; d'Oil Vulgar
@@ -264,7 +263,6 @@ scripted_effect shift_language_proto_gallo_romance_to_children_effect = {
 			}
 			else = {
 				set_culture_pillar = language_gallic_romance
-				set_name_list = name_list_gallo_romance
 				ccu_culture_created_or_changed_effect = yes
 			}
 		}
@@ -273,7 +271,6 @@ scripted_effect shift_language_proto_gallo_romance_to_children_effect = {
 scripted_effect shift_language_proto_british_romance_to_children_effect = {
 	scope:shift_culture = {
 		set_culture_pillar = language_british_romance
-		set_name_list = name_list_british_romance
 		ccu_culture_created_or_changed_effect = yes
 	}
 }
@@ -284,7 +281,6 @@ scripted_effect shift_language_proto_italian_romance_to_children_effect = {
 			if = {
 				limit = { a_culture_parent_is_a_germanic_culture_trigger = yes }
 				set_culture_pillar = language_germano_italian_romance
-				set_name_list = name_list_cisalpine
 				ccu_culture_created_or_changed_effect = yes
 			}
 			else = {
@@ -297,12 +293,10 @@ scripted_effect shift_language_proto_italian_romance_to_children_effect = {
 			if = {
 				limit = { is_culture_mostly_in_linguistic_region_trigger = { REGION = custom_sicilian } }
 				set_culture_pillar = language_sicilian
-				set_name_list = name_list_sicilian
 				ccu_culture_created_or_changed_effect = yes
 			}
 			else = {
 				set_culture_pillar = language_italian
-				set_name_list = name_list_italian
 				ccu_culture_created_or_changed_effect = yes
 			}
 		}
@@ -317,7 +311,6 @@ scripted_effect shift_language_proto_raetonorican_romance_to_children_effect = {
 		}
 		else = {
 			set_culture_pillar = language_rhaeto_romance
-			set_name_list = name_list_romansh
 			ccu_culture_created_or_changed_effect = yes
 		}
 	}
@@ -325,7 +318,6 @@ scripted_effect shift_language_proto_raetonorican_romance_to_children_effect = {
 scripted_effect shift_language_proto_illyrian_romance_to_children_effect = {
 	scope:shift_culture = {
 		set_culture_pillar = language_dalmatian
-		set_name_list = name_list_dalmatian
 		ccu_culture_created_or_changed_effect = yes
 	}
 }
@@ -339,7 +331,6 @@ scripted_effect shift_language_proto_pannonian_romance_to_children_effect = {
 scripted_effect shift_language_proto_eastern_romance_to_children_effect = {
 	scope:shift_culture = {
 		set_culture_pillar = language_wallachian
-		set_name_list = name_list_vlach
 		ccu_culture_created_or_changed_effect = yes
 	}
 }
@@ -354,7 +345,6 @@ scripted_effect shift_language_proto_african_romance_to_children_effect = {
 		if = {
 			limit = { a_culture_parent_is_a_germanic_culture_trigger = yes }
 			set_culture_pillar = language_germano_african_romance
-			set_name_list = name_list_african_romance
 			ccu_culture_created_or_changed_effect = yes
 		}
 		else = {
@@ -375,7 +365,6 @@ scripted_effect shift_language_doc_romance_to_children_effect = {
 		if = {
 			limit = { the_culture_or_parent_or_above_is_trigger = { CULTURE = culture:romano_hispanic } }
 			set_culture_pillar = language_catalan
-			set_name_list = name_list_catalan
 			ccu_culture_created_or_changed_effect = yes
 		}
 		else_if = {
@@ -385,7 +374,6 @@ scripted_effect shift_language_doc_romance_to_children_effect = {
 		}
 		else = {
 			set_culture_pillar = language_occitano_romance
-			set_name_list = name_list_occitan
 			ccu_culture_created_or_changed_effect = yes
 		}
 	}
@@ -404,7 +392,6 @@ scripted_effect shift_language_iberian_to_children_effect = {
 				the_culture_or_parent_or_above_is_trigger = { CULTURE = culture:suebi }
 			}
 			set_culture_pillar = language_galician
-			set_name_list = name_list_galician
 			ccu_culture_created_or_changed_effect = yes
 		}
 		else_if = {
@@ -415,12 +402,10 @@ scripted_effect shift_language_iberian_to_children_effect = {
 				}
 			}
 			set_culture_pillar = language_asturleonese
-			set_name_list = name_list_asturleonese
 			ccu_culture_created_or_changed_effect = yes
 		}
 		else = {
 			set_culture_pillar = language_castilian
-			set_name_list = name_list_castilian
 			ccu_culture_created_or_changed_effect = yes
 		}
 	}
@@ -463,7 +448,6 @@ scripted_effect shift_language_magadhan_to_children_effect = {
 scripted_effect shift_language_kamarupan_to_children_effect = {
 	scope:shift_culture = {
 		set_culture_pillar = language_assamese
-		set_name_list = name_list_assamese
 		ccu_culture_created_or_changed_effect = yes
 	}
 }
@@ -592,8 +576,11 @@ scripted_effect shift_language_parthian_to_children_effect = {
 
 #Main Language Shift Effect
 scripted_effect shift_language_effect = {
-	#Then apply the new language effect
 	scope:shift_culture = {
+		#First find all applicable minorities
+		find_same_language_minorities = yes
+		
+		#Then apply the new language effect
 		#NB: if/else-if prevents possible chain reaction
 		if = {
 			limit = { has_cultural_pillar = language_latin }
@@ -692,7 +679,155 @@ scripted_effect shift_language_effect = {
 		}
 		else = { debug_log = "UNHANDLED LANGUAGE SHIFT!" }
 	}
-	teach_chars_new_language = yes
+	# Finalize minorities, name lists, character languages
+	propagate_language_effect = yes
+}
+
+# Make list of this culture and all cultures that exist only as minorities under them
+scripted_effect find_same_language_minorities = {
+	# Start with scope:shift_culture
+	add_to_list = all_shift_cultures
+	
+	# No counties, same language
+	every_culture_global = {
+		limit = {
+			has_same_culture_language = scope:shift_culture
+			any_culture_county = { count = 0 }
+		}
+		add_to_temporary_list = check_culture_minorities
+	}
+	# Must have 50% or more of their minorities under the shift culture
+	every_in_list = {
+		list = check_culture_minorities
+		save_scope_as = check_minority_culture
+	
+		# If most are under the shift culture, save them to the persistent list
+		if = {
+			limit = {
+				this.number_of_shift_culture_counties_with_minority > 0
+				this.number_of_shift_culture_counties_with_minority >= this.half_number_of_counties_with_minority
+			}
+			add_to_list = all_shift_cultures
+		}
+	}
+}
+
+# Make list of this culture and all cultures that exist only as minorities under them
+scripted_effect propagate_language_effect = {
+	every_in_list = {
+		list = all_shift_cultures
+		
+		# If they don't know the new language
+		teach_chars_new_language = yes
+		
+		set_language_from = scope:shift_culture
+		
+		#Name lists
+		if = {
+			# Jewish cultures have different naming conventions
+			limit = { has_cultural_pillar = heritage_israelite }
+			if = {
+				limit = { has_cultural_parameter = language_dialect_continuum_gallo_romance }
+				### TODO: Needs Tzarfati name list
+			}
+			else_if = {
+				limit = { has_cultural_parameter = language_dialect_continuum_ibero_romance }
+				set_name_list = name_list_sephardi
+			}
+		}
+		else = {
+			#Romance, Iberian
+			if = {
+				limit = { has_cultural_pillar = language_mozarabic }
+				set_name_list = name_list_andalusian
+			}
+			else_if = {
+				limit = { has_cultural_pillar = language_galician }
+				set_name_list = name_list_galician
+			}
+			else_if = {
+				limit = { has_cultural_pillar = language_asturleonese }
+				set_name_list = name_list_asturleonese
+			}
+			else_if = {
+				limit = { has_cultural_pillar = language_castilian }
+				set_name_list = name_list_castilian
+			}
+			#Romance, Gallic
+			else_if = {
+				limit = {
+					has_cultural_pillar = language_french
+					any_parent_culture_or_above = { this = culture:old_frankish }
+				}
+				set_name_list = name_list_frankish
+			}
+			else_if = {
+				limit = { has_cultural_pillar = language_french }
+				set_name_list = name_list_norman
+			}
+			else_if = {
+				limit = { has_cultural_pillar = language_gallic_romance }
+				set_name_list = name_list_gallo_romance
+			}
+			#Romance, d'Oc
+			else_if = {
+				limit = { has_cultural_pillar = language_catalan }
+				set_name_list = name_list_catalan
+			}
+			else_if = {
+				limit = { has_cultural_pillar = language_arpitan }
+				set_name_list = name_list_occitan # Good enough for now
+			}
+			else_if = {
+				limit = { has_cultural_pillar = language_occitano_romance }
+				set_name_list = name_list_occitan
+			}
+			#Romance, Italian
+			else_if = {
+				limit = { has_cultural_pillar = language_germano_italian_romance }
+				set_name_list = name_list_cisalpine
+			}
+			else_if = {
+				limit = { has_cultural_pillar = language_sicilian }
+				set_name_list = name_list_sicilian
+			}
+			else_if = {
+				limit = { has_cultural_pillar = language_italian }
+				set_name_list = name_list_italian
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_cultural_pillar = language_noric_romance
+						has_cultural_pillar = language_rhaeto_romance # More closely corresponds
+					}
+				}
+				set_name_list = name_list_romansh
+			}
+			else_if = {
+				limit = { has_cultural_pillar = language_dalmatian }
+				set_name_list = name_list_dalmatian
+			}
+			#Romance, Outer
+			else_if = {
+				limit = { has_cultural_pillar = language_wallachian }
+				set_name_list = name_list_vlach
+			}
+			else_if = {
+				limit = { has_cultural_pillar = language_germano_african_romance }
+				set_name_list = name_list_african_romance
+			}
+			else_if = {
+				limit = { has_cultural_pillar = language_british_romance }
+				set_name_list = name_list_british_romance
+			}
+			#Indo-Aryan
+			else_if = {
+				limit = { has_cultural_pillar = language_assamese }
+				set_name_list = name_list_assamese
+			}
+		}
+	}
 }
 
 #For testing, sets to the root character
@@ -712,14 +847,14 @@ bp_heritage_linguistic_drift.0001 = {
 	
 	immediate = {
 		debug_set_shift_culture = yes
+		hidden_effect = { shift_language_effect = yes }
 		#If the culture head exists, inform him/her first
 		if = {
 			limit = { exists = scope:shift_culture.culture_head }
 			scope:shift_culture.culture_head = { trigger_event = { id = bp_heritage_linguistic_drift.0002 } }
 		}
-		#Otherwise, directly change the culture and tell everyone
+		#Otherwise, tell everyone
 		else = {
-			shift_language_effect = yes
 			every_ruler = { #Informational event
 				limit = {
 					ruler_is_valid_to_hear_about_culture_shift_trigger = {
@@ -749,6 +884,11 @@ bp_heritage_linguistic_drift.0002 = {
 			#Default
 			desc = bp_heritage_linguistic_drift.0002.desc
 		}
+		# List a minority if shifted
+		triggered_desc = {
+			trigger = { any_in_list = { list = all_shift_cultures count > 1 } }
+			desc = bp_heritage_linguistic_drift.0002.desc.minority
+		}
 	}
 	
 	theme = culture_change
@@ -756,7 +896,21 @@ bp_heritage_linguistic_drift.0002 = {
 	override_background = { reference = BP_shift_culture_city }
 	left_portrait = root
 	
-	immediate = { hidden_effect = { shift_language_effect = yes } }
+	immediate = {
+		#Pick random shifted minority
+		random_in_list = {
+			list = all_shift_cultures
+			limit = { NOT = { this = scope:shift_culture } }
+			save_scope_as = check_minority_culture
+		}
+		#Show language shifts
+		show_as_tooltip = {
+			every_in_list = {
+				list = all_shift_cultures
+				set_language_from = this
+			}
+		}
+	}
 	
 	option = {
 		name = bp_heritage_linguistic_drift.0002.accept
@@ -769,7 +923,8 @@ bp_heritage_linguistic_drift.0002 = {
 			}
 			trigger_event = { id = bp_heritage_linguistic_drift.0003 }
 		}
-		flavor = bp_heritage_linguistic_drift.0002.accept.tooltip
+		#flavor = bp_heritage_linguistic_drift.0002.accept.tooltip
+		show_as_tooltip = { learn_language_of_culture = scope:shift_culture }
 	}
 }
 
@@ -789,6 +944,11 @@ bp_heritage_linguistic_drift.0003 = {
 			}
 			#Default
 			desc = bp_heritage_linguistic_drift.0003.desc
+		}
+		# List a minority if shifted
+		triggered_desc = {
+			trigger = { any_in_list = { list = all_shift_cultures count > 1 } }
+			desc = bp_heritage_linguistic_drift.0003.desc.minority
 		}
 	}
 	theme = culture_change
@@ -822,19 +982,33 @@ bp_heritage_linguistic_drift.0003 = {
 			limit = { root.culture = scope:shift_culture }
 			save_scope_as = my_portrait
 		}
+		#Pick random shifted minority
+		random_in_list = {
+			list = all_shift_cultures
+			limit = { NOT = { this = scope:shift_culture } }
+			save_scope_as = check_minority_culture
+		}
+		#Show language shifts
+		show_as_tooltip = {
+			every_in_list = {
+				list = all_shift_cultures
+				set_language_from = this
+			}
+		}
 	}
 	
 	#For other rulers of the culture
 	option = {
 		name = bp_heritage_linguistic_drift.0003.accept_same_culture
-		flavor = bp_heritage_linguistic_drift.0003.accept_same_culture.tooltip
-		trigger = { root.culture = scope:shift_culture }
+		#flavor = bp_heritage_linguistic_drift.0003.accept_same_culture.tooltip
+		trigger = { root.culture = { is_in_list = all_shift_cultures } }
+		show_as_tooltip = { learn_language_of_culture = scope:shift_culture }
 	}
 	#For other rulers not of the culture
 	option = {
 		name = bp_heritage_linguistic_drift.0003.accept_different_culture
-		flavor = bp_heritage_linguistic_drift.0003.accept_different_culture.tooltip
-		trigger = { NOT = { root.culture = scope:shift_culture } }
+		#flavor = bp_heritage_linguistic_drift.0003.accept_different_culture.tooltip
+		trigger = { NOT = { root.culture = { has_same_culture_language = scope:shift_culture } } }
 		fallback = yes
 	}
 }
