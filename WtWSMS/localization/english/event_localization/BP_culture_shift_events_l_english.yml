@@ -21,8 +21,8 @@
  ## Heritage Drift
  bp_heritage_linguistic_drift.0102.t: "Customary Drift"
  bp_heritage_linguistic_drift.0102.roman.desc: "Where once all peoples of the Western Mediterranean were united into a single polity with similar behaviours, the fracturing of the Western Roman Empire into dozens, hundreds of states and statelets have effectively halted trade and exchange, sharpening regional differences.\n\nNow the mannerisms and customs of even the [shift_culture.GetName] people has changed enough from the practices of the people who colonized and dominate the #italic Pars Occidentalis#! that Octavian himself would not recognize them."
- bp_heritage_linguistic_drift.0102.latin.desc: "Where once all peoples of the Western Mediterranean were united into a single polity with similar behaviours, the fracturing of the Western Empire into dozens, hundreds of states and statelets have effectively halted trade and exchange, sharpening regional differences.\n\nNow the mannerisms and customs of the [shift_culture.GetName] people has changed enough from Roman practices that it is foreign to those of Roman customs."
- bp_heritage_linguistic_drift.0102.desc: "As time goes on, customs begin to differ, until the point where they are no longer recognizable to ones ancestors. This has occurred for the [shift_culture.GetName] people, whose ways have clearly changed from the past."
+ bp_heritage_linguistic_drift.0102.latin.desc: "Where once all peoples of the Western Mediterranean were united into a single polity with similar behaviours, the fracturing of the Western Empire into dozens, hundreds of states and statelets have effectively halted trade and exchange, sharpening regional differences.\n\nNow the mannerisms and customs of the [shift_culture.GetName] people have changed enough from Roman practices that they are foreign to those of Roman customs."
+ bp_heritage_linguistic_drift.0102.desc: "As time goes on, customs begin to differ, until the point where they are no longer recognizable to ones ancestors. This has occurred for the [shift_culture.GetName] people, whose [shift_culture.GetHeritage.GetName] ways have clearly changed from the past."
  bp_heritage_linguistic_drift.0102.accept: "As times change, so must we"
  bp_heritage_linguistic_drift.0102.accept.tooltip: "Your [culture|E]'s [heritage|E] has changed to [shift_culture.GetHeritage.GetName|V]"
  bp_heritage_linguistic_drift.0103.t: "$bp_heritage_linguistic_drift.0102.t$"
@@ -32,4 +32,11 @@
  bp_heritage_linguistic_drift.0103.accept_same_culture.tooltip: "$bp_heritage_linguistic_drift.0102.accept.tooltip$"
  bp_heritage_linguistic_drift.0103.accept_different_culture: "I see"
  bp_heritage_linguistic_drift.0103.accept_different_culture.tooltip: "The [shift_culture.GetName] [culture|E]'s [heritage|E] has changed to [shift_culture.GetHeritage.GetName|V]"
+ #Heritage Drift - Choose Heritage
+ bp_heritage_linguistic_drift.0104.t: "Rethinking our Heritage"
+ bp_heritage_linguistic_drift.0104.carpodaci.desc: "The old Gothic confederations are fraying at the seams.\nWe were once a proud part of that tapestry, but it has become absorbed into a broadening sphere of #italic Germania#!. It is clear there is no place in this foreign custom for [ROOT.Char.GetCulture.GetCollectiveNoun].\n\nMy mind knows that Dacian sons still live, born under Roman names. The heritage they boast of is ours to claim.\n\nBut my heart differs. Would it betray our ancestors to accept the imperial custom we have so thoroughly resisted?"
+ bp_heritage_linguistic_drift.0104.vlach: "We must reunite with our Wallachian kin."
+ bp_heritage_linguistic_drift.0104.vlach.flavor: "Claim a shared [GetCulturePillar('heritage_vlach').GetName|V] [heritage|E]"
+ bp_heritage_linguistic_drift.0104.carpathian: "Dacians will always be free!"
+ bp_heritage_linguistic_drift.0104.carpathian.flavor: "Return to your ancestral [GetCulturePillar('heritage_albanian').GetName|V] [heritage|E]"
  

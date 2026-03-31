@@ -1015,7 +1015,7 @@ bp_heritage_linguistic_drift.0003 = {
 
 ##### Heritage
 
-scripted_effect shift_heritage_latin_to_children_effect = {
+scripted_effect shift_latin_heritage_to_children_effect = {
 	scope:shift_culture = {
 		if = {
 			limit = { the_culture_or_parent_or_above_is_trigger = { CULTURE = culture:romano_hispanic } }
@@ -1088,6 +1088,21 @@ scripted_effect shift_heritage_latin_to_children_effect = {
 	}
 }
 
+scripted_trigger is_central_germanic_saxon_trigger = {
+	has_cultural_pillar = heritage_saxon
+	is_culture_mostly_in_linguistic_region_trigger = { REGION = custom_ashkenaz }
+}
+
+scripted_trigger is_west_germanic_saxon_trigger = {
+	has_cultural_pillar = heritage_saxon
+	NOT = { is_culture_mostly_in_linguistic_region_trigger = { REGION = custom_ashkenaz } }
+}
+
+scripted_trigger is_carpodaci_trigger = {
+	has_cultural_pillar = heritage_gothic
+	the_culture_or_parent_or_above_is_trigger = { CULTURE = culture:carpodaci }
+}
+
 scripted_effect germanic_shift_by_local_cultures_effect = {
 	if = {
 		limit = {
@@ -1127,6 +1142,7 @@ scripted_effect germanic_shift_by_local_cultures_effect = {
 					OR = {
 						culture = { has_cultural_pillar = heritage_suebic }
 						culture = { has_cultural_pillar = heritage_central_germanic }
+						culture = { is_central_germanic_saxon_trigger = yes }
 					}
 				}
 			}
@@ -1159,7 +1175,13 @@ scripted_effect germanic_shift_by_local_cultures_effect = {
 scripted_effect shift_germanic_heritage_to_children_effect = {
 	scope:shift_culture = {
 		if = {
-			limit = { has_cultural_pillar = heritage_nordwestblock }
+			limit = {
+				OR = {
+					has_cultural_pillar = heritage_nordwestblock
+					has_cultural_pillar = heritage_jutlandic
+					is_west_germanic_saxon_trigger = yes
+				}
+			}
 			germanic_shift_by_local_cultures_effect = { DEFAULT_MEDIEVAL_HERITAGE = heritage_west_germanic }
 		}
 		else_if = {
@@ -1167,7 +1189,12 @@ scripted_effect shift_germanic_heritage_to_children_effect = {
 			germanic_shift_by_local_cultures_effect = { DEFAULT_MEDIEVAL_HERITAGE = heritage_north_germanic }
 		}
 		else_if = {
-			limit = { has_cultural_pillar = heritage_suebic }
+			limit = {
+				OR = {
+					has_cultural_pillar = heritage_suebic
+					is_central_germanic_saxon_trigger = yes
+				}
+			}
 			germanic_shift_by_local_cultures_effect = { DEFAULT_MEDIEVAL_HERITAGE = heritage_central_germanic }
 		}
 		else_if = { #East Germanics...
@@ -1179,20 +1206,31 @@ scripted_effect shift_germanic_heritage_to_children_effect = {
 			}
 			germanic_shift_by_local_cultures_effect = { DEFAULT_MEDIEVAL_HERITAGE = heritage_east_germanic }
 		}
-		else_if = { #Jutlandics & Saxons
-			limit = {
-				has_cultural_pillar = heritage_jutlandic
-				has_cultural_pillar = heritage_saxon
-			}
-			germanic_shift_by_local_cultures_effect = { DEFAULT_MEDIEVAL_HERITAGE = heritage_central_germanic }
-		}
 		else = { debug_log = "UNHANDLED CULTURE IN bp_heritage_linguistic_drift EVENT SPACE: HERITAGE (GERMANIC=>CHILDREN)" }
+	}
+}
+
+scripted_effect shift_special_heritage_to_children_effect = {
+	scope:shift_culture = {
+		if = {
+			limit = { is_carpodaci_trigger = yes }
+			calc_culture_dominant_faith = { save_temporary_scope_as = shift_culture_dominant_religion }
+			if = {
+				limit = { scope:shift_culture_dominant_religion = religion:christianity_religion }
+				set_culture_pillar = heritage_vlach
+			}
+			else = {
+				set_culture_pillar = heritage_albanian
+			}
+			ccu_culture_created_or_changed_effect = yes
+		}
 	}
 }
 
 
 scripted_effect shift_heritage_effect = {
-	shift_heritage_latin_to_children_effect = yes
+	shift_special_heritage_to_children_effect = yes
+	shift_latin_heritage_to_children_effect = yes
 	shift_germanic_heritage_to_children_effect = yes
 }
 
@@ -1206,7 +1244,19 @@ bp_heritage_linguistic_drift.0101 = {
 		#If the culture head exists, inform him/her first
 		if = {
 			limit = { exists = scope:shift_culture.culture_head }
-			scope:shift_culture.culture_head = { trigger_event = { id = bp_heritage_linguistic_drift.0102 } }
+			if = {
+				# Certain cultures should get to decide their heritage
+				limit = {
+					scope:shift_culture = {
+						culture_head = { is_ai = no }
+						is_carpodaci_trigger = yes
+					}
+				}
+				scope:shift_culture.culture_head = { trigger_event = { id = bp_heritage_linguistic_drift.0104 } }
+			}	
+			else = {
+				scope:shift_culture.culture_head = { trigger_event = { id = bp_heritage_linguistic_drift.0102 } }
+			}
 		}
 		#Otherwise, directly change the culture and tell everyone
 		else = {
@@ -1323,6 +1373,57 @@ bp_heritage_linguistic_drift.0103 = {
 		name = bp_heritage_linguistic_drift.0103.accept_different_culture
 		flavor = bp_heritage_linguistic_drift.0103.accept_different_culture.tooltip
 		trigger = { NOT = { root.culture = scope:shift_culture } }
+		fallback = yes
+	}
+}
+
+# Choose your heritage
+bp_heritage_linguistic_drift.0104 = {
+	type = character_event
+	title = bp_heritage_linguistic_drift.0104.t
+	desc = {
+		first_valid = {
+			#Latin to Romance
+			triggered_desc = {
+				trigger = { root.culture = { is_carpodaci_trigger = yes } }
+				desc = bp_heritage_linguistic_drift.0104.carpodaci.desc
+			}
+		}
+	}
+	theme = culture_change
+	content_source = dlc_WtWSMS
+	left_portrait = {
+		character = root
+		animation = personality_cynical
+	}
+	
+	immediate = {}
+	
+	#Become Vlach
+	option = {
+		name = bp_heritage_linguistic_drift.0104.vlach
+		flavor = bp_heritage_linguistic_drift.0104.vlach.flavor
+		trigger = { root.culture = { is_carpodaci_trigger = yes } }
+		root.culture = {
+			set_culture_pillar = heritage_vlach
+			ccu_culture_created_or_changed_effect = yes
+		}
+	}
+	#Become Carpathian
+	option = {
+		name = bp_heritage_linguistic_drift.0104.carpathian
+		flavor = bp_heritage_linguistic_drift.0104.carpathian.flavor
+		trigger = { root.culture = { is_carpodaci_trigger = yes } }
+		root.culture = {
+			set_culture_pillar = heritage_albanian
+			ccu_culture_created_or_changed_effect = yes
+		}
+	}
+	#Fallback
+	option = {
+		name = bp_heritage_linguistic_drift.0102.accept
+		shift_heritage_effect = yes
+		trigger = { always = no }
 		fallback = yes
 	}
 }
