@@ -1,4 +1,4 @@
-﻿##### Changed from Vanilla: Add Lapsi custom localization
+﻿##### Changed from Vanilla: Add Lapsi custom localization, added faith modifiers
 excommunicated = {
 	category = fame
 	monthly_piety_gain_mult = -0.5
@@ -11,6 +11,14 @@ excommunicated = {
 		opinion_modifier = tenet_excommunicated_crime
 		same_faith = yes
 	}
+
+	##### Changed from Vanilla vvvvv
+	faith_modifier = {
+		parameter = lesser_excommunication
+		monthly_piety_gain_mult = 0.20
+		zealot_opinion = 20
+	}
+	##### Changed from Vanilla ^^^^^
 
 	desc = {
 		first_valid = {
@@ -27,13 +35,13 @@ excommunicated = {
 	name = {
 		first_valid = {
 			triggered_desc = {
-				trigger = { NOT = { exists = this } }
-				desc = trait_excommunicated
-			}
-			triggered_desc = {
-				trigger = { faith = { has_doctrine = tenet_rigorism } }
+				trigger = {
+					exists = this
+					faith ?= { has_doctrine = doctrine_christian_liturgical_rite_african_rite }
+				}
 				desc = trait_lapsi_name
 			}
+			desc = trait_excommunicated
 		}
 	}
 	##### Changed from Vanilla ^^^^^

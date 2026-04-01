@@ -4763,6 +4763,7 @@
 			cheaper_holy_wars_active = yes
 			great_holy_wars_active = yes
 			raise_circumcellions_decision = yes
+			peasant_and_populist_factions_more_common = yes
 		}
 		character_modifier = {
 			monthly_county_control_growth_factor = -0.2
@@ -5047,6 +5048,12 @@
 
 		piety_cost = {
 			value = faith_tenet_cost_massive
+			
+			# Multiplier for keeping same tenet
+			if = {
+				limit = { has_doctrine = tenet_frontier_monastics }
+				multiply = faith_unchanged_doctrine_cost_mult
+			}
 		}
 
 		parameters = {
@@ -5067,10 +5074,73 @@
 		}
 	}
 	
-	#####################
-	# BP Mazdan Tenets	#
-	#####################
+	tenet_false_conversion_sanction_african = {
+		icon = core_tenet_false_conversion_sanction
 
+		is_shown = { religion = christianity_religion }
+
+		can_pick = {
+			custom_description = {
+				text = doctrine_requires_head_of_faith_trigger
+				NOT = { doctrine:doctrine_no_head = { is_in_list = selected_doctrines } }
+			}
+			custom_description = {
+				text = doctrine_african_right_trigger
+				doctrine:doctrine_christian_liturgical_rite_african_rite = { is_in_list = selected_doctrines }
+			}
+			custom_description = {
+				text = doctrine_christian_soteriology_original_sin_trigger
+				doctrine:doctrine_christian_soteriology_original_sin = { is_in_list = selected_doctrines }
+			}
+			custom_description = {
+				text = incompatible_tenet_sacred_shadows_trigger
+				NOT = { doctrine:tenet_sacred_shadows = { is_in_list = selected_doctrines } }
+			}
+			custom_description = {
+				text = incompatible_tenet_communion_trigger
+				NOT = { doctrine:tenet_communion = { is_in_list = selected_doctrines } }
+			}
+			custom_description = {
+				text = incompatible_tenet_pastoral_isolation_trigger
+				NOT = { doctrine:tenet_pastoral_isolation = { is_in_list = selected_doctrines } }
+			}
+			custom_description = {
+				text = incompatible_tenet_false_conversion_sanction_trigger
+				NOT = { doctrine:tenet_false_conversion_sanction = { is_in_list = selected_doctrines } }
+			}
+		}
+
+		piety_cost = {
+			value = faith_tenet_cost_high
+
+			# Multiplier for keeping same tenet
+			if = {
+				limit = { has_doctrine = tenet_false_conversion_sanction_african }
+				multiply = faith_unchanged_doctrine_cost_mult
+			}
+		}
+
+		parameters = {
+			sanctioned_false_conversion = yes
+			
+			seek_indulgences_active = yes
+			seek_indulgences_active_2 = yes
+			excommunication_active = yes
+			lesser_excommunication = yes #Reduces impact of excommunication
+			
+			peasant_and_populist_factions_more_common = yes
+		}
+
+		character_modifier = {
+			stress_loss_per_prestige_level = -0.1
+		}
+		
+		traits = {
+			virtues = { honest }
+			sins = { deceitful }
+		}
+	}
+	
 	tenet_complex_exegesis = {
 		icon = core_tenet_literalism ##### TODO (Beta): Needs Unique Icon
 		
@@ -5116,6 +5186,10 @@
 			sins = { lazy = 1 }
 		}
 	}
+	
+	#####################
+	# BP Mazdan Tenets	#
+	#####################
 	
 	tenet_wedding_ceremonies = {
 		icon = core_tenet_wedding_ceremonies

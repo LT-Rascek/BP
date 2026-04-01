@@ -6,13 +6,28 @@ Tenets:
    - Frontier Monastics:
       - Models the frontier Christian faiths, such as Insular Celtic or the Bosnian Church
       - Only available if the root faith has this tenet
-      - Requires Pluralist Orientation, not combinable with Pastoral Isolation or Monasticism
+      - Requires Pluralist Orientation
+         - Not combinable with Pastoral Isolation or Monasticism
       - Has a -20% conversion speed with organized faiths
       - Enables the Taking of Vows
       - Unlocks the "Become an Adventurer" decision
       - Can build Monasteries buildings in all holdings
       - Clergy are always monks
       - Temperate is a Virtue, Gluttonous is a Sin
+   - Render unto Caesar:
+      - Models the tension within the African Church between its Donatist and Imperial sects
+      - Only available to Christians
+      - Requires using an African Liturgical Rite and a Head of Faith
+         - Not compatible with Sacred Lies, Pastoral Isolation, Communion, Sanctioned False Conversion
+      - Counties and characters may sometimes reconvert to this faith
+      - Unlocks the Seek Indulgences interaction with the Head of Faith
+      - Unlocks the Request Excommunication interaction on same faith characters
+      - Spiritual Head of Faith can Excommunicate characters
+      - Makes Excommunicated a crime
+      - Reduced impact of the Excommunication trait
+      - +50% Peasant and Populist faction military power
+      -10% Stress Loss per Level of Fame
+      - Honest is a Virtue, Deceitful is a Sin
 - Modified several tenets for Christian faiths:
    - Complex Exegesis:
       - Models the particularly 
@@ -23,18 +38,23 @@ Tenets:
       - Learning Education may also grant Wise Man/Woman trait
       - Pilgrimages have a change to grant or upgrade the Wise Man/Woman trait
       - Scholar and Wise Man/Woman are Virtues, Lazy is a Sin
+   - Redeeming Struggle:
+      - +50% Peasant and Populist faction military power
 
 Religion:
 - Overhauled Tenets and Doctrines of some Christian faiths for more variety and accuracy
    - Celtic Church: Replaces Peregrination with Frontier Monastics, adds Divorce: Divorce Allowed, Clerical Appointment: Temporal, for Life
    - Gallican Church: Replaces Communion with Scholasticism
    - Hispanic Church: Replaces Adaptive with Legalism, adds Religious Attitude: Righteous
+   - African Church: Replaces Communion with "Render unto Caesar", Monasticism with Scholasticism
+   - Donatism: Replaces Monasticism with "Communal Identity", Adds Soteriology: Total Depravity, Clerical Function: Recruitment
    - Priscilianism: Uses Asceticism, Complex Exegesis, Astrology
 
 Bugs:
-- Fixed "Complex Exegesis" being unavailble to Christians
+- Fixed "Complex Exegesis" being unavailable to Christians
 
 Localization:
+- Lapsi localization for Excommunication used for faiths using the African Rite
 - Re-localized "Alexandrian Catechism" to "Scholasticism", which is anachronistic but less so than the current description
 - Replaced some references to Saint Patrick, as it is anachronistic for the early Late Antique Period
 
