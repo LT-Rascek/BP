@@ -4691,59 +4691,6 @@
 		}
 	}
 	
-	tenet_marcionite_canon = {
-		icon = core_tenet_legalism ##### TODO (Beta): Needs Unique Icon
-		
-		is_shown = { 
-			religion_tag = christianity_religion
-		}
-		
-		#Valid for non-Jewish-favoring Gnostics without Alexandrian Catechism
-		can_pick = {
-			custom_description = {
-				text = doctrine_inverted_pluralism_fundamentalist_trigger
-				doctrine:doctrine_pluralism_fundamentalist = { is_in_list = selected_doctrines }
-			}
-			custom_description = {
-				text = doctrine_gnosis_trigger
-				doctrine:doctrine_christian_soteriology_gnosis = { is_in_list = selected_doctrines }
-			}
-			custom_description = {
-				text = incompatible_doctrine_judaizers_trigger
-				NOT = { doctrine:doctrine_christian_judaic_role_judaizers = { is_in_list = selected_doctrines } }
-			}
-			custom_description = {
-				text = incompatible_tenet_alexandrian_catechism_trigger
-				NOT = { doctrine:tenet_alexandrian_catechism = { is_in_list = selected_doctrines } }
-			}
-			custom_description = {
-				text = incompatible_tenet_monasticism_trigger
-				NOT = { doctrine:tenet_monasticism = { is_in_list = selected_doctrines } }
-			}
-		}
-		
-		piety_cost = { 
-			value = faith_tenet_cost_high
-			
-			if = {
-				limit = { has_doctrine = tenet_marcionite_canon }
-				multiply = faith_unchanged_doctrine_cost_mult
-			}
-		}
-		
-		character_modifier = {
-			monthly_learning_lifestyle_xp_gain_mult = 0.2
-		}
-		
-		parameters = {
-			take_vows_active = yes
-		}
-		traits = {
-			virtues = { temperate }
-			sins = { gluttonous }
-		}
-	}
-	
 	tenet_redeeming_struggle = {
 		icon = core_tenet_unrelenting_faith
 		
@@ -4821,10 +4768,12 @@
 				text = doctrine_inverted_pluralism_fundamentalist_trigger
 				doctrine:doctrine_pluralism_fundamentalist = { is_in_list = selected_doctrines }
 			}
-			#This is for orthodox Christians, so keep out of Gnostic hands
 			custom_description = {
-				text = incompatible_tenet_gnosticism_trigger
-				NOT = { doctrine:tenet_gnosticism = { is_in_list = selected_doctrines } }
+				text = doctrine_gnosis_or_total_depravity_trigger
+				OR = {
+					doctrine:doctrine_christian_soteriology_total_depravity = { is_in_list = selected_doctrines }
+					doctrine:doctrine_christian_soteriology_gnosis = { is_in_list = selected_doctrines }
+				}
 			}
 		}
 		
@@ -4895,7 +4844,6 @@
 		}
 
 		parameters = {
-			easier_to_convert_faith_in_mountains = yes
 			easier_to_convert_culture_in_same_faith_mountains = yes
 			harder_to_convert_faith_away_in_mountains = yes
 			other_culture_conversion_penalty_active = yes
@@ -4973,7 +4921,7 @@
 		}
 		
 		piety_cost = {
-			value = faith_tenet_cost_massive
+			value = faith_tenet_cost_high
 			if = {
 				limit = { has_doctrine = tenet_iconoclasm }
 				multiply = faith_unchanged_doctrine_cost_mult
@@ -4982,13 +4930,19 @@
 		
 		parameters = {
 			cheaper_holy_wars_active = yes
-			pilgrimage_decision_active = yes
+			ghw_no_hof_conversion_buffs_active = yes
+			reforging_artifacts_costs_piety = yes
+			destroying_artifacts_is_pious = yes
 		}
 		
 		character_modifier = {
-			monthly_piety_gain_mult = 0.1
 			same_faith_opinion = 10
 			different_faith_opinion = -20
+			
+			church_holding_build_speed = -0.33
+			church_holding_build_gold_cost = -0.33
+			church_holding_holding_build_speed = -0.33
+			church_holding_holding_build_gold_cost = -0.33
 		}
 	}
 	

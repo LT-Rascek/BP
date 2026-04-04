@@ -1073,7 +1073,7 @@
 
 			#Tenets
 			doctrine = tenet_communion
-			doctrine = tenet_monasticism
+			doctrine = tenet_mountain_hermits
 			doctrine = tenet_autocephaly
 
 			localization = { # Utilizes the 'East Christian' Saints, shared by Coptics and Armenians
@@ -1136,6 +1136,9 @@
 			holy_site = mtskheta
 			holy_site = vaspurakan
 			
+			#Main doctrines
+			doctrine = doctrine_pluralism_pluralistic
+			
 			#Special Tolerance
 			doctrine = special_doctrine_alexandria_ecumenism #Vacilated between different Creeds until becoming firmly Chalcedeonian in late Mod Era; was Miaphysite in 476 though
 			
@@ -1145,7 +1148,7 @@
 			#Tenets
 			doctrine = tenet_autocephaly
 			doctrine = tenet_communion
-			doctrine = tenet_monasticism
+			doctrine = tenet_adaptive
 			
 			#Christian doctrines
 			doctrine = doctrine_christian_christology_miaphysitism
@@ -1311,7 +1314,7 @@
 			doctrine = doctrine_anointment_permitted
 
 			#Tenets
-			doctrine = tenet_communion
+			doctrine = tenet_mendicant_preachers
 			doctrine = tenet_monasticism
 			doctrine = tenet_rite
 
@@ -1553,7 +1556,7 @@
 			doctrine = doctrine_no_anointment
 
 			#Tenets
-			doctrine = tenet_communion #CK2 excommunication
+			doctrine = tenet_communal_possessions
 			doctrine = tenet_iconoclasm
 			doctrine = tenet_unrelenting_faith
 
@@ -1584,6 +1587,10 @@
 			doctrine = doctrine_temporal_head
 			doctrine = doctrine_clerical_succession_temporal_fixed_appointment
 			
+			#Crime doctrines
+			doctrine = doctrine_adultery_men_crime
+			doctrine = doctrine_witchcraft_accepted
+			
 			#Christian Doctrines
 			doctrine = doctrine_christian_christology_adoptionism
 			doctrine = doctrine_christian_perichoresis_dynamic_monarchianism
@@ -1595,9 +1602,9 @@
 			doctrine = doctrine_anointment_permitted
 			
 			#Core Tenets
-			doctrine = tenet_ritual_celebrations
+			doctrine = tenet_pacifism
 			doctrine = tenet_aniconism
-			doctrine = tenet_monasticism
+			doctrine = tenet_esotericism
 			
 			localization = {
 				#Update names
@@ -1659,9 +1666,9 @@
 			doctrine = doctrine_anointment_permitted
 			
 			#Tenets
-			doctrine = tenet_aniconism
+			doctrine = tenet_asceticism
 			doctrine = tenet_literalism
-			doctrine = tenet_marcionite_canon
+			doctrine = tenet_rigorism
 			
 			holy_order_names = {
 				{ name = "holy_order_knights_of_saint_marcion" }

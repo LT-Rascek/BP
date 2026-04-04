@@ -27,6 +27,7 @@
  DOCTRINE_ADULTERY_WOMEN_CRIME_TRIGGER: "#V $doctrine_adultery_women_crime$#! required"
  DOCTRINE_AFRICAN_RIGHT_TRIGGER: "#V $doctrine_christian_liturgical_rite_african_rite_name$#! required"
  DOCTRINE_CHRISTIAN_SOTERIOLOGY_ORIGINAL_SIN_TRIGGER: "#V $doctrine_christian_soteriology_original_sin_name$#! required"
+ DOCTRINE_GNOSIS_OR_TOTAL_DEPRAVITY_TRIGGER: "[GetFaithDoctrine('doctrine_christian_soteriology_total_depravity').GetBaseName] or [GetFaithDoctrine('doctrine_christian_soteriology_gnosis').GetBaseName] [bp_christian_doctrine|E] required"
  #HOF requires agreement with Christian Doctrines for Rite Tenet
  INCOMPATIBLE_CHRISTIAN_DOCTRINE_CHRISTOLOGY_TENET_RITE: "$INCOMPATIBLE_TENET_SHARED_HOF_INTRO_UNILATERAL$ Christ's Nature ([bp_christian_doctrine|E])"
  INCOMPATIBLE_CHRISTIAN_DOCTRINE_PERICHORESIS_TENET_RITE: "$INCOMPATIBLE_TENET_SHARED_HOF_INTRO_UNILATERAL$ Perichoresis ([bp_christian_doctrine|E])"
