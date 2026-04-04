@@ -3983,6 +3983,7 @@
 	# TGP Tenets				#
 	############################
 
+	##### Changed from Vanilla: Gave custom loc for Christian faiths
 	tenet_pure_land = {
 		icon = core_tenet_pure_land
 		piety_cost = {
@@ -4009,8 +4010,27 @@
 			}
 		}
 
-		name = tenet_pure_land_name
-		
+		##### Changed from Vanilla vvvvv
+		name = {
+			first_valid = {
+				triggered_desc = {
+					trigger = { religion_tag = christianity_religion }
+					desc = tenet_pure_land_christian_name
+				}
+				desc = tenet_pure_land_name
+			}
+		}
+		desc = {
+			first_valid = {
+				triggered_desc = {
+					trigger = { religion_tag = christianity_religion }
+					desc = tenet_pure_land_christian_desc
+				}
+				desc = tenet_pure_land_desc
+			}
+		}
+		##### Changed from Vanilla ^^^^^
+
 		is_shown = {
 		}
 
@@ -4845,7 +4865,7 @@
 		desc = tenet_mountain_hermits_desc
 
 		piety_cost = {
-			value = faith_tenet_cost_high
+			value = faith_tenet_cost_mid
 
 			# Multiplier for keeping same tenet
 			if = {
