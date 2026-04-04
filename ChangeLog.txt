@@ -13,7 +13,7 @@ Tenets and Doctrines:
       - Unlocks the "Become an Adventurer" decision
       - Can build Monasteries buildings in all holdings
       - Clergy are always monks
-      - Temperate is a Virtue, Gluttonous is a Sin
+      - Temperate is a Virtue, Gluttonous and Greedy are Sins
    - Render unto Caesar:
       - Models the tension within the African Church between its Donatist and Imperial sects
       - Only available to Christians
@@ -28,6 +28,19 @@ Tenets and Doctrines:
       - +50% Peasant and Populist faction military power
       -10% Stress Loss per Level of Fame
       - Honest is a Virtue, Deceitful is a Sin
+   - Cenobitic Monasticism:
+      - Models the more Cenobitic Monastic life in early Christianity
+      - Unlocks the "Take Vows" decision
+      - Clerics are always monks
+      - Unlocks the Meditate in Seclusion decision
+      - Temperate is a Virtue, Gluttonous, Greedy, and Reveler Lifestyle are Sins
+   - Congregational Monasticism:
+      - Models the development of larger congregations of monastics in the West, starting in the VIth century
+      - Unlocks the "Take Vows" decision
+      - Can build Monasteries buildings in all holdings
+      - 5% bonus to learning lifestyle
+      - +0.2 Development per construction in Temple and Temple Citadel holdings
+      - Temperate is a Virtue, Gluttonous is a Sin
 - Modified several tenets for Christian faiths:
    - Complex Exegesis:
       - Models the particularly 
@@ -38,21 +51,20 @@ Tenets and Doctrines:
       - Learning Education may also grant Wise Man/Woman trait
       - Pilgrimages have a change to grant or upgrade the Wise Man/Woman trait
       - Scholar and Wise Man/Woman are Virtues, Lazy is a Sin
-   - Redeeming Struggle:
-      - +50% Peasant and Populist faction military power
-   - Christian Syncretism:
-      - Made unavailable to Jews
+   - Redeeming Struggle: +50% Peasant and Populist faction military power
+   - Christian Syncretism: Made unavailable to Jews
+   - Rigorism: Requires either "Soteriology: Total Depravity" or "Soteriology: Gnosis" Doctrines for Christians
+   - Pastoral Isolation: Considers other faiths of the same religion to be Astray instead of Hostile
    - Mountain Hermits:
       - No longer gets a bonus to convert faiths in mountains; retains the other bonuses
-   - Rigorism:
-      - Requires either "Soteriology: Total Depravity" or "Soteriology: Gnosis" Doctrines for Christians
+      - No longer gets mediation mechanics
    - Iconoclasm:
       - Models the Icon-Breaking aspects of Paulicianism and Byzantine Iconoclasm
       - Combines features of Aniconism and "Armed Pilgrimages" tenets
       - -20% Holy War Cost, +25% Conversion per controlled Holy Site
       - -33% Build Speed and Time for Temple Holding buildings
       - Destroying artifacts gives piety, repairing artifacts costs Piety
-- Removed "Marconite Canon" Tenet
+- Removed "Marconite Canon", "Peregrination" Tenets
 - Added a new Temple Authority Doctrine for some Jewish Sects
    - Models the various Jewish Christian sects that existed as part of the spectrum from the Ist to VIIth centuries
    - Views, and is viewed by, other Jewish Temple Authorities as Evil instead of hostile
@@ -74,27 +86,36 @@ Religion:
       - Uses Doctrines "Male Adultery: Shunned", "Female Adultery: Shunned"
       - Uses Doctrines "Halakha Authority: Messianic"
 - Overhauled Tenets and Doctrines of some Christian faiths for more variety and accuracy
-   - Celtic Church: Replaces Peregrination with Frontier Monastics, adds Divorce: Divorce Allowed, Clerical Appointment: Temporal, for Life
-   - Gallican Church: Replaces Communion with Scholasticism
+   - Chalcedonian Church: Replaces "Monasticism" with "Cenobitic Monasticism"
+   - Celtic Church: Replaces "Peregrination" with "Frontier Monastics", adds "Divorce: Divorce Allowed", "Clerical Appointment: Temporal, for Life"
+   - Gallican Church: Replaces "Communion" with "Scholasticism", replaces "Monasticism" with "Cenobitic Monasticism"
    - Hispanic Church: Replaces Adaptive with Legalism, adds Religious Attitude: Righteous
    - African Church: Replaces Communion with "Render unto Caesar", Monasticism with Scholasticism
-   - Syriac Orthodox: Replaces Communion with "Communal Identity"
+   - Maronite Church: Replaces "Monasticism" with "Cenobitic Monasticism"
+   - Syriac Orthodox: Replaces Communion with "Communal Identity", replaces "Monasticism" with "Cenobitic Monasticism"
    - Armenian Church: Replaces "Monasticism" with "Mountain Hermits"
    - Georgian Orthodox: Replaces "Monasticism" with "Adaptive", add "Religious Attitude: Pluralistic"
-   - Aghwank Church: Replaces "Communion" with "Mendicant Preachers"
+   - Aghwank Church: Replaces "Communion" with "Mendicant Preachers", "Monasticism" with "Cenobitic Monasticism"
+   - Ethiopian Church: Replaces "Monasticism" with "Cenobitic Monasticism", "Scholasticism" with "Communal Identity"
    - Arianism: Replaces "Armed Pilgrimages" with "Pentarchy"
    - Donatism: Replaces Monasticism with "Communal Identity", Adds Soteriology: Total Depravity, Clerical Function: Recruitment
-   - Pelagianism: Replaces Communion with "Religious Law"
-   - Audianism: Replaces Communion with "Pastoral Isolation", adds "Religious Attitude: Righteous", "Clerical Function: Alms and Pacification", "Male Adultery: Accepted", "Female Adultery: Accepted"
-   - Montanism: Adds "Soteriology: Total Depravity", adds "Divorce: Disallowed"
+   - Pelagianism: Replaces Communion with "Religious Law", Monasticism with "Cenobitic Monasticism"
+   - Audianism: Replaces Communion with "Pastoral Isolation", replaces "Monasticism" with "Cenobitic Monasticism", adds "Religious Attitude: Righteous", "Clerical Function: Alms and Pacification", "Male Adultery: Accepted", "Female Adultery: Accepted"
+   - Montanism: Replaces Monasticism with Rigorism Tenet, Adds "Soteriology: Total Depravity", adds "Divorce: Disallowed"
    - Marcionism: Uses "Asceticism", "Rigorism", "Literalism"
    - Priscilianism: Uses Asceticism, "Complex Exegesis", Astrology
    - Bosnian Church: Uses "Frontier Monastics", "Sacred Mountains", "Humble Savior" Tenets, adds "Inscribed Monuments" doctrine
    - Pneumatomachi: Uses "Communion" Tenet instead of "Aniconism", adds "Religious Attitude: Fundamentalist" doctrine, "Head of Faith: Spiritual", "Coronation: Anointment Permitted"
    - Melchisdechianism: Uses "Pacifism" instead of "Ritual Celebrations", "Esotericism" instead of "Monasticism", Adds "Witchcraft: Accepted", "Male Adultery: Criminal" Doctrines
+   - Messalianism: Uses "Esotericism" instead of "Monasticism"
    - Paulicianism: Uses "Communal Possessions" instead of "Communion"
+   - Catholicism: Uses "Congregational Monasticism" instead of "Monasticism"
+   - Orthodoxy: Uses "Cenobitic Monasticism" instead of "Monasticism"
 - Reorganized and Added some Jewish faiths
    - Ebionites: Made Jewish Religion, Replaces "Armed Pilgrimages" with "Communal Identity", along with "Halakha Authority: Messianic"
+
+Decisions:
+Peregrination decision removed
 
 History:
 - Updated province and character history to better historical Christian adherences
@@ -103,6 +124,7 @@ Bugs:
 - Fixed "Complex Exegesis" being unavailable to Christians
 
 Localization:
+- "Communal Identity" and "Legal Pronouncements" re-localizes to Jewish localizations if a Christian faith has Judaizers doctrine
 - "Righteous Rebirth" Tenet given a new localization for Christians, "Humble Savior".
 - Lapsi localization for Excommunication used for faiths using the African Rite
 - Re-localized "Alexandrian Catechism" to "Scholasticism", which is anachronistic but less so than the current description
