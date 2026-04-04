@@ -1,4 +1,4 @@
-﻿##### Changed from Vanilla: Moved to the structural group of doctrines
+﻿##### Changed from Vanilla: Moved to the structural group of doctrines, add messianic doctrine and its impacts on the rest
 doctrine_temple_authority = {
 	group = "structural_group"
 	is_available_on_create = {
@@ -26,6 +26,7 @@ doctrine_temple_authority = {
 		parameters = {
 			hostility_override_temple_authority_rabbinic_doctrine = 1
 			hostility_override_temple_authority_samaritan_torah_doctrine = 3
+			hostility_override_temple_authority_messianic_doctrine = 3
 		}
 	}
 	
@@ -52,6 +53,7 @@ doctrine_temple_authority = {
 		parameters = {
 			hostility_override_temple_authority_toric_doctrine = 1
 			hostility_override_temple_authority_samaritan_torah_doctrine = 3
+			hostility_override_temple_authority_messianic_doctrine = 3
 		}
 	}
 	
@@ -75,6 +77,7 @@ doctrine_temple_authority = {
 		parameters = {
 			hostility_override_temple_authority_kohanim_doctrine = 1
 			hostility_override_temple_authority_samaritan_torah_doctrine = 3
+			hostility_override_temple_authority_messianic_doctrine = 3
 		}
 	}
 
@@ -93,12 +96,43 @@ doctrine_temple_authority = {
 			hostility_override_temple_authority_rabbinic_doctrine = 3
 			hostility_override_temple_authority_toric_doctrine = 3
 			hostility_override_temple_authority_kohanim_doctrine = 3
+			hostility_override_temple_authority_messianic_doctrine = 3
 		}
 		character_modifier = {
 			different_faith_opinion = -10
 			same_faith_opinion = 10
 			domain_tax_same_faith_mult = 0.05
 			levy_reinforcement_rate_same_faith = 0.1
+		}
+	}
+	
+	temple_authority_messianic_doctrine = { # Messianic Jews
+		is_shown = { has_doctrine = temple_authority_messianic_doctrine }
+		piety_cost = {
+			if = {
+				limit = { has_doctrine = temple_authority_messianic_doctrine }
+				value = 0
+			}
+			else = {
+				value = faith_tenet_cost_massive
+			}
+		}
+		parameters = {
+			#Order matters here
+			hostility_override_doctrine_christian_judaic_role_forebears = 2
+			hostility_override_doctrine_christian_judaic_role_demiurge = 3
+			hostility_override_temple_authority_samaritan_torah_doctrine = 3
+			hostility_override_temple_authority_rabbinic_doctrine = 3
+			hostility_override_temple_authority_toric_doctrine = 3
+			hostility_override_temple_authority_kohanim_doctrine = 3
+			#Opinion Stuff
+			temple_authority_messianic_doctrine_opinion_active = yes
+			opinion_of_doctrine_christian_judaic_role_forebears_opinion_active = 20
+		}
+		character_modifier = {}
+		traits = {
+			virtues = { compassionate }
+			sins = { callous sadistic }
 		}
 	}
 }

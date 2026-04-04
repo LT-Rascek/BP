@@ -2936,6 +2936,7 @@
 		}
 	}
 
+	##### Changed from Vanilla: Made unavailable to Jews (handled by a special temple authority doctrine) and Gnostics
 	tenet_christian_syncretism = {
 		icon = core_tenet_christian_syncretism
 
@@ -2962,6 +2963,8 @@
 
 		is_shown = {
 			NOT = { religion_tag = christianity_religion }
+			NOT = { religion_tag = judaism_religion }
+			NOT = { religion_tag = dualism_religion }
 		}
 		can_pick = {
 			custom_description = {
