@@ -530,94 +530,6 @@ judaism_religion = {
 			}
 			
 			localization = {
-				#HighGodName
-				HighGodName = judaism_high_god_name
-				HighGodNamePossessive = judaism_high_god_name_possessive
-				HighGodNameSheHe = CHARACTER_SHEHE_HE
-				HighGodHerselfHimself = CHARACTER_HIMSELF
-				HighGodHerHis = CHARACTER_HERHIS_HIS
-				HighGodNameAlternate = judaism_high_god_alternate
-				HighGodNameAlternatePossessive = judaism_high_god_alternate_possessive
-
-				#Creator
-				CreatorName = judaism_creator_god_name
-				CreatorNamePossessive = judaism_creator_god_name_possessive
-				CreatorSheHe = CHARACTER_SHEHE_HE
-				CreatorHerHis = CHARACTER_HERHIS_HIS
-				CreatorHerHim = CHARACTER_HERHIM_HIM
-
-				#HealthGod
-				HealthGodName = judaism_health_god_name
-				HealthGodNamePossessive = judaism_health_god_name_possessive
-				HealthGodSheHe = CHARACTER_SHEHE_HE
-				HealthGodHerHis = CHARACTER_HERHIS_HIS
-				HealthGodHerHim = CHARACTER_HERHIM_HIM
-				
-				#FertilityGod
-				FertilityGodName = judaism_fertility_god_name
-				FertilityGodNamePossessive = judaism_fertility_god_name_possessive
-				FertilityGodSheHe = CHARACTER_SHEHE_HE
-				FertilityGodHerHis = CHARACTER_HERHIS_HIS
-				FertilityGodHerHim = CHARACTER_HERHIM_HIM
-
-				#WealthGod
-				WealthGodName = judaism_wealth_god_name
-				WealthGodNamePossessive = judaism_wealth_god_name_possessive
-				WealthGodSheHe = CHARACTER_SHEHE_HE
-				WealthGodHerHis = CHARACTER_HERHIS_HIS
-				WealthGodHerHim = CHARACTER_HERHIM_HIM
-
-				#HouseholdGod
-				HouseholdGodName = judaism_household_god_name
-				HouseholdGodNamePossessive = judaism_household_god_name_possessive
-				HouseholdGodSheHe = CHARACTER_SHEHE_HE
-				HouseholdGodHerHis = CHARACTER_HERHIS_HIS
-				HouseholdGodHerHim = CHARACTER_HERHIM_HIM
-
-				#FateGod
-				FateGodName = judaism_fate_god_name
-				FateGodNamePossessive = judaism_fate_god_name_possessive
-				FateGodSheHe = CHARACTER_SHEHE_HE
-				FateGodHerHis = CHARACTER_HERHIS_HIS
-				FateGodHerHim = CHARACTER_HERHIM_HIM
-
-				#KnowledgeGod
-				KnowledgeGodName = judaism_knowledge_god_name
-				KnowledgeGodNamePossessive = judaism_knowledge_god_name_possessive
-				KnowledgeGodSheHe = CHARACTER_SHEHE_HE
-				KnowledgeGodHerHis = CHARACTER_HERHIS_HIS
-				KnowledgeGodHerHim = CHARACTER_HERHIM_HIM
-
-				#WarGod
-				WarGodName = judaism_war_god_name
-				WarGodNamePossessive = judaism_war_god_name_possessive
-				WarGodSheHe = CHARACTER_SHEHE_HE
-				WarGodHerHis = CHARACTER_HERHIS_HIS
-				WarGodHerHim = CHARACTER_HERHIM_HIM
-
-				#TricksterGod
-				TricksterGodName = judaism_trickster_god_name
-				TricksterGodNamePossessive = judaism_trickster_god_name_possessive
-				TricksterGodSheHe = CHARACTER_SHEHE_SHE
-				TricksterGodHerHis = CHARACTER_HERHIS_HER
-				TricksterGodHerHim = CHARACTER_HERHIM_HER
-
-				#NightGod
-				NightGodName = judaism_night_god_name
-				NightGodNamePossessive = judaism_night_god_name_possessive
-				NightGodSheHe = CHARACTER_SHEHE_HE
-				NightGodHerHis = CHARACTER_HERHIS_HIS
-				NightGodHerHim = CHARACTER_HERHIM_HIM
-
-				#WaterGod
-				WaterGodName = judaism_water_god_name
-				WaterGodNamePossessive = judaism_water_god_name_possessive
-				WaterGodSheHe = CHARACTER_SHEHE_HE
-				WaterGodHerHis = CHARACTER_HERHIS_HIS
-				WaterGodHerHim = CHARACTER_HERHIM_HIM
-				
-				PantheonTerm = judaism_high_god_name
-				PantheonTermHasHave = pantheon_term_has
 				GoodGodNames = {
 					judaism_high_god_name
 					judaism_high_god_alternate
@@ -626,17 +538,64 @@ judaism_religion = {
 					ebionite_james_the_just
 					ebionite_jesus
 				}
-				DevilName = judaism_devil_name
-				DevilNamePossessive = judaism_devil_name_possessive
-				DevilSheHe = CHARACTER_SHEHE_HE
-				DevilHerHis = CHARACTER_HERHIS_HIS
-				DevilHerselfHimself = CHARACTER_HIMSELF
 				EvilGodNames = {
 					judaism_devil_name
 					judaism_evil_god_the_adversary
 					ebionite_paul_of_tarsos
 				}
-				ReligiousSymbol = judaism_religious_symbol
+				ReligiousText = ebionite_religious_text
+				
+				# Patriarchs instead of Popes
+				ReligiousHeadName = ebionite_religious_head_title
+				ReligiousHeadTitleName = ebionite_religious_head_title_name
+			}
+		}
+		elcesaite = {
+			icon = pagan
+			color = { 0.75 0.70 0.60 }
+			religious_head = d_ebionites
+			
+			holy_site = jerusalem
+			holy_site = baghdad
+			holy_site = antioch
+			holy_site = sinai
+			holy_site = ninive
+
+			
+			#Main Group
+			doctrine = doctrine_pluralism_pluralistic
+			doctrine = doctrine_no_head
+			doctrine = temple_authority_messianic_doctrine
+			
+			doctrine = doctrine_no_anointment
+			
+			#Crime Doctrines
+			doctrine = doctrine_adultery_men_shunned #Taken from Polemical sources, but adds flavor
+			doctrine = doctrine_adultery_women_shunned
+			
+			#Tenets
+			doctrine = tenet_esotericism
+			doctrine = tenet_gnosticism
+			doctrine = tenet_false_conversion_sanction
+			
+			holy_order_names = {
+				{ name = "holy_order_knights_of_saint_james" }
+			}
+			
+			localization = {
+				GoodGodNames = {
+					judaism_high_god_name
+					judaism_high_god_alternate
+					judaism_good_god_hashem
+					judaism_good_god_el_shaddai
+					ebionite_james_the_just
+					ebionite_jesus
+				}
+				EvilGodNames = {
+					judaism_devil_name
+					judaism_evil_god_the_adversary
+					ebionite_paul_of_tarsos
+				}
 				ReligiousText = ebionite_religious_text
 				
 				# Patriarchs instead of Popes
