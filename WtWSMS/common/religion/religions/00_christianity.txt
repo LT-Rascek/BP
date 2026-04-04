@@ -2471,6 +2471,41 @@
 				ReligiousHeadTitleName = orthodox_religious_head_title_name
 			}
 		}
+		conversos = { #Nazareans
+			color = { 0.4 0.5 0.8 }
+			icon = conversos
+			graphical_faith = "catholic_gfx"
+			
+			holy_site = jerusalem
+			holy_site = rome
+			holy_site = santiago
+			holy_site = toledo
+			holy_site = cordoba
+
+			#Main Group
+			doctrine = doctrine_pluralism_pluralistic
+			doctrine = doctrine_no_head
+			
+			#Clerical Doctrines
+			doctrine = doctrine_clerical_function_alms_and_pacification
+			doctrine = doctrine_clerical_marriage_allowed
+			doctrine = doctrine_clerical_succession_temporal_fixed_appointment
+			
+			doctrine = doctrine_no_anointment
+			
+			#Christian Doctrines
+			doctrine = doctrine_christian_christology_adoptionism
+			doctrine = doctrine_christian_perichoresis_dynamic_monarchianism
+			doctrine = doctrine_christian_pneumatology_modalism
+			doctrine = doctrine_christian_communion_memorialism
+			doctrine = doctrine_christian_soteriology_pelagianism
+			doctrine = doctrine_christian_liturgical_rite_local_rite
+			
+			#Tenets
+			doctrine = tenet_pastoral_isolation
+			doctrine = tenet_communal_identity
+			doctrine = tenet_aniconism
+		}
 		messalian = {
 			color = { 0.6 0.1 0.4 }
 			icon = christianity_messalian
