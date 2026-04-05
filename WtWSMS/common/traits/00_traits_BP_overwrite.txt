@@ -37,7 +37,10 @@ excommunicated = {
 			triggered_desc = {
 				trigger = {
 					exists = this
-					faith ?= { has_doctrine = doctrine_christian_liturgical_rite_african_rite }
+					OR = {
+						faith ?= { has_doctrine = doctrine_christian_liturgical_rite_african_rite }
+						faith ?= { has_doctrine = tenet_rigorism }
+					}
 				}
 				desc = trait_lapsi_name
 			}

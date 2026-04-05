@@ -667,7 +667,6 @@
 		}
 
 		is_shown = {
-			NOT = { religion_tag = christianity_religion }
 			NOT = { religion_tag = buddhism_religion }
 			NOT = { religion_tag = jainism_religion }
 			NOT = { religion_tag = nastika_religion }
@@ -682,7 +681,14 @@
 
 		parameters = {
 			take_vows_active = yes
+			monastic_schools_allowed_in_every_holding_type = yes
+			building_temples_gives_development = yes
 		}
+		
+		character_modifier = {
+			monthly_learning_lifestyle_xp_gain_mult = 0.05
+		}
+		
 		traits = {
 			virtues = { temperate }
 			sins = { gluttonous }
@@ -2245,7 +2251,10 @@
 		can_pick = {
 			custom_description = {
 				text = incompatible_tenet_monasticism_trigger
-				NOT = { doctrine:tenet_monasticism = { is_in_list = selected_doctrines } }
+				NOR = {
+					doctrine:tenet_monasticism = { is_in_list = selected_doctrines }
+					doctrine:tenet_cenobitic_monasticism = { is_in_list = selected_doctrines }
+				}
 			}
 			custom_description = {
 				text = incompatible_tenet_mendicant_preachers_trigger
@@ -4990,7 +4999,10 @@
 			}
 			custom_description = {
 				text = incompatible_tenet_monasticism_trigger
-				NOT = { doctrine:tenet_monasticism = { is_in_list = selected_doctrines } }
+				NOR = {
+					doctrine:tenet_monasticism = { is_in_list = selected_doctrines }
+					doctrine:tenet_cenobitic_monasticism = { is_in_list = selected_doctrines }
+				}
 			}
 			custom_description = {
 				text = incompatible_tenet_pastoral_isolation_trigger
@@ -5192,47 +5204,6 @@
 				greedy
 				lifestyle_reveler
 			}
-		}
-	}
-	
-	tenet_western_monasticism = {
-		icon = core_tenet_monasticism
-		
-		piety_cost = {
-			value = faith_tenet_cost_high
-			
-			# Multiplier for keeping same tenet
-			if = {
-				limit = { has_doctrine = tenet_cenobitic_monasticism }
-				multiply = faith_unchanged_doctrine_cost_mult
-			}
-		}
-
-		is_shown = {
-			religion_tag = christianity_religion
-		}
-
-		can_pick = {
-			custom_description = {
-				text = incompatible_tenet_hedonistic_trigger
-				NOT = { doctrine:tenet_hedonistic = { is_in_list = selected_doctrines } }
-			}
-			BP_unlocked_western_monasticism_trigger = yes
-		}
-
-		parameters = {
-			take_vows_active = yes
-			monastic_schools_allowed_in_every_holding_type = yes
-			building_temples_gives_development = yes
-		}
-		
-		character_modifier = {
-			monthly_learning_lifestyle_xp_gain_mult = 0.05
-		}
-		
-		traits = {
-			virtues = { temperate }
-			sins = { gluttonous }
 		}
 	}
 	
