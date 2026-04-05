@@ -840,7 +840,11 @@ change_vanilla_religion_doctrines = {
 			faith:bon = {
 				swap_doctrine_if_it_has_it_effect = {
 					OLD_DOCTRINE = tenet_eastern_syncretism
-					NEW_DOCTRINE = tenet_inner_journey
+					NEW_DOCTRINE = tenet_bhakti
+				}
+				swap_doctrine_if_it_has_it_effect = {
+					OLD_DOCTRINE = tenet_monasticism
+					NEW_DOCTRINE = tenet_cenobitic_monasticism
 				}
 			}
 			faith:old_bon = {

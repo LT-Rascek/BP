@@ -17,18 +17,6 @@
  arian_knowledge_god_name_possessive: "St. Eusebius'"
  arian_water_god_name: "St. Ulifas"
  arian_water_god_name_possessive: "St. Ulifas'"
- #Ebionite
- ebionite: "Ebionite"
- ebionite_adj: "Ebionite"
- ebionite_adherent: "Ebionite"
- ebionite_adherent_plural: "Ebionites"
- ebionite_desc: "Ebionites, or Ebionaioi, is a patristic term referring to a Jewish Christian movement that existed during the early centuries of the Christian Era. They regarded Jesus of Nazareth as the Messiah while rejecting his divinity and insisted on the necessity of following Jewish law and rites. The Ebionites used only one of the Jewish Gospels, revered James the Just and rejected Paul of Tarsus as an apostate from the Law. Their name suggests that they placed a special value on voluntary poverty. They have been identified as the meek and the poor Jesus spoke of in the Beatitudes, and the Ebionim was one of the terms used by the sect that sought to separate themselves from the corruption of the Temple, at Qumran, whom many believe were the Essenes."
- ebionite_religious_head_title: "Gadol"
- ebionite_religious_head_title_name: "Gadolship"
- ebionite_religious_text: "Gospel of the Ebionites"
- ebionite_paul_of_tarsos: "Paulus of Tarsos"
- ebionite_james_the_just: "Ya'akov the Just"
- ebionite_john_the_baptist: "Yahya of the Baptist"
  #Marcionism
  marcionism: "Marcionism"
  marcionism_adj: "Marcionist"
@@ -185,11 +173,11 @@
  gallican_church_adherent_plural: "Gallicans"
  gallican_church_desc: "The Early Christian Church did not have the same precise rubrics seen in later centuries, and a number of concurrent rites developed across the Roman Empire. While these rites were in doctrinal agreement with one another, it led to some noticeable behavioral and structural differences between the many rites in the East and West.\n\nIn Gaul, the Gallican Rite was one such rite. Closely related too, but distinct from, the Hispanic Rite, it was dominant in Gaul in 476."
  #Caucasian Church
- albanian_apostolic: "Aghwank Church"
- albanian_apostolic_adj: "Aghwank"
- albanian_apostolic_adherent: "Aghwank"
- albanian_apostolic_adherent_plural: "Aghwanks"
- albanian_apostolic_desc: "The Early Christian Church did not have the same precise rubrics seen in later centuries, and a number of concurrent rites developed across the Roman Empire. While these rites were in doctrinal agreement with one another, it led to some noticeable behavioral and structural differences between the many rites in the East and West.\n\nIn Caucasian Albania (Aghwank), the Aghwank Church was one such example. Formally established when Urnayr I converted to Christianity, it is the national church of the Aghwank people."
+ albanian_apostolic: "Elysean Apostolic Church"
+ albanian_apostolic_adj: "Elysean"
+ albanian_apostolic_adherent: "Elysean"
+ albanian_apostolic_adherent_plural: "Elysean"
+ albanian_apostolic_desc: "The Early Christian Church did not have the same precise rubrics seen in later centuries, and a number of concurrent rites developed across the Roman Empire. While these rites were in doctrinal agreement with one another, it led to some noticeable behavioral and structural differences between the many rites in the East and West.\n\nIn Caucasian Albania (Aghwank), the Elysean Church was one such example. Traditionally held to have been established by Saint Ełišay in the Ist Century, it was formally established when Urnayr I converted to Christianity, being the national church of Caucasian Albania."
  #Ethiopian Orthodox
  ethiopian_orthodox: "Yäityop'ya Bēte Kirisitina"
  ethiopian_orthodox_adj: "Kirisitina"
@@ -346,6 +334,8 @@
  doctrine_christian_judaic_role_demiurge_desc: "The god of the Hebrew Scriptures is associated with the Evil, material forces in the universe and as such the Jews are his servants, whether misguided or intentional."
  doctrine_parameter_hostility_override_doctrine_christian_judaic_role_judaizers: "Christian [faiths|E] with the [doctrine|E] Judaizers are considered [GetHostilityLevelName( TOKEN_PARAMETER.GetIntValue )|V]."
  doctrine_parameter_negative_opinion_of_jewish_features: "#N TODO: Views certain $judaism_religion_adj$ traits negatively.#!" ##### TODO (Beta): Make certain Jewish Traits negative for negative_opinion_of_jewish_features
+ doctrine_parameter_doctrine_christian_judaic_role_opinion_active: ""
+ doctrine_parameter_opinion_of_temple_authority_messianic_doctrine_opinion_active: "[opinion|E] of Christian [faiths|E] with the [GetFaithDoctrine('temple_authority_messianic_doctrine').GetBaseName] doctrine: $VALUE|+=0$"
  #Liturgical Rite
  doctrine_christian_liturgical_rite_name: "Liturgical Rite"
  doctrine_christian_liturgical_rite_name_plural: "Liturgical Rites"

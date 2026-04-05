@@ -1,0 +1,451 @@
+﻿##### Changed from Vanilla: Made Dynamic
+excommunicate_interaction = {
+	category = interaction_category_hostile
+	common_interaction = yes #suppress error
+	icon = excommunication
+
+	desc = excommunicate_interaction_desc
+
+	##### Changed from Vanilla vvvvv
+	is_shown = {
+		scope:actor = scope:actor.faith.religious_head
+		##### Changed from Vanilla vvvvv
+		scope:actor.faith = {
+			this = scope:recipient.faith
+			has_doctrine_parameter = excommunication_active
+			has_doctrine = doctrine_spiritual_head
+		}
+		##### Changed from Vanilla ^^^^^
+
+		NOT = {
+			scope:recipient = {
+				has_trait = excommunicated
+			}
+		}
+
+		NOT = { #Don't do this to yourself
+			scope:recipient = scope:actor
+		}
+	}
+	##### Changed from Vanilla ^^^^^
+
+	is_valid_showing_failures_only = {
+		NOR = {
+			scope:recipient = {
+				has_character_modifier = excommunication_recently_lifted
+			}
+			AND = {
+				exists = scope:actor.faith.great_holy_war
+				scope:actor.faith.great_holy_war = {
+					has_pledged_attacker = scope:recipient
+				}
+			}
+		}
+		scope:recipient = {
+			age >= 12
+		}
+		scope:actor = {
+			piety >= major_piety_value
+		}
+		scope:actor = {
+			custom_description = {
+				text = "hof_interaction_unreformed_faith"
+				NOT = {
+					faith = { has_doctrine_parameter = unreformed }
+				}
+			}
+		}
+		scope:recipient = { NOT = { has_strong_hook = scope:actor } }
+		custom_tooltip = {
+			text = cannot_take_overt_hostile_actions_against_diarch.tt
+			NOT = { scope:recipient ?= scope:actor.diarch }
+		}
+	}
+
+	auto_accept = yes
+	force_notification = yes
+	notification_text = religious_interaction.1021
+	#answer_accept_key = religious_interaction.1000.strong_negative
+
+	on_accept = {
+		scope:actor = {
+			add_piety = major_piety_loss
+			hidden_effect = {
+				send_interface_toast = {
+					type = event_toast_effect_neutral
+					title = excommunicate_interaction_desc.tt
+					left_icon = scope:recipient
+					scope:recipient = {
+						show_as_tooltip = { add_trait = excommunicated }
+					}
+				}
+			}
+		}
+		excommunicate_character = {
+			REQUESTING_CHARACTER = scope:actor
+			TARGET_CHARACTER = scope:recipient
+		}
+
+		scope:recipient = {
+			hidden_effect = { #Nudge towards rivalry
+				if = {
+					limit = {
+						NOR = {
+							has_relation_rival = scope:actor
+							has_relation_potential_rival = scope:actor
+						}
+					}
+					set_relation_potential_rival = scope:actor
+				}
+			}
+		}
+
+		# If we're a clan this interaction affects unity
+		add_clan_unity_interaction_effect = {
+			CHARACTER = scope:actor
+			TARGET = scope:recipient
+			VALUE = medium_unity_loss
+			DESC = clan_unity_excommunication.desc
+			REVERSE_NON_HOUSE_TARGET = no
+		}
+	}
+
+	# AI will do
+
+	ai_potential = {
+		is_adult = yes
+		piety >= major_piety_value
+	}
+
+	ai_target_quick_trigger = {
+		adult = yes
+	}
+
+	ai_targets = {
+		ai_recipients = scripted_relations
+		ai_recipients = primary_war_enemies
+	}
+
+	ai_frequency_by_tier = {
+		barony = 0
+		county = 72
+		duchy = 36
+		kingdom = 12
+		empire = 12
+		hegemony = 12
+	}
+
+	ai_will_do = {
+		base = 50
+
+		ai_value_modifier = { # +50 to -50
+			who = scope:actor
+			ai_vengefulness = 0.5
+		}
+
+		modifier = {
+			factor = 0
+			scope:recipient = {
+				NOR = {
+					has_relation_rival = scope:actor
+					has_relation_nemesis = scope:actor
+					is_at_war_with = scope:actor
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0
+			scope:recipient = {
+				involved_activity ?= {
+					has_activity_type = activity_coronation
+					activity_host = prev
+				}
+			}
+		}
+	}
+}
+
+##### Changed from Vanilla: Made Dynamic
+request_excommunication_interaction = {
+	category = interaction_category_hostile
+	icon = excommunication
+	interface_priority = 30
+
+	desc = request_excommunication_interaction_desc
+	redirect = {
+		if = {
+			limit = {
+				exists = scope:actor.faith.religious_head
+			}
+			scope:recipient = {
+				save_scope_as = secondary_recipient
+			}
+			scope:actor.faith.religious_head = {
+				save_scope_as = recipient
+			}
+		}
+		scope:actor.faith = {
+			if = {
+				limit = { exists = religious_head }
+				religious_head = {
+					save_scope_as = recipient
+				}
+			}
+		}
+	}
+
+	notification_text = RELIGIOUS_HEAD_REQUEST_EXCOMMUNICATION
+
+	##### Changed from Vanilla vvvvv
+	is_shown = {
+		exists = scope:actor.faith.religious_head
+		NOR = {
+			scope:actor = scope:secondary_recipient
+			scope:actor.faith.religious_head = scope:actor
+			scope:actor.faith.religious_head = scope:secondary_recipient
+		}
+		##### Changed from Vanilla vvvvv
+		scope:actor.faith = {
+			this = scope:secondary_recipient.faith
+			has_doctrine_parameter = excommunication_active
+			has_doctrine = doctrine_spiritual_head
+		}
+		##### Changed from Vanilla ^^^^^
+	}
+	##### Changed from Vanilla ^^^^^
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			piety >= massive_piety_value
+		}
+		scope:secondary_recipient = { #Excommunication target
+			NOT = { has_trait = excommunicated }
+			age >= 12
+		}
+		scope:actor = {
+			custom_description = {
+				text = "hof_interaction_unreformed_faith"
+				NOT = {
+					faith = { has_doctrine_parameter = unreformed }
+				}
+			}
+			NOT = {
+				is_at_war_with = scope:recipient
+			}
+		}
+		scope:secondary_recipient = { NOT = { has_strong_hook = scope:actor } }
+		custom_tooltip = {
+			text = cannot_take_overt_hostile_actions_against_diarch.tt
+			NOT = { scope:recipient ?= scope:actor.diarch }
+		}
+	}
+
+	send_option = {
+		is_valid = {
+			scope:actor = {
+				has_usable_hook = scope:recipient
+			}
+		}
+		flag = excommunication_hook
+		localization = EXCOMMUNICATION_HOOK
+	}
+	should_use_extra_icon = {
+		scope:actor = { has_usable_hook = scope:recipient }
+	}
+	extra_icon = "gfx/interface/icons/character_interactions/hook_icon.dds"
+
+	send_options_exclusive = no
+
+	auto_accept = {
+		custom_description = {
+			text = "spending_hook"
+			subject = scope:actor
+			object = scope:recipient
+			scope:excommunication_hook = yes
+			scope:actor = { has_strong_hook = scope:recipient }
+		}
+	}
+
+	ai_accept = {
+		base = -50
+
+		modifier = {
+			scope:excommunication_hook = yes
+			add = 50
+			desc = SCHEME_WEAK_HOOK_USED
+		}
+		opinion_modifier = {
+			who = scope:actor.faith.religious_head
+			opinion_target = scope:actor
+			multiplier = 1
+		}
+		opinion_modifier = {
+			who = scope:actor.faith.religious_head
+			opinion_target = scope:secondary_recipient #Excommunication target
+			multiplier = -1
+			min = 0
+		}
+		modifier = {
+			add = -100
+			scope:actor.faith.religious_head = {
+				opinion = {
+					value > 0
+					target = scope:secondary_recipient #Excommunication target
+				}
+			}
+			desc = EXCOMMUNICATION_OPINION
+		}
+		modifier = {
+			add = {
+				add = -10
+				multiply = scope:secondary_recipient.num_virtuous_traits
+			}
+			scope:secondary_recipient.num_virtuous_traits > 0
+			desc = EXCOMMUNICATION_VIRTUES
+		}
+		modifier = {
+			add = {
+				add = 10
+				multiply = scope:secondary_recipient.num_sinful_traits
+			}
+			scope:secondary_recipient.num_sinful_traits > 0
+			desc = EXCOMMUNICATION_SINS
+		}
+		modifier = {
+			desc = RELIGIOUS_HEAD_INTERACTION_PARAGON
+			add = 15
+			scope:actor = {
+				has_trait = paragon
+			}
+		}
+		modifier = {
+			desc = RELIGIOUS_HEAD_INTERACTION_CONSECRATED_BLOOD
+			add = 5
+			scope:actor = {
+				has_trait = consecrated_blood
+			}
+		}
+	}
+
+	ai_min_reply_days = 1
+	ai_max_reply_days = 5
+
+	on_accept = {
+		if = {
+			limit = {
+				scope:secondary_recipient = { is_alive = yes }
+			}
+			if = {
+				limit = { scope:excommunication_hook = yes }
+				scope:actor = {
+					use_hook = scope:recipient
+				}
+			}
+
+			scope:actor = {
+				#Spend piety for the excommunication.
+				add_piety = massive_piety_loss
+
+				#Letter event to inform character the pope agreed to their request.
+				trigger_event = {
+					id = religious_interaction.1022
+				}
+			}
+			excommunicate_character = {
+				TARGET_CHARACTER = scope:secondary_recipient
+				REQUESTING_CHARACTER = scope:actor
+			}
+			scope:secondary_recipient = {
+				#Letter event to inform character that they have been excommunicated.
+				trigger_event = {
+					id = religious_interaction.1020
+				}
+				hidden_effect = { #Nudge towards rivalry
+					if = {
+						limit = {
+							NOR = {
+								has_relation_rival = scope:actor
+								has_relation_potential_rival = scope:actor
+							}
+							scope:actor = { is_alive = yes }
+						}
+						set_relation_potential_rival = scope:actor
+					}
+				}
+			}
+			# If we're a clan this interaction affects unity
+			add_clan_unity_interaction_effect = {
+				CHARACTER = scope:actor
+				TARGET = scope:recipient
+				VALUE = medium_unity_loss
+				DESC = clan_unity_request_excommunication.desc
+				REVERSE_NON_HOUSE_TARGET = no
+			}
+		}
+	}
+
+	on_decline = {
+		scope:actor = {
+			#Letter event to inform character the pope refused their request.
+			trigger_event = {
+				id = religious_interaction.1023
+			}
+		}
+
+		# If we're a clan this interaction affects unity
+		add_clan_unity_interaction_effect = {
+			CHARACTER = scope:actor
+			TARGET = scope:recipient
+			VALUE = miniscule_unity_gain
+			DESC = clan_unity_excommunication_request_denied.desc
+			REVERSE_NON_HOUSE_TARGET = no
+		}
+	}
+
+	# AI will do
+
+	ai_potential = {
+		is_adult = yes
+		piety >= major_piety_value
+	}
+
+	ai_target_quick_trigger = {
+		adult = yes
+	}
+
+	ai_targets = {
+		ai_recipients = scripted_relations
+		ai_recipients = primary_war_enemies
+	}
+
+	ai_frequency_by_tier = {
+		barony = 0
+		county = 48
+		duchy = 36
+		kingdom = 12
+		empire = 12
+		hegemony = 12
+	}
+
+	ai_will_do = {
+		base = 25
+
+		ai_value_modifier = { # +50 to -50
+			who = scope:actor
+			ai_vengefulness = 0.5
+		}
+
+		modifier = {
+			factor = 0
+			scope:secondary_recipient = {
+				NOR = {
+					has_relation_rival = scope:actor
+					has_relation_nemesis = scope:actor
+					is_at_war_with = scope:actor
+				}
+			}
+		}
+	}
+}
+
