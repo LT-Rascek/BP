@@ -59,7 +59,7 @@
 		{ name = "holy_order_warriors_of_the_symbol" }
 	}
 
-	holy_order_maa = { horn_warrior }
+	holy_order_maa = { archers_of_the_nile } # Changed to use Nubian unit
 
 	localization = {
 		HighGodName = egyptian_high_god_name
@@ -245,6 +245,13 @@
 			doctrine = tenet_divine_marriage #WtWSMS feature
 			doctrine = tenet_legalism #Revamped Maat
 			doctrine = tenet_pentarchy #Emphasis on clerical class (while not using theocracy doctrine)
+			
+			holy_order_names = {
+				{ name = "holy_order_burning_blades" }
+				{ name = "holy_order_anubis_guard" }
+				{ name = "holy_order_horus_guard" }
+				{ name = "holy_order_bulls_of_montu" }
+			}
 		}
 		
 		#Replacement for Mandulis
