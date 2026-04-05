@@ -1154,6 +1154,10 @@
 			doctrine = doctrine_christian_christology_miaphysitism
 			doctrine = doctrine_christian_liturgical_rite_local_rite #Was probably not of the Imperial/Byzantine Rite yet
 			
+			holy_order_names = {
+				{ name = "holy_order_knights_of_saint_george" }
+			}
+			
 			localization = { # Utilizes the 'West Christian' Saints, shared by Catholics and Orthodox
 				#FertilityGod
 				FertilityGodName = west_christian_fertility_god_name
@@ -1279,6 +1283,12 @@
 				
 				ReligiousText = syrian_orthodox_religious_text
 			}
+			
+			holy_order_names = {
+				{ name = "holy_order_order_of_saint_anthony" }
+				{ name = "holy_order_knights_of_saint_james" }
+				{ name = "holy_order_jacobites" }
+			}
 		}
 		albanian_apostolic = {
 			#While minor, it had a very interesting history; Caucasian Albania converted around the reign
@@ -1317,6 +1327,11 @@
 			doctrine = tenet_mendicant_preachers
 			doctrine = tenet_cenobitic_monasticism
 			doctrine = tenet_rite
+
+			holy_order_names = {
+				{ name = "holy_order_order_of_saint_yegishe" }
+				{ name = "holy_order_order_of_saint_pantaleon" }
+			}
 
 			localization = { # Utilizes the 'East Christian' Saints, shared by Coptics and Armenians
 				#HealthGod
@@ -1671,7 +1686,7 @@
 			doctrine = tenet_rigorism
 			
 			holy_order_names = {
-				{ name = "holy_order_knights_of_saint_marcion" }
+				{ name = "holy_order_knights_of_saint_paul" }
 			}
 		
 			localization = {
@@ -1747,6 +1762,13 @@
 			doctrine = tenet_asceticism
 			doctrine = tenet_complex_exegesis
 			doctrine = tenet_astrology
+			
+			holy_order_names = {
+				{ name = "holy_order_servants_of_the_patricians" }
+				{ name = "holy_order_army_of_light" }
+				{ name = "holy_order_order_of_saint_marcus" }
+				{ name = "holy_order_order_of_saint_halpidus" }
+			}
 			
 			localization = { # Gods mostly shared with Manichean (Priscillianism is a Manichean-Gnostic hybrid)
 				#HighGodName
@@ -1965,6 +1987,11 @@
 			doctrine = tenet_communion
 			doctrine = tenet_pentarchy
 			doctrine = tenet_aniconism
+			
+			holy_order_names = {
+				{ name = "holy_order_macedonian_order" }
+				{ name = "holy_order_army_of_pneumatomachi" }
+			}
 		}
 		### Monophysite Group
 		monophysitism = {
@@ -2171,6 +2198,12 @@
 					christianity_evil_god_mephistopheles
 					montanism_evil_god_name
 				}
+			}
+			
+			holy_order_names = {
+				{ name = "holy_order_bretheren_of_the_holy_spirit" }
+				{ name = "holy_order_spiritales" }
+				{ name = "holy_order_pepuzans" }
 			}
 		}
 		donatism = {

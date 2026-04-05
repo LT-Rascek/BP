@@ -569,17 +569,47 @@ judaism_religion = {
 			
 			doctrine = doctrine_no_anointment
 			
-			#Crime Doctrines
-			doctrine = doctrine_adultery_men_shunned #Taken from Polemical sources, but adds flavor
+			#Crime Doctrines: Emphasis on frequent rebaptism for sins
+			doctrine = doctrine_homosexuality_shunned
+			doctrine = doctrine_adultery_men_shunned
 			doctrine = doctrine_adultery_women_shunned
+			doctrine = doctrine_deviancy_shunned
+			doctrine = doctrine_witchcraft_shunned
 			
 			#Tenets
 			doctrine = tenet_esotericism
 			doctrine = tenet_gnosticism
 			doctrine = tenet_false_conversion_sanction
 			
-			holy_order_names = {
-				{ name = "holy_order_knights_of_saint_james" }
+			localization = {
+				#FateGod
+				FateGodName = elcesaite_fate_god_name #NB: they ascribed the Holy Spirit feminine aspects
+				FateGodNamePossessive = elcesaite_fate_god_name_possessive
+				FateGodSheHe = CHARACTER_SHEHE_SHE
+				FateGodHerHis = CHARACTER_HERHIS_HER
+				FateGodHerHim = CHARACTER_HERHIM_HER
+
+				#KnowledgeGod
+				KnowledgeGodName = elcesaite_knowledge_god_name
+				KnowledgeGodNamePossessive = elcesaite_knowledge_god_name_possessive
+				KnowledgeGodSheHe = CHARACTER_SHEHE_HE
+				KnowledgeGodHerHis = CHARACTER_HERHIS_HIS
+				KnowledgeGodHerHim = CHARACTER_HERHIM_HIM
+
+				GoodGodNames = {
+					judaism_high_god_name
+					judaism_high_god_alternate
+					judaism_good_god_hashem
+					judaism_good_god_el_shaddai
+					elcesaite_fate_god_name
+					elcesaite_knowledge_god_name
+				}
+				ReligiousSymbol = elcesaite_religious_symbol
+				ReligiousSymbol2 = elcesaite_religious_symbol_2
+				ReligiousSymbol3 = elcesaite_religious_symbol_3
+				ReligiousText = elcesaite_religious_text
+				ReligiousText2 = elcesaite_religious_text_2
+				ReligiousText3 = elcesaite_religious_text_3
 			}
 			
 			localization = {
@@ -590,10 +620,12 @@ judaism_religion = {
 					judaism_good_god_el_shaddai
 					ebionite_jesus
 				}
+				DevilName = elcesaite_devil_name
+				DevilNamePossessive = elcesaite_devil_name_possessive
 				EvilGodNames = {
 					judaism_devil_name
 					judaism_evil_god_the_adversary
-					ebionite_paul_of_tarsos
+					elcesaite_devil_name
 				}
 			}
 		}
