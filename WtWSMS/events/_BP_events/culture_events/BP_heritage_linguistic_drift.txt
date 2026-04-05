@@ -755,7 +755,7 @@ scripted_effect propagate_language_effect = {
 					has_cultural_pillar = language_french
 					any_parent_culture_or_above = { this = culture:old_frankish }
 				}
-				set_name_list = name_list_frankish
+				set_name_list = name_list_french
 			}
 			else_if = {
 				limit = { has_cultural_pillar = language_french }
