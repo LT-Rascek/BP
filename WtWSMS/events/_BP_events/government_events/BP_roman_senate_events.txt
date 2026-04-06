@@ -175,6 +175,43 @@ scripted_effect senate_disapproval_legitimacy_effect = {
 	}
 }
 
+scripted_effect BP_roman_senate_events_0013_approve_effect = {
+	add_character_modifier = approved_by_the_senate
+	senate_approval_legitimacy_effect = { CHAR = scope:the_liege_west }
+	if = { limit = { has_character_modifier = stalled_the_senate } remove_character_modifier = stalled_the_senate }
+	add_opinion = {
+		target = scope:the_consul_west
+		modifier = pacified_opinion
+	}
+}
+scripted_effect BP_roman_senate_events_0014_decline_effect = {
+	add_character_modifier = rejected_by_the_senate
+	senate_disapproval_legitimacy_effect = { CHAR = scope:the_liege_west }
+	if = { limit = { has_character_modifier = stalled_the_senate } remove_character_modifier = stalled_the_senate }
+	add_opinion = {
+		target = scope:the_consul_west
+		modifier = insulted_opinion
+	}
+}
+scripted_effect BP_roman_senate_events_1013_approve_effect = {
+	add_character_modifier = approved_by_the_senate
+	senate_approval_legitimacy_effect = { CHAR = scope:the_liege_east }
+	if = { limit = { has_character_modifier = stalled_the_senate } remove_character_modifier = stalled_the_senate }
+	add_opinion = {
+		target = scope:the_consul_east
+		modifier = pacified_opinion
+	}
+}
+scripted_effect BP_roman_senate_events_1014_decline_effect = {
+	add_character_modifier = rejected_by_the_senate
+	senate_disapproval_legitimacy_effect = { CHAR = scope:the_liege_east }
+	if = { limit = { has_character_modifier = stalled_the_senate } remove_character_modifier = stalled_the_senate }
+	add_opinion = {
+		target = scope:the_consul_east
+		modifier = insulted_opinion
+	}
+}
+
 #0001-0999: Western Senate Stuff
 
 ##0001-0010: Disestablishment/Reestablishment of the Senate Effects
@@ -357,7 +394,7 @@ BP_roman_senate_events.0012 = { #The Senate deliberates
 		name = BP_roman_senate_events.0012.approve
 		scope:the_liege_west = {
 			trigger_event = { id = BP_roman_senate_events.0013 days = 3 }
-			show_as_tooltip = { BP_roman_senate_events.0014.decline_effect = yes }
+			show_as_tooltip = { BP_roman_senate_events_0014_decline_effect = yes }
 		}
 	}
 	
@@ -366,21 +403,10 @@ BP_roman_senate_events.0012 = { #The Senate deliberates
 		trigger = { is_ai = no } ##### TODO (Beta): Make the Senate actually negotiate for the crown
 		scope:the_liege_west = {
 			trigger_event = { id = BP_roman_senate_events.0014 days = 3 }
-			show_as_tooltip = { BP_roman_senate_events.0014.decline_effect = yes }
+			show_as_tooltip = { BP_roman_senate_events_0014_decline_effect = yes }
 		}
 	}
 }
-
-scripted_effect BP_roman_senate_events.0013.approve_effect = {
-	add_character_modifier = approved_by_the_senate
-	senate_approval_legitimacy_effect = { CHAR = scope:the_liege_west }
-	if = { limit = { has_character_modifier = stalled_the_senate } remove_character_modifier = stalled_the_senate }
-	add_opinion = {
-		target = scope:the_consul_west
-		modifier = pacified_opinion
-	}
-}
-
 BP_roman_senate_events.0013 = { #The Senate Approves!
 	type = letter_event
 	content_source = dlc_WtWSMS
@@ -391,23 +417,11 @@ BP_roman_senate_events.0013 = { #The Senate Approves!
 	option = { #Approve of the emperor
 		name = BP_roman_senate_events.0013.a
 		scope:the_liege_west = {
-			BP_roman_senate_events.0013.approve_effect = yes
+			BP_roman_senate_events_0013_approve_effect = yes
 		}
 		update_all_senate_opinion_about_character_effect = { ACTOR = scope:the_liege_west }
 	}
 }
-
-
-scripted_effect BP_roman_senate_events.0014.decline_effect = {
-	add_character_modifier = rejected_by_the_senate
-	senate_disapproval_legitimacy_effect = { CHAR = scope:the_liege_west }
-	if = { limit = { has_character_modifier = stalled_the_senate } remove_character_modifier = stalled_the_senate }
-	add_opinion = {
-		target = scope:the_consul_west
-		modifier = insulted_opinion
-	}
-}
-
 BP_roman_senate_events.0014 = { #The Senate Rejects!
 	type = letter_event
 	content_source = dlc_WtWSMS
@@ -420,7 +434,7 @@ BP_roman_senate_events.0014 = { #The Senate Rejects!
 	option = { #Boo!
 		name = BP_roman_senate_events.0014.a
 		scope:the_liege_west = {
-			BP_roman_senate_events.0014.decline_effect
+			BP_roman_senate_events_0014_decline_effect = yes
 		}
 		update_all_senate_opinion_about_character_effect = { ACTOR = scope:the_liege_west }
 	}
@@ -571,7 +585,7 @@ BP_roman_senate_events.0054 = { #You've been nominated to become consul
 }
 
 ##0061-0070: Dynasty demands land
-BP_roman_senate_events.0061 = { #Top Liege recieves message
+BP_roman_senate_events.0061 = { #Top Liege receives message
 	trigger = { root = { valid_characteristics_to_interact_with_senate_trigger = yes } }
 	
 	type = letter_event
@@ -869,7 +883,7 @@ BP_roman_senate_events.1012 = { #The Senate deliberates
 		name = BP_roman_senate_events.1012.approve
 		scope:the_liege_east = {
 			trigger_event = { id = BP_roman_senate_events.1013 days = 3 }
-			show_as_tooltip = { BP_roman_senate_events.1013.approve_effect = yes }
+			show_as_tooltip = { BP_roman_senate_events_1013_approve_effect = yes }
 		}
 	}
 	
@@ -878,20 +892,10 @@ BP_roman_senate_events.1012 = { #The Senate deliberates
 		trigger = { is_ai = no } ##### TODO (Beta): Make the Senate actually negotiate for the crown
 		scope:the_liege_east = {
 			trigger_event = { id = BP_roman_senate_events.1014 days = 3 }
-			show_as_tooltip = { BP_roman_senate_events.1014.decline_effect = yes }
+			show_as_tooltip = { BP_roman_senate_events_1014_decline_effect = yes }
 		}
 	}
 }
-scripted_effect BP_roman_senate_events.1013.approve_effect = {
-	add_character_modifier = approved_by_the_senate
-	senate_approval_legitimacy_effect = { CHAR = scope:the_liege_east }
-	if = { limit = { has_character_modifier = stalled_the_senate } remove_character_modifier = stalled_the_senate }
-	add_opinion = {
-		target = scope:the_consul_east
-		modifier = pacified_opinion
-	}
-}
-
 BP_roman_senate_events.1013 = { #The Senate Approves!
 	type = letter_event
 	content_source = dlc_WtWSMS
@@ -905,22 +909,11 @@ BP_roman_senate_events.1013 = { #The Senate Approves!
 	option = { #Approve of the emperor
 		name = BP_roman_senate_events.1013.a
 		scope:the_liege_east = {
-			BP_roman_senate_events.1013.approve_effect = yes
+			BP_roman_senate_events_1013_approve_effect = yes
 		}
 		update_all_senate_opinion_about_character_effect = { ACTOR = scope:the_liege_east }
 	}
 }
-
-scripted_effect BP_roman_senate_events.1014.decline_effect = {
-	add_character_modifier = rejected_by_the_senate
-	senate_disapproval_legitimacy_effect = { CHAR = scope:the_liege_east }
-	if = { limit = { has_character_modifier = stalled_the_senate } remove_character_modifier = stalled_the_senate }
-	add_opinion = {
-		target = scope:the_consul_east
-		modifier = insulted_opinion
-	}
-}
-
 BP_roman_senate_events.1014 = { #The Senate Rejects!
 	type = letter_event
 	content_source = dlc_WtWSMS
@@ -933,7 +926,7 @@ BP_roman_senate_events.1014 = { #The Senate Rejects!
 	option = { #Boo!
 		name = BP_roman_senate_events.1014.a
 		scope:the_liege_east = {
-			BP_roman_senate_events.1014.decline_effect = yes
+			BP_roman_senate_events_1014_decline_effect = yes
 			update_all_senate_opinion_about_character_effect = { ACTOR = scope:the_liege_east }
 		}
 	}
@@ -1083,7 +1076,7 @@ BP_roman_senate_events.1054 = { #You've been nominated to become consul
 }
 
 ##1061-1070: Dynasty demands land
-BP_roman_senate_events.1061 = { #Top Liege recieves message
+BP_roman_senate_events.1061 = { #Top Liege receives message
 	trigger = { root = { valid_characteristics_to_interact_with_senate_trigger = yes } }
 	
 	type = letter_event

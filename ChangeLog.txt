@@ -1,6 +1,26 @@
 2026-MM-DD v0.1.8.6
 -----------
 
+Mechanics:
+- Added new dynamic culture creation events for the creation of Ashkenazi, Radhanite Jewish cultures
+- Cultural language shift mechanics will also propagate to minority cultures if said minorities speak the majority language
+
+Culture:
+- Updated ethnicity weighting across a wide range of cultures
+- Added several Jewish minority cultures for various parts of the map:
+   - Romaniote:
+      - For the Jews in Hellenic areas of the Roman Empire
+      - Pillars: Israelite Heritage, Greek Language, Communal Ethos
+      - Traditions: Diasporic, Philosopher Culture, Mobile Guards, Musical Theorists, Staunch Traditionalists (with Royal Court)
+   - Tzafarti:
+      - For the Jews in Gaul and France
+      - Pillars: Israelite Heritage, Latin Language, Cosmopolitan Ethos
+      - Traditions: Diasporic, Philosopher Culture, Mobile Guards, Caravaneers, Religion Blending
+- Changed some langauges at start for various Jewish minorities:
+   - Kochinim uses Tamil Language instead of Hebrew Language
+   - Sephardi uses Latin Language instead of Hebrew Language
+- Added new namelists for Romaniote, Tzafarti, Sephardi
+
 Tenets and Doctrines:
 - Added several new tenets for Christian faiths:
    - Frontier Monastics:
@@ -73,6 +93,7 @@ Tenets and Doctrines:
    - Compassionate is a Virtue, Callous and Sadistic are Sins
 
 Religion:
+- Updated Holy Order Men-At-Arms for several faiths
 - Hindu faiths implicitly have the "Take Vows" interaction decision
 - Added a few faiths relating to Jewish Christianity:
    - Nazarenes (Christian Faith):
@@ -134,22 +155,33 @@ Religion:
    - Gyur Bon: Uses "Cenobitic Monasticism" instead of "Monasticism", uses "Patron Gods" instead of "Inner Journey"
 
 Decisions:
+- Extended the "Embrace Zoroastrianism" decision to WtWSMS Zoroastrian faiths
 - Peregrination decision removed, as the tenet no longer exists
 
 History:
+- Added new Jewish minorities to the map in various parts of the Roman Empire
+- More dynasties converted to houses of dynasties
 - Updated province and character history to better historical Christian adherences
 
-Bugs:
+GFX:
+- Improved portrait animations for a number of events and bookmarks
+- Added new event backgrounds for culture shift events
+- Updated building graphics, COA frames, clothing for several cultures
+- Updated bookmark dna and historical dna
+- Updated several faith icons
+
+Bug Fixes:
+- Fixed overly long lists in some Senate event effects
+- Ostrogothic culture inherits its innovations from Gothic properly
+- Creation of Ostrogothic culture properly resets Thracian and Ostrogothic culture creation dates
 - Fixed "Complex Exegesis" being unavailable to Christians
 - Fixed Zeno's armies starving to death
 - Fixed up heritage and linguistic drift spamming too much and hanging a bit
 
-GFX:
-- Updated several faith icons
-
 Localization:
+- Added a number of new culture localizations for titles
 - Re-localized "Monasticism" to "Congregational Monasticism"
-- Updated localizations for some Holy Orders for various Christian faiths
+- Updated localizations for some Holy Orders for various faiths
 - Updated Caucasian Albanian name and description for a more general religion between both the Parthian ruling class and the populace
 - "Communal Identity" and "Legal Pronouncements" re-localizes to Jewish localizations if a Christian faith has Judaizers doctrine
 - "Righteous Rebirth" Tenet given a new localization for Christians, "Humble Savior"

@@ -208,6 +208,7 @@ romaniote = { #Byzantine/Yanniote/Yevanic Jews
 	traditions = {
 		#Societal Traditions
 		tradition_diasporic
+		tradition_philosopher_culture
 		#Regional Traditions
 		tradition_mobile_guards
 		#Ritual Traditions
@@ -219,12 +220,6 @@ romaniote = { #Byzantine/Yanniote/Yevanic Jews
 	dlc_tradition = {
 		trait = tradition_staunch_traditionalists
 		requires_dlc_flag = hybridize_culture
-	}
-	
-	dlc_tradition = { # Improved philosopher culture
-		trait = tradition_fp3_beacon_of_learning
-		requires_dlc_flag = legacy_of_persia
-		fallback = tradition_philosopher_culture
 	}
 	
 	name_list = name_list_romaniote
