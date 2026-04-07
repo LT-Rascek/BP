@@ -110,6 +110,10 @@ has_same_liturgical_rite_trigger = {
 			$FAITH_1$ = { has_doctrine = doctrine_christian_liturgical_rite_east_syriac_rite }
 			$FAITH_2$ = { has_doctrine = doctrine_christian_liturgical_rite_east_syriac_rite }
 		}
+		AND = {
+			$FAITH_1$ = { has_doctrine = doctrine_christian_liturgical_rite_israelite }
+			$FAITH_2$ = { has_doctrine = doctrine_christian_liturgical_rite_israelite }
+		}
 	}
 }
 #Note that this relations are not equivalent; 
@@ -408,34 +412,34 @@ is_gamerule_blocked_faith_trigger = {
 	trigger_if = {
 		limit = {
 			OR = {
-				this = faith:pundarika
-				this = faith:mantrayana
-				this = faith:dhyana
-				this = faith:sukhavati
-				this = faith:avatamsaka
-				this = faith:maitreya
-				this = faith:vinaya
-				this = faith:yogacara
-				this = faith:acharya
-				this = faith:mingism
-				this = faith:ngaiism_pagan
+				scope:new_faith = faith:pundarika
+				scope:new_faith = faith:mantrayana
+				scope:new_faith = faith:dhyana
+				scope:new_faith = faith:sukhavati
+				scope:new_faith = faith:avatamsaka
+				scope:new_faith = faith:maitreya
+				scope:new_faith = faith:vinaya
+				scope:new_faith = faith:yogacara
+				scope:new_faith = faith:acharya
+				scope:new_faith = faith:mingism
+				scope:new_faith = faith:ngaiism_pagan
 				
-				this.religion = religion:aluk_religion
-				this.religion = religion:biliku_religion
-				this.religion = religion:bimoism_religion
-				this.religion = religion:confucianism_religion
-				this.religion = religion:dayawism_religion
-				this.religion = religion:hantuism_religion
-				this.religion = religion:dab_qhuas_religion
-				this.religion = religion:kaharingan_religion
-				this.religion = religion:kamuyism_religion
-				this.religion = religion:moism_religion
-				this.religion = religion:muism_religion
-				this.religion = religion:satsana_phi_religion
-				this.religion = religion:shamanism_religion
-				this.religion = religion:shintoism_religion
-				this.religion = religion:tolotang_religion
-				this.religion = religion:utaki_religion
+				scope:new_faith.religion = religion:aluk_religion
+				scope:new_faith.religion = religion:biliku_religion
+				scope:new_faith.religion = religion:bimoism_religion
+				scope:new_faith.religion = religion:confucianism_religion
+				scope:new_faith.religion = religion:dayawism_religion
+				scope:new_faith.religion = religion:hantuism_religion
+				scope:new_faith.religion = religion:dab_qhuas_religion
+				scope:new_faith.religion = religion:kaharingan_religion
+				scope:new_faith.religion = religion:kamuyism_religion
+				scope:new_faith.religion = religion:moism_religion
+				scope:new_faith.religion = religion:muism_religion
+				scope:new_faith.religion = religion:satsana_phi_religion
+				scope:new_faith.religion = religion:shamanism_religion
+				scope:new_faith.religion = religion:shintoism_religion
+				scope:new_faith.religion = religion:tolotang_religion
+				scope:new_faith.religion = religion:utaki_religion
 			}
 		}
 		BP_east_asia_trigger = yes
