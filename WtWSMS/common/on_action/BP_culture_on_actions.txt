@@ -189,7 +189,7 @@ historical_culture_ashkenazi = {
 						# Must be in central Europe
 						any_culture_county = {
 							percent >= 0.5
-							geographical_region = custom_ashkenaz
+							any_province = { geographical_region = custom_ashkenaz }
 						}
 					}
 					weight = {
@@ -203,6 +203,7 @@ historical_culture_ashkenazi = {
 					change_cultural_acceptance = {
 						target = culture:ashkenazi
 						value = 100
+						desc = ashkenazi_culture_created
 					}
 					culture:ashkenazi = {
 						reset_culture_creation_date = yes
@@ -211,7 +212,7 @@ historical_culture_ashkenazi = {
 						set_language_from = scope:patron_culture
 					}
 					
-					# Add minorities and exiles (inviting Ashkenazim occured historically)
+					# Add minorities and exiles (inviting Ashkenazim occurred historically)
 					scope:patron_culture.culture_head.capital_county = {
 						add_culture_minority_effect = {
 							CULTURE = culture:ashkenazi
@@ -265,7 +266,7 @@ historical_culture_ashkenazi = {
 						every_county = {
 							limit = {
 								county_has_specific_minority_culture_trigger = { CULTURE = culture:tzarfati }
-								culture = { has_same_language_group_as_trigger = { CULTURE = scope:patron_culture } }
+								culture = { has_same_language_group_as_trigger = { TARGET = scope:patron_culture } }
 							}
 							if = {
 								limit = { county_has_specific_large_minority_culture_trigger = { CULTURE = culture:tzarfati } }
@@ -341,7 +342,7 @@ historical_culture_radhanite = {
 						# Must be along the western head of the Silk Road
 						any_culture_county = {
 							percent >= 0.25
-							geographical_region = tgp_silk_road_occident_region
+							any_province = { geographical_region = tgp_silk_road_occident_region }
 						}
 					}
 					weight = {

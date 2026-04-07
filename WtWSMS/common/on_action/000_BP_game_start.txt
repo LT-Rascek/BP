@@ -1072,6 +1072,23 @@ learn_liturgical_language_if_not_already = {
 }
 add_innovations_as_required = {
 	effect = {
+		#All Jewish cultures should be Ancient Urbanites and Sanitation
+		every_culture_global = {
+			limit = {
+				has_cultural_pillar = heritage_israelite
+				NOT = { this = culture:juhuro } #Lived in the mountains
+				NOT = { this = culture:radhanite } #Iterant, mostly nomadic lifestyle
+			}
+			add_innovation = innovation_sanitation
+			add_innovation = innovation_ancient_urbanites
+		}
+		#Jews outside of the Levant should not have Camel Riders (as cool as the thought is)
+		culture:kochinim = { remove_innovation = innovation_war_camels }
+		culture:romaniote = { remove_innovation = innovation_war_camels }
+		culture:tzarfati = { remove_innovation = innovation_war_camels }
+		culture:ashkenazi = { remove_innovation = innovation_war_camels }
+		culture:radhanite = { remove_innovation = innovation_war_camels }
+		culture:sephardi = { remove_innovation = innovation_war_camels }
 		if = { #Armenians should have Cataphracts if you don't have the DLC for their Vanilla MAA
 			limit = {
 				NOR = {
