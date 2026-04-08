@@ -10,7 +10,7 @@
 			}
 			NOT = { exists = scope:swapped_position }
 		}
-		# Grant the ministry title if councillor doesn't have it
+		# Grant the ministry title if councilor doesn't have it
 		if = {
 			limit = {
 				NOT = { has_title = $MINISTER_TITLE$ }
@@ -65,12 +65,26 @@
 		}
 		
 		#Fix Government if needed
-		if = {
-			limit = {
-				NOT = { scope:new_minister = { has_government = roman_administrative_government } }
-				 is_landless_ruler = yes
+		switch = {
+			trigger = has_government
+			roman_administrative_government = {
+				if = {
+					limit = {
+						NOT = { scope:new_minister = { has_government = roman_administrative_government } }
+						 is_landless_ruler = yes
+					}
+					scope:new_minister = { change_government = roman_administrative_government }
+				}
 			}
-			scope:new_minister = { change_government = roman_administrative_government }
+			subroman_administrative_government = {
+				if = {
+					limit = {
+						NOT = { scope:new_minister = { has_government = subroman_administrative_government } }
+						 is_landless_ruler = yes
+					}
+					scope:new_minister = { change_government = subroman_administrative_government }
+				}
+			}
 		}
 		if = {
 			limit = { scope:new_minister.primary_title ?= { has_variable = is_supreme_roman_military_title } }
@@ -111,19 +125,18 @@
 			}
 		}
 
-		# Make them a minister if they don't have the council position
-		if = {
-			limit = {
-				NOT = { has_council_position = $MINISTER_POSITION$ }
-			}
-			top_liege = {
-				assign_councillor_type = {
-					type = $MINISTER_POSITION$
-					target = scope:new_minister
-					remove_existing_councillor = yes
-				}
-			}
-		}
+		#### NB: While this is part of the Vanilla effect, it seems to cause chain reactions in appointments sometimes...
+		# # Make them a minister if they don't have the council position
+		# if = {
+		# 	limit = { NOT = { has_council_position = $MINISTER_POSITION$ } }
+		# 	top_liege = {
+		# 		assign_councillor_type = {
+		# 			type = $MINISTER_POSITION$
+		# 			target = scope:new_minister
+		# 			remove_existing_councillor = yes
+		# 		}
+		# 	}
+		# }
 		# If we have any noble family vassals remaining, let's move them to where they are supposed to be
 		if = {
 			limit = {
@@ -224,7 +237,7 @@ fired_roman_minister_position_effect = {
 						root.primary_title.current_heir = {
 							got_roman_administrative_minister_position_effect = {
 								MINISTER_TITLE = scope:the_title
-								MINISTER_POSITION = councillor_marshal_roman
+								#MINISTER_POSITION = councillor_marshal_roman
 							}
 						}
 					}
@@ -242,7 +255,7 @@ fired_roman_minister_position_effect = {
 						root.primary_title.current_heir = {
 							got_roman_administrative_minister_position_effect = {
 								MINISTER_TITLE = scope:the_title
-								MINISTER_POSITION = councillor_chancellor_roman
+								#MINISTER_POSITION = councillor_chancellor_roman
 							}
 						}
 					}

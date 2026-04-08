@@ -986,7 +986,6 @@ BP_setup_capitals_476_feb = {
 }
 
 on_game_start_after_lobby = { on_actions = { bp_game_start_after_lobby_476_feb } }
-
 bp_game_start_after_lobby_476_feb = {
 	trigger = { current_date = 476.2.2 }
 	on_actions = {
@@ -1116,7 +1115,6 @@ BP_setup_federate_troops_476_feb_DLC = {
 		}
 	}
 }
-
 
 BP_setup_roman_council_476_feb = {
 	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }

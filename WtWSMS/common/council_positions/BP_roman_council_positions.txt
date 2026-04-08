@@ -8,11 +8,17 @@ councillor_chancellor_roman = {
 	}
 
 	can_fire = {
-		NOT = { has_realm_law = roman_chancellor_law }
+		trigger_if = {
+			limit = { has_realm_law = roman_chancellor_law }
+			NOT = { has_diarchy_active_parameter = unable_to_dismiss_diarch }
+		}
 	}
 
 	can_reassign = {
-		NOT = { has_realm_law = roman_chancellor_law }
+		trigger_if = {
+			limit = { has_realm_law = roman_chancellor_law }
+			NOT = { has_diarchy_active_parameter = unable_to_dismiss_diarch }
+		}
 	}
 
 	
@@ -95,7 +101,7 @@ councillor_chancellor_roman = {
 				root = {
 					got_roman_administrative_minister_position_effect = {
 						MINISTER_TITLE = scope:the_ministry_title
-						MINISTER_POSITION = councillor_chancellor_roman
+						#MINISTER_POSITION = councillor_chancellor_roman
 					}
 				}
 			}
@@ -133,11 +139,17 @@ councillor_marshal_roman = {
 	}
 
 	can_fire = {
-		NOT = { has_realm_law = roman_marshal_law }
+		trigger_if = {
+			limit = { has_realm_law = roman_marshal_law }
+			NOT = { has_diarchy_active_parameter = unable_to_dismiss_diarch }
+		}
 	}
 
 	can_reassign = {
-		NOT = { has_realm_law = roman_marshal_law }
+		trigger_if = {
+			limit = { has_realm_law = roman_marshal_law }
+			NOT = { has_diarchy_active_parameter = unable_to_dismiss_diarch }
+		}
 	}
 
 	modifier = {
@@ -193,7 +205,7 @@ councillor_marshal_roman = {
 				root = {
 					got_roman_administrative_minister_position_effect = {
 						MINISTER_TITLE = scope:the_ministry_title
-						MINISTER_POSITION = councillor_marshal_roman
+						#MINISTER_POSITION = councillor_marshal_roman
 					}
 				}
 			}
