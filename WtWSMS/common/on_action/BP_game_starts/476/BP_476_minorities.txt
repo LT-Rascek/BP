@@ -496,6 +496,17 @@ BP_minorities_476_european_byzantium = {
 			add_small_culture_to_county_effect = { CULTURE = culture:western_alan }
 			add_small_culture_to_county_effect = { CULTURE = culture:skirian }
 		}
+		#Illyrians
+		every_county = {
+			limit = {
+				this.culture = culture:greek
+				OR = {
+					this.kingdom = title:k_macedonia
+					this.kingdom = title:k_moesia_superior
+				}
+			}
+			add_minority_culture_granular_effect = { CULTURE = culture:illyrian }
+		}
 	}
 }
 
