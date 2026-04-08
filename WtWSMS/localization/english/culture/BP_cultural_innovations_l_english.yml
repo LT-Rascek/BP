@@ -35,7 +35,7 @@
  innovation_writing_desc: "Writing allows for the exchange, storage, and standardization of language and laws in both time and space and is a critical step in the development of a society."
  unlocks_all_scriptoria: "Required for all Scriptorium Buildings"
  adopt_high_tribal_government_as_a_vassal: "Enables changing [government|E] type to [high_tribal_government|E] if a liege has a more advanced government"
- high_titles_shatter_without_this_innovation: "Kingdoms and Empires of [tribal|E] rulers #EMP no longer#! shatter upon death of the holder (if that rule is enabled)"
+ high_titles_shatter_without_this_innovation: "[SelectLocalization(GetGlobalVariable('tribal_shatter_mechanic_enabled').IsSet, 'Kingdoms and Empires of tribal rulers #EMP no longer#! shatter upon death of the holder', '')]"
  innovation_social_stratification: "Social Stratification"
  innovation_social_stratification_desc: "The transition from a stateless to a state socieity involves the creations of a social hierarchy, which is necessary for chiefs to extend their power to their progeny."
  can_create_de_jure_kingdoms_if_settled: "Can create [de_jure|E] [kingdoms|E] with [organized_government|E] government"

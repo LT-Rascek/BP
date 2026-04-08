@@ -17,6 +17,7 @@ bp_game_start = {
 	on_actions = {
 		#Needs to be done first to avoid some errors
 		ccu_startup_debug
+		bp_set_global_variables
 		create_BP_artifacts
 		#Legal Stuff
 		setup_realm_and_title_succession_laws
@@ -112,6 +113,16 @@ ccu_startup_debug = {
 					}
 				}
 			}
+		}
+	}
+}
+
+bp_set_global_variables = {
+	effect = {
+		#Set some global variables per rules for localizations
+		if = {
+			limit = { has_game_rule = tribal_shatter_mechanic_enabled }
+			set_global_variable = tribal_shatter_mechanic_enabled
 		}
 	}
 }
