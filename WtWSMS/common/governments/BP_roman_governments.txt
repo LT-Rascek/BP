@@ -181,7 +181,7 @@ roman_administrative_government = {
 		men_at_arms_recruitment_cost = 1
 	}
 
-	compatible_government_type_succession = { roman_federate_government }
+	compatible_government_type_succession = { roman_administrative_government }
 
 	# Use flags instead of has_government for moddability if possible (i.e., wherever not visible to the player).
 	flags = {
@@ -249,7 +249,7 @@ roman_federate_government = {
 	valid_holdings = { tribal_holding city_holding temple_citadel_holding }
 	required_county_holdings = { castle_holding city_holding church_holding }
 
-	compatible_government_type_succession = { subroman_administrative_government roman_administrative_government }
+	compatible_government_type_succession = { roman_federate_government }
 
 	vassal_contract_group = roman_federate
 
