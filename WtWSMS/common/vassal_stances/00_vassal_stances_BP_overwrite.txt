@@ -268,6 +268,7 @@ zealot = {
 }
 
 ##### Changed from Vanilla: Greco-Roman Social Traditions won't be minority stances with each other
+##### Changed from Vanilla: Greco-Roman Social Traditions can only be if they are oppressed
 minority = {
 	score = 1000
 	heir_score = {
@@ -453,6 +454,15 @@ minority = {
 		NAND = {
 			culture = { has_cultural_parameter = greco_roman_social_tradition }
 			scope:liege.culture = { has_cultural_parameter = greco_roman_social_tradition }
+		}
+		#If in a Roman or Sub-Roman realm, only trigger if there's 
+		trigger_if = {
+			limit = {
+				scope:liege = { government_has_flag = is_a_roman_government }
+				culture = { has_cultural_parameter = greco_roman_social_tradition }
+				NOT = { scope:liege.culture = { has_cultural_parameter = greco_roman_social_tradition } }
+			}
+			scope:liege = { has_realm_law_flag = roman_characters_can_be_minorities }
 		}
 		##### Changed from Vanilla ^^^^^
 		scope:liege = {

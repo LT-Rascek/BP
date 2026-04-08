@@ -1,0 +1,73 @@
+﻿#Magister Officiorum
+
+#Basically a spouse/vizier + bestow royal favor; they're running the realm
+task_manage_realm_roman = {
+	position = councillor_chancellor_roman
+	clone = task_vizier_default
+
+	asset = {
+		icon = "gfx/interface/icons/court_position_task_types/court_artificer_court_position_task_stewardship.dds"
+		background = "gfx/interface/buttons/button_round_bg.dds"
+		frame = "gfx/interface/buttons/button_round_frame.dds"
+		glow = "gfx/particles/halo.dds"
+	}
+}
+task_court_politics_roman = {
+	position = councillor_chancellor_roman
+	clone = task_vizier_court_politics
+	
+	asset = {
+		icon = "gfx/interface/icons/council_task_types/task_domestic_affairs.dds"
+		background = "gfx/interface/buttons/button_round_bg.dds"
+		frame = "gfx/interface/buttons/button_round_frame.dds"
+		glow = "gfx/particles/halo.dds"
+	}
+}
+task_chivalry_roman = {
+	position = councillor_chancellor_roman
+	clone = task_vizier_chivalry
+
+	asset = {
+		icon = "gfx/interface/icons/court_position_task_types/grand_guardian_court_position_task_instill_martial_discipline.dds"
+		background = "gfx/interface/buttons/button_round_bg.dds"
+		frame = "gfx/interface/buttons/button_round_frame.dds"
+		glow = "gfx/particles/halo.dds"
+	}
+}
+task_manage_domain_roman = {
+	position = councillor_chancellor_roman
+	clone = task_vizier_manage_domain
+
+	asset = {
+		icon = "gfx/interface/icons/court_position_task_types/seneschal_improve_domain.dds"
+		background = "gfx/interface/buttons/button_round_bg.dds"
+		frame = "gfx/interface/buttons/button_round_frame.dds"
+		glow = "gfx/particles/halo.dds"
+	}
+}
+task_court_intrigue_roman = {
+	position = councillor_chancellor_roman
+	clone = task_vizier_court_intrigue
+	
+	asset = {
+		icon = "gfx/interface/icons/council_task_types/task_support_schemes.dds"
+		background = "gfx/interface/buttons/button_round_bg.dds"
+		frame = "gfx/interface/buttons/button_round_frame.dds"
+		glow = "gfx/particles/halo.dds"
+	}
+}
+task_patronage_roman = {
+	position = councillor_chancellor_roman
+	clone = task_vizier_patronage
+	
+	asset = {
+		icon = "gfx/interface/icons/court_position_task_types/court_tutor_improve_others.dds"
+		background = "gfx/interface/buttons/button_round_bg.dds"
+		frame = "gfx/interface/buttons/button_round_frame.dds"
+		glow = "gfx/particles/halo.dds"
+	}
+}
+task_bestow_royal_favor_roman = {
+	position = councillor_chancellor_roman
+	clone = task_bestow_royal_favor
+}

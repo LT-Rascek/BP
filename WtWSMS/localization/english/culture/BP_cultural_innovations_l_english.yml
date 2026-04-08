@@ -5,7 +5,9 @@
  #General
  improves_migration_tribal_odds: "Reduces the chance a [castle_holding|E] converts to #V $building_type_tribe_01$#! during a [major_migration_war|E]."
  greatly_improves_migration_tribal_odds: "#EMP Greatly#! reduces the chance a [castle_holding|E] converts to #V $building_type_tribe_01$#! during a [major_migration_war|E]."
- required_to_adopt_organized_government_during_migration: "#V Required#! to be able to adopt [organized_government|E] during migrations."
+ required_to_adopt_organized_government_during_migration: "#V Required#! to be able to adopt [organized_government|E] during migrations"
+ increases_chance_subroman_administrative_vassals_increase_aristocracy: "[SelectLocalization( HasDlcFeature( 'landless_playable' ), '#EMP Increases#! the chance that #V $subroman_administrative_government|q$#! vassals achieve more aristocratic inheritance laws', 'BLANK' )]"
+ reduces_chance_subroman_administrative_vassals_increase_aristocracy: "[SelectLocalization( HasDlcFeature( 'landless_playable' ), '#EMP Decreases#! the chance that #V $subroman_administrative_government|q$#! vassals achieve more aristocratic inheritance laws', 'BLANK' )]"
  BLANK: ""
  #Military Innovations
  innovation_primitive_leverage: "Primitive Leverage"
@@ -39,6 +41,7 @@
  can_create_de_jure_kingdoms_if_settled: "Can create [de_jure|E] [kingdoms|E] with [organized_government|E] government"
  unlocks_megaliths: "Unlocks the Megalith line of buildings"
  allows_confederation_to_kingdom: "Enables the #V $confederation_kingdom_decision$#! [decision|E]"
+ unlocks_domicile_buildings: "[SelectLocalization( HasDlcFeature( 'landless_playable' ), 'Unlocks the first 3 levels of administrative main domicile buildings', 'BLANK' )]
  #######################
  # Classical Antiquity #
  #######################
@@ -70,6 +73,7 @@
  innovation_state_religion_effect: "Enables [faith_reformation|E] and [faith_creation|E]"
  innovation_state_religion_can_demand_vassal_conversion: "Can [demand_conversion|E] of [organized_government|E] [vassals|E] with [organized|E] [faiths|E]"
  innovation_state_religion_allows_organized_conversion: "If the [top_liege|E]'s [culture|E] has this innovation, the [top_liege|E] and [vassals|E] may convert counties of [organized_government|E] [vassals|E] with different faiths"
+ innovation_state_religion_enables_state_faith_conversion_bonus: "Polities with a [state_faith|E] now have a conversion bonus for converting [counties|E] to that [faith|E]"
  #Cultural Innovations
  reduce_develop_county_penalty_special_urbanizations: "Counties now reach the maximum [existing_development|E] penalty at 50 [development|E]"
  innovation_roman_administration: "Roman Administration"
@@ -78,8 +82,6 @@
  innovation_roman_concrete: "Roman Concrete"
  innovation_roman_concrete_desc: "Roman concrete, or #italic opus caementicium#!, was a material used for construction in Ancient Rome, particularly in Rome's many enduring monuments such as the Pantheon."
  unlocks_foederati_contract_for_roman_administrative: "Unlocks the #high Foederatus#! tributaries with Roman Governments."
- innovation_scholae: "Scholae"
- innovation_scholae_desc: "The #italic Scholae Palatinae#! were the elite guard unit of the Roman Empire, instituted by Constantine the Great as a replacement for the Praetorian Guard."
  innovation_marzban: "Marzban"
  innovation_marzban_desc: "Marzban were a class of margraves in both the Parthian and Sassanid Empires."
  unlock_marzban_contract: "Unlocks the #high $special_contract_marzban_short$#! [feudal_contract|E]"
@@ -95,9 +97,6 @@
  innovation_ancient_urbanites_desc: "This culture has been urbanized for millennia and understands how to build cities more intuitively than those who more recently developed urbanization."
  #For various urbanization effects
  very_early_urbanization_effect: "Unlocks first 4 levels of buildings\n$EFFECT_LIST_BULLET$Unlocks first level of Duchy Buildings\n$EFFECT_LIST_BULLET$Can build level 1 holdings\n$EFFECT_LIST_BULLET$With sufficient development, can build level two holdings in the $culture_era_classical_antiquity$ Era and $culture_era_late_antiquity$ Era"
- #Men-At-Arms Innovations
- innovation_ballista: "Ballista"
- innovation_ballista_desc: "Originally developed by the Greeks, the later ballistas of the Roman Empire evolved into feared siege weapons, playing crucial roles in such battles as Alesia."
  ##################
  # Late Antiquity #
  ##################

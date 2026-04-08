@@ -194,7 +194,9 @@ innovation_mundium = {
 
 	unlock_law = high_tribal_organization_2
 	unlock_law = prefeudal_authority_2
+	
 	custom = can_create_de_jure_empires_if_settled
+	custom = increases_chance_subroman_administrative_vassals_increase_aristocracy
 
 	flag = global_regular
 	flag = late_antiquity_era_regular
@@ -206,11 +208,15 @@ innovation_state_religion = {
 	icon = @leadership_1
 	
 	custom = unlocks_temple_01_for_advanced_governments
+	
 	unlock_building = monastic_schools_01
+	
+	unlock_law = high_tribal_organization_2
 	
 	custom = innovation_state_religion_effect
 	custom = innovation_state_religion_can_demand_vassal_conversion
 	custom = innovation_state_religion_allows_organized_conversion
+	custom = innovation_state_religion_enables_state_faith_conversion_bonus
 	
 	flag = global_regular
 	flag = late_antiquity_era_regular
@@ -252,6 +258,7 @@ innovation_roman_administration = {
 
 	custom = roman_government_effect
 	custom = unlocks_foederati_contract_for_roman_administrative
+	custom = reduces_chance_subroman_administrative_vassals_increase_aristocracy
 
 	flag = global_regional
 	flag = late_antiquity_era_regional
@@ -266,6 +273,7 @@ innovation_roman_concrete = {
 
 	custom = reduce_develop_county_penalty_special_urbanizations
 	custom = very_early_urbanization_effect
+	custom = unlocks_domicile_buildings
 
 	character_modifier = {
 		build_gold_cost = -0.10
@@ -274,27 +282,8 @@ innovation_roman_concrete = {
 
 	flag = global_regional
 	flag = late_antiquity_era_regional
-}
-innovation_scholae = {
-	skill = martial
-	group = culture_group_military
-	culture_era = culture_era_classical_antiquity
-	icon = @maa_01
-	
-	potential = {
-		OR = {
-			has_cultural_parameter = unlock_innovation_roman_military
-			has_cultural_parameter = unlock_innovation_byzantine_military
-		}
-	}
-
-	character_modifier = {
-		men_at_arms_cap = 2
-		men_at_arms_limit = -1
-	}
-
-	flag = global_regional
-	flag = late_antiquity_era_regional
+	#Functional Flags
+	flag = unlocks_first_three_domiciles
 }
 ## Persian Innovations
 innovation_marzban = {
@@ -361,6 +350,7 @@ innovation_indian_urbanization = {
 
 	custom = reduce_develop_county_penalty_special_urbanizations
 	custom = very_early_urbanization_effect
+	custom = unlocks_domicile_buildings
 	
 	character_modifier = {
 		building_slot_add = 1
@@ -368,6 +358,8 @@ innovation_indian_urbanization = {
 
 	flag = global_regional
 	flag = late_antiquity_era_regional
+	#Functional Flags
+	flag = unlocks_first_three_domiciles
 }
 innovation_chinese_urbanization = {
 	skill = stewardship
@@ -379,6 +371,7 @@ innovation_chinese_urbanization = {
 
 	custom = reduce_develop_county_penalty_special_urbanizations
 	custom = very_early_urbanization_effect
+	custom = unlocks_domicile_buildings
 	
 	character_modifier = {
 		building_slot_add = 1
@@ -386,6 +379,8 @@ innovation_chinese_urbanization = {
 
 	flag = global_regional
 	flag = late_antiquity_era_regional
+	#Functional Flags
+	flag = unlocks_first_three_domiciles
 }
 innovation_ancient_urbanites = {
 	skill = stewardship
@@ -406,6 +401,7 @@ innovation_ancient_urbanites = {
 
 	custom = reduce_develop_county_penalty_special_urbanizations
 	custom = very_early_urbanization_effect
+	custom = unlocks_domicile_buildings
 
 	character_modifier = {
 		building_slot_add = 1
@@ -413,55 +409,10 @@ innovation_ancient_urbanites = {
 
 	flag = global_regional
 	flag = late_antiquity_era_regional
+	#Functional Flags
+	flag = unlocks_first_three_domiciles
 }
 #MAA Innovations
-innovation_ballista = {
-	skill = learning
-	group = culture_group_military
-	culture_era = culture_era_classical_antiquity
-	icon = @siege_weapons
-
-	potential = {
-		OR = {
-			has_cultural_parameter = unlock_innovation_roman_military
-			has_cultural_parameter = unlock_innovation_byzantine_military
-		}
-	}
-
-	unlock_maa = ballista
-
-	flag = global_regional
-	flag = late_antiquity_era_regional
-}
-innovation_cataphracts = {
-	skill = martial
-	group = culture_group_military
-	culture_era = culture_era_classical_antiquity
-	icon = @special_maa_01
-
-	potential = {
-		OR = {
-			has_cultural_parameter = unlock_innovation_byzantine_military
-			has_cultural_parameter = unlocks_cataphract_innovation
-		}
-	}
-
-	unlock_maa = cataphract
-
-	flag = global_maa
-}
-innovation_legionnaires = {
-	skill = martial
-	group = culture_group_military
-	culture_era = culture_era_classical_antiquity
-	icon = @raised_banner
-
-	potential = { has_cultural_parameter = unlock_innovation_roman_military }
-
-	unlock_maa = praetorian
-
-	flag = global_maa
-}
 innovation_repeating_crossbow = {
 	skill = martial
 	group = culture_group_military

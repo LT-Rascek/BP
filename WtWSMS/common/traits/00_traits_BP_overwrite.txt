@@ -397,7 +397,7 @@ augustus = {
 
 	##### Changed from Vanilla vvvvv
 	culture_modifier = {
-		parameter = roman_cultural_trait_bonus
+		parameter = roman_legal_traits_are_valued
 		same_culture_opinion = 20
 	}
 	##### Changed from Vanilla ^^^^^
@@ -414,3 +414,482 @@ augustus = {
 		}
 	}
 }
+
+##### Changed from Vanilla: Tied into Roman Culture Stuff
+august = {
+	category = lifestyle
+	
+	diplomacy = 2
+	martial = 1
+	monthly_prestige = 1
+	flag = initial_legitimacy_boost
+	
+	ruler_designer_cost = 50
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_august_desc
+			}
+			desc = trait_august_character_desc
+		}
+	}
+
+	#AI Values
+	ai_energy = 20
+	ai_amenity_target_baseline = 0.2
+	ai_amenity_spending = 0.1
+	
+	compatibility = {
+		diplomat = @pos_compat_medium
+		family_first = @pos_compat_medium
+		august = @pos_compat_medium
+		gregarious = @pos_compat_low
+		shy = @neg_compat_low
+	}
+	
+	##### Changed from Vanilla vvvvv
+	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
+		parameter = roman_popular_opinion_traits_bonus
+		county_opinion_add = 5
+	}
+	##### Changed from Vanilla ^^^^^
+}
+
+##### Changed from Vanilla: Tied into Roman Culture Stuff
+overseer = {
+	category = lifestyle
+
+	stewardship = 2
+	martial = 2
+	monthly_county_control_growth_add = 0.5
+	epidemic_resistance = 5
+
+	culture_modifier = {
+		parameter = martial_traits_give_out_hcav_bonus
+		heavy_cavalry_recruitment_cost_mult = -0.1
+		heavy_cavalry_maintenance_mult = -0.1
+	}
+	
+	ruler_designer_cost = 50
+
+	ai_rationality = 20
+
+	compatibility = {
+		strategist = @pos_compat_medium
+		overseer = @pos_compat_medium
+		gallant = @pos_compat_medium
+		brave = @pos_compat_low
+		craven = @neg_compat_low
+	}
+	
+	##### Changed from Vanilla vvvvv
+	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
+		parameter = roman_popular_opinion_traits_bonus
+		county_opinion_add = 5
+	}
+	##### Changed from Vanilla ^^^^^
+}
+
+##### Changed from Vanilla: Tied into Roman Culture Stuff
+administrator = {
+	category = lifestyle
+
+	stewardship = 3
+	diplomacy = 1
+	parochial_opinion = 10
+	vassal_opinion = 5
+	tributary_opinion = 5
+	epidemic_resistance = 10
+	
+	ruler_designer_cost = 50
+
+	culture_modifier = {
+		parameter = legalistic_administrator_bonuses
+		long_reign_bonus_mult = 0.25
+	}
+
+	culture_modifier = {
+		parameter = stewardship_traits_give_out_cav_bonus
+		archer_cavalry_max_size_add = 4 #change it
+		heavy_cavalry_max_size_add = 4
+		light_cavalry_max_size_add = 4
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_administrator_desc
+			}
+			desc = trait_administrator_character_desc
+		}
+	}
+
+	ai_rationality = 20
+	ai_energy = 10
+	ai_amenity_spending = 0.1
+
+	compatibility = {
+		architect = @pos_compat_medium
+		administrator = @pos_compat_medium
+		avaricious = @pos_compat_medium
+		diligent = @pos_compat_low
+		lazy = @neg_compat_low
+	}
+	
+	##### Changed from Vanilla vvvvv
+	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
+		parameter = roman_popular_opinion_traits_bonus
+		county_opinion_add = 5
+	}
+	##### Changed from Vanilla ^^^^^
+}
+
+##### Changed from Vanilla: Tied into Roman Culture Stuff
+torturer = {
+	category = lifestyle
+
+	dread_gain_mult = 0.5
+	prowess = 4
+	levy_size = 0.1
+	enemy_hostile_scheme_phase_duration_add = medium_scheme_phase_duration_malus_value
+	
+	ruler_designer_cost = 50
+
+	ai_honor = -30
+	ai_vengefulness = 20
+	ai_boldness = 20
+	
+	compatibility = {
+		schemer = @pos_compat_medium
+		seducer = @pos_compat_medium
+		torturer = @pos_compat_medium
+		deceitful = @pos_compat_low
+		honest = @neg_compat_low
+	}
+	
+	##### Changed from Vanilla vvvvv
+	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
+		parameter = roman_popular_opinion_traits_malus
+		county_opinion_add = -5
+	}
+	##### Changed from Vanilla ^^^^^
+}
+
+##### Changed from Vanilla: Tied into Roman Culture Stuff
+arbitrary = {
+	category = personality
+	opposites = {
+		just
+	}
+	stewardship = -2
+	learning = -1
+	intrigue = 3
+	
+	stress_gain_mult = -0.5
+	dread_baseline_add = 15
+
+	culture_modifier = {
+		parameter = palace_politics_trait_bonuses
+		monthly_influence = 0.15
+	}
+	
+	vassal_opinion = -5
+	
+	flag = can_dismiss_hooks_interaction
+	flag = trait_unlocks_t2_arbitrary_arrests
+	
+	ruler_designer_cost = 30
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_arbitrary_desc
+			}
+			desc = trait_arbitrary_character_desc
+		}
+	}
+
+	ai_honor = dominant_negative_ai_value
+	ai_rationality = low_negative_ai_value
+	ai_zeal = very_low_negative_ai_value
+	ai_compassion = very_low_negative_ai_value
+	ai_boldness = very_low_positive_ai_value
+
+	compatibility = {
+		eccentric = @pos_compat_medium
+		arbitrary = @pos_compat_low
+		fickle = @pos_compat_low
+		just = @neg_compat_medium
+		zealous = @neg_compat_low
+		stubborn = @neg_compat_low
+		honest = @neg_compat_low
+	}
+	
+	##### Changed from Vanilla vvvvv
+	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
+		parameter = roman_popular_opinion_traits_malus
+		county_opinion_add = -5
+	}
+	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
+		parameter = roman_cultural_trait_opinion_bonus
+		same_culture_opinion = 5
+	}
+	##### Changed from Vanilla ^^^^^
+}
+
+##### Changed from Vanilla: Tied into Roman Culture Stuff
+just = {
+	category = personality
+	opposites = {
+		arbitrary
+	}
+	stewardship = 2
+	learning = 1
+	intrigue = -3
+	
+	parochial_opinion = 15
+	minority_opinion = 15
+	opposite_opinion = -10
+	same_opinion = 10
+	flag = initial_legitimacy_boost
+	
+	culture_modifier = {
+		parameter = just_trait_gives_bonuses
+		monthly_prestige_gain_mult = 0.05
+		diplomacy_per_prestige_level = 1
+	}
+	
+	culture_modifier = {
+		parameter = honorable_trait_bonuses
+		same_culture_opinion = 10
+		monthly_prestige_gain_mult = 0.05
+	}
+
+	ruler_designer_cost = 40
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_just_desc
+			}
+			desc = trait_just_character_desc
+		}
+	}
+
+	ai_honor = dominant_positive_ai_value
+	ai_zeal = very_low_positive_ai_value
+	ai_vengefulness = very_low_positive_ai_value
+	ai_rationality = low_positive_ai_value
+	ai_amenity_target_baseline = 0.05
+	ai_amenity_spending = 0.05
+
+	compatibility = {
+		just = @pos_compat_high
+		zealous = @pos_compat_medium
+		honest = @pos_compat_medium
+		compassionate = @pos_compat_medium
+		gallant = @pos_compat_medium
+		trusting = @pos_compat_low
+		brave = @pos_compat_low
+		arbitrary = @neg_compat_high
+		deceitful = @neg_compat_medium
+		sadistic = @neg_compat_medium
+		callous = @neg_compat_medium
+		fickle = @neg_compat_low
+		greedy = @neg_compat_low
+		eccentric = @neg_compat_low
+	}
+	
+	##### Changed from Vanilla vvvvv
+	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
+		parameter = roman_popular_opinion_traits_bonus
+		county_opinion_add = 5
+	}
+	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
+		parameter = roman_cultural_trait_opinion_bonus
+		same_culture_opinion = 5
+	}
+	##### Changed from Vanilla ^^^^^
+}
+
+##### Changed from Vanilla: Tied into Roman Culture Stuff
+viking = {
+	category = fame
+
+	martial = 2
+	prowess = 3
+	monthly_prestige = 0.3
+	
+	same_opinion = 5
+	
+	ruler_designer_cost = 25
+
+	name = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					exists = this
+					culture = { has_innovation = innovation_longboats }
+				}
+				desc = trait_viking_has_longships
+			}
+			desc = trait_viking_fallback
+		}
+	}
+	
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_viking_desc
+			}
+			desc = trait_viking_character_desc
+		}
+	}
+
+	ai_energy = 10
+	ai_boldness = 10
+	
+	##### Changed from Vanilla vvvvv
+	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
+		parameter = roman_popular_opinion_traits_malus
+		county_opinion_add = -5
+	}
+	##### Changed from Vanilla ^^^^^
+}
+
+##### Changed from Vanilla: Tied into Roman Culture Stuff
+peasant_leader = {
+	category = fame
+
+	same_opinion = 25
+	general_opinion = -10
+	county_opinion_add = 10
+	army_maintenance_mult = -0.5
+	
+	ruler_designer_cost = 100
+
+	culture_modifier = {
+		parameter = grants_to_lowborns_bonuses
+		development_growth_factor = 0.2
+		county_fertility_growth_mult = medium_county_fertility_growth_gain
+	}
+
+	track = {
+		33 = {
+			enemy_terrain_advantage = -0.25
+		}
+		66 = {
+			advantage = 1
+			levy_siege = 0.1
+		}
+		100 = {
+			advantage = 2
+			county_opinion_add = 20
+			ignore_negative_culture_opinion = yes
+			ignore_different_faith_opinion = yes
+		}
+	}
+	name = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					exists = this
+					has_trait_xp = {
+						trait = peasant_leader
+						value >= 100
+					}
+				}
+				desc = trait_peasant_leader_3
+			}
+			triggered_desc = {
+				trigger = {
+					exists = this
+					has_trait_xp = {
+						trait = peasant_leader
+						value >= 66
+					}
+				}
+				desc = trait_peasant_leader_2
+			}
+			triggered_desc = {
+				trigger = {
+					exists = this
+					has_trait_xp = {
+						trait = peasant_leader
+						value >= 33
+					}
+				}
+				desc = trait_peasant_leader_1
+			}
+			desc = trait_peasant_leader
+		}
+	}
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_peasant_leader_desc
+			}
+			desc = trait_peasant_leader_character_desc
+		}
+	}
+	
+	##### Changed from Vanilla vvvvv
+	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
+		parameter = roman_cultural_trait_opinion_malus
+		same_culture_opinion = -10
+	}
+	##### Changed from Vanilla ^^^^^
+}
+
+##### Changed from Vanilla: Tied into Roman Culture Stuff
+populist_leader = {
+	category = fame
+	icon = "populist_leader.dds"
+
+	county_opinion_add = 15
+	courtly_opinion = -30
+	parochial_same_faith_opinion = 10
+	parochial_same_culture_opinion = 10
+	army_maintenance_mult = -0.5
+	
+	ruler_designer_cost = 150
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_populist_leader_desc
+			}
+			desc = trait_populist_leader_character_desc
+		}
+	}
+	
+	##### Changed from Vanilla vvvvv
+	culture_modifier = { #NB: Only applies if the char's culture has the associated tradition
+		parameter = roman_cultural_trait_opinion_malus
+		same_culture_opinion = -20
+	}
+	##### Changed from Vanilla ^^^^^
+}
+

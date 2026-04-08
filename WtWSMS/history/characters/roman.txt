@@ -125,6 +125,7 @@
 
 #Removed: 31125
 
+#31126-31128: Pisan Republic Holders
 31126 = {
 	name = "Urbanus"
 	# Urbanus Menenius
@@ -3426,6 +3427,7 @@
 	475.10.31 = {
 		give_nickname = nick_augustulus #Starts being called Augustulus (diminuative of Augustus)
 	}
+	476.9.4 = { trait = deposed }
 	515.1.1 = { death = yes }
 }
 
@@ -3872,30 +3874,19 @@
 	}
 }
 
-470052 = {
-	name = "Beatus" # Governor of Liguria, "Beatus-Probus-Beatus" family
-	dynasty = ligurian_dynn_aetius # Fictional dynasty, not related to Flavius Aetius
-	religion = "nicene"
-	culture = "roman"
-	430.1.1 = {
-		birth = yes
-	}
-	489.1.1 = {
-		death = yes
-	}
-}
+#470052: Moved to roman_ck3.txt
 
 470053 = {
-	name = "Pierius"
-	dynasty = 10424632
+	name = "Pierius" #PLRE 2 Pierius 5
+	dynasty = dynn_PLRE2_pierius #Can't find any evidence that Pierius 5 is linked to Aetius
 	religion = "nicene"
 	culture = "roman"
-	455.1.1 = {
-		birth = yes
-	}
-	489.1.1 = {
-		death = yes
-	}
+	#He was probably reasonably distinguished by Odoacer's revolt, being a Vir Illustris,
+	#So he should be in his 40s at the earliest
+	425.1.1 = { birth = yes }
+	445.1.1 = { trait = senator_west }
+	470.1.1 = { set_relation_friend = character:55 } #Makes it make sense that he's linked to Odoacer
+	489.1.1 = { death = yes }
 }
 
 470056 = {
@@ -4202,7 +4193,7 @@
 	}
 	474.6.1 = { #Rivalries set elsewhere
 		add_pressed_claim = title:h_western_roman_empire
-		employer = 175110
+		#employer = 175110 (set by on-action now)
 	}
 	490.1.1 = {
 		death = yes
@@ -5001,7 +4992,7 @@
 	}
 }
 
-1000509 = {
+1000509 = { #PLRE Vol 2 Probus 4
 	name = "Probus"
 	# Great Nephew of Avitus
 	religion = nicene
@@ -5589,19 +5580,15 @@
 
 1001111 = {
 	name = "Aspasius"
-	# Bishop of Auch/Eauze until 555
+	# Bishop of Auch/Eauze until 560
+	#NB: not really recorded until 533; assuming being 45 at the earliest to be a bishop
+	# (it's around the early 50s today), he'd be born around 488. So have him born around
+	# 476 to 480
 	religion = nicene
 	culture = romano_gallic
 	trait = "zealous"
-	455.1.1 = {
-		birth = yes
-	}
-	475.1.1 = {
-		add_spouse = 1005006
-	}
-	555.1.1 = {
-		death = yes
-	}
+	476.2.2 = { birth = yes }
+	560.1.1 = { death = yes }
 }
 
 1001112 = {
@@ -9147,8 +9134,8 @@
 		trait = "education_martial_2"
 	}
 	474.1.1 = { set_relation_lover = character:1001003 } #Zenonis
-	476.2.2 = { employer = 145226 } #Basiliskos
-	476.8.15 = { employer = 70515 } #Zenon again
+	#476.2.2 = { employer = 145226 } #Basiliskos
+	#476.8.15 = { employer = 70515 } #Zenon again
 	477.6.1 = {
 		death = {
 			death_reason = death_murder_known

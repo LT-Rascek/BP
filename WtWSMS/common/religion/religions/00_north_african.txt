@@ -242,7 +242,7 @@
 			holy_site = ghirza
 			
 			# tenets
-			doctrine = tenet_egyptian_syncretism
+			doctrine = tenet_egyptian_syncretism_pagan_only
 			doctrine = tenet_unrelenting_faith
 			doctrine = tenet_esotericism
 		}
@@ -325,10 +325,12 @@
 			holy_site = carthage
 			holy_site = leptis_magna
 
+			doctrine = doctrine_roman_polytheist
+
 			# tenets
 			doctrine = tenet_communal_identity
 			doctrine = tenet_ancestor_worship
-			doctrine = tenet_hellenic_syncretism
+			doctrine = tenet_hellenic_syncretism_pagan_only
 		}
 		#WtWSMS diffs: human sacrifice, hellenism syncretic
 		mastimani = {# Mastimani
@@ -345,9 +347,11 @@
 			holy_site = carthage
 			holy_site = leptis_magna
 
+			doctrine = doctrine_roman_polytheist
+
 			doctrine = tenet_ancestor_worship
 			doctrine = tenet_human_sacrifice
-			doctrine = tenet_hellenic_syncretism
+			doctrine = tenet_hellenic_syncretism_pagan_only
 			
 			localization = {
 				HighGodName = mastimani_high_god_name

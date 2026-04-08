@@ -1,0 +1,135 @@
+﻿@correct_culture_primary_score = 100
+@better_than_the_alternatives_score = 50
+@always_primary_score = 1000
+@never_primary_score = -1000
+
+#Romans
+c_nf_roman_dynn_Caecina = {
+	color = { 100 100 100 }
+	capital = c_ravenna
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+c_nf_roman_dynn_Avitus = {
+	color = { 100 100 100 }
+	capital = c_vaucouleurs
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+c_nf_roman_dynn_PLRE2Pierius5 = { #Pierius was a "Vir Illustris", so he was part of the Senate and of high standing
+	color = { 100 100 100 }
+	capital = c_ravenna
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+#Ligurian Families
+c_nf_roman_ligurian_dynn_beatus = { #Probus-Beatus-Probus Family in Liguria, mentioned by Ennodius
+	color = { 100 100 100 }
+	capital = c_lombardia
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+c_nf_roman_ligurian_dynn_gaudiosus = {
+	color = { 100 100 100 }
+	capital = c_como
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+c_nf_roman_ligurian_dynn_faustinus = {
+	color = { 100 100 100 }
+	capital = c_genoa
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+#Skirians
+c_nf_skirian_dynn_thorciling = {
+	color = { 100 100 100 }
+	capital = c_ravenna
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+c_nf_skirian_dynn_braching = {
+	color = { 100 100 100 }
+	capital = c_ravenna
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+c_nf_skirian_dynn_tufing = {
+	color = { 100 100 100 }
+	capital = c_ravenna
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}

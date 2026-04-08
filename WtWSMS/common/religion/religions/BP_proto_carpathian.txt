@@ -228,15 +228,20 @@
 			holy_site = giurgiu
 			holy_site = chilia #Replaces belgorod as belgorod is a modern-ish city
 
+			doctrine = doctrine_roman_polytheist
+
 			#Generic pagan tenets
 			doctrine = tenet_cthonic_redoubts
 			doctrine = tenet_ancestor_worship
-			doctrine = tenet_hellenic_syncretism
+			doctrine = tenet_hellenic_syncretism_pagan_only
 			
 			holy_order_names = {
 				{ name = holy_order_messengers_of_zalmoxis }
 				{ name = holy_order_dracones }
 			}
+			
+			#Branch
+			doctrine = special_doctrine_chernyakhov_complex
 		}
 		illyrian_pagan = {
 			color = { 0.6 0.4 0.3 }
@@ -376,10 +381,12 @@
 			holy_site = giurgiu
 			holy_site = chilia #Replaces belgorod as belgorod is a modern-ish city
 
+			doctrine = doctrine_roman_polytheist
+
 			#Generic pagan tenets
 			doctrine = tenet_warmonger
 			doctrine = tenet_ethnic_religion
-			doctrine = tenet_hellenic_syncretism
+			doctrine = tenet_hellenic_syncretism_pagan_only
 			
 			holy_order_names = {
 				{ name = holy_order_messengers_of_zalmoxis }

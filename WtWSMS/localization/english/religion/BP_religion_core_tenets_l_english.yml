@@ -111,9 +111,11 @@
  doctrine_parameter_hellenism_syncretic_recipient_opinion_active: "Mutual [EmptyScope.ScriptValue('hellenism_syncretic_mutual_opinion_bonus_value')|=+0] [opinion|E] bonus with [faiths|E] that have the $tenet_hellenic_syncretism_name$ [core_tenet|E]"
  doctrine_parameter_opinion_of_hellenism_syncretic_actor_opinion_active: ""
  hellenism_syncretic_actor_opinion_active_county_opinion_name: "$faith_syncretic_popular_opinion_active_control$"
+ tenet_hellenic_syncretism_pagan_only_name: "$tenet_hellenic_syncretism_name$"
+ tenet_hellenic_syncretism_pagan_only_desc: "The universe is vast, and our gods are the gods of the Romans, albeit under different guises."
  #Egyptian Paganism
- tenet_egyptian_syncretism_name: "Egyptian Syncretism"
- tenet_egyptian_syncretism_desc: "Although we are not of the lands of the River, their ways convey deeper truths than other infidel faiths."
+ tenet_egyptian_syncretism_pagan_only_name: "Egyptian Syncretism"
+ tenet_egyptian_syncretism_pagan_only_desc: "Although we are not of the lands of the River, their ways convey deeper truths than other infidel faiths."
  doctrine_parameter_hostility_override_special_doctrine_is_egyptian_faith: "Considers Egyptian [faiths|E] and is considered by Egyptian $game_concept_faiths$ to be [GetHostilityLevelName( TOKEN_PARAMETER.GetIntValue )|V] instead of $hostility_hostile_tooltippable$"
  doctrine_parameter_egyptian_syncretic_actor_opinion_active: "Mutual [EmptyScope.ScriptValue('egyptian_syncretic_mutual_opinion_bonus_value')|=+0] [opinion|E] bonus with Egyptian [faiths|E]"
  doctrine_parameter_opinion_of_egyptian_syncretic_recipient_opinion_active: ""

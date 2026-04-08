@@ -1,0 +1,826 @@
+﻿liege_dismiss_primiership_interaction = {
+	category = interaction_category_diarch
+	common_interaction = yes
+	notification_text = liege_dismiss_entrenched_regency_interaction_proposal
+	icon = icon_dismiss_entrenched_regency
+
+	desc = liege_dismiss_entrenched_regency_interaction_desc
+
+	ai_maybe = yes
+	can_send_despite_rejection = yes
+	popup_on_receive = yes
+	pause_on_receive = yes
+
+	interface_priority = 60
+	ai_min_reply_days = 4
+	ai_max_reply_days = 9
+
+	is_shown = {
+		# The obvious.
+		scope:actor != scope:recipient
+		always = no #Done via other mechanisms
+		# Diarchy checks for scope:actor.
+		scope:actor = {
+			# If you're not in a diarchy, we don't care.
+			diarch ?= scope:recipient
+			# With the extra consideration that we only want this to appear for Entrenched Regencies.
+			OR = {
+				has_diarchy_parameter = dismissal_requires_gift
+				AND = {
+					has_diarchy_parameter = dismissal_requires_no_ministry
+					tgp_has_access_to_ministry_trigger = no
+				}
+			}
+		}
+	}
+
+	cooldown = { years = 1 }
+
+	is_valid_showing_failures_only = {
+		# Basic requirements must be fulfilled.
+		scope:actor = { can_leave_diarchy_trigger = yes }
+		# And you mustn't be locked in by your regent's power.
+		scope:actor = {
+			NOT = { has_diarchy_active_parameter = regency_cant_be_ended_above_this_point }
+		}
+		# Must select something.
+		trigger_if = {
+			# AI won't exploit and need this exception, as they don't actually open the windows, so they'll be blocked from taking the interaction otherwise.
+			limit = {
+				scope:actor = { is_ai = no }
+			}
+			custom_tooltip = {
+				text = interactions_general.tt.must_select_one_option
+				OR = {
+					scope:diarchy_ending_gift_unnecessary = yes
+					scope:diarchy_ending_gift_stiffed = yes
+					scope:diarchy_ending_gift_hook = yes
+					scope:diarchy_ending_gift_dynasty_prestige = yes
+					scope:diarchy_ending_gift_piety = yes
+					scope:diarchy_ending_gift_cash = yes
+					scope:diarchy_ending_gift_herd = yes
+				}
+			}
+		}
+		custom_tooltip = {
+			text = government_is_celestial_tt
+			scope:actor = {
+				tgp_has_access_to_ministry_trigger = no
+			}
+		}
+	}
+
+	can_send = {
+		scope:actor = {
+			custom_description = {
+				text = "character_interactions_hostile_actions_disabled_delay"
+				NOT = { has_character_flag = flag_hostile_actions_disabled_delay }
+			}
+		}
+	}
+
+	# Ending gifts.
+	send_options_exclusive = yes
+	## No gift required.
+	send_option = {
+		flag = diarchy_ending_gift_unnecessary
+		current_description = diarchy_ending_gift_unnecessary_desc
+		is_shown = {
+			scope:actor = {
+				NOT = { has_diarchy_active_parameter = regency_free_end_below_this_point }
+			}
+		}
+	}
+	## Stiff scope:recipient for opinion loss.
+	send_option = {
+		flag = diarchy_ending_gift_stiffed
+		current_description = diarchy_ending_gift_stiffed_desc
+		is_shown = {
+			scope:actor = { has_diarchy_active_parameter = regency_free_end_below_this_point }
+		}
+	}
+	## A hook for scope:recipient on scope:actor.
+	send_option = {
+		flag = diarchy_ending_gift_hook
+		current_description = diarchy_ending_gift_hook_desc
+		is_shown = {
+			scope:recipient = {
+				NOT = { has_hook = scope:actor }
+			}
+		}
+	}
+	## Transfer some of your prestige into their dynasty prestige.
+	send_option = {
+		flag = diarchy_ending_gift_dynasty_prestige
+		current_description = diarchy_ending_gift_dynasty_prestige_desc
+		is_shown = {
+			# Filter out characters with no dynasty.
+			exists = scope:recipient.dynasty
+			# And make sure that they don't share a dynasty.
+			trigger_if = {
+				limit = { exists = scope:actor.dynasty }
+				scope:actor.dynasty != scope:recipient.dynasty
+			}
+		}
+	}
+	## Pray for them to transfer piety.
+	### Requires same-HoF.
+	send_option = {
+		flag = diarchy_ending_gift_piety
+		current_description = diarchy_ending_gift_piety_desc
+		is_shown = {
+			shared_faith_or_hof_trigger = {
+				ACTOR = scope:actor
+				RECIPIENT = scope:recipient
+			}
+		}
+	}
+	## Cash.
+	send_option = {
+		flag = diarchy_ending_gift_cash
+		current_description = diarchy_ending_gift_cash_desc
+	}
+	## Horse.
+	send_option = {
+		flag = diarchy_ending_gift_herd
+		current_description = diarchy_ending_gift_herd_desc
+		is_shown = {
+			# Can only pay herd if actor has herd to pay and recipient accepts herd as a currency
+			scope:actor = { government_has_flag = government_is_nomadic } 
+			scope:recipient = { government_has_flag = government_is_nomadic } 
+		}
+	}
+
+	on_send = {
+		scope:actor = {
+			add_character_flag = {
+				flag = flag_hostile_actions_disabled_delay
+				days = 10
+			}
+			# Remove the waiting flag.
+			add_character_flag = trying_to_dismiss_regent
+		}
+	}
+
+	on_accept = {
+		# End the diarchy.
+		scope:actor = { end_diarchy = yes }
+		scope:recipient = {
+			# Transfer a gift.
+			## ... or don't, 'cause one isn't necessary!
+			if = {
+				limit = { scope:diarchy_ending_gift_unnecessary = yes }
+				custom_tooltip = liege_dismiss_entrenched_regency_interaction.tt.no_gift_necessary
+			}
+			## Give 'em *nothing*, even though they earnt it.
+			if = {
+				limit = { scope:diarchy_ending_gift_stiffed = yes }
+				custom_tooltip = liege_dismiss_entrenched_regency_interaction.tt.stiff_them
+				# Scope:recipient is unhappy about this.
+				if = {
+					limit = { is_ai = yes }
+					# More so if they're arrogant, as they take such a smack in the face even more on the proverbial nose.
+					if = {
+						limit = { has_trait = arrogant }
+						add_opinion = {
+							target = scope:actor
+							modifier = insult_opinion
+							opinion = -50
+						}
+					}
+					else = {
+						add_opinion = {
+							target = scope:actor
+							modifier = disappointed_opinion
+							opinion = -30
+						}
+					}
+				}
+			}
+			## Give 'em a hook.
+			if = {
+				limit = { scope:diarchy_ending_gift_hook = yes }
+				# Transfer the hook.
+				add_hook = {
+					type = favor_hook
+					target = scope:actor
+				}
+				# Plus they're happy.
+				if = {
+					limit = { is_ai = yes }
+					# More so if they're deceitful, since they value favours.
+					if = {
+						limit = { has_trait = deceitful }
+						add_opinion = {
+							target = scope:actor
+							modifier = pleased_opinion
+							opinion = 30
+						}
+					}
+					else = {
+						add_opinion = {
+							target = scope:actor
+							modifier = pleased_opinion
+							opinion = 15
+						}
+					}
+				}
+			}
+			## Give 'em some dynasty prestige.
+			if = {
+				limit = { scope:diarchy_ending_gift_dynasty_prestige = yes }
+				scope:actor = { add_prestige = minor_prestige_loss }
+				# Transfer the prestige.
+				custom_tooltip = liege_dismiss_entrenched_regency_interaction.tt.dynasty_receives_prestige
+				hidden_effect = {
+					dynasty = { add_dynasty_prestige = liege_dismiss_entrenched_regency_interaction_dynasty_prestige_value }
+				}
+				# Plus they're happy.
+				if = {
+					limit = { is_ai = yes }
+					# More so if they're the dynasty head, as then they can make use of it.
+					if = {
+						limit = { dynasty.dynast = scope:recipient }
+						add_opinion = {
+							target = scope:actor
+							modifier = pleased_opinion
+							opinion = 30
+						}
+					}
+					else = {
+						add_opinion = {
+							target = scope:actor
+							modifier = pleased_opinion
+							opinion = 15
+						}
+					}
+				}
+			}
+			## Give 'em some piety.
+			if = {
+				limit = { scope:diarchy_ending_gift_piety = yes }
+				# Transfer the piety.
+				scope:actor = { add_piety = medium_piety_loss }
+				add_piety = major_piety_value
+				# Plus they're happy.
+				if = {
+					limit = { is_ai = yes }
+					# More so if they're zealous, as zealots like piety.
+					if = {
+						limit = { has_trait = zealous }
+						add_opinion = {
+							target = scope:actor
+							modifier = pleased_opinion
+							opinion = 30
+						}
+					}
+					else = {
+						add_opinion = {
+							target = scope:actor
+							modifier = pleased_opinion
+							opinion = 15
+						}
+					}
+				}
+			}
+			## Five 'em cold, hard cash.
+			if = {
+				limit = { scope:diarchy_ending_gift_cash = yes }
+				# Transfer the cash.
+				scope:actor = {
+					pay_short_term_gold = {
+						target = scope:recipient
+						gold = major_gold_value
+					}
+				}
+				# Plus they're happy.
+				if = {
+					limit = { is_ai = yes }
+					# More so if they're greedy, 'cause greedy likes money.
+					if = {
+						limit = { has_trait = greedy }
+						add_opinion = {
+							target = scope:actor
+							modifier = pleased_opinion
+							opinion = 30
+						}
+					}
+					else = {
+						add_opinion = {
+							target = scope:actor
+							modifier = pleased_opinion
+							opinion = 15
+						}
+					}
+				}
+			}
+			# Herd
+			if = {
+				limit = { scope:diarchy_ending_gift_herd = yes }
+				# Transfer the cash.
+				scope:actor = {
+						#gold = major_gold_value
+					pay_herd = {
+						target = scope:recipient
+						value = domicile.ten_percent_herd_value
+					}
+				}
+				# Plus they're happy.
+				if = {
+					limit = { is_ai = yes }
+					# More so if they're greedy, 'cause greedy likes money i mean horses.
+					if = {
+						limit = { has_trait = greedy }
+						add_opinion = {
+							target = scope:actor
+							modifier = pleased_opinion
+							opinion = 30
+						}
+					}
+					else = {
+						add_opinion = {
+							target = scope:actor
+							modifier = pleased_opinion
+							opinion = 15
+						}
+					}
+				}
+			}
+		}
+
+		# Object explorer logging.
+		if = {
+			limit = { always = scope:diarchy_ending_gift_unnecessary }
+			scope:actor = {
+				diarch_interaction_set_or_update_global_variable_effect = { VARIABLE = di_track_entr_unnecessary_accept }
+				diarch_interaction_add_to_global_list_effect = { VARIABLE_LIST = di_track_entr_unnecessary_accept_actor_list }
+			}
+			scope:recipient = {
+				diarch_interaction_add_to_global_list_effect = { VARIABLE_LIST = di_track_entr_unnecessary_accept_recipient_list }
+			}
+		}
+		else_if = {
+			limit = { always = scope:diarchy_ending_gift_stiffed }
+			scope:actor = {
+				diarch_interaction_set_or_update_global_variable_effect = { VARIABLE = di_track_entr_stiffed_accept }
+				diarch_interaction_add_to_global_list_effect = { VARIABLE_LIST = di_track_entr_stiffed_accept_actor_list }
+			}
+			scope:recipient = {
+				diarch_interaction_add_to_global_list_effect = { VARIABLE_LIST = di_track_entr_stiffed_accept_recipient_list }
+			}
+		}
+		else_if = {
+			limit = { always = scope:diarchy_ending_gift_hook }
+			scope:actor = {
+				diarch_interaction_set_or_update_global_variable_effect = { VARIABLE = di_track_entr_hook_accept }
+				diarch_interaction_add_to_global_list_effect = { VARIABLE_LIST = di_track_entr_hook_accept_actor_list }
+			}
+			scope:recipient = {
+				diarch_interaction_add_to_global_list_effect = { VARIABLE_LIST = di_track_entr_hook_accept_recipient_list }
+			}
+		}
+		else_if = {
+			limit = { always = scope:diarchy_ending_gift_dynasty_prestige }
+			scope:actor = {
+				diarch_interaction_set_or_update_global_variable_effect = { VARIABLE = di_track_entr_dynpres_accept }
+				diarch_interaction_add_to_global_list_effect = { VARIABLE_LIST = di_track_entr_dynpres_accept_actor_list }
+			}
+			scope:recipient = {
+				diarch_interaction_add_to_global_list_effect = { VARIABLE_LIST = di_track_entr_dynpres_accept_recipient_list }
+			}
+		}
+		else_if = {
+			limit = { always = scope:diarchy_ending_gift_piety }
+			scope:actor = {
+				diarch_interaction_set_or_update_global_variable_effect = { VARIABLE = di_track_entr_piety_accept }
+				diarch_interaction_add_to_global_list_effect = { VARIABLE_LIST = di_track_entr_piety_accept_actor_list }
+			}
+			scope:recipient = {
+				diarch_interaction_add_to_global_list_effect = { VARIABLE_LIST = di_track_entr_piety_accept_recipient_list }
+			}
+		}
+		else_if = {
+			limit = { always = scope:diarchy_ending_gift_cash }
+			scope:actor = {
+				diarch_interaction_set_or_update_global_variable_effect = { VARIABLE = di_track_entr_cash_accept }
+				diarch_interaction_add_to_global_list_effect = { VARIABLE_LIST = di_track_entr_cash_accept_actor_list }
+			}
+			scope:recipient = {
+				diarch_interaction_add_to_global_list_effect = { VARIABLE_LIST = di_track_entr_cash_accept_recipient_list }
+			}
+		}
+		else_if = {
+			limit = { always = scope:diarchy_ending_gift_herd }
+			scope:actor = {
+				diarch_interaction_set_or_update_global_variable_effect = { VARIABLE = di_track_entr_herd_accept }
+				diarch_interaction_add_to_global_list_effect = { VARIABLE_LIST = di_track_entr_herd_accept_actor_list }
+			}
+			scope:recipient = {
+				diarch_interaction_add_to_global_list_effect = { VARIABLE_LIST = di_track_entr_herd_accept_recipient_list }
+			}
+		}
+	}
+
+	on_decline = {
+		scope:actor = {
+			# Attempting to assert authority pushes scope:actor's scales in their favour.
+			update_diarchy_swing_with_perspective_effect = {
+				SWING = major_sop_swing_liege_gain
+				LIEGE = scope:actor
+			}
+			# Plus AI don't like being told *no*.
+			if = {
+				limit = { is_ai = no }
+				add_opinion = {
+					target = scope:recipient
+					modifier = trust_opinion
+					opinion = -30
+				}
+			}
+		}
+		# Clean-up that pesky flag.
+		if = {
+			limit = {
+				scope:actor = { has_character_flag = flag_hostile_actions_disabled_delay }
+			}
+			scope:actor = { remove_character_flag = flag_hostile_actions_disabled_delay }
+		}
+		# And add a _new_ pesky flag to stop 'em doubling up whilst also telling them to try to take this interaction again AQAP.
+		## This is to stop the AI from failing to tackle this efficiently.
+		scope:actor = {
+			if = {
+				limit = { is_ai = yes }
+				add_character_flag = trying_to_dismiss_regent
+				trigger_event = {
+					id = diarchy.0111
+					days = 366
+				}
+			}
+		}
+
+		# Object explorer logging.
+		if = {
+			limit = { always = scope:diarchy_ending_gift_stiffed }
+			scope:actor = {
+				diarch_interaction_set_or_update_global_variable_effect = { VARIABLE = di_track_entr_stiffed_decline }
+				diarch_interaction_add_to_global_list_effect = { VARIABLE_LIST = di_track_entr_stiffed_decline_actor_list }
+			}
+			scope:recipient = {
+				diarch_interaction_add_to_global_list_effect = { VARIABLE_LIST = di_track_entr_stiffed_decline_recipient_list }
+			}
+		}
+		else_if = {
+			limit = { always = scope:diarchy_ending_gift_hook }
+			scope:actor = {
+				diarch_interaction_set_or_update_global_variable_effect = { VARIABLE = di_track_entr_hook_decline }
+				diarch_interaction_add_to_global_list_effect = { VARIABLE_LIST = di_track_entr_hook_decline_actor_list }
+			}
+			scope:recipient = {
+				diarch_interaction_add_to_global_list_effect = { VARIABLE_LIST = di_track_entr_hook_decline_recipient_list }
+			}
+		}
+		else_if = {
+			limit = { always = scope:diarchy_ending_gift_dynasty_prestige }
+			scope:actor = {
+				diarch_interaction_set_or_update_global_variable_effect = { VARIABLE = di_track_entr_dynpres_decline }
+				diarch_interaction_add_to_global_list_effect = { VARIABLE_LIST = di_track_entr_dynpres_decline_actor_list }
+			}
+			scope:recipient = {
+				diarch_interaction_add_to_global_list_effect = { VARIABLE_LIST = di_track_entr_dynpres_decline_recipient_list }
+			}
+		}
+		else_if = {
+			limit = { always = scope:diarchy_ending_gift_piety }
+			scope:actor = {
+				diarch_interaction_set_or_update_global_variable_effect = { VARIABLE = di_track_entr_piety_decline }
+				diarch_interaction_add_to_global_list_effect = { VARIABLE_LIST = di_track_entr_piety_decline_actor_list }
+			}
+			scope:recipient = {
+				diarch_interaction_add_to_global_list_effect = { VARIABLE_LIST = di_track_entr_piety_decline_recipient_list }
+			}
+		}
+		else_if = {
+			limit = { always = scope:diarchy_ending_gift_cash }
+			scope:actor = {
+				diarch_interaction_set_or_update_global_variable_effect = { VARIABLE = di_track_entr_cash_decline }
+				diarch_interaction_add_to_global_list_effect = { VARIABLE_LIST = di_track_entr_cash_decline_actor_list }
+			}
+			scope:recipient = {
+				diarch_interaction_add_to_global_list_effect = { VARIABLE_LIST = di_track_entr_cash_decline_recipient_list }
+			}
+		}
+		else_if = {
+			limit = { always = scope:diarchy_ending_gift_herd }
+			scope:actor = {
+				diarch_interaction_set_or_update_global_variable_effect = { VARIABLE = di_track_entr_herd_decline }
+				diarch_interaction_add_to_global_list_effect = { VARIABLE_LIST = di_track_entr_herd_decline_actor_list }
+			}
+			scope:recipient = {
+				diarch_interaction_add_to_global_list_effect = { VARIABLE_LIST = di_track_entr_herd_decline_recipient_list }
+			}
+		}
+	}
+
+	auto_accept = {
+		custom_tooltip = {
+			text = liege_dismiss_entrenched_regency_interaction.tt.force_ending
+			scope:diarchy_ending_gift_unnecessary = yes
+		}
+	}
+	
+	ai_accept = {
+		# Diarchs don't *want* to agree, by default...
+		base = 0
+
+		# ... except loyal ones, who really, really do...
+		modifier = {
+			add = 100
+			desc = liege_dismiss_entrenched_regency_interaction.modifier.desc.loyal_diarch
+			diarch_loyalty >= diarch_loyalty_visibly_loyal_threshold
+		}
+		# ... plus inactive ones, who can't really refuse.
+		modifier = {
+			add = 50
+			desc = liege_dismiss_entrenched_regency_interaction.modifier.desc.is_disabled
+			scope:recipient = { is_diarch_able_trigger = no }
+		}
+		# If you could just end the diarchy without any fuss, then they're much more inclined to agree.
+		modifier = {
+			add = 1000
+			desc = liege_dismiss_entrenched_regency_interaction.modifier.desc.could_freely_dismiss_me
+			scope:actor = {
+				NOT = { has_diarchy_active_parameter = regency_free_end_below_this_point }
+			}
+		}
+		# Factor for diplomacy.
+		## Yours.
+		modifier = {
+			add = {
+				value = scope:actor.diplomacy
+				multiply = 2
+			}
+			desc = INTERACTION_DIPLOMACY_ACTOR
+		}
+		## Theirs.
+		modifier = {
+			add = {
+				value = scope:recipient.diplomacy
+				multiply = -2
+			}
+			desc = INTERACTION_DIPLOMACY_RECIPIENT
+		}
+		# Factor for opinion.
+		opinion_modifier = {
+			who = scope:recipient
+			opinion_target = scope:actor
+			multiplier = 0.5
+			desc = AI_OPINION_REASON
+		}
+		# Factor for AI personalities.
+		ai_value_modifier = {
+			ai_honor = 1
+			ai_boldness = -0.5
+		}
+		# Factor for Scales of Power.
+		modifier = {
+			add = {
+				value = scope:actor.diarchy_swing
+				# Reduce by 40.
+				## 20 is (currently) the node at which things become free, so we want to subtract above this point and invert below it.
+				## The extra -20 is so that diarchs are more willing to go in exchange for a gift when their power is ebbing, rather than holding on until they can be discharged without one.
+				add = -40
+				# Invert it, since scope:actor wants low scales.
+				multiply = -1
+			}
+			desc = INTERACTION_SCALES_OF_POWER
+		}
+		# Intimidation.
+		## Intimidated.
+		modifier = {
+			add = intimidated_halved_reason_value
+			scope:recipient = {
+				has_dread_level_towards = {
+					target = scope:actor
+					level = 1
+				}
+			}
+			desc = INTIMIDATED_REASON
+		}
+		## Cowed.
+		modifier = {
+			add = cowed_halved_reason_value
+			scope:recipient = {
+				has_dread_level_towards = {
+					target = scope:actor
+					level = 2
+				}
+			}
+			desc = COWED_REASON
+		}
+		# Factor for low grandeur.
+		## 1 level below.
+		modifier = {
+			add = -20
+			desc = GRANDEUR_REASON
+			has_royal_court = yes
+			has_dlc_feature = royal_court
+			court_grandeur_current_level <= 1_levels_below_expected_level
+			court_grandeur_current_level > 3_levels_below_expected_level
+		}
+		## 3 levels below.
+		modifier = {
+			add = -40
+			desc = GRANDEUR_REASON
+			has_royal_court = yes
+			has_dlc_feature = royal_court
+			court_grandeur_current_level <= 3_levels_below_expected_level
+			court_grandeur_current_level > 5_levels_below_expected_level
+		}
+		## 5 levels below.
+		modifier = {
+			add = -60
+			desc = GRANDEUR_REASON
+			has_royal_court = yes
+			has_dlc_feature = royal_court
+			court_grandeur_current_level <= 5_levels_below_expected_level
+			court_grandeur_current_level > 7_levels_below_expected_level
+		}
+		## 7 levels below.
+		modifier = {
+			add = -80
+			desc = GRANDEUR_REASON
+			has_royal_court = yes
+			has_dlc_feature = royal_court
+			court_grandeur_current_level <= 7_levels_below_expected_level
+			court_grandeur_current_level > 9_levels_below_expected_level
+		}
+		## 9 levels below.
+		modifier = {
+			add = -100
+			desc = GRANDEUR_REASON
+			has_royal_court = yes
+			has_dlc_feature = royal_court
+			court_grandeur_current_level <= 9_levels_below_expected_level
+		}
+		# Negative relationships.
+		## Rival.
+		modifier = {
+			add = -50
+			desc = offer_vassalization_interaction_aibehavior_rival_tt
+			scope:recipient = {
+				has_relation_rival = scope:actor
+				NOT = { has_relation_nemesis = scope:actor }
+			}
+		}
+		## Nemesis.
+		modifier = {
+			add = -100
+			desc = offer_vassalization_interaction_aibehavior_nemesis_tt
+			scope:recipient = { has_relation_nemesis = scope:actor }
+		}
+		# Plus for whether you're offering a gift and if it's one they need or not.
+		## No gift offered.
+		### No base-vs.-trait modifier here, as we want arrogant characters to be dramatic little bastards.
+		modifier = {
+			add = -30
+			desc = AI_OPINION_OFFENDED
+			scope:diarchy_ending_gift_stiffed = yes
+		}
+		## Favour.
+		### Deceitful variant.
+		modifier = {
+			add = 60
+			desc = liege_dismiss_entrenched_regency_interaction.tt.deceitful_likes_hook
+			scope:diarchy_ending_gift_hook = yes
+			has_trait = deceitful
+		}
+		### Base variant.
+		modifier = {
+			add = 30
+			desc = liege_dismiss_entrenched_regency_interaction.tt.offered_gift
+			scope:diarchy_ending_gift_hook = yes
+			NOT = { has_trait = deceitful }
+		}
+		## Dynasty Prestige.
+		### Dynasty Head variant.
+		modifier = {
+			add = 60
+			desc = liege_dismiss_entrenched_regency_interaction.tt.dynasty_head_likes_dynasty_prestige
+			scope:diarchy_ending_gift_dynasty_prestige = yes
+			this = dynasty.dynast
+		}
+		### Base variant.
+		modifier = {
+			add = 30
+			desc = liege_dismiss_entrenched_regency_interaction.tt.offered_gift
+			scope:diarchy_ending_gift_dynasty_prestige = yes
+			this != dynasty.dynast
+		}
+		## Piety.
+		### Zealous variant.
+		modifier = {
+			add = 60
+			desc = liege_dismiss_entrenched_regency_interaction.tt.zealous_likes_piety
+			scope:diarchy_ending_gift_piety = yes
+			has_trait = zealous
+		}
+		### Base variant.
+		modifier = {
+			add = 30
+			desc = liege_dismiss_entrenched_regency_interaction.tt.offered_gift
+			scope:diarchy_ending_gift_piety = yes
+			NOT = { has_trait = zealous }
+		}
+		## Cash.
+		### Greedy variant.
+		modifier = {
+			add = 60
+			desc = liege_dismiss_entrenched_regency_interaction.tt.greedy_likes_cash
+			scope:diarchy_ending_gift_cash = yes
+			has_trait = greedy
+		}
+		### Base variant.
+		modifier = {
+			add = 30
+			desc = liege_dismiss_entrenched_regency_interaction.tt.offered_gift
+			scope:diarchy_ending_gift_cash = yes
+			NOT = { has_trait = greedy }
+		}
+		### Also debters like this.
+		modifier = {
+			add = 60
+			desc = PT_AI_IS_IN_DEBT
+			scope:diarchy_ending_gift_cash = yes
+			debt_level >= 1
+		}
+	}
+
+	# AI
+	ai_targets = { ai_recipients = diarch }
+	ai_frequency_by_tier = {
+		barony = 0
+		county = 48
+		duchy = 24
+		kingdom = 12
+		empire = 12
+		hegemony = 12
+	}
+	ai_potential = {
+		# Are we in a diarchy at all?
+		has_active_diarchy = yes
+		# Can we leave it?
+		can_leave_diarchy_trigger = yes
+		# Are we locked into a speed-leave cycle?
+		NOT = { has_character_flag = trying_to_dismiss_regent }
+	}
+
+	ai_will_do = {
+		# You never _don't_ want to do this.
+		base = 1000
+
+		# Flag management.
+		## Auto-dismiss.
+		modifier = {
+			add = 10
+			scope:diarchy_ending_gift_unnecessary = yes
+		}
+		## Stiff 'em.
+		### If we hate the diarch, try to stiff them till we can dismiss 'em.
+		modifier = {
+			scope:diarchy_ending_gift_stiffed = yes
+			add = 9
+			diarch_liege_wants_to_stiff_regent_trigger = yes
+		}
+		### Otherwise, try to down prio this. It'll just make things harder.
+		modifier = {
+			scope:diarchy_ending_gift_stiffed = yes
+			add = 1
+			diarch_liege_wants_to_stiff_regent_trigger = no
+		}
+		## Hook.
+		modifier = {
+			add = 4
+			scope:diarchy_ending_gift_hook = yes
+		}
+		## Dynasty Prestige.
+		modifier = {
+			add = 5
+			scope:diarchy_ending_gift_dynasty_prestige = yes
+		}
+		## Piety.
+		modifier = {
+			add = 2
+			scope:diarchy_ending_gift_piety = yes
+		}
+		## Cash.
+		modifier = {
+			add = 3
+			scope:diarchy_ending_gift_cash = yes
+		}
+		## Herd.
+		modifier = {
+			add = 5
+			scope:diarchy_ending_gift_herd = yes
+		}
+	}
+}

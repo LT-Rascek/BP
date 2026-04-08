@@ -1,0 +1,20 @@
+﻿BP_roman_heritage_legacy_track = {
+	is_shown = {
+		dynasty = {
+			OR = {
+				#Your dynast is a Roman and landed or a noble family
+				AND = {
+					dynast.culture = { has_cultural_parameter = greco_roman_social_tradition }
+					OR = {
+						dynast = { is_landed = yes }
+						dynast = { any_held_title = { is_noble_family_title = yes } }
+					}
+				}
+				#You already have the starting Perk
+				has_dynasty_perk = BP_roman_heritage_legacy_1
+			}
+		}
+	}
+}
+#Non-Roman Sub-Roman Track: Eventually unlocks Roman Heritage
+#Anti-Roman Sub-Roman Track: Building an anti-Rome, pulling culture together, &c.

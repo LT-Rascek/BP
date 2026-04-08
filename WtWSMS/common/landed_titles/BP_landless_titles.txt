@@ -166,6 +166,35 @@ d_laamp_bagaudae_gaul_5 = {
 
 	ai_primary_priority = { add = @never_primary_score }
 }
+#Other 476 adventurers
+d_laamp_britannia_taifali = {
+	color = { 100 100 100 }
+	capital = c_lincolnshire
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+d_laamp_britannia_bucinobantes = {
+	color = { 100 100 100 }
+	capital = c_middlesex
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+
 #Odoacer and His Merry Band
 d_laamp_odoacer = {
 	color = { 100 100 100 }

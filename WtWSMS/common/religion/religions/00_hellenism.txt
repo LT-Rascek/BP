@@ -3,6 +3,7 @@
 hellenism_religion = {
 	family = rf_pagan
 	graphical_faith = "hellenic_gfx"
+	doctrine_background_icon = core_tenet_banner_hellenism.dds
 
 	pagan_roots = yes
 
@@ -519,7 +520,12 @@ hellenism_religion = {
 			#Mystery religion
 			doctrine = doctrine_clerical_succession_spiritual_appointment
 			
+			#Not really aligned with the Roman pantheon and unpopular with the Roman elite
+			doctrine = doctrine_pluralism_righteous
+			doctrine = doctrine_polytheist
+			
 			#Male-dominated religion populari with the military
+			doctrine = doctrine_clerical_gender_male_only
 			doctrine = doctrine_clerical_function_recruitment
 			doctrine = doctrine_clerical_gender_either #[1]
 			
