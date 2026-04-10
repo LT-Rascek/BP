@@ -1,4 +1,4 @@
-﻿saka = { #Nomadic Sakans
+﻿saka = { #Nomadic Sakans; extinct circa Ist centuries BC, migrating to India, Tarim, Sakastan in the face of Yuezhi pressure
 	color = saka
 	
 	ethos = ethos_bellicose
@@ -39,6 +39,52 @@
 	ethnicities = {
 		44 = iranian
 		32 = mediterranean
+		#Historic references to lighter hair colors
+		6 = caucasian_blond
+		6 = caucasian_brown_hair
+		6 = caucasian_dark_hair
+		6 = caucasian_ginger
+	}
+}
+kangju = { #The pre-Turkic peoples of the Syr Darya; noted as only semi-nomadic.
+	color = saka
+	
+	parents = { saka }
+	created = 2.1.1
+	#history_loc_override = kangju_history_loc
+	
+	ethos = ethos_bellicose
+	heritage = heritage_sakan
+	language = language_sakan
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_herd
+	traditions = {
+		#Societal Traditions
+		#Regional Traditions
+		tradition_caravaneers #Very much a part of the Silk Road Trade
+		#Ritual Traditions
+		#Realm Traditions
+		#Combat Traditions
+		tradition_warriors_of_the_dry
+	}
+	
+	dlc_tradition = {
+		trait = tradition_devoted_horsemanship
+		requires_dlc_flag = khans_of_the_steppe
+		fallback = tradition_horse_lords
+	}
+	
+	name_list = name_list_saka #Simplicity
+	
+	coa_gfx = { bp_scythian_coa_gfx iranian_group_coa_gfx steppe_coa_gfx }
+	building_gfx = { steppe_building_gfx }
+	clothing_gfx = { bp_scythian_clothing_gfx }
+	unit_gfx = { mongol_unit_gfx }
+	house_coa_frame = house_frame_14
+
+	ethnicities = {
+		38 = iranian
+		38 = mediterranean
 		#Historic references to lighter hair colors
 		6 = caucasian_blond
 		6 = caucasian_brown_hair
