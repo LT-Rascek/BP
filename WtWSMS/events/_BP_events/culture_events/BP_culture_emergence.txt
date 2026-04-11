@@ -549,3 +549,38 @@ bp_culture_emergence_events.1003 = { #root is founder
 		scope:new_culture = { remove_variable = suppress_tradition_change_warnings }
 	}
 }
+
+# Ashkenazi appearance
+bp_culture_emergence_events.1100 = {
+	type = character_event
+	title = bp_culture_emergence_events.1100.t
+	desc = bp_culture_emergence_events.1100.desc
+	theme = culture_change
+	window = fullscreen_event
+	override_background = { reference = BP_ashkenazi_event_story }
+	content_source = dlc_WtWSMS
+
+	immediate = { show_as_tooltip = { culture:ashkenazi = { set_language_from = scope:patron_culture } } }
+	
+	option = {
+		name = bp_culture_emergence_events.1100.a
+	}
+}
+
+# Radhanite appearance
+bp_culture_emergence_events.1101 = {
+	type = character_event
+	title = bp_culture_emergence_events.1101.t
+	desc = bp_culture_emergence_events.1101.desc
+	theme = culture_change
+	window = fullscreen_event
+	override_background = { reference = BP_silk_road_event_story }
+	content_source = dlc_WtWSMS
+	
+	immediate = { show_as_tooltip = { culture:ashkenazi = { set_language_from = scope:patron_culture } } }
+	
+	option = {
+		name = bp_culture_emergence_events.1101.a
+	}
+}
+

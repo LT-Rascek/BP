@@ -4,11 +4,6 @@ incompatible_tenet_jewish_syncretism_trigger = {
 	third_not = INCOMPATIBLE_TENET_JEWISH_SYNCRETISM_TRIGGER
 	global_not = INCOMPATIBLE_TENET_JEWISH_SYNCRETISM_TRIGGER
 }
-incompatible_tenet_alexandrian_catechism_trigger = {
-	first_not = INCOMPATIBLE_TENET_ALEXANDRIAN_CATECHISM_TRIGGER
-	third_not = INCOMPATIBLE_TENET_ALEXANDRIAN_CATECHISM_TRIGGER
-	global_not = INCOMPATIBLE_TENET_ALEXANDRIAN_CATECHISM_TRIGGER
-}
 incompatible_tenet_communion_trigger = {
 	first_not = INCOMPATIBLE_TENET_COMMUNION_TRIGGER
 	third_not = INCOMPATIBLE_TENET_COMMUNION_TRIGGER
@@ -48,11 +43,6 @@ incompatible_tenet_literalism_trigger = {
 	first_not = INCOMPATIBLE_TENET_LITERALISM_TRIGGER
 	third_not = INCOMPATIBLE_TENET_LITERALISM_TRIGGER
 	global_not = INCOMPATIBLE_TENET_LITERALISM_TRIGGER
-}
-incompatible_tenet_astrology_trigger = {
-	first_not = INCOMPATIBLE_TENET_ASTROLOGY_TRIGGER
-	third_not = INCOMPATIBLE_TENET_ASTROLOGY_TRIGGER
-	global_not = INCOMPATIBLE_TENET_ASTROLOGY_TRIGGER
 }
 incompatible_tenet_monasticism_trigger = {
 	first_not = INCOMPATIBLE_TENET_MONASTICISM_TRIGGER
@@ -94,6 +84,28 @@ incompatible_tenet_communal_possessions_trigger = {
 	third = INCOMPATIBLE_TENET_COMMUNAL_POSSESSIONS_TRIGGER
 	global = INCOMPATIBLE_TENET_COMMUNAL_POSSESSIONS_TRIGGER
 }
+incompatible_tenet_pastoral_isolation_trigger = {
+	first = INCOMPATIBLE_TENET_PASTORAL_ISOLATION_TRIGGER
+	third = INCOMPATIBLE_TENET_PASTORAL_ISOLATION_TRIGGER
+	global = INCOMPATIBLE_TENET_PASTORAL_ISOLATION_TRIGGER
+}
+incompatible_tenet_esotericism_trigger = {
+	first = INCOMPATIBLE_TENET_ESOTERICISM_TRIGGER
+	third = INCOMPATIBLE_TENET_ESOTERICISM_TRIGGER
+	global = INCOMPATIBLE_TENET_ESOTERICISM_TRIGGER
+}
+incompatible_tenet_cthonic_redoubts_trigger = {
+	first = INCOMPATIBLE_TENET_CTHONIC_REDOUBTS_TRIGGER
+	third = INCOMPATIBLE_TENET_CTHONIC_REDOUBTS_TRIGGER
+	global = INCOMPATIBLE_TENET_CTHONIC_REDOUBTS_TRIGGER
+}
+doctrine_gnosis_or_total_depravity_trigger = {
+	first = DOCTRINE_GNOSIS_OR_TOTAL_DEPRAVITY_TRIGGER
+	third = DOCTRINE_GNOSIS_OR_TOTAL_DEPRAVITY_TRIGGER
+	global = DOCTRINE_GNOSIS_OR_TOTAL_DEPRAVITY_TRIGGER
+}
+
+#Doctrines
 doctrine_gnosis_trigger = {
 	first_not = DOCTRINE_GNOSIS_TRIGGER
 	third_not = DOCTRINE_GNOSIS_TRIGGER
@@ -103,16 +115,6 @@ doctrine_tenet_gnosticism_trigger = {
 	first_not = DOCTRINE_TENET_GNOSTICISM_TRIGGER
 	third_not = DOCTRINE_TENET_GNOSTICISM_TRIGGER
 	global_not = DOCTRINE_TENET_GNOSTICISM_TRIGGER
-}
-incompatible_tenet_cthonic_redoubts_trigger = {
-	first = INCOMPATIBLE_TENET_CTHONIC_REDOUBTS_TRIGGER
-	third = INCOMPATIBLE_TENET_CTHONIC_REDOUBTS_TRIGGER
-	global = INCOMPATIBLE_TENET_CTHONIC_REDOUBTS_TRIGGER
-}
-saurism_is_in_selected_list = {
-	first_not = SAURISM_IS_IN_SELECTED_LIST
-	third_not = SAURISM_IS_IN_SELECTED_LIST
-	global_not = SAURISM_IS_IN_SELECTED_LIST
 }
 incompatible_tenet_changing_theism = {
 	first_not = INCOMPATIBLE_TENET_CHANGING_THEISM
@@ -133,6 +135,16 @@ doctrine_adultery_women_crime_trigger = {
 	first_not = DOCTRINE_ADULTERY_WOMEN_CRIME_TRIGGER
 	third_not = DOCTRINE_ADULTERY_WOMEN_CRIME_TRIGGER
 	global_not = DOCTRINE_ADULTERY_WOMEN_CRIME_TRIGGER
+}
+doctrine_african_right_trigger = {
+	first = DOCTRINE_AFRICAN_RIGHT_TRIGGER
+	third = DOCTRINE_AFRICAN_RIGHT_TRIGGER
+	global = DOCTRINE_AFRICAN_RIGHT_TRIGGER
+}
+doctrine_christian_soteriology_original_sin_trigger = {
+	first = DOCTRINE_CHRISTIAN_SOTERIOLOGY_ORIGINAL_SIN_TRIGGER
+	third = DOCTRINE_CHRISTIAN_SOTERIOLOGY_ORIGINAL_SIN_TRIGGER
+	global = DOCTRINE_CHRISTIAN_SOTERIOLOGY_ORIGINAL_SIN_TRIGGER
 }
 
 ### Christian Doctrine Trigger Loc ###
@@ -374,4 +386,11 @@ doctrine_requires_polytheism = {
 	first_not = DOCTRINE_REQUIRES_POLYTHEISM
 	third_not = DOCTRINE_REQUIRES_POLYTHEISM
 	global_not = DOCTRINE_REQUIRES_POLYTHEISM
+}
+
+#Hindu Doctrines
+saurism_is_in_selected_list = {
+	first_not = SAURISM_IS_IN_SELECTED_LIST
+	third_not = SAURISM_IS_IN_SELECTED_LIST
+	global_not = SAURISM_IS_IN_SELECTED_LIST
 }

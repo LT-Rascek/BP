@@ -2318,6 +2318,24 @@ doctrine_christian_liturgical_rite = {
 	}
 	
 	### Other cases
+	doctrine_christian_liturgical_rite_israelite = { #At least the Nazoreans by the late Vth century
+		piety_cost = {
+			value = christian_doctrine_cost_massive
+			
+			if = {
+				limit = { has_doctrine = doctrine_christian_liturgical_rite_israelite }
+				multiply = christian_doctrine_unchanged_cost_mult
+			}
+		}
+		can_pick = {
+			uses_eucharistic_rite_trigger = yes
+		}
+		parameters = {
+			liturgical_language_israelite = yes
+		}
+		traits = {}
+		character_modifier = {}
+	}
 	doctrine_christian_liturgical_rite_local_rite = { #for various other faiths
 		piety_cost = {
 			if = {

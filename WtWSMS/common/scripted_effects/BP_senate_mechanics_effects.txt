@@ -215,15 +215,17 @@ update_senator_opinion_about_character_effect = { #Senator scope
 }
 
 update_all_senate_opinion_about_character_effect = {
-	every_living_character = {
-		limit = {
-			OR = {
-				has_trait = senator_east
-				has_trait = senator_west
+	hidden_effect = { # Too many characters, plus flag-dependent
+		every_living_character = {
+			limit = {
+				OR = {
+					has_trait = senator_east
+					has_trait = senator_west
+				}
+				NOT = { this = $ACTOR$ }
 			}
-			NOT = { this = $ACTOR$ }
+			update_senator_opinion_about_character_effect = { ACTOR = $ACTOR$ }
 		}
-		update_senator_opinion_about_character_effect = { ACTOR = $ACTOR$ }
 	}
 }
 

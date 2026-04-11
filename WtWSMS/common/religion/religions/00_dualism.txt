@@ -248,7 +248,7 @@ dualism_religion = {
 			#Tenets
 			doctrine = tenet_adaptive
 			doctrine = tenet_communion
-			doctrine = tenet_monasticism
+			doctrine = tenet_cenobitic_monasticism
 			
 			#Ritual Doctrines
 			doctrine = doctrine_ritual_vegetarianism_clerics #The elect were vegetarians
@@ -402,7 +402,7 @@ dualism_religion = {
 			doctrine = doctrine_adultery_women_crime
 			
 			#Tenets
-			doctrine = tenet_monasticism
+			doctrine = tenet_cenobitic_monasticism
 			doctrine = tenet_communion
 			doctrine = tenet_wedding_ceremonies
 			
@@ -538,7 +538,7 @@ dualism_religion = {
 			
 			#Core Tenets
 			doctrine = tenet_struggle_submission
-			doctrine = tenet_monasticism
+			doctrine = tenet_cenobitic_monasticism
 			doctrine = tenet_communion
 			
 			localization = {
@@ -1048,6 +1048,126 @@ dualism_religion = {
 				DevilHerHis = CHARACTER_HERHIS_HIS
 				DevilHerselfHimself = CHARACTER_HIMSELF
 				EvilGodNames = { mingism_devil_name }
+			}
+		}
+	
+		bardaisanism = {
+			color = { 0.6 0.1 0.3 }
+			icon = mfi_dualism
+			graphical_faith = "orthodox_gfx"
+			
+			holy_site = jerusalem
+			holy_site = baghdad
+			holy_site = antioch
+			holy_site = harran
+			holy_site = ninive
+			
+			#Main Group
+			doctrine = doctrine_theocracy_temporal #Branched of from mid-Early Christianity
+			doctrine = doctrine_pluralism_fundamentalist #Anti-Valentinian, Anti-Marcion
+			
+			#Clergy Doctrines
+			doctrine = doctrine_clerical_succession_spiritual_fixed_appointment
+			
+			#Dualist Doctrines
+			doctrine = gnostic_syncretism_christian
+			
+			#Tenets
+			doctrine = tenet_astrology
+			doctrine = tenet_false_conversion_sanction #Hard to stamp out
+			doctrine = tenet_reincarnation
+			
+			#Mostly borrowed from Valentinianism with some tweaks
+			localization = {
+				#High God
+				HighGodName = bardaisanism_high_god_name
+				HighGodNamePossessive = bardaisanism_high_god_name_possessive
+				HighGodNameSheHe = CHARACTER_SHEHE_HE
+				HighGodHerselfHimself = CHARACTER_HIMSELF
+				HighGodHerHis = CHARACTER_HERHIS_HIS
+				HighGodNameAlternate = bardaisanism_high_god_name_alternate
+				HighGodNameAlternatePossessive = bardaisanism_high_god_name_alternate_possessive
+				
+				#Creator
+				CreatorName = valentinianism_creator_god_name
+				CreatorNamePossessive = valentinianism_creator_god_name_possessive
+				CreatorSheHe = CHARACTER_SHEHE_SHE
+				CreatorHerHis = CHARACTER_HERHIS_HER
+				CreatorHerHim = CHARACTER_HERHIM_HER
+				
+				#HealthGod
+				HealthGodName = valentinianism_health_god_name
+				HealthGodNamePossessive = valentinianism_health_god_name_possessive
+				HealthGodSheHe = CHARACTER_SHEHE_SHE
+				HealthGodHerHis = CHARACTER_HERHIS_HER
+				HealthGodHerHim = CHARACTER_HERHIM_HER
+				
+				#FertilityGod
+				FertilityGodName = valentinianism_fertility_god_name
+				FertilityGodNamePossessive = valentinianism_fertility_god_name_possessive
+				FertilityGodSheHe = CHARACTER_SHEHE_SHE
+				FertilityGodHerHis = CHARACTER_HERHIS_HER
+				FertilityGodHerHim = CHARACTER_HERHIM_HER
+				
+				#WealthGod
+				WealthGodName = valentinianism_wealth_god_name
+				WealthGodNamePossessive = valentinianism_wealth_god_name_possessive
+				WealthGodSheHe = CHARACTER_SHEHE_HE
+				WealthGodHerHis = CHARACTER_HERHIS_HIS
+				WealthGodHerHim = CHARACTER_HERHIM_HIM
+				
+				#HouseholdGod
+				HouseholdGodName = valentinianism_household_god_name
+				HouseholdGodNamePossessive = valentinianism_household_god_name_possessive
+				HouseholdGodSheHe = CHARACTER_SHEHE_HE
+				HouseholdGodHerHis = CHARACTER_HERHIS_HIS
+				HouseholdGodHerHim = CHARACTER_HERHIM_HIM
+				
+				#KnowledgeGod
+				KnowledgeGodName = valentinianism_knowledge_god_name
+				KnowledgeGodNamePossessive = valentinianism_knowledge_god_name_possessive
+				KnowledgeGodSheHe = CHARACTER_SHEHE_SHE
+				KnowledgeGodHerHis = CHARACTER_HERHIS_HER
+				KnowledgeGodHerHim = CHARACTER_HERHIM_HER
+				
+				#WarGod
+				WarGodName = valentinianism_war_god_name
+				WarGodNamePossessive = valentinianism_war_god_name_possessive
+				WarGodSheHe = CHARACTER_SHEHE_HE
+				WarGodHerHis = CHARACTER_HERHIS_HIS
+				WarGodHerHim = CHARACTER_HERHIM_HIM
+				
+				#NightGod
+				NightGodName = valentinianism_night_god_name
+				NightGodNamePossessive = valentinianism_night_god_name_possessive
+				NightGodSheHe = CHARACTER_SHEHE_SHE
+				NightGodHerHis = CHARACTER_HERHIS_HER
+				NightGodHerHim = CHARACTER_HERHIM_HER
+				
+				#WaterGod
+				WaterGodName = valentinianism_water_god_name
+				WaterGodNamePossessive = valentinianism_water_god_name_possessive
+				WaterGodSheHe = CHARACTER_SHEHE_SHE
+				WaterGodHerHis = CHARACTER_HERHIS_HER
+				WaterGodHerHim = CHARACTER_HERHIM_HER
+				
+				GoodGodNames = {
+					valentinianism_high_god_name
+					valentinianism_high_god_name_alternate
+					dualism_high_god_name
+					bardaisanism_planets_name
+					bardaisanism_stars_name
+				}
+				EvilGodNames = {
+					valentinianism_devil_name
+					dualism_evil_god_archons
+					dualism_evil_god_matter
+					dualism_evil_god_ignorance
+					bardaisanism_planets_name #Planets functioned for both Good and Evil
+					bardaisanism_stars_name
+				}
+				
+				ReligiousText = bardaisanism_religious_text
 			}
 		}
 	}

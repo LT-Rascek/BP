@@ -1,0 +1,84 @@
+﻿### WtWSMS change: Include additional ancient Iranian faiths
+fp3_embrace_zoroastrianism_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/event_scenes/fp3_temple.dds"
+	}
+	desc = fp3_embrace_zoroastrianism_decision_desc
+	selection_tooltip = fp3_embrace_zoroastrianism_decision_tooltip
+	sort_order = 120
+	
+	is_shown = {
+		culture = { has_cultural_pillar = heritage_iranian }
+		# Narratively, this decision is about embracing the faith of your ancestors over newer "modern" faiths
+		# Therefore, this decision should not be available to Zoroastrians looking to change their sect
+		# WtWSMS Changes: Ancient faiths not limited to Zoroastrianism
+		NOR = {
+			has_religion = religion:zoroastrianism_religion
+			has_religion = religion:zunism_religion
+			has_religion = religion:hepthal_religion
+			faith = { has_doctrine = special_doctrine_is_scythian_faith }
+			faith = { has_doctrine = special_doctrine_is_kitebacilweism }
+		}
+		current_date <= 960.1.1
+	}
+
+	is_valid = {
+		# Don't grant more than 1 secret faith at once
+		custom_tooltip = {
+			text = no_secret_faith_tt
+			NOT = { exists = secret_faith }
+		}
+		custom_tooltip = {
+			text = year_960_tt
+			current_date <= 960.1.1
+		}
+		culture = { has_cultural_pillar = heritage_iranian }
+		# WtWSMS Changes: Additional faiths
+		NOR = {
+			has_religion = religion:zoroastrianism_religion
+			faith = { has_doctrine = special_doctrine_is_kitebacilweism }
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_physically_able_adult = yes
+		custom_tooltip = {
+			text = zoroastrian_county_tt
+			any_sub_realm_county = {
+				faith = {
+					religion = religion:zoroastrianism_religion
+				}
+			}
+		}
+	}
+
+	effect = {
+		custom_tooltip = fp3_embrace_zoroastrianism_decision.tt
+		trigger_event = fp3_misc_decisions.0015
+	}
+
+	cost = { piety = major_piety_value }
+	
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 60
+		kingdom = 60
+		empire = 60
+		hegemony = 60
+	}
+	ai_potential = {
+		ai_zeal <= -25
+		ai_rationality <= -50
+		OR = {
+			has_trait = cynical
+			has_trait = fickle
+			has_trait = eccentric
+			has_trait = lunatic
+			has_trait = arbitrary
+		}
+	}
+	ai_will_do = {
+		base = 20
+	}
+}

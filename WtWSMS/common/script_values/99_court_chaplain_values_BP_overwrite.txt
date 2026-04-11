@@ -524,6 +524,20 @@ court_chaplain_conversion_contextual_bonuses = {
 			desc = COURT_CHAPLAIN_CONVERSION_HARDER_TO_CONVERT_FAITH_AWAY_IN_MOUNTAINS_MALUS_MODIFIER
 		}
 	}
+	##### Changed from Vanilla vvvvv
+	if = {
+		limit = {
+			scope:councillor.faith = { has_doctrine_parameter = organized_conversion_nerfed }
+			exists = scope:county
+			NOT = { scope:county.faith = { has_doctrine_parameter = unreformed } }
+		}
+		add = {
+			value = scope:councillor.organized_conversion_nerfed_value
+			desc = COURT_CHAPLAIN_CONVERSION_ORGANIZED_CONVERSIONS_NERFED_MALUS
+		}
+	}
+	##### Changed from Vanilla ^^^^^
+	
 	### Syncretics
 	#### Syncretic tenets aim to allow a faith and a separate religion/family to coexist without one eating the other. Accordingly, we make it harder for you to syncretise with a faith *then* wipe it out.
 	if = {

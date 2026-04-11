@@ -232,6 +232,7 @@
 		}
 	}
 
+	##### Changed from Vanilla: Tied Jewish-style localization to Judaizers as well
 	tenet_communal_identity = {
 		icon = core_tenet_communal_identity
 		piety_cost = {
@@ -263,6 +264,16 @@
 					}
 					desc = tenet_communal_identity_chosen_people_name
 				}
+				triggered_desc = {
+					trigger = {
+						religion_tag = christianity_religion
+						OR = {
+							doctrine:doctrine_christian_judaic_role_judaizers = { is_in_list = selected_doctrines }
+							has_doctrine = doctrine_christian_judaic_role_judaizers
+						}
+					}
+					desc = tenet_communal_identity_chosen_people_name
+				}
 				desc = tenet_communal_identity_name
 			}
 		}
@@ -272,6 +283,16 @@
 				triggered_desc = {
 					trigger = {
 						religion_tag = judaism_religion
+					}
+					desc = tenet_communal_identity_chosen_people_desc
+				}
+				triggered_desc = {
+					trigger = {
+						religion_tag = christianity_religion
+						OR = {
+							doctrine:doctrine_christian_judaic_role_judaizers = { is_in_list = selected_doctrines }
+							has_doctrine = doctrine_christian_judaic_role_judaizers
+						}
 					}
 					desc = tenet_communal_identity_chosen_people_desc
 				}
@@ -610,7 +631,7 @@
 		}
 	}
 
-	##### Changed from Vanilla: No longer valid for Buddhists, Jains, Nastikas
+	##### Changed from Vanilla: No longer valid for Buddhists, Jains, Nastikas, Christians
 	tenet_monasticism = {
 		icon = core_tenet_monasticism
 		piety_cost = {
@@ -646,6 +667,7 @@
 		}
 
 		is_shown = {
+			NOT = { religion_tag = hinduism_religion }
 			NOT = { religion_tag = buddhism_religion }
 			NOT = { religion_tag = jainism_religion }
 			NOT = { religion_tag = nastika_religion }
@@ -660,7 +682,14 @@
 
 		parameters = {
 			take_vows_active = yes
+			monastic_schools_allowed_in_every_holding_type = yes
+			building_temples_gives_development = yes
 		}
+		
+		character_modifier = {
+			monthly_learning_lifestyle_xp_gain_mult = 0.05
+		}
+		
 		traits = {
 			virtues = { temperate }
 			sins = { gluttonous }
@@ -936,9 +965,9 @@
 		}
 
 		parameters = {
-			hostility_override_special_doctrine_is_christian_faith = 0
+			hostility_override_special_doctrine_is_christian_faith = 1
 			#For loc:
-			is_christian_faith_pastoral_isolation_loc_override = 0
+			is_christian_faith_pastoral_isolation_loc_override = 1
 			sanctioned_false_conversion = yes
 			unattractive_for_character_conversions = yes
 			tenet_unlocks_t3_withdraw_from_view = yes
@@ -1150,7 +1179,7 @@
 			value = faith_tenet_cost_low
 		}
 
-		parameters = {
+			parameters = {
 			maintains_head_of_faith_on_creation = yes
 			# For loc:
 			ecumenical_christians_keep_ecumenism = yes
@@ -1513,6 +1542,7 @@
 		}
 	}
 
+	##### Changed from Vanilla: Christian Faiths with Judaizers uses Jewish Localization
 	tenet_religious_legal_pronouncements = {
 		icon = core_tenet_legal_pronouncements
 		piety_cost = {
@@ -1562,6 +1592,16 @@
 				triggered_desc = {
 					trigger = {
 						religion_tag = judaism_religion
+					}
+					desc = tenet_religious_legal_pronouncements_halakha
+				}
+				triggered_desc = {
+					trigger = {
+						religion_tag = christianity_religion
+						OR = {
+							doctrine:doctrine_christian_judaic_role_judaizers = { is_in_list = selected_doctrines }
+							has_doctrine = doctrine_christian_judaic_role_judaizers
+						}
 					}
 					desc = tenet_religious_legal_pronouncements_halakha
 				}
@@ -2212,7 +2252,10 @@
 		can_pick = {
 			custom_description = {
 				text = incompatible_tenet_monasticism_trigger
-				NOT = { doctrine:tenet_monasticism = { is_in_list = selected_doctrines } }
+				NOR = {
+					doctrine:tenet_monasticism = { is_in_list = selected_doctrines }
+					doctrine:tenet_cenobitic_monasticism = { is_in_list = selected_doctrines }
+				}
 			}
 			custom_description = {
 				text = incompatible_tenet_mendicant_preachers_trigger
@@ -2833,14 +2876,9 @@
 			OR = {
 				has_doctrine = abrahamic_hostility_doctrine
 				has_doctrine = pagan_hostility_doctrine
-				NOT = { has_doctrine = special_doctrine_is_gnostic_faith }
 			}
 		}
 		can_pick = {
-			custom_description = {
-				text = incompatible_tenet_gnosticism_trigger
-				NOT = { doctrine:tenet_gnosticism = { is_in_list = selected_doctrines } }
-			}
 			custom_description = {
 				text = incompatible_tenet_other_syncretism_trigger
 				NOR = {
@@ -2936,6 +2974,7 @@
 		}
 	}
 
+	##### Changed from Vanilla: Made unavailable to Jews (handled by a special temple authority doctrine) and Gnostics
 	tenet_christian_syncretism = {
 		icon = core_tenet_christian_syncretism
 
@@ -2962,6 +3001,8 @@
 
 		is_shown = {
 			NOT = { religion_tag = christianity_religion }
+			NOT = { religion_tag = judaism_religion }
+			NOT = { religion_tag = dualism_religion }
 		}
 		can_pick = {
 			custom_description = {
@@ -3983,6 +4024,7 @@
 	# TGP Tenets				#
 	############################
 
+	##### Changed from Vanilla: Gave custom loc for Christian faiths
 	tenet_pure_land = {
 		icon = core_tenet_pure_land
 		piety_cost = {
@@ -4009,8 +4051,27 @@
 			}
 		}
 
-		name = tenet_pure_land_name
-		
+		##### Changed from Vanilla vvvvv
+		name = {
+			first_valid = {
+				triggered_desc = {
+					trigger = { religion_tag = christianity_religion }
+					desc = tenet_pure_land_christian_name
+				}
+				desc = tenet_pure_land_name
+			}
+		}
+		desc = {
+			first_valid = {
+				triggered_desc = {
+					trigger = { religion_tag = christianity_religion }
+					desc = tenet_pure_land_christian_desc
+				}
+				desc = tenet_pure_land_desc
+			}
+		}
+		##### Changed from Vanilla ^^^^^
+
 		is_shown = {
 		}
 
@@ -4668,59 +4729,6 @@
 		}
 	}
 	
-	tenet_marcionite_canon = {
-		icon = core_tenet_legalism ##### TODO (Beta): Needs Unique Icon
-		
-		is_shown = { 
-			religion_tag = christianity_religion
-		}
-		
-		#Valid for non-Jewish-favoring Gnostics without Alexandrian Catechism
-		can_pick = {
-			custom_description = {
-				text = doctrine_inverted_pluralism_fundamentalist_trigger
-				doctrine:doctrine_pluralism_fundamentalist = { is_in_list = selected_doctrines }
-			}
-			custom_description = {
-				text = doctrine_gnosis_trigger
-				doctrine:doctrine_christian_soteriology_gnosis = { is_in_list = selected_doctrines }
-			}
-			custom_description = {
-				text = incompatible_doctrine_judaizers_trigger
-				NOT = { doctrine:doctrine_christian_judaic_role_judaizers = { is_in_list = selected_doctrines } }
-			}
-			custom_description = {
-				text = incompatible_tenet_alexandrian_catechism_trigger
-				NOT = { doctrine:tenet_alexandrian_catechism = { is_in_list = selected_doctrines } }
-			}
-			custom_description = {
-				text = incompatible_tenet_monasticism_trigger
-				NOT = { doctrine:tenet_monasticism = { is_in_list = selected_doctrines } }
-			}
-		}
-		
-		piety_cost = { 
-			value = faith_tenet_cost_high
-			
-			if = {
-				limit = { has_doctrine = tenet_marcionite_canon }
-				multiply = faith_unchanged_doctrine_cost_mult
-			}
-		}
-		
-		character_modifier = {
-			monthly_learning_lifestyle_xp_gain_mult = 0.2
-		}
-		
-		parameters = {
-			take_vows_active = yes
-		}
-		traits = {
-			virtues = { temperate }
-			sins = { gluttonous }
-		}
-	}
-	
 	tenet_redeeming_struggle = {
 		icon = core_tenet_unrelenting_faith
 		
@@ -4763,6 +4771,7 @@
 			cheaper_holy_wars_active = yes
 			great_holy_wars_active = yes
 			raise_circumcellions_decision = yes
+			peasant_and_populist_factions_more_common = yes
 		}
 		character_modifier = {
 			monthly_county_control_growth_factor = -0.2
@@ -4797,10 +4806,12 @@
 				text = doctrine_inverted_pluralism_fundamentalist_trigger
 				doctrine:doctrine_pluralism_fundamentalist = { is_in_list = selected_doctrines }
 			}
-			#This is for orthodox Christians, so keep out of Gnostic hands
 			custom_description = {
-				text = incompatible_tenet_gnosticism_trigger
-				NOT = { doctrine:tenet_gnosticism = { is_in_list = selected_doctrines } }
+				text = doctrine_gnosis_or_total_depravity_trigger
+				OR = {
+					doctrine:doctrine_christian_soteriology_total_depravity = { is_in_list = selected_doctrines }
+					doctrine:doctrine_christian_soteriology_gnosis = { is_in_list = selected_doctrines }
+				}
 			}
 		}
 		
@@ -4844,7 +4855,7 @@
 		desc = tenet_mountain_hermits_desc
 
 		piety_cost = {
-			value = faith_tenet_cost_high
+			value = faith_tenet_cost_mid
 
 			# Multiplier for keeping same tenet
 			if = {
@@ -4871,11 +4882,9 @@
 		}
 
 		parameters = {
-			easier_to_convert_faith_in_mountains = yes
 			easier_to_convert_culture_in_same_faith_mountains = yes
 			harder_to_convert_faith_away_in_mountains = yes
 			other_culture_conversion_penalty_active = yes
-			meditation_mechanics_active = yes
 		}
 
 		character_modifier = {
@@ -4896,7 +4905,6 @@
 			sins = {
 				gluttonous
 				greedy
-				lifestyle_reveler
 			}
 		}
 	}
@@ -4949,7 +4957,7 @@
 		}
 		
 		piety_cost = {
-			value = faith_tenet_cost_massive
+			value = faith_tenet_cost_high
 			if = {
 				limit = { has_doctrine = tenet_iconoclasm }
 				multiply = faith_unchanged_doctrine_cost_mult
@@ -4958,75 +4966,150 @@
 		
 		parameters = {
 			cheaper_holy_wars_active = yes
-			pilgrimage_decision_active = yes
+			ghw_no_hof_conversion_buffs_active = yes
+			reforging_artifacts_costs_piety = yes
+			destroying_artifacts_is_pious = yes
 		}
 		
 		character_modifier = {
-			monthly_piety_gain_mult = 0.1
 			same_faith_opinion = 10
 			different_faith_opinion = -20
+			
+			church_holding_build_speed = -0.33
+			church_holding_build_gold_cost = -0.33
+			church_holding_holding_build_speed = -0.33
+			church_holding_holding_build_gold_cost = -0.33
 		}
 	}
 	
-	##### TODO (Beta): Create Peregrinatio/Coptic localization variants for tenet_peregrination
-	tenet_peregrination = { #Covers Miaphysitism and Celtic Christianity; both had similar sorts of features
-		icon = core_tenet_mendicant_preachers ##### TODO (Beta): Needs Unique Icon
-		
-		is_shown = { religion_tag = christianity_religion }
-		
+	#The more localized, monastic-led Christian Faiths, namely Insular Celtic and Bosnian Christian
+	tenet_frontier_monastics = {
+		icon = core_tenet_pastoral_isolation
+
+		is_shown = {
+			#Only if already used
+			doctrine:tenet_frontier_monastics = { is_in_list = selected_doctrines }
+		}
 		can_pick = {
 			custom_description = {
+				text = doctrine_inverted_pluralism_pluralistic_trigger
+				NOR = {
+					doctrine:doctrine_pluralism_fundamentalist = { is_in_list = selected_doctrines }
+					doctrine:doctrine_pluralism_righteous = { is_in_list = selected_doctrines }
+				}
+			}
+			custom_description = {
 				text = incompatible_tenet_monasticism_trigger
-				NOT = { doctrine:tenet_monasticism = { is_in_list = selected_doctrines } }
+				NOR = {
+					doctrine:tenet_monasticism = { is_in_list = selected_doctrines }
+					doctrine:tenet_cenobitic_monasticism = { is_in_list = selected_doctrines }
+				}
 			}
 			custom_description = {
-				text = incompatible_tenet_asceticism_trigger
-				NOT = { doctrine:tenet_asceticism = { is_in_list = selected_doctrines } }
-			}
-			custom_description = {
-				text = incompatible_tenet_hedonistic_trigger
-				NOT = { doctrine:tenet_hedonistic = { is_in_list = selected_doctrines } }
+				text = incompatible_tenet_pastoral_isolation_trigger
+				NOT = { doctrine:tenet_pastoral_isolation = { is_in_list = selected_doctrines } }
 			}
 		}
-		
+
 		piety_cost = {
-			value = faith_tenet_cost_high
+			value = faith_tenet_cost_mid
+			
+			# Multiplier for keeping same tenet
 			if = {
-				limit = { has_doctrine = tenet_peregrination }
+				limit = { has_doctrine = tenet_frontier_monastics }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 		}
-		
+
 		parameters = {
-			meditation_mechanics_active = yes
+			organized_conversion_nerfed = yes
 			take_vows_active = yes
-			peregrinition_active = yes
 			unlock_voluntary_laampdom_faith = yes
+			monastic_schools_allowed_in_every_holding_type = yes
+			clergy_are_always_monks = yes
 		}
-		
+
 		character_modifier = {
+			monthly_county_control_growth_factor = -0.2
 		}
-		
+
 		traits = {
-			virtues = {
-				temperate
-			}
-			sins = {
-				gluttonous
-				greedy
-				lifestyle_reveler
-			}
+			virtues = { temperate }
+			sins = { gluttonous }
 		}
 	}
 	
-	#####################
-	# BP Mazdan Tenets	#
-	#####################
+	tenet_false_conversion_sanction_african = {
+		icon = core_tenet_false_conversion_sanction
 
+		is_shown = { religion_tag = christianity_religion }
+
+		can_pick = {
+			custom_description = {
+				text = doctrine_requires_head_of_faith_trigger
+				NOT = { doctrine:doctrine_no_head = { is_in_list = selected_doctrines } }
+			}
+			custom_description = {
+				text = doctrine_african_right_trigger
+				doctrine:doctrine_christian_liturgical_rite_african_rite = { is_in_list = selected_doctrines }
+			}
+			custom_description = {
+				text = doctrine_christian_soteriology_original_sin_trigger
+				doctrine:doctrine_christian_soteriology_original_sin = { is_in_list = selected_doctrines }
+			}
+			custom_description = {
+				text = incompatible_tenet_sacred_shadows_trigger
+				NOT = { doctrine:tenet_sacred_shadows = { is_in_list = selected_doctrines } }
+			}
+			custom_description = {
+				text = incompatible_tenet_communion_trigger
+				NOT = { doctrine:tenet_communion = { is_in_list = selected_doctrines } }
+			}
+			custom_description = {
+				text = incompatible_tenet_pastoral_isolation_trigger
+				NOT = { doctrine:tenet_pastoral_isolation = { is_in_list = selected_doctrines } }
+			}
+			custom_description = {
+				text = incompatible_tenet_false_conversion_sanction_trigger
+				NOT = { doctrine:tenet_false_conversion_sanction = { is_in_list = selected_doctrines } }
+			}
+		}
+
+		piety_cost = {
+			value = faith_tenet_cost_high
+
+			# Multiplier for keeping same tenet
+			if = {
+				limit = { has_doctrine = tenet_false_conversion_sanction_african }
+				multiply = faith_unchanged_doctrine_cost_mult
+			}
+		}
+
+		parameters = {
+			sanctioned_false_conversion = yes
+			
+			seek_indulgences_active = yes
+			seek_indulgences_active_2 = yes
+			excommunication_active = yes
+			lesser_excommunication = yes #Reduces impact of excommunication
+			
+			peasant_and_populist_factions_more_common = yes
+		}
+
+		character_modifier = {
+			stress_loss_per_prestige_level = -0.1
+		}
+		
+		traits = {
+			virtues = { honest }
+			sins = { deceitful }
+		}
+	}
+	
 	tenet_complex_exegesis = {
 		icon = core_tenet_literalism ##### TODO (Beta): Needs Unique Icon
 		
-		is_shown = { religion_tag = dualism_religion }
+		is_shown = { religion_tag = christianity_religion }
 		
 		can_pick = {
 			custom_description = {
@@ -5034,12 +5117,12 @@
 				NOT = { doctrine:tenet_literalism = { is_in_list = selected_doctrines } }
 			}
 			custom_description = {
-				text = incompatible_tenet_astrology_trigger
-				NOT = { doctrine:tenet_astrology = { is_in_list = selected_doctrines } }
+				text = incompatible_tenet_esotericism_trigger
+				NOT = { doctrine:tenet_esotericism = { is_in_list = selected_doctrines } }
 			}
 			custom_description = {
-				text = incompatible_tenet_monasticism_trigger
-				NOT = { doctrine:tenet_monasticism = { is_in_list = selected_doctrines } }
+				text = doctrine_gnosis_trigger
+				doctrine:doctrine_christian_soteriology_gnosis = { is_in_list = selected_doctrines }
 			}
 		}
 		
@@ -5052,19 +5135,82 @@
 		}
 		
 		parameters = {
-			divine_the_stars_active = yes
-			take_vows_active = yes
+			literalist_debate_enabled = yes
+			tenet_esotericism_mystic_education = yes
 		}
 		
 		character_modifier = {
-			monthly_learning_lifestyle_xp_gain_mult = 0.1
+			monthly_learning_lifestyle_xp_gain_mult = -0.1
 		}
 		
 		traits = {
-			virtues = { temperate = 2 }
-			sins = { gluttonous = 2 }
+			virtues = {
+				scholar = 1
+				lifestyle_mystic = 1
+			}
+			sins = { lazy = 1 }
 		}
 	}
+	
+	tenet_cenobitic_monasticism = {
+		icon = core_tenet_monasticism
+
+		name = {
+			first_valid = {
+				triggered_desc = {
+					trigger = {
+						OR = {
+							doctrine:doctrine_christian_liturgical_rite_greek = { is_in_list = selected_doctrines }
+							doctrine:doctrine_christian_liturgical_rite_imperial_rite = { is_in_list = selected_doctrines }
+							has_doctrine = doctrine_christian_liturgical_rite_greek
+							has_doctrine = doctrine_christian_liturgical_rite_imperial_rite
+						}
+					}
+					desc = tenet_cenobitic_monasticism_koinonia_name
+				}
+				desc = tenet_cenobitic_monasticism_name
+			}
+		}
+
+		piety_cost = {
+			value = faith_tenet_cost_mid
+			
+			# Multiplier for keeping same tenet
+			if = {
+				limit = { has_doctrine = tenet_cenobitic_monasticism }
+				multiply = faith_unchanged_doctrine_cost_mult
+			}
+		}
+
+		is_shown = {
+			religion_tag = christianity_religion
+		}
+
+		can_pick = {
+			custom_description = {
+				text = incompatible_tenet_hedonistic_trigger
+				NOT = { doctrine:tenet_hedonistic = { is_in_list = selected_doctrines } }
+			}
+		}
+
+		parameters = {
+			take_vows_active = yes
+			clergy_are_always_monks = yes
+			meditation_mechanics_active = yes
+		}
+		traits = {
+			virtues = { temperate }
+			sins = {
+				gluttonous
+				greedy
+				lifestyle_reveler
+			}
+		}
+	}
+	
+	#####################
+	# BP Mazdan Tenets	#
+	#####################
 	
 	tenet_wedding_ceremonies = {
 		icon = core_tenet_wedding_ceremonies
@@ -5204,7 +5350,6 @@
 		}
 	}
 	
-
 	tenet_ethnic_religion = {
 		icon = core_tenet_communal_identity ##### TODO (Beta): Needs Unique Icon
 		piety_cost = {

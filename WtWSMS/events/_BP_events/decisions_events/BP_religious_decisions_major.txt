@@ -106,7 +106,6 @@ BP_religious_decisions_major.0001 = {
 							has_doctrine = tenet_gnosticism
 							has_doctrine = tenet_inner_journey
 							has_doctrine = tenet_asceticism
-							has_doctrine = tenet_peregrination
 						}
 					}
 				}
@@ -197,6 +196,7 @@ BP_religious_decisions_major.0001 = {
 BP_religious_decisions_major.0101 = {
 	type = character_event
 	theme = faith
+	override_background = { reference = ep3_holy_site_orthodox }
 	content_source = dlc_WtWSMS
 	
 	immediate = {
@@ -230,6 +230,9 @@ BP_religious_decisions_major.0101 = {
 				save_scope_as = treaty_participant
 			}
 		}
+		else = {
+			show_as_tooltip = { legalize_caucasian_christianity_global_effect = yes }
+		}
 	}
 	
 	title = BP_religious_decisions_major.0101.t
@@ -251,7 +254,7 @@ BP_religious_decisions_major.0101 = {
 		
 		caucasian_christian_legalization_local_effect = yes
 		
-		every_ruler = {
+		every_player = {
 			limit = {
 				in_diplomatic_range = scope:legalizing_emperor
 				NOT = { this = scope:legalizing_emperor }
@@ -264,7 +267,6 @@ BP_religious_decisions_major.0101 = {
 	option = {
 		trigger = { NOT = { this = scope:legalizing_emperor } }
 		name = BP_religious_decisions_major.0101.o.getreaction
-		show_as_tooltip = { legalize_caucasian_christianity_global_effect = yes }
 	}
 }
 

@@ -7,17 +7,23 @@ BP_major_culture_decisions.0001 = {
 	type = character_event
 	title = BP_major_culture_decisions.0001.t
 	theme = culture_change
+	override_background = { reference = fp1_throneroom_tribal }
 	content_source = dlc_WtWSMS
 	
 	desc = {
 		triggered_desc = {
-			trigger = { NOT = { root = scope:culture_former } }
+			trigger = {
+				NOR = {
+					root = scope:culture_former
+					root.culture = culture:thracian_gothic
+				}
+			}
 			desc = BP_major_culture_decisions.0001.others.desc
 		}
 		triggered_desc = {
 			trigger = {
 				NOT = { root = scope:culture_former }
-				root.culture = culture:gothic
+				root.culture = culture:thracian_gothic
 			}
 			desc = BP_major_culture_decisions.0001.other_goths.desc
 		}
@@ -27,20 +33,27 @@ BP_major_culture_decisions.0001 = {
 		}
 	}
 	
-	right_portrait = {
+	left_portrait = {
 		character = scope:culture_former
 		animation = personality_bold
 	}
+	lower_right_portrait = scope:your_portrait
 	
 	immediate = {
 		#We show as tooltip so that it appears as "has happened" to others.
 		if = {
 			limit = { NOT = { root = scope:culture_former } }
 			show_as_tooltip = { create_ostrogothic_culture_effect = { CREATING_CHAR = scope:culture_former } }
+			# Show your portrait if your culture has changed
+			if = {
+				limit = { culture = culture:thracian_gothic }
+				save_scope_as = your_portrait
+				show_as_tooltip = { set_culture = culture:thracian_gothic }
+			}
 		}
 	}
 	
-	option = { #The Emperor himself
+	option = { #The reformer
 		trigger = { this = scope:culture_former }
 		name = BP_major_culture_decisions.0001.the_former
 		
@@ -49,10 +62,10 @@ BP_major_culture_decisions.0001 = {
 		#Every other gothic ruler get informed
 		
 		#Every relatively close ruler gets informed
-		every_ruler = {
+		every_player = {
 			limit = {
 				OR = {
-					is_ai = no
+					this = { in_diplomatic_range = root }
 					this.culture = culture:gothic
 				}
 				NOT = { this = scope:culture_former }
