@@ -16,11 +16,9 @@ tradition_devoted_horsemanship_western_steppe = {
 	can_pick = {
 		custom_description = {
 			text = half_of_counties_in_world_steppe_west
-			culture = {
-				any_culture_county = {
-					percent > 0.50
-					any_province = { geographical_region = world_steppe_west }
-				}
+			any_culture_county = {
+				percent > 0.50
+				any_province = { geographical_region = world_steppe_west }
 			}
 		}
 		OR = {

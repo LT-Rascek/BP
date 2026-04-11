@@ -205,6 +205,7 @@ bp_dummy = {
 		if = { limit = { exists = var:titles_taken var:titles_taken = flag:titles_taken } set_variable = { name = titles_taken value = flag:titles_taken } }
 		if = { limit = { exists = var:total_available_subjugations var:total_available_subjugations = flag:total_available_subjugations } set_variable = { name = total_available_subjugations value = flag:total_available_subjugations } }
 		if = { limit = { exists = var:tradition_lifestyle_poetry_travel_discount var:tradition_lifestyle_poetry_travel_discount = flag:tradition_lifestyle_poetry_travel_discount } set_variable = { name = tradition_lifestyle_poetry_travel_discount value = flag:tradition_lifestyle_poetry_travel_discount } }
+		if = { limit = { exists = var:tribal_shatter_mechanic_enabled var:tribal_shatter_mechanic_enabled = flag:tribal_shatter_mechanic_enabled } set_variable = { name = tribal_shatter_mechanic_enabled value = flag:tribal_shatter_mechanic_enabled } }
 		if = { limit = { exists = var:tributary_succ_var var:tributary_succ_var = flag:tributary_succ_var } set_variable = { name = tributary_succ_var value = flag:tributary_succ_var } }
 		if = { limit = { exists = var:trinket var:trinket = flag:trinket } set_variable = { name = trinket value = flag:trinket } }
 		if = { limit = { exists = var:tutorial_current_situation_gradual_reveal_1 var:tutorial_current_situation_gradual_reveal_1 = flag:tutorial_current_situation_gradual_reveal_1 } set_variable = { name = tutorial_current_situation_gradual_reveal_1 value = flag:tutorial_current_situation_gradual_reveal_1 } }

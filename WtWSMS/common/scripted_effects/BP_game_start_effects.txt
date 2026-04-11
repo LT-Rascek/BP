@@ -32,6 +32,7 @@ make_councilor_of_type_if_not_already_effect = { #Scope is council owner
 		assign_councillor_type = {
 			type = $POSITION$
 			target = $TARGET_CHAR$
+			fire_on_actions = no
 			remove_existing_councillor = yes
 		}
 	}

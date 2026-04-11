@@ -103,12 +103,7 @@ realm_law_vassal_has_liege_law_level_subroman_dynastic_trigger = { #can_pass
 		}
 		liege = { has_realm_law = $LAW$ }
 	}
-	trigger_else = {
-		custom_description = {
-			text = $TYPE$_can_not_be_controlled_manually
-			always = no
-		}
-	}
+	trigger_else = { always = no }
 }
 
 #Others

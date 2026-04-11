@@ -280,15 +280,6 @@ doctrine_theism = {
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 		}
-		can_pick = { #For safety
-			custom_description = {
-				text = doctrine_inverted_pluralism_pluralistic_trigger
-				NOR = {
-					doctrine:doctrine_pluralism_fundamentalist = { is_in_list = selected_doctrines }
-					doctrine:doctrine_pluralism_righteous = { is_in_list = selected_doctrines }
-				}
-			}
-		}
 		parameters = {
 			hostility_override_doctrine_roman_polytheist = 0
 			hostility_override_doctrine_polytheist = 1

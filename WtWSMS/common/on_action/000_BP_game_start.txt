@@ -1117,15 +1117,6 @@ add_innovations_as_required = {
 		culture:ashkenazi = { remove_innovation = innovation_war_camels }
 		culture:radhanite = { remove_innovation = innovation_war_camels }
 		culture:sephardi = { remove_innovation = innovation_war_camels }
-		if = { #Armenians should have Cataphracts if you don't have the DLC for their Vanilla MAA
-			limit = {
-				NOR = {
-					has_ep3_dlc_trigger = yes
-					has_dlc_feature = hybridize_culture
-				}
-			}
-			culture:armenian = { add_innovation = innovation_cataphracts }
-		}
 	}
 }
 
