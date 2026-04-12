@@ -375,3 +375,433 @@ legal_bureau_director_task.3103 = {
 		}
 	}
 }
+
+####
+#9000-13999: Side effects from Increase Control
+# by Petter Vilberg
+####
+# 9001 - Reduce County Opinion
+# 9002 - Loss of Control
+# 9003 - Baron Opinion Loss
+
+# 9101 - Increased County Opinion
+# 9102 - Baron Opinion Gain
+
+#Baron opinion loss
+# by Petter Vilberg
+
+scripted_trigger legal_bureau_director_task_9003_baron_trigger = {
+	NOR = {
+		has_opinion_modifier = {
+			target = root
+			modifier = marshal_task_increase_control_baron_increase_opinion
+		}
+		has_opinion_modifier = {
+			target = root
+			modifier = marshal_task_increase_control_baron_decrease_opinion
+		}
+	}
+	this != scope:councillor
+}
+
+scripted_trigger legal_bureau_director_task_9003_county_trigger = {
+	any_in_de_facto_hierarchy = {
+		tier = tier_barony
+		exists = holder
+		holder != ROOT
+		holder = {
+			legal_bureau_director_task_9003_baron_trigger = yes
+		}
+	}
+}
+
+##################
+# Side Effects from Increase Control
+# 9001-3999
+##################
+
+###
+#Bad Side Effects
+###
+
+#Reduce County Opinion
+# by Petter Vilberg
+legal_bureau_director_task.9001 = {
+	hidden = yes
+
+	trigger = {
+		scope:councillor = {
+			has_council_position = councillor_legal_bureau_director
+			learning < high_skill_rating
+		}
+		scope:county ?= {
+			NOR = {
+				has_county_modifier = marshal_task_increase_control_decreased_opinion_modifier
+				has_county_modifier = marshal_task_increase_control_increased_opinion_modifier
+			}
+		}
+	}
+
+	weight_multiplier = {
+		base = 1
+		compare_modifier = {
+			target = scope:councillor
+			value = learning
+			multiplier = -0.2
+			offset = inverted_high_skill_rating
+		}
+	}
+
+	immediate = {
+		scope:councillor ?= {
+			save_scope_as = active_councillor
+		}
+		set_variable = {
+			name = had_legal_bureau_director_task_side_effect
+			value = yes
+			days = legal_bureau_director_task_side_effect_cooldown
+		}
+		send_interface_message = {
+			type = msg_marshal_task_bad
+			title = legal_bureau_director_task.9001.notification
+			desc = {
+				triggered_desc = {
+					trigger = {
+						scope:active_councillor ?= { learning <= average_skill_level }
+					}
+					desc = task_learning_bad_unskilled_notification_tooltip
+				}
+				triggered_desc = {
+					trigger = {
+						scope:active_councillor ?= { learning > average_skill_level }
+					}
+					desc = task_learning_bad_skilled_notification_tooltip
+				}
+			}
+			tooltip = task_increase_control_notification_tooltip
+
+			left_icon = scope:active_councillor
+			right_icon = scope:county
+
+			scope:county ?= {
+				add_county_modifier = {
+					modifier = marshal_task_increase_control_decreased_opinion_modifier
+					years = 5
+				}
+			}
+		}
+	}
+
+}
+
+
+#Loss of Control
+# by Petter Vilberg
+legal_bureau_director_task.9002 = {
+	hidden = yes
+
+	trigger = {
+		scope:councillor = {
+			has_council_position = councillor_legal_bureau_director
+			learning < high_skill_rating
+		}
+		scope:county ?= {
+			county_control > medium_county_control
+		}
+	}
+
+	weight_multiplier = {
+		base = 1
+		compare_modifier = {
+			target = scope:councillor
+			value = learning
+			multiplier = -0.2
+			offset = inverted_high_skill_rating
+		}
+	}
+
+	immediate = {
+		scope:councillor ?= {
+			save_scope_as = active_councillor
+		}
+		set_variable = {
+			name = had_legal_bureau_director_task_side_effect
+			value = yes
+			days = legal_bureau_director_task_side_effect_cooldown
+		}
+
+		send_interface_message = {
+			type = msg_marshal_task_bad
+			title = legal_bureau_director_task.9002.notification
+			desc = {
+				triggered_desc = {
+					trigger = {
+						scope:active_councillor ?= { learning <= average_skill_level }
+					}
+					desc = task_learning_bad_unskilled_notification_tooltip
+				}
+				triggered_desc = {
+					trigger = {
+						scope:active_councillor ?= { learning > average_skill_level }
+					}
+					desc = task_learning_bad_skilled_notification_tooltip
+				}
+			}
+			tooltip = task_increase_control_notification_tooltip
+
+			left_icon = scope:active_councillor
+			right_icon = scope:county
+
+			scope:county ?= {
+				change_county_control = medium_county_control_loss
+			}
+		}
+	}
+}
+
+
+#Baron opinion loss
+# by Petter Vilberg
+
+legal_bureau_director_task.9003 = {
+	hidden = yes
+
+	trigger = {
+		scope:councillor = {
+			has_council_position = councillor_legal_bureau_director
+			learning < high_skill_rating
+		}
+		scope:county ?= {
+			legal_bureau_director_task_9003_county_trigger = yes
+		}
+	}
+
+	weight_multiplier = {
+		base = 1
+		compare_modifier = {
+			target = scope:councillor
+			value = learning
+			multiplier = -0.2
+			offset = inverted_high_skill_rating
+		}
+	}
+
+	immediate = {
+		cp:councillor_legal_bureau_director = {
+			save_scope_as = active_councillor
+		}
+		set_variable = {
+			name = had_legal_bureau_director_task_side_effect
+			value = yes
+			days = legal_bureau_director_task_side_effect_cooldown
+		}
+		scope:county ?= {
+			random_in_de_facto_hierarchy = {
+				limit = {
+					tier = tier_barony
+					exists = holder
+					holder != ROOT
+					holder = {
+						legal_bureau_director_task_9003_baron_trigger = yes
+					}
+				}
+				holder = {
+					save_scope_as = baron
+				}
+			}
+		}
+
+		send_interface_message = {
+			type = msg_marshal_task_bad
+			title = legal_bureau_director_task.9003.notification
+			desc = {
+				triggered_desc = {
+					trigger = {
+						scope:active_councillor ?= { learning <= average_skill_level }
+					}
+					desc = task_learning_good_unskilled_notification_tooltip
+				}
+				triggered_desc = {
+					trigger = {
+						scope:active_councillor ?= { learning > average_skill_level }
+					}
+					desc = task_learning_good_skilled_notification_tooltip
+				}
+			}
+			tooltip = task_increase_control_notification_tooltip
+
+			left_icon = scope:active_councillor
+			right_icon = scope:baron
+
+			add_prestige = minor_prestige_loss
+			scope:baron = {
+				add_opinion = {
+					target = root
+					modifier = marshal_task_increase_control_baron_decrease_opinion
+					days = legal_bureau_director_task_modifier_duration
+				}
+			}
+		}
+	}
+
+}
+
+
+####
+# Good Side Effects
+####
+
+#Increased County Opinion
+# by Petter Vilberg
+legal_bureau_director_task.9101 = {
+	hidden = yes
+
+	trigger = {
+		scope:councillor = {
+			has_council_position = councillor_legal_bureau_director
+			learning > mediocre_skill_rating
+		}
+		scope:county ?= {
+			NOR = {
+				has_county_modifier = marshal_task_increase_control_decreased_opinion_modifier
+				has_county_modifier = marshal_task_increase_control_increased_opinion_modifier
+			}
+		}
+	}
+
+	weight_multiplier = {
+		base = 1
+		compare_modifier = {
+			target = scope:councillor
+			value = learning
+			multiplier = 0.2
+			offset = inverted_mediocre_skill_rating
+		}
+	}
+
+	immediate = {
+		scope:councillor ?= {
+			save_scope_as = active_councillor
+		}
+		set_variable = {
+			name = had_legal_bureau_director_task_side_effect
+			value = yes
+			days = legal_bureau_director_task_side_effect_cooldown
+		}
+
+		send_interface_message = {
+			type = msg_marshal_task_good
+			title = legal_bureau_director_task.9101.notification
+			desc = {
+				triggered_desc = {
+					trigger = {
+						scope:active_councillor ?= { learning <= average_skill_level }
+					}
+					desc = task_learning_good_unskilled_notification_tooltip
+				}
+				triggered_desc = {
+					trigger = {
+						scope:active_councillor ?= { learning > average_skill_level }
+					}
+					desc = task_learning_good_skilled_notification_tooltip
+				}
+			}
+			tooltip = task_increase_control_notification_tooltip
+
+			left_icon = scope:active_councillor
+			right_icon = scope:county
+
+			scope:county ?= {
+				add_county_modifier = {
+					modifier = marshal_task_increase_control_increased_opinion_modifier
+					years = 5
+				}
+			}
+		}
+	}
+}
+
+#Baron opinion gain
+# by Petter Vilberg
+
+legal_bureau_director_task.9102 = {
+	hidden = yes
+
+	trigger = {
+		scope:councillor = {
+			has_council_position = councillor_legal_bureau_director
+			learning > mediocre_skill_rating
+		}
+		scope:county ?= {
+			legal_bureau_director_task_9003_county_trigger = yes
+		}
+	}
+
+	weight_multiplier = {
+		base = 1
+		compare_modifier = {
+			target = scope:councillor
+			value = learning
+			multiplier = 0.2
+			offset = inverted_mediocre_skill_rating
+		}
+	}
+
+	immediate = {
+		scope:councillor ?= {
+			save_scope_as = active_councillor
+		}
+		set_variable = {
+			name = had_legal_bureau_director_task_side_effect
+			value = yes
+			days = legal_bureau_director_task_side_effect_cooldown
+		}
+		scope:county ?= {
+			random_in_de_facto_hierarchy = {
+				limit = {
+					tier = tier_barony
+					exists = holder
+					holder != ROOT
+					holder = {
+						legal_bureau_director_task_9003_baron_trigger = yes
+					}
+				}
+				holder = {
+					save_scope_as = baron
+				}
+			}
+		}
+
+		send_interface_message = {
+			type = msg_marshal_task_good
+			title = legal_bureau_director_task.9102.notification
+			desc = {
+				triggered_desc = {
+					trigger = {
+						scope:active_councillor ?= { learning <= average_skill_level }
+					}
+					desc = task_learning_good_unskilled_notification_tooltip
+				}
+				triggered_desc = {
+					trigger = {
+						scope:active_councillor ?= { learning > average_skill_level }
+					}
+					desc = task_learning_good_skilled_notification_tooltip
+				}
+			}
+			tooltip = task_increase_control_notification_tooltip
+
+			left_icon = scope:active_councillor
+			right_icon = scope:baron
+
+			scope:baron = {
+				add_opinion = {
+					target = root
+					modifier = marshal_task_increase_control_baron_increase_opinion
+					days = legal_bureau_director_task_modifier_duration
+				}
+			}
+			add_prestige = minor_prestige_gain
+		}
+	}
+}

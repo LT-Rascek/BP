@@ -1,0 +1,437 @@
+﻿##### Changed from Vanilla: extended to Roman Legal Bureau Director
+marshal_remove_random_county_corruption_modifier_effect = {
+	random_list = {
+		100 = {
+			trigger = {
+				has_county_modifier = county_corruption_inefficient_tax_collection_modifier
+			}
+			if = {
+				limit = {
+					scope:councillor = {
+						OR = {
+							scope:county.holder.cp:councillor_marshal ?= this
+							scope:county.holder.cp:councillor_legal_bureau_director ?= this
+							is_kurultai_trigger = yes
+						}
+					}
+				}
+				save_scope_value_as = {
+					name = marshal_removal
+					value = yes
+				}
+			}
+			hidden_effect = {
+				set_variable = {
+					name = county_corruption_recent_removal
+					years = 3
+				}
+			}
+			remove_inefficient_tax_collection_modifier_effect = yes
+		}
+		100 = {
+			trigger = {
+				has_county_modifier = county_corruption_deserting_levies_modifier
+			}
+			if = {
+				limit = {
+					scope:councillor = {
+						OR = {
+							scope:county.holder.cp:councillor_marshal ?= this
+							scope:county.holder.cp:councillor_legal_bureau_director ?= this
+							is_kurultai_trigger = yes
+						}
+					}
+				}
+				save_scope_value_as = {
+					name = marshal_removal
+					value = yes
+				}
+			}
+			hidden_effect = {
+				set_variable = {
+					name = county_corruption_recent_removal
+					years = 3
+				}
+			}
+			remove_deserting_levies_modifier_effect = yes
+		}
+		100 = {
+			trigger = {
+				has_county_modifier = county_corruption_smuggling_ring_modifier
+			}
+			if = {
+				limit = {
+					scope:councillor = {
+						OR = {
+							scope:county.holder.cp:councillor_marshal ?= this
+							scope:county.holder.cp:councillor_legal_bureau_director ?= this
+							is_kurultai_trigger = yes
+						}
+					}
+				}
+				save_scope_value_as = {
+					name = marshal_removal
+					value = yes
+				}
+			}
+			hidden_effect = {
+				set_variable = {
+					name = county_corruption_recent_removal
+					years = 3
+				}
+			}
+			remove_smuggling_ring_modifier_effect = yes
+		}
+		100 = {
+			trigger = {
+				has_county_modifier = county_corruption_bandits_rampant_modifier
+			}
+			if = {
+				limit = {
+					scope:councillor = {
+						OR = {
+							scope:county.holder.cp:councillor_marshal ?= this
+							scope:county.holder.cp:councillor_legal_bureau_director ?= this
+							is_kurultai_trigger = yes
+						}
+					}
+				}
+				save_scope_value_as = {
+					name = marshal_removal
+					value = yes
+				}
+			}
+			hidden_effect = {
+				set_variable = {
+					name = county_corruption_recent_removal
+					years = 3
+				}
+			}
+			remove_bandits_rampant_modifier_effect = yes
+		}
+		100 = {
+			trigger = {
+				has_county_modifier = county_corruption_inefficient_census_modifier
+			}
+			if = {
+				limit = {
+					scope:councillor = {
+						OR = {
+							scope:county.holder.cp:councillor_marshal ?= this
+							scope:county.holder.cp:councillor_legal_bureau_director ?= this
+							is_kurultai_trigger = yes
+						}
+					}
+				}
+				save_scope_value_as = {
+					name = marshal_removal
+					value = yes
+				}
+			}
+			hidden_effect = {
+				set_variable = {
+					name = county_corruption_recent_removal
+					years = 3
+				}
+			}
+			remove_inefficient_census_modifier_effect = yes
+		}
+		100 = {
+			trigger = {
+				has_county_modifier = county_corruption_lack_of_sheriffs_modifier
+			}
+			if = {
+				limit = {
+					scope:councillor = {
+						OR = {
+							scope:county.holder.cp:councillor_marshal ?= this
+							scope:county.holder.cp:councillor_legal_bureau_director ?= this
+							is_kurultai_trigger = yes
+						}
+					}
+				}
+				save_scope_value_as = {
+					name = marshal_removal
+					value = yes
+				}
+			}
+			hidden_effect = {
+				set_variable = {
+					name = county_corruption_recent_removal
+					years = 3
+				}
+			}
+			remove_lack_of_sheriffs_modifier_effect = yes
+		}
+		100 = {
+			trigger = {
+				has_county_modifier = county_corruption_lack_of_courts_modifier
+			}
+			if = {
+				limit = {
+					scope:councillor = {
+						OR = {
+							scope:county.holder.cp:councillor_marshal ?= this
+							scope:county.holder.cp:councillor_legal_bureau_director ?= this
+							is_kurultai_trigger = yes
+						}
+					}
+				}
+				save_scope_value_as = {
+					name = marshal_removal
+					value = yes
+				}
+			}
+			hidden_effect = {
+				set_variable = {
+					name = county_corruption_recent_removal
+					years = 3
+				}
+			}
+			remove_lack_of_courts_modifier_effect = yes
+		}
+		100 = {
+			trigger = {
+				has_county_modifier = county_corruption_thieves_guild_modifier
+			}
+			if = {
+				limit = {
+					scope:councillor = {
+						OR = {
+							scope:county.holder.cp:councillor_marshal ?= this
+							scope:county.holder.cp:councillor_legal_bureau_director ?= this
+							is_kurultai_trigger = yes
+						}
+					}
+				}
+				save_scope_value_as = {
+					name = marshal_removal
+					value = yes
+				}
+			}
+			hidden_effect = {
+				set_variable = {
+					name = county_corruption_recent_removal
+					years = 3
+				}
+			}
+			remove_thieves_guild_modifier_effect = yes
+		}
+		100 = {
+			trigger = {
+				has_county_modifier = county_corruption_unsafe_highways_modifier
+			}
+			if = {
+				limit = {
+					scope:councillor = {
+						OR = {
+							scope:county.holder.cp:councillor_marshal ?= this
+							scope:county.holder.cp:councillor_legal_bureau_director ?= this
+							is_kurultai_trigger = yes
+						}
+					}
+				}
+				save_scope_value_as = {
+					name = marshal_removal
+					value = yes
+				}
+			}
+			hidden_effect = {
+				set_variable = {
+					name = county_corruption_recent_removal
+					years = 3
+				}
+			}
+			remove_unsafe_highways_modifier_effect = yes
+		}
+		100 = {
+			trigger = {
+				has_county_modifier = county_corruption_uncooperative_guilds_modifier
+			}
+			if = {
+				limit = {
+					scope:councillor = {
+						OR = {
+							scope:county.holder.cp:councillor_marshal ?= this
+							scope:county.holder.cp:councillor_legal_bureau_director ?= this
+							is_kurultai_trigger = yes
+						}
+					}
+				}
+				save_scope_value_as = {
+					name = marshal_removal
+					value = yes
+				}
+			}
+			hidden_effect = {
+				set_variable = {
+					name = county_corruption_recent_removal
+					years = 3
+				}
+			}
+			remove_uncooperative_guilds_modifier_effect = yes
+		}
+		100 = {
+			trigger = {
+				has_county_modifier = county_corruption_lackluster_administration_modifier
+			}
+			if = {
+				limit = {
+					scope:councillor = {
+						OR = {
+							scope:county.holder.cp:councillor_marshal ?= this
+							scope:county.holder.cp:councillor_legal_bureau_director ?= this
+							is_kurultai_trigger = yes
+						}
+					}
+				}
+				save_scope_value_as = {
+					name = marshal_removal
+					value = yes
+				}
+			}
+			hidden_effect = {
+				set_variable = {
+					name = county_corruption_recent_removal
+					years = 3
+				}
+			}
+			remove_lackluster_administration_modifier_effect = yes
+		}
+		100 = {
+			trigger = {
+				has_county_modifier = county_corruption_roaming_bandits_modifier
+			}
+			if = {
+				limit = {
+					scope:councillor = {
+						OR = {
+							scope:county.holder.cp:councillor_marshal ?= this
+							scope:county.holder.cp:councillor_legal_bureau_director ?= this
+							is_kurultai_trigger = yes
+						}
+					}
+				}
+				save_scope_value_as = {
+					name = marshal_removal
+					value = yes
+				}
+			}
+			hidden_effect = {
+				set_variable = {
+					name = county_corruption_recent_removal
+					years = 3
+				}
+			}
+			remove_roaming_bandits_modifier_effect = yes
+		}
+		100 = {
+			trigger = {
+				has_county_modifier = county_corruption_wild_beast_attacks_modifier
+			}
+			if = {
+				limit = {
+					scope:councillor = {
+						OR = {
+							scope:county.holder.cp:councillor_marshal ?= this
+							scope:county.holder.cp:councillor_legal_bureau_director ?= this
+							is_kurultai_trigger = yes
+						}
+					}
+				}
+				save_scope_value_as = {
+					name = marshal_removal
+					value = yes
+				}
+			}
+			hidden_effect = {
+				set_variable = {
+					name = county_corruption_recent_removal
+					years = 3
+				}
+			}
+			remove_wild_beast_attacks_modifier_effect = yes
+		}
+		100 = {
+			trigger = {
+				has_county_modifier = county_corruption_upset_shepherds_modifier
+			}
+			if = {
+				limit = {
+					scope:councillor = {
+						OR = {
+							scope:county.holder.cp:councillor_marshal ?= this
+							scope:county.holder.cp:councillor_legal_bureau_director ?= this
+							is_kurultai_trigger = yes
+						}
+					}
+				}
+				save_scope_value_as = {
+					name = marshal_removal
+					value = yes
+				}
+			}
+			hidden_effect = {
+				set_variable = {
+					name = county_corruption_recent_removal
+					years = 3
+				}
+			}
+			remove_upset_shepherds_modifier_effect = yes
+		}
+		100 = {
+			trigger = {
+				has_county_modifier = county_corruption_rogue_warriors_modifier
+			}
+			if = {
+				limit = {
+					scope:councillor = {
+						OR = {
+							scope:county.holder.cp:councillor_marshal ?= this
+							scope:county.holder.cp:councillor_legal_bureau_director ?= this
+							is_kurultai_trigger = yes
+						}
+					}
+				}
+				save_scope_value_as = {
+					name = marshal_removal
+					value = yes
+				}
+			}
+			hidden_effect = {
+				set_variable = {
+					name = county_corruption_recent_removal
+					years = 3
+				}
+			}
+			remove_rogue_warriors_modifier_effect = yes
+		}
+		100 = {
+			trigger = {
+				has_county_modifier = county_corruption_unruly_nomads_modifier
+			}
+			if = {
+				limit = {
+					scope:councillor = {
+						OR = {
+							scope:county.holder.cp:councillor_marshal ?= this
+							scope:county.holder.cp:councillor_legal_bureau_director ?= this
+							is_kurultai_trigger = yes
+						}
+					}
+				}
+				save_scope_value_as = {
+					name = marshal_removal
+					value = yes
+				}
+			}
+			hidden_effect = {
+				set_variable = {
+					name = county_corruption_recent_removal
+					years = 3
+				}
+			}
+			remove_unruly_nomads_modifier_effect = yes
+		}
+	}
+}
