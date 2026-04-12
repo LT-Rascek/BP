@@ -4229,9 +4229,6 @@ on_vassal_change = {
 						}
 					}
 				}
-				##### Changed from Vanilla vvvvv
-				NOT = { government_has_flag = government_is_quasi_feudal }
-				##### Changed from Vanilla ^^^^^
 			}
 			create_noble_family_effect = { GOVERNMENT_GIVER = this }
 			domicile ?= { set_up_domicile_estate_effect = yes }
