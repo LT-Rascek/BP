@@ -420,8 +420,20 @@ task_conversion = {
 				}
 				faith != scope:councillor_liege.faith
 			}
-			#Otherwise it's councillor's faith
+			### Minority stuff; replaces Vanilla `NOT = { culture = scope:councillor_liege.culture }` ###
+			trigger_else_if = {
+				limit = {
+					culture = scope:councillor_liege.culture
+					scope:councillor_liege = { has_realm_law_flag = may_convert_faith }
+				}
+				custom_tooltip = {
+					text = "not_has_expel_minorities_unlocked"
+					county_has_minority_faith_trigger = yes
+					scope:councillor_liege = { has_realm_law_flag = unlock_expel_religious_minorities }
+				}
+			}
 			trigger_else = { faith != scope:councillor.faith }
+			### End Minority stuff ###
 			trigger_if = {
 				limit = {
 					scope:councillor_liege = {
