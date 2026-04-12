@@ -1,4 +1,4 @@
-﻿##### Changed from Vanilla: Tweaked it so government is inherited properly for 
+﻿##### Changed from Vanilla: Tweaked it so government is inherited properly for even during unlanding
 
 # Shared effect between the Popular Faction's demand event and victory outcome.
 #
@@ -286,6 +286,90 @@ successful_popular_revolt_outcome_effect = {
 						}
 					}
 				}
+				
+				##### Changed from Vanilla vvvvv
+				
+				# Step 4b: (Previously Step 8): Set up government type correctly.
+				# (The capital county holder can possibly 
+				scope:capital_county = {
+					holder ?= {
+						if = {
+							limit = {
+								is_alive = yes
+							}
+							save_scope_as = old_holder
+							switch = {
+								trigger = government_has_flag
+								##### Changed from Vanilla vvvvv
+								#Put before the vanilla so that High Tribal doesn't get flagged as tribal
+								#Put Sub-Roman before proper Roman for the same reason
+								government_is_prefeudal = {
+									save_scope_value_as = { name = old_government value = flag:prefeudal }
+								}
+								government_is_rajamandala = {
+									save_scope_value_as = { name = old_government value = flag:rajamandala }
+								}
+								government_is_iranian_dynastic = {
+									save_scope_value_as = { name = old_government value = flag:iranian_dynastic }
+								}
+								government_is_subroman_dynastic = {
+									save_scope_value_as = { name = old_government value = flag:sub_roman_dynastic }
+								}
+								government_is_roman_dynastic = {
+									save_scope_value_as = { name = old_government value = flag:roman_dynastic }
+								}
+								government_is_subroman_administrative = {
+									save_scope_value_as = { name = old_government value = flag:subroman_administrative }
+								}
+								government_is_roman_federate = {
+									save_scope_value_as = { name = old_government value = flag:roman_federate }
+								}
+								government_is_roman_administrative = {
+									save_scope_value_as = { name = old_government value = flag:roman_administrative }
+								}
+								government_is_high_tribal = {
+									save_scope_value_as = { name = old_government value = flag:high_tribal }
+								}
+								##### Changed from Vanilla ^^^^^
+								government_is_administrative = {
+									save_scope_value_as = { name = old_government value = flag:admin }
+								}
+								government_is_clan = {
+									save_scope_value_as = { name = old_government value = flag:clan }
+								}
+								government_is_tribal = {
+									save_scope_value_as = { name = old_government value = flag:tribal }
+								}
+								government_is_wanua = {
+									save_scope_value_as = { name = old_government value = flag:wanua }
+								}
+								government_is_nomadic = {
+									save_scope_value_as = { name = old_government value = flag:nomad }
+								}
+								government_is_celestial = {
+									save_scope_value_as = { name = old_government value = flag:admin }
+								}
+								government_is_steppe_admin = {
+									save_scope_value_as = { name = old_government value = flag:admin }
+								}
+								government_is_meritocratic = {
+									save_scope_value_as = { name = old_government value = flag:admin }
+								}
+								government_is_japan_administrative = {
+									save_scope_value_as = { name = old_government value = flag:admin }
+								}
+								government_is_japan_feudal = {
+									save_scope_value_as = { name = old_government value = flag:japan_feudal }
+								}
+								government_is_mandala = {
+									save_scope_value_as = { name = old_government value = flag:mandala }
+								}
+							}
+						}
+					}
+				}
+				##### Changed from Vanilla ^^^^^
+				
 				# Step 5: CHANGE ONE - Give them the selected county and make them go independent
 				create_title_and_vassal_change = {
 					type = conquest_populist
@@ -376,84 +460,6 @@ successful_popular_revolt_outcome_effect = {
 						exists = var:peasant_title.holder
 					}
 					destroy_title = var:peasant_title
-				}
-				# Step 8: Set up government type correctly.
-				scope:capital_county = {
-					previous_holder ?= {
-						if = {
-							limit = {
-								is_alive = yes
-							}
-							save_scope_as = old_holder
-							switch = {
-								trigger = government_has_flag
-								##### Changed from Vanilla vvvvv
-								#Put before the vanilla so that High Tribal doesn't get flagged as tribal
-								#Put Sub-Roman before proper Roman for the same reason
-								government_is_prefeudal = {
-									save_scope_value_as = { name = old_government value = flag:prefeudal }
-								}
-								government_is_rajamandala = {
-									save_scope_value_as = { name = old_government value = flag:rajamandala }
-								}
-								government_is_iranian_dynastic = {
-									save_scope_value_as = { name = old_government value = flag:iranian_dynastic }
-								}
-								government_is_subroman_dynastic = {
-									save_scope_value_as = { name = old_government value = flag:sub_roman_dynastic }
-								}
-								government_is_roman_dynastic = {
-									save_scope_value_as = { name = old_government value = flag:roman_dynastic }
-								}
-								government_is_subroman_administrative = {
-									save_scope_value_as = { name = old_government value = flag:subroman_administrative }
-								}
-								government_is_roman_federate = {
-									save_scope_value_as = { name = old_government value = flag:roman_federate }
-								}
-								government_is_roman_administrative = {
-									save_scope_value_as = { name = old_government value = flag:roman_administrative }
-								}
-								government_is_high_tribal = {
-									save_scope_value_as = { name = old_government value = flag:high_tribal }
-								}
-								##### Changed from Vanilla ^^^^^
-								government_is_administrative = {
-									save_scope_value_as = { name = old_government value = flag:admin }
-								}
-								government_is_clan = {
-									save_scope_value_as = { name = old_government value = flag:clan }
-								}
-								government_is_tribal = {
-									save_scope_value_as = { name = old_government value = flag:tribal }
-								}
-								government_is_wanua = {
-									save_scope_value_as = { name = old_government value = flag:wanua }
-								}
-								government_is_nomadic = {
-									save_scope_value_as = { name = old_government value = flag:nomad }
-								}
-								government_is_celestial = {
-									save_scope_value_as = { name = old_government value = flag:admin }
-								}
-								government_is_steppe_admin = {
-									save_scope_value_as = { name = old_government value = flag:admin }
-								}
-								government_is_meritocratic = {
-									save_scope_value_as = { name = old_government value = flag:admin }
-								}
-								government_is_japan_administrative = {
-									save_scope_value_as = { name = old_government value = flag:admin }
-								}
-								government_is_japan_feudal = {
-									save_scope_value_as = { name = old_government value = flag:japan_feudal }
-								}
-								government_is_mandala = {
-									save_scope_value_as = { name = old_government value = flag:mandala }
-								}
-							}
-						}
-					}
 				}
 				
 				##### Changed from Vanilla vvvvv

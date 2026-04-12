@@ -244,11 +244,11 @@ BP_flip_federate_to_admin_when_landless = {
 			limit = { is_landless_ruler = yes }
 			if = {
 				limit = { root.top_liege = { has_government = roman_administrative_government } }
-				change_government = roman_administrative_government
+				change_government_roman_administrative_effect = yes
 			}
 			else_if = {
 				limit = { root.top_liege = { has_government = subroman_administrative_government } }
-				change_government = subroman_administrative_government
+				change_government_subroman_administrative_effect = yes
 			}
 		}
 	}

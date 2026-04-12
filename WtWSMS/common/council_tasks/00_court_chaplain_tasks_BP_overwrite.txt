@@ -423,7 +423,7 @@ task_conversion = {
 			### Minority stuff; replaces Vanilla `NOT = { culture = scope:councillor_liege.culture }` ###
 			trigger_else_if = {
 				limit = {
-					culture = scope:councillor_liege.culture
+					faith = scope:councillor_liege.faith
 					scope:councillor_liege = { has_realm_law_flag = may_convert_faith }
 				}
 				custom_tooltip = {
