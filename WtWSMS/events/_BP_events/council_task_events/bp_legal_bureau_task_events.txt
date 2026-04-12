@@ -376,8 +376,837 @@ legal_bureau_director_task.3103 = {
 	}
 }
 
+##################
+# Side Effects from Domestic Affairs
+# 8001-8999
+##################
+
+###
+#Bad Side Effects
+###
+
+#Decrease Powerful vassal opinion
+# by Petter Vilberg
+scripted_trigger legal_bureau_director_task_8001_vassal_trigger = {
+	trigger_if = { #For directed efforts it has to be the target vassal
+		limit = {
+			scope:councillor = {
+				is_performing_council_task = task_bestow_royal_favor
+			}
+		}
+		this = scope:councillor.councillor_task_target 
+	}
+	trigger_else = {
+		is_of_major_interest_to_root_trigger = yes
+		is_imprisoned = no
+		NOT = { has_trait = incapable }
+		NOR = {
+			has_opinion_modifier = {
+				target = root
+				modifier = chancellor_task_powerful_vassal_increased_opinion
+			}
+			has_opinion_modifier = {
+				target = root
+				modifier = chancellor_task_powerful_vassal_decreased_opinion
+			}
+		}
+		NOT = { root.cp:councillor_chancellor ?= this }
+	}
+}
+
+legal_bureau_director_task.8001 = {
+	type = letter_event
+	opening = {
+		desc = legal_bureau_director_task.8001.opening
+	}
+	desc = legal_bureau_director_task.8001.desc
+	sender = scope:vassal
+	
+	trigger = {
+		NOT = { has_character_flag = had_msg_legal_bureau_director_task_8001 }
+		OR = {
+			AND = {
+				exists = cp:councillor_chancellor
+				scope:councillor = cp:councillor_chancellor
+			}
+			scope:councillor = {
+				is_kurultai_trigger = yes
+			}
+		}
+		any_vassal = {
+			legal_bureau_director_task_8001_vassal_trigger = yes
+		}
+		scope:councillor = {
+			diplomacy < high_skill_rating
+		}
+	}
+
+	weight_multiplier = {
+		base = 1
+		compare_modifier = {
+			target = scope:councillor
+			value = diplomacy
+			multiplier = -0.2
+			offset = inverted_high_skill_rating
+		}
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_msg_legal_bureau_director_task_8001
+			years = 5
+		}
+		set_variable = {
+			name = had_legal_bureau_director_task_side_effect
+			value = yes
+			days = legal_bureau_director_task_side_effect_cooldown
+		}
+		scope:councillor = {
+			save_scope_as = active_councillor
+		}
+		random_vassal = {
+			limit = {
+				legal_bureau_director_task_8001_vassal_trigger = yes
+			}
+			save_scope_as = vassal
+		}
+	}
+
+	option = {
+		name = legal_bureau_director_task.8001.a
+		scope:vassal = {
+			add_opinion = {
+				target = root
+				modifier = chancellor_task_powerful_vassal_decreased_opinion
+				days = legal_bureau_director_task_modifier_duration
+			}
+		}
+	}
+}
+
+#Worsen vassal contract
+# by Petter Vilberg
+
+scripted_trigger legal_bureau_director_task_8002_vassal_trigger = {
+	vassal_contract_obligation_level_can_be_decreased = feudal_government_taxes
+	is_ai = yes
+	trigger_if = { #For directed efforts it has to be the target vassal
+		limit = {
+			scope:councillor = {
+				is_performing_council_task = task_bestow_royal_favor
+			}
+		}
+		this = scope:councillor.councillor_task_target
+	}
+	trigger_else = {
+		NOR = { 
+			has_variable = legal_bureau_director_task_improved_contract 
+			has_variable = legal_bureau_director_task_worsened_contract 
+		}
+		NOT = {
+			root.cp:councillor_chancellor ?= this
+		}
+	}
+}
+
+legal_bureau_director_task.8002 = {
+	type = letter_event
+	opening = {
+		desc = legal_bureau_director_task.8002.opening
+	}
+	desc = legal_bureau_director_task.8002.desc
+	sender = scope:councillor
+	
+	trigger = {
+		NOT = { has_character_flag = had_msg_legal_bureau_director_task_8002 }
+		OR = {
+			AND = {
+				exists = cp:councillor_chancellor
+				scope:councillor = cp:councillor_chancellor
+			}
+			scope:councillor = {
+				is_kurultai_trigger = yes
+			}
+		}
+		any_vassal = {
+			legal_bureau_director_task_8002_vassal_trigger = yes
+		}
+		scope:councillor = {
+			diplomacy < high_skill_rating
+		}
+	}
+
+	weight_multiplier = {
+		base = 1
+		compare_modifier = {
+			target = scope:councillor
+			value = diplomacy
+			multiplier = -0.2
+			offset = inverted_high_skill_rating
+		}
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_msg_legal_bureau_director_task_8002
+			years = 5
+		}
+		set_variable = {
+			name = had_legal_bureau_director_task_side_effect
+			value = yes
+			days = legal_bureau_director_task_side_effect_cooldown
+		}
+		scope:councillor = {
+			save_scope_as = active_councillor
+		}
+		random_vassal = {
+			limit = {
+				legal_bureau_director_task_8002_vassal_trigger = yes
+			}
+			set_variable = {
+				name = legal_bureau_director_task_worsened_contract
+				value = yes
+				days = 7800
+			}
+			save_scope_as = vassal
+		}
+	}
+
+	option = { #Reduce the contract
+		name = legal_bureau_director_task.8002.a
+		scope:vassal = {
+			vassal_contract_decrease_obligation_level = feudal_government_taxes
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	option = { #Give the vassal a Hook instead
+		trigger = {
+			scope:vassal = {
+				can_add_hook = {
+					target = root
+					type = favor_hook
+				}
+			}
+		}
+		name = legal_bureau_director_task.8002.c
+		scope:vassal = {
+			add_hook = {
+				target = root
+				type = favor_hook
+			}
+		}
+	}
+
+	option = { #Spend a Hook instead
+		trigger = {
+			has_usable_hook = scope:vassal
+		}
+		name = legal_bureau_director_task.8002.d
+		use_hook = scope:vassal
+	}
+}
+
+#Loss of Prestige
+# by Petter Vilberg
+legal_bureau_director_task.8003 = {
+	hidden = yes
+	
+	trigger = {
+		NOT = { has_character_flag = had_msg_legal_bureau_director_task_8003 }
+		OR = {
+			AND = {
+				exists = cp:councillor_chancellor
+				scope:councillor = cp:councillor_chancellor
+			}
+			scope:councillor = {
+				is_kurultai_trigger = yes
+			}
+		}
+		scope:councillor = {
+			diplomacy < high_skill_rating
+		}
+	}
+
+	weight_multiplier = {
+		base = 1
+		compare_modifier = {
+			target = scope:councillor
+			value = diplomacy
+			multiplier = -0.2
+			offset = inverted_high_skill_rating
+		}
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_msg_legal_bureau_director_task_8003
+			years = 5
+		}
+		set_variable = {
+			name = had_legal_bureau_director_task_side_effect
+			value = yes
+			days = legal_bureau_director_task_side_effect_cooldown
+		}
+		scope:councillor = {
+			save_scope_as = active_councillor
+		}
+		send_interface_message = {
+			type = msg_chancellor_task_bad
+			title = legal_bureau_director_task.8003.notification
+			desc = {
+				triggered_desc = {
+					trigger = {
+						scope:active_councillor = { diplomacy <= average_skill_level }
+					}
+					desc = task_diplomacy_bad_unskilled_notification_tooltip
+				}
+				triggered_desc = {
+					trigger = {
+						scope:active_councillor = { diplomacy > average_skill_level }
+					}
+					desc = task_diplomacy_bad_skilled_notification_tooltip
+				}
+			}
+			tooltip = task_domestic_affairs_notification_tooltip
+
+			left_icon = scope:active_councillor
+			right_icon = root.primary_title
+
+			add_prestige = medium_prestige_loss
+		}
+	}
+
+}
+
 ####
-#9000-13999: Side effects from Increase Control
+# Good Side Effects
+####
+
+#Stop vassal infighting
+# by Petter Vilberg
+
+scripted_trigger legal_bureau_director_task_8101_defender_vassal = {
+	is_ai = yes
+	is_at_war_as_defender = yes
+	save_temporary_scope_as = defender_vassal
+	NOT = {
+		root.cp:councillor_chancellor ?= this
+	}
+	trigger_if = { #For directed efforts one of the vassals has to be the target
+		limit = {
+			scope:councillor = {
+				is_performing_council_task = task_bestow_royal_favor
+			}
+		}
+		save_temporary_scope_as = vassal_1
+	}
+}
+
+scripted_trigger legal_bureau_director_task_8101_attacker_vassal = {	
+	is_ai = yes
+	is_at_war_as_attacker = yes
+	save_temporary_scope_as = attacker_vassal
+	any_character_war = {
+		primary_attacker = scope:attacker_vassal
+		primary_defender = scope:defender_vassal
+	}
+	NOT = {
+		root.cp:councillor_chancellor ?= this
+	}
+	trigger_if = { #For directed efforts one of the vassals has to be the target
+		limit = {
+			scope:councillor = {
+				is_performing_council_task = task_bestow_royal_favor
+			}
+		}
+		save_temporary_scope_as = vassal_2
+	}
+}
+
+legal_bureau_director_task.8101 = {
+	type = letter_event
+	opening = {
+		desc = legal_bureau_director_task.8101.opening
+	}
+	desc = legal_bureau_director_task.8101.desc
+	sender = scope:active_councillor
+	
+	trigger = {
+		NOT = { has_character_flag = had_msg_legal_bureau_director_task_8101 }
+		OR = {
+			AND = {
+				exists = cp:councillor_chancellor
+				scope:councillor = cp:councillor_chancellor
+			}
+			scope:councillor = {
+				is_kurultai_trigger = yes
+			}
+		}
+		is_at_war = no
+		any_vassal = {
+			legal_bureau_director_task_8101_defender_vassal = yes
+		}
+		any_vassal = {
+			legal_bureau_director_task_8101_attacker_vassal = yes
+		}
+		trigger_if = { #For directed efforts one of the vassals has to be the target
+			limit = {
+				scope:councillor = {
+					is_performing_council_task = task_bestow_royal_favor
+				}
+			}
+			OR = {
+				scope:target_character = scope:vassal_1
+				scope:target_character = scope:vassal_2
+			}
+		}
+		
+		scope:councillor = {
+			
+			diplomacy > mediocre_skill_rating
+		}
+	}
+
+	weight_multiplier = {
+		base = 1
+		compare_modifier = {
+			target = scope:councillor
+			value = diplomacy
+			multiplier = 0.2
+			offset = inverted_mediocre_skill_rating
+		}
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_msg_legal_bureau_director_task_8101
+			years = 5
+		}
+		scope:councillor = {
+			save_scope_as = active_councillor
+		}
+		set_variable = {
+			name = had_legal_bureau_director_task_side_effect
+			value = yes
+			days = legal_bureau_director_task_side_effect_cooldown
+		}
+		random_vassal = {
+			limit = {
+				legal_bureau_director_task_8101_defender_vassal = yes
+				root = {
+					any_vassal = {
+						legal_bureau_director_task_8101_attacker_vassal = yes
+					}
+				}
+			}
+			save_scope_as = defender_vassal
+		}
+		random_vassal = {
+			limit = {
+				legal_bureau_director_task_8101_attacker_vassal = yes
+			}
+			save_scope_as = attacker_vassal
+			random_character_war = {
+				limit = {
+					primary_attacker = scope:attacker_vassal
+					primary_defender = scope:defender_vassal
+				}
+				save_scope_as = war
+			}
+		}
+	}
+
+	option = {
+		name = legal_bureau_director_task.8101.a
+		remove_treasury_or_gold = medium_treasury_or_gold_value
+		scope:war = {
+			end_war = white_peace
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0
+				short_term_treasury_or_gold <= medium_treasury_or_gold_value
+			}
+		}
+	}
+
+	option = {
+		name = legal_bureau_director_task.8101.b
+		add_prestige = medium_prestige_loss
+		scope:war = {
+			end_war = white_peace
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	option = {
+		name = legal_bureau_director_task.8101.c
+		custom_tooltip = legal_bureau_director_task.8101.c.tt
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+#Improve vassal contract
+# by Petter Vilberg
+
+scripted_trigger legal_bureau_director_task_8102_vassal_trigger = {
+	is_ai = yes
+	vassal_contract_obligation_level_can_be_increased = feudal_government_taxes
+	trigger_if = { #For directed efforts it has to be the target vassal
+		limit = {
+			scope:councillor = {
+				is_performing_council_task = task_bestow_royal_favor
+			}
+		}
+		this = scope:councillor.councillor_task_target
+	}
+	trigger_else = {
+		NOR = { 
+			has_variable = legal_bureau_director_task_improved_contract 
+			has_variable = legal_bureau_director_task_worsened_contract 
+		}
+		NOT = {
+			root.cp:councillor_chancellor ?= this
+		}
+	}
+}
+
+legal_bureau_director_task.8102 = {
+	type = letter_event
+	opening = {
+		desc = legal_bureau_director_task.8002.opening
+	}
+	desc = legal_bureau_director_task.8102.desc
+	sender = scope:councillor
+	
+	trigger = {
+		NOT = { has_character_flag = had_msg_legal_bureau_director_task_8102 }
+		OR = {
+			AND = {
+				exists = cp:councillor_chancellor
+				scope:councillor = cp:councillor_chancellor
+			}
+			scope:councillor = {
+				is_kurultai_trigger = yes
+			}
+		}
+		any_vassal = {
+			legal_bureau_director_task_8102_vassal_trigger = yes
+		}
+		scope:councillor = {
+			
+			diplomacy > mediocre_skill_rating
+		}
+	}
+
+	weight_multiplier = {
+		base = 1
+		compare_modifier = {
+			target = scope:councillor
+			value = diplomacy
+			multiplier = 0.2
+			offset = inverted_mediocre_skill_rating
+		}
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_msg_legal_bureau_director_task_8102
+			years = 5
+		}
+		set_variable = {
+			name = had_legal_bureau_director_task_side_effect
+			value = yes
+			days = legal_bureau_director_task_side_effect_cooldown
+		}
+		scope:councillor = {
+			save_scope_as = active_councillor
+		}
+		random_vassal = {
+			limit = {
+				legal_bureau_director_task_8102_vassal_trigger = yes
+			}
+			set_variable = {
+				name = legal_bureau_director_task_improved_contract
+				value = yes
+				days = 7800
+			}
+			save_scope_as = vassal
+		}
+	}
+
+	option = {
+		name = legal_bureau_director_task.8102.a
+		scope:vassal = {
+			vassal_contract_increase_obligation_level = feudal_government_taxes
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	option = {
+		name = legal_bureau_director_task.8102.c
+		trigger = {
+			can_add_hook = {
+				target = scope:vassal
+				type = favor_hook
+			}
+		}
+		add_hook = {
+			target = scope:vassal
+			type = favor_hook
+		}
+	}
+}
+
+#Improve Powerful vassal opinion
+# by Petter Vilberg
+scripted_trigger legal_bureau_director_task_8103_vassal_trigger = {
+	trigger_if = { #For directed efforts it has to be the target vassal
+		limit = {
+			scope:councillor = {
+				is_performing_council_task = task_bestow_royal_favor
+			}
+		}
+		this = scope:councillor.councillor_task_target
+	}
+	trigger_else = {
+		is_of_major_interest_to_root_trigger = yes
+		is_imprisoned = no
+		NOT = { has_trait = incapable }
+		NOR = {
+			has_opinion_modifier = {
+				target = root
+				modifier = chancellor_task_powerful_vassal_increased_opinion
+			}
+			has_opinion_modifier = {
+				target = root
+				modifier = chancellor_task_powerful_vassal_decreased_opinion
+			}
+		}
+		NOT = {
+			root.cp:councillor_chancellor ?= this
+		}
+	}
+}
+
+legal_bureau_director_task.8103 = {
+	type = letter_event
+	opening = {
+		desc = legal_bureau_director_task.8001.opening
+	}
+	desc = legal_bureau_director_task.8103.desc
+	sender = scope:vassal
+	
+	trigger = {
+		NOT = { has_character_flag = had_msg_legal_bureau_director_task_8103 }
+		OR = {
+			AND = {
+				exists = cp:councillor_chancellor
+				scope:councillor = cp:councillor_chancellor
+			}
+			scope:councillor = {
+				is_kurultai_trigger = yes
+			}
+		}
+		any_vassal = {
+			legal_bureau_director_task_8103_vassal_trigger = yes
+		}
+		scope:councillor = {
+			
+			diplomacy > mediocre_skill_rating
+		}
+	}
+
+	weight_multiplier = {
+		base = 1
+		compare_modifier = {
+			target = scope:councillor
+			value = diplomacy
+			multiplier = 0.2
+			offset = inverted_mediocre_skill_rating
+		}
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_msg_legal_bureau_director_task_8103
+			years = 5
+		}
+		set_variable = {
+			name = had_legal_bureau_director_task_side_effect
+			value = yes
+			days = legal_bureau_director_task_side_effect_cooldown
+		}
+		scope:councillor = {
+			save_scope_as = active_councillor
+		}
+		random_vassal = {
+			limit = {
+				legal_bureau_director_task_8103_vassal_trigger = yes
+			}
+			save_scope_as = vassal
+		}
+	}
+
+	option = {
+		name = legal_bureau_director_task.8103.a
+		scope:vassal = {
+			add_opinion = {
+				target = root
+				modifier = chancellor_task_powerful_vassal_increased_opinion
+				days = legal_bureau_director_task_modifier_duration
+			}
+		}
+	}
+}
+
+
+#Force a Vassal into Partition
+# by Petter Vilberg
+
+scripted_trigger legal_bureau_director_task_8104_vassal_trigger = {
+	
+	highest_held_title_tier >= tier_duchy
+	is_ai = yes
+	primary_title = {
+		title_can_reduce_partition_law_trigger = yes
+	}
+	NOT = {
+		has_variable = legal_bureau_director_task_forced_partition
+	}
+	NOT = {
+		root.cp:councillor_chancellor ?= this
+	}
+	root = {
+		can_add_hook = {
+			target = prev
+			type = favor_hook
+		}
+	}
+}
+
+legal_bureau_director_task.8104 = {
+	type = letter_event
+	opening = {
+		desc = legal_bureau_director_task.8002.opening
+	}
+	desc = legal_bureau_director_task.8104.desc
+	sender = scope:councillor
+	
+	trigger = {
+		NOT = { has_character_flag = had_msg_legal_bureau_director_task_8104 }
+		OR = {
+			AND = {
+				exists = cp:councillor_chancellor
+				scope:councillor = cp:councillor_chancellor
+			}
+			scope:councillor = {
+				is_kurultai_trigger = yes
+			}
+		}
+		any_vassal = {
+			legal_bureau_director_task_8104_vassal_trigger = yes
+		}
+		scope:councillor = {
+			
+			diplomacy > mediocre_skill_rating
+		}
+	}
+
+	weight_multiplier = {
+		base = 1
+		compare_modifier = {
+			target = scope:councillor
+			value = diplomacy
+			multiplier = 0.2
+			offset = inverted_mediocre_skill_rating
+		}
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_msg_legal_bureau_director_task_8104
+			years = 5
+		}
+		set_variable = {
+			name = had_legal_bureau_director_task_side_effect
+			value = yes
+			days = legal_bureau_director_task_side_effect_cooldown
+		}
+		scope:councillor = {
+			save_scope_as = active_councillor
+		}
+		random_vassal = {
+			limit = {
+				legal_bureau_director_task_8104_vassal_trigger = yes
+			}
+			set_variable = {
+				name = legal_bureau_director_task_forced_partition
+				value = yes
+				days = 7800
+			}
+			save_scope_as = vassal
+			primary_title = {
+				save_scope_as = primary_title
+			}
+		}
+	}
+
+	option = {
+		name = legal_bureau_director_task.8104.a
+		scope:vassal = {
+			reduce_partition_succession_law_effect = yes
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	option = {
+		name = legal_bureau_director_task.8104.b
+		trigger = {
+			can_add_hook = {
+				target = scope:vassal
+				type = favor_hook
+			}
+		}
+		add_hook = {
+			target = scope:vassal
+			type = favor_hook
+		}
+		ai_chance = {
+			base = 20
+		}
+	}
+
+	option = {
+		name = legal_bureau_director_task.8104.c
+		trigger = {
+			NOT = {
+				can_add_hook = {
+					target = scope:vassal
+					type = favor_hook
+				}
+			}
+		}
+		ai_chance = {
+			base = 20
+		}
+	}
+}
+
+####
+#9000-9999: Side effects from Increase Control
 # by Petter Vilberg
 ####
 # 9001 - Reduce County Opinion
@@ -417,7 +1246,7 @@ scripted_trigger legal_bureau_director_task_9003_county_trigger = {
 
 ##################
 # Side Effects from Increase Control
-# 9001-3999
+# 9001-9999
 ##################
 
 ###

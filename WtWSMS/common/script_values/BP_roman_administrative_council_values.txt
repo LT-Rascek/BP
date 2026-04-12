@@ -49,7 +49,7 @@ clerical_bureau_director_influence_max = {
 }
 
 clerical_bureau_director_influence_monthly_increase = {
-	add = chancellor_domestic_affairs_opinion_max
+	add = legal_bureau_director_domestic_affairs_opinion_max
 	divide = 24
 }
 
@@ -1122,4 +1122,226 @@ legal_bureau_director_petition_liege_county_control_modifier_value = {
 
 legal_bureau_director_court_jester_contribution_value = {
 	value = marshal_court_jester_contribution_value
+}
+
+####################
+# Domestic Affairs
+####################
+legal_bureau_director_domestic_affairs_opinion_base = {
+	add = learning
+	divide = 2
+}
+
+legal_bureau_director_domestic_affairs_opinion_chains_of_loyalty_bonus = {
+	add = legal_bureau_director_domestic_affairs_opinion_base
+	multiply = {
+		add = chains_of_loyalty_percentage
+		divide = 100
+	}
+}
+
+legal_bureau_director_domestic_affairs_opinion_erudition_bonus = {
+	add = legal_bureau_director_domestic_affairs_opinion_base
+	multiply = {
+		add = erudition_legacy_5_percentage
+		divide = 100
+	}
+}
+
+legal_bureau_director_domestic_affairs_opinion_family_business_bonus = {
+	add = legal_bureau_director_domestic_affairs_opinion_base
+	multiply = {
+		add = family_business_councillors_percentage
+		divide = 100
+	}
+}
+
+legal_bureau_director_domestic_affairs_opinion_consulted_house_bonus = {
+	add = legal_bureau_director_domestic_affairs_opinion_base
+	multiply = {
+		add = consulted_house_councillors_percentage
+		divide = 100
+	}
+}
+
+legal_bureau_director_domestic_affairs_opinion_pandidakterion_bonus = {
+	add = legal_bureau_director_domestic_affairs_opinion_base
+	multiply = {
+		add = 20
+		divide = 100
+	} 
+}
+
+legal_bureau_director_domestic_affairs_opinion_food_bonus = {
+	add = legal_bureau_director_domestic_affairs_opinion_base
+	multiply = {
+		add = 15
+		divide = 100
+	} 
+}
+
+legal_bureau_director_domestic_affairs_opinion_max = {
+	add = legal_bureau_director_domestic_affairs_opinion_base
+	if = {
+		limit = {
+			scope:councillor_liege = { has_perk = chains_of_loyalty_perk }
+		}
+		add = legal_bureau_director_domestic_affairs_opinion_chains_of_loyalty_bonus
+	}
+	if = {
+		limit = {
+			councillor_liege_has_erudition_legacy_5_perk = yes
+		}
+		add = legal_bureau_director_domestic_affairs_opinion_erudition_bonus
+	}
+	if = {
+		limit = {
+			councillor_liege_has_family_business_bonus = yes
+		}
+		add = legal_bureau_director_domestic_affairs_opinion_family_business_bonus
+	}
+	if = {
+		limit = {
+			councillor_liege_has_consulted_house_bonus = yes
+		}
+		add = legal_bureau_director_domestic_affairs_opinion_consulted_house_bonus
+	}
+	if = {
+		limit = {
+			scope:councillor_liege = {
+				has_title = title:c_byzantion
+				title:c_byzantion = { has_county_modifier = pandidakterion_university_modifier }
+			}
+		}
+		add = legal_bureau_director_domestic_affairs_opinion_pandidakterion_bonus
+	}
+	if = {
+		limit = {
+			scope:councillor_liege = {
+				has_character_flag = food_improves_opinion
+			}
+		}
+		add = legal_bureau_director_domestic_affairs_opinion_food_bonus
+	}
+}
+
+legal_bureau_director_domestic_affairs_opinion_scale = {
+	value = 0
+	if = {
+		limit = {
+			scope:councillor_liege = {
+				is_ai = yes
+				top_liege = this
+			}
+		}
+		add = legal_bureau_director_domestic_affairs_opinion_max
+	}
+	else_if = {
+		limit = {
+			scope:councillor_liege = { has_variable = legal_bureau_director_domestic_affairs_opinion_value }
+		}
+		add = scope:councillor_liege.var:legal_bureau_director_domestic_affairs_opinion_value
+	}
+}
+
+legal_bureau_director_domestic_affairs_monthly_increase = {
+	add = legal_bureau_director_domestic_affairs_opinion_max
+	divide = 24
+}
+
+legal_bureau_director_domestic_affairs_tyranny_base = {
+	add = learning
+	#multiply = 2
+	min = 1
+}
+
+legal_bureau_director_domestic_affairs_tyranny_chains_of_loyalty_bonus = {
+	value = 0
+	if = {
+		limit = {
+			scope:councillor_liege = { has_perk = chains_of_loyalty_perk }
+		}
+		add = {
+			value = legal_bureau_director_domestic_affairs_tyranny_base
+			multiply = {
+				add = chains_of_loyalty_percentage
+				divide = 100
+			}
+		}
+	}
+}
+
+legal_bureau_director_domestic_affairs_tyranny_erudition_bonus = {
+	value = 0
+	if = {
+		limit = {
+			councillor_liege_has_erudition_legacy_5_perk = yes
+		}
+		add = {
+			value = legal_bureau_director_domestic_affairs_tyranny_base
+			multiply = {
+				add = erudition_legacy_5_percentage
+				divide = 100
+			}
+		}
+	}
+}
+
+legal_bureau_director_domestic_affairs_tyranny_family_business_bonus = {
+	value = 0
+	if = {
+		limit = {
+			councillor_liege_has_family_business_bonus = yes
+		}
+		add = {
+			value = legal_bureau_director_domestic_affairs_tyranny_base
+			multiply = {
+				add = family_business_councillors_percentage
+				divide = 100
+			}
+		}
+	}
+}
+
+legal_bureau_director_domestic_affairs_tyranny_consulted_house_bonus = {
+	value = 0
+	if = {
+		limit = {
+			councillor_liege_has_consulted_house_bonus = yes
+		}
+		add = {
+			value = legal_bureau_director_domestic_affairs_tyranny_base
+			multiply = {
+				add = consulted_house_councillors_percentage
+				divide = 100
+			}
+		}
+	}
+}
+
+legal_bureau_director_domestic_affairs_tyranny_food_bonus = {
+	value = 0
+	if = {
+		limit = {
+			scope:councillor_liege = {
+				has_character_flag = food_improves_opinion
+			}
+		}
+		add = {
+			value = legal_bureau_director_domestic_affairs_tyranny_base
+			multiply = {
+				add = 10
+				divide = 100
+			}
+		}
+	}
+}
+
+legal_bureau_director_domestic_affairs_tyranny_total = {
+	add = legal_bureau_director_domestic_affairs_tyranny_base
+	add = legal_bureau_director_domestic_affairs_tyranny_chains_of_loyalty_bonus
+	add = legal_bureau_director_domestic_affairs_tyranny_erudition_bonus
+	add = legal_bureau_director_domestic_affairs_tyranny_family_business_bonus
+	add = legal_bureau_director_domestic_affairs_tyranny_consulted_house_bonus
+	add = legal_bureau_director_domestic_affairs_tyranny_food_bonus
 }

@@ -1118,14 +1118,14 @@ task_increase_control_roman = {
 		}
 	}
 }
-task_hear_appeals = { #Clone of Domestic Affairs; TODO: Make unique, provide vassal opinion
+task_domestic_affairs_roman = { #Clone of Domestic Affairs; TODO: Make unique, provide vassal opinion
 	default_task = yes
 	position = councillor_legal_bureau_director
 	task_type = task_type_general
 	task_progress = task_progress_infinite
 
 	asset = {
-		icon = "gfx/interface/icons/court_position_task_types/grand_preceptor_court_position_task_propagate_civic_virtue.dds"
+		icon = "gfx/interface/icons/council_task_types/task_domestic_affairs.dds"
 		background = "gfx/interface/buttons/button_round_bg.dds"
 		frame = "gfx/interface/buttons/button_round_frame.dds"
 		glow = "gfx/particles/halo.dds"
@@ -1133,30 +1133,30 @@ task_hear_appeals = { #Clone of Domestic Affairs; TODO: Make unique, provide vas
 
 	effect_desc = {
 		# Direct Vassal Opinion
-		desc = task_domestic_affairs_direct_effect_desc
+		desc = task_domestic_affairs_roman_direct_effect_desc
 		triggered_desc = {
 			trigger = {
 				liege = { has_perk = chains_of_loyalty_perk }
 			}
-			desc = task_domestic_affairs_chains_of_loyalty_bonus_desc
+			desc = task_domestic_affairs_roman_chains_of_loyalty_bonus_desc
 		}
 		triggered_desc = {
 			trigger = {
 				councillor_liege_has_erudition_legacy_5_perk = yes
 			}
-			desc = task_domestic_affairs_bureaucrats_bonus_desc
+			desc = task_domestic_affairs_roman_bureaucrats_bonus_desc
 		}
 		triggered_desc = {
 			trigger = {
 				councillor_liege_has_family_business_bonus = yes
 			}
-			desc = task_domestic_affairs_family_business_bonus_desc
+			desc = task_domestic_affairs_roman_family_business_bonus_desc
 		}
 		triggered_desc = {
 			trigger = {
 				councillor_liege_has_consulted_house_bonus = yes
 			}
-			desc = task_domestic_affairs_consulted_house_bonus_desc
+			desc = task_domestic_affairs_roman_consulted_house_bonus_desc
 		}
 		triggered_desc = {
 			trigger = {
@@ -1176,30 +1176,30 @@ task_hear_appeals = { #Clone of Domestic Affairs; TODO: Make unique, provide vas
 			desc = chancellor_domestic_affairs_opinion_food_bonus_desc
 		}
 		# Parochial Vassal Opinion
-		desc = task_domestic_affairs_parochial_effect_desc
+		desc = task_domestic_affairs_roman_parochial_effect_desc
 		triggered_desc = {
 			trigger = {
 				liege = { has_perk = chains_of_loyalty_perk }
 			}
-			desc = task_domestic_affairs_chains_of_loyalty_bonus_desc
+			desc = task_domestic_affairs_roman_chains_of_loyalty_bonus_desc
 		}
 		triggered_desc = {
 			trigger = {
 				councillor_liege_has_erudition_legacy_5_perk = yes
 			}
-			desc = task_domestic_affairs_bureaucrats_bonus_desc
+			desc = task_domestic_affairs_roman_bureaucrats_bonus_desc
 		}
 		triggered_desc = {
 			trigger = {
 				councillor_liege_has_family_business_bonus = yes
 			}
-			desc = task_domestic_affairs_family_business_bonus_desc
+			desc = task_domestic_affairs_roman_family_business_bonus_desc
 		}
 		triggered_desc = {
 			trigger = {
 				councillor_liege_has_consulted_house_bonus = yes
 			}
-			desc = task_domestic_affairs_consulted_house_bonus_desc
+			desc = task_domestic_affairs_roman_consulted_house_bonus_desc
 		}
 		triggered_desc = {
 			trigger = {
@@ -1219,30 +1219,30 @@ task_hear_appeals = { #Clone of Domestic Affairs; TODO: Make unique, provide vas
 			desc = chancellor_domestic_affairs_opinion_food_bonus_desc
 		}
 		# Tyranny Loss
-		desc = task_domestic_affairs_tyranny_effect_desc
+		desc = task_domestic_affairs_roman_tyranny_effect_desc
 		triggered_desc = {
 			trigger = {
 				liege = { has_perk = chains_of_loyalty_perk }
 			}
-			desc = task_domestic_affairs_tyranny_chains_of_loyalty_bonus_desc
+			desc = task_domestic_affairs_roman_tyranny_chains_of_loyalty_bonus_desc
 		}
 		triggered_desc = {
 			trigger = {
 				councillor_liege_has_erudition_legacy_5_perk = yes
 			}
-			desc = task_domestic_affairs_tyranny_bureaucrats_bonus_desc
+			desc = task_domestic_affairs_roman_tyranny_bureaucrats_bonus_desc
 		}
 		triggered_desc = {
 			trigger = {
 				councillor_liege_has_family_business_bonus = yes
 			}
-			desc = task_domestic_affairs_tyranny_family_business_bonus_desc
+			desc = task_domestic_affairs_roman_tyranny_family_business_bonus_desc
 		}
 		triggered_desc = {
 			trigger = {
 				councillor_liege_has_consulted_house_bonus = yes
 			}
-			desc = task_domestic_affairs_tyranny_consulted_house_bonus_desc
+			desc = task_domestic_affairs_roman_tyranny_consulted_house_bonus_desc
 		}
 		triggered_desc = {
 			trigger = {
@@ -1256,13 +1256,13 @@ task_hear_appeals = { #Clone of Domestic Affairs; TODO: Make unique, provide vas
 			desc = council_task_possible_side_effects
 			triggered_desc = {
 				trigger = {
-					diplomacy > mediocre_skill_rating
+					learning > mediocre_skill_rating
 				}
 				desc = task_increase_control_improved_vassal_opinion
 			}
 			triggered_desc = {
 				trigger = {
-					diplomacy > mediocre_skill_rating
+					learning > mediocre_skill_rating
 					liege = {
 						any_vassal = {
 							government_has_flag = government_is_feudal
@@ -1274,25 +1274,25 @@ task_hear_appeals = { #Clone of Domestic Affairs; TODO: Make unique, provide vas
 			}
 			triggered_desc = {
 				trigger = {
-					diplomacy > mediocre_skill_rating
+					learning > mediocre_skill_rating
 				}
 				desc = task_increase_control_end_internal_war
 			}
 			triggered_desc = {
 				trigger = {
-					diplomacy > mediocre_skill_rating
+					learning > mediocre_skill_rating
 				}
 				desc = task_increase_control_force_vassal_partition
 			}
 			triggered_desc = {
 				trigger = {
-					diplomacy < high_skill_rating
+					learning < high_skill_rating
 				}
 				desc = task_increase_control_lose_vassal_opinion
 			}
 			triggered_desc = {
 				trigger = {
-					diplomacy < high_skill_rating
+					learning < high_skill_rating
 					liege = {
 						any_vassal = {
 							government_has_flag = government_is_feudal
@@ -1308,7 +1308,7 @@ task_hear_appeals = { #Clone of Domestic Affairs; TODO: Make unique, provide vas
 	on_start_task = {
 		liege = {
 			set_variable = {
-				name = chancellor_domestic_affairs_opinion_value
+				name = legal_bureau_director_domestic_affairs_opinion_value
 				value = 0
 			}
 		}
@@ -1318,31 +1318,31 @@ task_hear_appeals = { #Clone of Domestic Affairs; TODO: Make unique, provide vas
 		if = {
 			limit = {
 				is_alive = yes
-				has_variable = chancellor_domestic_affairs_opinion_value
+				has_variable = legal_bureau_director_domestic_affairs_opinion_value
 			}
-			remove_variable = chancellor_domestic_affairs_opinion_value
+			remove_variable = legal_bureau_director_domestic_affairs_opinion_value
 		}
 	}
 
 	council_owner_modifier = {
 		name = task_domestic_affairs_opinion_modifier
 		direct_vassal_opinion = 1
-		scale = chancellor_domestic_affairs_opinion_scale
+		scale = legal_bureau_director_domestic_affairs_opinion_scale
 	}
 
 	council_owner_modifier = {
 		name = task_domestic_affairs_parochial_opinion_modifier
 		parochial_opinion = 1
-		scale = chancellor_domestic_affairs_opinion_scale
+		scale = legal_bureau_director_domestic_affairs_opinion_scale
 	}
 
 	council_owner_modifier = {
 		name = task_domestic_affairs_opinion_modifier
 		tyranny_loss_mult = 0.01
-		scale = chancellor_domestic_affairs_tyranny_total
+		scale = legal_bureau_director_domestic_affairs_tyranny_total
 	}
 
-	monthly_on_action = task_domestic_affairs_side_effects
+	monthly_on_action = task_domestic_affairs_roman_side_effects
 
 	on_monthly = {
 		if = {
@@ -1352,26 +1352,26 @@ task_hear_appeals = { #Clone of Domestic Affairs; TODO: Make unique, provide vas
 			if = {
 				limit = {
 					liege = {
-						has_variable = chancellor_domestic_affairs_opinion_value
+						has_variable = legal_bureau_director_domestic_affairs_opinion_value
 					}
 				}
 				liege = {
 					if = {
 						limit = {
-							var:chancellor_domestic_affairs_opinion_value < root.chancellor_domestic_affairs_opinion_max
+							var:legal_bureau_director_domestic_affairs_opinion_value < root.legal_bureau_director_domestic_affairs_opinion_max
 						}
 						change_variable = {
-							name = chancellor_domestic_affairs_opinion_value
-							add = root.chancellor_domestic_affairs_monthly_increase
+							name = legal_bureau_director_domestic_affairs_opinion_value
+							add = root.legal_bureau_director_domestic_affairs_monthly_increase
 						}
 					}
 					if = {
 						limit = {
-							var:chancellor_domestic_affairs_opinion_value > root.chancellor_domestic_affairs_opinion_max
+							var:legal_bureau_director_domestic_affairs_opinion_value > root.legal_bureau_director_domestic_affairs_opinion_max
 						}
 						set_variable = {
-							name = chancellor_domestic_affairs_opinion_value
-							value = root.chancellor_domestic_affairs_opinion_max
+							name = legal_bureau_director_domestic_affairs_opinion_value
+							value = root.legal_bureau_director_domestic_affairs_opinion_max
 						}
 					}
 				}
@@ -1379,7 +1379,7 @@ task_hear_appeals = { #Clone of Domestic Affairs; TODO: Make unique, provide vas
 			else = {
 				liege = {
 					set_variable = {
-						name = chancellor_domestic_affairs_opinion_value
+						name = legal_bureau_director_domestic_affairs_opinion_value
 						value = 0
 					}
 				}
