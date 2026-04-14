@@ -1,5 +1,8 @@
 ﻿roman_federate_succession = {
-	default_candidates = { holder_close_family holder_close_extended_family holder_house_member holder_councilor holder_court_position landed_vassal direct_subject }
+	default_candidates = { holder_close_family holder_close_extended_family holder_house_member holder_councilor holder_court_position direct_subject }
+
+	allow_same_tier_candidates = no
+	allow_children = yes
 
 	candidate_score = {
 		value = {
@@ -871,6 +874,34 @@
 					desc = same_heritage_group_tt
 				}
 			}
+			else_if = {
+				limit = { culture = { has_cultural_parameter = greco_roman_social_tradition } }
+				subtract = {
+					value = 5000
+					if = {
+						limit = { scope:title.holder = { bp_succession_weight_dynastic_1_trigger = yes } }
+						multiply = succession_weight_dynastic_1_value
+					}
+					else_if = {
+						limit = { scope:title.holder = { bp_succession_weight_dynastic_2_trigger = yes } }
+						multiply = 0.5
+					}
+					else_if = {
+						limit = { scope:title.holder = { bp_succession_weight_dynastic_3_trigger = yes } }
+						multiply = succession_weight_dynastic_3_value
+					}
+					else_if = {
+						limit = { scope:title.holder = { bp_succession_weight_dynastic_4_trigger = yes } }
+						multiply = succession_weight_dynastic_4_value
+					}
+					else_if = {
+						limit = { scope:title.holder = { bp_succession_weight_purely_dynastic_trigger = yes } }
+						multiply = succession_is_purely_dynastic_value
+					}
+					multiply = 2.0 #Romanitas is still very odd for Federates
+					desc = roman_culture_tt
+				}
+			}
 			else = {
 				subtract = {
 					value = 50
@@ -895,6 +926,20 @@
 						multiply = succession_is_purely_dynastic_value
 					}
 					desc = alien_culture_tt
+				}
+			}
+
+			#Already
+			if = {
+				limit = {
+					OR = {
+						is_landed = yes
+						is_landless_ruler = yes
+					}
+				}
+				subtract = {
+					value = 5000
+					desc = already_landed_tt
 				}
 			}
 

@@ -457,6 +457,16 @@ change_government_roman_federate_effect = {
 			destroy_maa_regiment = yes
 		}
 	}
+	if = {
+		limit = { any_held_title = { is_noble_family_title = yes } }
+		custom_tooltip = {
+			text = destroy_noble_family_titles
+			every_held_title = {
+				limit = { is_noble_family_title = yes }
+				prev = { destroy_title = prev }
+			}
+		}
+	}
 }
 change_government_subroman_administrative_effect = {
 	change_government = subroman_administrative_government
