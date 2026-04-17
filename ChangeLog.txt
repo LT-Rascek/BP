@@ -1,6 +1,7 @@
 2026-MM-DD v0.2.0
 -----------
 - At Start Information Event:
+   - Changed theme to be more fitting
    - Added a game rule to toggle the at-start informational event
    - This will change with every major version upgrade, so the rule setting will change with each version
 
@@ -86,6 +87,7 @@ Mechanics:
       - Uses Tribal Authority Law
 
 Government:
+- Centralized governments unlock the second level of Estate domicile main buildings
 - High Tribal Government reworked slightly
    - High Tribal Governments use Tribal Authority as the authority law mechanic universally
    - High Tribal Obligations obligations modified
@@ -102,13 +104,10 @@ Government:
    - Functions similar to many other Diarchs
 
 Landed Titles:
-- Eastern Roman Empire:
-  - Added two new Empire-level tiers, the Praetorian Prefecture of Illyricum and the Praetorian Prefecture of the East
-  - Removed the titular Illyrian Prefecture Kingdom
-  - To avoid issues with landed titles and vassal anger, the Eastern Roman Empire Empire-Tier title is kept for the duchy containing Byzantium
-  - Once destroyed, only creatable by the Eastern Roman Emperor or by decision
+- Praetorian Prefectures:
+   - Reorganized old Empire titles into Praetorian Prefecture titles in line with Hegemonies
+   - Currently the Prefectures are not creatable as we are working out making the AI function well with Empire-level titles within the Roman Empires
 - Western Roman Empire:
-  - Replaced several Empires with Praetorian Prefectures, including Gaul (Hispania and Gaul), Italia (Italy), and Africa (North Africa)
   - Adjusted the borders of some provinces in southern Gaul
   - To avoid issues with landed titles and vassal anger, the Western Roman Empire Empire-Tier title is kept for the duchy containing Ravenna
   - Adjusted some capitals to avoid collision issues
@@ -127,6 +126,8 @@ Landed Titles:
 
 Causus Bellorum:
 - Revamped Odoacer's Take Over War to better integrate with landless vassal mechanics
+   - With "Roads to Power" DLC, Tufa and the WRE Magister Officiorum become Italy's Magister Militum and Magister Officiorum, respectively
+   - Personal Troops become Title Troops upon the end of the war, when Odoacer wins
 
 Decision:
 - "State Religion" Innovation required to change the state faith of a title
@@ -284,6 +285,7 @@ GFX:
 - Updated GFX for a number of faiths
 
 Tweaks:
+- You can no longer offer Odoacer or his allies land to get them to stop fighting the Western Roman Empire in the February 476 Scenario
 - "Roman Nostalgia" looses its culture-related bonuses
 - Roman Senate recognition legitimacy values increased in most cases
 - All WtWSMS use either gold or treasury as is appropriate

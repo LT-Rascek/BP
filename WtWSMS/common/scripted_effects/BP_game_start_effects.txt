@@ -28,7 +28,7 @@ destroy_title_if_landless_effect = {
 }
 make_councilor_of_type_if_not_already_effect = { #Scope is council owner
 	if = {
-		limit = { NOT = { $TARGET_CHAR$ = { has_council_position = $POSITION$ } } }
+		limit = { NOT = { $TARGET_CHAR$ ?= { has_council_position = $POSITION$ } } }
 		assign_councillor_type = {
 			type = $POSITION$
 			target = $TARGET_CHAR$

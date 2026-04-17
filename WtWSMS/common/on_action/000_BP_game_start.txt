@@ -1457,11 +1457,6 @@ setup_governments_based_on_dlc = {
 			
 			#Cleanup landless titles
 			
-			#Destroy PP titles
-			destroy_PP_title_if_ai_effect = { TITLE = title:e_praetorian_prefecture_east }
-			destroy_PP_title_if_ai_effect = { TITLE = title:e_praetorian_prefecture_illyria }
-			destroy_PP_title_if_ai_effect = { TITLE = title:e_praetorian_prefecture_gaul }
-			destroy_PP_title_if_ai_effect = { TITLE = title:e_praetorian_prefecture_italy }
 			#Destroy Roman Offices
 			destroy_title_if_landless_effect = { TITLE = title:e_magister_offices_roman_empire }
 			destroy_title_if_landless_effect = { TITLE = title:e_magister_offices_wre }
@@ -1628,5 +1623,11 @@ setup_governments_based_on_dlc = {
 				}
 			}
 		}
+		
+		#Destroy PP titles as they currently bork lots of game math and logic
+		destroy_PP_title_if_ai_effect = { TITLE = title:e_praetorian_prefecture_east }
+		destroy_PP_title_if_ai_effect = { TITLE = title:e_praetorian_prefecture_illyria }
+		destroy_PP_title_if_ai_effect = { TITLE = title:e_praetorian_prefecture_gaul }
+		destroy_PP_title_if_ai_effect = { TITLE = title:e_praetorian_prefecture_italy }
 	}
 }

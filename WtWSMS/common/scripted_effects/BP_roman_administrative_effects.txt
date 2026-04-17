@@ -65,24 +65,24 @@
 		}
 		
 		#Fix Government if needed
-		switch = {
-			trigger = has_government
-			roman_administrative_government = {
-				if = {
-					limit = {
-						NOT = { scope:new_minister = { has_government = roman_administrative_government } }
-						 is_landless_ruler = yes
+		scope:councillor_liege = {
+			switch = {
+				trigger = has_government
+				roman_administrative_government = {
+					if = {
+						limit = {
+							NOT = { scope:new_minister = { has_government = roman_administrative_government } }
+						}
+						scope:new_minister = { change_government = roman_administrative_government }
 					}
-					scope:new_minister = { change_government = roman_administrative_government }
 				}
-			}
-			subroman_administrative_government = {
-				if = {
-					limit = {
-						NOT = { scope:new_minister = { has_government = subroman_administrative_government } }
-						 is_landless_ruler = yes
+				subroman_administrative_government = {
+					if = {
+						limit = {
+							NOT = { scope:new_minister = { has_government = subroman_administrative_government } }
+						}
+						scope:new_minister = { change_government = subroman_administrative_government }
 					}
-					scope:new_minister = { change_government = subroman_administrative_government }
 				}
 			}
 		}
@@ -352,110 +352,132 @@ establish_premiership_if_necessary_effect = { #Scope is top liege
 	}
 }
 
+convert_personal_troops_to_title_troops_effect = {
+	save_scope_as = the_new_federate
+	every_maa_regiment = {
+		save_temporary_scope_as = maa_regiment
+		
+		if = {
+			limit = { scope:maa_regiment.maa_size = 1 }
+			scope:the_new_federate = {
+				create_maa_regiment = {
+					type_of = scope:maa_regiment
+					check_can_recruit = no
+					title = scope:the_new_federate.primary_title
+					size = 1
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:maa_regiment.maa_size = 2 }
+			scope:the_new_federate = {
+				create_maa_regiment = {
+					type_of = scope:maa_regiment
+					check_can_recruit = no
+					title = scope:the_new_federate.primary_title
+					size = 2
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:maa_regiment.maa_size = 3 }
+			scope:the_new_federate = {
+				create_maa_regiment = {
+					type_of = scope:maa_regiment
+					check_can_recruit = no
+					title = scope:the_new_federate.primary_title
+					size = 3
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:maa_regiment.maa_size = 4 }
+			scope:the_new_federate = {
+				create_maa_regiment = {
+					type_of = scope:maa_regiment
+					check_can_recruit = no
+					title = scope:the_new_federate.primary_title
+					size = 4
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:maa_regiment.maa_size = 5 }
+			scope:the_new_federate = {
+				create_maa_regiment = {
+					type_of = scope:maa_regiment
+					check_can_recruit = no
+					title = scope:the_new_federate.primary_title
+					size = 5
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:maa_regiment.maa_size = 6 }
+			scope:the_new_federate = {
+				create_maa_regiment = {
+					type_of = scope:maa_regiment
+					check_can_recruit = no
+					title = scope:the_new_federate.primary_title
+					size = 6
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:maa_regiment.maa_size = 7 }
+			scope:the_new_federate = {
+				create_maa_regiment = {
+					type_of = scope:maa_regiment
+					check_can_recruit = no
+					title = scope:the_new_federate.primary_title
+					size = 7
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:maa_regiment.maa_size = 8 }
+			scope:the_new_federate = {
+				create_maa_regiment = {
+					type_of = scope:maa_regiment
+					check_can_recruit = no
+					title = scope:the_new_federate.primary_title
+					size = 8
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:maa_regiment.maa_size = 9 }
+			scope:the_new_federate = {
+				create_maa_regiment = {
+					type_of = scope:maa_regiment
+					check_can_recruit = no
+					title = scope:the_new_federate.primary_title
+					size = 9
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:maa_regiment.maa_size = 10 }
+			scope:the_new_federate = {
+				create_maa_regiment = {
+					type_of = scope:maa_regiment
+					check_can_recruit = no
+					title = scope:the_new_federate.primary_title
+					size = 10
+				}
+			}
+		}
+		
+		destroy_maa_regiment = yes
+	}
+}
+
 change_government_roman_federate_effect = {
 	change_government = roman_federate_government
 	#Convert Personal MAAs to Title MAAs
 	custom_tooltip = {
 		text = personal_maa_transfer_to_title
-		save_temporary_scope_as = the_char
-		every_maa_regiment = {
-			save_temporary_scope_as = maa_regiment
-			
-			scope:the_char = {
-				if = {
-					limit = { scope:maa_regiment.maa_size = 1 }
-					create_maa_regiment = {
-						type_of = scope:maa_regiment
-						check_can_recruit = no
-						title = scope:the_char.primary_title
-						size = 1
-					}
-				}
-				else_if = {
-					limit = { scope:maa_regiment.maa_size = 2 }
-					create_maa_regiment = {
-						type_of = scope:maa_regiment
-						check_can_recruit = no
-						title = scope:the_char.primary_title
-						size = 2
-					}
-				}
-				else_if = {
-					limit = { scope:maa_regiment.maa_size = 3 }
-					create_maa_regiment = {
-						type_of = scope:maa_regiment
-						check_can_recruit = no
-						title = scope:the_char.primary_title
-						size = 3
-					}
-				}
-				else_if = {
-					limit = { scope:maa_regiment.maa_size = 4 }
-					create_maa_regiment = {
-						type_of = scope:maa_regiment
-						check_can_recruit = no
-						title = scope:the_char.primary_title
-						size = 4
-					}
-				}
-				else_if = {
-					limit = { scope:maa_regiment.maa_size = 5 }
-					create_maa_regiment = {
-						type_of = scope:maa_regiment
-						check_can_recruit = no
-						title = scope:the_char.primary_title
-						size = 5
-					}
-				}
-				else_if = {
-					limit = { scope:maa_regiment.maa_size = 6 }
-					create_maa_regiment = {
-						type_of = scope:maa_regiment
-						check_can_recruit = no
-						title = scope:the_char.primary_title
-						size = 6
-					}
-				}
-				else_if = {
-					limit = { scope:maa_regiment.maa_size = 7 }
-					create_maa_regiment = {
-						type_of = scope:maa_regiment
-						check_can_recruit = no
-						title = scope:the_char.primary_title
-						size = 7
-					}
-				}
-				else_if = {
-					limit = { scope:maa_regiment.maa_size = 8 }
-					create_maa_regiment = {
-						type_of = scope:maa_regiment
-						check_can_recruit = no
-						title = scope:the_char.primary_title
-						size = 8
-					}
-				}
-				else_if = {
-					limit = { scope:maa_regiment.maa_size = 9 }
-					create_maa_regiment = {
-						type_of = scope:maa_regiment
-						check_can_recruit = no
-						title = scope:the_char.primary_title
-						size = 9
-					}
-				}
-				else_if = {
-					limit = { scope:maa_regiment.maa_size = 10 }
-					create_maa_regiment = {
-						type_of = scope:maa_regiment
-						check_can_recruit = no
-						title = scope:the_char.primary_title
-						size = 10
-					}
-				}
-			}
-			
-			destroy_maa_regiment = yes
-		}
+		convert_personal_troops_to_title_troops_effect = yes
 	}
 	if = {
 		limit = { any_held_title = { is_noble_family_title = yes } }

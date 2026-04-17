@@ -11,13 +11,17 @@
 }
 
 BP_got_a_roman_ministry = {
-	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
+	trigger = {
+		BP_has_dlc_necessary_for_roman_governments_trigger = yes
+		scope:title.tier = tier_empire
+		scope:title = { has_variable = is_a_roman_ministry_title }
+	}
 	effect = {
-		if = {
-			limit = {
-				scope:title.tier = tier_empire
-				scope:title = { has_variable = is_a_roman_ministry_title }
-			}
+		if = { #If Hegemons get a ministry title, destroy it.
+			limit = { root.primary_title.tier >= tier_hegemony }
+			root = { destroy_title = scope:title }
+		}
+		else = {
 			scope:title.de_jure_liege.holder = { save_scope_as = councillor_liege }
 			scope:title = { save_scope_as = the_ministry_title }
 			switch = {
@@ -105,7 +109,6 @@ BP_flip_federate_on_circumstance = {
 BP_grants_to_tribals_become_federate = {
 	#Tribals and Migratory cultures become federates
 	trigger = {
-		BP_has_dlc_necessary_for_roman_governments_trigger = yes
 		liege_or_court_owner.top_liege = { government_has_flag = is_a_roman_government }
 		NOT = { root = liege }
 		OR = {
@@ -116,7 +119,7 @@ BP_grants_to_tribals_become_federate = {
 	effect = {
 		if = {
 			limit = { bp_can_become_federate_trigger = yes }
-			change_government_roman_federate_effect = yes
+			convert_to_roman_federate_government_effect = yes
 		}
 	}
 }
