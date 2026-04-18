@@ -1160,7 +1160,7 @@ trigger_needed_events = {
 			trigger_event = { id = BP_maintenance_events.0001 }
 		}
 		#Fix _all_ the barony governments; has to be some ruler for some reason
-		random_ruler = { trigger_event = { id = BP_maintenance_events.0002 } }
+		random_ruler = { trigger_event = { id = BP_maintenance_events.1000 } }
 		#Add theocratic traits to chaplain
 		every_ruler = {
 			limit = { exists = cp:councillor_court_chaplain }

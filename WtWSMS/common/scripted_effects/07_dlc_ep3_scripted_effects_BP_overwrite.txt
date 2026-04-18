@@ -794,28 +794,36 @@ create_noble_family_effect = {
 				}
 				##### Changed from Vanilla vvvvv
 				roman_administrative_government = {
-					scope:new_noble_family_holder = {
-						give_noble_family_title = {
-							name = noble_family_name
-							tier = county
-							article = DEFAULT_TITLE_NAME_ARTICLE
-							government = roman_administrative_government
-							save_scope_as = new_title
+					if = {
+						limit = { scope:new_noble_family_holder = { bp_can_become_federate_trigger = no } }
+						scope:new_noble_family_holder = {
+							give_noble_family_title = {
+								name = noble_family_name
+								tier = county
+								article = DEFAULT_TITLE_NAME_ARTICLE
+								government = roman_administrative_government
+								save_scope_as = new_title
+							}
 						}
 					}
+					#Otherwise, you're a federate
 				}
 				subroman_administrative_government = {
-					scope:new_noble_family_holder = {
-						give_noble_family_title = {
-							name = noble_family_name
-							tier = county
-							article = DEFAULT_TITLE_NAME_ARTICLE
-							government = subroman_administrative_government
-							save_scope_as = new_title
+					if = {
+						limit = { scope:new_noble_family_holder = { bp_can_become_federate_trigger = no } }
+						scope:new_noble_family_holder = {
+							give_noble_family_title = {
+								name = noble_family_name
+								tier = county
+								article = DEFAULT_TITLE_NAME_ARTICLE
+								government = subroman_administrative_government
+								save_scope_as = new_title
+							}
 						}
 					}
+					#Otherwise, you're a federate
 				}
-				roman_federate_government = {} #Roman Federates are admin government but no NF title
+				roman_federate_government = {}
 				##### Changed from Vanilla ^^^^^
 				fallback = {
 					scope:new_noble_family_holder = {
@@ -830,23 +838,26 @@ create_noble_family_effect = {
 				}
 			}
 		}
-		scope:new_title.holder ?= {
-			save_scope_as = noble_family_head
-			scope:new_title = { set_coa = scope:noble_family_head.house }
-		}
-		custom_description = { text = create_noble_family_tt }
-
-		#Notifications
-		every_player = {
-			limit = {
-				top_liege = scope:new_noble_family_holder.top_liege
-				this != scope:new_noble_family_holder
-				# China has hundreds of Noble Families, it gets spammy
-				NOT = { government_allows = merit }
+		if = {
+			limit = { NOT = { scope:new_noble_family_holder = { has_government = roman_federate_government } } }
+			scope:new_title.holder ?= {
+				save_scope_as = noble_family_head
+				scope:new_title = { set_coa = scope:noble_family_head.house }
 			}
-			trigger_event = {
-				id = ep3_emperor_yearly.2410
-				days = 1
+			custom_description = { text = create_noble_family_tt }
+
+			#Notifications
+			every_player = {
+				limit = {
+					top_liege = scope:new_noble_family_holder.top_liege
+					this != scope:new_noble_family_holder
+					# China has hundreds of Noble Families, it gets spammy
+					NOT = { government_allows = merit }
+				}
+				trigger_event = {
+					id = ep3_emperor_yearly.2410
+					days = 1
+				}
 			}
 		}
 	}

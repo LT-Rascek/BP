@@ -479,16 +479,6 @@ change_government_roman_federate_effect = {
 		text = personal_maa_transfer_to_title
 		convert_personal_troops_to_title_troops_effect = yes
 	}
-	if = {
-		limit = { any_held_title = { is_noble_family_title = yes } }
-		custom_tooltip = {
-			text = destroy_noble_family_titles
-			every_held_title = {
-				limit = { is_noble_family_title = yes }
-				prev = { destroy_title = prev }
-			}
-		}
-	}
 }
 change_government_subroman_administrative_effect = {
 	change_government = subroman_administrative_government
@@ -498,13 +488,7 @@ change_government_subroman_administrative_effect = {
 			this.primary_title.tier >= tier_duchy #Don't want nf running counties...
 			any_held_title = { count < 1 is_noble_family_title = yes }
 		}
-		give_noble_family_title = {
-			name = noble_family_name
-			tier = county
-			article = DEFAULT_TITLE_NAME_ARTICLE
-			government = subroman_administrative_government
-			save_scope_as = new_title
-		}
+		create_noble_family_effect = { GOVERNMENT_GIVER = this }
 	}
 }
 change_government_roman_administrative_effect = {
@@ -515,12 +499,6 @@ change_government_roman_administrative_effect = {
 			this.primary_title.tier >= tier_duchy #Don't want nf running counties...
 			any_held_title = { count < 1 is_noble_family_title = yes }
 		}
-		give_noble_family_title = {
-			name = noble_family_name
-			tier = county
-			article = DEFAULT_TITLE_NAME_ARTICLE
-			government = roman_administrative_government
-			save_scope_as = new_title
-		}
+		create_noble_family_effect = { GOVERNMENT_GIVER = this }
 	}
 }

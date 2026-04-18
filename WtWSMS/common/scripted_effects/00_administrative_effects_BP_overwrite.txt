@@ -1,4 +1,5 @@
-﻿change_to_administrative_effect = {
+﻿##### Changed from Vanilla: Applied New Roman Governments, Blocked NF creation for government_is_quasi_feudal flag
+change_to_administrative_effect = {
 	save_scope_as = governor
 	if = {
 		limit = { exists = scope:new_liege }
@@ -204,6 +205,16 @@
 			change_government = meritocratic_government
 		}
 		##### Changed from Vanilla vvvvv
+		else_if = { # Roman Federate; must be before either other option for logic reasons
+			limit = {
+				OR = {
+					scope:governor_liege = { government_has_flag = government_is_roman_administrative }
+					scope:governor_liege = { government_has_flag = government_is_subroman_administrative }
+				}
+				bp_can_become_federate_trigger = yes
+			}
+			change_government_roman_federate_effect = yes
+		}
 		else_if = { # Roman Administrative
 			limit = {
 				scope:governor_liege = { government_has_flag = government_is_roman_administrative }
@@ -273,20 +284,23 @@
 	}
 	# Set up a noble family title
 	if = {
-		limit = {
-			primary_title.tier >= min_appointment_tier
-			liege = {
-				scope:governor_liege = this
-				government_allows = administrative
-			}
-			house.house_head = {
-				top_liege = scope:governor_liege
-				NOT = {
-					any_held_title = { is_noble_family_title = yes }
+		limit = { NOT = { government_has_flag = government_is_quasi_feudal } }
+		if = {
+			limit = {
+				primary_title.tier >= min_appointment_tier
+				liege = {
+					scope:governor_liege = this
+					government_allows = administrative
+				}
+				house.house_head = {
+					top_liege = scope:governor_liege
+					NOT = {
+						any_held_title = { is_noble_family_title = yes }
+					}
 				}
 			}
+			create_noble_family_effect = { GOVERNMENT_GIVER = top_liege }
 		}
-		create_noble_family_effect = { GOVERNMENT_GIVER = top_liege }
 	}
 	# Add the governor trait if applicable
 	hidden_effect = {

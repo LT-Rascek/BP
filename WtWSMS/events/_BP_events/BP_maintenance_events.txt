@@ -37,6 +37,9 @@ BP_maintenance_events.0001 = {
 	option = { name = BP_maintenance_events.0001.a }
 }
 
+# 1000-9999
+# Special Game start stuff
+
 scripted_trigger is_landed_alive_ruler = {
 	$CHAR$ = { is_alive = yes }
 	$CHAR$ = { is_ruler = yes }
@@ -44,7 +47,7 @@ scripted_trigger is_landed_alive_ruler = {
 }
 
 #Does things for 476.2.2 game start
-BP_maintenance_events.0002 = {
+BP_maintenance_events.1000 = {
 	scope = none
 	hidden = yes
 	content_source = dlc_WtWSMS
