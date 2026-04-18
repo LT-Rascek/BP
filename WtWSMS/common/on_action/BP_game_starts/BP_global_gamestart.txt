@@ -205,7 +205,64 @@ BP_learn_capital_languages = {
 }
 
 on_game_start_after_lobby = {
+	on_actions = {
+		BP_generate_buildings
+	}
 	events = {
 		bp_historical_artifacts.0023 # Historical Artifacts Generator
+	}
+}
+
+BP_generate_buildings = {
+	effect = {
+		every_province = {
+			limit = { has_holding = yes }
+			generate_building = yes
+			
+			if = {
+				limit = { county.development_level >= 5 }
+				generate_building = yes
+			}
+			if = {
+				limit = { county.development_level >= 10 }
+				generate_building = yes
+			}
+			if = {
+				limit = { county.development_level >= 15 }
+				generate_building = yes
+			}
+			if = {
+				limit = { county.development_level >= 20 }
+				generate_building = yes
+			}
+			if = {
+				limit = { county.development_level >= 25 }
+				generate_building = yes
+			}
+			if = {
+				limit = { county.development_level >= 30 }
+				generate_building = yes
+			}
+			if = {
+				limit = { county.development_level >= 35 }
+				generate_building = yes
+			}
+			#Government bonuses
+			if = {
+				limit = { this.county.holder.top_liege = { government_has_flag = government_is_centralized } }
+				generate_building = yes
+			}
+		}
+		every_domicile = {
+			limit = {
+				exists = owner
+				is_domicile_type = estate
+			}
+			add_random_internal_estate_building = yes
+			if = {
+				limit = { owner = { government_has_flag = government_is_centralized } }
+				add_random_internal_estate_building = yes
+			}
+		}
 	}
 }
