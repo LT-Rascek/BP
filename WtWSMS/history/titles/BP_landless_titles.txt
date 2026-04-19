@@ -174,6 +174,47 @@ d_laamp_bagaudae_gaul_5 = {
 	}
 	501.1.1 = { holder = 0 }
 }
+#Donatist Bands
+d_laamp_donatist_1 = {
+	467.1.1 = {
+		holder = holder_d_laamp_donatist_1
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			#No variable; don't need the trait
+			destroy_landless_title_no_dlc_effect = { DATE = 467.1.1 }
+		}
+	}
+	501.1.1 = { holder = 0 }
+}
+d_laamp_donatist_2 = {
+	450.1.1 = {
+		holder = holder_d_laamp_donatist_2
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			#No variable; don't need the trait
+			destroy_landless_title_no_dlc_effect = { DATE = 467.1.1 }
+		}
+	}
+	501.1.1 = { holder = 0 }
+}
+d_laamp_donatist_3 = {
+	461.1.1 = {
+		holder = holder_d_laamp_donatist_3
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			#No variable; don't need the trait
+			destroy_landless_title_no_dlc_effect = { DATE = 467.1.1 }
+		}
+	}
+	501.1.1 = { holder = 0 }
+}
+
 #Other 476 adventurers
 d_laamp_britannia_taifali = {
 	395.1.1 = {
