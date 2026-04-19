@@ -57,10 +57,10 @@ negotiate_settlement_interaction = {
 		}
 		scope:recipient != scope:actor
 		NOR = {
-			scope:recipient.holder = title:d_laamp_odoacer_skirian.holder
-			scope:recipient.holder = title:d_laamp_odoacer_heruli.holder
-			scope:recipient.holder = title:d_laamp_odoacer_rugii.holder
-			scope:recipient.holder = title:d_laamp_odoacer.holder
+			scope:recipient = title:d_laamp_odoacer_skirian.holder
+			scope:recipient = title:d_laamp_odoacer_heruli.holder
+			scope:recipient = title:d_laamp_odoacer_rugii.holder
+			scope:recipient = title:d_laamp_odoacer.holder
 		}
 	}
 	##### Changed from Vanilla ^^^^^
