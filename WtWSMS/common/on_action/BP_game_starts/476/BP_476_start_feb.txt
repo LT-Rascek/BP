@@ -551,7 +551,7 @@ BP_setup_landless_chars_476 = {
 				add_domicile_building = baggage_train_03
 			}
 			create_maa_regiment = {
-				type = armored_footmen
+				type = gothic_armored_infantry
 				check_can_recruit = yes
 				size = 7
 			}
@@ -739,12 +739,12 @@ BP_setup_landless_chars_476 = {
 			# 4 Total, Size: 4
 			# 2x heavy_infantry, 1x bowmen, 1x light_footmen
 			create_maa_regiment = {
-				type = armored_footmen
+				type = gothic_armored_infantry
 				check_can_recruit = yes
 				size = 4
 			}
 			create_maa_regiment = {
-				type = armored_footmen
+				type = gothic_armored_infantry
 				check_can_recruit = yes
 				size = 4
 			}
@@ -906,7 +906,7 @@ BP_set_lieges_476 = {
 }
 BP_remove_claims_476 = {
 	effect = {
-		#Vache voluntarily abidcated with Persian pressure, so prevent any claims from him
+		#Vache voluntarily abdicated with Persian pressure, so prevent any claims from him
 		character:159589 = { every_claim = { prev = { remove_claim = prev } } }
 		#Emnetzur and Ultzindur shouldn't get any claims to Hunnic titles
 		character:HunnicEmnetzur = { every_claim = { prev = { remove_claim = prev } } }

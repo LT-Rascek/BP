@@ -309,6 +309,20 @@ spawn_large_minority_characters = {
 				}
 				##### End: Catch Ethnic religions spawning weirdly
 
+				##### Start: Fix Jews Spawning Oddly
+				if = {
+					limit = {
+						scope:culture_to_spawn = { has_cultural_pillar = heritage_israelite }
+						#Jews should be Jewish faith or Nazaoreans
+						NOR = {
+							scope:faith_to_spawn.religion = religion:judaism_religion
+							scope:faith_to_spawn = faith:conversos
+						}
+					}
+					faith:rabbinism = { save_temporary_scope_as = faith_to_spawn }
+				}
+				##### End: Fix Jews Spawning Oddly
+
 				create_character = {
 					employer = root
 					age = { 18 50 }
@@ -442,6 +456,20 @@ spawn_small_minority_characters = {
 					}
 				}
 				##### End: Catch Ethnic religions spawning weirdly
+
+				##### Start: Fix Jews Spawning Oddly
+				if = {
+					limit = {
+						scope:culture_to_spawn = { has_cultural_pillar = heritage_israelite }
+						#Jews should be Jewish faith or Nazaoreans
+						NOR = {
+							scope:faith_to_spawn.religion = religion:judaism_religion
+							scope:faith_to_spawn = faith:conversos
+						}
+					}
+					faith:rabbinism = { save_temporary_scope_as = faith_to_spawn }
+				}
+				##### End: Fix Jews Spawning Oddly
 
 				create_character = {
 					employer = root
