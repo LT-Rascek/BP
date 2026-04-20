@@ -64,6 +64,52 @@ activity_coronation = {
 				}
 			}
 		}
+		# In realms with Ceremonial Lieges, only independent Ceremonial Lieges may hold a Coronation
+		trigger_if = {
+			limit = { tgp_realm_has_ceremonial_liege_trigger = yes }
+			custom_tooltip = {
+				text = tgp_ceremonial_liege_coronation_trigger
+				tgp_has_ceremonial_liege_title_trigger = yes
+			}
+		}
+
+		trigger_if = {
+			limit = {
+				highest_held_title_tier >= tier_empire
+				faith = {
+					has_doctrine = doctrine_spiritual_head
+					has_doctrine = doctrine_imperial_anointment
+				}
+			}
+			faith.religious_head ?= {
+				save_temporary_scope_as = hof_temp
+			}
+			trigger_if = {
+				limit = {
+					exists = scope:hof_temp
+				}
+				scope:hof_temp = {
+					custom_description = {
+						text = HOF_is_ai_tt
+						is_ai = yes
+					}
+					is_available_allow_travelling = yes
+				}
+			}
+			trigger_else = {
+				custom_description = {
+					text = HOF_DOESNT_EXIST
+					exists = scope:hof_temp
+				}
+			}
+			NOT = { has_trait = excommunicated }
+			trigger_if = {
+				limit = {
+					is_ai = no
+				}
+				piety_level >= 2
+			}
+		}
 	}
 
 	is_location_valid = {
@@ -71,8 +117,8 @@ activity_coronation = {
 		trigger_if = { # If it is an anointment, it must happen within the HoF's lands if they hold a holy site
 			limit = {
 				scope:special_option ?= flag:coronation_type_anointment
-				scope:host.faith.religious_head ?= { 
-					is_landed = yes 
+				scope:host.faith.religious_head ?= {
+					is_landed = yes
 					faith = {
 						any_holy_site = {
 							barony.holder = {
@@ -111,7 +157,7 @@ activity_coronation = {
 					}
 				}
 				#head of faith has no holy site
-				scope:host.faith.religious_head ?= { 
+				scope:host.faith.religious_head ?= {
 					OR = {
 						is_landed = no
 						NOT = {
@@ -173,134 +219,7 @@ activity_coronation = {
 					limit = {
 						has_treasury = no
 					}
-					add = {
-						value = base_coronation_cost
-						desc = CORONATION_BASE_COST
-					}
-					if = {
-						limit = {
-							highest_held_title_tier >= tier_empire
-						}
-						add = {
-							value = 30
-							add = {
-								value = 30
-								multiply = activity_cost_scale_by_era
-								subtract = 30
-							}
-							desc = coronation_empire_req
-						}
-					}
-					#The bigger your realm, the more it costs
-					if = {
-						limit = {
-							realm_size >= 1
-							highest_held_title_tier > tier_empire
-						}
-						add = {
-							value = realm_size
-							add = {
-								value = realm_size
-								multiply = activity_cost_scale_by_era
-								subtract = realm_size
-							}
-							multiply = 0.125
-							desc = coronation_realm_size_desc
-						}
-					}
-					else_if = {
-						limit = {
-							realm_size >= 1
-							highest_held_title_tier > tier_kingdom
-						}
-						add = {
-							value = realm_size
-							add = {
-								value = realm_size
-								multiply = activity_cost_scale_by_era
-								subtract = realm_size
-							}
-							multiply = 0.25
-							desc = coronation_realm_size_desc
-						}
-					}
-					else_if = {
-						limit = {
-							realm_size >= 1
-							highest_held_title_tier = tier_kingdom
-						}
-						add = {
-							value = realm_size
-							add = {
-								value = realm_size
-								multiply = activity_cost_scale_by_era
-								subtract = realm_size
-							}
-							multiply = 0.5
-							desc = coronation_realm_size_desc
-						}
-					}
-	
-					#Government types
-					if = {
-						limit = {
-							government_has_flag = government_is_tribal
-						}
-						multiply = 0.66
-						desc = coronation_tribal_req
-					}
-					if = {
-						limit = {
-							government_has_flag = government_is_nomadic
-						}
-						multiply = 0.1
-						desc = coronation_nomadic_reg
-					}
-	
-					#AI discounts
-					if = {
-						limit = {
-							is_ai = yes
-							has_game_rule = hard_difficulty
-						}
-						multiply = 0.5
-					}
-					else_if = {
-						limit = {
-							is_ai = yes
-							has_game_rule = very_hard_difficulty
-						}
-						multiply = 0.25
-					}
-					else_if = {
-						limit = {
-							is_ai = yes
-						}
-						multiply = 0.75
-					}
-					if = {
-						limit = {
-							exists = primary_title
-							primary_title.title_held_years >= 5
-							is_ai = yes
-						}
-						multiply = 0.5
-					}
-					if = {
-						limit = {
-							is_ai = yes
-							exists = primary_title
-							OR = {
-								has_trait = conqueror
-								has_trait = greatest_of_khans
-								primary_title.title_held_years >= 10
-							}
-						}
-						multiply = 0
-					}
-				}
-				else = {
-					value = 0
+					value = coronation_cost
 				}
 			}
 		}
@@ -310,246 +229,18 @@ activity_coronation = {
 					limit = {
 						has_treasury = yes
 					}
-					add = {
-						value = base_coronation_cost
-						desc = CORONATION_BASE_COST
-					}
-					if = {
-						limit = {
-							highest_held_title_tier >= tier_empire
-						}
-						add = {
-							value = 30
-							add = {
-								value = 30
-								multiply = activity_cost_scale_by_era
-								subtract = 30
-							}
-							desc = coronation_empire_req
-						}
-					}
-					#The bigger your realm, the more it costs
-					if = {
-						limit = {
-							realm_size >= 1
-							highest_held_title_tier > tier_empire
-						}
-						add = {
-							value = realm_size
-							add = {
-								value = realm_size
-								multiply = activity_cost_scale_by_era
-								subtract = realm_size
-							}
-							multiply = 0.125
-							desc = coronation_realm_size_desc
-						}
-					}
-					else_if = {
-						limit = {
-							realm_size >= 1
-							highest_held_title_tier > tier_kingdom
-						}
-						add = {
-							value = realm_size
-							add = {
-								value = realm_size
-								multiply = activity_cost_scale_by_era
-								subtract = realm_size
-							}
-							multiply = 0.25
-							desc = coronation_realm_size_desc
-						}
-					}
-					else_if = {
-						limit = {
-							realm_size >= 1
-							highest_held_title_tier = tier_kingdom
-						}
-						add = {
-							value = realm_size
-							add = {
-								value = realm_size
-								multiply = activity_cost_scale_by_era
-								subtract = realm_size
-							}
-							multiply = 0.5
-							desc = coronation_realm_size_desc
-						}
-					}
-	
-					#Government types
-					if = {
-						limit = {
-							government_has_flag = government_is_tribal
-						}
-						multiply = 0.66
-						desc = coronation_tribal_req
-					}
-					if = {
-						limit = {
-							government_has_flag = government_is_nomadic
-						}
-						multiply = 0.1
-						desc = coronation_nomadic_reg
-					}
-	
-					#AI discounts
-					if = {
-						limit = {
-							is_ai = yes
-							has_game_rule = hard_difficulty
-						}
-						multiply = 0.5
-					}
-					else_if = {
-						limit = {
-							is_ai = yes
-							has_game_rule = very_hard_difficulty
-						}
-						multiply = 0.25
-					}
-					else_if = {
-						limit = {
-							is_ai = yes
-						}
-						multiply = 0.75
-					}
-					if = {
-						limit = {
-							exists = primary_title
-							primary_title.title_held_years >= 5
-							is_ai = yes
-						}
-						multiply = 0.5
-					}
-					if = {
-						limit = {
-							is_ai = yes
-							exists = primary_title
-							OR = {
-								has_trait = conqueror
-								has_trait = greatest_of_khans
-								primary_title.title_held_years >= 10
-							}
-						}
-						multiply = 0
-					}
-				}
-				else = {
-					value = 0
+					add = coronation_cost
 				}
 			}
 		}
 		herd = {
-			if = {
-				limit = {
-					government_has_flag = government_is_nomadic
-				}
-				add = {
-					value = domicile.medium_herd_value
-					min = 200
-					desc = CORONATION_BASE_COST
-				}
-			}
-			if = {
-				limit = {
-					confederation ?= { has_cohesion_level_parameter = any_member_activity_cost_reduced }
-				}
-				multiply = {
-					value = 0.9
-					desc = CB_COHESION_PARAMETER_DISCOUNT
-				}
-			}
-			if = {
-				limit = {
-					highest_held_title_tier >= tier_empire
-					government_has_flag = government_is_nomadic
-				}
-				add = {
-					value = domicile.minor_herd_value
-					min = 200
-					desc = coronation_empire_req
-				}
-			}
-			#The bigger your realm, the more it costs
-			if = {
-				limit = {
-					government_has_flag = government_is_nomadic
-					realm_size >= 1
-					highest_held_title_tier > tier_empire
-				}
-				add = {
-					value = realm_size
-					multiply = 2
-					desc = coronation_realm_size_desc
-				}
-			}
-			else_if = {
-				limit = {
-					government_has_flag = government_is_nomadic
-					realm_size >= 1
-					highest_held_title_tier = tier_empire
-				}
-				add = {
-					value = realm_size
-					multiply = 4
-					desc = coronation_realm_size_desc
-				}
-			}
-			else_if = {
-				limit = {
-					government_has_flag = government_is_nomadic
-					realm_size >= 1
-					highest_held_title_tier < tier_empire
-				}
-				add = {
-					value = realm_size
-					multiply = 6
-					desc = coronation_realm_size_desc
-				}
-			}
-
-			#AI discounts
-			if = {
-				limit = {
-					is_ai = yes
-					has_game_rule = hard_difficulty
-				}
-				multiply = 0.5
-			}
-			else_if = {
-				limit = {
-					is_ai = yes
-					has_game_rule = very_hard_difficulty
-				}
-				multiply = 0.25
-			}
-			else_if = {
-				limit = {
-					is_ai = yes
-				}
-				multiply = 0.75
-			}
-			if = {
-				limit = {
-					exists = primary_title
-					primary_title.title_held_years >= 5
-					is_ai = yes
-				}
-				multiply = 0.5
-			}
-			if = {
-				limit = {
-					is_ai = yes
-					exists = primary_title
-					OR = {
-						has_trait = conqueror
-						has_trait = greatest_of_khans
-						primary_title.title_held_years >= 10
+			add = {
+				if = {
+					limit = {
+						government_has_flag = government_is_nomadic
 					}
+					value = coronation_cost_herd
 				}
-				multiply = 0
 			}
 		}
 	}
@@ -598,7 +289,16 @@ activity_coronation = {
 					var:coronation_primary_title ?= primary_title
 					text = coronation_cancelled_wrong_primary_title_desc
 				}
-			}		
+			}
+
+			# In realms with Ceremonial Lieges, only independent Ceremonial Lieges may hold a Coronation
+			trigger_if = {
+				limit = { tgp_realm_has_ceremonial_liege_trigger = yes }
+				custom_tooltip = {
+					text = tgp_ceremonial_liege_coronation_trigger
+					tgp_has_ceremonial_liege_title_trigger = yes
+				}
+			}
 		}
 	}
 
@@ -625,11 +325,26 @@ activity_coronation = {
 				trigger_event = activity_system.0330
 			}
 			every_attending_character = {
-				limit = { NOT = { this = scope:host } }
+				limit = { this != scope:host }
 				trigger_event = activity_system.0331
 			}
 		}
-		
+
+		#Host has different primary title
+		if = {
+			limit = {
+				scope:host = {
+					has_variable = coronation_primary_title
+					NOT = {
+						var:coronation_primary_title = primary_title
+					}
+				}
+			}
+			every_attending_character = {
+				limit = { this != scope:host }
+				trigger_event = coronation_events.0401
+			}
+		}
 
 		# Host becomes unlanded
 		if = {
@@ -656,7 +371,7 @@ activity_coronation = {
 			}
 			every_attending_character = {
 				limit = {
-					NOT = { this = scope:host }
+					this != scope:host
 				}
 				trigger_event = ach_maintenance_events.0100
 			}
@@ -673,7 +388,7 @@ activity_coronation = {
 			}
 			every_attending_character = {
 				limit = {
-					NOT = { this = scope:host }
+					this != scope:host
 				}
 				trigger_event = ach_maintenance_events.0101
 			}
@@ -681,7 +396,7 @@ activity_coronation = {
 		}
 
 		# No one shows up
-		if = { 
+		if = {
 			limit = {
 				has_attending_activity_guests = no
 			}
@@ -763,134 +478,7 @@ activity_coronation = {
 					limit = {
 						has_treasury = no
 					}
-					add = {
-						value = base_coronation_cost
-						desc = CORONATION_BASE_COST
-					}
-					if = {
-						limit = {
-							highest_held_title_tier >= tier_empire
-						}
-						add = {
-							value = 30
-							add = {
-								value = 30
-								multiply = activity_cost_scale_by_era
-								subtract = 30
-							}
-							desc = coronation_empire_req
-						}
-					}
-					#The bigger your realm, the more it costs
-					if = {
-						limit = {
-							realm_size >= 1
-							highest_held_title_tier > tier_empire
-						}
-						add = {
-							value = realm_size
-							add = {
-								value = realm_size
-								multiply = activity_cost_scale_by_era
-								subtract = realm_size
-							}
-							multiply = 0.125
-							desc = coronation_realm_size_desc
-						}
-					}
-					else_if = {
-						limit = {
-							realm_size >= 1
-							highest_held_title_tier > tier_kingdom
-						}
-						add = {
-							value = realm_size
-							add = {
-								value = realm_size
-								multiply = activity_cost_scale_by_era
-								subtract = realm_size
-							}
-							multiply = 0.25
-							desc = coronation_realm_size_desc
-						}
-					}
-					else_if = {
-						limit = {
-							realm_size >= 1
-							highest_held_title_tier = tier_kingdom
-						}
-						add = {
-							value = realm_size
-							add = {
-								value = realm_size
-								multiply = activity_cost_scale_by_era
-								subtract = realm_size
-							}
-							multiply = 0.5
-							desc = coronation_realm_size_desc
-						}
-					}
-	
-					#Government types
-					if = {
-						limit = {
-							government_has_flag = government_is_tribal
-						}
-						multiply = 0.66
-						desc = coronation_tribal_req
-					}
-					if = {
-						limit = {
-							government_has_flag = government_is_nomadic
-						}
-						multiply = 0.1
-						desc = coronation_nomadic_reg
-					}
-	
-					#AI discounts
-					if = {
-						limit = {
-							is_ai = yes
-							has_game_rule = hard_difficulty
-						}
-						multiply = 0.5
-					}
-					else_if = {
-						limit = {
-							is_ai = yes
-							has_game_rule = very_hard_difficulty
-						}
-						multiply = 0.25
-					}
-					else_if = {
-						limit = {
-							is_ai = yes
-						}
-						multiply = 0.75
-					}
-					if = {
-						limit = {
-							exists = primary_title
-							primary_title.title_held_years >= 5
-							is_ai = yes
-						}
-						multiply = 0.5
-					}
-					if = {
-						limit = {
-							is_ai = yes
-							exists = primary_title
-							OR = {
-								has_trait = conqueror
-								has_trait = greatest_of_khans
-								primary_title.title_held_years >= 10
-							}
-						}
-						multiply = 0
-					}
-				}
-				else = {
-					value = 0
+					add = coronation_cost
 				}
 			}
 		}
@@ -900,246 +488,18 @@ activity_coronation = {
 					limit = {
 						has_treasury = yes
 					}
-					add = {
-						value = base_coronation_cost
-						desc = CORONATION_BASE_COST
-					}
-					if = {
-						limit = {
-							highest_held_title_tier >= tier_empire
-						}
-						add = {
-							value = 30
-							add = {
-								value = 30
-								multiply = activity_cost_scale_by_era
-								subtract = 30
-							}
-							desc = coronation_empire_req
-						}
-					}
-					#The bigger your realm, the more it costs
-					if = {
-						limit = {
-							realm_size >= 1
-							highest_held_title_tier > tier_empire
-						}
-						add = {
-							value = realm_size
-							add = {
-								value = realm_size
-								multiply = activity_cost_scale_by_era
-								subtract = realm_size
-							}
-							multiply = 0.125
-							desc = coronation_realm_size_desc
-						}
-					}
-					else_if = {
-						limit = {
-							realm_size >= 1
-							highest_held_title_tier > tier_kingdom
-						}
-						add = {
-							value = realm_size
-							add = {
-								value = realm_size
-								multiply = activity_cost_scale_by_era
-								subtract = realm_size
-							}
-							multiply = 0.25
-							desc = coronation_realm_size_desc
-						}
-					}
-					else_if = {
-						limit = {
-							realm_size >= 1
-							highest_held_title_tier = tier_kingdom
-						}
-						add = {
-							value = realm_size
-							add = {
-								value = realm_size
-								multiply = activity_cost_scale_by_era
-								subtract = realm_size
-							}
-							multiply = 0.5
-							desc = coronation_realm_size_desc
-						}
-					}
-	
-					#Government types
-					if = {
-						limit = {
-							government_has_flag = government_is_tribal
-						}
-						multiply = 0.66
-						desc = coronation_tribal_req
-					}
-					if = {
-						limit = {
-							government_has_flag = government_is_nomadic
-						}
-						multiply = 0.1
-						desc = coronation_nomadic_reg
-					}
-	
-					#AI discounts
-					if = {
-						limit = {
-							is_ai = yes
-							has_game_rule = hard_difficulty
-						}
-						multiply = 0.5
-					}
-					else_if = {
-						limit = {
-							is_ai = yes
-							has_game_rule = very_hard_difficulty
-						}
-						multiply = 0.25
-					}
-					else_if = {
-						limit = {
-							is_ai = yes
-						}
-						multiply = 0.75
-					}
-					if = {
-						limit = {
-							exists = primary_title
-							primary_title.title_held_years >= 5
-							is_ai = yes
-						}
-						multiply = 0.5
-					}
-					if = {
-						limit = {
-							is_ai = yes
-							exists = primary_title
-							OR = {
-								has_trait = conqueror
-								has_trait = greatest_of_khans
-								primary_title.title_held_years >= 10
-							}
-						}
-						multiply = 0
-					}
-				}
-				else = {
-					value = 0
+					add = coronation_cost
 				}
 			}
 		}
 		herd = {
-			if = {
-				limit = {
-					government_has_flag = government_is_nomadic
-				}
-				add = {
-					value = domicile.medium_herd_value
-					min = 200
-					desc = CORONATION_BASE_COST
-				}
-			}
-			if = {
-				limit = {
-					confederation ?= { has_cohesion_level_parameter = any_member_activity_cost_reduced }
-				}
-				multiply = {
-					value = 0.9
-					desc = CB_COHESION_PARAMETER_DISCOUNT
-				}
-			}
-			if = {
-				limit = {
-					highest_held_title_tier >= tier_empire
-					government_has_flag = government_is_nomadic
-				}
-				add = {
-					value = domicile.minor_herd_value
-					min = 200
-					desc = coronation_empire_req
-				}
-			}
-			#The bigger your realm, the more it costs
-			if = {
-				limit = {
-					government_has_flag = government_is_nomadic
-					realm_size >= 1
-					highest_held_title_tier > tier_empire
-				}
-				add = {
-					value = realm_size
-					multiply = 2
-					desc = coronation_realm_size_desc
-				}
-			}
-			else_if = {
-				limit = {
-					government_has_flag = government_is_nomadic
-					realm_size >= 1
-					highest_held_title_tier = tier_empire
-				}
-				add = {
-					value = realm_size
-					multiply = 4
-					desc = coronation_realm_size_desc
-				}
-			}
-			else_if = {
-				limit = {
-					government_has_flag = government_is_nomadic
-					realm_size >= 1
-					highest_held_title_tier < tier_empire
-				}
-				add = {
-					value = realm_size
-					multiply = 6
-					desc = coronation_realm_size_desc
-				}
-			}
-
-			#AI discounts
-			if = {
-				limit = {
-					is_ai = yes
-					has_game_rule = hard_difficulty
-				}
-				multiply = 0.5
-			}
-			else_if = {
-				limit = {
-					is_ai = yes
-					has_game_rule = very_hard_difficulty
-				}
-				multiply = 0.25
-			}
-			else_if = {
-				limit = {
-					is_ai = yes
-				}
-				multiply = 0.75
-			}
-			if = {
-				limit = {
-					exists = primary_title
-					primary_title.title_held_years >= 5
-					is_ai = yes
-				}
-				multiply = 0.5
-			}
-			if = {
-				limit = {
-					is_ai = yes
-					exists = primary_title
-					OR = {
-						has_trait = conqueror
-						has_trait = greatest_of_khans
-						primary_title.title_held_years >= 10
+			add = {
+				if = {
+					limit = {
+						government_has_flag = government_is_nomadic
 					}
+					value = coronation_cost_herd
 				}
-				multiply = 0
 			}
 		}
 	}
@@ -1210,19 +570,8 @@ activity_coronation = {
 									name = supported_anointments
 									target = root
 								}
-								is_alive = yes
-								is_imprisoned = no
+								is_available_allow_travelling = yes
 								is_ai = yes
-								has_contagious_deadly_disease_trigger = no
-								custom_description = {
-									text = ALREADY_IN_ACTIVITY
-									NOR = {
-										exists = involved_activity
-										has_variable = homage_liege_scope
-										has_character_flag = meditation_character_flag
-										has_character_flag = petition_liege_character_flag
-									}
-								}
 								NOT = {
 									has_any_bad_relationship_with_character_trigger = { CHARACTER = root }
 								}
@@ -1271,23 +620,10 @@ activity_coronation = {
 							exists = scope:hof_temp
 						}
 						scope:hof_temp = {
-							is_alive = yes
-							is_imprisoned = no
+							is_available_allow_travelling = yes
 							custom_description = {
 								text = HOF_is_ai_tt
 								is_ai = yes
-							}
-							has_contagious_deadly_disease_trigger = no
-							custom_description = {
-								text = ALREADY_IN_ACTIVITY
-								NOR = {
-									is_travelling = yes
-									exists = involved_activity
-									has_variable = homage_liege_scope
-									has_character_flag = meditation_character_flag
-									has_character_flag = local_shrine_rite
-									has_character_flag = petition_liege_character_flag
-								}
 							}
 						}
 					}
@@ -1303,8 +639,8 @@ activity_coronation = {
 						limit = {
 							is_ai = no
 						}
-						piety_level >= 2	
-					}		
+						piety_level >= 2
+					}
 				}
 
 				ai_will_do = {
@@ -1317,7 +653,7 @@ activity_coronation = {
 							AND = {
 								exists = faith.religious_head
 								faith.religious_head ?= { has_any_bad_relationship_with_character_trigger = { CHARACTER = root } }
-							}			
+							}
 						}
 						add = -90
 					}
@@ -1376,72 +712,43 @@ activity_coronation = {
 					OR = {
 						highest_held_title_tier >= tier_empire
 						coronation_has_proper_artifact_trigger = yes
-					}			
+					}
 				}
 				cost = {
 					gold = {
-						value = {
+						add = {
 							if = {
 								limit = {
 									has_treasury = no
 								}
-								value = coronation_medium_ceremony_value
 								add = {
 									value = coronation_medium_ceremony_value
-									multiply = activity_cost_scale_by_era
-									subtract = coronation_medium_ceremony_value
+									desc = coronation_medium_ceremony
 								}
 								#The bigger your realm, the more it costs
-								if = {
-									limit = {
-										realm_size >= 1
-										highest_held_title_tier > tier_empire
+								add = coronation_medium_ceremony_realm_size_cost
+
+								add = {
+									value = coronation_medium_ceremony_value
+									add = coronation_medium_ceremony_realm_size_cost
+									multiply = {
+										value = activity_cost_scale_by_era
+										subtract = 1
 									}
-									add = {
-										value = realm_size
-										add = {
-											value = realm_size
-											multiply = activity_cost_scale_by_era
-											subtract = realm_size
-										}
-										multiply = 0.05
-									}
+									desc = activity_cost_scale_by_era_desc
 								}
-								else_if = {
-									limit = {
-										realm_size >= 1
-										highest_held_title_tier > tier_kingdom
-									}
-									add = {
-										value = realm_size
-										add = {
-											value = realm_size
-											multiply = activity_cost_scale_by_era
-											subtract = realm_size
-										}
-										multiply = 0.1
-									}
-								}
-								else_if = {
-									limit = {
-										realm_size >= 1
-										highest_held_title_tier = tier_kingdom
-									}
-									add = {
-										value = realm_size
-										add = {
-											value = realm_size
-											multiply = activity_cost_scale_by_era
-											subtract = realm_size
-										}
-										multiply = 0.15
-									}
-								}
+
 								if = {
 									limit = {
 										has_variable = coronation_discount
 									}
-									multiply = 0.5
+									add = {
+										value = coronation_medium_ceremony_value
+										add = coronation_medium_ceremony_realm_size_cost
+										multiply = activity_cost_scale_by_era
+										multiply = 0.5
+										desc = coronation_discount_reg
+									}
 								}
 								if = {
 									limit = {
@@ -1450,47 +757,27 @@ activity_coronation = {
 											government_has_flag = government_is_tribal
 										}
 									}
-									multiply = 0.66
-								}
-								if = {
-									limit = {
-										is_ai = yes
-										#Go for the cheap option if you poor
-										monthly_character_income > 0
-									}
-									multiply = coronation_amenity_ai_discount_value
-								}
-								if = {
-									limit = {
-										OR = {
-											has_trait = conqueror
-											has_trait = greatest_of_khans
+									add = {
+										value = coronation_medium_ceremony_value
+										add = coronation_medium_ceremony_realm_size_cost
+										multiply = activity_cost_scale_by_era
+										if = {
+											limit = {
+												has_variable = coronation_discount
+											}
+											multiply = 0.5
 										}
+										multiply = -0.34
+										desc = coronation_tribal_nomadic_reg
+									}
+								}
+								if = {
+									limit = {
 										is_ai = yes
 									}
-									multiply = 0.1
+									multiply = coronation_option_cost_ai_factor
 								}
 								desc = coronation_medium_ceremony
-								if = {
-									limit = {
-										exists = primary_title
-										primary_title.title_held_years >= 5
-										is_ai = yes
-									}
-									multiply = 0.5
-								}
-								if = {
-									limit = {
-										is_ai = yes
-										exists = primary_title
-										OR = {
-											has_trait = conqueror
-											has_trait = greatest_of_khans
-											primary_title.title_held_years >= 10
-										}
-									}
-									multiply = 0.1
-								}
 							}
 							else = {
 								value = 0
@@ -1498,68 +785,39 @@ activity_coronation = {
 						}
 					}
 					treasury = { #Make sure this matches the gold cost above
-						value = {
+						add = {
 							if = {
 								limit = {
 									has_treasury = yes
 								}
-								value = coronation_medium_ceremony_treasury_value
 								add = {
 									value = coronation_medium_ceremony_treasury_value
-									multiply = activity_cost_scale_by_era
-									subtract = coronation_medium_ceremony_treasury_value
+									desc = coronation_medium_ceremony
 								}
 								#The bigger your realm, the more it costs
-								if = {
-									limit = {
-										realm_size >= 1
-										highest_held_title_tier > tier_empire
+								add = coronation_medium_ceremony_realm_size_cost
+
+								add = {
+									value = coronation_medium_ceremony_treasury_value
+									add = coronation_medium_ceremony_realm_size_cost
+									multiply = {
+										value = activity_cost_scale_by_era
+										subtract = 1
 									}
-									add = {
-										value = realm_size
-										add = {
-											value = realm_size
-											multiply = activity_cost_scale_by_era
-											subtract = realm_size
-										}
-										multiply = 0.05
-									}
+									desc = activity_cost_scale_by_era_desc
 								}
-								else_if = {
-									limit = {
-										realm_size >= 1
-										highest_held_title_tier > tier_kingdom
-									}
-									add = {
-										value = realm_size
-										add = {
-											value = realm_size
-											multiply = activity_cost_scale_by_era
-											subtract = realm_size
-										}
-										multiply = 0.1
-									}
-								}
-								else_if = {
-									limit = {
-										realm_size >= 1
-										highest_held_title_tier = tier_kingdom
-									}
-									add = {
-										value = realm_size
-										add = {
-											value = realm_size
-											multiply = activity_cost_scale_by_era
-											subtract = realm_size
-										}
-										multiply = 0.15
-									}
-								}
+
 								if = {
 									limit = {
 										has_variable = coronation_discount
 									}
-									multiply = 0.5
+									add = {
+										value = coronation_medium_ceremony_treasury_value
+										add = coronation_medium_ceremony_realm_size_cost
+										multiply = activity_cost_scale_by_era
+										multiply = 0.5
+										desc = coronation_discount_reg
+									}
 								}
 								if = {
 									limit = {
@@ -1568,47 +826,27 @@ activity_coronation = {
 											government_has_flag = government_is_tribal
 										}
 									}
-									multiply = 0.66
-								}
-								if = {
-									limit = {
-										is_ai = yes
-										#Go for the cheap option if you poor
-										monthly_character_income > 0
-									}
-									multiply = coronation_amenity_ai_discount_value
-								}
-								if = {
-									limit = {
-										OR = {
-											has_trait = conqueror
-											has_trait = greatest_of_khans
+									add = {
+										value = coronation_medium_ceremony_treasury_value
+										add = coronation_medium_ceremony_realm_size_cost
+										multiply = activity_cost_scale_by_era
+										if = {
+											limit = {
+												has_variable = coronation_discount
+											}
+											multiply = 0.5
 										}
+										multiply = -0.34
+										desc = coronation_tribal_nomadic_reg
+									}
+								}
+								if = {
+									limit = {
 										is_ai = yes
 									}
-									multiply = 0.1
+									multiply = coronation_option_cost_ai_factor
 								}
 								desc = coronation_medium_ceremony
-								if = {
-									limit = {
-										exists = primary_title
-										primary_title.title_held_years >= 5
-										is_ai = yes
-									}
-									multiply = 0.5
-								}
-								if = {
-									limit = {
-										is_ai = yes
-										exists = primary_title
-										OR = {
-											has_trait = conqueror
-											has_trait = greatest_of_khans
-											primary_title.title_held_years >= 10
-										}
-									}
-									multiply = 0.1
-								}
 							}
 							else = {
 								value = 0
@@ -1677,68 +915,39 @@ activity_coronation = {
 			coronation_large_ceremony = {
 				cost = {
 					gold = {
-						value = {
+						add = {
 							if = {
 								limit = {
 									has_treasury = no
 								}
-								value = coronation_large_ceremony_value
 								add = {
 									value = coronation_large_ceremony_value
-									multiply = activity_cost_scale_by_era
-									subtract = coronation_large_ceremony_value
+									desc = coronation_large_ceremony
 								}
 								#The bigger your realm, the more it costs
-								if = {
-									limit = {
-										realm_size >= 1
-										highest_held_title_tier > tier_empire
+								add = coronation_large_ceremony_realm_size_cost
+
+								add = {
+									value = coronation_large_ceremony_value
+									add = coronation_large_ceremony_realm_size_cost
+									multiply = {
+										value = activity_cost_scale_by_era
+										subtract = 1
 									}
-									add = {
-										value = realm_size
-										add = {
-											value = realm_size
-											multiply = activity_cost_scale_by_era
-											subtract = realm_size
-										}
-										multiply = 0.15
-									}
+									desc = activity_cost_scale_by_era_desc
 								}
-								else_if = {
-									limit = {
-										realm_size >= 1
-										highest_held_title_tier > tier_kingdom
-									}
-									add = {
-										value = realm_size
-										add = {
-											value = realm_size
-											multiply = activity_cost_scale_by_era
-											subtract = realm_size
-										}
-										multiply = 0.2
-									}
-								}
-								else_if = {
-									limit = {
-										realm_size >= 1
-										highest_held_title_tier = tier_kingdom
-									}
-									add = {
-										value = realm_size
-										add = {
-											value = realm_size
-											multiply = activity_cost_scale_by_era
-											subtract = realm_size
-										}
-										multiply = 0.3
-									}
-								}
+
 								if = {
 									limit = {
 										has_variable = coronation_discount
 									}
-									multiply = 0.5
+									add = {
+										value = coronation_large_ceremony_value
+										add = coronation_large_ceremony_realm_size_cost
+										multiply = activity_cost_scale_by_era
+										multiply = 0.5
+										desc = coronation_discount_reg
+									}
 								}
 								if = {
 									limit = {
@@ -1747,97 +956,67 @@ activity_coronation = {
 											government_has_flag = government_is_tribal
 										}
 									}
-									multiply = 0.66
-								}
-								if = {
-									limit = {
-										is_ai = yes
-										#Go for the cheap option if you poor
-										monthly_character_income > 0
-									}
-									multiply = coronation_amenity_ai_discount_value
-								}
-								if = {
-									limit = {
-										OR = {
-											has_trait = conqueror
-											has_trait = greatest_of_khans
+									add = {
+										value = coronation_large_ceremony_value
+										add = coronation_large_ceremony_realm_size_cost
+										multiply = activity_cost_scale_by_era
+										if = {
+											limit = {
+												has_variable = coronation_discount
+											}
+											multiply = 0.5
 										}
+										multiply = -0.34
+										desc = coronation_tribal_nomadic_reg
+									}
+								}
+								if = {
+									limit = {
 										is_ai = yes
 									}
-									multiply = 0.25
+									multiply = coronation_option_cost_ai_factor
 								}
-								desc = coronation_medium_ceremony
+								desc = coronation_large_ceremony
 							}
 							else = {
 								value = 0
 							}
 						}
-						
 					}
-					treasury = {
-						value = {
+					treasury = { #Make sure this matches the gold cost above
+						add = {
 							if = {
 								limit = {
 									has_treasury = yes
 								}
-								value = coronation_large_ceremony_treasury_value
 								add = {
 									value = coronation_large_ceremony_treasury_value
-									multiply = activity_cost_scale_by_era
-									subtract = coronation_large_ceremony_treasury_value
+									desc = coronation_large_ceremony
 								}
 								#The bigger your realm, the more it costs
-								if = {
-									limit = {
-										realm_size >= 1
-										highest_held_title_tier > tier_empire
+								add = coronation_large_ceremony_realm_size_cost
+
+								add = {
+									value = coronation_large_ceremony_treasury_value
+									add = coronation_large_ceremony_realm_size_cost
+									multiply = {
+										value = activity_cost_scale_by_era
+										subtract = 1
 									}
-									add = {
-										value = realm_size
-										add = {
-											value = realm_size
-											multiply = activity_cost_scale_by_era
-											subtract = realm_size
-										}
-										multiply = 0.15
-									}
+									desc = activity_cost_scale_by_era_desc
 								}
-								else_if = {
-									limit = {
-										realm_size >= 1
-										highest_held_title_tier > tier_kingdom
-									}
-									add = {
-										value = realm_size
-										add = {
-											value = realm_size
-											multiply = activity_cost_scale_by_era
-											subtract = realm_size
-										}
-										multiply = 0.2
-									}
-								}
-								else_if = {
-									limit = {
-										realm_size >= 1
-										highest_held_title_tier = tier_kingdom
-									}
-									add = {
-										value = realm_size
-										add = {
-											value = realm_size
-											multiply = activity_cost_scale_by_era
-											subtract = realm_size
-										}
-										multiply = 0.3
-									}
-								}
+
 								if = {
 									limit = {
 										has_variable = coronation_discount
 									}
-									multiply = 0.5
+									add = {
+										value = coronation_large_ceremony_treasury_value
+										add = coronation_large_ceremony_realm_size_cost
+										multiply = activity_cost_scale_by_era
+										multiply = 0.5
+										desc = coronation_discount_reg
+									}
 								}
 								if = {
 									limit = {
@@ -1846,27 +1025,27 @@ activity_coronation = {
 											government_has_flag = government_is_tribal
 										}
 									}
-									multiply = 0.66
-								}
-								if = {
-									limit = {
-										is_ai = yes
-										#Go for the cheap option if you poor
-										monthly_character_income > 0
-									}
-									multiply = coronation_amenity_ai_discount_value
-								}
-								if = {
-									limit = {
-										OR = {
-											has_trait = conqueror
-											has_trait = greatest_of_khans
+									add = {
+										value = coronation_large_ceremony_treasury_value
+										add = coronation_large_ceremony_realm_size_cost
+										multiply = activity_cost_scale_by_era
+										if = {
+											limit = {
+												has_variable = coronation_discount
+											}
+											multiply = 0.5
 										}
+										multiply = -0.34
+										desc = coronation_tribal_nomadic_reg
+									}
+								}
+								if = {
+									limit = {
 										is_ai = yes
 									}
-									multiply = 0.25
+									multiply = coronation_option_cost_ai_factor
 								}
-								desc = coronation_medium_ceremony
+								desc = coronation_large_ceremony
 							}
 							else = {
 								value = 0
@@ -1989,61 +1168,38 @@ activity_coronation = {
 				}
 				cost = {
 					gold = {
-						value = {
+						add = {
 							if = {
 								limit = {
 									has_treasury = no
 								}
-								value = coronation_medium_feast_value
 								add = {
 									value = coronation_medium_feast_value
-									multiply = activity_cost_scale_by_era
-									subtract = coronation_medium_feast_value
+									desc = ceremony_feast_type_regular
 								}
 								#The bigger your realm, the more it costs
+								add = coronation_medium_feast_realm_size_cost
+
+								add = {
+									value = coronation_medium_feast_value
+									add = coronation_medium_feast_realm_size_cost
+									multiply = {
+										value = activity_cost_scale_by_era
+										subtract = 1
+									}
+									desc = activity_cost_scale_by_era_desc
+								}
+
 								if = {
 									limit = {
-										realm_size >= 1
-										highest_held_title_tier > tier_empire
+										has_variable = coronation_discount
 									}
 									add = {
-										value = realm_size
-										add = {
-											value = realm_size
-											multiply = activity_cost_scale_by_era
-											subtract = realm_size
-										}
-										multiply = 0.1
-									}
-								}
-								else_if = {
-									limit = {
-										realm_size >= 1
-										highest_held_title_tier > tier_kingdom
-									}
-									add = {
-										value = realm_size
-										add = {
-											value = realm_size
-											multiply = activity_cost_scale_by_era
-											subtract = realm_size
-										}
-										multiply = 0.15
-									}
-								}
-								else_if = {
-									limit = {
-										realm_size >= 1
-										highest_held_title_tier = tier_kingdom
-									}
-									add = {
-										value = realm_size
-										add = {
-											value = realm_size
-											multiply = activity_cost_scale_by_era
-											subtract = realm_size
-										}
-										multiply = 0.2
+										value = coronation_medium_feast_value
+										add = coronation_medium_feast_realm_size_cost
+										multiply = activity_cost_scale_by_era
+										multiply = 0.5
+										desc = coronation_discount_reg
 									}
 								}
 								if = {
@@ -2053,115 +1209,66 @@ activity_coronation = {
 											government_has_flag = government_is_tribal
 										}
 									}
-									multiply = 0.66
-								}
-								if = {
-									limit = {
-										has_variable = coronation_discount
-									}
-									multiply = 0.5
-								}
-								if = {
-									limit = {
-										is_ai = yes
-										#Go for the cheap option if you poor
-										monthly_character_income > 0
-									}
-									multiply = coronation_amenity_ai_discount_value
-								}
-								if = {
-									limit = {
-										OR = {
-											has_trait = conqueror
-											has_trait = greatest_of_khans
+									add = {
+										value = coronation_medium_feast_value
+										add = coronation_medium_feast_realm_size_cost
+										multiply = activity_cost_scale_by_era
+										if = {
+											limit = {
+												has_variable = coronation_discount
+											}
+											multiply = 0.5
 										}
+										multiply = -0.34
+										desc = coronation_tribal_nomadic_reg
+									}
+								}
+								if = {
+									limit = {
 										is_ai = yes
 									}
-									multiply = 0.1
+									multiply = coronation_option_cost_ai_factor
 								}
 								desc = ceremony_feast_type_regular
-								if = {
-									limit = {
-										exists = primary_title
-										primary_title.title_held_years >= 5
-										is_ai = yes
-									}
-									multiply = 0.5
-								}
-								if = {
-									limit = {
-										is_ai = yes
-										exists = primary_title
-										OR = {
-											has_trait = conqueror
-											has_trait = greatest_of_khans
-											primary_title.title_held_years >= 10
-										}
-									}
-									multiply = 0.1
-								}
 							}
 							else = {
 								value = 0
 							}
 						}
 					}
-					treasury = {
-						value = {
+					treasury = { #Make sure this matches the gold cost above
+						add = {
 							if = {
 								limit = {
 									has_treasury = yes
 								}
-								value = coronation_medium_feast_treasury_value
 								add = {
 									value = coronation_medium_feast_treasury_value
-									multiply = activity_cost_scale_by_era
-									subtract = coronation_medium_feast_treasury_value
+									desc = ceremony_feast_type_regular
 								}
 								#The bigger your realm, the more it costs
+								add = coronation_medium_feast_realm_size_cost
+
+								add = {
+									value = coronation_medium_feast_treasury_value
+									add = coronation_medium_feast_realm_size_cost
+									multiply = {
+										value = activity_cost_scale_by_era
+										subtract = 1
+									}
+									desc = activity_cost_scale_by_era_desc
+								}
+
 								if = {
 									limit = {
-										realm_size >= 1
-										highest_held_title_tier > tier_empire
+										has_variable = coronation_discount
 									}
 									add = {
-										value = realm_size
-										add = {
-											value = realm_size
-											multiply = activity_cost_scale_by_era
-											subtract = realm_size
-										}
-										multiply = 0.1
-									}
-								}
-								else_if = {
-									limit = {
-										realm_size >= 1
-										highest_held_title_tier > tier_kingdom
-									}
-									add = {
-										value = realm_size
-										add = {
-											value = realm_size
-											multiply = activity_cost_scale_by_era
-											subtract = realm_size
-										}
-										multiply = 0.15
-									}
-								}
-								else_if = {
-									limit = {
-										realm_size >= 1
-										highest_held_title_tier = tier_kingdom
-									}
-									add = {
-										value = realm_size
-										add = {
-											value = realm_size
-											multiply = activity_cost_scale_by_era
-											subtract = realm_size
-										}
-										multiply = 0.2
+										value = coronation_medium_feast_treasury_value
+										add = coronation_medium_feast_realm_size_cost
+										multiply = activity_cost_scale_by_era
+										multiply = 0.5
+										desc = coronation_discount_reg
 									}
 								}
 								if = {
@@ -2171,53 +1278,27 @@ activity_coronation = {
 											government_has_flag = government_is_tribal
 										}
 									}
-									multiply = 0.66
-								}
-								if = {
-									limit = {
-										has_variable = coronation_discount
-									}
-									multiply = 0.5
-								}
-								if = {
-									limit = {
-										is_ai = yes
-										#Go for the cheap option if you poor
-										monthly_character_income > 0
-									}
-									multiply = coronation_amenity_ai_discount_value
-								}
-								if = {
-									limit = {
-										OR = {
-											has_trait = conqueror
-											has_trait = greatest_of_khans
+									add = {
+										value = coronation_medium_feast_treasury_value
+										add = coronation_medium_feast_realm_size_cost
+										multiply = activity_cost_scale_by_era
+										if = {
+											limit = {
+												has_variable = coronation_discount
+											}
+											multiply = 0.5
 										}
+										multiply = -0.34
+										desc = coronation_tribal_nomadic_reg
+									}
+								}
+								if = {
+									limit = {
 										is_ai = yes
 									}
-									multiply = 0.1
+									multiply = coronation_option_cost_ai_factor
 								}
 								desc = ceremony_feast_type_regular
-								if = {
-									limit = {
-										exists = primary_title
-										primary_title.title_held_years >= 5
-										is_ai = yes
-									}
-									multiply = 0.5
-								}
-								if = {
-									limit = {
-										is_ai = yes
-										exists = primary_title
-										OR = {
-											has_trait = conqueror
-											has_trait = greatest_of_khans
-											primary_title.title_held_years >= 10
-										}
-									}
-									multiply = 0.1
-								}
 							}
 							else = {
 								value = 0
@@ -2293,68 +1374,39 @@ activity_coronation = {
 			ceremony_feast_type_lavish = {
 				cost = {
 					gold = {
-						value = {
+						add = {
 							if = {
 								limit = {
 									has_treasury = no
 								}
-								value = coronation_large_feast_value
 								add = {
 									value = coronation_large_feast_value
-									multiply = activity_cost_scale_by_era
-									subtract = coronation_large_feast_value
+									desc = ceremony_feast_type_lavish
 								}
 								#The bigger your realm, the more it costs
-								if = {
-									limit = {
-										realm_size >= 1
-										highest_held_title_tier > tier_empire
+								add = coronation_large_feast_realm_size_cost
+
+								add = {
+									value = coronation_large_feast_value
+									add = coronation_large_feast_realm_size_cost
+									multiply = {
+										value = activity_cost_scale_by_era
+										subtract = 1
 									}
-									add = {
-										value = realm_size
-										add = {
-											value = realm_size
-											multiply = activity_cost_scale_by_era
-											subtract = realm_size
-										}
-										multiply = 0.3
-									}
+									desc = activity_cost_scale_by_era_desc
 								}
-								else_if = {
-									limit = {
-										realm_size >= 1
-										highest_held_title_tier > tier_kingdom
-									}
-									add = {
-										value = realm_size
-										add = {
-											value = realm_size
-											multiply = activity_cost_scale_by_era
-											subtract = realm_size
-										}
-										multiply = 0.45
-									}
-								}
-								else_if = {
-									limit = {
-										realm_size >= 1
-										highest_held_title_tier = tier_kingdom
-									}
-									add = {
-										value = realm_size
-										add = {
-											value = realm_size
-											multiply = activity_cost_scale_by_era
-											subtract = realm_size
-										}
-										multiply = 0.6
-									}
-								}
+
 								if = {
 									limit = {
 										has_variable = coronation_discount
 									}
-									multiply = 0.5
+									add = {
+										value = coronation_large_feast_value
+										add = coronation_large_feast_realm_size_cost
+										multiply = activity_cost_scale_by_era
+										multiply = 0.5
+										desc = coronation_discount_reg
+									}
 								}
 								if = {
 									limit = {
@@ -2363,25 +1415,25 @@ activity_coronation = {
 											government_has_flag = government_is_tribal
 										}
 									}
-									multiply = 0.66
-								}
-								if = {
-									limit = {
-										is_ai = yes
-										#Go for the cheap option if you poor
-										monthly_character_income > 0
-									}
-									multiply = coronation_amenity_ai_discount_value
-								}
-								if = {
-									limit = {
-										OR = {
-											has_trait = conqueror
-											has_trait = greatest_of_khans
+									add = {
+										value = coronation_large_feast_value
+										add = coronation_large_feast_realm_size_cost
+										multiply = activity_cost_scale_by_era
+										if = {
+											limit = {
+												has_variable = coronation_discount
+											}
+											multiply = 0.5
 										}
+										multiply = -0.34
+										desc = coronation_tribal_nomadic_reg
+									}
+								}
+								if = {
+									limit = {
 										is_ai = yes
 									}
-									multiply = 0.25
+									multiply = coronation_option_cost_ai_factor
 								}
 								desc = ceremony_feast_type_lavish
 							}
@@ -2390,69 +1442,40 @@ activity_coronation = {
 							}
 						}
 					}
-					treasury = {
-						value = {
+					treasury = { #Make sure this matches the gold cost above
+						add = {
 							if = {
 								limit = {
 									has_treasury = yes
 								}
-								value = coronation_large_feast_treasury_value
 								add = {
 									value = coronation_large_feast_treasury_value
-									multiply = activity_cost_scale_by_era
-									subtract = coronation_large_feast_treasury_value
+									desc = ceremony_feast_type_lavish
 								}
 								#The bigger your realm, the more it costs
-								if = {
-									limit = {
-										realm_size >= 1
-										highest_held_title_tier > tier_empire
+								add = coronation_large_feast_realm_size_cost
+
+								add = {
+									value = coronation_large_feast_treasury_value
+									add = coronation_large_feast_realm_size_cost
+									multiply = {
+										value = activity_cost_scale_by_era
+										subtract = 1
 									}
-									add = {
-										value = realm_size
-										add = {
-											value = realm_size
-											multiply = activity_cost_scale_by_era
-											subtract = realm_size
-										}
-										multiply = 0.3
-									}
+									desc = activity_cost_scale_by_era_desc
 								}
-								else_if = {
-									limit = {
-										realm_size >= 1
-										highest_held_title_tier > tier_kingdom
-									}
-									add = {
-										value = realm_size
-										add = {
-											value = realm_size
-											multiply = activity_cost_scale_by_era
-											subtract = realm_size
-										}
-										multiply = 0.45
-									}
-								}
-								else_if = {
-									limit = {
-										realm_size >= 1
-										highest_held_title_tier = tier_kingdom
-									}
-									add = {
-										value = realm_size
-										add = {
-											value = realm_size
-											multiply = activity_cost_scale_by_era
-											subtract = realm_size
-										}
-										multiply = 0.6
-									}
-								}
+
 								if = {
 									limit = {
 										has_variable = coronation_discount
 									}
-									multiply = 0.5
+									add = {
+										value = coronation_large_feast_treasury_value
+										add = coronation_large_feast_realm_size_cost
+										multiply = activity_cost_scale_by_era
+										multiply = 0.5
+										desc = coronation_discount_reg
+									}
 								}
 								if = {
 									limit = {
@@ -2461,25 +1484,25 @@ activity_coronation = {
 											government_has_flag = government_is_tribal
 										}
 									}
-									multiply = 0.66
-								}
-								if = {
-									limit = {
-										is_ai = yes
-										#Go for the cheap option if you poor
-										monthly_character_income > 0
-									}
-									multiply = coronation_amenity_ai_discount_value
-								}
-								if = {
-									limit = {
-										OR = {
-											has_trait = conqueror
-											has_trait = greatest_of_khans
+									add = {
+										value = coronation_large_feast_treasury_value
+										add = coronation_large_feast_realm_size_cost
+										multiply = activity_cost_scale_by_era
+										if = {
+											limit = {
+												has_variable = coronation_discount
+											}
+											multiply = 0.5
 										}
+										multiply = -0.34
+										desc = coronation_tribal_nomadic_reg
+									}
+								}
+								if = {
+									limit = {
 										is_ai = yes
 									}
-									multiply = 0.25
+									multiply = coronation_option_cost_ai_factor
 								}
 								desc = ceremony_feast_type_lavish
 							}
@@ -2600,7 +1623,7 @@ activity_coronation = {
 	province_filter = holy_sites_realm
 	ai_province_filter = holy_sites_realm
 
-	max_guest_arrival_delay_time = { months = 8 }
+	max_guest_arrival_delay_time = { months = 5 }
 
 	ai_check_interval = 6
 
@@ -2773,7 +1796,7 @@ activity_coronation = {
 								scope:activity = {
 									trigger_if = {
 										limit = {
-											has_variable_list = blocked_from_detractors	
+											has_variable_list = blocked_from_detractors
 										}
 										NOT = {
 											is_target_in_variable_list = {
@@ -2857,8 +1880,8 @@ activity_coronation = {
 										value >= 20
 									}
 								}
-								
-								NOT = { this = scope:host }
+
+								this != scope:host
 								scope:activity = {
 									trigger_if = {
 										limit = {
@@ -3067,7 +2090,7 @@ activity_coronation = {
 					}
 				}
 			}
-			
+
 			on_weekly_pulse = {
 				if = { #host
 					limit = {
@@ -3078,7 +2101,7 @@ activity_coronation = {
 				}
 				else_if = { #major supporter/detractor guest and players
 					limit = {
-						NOT = { this = scope:host }
+						this != scope:host
 					}
 					trigger_event = { on_action = coronation_first_phase_guest_events }
 				}
@@ -3092,8 +2115,8 @@ activity_coronation = {
 
 			on_enter_phase = {
 				if = {
-					limit = { 
-						this = scope:host 
+					limit = {
+						this = scope:host
 						has_multiple_players = no
 					}
 					scope:activity = { progress_activity_phase_after = { days = 3 } }
@@ -3123,20 +2146,20 @@ activity_coronation = {
 			on_enter_phase = {
 				scope:activity = { progress_activity_phase_after = { days = 3 } }
 			}
-			
+
 			on_phase_active = {
 				# Intro event for the phase
 				trigger_event = coronation_events.0210
 				if = {
 					limit = { this = scope:host }
-					scope:activity = { progress_activity_phase_after = { weeks = 6 } }
+					scope:activity = { progress_activity_phase_after = { weeks = 3 } }
 					trigger_event = { #Coronation ending events	
 						id = coronation_events.0310
-						days = 41
+						days = 20
 					}
 				}
 			}
-			
+
 			on_weekly_pulse = {
 				if = {
 					limit = {
@@ -3144,15 +2167,12 @@ activity_coronation = {
 					}
 					trigger_event = { on_action = coronation_third_phase_host_events }
 				}
-				else_if = {
-					limit = {
-						NOT = { this = scope:host }
-					}
+				else = {
 					trigger_event = { on_action = coronation_third_phase_guest_events }
 				}
 			}
 
-			on_end = {			
+			on_end = {
 			}
 		}
 	}
@@ -3174,17 +2194,17 @@ activity_coronation = {
 			# Feast APAs
 			excellent_food impressed_courtly_vassal hook_trusting_guest leftover_food_giveaway virtuous_feast noble_privileges good_kitty good_puppy antiquarian_admires_artifact jester_entertained_guests apa_executioner spouse_skill_diplomacy_improves spouse_gives_host_prestige spouse_manages_feast_splendidly spouse_impresses_clergy spouse_gives_hook relation_gains_friend lauded_food children_bonding guest_impressed_by_court_artifact guest_chokes_on_bone guest_brawl friend_lauds_efforts courtly_vassals_appeased spouse_insults_host host_gains_diplo_xp host_gains_steward_xp host_gains_intrigue_xp ridiculed_food guest_tells_fantastic_joke
 			# Tournament APAs
-			tournament_prayed_temple tournament_host_gifted 
+			tournament_prayed_temple tournament_host_gifted
 			# Pilgrimage APAs
 			apa_overcome_with_emotion apa_comet_sighted apa_good_omen
 			# Playdate APAs
-			apa_joked_together apa_sang_nice_song apa_had_charming_convo 
+			apa_joked_together apa_sang_nice_song apa_had_charming_convo
 			# Hunt APAs
 			hunt_dog_bond hunt_poetic_inspiration
 			# Wedding APAs
 			dynasty_blessing cultural_acceptance royal_gift gossip_with_guests contact_network admired_venue knight_praised poetry_performance music_performance floral_exhibit spouse_impressed
 			# Journey APAs
-			apa_child_learns_something apa_scribe_makes_notes apa_spotted_by_locals apa_spouse_learns_something apa_ate_local_food apa_entourage_stops_pickpocket 
+			apa_child_learns_something apa_scribe_makes_notes apa_spotted_by_locals apa_spouse_learns_something apa_ate_local_food apa_entourage_stops_pickpocket
 			# Coronation APAs
 			loyalty_pledge nobles_cheer regalia_impresses_attendees supporters_bond detractors_bond befriend_loyalists supporter_stresses_detractor praised_king_together bonded_over_help beautiful_choir_song heir_diplomacy_boost heir_stewardship_boost heir_learning_boost
 			# General Actions
@@ -3220,8 +2240,8 @@ activity_coronation = {
 			2 = activity_invite_rule_lovers
 			2 = activity_invite_rule_potential_lovers
 			1 = activity_invite_rule_hof
-			
-			# MP 
+
+			# MP
 			6 = activity_invite_mp
 		}
 		defaults = {
@@ -3275,6 +2295,11 @@ activity_coronation = {
 			NOT = { scope:special_type = flag:coronation_type_anointment }
 			add = -1000
 			desc = coronation_pope_not_anointment
+		}
+		modifier = {
+			is_acclaimed = yes
+			add = 20
+			desc = ACTIVITY_GUEST_ACCLAIMED_KNIGHT_REASON
 		}
 		#Lieges, suzerains and tributaries are a bit more likely to attend
 		modifier = {
@@ -3346,8 +2371,8 @@ activity_coronation = {
 				name = hide_make_primary_title
 				value = 1
 			}
-		}							
-		
+		}
+
 		# Activity Province
 		scope:activity = {
 			if = {
@@ -3718,9 +2743,9 @@ activity_coronation = {
 					value = scope:host.faith.religious_head
 				}
 			}
-		}					
+		}
 	}
-	
+
 	on_enter_passive_state = {
 		scope:activity = {
 			if = {
@@ -3752,7 +2777,7 @@ activity_coronation = {
 	on_complete = {
 		var:officiator ?= {
 			remove_character_flag = coronation_officiator
-		}	
+		}
 		if = {
 			limit = {
 				this = scope:host
@@ -3917,12 +2942,104 @@ activity_coronation = {
 			}
 			remove_variable = coronation_primary_title
 			remove_variable = hide_make_primary_title
+			random_knight = {
+				limit = {
+					can_unlock_accolade_attribute_trigger = {
+						ATTRIBUTE = politicker
+					}
+				}
+				weight = {
+					base = -10
+					modifier = {
+						add = diplomacy
+						factor = 1.5
+					}
+					modifier = {
+						add = 10
+						is_acclaimed = yes
+					}
+					modifier = {
+						add = 10
+						involved_activity ?= scope:activity
+					}
+				}
+				save_scope_as = accolade_knight
+				liege = {
+					save_scope_as = accolade_liege
+					set_variable = {
+						name = accolade_progress
+						value = 0
+					}
+					send_interface_message = {
+						type = msg_accolade_eligibility
+						title = accolade_politicker_unlock.t_coronation
+						left_icon = scope:accolade_knight
+						right_icon = scope:accolade_liege
+						custom_tooltip = accolade_politicker_unlock.tt
+						scope:accolade_knight = {
+							set_variable = {
+								name = politicker_attribute_unlock
+								value = yes
+							}
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				accolades_activity_complete_coronation_glory_effect = yes
+			}
+			scope:activity.activity_location = {
+				if = {
+					limit = {
+						exists = scope:activity.var:activity_special_type_progression
+						scope:activity.var:activity_special_type_progression >= 50
+					}
+					if = {
+						limit = {
+							has_variable = coronation_tradition_location
+						}
+						change_variable = {
+							name = coronation_tradition_location
+							add = 1
+						}
+						if = {
+							limit = {
+								var:coronation_tradition_location >= 15
+								NOT = { has_province_modifier = coronation_ancient_tradition_modifier }
+							}
+							add_province_modifier = coronation_ancient_tradition_modifier
+							remove_province_modifier = coronation_long_tradition_modifier
+						}
+						else_if = {
+							limit = {
+								var:coronation_tradition_location >= 10
+								var:coronation_tradition_location < 15
+								NOT = { has_province_modifier = coronation_long_tradition_modifier }
+							}
+							add_province_modifier = coronation_long_tradition_modifier
+							remove_province_modifier = coronation_tradition_modifier
+						}
+						else_if = {
+							limit = {
+								var:coronation_tradition_location >= 5
+								var:coronation_tradition_location < 10
+								NOT = { has_province_modifier = coronation_tradition_modifier }
+							}
+							add_province_modifier = coronation_tradition_modifier
+						}
+					}
+					else = {
+						set_variable = {
+							name = coronation_tradition_location
+							value = 1
+						}
+					}
+				}
+			}
 		}
 		if = {
 			limit = {
-				NOT = {
-					this = scope:host
-				}
+				this != scope:host
 			}
 			create_character_memory = {
 				type = witnessed_a_coronation_memory
@@ -3931,57 +3048,60 @@ activity_coronation = {
 				}
 			}
 		}
-		scope:activity.activity_location = {
-			if = {
-				limit = {
-					exists = scope:activity.var:activity_special_type_progression
-					scope:activity.var:activity_special_type_progression >= 50
-				}
-				if = {
-					limit = {
-						has_variable = coronation_tradition_location
-					}
-					change_variable = {
-						name = coronation_tradition_location
-						add = 1
-					}
-					if = {
-						limit = {
-							var:coronation_tradition_location >= 15
-							NOT = { has_province_modifier = coronation_ancient_tradition_modifier }
-						}
-						add_province_modifier = coronation_ancient_tradition_modifier
-						remove_province_modifier = coronation_long_tradition_modifier
-					}
-					else_if = {
-						limit = {
-							var:coronation_tradition_location >= 10
-							var:coronation_tradition_location < 15
-							NOT = { has_province_modifier = coronation_long_tradition_modifier }
-						}
-						add_province_modifier = coronation_long_tradition_modifier
-						remove_province_modifier = coronation_tradition_modifier
-					}
-					else_if = {
-						limit = {
-							var:coronation_tradition_location >= 5
-							var:coronation_tradition_location < 10
-							NOT = { has_province_modifier = coronation_tradition_modifier }
-						}
-						add_province_modifier = coronation_tradition_modifier
-					}
-				}
-				else = {
-					set_variable = {
-						name = coronation_tradition_location
-						value = 1
-					}
-				}
-			}
-		}
 
 		# Struggle Catalysts
 		fp3_struggle_catalysts_for_activities_effect = yes
+	}
+	conclusion_description = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					coronation_proper_artifact_crown_trigger = yes
+				}
+				desc = coronation_conclusion_summary_desc_crown
+			}
+			desc = coronation_conclusion_summary_desc
+		}
+
+
+		#Number of supporters who gave their all to the oath
+		triggered_desc = {
+			trigger = {
+				scope:activity = {
+					has_variable = supporters_pledge_var
+					var:supporters_pledge_var > 1
+				}
+			}
+			desc = coronation_supporters_pledge_total
+		}
+		triggered_desc = {
+			trigger = {
+				scope:activity = {
+					has_variable = supporters_pledge_var
+					var:supporters_pledge_var = 1
+				}
+			}
+			desc = coronation_supporters_pledge_total_1
+		}
+		#Number of detractors who scorned the oath of loyalty
+		triggered_desc = {
+			trigger = {
+				scope:activity = {
+					has_variable = detractors_scorned_pledge_var
+					var:detractors_scorned_pledge_var > 1
+				}
+			}
+			desc = coronation_detractors_scorned_pledge_total
+		}
+		triggered_desc = {
+			trigger = {
+				scope:activity = {
+					has_variable = detractors_scorned_pledge_var
+					var:detractors_scorned_pledge_var = 1
+				}
+			}
+			desc = coronation_detractors_scorned_pledge_total_1
+		}
 	}
 
 	### Plugin widgets
@@ -3996,7 +3116,7 @@ activity_coronation = {
 		# Find an important character
 		guest = {
 			camera = camera_body_right
-			
+
 			effect = {
 				if = {
 					limit = {
@@ -4018,9 +3138,7 @@ activity_coronation = {
 						}
 						limit = {
 							location = scope:activity.activity_location
-							NOT = {
-								this = scope:host
-							}
+							this != scope:host
 						}
 						add_to_list = characters
 					}
@@ -4033,7 +3151,7 @@ activity_coronation = {
 		# Find the officiant if they exist, otherwise an important character
 		guest = {
 			camera = camera_body_right
-			
+
 			effect = {
 				if = {
 					limit = {
@@ -4052,9 +3170,7 @@ activity_coronation = {
 						any_attending_character = {
 							count >= 4
 							location = scope:activity.activity_location
-							NOT = {
-								this = scope:host
-							}
+							this != scope:host
 						}
 					}
 					ordered_attending_character = {
@@ -4074,9 +3190,7 @@ activity_coronation = {
 						position = 3
 						limit = {
 							location = scope:activity.activity_location
-							NOT = {
-								this = scope:host
-							}
+							this != scope:host
 						}
 						add_to_list = characters
 					}
@@ -4089,7 +3203,7 @@ activity_coronation = {
 		# Host
 		host = {
 			camera = camera_body
-			
+
 			effect = {
 				if = {
 					limit = {
@@ -4103,10 +3217,10 @@ activity_coronation = {
 
 			scripted_animation = coronation_host_animation
 		}
-		
+
 		travel_host = {
 			camera = camera_event_horse_left
-			
+
 			effect = {
 				if = {
 					limit = {
@@ -4138,7 +3252,7 @@ activity_coronation = {
 		# Find a family member/spouse/heir
 		guest = {
 			camera = camera_body_left_slight
-			
+
 			effect = {
 				if = {
 					limit = {
@@ -4161,7 +3275,7 @@ activity_coronation = {
 								add = 25
 							}
 							if = {
-								limit = { 
+								limit = {
 									this = scope:host.primary_spouse
 								}
 								add = 50
@@ -4175,8 +3289,8 @@ activity_coronation = {
 						}
 						limit = {
 							location = scope:activity.activity_location
-							NOR = { 
-								this = scope:host 
+							NOR = {
+								this = scope:host
 								scope:activity.var:officiator ?= this
 							}
 						}
@@ -4191,20 +3305,18 @@ activity_coronation = {
 		# Find an important member
 		guest = {
 			camera = camera_body_left
-			
+
 			effect = {
 				if = {
 					limit = {
 						scope:host.location = scope:activity.activity_location
-						scope:activity = { 
-							NOT = { has_current_phase = coronation_phase_coronation } 
+						scope:activity = {
+							NOT = { has_current_phase = coronation_phase_coronation }
 						}
 						any_attending_character = {
 							count >= 3
 							location = scope:activity.activity_location
-							NOT = {
-								this = scope:host
-							}
+							this != scope:host
 						}
 					}
 					ordered_attending_character = {
@@ -4224,9 +3336,7 @@ activity_coronation = {
 						position = 2
 						limit = {
 							location = scope:activity.activity_location
-							NOT = {
-								this = scope:host
-							}
+							this != scope:host
 						}
 						add_to_list = characters
 					}
@@ -4314,12 +3424,12 @@ activity_coronation = {
 					}
 					activity_location.culture ?= {
 						OR = {
-							has_building_gfx = western_building_gfx 
-							has_building_gfx = mediterranean_building_gfx 
-							has_building_gfx = byzantine_building_gfx 
+							has_building_gfx = western_building_gfx
+							has_building_gfx = mediterranean_building_gfx
+							has_building_gfx = byzantine_building_gfx
 							has_building_gfx = caucasian_building_gfx
-							has_building_gfx = norse_building_gfx 
-							has_building_gfx = iberian_building_gfx 
+							has_building_gfx = norse_building_gfx
+							has_building_gfx = iberian_building_gfx
 						}
 					}
 				}
@@ -4362,7 +3472,7 @@ activity_coronation = {
 				}
 				has_current_phase = coronation_phase_preparations
 			}
-			
+
 		}
 		texture = "gfx/interface/illustrations/event_scenes/market_east.dds"
 		environment = "environment_event_market_east"
@@ -4377,7 +3487,7 @@ activity_coronation = {
 		}
 		texture = "gfx/interface/illustrations/event_scenes/ep2_holysite_tribal.dds"
 		environment = "environment_event_garden"
-		ambience = "event:/DLC/FP1/SFX/Events/event_temple" 
+		ambience = "event:/DLC/FP1/SFX/Events/event_temple"
 	}
 	background = {	#Constantinople
 		trigger = {
@@ -4388,7 +3498,7 @@ activity_coronation = {
 		}
 		texture = "gfx/interface/illustrations/event_scenes/ep3_constantinople.dds"
 		environment = "environment_ep3_constantinople"
-		ambience = "event:/DLC/EP3/SFX/Events/Event_Images/ep3_evn_eventimage_constantinople" 
+		ambience = "event:/DLC/EP3/SFX/Events/Event_Images/ep3_evn_eventimage_constantinople"
 	}
 	background = {	#FP2
 		trigger = {
@@ -4403,8 +3513,8 @@ activity_coronation = {
 			}
 		}
 		texture = "gfx/interface/illustrations/event_scenes/fp2_courtyard.dds"
-		environment = "environment_event_fp2_courtyard" 
-		ambience = "event:/DLC/FP2/SFX/Events/courtyard" 
+		environment = "environment_event_fp2_courtyard"
+		ambience = "event:/DLC/FP2/SFX/Events/courtyard"
 	}
 	background = {	#Mandala shrine
 		trigger = {
@@ -4414,7 +3524,7 @@ activity_coronation = {
 						culture = { has_building_gfx = southeast_asian_building_gfx }
 						steppe_building_gfx_use_southeast_asian_trigger = yes
 					}
-					
+
 				}
 				has_current_phase = coronation_phase_preparations
 			}
@@ -4436,7 +3546,7 @@ activity_coronation = {
 			}
 		}
 		texture = "gfx/interface/illustrations/event_scenes/bp1_courtyard_indian.dds"
-		environment = "environment_event_bp1_courtyard_indian" 
+		environment = "environment_event_bp1_courtyard_indian"
 		ambience = "event:/SFX/Events/Backgrounds/castle_courtyard_western"
 	}
 	background = {	#MENA Courtyard
@@ -4480,7 +3590,7 @@ activity_coronation = {
 		}
 		texture = "gfx/interface/illustrations/event_scenes/bp2_courtyard.dds"
 		environment = "environment_bp2_courtyard"
-		ambience = "event:/DLC/FP2/SFX/Events/courtyard" 
+		ambience = "event:/DLC/FP2/SFX/Events/courtyard"
 	}
 
 	# Ceremony - Throne Room Pictures
@@ -4567,7 +3677,7 @@ activity_coronation = {
 								primary_title = title:h_eastern_roman_empire
 							}
 							title:c_byzantion = {
-								any_de_jure_top_liege = { this = root } 
+								any_de_jure_top_liege = { this = root }
 							}
 						}
 					}
@@ -4577,7 +3687,7 @@ activity_coronation = {
 		}
 		texture = "gfx/interface/illustrations/event_scenes/ep3_byzantine_throne_room.dds"
 		environment = "environment_ep3_byzantine_throne_room"
-		ambience = "event:/DLC/EP3/SFX/Events/Event_Images/ep3_evn_eventimage_byzantine_throne_room" 
+		ambience = "event:/DLC/EP3/SFX/Events/Event_Images/ep3_evn_eventimage_byzantine_throne_room"
 	}
 	background = { # TGP Japan
 		trigger = {
@@ -4629,7 +3739,7 @@ activity_coronation = {
 		}
 		texture = "gfx/interface/illustrations/event_scenes/fp3_throneroom.dds"
 		environment = "environment_event_temple"
-		ambience = "event:/SFX/Events/Backgrounds/throneroom_middleeastern_african" 
+		ambience = "event:/SFX/Events/Backgrounds/throneroom_middleeastern_african"
 	}
 	background = {	#Iberia
 		trigger = {
@@ -4646,7 +3756,7 @@ activity_coronation = {
 		}
 		texture = "gfx/interface/illustrations/event_scenes/fp2_throneroom.dds"
 		environment = "environment_event_fp2_throneroom"
-		ambience = "event:/DLC/FP2/SFX/Events/throneroom" 
+		ambience = "event:/DLC/FP2/SFX/Events/throneroom"
 	}
 	background = {	#Norse Non-Tribal
 		trigger = {
@@ -4666,7 +3776,7 @@ activity_coronation = {
 	background = { #MENA
 		trigger = {
 			scope:activity ?= {
-				activity_location = { 
+				activity_location = {
 					NOT = { has_holding_type = church_holding }
 					OR = {
 						steppe_building_gfx_use_mena_trigger = yes
@@ -4729,21 +3839,21 @@ activity_coronation = {
 	}
 
 	# Ceremony - Church Pictures
-	
+
 	background = {	# FP3
 		trigger = {
-			scope:activity ?= { 
+			scope:activity ?= {
 				has_current_phase = coronation_phase_coronation
 			}
 			scope:host.religion = religion:zoroastrianism_religion
 		}
 		texture = "gfx/interface/illustrations/event_scenes/fp3_temple.dds"
 		environment = "environment_event_fp3_temple"
-		ambience = "event:/SFX/Events/Backgrounds/temple_generic" 
+		ambience = "event:/SFX/Events/Backgrounds/temple_generic"
 	}
 	background = {
 		trigger = {
-			scope:activity ?= { 
+			scope:activity ?= {
 				has_current_phase = coronation_phase_coronation
 				OR = {
 					#Coronation in nomadic holding
@@ -4758,7 +3868,7 @@ activity_coronation = {
 					scope:host = {
 						OR = {
 							religion = religion:tengrism_religion
-							#religion = religion:magyar_religion
+							##### Changed from Vanilla: religion = religion:magyar_religion
 							religion = religion:siberian_religion
 							religion = religion:kamuyism_religion
 							AND = {
@@ -4780,12 +3890,12 @@ activity_coronation = {
 			}
 		}
 		texture = "gfx/interface/illustrations/event_scenes/mpo_temple_steppe.dds"
-		environment = "environment_mpo_temple_steppe" 
+		environment = "environment_mpo_temple_steppe"
 		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_temple_steppe"
 	}
 	background = { # EP3 - Hagia Sophia for Byzantium
 		trigger = {
-			scope:activity ?= { 
+			scope:activity ?= {
 				has_current_phase = coronation_phase_coronation
 			}
 			scope:host = {
@@ -4794,11 +3904,11 @@ activity_coronation = {
 		}
 		texture = "gfx/interface/illustrations/event_scenes/ep3_hagia_sophia.dds"
 		environment = "environment_ep3_hagia_sophia"
-		ambience = "event:/DLC/EP3/SFX/Events/Event_Images/ep3_evn_eventimage_hagia_sophia" 
+		ambience = "event:/DLC/EP3/SFX/Events/Event_Images/ep3_evn_eventimage_hagia_sophia"
 	}
 	background = {	# FP2
 		trigger = {
-			scope:activity ?= { 
+			scope:activity ?= {
 				has_current_phase = coronation_phase_coronation
 				OR = {
 					activity_location.culture ?= { has_building_gfx = iberian_building_gfx }
@@ -4808,11 +3918,11 @@ activity_coronation = {
 		}
 		texture = "gfx/interface/illustrations/event_scenes/fp2_temple.dds"
 		environment = "environment_event_fp2_temple"
-		ambience = "event:/DLC/FP2/SFX/Events/temple" 
+		ambience = "event:/DLC/FP2/SFX/Events/temple"
 	}
 	background = { #Orthodox holy site
 		trigger = {
-			scope:activity ?= { 
+			scope:activity ?= {
 				has_current_phase = coronation_phase_coronation
 			}
 			scope:host = {
@@ -4837,7 +3947,7 @@ activity_coronation = {
 	}
 	background = { #Western holy site
 		trigger = {
-			scope:activity ?= { 
+			scope:activity ?= {
 				has_current_phase = coronation_phase_coronation
 				activity_location = {
 					OR = {
@@ -4856,7 +3966,7 @@ activity_coronation = {
 	}
 	background = { #Generic christian church
 		trigger = {
-			scope:activity ?= { 
+			scope:activity ?= {
 				has_current_phase = coronation_phase_coronation
 			}
 			scope:host = { religion = religion:christianity_religion }
@@ -4867,7 +3977,7 @@ activity_coronation = {
 	}
 	background = {
 		trigger = {
-			scope:activity ?= { 
+			scope:activity ?= {
 				has_current_phase = coronation_phase_coronation
 			}
 			scope:host = {
@@ -4875,12 +3985,12 @@ activity_coronation = {
 			}
 		}
 		texture = "gfx/interface/illustrations/event_scenes/ep2_holysite_mena.dds"
-		environment = "environment_generic_holy_site_mena" 				
+		environment = "environment_generic_holy_site_mena"
 		ambience = "event:/DLC/EP2/SFX/Events/Backgrounds/evn_background_holysite_mena"
 	}
 	background = { # FP1
 		trigger = {
-			scope:activity ?= { 
+			scope:activity ?= {
 				has_current_phase = coronation_phase_coronation
 			}
 			scope:host = { religion = religion:germanic_religion }
@@ -4933,7 +4043,7 @@ activity_coronation = {
 	}
 	background = { # generic tribal
 		trigger = {
-			scope:activity ?= { 
+			scope:activity ?= {
 				has_current_phase = coronation_phase_coronation
 			}
 			scope:host = {
@@ -4950,7 +4060,7 @@ activity_coronation = {
 	}
 	background = {
 		trigger = {
-			scope:activity ?= { 
+			scope:activity ?= {
 				has_current_phase = coronation_phase_coronation
 			}
 		}
@@ -4978,8 +4088,8 @@ activity_coronation = {
 	}
 	background = {	# EP3
 		trigger = {
-			scope:activity ?= { 
-				has_current_phase = coronation_phase_feast 
+			scope:activity ?= {
+				has_current_phase = coronation_phase_feast
 				activity_location.culture = {
 					OR = {
 						has_building_gfx = byzantine_building_gfx
@@ -4994,8 +4104,8 @@ activity_coronation = {
 	}
 	background = {	# FP1
 		trigger = {
-			scope:activity ?= { 
-				has_current_phase = coronation_phase_feast 
+			scope:activity ?= {
+				has_current_phase = coronation_phase_feast
 				OR = {
 					AND = {
 						activity_location.culture ?= { has_building_gfx = western_building_gfx }
@@ -5005,7 +4115,7 @@ activity_coronation = {
 					}
 					activity_location.culture = { has_building_gfx = norse_building_gfx }
 				}
-				
+
 			}
 		}
 		texture = "gfx/interface/illustrations/event_scenes/fp1_viking_feast.dds"
@@ -5014,7 +4124,7 @@ activity_coronation = {
 	}
 	background = {
 		trigger = {
-			scope:activity ?= { 
+			scope:activity ?= {
 				has_current_phase = coronation_phase_feast
 				activity_location = {
 					OR = {
@@ -5030,8 +4140,8 @@ activity_coronation = {
 	}
 	background = {
 		trigger = {
-			scope:activity ?= { 
-				has_current_phase = coronation_phase_feast 
+			scope:activity ?= {
+				has_current_phase = coronation_phase_feast
 				activity_location.culture = { has_building_gfx = african_building_gfx }
 			}
 		}
@@ -5041,8 +4151,8 @@ activity_coronation = {
 	}
 	background = { #East Asian
 		trigger = {
-			scope:activity ?= { 
-				has_current_phase = coronation_phase_feast 
+			scope:activity ?= {
+				has_current_phase = coronation_phase_feast
 				activity_location = {
 					OR = {
 						culture = { has_graphical_east_asia_culture_group_trigger = yes }
@@ -5057,11 +4167,11 @@ activity_coronation = {
 	}
 	background = {
 		trigger = {
-			scope:activity ?= { 
-				has_current_phase = coronation_phase_feast 
+			scope:activity ?= {
+				has_current_phase = coronation_phase_feast
 				activity_location = {
 					OR = {
-						steppe_building_gfx_use_mena_trigger = yes 
+						steppe_building_gfx_use_mena_trigger = yes
 						culture ?= {
 							OR = {
 								has_building_gfx = arabic_group_building_gfx
@@ -5082,7 +4192,7 @@ activity_coronation = {
 	background = { #East Asia
 		trigger = {
 			scope:activity ?= {
-				has_current_phase = coronation_phase_feast 
+				has_current_phase = coronation_phase_feast
 			}
 			activity_location.culture = { has_graphical_east_asia_culture_group_trigger = yes }
 		}
@@ -5092,8 +4202,8 @@ activity_coronation = {
 	}
 	background = { #fallback Western
 		trigger = {
-			scope:activity ?= { 
-				has_current_phase = coronation_phase_feast 
+			scope:activity ?= {
+				has_current_phase = coronation_phase_feast
 			}
 		}
 		texture = "gfx/interface/illustrations/event_scenes/feast.dds"
@@ -5198,7 +4308,7 @@ activity_coronation = {
 		environment = "environment_tgp_farm_asia"
 		ambience = "event:/DLC/EP4/SFX/Events/Event_Backgrounds/tgp_farm_asia"
 	}
-	
+
 	background = { # Farmland, settled
 		trigger = {
 			OR = {
@@ -5561,7 +4671,7 @@ activity_coronation = {
 			}
 		}
 		texture = "gfx/interface/illustrations/event_scenes/bp1_wetlands.dds"
-		environment = "environment_event_bp1_wetlands" 
+		environment = "environment_event_bp1_wetlands"
 		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
 	}
 
