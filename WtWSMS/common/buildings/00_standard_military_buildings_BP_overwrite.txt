@@ -2398,6 +2398,10 @@ outposts_02 = {
 		skirmishers_recruitment_cost_mult = -0.02
 		archers_recruitment_cost_mult = -0.02
 	}
+	county_culture_modifier = {
+		parameter = strength_in_numbers_maa_limit_bonus 
+		levy_size = 0.01
+	}
 	province_culture_modifier = {
 		parameter = outposts_building_bonuses
 		monthly_income = super_poor_building_tax_tier_2
@@ -2695,6 +2699,10 @@ barracks_01 = {
 		parameter = building_barracks_piety_bonuses
 		monthly_piety = 0.1
 	}
+	county_culture_modifier = {
+		parameter = strength_in_numbers_maa_limit_bonus 
+		levy_size = 0.01
+	}
 	province_culture_modifier = {
 		parameter = strength_in_numbers_maa_limit_bonus
 		stationed_heavy_infantry_damage_mult = -0.20
@@ -2749,6 +2757,8 @@ barracks_02 = {
 	can_construct_potential = {
 		building_barracks_requirement_terrain = yes
 		building_requirement_castle_city_church = { LEVEL = 01 }
+	}
+	can_construct_showing_failures_only = {
 		trigger_if = {
 			limit = {
 				NOT = {
@@ -2765,9 +2775,6 @@ barracks_02 = {
 			}
 			military_building_level_01_trigger = yes
 		}
-	}
-
-	can_construct_showing_failures_only = {
 		##### Changed from Vanilla vvvvv
 		OR = {
 			building_requirement_tribal = no
@@ -2791,6 +2798,10 @@ barracks_02 = {
 	character_culture_modifier = {
 		parameter = building_barracks_piety_bonuses
 		monthly_piety = 0.2
+	}
+	county_culture_modifier = {
+		parameter = strength_in_numbers_maa_limit_bonus 
+		levy_size = 0.02
 	}
 	province_culture_modifier = {
 		parameter = strength_in_numbers_maa_limit_bonus
@@ -2872,6 +2883,10 @@ barracks_03 = {
 		parameter = building_barracks_piety_bonuses
 		monthly_piety = 0.3
 	}
+	county_culture_modifier = {
+		parameter = strength_in_numbers_maa_limit_bonus 
+		levy_size = 0.02
+	}
 	province_culture_modifier = {
 		parameter = strength_in_numbers_maa_limit_bonus
 		stationed_heavy_infantry_damage_mult = -0.20
@@ -2950,6 +2965,10 @@ barracks_04 = {
 	character_culture_modifier = {
 		parameter = building_barracks_piety_bonuses
 		monthly_piety = 0.4
+	}
+	county_culture_modifier = {
+		parameter = strength_in_numbers_maa_limit_bonus 
+		levy_size = 0.02
 	}
 	province_culture_modifier = {
 		parameter = strength_in_numbers_maa_limit_bonus
@@ -3608,6 +3627,8 @@ stables_02 = {
 	can_construct_potential = {
 		building_stables_requirement_terrain = yes
 		building_requirement_castle_city_church = { LEVEL = 01 }
+	}
+	can_construct_showing_failures_only = {
 		trigger_if = {
 			limit = {
 				NOT = {
@@ -3624,9 +3645,6 @@ stables_02 = {
 			}
 			military_building_level_01_trigger = yes
 		}
-	}
-
-	can_construct_showing_failures_only = {
 		##### Changed from Vanilla vvvvv
 		OR = {
 			building_requirement_tribal = no
@@ -4009,10 +4027,6 @@ smiths_01 = {
 	character_modifier = {
 		knight_effectiveness_mult = normal_knight_effectiveness_mult_tier_1
 	}
-	character_culture_modifier = {
-		parameter = frugal_blacksmith_maa_size 
-		knight_limit = 1
-	}
 	
 	on_complete = {
 		#Mandala Creator Aspect
@@ -4165,11 +4179,6 @@ smiths_02 = {
 	character_modifier = {
 		knight_effectiveness_mult = normal_knight_effectiveness_mult_tier_2
 	}
-	character_culture_modifier = {
-		parameter = frugal_blacksmith_maa_size 
-		knight_limit = 1
-		men_at_arms_limit = 1
-	}
 	
 	on_complete = {
 		#Mandala Creator Aspect
@@ -4247,11 +4256,6 @@ smiths_03 = {
 	character_modifier = {
 		knight_effectiveness_mult = normal_knight_effectiveness_mult_tier_3
 	}
-	character_culture_modifier = {
-		parameter = frugal_blacksmith_maa_size 
-		knight_limit = 2
-		men_at_arms_limit = 1
-	}
 	
 	on_complete = {
 		#Mandala Creator Aspect
@@ -4324,11 +4328,6 @@ smiths_04 = {
 	}
 	character_modifier = {
 		knight_effectiveness_mult = normal_knight_effectiveness_mult_tier_4
-	}
-	character_culture_modifier = {
-		parameter = frugal_blacksmith_maa_size 
-		knight_limit = 2
-		men_at_arms_limit = 1
 	}
 	
 	on_complete = {
