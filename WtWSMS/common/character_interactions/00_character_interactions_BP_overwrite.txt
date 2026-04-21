@@ -649,7 +649,14 @@ offer_vassalization_interaction = {
 						character_is_realm_neighbor = scope:recipient
 					}
 				}
-				scope:recipient.capital_province = { squared_distance = { target = scope:actor.capital_province value < 200000 } }
+				scope:recipient = {
+					# landless ruler count as within realm
+					trigger_if = {
+						limit = { is_landed = no }
+						NOT = { capital_county.holder = { target_is_same_character_or_above = scope:actor } }
+					}
+					capital_province = { squared_distance = { target = scope:actor.capital_province value < 200000 } }
+				}
 			}
 			add = -250
 		}
@@ -661,7 +668,14 @@ offer_vassalization_interaction = {
 						character_is_realm_neighbor = scope:recipient
 					}
 				}
-				scope:recipient.capital_province = { squared_distance = { target = scope:actor.capital_province value >= 200000 } }
+				scope:recipient = {
+					# landless ruler count as within realm
+					trigger_if = {
+						limit = { is_landed = no }
+						NOT = { capital_county.holder = { target_is_same_character_or_above = scope:actor } }
+					}
+					capital_province = { squared_distance = { target = scope:actor.capital_province value >= 200000 } }
+				}
 			}
 			add = -500
 		}
@@ -1278,7 +1292,7 @@ offer_vassalization_interaction = {
 		flag = religious_exemption
 		localization = religious_exemption
 	}
-##### Changed from Vanilla ^^^^^
+	##### Changed from Vanilla ^^^^^
 
 	# Religious exemption, for clans
 	send_option = {
@@ -1532,8 +1546,13 @@ offer_fealty_interaction = {
 					NOT = {
 						any_neighboring_top_liege_realm_owner = { this = scope:recipient }
 					}
+					# landless ruler count as within realm
+					trigger_if = {
+						limit = { is_landed = no }
+						NOT = { capital_county.holder = { target_is_same_character_or_above = scope:actor } }
+					}
+					capital_province = { squared_distance = { target = scope:recipient.capital_province value < 200000 } }
 				}
-				scope:actor.capital_province = { squared_distance = { target = scope:recipient.capital_province value < 200000 } }
 			}
 			add = -15
 		}
@@ -1544,14 +1563,13 @@ offer_fealty_interaction = {
 					NOT = {
 						any_neighboring_top_liege_realm_owner = { this = scope:recipient }
 					}
-				}
-				trigger_if = {
-					limit = {
-						exists = scope:recipient.suzerain
-						scope:recipient.suzerain != scope:actor
+					# landless ruler count as within realm
+					trigger_if = {
+						limit = { is_landed = no }
+						NOT = { capital_county.holder = { target_is_same_character_or_above = scope:actor } }
 					}
+					capital_province = { squared_distance = { target = scope:recipient.capital_province value >= 200000 } }
 				}
-				scope:actor.capital_province = { squared_distance = { target = scope:recipient.capital_province value >= 200000 } }
 			}
 			add = -25
 		}
@@ -1716,6 +1734,8 @@ offer_fealty_interaction = {
 			}
 		}
 	}
+
+	##### Changed from Vanilla vvvvv
 
 	# Low starting obligations
 	send_option = {
@@ -1914,3 +1934,4 @@ offer_fealty_interaction = {
 		}
 	}
 }
+

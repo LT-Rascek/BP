@@ -833,6 +833,15 @@ heritage_ancient_greek = {
 		heritage_family_west_asian = yes
 	}
 }
+heritage_phoenician = {
+	type = heritage 
+	is_shown = { 
+		heritage_is_shown_trigger = {
+			HERITAGE = heritage_phoenician
+		}
+	}
+	audio_parameter = byzantine
+}
 
 #AUH
 heritage_austronesian = {
