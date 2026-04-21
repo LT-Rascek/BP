@@ -40,10 +40,10 @@
 			}
 		}
 		##### Changed from Vanilla ^^^^^
-		
+	
 		#Mandala gets special treatment
 		trigger_if = {
-			limit = { 
+			limit = {
 				scope:actor = { government_has_flag = government_is_mandala }
 			}
 			custom_tooltip = {
@@ -183,7 +183,7 @@
 						add_piety = major_piety_loss
 					}
 					else = { add_prestige = medium_prestige_loss }
-					
+
 					scope:recipient = {
 						add_opinion = {
 							modifier = outraged_opinion
@@ -302,7 +302,7 @@ subject_modify_tributary_contract_interaction = {
 	
 		#Mandala gets special treatment
 		trigger_if = {
-			limit = { 
+			limit = {
 				scope:recipient = { government_has_flag = government_is_mandala }
 			}
 			custom_tooltip = {
@@ -317,9 +317,9 @@ subject_modify_tributary_contract_interaction = {
 				trigger_if = {
 					limit = { scope:hook = no } # no cost
 					trigger_if = {
-						limit = { subject_standing < 0 } # this means we don't use subject standing	
+						limit = { subject_standing < 0 } # this means we don't use subject standing
 						trigger_if = {
-							limit = { 
+							limit = {
 								government_has_flag = government_is_nomadic
 								scope:recipient = { government_has_flag = government_is_nomadic }
 							}
@@ -374,9 +374,9 @@ subject_modify_tributary_contract_interaction = {
 				trigger_if = {
 					limit = { scope:hook = no } # no cost
 					trigger_if = {
-						limit = { subject_standing < 0 } # this means we don't use subject standing	
+						limit = { subject_standing < 0 } # this means we don't use subject standing
 						trigger_if = {
-							limit = { 
+							limit = {
 								government_has_flag = government_is_nomadic
 								scope:recipient = { government_has_flag = government_is_nomadic }
 							}
@@ -416,9 +416,9 @@ subject_modify_tributary_contract_interaction = {
 				}
 				else = {
 					if = {
-						limit = { subject_standing < 0 } # this means we don't use subject standing	
+						limit = { subject_standing < 0 } # this means we don't use subject standing
 						if = {
-							limit = { 
+							limit = {
 								government_has_flag = government_is_nomadic
 								scope:recipient = { government_has_flag = government_is_nomadic }
 							}
@@ -550,9 +550,14 @@ subject_modify_tributary_contract_interaction = {
 				add = scope:new_value
 				multiply = -20 #Overlord favoring options have a negative score
 				if = { # the Chinese Emperor cares less since they get tribute through missions as well
-					limit = { 
+					limit = {
 						scope:new_value < 0
-						scope:actor = { has_subject_contract_group = tributary_celestial } 
+						scope:actor = {
+							OR = {
+								has_subject_contract_group = tributary_celestial
+								has_subject_contract_group = tributary_hegemonic
+							}
+						}
 					}
 					multiply = 0.5
 				}
