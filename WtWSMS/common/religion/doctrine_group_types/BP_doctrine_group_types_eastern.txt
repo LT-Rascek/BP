@@ -1,0 +1,73 @@
+﻿nudity_doctrine = {
+	category = "clergy"
+	is_available_on_create = {
+		OR = {
+			religion_tag = jainism_religion
+			religion_tag = nastika_religion
+			has_doctrine = nudity_doctrine_naked_priests
+		}
+	}
+
+	doctrine_types = {
+		nudity_doctrine_no_naked_priests
+		nudity_doctrine_naked_priests
+	}
+}
+
+# Between those line is take from Dharmachakra: https://github.com/herkles/Dharmachakra
+
+#############################
+
+#Teaching of the Vedas
+is_hinduism_faith = {
+	category = "special"
+	
+	is_available_on_create = {
+		has_doctrine = special_doctrine_is_hinduism_faith
+	}
+
+	doctrine_types = {
+		special_doctrine_is_hinduism_faith
+	}
+}
+
+#Teaching of Mahavira
+is_jainism_faith = {
+	category = "special"
+	
+	is_available_on_create = {
+		has_doctrine = special_doctrine_is_jainism_faith
+	}
+
+	doctrine_types = {
+		special_doctrine_is_jainism_faith
+	}
+}
+
+#Teaching of Gautama Buddha
+is_buddhist_faith = {
+	category = "special"
+	
+	is_available_on_create = {
+		has_doctrine = special_doctrine_is_buddhist_faith
+	}
+
+	doctrine_types = {
+		special_doctrine_is_buddhist_faith
+	}
+}
+
+###############################
+
+#Teachings of the Sramanas
+is_nastika_faith = {
+	category = "special"
+	
+	is_available_on_create = {
+		has_doctrine = special_doctrine_is_nastika_faith
+	}
+
+	doctrine_types = {
+		special_doctrine_is_nastika_faith
+	}
+}

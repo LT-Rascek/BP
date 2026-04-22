@@ -1,0 +1,101 @@
+﻿is_germanic_faith = {
+	category = "special"
+	#Should go away on creating a new faith; this only represents germanic paganism at its most disorganized
+	is_available_on_create = { always = no }
+
+	doctrine_types = {
+		special_doctrine_is_norse_faith
+		special_doctrine_is_gothic_faith
+		special_doctrine_is_anglo_faith
+		special_doctrine_is_frankish_faith
+		special_doctrine_is_przeworsk_faith
+		special_doctrine_is_irimonic_faith
+		special_doctrine_is_saxon_faith
+	}
+}
+
+is_eastern_pagan_faith = {
+	category = "special"
+	is_available_on_create = { has_doctrine = special_doctrine_is_eastern_pagan_faith }
+	
+	doctrine_types = {
+		special_doctrine_is_eastern_pagan_faith
+	}
+}
+
+is_egyptian_faith = {
+	category = "special"
+	is_available_on_create = { has_doctrine = special_doctrine_is_egyptian_faith }
+	
+	doctrine_types = {
+		special_doctrine_is_egyptian_faith
+	}
+}
+
+is_dravidian_pagan_faith = {
+	category = "special"
+	is_available_on_create = { has_doctrine = special_doctrine_is_dravidian_pagan_faith }
+	
+	doctrine_types = {
+		special_doctrine_is_dravidian_pagan_faith
+	}
+}
+
+twin_status = {
+	category = "special"
+	
+	is_available_on_create = { 
+		OR = {
+			has_doctrine = special_doctrine_good_twins
+			has_doctrine = special_doctrine_evil_twins
+		}
+	}
+	
+	doctrine_types = {
+		special_doctrine_good_twins
+		special_doctrine_evil_twins
+	}
+}
+
+#Needed to make Enarei opinions active
+scythian_pagan_doctrine = {
+	category = "special"
+
+	is_available_on_create = { has_doctrine = special_doctrine_is_scythian_faith }
+
+	doctrine_types = {
+		special_doctrine_is_scythian_faith
+	}
+}
+
+iranian_pagan_doctrine = {
+	category = "special"
+
+	is_available_on_create = { has_doctrine = special_doctrine_is_kitebacilweism }
+
+	doctrine_types = {
+		special_doctrine_is_kitebacilweism
+	}
+}
+
+przework_archeological_complex_faith_doctrine = {
+	category = "special"
+	
+	#Should go away on creating a new faith; this only represents large, unorganized Pagan conglomerations
+	is_available_on_create = { always = no }
+	
+	doctrine_types = {
+		special_doctrine_przeworsk_complex
+	}
+}
+
+chernyakhov_archeological_complex_faith_doctrine = {
+	category = "special"
+	
+	#Should go away on creating a new faith; this only represents large, unorganized Pagan conglomerations
+	is_available_on_create = { always = no }
+	
+	doctrine_types = {
+		special_doctrine_chernyakhov_complex
+	}
+}

@@ -1,0 +1,181 @@
+﻿rice_mahayana_canon_doctrine = { # Chinese Canon/Dazangjing
+	piety_cost = {
+		value = faith_doctrine_cost_mid
+		if = {
+			limit = { has_doctrine = rice_mahayana_canon_doctrine }
+			multiply = bp_faith_unchanged_doctrine_cost_mult
+		}
+		else_if = {
+			limit = { has_doctrine = bp_nikaya_cannon_doctrine }
+			multiply = bp_faith_unchanged_doctrine_cost_mult
+		}
+		else_if = {
+			limit = { has_doctrine = rice_theravada_canon_doctrine }
+			multiply = bp_faith_changed_doctrine_cost_mult
+		}
+		else_if = {
+			limit = { has_doctrine = rice_vajrayana_canon_doctrine }
+			multiply = bp_faith_changed_doctrine_cost_mult
+		}
+		else_if = {
+			limit = { has_doctrine = rice_pudgalavada_canon_doctrine }
+			multiply = bp_faith_changed_doctrine_cost_mult_two_step
+		}
+	}
+	is_shown = {
+		NOT = { doctrine:tenet_extinction_of_dharma = { is_in_list = selected_doctrines } }
+	}
+	parameters = {
+		hostility_override_rice_mahayana_canon_doctrine = 0
+		hostility_override_bp_nikaya_cannon_doctrine = 0
+		same_vehicle_recipient_opinion_active = yes
+		opinion_of_same_vehicle_recipient_opinion_active = -5
+		liturgical_language_chinese = yes
+	}
+}
+#Hinayana Cannon
+bp_nikaya_cannon_doctrine = {
+	piety_cost = {
+		value = faith_doctrine_cost_mid
+		if = {
+			limit = { has_doctrine = rice_mahayana_canon_doctrine }
+			multiply = bp_faith_unchanged_doctrine_cost_mult
+		}
+		else_if = {
+			limit = { has_doctrine = bp_nikaya_cannon_doctrine }
+			multiply = bp_faith_unchanged_doctrine_cost_mult
+		}
+		else_if = {
+			limit = { has_doctrine = rice_theravada_canon_doctrine }
+			multiply = bp_faith_changed_doctrine_cost_mult
+		}
+		else_if = {
+			limit = { has_doctrine = rice_vajrayana_canon_doctrine }
+			multiply = bp_faith_changed_doctrine_cost_mult
+		}
+		else_if = {
+			limit = { has_doctrine = rice_pudgalavada_canon_doctrine }
+			multiply = bp_faith_changed_doctrine_cost_mult_two_step
+		}
+	}
+	is_shown = {
+		NOT = { doctrine:tenet_extinction_of_dharma = { is_in_list = selected_doctrines } }
+	}
+	parameters = {
+		hostility_override_rice_mahayana_canon_doctrine = 0
+		hostility_override_bp_nikaya_cannon_doctrine = 0
+		same_vehicle_recipient_opinion_active = yes
+		opinion_of_same_vehicle_recipient_opinion_active = -5
+		liturgical_language_magadhan = yes
+	}
+}
+rice_theravada_canon_doctrine = { # Pali Canon
+	piety_cost = {
+		value = faith_doctrine_cost_mid
+		if = {
+			limit = { has_doctrine = rice_theravada_canon_doctrine }
+			multiply = bp_faith_unchanged_doctrine_cost_mult
+		}
+		else_if = {
+			limit = { has_doctrine = bp_nikaya_cannon_doctrine }
+			multiply = bp_faith_changed_doctrine_cost_mult
+		}
+		else_if = {
+			limit = { has_doctrine = rice_mahayana_canon_doctrine }
+			multiply = bp_faith_changed_doctrine_cost_mult
+		}
+		else_if = {
+			limit = { has_doctrine = rice_vajrayana_canon_doctrine }
+			multiply = bp_faith_changed_doctrine_cost_mult
+		}
+		else_if = {
+			limit = { has_doctrine = rice_pudgalavada_canon_doctrine }
+			multiply = bp_faith_changed_doctrine_cost_mult_two_step
+		}
+	}
+	is_shown = {
+		NOT = { doctrine:tenet_extinction_of_dharma = { is_in_list = selected_doctrines } }
+	}
+	parameters = {
+		hostility_override_rice_theravada_canon_doctrine = 0
+		rice_vassa_active = yes
+		liturgical_language_magadhan = yes
+	}
+}
+rice_vajrayana_canon_doctrine = { # Tibetan Canon/Kanngur and Tanggur
+	piety_cost = {
+		value = faith_doctrine_cost_mid
+		if = {
+			limit = { has_doctrine = rice_vajrayana_canon_doctrine }
+			multiply = bp_faith_unchanged_doctrine_cost_mult
+		}
+		else_if = {
+			limit = { has_doctrine = bp_nikaya_cannon_doctrine }
+			multiply = bp_faith_changed_doctrine_cost_mult
+		}
+		else_if = {
+			limit = { has_doctrine = rice_mahayana_canon_doctrine }
+			multiply = bp_faith_changed_doctrine_cost_mult
+		}
+		else_if = {
+			limit = { has_doctrine = rice_theravada_canon_doctrine }
+			multiply = bp_faith_changed_doctrine_cost_mult
+		}
+		else_if = {
+			limit = { has_doctrine = rice_pudgalavada_canon_doctrine }
+			multiply = bp_faith_changed_doctrine_cost_mult_two_step
+		}
+	}
+	is_shown = {
+		NOT = { doctrine:tenet_extinction_of_dharma = { is_in_list = selected_doctrines } }
+	}
+	parameters = {
+		hostility_override_rice_vajrayana_canon_doctrine = 0
+	}
+}
+rice_pudgalavada_canon_doctrine = { # Pudgalavada/Sammitiya Canon
+	piety_cost = {
+		value = faith_doctrine_cost_mid
+		if = {
+			limit = { has_doctrine = rice_pudgalavada_canon_doctrine }
+			multiply = bp_faith_unchanged_doctrine_cost_mult
+		}
+		else_if = {
+			limit = { has_doctrine = bp_nikaya_cannon_doctrine }
+			multiply = bp_faith_changed_doctrine_cost_mult_two_step
+		}
+		else_if = {
+			limit = { has_doctrine = rice_mahayana_canon_doctrine }
+			multiply = bp_faith_changed_doctrine_cost_mult_two_step
+		}
+		else_if = {
+			limit = { has_doctrine = rice_theravada_canon_doctrine }
+			multiply = bp_faith_changed_doctrine_cost_mult_two_step
+		}
+		else_if = {
+			limit = { has_doctrine = rice_vajrayana_canon_doctrine }
+			multiply = bp_faith_changed_doctrine_cost_mult_two_step
+		}
+	}
+	is_shown = {
+		NOT = { doctrine:tenet_extinction_of_dharma = { is_in_list = selected_doctrines } }
+	}
+	parameters = {
+		hostility_override_rice_pudgalavada_canon_doctrine = 0
+		rice_vassa_active = yes
+		liturgical_language_magadhan = yes
+	}
+}
+bp_no_canon_doctrine = { # Maitreya
+	piety_cost = {
+		value = bp_faith_unchanged_doctrine_cost_mult
+	}
+	is_shown = {
+		doctrine:tenet_extinction_of_dharma = { is_in_list = selected_doctrines }
+	}
+	parameters = {
+		hostility_same_religion = 3
+		same_vehicle_recipient_opinion_active = yes
+		opinion_of_same_vehicle_recipient_opinion_active = -5
+	}
+}

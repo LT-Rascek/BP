@@ -1,0 +1,22 @@
+﻿runestones_doctrine = {
+	category = "special"
+
+	is_available_on_create = { has_doctrine = special_doctrine_runestones }
+	
+	doctrine_types = {
+		special_doctrine_runestones
+	}
+}
+
+#Philosophy religions consider each other Astray
+humanistic_hostility_doctrine = {
+	category = "special"
+	
+	is_available_on_create = {
+		has_doctrine = special_doctrine_humanistic_philosophy
+	}
+
+	doctrine_types = {
+		special_doctrine_humanistic_philosophy
+	}
+}
