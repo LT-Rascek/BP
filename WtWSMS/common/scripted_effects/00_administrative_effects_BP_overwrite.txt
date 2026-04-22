@@ -8,6 +8,16 @@ change_to_administrative_effect = {
 	else = {
 		top_liege = { save_scope_as = governor_liege }
 	}
+	# exactly 0 treasury,  i.e. newly get this feature
+	if = {
+		limit = {
+			OR = {
+				has_treasury = no
+				treasury = 0
+			}
+		}
+		save_scope_as = new_treasury
+	}
 	# Set the correct government
 	if = {
 		limit = {
@@ -85,6 +95,7 @@ change_to_administrative_effect = {
 					scope:governor_liege = { government_has_flag = government_is_japan_administrative }
 				}
 			}
+			change_to_administrative_holding_effect = yes
 			tgp_domicile_conversion_when_changing_government_type = {
 				NEW_DOMICILE_TYPE = japanese_manor
 				NEW_GOVERNMENT_TYPE = japan_administrative_government
@@ -118,18 +129,7 @@ change_to_administrative_effect = {
 					scope:governor_liege = { government_has_flag = government_is_celestial }
 				}
 			}
-			capital_province = {
-				if = {
-					limit = {
-						OR = {
-							has_holding_type = tribal_holding
-							has_holding_type = herder_holding
-							has_holding_type = nomad_holding
-						}
-					}
-					set_holding_type = castle_holding
-				}
-			}
+			change_to_administrative_holding_effect = yes
 			tgp_domicile_conversion_when_changing_government_type = {
 				NEW_DOMICILE_TYPE = east_asian_estate
 				NEW_GOVERNMENT_TYPE = celestial_government
@@ -149,18 +149,7 @@ change_to_administrative_effect = {
 					scope:governor_liege = { government_has_flag = government_is_steppe_admin }
 				}
 			}
-			capital_province = {
-				if = {
-					limit = {
-						OR = {
-							has_holding_type = tribal_holding
-							has_holding_type = herder_holding
-							has_holding_type = nomad_holding
-						}
-					}
-					set_holding_type = castle_holding
-				}
-			}
+			change_to_administrative_holding_effect = yes
 			tgp_domicile_conversion_when_changing_government_type = {
 				NEW_DOMICILE_TYPE = east_asian_estate
 				NEW_GOVERNMENT_TYPE = steppe_admin_government
@@ -186,18 +175,7 @@ change_to_administrative_effect = {
 					scope:governor_liege = { government_has_flag = government_is_meritocratic }
 				}
 			}
-			capital_province = {
-				if = {
-					limit = {
-						OR = {
-							has_holding_type = tribal_holding
-							has_holding_type = herder_holding
-							has_holding_type = nomad_holding
-						}
-					}
-					set_holding_type = castle_holding
-				}
-			}
+			change_to_administrative_holding_effect = yes
 			tgp_domicile_conversion_when_changing_government_type = {
 				NEW_DOMICILE_TYPE = east_asian_estate
 				NEW_GOVERNMENT_TYPE = meritocratic_government
@@ -241,18 +219,7 @@ change_to_administrative_effect = {
 			limit = {
 				scope:governor_liege = { government_has_flag = government_is_subroman_administrative }
 			}
-			capital_province = {
-				if = {
-					limit = {
-						OR = {
-							has_holding_type = tribal_holding
-							has_holding_type = herder_holding
-							has_holding_type = nomad_holding
-						}
-					}
-					set_holding_type = castle_holding
-				}
-			}
+			change_to_administrative_holding_effect = yes
 			tgp_domicile_conversion_when_changing_government_type = {
 				NEW_DOMICILE_TYPE = estate
 				NEW_GOVERNMENT_TYPE = subroman_administrative_government
@@ -261,18 +228,7 @@ change_to_administrative_effect = {
 		}
 		##### Changed from Vanilla ^^^^^
 		else = { # Administrative
-			capital_province = {
-				if = {
-					limit = {
-						OR = {
-							has_holding_type = tribal_holding
-							has_holding_type = herder_holding
-							has_holding_type = nomad_holding
-						}
-					}
-					set_holding_type = castle_holding
-				}
-			}
+			change_to_administrative_holding_effect = yes
 			add_character_flag = new_government_is_byz_admin
 			tgp_domicile_conversion_when_changing_government_type = {
 				NEW_DOMICILE_TYPE = estate
@@ -325,6 +281,7 @@ change_to_administrative_effect = {
 	if = {
 		limit = {
 			has_treasury = yes
+			exists = scope:new_treasury  # do not give it multiple times
 		}
 		add_treasury = {
 			value = gold

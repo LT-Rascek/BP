@@ -81,11 +81,36 @@ ep3_become_landed_transfer_effect = {
 			government_is_administrative = {
 				save_scope_value_as = { name = old_government value = flag:admin }
 			}
+			government_is_feudal = {
+				save_scope_value_as = { name = old_government value = flag:feudal }
+			}
 			government_is_clan = {
 				save_scope_value_as = { name = old_government value = flag:clan }
 			}
 			government_is_tribal = {
 				save_scope_value_as = { name = old_government value = flag:tribal }
+			}
+			government_is_republic = {
+				if = {
+					limit = {
+						scope:government_giver ?= { ep3_is_clan_inclined_trigger = yes }
+					}
+					save_scope_value_as = { name = old_government value = flag:clan }
+				}
+				else = {
+					save_scope_value_as = { name = old_government value = flag:feudal }
+				}
+			}
+			government_is_theocracy = {
+				if = {
+					limit = {
+						scope:government_giver ?= { ep3_is_clan_inclined_trigger = yes }
+					}
+					save_scope_value_as = { name = old_government value = flag:clan }
+				}
+				else = {
+					save_scope_value_as = { name = old_government value = flag:feudal }
+				}
 			}
 			government_is_wanua = {
 				save_scope_value_as = { name = old_government value = flag:wanua }
@@ -133,12 +158,8 @@ ep3_become_landed_transfer_effect = {
 		}
 		scope:new_primary_title ?= {
 			ordered_de_jure_county = {
-				limit = {
-					holder = scope:defender
-				}
-				alternative_limit = {
-					holder.top_liege = scope:defender.top_liege
-				}
+				limit = { holder = scope:defender }
+				alternative_limit = { holder.top_liege = scope:defender.top_liege }
 				order_by = development_level
 				save_scope_as = new_capital
 			}
@@ -251,18 +272,12 @@ ep3_become_landed_transfer_effect = {
 	resolve_title_and_vassal_change = scope:title_change
 	# Because target may be either a title or a character, we check if a scope value has been set up in advance if this is being called from the Seize Realm scheme specifically
 	if = {
-		limit = {
-			exists = scope:old_government_type
-		}
-		scope:old_government_type = {
-			save_scope_as = old_government
-		}
+		limit = { exists = scope:old_government_type }
+		scope:old_government_type = { save_scope_as = old_government }
 	}
 	# Set government type
 	if = {
-		limit = {
-			exists = scope:old_government
-		}
+		limit = { exists = scope:old_government }
 		# We don't expect to actually trigger most of the below, as most are not valid targets to begin with, but all are included for completeness and mod support
 		switch = {
 			trigger = scope:old_government
@@ -320,6 +335,16 @@ ep3_become_landed_transfer_effect = {
 				change_government = administrative_government
 			}
 			flag:nomad = {
+				#Did you demand a herder's pastureland?
+				if = {
+					limit = {
+						scope:new_capital.title_province = {
+							has_holding = yes
+							NOT = { has_holding_type = nomad_holding }
+						}
+					}
+					scope:new_capital.title_province = { set_holding_type = nomad_holding }
+				}
 				change_government = nomad_government
 			}
 			flag:herder = {
@@ -546,6 +571,19 @@ ep3_become_landed_transfer_effect = {
 				}
 				change_government = clan_government
 			}
+			## Republic.
+			else_if = {
+				limit = {
+					scope:new_liege ?= { government_has_flag = government_is_republic }
+				}
+				if = {
+					limit = {
+						scope:new_liege ?= { ep3_is_clan_inclined_trigger = yes }
+					}
+					change_government = clan_government
+				}
+				else = { change_government = feudal_government }
+			}
 			## Tribal.
 			else_if = {
 				limit = {
@@ -679,7 +717,7 @@ ep3_become_landed_transfer_effect = {
 	destroy_laamp_effect = { ADVENTURER = $TITLE_RECEIVER$ }
 	# Setup NF if valid
 	if = {
-		limit = { government_allows = administrative }
+		limit = { government_allows = noble_families }
 		give_new_noble_family_title_effect = yes
 	}
 }
@@ -838,26 +876,23 @@ create_noble_family_effect = {
 				}
 			}
 		}
-		if = {
-			limit = { NOT = { scope:new_noble_family_holder = { has_government = roman_federate_government } } }
-			scope:new_title.holder ?= {
-				save_scope_as = noble_family_head
-				scope:new_title = { set_coa = scope:noble_family_head.house }
-			}
-			custom_description = { text = create_noble_family_tt }
+		scope:new_title.holder ?= {
+			save_scope_as = noble_family_head
+			scope:new_title = { set_coa = scope:noble_family_head.house }
+		}
+		custom_description = { text = create_noble_family_tt }
 
-			#Notifications
-			every_player = {
-				limit = {
-					top_liege = scope:new_noble_family_holder.top_liege
-					this != scope:new_noble_family_holder
-					# China has hundreds of Noble Families, it gets spammy
-					NOT = { government_allows = merit }
-				}
-				trigger_event = {
-					id = ep3_emperor_yearly.2410
-					days = 1
-				}
+		#Notifications
+		every_player = {
+			limit = {
+				top_liege = scope:new_noble_family_holder.top_liege
+				this != scope:new_noble_family_holder
+				# China has hundreds of Noble Families, it gets spammy
+				NOT = { government_allows = merit }
+			}
+			trigger_event = {
+				id = ep3_emperor_yearly.2410
+				days = 1
 			}
 		}
 	}
