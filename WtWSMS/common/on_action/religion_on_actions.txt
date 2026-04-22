@@ -1,9 +1,7 @@
-﻿##### Changed from Vanilla: Updated ecumenism to encompase BP effects
+﻿##### Changed from Vanilla: Updated ecumenism to encompass BP effects
 ##### Changed from Vanilla: Updated to cover our rework of tribal innovations
 
 #On actions related to religion
-
-##### Changed from Vanilla vvvvv
 
 # Code on-action: character creates a faith
 # Root is the creator
@@ -62,6 +60,14 @@ on_faith_created = {
 				limit = { has_doctrine_parameter = unreformed }
 				set_variable = { name = has_been_reformed }
 				root = {
+					if = {
+						limit = {
+							government_allows = state_faith
+							liege = this
+							primary_title.state_faith = scope:old_faith
+						}
+						primary_title = { set_state_faith = faith }
+					}
 					if = {
 						limit = {
 							NOT = { has_character_flag = reformer_legend }
@@ -293,12 +299,8 @@ on_faith_created = {
 		faith_creation.0002 # Spiritual rel head setup
 		faith_creation.0003 # Faith flags
 		faith_creation.1000 # Notification event
-		##### Changed from Vanilla vvvvv
-		bp_faith_creation.1001
-		##### Changed from Vanilla ^^^^^
 	}
 }
-##### Changed from Vanilla ^^^^^
 
 # Code on-action: character converts faith. Only fired when using the convert window, or the script effect that uses the same logic
 # Root is the converted character
@@ -903,7 +905,7 @@ faith_fervor_events_pulse = {
 	}
 
 	random_events = {
-		chance_to_happen = 6 # ~53% chance of occuring within a given year. 90% chance within 3 years, 99.8% chance within 5.
+		chance_to_happen = 6 # ~53% chance of occurring within a given year. 90% chance within 3 years, 99.8% chance within 5.
 		100 = fervor.1001
 		100 = fervor.2001
 	}
@@ -957,6 +959,7 @@ pagan_conversion_pulse = {
 
 		##### Changed from Vanilla: Uses WtWSMS innovations instead of vanilla
 		culture = { has_tribal_innovations_for_high_tribal_trigger = yes }
+		##### Changed from Vanilla: Uses WtWSMS innovations instead of vanilla
 	}
 
 	events = {
