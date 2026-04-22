@@ -1,0 +1,2347 @@
+﻿### Orthodox Positions
+
+#Two natures exist in Christ, Divine and Human
+doctrine_christian_christology_dyophysitism = {
+	piety_cost = {
+		#Otrhodox Positions
+		if = {
+			limit = { has_doctrine = doctrine_christian_christology_miaphysitism }
+			value = christian_doctrine_cost_low
+		}
+		#Orthodox Compromise Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_monothelitism }
+			value = christian_doctrine_cost_mid
+		}
+		#Monophysite Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_monophysitism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_eutychianism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_apollinarism }
+			value = christian_doctrine_cost_high
+		}
+		#Arian Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_arianism }
+			value = christian_doctrine_cost_high
+		}
+		#Nestorian Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_nestorianism }
+			value = christian_doctrine_cost_high
+		}
+		#Monarchian Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_modalistic_monarchianism }
+			value = christian_doctrine_cost_massive
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_adoptionism }
+			value = christian_doctrine_cost_massive
+		}
+		#Massive Departures
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_doceticism }
+			value = christian_doctrine_cost_massive
+		}
+		else = { value = christian_doctrine_cost_none }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_christology_dyophysitism }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {}
+	parameters = {}
+}
+
+#Christ is fully divine and fully human, in one nature
+doctrine_christian_christology_miaphysitism = {
+	piety_cost = {
+		#Otrhodox Positions
+		if = {
+			limit = { has_doctrine = doctrine_christian_christology_dyophysitism }
+			value = christian_doctrine_cost_low
+		}
+		#Orthodox Compromise Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_monothelitism }
+			value = christian_doctrine_cost_mid
+		}
+		#Monophysite Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_monophysitism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_eutychianism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_apollinarism }
+			value = christian_doctrine_cost_high
+		}
+		#Arian Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_arianism }
+			value = christian_doctrine_cost_high
+		}
+		
+		#Nestorian Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_nestorianism }
+			value = christian_doctrine_cost_high
+		}
+		#Monarchian Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_modalistic_monarchianism }
+			value = christian_doctrine_cost_massive
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_adoptionism }
+			value = christian_doctrine_cost_massive
+		}
+		#Massive Departures
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_doceticism }
+			value = christian_doctrine_cost_massive
+		}
+		else = { value = christian_doctrine_cost_none }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_christology_miaphysitism }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {}
+	parameters = {}
+}
+
+### Orthodox Compromise Positions
+
+#Christ has two natures, but one will
+doctrine_christian_christology_monothelitism = {
+	piety_cost = {
+		#Otrhodox Positions
+		if = {
+			limit = { has_doctrine = doctrine_christian_christology_dyophysitism }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_miaphysitism }
+			value = christian_doctrine_cost_mid
+		}
+		#Monophysite Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_monophysitism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_eutychianism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_apollinarism }
+			value = christian_doctrine_cost_high
+		}
+		#Arian Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_arianism }
+			value = christian_doctrine_cost_high
+		}
+		#Nestorian Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_nestorianism }
+			value = christian_doctrine_cost_high
+		}
+		#Monarchian Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_modalistic_monarchianism }
+			value = christian_doctrine_cost_massive
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_adoptionism }
+			value = christian_doctrine_cost_massive
+		}
+		#Massive Departures
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_doceticism }
+			value = christian_doctrine_cost_massive
+		}
+		else = { value = christian_doctrine_cost_none }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_christology_monothelitism }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {}
+	parameters = {}
+}
+
+### Monophysite Positions
+
+#Christ had a single divine nature
+doctrine_christian_christology_monophysitism = {
+	piety_cost = {
+		#Otrhodox Positions
+		if = {
+			limit = { has_doctrine = doctrine_christian_christology_dyophysitism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_miaphysitism }
+			value = christian_doctrine_cost_high
+		}
+		#Orthodox Compromise Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_monothelitism }
+			value = christian_doctrine_cost_high
+		}
+		#Monophysite Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_eutychianism }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_apollinarism }
+			value = christian_doctrine_cost_mid
+		}
+		#Arian Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_arianism }
+			value = christian_doctrine_cost_high
+		}
+		#Nestorian Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_nestorianism }
+			value = christian_doctrine_cost_high
+		}
+		#Monarchian Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_modalistic_monarchianism }
+			value = christian_doctrine_cost_massive
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_adoptionism }
+			value = christian_doctrine_cost_massive
+		}
+		#Massive Departures
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_doceticism }
+			value = christian_doctrine_cost_massive
+		}
+		else = { value = christian_doctrine_cost_none }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_christology_monophysitism }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {}
+	parameters = {}
+}
+
+#Christ had a human body and soul, but a divine mind
+doctrine_christian_christology_apollinarism = {
+	piety_cost = {
+		#Otrhodox Positions
+		if = {
+			limit = { has_doctrine = doctrine_christian_christology_dyophysitism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_miaphysitism }
+			value = christian_doctrine_cost_high
+		}
+		#Orthodox Compromise Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_monothelitism }
+			value = christian_doctrine_cost_high
+		}
+		#Monophysite Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_monophysitism }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_eutychianism }
+			value = christian_doctrine_cost_mid
+		}
+		#Arian Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_arianism }
+			value = christian_doctrine_cost_high
+		}
+		#Nestorian Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_nestorianism }
+			value = christian_doctrine_cost_high
+		}
+		#Monarchian Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_modalistic_monarchianism }
+			value = christian_doctrine_cost_massive
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_adoptionism }
+			value = christian_doctrine_cost_massive
+		}
+		#Massive Departures
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_doceticism }
+			value = christian_doctrine_cost_massive
+		}
+		else = { value = christian_doctrine_cost_none }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_christology_apollinarism }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {}
+	parameters = {}
+}
+
+#Christ had a united nature that was distinct and not human
+doctrine_christian_christology_eutychianism = {
+	piety_cost = {
+		#Otrhodox Positions
+		if = {
+			limit = { has_doctrine = doctrine_christian_christology_dyophysitism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_miaphysitism }
+			value = christian_doctrine_cost_high
+		}
+		#Orthodox Compromise Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_monothelitism }
+			value = christian_doctrine_cost_high
+		}
+		#Monophysite Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_monophysitism }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_apollinarism }
+			value = christian_doctrine_cost_mid
+		}
+		#Arian Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_arianism }
+			value = christian_doctrine_cost_high
+		}
+		#Nestorian Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_nestorianism }
+			value = christian_doctrine_cost_high
+		}
+		#Monarchian Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_modalistic_monarchianism }
+			value = christian_doctrine_cost_massive
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_adoptionism }
+			value = christian_doctrine_cost_massive
+		}
+		#Massive Departures
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_doceticism }
+			value = christian_doctrine_cost_massive
+		}
+		else = { value = christian_doctrine_cost_none }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_christology_eutychianism }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {}
+	parameters = {}
+}
+
+### Nestorian Positions
+
+#Christ had distinct human and divine persons
+doctrine_christian_christology_nestorianism = {
+	piety_cost = {
+		#Otrhodox Positions
+		if = {
+			limit = { has_doctrine = doctrine_christian_christology_dyophysitism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_miaphysitism }
+			value = christian_doctrine_cost_high
+		}
+		#Orthodox Compromise Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_monothelitism }
+			value = christian_doctrine_cost_high
+		}
+		#Monophysite Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_monophysitism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_eutychianism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_apollinarism }
+			value = christian_doctrine_cost_high
+		}
+		#Arian Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_arianism }
+			value = christian_doctrine_cost_high
+		}
+		#Monarchian Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_modalistic_monarchianism }
+			value = christian_doctrine_cost_massive
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_adoptionism }
+			value = christian_doctrine_cost_massive
+		}
+		#Massive Departures
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_doceticism }
+			value = christian_doctrine_cost_massive
+		}
+		else = { value = christian_doctrine_cost_none }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_christology_nestorianism }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {}
+	parameters = {}
+}
+
+### Arian Positions
+
+#Christ was begotten by the father and thus had a beginning
+doctrine_christian_christology_arianism = {
+	piety_cost = {
+		#Otrhodox Positions
+		if = {
+			limit = { has_doctrine = doctrine_christian_christology_dyophysitism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_miaphysitism }
+			value = christian_doctrine_cost_high
+		}
+		#Orthodox Compromise Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_monothelitism }
+			value = christian_doctrine_cost_high
+		}
+		#Monophysite Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_monophysitism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_eutychianism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_apollinarism }
+			value = christian_doctrine_cost_high
+		}
+		#Nestorian Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_nestorianism }
+			value = christian_doctrine_cost_high
+		}
+		#Monarchian Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_modalistic_monarchianism }
+			value = christian_doctrine_cost_massive
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_adoptionism }
+			value = christian_doctrine_cost_massive
+		}
+		#Massive Departures
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_doceticism }
+			value = christian_doctrine_cost_massive
+		}
+		else = { value = christian_doctrine_cost_none }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_christology_arianism }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {}
+	parameters = {}
+}
+
+### Monarchian Positions
+
+#God revealed himself as the savior in Jesus Christ "the Son"
+doctrine_christian_christology_modalistic_monarchianism = {
+	piety_cost = {
+		#Otrhodox Positions
+		if = {
+			limit = { has_doctrine = doctrine_christian_christology_dyophysitism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_miaphysitism }
+			value = christian_doctrine_cost_high
+		}
+		#Orthodox Compromise Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_monothelitism }
+			value = christian_doctrine_cost_high
+		}
+		#Monophysite Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_monophysitism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_eutychianism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_apollinarism }
+			value = christian_doctrine_cost_high
+		}
+		#Arian Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_arianism }
+			value = christian_doctrine_cost_high
+		}
+		#Nestorian Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_nestorianism }
+			value = christian_doctrine_cost_high
+		}
+		#Monarchian Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_adoptionism }
+			value = christian_doctrine_cost_mid
+		}
+		#Massive Departures
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_doceticism }
+			value = christian_doctrine_cost_massive
+		}
+		else = { value = christian_doctrine_cost_none }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_christology_modalistic_monarchianism }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {}
+	parameters = {
+		required_for_gnostic_soteriology = yes
+	}
+}
+
+#Dynamic Monarchianism; Christ was adopted as the Son of God
+doctrine_christian_christology_adoptionism = {
+	piety_cost = {
+		#Otrhodox Positions
+		if = {
+			limit = { has_doctrine = doctrine_christian_christology_dyophysitism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_miaphysitism }
+			value = christian_doctrine_cost_high
+		}
+		#Orthodox Compromise Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_monothelitism }
+			value = christian_doctrine_cost_high
+		}
+		#Monophysite Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_monophysitism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_eutychianism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_apollinarism }
+			value = christian_doctrine_cost_high
+		}
+		#Arian Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_nestorianism }
+			value = christian_doctrine_cost_high
+		}
+		#Nestorian Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_arianism }
+			value = christian_doctrine_cost_high
+		}
+		#Monarchian Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_modalistic_monarchianism }
+			value = christian_doctrine_cost_mid
+		}
+		#Massive Departures
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_doceticism }
+			value = christian_doctrine_cost_massive
+		}
+		else = { value = christian_doctrine_cost_none }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_christology_adoptionism }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {}
+	parameters = {
+		required_for_gnostic_soteriology = yes
+	}
+}
+
+### Massive Differences
+
+#Christ's body did not exist and was illusionary
+doctrine_christian_christology_doceticism = {
+	piety_cost = {
+		#Otrhodox Positions
+		if = {
+			limit = { has_doctrine = doctrine_christian_christology_dyophysitism }
+			value = christian_doctrine_cost_massive
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_miaphysitism }
+			value = christian_doctrine_cost_massive
+		}
+		#Orthodox Compromise Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_monothelitism }
+			value = christian_doctrine_cost_massive
+		}
+		#Monophysite Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_monophysitism }
+			value = christian_doctrine_cost_massive
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_eutychianism }
+			value = christian_doctrine_cost_massive
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_apollinarism }
+			value = christian_doctrine_cost_massive
+		}
+		#Arian Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_arianism }
+			value = christian_doctrine_cost_massive
+		}
+		#Nestorian Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_nestorianism }
+			value = christian_doctrine_cost_massive
+		}
+		#Monarchian Positions
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_modalistic_monarchianism }
+			value = christian_doctrine_cost_massive
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_christology_adoptionism }
+			value = christian_doctrine_cost_massive
+		}
+		else = { value = christian_doctrine_cost_none }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_christology_doceticism }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {}
+	parameters = {
+		required_for_gnostic_soteriology = yes
+	}
+}
+
+#Perichoresis:
+### Trinitarian Group
+# Trinitarianism
+### Subordinationist Group
+# Subordinationism
+### Binitarian Group
+# Binitarianism
+### Monarchian Group
+# Modalistic and Dynamic
+### Unitarian Group
+# Unitarianism
+### Dualist Group
+# Dualism
+doctrine_christian_perichoresis_trinitarianism = {
+	piety_cost = {
+		if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_subordinationism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_binitarianism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_modalistic_monarchianism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_dynamic_monarchianism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_unitarianism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_dualism }
+			value = christian_doctrine_cost_massive
+		}
+		else = { value = christian_doctrine_cost_none }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_trinitarianism }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		AND = {
+			custom_description = {
+				text = incompatible_doctrine_arianism
+				NOT = { doctrine:doctrine_christian_christology_arianism = { is_in_list = selected_doctrines } }
+			}
+			custom_description = {
+				text = incompatible_doctrine_doceticism_trigger
+				NOT = { doctrine:doctrine_christian_christology_doceticism = { is_in_list = selected_doctrines } }
+			}
+			custom_description = {
+				text = incompatible_doctrine_adoptionism_trigger
+				NOT = { doctrine:doctrine_christian_christology_adoptionism = { is_in_list = selected_doctrines } }
+			}
+			custom_description = {
+				text = incompatible_doctrine_modalistic_monarchianism_trigger
+				NOT = { doctrine:doctrine_christian_christology_modalistic_monarchianism = { is_in_list = selected_doctrines } }
+			}
+		}
+	}
+	parameters = {}
+}
+#For the more hierarchical positions that aren't outright dualist (e.g., Arianism)
+doctrine_christian_perichoresis_subordinationism = {
+	piety_cost = {
+		if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_trinitarianism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_binitarianism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_modalistic_monarchianism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_dynamic_monarchianism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_unitarianism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_dualism }
+			value = christian_doctrine_cost_massive
+		}
+		else = { value = christian_doctrine_cost_none }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_subordinationism }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	
+	can_pick = {
+		custom_description = {
+			text = incompatible_doctrine_doceticism_trigger
+			NOT = { doctrine:doctrine_christian_christology_doceticism = { is_in_list = selected_doctrines } }
+		}
+		custom_description = {
+			text = incompatible_doctrine_adoptionism_trigger
+			NOT = { doctrine:doctrine_christian_christology_adoptionism = { is_in_list = selected_doctrines } }
+		}
+		custom_description = {
+			text = incompatible_doctrine_modalistic_monarchianism_trigger
+			NOT = { doctrine:doctrine_christian_christology_modalistic_monarchianism = { is_in_list = selected_doctrines } }
+		}
+	}
+	parameters = {}
+}
+doctrine_christian_perichoresis_binitarianism = {
+	piety_cost = {
+		if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_trinitarianism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_subordinationism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_modalistic_monarchianism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_dynamic_monarchianism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_unitarianism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_dualism }
+			value = christian_doctrine_cost_massive
+		}
+		else = { value = christian_doctrine_cost_none }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_binitarianism }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	#Exclude's monarchianism in both forms and not Gnostic
+	can_pick = {
+		AND = {
+			custom_description = {
+				text = incompatible_doctrine_doceticism_trigger
+				NOT = { doctrine:doctrine_christian_christology_doceticism = { is_in_list = selected_doctrines } }
+			}
+			custom_description = {
+				text = incompatible_doctrine_adoptionism_trigger
+				NOT = { doctrine:doctrine_christian_christology_adoptionism = { is_in_list = selected_doctrines } }
+			}
+			custom_description = {
+				text = incompatible_doctrine_modalistic_monarchianism_trigger
+				NOT = { doctrine:doctrine_christian_christology_modalistic_monarchianism = { is_in_list = selected_doctrines } }
+			}
+			custom_description = {
+				text = incompatible_tenet_gnosticism_trigger
+				NOT = { doctrine:tenet_gnosticism = { is_in_list = selected_doctrines } }
+			}
+		}
+	}
+	parameters = {}
+}
+doctrine_christian_perichoresis_modalistic_monarchianism = {
+	piety_cost = {
+		if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_trinitarianism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_subordinationism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_binitarianism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_dynamic_monarchianism }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_unitarianism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_dualism }
+			value = christian_doctrine_cost_massive
+		}
+		else = { value = christian_doctrine_cost_none }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_modalistic_monarchianism }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		AND = {
+			custom_description = {
+				text = incompatible_doctrine_dyophysite
+				NOT = { doctrine:doctrine_christian_christology_dyophysitism = { is_in_list = selected_doctrines } }
+			}
+			custom_description = {
+				text = incompatible_doctrine_miaphysite
+				NOT = { doctrine:doctrine_christian_christology_miaphysitism = { is_in_list = selected_doctrines } }
+			}
+			custom_description = {
+				text = incompatible_doctrine_monothelitism
+				NOT = { doctrine:doctrine_christian_christology_monothelitism = { is_in_list = selected_doctrines } }
+			}
+			custom_description = {
+				text = incompatible_doctrine_nestorianism
+				NOT = { doctrine:doctrine_christian_christology_nestorianism = { is_in_list = selected_doctrines } }
+			}
+			custom_description = {
+				text = incompatible_doctrine_arianism
+				NOT = { doctrine:doctrine_christian_christology_arianism = { is_in_list = selected_doctrines } }
+			}
+			custom_description = {
+				text = incompatible_doctrine_eutychianism
+				NOT = { doctrine:doctrine_christian_christology_eutychianism = { is_in_list = selected_doctrines } }
+			}
+			custom_description = {
+				text = incompatible_doctrine_apollinarism
+				NOT = { doctrine:doctrine_christian_christology_apollinarism = { is_in_list = selected_doctrines } }
+			}
+			custom_description = {
+				text = incompatible_doctrine_monophysitism
+				NOT = { doctrine:doctrine_christian_christology_monophysitism = { is_in_list = selected_doctrines } }
+			}
+			custom_description = {
+				text = incompatible_doctrine_arianism
+				NOT = { doctrine:doctrine_christian_christology_arianism = { is_in_list = selected_doctrines } }
+			}
+			custom_description = {
+				text = inverted_doctrine_modalistic_monarchianism_trigger
+				doctrine:doctrine_christian_christology_modalistic_monarchianism = { is_in_list = selected_doctrines }
+			}
+		}
+	}
+	parameters = {
+		required_for_gnostic_soteriology = yes
+	}
+}
+doctrine_christian_perichoresis_dynamic_monarchianism = {
+	piety_cost = {
+		if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_trinitarianism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_subordinationism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_binitarianism }
+			value = christian_doctrine_cost_low
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_modalistic_monarchianism }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_unitarianism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_dualism }
+			value = christian_doctrine_cost_massive
+		}
+		else = { value = christian_doctrine_cost_none }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_dynamic_monarchianism }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	#Iff adoptinist; Bogomils were adoptinist Gnostics
+	can_pick = {
+		custom_description = {
+			text = incompatible_doctrine_arianism
+			NOT = { doctrine:doctrine_christian_christology_arianism = { is_in_list = selected_doctrines } }
+		}
+		custom_description = {
+			text = inverted_doctrine_adoptionsim_trigger
+			doctrine:doctrine_christian_christology_adoptionism = { is_in_list = selected_doctrines }
+		}
+	}
+	parameters = {
+		required_for_gnostic_soteriology = yes
+	}
+}
+doctrine_christian_perichoresis_unitarianism = {
+	piety_cost = {
+		if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_trinitarianism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_subordinationism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_binitarianism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_modalistic_monarchianism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_dynamic_monarchianism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_dualism }
+			value = christian_doctrine_cost_massive
+		}
+		else = { value = christian_doctrine_cost_none }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_unitarianism }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		AND = {
+			custom_description = {
+				text = incompatible_doctrine_dyophysite
+				NOT = { doctrine:doctrine_christian_christology_dyophysitism = { is_in_list = selected_doctrines } }
+			}
+			custom_description = {
+				text = incompatible_doctrine_miaphysite
+				NOT = { doctrine:doctrine_christian_christology_miaphysitism = { is_in_list = selected_doctrines } }
+			}
+			custom_description = {
+				text = incompatible_doctrine_monothelitism
+				NOT = { doctrine:doctrine_christian_christology_monothelitism = { is_in_list = selected_doctrines } }
+			}
+			custom_description = {
+				text = incompatible_doctrine_nestorianism
+				NOT = { doctrine:doctrine_christian_christology_nestorianism = { is_in_list = selected_doctrines } }
+			}
+			custom_description = {
+				text = incompatible_doctrine_arianism
+				NOT = { doctrine:doctrine_christian_christology_arianism = { is_in_list = selected_doctrines } }
+			}
+			custom_description = {
+				text = incompatible_doctrine_eutychianism
+				NOT = { doctrine:doctrine_christian_christology_eutychianism = { is_in_list = selected_doctrines } }
+			}
+			custom_description = {
+				text = incompatible_doctrine_apollinarism
+				NOT = { doctrine:doctrine_christian_christology_apollinarism = { is_in_list = selected_doctrines } }
+			}
+			custom_description = {
+				text = incompatible_doctrine_monophysitism
+				NOT = { doctrine:doctrine_christian_christology_monophysitism = { is_in_list = selected_doctrines } }
+			}
+			custom_description = {
+				text = incompatible_doctrine_modalistic_monarchianism_trigger
+				NOT = { doctrine:doctrine_christian_christology_modalistic_monarchianism = { is_in_list = selected_doctrines } }
+			}
+			custom_description = {
+				text = incompatible_doctrine_adoptionism_trigger
+				NOT = { doctrine:doctrine_christian_christology_adoptionism = { is_in_list = selected_doctrines } }
+			}
+		}
+	}
+	parameters = {
+		required_for_gnostic_soteriology = yes
+	}
+}
+doctrine_christian_perichoresis_dualism = {
+	piety_cost = {
+		if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_trinitarianism }
+			value = christian_doctrine_cost_massive
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_subordinationism }
+			value = christian_doctrine_cost_massive
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_binitarianism }
+			value = christian_doctrine_cost_massive
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_modalistic_monarchianism }
+			value = christian_doctrine_cost_massive
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_dynamic_monarchianism }
+			value = christian_doctrine_cost_massive
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_unitarianism }
+			value = christian_doctrine_cost_massive
+		}
+		else = { value = christian_doctrine_cost_none }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_perichoresis_dualism }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		custom_description = {
+			text = doctrine_christian_perichoresis_dualism_trigger
+			OR = {
+				doctrine:doctrine_christian_christology_modalistic_monarchianism = { is_in_list = selected_doctrines }
+				doctrine:doctrine_christian_christology_doceticism = { is_in_list = selected_doctrines }
+				doctrine:doctrine_christian_christology_adoptionism = { is_in_list = selected_doctrines }
+			}
+		}
+	}
+	parameters = {
+		required_for_gnostic_soteriology = yes
+	}
+}
+
+#Pneumatology Groups:
+### Orthodox and Quasi-Orthodox Positions (Mid Cost in Group)
+# Consubstantial, Subordinationism, Modalist
+### Other Positions
+# Melchisedechian, Pneumatomachi, Subserviant (Very specific costs for each)
+
+### Orthodox and Quasi-Orthodox Group
+doctrine_christian_pneumatology_consubstantial = {
+	piety_cost = {
+		### Orthodox & Quasi-Orthodox Positions
+		if = { #Subordinationism Position
+			limit = { has_doctrine = doctrine_christian_pneumatology_subordinationism }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = { #Monarchian Position
+			limit = { has_doctrine = doctrine_christian_pneumatology_modalism }
+			value = christian_doctrine_cost_mid
+		}
+		### Other Positions
+		else_if = { #Pneumatomachi Position
+			limit = { has_doctrine = doctrine_christian_pneumatology_pneumatomachi }
+			value = christian_doctrine_cost_high
+		}
+		else_if = { #Melchisedechian Position
+			limit = { has_doctrine = doctrine_christian_pneumatology_melchisedechian }
+			value = christian_doctrine_cost_massive
+		}
+		else_if = { #Dualist Position
+			limit = { has_doctrine = doctrine_christian_pneumatology_subservient }
+			value = christian_doctrine_cost_massive
+		}
+		else = { value = christian_doctrine_cost_low }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_pneumatology_consubstantial }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		custom_description = {
+			text = inverted_doctrine_trinitarianism_trigger
+			doctrine:doctrine_christian_perichoresis_trinitarianism = { is_in_list = selected_doctrines }
+		}
+	}
+	parameters = {}
+}
+doctrine_christian_pneumatology_subordinationism = {
+	piety_cost = {
+		### Orthodox & Quasi-Orthodox Positions
+		if = { #Orthodox Position
+			limit = { has_doctrine = doctrine_christian_pneumatology_consubstantial }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = { #Monarchian Position
+			limit = { has_doctrine = doctrine_christian_pneumatology_modalism }
+			value = christian_doctrine_cost_mid
+		}
+		### Other Positions
+		else_if = { #Pneumatomachi Position
+			limit = { has_doctrine = doctrine_christian_pneumatology_pneumatomachi }
+			value = christian_doctrine_cost_high
+		}
+		else_if = { #Melchisedechian Position
+			limit = { has_doctrine = doctrine_christian_pneumatology_melchisedechian }
+			value = christian_doctrine_cost_massive
+		}
+		else_if = { #Dualist Position
+			limit = { has_doctrine = doctrine_christian_pneumatology_subservient }
+			value = christian_doctrine_cost_massive
+		}
+		else = { value = christian_doctrine_cost_low }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_pneumatology_subordinationism }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		custom_description = {
+			text = inverted_doctrine_hypostates_subordinationism_trigger
+			doctrine:doctrine_christian_perichoresis_subordinationism = { is_in_list = selected_doctrines }
+		}
+	}
+	parameters = {}
+}
+doctrine_christian_pneumatology_modalism = {
+	piety_cost = {
+		### Orthodox & Quasi-Orthodox Positions
+		if = { #Orthodox Position
+			limit = { has_doctrine = doctrine_christian_pneumatology_consubstantial }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = { #Subordinationism Position
+			limit = { has_doctrine = doctrine_christian_pneumatology_subordinationism }
+			value = christian_doctrine_cost_mid
+		}
+		### Other Positions
+		else_if = { #Pneumatomachi Position
+			limit = { has_doctrine = doctrine_christian_pneumatology_pneumatomachi }
+			value = christian_doctrine_cost_high
+		}
+		else_if = { #Melchisedechian Position
+			limit = { has_doctrine = doctrine_christian_pneumatology_melchisedechian }
+			value = christian_doctrine_cost_massive
+		}
+		else_if = { #Dualist Position
+			limit = { has_doctrine = doctrine_christian_pneumatology_subservient }
+			value = christian_doctrine_cost_massive
+		}
+		else = { value = christian_doctrine_cost_low }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_pneumatology_modalism }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		custom_description = {
+			text = doctrine_christian_pneumatology_modalism_trigger
+			OR = {
+				doctrine:doctrine_christian_perichoresis_modalistic_monarchianism = { is_in_list = selected_doctrines }
+				doctrine:doctrine_christian_perichoresis_dynamic_monarchianism = { is_in_list = selected_doctrines }
+			}
+		}
+	}
+	parameters = {
+		required_for_gnostic_soteriology = yes
+	}
+}
+### Other Positions
+doctrine_christian_pneumatology_pneumatomachi = {
+	piety_cost = {
+		### Orthodox & Quasi-Orthodox Positions
+		if = { #Orthodox Position
+			limit = { has_doctrine = doctrine_christian_pneumatology_consubstantial }
+			value = christian_doctrine_cost_high
+		}
+		else_if = { #Subordinationism Position
+			limit = { has_doctrine = doctrine_christian_pneumatology_subordinationism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = { #Monarchian Position
+			limit = { has_doctrine = doctrine_christian_pneumatology_modalism }
+			value = christian_doctrine_cost_high
+		}
+		### Other Positions
+		else_if = { #Melchisedechian Position
+			limit = { has_doctrine = doctrine_christian_pneumatology_melchisedechian }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = { #Dualist Position
+			limit = { has_doctrine = doctrine_christian_pneumatology_subservient }
+			value = christian_doctrine_cost_massive
+		}
+		else = { value = christian_doctrine_cost_low }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_pneumatology_pneumatomachi }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		custom_description = {
+			text = doctrine_christian_pneumatology_pneumatomachi_trigger
+			OR = {
+				doctrine:doctrine_christian_perichoresis_dualism = { is_in_list = selected_doctrines }
+				doctrine:doctrine_christian_perichoresis_binitarianism = { is_in_list = selected_doctrines }
+				doctrine:doctrine_christian_perichoresis_unitarianism = { is_in_list = selected_doctrines }
+				doctrine:doctrine_christian_perichoresis_dynamic_monarchianism = { is_in_list = selected_doctrines }
+			}
+		}
+	}
+	parameters = {
+		required_for_gnostic_soteriology = yes
+	}
+}
+doctrine_christian_pneumatology_melchisedechian = {
+	piety_cost = {
+		### Orthodox & Quasi-Orthodox Positions
+		if = { #Orthodox Position
+			limit = { has_doctrine = doctrine_christian_pneumatology_consubstantial }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = { #Subordinationism Position
+			limit = { has_doctrine = doctrine_christian_pneumatology_subordinationism }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = { #Monarchian Position
+			limit = { has_doctrine = doctrine_christian_pneumatology_modalism }
+			value = christian_doctrine_cost_mid
+		}
+		### Other Positions
+		else_if = { #Pneumatomachi Position
+			limit = { has_doctrine = doctrine_christian_pneumatology_pneumatomachi }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = { #Melchisedechian Position
+			limit = { has_doctrine = doctrine_christian_pneumatology_melchisedechian }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = { #Dualist Position
+			limit = { has_doctrine = doctrine_christian_pneumatology_subservient }
+			value = christian_doctrine_cost_mid
+		}
+		else = { value = christian_doctrine_cost_low }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_pneumatology_melchisedechian }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = { #Valid for Trinitarianism (although **not** an orthodox position)
+		OR = {
+			custom_description = {
+				text = inverted_doctrine_trinitarianism_trigger
+				NOT = { doctrine:doctrine_christian_perichoresis_trinitarianism = { is_in_list = selected_doctrines } }
+			}
+		}
+	}
+	parameters = {
+		required_for_gnostic_soteriology = yes
+	}
+}
+doctrine_christian_pneumatology_subservient = {
+	piety_cost = {
+		### Orthodox & Quasi-Orthodox Positions
+		if = { #Orthodox Position
+			limit = { has_doctrine = doctrine_christian_pneumatology_consubstantial }
+			value = christian_doctrine_cost_massive
+		}
+		else_if = { #Subordinationism Position
+			limit = { has_doctrine = doctrine_christian_pneumatology_subordinationism }
+			value = christian_doctrine_cost_massive
+		}
+		else_if = { #Monarchian Position
+			limit = { has_doctrine = doctrine_christian_pneumatology_modalism }
+			value = christian_doctrine_cost_massive
+		}
+		### Other Positions
+		else_if = { #Pneumatomachi Position
+			limit = { has_doctrine = doctrine_christian_pneumatology_pneumatomachi }
+			value = christian_doctrine_cost_high
+		}
+		else_if = { #Melchisedechian Position
+			limit = { has_doctrine = doctrine_christian_pneumatology_melchisedechian }
+			value = christian_doctrine_cost_high
+		}
+		else = { value = christian_doctrine_cost_low }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_pneumatology_subservient }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		custom_description = {
+			text = inverted_doctrine_dualism_trigger
+			doctrine:doctrine_christian_perichoresis_dualism = { is_in_list = selected_doctrines }
+		}
+	}
+	parameters = {
+		required_for_gnostic_soteriology = yes
+	}
+}
+
+#Reviewing the variety of beliefs, I've concluded that any of these is valid for everyone
+#Paulicans (Gnostics) talk of consecration in the Key of Truth, while Bogomils are memorializers,
+#and Cathars are repudiators. So no real restriction, just mutually invalid
+#
+#Eucharistic Theology Groups:
+# Real Presence
+# Memorialsim
+# Repudiation
+#
+# Two Step between Trans and Cons, Cons and Memorial; two step between Memorial and Trans
+# Repudiation to others is four step
+
+#Valid for Paulicians (Consecration mentioned in the Key of Truth)
+doctrine_christian_communion_transubstantiation = {
+	piety_cost = {
+		if = {
+			limit = { has_doctrine = doctrine_christian_communion_memorialism }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_communion_repudiation }
+			value = christian_doctrine_cost_massive
+		}
+		else = { value = christian_doctrine_cost_low }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_communion_transubstantiation }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {}
+	parameters = {
+		can_select_tenet_communion = yes
+		allows_eucharistic_rites = yes
+	}
+}
+#Valid for everyone (Bogomils, Proto-Protestants take this view)
+doctrine_christian_communion_memorialism = {
+	piety_cost = {
+		if = {
+			limit = { has_doctrine = doctrine_christian_communion_transubstantiation }
+			value = christian_doctrine_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_communion_repudiation }
+			value = christian_doctrine_cost_massive
+		}
+		else = { value = christian_doctrine_cost_low }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_communion_memorialism }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		custom_description = { #Invalid (read Communion's desc)
+			text = incompatible_tenet_communion_trigger
+			NOT = { doctrine:tenet_communion = { is_in_list = selected_doctrines } }
+		}
+	}
+	parameters = {
+		allows_eucharistic_rites = yes
+	}
+}
+#Valid for everyone (Gnostics, Messalians, Tondrakians stand out about this)
+doctrine_christian_communion_repudiation = {
+	piety_cost = {
+		if = {
+			limit = { has_doctrine = doctrine_christian_communion_transubstantiation }
+			value = christian_doctrine_cost_massive
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_communion_memorialism }
+			value = christian_doctrine_cost_massive
+		}
+		else = { value = christian_doctrine_cost_low }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_communion_repudiation }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		custom_description = {
+			text = incompatible_tenet_communion_trigger
+			NOT = { doctrine:tenet_communion = { is_in_list = selected_doctrines } }
+		}
+	}
+	parameters = {
+		forbidden_eucharistic_rites = yes
+	}
+}
+
+#Soteriology Groups:
+# Original Sin
+# Pelagianism
+# Antinomianism
+# Total Depravity
+# Cosmic
+#
+# Original Sin and Pelagianism are two step, Total Depravity and Original Sin are two step, Pelagianism
+# and Total Depravity are three step, and all others are four step
+
+doctrine_christian_soteriology_original_sin = {
+	piety_cost = {
+		if = {
+			limit = { has_doctrine = doctrine_christian_soteriology_pelagianism }
+			value = christian_doctrine_soteriology_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_soteriology_total_depravity }
+			value = christian_doctrine_soteriology_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_soteriology_antinomianism }
+			value = christian_doctrine_soteriology_cost_massive
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_soteriology_gnosis }
+			value = christian_doctrine_gnosis_high
+		}
+		else = { value = christian_doctrine_soteriology_cost_low }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_soteriology_original_sin }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {}
+	parameters = {}
+	traits = {
+		virtues = { humble }
+		sins = { arrogant }
+	}
+}
+#Primarily for Ebionites who view the world through a Jewish lens
+doctrine_christian_soteriology_pelagianism = {
+	piety_cost = {
+		if = {
+			limit = { has_doctrine = doctrine_christian_soteriology_original_sin }
+			value = christian_doctrine_soteriology_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_soteriology_total_depravity }
+			value = christian_doctrine_soteriology_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_soteriology_antinomianism }
+			value = christian_doctrine_soteriology_cost_massive
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_soteriology_gnosis }
+			value = christian_doctrine_gnosis_high
+		}
+		else = { value = christian_doctrine_soteriology_cost_low }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_soteriology_pelagianism }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {}
+	parameters = {}
+	traits = {
+		virtues = { diligent }
+		sins = { lazy }
+	}
+}
+doctrine_christian_soteriology_total_depravity = {
+	piety_cost = {
+		if = {
+			limit = { has_doctrine = doctrine_christian_soteriology_original_sin }
+			value = christian_doctrine_soteriology_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_soteriology_pelagianism }
+			value = christian_doctrine_soteriology_cost_high
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_soteriology_antinomianism }
+			value = christian_doctrine_soteriology_cost_massive
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_soteriology_gnosis }
+			value = christian_doctrine_gnosis_high
+		}
+		else = { value = christian_doctrine_soteriology_cost_low }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_soteriology_total_depravity }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {}
+	parameters = {}
+	traits = {
+		virtues = { humble zealous }
+		sins = { arrogant cynical }
+	}
+}
+#Adamites, Messalians
+doctrine_christian_soteriology_antinomianism = {
+	piety_cost = {
+		if = {
+			limit = { has_doctrine = doctrine_christian_soteriology_original_sin }
+			value = christian_doctrine_soteriology_cost_massive
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_soteriology_pelagianism }
+			value = christian_doctrine_soteriology_cost_massive
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_soteriology_total_depravity }
+			value = christian_doctrine_soteriology_cost_massive
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_soteriology_gnosis }
+			value = christian_doctrine_gnosis_high
+		}
+		else = { value = christian_doctrine_soteriology_cost_low }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_soteriology_antinomianism }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		#Cannot honor Mosaic law
+		custom_description = {
+			text = incompatible_doctrine_judaizers_trigger
+			NOT = { doctrine:doctrine_christian_judaic_role_judaizers = { is_in_list = selected_doctrines } }
+		}
+		#Pleasures of the flesh can't be sins
+		custom_description = {
+			text = incompatible_tenet_monasticism_trigger
+			NOT = { doctrine:tenet_monasticism = { is_in_list = selected_doctrines } }
+		}
+		custom_description = {
+			text = incompatible_tenet_asceticism_trigger
+			NOT = { doctrine:tenet_asceticism = { is_in_list = selected_doctrines } }
+		}
+		custom_description = {
+			text = incompatible_tenet_mendicant_preachers_trigger
+			NOT = { doctrine:tenet_mendicant_preachers = { is_in_list = selected_doctrines } }
+		}
+		#Must have a tenet to make carnality not sinful
+		custom_description = {
+			text = tenet_carnal_exaltation_or_polyamory_trigger
+			OR = {
+				doctrine:tenet_polyamory = { is_in_list = selected_doctrines }
+				doctrine:tenet_carnal_exaltation = { is_in_list = selected_doctrines }
+			}
+		}
+	}
+	parameters = {
+		hostility_same_religion = 3
+		hostility_override_doctrine_christian_soteriology_antinomianism = 1
+	}
+	character_modifier = {
+		opinion_of_same_faith = 30
+		different_faith_opinion = -30
+		attraction_opinion = 5
+		fertility = 0.30
+	}
+	traits = {
+		virtues = {
+			chaste = 0
+			lifestyle_reveler = 0
+			forgiving = 2
+		}
+		sins = {
+			lustful = 0
+			gluttonous = 0
+		}
+	}
+}
+#For Gnostics of the more Dualist bent (namely All Dualists right now, but that can be debated)
+doctrine_christian_soteriology_gnosis = { #Copy of Gnosticism
+	piety_cost = {
+		if = {
+			limit = { has_doctrine = doctrine_christian_soteriology_original_sin }
+			value = christian_doctrine_soteriology_cost_massive
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_soteriology_pelagianism }
+			value = christian_doctrine_soteriology_cost_massive
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_soteriology_total_depravity }
+			value = christian_doctrine_soteriology_cost_massive
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_soteriology_antinomianism }
+			value = christian_doctrine_soteriology_cost_massive
+		}
+		else = { value = christian_doctrine_soteriology_cost_low }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_soteriology_gnosis }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		custom_description = {
+			text = incompatible_tenet_eastern_syncretism_trigger
+			NOT = { doctrine:tenet_eastern_syncretism = { is_in_list = selected_doctrines } }
+		}
+		#Christian Doctrines
+		custom_description = {
+			text = required_christology_for_gnosis
+			OR = {
+				doctrine:doctrine_christian_christology_adoptionism = { is_in_list = selected_doctrines }
+				doctrine:doctrine_christian_christology_doceticism = { is_in_list = selected_doctrines }
+				doctrine:doctrine_christian_christology_modalistic_monarchianism = { is_in_list = selected_doctrines }
+			}
+		}
+		custom_description = {
+			text = required_hypostasis_for_gnosis
+			OR = {
+				doctrine:doctrine_christian_perichoresis_modalistic_monarchianism = { is_in_list = selected_doctrines }
+				doctrine:doctrine_christian_perichoresis_dynamic_monarchianism = { is_in_list = selected_doctrines }
+				doctrine:doctrine_christian_perichoresis_unitarianism = { is_in_list = selected_doctrines }
+				doctrine:doctrine_christian_perichoresis_dualism = { is_in_list = selected_doctrines }
+			}
+		}
+		custom_description = {
+			text = required_pneumatology_for_gnosis
+			OR = {
+				doctrine:doctrine_christian_pneumatology_modalism = { is_in_list = selected_doctrines }
+				doctrine:doctrine_christian_pneumatology_pneumatomachi = { is_in_list = selected_doctrines }
+				doctrine:doctrine_christian_pneumatology_melchisedechian = { is_in_list = selected_doctrines }
+				doctrine:doctrine_christian_pneumatology_subservient = { is_in_list = selected_doctrines }
+			}
+		}
+	}
+	parameters = {
+		hostility_override_tenet_gnosticism = 1
+		hostility_override_special_doctrine_is_gnostic_faith = 1
+		hostility_override_doctrine_christian_soteriology_gnosis = 1
+		granting_titles_gives_stress = yes
+		can_select_tenet_reincarnation = yes
+		can_select_tenet_marcionite_canon = yes
+	}
+	character_modifier = {
+		learning = 2
+		stewardship = -2
+	}
+	traits = {
+		virtues = { temperate }
+		sins = { gluttonous }
+	}
+}
+
+#Judaic role doesn't really raise to many ecumenical questions, really just opinion shifts on Jews
+#Mostly for Nazarenes as Jewish Syncretims is no longer a tenet for Christians
+doctrine_christian_judaic_role_forebears = {
+	piety_cost = {
+		if = {
+			limit = { has_doctrine = doctrine_christian_judaic_role_judaizers }
+			value = christian_doctrine_judaic_role_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_judaic_role_demiurge }
+			value = christian_doctrine_judaic_role_cost_massive
+		}
+		else = { value = christian_doctrine_judaic_role_cost_low }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_judaic_role_forebears }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	parameters = {}
+}
+#This replaces Jewish syncretism for Christians
+doctrine_christian_judaic_role_judaizers = {
+	piety_cost = {
+		if = {
+			limit = { has_doctrine = doctrine_christian_judaic_role_forebears }
+			value = christian_doctrine_judaic_role_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_judaic_role_demiurge }
+			value = christian_doctrine_judaic_role_cost_massive
+		}
+		else = { value = christian_doctrine_judaic_role_cost_low }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_judaic_role_judaizers }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {}
+	parameters = {
+		hostility_override_special_doctrine_is_jewish_faith = 2
+		jewish_syncretic_actor_opinion_active = yes
+		opinion_of_jewish_syncretic_recipient_opinion_active = 30 #Sync this to syncretic_mutual_opinion_bonus_value
+	}
+	
+	traits = {
+		virtues = { patient }
+		sins = { cynical greedy }
+	}
+}
+##### TODO (Beta): Make certain Jewish Traits negative for negative_opinion_of_jewish_features
+doctrine_christian_judaic_role_demiurge = {
+	piety_cost = {
+		if = {
+			limit = { has_doctrine = doctrine_christian_judaic_role_forebears }
+			value = christian_doctrine_judaic_role_cost_massive
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_judaic_role_judaizers }
+			value = christian_doctrine_judaic_role_cost_massive
+		}
+		else = { value = christian_doctrine_judaic_role_cost_low }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_judaic_role_demiurge }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		AND = {
+			custom_description = {
+				text = doctrine_gnosis_trigger
+				doctrine:doctrine_christian_soteriology_gnosis = { is_in_list = selected_doctrines }
+			}
+			custom_description = {
+				text = incompatible_tenet_jewish_syncretism_trigger
+				NOT = { doctrine:tenet_jewish_syncretism = { is_in_list = selected_doctrines } }
+			}
+		}
+	}
+	parameters = {
+		hostility_override_doctrine_christian_judaic_role_judaizers = 3
+		negative_opinion_of_jewish_features = yes
+	}
+}
+
+#Liturgical Rites
+
+### "Western" Rites
+
+#For the period when the Greek and Latin Rites were not under significant deviation
+#(ca. 400s-600s, when the influx of Gallican and other rites influenced the structure
+#of the Western celebration).
+doctrine_christian_liturgical_rite_imperial_rite = {
+	piety_cost = {
+		if = {
+			limit = { has_western_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_low
+		}
+		else_if = {
+			limit = { has_eastern_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
+			value = christian_doctrine_cost_high
+		}
+		else = { value = christian_doctrine_cost_massive }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_imperial_rite }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		uses_eucharistic_rite_trigger = yes
+		custom_description = {
+			text = incompatible_tenet_ecstatic_prophecy_trigger
+			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		}
+	}
+	parameters = {
+		liturgical_language_latin_greek = yes
+		allows_brewery = yes # Vanilla Catholic feature
+	}
+	traits = {}
+}
+doctrine_christian_liturgical_rite_latin = { #For Catholic
+	piety_cost = {
+		if = {
+			limit = { has_western_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_low
+		}
+		else_if = {
+			limit = { has_eastern_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
+			value = christian_doctrine_cost_high
+		}
+		else = { value = christian_doctrine_cost_massive }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_latin }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	is_shown = { always = yes }
+	can_pick = {
+		uses_eucharistic_rite_trigger = yes
+		custom_description = {
+			text = incompatible_tenet_ecstatic_prophecy_trigger
+			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		}
+	}
+	parameters = {
+		liturgical_language_latin = yes
+		allows_brewery = yes # Vanilla Catholic feature
+	}
+	traits = {}
+}
+doctrine_christian_liturgical_rite_greek = { #For Orthodox
+	piety_cost = {
+		if = {
+			limit = { has_western_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_low
+		}
+		else_if = {
+			limit = { has_eastern_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
+			value = christian_doctrine_cost_high
+		}
+		else = { value = christian_doctrine_cost_massive }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_greek }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	is_shown = { always = yes }
+	can_pick = {
+		uses_eucharistic_rite_trigger = yes
+		custom_description = {
+			text = incompatible_tenet_ecstatic_prophecy_trigger
+			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		}
+	}
+	parameters = {
+		liturgical_language_greek = yes
+	}
+	traits = {}
+}
+
+#Other Western Rites
+doctrine_christian_liturgical_rite_gallican_rite = {
+	piety_cost = {
+		if = {
+			limit = { has_western_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_low
+		}
+		else_if = {
+			limit = { has_eastern_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
+			value = christian_doctrine_cost_high
+		}
+		else = { value = christian_doctrine_cost_massive }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_gallican_rite }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		uses_eucharistic_rite_trigger = yes
+		custom_description = {
+			text = incompatible_tenet_ecstatic_prophecy_trigger
+			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		}
+	}
+	parameters = {
+		liturgical_language_latin = yes
+		latin_rites_are_similar = yes
+	}
+	traits = {}
+}
+doctrine_christian_liturgical_rite_moazarbic_rite = {
+	piety_cost = {
+		if = {
+			limit = { has_western_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_low
+		}
+		else_if = {
+			limit = { has_eastern_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
+			value = christian_doctrine_cost_high
+		}
+		else = { value = christian_doctrine_cost_massive }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_moazarbic_rite }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		uses_eucharistic_rite_trigger = yes
+		custom_description = {
+			text = incompatible_tenet_ecstatic_prophecy_trigger
+			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		}
+	}
+	parameters = {
+		liturgical_language_latin = yes
+		latin_rites_are_similar = yes
+	}
+	traits = {}
+}
+doctrine_christian_liturgical_rite_celtic_rite = {
+	piety_cost = {
+		if = {
+			limit = { has_western_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_low
+		}
+		else_if = {
+			limit = { has_eastern_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
+			value = christian_doctrine_cost_high
+		}
+		else = { value = christian_doctrine_cost_massive }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_celtic_rite }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		uses_eucharistic_rite_trigger = yes
+		custom_description = {
+			text = incompatible_tenet_ecstatic_prophecy_trigger
+			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		}
+	}
+	parameters = {
+		liturgical_language_latin = yes
+		latin_rites_are_similar = yes
+	}
+	traits = {}
+}
+doctrine_christian_liturgical_rite_african_rite = {
+	piety_cost = {
+		if = {
+			limit = { has_western_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_low
+		}
+		else_if = {
+			limit = { has_eastern_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
+			value = christian_doctrine_cost_high
+		}
+		else = { value = christian_doctrine_cost_massive }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_african_rite }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		uses_eucharistic_rite_trigger = yes
+		custom_description = {
+			text = incompatible_tenet_ecstatic_prophecy_trigger
+			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		}
+	}
+	parameters = {
+		liturgical_language_latin = yes
+		latin_rites_are_similar = yes
+	}
+	traits = {}
+}
+
+### Eastern Rites (all use mid because they are noticeably different from one another)
+doctrine_christian_liturgical_rite_west_syriac_rite = { #aka, Antiochene Rite
+	piety_cost = {
+		if = {
+			limit = { has_western_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_eastern_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
+			value = christian_doctrine_cost_high
+		}
+		else = { value = christian_doctrine_cost_massive }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_west_syriac_rite }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		uses_eucharistic_rite_trigger = yes
+		custom_description = {
+			text = incompatible_tenet_ecstatic_prophecy_trigger
+			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		}
+	}
+	parameters {
+		liturgical_language_aramaic = yes
+	}
+	traits = {}
+}
+doctrine_christian_liturgical_rite_armenian_rite = {
+	piety_cost = {
+		if = {
+			limit = { has_western_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_eastern_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
+			value = christian_doctrine_cost_high
+		}
+		else = { value = christian_doctrine_cost_massive }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_armenian_rite }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		uses_eucharistic_rite_trigger = yes
+		custom_description = {
+			text = incompatible_tenet_ecstatic_prophecy_trigger
+			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		}
+	}
+	parameters = {
+		liturgical_language_armenian = yes
+	}
+	traits = {}
+}
+doctrine_christian_liturgical_rite_alexandrian_rite = {
+	piety_cost = {
+		if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_ethiopian_rite }
+			value = christian_doctrine_cost_low
+		}
+		else_if = {
+			limit = { has_western_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_eastern_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
+			value = christian_doctrine_cost_high
+		}
+		else = { value = christian_doctrine_cost_massive }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_alexandrian_rite }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		uses_eucharistic_rite_trigger = yes
+		custom_description = {
+			text = incompatible_tenet_ecstatic_prophecy_trigger
+			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		}
+	}
+	parameters {
+		liturgical_language_coptic = yes
+		alexandrian_rites_are_similar = yes
+	}
+	traits = {}
+}
+doctrine_christian_liturgical_rite_ethiopian_rite = {
+	piety_cost = {
+		if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_alexandrian_rite }
+			value = christian_doctrine_cost_low
+		}
+		else_if = {
+			limit = { has_western_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_eastern_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
+			value = christian_doctrine_cost_high
+		}
+		else = { value = christian_doctrine_cost_massive }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_ethiopian_rite }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		uses_eucharistic_rite_trigger = yes
+		custom_description = {
+			text = incompatible_tenet_ecstatic_prophecy_trigger
+			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		}
+	}
+	parameters {
+		liturgical_language_ethiopic = yes
+		alexandrian_rites_are_similar = yes
+	}
+	traits = {}
+}
+doctrine_christian_liturgical_rite_east_syriac_rite = { #aka Chaldean Rite
+	piety_cost = {
+		if = {
+			limit = { has_western_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_eastern_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
+			value = christian_doctrine_cost_high
+		}
+		else = { value = christian_doctrine_cost_massive }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_east_syriac_rite }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		uses_eucharistic_rite_trigger = yes
+		custom_description = {
+			text = incompatible_tenet_ecstatic_prophecy_trigger
+			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		}
+	}
+	parameters {
+		liturgical_language_aramaic = yes
+	}
+	traits = {}
+}
+
+### Other cases
+doctrine_christian_liturgical_rite_israelite = { #At least the Nazoreans by the late Vth century
+	piety_cost = {
+		value = christian_doctrine_cost_massive
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_israelite }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		uses_eucharistic_rite_trigger = yes
+	}
+	parameters = {
+		liturgical_language_israelite = yes
+	}
+	traits = {}
+	character_modifier = {}
+}
+doctrine_christian_liturgical_rite_local_rite = { #for various other faiths
+	piety_cost = {
+		if = {
+			limit = { has_western_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_eastern_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
+			value = christian_doctrine_cost_high
+		}
+		else = { value = christian_doctrine_cost_massive }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_east_syriac_rite }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = { uses_eucharistic_rite_trigger = yes }
+	parameters = {}
+	traits = {}
+	character_modifier = {
+		county_opinion_add = 5
+	}
+}
+doctrine_christian_liturgical_rite_none = { #For faiths that don't practice the Eucharist
+	piety_cost = {
+		value = christian_doctrine_cost_massive
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_none }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = { uses_eucharistic_rite_trigger = no }
+	parameters = {}
+	traits = {}
+	character_modifier = {
+		monthly_piety_gain_mult = 0.05
+	}
+}
+
+#Reformatted Ecumenism doctrines
+special_doctrine_nicene_ecumenism = {
+	icon = special_doctrine_bp_ecumenism
+	parameters = {
+		hostility_override_special_doctrine_nicene_ecumenism = 0
+		hostility_override_special_doctrine_alexandria_ecumenism = 1
+		resists_same_religion_conversion = yes
+	}
+}
+special_doctrine_alexandria_ecumenism = {
+	icon = special_doctrine_bp_ecumenism
+	parameters = {
+		hostility_override_special_doctrine_nicene_ecumenism = 1
+		hostility_override_special_doctrine_alexandria_ecumenism = 0
+		resists_same_religion_conversion = yes
+	}
+}
+special_doctrine_nestorian_ecumenism = {
+	icon = special_doctrine_bp_ecumenism
+	parameters = {
+		hostility_override_special_doctrine_nestorian_ecumenism = 0
+		resists_same_religion_conversion = yes
+	}
+}
+special_doctrine_arian_ecumenism = {
+	icon = special_doctrine_bp_ecumenism
+	parameters = {
+		hostility_override_special_doctrine_arian_ecumenism = 0
+		resists_same_religion_conversion = yes
+	}
+}
