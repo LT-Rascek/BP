@@ -46,15 +46,6 @@ scripted_trigger is_valid_nomad_events_0001_councillor = {
 		is_spouse_of = root 
 		is_child_of = root 
 	}
-	NAND = { # Not your Shaman unless they can be fired
-		has_council_position = councillor_court_chaplain
-		faith = {
-			OR = {
-				has_doctrine = doctrine_clerical_succession_temporal_fixed_appointment
-				has_doctrine = doctrine_clerical_succession_spiritual_fixed_appointment
-			}
-		}
-	}
 }
 
 scripted_trigger is_valid_nomad_events_0001_courtier = {
@@ -1612,6 +1603,12 @@ nomad_events.0008 = {
 			NOT = { faith = scope:achmach_scope.faith }
 		}
 		set_character_faith_with_conversion = scope:achmach_scope.faith
+		if = {
+		    limit = { 
+		        scope:achmach_scope.faith = { has_doctrine = doctrine_monotheist }
+		    }
+		    custom_description_no_bullet = { text = mandala_monotheist_warning_tt }
+		}
 		add_piety = medium_piety_gain
 		ai_chance = {
 			base = 0 #AI should never choose this
@@ -5003,6 +5000,7 @@ nomad_events.0250 = {
 		}
 	}
 	
+	##### Changed from Vanilla vvvvv
 	immediate = {
 		if = {
 			limit = {
@@ -5057,11 +5055,9 @@ nomad_events.0250 = {
 			}
 		}	
 		else = {
-			##### Changed from Vanilla vvvvv
 			random_list = {
 				10 = {
 					trigger = {
-						BP_rise_of_islam_trigger = yes
 						NOT = { faith = faith:ashari }
 						NOT = { any_character_situation = { this = situation:game_rule_extra_nomads_sami } }
 					}
@@ -5080,9 +5076,9 @@ nomad_events.0250 = {
 				}
 				10 = {
 					trigger = {
-						BP_rise_of_islam_trigger = yes
 						NOT = { faith = faith:kabarism }
 						any_character_situation = { this = situation:the_great_steppe }
+						BP_rise_of_islam_trigger = yes
 					}
 					modifier = {
 						location = { geographical_region = world_steppe_west }
@@ -5167,9 +5163,9 @@ nomad_events.0250 = {
 				}
 				10 = {
 					trigger = {
-						BP_rise_of_islam_trigger = yes
 						NOT = { faith = faith:maturidi }
 						NOT = { any_character_situation = { this = situation:game_rule_extra_nomads_sami } }
+						BP_rise_of_islam_trigger = yes
 					}
 					modifier = {
 						location = { geographical_region = world_steppe_central }
@@ -5186,9 +5182,9 @@ nomad_events.0250 = {
 				}
 				10 = {
 					trigger = {
-						BP_rise_of_islam_trigger = yes
 						NOT = { faith = faith:alevi }
 						any_character_situation = { this = situation:the_great_steppe }
+						BP_rise_of_islam_trigger = yes
 					}
 					modifier = {
 						location = { geographical_region = world_steppe_central }
@@ -5205,9 +5201,9 @@ nomad_events.0250 = {
 				}
 				10 = {
 					trigger = {
-						BP_rise_of_islam_trigger = yes
 						NOT = { faith = faith:ismaili }
 						NOT = { any_character_situation = { this = situation:game_rule_extra_nomads_sami } }
+						BP_rise_of_islam_trigger = yes
 					}
 					modifier = {
 						location = { geographical_region = world_steppe_central }
@@ -5244,11 +5240,11 @@ nomad_events.0250 = {
 				save_scope_as = created_priest
 			}
 		}
-		##### Changed from Vanilla vvvvv
 		scope:priest = {
 			set_variable = had_nomad_events_0250_var
 		}
 	}
+	##### Changed from Vanilla ^^^^^
 	
 	option = { # Convert
 		name = nomad_events.0250.a
