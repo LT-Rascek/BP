@@ -1,5 +1,4 @@
-﻿##### Changed from Vanilla: Removed fp2_yearly.9001
-##### Changed from Vanilla: Removed fp2_yearly.9002
+﻿##### Changed from Vanilla: Removed fp2_yearly.9001,9002
 fp1_yearly_events = {
 	trigger = { fp1_eligible_for_yearly_events_trigger = yes }
 	weight_multiplier = {
@@ -118,7 +117,7 @@ fp2_yearly_events = {
 		160 = fp2_yearly.1001   # Chess Two 
 		10 = fp2_yearly.1002	# A Compromising Position 
 		160 = fp2_yearly.1003   # Tilting at...Giants?  
-		160 = fp2_yearly.1004   # The Hawk of Quarysh 
+		160 = fp2_yearly.1004   # The Hawk of Quraysh 
 		160 = fp2_yearly.1005   # Lost Viking  
 		80 = fp2_yearly.1006	# Viking Cheese?
 		180 = fp2_yearly.2020	# Horchata colonialism event
@@ -149,8 +148,8 @@ fp2_yearly_events = {
 		300 = fp2_yearly.3000 	# Neighboring Muslims are growing rice, adopt the practice yourself?
 		100 = bell_special_yearly.1000 # The bell of Huesca yearly 
 		150 = fp2_yearly.9000 	# Thriving Jewish Community
-		##### Changed from Vanilla: Removed fp2_yearly.9001
-		##### Changed from Vanilla: Removed fp2_yearly.9002
+		#####150 = fp2_yearly.9001 	# Suspect Conversos of secretly praciticing Judaism
+		#####150 = fp2_yearly.9002 	# Jewish people come fleeing persecution from a nearby realm
 		150 = fp2_yearly.9005 	# Toledan Nights
 		50 = fp2_yearly.9006 	# Local bishop mad his church faces the wrong way
 	}
@@ -165,14 +164,12 @@ fp2_yearly_events = {
 	}
 }
 
-bp1_yearly_events = {
+bp1_yearly_events = { # Disabled in yearly_on_actions
 	trigger = {
 		has_dlc_feature = friends_and_foes
 		OR = {
 			any_relation = { type = friend }
 			any_relation = { type = rival }
-			any_relation = { type = best_friend }
-			any_relation = { type = nemesis }
 		}
 	}
 	weight_multiplier = {
@@ -289,7 +286,7 @@ bp1_yearly_events = {
 		200 = bp1_yearly.9023 # You realise you don't speak the same language
 		100 = bp1_yearly.9024 # A friend visits you while you're sick
 		150 = bp1_yearly.9025 # You realise you hate your friend
-		100 = bp1_yearly.9026 # You're haunted by an old friend who convinces you to make ammends before you die
+		100 = bp1_yearly.9026 # You're haunted by an old friend who convinces you to make amends before you die
 		100 = bp1_yearly.9040 # The ghost of your dead lover wants to have sex again
 		100 = bp1_yearly.9042 # Your chaplain finds a dessert that looks like HealthGodName
 		100 = bp1_yearly.9043 # Your chaplain admits to being a deviant and a cannibal who eats babies
