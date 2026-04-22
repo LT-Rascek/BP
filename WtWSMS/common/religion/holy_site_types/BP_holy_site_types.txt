@@ -49,7 +49,9 @@ mtskheta = {
 }
 vaspurakan = {
 	county = c_vaspurakan
-	flag = vaspurakan_same_culture_conversion_bonus #50% conversion speed bonus on the counties with same culture
+	parameters = {
+		vaspurakan_same_culture_conversion_bonus #50% conversion speed bonus on the counties with same culture
+	}
 }
 tephrike = {
 	county = c_satala
@@ -67,7 +69,9 @@ samosata = {
 mt_tondrak = {
 	county = c_bagrewand
 	barony = b_bagavan
-	flag = mt_tondrak_resistance_bonus #30% bonus to conversion resistance and return to the old religion
+	parameters = {
+		mt_tondrak_resistance_bonus #30% bonus to conversion resistance and return to the old religion
+	}
 }
 pepuza = {
 	county = c_pacatiana
@@ -183,7 +187,9 @@ somapur = {
 # Mazdan
 amida = {
 	county = c_amida
-	flag = amida_resistance_bonus #30% bonus to conversion resistance and return to the old religion
+	parameters = {
+		amida_resistance_bonus #30% bonus to conversion resistance and return to the old religion
+	}
 }
 ani = {
 	county = c_ayrarat
@@ -507,7 +513,9 @@ msoura = { #Site of Msoura Stone Circle, related to Anti
 # Celtic Pagan
 vannes = {
 	county = c_vannes
-	flag = vannes_celtic_conversion_bonus #20% bonus to converting Celtic culture group provinces, 20% bonus for if county and liege cultures are the same
+	parameters = {
+		vannes_celtic_conversion_bonus #20% bonus to converting Celtic culture group provinces, 20% bonus for if county and liege cultures are the same
+	}
 }
 isle_of_man = {
 	county = c_isle_of_man

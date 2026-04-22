@@ -393,7 +393,7 @@ governor_efficiency = {
 		# Aspirations
 		if = {
 			limit = { # Service
-				house ?= { has_house_power_parameter = service_house_governor_efficiency_bonus }
+				house ?= { has_house_aspiration_parameter = service_house_governor_efficiency_bonus }
 			}
 			add = {
 				add = {
@@ -406,7 +406,7 @@ governor_efficiency = {
 		}
 		if = {
 			limit = { # Governance
-				house ?= { has_house_power_parameter = governance_improved_governor_efficiency_bonus }
+				house ?= { has_house_aspiration_parameter = governance_improved_governor_efficiency_bonus }
 			}
 			add = {
 				add = {
@@ -897,10 +897,8 @@ governor_efficiency = {
 		}
 		if = { # The Forbidden City special building bonus
 			limit = {
-				top_liege ?= {
-					capital_province = {
-						has_building_or_higher = forbidden_city_01
-					}
+				top_liege.capital_province ?= {
+					has_building_or_higher = forbidden_city_01
 				}
 			}
 			add = {

@@ -710,7 +710,7 @@ court_chaplain_conversion_contextual_bonuses = {
 	if = {
 		limit = {
 			scope:councillor.faith = {
-				controls_holy_site = jerusalem
+				controls_holy_site_with_parameter = jerusalem_conversion_bonus
 			}
 			title:b_jerusalem = {
 				is_holy_site_of = scope:councillor.faith
@@ -724,7 +724,7 @@ court_chaplain_conversion_contextual_bonuses = {
 	if = {
 		limit = {
 			scope:councillor.faith = {
-				controls_holy_site = kerala
+				controls_holy_site_with_parameter = kerala_conversion_bonus
 			}
 			title:b_mahoyadapuram = {
 				is_holy_site_of = scope:councillor.faith
@@ -739,7 +739,7 @@ court_chaplain_conversion_contextual_bonuses = {
 		limit = {
 			exists = scope:county
 			scope:councillor.faith = {
-				controls_holy_site = iona
+				controls_holy_site_with_parameter = iona_conversion_bonus
 			}
 			title:b_islay = {
 				is_holy_site_of = scope:councillor.faith
@@ -757,7 +757,7 @@ court_chaplain_conversion_contextual_bonuses = {
 		limit = {
 			exists = scope:county
 			scope:county.faith = {
-				controls_holy_site = wadi_el_milk
+				controls_holy_site_with_parameter = wadi_el_milk_conversion_resistance_bonus
 			}
 			title:b_wadi_el-milk = {
 				is_holy_site_of = scope:councillor.faith
@@ -771,7 +771,7 @@ court_chaplain_conversion_contextual_bonuses = {
 	if = {
 		limit = {
 			scope:councillor.faith = {
-				controls_holy_site = cordoba
+				controls_holy_site_with_parameter = cordoba_conversion_bonus
 			}
 			title:b_cordoba = {
 				is_holy_site_of = scope:councillor.faith
@@ -786,7 +786,7 @@ court_chaplain_conversion_contextual_bonuses = {
 		limit = {
 			exists = scope:county
 			scope:county.faith = {
-				controls_holy_site = visoki
+				controls_holy_site_with_parameter = visoki_conversion_resistance_bonus
 			}
 			title:b_visoki = {
 				is_holy_site_of = scope:councillor.faith
@@ -802,7 +802,7 @@ court_chaplain_conversion_contextual_bonuses = {
 		limit = {
 			exists = scope:county
 			scope:councillor.faith = {
-				controls_holy_site = vaspurakan
+				controls_holy_site_with_parameter = vaspurakan_same_culture_conversion_bonus
 			}
 			title:b_van = { #c_vaspurakan
 				is_holy_site_of = scope:councillor.faith
@@ -818,7 +818,7 @@ court_chaplain_conversion_contextual_bonuses = {
 		limit = {
 			exists = scope:county
 			scope:councillor.faith = {
-				controls_holy_site = vannes
+				controls_holy_site_with_parameter = vannes_celtic_conversion_bonus
 			}
 			title:b_vannes = { #c_vannes
 				is_holy_site_of = scope:councillor.faith
@@ -834,7 +834,7 @@ court_chaplain_conversion_contextual_bonuses = {
 		limit = {
 			exists = scope:county
 			scope:councillor.faith = {
-				controls_holy_site = vannes
+				controls_holy_site_with_parameter = vannes_celtic_conversion_bonus
 			}
 			title:b_vannes = {
 				is_holy_site_of = scope:councillor.faith
@@ -850,7 +850,7 @@ court_chaplain_conversion_contextual_bonuses = {
 		limit = {
 			exists = scope:county
 			scope:councillor.faith = {
-				controls_holy_site = mt_tondrak
+				controls_holy_site_with_parameter = mt_tondrak_resistance_bonus
 			}
 			title:b_bagavan = {
 				is_holy_site_of = scope:councillor.faith
@@ -865,7 +865,7 @@ court_chaplain_conversion_contextual_bonuses = {
 		limit = {
 			exists = scope:county
 			scope:councillor.faith = {
-				controls_holy_site = amida
+				controls_holy_site_with_parameter = amida_resistance_bonus
 			}
 			title:b_amid = { #c_amida
 				is_holy_site_of = scope:councillor.faith
