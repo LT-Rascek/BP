@@ -51,7 +51,7 @@
 			# TRAITS
 			if = {
 				limit = {
-					has_trait = born_in_the_purple
+					has_trait = trait:born_in_the_purple
 				}
 				add = {
 					value = 50
@@ -60,7 +60,7 @@
 			}
 			if = {
 				limit = {
-					has_trait = disfigured
+					has_trait = trait:disfigured
 					scope:title.holder.culture = { has_cultural_parameter = physical_disfigurement_blocks_inheritance }
 				}
 				subtract = {
@@ -69,28 +69,28 @@
 				}
 			}
 			if = {
-				limit = { has_trait = clubfooted }
+				limit = { has_trait = trait:clubfooted }
 				subtract = {
 					value = 15
 					desc = trait_clubfooted
 				}
 			}
 			if = {
-				limit = { has_trait = dwarf }
+				limit = { has_trait = trait:dwarf }
 				subtract = {
 					value = 15
 					desc = trait_dwarf
 				}
 			}
 			if = {
-				limit = { has_trait = hunchbacked }
+				limit = { has_trait = trait:hunchbacked }
 				subtract = {
 					value = 15
 					desc = trait_hunchbacked
 				}
 			}
 			if = {
-				limit = { has_trait = lisping }
+				limit = { has_trait = trait:lisping }
 				subtract = {
 					value = 20
 					desc = trait_lisping
@@ -99,13 +99,13 @@
 			if = {
 				limit = {
 					OR = {
-						has_trait = inbred
-						has_trait = spindly
-						has_trait = scaly
-						has_trait = albino
-						has_trait = wheezing
-						has_trait = bleeder
-						has_trait = infirm
+						has_trait = trait:inbred
+						has_trait = trait:spindly
+						has_trait = trait:scaly
+						has_trait = trait:albino
+						has_trait = trait:wheezing
+						has_trait = trait:bleeder
+						has_trait = trait:infirm
 					}
 				}
 				subtract = {
@@ -115,7 +115,7 @@
 			}
 			if = {
 				limit = {
-					has_trait = incapable
+					has_trait = trait:incapable
 					scope:title.holder.culture = { has_cultural_parameter = physical_disfigurement_blocks_inheritance }
 				}
 				subtract = {
@@ -125,7 +125,7 @@
 			}
 			if = {
 				limit = {
-					has_trait = blind
+					has_trait = trait:blind
 					scope:title.holder.culture = { has_cultural_parameter = physical_disfigurement_blocks_inheritance }
 				}
 				subtract = {
@@ -135,7 +135,7 @@
 			}
 			if = {
 				limit = {
-					has_trait = eunuch_1
+					has_trait = trait:eunuch_1
 					scope:title.holder.culture = { has_cultural_parameter = physical_disfigurement_blocks_inheritance }
 				}
 				subtract = {
@@ -145,7 +145,7 @@
 			}
 			if = {
 				limit = {
-					has_trait = beardless_eunuch
+					has_trait = trait:beardless_eunuch
 					scope:title.holder.culture = { has_cultural_parameter = physical_disfigurement_blocks_inheritance }
 				}
 				subtract = {
@@ -155,7 +155,7 @@
 			}
 			if = {
 				limit = {
-					has_trait = disinherited
+					has_trait = trait:disinherited
 					scope:title.holder.culture = { has_cultural_parameter = physical_disfigurement_blocks_inheritance }
 				}
 				subtract = {
@@ -164,7 +164,7 @@
 				}
 			}
 			if = {
-				limit = { has_trait = gallivanter }
+				limit = { has_trait = trait:gallivanter }
 				subtract = {
 					value = 1000
 					desc = trait_gallivanter
@@ -172,14 +172,14 @@
 			}
 			##### Changed from Vanilla vvvvv
 			if = {
-				limit = { has_trait = power_behind_the_throne }
+				limit = { has_trait = trait:power_behind_the_throne }
 				subtract = {
 					value = 1000
 					desc = trait_power_behind_the_throne
 				}
 			}
 			if = {
-				limit = { has_trait = deposed }
+				limit = { has_trait = trait:deposed }
 				subtract = {
 					value = 1000
 					desc = trait_deposed
@@ -190,9 +190,9 @@
 			# CRIMINAL
 			if = {
 				limit = {
-					has_trait = deviant
+					has_trait = trait:deviant
 					exists = top_liege.primary_title.state_faith
-					trait_is_criminal_in_faith_trigger = { TRAIT = deviant FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
+					trait_is_criminal_in_faith_trigger = { TRAIT = trait:deviant FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
 				}
 				add = {
 					value = -20
@@ -201,9 +201,9 @@
 			}
 			if = {
 				limit = {
-					has_trait = incestuous
+					has_trait = trait:incestuous
 					exists = top_liege.primary_title.state_faith
-					trait_is_criminal_in_faith_trigger = { TRAIT = incestuous FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
+					trait_is_criminal_in_faith_trigger = { TRAIT = trait:incestuous FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
 				}
 				add = {
 					value = -20
@@ -212,9 +212,9 @@
 			}
 			if = {
 				limit = {
-					has_trait = sodomite
+					has_trait = trait:sodomite
 					exists = top_liege.primary_title.state_faith
-					trait_is_criminal_in_faith_trigger = { TRAIT = sodomite FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
+					trait_is_criminal_in_faith_trigger = { TRAIT = trait:sodomite FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
 				}
 				add = {
 					value = -20
@@ -223,9 +223,9 @@
 			}
 			if = {
 				limit = {
-					has_trait = cannibal
+					has_trait = trait:cannibal
 					exists = top_liege.primary_title.state_faith
-					trait_is_criminal_in_faith_trigger = { TRAIT = cannibal FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
+					trait_is_criminal_in_faith_trigger = { TRAIT = trait:cannibal FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
 				}
 				add = {
 					value = -20
@@ -234,9 +234,9 @@
 			}
 			if = {
 				limit = {
-					has_trait = kinslayer_1
+					has_trait = trait:kinslayer_1
 					exists = top_liege.primary_title.state_faith
-					trait_is_criminal_in_faith_trigger = { TRAIT = kinslayer_1 FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
+					trait_is_criminal_in_faith_trigger = { TRAIT = trait:kinslayer_1 FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
 				}
 				add = {
 					value = -20
@@ -245,9 +245,9 @@
 			}
 			if = {
 				limit = {
-					has_trait = kinslayer_2
+					has_trait = trait:kinslayer_2
 					exists = top_liege.primary_title.state_faith
-					trait_is_criminal_in_faith_trigger = { TRAIT = kinslayer_2 FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
+					trait_is_criminal_in_faith_trigger = { TRAIT = trait:kinslayer_2 FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
 				}
 				add = {
 					value = -20
@@ -256,9 +256,9 @@
 			}
 			if = {
 				limit = {
-					has_trait = kinslayer_3
+					has_trait = trait:kinslayer_3
 					exists = top_liege.primary_title.state_faith
-					trait_is_criminal_in_faith_trigger = { TRAIT = kinslayer_3 FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
+					trait_is_criminal_in_faith_trigger = { TRAIT = trait:kinslayer_3 FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
 				}
 				add = {
 					value = -20
@@ -267,9 +267,9 @@
 			}
 			if = {
 				limit = {
-					has_trait = witch
+					has_trait = trait:witch
 					exists = top_liege.primary_title.state_faith
-					trait_is_criminal_in_faith_trigger = { TRAIT = witch FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
+					trait_is_criminal_in_faith_trigger = { TRAIT = trait:witch FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
 				}
 				add = {
 					value = -20
@@ -278,9 +278,9 @@
 			}
 			if = {
 				limit = {
-					has_trait = adulterer
+					has_trait = trait:adulterer
 					exists = top_liege.primary_title.state_faith
-					trait_is_criminal_in_faith_trigger = { TRAIT = adulterer FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
+					trait_is_criminal_in_faith_trigger = { TRAIT = trait:adulterer FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
 				}
 				add = {
 					value = -20
@@ -289,9 +289,9 @@
 			}
 			if = {
 				limit = {
-					has_trait = fornicator
+					has_trait = trait:fornicator
 					exists = top_liege.primary_title.state_faith
-					trait_is_criminal_in_faith_trigger = { TRAIT = fornicator FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
+					trait_is_criminal_in_faith_trigger = { TRAIT = trait:fornicator FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
 				}
 				add = {
 					value = -20
@@ -646,13 +646,13 @@
 					is_male = yes
 					is_child_of = scope:title.holder
 					is_eunuch_trigger = no
-					NOT = { has_trait = bastard }
+					NOT = { has_trait = trait:bastard }
 					any_sibling = {
 						count = 0
 						is_male = yes
 						age > prev.age
 						is_eunuch_trigger = no
-						NOT = { has_trait = bastard }
+						NOT = { has_trait = trait:bastard }
 					}
 				}
 				add = {
@@ -671,12 +671,12 @@
 					}
 					is_female = yes
 					is_child_of = scope:title.holder
-					NOT = { has_trait = bastard }
+					NOT = { has_trait = trait:bastard }
 					any_sibling = {
 						count = 0
 						is_female = yes
 						age > prev.age
-						NOT = { has_trait = bastard }
+						NOT = { has_trait = trait:bastard }
 					}
 				}
 				add = {
@@ -691,13 +691,13 @@
 						has_realm_law = equal_law
 					}
 					is_eunuch_trigger = no
-					NOT = { has_trait = bastard }
+					NOT = { has_trait = trait:bastard }
 					is_child_of = scope:title.holder
 					any_sibling = {
 						count = 0
 						age > prev.age
 						is_eunuch_trigger = no
-						NOT = { has_trait = bastard }
+						NOT = { has_trait = trait:bastard }
 					}
 				}
 				add = {
