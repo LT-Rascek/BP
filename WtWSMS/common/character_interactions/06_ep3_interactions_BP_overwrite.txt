@@ -425,7 +425,7 @@ influence_candidacy_interaction = { #DONE
 			# House Aspiration Service
 			if = {
 				limit = {
-					scope:actor.house ?= { has_house_power_parameter = service_house_cheaper_influence_candidacy_investments }
+					scope:actor.house ?= { has_house_aspiration_parameter = service_house_cheaper_influence_candidacy_investments }
 				}
 				add = {
 					value = scope:calculated_base_cost
