@@ -425,7 +425,9 @@ window = {
 										addrow = 65
 										datamodel_wrap = 2
 
-										item = { widget_doctrine_selection_item = {} }
+										item = {
+											widget_doctrine_selection_item = {}
+										}
 									}
 								}
 								##### Changed from Vanilla ^^^^^
@@ -1122,7 +1124,8 @@ window = {
 
 											icon_doctrine = {
 												name = "doctrine_icon_main"
-												visible = "[EqualTo_string( FaithDoctrine.GetGroup.GetCategory, 'main_group' )]"
+												visible = "[IsValidForUnqiueFaithCreationIcon(FaithDoctrine)]"
+												#visible = "[EqualTo_string( FaithDoctrine.GetGroup.GetCategory, 'main_group' )]"
 												size = { 60 60 }
 												position = { 5 10 }
 
@@ -1131,7 +1134,8 @@ window = {
 
 											icon_doctrine = {
 												name = "doctrine_icon_other"
-												visible = "[And(Not(EqualTo_string( FaithDoctrine.GetGroup.GetCategory, 'main_group' )), Not(EqualTo_string( FaithDoctrine.GetGroup.GetCategory, 'core_tenets' )))]"
+												visible = "[And( Not(IsValidForUnqiueFaithCreationIcon(FaithDoctrine)), Not(EqualTo_string( FaithDoctrine.GetGroup.GetCategory, 'core_tenets' )) )]"
+												#visible = "[And(Not(EqualTo_string( FaithDoctrine.GetGroup.GetCategory, 'main_group' )), Not(EqualTo_string( FaithDoctrine.GetGroup.GetCategory, 'core_tenets' )))]"
 												size = { 60 60 }
 												position = { 5 10 }
 

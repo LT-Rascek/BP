@@ -1,5 +1,6 @@
 ﻿#Covers the strictest cases like Jains, Priscillianism
 doctrine_ritual_vegetarianism_required = {
+	icon = "doctrine_ritual_vegetarianism_required"
 	piety_cost = {
 		if = {
 			limit = { has_doctrine = doctrine_ritual_vegetarianism_clerics }
@@ -46,6 +47,7 @@ doctrine_ritual_vegetarianism_required = {
 }
 #Covers midway cases like some Buddhist sects, where it's only monks and nuns that abstain
 doctrine_ritual_vegetarianism_clerics = {
+	icon = "doctrine_ritual_vegetarianism_clerics"
 	piety_cost = {
 		if = {
 			limit = { has_doctrine = doctrine_ritual_vegetarianism_required }
@@ -91,6 +93,7 @@ doctrine_ritual_vegetarianism_clerics = {
 }
 #Covers Coptic Christianity, or other faiths that suggest it part of the time
 doctrine_ritual_vegetarianism_partial = {
+	icon = "doctrine_ritual_vegetarianism_partial"
 	piety_cost = {
 		if = {
 			limit = { has_doctrine = doctrine_ritual_vegetarianism_required }
@@ -115,6 +118,7 @@ doctrine_ritual_vegetarianism_partial = {
 	traits = { virtues = { vegetarian = 0.2 } }
 }
 doctrine_ritual_vegetarianism_no_statement = {
+	icon = "doctrine_ritual_vegetarianism_no_statement"
 	piety_cost = {
 		if = {
 			limit = { has_doctrine = doctrine_ritual_vegetarianism_required }

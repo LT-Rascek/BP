@@ -1,5 +1,6 @@
 ﻿##### Changed from Vanilla: Added links to new doctrines
 doctrine_monotheist = {
+	icon = "doctrine_monotheist"
 	is_shown = { NOT = { religion_tag = nastika_religion } }
 	piety_cost = {
 		value = faith_doctrine_cost_high
@@ -21,6 +22,7 @@ doctrine_monotheist = {
 }
 ##### Changed from Vanilla: Added links to new doctrines
 doctrine_polytheist = {
+	icon = "doctrine_polytheist"
 	is_shown = { NOT = { religion_tag = nastika_religion } }
 	piety_cost = {
 		value = faith_doctrine_cost_high
@@ -47,6 +49,7 @@ doctrine_polytheist = {
 	}
 }
 doctrine_roman_polytheist = { ##### WtWSMS New
+	icon = "doctrine_roman_polytheist"
 	is_shown = { religion_tag = hellenism_religion }
 	piety_cost = {
 		value = faith_doctrine_cost_high
@@ -83,6 +86,7 @@ doctrine_roman_polytheist = { ##### WtWSMS New
 	}
 }
 doctrine_monist = { ##### WtWSMS New
+	icon = "doctrine_monist"
 	is_shown = { #Not available to the principal Monotheist faiths
 		NOR = {
 			has_doctrine = abrahamic_hostility_doctrine
@@ -126,6 +130,7 @@ doctrine_monist = { ##### WtWSMS New
 	}
 }
 doctrine_agnostic = { ##### WtWSMS New
+	icon = "doctrine_agnostic"
 	is_shown = { #Only for the Nastika right now; really only applicable there and we want to avoid too much weirdness atm
 		religion_tag = nastika_religion
 	}
@@ -166,6 +171,7 @@ doctrine_agnostic = { ##### WtWSMS New
 
 ##### Changed from Vanilla: Rewrote desc for monotheists
 doctrine_pluralism_pluralistic = {
+	icon = "doctrine_pluralism_pluralistic"
 	##### Changed from Vanilla vvvvv
 	desc = {
 		first_valid = {
@@ -208,5 +214,115 @@ doctrine_pluralism_pluralistic = {
 		pluralism_pluralistic_resistant_to_heresy = yes
 		pluralism_pluralistic_holy_wars_preserve_vassals = yes
 		
+	}
+}
+
+##### Changed from Vanilla: Added icons
+doctrine_funeral_stoic = { # Abrahamic funerals, stand around and try not to cry too much before the body is humbly buried
+	icon = "doctrine_funeral_stoic"
+	piety_cost = {
+		value = faith_doctrine_cost_mid
+		if = {
+			limit = { has_doctrine = doctrine_funeral_stoic }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	parameters = {
+		burial_funeral = yes
+		stoic_funeral = yes
+	}
+}
+##### Changed from Vanilla: Added icons
+doctrine_funeral_bewailment = { # West African funerals, strongly encouraged to show emotion before the body is humbly buried
+	icon = "doctrine_funeral_bewailment"
+	piety_cost = {
+		value = faith_doctrine_cost_mid
+		if = {
+			limit = { has_doctrine = doctrine_funeral_bewailment }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	parameters = {
+		burial_funeral = yes
+		bewailment_funeral = yes
+	}
+}
+##### Changed from Vanilla: Added icons
+doctrine_funeral_cremation = { # Catch-all cremations, burn or otherwise dissolve the body
+	icon = "doctrine_funeral_cremation"
+	piety_cost = {
+		value = faith_doctrine_cost_mid
+		if = {
+			limit = { has_doctrine = doctrine_funeral_cremation }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	parameters = {
+		cremation_funeral = yes
+	}
+}
+##### Changed from Vanilla: Added icons
+doctrine_funeral_sky_burial = { # Have the body fed to scavenging animals and birds
+	icon = "doctrine_funeral_sky_burial"
+	piety_cost = {
+		value = faith_doctrine_cost_mid
+		if = {
+			limit = { has_doctrine = doctrine_funeral_sky_burial }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	parameters = {
+		sky_burials_active = yes
+		can_build_towers_of_silence_active = yes
+	}
+
+	character_modifier = {
+		negate_health_penalty_add = 0.25
+	}
+}
+##### Changed from Vanilla: Added icons
+doctrine_funeral_mummification = { # Fanatically preserve the body, very expensive
+	icon = "doctrine_funeral_mummification"
+	piety_cost = {
+		value = faith_doctrine_cost_high
+		if = {
+			limit = { has_doctrine = doctrine_funeral_mummification }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	parameters = {
+		mummification_funeral = yes
+	}
+
+	can_pick = {
+		custom_description = {
+			text = incompatible_tenet_aniconism_trigger
+			NOT = { doctrine:tenet_aniconism = { is_in_list = selected_doctrines } }
+		}
+	}
+}
+##### Changed from Vanilla: Added icons
+doctrine_family_rites = { # Solemn veneration
+	icon = "doctrine_family_rites"
+	piety_cost = {
+		value = faith_doctrine_cost_high
+		if = {
+			limit = { has_doctrine = doctrine_family_rites }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+		if = {
+			limit = { has_doctrine = tenet_filial_piety }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	parameters = {
+		burial_funeral = yes
+		family_rites = yes
 	}
 }
