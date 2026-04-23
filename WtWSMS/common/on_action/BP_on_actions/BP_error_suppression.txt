@@ -80,6 +80,7 @@ orphaned_events = {
 			1 = ep3_roman_restoration.0100
 			1 = ep3_story_cycle_violet_poet.0001
 			1 = ep3_yearly.3000
+			1 = faith_creation.1001
 			1 = fp2_other_decisions.1100
 			1 = fp2_yearly.9000
 			1 = fp2_yearly.9005
@@ -105,6 +106,8 @@ orphaned_events = {
 			1 = iberia_north_africa.9101
 			1 = major_decisions.0001
 			1 = major_decisions.0002
+			1 = major_decisions.3400 #Carantania
+			1 = major_decisions.3500 #Cumbria
 			1 = major_decisions.4000
 			1 = major_decisions.4001
 			1 = major_decisions.5000
@@ -119,6 +122,9 @@ orphaned_events = {
 			1 = middle_east_decisions.0009
 			1 = middle_east_decisions.0011
 			1 = middle_east_decisions.0014
+			1 = middle_east_decisions.1100 # Dar al-Islam
+			1 = middle_east_decisions.1101 # Dar al-Islam
+			1 = middle_east_decisions.1102 # Dar al-Islam
 			1 = middle_europe_decisions.0001
 			1 = middle_europe_decisions.0003
 			1 = middle_europe_decisions.0005
@@ -408,12 +414,16 @@ fix_modifier_errors = {
 
 fix_list_errors = {
 	effect = {
+		add_to_list = disciple
+		add_to_list = elders
 		add_to_list = the_province_with_available_city_holdings
-		remove_from_list = the_province_with_available_city_holdings
-		add_to_list = vasconia_kingdoms
-		remove_from_list = vasconia_kingdoms
 		add_to_list = vasconia_duchies
+		add_to_list = vasconia_kingdoms
+		remove_from_list = disciple
+		remove_from_list = elders
+		remove_from_list = the_province_with_available_city_holdings
 		remove_from_list = vasconia_duchies
+		remove_from_list = vasconia_kingdoms
 	}
 }
 

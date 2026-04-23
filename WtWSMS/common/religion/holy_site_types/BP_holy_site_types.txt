@@ -223,7 +223,9 @@ kerala_dravidian = {
 	character_modifier = {
 		monthly_piety_gain_mult = 0.2
 	}
-	flag = jerusalem_conversion_bonus # +20% County Conversion
+	parameters = {
+		jerusalem_conversion_bonus # +20% County Conversion
+	}
 }
 
 # Mazdan
@@ -708,7 +710,9 @@ cilicia = {
 assur = { #Given historic and religious importance, made it a lesser version of Jerusalem
 	county = c_takrit
 	character_modifier = { monthly_piety_gain_mult = 0.1 }
-	flag = jerusalem_conversion_bonus # +20% County Conversion
+	parameters = {
+		jerusalem_conversion_bonus # +20% County Conversion
+	}
 }
 ninive = { #Temple of Ishtar
 	county = c_ninive

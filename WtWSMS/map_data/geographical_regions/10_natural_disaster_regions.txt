@@ -159,3 +159,78 @@ tapti_river_region = { # Tapti River
 	}
 }
 
+# Seismic Regions
+# 89 in total, Himalaya + Tibet Plateau
+# actually 2 strips as a bigger group, our map density is not enough to distinguish them. high chance + high severity
+himalaya_earthquake_region = {
+	duchies = {
+		#Kashmir
+		d_kasmira d_pamir
+		#Maryul
+		d_ladakh d_zanskar d_baltiyul d_aksai_chin
+		#Guge
+		d_kinnaur d_purang
+		#Himalaya
+		d_kurmanchal d_khasa d_nepal d_limbuwan
+		#Tsang
+		d_xigaze d_sagya d_ngamring
+		#Ü
+		d_yarlung d_lhasa
+		#Lhomon
+		d_bumthang d_paro d_monyul d_lhoyul d_dzayul
+		#Kham
+		d_nyingchi d_boyul
+	}
+	counties = {
+		#Guge
+		c_tsaparang c_kyunglung c_gar c_gegyai
+		#Maryul
+		c_rutog
+		#Lahore
+		#c_kangra
+	}
+}
+# Eastern Himalaya, Sichuan-Yunnan-Myanmar, crossing China Myanmar India
+# 13 in e_bengal, 34 in k_pagan, 2 in k_dvaravati, 12 in e_tibet, 23 in e_liangyi, 82 in total. give it same level as himalaya.
+sichuan_myanmar_earthquake_region = {} ##### Changed from Vanilla
+# about 100 counties
+north_china_earthquake_region = {} ##### Changed from Vanilla
+# Fujian and Guangdong, pretty small so make a much lower chance and basic severity (different from islands min=2)
+south_china_coastaline_earthquake_region = {} ##### Changed from Vanilla
+# ~40, medium level overlap with Steppe & Siberia
+mongolia_baikal_earthquake_region = {} ##### Changed from Vanilla
+# Tarim, Tianshan, Hindu Kush
+central_asian_earthquake_region = {
+	duchies = {
+		# k_khotan
+		d_charkliq d_khotan d_kashgar
+		# k_dzungaria
+		d_kara_khoja #d_beshbalik
+		# k_zhetysu
+		d_tarbagatai d_ili-alatau
+		# k_transoxiana
+		d_badakhshan d_khuttal d_ferghana d_soghd d_osrushana
+		# k_syr_darya
+		d_muyunkum ##### Changed from Vanilla
+	}
+	counties = {
+		# k_khotan
+		c_luntai c_kucha
+		# k_zhetysu
+		c_almaty c_qayaliq c_kopathal c_kaskelen
+	}
+}
+north_pacific_earthquake_region = {
+	regions = {
+		world_asia_japan world_asia_sakhalin_hokkaido
+	}
+}
+
+world_asia_southeast_islands_weak_earthquake_region = {} ##### Changed from Vanilla
+world_asia_north_east_and_korea_weak_earthquake_region = {} ##### Changed from Vanilla
+# Make them in same group for earthquake check anyway, unlike eastern EU here have some.
+world_asia_north_east_and_korea = {
+	regions = {
+		world_asia_korea world_asia_north_east
+	}
+}
