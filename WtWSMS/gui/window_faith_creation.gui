@@ -277,7 +277,7 @@ window = {
 
 									fixedgridbox = {
 										name = "doctrines_grid_main_group"
-										datamodel = "[FaithCreationWindow.GetGroupingHelper( 'structural_group' ).GetGrouping]"
+										datamodel = "[FaithCreationWindow.GetCategoryHelper( 'structural_group' ).GetCategory]"
 
 										flipdirection = yes
 										addcolumn = 270
@@ -388,7 +388,7 @@ window = {
 
 									fixedgridbox = {
 										name = "doctrines_grid_ritual_group"
-										datamodel = "[FaithCreationWindow.GetGroupingHelper( 'ritual_group' ).GetGrouping]"
+										datamodel = "[FaithCreationWindow.GetCategoryHelper( 'ritual_group' ).GetCategory]"
 
 										flipdirection = yes
 										addcolumn = 270
@@ -418,7 +418,7 @@ window = {
 
 									fixedgridbox = { #Christian Doctrines
 										name = "FAITH_DOCTRINES_CHRISTIAN_SPECIFIC"
-										datamodel = "[FaithCreationWindow.GetGroupingHelper( 'christian_doctrines' ).GetGrouping]"
+										datamodel = "[FaithCreationWindow.GetCategoryHelper( 'christian_doctrines' ).GetCategory]"
 
 										flipdirection = yes
 										addcolumn = 270
@@ -1542,12 +1542,12 @@ types FaithCreationWindow
 	type widget_doctrine_selection_item_unique = button_standard_hover {
 		size = { 240 53 }
 		tooltip = "FAITH_WINDOW_DOCTRINE_CHANGE_TOOLTIP"
-		datacontext = "[GuiFaithCreationDoctrineItem.GetGuiFaithDoctrineItem]"
-		datacontext = "[GuiFaithDoctrineItem.GetDoctrine]"
-		onclick = "[GuiFaithCreationDoctrineItem.GetFaithCreationWindow.GetDoctrineGroupWindow.ShowWindow( GuiFaithCreationDoctrineItem.GetSlotIndex )]"
+		datacontext = "[FaithCreationDoctrineItem.GetDoctrineItem]"
+		datacontext = "[DoctrineItem.GetDoctrine]"
+		onclick = "[FaithCreationDoctrineItem.GetFaithCreationWindow.GetDoctrineCategoryWindow.ShowWindow( FaithCreationDoctrineItem.GetSlotIndex )]"
 		onclick = "[GetVariableSystem.Set( 'faith_creation_right_view', 'doctrine_selection' )]"
-		onclick = "[GetVariableSystem.Set( 'doctrine_group_name', FaithDoctrine.GetGroup.GetName( GuiFaithDoctrineItem.GetFaith ) )]"
-		down = "[And(GetVariableSystem.HasValue( 'doctrine_group_name', FaithDoctrine.GetGroup.GetName( GuiFaithDoctrineItem.GetFaith ) ), GetVariableSystem.HasValue( 'faith_creation_right_view', 'doctrine_selection' ))]"
+		onclick = "[GetVariableSystem.Set( 'doctrine_group_name', FaithDoctrine.GetGroup.GetName( DoctrineItem.GetFaith ) )]"
+		down = "[And(GetVariableSystem.HasValue( 'doctrine_group_name', FaithDoctrine.GetGroup.GetName( DoctrineItem.GetFaith ) ), GetVariableSystem.HasValue( 'faith_creation_right_view', 'doctrine_selection' ))]"
 
 		background = {
 			using = Background_Area
@@ -1556,7 +1556,7 @@ types FaithCreationWindow
 
 		hbox = {
 			name = "faith_list_item"
-			datacontext = "[GuiFaithDoctrineItem.GetDoctrine]"
+			datacontext = "[FaithCreationDoctrineItem.GetDoctrineItem]"
 			spacing = 5
 			using = tooltip_nw
 			tooltip = "FAITH_WINDOW_DOCTRINE_TOOLTIP"
@@ -1567,7 +1567,7 @@ types FaithCreationWindow
 				block "doctrine_icon_texture"
 				{ texture = "[FaithDoctrine.GetIcon]" }
 
-				alpha = "[Select_float( GetPlayer.GetFaith.HasDoctrine( GuiFaithDoctrineItem.GetDoctrine ), '(float)0.4', '(float)1.0' )]"
+				alpha = "[Select_float( GetPlayer.GetFaith.HasDoctrine( DoctrineItem.GetDoctrine ), '(float)0.4', '(float)1.0' )]"
 			}
 
 			vbox = {
@@ -1575,19 +1575,21 @@ types FaithCreationWindow
 
 				text_single = {
 					name = "doctrine_group_name"
-					text = "[FaithDoctrine.GetGroup.GetName( GuiFaithDoctrineItem.GetFaith )]"
+					layoutpolicy_horizontal = expanding
+
+					text = "[FaithDoctrine.GetGroup.GetName( DoctrineItem.GetFaith )]"
 					align = left
 					default_format = "#low"
-					layoutpolicy_horizontal = expanding
 					autoresize = no
 					fontsize_min = 12
 				}
 
 				text_single = {
 					name = "faith_name"
-					text = "[FaithDoctrine.GetNameNoTooltip( GuiFaithDoctrineItem.GetFaith )]"
-					datacontext = "[GuiFaithDoctrineItem.GetFaith]"
+					datacontext = "[DoctrineItem.GetFaith]"
 					layoutpolicy_horizontal = expanding
+
+					text = "[FaithDoctrine.GetNameNoTooltip( DoctrineItem.GetFaith )]"
 					elide = right
 					autoresize = no
 					fontsize_min = 12

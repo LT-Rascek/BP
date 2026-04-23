@@ -15,7 +15,7 @@ character_view_bg = {
 			is_alive = no
 			OR = {
 				religion = religion:tengrism_religion
-				##### Changed from Vanilla: religion = religion:magyar_religion
+				##### religion = religion:magyar_religion
 				religion = religion:siberian_religion
 				religion = religion:shamanism_religion
 				religion = religion:kamuyism_religion
@@ -2452,7 +2452,7 @@ character_view_bg = {
 			involved_activity ?= { has_activity_type = activity_pilgrimage }
 			OR = {
 				involved_activity.activity_location.religion = religion:tengrism_religion
-				##### Changed from Vnailla: involved_activity.activity_location.religion = religion:magyar_religion
+				##### involved_activity.activity_location.religion = religion:magyar_religion
 				involved_activity.activity_location.religion = religion:siberian_religion
 			}
 			location ?= involved_activity.activity_location
@@ -2628,15 +2628,9 @@ character_view_bg = {
 		reference = "event_scenes/ep3_byzantine_throne_room.dds"
 		trigger = {
 			OR = {
-				OR = {
-					primary_title = title:e_byzantium
-					primary_title = title:h_eastern_roman_empire
-				}
+				primary_title = title:e_byzantium
 				AND = {
-					OR = {
-						primary_title = title:e_byzantium
-						primary_title = title:h_eastern_roman_empire
-					}
+					primary_spouse.primary_title = title:e_byzantium
 					is_landed = no
 				}
 			}
@@ -11496,7 +11490,7 @@ character_religion_interior = {
 		trigger = {
 			OR = {
 				religion = religion:tengrism_religion
-				##### Changed from Vnailla: religion = religion:magyar_religion
+				##### religion = religion:magyar_religion
 				religion = religion:siberian_religion
 				religion = religion:shamanism_religion
 				religion = religion:kamuyism_religion
@@ -11509,7 +11503,7 @@ character_religion_interior = {
 		trigger = {
 			OR = {
 				religion = religion:tengrism_religion
-				##### Changed from Vnailla: religion = religion:magyar_religion
+				##### religion = religion:magyar_religion
 				religion = religion:siberian_religion
 				religion = religion:shamanism_religion
 				religion = religion:kamuyism_religion
@@ -11777,7 +11771,7 @@ religion_holding = {
 		trigger = {
 			religion = religion:christianity_religion
 			NOT = {
-				faith = faith:nestorian
+				this = faith:nestorian
 			}
 		}
 		reference = "holding_types/temple_christian.dds"

@@ -581,7 +581,7 @@ window = {
 
 						##### Changed From Vanilla
 						vbox = {
-							visible = "[DataModelHasItems(FaithWindow.GetGroupingHelper( 'structural_group' ).GetGrouping)]"
+							visible = "[DataModelHasItems(FaithWindow.GetCategoryHelper( 'structural_group' ).GetCategory)]"
 							layoutpolicy_horizontal = expanding
 							spacing = 8
 
@@ -598,7 +598,7 @@ window = {
 
 								hbox = {
 									name = "important_doctrines"
-									datamodel = "[FaithWindow.GetGroupingHelper( 'structural_group' ).GetGrouping]"
+									datamodel = "[FaithWindow.GetCategoryHelper( 'structural_group' ).GetCategory]"
 									spacing = 3
 									layoutpolicy_vertical = expanding
 									minimumsize = { 0 108 }
@@ -608,7 +608,7 @@ window = {
 											layoutpolicy_vertical = expanding
 											minimumsize = { 100 0 }
 											name = "doctrine_list_item"
-											datacontext = "[GuiFaithDoctrineItem.GetDoctrine]"
+											datacontext = "[DoctrineItem.GetDoctrine]"
 											visible = "[FaithDoctrine.IsVisible]"
 											tooltip = "FAITH_WINDOW_DOCTRINE_TOOLTIP"
 											using = tooltip_se
@@ -622,7 +622,7 @@ window = {
 											text_single = {
 												name = "doctrine_name"
 												align = center
-												text = "[FaithDoctrine.GetNameNoTooltip( GuiFaithDoctrineItem.GetFaith )]"
+												text = "[FaithDoctrine.GetNameNoTooltip( DoctrineItem.GetFaith )]"
 												default_format = "#high"
 												multiline = yes
 												max_width = 108   ##### minimum in order to look good in german
@@ -726,7 +726,7 @@ window = {
 
 								hbox = {
 									name = "ritual_doctrines"
-									datamodel = "[FaithWindow.GetGroupingHelper( 'ritual_group' ).GetGrouping]"
+									datamodel = "[FaithWindow.GetCategoryHelper( 'ritual_group' ).GetCategory]"
 									#spacing = 15
 									layoutpolicy_vertical = expanding
 									minimumsize = { 0 108 }
@@ -736,7 +736,7 @@ window = {
 											layoutpolicy_vertical = expanding
 											minimumsize = { 110 0 }
 											name = "doctrine_list_item"
-											datacontext = "[GuiFaithDoctrineItem.GetDoctrine]"
+											datacontext = "[DoctrineItem.GetDoctrine]"
 											visible = "[FaithDoctrine.IsVisible]"
 											tooltip = "FAITH_WINDOW_DOCTRINE_TOOLTIP"
 											using = tooltip_se
@@ -751,7 +751,7 @@ window = {
 												name = "doctrine_name"
 												align = center
 												#raw_text = "Bingo Bongo Tongo gyngo"
-												text = "[FaithDoctrine.GetNameNoTooltip( GuiFaithDoctrineItem.GetFaith )]"
+												text = "[FaithDoctrine.GetNameNoTooltip( DoctrineItem.GetFaith )]"
 												default_format = "#high"
 												multiline = yes
 												max_width = 108   ##### minimum in order to look good in german
@@ -776,7 +776,7 @@ window = {
 
 							#Christian Doctrines
 							fixedgridbox = {
-								datamodel = "[FaithWindow.GetGroupingHelper( 'christian_doctrines' ).GetGrouping]"
+								datamodel = "[FaithWindow.GetCategoryHelper( 'christian_doctrines' ).GetCategory]"
 								flipdirection = yes
 								addcolumn = 230
 								addrow = 65
@@ -1729,8 +1729,8 @@ types FaithWindow
 		size = { 210 53 }
 		block "wdi_context"
 		{
-			datacontext = "[GuiFaithDoctrineItem.GetDoctrine]"
-			datacontext = "[GuiFaithDoctrineItem.GetFaith]"
+			datacontext = "[DoctrineItem.GetDoctrine]"
+			datacontext = "[DoctrineItem.GetFaith]"
 		}
 
 		block "background" {
