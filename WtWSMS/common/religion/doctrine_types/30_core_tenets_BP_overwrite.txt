@@ -915,6 +915,77 @@ tenet_reincarnation = {
 		}
 	}
 }
+##### Changed from Vanilla: Gave dynamic name and description
+tenet_literalism = {
+	icon = core_tenet_literalism
+
+	##### Changed from Vanilla vvvvv
+	name = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { religion_tag = buddhism_religion }
+				desc = tenet_dhammavicaya_name
+			}
+			desc = tenet_literalism_name
+		}
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { religion_tag = buddhism_religion }
+				desc = tenet_dhammavicaya_desc
+			}
+			desc = tenet_literalism_desc
+		}
+	}
+	##### Changed from Vanilla ^^^^^
+
+
+	piety_cost = {
+		if = {
+			limit = {
+				OR = {
+					religion_tag = islam_religion
+					religion_tag = judaism_religion
+				}
+			}
+			value = faith_tenet_cost_low
+		}
+		else = {
+			value = faith_tenet_cost_mid
+		}
+
+		# Multiplier for keeping same tenet
+		if = {
+			limit = { has_doctrine = tenet_literalism }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+
+		if = {
+			limit = { NOT = { has_doctrine = abrahamic_hostility_doctrine } }
+			multiply = 1.5
+			round = yes
+		}
+	}
+
+	traits = {
+		virtues = {
+			education_learning_3
+			education_learning_4
+			education_learning_5
+			scholar
+		}
+	}
+	
+	character_modifier = {
+		monthly_merit_mult = 0.1
+	}
+
+	parameters = {
+		literalist_debate_enabled = yes
+	}
+}
 ##### Changed from Vanilla: Christian Faiths with Judaizers uses Jewish Localization
 tenet_religious_legal_pronouncements = {
 	icon = core_tenet_legal_pronouncements

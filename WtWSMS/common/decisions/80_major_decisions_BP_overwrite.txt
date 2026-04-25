@@ -1014,7 +1014,7 @@ restore_carthage_decision = {
 		#Romano-African AIs will _not_ do this
 		NOT = {
 			culture = culture:romano_african
-			any_parent_culture_or_above = { this = culture:romano_african }
+			culture = { any_parent_culture_or_above = { this = culture:romano_african } }
 		}
 	}
 	##### Changed from Vanilla ^^^^^^

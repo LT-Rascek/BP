@@ -587,46 +587,6 @@ tenet_wedding_ceremonies = {
 }
 
 #####################
-# BP Eastern Tenets	#
-#####################
-
-tenet_dhammavicaya = {
-	icon = core_tenet_literalism ##### TODO (Beta): Needs Unique Icon
-		piety_cost = {
-			value = faith_tenet_cost_mid
-			
-		# Multiplier for keeping same tenet
-		if = {
-			limit = { has_doctrine = tenet_dhammavicaya }
-			multiply = faith_unchanged_doctrine_cost_mult
-		}
-	}
-	
-	#No can_pick issues; Literalism is only for Abrahamics/Gnostics/Hellenic (Philosphical)
-
-	is_shown = {
-		religion_tag = buddhism_religion
-	}
-
-	traits = {
-		virtues = {
-			education_learning_3
-			education_learning_4
-			education_learning_5
-			scholar
-		}
-	}
-
-	character_modifier = {
-		monthly_learning_lifestyle_xp_gain_mult = 0.1
-	}
-
-	parameters = {
-		literalist_debate_enabled = yes
-	}
-}
-
-#####################
 # BP Pagan Tenets	#
 #####################
 

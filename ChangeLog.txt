@@ -179,6 +179,7 @@ Culture:
 - Culture Changes:
    - Taifal culture COA frame is Chernyakhov instead of Sarmatian, uses only Samaritan name list
    - Burgundian Culture has "Family Business" Tradition
+   - Romano-Punic culture uses "Water Rituals" instead of "Maritime Mercantilism"
 - Latin Culture Overhaul in light of DLC:
    - Roman: Adds "Roman Politics"/"Roman Succession", Adds "Roman Military"/"Western Roman Legacy", Adds "Romance Culture", Adds "Roman Ceremonies" (with "Roads to Power"), Removed "Legalistic"
    - Romano-Raetian: Adds "Roman Politics"/"Roman Succession", Adds "Roman Military"/"Western Roman Legacy", Adds "Roman Ceremonies" (with "Roads to Power")
@@ -232,6 +233,7 @@ Landed Titles:
 - The Orleans Alans start as a landed duchy after 442
 
 Decisions:
+- Tweaked the "Reform Carthage" decision to be more readily accessible in light of WtWSMS cultures and heritages
 - Unified the chariot team support decision into a decision with options
 - Added a decision to establish titular Hegemonies like for titular Empires and titular Kingdoms
 - Updated the "Ask Pope for Coronation", "Ask for Western Roman Empire", and "Reunite the two Roman Empires" decisions requirements and effects
@@ -259,6 +261,7 @@ Dynasty Legacies:
    - Level 5: "Roma Est Aeterna": Maximum Level of Influence +1, Unlocks the Restore Eastern & Western Empire decisions (regardless of culture), Enables adopting Roman Administrative Government for more governments
 
 History:
+- Added Priscilian as a historical character
 - Added Alamanian and Taifal adventurers in Britannia to model the potentially long-lived groups in Britannia
 - Added several Gallowsbait adventurers in Africa, representing the Circumcellion groups roaming the countryside
 - Updated large parts of history to tie into the new hegemonies and empire structures
@@ -291,6 +294,9 @@ GFX:
 - Updated GFX for a number of faiths
 
 Tweaks:
+- Internally remapped some heritages for Vanilla compatibility
+- Added some historical executions where appropriate
+- Removed the ability to adopt culture pillars from legends
 - You can no longer offer Odoacer or his allies land to get them to stop fighting the Western Roman Empire in the February 476 Scenario
 - "Roman Nostalgia" looses its culture-related bonuses
 - Roman Senate recognition legitimacy values increased in most cases
@@ -310,6 +316,9 @@ Localization:
 - Lots of minor localization fixes (thanks DPh-Kraken!)
 
 Bug Fixes:
+- Fixed some historical characters being marked as Ebionite instead of their actual faith
+- Fixed Evenk name list not working
+- Fixed a bug with selection of Israelite heritage
 - Fixed a bug with culture promotion and faith conversion
 - Orestes is no longer eligible for election in the WRE and is fully blocked from title inheritance and government appointment
 - Disabled deprecated events from tributaries
