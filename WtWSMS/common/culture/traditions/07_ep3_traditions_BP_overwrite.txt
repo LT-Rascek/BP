@@ -1,0 +1,120 @@
+﻿##### Changed from Vanilla: Made available conditions different
+tradition_ep3_imperial_tagmata = {
+	category = regional
+
+	layers = {
+		0 = martial
+		1 = mediterranean
+		4 = imperial_tagmata.dds 
+	}
+
+	##### Changed from Vanilla vvvvv
+	is_shown = {
+		has_ep3_dlc_trigger = yes
+		has_cultural_pillar = heritage_latin
+		NOT = { has_cultural_tradition = tradition_roman_legacy }
+	}
+	can_pick = {
+		traditions_cultural_combat_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_ep3_imperial_tagmata }
+		custom_tooltip = {
+			text = cannot_have_tradition_roman_military
+			NOT = { culture_tradition:tradition_roman_military = { is_in_list = traits } }
+		}
+	}
+	can_pick_for_hybridization = {
+		traditions_cultural_combat_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_ep3_imperial_tagmata }
+		custom_tooltip = {
+			text = cannot_have_tradition_roman_military
+			NOT = { culture_tradition:tradition_roman_military = { is_in_list = traits } }
+		}
+	}
+	##### Changed from Vanilla ^^^^^
+	
+	parameters = {
+		unlock_maa_cataphract = yes
+		unlock_maa_akritai = yes
+		unlock_maa_ballistrai = yes
+		unlock_maa_skoutatoi = yes
+		frontier_themes_borrow_neighbor_troops = yes
+		unlock_innovation_byzantine_military = yes
+	}
+	character_modifier = {
+		heavy_cavalry_max_size_add = 2
+		counter_efficiency = 0.1
+		knight_effectiveness_mult = -0.25
+		men_at_arms_title_limit = 1
+	}
+	
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_bureaucratic = { is_in_list = traits }
+						culture_pillar:ethos_bellicose = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_bellicose_or_bureaucratic_desc
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						scope:character = {
+							any_held_title = {
+								tier = tier_county
+								count >= 8
+								any_county_province = {
+									has_building_or_higher = stables_01
+								}
+							}
+						}
+					}
+				}
+				add = {
+					value = tradition_unfulfilled_criteria_penalty
+					desc = domain_counties_with_stables_desc
+				}
+			}
+
+			if = {
+				limit = {
+					culture_tradition_reduction_trigger = { TRADITION = tradition_ep3_imperial_tagmata }
+				}
+				multiply = {
+					value = 0.5
+					desc = inspired_by_culture_desc
+				}
+			}
+			
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+	
+	ai_will_do = {
+		value = 400
+		if = {
+			limit = { # Admin should be more into this
+				scope:character = {
+					government_allows = administrative
+				}
+			}
+			multiply = 2
+		}
+		else_if = {
+			limit = {
+				scope:character ?= {
+					ai_has_warlike_personality = yes
+				}
+			}
+			multiply = 4
+		}
+	}
+}

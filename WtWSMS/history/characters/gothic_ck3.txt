@@ -73,9 +73,10 @@
 	female = yes
 	dynasty = 1042165
 	religion = "arian"
-	culture = "ostrogothic"
+	culture = "gothic"
 	father = 63
 	471.1.1 = { birth = yes }
+	488.1.1 = { culture = ostrogothic }
 	520.1.1 = { death = yes }
 }
 63_daughter_2 = {
@@ -83,9 +84,10 @@
 	female = yes
 	dynasty = 1042165
 	religion = "arian"
-	culture = "ostrogothic"
+	culture = "gothic"
 	father = 63
 	473.1.1 = { birth = yes }
+	488.1.1 = { culture = ostrogothic }
 	516.1.1 = { death = yes }
 }
 22_wife = {
@@ -102,17 +104,18 @@
 	name = "Theodomund" # PLRE vol. 2 Theodimundus
 	dynasty = 1042165
 	religion = "arian"
-	culture = "ostrogothic"
+	culture = "gothic"
 	father = 190204
 	mother = 190205
 	455.1.1 = { birth = yes }
+	488.1.1 = { culture = ostrogothic }
 	510.1.1 = { death = yes }
 }
 190204_brother = {
 	name = "Withemir" # brother of Theodomir and Walamir
 	dynasty = 1042165
 	religion = "arian"
-	culture = "ostrogothic"
+	culture = "gothic"
 	father = 190126
 	415.1.1 = { birth = yes }
 	474.1.1 = { death = yes }
@@ -121,7 +124,7 @@
 	name = "Withemir"
 	dynasty = 1042165
 	religion = "arian"
-	culture = "ostrogothic"
+	culture = "gothic"
 	father = 190204_brother
 	445.1.1 = { birth = yes }
 	473.1.1 = { culture = "visigothic" }
@@ -140,7 +143,7 @@
 	name = "Gesimund" # PLRE vol. 2 Gesimund
 	dynasty = 1042165
 	religion = "arian"
-	culture = "ostrogothic"
+	culture = "gothic"
 	father = 190113_brother
 	385.1.1 = { birth = yes }
 	445.1.1 = { death = yes }
@@ -149,9 +152,10 @@
 	name = "Sidimund" # PLRE vol. 2 Sidimund
 	dynasty = 1042165
 	religion = "arian"
-	culture = "ostrogothic"
+	culture = "gothic"
 	father = 190113_brother_son # to link with amaling family
 	435.1.1 = { birth = yes }
+	488.1.1 = { culture = ostrogothic }
 	490.1.1 = { death = yes }
 }
 190111_brother_1 = {
@@ -185,26 +189,29 @@
 	name = "Witheric"
 	dynasty = 1042389
 	religion = "arian"
-	culture = "ostrogothic"
+	culture = "gothic"
 	459.1.1 = { birth = yes }
-	5121.1 = { death = yes }
+	488.1.1 = { culture = ostrogothic }
+	512.1.1 = { death = yes }
 }
 190219_father = {
 	name = "Uligisel" # general of Withigis according to Procopius
 	dynasty = 1042389
 	religion = "arian"
-	culture = "ostrogothic"
+	culture = "gothic"
 	father = 190219_grandpa
 	484.1.1 = { birth = yes }
+	488.1.1 = { culture = ostrogothic }
 	539.1.1 = { death = yes }
 }
 190219_uncle = {
 	name = "Ulithech" # uncle of Withigis according to Procopius
 	dynasty = 1042389
 	religion = "arian"
-	culture = "ostrogothic"
+	culture = "gothic"
 	father = 190219_grandpa
 	482.1.1 = { birth = yes }
+	488.1.1 = { culture = ostrogothic }
 	538.1.1 = { death = yes }
 }
 190219_nephew = {

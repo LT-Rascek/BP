@@ -1,0 +1,59 @@
+﻿special_doctrine_is_eastern_pagan_faith = {
+	parameters = {
+		# Since doctrines cannot modify other faith's views of us, only our view of others, all pagan faiths are given this special doctrine which makes them friendlier to Faiths with the Interpratio Romanao tenet.
+		hostility_override_eastern_hostility_doctrine = 1
+		hostility_override_special_doctrine_is_eastern_pagan_faith = 1
+	}
+}
+special_doctrine_is_egyptian_faith = {
+	parameters = {
+		# Since doctrines cannot modify other faith's views of us, only our view of others, all Hellenistic faiths are given this special doctrine which makes them friendlier to Faiths with the Hellenistic Syncretism tenet.
+		hostility_override_tenet_egyptian_syncretism_pagan_only = 1
+		egyptian_syncretic_recipient_opinion_active = yes
+		opinion_of_egyptian_syncretic_actor_opinion_active = 10
+	}
+}
+special_doctrine_is_dravidian_pagan_faith = {
+	parameters = {
+		hostility_override_sampradaya_shaktism_doctrine = 0
+		hostility_override_special_doctrine_is_dravidian_pagan_faith = 0
+	}
+}
+special_doctrine_is_scythian_faith = {
+	parameters = {
+		utilizes_enarei = yes
+		has_access_to_runestones = yes
+	}
+}
+#Not an **actual** syncretic opinion, so no opinion bonus; it instead treats the faith as if it's part of the 
+#same family, even though it's not
+special_doctrine_is_kitebacilweism = {
+	parameters = { hostility_override_special_doctrine_is_zoroastrian_faith = 2 }
+	traits = {
+		virtues = { hashishiyah } #More represents the importance of Haoma in Ancient Iranian rituals
+	}
+}
+special_doctrine_przeworsk_complex = {
+	parameters = {
+		hostility_override_special_doctrine_przeworsk_complex = 1
+	}
+}
+special_doctrine_chernyakhov_complex = {
+	parameters = {
+		hostility_override_special_doctrine_chernyakhov_complex = 1
+	}
+}
+special_doctrine_runestones = {
+	parameters = { has_access_to_runestones = yes }
+}
+
+special_doctrine_good_twins = {
+	traits = {
+		virtues = { twin }
+	}
+}
+special_doctrine_evil_twins = {
+	traits = {
+		sins = { twin }
+	}
+}

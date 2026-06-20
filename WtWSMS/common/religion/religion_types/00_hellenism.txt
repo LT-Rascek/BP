@@ -1,0 +1,576 @@
+﻿#Sources:
+# [1] J. David, “The exclusion of women in the Mithraic mysteries: Ancient or modern?,” Numen, vol. 47, no. 2, pp. 121–141, 2000.
+hellenism_religion = {
+	family = rf_pagan
+	graphical_faith = "hellenic_gfx"
+	doctrine_background_icon = core_tenet_banner_hellenism.dds
+
+	pagan_roots = yes
+
+	doctrine = pagan_hostility_doctrine
+
+	#Main Group
+	doctrine = doctrine_roman_polytheist
+	doctrine = doctrine_no_head
+	doctrine = doctrine_gender_male_dominated
+	doctrine = doctrine_pluralism_pluralistic
+	doctrine = doctrine_theocracy_lay_clergy
+	doctrine = doctrine_right_to_rule_divine
+
+	#Marriage
+	doctrine = doctrine_monogamy
+	doctrine = doctrine_divorce_allowed
+	doctrine = doctrine_bastardry_legitimization
+	doctrine = doctrine_consanguinity_aunt_nephew_and_uncle_niece
+
+	#Crimes
+	doctrine = doctrine_homosexuality_accepted
+	doctrine = doctrine_adultery_men_shunned
+	doctrine = doctrine_adultery_women_crime
+	doctrine = doctrine_kinslaying_close_kin_crime
+	doctrine = doctrine_deviancy_shunned
+	doctrine = doctrine_witchcraft_accepted
+
+	#Clerical Functions
+	doctrine = doctrine_clerical_function_taxation
+	doctrine = doctrine_clerical_gender_either
+	doctrine = doctrine_clerical_marriage_allowed
+	doctrine = doctrine_clerical_succession_temporal_appointment
+
+	#Ritual Doctrines
+	doctrine = doctrine_pilgrimage_encouraged
+	doctrine = doctrine_ritual_vegetarianism_no_statement
+	doctrine = doctrine_funeral_bewailment # Ancient Greeks were encouraged to grieve publicly
+
+	#Coronation tradition
+	doctrine = doctrine_no_anointment
+
+	#Special Doctrine for Christian Syncretism
+	doctrine = special_doctrine_is_hellenic_faith
+
+	traits = {
+		virtues = { generous just temperate athletic }
+		sins = { greedy arbitrary gluttonous }
+	}
+
+	custom_faith_icons = {
+		custom_faith_1 custom_faith_2 custom_faith_3 custom_faith_4 custom_faith_5 custom_faith_6 custom_faith_7 custom_faith_8 custom_faith_9 custom_faith_10 dualism_custom_1 zoroastrian_custom_1 zoroastrian_custom_2 buddhism_custom_1 buddhism_custom_2 buddhism_custom_3 buddhism_custom_4 taoism_custom_1 yazidi_custom_1 sunni_custom_2 sunni_custom_3 sunni_custom_4 muhakkima_1 muhakkima_2 muhakkima_4 muhakkima_5 muhakkima_6 judaism_custom_1 custom_faith_fp1_fenrir custom_faith_fp1_irminsul custom_faith_fp1_jormungandr custom_faith_fp1_odins_ravens custom_faith_fp1_runestone_moon custom_faith_fp1_thors_hammer custom_faith_fp1_valknut custom_faith_fp1_yggdrasil custom_faith_boromian_circles custom_faith_lotus custom_faith_aum_tibetan custom_faith_pentagram custom_faith_pentagram_inverted custom_faith_burning_bush custom_faith_allah custom_faith_gankyil custom_faith_eye_of_providence custom_faith_dove custom_faith_ichthys custom_faith_lamb custom_faith_black_sheep custom_faith_ankh custom_faith_chi_rho custom_faith_hamsa custom_faith_cool_s custom_faith_magatama custom_faith_soto custom_faith_benzhuism
+	}
+
+	holy_order_names = {
+		{ name = "holy_order_myrmidons" }
+		{ name = "holy_order_priesthood_of_ares" }
+		#From WtWSMS:
+		{ name = "holy_order_sacred_band" }
+		{ name = "holy_order_olympians" }
+	}
+
+	holy_order_maa = { praetorian }
+
+	localization = {
+		#High God Name
+		HighGodName = hellenism_high_god_name
+		HighGodName2 = hellenism_high_god_name_2
+		HighGodNamePossessive = hellenism_high_god_name_possessive
+		HighGodNameSheHe = CHARACTER_SHEHE_HE
+		HighGodHerselfHimself = CHARACTER_HIMSELF
+		HighGodHerHis = CHARACTER_HERHIS_HIS
+		HighGodNameAlternate = hellenism_high_god_name_alternate
+		HighGodNameAlternatePossessive = hellenism_high_god_name_alternate_possessive
+
+		#Creator
+		CreatorName = hellenism_creator_god_name
+		CreatorNamePossessive = hellenism_creator_god_name_possessive
+		CreatorSheHe = CHARACTER_SHEHE_SHE
+		CreatorHerHis = CHARACTER_HERHIS_HER
+		CreatorHerHim = CHARACTER_HERHIM_HER
+
+		#HealthGod
+		HealthGodName = hellenism_health_god_name
+		HealthGodNamePossessive = hellenism_health_god_name_possessive
+		HealthGodSheHe = CHARACTER_SHEHE_HE
+		HealthGodHerHis = CHARACTER_HERHIS_HIS
+		HealthGodHerHim = CHARACTER_HERHIM_HIM
+		
+		#FertilityGod
+		FertilityGodName = hellenism_fertility_god_name
+		FertilityGodNamePossessive = hellenism_fertility_god_name_possessive
+		FertilityGodSheHe = CHARACTER_SHEHE_SHE
+		FertilityGodHerHis = CHARACTER_HERHIS_HER
+		FertilityGodHerHim = CHARACTER_HERHIM_HER
+
+		#WealthGod
+		WealthGodName = hellenism_wealth_god_name
+		WealthGodNamePossessive = hellenism_wealth_god_name_possessive
+		WealthGodSheHe = CHARACTER_SHEHE_HE
+		WealthGodHerHis = CHARACTER_HERHIS_HIS
+		WealthGodHerHim = CHARACTER_HERHIM_HIM
+
+		#HouseholdGod
+		HouseholdGodName = hellenism_household_god_name
+		HouseholdGodNamePossessive = hellenism_household_god_name_possessive
+		HouseholdGodSheHe = CHARACTER_SHEHE_SHE
+		HouseholdGodHerHis = CHARACTER_HERHIS_HER
+		HouseholdGodHerHim = CHARACTER_HERHIM_HER
+
+		#FateGod
+		FateGodName = hellenism_fate_god_name
+		FateGodNamePossessive = hellenism_fate_god_name_possessive
+		FateGodSheHe = CHARACTER_SHEHE_THEY
+		FateGodHerHis = CHARACTER_HERHIS_THEIR
+		FateGodHerHim = CHARACTER_HERHIM_THEM
+
+		#KnowledgeGod
+		KnowledgeGodName = hellenism_knowledge_god_name
+		KnowledgeGodNamePossessive = hellenism_knowledge_god_name_possessive
+		KnowledgeGodSheHe = CHARACTER_SHEHE_SHE
+		KnowledgeGodHerHis = CHARACTER_HERHIS_HER
+		KnowledgeGodHerHim = CHARACTER_HERHIM_HER
+
+		#WarGod
+		WarGodName = hellenism_war_god_name
+		WarGodNamePossessive = hellenism_war_god_name_possessive
+		WarGodSheHe = CHARACTER_SHEHE_HE
+		WarGodHerHis = CHARACTER_HERHIS_HIS
+		WarGodHerHim = CHARACTER_HERHIM_HIM
+
+		#TricksterGod
+		TricksterGodName = hellenism_trickster_god_name
+		TricksterGodNamePossessive = hellenism_trickster_god_name_possessive
+		TricksterGodSheHe = CHARACTER_SHEHE_HE
+		TricksterGodHerHis = CHARACTER_HERHIS_HIS
+		TricksterGodHerHim = CHARACTER_HERHIM_HIM
+
+		#NightGod
+		NightGodName = hellenism_night_god_name
+		NightGodNamePossessive = hellenism_night_god_name_possessive
+		NightGodSheHe = CHARACTER_SHEHE_SHE
+		NightGodHerHis = CHARACTER_HERHIS_HER
+		NightGodHerHim = CHARACTER_HERHIM_HER
+
+		#WaterGod
+		WaterGodName = hellenism_water_god_name
+		WaterGodNamePossessive = hellenism_water_god_name_possessive
+		WaterGodSheHe = CHARACTER_SHEHE_HE
+		WaterGodHerHis = CHARACTER_HERHIS_HIS
+		WaterGodHerHim = CHARACTER_HERHIM_HIM
+
+
+
+		PantheonTerm = religion_the_gods
+		PantheonTerm2 = religion_the_gods_2
+		PantheonTerm3 = religion_the_gods_3
+		PantheonTermHasHave = pantheon_term_have
+		GoodGodNames = { hellenism_good_god_poseidon hellenism_good_god_athena hellenism_good_god_ares hellenism_good_god_hera hellenism_good_god_apollo hellenism_good_god_artemis hellenism_good_god_hermes hellenism_good_god_aphrodite hellenism_good_god_demeter hellenism_good_god_hephaestus hellenism_good_god_dionysos hellenism_good_god_hestia hellenism_good_god_herakles hellenism_good_god_mousai }
+		DevilName = hellenism_devil_name
+		DevilNamePossessive = hellenism_devil_name_possessive
+		DevilSheHe = CHARACTER_SHEHE_HE
+		DevilHerHis = CHARACTER_HERHIS_HIS
+		DevilHerselfHimself = CHARACTER_HIMSELF
+		EvilGodNames = { hellenism_evil_god_menoetius hellenism_evil_god_erinyes }
+		HouseOfWorship = paganism_house_of_worship
+		HouseOfWorship2 = paganism_house_of_worship_2
+		HouseOfWorship3 = paganism_house_of_worship_3
+		HouseOfWorshipPlural = hellenism_house_of_worship_plural
+		ReligiousSymbol = hellenism_religious_symbol
+		ReligiousSymbol2 = hellenism_religious_symbol_2
+		ReligiousSymbol3 = hellenism_religious_symbol_3
+		ReligiousText = hellenism_religious_text
+		ReligiousText2 = hellenism_religious_text_2
+		ReligiousText3 = hellenism_religious_text_3
+		ReligiousHeadName = hellenism_religious_head_title
+		ReligiousHeadTitleName = dualism_religious_head_title_name
+		DevoteeMale = hellenism_devotee
+		DevoteeMalePlural = hellenism_devoteeplural
+		DevoteeFemale = hellenism_devotee
+		DevoteeFemalePlural = hellenism_devoteeplural
+		DevoteeNeuter = hellenism_devotee
+		DevoteeNeuterPlural = hellenism_devoteeplural
+		PriestMale = hellenism_priest_male
+		PriestMalePlural = hellenism_priest_male_plural
+		PriestFemale = hellenism_priest_female
+		PriestFemalePlural = hellenism_priest_female_plural
+		PriestNeuter = hellenism_priest_male
+		PriestNeuterPlural = hellenism_priest_male_plural
+		AltPriestTermPlural = roman_priest_alternate_plural
+		BishopMale = roman_bishop_male
+		BishopMalePlural = roman_bishop_male_plural
+		BishopFemale = roman_bishop_female
+		BishopFemalePlural = roman_bishop_female_plural
+		BishopNeuter = roman_bishop_male
+		BishopNeuterPlural = roman_bishop_male_plural
+		DivineRealm = hellenism_divine_realm
+		DivineRealm2 = hellenism_divine_realm_2
+		DivineRealm3 = hellenism_divine_realm_3
+		PositiveAfterLife = hellenic_pagan_positive_afterlife
+		PositiveAfterLife2 = hellenic_pagan_positive_afterlife
+		PositiveAfterLife3 = hellenic_pagan_positive_afterlife
+		NegativeAfterLife = hellenism_death_deity_name
+		NegativeAfterLife2 = hellenism_death_deity_name_2
+		NegativeAfterLife3 = hellenism_death_deity_name_3
+		DeathDeityName = hellenism_death_deity_name
+		DeathDeityNamePossessive = hellenism_death_deity_name_possessive
+		DeathDeitySheHe = CHARACTER_SHEHE_HE
+		DeathDeityHerHis = CHARACTER_HERHIS_HIS
+		DeathDeityHerHim = CHARACTER_HERHIM_HIM
+		WitchGodName = hellenism_witchgodname_hekate
+		WitchGodNamePossessive = hellenism_witchgodname_hekate_possessive
+		WitchGodHerHis = CHARACTER_HERHIS_HER
+		WitchGodSheHe = CHARACTER_SHEHE_SHE
+		WitchGodHerHim = CHARACTER_HERHIM_HER
+		WitchGodMistressMaster = mistress
+		WitchGodMotherFather = mother
+
+		
+		GHWName = ghw_great_holy_war
+		GHWNamePlural = ghw_great_holy_wars
+	}
+
+	faiths = {
+		#WtWSMS differences: no GHW, no special CBs
+		hellenic_pagan = {# Classical Hellenic Polytheism
+			color = { 0.5 0.5 1.0 }
+			icon = mfi_chaplet_1
+			religious_head = d_hellenic_pagan
+			
+			#Other Doctrines
+			doctrine = doctrine_temporal_head
+
+			#WtWSMS: Thessalonika, Athens, Abydos, Alexandria, Rome
+			holy_site = mt_olympus #Replaces Thessalonika
+			holy_site = athens
+			holy_site = olympia #Replaces Abydos (troy)
+			holy_site = alexandria
+			holy_site = rome
+
+			doctrine = tenet_bhakti #With 1.3, bhakti is the patron god mechanic
+			doctrine = tenet_esotericism #Modeling the Mystery Religions that weren't as distinct as Mithraism was
+			doctrine = tenet_astrology
+			
+			localization = {
+				ReligiousHeadName = hellenic_pagan_religious_head_title
+				ReligiousHeadTitleName = hellenic_pagan_religious_head_title_name
+			}
+		}
+		platonism = {# Neoplatonism - Julian's legacy
+			color = { 0.6 0.6 0.6 }
+			religious_head = d_platonic_academy
+			icon = mfi_stoics
+
+			#WtWSMS: Thessalonika, Athens, Abydos, Alexandria, Rome
+			holy_site = mt_olympus #Replaces Thessalonika
+			holy_site = athens
+			holy_site = olympia #Replaces Abydos (troy)
+			holy_site = alexandria
+			holy_site = rome
+
+			doctrine = doctrine_ritual_vegetarianism_partial
+			doctrine = doctrine_monist
+
+			#Doctrinal deviations
+			doctrine = doctrine_spiritual_head
+			doctrine = doctrine_theocracy_lay_clergy
+			doctrine = special_doctrine_humanistic_philosophy
+
+			#Tenets
+			doctrine = tenet_bhakti #Julian definitely had shades of this
+			doctrine = tenet_alexandrian_catechism
+			doctrine = tenet_esotericism
+
+			localization = {
+				#Creator
+				CreatorName = platonism_creator_god_name
+				CreatorNamePossessive = platonism_creator_god_name_possessive
+				CreatorSheHe = CHARACTER_SHEHE_IT
+				CreatorHerHis = CHARACTER_HERHIS_ITS
+				CreatorHerHim = CHARACTER_HERHIM_IT
+				
+				HighGodNameAlternate = platonism_creator_god_name_possessive
+				HighGodNameAlternatePossessive = platonism_creator_god_name_alternate
+				CreatorSheHe = CHARACTER_SHEHE_IT
+				CreatorHerHis = CHARACTER_HERHIS_ITS
+				CreatorHerHim = CHARACTER_HERHIM_IT
+				
+				PriestMale = platonism_priest_neuter
+				PriestMalePlural = platonism_priest_neuter_plural
+				PriestFemale = platonism_priest_neuter
+				PriestFemalePlural = platonism_priest_neuter_plural
+				PriestNeuter = platonism_priest_neuter
+				PriestNeuterPlural = platonism_priest_neuter_plural
+				BishopMale = platonism_priest_neuter
+				BishopMalePlural = platonism_priest_neuter_plural
+				BishopFemale = platonism_priest_neuter
+				BishopFemalePlural = platonism_priest_neuter_plural
+				BishopNeuter = platonism_priest_neuter
+				BishopNeuterPlural = platonism_priest_neuter_plural
+				
+				ReligiousHeadName = platonism_religious_head_title
+				ReligiousHeadTitleName = platonism_religious_head_title_name
+			}
+		}
+		orphism = {# Orphism
+			color = { 0.6 0.1 0.1 }
+			icon = lyre
+
+			#Holy Sites (New CK3 Religion)
+			holy_site = pimpleia #Purported birthplace and actual shrine to Orpheus
+			holy_site = pangaion_hills #Purported death site of Orpheus
+			holy_site = mt_olympus
+			holy_site = olympia
+			holy_site = athens
+			
+			#Mystery religion
+			doctrine = doctrine_clerical_succession_spiritual_appointment
+
+			doctrine = tenet_esotericism
+			doctrine = tenet_reincarnation #Similarity to Pythagoreanism
+			doctrine = tenet_asceticism
+			
+			#Emphasize Dionysus over Zeus
+			localization = {
+				HighGodName = orphism_high_god_name
+				HighGodNamePossessive = orphism_high_god_name_possessive
+				HighGodNameSheHe = CHARACTER_SHEHE_HE
+				HighGodHerselfHimself = CHARACTER_HIMSELF
+				HighGodHerHis = CHARACTER_HERHIS_HIS
+				HighGodNameAlternate = orphism_high_god_name_alternate
+				HighGodNameAlternatePossessive = orphism_high_god_name_alternate_possessive
+				
+				ReligiousText = orphism_religious_text
+			}
+		}
+		pythagoreanism = {# pythagoreanism
+			color = { 0.6 0.1 0.4 }
+			icon = pythagoras_theorem
+
+			#Holy Sites (New CK3 Religion)
+			holy_site = crotona #Death location of Pythagoras and center of Pythagoreanism in Italy
+			holy_site = athens
+			holy_site = baghdad #Pythagoras had eastern education in Babylon, so this stands in for it
+			holy_site = alexandria #Pythagoras (probably) had Egyptian Education, so this stands in for it
+			holy_site = mt_olympus
+
+			doctrine = doctrine_gender_equal
+			doctrine = special_doctrine_humanistic_philosophy
+			doctrine = doctrine_monist
+			
+			doctrine = doctrine_ritual_vegetarianism_required
+
+			doctrine = tenet_esotericism
+			doctrine = tenet_pacifism
+			doctrine = tenet_alexandrian_catechism
+			
+			localization = {
+				PriestMale = platonism_priest_neuter
+				PriestMalePlural = platonism_priest_neuter_plural
+				PriestFemale = platonism_priest_neuter
+				PriestFemalePlural = platonism_priest_neuter_plural
+				PriestNeuter = platonism_priest_neuter
+				PriestNeuterPlural = platonism_priest_neuter_plural
+				BishopMale = platonism_priest_neuter
+				BishopMalePlural = platonism_priest_neuter_plural
+				BishopFemale = platonism_priest_neuter
+				BishopFemalePlural = platonism_priest_neuter_plural
+				BishopNeuter = platonism_priest_neuter
+				BishopNeuterPlural = platonism_priest_neuter_plural
+			}
+		}
+		stoicism = {# Stoicism
+			color = { 0.6 0.1 0.1 }
+			icon = hellenic
+			
+			#Holy Sites (New CK3 Religion)
+			holy_site = kition #Birthplace of Stoicism
+			holy_site = rome
+			holy_site = athens
+			holy_site = alexandria
+			holy_site = carthage
+			
+			#Doctrines:
+			doctrine = doctrine_no_head
+			doctrine = special_doctrine_humanistic_philosophy
+			doctrine = doctrine_monist
+			
+			doctrine = tenet_legalism #Dikaoiosyne
+			doctrine = tenet_consolamentum
+			
+			doctrine_selection_pair = {
+				requires_dlc_flag = all_under_heaven
+				doctrine = tenet_harmonious_society
+				fallback_doctrine = tenet_alexandrian_catechism
+			}
+			
+			localization = {
+				#Creator
+				CreatorName = platonism_creator_god_name
+				CreatorNamePossessive = platonism_creator_god_name_possessive
+				CreatorSheHe = CHARACTER_SHEHE_IT
+				CreatorHerHis = CHARACTER_HERHIS_ITS
+				CreatorHerHim = CHARACTER_HERHIM_IT
+				
+				PriestMale = platonism_priest_neuter
+				PriestMalePlural = platonism_priest_neuter_plural
+				PriestFemale = platonism_priest_neuter
+				PriestFemalePlural = platonism_priest_neuter_plural
+				PriestNeuter = platonism_priest_neuter
+				PriestNeuterPlural = platonism_priest_neuter_plural
+				BishopMale = platonism_priest_neuter
+				BishopMalePlural = platonism_priest_neuter_plural
+				BishopFemale = platonism_priest_neuter
+				BishopFemalePlural = platonism_priest_neuter_plural
+				BishopNeuter = platonism_priest_neuter
+				BishopNeuterPlural = platonism_priest_neuter_plural
+			}
+		}
+		#WtWSMS differences: no raiding, has HOF
+		sol_invictus = {# Sol Invictus
+			color = { 0.90 0.45 0.56 }
+			icon = mfi_custom_faith_5
+			reformed_icon = mfi_custom_faith_5
+			
+			#WtWSMS: Swarty, Rome, Trapani, Carthage, Aneb
+			holy_site = rome
+			holy_site = constantinople #Constantine supported the cult before backing Christianity; also close to Aurelians death place
+			holy_site = emessa #Elagabalus purportatedly brought the cult from Emessa
+			holy_site = carthage #WtWSMS
+			holy_site = trapani #WtWSMS
+			
+			#Imperial Cult so Temporal head and a theocracy
+			doctrine = doctrine_temporal_head
+			
+			doctrine = tenet_warmonger #Not WtWSMS, but adds some interesting flavor as an imperial cult
+			doctrine = tenet_sun_worship
+			doctrine = tenet_pursuit_of_power #Not WtWSMS, but the Imperial Cult seemed to try to solidify imperial power
+			
+			localization = {
+				HighGodName = sol_invictus_high_god_name
+				HighGodNamePossessive = sol_invictus_high_god_name_possessive
+				HighGodNameSheHe = CHARACTER_SHEHE_HE
+				HighGodHerselfHimself = CHARACTER_HIMSELF
+				HighGodHerHis = CHARACTER_HERHIS_HIS
+			}
+		}
+		#WtWSMS differences: no GHW, sacred eunuchs, exaltation of pain
+		cybelian = {# Cybelian
+			color = { 0.06 0.2 0.65 }
+			religious_head = d_cybelian_pagan
+			icon = cybelianism
+				
+			#WtWSMS: Thessalonika, Athens, Abydos, Alexandria, Rome
+			holy_site = rome
+			holy_site = satif #Major Cybelian temple in Africa
+			holy_site = phrygia #Capital of Kingdom of Phrygia; originally a Phrygian deity
+			holy_site = carthage #Augustine noted their presence during his time
+			holy_site = athens #WtWSMS
+			
+			#Other Doctrines
+			#Was an official cult, so has theocratic vassals
+			doctrine = doctrine_theocracy_temporal
+			doctrine = doctrine_spiritual_head
+			#Women should have a better lot in the cult of the mother
+			doctrine = doctrine_gender_equal
+			
+			#Needed because of interaction with sacred eunuchs
+			doctrine = doctrine_clerical_gender_male_only
+			doctrine = doctrine_clerical_marriage_disallowed
+			doctrine = doctrine_clerical_succession_spiritual_appointment
+			
+			doctrine = special_doctrine_sacred_eunuchs
+			
+			doctrine = tenet_exaltation_of_pain
+			doctrine = tenet_sacred_childbirth
+			doctrine = tenet_esotericism
+			
+			localization = {
+				HighGodName = cybelian_high_god_name
+				HighGodNamePossessive = cybelian_high_god_name_possessive
+				HighGodNameSheHe = CHARACTER_SHEHE_SHE
+				HighGodHerselfHimself = CHARACTER_HERSELF
+				HighGodHerHis = CHARACTER_HERHIS_HER
+				HighGodNameAlternate = cybelian_high_god_name_alternate
+				HighGodNameAlternatePossessive = cybelian_high_god_name_alternate_possessive
+				
+				PriestMale = cybelian_priest_neuter
+				PriestMalePlural = cybelian_priest_neuter_plural
+				PriestNeuter = cybelian_priest_neuter
+				PriestNeuterPlural = cybelian_priest_neuter_plural
+				BishopMale = cybelian_priest_neuter
+				BishopMalePlural = cybelian_priest_neuter_plural
+				BishopNeuter = cybelian_priest_neuter
+				BishopNeuterPlural = cybelian_priest_neuter_plural
+				
+				ReligiousText = cybelian_religious_text
+				
+				ReligiousHeadName = cybelian_religious_head_title
+				ReligiousHeadTitleName = cybelian_religious_head_title_name
+			}
+		}
+		#WtWSMS differences: none
+		mithraic_pagan = { #Mithraism
+			color = { 1.0 1.0 0.0 }
+			icon = mithraic_pagan
+			
+			#WtWSMS: Thessalonika, Athens, Abydos, Alexandria, Rome
+			holy_site = rome
+			holy_site = vienna #Earliest known Mithraic site in Carnuntum
+			holy_site = cilicia #Plutarch notes an early presence in cilicia
+			holy_site = alexandria #WtWSMS
+			holy_site = athens #WtWSMS
+			
+			#Mystery religion
+			doctrine = doctrine_clerical_succession_spiritual_appointment
+			
+			#Not really aligned with the Roman pantheon and unpopular with the Roman elite
+			doctrine = doctrine_pluralism_righteous
+			doctrine = doctrine_polytheist
+			
+			#Male-dominated religion populari with the military
+			doctrine = doctrine_clerical_gender_male_only
+			doctrine = doctrine_clerical_function_recruitment
+			doctrine = doctrine_clerical_gender_either #[1]
+			
+			#Tenets
+			doctrine = tenet_communal_identity
+			doctrine = tenet_ritual_celebrations #Ritual Meals were important
+			doctrine = tenet_unrelenting_faith #Should have a military orientation even if no GHW
+			
+			localization = {
+				#High God Name
+				HighGodName = mithraism_high_god_name
+				HighGodNamePossessive = mithraism_high_god_name_possessive
+				HighGodNameSheHe = CHARACTER_SHEHE_HE
+				HighGodHerselfHimself = CHARACTER_HIMSELF
+				HighGodHerHis = CHARACTER_HERHIS_HIS
+				HighGodNameAlternate = mithraism_high_god_name_alternate
+				HighGodNameAlternatePossessive = mithraism_high_god_name_alternate_possessive
+				
+				EvilGodNames = { mithraism_evil_god_ahriman mithraism_evil_god_angra_mainyu }
+				
+				HouseOfWorship = mithraism_house_of_worship
+				HouseOfWorshipPlural = mithraism_house_of_worship_plural
+				ReligiousSymbol = mithraism_religious_symbol
+				
+				ReligiousHeadName = mithraism_religious_head_title
+				ReligiousHeadTitleName = mithraism_religious_head_title_name
+				
+				PriestMale = mithraism_priest_male
+				PriestMalePlural = mithraism_priest_male_plural
+				PriestNeuter = mithraism_priest_male
+				PriestNeuterPlural = mithraism_priest_male_plural
+				AltPriestTermPlural = christianity_priest_alternate_plural
+				
+				BishopMale = mithraism_bishop_male
+				BishopMalePlural = mithraism_bishop_male_plural
+				BishopNeuter = mithraism_bishop_male
+				BishopNeuterPlural = mithraism_bishop_male_plural
+				
+				DevoteeMale = mithraism_devotee
+				DevoteeMalePlural = mithraism_devoteeplural
+				DevoteeFemale = mithraism_devotee
+				DevoteeFemalePlural = mithraism_devoteeplural
+				DevoteeNeuter = mithraism_devotee
+				DevoteeNeuterPlural = mithraism_devoteeplural
+			}
+		}
+	}
+}

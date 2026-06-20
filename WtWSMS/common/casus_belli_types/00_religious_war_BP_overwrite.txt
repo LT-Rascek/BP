@@ -129,6 +129,12 @@ minor_religious_war = {
 		# Filter for struggles
 		trigger_if = {
 			limit = {
+				scope:attacker = {
+					any_character_struggle = {
+						involvement = involved
+						is_struggle_type = iberian_struggle
+					}
+				}
 				scope:defender = {
 					any_character_struggle = {
 						involvement = involved
@@ -200,7 +206,6 @@ minor_religious_war = {
 	}
 
 	on_invalidated = {
-		
 	}
 	
 	ai_score_mult = {
@@ -575,6 +580,22 @@ religious_war = {
 
 	# Additional requirements to the defines in 00_casus_belli_groups.txt
 	allowed_for_character = {
+		scope:attacker.faith = {
+			NOR = { 
+				has_doctrine_parameter = unreformed
+				has_doctrine_parameter = holy_wars_forbidden
+			}
+		}
+		NOR = { 
+			government_has_flag = government_is_nomadic
+			government_has_flag = government_is_celestial
+		}
+		scope:attacker.faith = {
+			NOR = { 
+				has_doctrine_parameter = unreformed
+				has_doctrine_parameter = holy_wars_forbidden
+			}
+		}
 		##### Changed from Vanilla vvvvv
 		OR = {
 			scope:attacker.religion = religion:islam_religion
@@ -584,10 +605,6 @@ religious_war = {
 			}
 		}
 		##### Changed from Vanilla ^^^^^
-		NOR = { 
-			government_has_flag = government_is_nomadic
-			government_has_flag = government_is_celestial
-		}
 	}
 	##### Changed from Vanilla ^^^^^
 
@@ -702,6 +719,12 @@ religious_war = {
 		# Filter for struggles
 		trigger_if = {
 			limit = {
+				scope:attacker = {
+					any_character_struggle = {
+						involvement = involved
+						is_struggle_type = iberian_struggle
+					}
+				}
 				scope:defender = {
 					any_character_struggle = {
 						involvement = involved
@@ -712,7 +735,6 @@ religious_war = {
 			are_holy_wars_disabled_in_struggle_phase_trigger = yes
 		}
 		are_holy_wars_disabled_by_struggle_conciliation_trigger = no # Disabled against other involved faiths in FP2 Conciliation ending
-
 	}
 
 	should_invalidate = {
@@ -1189,6 +1211,13 @@ major_religious_war = {
 
 	# Additional requirements to the defines in 00_casus_belli_groups.txt
 	allowed_for_character = {
+		scope:attacker.faith = {
+			NOT = { has_doctrine_parameter = unreformed }
+		}
+		NOR = { 
+			government_has_flag = government_is_nomadic
+			government_has_flag = government_is_celestial
+		}
 		##### Changed from Vanilla vvvvv
 		OR = {
 			scope:attacker.religion = religion:islam_religion
@@ -1197,10 +1226,7 @@ major_religious_war = {
 				BP_religious_wars_unlocked_trigger = yes
 			}
 		}
-		NOR = { 
-			government_has_flag = government_is_nomadic
-			government_has_flag = government_is_celestial
-		}
+		##### Changed from Vanilla ^^^^^
 	}
 	##### Changed from Vanilla ^^^^^
 
@@ -1307,6 +1333,12 @@ major_religious_war = {
 		# Filter for struggles
 		trigger_if = {
 			limit = {
+				scope:attacker = {
+					any_character_struggle = {
+						involvement = involved
+						is_struggle_type = iberian_struggle
+					}
+				}
 				scope:defender = {
 					any_character_struggle = {
 						involvement = involved
@@ -1398,7 +1430,7 @@ major_religious_war = {
 	}
 	
 	on_invalidated = {
-		
+		scope:attacker = { remove_character_flag = declared_major_religious_war_flag }
 	}
 
 	cost = {

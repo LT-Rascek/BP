@@ -107,7 +107,9 @@ valid_to_be_senator_trigger_roman_empires_trigger = {
 		OR = { #Emperors could be consuls
 			$CHAR$.primary_title = title:e_wre
 			$CHAR$.primary_title = title:e_byzantium
-			$CHAR$.primary_title = title:e_roman_empire
+			$CHAR$.primary_title = title:h_roman_empire
+			$CHAR$.primary_title = title:h_eastern_roman_empire
+			$CHAR$.primary_title = title:h_western_roman_empire
 		}
 	}
 }
@@ -164,5 +166,14 @@ valid_characteristics_to_interact_with_senate_trigger = {
 	trigger_if = {
 		limit = { is_landed = yes }
 		government_has_flag = is_a_roman_government
+	}
+}
+has_senate_phase_trigger = {
+	any_character_situation = {
+		this = situation:BP_senate
+		any_situation_sub_region = {
+			sub_region_current_phase = $PHASE$
+			any_situation_sub_region_participant = { this = $ACTOR$ }
+		}
 	}
 }

@@ -25,15 +25,17 @@ scripted_trigger has_roman_empire_trigger = {
 		OR = {
 			has_title = title:e_wre
 			has_title = title:e_byzantium
-			has_title = title:e_roman_empire
+			has_title = title:h_roman_empire
+			has_title = title:h_eastern_roman_empire
+			has_title = title:h_western_roman_empire
 		}
 	}
 }
 scripted_trigger has_government_of_different_universality_trigger = {
 	$CHAR$ = {
-		OR = {
-			government_has_flag = government_uses_rajamandala_authority
-			government_has_flag = government_uses_iranian_dynastic_authority
+		NOR = {
+			has_main_roman_government_trigger = yes
+			has_subroman_government_trigger = yes
 		}
 	}
 }
@@ -101,7 +103,7 @@ scripted_effect refused_land_effect = {
 }
 scripted_effect sought_approval_effect = {
 	add_prestige = senate_approval_prestige_cost_$REGION$
-	scope:the_consul_$REGION$ = {
+	scope:the_consul_$REGION$ ?= {
 		add_opinion = {
 			target = root
 			modifier = sought_senate_approval
@@ -128,7 +130,12 @@ scripted_effect ignored_senate_effect = {
 		}
 	}
 	
-	add_character_modifier = ignored_the_senate
+	show_as_tooltip = { add_character_modifier = ignored_the_senate }
+	situation:BP_senate = {
+		situation_sub_region:$REGION$ = {
+			change_phase = { phase = senate_ignored }
+		}
+	}
 	update_all_senate_opinion_about_character_effect = { ACTOR = scope:the_liege_$REGION$ }
 	
 	custom_tooltip = {
@@ -154,11 +161,11 @@ scripted_effect senate_action_legitimacy_effect = {
 			add_legitimacy = major_legitimacy_$GAIN_LOSS$
 		}
 		else_if = { #Otherwise, if you're a Roman culture, this still is nice
-			limit = { culture = { has_cultural_parameter = roman_cultural_trait_bonus } }
-			add_legitimacy = medium_legitimacy_$GAIN_LOSS$
+			limit = { culture = { has_cultural_parameter = roman_legal_traits_are_valued } }
+			add_legitimacy = massive_legitimacy_$GAIN_LOSS$
 		}
 		else = { #That's nice...
-			add_legitimacy = minor_legitimacy_$GAIN_LOSS$
+			add_legitimacy = major_legitimacy_$GAIN_LOSS$
 		}
 	}
 }
@@ -176,7 +183,8 @@ scripted_effect senate_disapproval_legitimacy_effect = {
 }
 
 scripted_effect BP_roman_senate_events_0013_approve_effect = {
-	add_character_modifier = approved_by_the_senate
+	show_as_tooltip = { add_character_modifier = approved_by_the_senate }
+	situation:BP_senate = { situation_sub_region:west = { change_phase = senate_approval } }
 	senate_approval_legitimacy_effect = { CHAR = scope:the_liege_west }
 	if = { limit = { has_character_modifier = stalled_the_senate } remove_character_modifier = stalled_the_senate }
 	add_opinion = {
@@ -185,7 +193,12 @@ scripted_effect BP_roman_senate_events_0013_approve_effect = {
 	}
 }
 scripted_effect BP_roman_senate_events_0014_decline_effect = {
-	add_character_modifier = rejected_by_the_senate
+	show_as_tooltip = { add_character_modifier = rejected_by_the_senate }
+	situation:BP_senate = {
+		situation_sub_region:west = {
+			change_phase = { phase = senate_rejection }
+		}
+	}
 	senate_disapproval_legitimacy_effect = { CHAR = scope:the_liege_west }
 	if = { limit = { has_character_modifier = stalled_the_senate } remove_character_modifier = stalled_the_senate }
 	add_opinion = {
@@ -194,7 +207,8 @@ scripted_effect BP_roman_senate_events_0014_decline_effect = {
 	}
 }
 scripted_effect BP_roman_senate_events_1013_approve_effect = {
-	add_character_modifier = approved_by_the_senate
+	show_as_tooltip = { add_character_modifier = approved_by_the_senate }
+	situation:BP_senate = { situation_sub_region:east = { change_phase = senate_approval } }
 	senate_approval_legitimacy_effect = { CHAR = scope:the_liege_east }
 	if = { limit = { has_character_modifier = stalled_the_senate } remove_character_modifier = stalled_the_senate }
 	add_opinion = {
@@ -203,7 +217,12 @@ scripted_effect BP_roman_senate_events_1013_approve_effect = {
 	}
 }
 scripted_effect BP_roman_senate_events_1014_decline_effect = {
-	add_character_modifier = rejected_by_the_senate
+	show_as_tooltip = { add_character_modifier = rejected_by_the_senate }
+	situation:BP_senate = {
+		situation_sub_region:east = {
+			change_phase = { phase = senate_rejection }
+		}
+	}
 	senate_disapproval_legitimacy_effect = { CHAR = scope:the_liege_east }
 	if = { limit = { has_character_modifier = stalled_the_senate } remove_character_modifier = stalled_the_senate }
 	add_opinion = {
@@ -249,8 +268,8 @@ BP_roman_senate_events.0001 = { #Informational Event on Disestablishing the Sena
 		name = BP_roman_senate_events.0001.do_it
 		disestablished_senate_effect = {
 			REGION = west
-			MAIN_EMPIRE = e_wre
-			OPPOSITE_EMPIRE = e_byzantium
+			MAIN_EMPIRE = h_western_roman_empire
+			OPPOSITE_EMPIRE = h_eastern_roman_empire
 		}
 		root = { save_scope_as = the_destroyer }
 		every_player = { trigger_event = { id = BP_roman_senate_events.0002 } }
@@ -443,8 +462,10 @@ BP_roman_senate_events.0014 = { #The Senate Rejects!
 #You now rule Rome, so the Senate bugs you about it...
 BP_roman_senate_events.0020 = { #The Consul (or representative) of the Western Senate requests you ask the Senate
 	trigger = {
-		root = { valid_characteristics_to_interact_with_senate_trigger = yes }
-		NOT = { root = { has_variable = asked_the_senate_recently } }
+		situation:BP_senate = { situation_sub_region:west = { sub_region_current_phase = senate_deliberation } }
+		valid_characteristics_to_interact_with_senate_trigger = yes
+		NOT = { has_variable = asked_the_senate_recently }
+		NOT = { has_variable = already_asked_the_senate }
 	}
 	
 	type = letter_event
@@ -466,6 +487,7 @@ BP_roman_senate_events.0020 = { #The Consul (or representative) of the Western S
 		
 		if = { limit = { has_variable = new_top_liege_of_a_city } remove_variable = new_top_liege_of_a_city }
 		
+		set_variable = already_asked_the_senate
 		sought_approval_effect = {
 			REGION = west
 			EVENT_ID = 0012
@@ -485,6 +507,7 @@ BP_roman_senate_events.0020 = { #The Consul (or representative) of the Western S
 		
 		if = { limit = { has_variable = new_top_liege_of_a_city } remove_variable = new_top_liege_of_a_city }
 		
+		set_variable = already_asked_the_senate
 		ignored_senate_effect = { REGION = west }
 		
 		ai_chance = {
@@ -761,8 +784,8 @@ BP_roman_senate_events.1001 = { #Informational Event on Disestablishing the Sena
 		name = BP_roman_senate_events.1001.do_it
 		disestablished_senate_effect = {
 			REGION = east
-			MAIN_EMPIRE = e_byzantium
-			OPPOSITE_EMPIRE = e_wre
+			MAIN_EMPIRE = h_eastern_roman_empire
+			OPPOSITE_EMPIRE = h_western_roman_empire
 		}
 		root = { save_scope_as = the_destroyer }
 		every_player = { trigger_event = { id = BP_roman_senate_events.1002 } }
@@ -935,8 +958,10 @@ BP_roman_senate_events.1014 = { #The Senate Rejects!
 #You now rule Rome, so the Senate bugs you about it...
 BP_roman_senate_events.1020 = { #The Consul (or representative) of the Western Senate requests you ask the Senate
 	trigger = {
-		root = { valid_characteristics_to_interact_with_senate_trigger = yes }
-		NOT = { root = { has_variable = asked_the_senate_recently } }
+		situation:BP_senate = { situation_sub_region:east = { sub_region_current_phase = senate_deliberation } }
+		valid_characteristics_to_interact_with_senate_trigger = yes
+		NOT = { has_variable = asked_the_senate_recently }
+		NOT = { has_variable = already_asked_the_senate }
 	}
 	
 	type = letter_event
@@ -957,6 +982,7 @@ BP_roman_senate_events.1020 = { #The Consul (or representative) of the Western S
 		
 		if = { limit = { has_variable = new_top_liege_of_a_city } remove_variable = new_top_liege_of_a_city }
 		
+		set_variable = already_asked_the_senate
 		sought_approval_effect = {
 			REGION = east
 			EVENT_ID = 1012
@@ -976,6 +1002,7 @@ BP_roman_senate_events.1020 = { #The Consul (or representative) of the Western S
 		
 		if = { limit = { has_variable = new_top_liege_of_a_city } remove_variable = new_top_liege_of_a_city }
 		
+		set_variable = already_asked_the_senate
 		ignored_senate_effect = { REGION = east }
 		
 		ai_chance = {
@@ -1070,7 +1097,7 @@ BP_roman_senate_events.1054 = { #You've been nominated to become consul
 		name = BP_roman_senate_events.1054.a
 		nominated_consul_effect = {
 			ACTOR = scope:actor
-			REGION = west
+			REGION = east
 		}
 	}
 }
@@ -1353,7 +1380,7 @@ BP_roman_senate_events.2011 = { #Yearly check that the Senate hasn't collapsed
 	}
 }
 
-BP_roman_senate_events.2012 = { #Collapse of the Senate, no people
+BP_roman_senate_events.2012 = { #Collapse of the Senate, no people in the west
 	type = character_event
 	theme = realm
 	content_source = dlc_WtWSMS
@@ -1377,7 +1404,7 @@ BP_roman_senate_events.2012 = { #Collapse of the Senate, no people
 		name = BP_roman_senate_events.2012.a
 	}
 }
-BP_roman_senate_events.2013 = { #Collapse of the Senate, by decision
+BP_roman_senate_events.2013 = { #Collapse of the Senate, no people in the east
 	type = character_event
 	theme = realm
 	content_source = dlc_WtWSMS

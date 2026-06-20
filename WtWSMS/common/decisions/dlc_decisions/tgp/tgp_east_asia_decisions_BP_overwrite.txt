@@ -44,11 +44,32 @@ convert_to_mandala_government_decision = {
 			}
 			legitimacy_level >= 4
 		}
+		has_mandala_faith_trigger = yes
+		is_independent_ruler = yes
+		# This logic is necessary for the triggers in the options in the subsequent event, or else the player will not get the event
+		OR = {
+			any_realm_province = {
+				OR = {
+					custom_tooltip = {
+						text = convert_to_mandala_government_decision_is_temple_citadel_holding_tt
+						has_holding_type = temple_citadel_holding
+					}
+					custom_tooltip = {
+						text = convert_to_mandala_government_decision_has_no_holding_tt
+						has_holding = no
+					}
+				}
+			}
+			any_directly_owned_province = {
+				custom_tooltip = {
+					text = convert_to_mandala_government_decision_is_tribal_holding_tt
+					has_holding_type = tribal_holding
+				}
+			}
+		}
 		##### Changed from Vanilla vvvvv
 		culture = { has_cultural_era_or_later = culture_era_late_antiquity }
 		##### Changed from Vanilla ^^^^^
-		has_mandala_faith_trigger = yes
-		is_independent_ruler = yes
 	}
 	##### Changed from Vanilla ^^^^^
 
@@ -203,9 +224,6 @@ assimilate_to_mandala_decision = {
 
 	##### Changed from Vanilla vvvvv
 	is_shown = {
-		##### Changed from Vanilla vvvvv
-		culture = { has_cultural_era_or_later = culture_era_late_antiquity }
-		##### Changed from Vanilla ^^^^^
 		has_tgp_dlc_trigger = yes
 		overlord ?= { government_has_flag = government_is_mandala }
 		NAND = { 
@@ -213,6 +231,9 @@ assimilate_to_mandala_decision = {
 			faith = overlord.faith
 		}
 		highest_held_title_tier > tier_barony
+		##### Changed from Vanilla vvvvv
+		culture = { has_cultural_era_or_later = culture_era_late_antiquity }
+		##### Changed from Vanilla ^^^^^
 	}
 	##### Changed from Vanilla ^^^^^
 
@@ -425,6 +446,16 @@ assimilate_to_mandala_decision = {
 			who = root
 			opinion_target = overlord
 			multiplier = 1
+		}
+		modifier = {
+			capital_county.title_province = {
+				NOR = {
+					has_holding_type = temple_citadel_holding
+					has_holding_type = church_holding
+					has_holding_type = castle_holding
+				}
+			}
+			factor = 0
 		}
 	}
 }

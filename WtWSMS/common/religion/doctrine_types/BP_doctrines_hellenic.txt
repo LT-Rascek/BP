@@ -1,0 +1,20 @@
+﻿special_doctrine_is_hellenic_faith = {
+	parameters = {
+		# Since doctrines cannot modify other faith's views of us, only our view of others, all Hellenistic faiths are given this special doctrine which makes them friendlier to Faiths with the Hellenistic Syncretism tenet.
+		hostility_override_tenet_hellenic_syncretism = 1
+		hellenism_syncretic_recipient_opinion_active = yes
+		opinion_of_hellenism_syncretic_actor_opinion_active = 10
+	}
+}
+special_doctrine_sacred_eunuchs = {
+	parameters = {
+		clergy_are_always_monks = yes
+		clergy_are_always_eunuchs = yes
+	}
+	traits = {
+		virtues = {
+			eunuch_1 = 3
+			beardless_eunuch = 3
+		}
+	}
+}

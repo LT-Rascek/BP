@@ -1,0 +1,1231 @@
+﻿#Regional, Social, and Military Traditions grouped together for simplicity
+
+#Non-DLC Regional
+tradition_greek_succession = { #Byzantine Succession Variant for non-Roman Reformation cultures
+	category = regional
+
+	layers = {
+		0 = intrigue
+		1 = mediterranean
+		4 = crown.dds
+	}
+	
+	is_shown = {
+		AND = {
+			has_cultural_pillar = heritage_byzantine
+			scope:character = {
+				NOR = {
+					has_title = title:e_byzantium
+					has_title = title:h_roman_empire
+					has_title = title:h_eastern_roman_empire
+				}
+			}
+		}
+	}
+	can_pick = {
+		traditions_legal_tradition_is_in_list_trigger = { TRADITION = culture_tradition:tradition_greek_succession }
+		traditions_body_status_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_greek_succession }
+	}
+	can_pick_for_hybridization = {
+		traditions_legal_tradition_is_in_list_trigger = { TRADITION = culture_tradition:tradition_greek_succession }
+		traditions_body_status_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_greek_succession }
+		custom_description = {
+			text = hybrid_must_have_byzantine_heritage_for_tradition_greek_succession
+			culture_pillar:heritage_byzantine = { is_in_list = traits }
+		}
+	}
+	
+	parameters = {
+		is_a_legal_tradition = yes
+		can_blind_prisoners = yes
+		can_castrate_prisoners = yes
+		eunuch_trait_bonuses = yes
+		can_appoint_chief_eunuch = yes
+		physical_disfigurement_blocks_inheritance = yes #Actually only blocks claimants and reduce score in elective. Also includes infertility for tooltip reasons.
+		disloyal_trait_more_common = yes
+	}
+	
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_courtly = { is_in_list = traits }
+						culture_pillar:ethos_communal = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_courtly_or_communal_desc
+				}
+			}
+			
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+
+	ai_will_do = {
+		value = 100
+		if = { #Not Roman government, so *ick*
+			limit = {
+				NOR = {
+					scope:character = { has_main_roman_government_trigger = yes }
+					scope:character = { has_subroman_government_trigger = yes }
+				}
+			}
+			multiply = 0.0
+		}
+	}
+}
+tradition_roman_succession = { #For Roman Political Aspects (innovations &c)
+	category = regional
+
+	layers = {
+		0 = intrigue
+		1 = mediterranean
+		4 = crown.dds
+	}
+	
+	is_shown = {
+		has_ep3_dlc_trigger = no
+		trigger_if = {
+			limit = { has_game_rule = roman_succesion_tradition_access_locked }
+			has_cultural_pillar = heritage_latin
+		}
+		trigger_else = {
+			OR = {
+				has_cultural_pillar = heritage_latin
+				has_cultural_pillar = heritage_iberian
+				has_cultural_pillar = heritage_frankish
+				has_cultural_pillar = heritage_gallic_romance
+				has_cultural_pillar = heritage_romano_british
+				has_cultural_pillar = heritage_romano_aramean
+				has_cultural_pillar = heritage_romano_african
+				has_cultural_pillar = heritage_vlach
+				has_cultural_pillar = heritage_italian
+			}
+		}
+		scope:character = {
+			NOR = {
+				has_title = title:e_wre
+				has_title = title:h_western_roman_empire
+				has_title = title:h_roman_empire
+			}
+		}
+	}
+	can_pick = {
+		custom_description = {
+			text = has_wre_or_roman_empire
+			subject = title:e_wre
+			object = title:h_roman_empire
+			scope:character = {
+				OR = {
+					has_title = title:e_wre
+					has_title = title:h_western_roman_empire
+					has_title = title:h_roman_empire
+				}
+			}
+		}
+		traditions_legal_tradition_is_in_list_trigger = { TRADITION = culture_tradition:tradition_roman_succession }
+		traditions_body_status_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_roman_succession }
+	}
+	can_pick_for_hybridization = {
+		custom_description = {
+			text = has_wre_or_roman_empire
+			subject = title:e_wre
+			scope:character = { has_title = title:h_western_roman_empire }
+			object = title:h_roman_empire
+			scope:character = {
+				OR = {
+					has_title = title:e_wre
+					has_title = title:h_western_roman_empire
+					has_title = title:h_roman_empire
+				}
+			}
+		}
+		traditions_legal_tradition_is_in_list_trigger = { TRADITION = culture_tradition:tradition_roman_succession }
+		traditions_body_status_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_roman_succession }
+		custom_description = {
+			text = hybrid_must_have_latin_heritage_for_tradition_roman_succession
+			culture_pillar:heritage_latin = { is_in_list = traits }
+		}
+	}
+	#Actually only blocks claimants and reduce score in elective. Also includes infertility for tooltip reasons.
+	parameters = {
+		is_a_legal_tradition = yes
+		disloyal_trait_more_common = yes
+		can_restore_roman_empire = yes
+		unlock_innovation_roman_civil = yes
+		roman_legal_traits_are_valued = yes
+	}
+	character_modifier = {
+		eligible_child_opinion = 20
+		short_reign_duration_mult = 0.5
+		hostile_scheme_phase_duration_add = medium_scheme_phase_duration_bonus_value
+		ai_amenity_target_baseline = 0.75
+		ai_amenity_spending = 1
+	}
+	
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_courtly = { is_in_list = traits }
+						culture_pillar:ethos_communal = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_courtly_or_communal_desc
+				}
+			}
+			if = {
+				limit = { scope:character = { has_title = title:c_roma } }
+				add = {
+					value = tradition_unfulfilled_criteria_penalty
+					desc = byzantion_desc
+				}
+			}
+			
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+
+	ai_will_do = {
+		value = 100
+		if = { #Not Roman government, so *ick*
+			limit = {
+				NOR = {
+					scope:character = { has_main_roman_government_trigger = yes }
+					scope:character = { has_subroman_government_trigger = yes }
+				}
+			}
+			multiply = 0.0
+		}
+	}
+}
+
+#DLC Regional
+tradition_roman_politics = {
+	category = regional
+
+	layers = {
+		0 = diplo
+		1 = mediterranean
+		4 = palace_politics.dds 
+	}
+
+	is_shown = {
+		has_ep3_dlc_trigger = yes
+		OR = {
+			has_cultural_pillar = heritage_latin
+			scope:character = { has_title = title:h_western_roman_empire }
+			scope:character = { has_title = title:h_roman_empire }
+		}
+		NOT = { has_cultural_tradition = tradition_roman_succession }
+		NOT = { has_cultural_tradition = tradition_byzantine_succession }
+		NOT = { has_cultural_tradition = tradition_byzantine_politics }
+	}
+	can_pick = {
+		custom_tooltip = {
+			text = cannot_have_tradition_court_eunuchs
+			NOT = { culture_tradition:tradition_court_eunuchs = { is_in_list = traits } }
+		}
+		custom_tooltip = {
+			text = cannot_have_tradition_legalistic
+			NOT = { culture_tradition:tradition_legalistic = { is_in_list = traits } }
+		}
+	}
+	can_pick_for_hybridization = {
+		custom_tooltip = {
+			text = cannot_have_tradition_court_eunuchs
+			NOT = { culture_tradition:tradition_court_eunuchs = { is_in_list = traits } }
+		}
+		custom_tooltip = {
+			text = cannot_have_tradition_legalistic
+			NOT = { culture_tradition:tradition_legalistic = { is_in_list = traits } }
+		}
+	}
+	
+	#NB: Latin Romans _used_ Eunuchs, but were very squeamish about actually castrating
+	# so they get the bonuses but can't actually make them themselves
+	parameters = {
+		is_a_legal_tradition = yes
+		
+		cheaper_to_change_laws = yes
+		
+		reduced_bodyguard_aptitude = yes
+		eunuch_trait_bonuses = yes
+		
+		ambitious_trait_more_common = yes
+		disloyal_trait_more_common = yes
+		
+		cultrad_unlocks_t2_countermeasures = yes
+		
+		holds_triumphs = yes
+		
+		can_restore_roman_empire = yes
+		unlock_innovation_roman_civil = yes
+		roman_legal_traits_are_valued = yes
+	}
+	
+	character_modifier = {
+		monthly_influence_mult = 0.1
+		vassal_limit = 30
+		owned_hostile_scheme_success_chance_add = 5
+		political_scheme_phase_duration_add = minor_scheme_phase_duration_bonus_value
+		tyranny_gain_mult = 0.25
+		monthly_prestige_gain_per_dread_mult = -0.01
+	}
+	
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_bureaucratic = { is_in_list = traits }
+						culture_pillar:ethos_courtly = { is_in_list = traits }
+						culture_pillar:ethos_spiritual = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_bureaucratic_courtly_or_spiritual_desc
+				}
+			}
+			if = {
+				limit = {
+					has_dlc_feature = royal_court
+					OR = {
+						scope:character = { has_royal_court = no }
+						NOT = {
+							scope:character = {
+								court_grandeur_current_level >= very_high_court_grandeur_level
+							}
+						}
+					}
+				}
+				add = {
+					value = tradition_unfulfilled_criteria_penalty
+					desc = culture_head_court_grandeur_desc
+				}
+			}
+
+			if = {
+				limit = {
+					culture_tradition_reduction_trigger = { TRADITION = tradition_roman_politics }
+				}
+				multiply = {
+					value = 0.5
+					desc = inspired_by_culture_desc
+				}
+			}
+			
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+	
+	ai_will_do = {
+		value = 200
+		if = {
+			limit = { # Admin should be more into this
+				scope:character = {
+					government_allows = administrative
+				}
+			}
+			multiply = 2
+		}
+	}
+}
+tradition_byzantine_politics = {
+	category = regional
+
+	layers = {
+		0 = intrigue
+		1 = mediterranean
+		4 = palace_politics.dds 
+	}
+
+	is_shown = {
+		has_ep3_dlc_trigger = yes
+		OR = {
+			has_cultural_pillar = heritage_byzantine
+			scope:character = { has_title = title:h_eastern_roman_empire }
+			scope:character = { has_title = title:h_roman_empire }
+		}
+		NOT = { has_cultural_tradition = tradition_roman_succession }
+		NOT = { has_cultural_tradition = tradition_byzantine_succession }
+	}
+	can_pick = {
+		custom_tooltip = {
+			text = cannot_have_tradition_court_eunuchs
+			NOT = { culture_tradition:tradition_court_eunuchs = { is_in_list = traits } }
+		}
+		custom_tooltip = {
+			text = cannot_have_tradition_legalistic
+			NOT = { culture_tradition:tradition_legalistic = { is_in_list = traits } }
+		}
+	}
+	can_pick_for_hybridization = {
+		custom_tooltip = {
+			text = cannot_have_tradition_court_eunuchs
+			NOT = { culture_tradition:tradition_court_eunuchs = { is_in_list = traits } }
+		}
+		custom_tooltip = {
+			text = cannot_have_tradition_legalistic
+			NOT = { culture_tradition:tradition_legalistic = { is_in_list = traits } }
+		}
+	}
+	
+	#NB: Latin Romans _used_ Eunuchs, but were very squeamish about actually castrating
+	# so they get the bonuses but can't actually make them themselves
+	parameters = {
+		is_a_legal_tradition = yes
+		
+		cheaper_to_change_laws = yes
+		
+		reduced_bodyguard_aptitude = yes
+		
+		unlock_akolouthos = yes
+		can_blind_prisoners = yes
+		can_castrate_prisoners = yes
+		eunuch_trait_bonuses = yes
+		can_appoint_chief_eunuch = yes
+		family_castration = yes
+		
+		ambitious_trait_more_common = yes
+		disloyal_trait_more_common = yes
+		
+		cultrad_unlocks_t2_countermeasures = yes
+		
+		holds_triumphs = yes
+		
+		can_restore_roman_empire = yes
+		unlock_innovation_roman_civil = yes
+		roman_legal_traits_are_valued = yes
+	}
+	
+	character_modifier = {
+		monthly_influence_mult = 0.1
+		vassal_limit = 30
+		owned_hostile_scheme_success_chance_add = 5
+		political_scheme_phase_duration_add = minor_scheme_phase_duration_bonus_value
+		tyranny_gain_mult = 0.25
+		monthly_prestige_gain_per_dread_mult = -0.01
+	}
+	
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_bureaucratic = { is_in_list = traits }
+						culture_pillar:ethos_courtly = { is_in_list = traits }
+						culture_pillar:ethos_spiritual = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_bureaucratic_courtly_or_spiritual_desc
+				}
+			}
+			if = {
+				limit = {
+					has_dlc_feature = royal_court
+					OR = {
+						scope:character = { has_royal_court = no }
+						NOT = {
+							scope:character = {
+								court_grandeur_current_level >= very_high_court_grandeur_level
+							}
+						}
+					}
+				}
+				add = {
+					value = tradition_unfulfilled_criteria_penalty
+					desc = culture_head_court_grandeur_desc
+				}
+			}
+
+			if = {
+				limit = {
+					culture_tradition_reduction_trigger = { TRADITION = tradition_byzantine_politics }
+				}
+				multiply = {
+					value = 0.5
+					desc = inspired_by_culture_desc
+				}
+			}
+			
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+	
+	ai_will_do = {
+		value = 200
+		if = {
+			limit = { # Admin should be more into this
+				scope:character = {
+					government_allows = administrative
+				}
+			}
+			multiply = 2
+		}
+	}
+}
+
+tradition_roman_ceremonies = {
+	category = regional
+
+	layers = {
+		0 = diplo
+		1 = mediterranean
+		4 = roman_ceremonies.dds
+	}
+
+
+	is_shown = {
+		has_ep3_dlc_trigger = yes
+		OR = {
+			has_cultural_pillar = heritage_latin
+			scope:character = { is_roman_emperor_trigger = yes }
+		}
+		NOT = { has_cultural_tradition = tradition_roman_succession }
+	}
+	can_pick = {
+	}
+	
+	parameters = {
+		hosts_chariot_races = yes
+		roman_popular_opinion_traits_bonus = yes
+		roman_popular_opinion_traits_malus = yes
+		unlocks_chariot_support = yes
+	}
+	county_modifier = {} #Popular Opinion Nerf achieved via traits now
+	
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_bureaucratic = { is_in_list = traits }
+						culture_pillar:ethos_courtly = { is_in_list = traits }
+						culture_pillar:ethos_egalitarian = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_bureaucratic_courtly_or_egalitarian_desc
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_culture_county = {
+							count >= 50
+							any_county_province = {
+								geographical_region = custom_eastern_roman_empire
+							}
+						}
+					}
+				}
+				add = {
+					value = tradition_unfulfilled_criteria_penalty
+					desc = culture_in_roman_empire_desc
+				}
+			}
+
+			if = {
+				limit = {
+					culture_tradition_reduction_trigger = { TRADITION = tradition_ep3_roman_ceremonies }
+				}
+				multiply = {
+					value = 0.5
+					desc = inspired_by_culture_desc
+				}
+			}
+			
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+	
+	ai_will_do = {
+		value = 200
+		if = {
+			limit = { # Admin should be more into this
+				scope:character = {
+					government_allows = administrative
+				}
+			}
+			multiply = 2
+		}
+	}
+}
+
+#The super-special core Romano-Greek Traditions
+tradition_colonizers = { #Special Roman Tradition, Emphasizing Conquest Features
+	category = regional
+
+	layers = {
+		0 = steward
+		1 = mediterranean
+		4 = city.dds
+	}
+	
+	is_shown = { always = no } #Never selectable even with DLC (have to get it from extant cultures)
+	can_pick = {
+		custom_tooltip = {
+			text = cannot_have_tradition_culture_blending
+			NOT = { culture_tradition:tradition_culture_blending = { is_in_list = traits } }
+		}
+		custom_tooltip = {
+			text = cannot_have_tradition_malleable_invaders
+			NOT = { culture_tradition:tradition_malleable_invaders = { is_in_list = traits } }
+		}
+		custom_description = {
+			text = hybrid_must_have_latin_heritage_for_tradition_colonizers
+			culture_pillar:heritage_latin = { is_in_list = traits }
+		}
+	}
+	can_pick_for_hybridization = {
+		custom_tooltip = {
+			text = cannot_have_tradition_culture_blending
+			NOT = { culture_tradition:tradition_culture_blending = { is_in_list = traits } }
+		}
+		custom_tooltip = {
+			text = cannot_have_tradition_malleable_invaders
+			NOT = { culture_tradition:tradition_malleable_invaders = { is_in_list = traits } }
+		}
+		custom_description = {
+			text = hybrid_must_have_latin_heritage_for_tradition_colonizers
+			culture_pillar:heritage_latin = { is_in_list = traits }
+		}
+	}
+	
+	parameters = {
+		conqueror_culture_feature = yes
+		#Hybrid/Divergence Features
+		easier_cheaper_hybridization_colonizers = yes
+	}
+	culture_modifier = {
+		cultural_acceptance_gain_mult = -0.25 #Teams up with Romance Culture
+	}
+	county_modifier = {
+		development_growth_factor = 0.1
+		monthly_county_control_growth_add = 0.1
+	}
+	
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_bureaucratic = { is_in_list = traits }
+						culture_pillar:ethos_communal = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_bureaucratic_or_communal_desc
+				}
+			}
+			if = {
+				limit = { NOT = { culture_pillar:heritage_latin = { is_in_list = traits } } }
+				add = {
+					value = tradition_unfulfilled_criteria_penalty
+					desc = not_latin_desc
+				}
+			}
+			
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+	
+	ai_will_do = { value = 0 }
+}
+tradition_hellenizers = { #Byzantine Hellenizaiton
+	category = regional
+
+	layers = {
+		0 = steward
+		1 = mediterranean
+		4 = conversation.dds
+	}
+	
+	is_shown = { always = no } #Never selectable even with DLC (have to get it from extant cultures)
+	can_pick = {
+		any_parent_culture = { this = culture:greek }
+		culture_pillar:heritage_byzantine = { is_in_list = traits }
+		traditions_monolithic_culture_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_hellenizers }
+		custom_tooltip = {
+			text = cannot_have_tradition_xenophilic
+			NOT = { culture_tradition:tradition_xenophilic = { is_in_list = traits } }
+		}
+		custom_tooltip = {
+			text = cannot_have_tradition_ruling_caste
+			NOT = { culture_tradition:tradition_ruling_caste = { is_in_list = traits } }
+		}
+	}
+	can_pick_for_hybridization = {
+		custom_description = {
+			text = hybrid_must_have_byzantine_heritage_for_tradition_hellenizers
+			culture_pillar:heritage_byzantine = { is_in_list = traits }
+		}
+		traditions_monolithic_culture_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_hellenizers }
+		custom_tooltip = {
+			text = cannot_have_tradition_xenophilic
+			NOT = { culture_tradition:tradition_xenophilic = { is_in_list = traits } }
+		}
+		custom_tooltip = {
+			text = cannot_have_tradition_ruling_caste
+			NOT = { culture_tradition:tradition_ruling_caste = { is_in_list = traits } }
+		}
+	}
+	
+	parameters = {
+		improved_promote_culture_speed_hellenization = yes
+	}
+	culture_modifier = {}
+	county_modifier = {
+		development_growth_factor = 0.1
+	}
+	
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_bureaucratic = { is_in_list = traits }
+						culture_pillar:ethos_communal = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_bureaucratic_or_communal_desc
+				}
+			}
+			if = {
+				limit = { NOT = { culture_pillar:heritage_byzantine = { is_in_list = traits } } }
+				add = {
+					value = tradition_unfulfilled_criteria_penalty
+					desc = not_byzantine_desc
+				}
+			}
+			
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+	
+	ai_will_do = { value = 0 }
+}
+
+#Societal Traditions
+tradition_romance_culture = {
+	category = societal
+
+	layers = {
+		0 = steward
+		1 = mediterranean
+		4 = conversation.dds
+	}
+	
+	is_shown = { always = no } #Never selectable even with DLC (have to get it from extant cultures)
+	can_pick = {
+		any_parent_culture = { this = culture:roman }
+		culture_pillar:heritage_latin = { is_in_list = traits }
+		traditions_monolithic_culture_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_romance_culture }
+	}
+	can_pick_for_hybridization = {
+		custom_description = {
+			text = hybrid_must_have_latin_heritage_for_tradition_romance_culture
+			culture_pillar:heritage_latin = { is_in_list = traits }
+		}
+		traditions_monolithic_culture_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_romance_culture }
+	}
+	
+	parameters = {
+		#Culture Features
+		greco_roman_social_tradition = yes
+		monolithic_culture_feature = yes
+		blocks_populist_revolts_against_roman_governments = yes
+		#Hybrid/Divergence Features
+		expensive_convert_to_local_culture = yes
+		harder_to_convert_county_culture_without_heritage = yes
+		#Other Features
+		less_likely_to_culture_convert = yes
+		estate_building_upgrade_development_gain = yes
+		roman_cultural_trait_opinion_bonus = yes
+		roman_cultural_trait_opinion_malus = yes
+	}
+	culture_modifier = {
+		cultural_acceptance_gain_mult = -0.25
+	}
+	county_modifier = {}
+	
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_bureaucratic = { is_in_list = traits }
+						culture_pillar:ethos_communal = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_bureaucratic_or_communal_desc
+				}
+			}
+			if = {
+				limit = { NOT = { culture_pillar:heritage_latin = { is_in_list = traits } } }
+				add = {
+					value = tradition_unfulfilled_criteria_penalty
+					desc = not_latin_desc
+				}
+			}
+			
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+	
+	ai_will_do = { value = 100 }
+}
+tradition_romance_culture_non_dlc = {
+	category = societal
+
+	layers = {
+		0 = steward
+		1 = mediterranean
+		4 = conversation.dds
+	}
+	
+	is_shown = { always = no } #Never selectable even with DLC (have to get it from extant cultures)
+	can_pick = {
+		any_parent_culture = { this = culture:roman }
+		culture_pillar:heritage_latin = { is_in_list = traits }
+		traditions_monolithic_culture_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_romance_culture_non_dlc }
+	}
+	can_pick_for_hybridization = {
+		custom_description = {
+			text = hybrid_must_have_latin_heritage_for_tradition_romance_culture
+			culture_pillar:heritage_latin = { is_in_list = traits }
+		}
+		traditions_monolithic_culture_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_romance_culture_non_dlc }
+	}
+	
+	parameters = {
+		#Culture Impacts
+		greco_roman_social_tradition = yes
+		monolithic_culture_feature = yes
+		blocks_populist_revolts_against_roman_governments = yes
+		#Hybrid/Divergence Features
+		expensive_convert_to_local_culture = yes
+		harder_to_convert_county_culture_without_heritage = yes
+		#Other Features
+		allows_noble_family_adoption = yes
+		roman_cultural_trait_opinion_bonus = yes
+		roman_cultural_trait_opinion_malus = yes
+	}
+	culture_modifier = {
+		cultural_acceptance_gain_mult = -0.25
+	}
+	county_modifier = {}
+	
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_bureaucratic = { is_in_list = traits }
+						culture_pillar:ethos_communal = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_bureaucratic_or_communal_desc
+				}
+			}
+			if = {
+				limit = { NOT = { culture_pillar:heritage_latin = { is_in_list = traits } } }
+				add = {
+					value = tradition_unfulfilled_criteria_penalty
+					desc = not_latin_desc
+				}
+			}
+			
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+	
+	ai_will_do = { value = 100 }
+}
+tradition_hellenic_culture = {
+	category = societal
+
+	layers = {
+		0 = steward
+		1 = mediterranean
+		4 = conversation.dds
+	}
+	
+	is_shown = { always = no } #Never selectable even with DLC (have to get it from extant cultures)
+	can_pick = {
+		any_parent_culture = { this = culture:greek }
+		culture_pillar:heritage_byzantine = { is_in_list = traits }
+		traditions_monolithic_culture_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_hellenic_culture }
+		custom_tooltip = {
+			text = cannot_have_tradition_xenophilic
+			NOT = { culture_tradition:tradition_xenophilic = { is_in_list = traits } }
+		}
+	}
+	can_pick_for_hybridization = {
+		custom_description = {
+			text = hybrid_must_have_byzantine_heritage_for_tradition_hellenic_culture
+			culture_pillar:heritage_byzantine = { is_in_list = traits }
+		}
+		traditions_monolithic_culture_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_hellenic_culture }
+		custom_tooltip = {
+			text = cannot_have_tradition_xenophilic
+			NOT = { culture_tradition:tradition_xenophilic = { is_in_list = traits } }
+		}
+	}
+	
+	parameters = {
+		greco_roman_social_tradition = yes
+		monolithic_culture_feature = yes
+		traditionalist_culture_feature = yes
+		blocks_populist_revolts_against_roman_governments = yes
+		#Other Features
+		allows_noble_family_adoption = yes
+		roman_cultural_trait_opinion_bonus = yes
+		roman_cultural_trait_opinion_malus = yes
+	}
+	culture_modifier = {
+		cultural_acceptance_gain_mult = 0.25
+	}
+	county_modifier = {}
+	
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_bureaucratic = { is_in_list = traits }
+						culture_pillar:ethos_communal = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_bureaucratic_or_communal_desc
+				}
+			}
+			if = {
+				limit = { NOT = { culture_pillar:heritage_byzantine = { is_in_list = traits } } }
+				add = {
+					value = tradition_unfulfilled_criteria_penalty
+					desc = not_byzantine_desc
+				}
+			}
+			
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+	
+	ai_will_do = { value = 100 }
+}
+tradition_hellenic_culture_non_dlc = {
+	category = societal
+
+	layers = {
+		0 = steward
+		1 = mediterranean
+		4 = conversation.dds
+	}
+	
+	is_shown = { always = no } #Never selectable even with DLC (have to get it from extant cultures)
+	can_pick = {
+		any_parent_culture = { this = culture:greek }
+		culture_pillar:heritage_byzantine = { is_in_list = traits }
+		traditions_monolithic_culture_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_hellenic_culture_non_dlc }
+		custom_tooltip = {
+			text = cannot_have_tradition_xenophilic
+			NOT = { culture_tradition:tradition_xenophilic = { is_in_list = traits } }
+		}
+	}
+	can_pick_for_hybridization = {
+		custom_description = {
+			text = hybrid_must_have_byzantine_heritage_for_tradition_hellenic_culture
+			culture_pillar:heritage_byzantine = { is_in_list = traits }
+		}
+		traditions_monolithic_culture_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_hellenic_culture_non_dlc }
+		custom_tooltip = {
+			text = cannot_have_tradition_xenophilic
+			NOT = { culture_tradition:tradition_xenophilic = { is_in_list = traits } }
+		}
+	}
+	
+	parameters = {
+		greco_roman_social_tradition = yes
+		traditionalist_culture_feature = yes
+		blocks_populist_revolts_against_roman_governments = yes
+		#Other Features
+		roman_cultural_trait_opinion_bonus = yes
+		roman_cultural_trait_opinion_malus = yes
+	}
+	culture_modifier = {
+		cultural_acceptance_gain_mult = 0.25
+	}
+	county_modifier = {}
+	
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_bureaucratic = { is_in_list = traits }
+						culture_pillar:ethos_communal = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_bureaucratic_or_communal_desc
+				}
+			}
+			if = {
+				limit = { NOT = { culture_pillar:heritage_byzantine = { is_in_list = traits } } }
+				add = {
+					value = tradition_unfulfilled_criteria_penalty
+					desc = not_byzantine_desc
+				}
+			}
+			
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+	
+	ai_will_do = { value = 100 }
+}
+
+#Combat Traditions
+tradition_western_roman_legacy = { #WRE military aspects
+	category = realm
+
+	layers = {
+		0 = martial
+		1 = mediterranean
+		4 = shield.dds
+	}
+
+	is_shown = {
+		has_ep3_dlc_trigger = no
+		has_cultural_pillar = heritage_latin
+	}
+	can_pick = {
+		traditions_cultural_combat_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_western_roman_legacy }
+	}
+	can_pick_for_hybridization = {
+		traditions_cultural_combat_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_western_roman_legacy }
+	}
+	
+	parameters = {
+		unlock_maa_ballista = yes
+		unlock_maa_praetorian = yes
+		unlock_maa_roman_heavy_infantry = yes
+		unlock_maa_roman_light_infantry = yes
+		unlock_maa_roman_heavy_cavalry = yes
+	}
+	province_modifier = {}
+	character_modifier = {
+		levy_size = -0.25
+		men_at_arms_recruitment_cost = -0.15
+		men_at_arms_maintenance = -0.15
+		levy_reinforcement_rate = -0.25
+		heavy_infantry_max_size_add = 2
+		heavy_cavalry_max_size_add = 2
+	}
+	
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_bellicose = { is_in_list = traits }
+						culture_pillar:ethos_egalitarian = { is_in_list = traits }
+						culture_pillar:ethos_courtly = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_bellicose_egalitarian_or_courtly_desc
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_culture_county = {
+							count >= 50
+							any_county_province = { geographical_region = world_roman_empire_west }
+						}
+					}
+				}
+				add = {
+					value = tradition_unfulfilled_criteria_penalty
+					desc = culture_in_roman_empire_desc
+				}
+			}
+			
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+	
+	ai_will_do = {
+		value = 100
+	}
+}
+tradition_roman_military = { #DLC Version; not really DLC-locked, but synergizes with title_maa stuff
+	category = realm
+
+	layers = {
+		0 = martial
+		1 = mediterranean
+		4 = shield.dds
+	}
+
+	is_shown = {
+		has_ep3_dlc_trigger = yes
+		OR = {
+			has_cultural_pillar = heritage_latin
+			has_cultural_pillar = heritage_byzantine
+		}
+		OR = {
+			scope:character = { has_title = title:h_eastern_roman_empire }
+			scope:character = { has_title = title:h_western_roman_empire }
+			scope:character = { has_title = title:h_roman_empire }
+		}
+	}
+	can_pick = {
+		traditions_cultural_combat_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_roman_military }
+	}
+	can_pick_for_hybridization = {
+		traditions_cultural_combat_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_roman_military }
+	}
+	
+	parameters = {
+		unlock_maa_ballista = yes
+		unlock_maa_praetorian = yes
+		unlock_maa_roman_heavy_infantry = yes
+		unlock_maa_roman_light_infantry = yes
+		unlock_maa_roman_heavy_cavalry = yes
+	}
+	province_modifier = {}
+	character_modifier = {
+		knight_effectiveness_mult = -0.25
+		heavy_infantry_max_size_add = 2
+		light_cavalry_max_size_add = 1
+		men_at_arms_title_limit = 1
+	}
+	
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_bellicose = { is_in_list = traits }
+						culture_pillar:ethos_egalitarian = { is_in_list = traits }
+						culture_pillar:ethos_courtly = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_bellicose_egalitarian_or_courtly_desc
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_culture_county = {
+							count >= 50
+							any_county_province = { geographical_region = world_roman_empire_west }
+						}
+					}
+				}
+				add = {
+					value = tradition_unfulfilled_criteria_penalty
+					desc = culture_in_roman_empire_desc
+				}
+			}
+			
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+	
+	ai_will_do = {
+		value = 100
+	}
+}

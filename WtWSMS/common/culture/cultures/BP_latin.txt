@@ -1,6 +1,6 @@
 ﻿#Translation from CK2 to CK3
 #tradition_western_roman_legacy = able to reconquer Rome, able to Reform Legions
-#tradition_roman_succession/tradition_latin_succession = able to reform Rome
+#tradition_roman_succession = able to reform Rome
 
 #Base Cultures (also hybrids without an extant heritage [Torrean/Rhaetian])
 roman = {
@@ -12,19 +12,28 @@ roman = {
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_domain
 	traditions = {
-		#Realm Traditions
-		tradition_legalistic
-		#Regional Traditions
-		tradition_western_roman_legacy
-		tradition_roman_succession
-		#Combat Traditions
-		tradition_formation_fighting
+		tradition_colonizers
 	}
 	
+	##### NEW #####
 	dlc_tradition = {
-		trait = tradition_colonizers
-		requires_dlc_flag = hybridize_culture
-		fallback = tradition_colonizers_non_dlc
+		trait = tradition_roman_politics
+		requires_dlc_flag = roads_to_power
+		fallback = tradition_roman_succession
+	}
+	dlc_tradition = {
+		trait = tradition_romance_culture
+		requires_dlc_flag = roads_to_power
+		fallback = tradition_romance_culture_non_dlc
+	}
+	dlc_tradition = {
+		trait = tradition_roman_military
+		requires_dlc_flag = roads_to_power
+		fallback = tradition_western_roman_legacy
+	}
+	dlc_tradition = {
+		trait = tradition_roman_ceremonies
+		requires_dlc_flag = roads_to_power
 	}
 	
 	name_list = name_list_roman
@@ -39,7 +48,7 @@ roman = {
 	
 	ethnicities = { 100 = mediterranean }
 }
-corsican = { # Migrational Era Corsican (not Torrean Culture)
+corsican = { # Migration Era Corsican (not Torrean Culture)
 	color = corsican
 	
 	parents = { roman }
@@ -64,7 +73,7 @@ corsican = { # Migrational Era Corsican (not Torrean Culture)
 	coa_gfx = { latin_group_coa_gfx western_coa_gfx }
 	building_gfx = { mediterranean_building_gfx }
 	clothing_gfx = { byzantine_clothing_gfx }
-	unit_gfx = { eastern_unit_gfx }
+	unit_gfx = { iberian_christian_unit_gfx }
 	house_coa_frame = house_frame_22
 	house_coa_mask_offset = { 0.0 0.11 }
 	house_coa_mask_scale = { 0.85 0.85 }
@@ -97,14 +106,14 @@ sardinian = { #Medieval Sardinian
 	coa_gfx = { latin_group_coa_gfx western_coa_gfx }
 	building_gfx = { mediterranean_building_gfx }
 	clothing_gfx = { byzantine_clothing_gfx }
-	unit_gfx = { eastern_unit_gfx }
+	unit_gfx = { iberian_christian_unit_gfx }
 	house_coa_frame = house_frame_22
 	house_coa_mask_offset = { 0.0 0.11 }
 	house_coa_mask_scale = { 0.85 0.85 }
 	
 	ethnicities = { 100 = mediterranean }
 }
-romano_raetian = { # Migrational Era Rhaeto-Romance, or Rhaetian
+romano_raetian = { # Migration Era Rhaeto-Romance, or Rhaetian
 	color = romano_raetian
 	
 	parents = { roman }
@@ -117,17 +126,28 @@ romano_raetian = { # Migrational Era Rhaeto-Romance, or Rhaetian
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_domain
 	traditions = {
-		#Realm Traditions
-		tradition_mountain_homes #Rhaeti inheritence
-		#Regional Traditions
-		tradition_western_roman_legacy
-		tradition_roman_succession
+		tradition_mountain_homes
 	}
 	
+	##### NEW #####
+	dlc_tradition = {
+		trait = tradition_roman_politics
+		requires_dlc_flag = roads_to_power
+		fallback = tradition_roman_succession
+	}
 	dlc_tradition = {
 		trait = tradition_romance_culture
-		requires_dlc_flag = hybridize_culture
+		requires_dlc_flag = roads_to_power
 		fallback = tradition_romance_culture_non_dlc
+	}
+	dlc_tradition = {
+		trait = tradition_roman_military
+		requires_dlc_flag = roads_to_power
+		fallback = tradition_western_roman_legacy
+	}
+	dlc_tradition = {
+		trait = tradition_roman_ceremonies
+		requires_dlc_flag = roads_to_power
 	}
 	
 	name_list = name_list_romano_raetian
@@ -135,7 +155,7 @@ romano_raetian = { # Migrational Era Rhaeto-Romance, or Rhaetian
 	coa_gfx = { latin_group_coa_gfx western_coa_gfx }
 	building_gfx = { western_building_gfx }
 	clothing_gfx = { byzantine_clothing_gfx }
-	unit_gfx = { western_unit_gfx }
+	unit_gfx = { eastern_unit_gfx }
 	house_coa_frame = house_frame_22
 	house_coa_mask_offset = { 0.0 0.11 }
 	house_coa_mask_scale = { 0.85 0.85 }
@@ -160,17 +180,24 @@ romano_noric = { # Romano-Noric
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_domain
 	traditions = {
-		#Societal Traditions
 		tradition_metal_craftsmanship
-		#Regional Traditions
-		tradition_western_roman_legacy
-		tradition_roman_succession
 	}
 	
+	##### NEW #####
+	dlc_tradition = {
+		trait = tradition_roman_politics
+		requires_dlc_flag = roads_to_power
+		fallback = tradition_roman_succession
+	}
 	dlc_tradition = {
 		trait = tradition_romance_culture
-		requires_dlc_flag = hybridize_culture
+		requires_dlc_flag = roads_to_power
 		fallback = tradition_romance_culture_non_dlc
+	}
+	dlc_tradition = {
+		trait = tradition_roman_military
+		requires_dlc_flag = roads_to_power
+		fallback = tradition_western_roman_legacy
 	}
 	
 	name_list = name_list_romano_noric
@@ -178,7 +205,7 @@ romano_noric = { # Romano-Noric
 	coa_gfx = { latin_group_coa_gfx western_coa_gfx }
 	building_gfx = { western_building_gfx }
 	clothing_gfx = { byzantine_clothing_gfx }
-	unit_gfx = { western_unit_gfx }
+	unit_gfx = { eastern_unit_gfx }
 	house_coa_frame = house_frame_22
 	house_coa_mask_offset = { 0.0 0.11 }
 	house_coa_mask_scale = { 0.85 0.85 }
@@ -204,17 +231,28 @@ romano_gallic = {
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_domain
 	traditions = {
-		#Societal Traditions
 		tradition_zealous_people #Gallic Heritage
-		#Regional Traditions
-		tradition_western_roman_legacy
-		tradition_roman_succession
 	}
 	
+	##### NEW #####
+	dlc_tradition = {
+		trait = tradition_roman_politics
+		requires_dlc_flag = roads_to_power
+		fallback = tradition_roman_succession
+	}
 	dlc_tradition = {
 		trait = tradition_romance_culture
-		requires_dlc_flag = hybridize_culture
+		requires_dlc_flag = roads_to_power
 		fallback = tradition_romance_culture_non_dlc
+	}
+	dlc_tradition = {
+		trait = tradition_roman_military
+		requires_dlc_flag = roads_to_power
+		fallback = tradition_western_roman_legacy
+	}
+	dlc_tradition = {
+		trait = tradition_roman_ceremonies
+		requires_dlc_flag = roads_to_power
 	}
 	
 	name_list = name_list_romano_gallic
@@ -238,7 +276,7 @@ romano_gallic = {
 romano_african = { #Africanu, Old Réyanu
 	color = romano_african
 	
-	parents = { roman punic }
+	parents = { roman carthaginian }
 	created = 2.1.1
 	history_loc_override = romano_african_history_loc
 	
@@ -248,19 +286,28 @@ romano_african = { #Africanu, Old Réyanu
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_domain
 	traditions = {
-		#Societal Traditions
 		tradition_zealous_people
-		#Realm Traditions
-		tradition_western_roman_legacy
-		tradition_dryland_dwellers #Punic Inheritance
-		#Regional Traditions
-		tradition_latin_succession
 	}
 	
+	##### NEW #####
+	dlc_tradition = {
+		trait = tradition_roman_politics
+		requires_dlc_flag = roads_to_power
+		fallback = tradition_roman_succession
+	}
 	dlc_tradition = {
 		trait = tradition_romance_culture
-		requires_dlc_flag = hybridize_culture
+		requires_dlc_flag = roads_to_power
 		fallback = tradition_romance_culture_non_dlc
+	}
+	dlc_tradition = {
+		trait = tradition_roman_military
+		requires_dlc_flag = roads_to_power
+		fallback = tradition_western_roman_legacy
+	}
+	dlc_tradition = {
+		trait = tradition_roman_ceremonies
+		requires_dlc_flag = roads_to_power
 	}
 	
 	name_list = name_list_romano_african
@@ -293,18 +340,27 @@ romano_british = { # Britons and Romans in Romano-British
 	language = language_latin
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_domain
-	traditions = {
-		#Ritual Traditions
-		tradition_concubines #Briton heritage
-		#Regional Traditions
-		tradition_western_roman_legacy
-		tradition_latin_succession
-	}
+	traditions = {}
 	
+	##### NEW #####
+	dlc_tradition = {
+		trait = tradition_roman_politics
+		requires_dlc_flag = roads_to_power
+		fallback = tradition_roman_succession
+	}
 	dlc_tradition = {
 		trait = tradition_romance_culture
-		requires_dlc_flag = hybridize_culture
+		requires_dlc_flag = roads_to_power
 		fallback = tradition_romance_culture_non_dlc
+	}
+	dlc_tradition = {
+		trait = tradition_roman_military
+		requires_dlc_flag = roads_to_power
+		fallback = tradition_western_roman_legacy
+	}
+	dlc_tradition = {
+		trait = tradition_roman_ceremonies
+		requires_dlc_flag = roads_to_power
 	}
 	
 	name_list = name_list_romano_british
@@ -312,7 +368,7 @@ romano_british = { # Britons and Romans in Romano-British
 	coa_gfx = { breton_coa_gfx western_coa_gfx }
 	building_gfx = { western_building_gfx }
 	clothing_gfx = { byzantine_clothing_gfx  }
-	unit_gfx = { eastern_unit_gfx }
+	unit_gfx = { western_unit_gfx }
 	house_coa_frame = house_frame_24
 	house_coa_mask_offset = { 0.0 0.055 }
 	house_coa_mask_scale = { 0.9 0.9 }
@@ -337,18 +393,28 @@ romano_thracian = { # Thraco-Roman
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_domain
 	traditions = {
-		#Regional Traditions
-		tradition_western_roman_legacy
-		tradition_roman_succession
-		#Combat Traditions
 		tradition_strength_in_numbers #Thracian heritage
-		tradition_formation_fighting #Roman Heritage
 	}
 	
+	##### NEW #####
+	dlc_tradition = {
+		trait = tradition_roman_politics
+		requires_dlc_flag = roads_to_power
+		fallback = tradition_roman_succession
+	}
 	dlc_tradition = {
 		trait = tradition_romance_culture
-		requires_dlc_flag = hybridize_culture
+		requires_dlc_flag = roads_to_power
 		fallback = tradition_romance_culture_non_dlc
+	}
+	dlc_tradition = {
+		trait = tradition_roman_military
+		requires_dlc_flag = roads_to_power
+		fallback = tradition_western_roman_legacy
+	}
+	dlc_tradition = {
+		trait = tradition_roman_ceremonies
+		requires_dlc_flag = roads_to_power
 	}
 	
 	name_list = name_list_romano_thracian
@@ -356,7 +422,7 @@ romano_thracian = { # Thraco-Roman
 	coa_gfx = { south_slavic_group_coa_gfx western_coa_gfx }
 	building_gfx = { mediterranean_building_gfx }
 	clothing_gfx = { byzantine_clothing_gfx }
-	unit_gfx = { northern_unit_gfx }
+	unit_gfx = { eastern_unit_gfx }
 	house_coa_frame = house_frame_02
 	house_coa_mask_offset = { 0.0 0.055 }
 	house_coa_mask_scale = { 0.9 0.9 }
@@ -376,19 +442,25 @@ romano_illyrian = { # Romano-Illyrian
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_domain
 	traditions = {
-		#Realm Traditions
-		tradition_mountain_homes #Illyrian inheritence
-		#Regional Traditions
-		tradition_western_roman_legacy
-		tradition_roman_succession
-		#Combat Traditions
+		tradition_mountain_homes #Illyrian inheritance
 		tradition_adaptive_skirmishing
 	}
 	
+	##### NEW #####
+	dlc_tradition = {
+		trait = tradition_roman_politics
+		requires_dlc_flag = roads_to_power
+		fallback = tradition_roman_succession
+	}
 	dlc_tradition = {
 		trait = tradition_romance_culture
-		requires_dlc_flag = hybridize_culture
+		requires_dlc_flag = roads_to_power
 		fallback = tradition_romance_culture_non_dlc
+	}
+	dlc_tradition = {
+		trait = tradition_roman_military
+		requires_dlc_flag = roads_to_power
+		fallback = tradition_western_roman_legacy
 	}
 	
 	name_list = name_list_romano_illyrian
@@ -396,14 +468,14 @@ romano_illyrian = { # Romano-Illyrian
 	coa_gfx = { latin_group_coa_gfx western_coa_gfx }
 	building_gfx = { mediterranean_building_gfx }
 	clothing_gfx = { byzantine_clothing_gfx }
-	unit_gfx = { northern_unit_gfx }
+	unit_gfx = { eastern_unit_gfx }
 	house_coa_frame = house_frame_22
 	house_coa_mask_offset = { 0.0 0.11 }
 	house_coa_mask_scale = { 0.85 0.85 }
 	
 	ethnicities = { 10 = mediterranean_byzantine }
 }
-romano_pannonian = { # Migrational Era Pannonian
+romano_pannonian = { # Migration Era Pannonian
 	color = romano_pannonian
 	
 	parents = { roman }
@@ -415,16 +487,23 @@ romano_pannonian = { # Migrational Era Pannonian
 	language = language_latin
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_domain
-	traditions = {
-		#Regional Traditions
-		tradition_western_roman_legacy
-		tradition_latin_succession
-	}
+	traditions = {}
 	
+	##### NEW #####
+	dlc_tradition = {
+		trait = tradition_roman_politics
+		requires_dlc_flag = roads_to_power
+		fallback = tradition_roman_succession
+	}
 	dlc_tradition = {
 		trait = tradition_romance_culture
-		requires_dlc_flag = hybridize_culture
+		requires_dlc_flag = roads_to_power
 		fallback = tradition_romance_culture_non_dlc
+	}
+	dlc_tradition = {
+		trait = tradition_roman_military
+		requires_dlc_flag = roads_to_power
+		fallback = tradition_western_roman_legacy
 	}
 	
 	name_list = name_list_romano_pannonian
@@ -432,7 +511,7 @@ romano_pannonian = { # Migrational Era Pannonian
 	coa_gfx = { latin_group_coa_gfx western_coa_gfx }
 	building_gfx = { mediterranean_building_gfx }
 	clothing_gfx = { byzantine_clothing_gfx }
-	unit_gfx = { northern_unit_gfx }
+	unit_gfx = { eastern_unit_gfx }
 	house_coa_frame = house_frame_22
 	house_coa_mask_offset = { 0.0 0.11 }
 	house_coa_mask_scale = { 0.85 0.85 }
@@ -457,18 +536,28 @@ romano_hispanic = { # Romano-Hispanic
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_domain
 	traditions = {
-		#Realm Traditions
-		tradition_parochialism #Iberian bequethal
-		tradition_agrarian
-		#Regional Traditions
-		tradition_western_roman_legacy
-		tradition_roman_succession
+		tradition_parochialism #Iberian bequeathal
 	}
 	
+	##### NEW #####
+	dlc_tradition = {
+		trait = tradition_roman_politics
+		requires_dlc_flag = roads_to_power
+		fallback = tradition_roman_succession
+	}
 	dlc_tradition = {
 		trait = tradition_romance_culture
-		requires_dlc_flag = hybridize_culture
+		requires_dlc_flag = roads_to_power
 		fallback = tradition_romance_culture_non_dlc
+	}
+	dlc_tradition = {
+		trait = tradition_roman_military
+		requires_dlc_flag = roads_to_power
+		fallback = tradition_western_roman_legacy
+	}
+	dlc_tradition = {
+		trait = tradition_roman_ceremonies
+		requires_dlc_flag = roads_to_power
 	}
 	
 	name_list = name_list_romano_hispanic
@@ -476,8 +565,7 @@ romano_hispanic = { # Romano-Hispanic
 	coa_gfx = { iberian_group_coa_gfx western_coa_gfx }
 	building_gfx = { mediterranean_building_gfx }
 	clothing_gfx = { byzantine_clothing_gfx }
-	unit_gfx = { northern_unit_gfx }
-	house_coa_frame = house_frame_02
+	unit_gfx = { iberian_christian_unit_gfx }
 	
 	ethnicities = { 100 = mediterranean }
 }
@@ -494,17 +582,24 @@ romano_dacian = { #Proto-Eastern Romance; Rumanescu
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_domain
 	traditions = {
-		#Realm Traditions
 		tradition_metal_craftsmanship #Dacian heritage
-		#Regional Traditions
-		tradition_western_roman_legacy
-		tradition_roman_succession
 	}
 	
+	##### NEW #####
+	dlc_tradition = {
+		trait = tradition_roman_politics
+		requires_dlc_flag = roads_to_power
+		fallback = tradition_roman_succession
+	}
 	dlc_tradition = {
 		trait = tradition_romance_culture
-		requires_dlc_flag = hybridize_culture
+		requires_dlc_flag = roads_to_power
 		fallback = tradition_romance_culture_non_dlc
+	}
+	dlc_tradition = {
+		trait = tradition_roman_military
+		requires_dlc_flag = roads_to_power
+		fallback = tradition_western_roman_legacy
 	}
 	
 	name_list = name_list_romano_dacian
@@ -512,7 +607,7 @@ romano_dacian = { #Proto-Eastern Romance; Rumanescu
 	coa_gfx = { south_slavic_group_coa_gfx western_coa_gfx }
 	building_gfx = { mediterranean_building_gfx }
 	clothing_gfx = { byzantine_clothing_gfx }
-	unit_gfx = { northern_unit_gfx }
+	unit_gfx = { eastern_unit_gfx }
 	house_coa_frame = house_frame_02
 	house_coa_mask_offset = { 0.0 0.055 }
 	house_coa_mask_scale = { 0.9 0.9 }
@@ -537,18 +632,25 @@ romano_aramean = {
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_domain
 	traditions = {
-		#Realm Traditions
-		tradition_legalistic #Roman inheritence; law school of Beirut
-		tradition_religious_patronage #Aramean inheritence
-		#Regional Traditions
-		tradition_western_roman_legacy
-		tradition_latin_succession
+		tradition_religious_patronage #Aramean inheritance
+		tradition_zealous_people #Aramean inheritance
 	}
 	
+	##### NEW #####
+	dlc_tradition = {
+		trait = tradition_roman_politics
+		requires_dlc_flag = roads_to_power
+		fallback = tradition_roman_succession
+	}
 	dlc_tradition = {
 		trait = tradition_romance_culture
-		requires_dlc_flag = hybridize_culture
+		requires_dlc_flag = roads_to_power
 		fallback = tradition_romance_culture_non_dlc
+	}
+	dlc_tradition = {
+		trait = tradition_roman_military
+		requires_dlc_flag = roads_to_power
+		fallback = tradition_western_roman_legacy
 	}
 	
 	name_list = name_list_romano_aramean
@@ -567,13 +669,13 @@ romano_aramean = {
 romano_punic = {
 	color = punic
 	
-	parents = { roman punic }
+	parents = { roman carthaginian }
 	created = 2.1.1
 	history_loc_override = romano_punic_history_loc
 	
 	ethos = ethos_egalitarian
 	heritage = heritage_latin
-	language = language_punic
+	language = language_carthaginian
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_domain
 	traditions = {
@@ -582,13 +684,13 @@ romano_punic = {
 		#Regional Traditions
 		tradition_city_builders
 		#Ritual Traditions
+		tradition_ce1_ritual_washing
 		#Realm Traditions
 		tradition_isolationist
 		tradition_dryland_dwellers
-		tradition_maritime_mercantilism #Not really by this point, but let's give them a bump
 	}
 	
-	name_list = name_list_punic
+	name_list = name_list_carthaginian
 	
 	coa_gfx = { berber_group_coa_gfx }
 	building_gfx = { mediterranean_building_gfx }
@@ -618,21 +720,25 @@ romano_gothic = {
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_domain
 	traditions = {
-		#Societal Traditions
 		tradition_martial_admiration #Gothic Inheritance
-		#Regional Traditions
-		tradition_western_roman_legacy
-		tradition_roman_succession
-		#Ritual Traditions
-		#Realm Traditions
-		#Combat Traditions
 		tradition_formation_fighting
 	}
 	
+	##### NEW #####
+	dlc_tradition = {
+		trait = tradition_roman_politics
+		requires_dlc_flag = roads_to_power
+		fallback = tradition_roman_succession
+	}
 	dlc_tradition = {
 		trait = tradition_romance_culture
-		requires_dlc_flag = hybridize_culture
+		requires_dlc_flag = roads_to_power
 		fallback = tradition_romance_culture_non_dlc
+	}
+	dlc_tradition = {
+		trait = tradition_roman_military
+		requires_dlc_flag = roads_to_power
+		fallback = tradition_western_roman_legacy
 	}
 	
 	name_list = name_list_romano_gothic

@@ -15,7 +15,7 @@
 world_roman_empire_west_gaulia = {
 	duchies = {
 		#k_septem_provincae
-		d_novempopulana d_aquitanica_prima d_aquitanica_secunda d_avaricum d_limonum d_toulouse d_narbonensis_prima
+		d_novempopulana d_aquitanica_prima d_aquitanica_secunda d_auvergne d_limonum d_toulouse d_narbonensis_prima
 		d_narbonensis_secunda d_alpes_maritimae d_gallia_viennensis
 		#k_lugdunensis
 		d_noviodunum d_gallia d_lugdunum d_celtica d_lugdunensis_tertia
@@ -524,7 +524,7 @@ world_europe_west_francia = { ##### Changed from Vanilla
 		#k_maxima_sequanorum
 		d_alpes_poeninae d_maxima_sequanorum
 		#k_septem_provincae
-		d_limonum d_avaricum d_aquitanica_prima d_aquitanica_secunda d_narbonensis_prima
+		d_limonum d_auvergne d_aquitanica_prima d_aquitanica_secunda d_narbonensis_prima
 		d_narbonensis_secunda d_alpes_maritimae d_gallia_viennensis d_toulouse d_novempopulana
 	}
 }
@@ -965,6 +965,7 @@ world_asia_japan = {} ##### Changed from Vanilla
 world_asia_korea = {} ##### Changed from Vanilla
 world_asia_southeast = {} ##### Changed from Vanilla
 world_asia_southeast_mainland = {} ##### Changed from Vanilla
+world_asia_vietnam = {} ##### Changed from Vanilla
 world_asia_thailand = {} ##### Changed from Vanilla
 world_asia_malaysia = {} ##### Changed from Vanilla
 world_asia_southeast_islands = {} ##### Changed from Vanilla
@@ -991,6 +992,7 @@ custom_arakan_mountains = {
 	}
 }
 world_steppe = {
+	generate_modifiers = yes
 	regions = {
 		world_steppe_west world_steppe_central world_steppe_east world_steppe_tarim
 	}
@@ -1648,7 +1650,7 @@ custom_portuguese = { ##### Changed from Vanilla
 }
 custom_occitan = { ##### Changed from Vanilla
 	duchies = {
-		d_novempopulana d_toulouse d_narbonensis_prima d_narbonensis_secunda d_alpes_maritimae d_gallia_viennensis d_aquitanica_prima d_avaricum d_limonum
+		d_novempopulana d_toulouse d_narbonensis_prima d_narbonensis_secunda d_alpes_maritimae d_gallia_viennensis d_aquitanica_prima d_auvergne d_limonum
 	}
 }
 custom_andalusian = { ##### Changed from Vanilla
@@ -1803,7 +1805,7 @@ custom_west_francia_minus_mediterranean = { ##### Changed from Vanilla
 
 custom_south_francia = { ##### Changed from Vanilla
 	duchies = {
-		d_limonum d_avaricum d_aquitanica_prima d_aquitanica_secunda d_novempopulana d_toulouse
+		d_limonum d_auvergne d_aquitanica_prima d_aquitanica_secunda d_novempopulana d_toulouse
 		d_narbonensis_prima d_narbonensis_secunda d_alpes_maritimae d_gallia_viennensis
 	}
 }
@@ -2071,7 +2073,7 @@ custom_sub_saharan_africa_immediate = {
 custom_carolingian_francia = { ##### Changed from Vanilla
 	duchies = {
 		#k_septem_provincae
-		d_novempopulana d_aquitanica_prima d_aquitanica_secunda d_avaricum d_limonum d_toulouse
+		d_novempopulana d_aquitanica_prima d_aquitanica_secunda d_auvergne d_limonum d_toulouse
 		d_narbonensis_prima d_narbonensis_secunda d_alpes_maritimae d_gallia_viennensis
 		#k_maxima_sequanorum
 		d_maxima_sequanorum d_alpes_poeninae
@@ -2180,6 +2182,50 @@ custom_beth_nahrain = {
 	}
 }
 
+custom_carthaginian_empire = {
+	generate_modifiers = yes
+	regions = {
+		custom_carthage
+		custom_tripolitania
+		custom_mauretania
+		custom_carthago_nova
+	}
+}
+
+custom_carthage = { ##### Changed from Vanilla: tweaked
+	duchies = {
+		#Tunis
+		d_tunis d_gabes d_kairouan d_kroumerie d_jerid
+		#Scicili & Sardinia
+		d_sicily d_sardinia
+	}
+}
+
+custom_tripolitania = { ##### Changed from Vanilla: tweaked
+	kingdoms = {
+		k_tripolitania
+	}
+}
+
+custom_mauretania = { ##### Changed from Vanilla: tweaked
+	duchies = {
+		d_bejaia d_zab d_alger d_tlemcen d_rif
+	}
+}
+
+custom_carthago_nova = { ##### Changed from Vanilla
+	duchies = {
+		d_carthago_superior d_carthago_inferior d_hispalensis d_gaditanus d_urcitanensis
+	}
+}
+
+custom_cumbria = { ##### Changed from Vanilla
+	generate_modifiers = yes
+	duchies = {
+		d_galloway
+	}
+}
+
 ###########################################################################
 # Graphical Regions
 ###########################################################################
@@ -2227,7 +2273,7 @@ graphical_steppe = {
 	graphical = yes
 	color = { 0 255 255 }
 	regions = {
-		world_steppe
+		world_steppe_tarim world_steppe_west world_steppe_central
 	}
 }
 
@@ -2243,8 +2289,10 @@ graphical_east_asia = {
 	graphical = yes
 	color = { 155 255 155 }
 	regions = {
-		world_asia_north_east world_asia_korea world_asia_china world_asia_sakhalin_hokkaido world_asia_japan
-	} 
+		world_asia_north_east world_asia_korea world_asia_china world_asia_sakhalin_hokkaido world_asia_japan world_steppe_east
+		# Asia Southeast Mainland
+		world_asia_vietnam
+	}
 }
 
 ##############################
@@ -3182,6 +3230,7 @@ ghw_region_egypt = {
 	duchies = {
 		#Egypt
 		d_cyrenaica d_alexandria d_delta d_cairo d_al-wahat d_al-said d_eastern_desert d_sinai
+		d_augustamnica d_arcadia d_thebais d_libya
 	}
 }
 ghw_region_egypt_et_al = {
@@ -4518,6 +4567,9 @@ dlc_mpo_steppe_east_buryatia_addon = {
 }
 
 dlc_mpo_steppe_east_andong_addon = {
+	regions = {
+		world_asia_sakhalin_hokkaido
+	}
 	duchies = {
 		  
 		 
@@ -4530,6 +4582,8 @@ dlc_mpo_steppe_east_andong_addon = {
 		     
 	}
 }
+
+dlc_mpo_steppe_east_china_addon = {} ##### Changed from Vanilla: 
 
 dlc_mpo_steppe_central_siberia_addon = {
 	duchies = {
@@ -4564,6 +4618,14 @@ dlc_mpo_steppe_siberia_further_expansion = { # k_yugra and bits of k_ob and k_si
 		d_vasyugan_mire
 	}
 }
+
+dlc_mpo_steppe_e_amur_expansion = {} ##### Changed from Vanilla
+
+dlc_mpo_steppe_hexi_tarim_expansion = {} ##### Changed from Vanilla
+
+dlc_mpo_steppe_north_china_expansion = {} ##### Changed from Vanilla
+
+dlc_mpo_steppe_central_china_expansion = {} ##### Changed from Vanilla
 
 heritage_area_pontic_steppe = {
 	duchies = {
@@ -5108,7 +5170,7 @@ dlc_tgp_great_wall_shanhai = {
 
 dlc_tgp_great_wall_liaodong = {
 	provinces = {
-		12422 11776 11774 11772 11761 11766 11764 11763
+		13018 12421 12424 11760 11759 11754 11758 11766 11767 11770 11771 11781 11779 11803 11799 11800 11796 9889 9890
 	}
 }
 
@@ -5391,7 +5453,7 @@ hunt_animal_antelope_region = {
 		# Africa
 		world_africa
 		# Asia
-		world_middle_east world_steppe world_tibet world_india world_asia_china world_asia_southeast_mainland
+		world_middle_east world_steppe world_tibet world_india world_asia_china world_asia_southeast_mainland world_burma
 	}
 }
 
@@ -5888,40 +5950,9 @@ river_valley_nomad_area = {
 }
 
 tgp_china_tributary_region = {} ##### Changed from Vanilla
-tgp_ba_region = {} ##### Changed from Vanilla
-tgp_cai_region = {} ##### Changed from Vanilla
-tgp_cao_region = {} ##### Changed from Vanilla
-tgp_chen_region = {} ##### Changed from Vanilla
-tgp_chu_region = {} ##### Changed from Vanilla
-tgp_dai_region = {} ##### Changed from Vanilla
-tgp_dian_region = {} ##### Changed from Vanilla
-tgp_e_region = {} ##### Changed from Vanilla
-tgp_gan_region = {} ##### Changed from Vanilla
-tgp_gui_region = {} ##### Changed from Vanilla
-tgp_han_region = {} ##### Changed from Vanilla
-tgp_huai_region = {} ##### Changed from Vanilla
-tgp_jin_region = {} ##### Changed from Vanilla
-tgp_jing_region = {} ##### Changed from Vanilla
-tgp_lai_region = {} ##### Changed from Vanilla
-tgp_liang_region = {} ##### Changed from Vanilla
-tgp_lu_region = {} ##### Changed from Vanilla
-tgp_min_region = {} ##### Changed from Vanilla
-tgp_qi_region = {} ##### Changed from Vanilla
-tgp_qian_region = {} ##### Changed from Vanilla
-tgp_shu_region = {} ##### Changed from Vanilla
-tgp_song_region = {} ##### Changed from Vanilla
-tgp_sui_region = {} ##### Changed from Vanilla
-tgp_tang_region = {} ##### Changed from Vanilla
-tgp_wei_region = {} ##### Changed from Vanilla
-tgp_wu_region = {} ##### Changed from Vanilla
-tgp_xia_region = {} ##### Changed from Vanilla
-tgp_xiang_region = {} ##### Changed from Vanilla
-tgp_xing_region = {} ##### Changed from Vanilla
-tgp_xu_region = {} ##### Changed from Vanilla
-tgp_yang_region = {} ##### Changed from Vanilla
-tgp_yin_region = {} ##### Changed from Vanilla
-tgp_yong_region = {} ##### Changed from Vanilla
-tgp_yue_region = {} ##### Changed from Vanilla
-tgp_zhao_region = {} ##### Changed from Vanilla
-tgp_zheng_region = {} ##### Changed from Vanilla
-tgp_zhou_region = {} ##### Changed from Vanilla
+
+paddy_fields_region = {
+	regions = {
+		graphical_east_asia	
+	}
+}

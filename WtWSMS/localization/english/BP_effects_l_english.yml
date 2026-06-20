@@ -4,20 +4,22 @@
  CALL_PARTICIPATING_VASSAL_TO_WAR_EFFECT_THIRD: "[CHARACTER.GetUIName] joins the migration as an Attacker"
  CALLED_PARTICIPATING_VASSAL_TO_WAR_EFFECT_THIRD: "[CHARACTER.GetUIName] joined the migration as an Attacker"
  #EVENT LOCALIZATIONS
- INCREASES_FEUDAL_TRANSITION: "Increases the probability of a transition to feudalism."
- CREATES_CHANCE_FOR_VASSALS_TO_CONVERT_GOVERNMENT: "All vassals above the rank of baron will have this event fire within a year, if applicable."
- ALL_DIRECT_BARONS_CONVERT_TO_FEDUAL: "All your barons will convert to [feudal|E]."
- ALL_DIRECT_BARONS_CONVERT_TO_CLAN: "All your barons will convert to [clan|E]."
  UNLOCKS_ONE_MAJOR_CB_AGAINST_ROMAN_STATE: "Allows for one Major Conquest [casus_belli|E] against an [organized|E] polity of the same rank as your [primary_title|E]"
  #Event Effects
  USES_EAST_CELTIC_NAME_LIST: "[CULTURE.GetName] now uses $name_list_east_celtic$ Naming Practices"
  #De Jure Decision Effects
- WHOLLY_OWNED_DUCHIES_BECOME_DE_JURE: "All wholely owned duchies in the same [kingdom|E] as our [capital|E] [county|E] become [de_jure|E] vassals of our [kingdom|E]."
- WHOLLY_OWNED_KINGDOMS_BECOME_DE_JURE: "All wholely owned kingdoms in the same [empire|E] as our [capital|E] [county|E] become [de_jure|E] vassals of our [empire|E]."
+ WHOLLY_OWNED_DUCHIES_BECOME_DE_JURE: "All wholly owned duchies in the same [kingdom|E] as our [capital|E] [county|E] become [de_jure|E] vassals of our [kingdom|E]."
+ WHOLLY_OWNED_KINGDOMS_BECOME_DE_JURE: "All wholly owned kingdoms in the same [empire|E] as our [capital|E] [county|E] become [de_jure|E] vassals of our [empire|E]."
+ WHOLLY_OWNED_EMPIRES_BECOME_DE_JURE: "The wholly owned [empire|E] that contains our [capital|E] [county|E] become [de_jure|E] vassals of our [hegemony|E]."
  #Ostrogothic culture Decision
  YOUR_COURTIERS_AND_GUESTS_BECOME_OSTROGOTHIC: "Your [courtiers|E] and [guests|E] with [CULTURE.GetName] [culture|E] become [TARGET_CULTURE.GetName]"
  OTHER_RULERS_AND_COURTIERS_BECOME_THRACIAN_GOTHIC: "Other [rulers|E] and [courtiers|E] and [guests|E] with [CULTURE.GetName] [culture|E] become [TARGET_CULTURE.GetName]"
- #Federate Raid Wars
- IMPROVE_OLD_SUBSIDIES: "You remain a #V Federate#! with an increase in subsidies."
- KEEP_OLD_SUBSIDIES: "You remain a #V Federate#! with no change in subsidies."
- REDUCE_OLD_SUBSIDIES: "You remain a #V Federate#! with a reduction in subsidies."
+ #Non-Roman Laws
+ NULL: ""
+ ALL_VASSALS_YOUR_CULTURE_OR_MIGRATORY_APPROVE: "Every [CHARACTER.GetCulture.GetName] or Migratory Culture [vassal|E] and below or [courtier|E] gains $VALUE|+0$ [opinion|E] of [CHARACTER.GetShortUIName] for 30 years #weak ($reduced_roman_priveleges_minority$)#!"
+ ALL_VASSALS_YOUR_CULTURE_OR_MIGRATORY_DISAPPROVE: "Every [CHARACTER.GetCulture.GetName] or Migratory Culture [vassal|E] and below or [courtier|E] looses #N $VALUE|0$#! [opinion|E] of [CHARACTER.GetShortUIName] for 30 years #weak ($improved_roman_priveleges_minority$)#!"
+ ALL_VASSALS_ROMAN_APPROVE: "Every Roman or Greek [vassal|E] and below or [courtier|E] gains $VALUE|+0$ [opinion|E] of [CHARACTER.GetShortUIName] for 30 years #weak ($reduced_roman_priveleges_roman$)#!"
+ ALL_VASSALS_ROMAN_DISAPPROVE: "Every Roman or Greek [vassal|E] and below or [courtier|E] looses #N $VALUE|0$#! [opinion|E] of [CHARACTER.GetShortUIName] for 30 years #weak ($improved_roman_priveleges_roman$)#!"
+ #Roman Federate Conversion
+ personal_maa_transfer_to_title: "Personal men at arms become title men at arms"
+ destroy_noble_family_titles: "Noble Family titles are destroyed"

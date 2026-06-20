@@ -1,0 +1,53 @@
+﻿# Called from code once every five years for "playable" (count+) characters.
+# Root is the character
+yearly_playable_pulse = {
+	on_actions = {
+		BP_chance_create_federate_commander
+	}
+}
+
+BP_chance_create_federate_commander = {
+	trigger = {
+		government_has_flag = government_is_roman_federate
+		primary_title.tier >= tier_duchy
+		#Not enough knights of your culture or too few knights of yoru culture
+		OR = {
+			any_courtier = {
+				percent < 0.5
+				this.culture = root.culture
+				is_potential_knight = yes
+			}
+			any_courtier = {
+				count < 5
+				this.culture = root.culture
+			}
+		}
+	}
+	effect = {
+		random_list = {
+			#Nearly guaranteed (<3% no event) every 5 years
+			50 = { trigger_event = { on_action = BP_create_federate_commander } }
+			50 = {}
+		}
+	}
+}
+
+BP_create_federate_commander = {
+	effect = {
+		create_character = {
+			employer = root
+			gender = male
+			template = new_commander_character
+			faith = root.faith
+			culture = root.culture
+			after_creation = { save_scope_as = new_commander }
+		}
+		send_interface_message = {
+			type = event_generic_neutral_text
+			title = msg_new_federate_commander.t
+			desc = msg_new_federate_commander.desc
+			right_icon = root.primary_title
+			custom_tooltip = msg_new_federate_commander_tt
+		}
+	}
+}

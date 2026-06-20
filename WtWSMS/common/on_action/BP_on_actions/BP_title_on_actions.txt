@@ -1,0 +1,288 @@
+﻿# All on-actions in this file provide scope:transfer_type unless otherwise noted
+# scope:transfer_type has the following permutations:
+# flag:conquest
+# flag:conquest_holy_war
+# flag:conquest_claim
+# flag:conquest_populist
+# flag:inheritance
+# flag:abdication
+# flag:destroyed
+# flag:created
+# flag:usurped
+# flag:granted
+# flag:revoked
+# flag:election
+# flag:independency
+# flag:returned
+# flag:leased_out
+# flag:lease_revoked
+# flag:faction_demand
+# flag:swear_fealty
+
+# A title is destroyed
+# root = the holder before destruction
+# scope:landed_title = the title that is being destroyed
+# Does *not* provide scope:transfer_type
+on_title_destroyed = {
+	events = {}
+	on_actions = {
+		BP_handle_independent_roman_duchies
+	}
+}
+
+BP_handle_independent_roman_duchies = {
+	effect = {
+		# If the title of an independent Roman Dynastic ruler is destroyed,
+		# let's make sure we handle any stray Roman Dynastic vassals
+		if = {
+			limit = {
+				government_has_flag = government_only_valid_for_kingdoms_empires
+				government_has_flag = government_uses_roman_dynastic_authority
+				is_independent_ruler = yes
+				NOT = {
+					any_held_title = {
+						tier > tier_duchy
+						NOT = { this = scope:landed_title }
+					}
+				}
+			}
+			convert_to_subroman_government_effect = yes
+			every_vassal_or_below = {
+				limit = { government_has_flag = government_uses_roman_dynastic_authority }
+				convert_to_subroman_government_effect = yes
+			}
+		}
+	}
+}
+
+# root = the new holder
+# scope:title = the title that changes hands
+# scope:previous_holder = previous holder. Might be dead
+on_title_gain = {
+	events = {}
+	on_actions = {
+		BP_handle_centralized_realm_stuff
+		BP_apply_title_laws
+		#Specific other on-actions
+		BP_add_theocratic_traits
+		BP_fall_of_rome
+		BP_hegemonic_collapse
+		BP_check_independent_roman_polities
+	}
+}
+
+BP_check_independent_roman_polities = {
+	effect = {
+		#Fails the check properly if not delayed, so we have to fire via event
+		trigger_event = { on_action = BP_handle_independent_roman_polities delayed = yes }
+	}
+}
+
+BP_handle_independent_roman_polities = {
+	trigger = {
+		is_independent_ruler = yes
+		government_has_flag = government_only_valid_for_empires_hegemonies
+		has_main_roman_government_trigger = yes
+		
+	}
+	effect = {
+		# If the title of an independent Roman Dynastic/Admin ruler is destroyed,
+		# let's make sure we handle any stray Roman Dynastic/Admin vassals
+		if = {
+			limit = { primary_title.tier < tier_empire }
+			root = { convert_to_subroman_government_effect = yes }
+			every_vassal_or_below = {
+				limit = { has_main_roman_government_trigger = yes }
+				convert_to_subroman_government_effect = yes
+			}
+		}
+	}
+}
+
+BP_handle_centralized_realm_stuff = {
+	effect = {
+		# Ensure Emperor keeps old realm capital in admin realms & apply unique domicile
+		# building bonus if appropriate
+		if = {
+			limit = {
+				government_has_flag = government_is_centralized
+				is_independent_ruler = yes
+				highest_held_title_tier >= tier_empire
+			}
+			if = { # Ensure we keep the old realm capital
+				limit = {
+					scope:title = {
+						tier = tier_empire
+						NOT = { title_capital_county = root.capital_county }
+						# Constantinople must have been inherited
+						title_capital_county.holder = root
+					}
+				}
+				set_realm_capital = scope:title.title_capital_county
+			}
+		}
+	}
+}
+
+BP_apply_title_laws = {
+	effect = {
+		if = {
+			limit = {
+				scope:title.tier = tier_empire
+				scope:transfer_type = flag:created
+			}
+			#Roman Governments
+			if = {
+				limit = { government_has_flag = empires_use_imperial_elective_succession }
+				scope:title = { add_title_law = imperial_elective_succession_law }
+			}
+			#Iranian Governments
+			if = {
+				limit = { government_has_flag = empires_use_mahestan_succession }
+				scope:title = { add_title_law = mahestan_elective_succession_law }
+			}
+		}
+	}
+}
+
+BP_add_theocratic_traits = {
+	trigger = {
+		government_has_flag = government_is_theocracy
+	}
+	effect = {
+		bp_setup_priest_traits_effect = yes
+	}
+}
+
+BP_hegemonic_collapse = {
+	trigger = {
+		#Not China; it has its own rules
+		NOT = { scope:title = title:h_china }
+		#Only Hegemonies
+		scope:title.tier = tier_hegemony
+		#Your territory must be too small for hegemonic pretensions
+		realm_size < 50
+		#Must not be an accepted transfer type
+		NOT = { scope:transfer_type = flag:created }
+		NOT = { scope:transfer_type = flag:granted }
+		NOT = { scope:transfer_type = flag:abdication }
+		NOT = { scope:transfer_type = flag:faction_demand }
+		NOT = { scope:transfer_type = flag:usurped }
+	}
+	effect = {
+		if = { #Roman Empires are special
+			limit = {
+				OR = {
+					scope:title = title:h_western_roman_empire
+					scope:title = title:h_eastern_roman_empire
+					scope:title = title:h_roman_empire
+				}
+			}
+			scope:title = { save_scope_as = the_hegemony }
+			root = { save_scope_as = the_bag_holder }
+			scope:previous_holder ?= { save_scope_as = last_hegemon }
+			trigger_event = { id = bp_hegemonic_collapse.0010 }
+		}
+		else = { #All other Hegemonies
+			scope:title = { save_scope_as = the_hegemony }
+			root = { save_scope_as = the_bag_holder }
+			scope:previous_holder = { save_scope_as = last_hegemon }
+			trigger_event = { id = bp_hegemonic_collapse.0001 }
+		}
+	}
+}
+
+# A vassal changes their liege
+# root = vassal changing their status
+# scope:old_liege = the previous liege of the vassal
+# It is also fired for rulers gaining independence, those can be identified by checking current liege
+on_vassal_change = {
+	on_actions = {
+		BP_degrade_roman_government
+		BP_fall_of_rome
+	}
+}
+
+BP_degrade_roman_government = {
+	effect = {
+		### If an admin ruler becomes independent, who are not of a high enough rank, changes government
+		if = {
+			limit = {
+				liege = root # I.e. root is independent
+				government_has_flag = government_only_valid_for_kingdoms_empires
+				government_has_flag = government_uses_roman_dynastic_authority
+				highest_held_title_tier < tier_kingdom
+			}
+			convert_to_subroman_government_effect = yes
+		}
+	}
+}
+
+# A character gains a vassal
+# root = character gaining vassal
+# scope:vassal = vassal being gained
+# scope:old_liege = the previous liege of the vassal. Might be the null character (vassal used to be a non-ruler or independent), so make sure to use "exists" checks where relevant
+on_vassal_gained = {
+	on_actions = {
+		BP_subroman_to_roman
+	}
+}
+
+BP_subroman_to_roman = {
+	effect = {
+		#Sub-Romans change government to roman if they get vassalized
+		if = {
+			limit = {
+				root = {
+					government_has_flag = is_a_roman_government
+					NOT = { government_has_flag = is_a_transitory_roman_government }
+					scope:vassal = { government_has_flag = is_a_transitory_roman_government }
+				}
+			}
+			scope:vassal = {
+				convert_to_roman_government_effect = yes
+				every_vassal_or_below = {
+					limit = { government_has_flag = is_a_transitory_roman_government }
+					convert_to_roman_government_effect = yes
+				}
+			}
+		}
+	}
+}
+
+on_title_lost = {
+	on_actions = {
+		BP_fall_of_rome
+	}
+}
+
+##### Generic Modifiers
+
+#Fires when Rome falls
+BP_fall_of_rome = {
+	effect = {
+		if = {
+			limit = {
+				#Only shocking the first time...
+				NOT = { has_global_variable = fall_of_rome }
+				#Da Pope shouldn't trigger it ever; Translatio Imperii
+				NOT = { title:c_roma.holder.top_liege = { government_has_flag = government_is_theocracy } }
+				NOR = { #If any of the following is true, we would *not* be checking this
+					title:c_roma.holder.top_liege = { has_primary_title = title:e_wre }
+					title:c_roma.holder.top_liege = { has_primary_title = title:e_byzantium }
+					title:c_roma.holder.top_liege = { has_primary_title = title:h_roman_empire }
+					title:c_roma.holder.top_liege.culture = { has_cultural_parameter = greco_roman_social_tradition }
+				}
+			}
+			#Prevent from firing twice
+			set_global_variable = {
+				name = fall_of_rome
+				value = title:c_roma.holder.top_liege
+			}
+			every_ruler = { #Inform all playable characters
+				limit = { primary_title.tier >= tier_county }
+				trigger_event = { id = bp_narrative_events.0001 }
+			}
+		}
+	}
+}

@@ -15,17 +15,7 @@ can_be_chancellor_trigger = {
 			liege = { has_diarchy_active_parameter = diarchy_is_vizierate }
 		}
 	}
-	OR = {
-		is_ruler = yes
-		AND = {
-			is_female = yes
-			$COURT_OWNER$.faith = { NOT = { has_doctrine_parameter = male_dominated_council } }
-		}
-		AND = {
-			is_male = yes
-			$COURT_OWNER$.faith = { NOT = { has_doctrine_parameter = female_dominated_council } }
-		}
-	}
+	can_be_councillor_gender_trigger = { COURT_OWNER = $COURT_OWNER$ }
 	##### Changed from Vanilla vvvvv
 	trigger_if = {
 		limit = {
@@ -54,17 +44,7 @@ can_be_steward_trigger = {
 			liege = { has_diarchy_active_parameter = diarchy_is_vizierate }
 		}
 	}
-	OR = {
-		is_ruler = yes
-		AND = {
-			is_female = yes
-			$COURT_OWNER$.faith = { NOT = { has_doctrine_parameter = male_dominated_council } }
-		}
-		AND = {
-			is_male = yes
-			$COURT_OWNER$.faith = { NOT = { has_doctrine_parameter = female_dominated_council } }
-		}
-	}
+	can_be_councillor_gender_trigger = { COURT_OWNER = $COURT_OWNER$ }
 	##### Changed from Vanilla vvvvv
 	trigger_if = {
 		limit = {
@@ -95,15 +75,7 @@ can_be_marshal_trigger = {
 		}
 	}
 	OR = {
-		is_ruler = yes
-		AND = {
-			is_female = yes
-			$COURT_OWNER$.faith = { NOT = { has_doctrine_parameter = male_dominated_council } }
-		}
-		AND = {
-			is_male = yes
-			$COURT_OWNER$.faith = { NOT = { has_doctrine_parameter = female_dominated_council } }
-		}
+		can_be_councillor_gender_trigger = { COURT_OWNER = $COURT_OWNER$ }
 		AND = {
 			has_trait = shieldmaiden
 			$COURT_OWNER$.culture = { has_cultural_parameter = has_access_to_shieldmaidens }

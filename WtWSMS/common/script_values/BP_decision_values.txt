@@ -63,6 +63,14 @@ number_of_not_titular_empires = {
 		if = { limit = { is_titular = no } add = 1 }
 	}
 }
+number_of_not_titular_hegemonies = {
+	value = 0
+	every_held_title = {
+		limit = { this.tier = tier_hegemony }
+		if = { limit = { is_titular = no } add = 1 }
+	}
+}
+
 number_of_counties_in_italy = {
 	value = 0
 	every_county = {
@@ -87,7 +95,12 @@ percent_controlled_counties_in_italy = {
 number_of_counties_in_byzantium = {
 	value = 0
 	every_county = {
-		limit = { this.empire = title:e_byzantium }
+		limit = {
+			OR = {
+				this.empire = title:e_praetorian_prefecture_east
+				this.empire = title:e_praetorian_prefecture_illyria
+			}
+		}
 		add = 1
 	}
 }
@@ -95,8 +108,10 @@ number_of_controlled_counties_in_byzantium = {
 	value = 0
 	every_county = {
 		limit = {
-			this.empire = title:e_byzantium
-			this.holder.top_liege = root
+			OR = {
+				this.empire = title:e_praetorian_prefecture_east
+				this.empire = title:e_praetorian_prefecture_illyria
+			}
 		}
 		add = 1
 	}
@@ -224,3 +239,7 @@ num_raised_circumcellions_infantry = {
 	value = num_raised_circumcellions
 	multiply = 200
 }
+
+establish_de_jure_cost_0 = 1000
+establish_de_jure_cost_1 = 1500
+establish_de_jure_cost_2 = 2500

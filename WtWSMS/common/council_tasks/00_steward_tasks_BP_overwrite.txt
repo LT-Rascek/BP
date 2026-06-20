@@ -269,15 +269,15 @@ task_promote_culture = {
 		scope:county = {
 			is_landless_type_title = no
 			### Minority stuff; replaces Vanilla `NOT = { culture = scope:councillor_liege.culture }` ###
-			scope:councillor_liege = { has_realm_law_flag = may_convert_culture }
 			trigger_if = {
-				limit = { culture = scope:councillor_liege.culture }
-				trigger_if = {
-					limit = { county_has_different_heritage_minority_culture_trigger = { CULTURE = scope:councillor.culture } }
-					custom_tooltip = {
-						text = "not_has_expel_minorities_unlocked"
-						scope:councillor_liege = { has_realm_law_flag = unlock_expel_cultural_minorities }
-					}
+				limit = {
+					culture = scope:councillor_liege.culture
+					scope:councillor_liege = { has_realm_law_flag = may_convert_culture }
+				}
+				custom_tooltip = {
+					text = "not_has_expel_minorities_unlocked"
+					county_has_different_heritage_minority_culture_trigger = { CULTURE = scope:councillor.culture }
+					scope:councillor_liege = { has_realm_law_flag = unlock_expel_cultural_minorities }
 				}
 			}
 			trigger_else = { NOT = { culture = scope:councillor_liege.culture } }

@@ -188,3 +188,27 @@ become_saoshyant_decision = {
 	
 	ai_potential = { always = no }
 }
+
+create_dar_al_islam_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_found_kingdom.dds"
+	}
+	decision_group_type = major
+
+	ai_check_interval = 120
+
+	desc = become_saoshyant_decision_desc
+	selection_tooltip = become_saoshyant_decision_tooltip
+	
+	is_shown = { always = no }
+	
+	is_valid = { always = no }
+
+	is_valid_showing_failures_only = { always = no }
+
+	cost = {}
+
+	effect = {}
+	
+	ai_potential = { always = no }
+}

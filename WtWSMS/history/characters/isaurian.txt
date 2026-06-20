@@ -198,7 +198,7 @@
 		effect = { set_knight_status = force }
 	}
 	497.5.5 = {
-		death = yes
+		death = { death_reason = death_decapitated }
 	}
 }
 
@@ -222,7 +222,7 @@
 		effect = { set_knight_status = force }
 	}
 	497.5.5 = {
-		death = yes
+		death = { death_reason = death_execution }
 	}
 }
 

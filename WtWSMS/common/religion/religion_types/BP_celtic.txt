@@ -1,0 +1,418 @@
+﻿celtic_religion = {
+	family = rf_pagan
+	graphical_faith = "pagan_gfx"
+
+	doctrine = pagan_hostility_doctrine
+
+	pagan_roots = yes
+
+	#Main Group
+	doctrine = doctrine_polytheist
+	doctrine = doctrine_no_head
+	doctrine = doctrine_gender_equal #Equal in WtWSMS
+	doctrine = doctrine_pluralism_pluralistic
+	doctrine = doctrine_theocracy_temporal
+
+	#Marriage
+	doctrine = doctrine_polygamy
+	doctrine = doctrine_divorce_approval
+	doctrine = doctrine_bastardry_legitimization
+	doctrine = doctrine_consanguinity_cousins
+
+	#Crimes
+	doctrine = doctrine_homosexuality_shunned
+	doctrine = doctrine_adultery_men_crime
+	doctrine = doctrine_adultery_women_crime
+	doctrine = doctrine_kinslaying_any_dynasty_member_crime
+	doctrine = doctrine_deviancy_crime
+	doctrine = doctrine_witchcraft_accepted
+
+	#Clerical Functions
+	doctrine = doctrine_clerical_function_taxation
+	doctrine = doctrine_clerical_gender_either
+	doctrine = doctrine_clerical_marriage_allowed
+	doctrine = doctrine_clerical_succession_temporal_appointment
+	
+	#Ritual Doctrines
+	doctrine = doctrine_pilgrimage_encouraged
+	doctrine = doctrine_ritual_vegetarianism_no_statement
+	doctrine = doctrine_funeral_cremation
+
+	#Coronation tradition
+	doctrine = doctrine_no_anointment
+
+	traits = {
+		virtues = { brave just honest lifestyle_poet }
+		sins = { craven arbitrary deceitful }
+	}
+
+	custom_faith_icons = {
+		custom_faith_1 custom_faith_2 custom_faith_3 custom_faith_4 custom_faith_5 custom_faith_6 custom_faith_7 custom_faith_8 custom_faith_9 custom_faith_10 dualism_custom_1 zoroastrian_custom_1 zoroastrian_custom_2 buddhism_custom_1 buddhism_custom_2 buddhism_custom_3 buddhism_custom_4 taoism_custom_1 yazidi_custom_1 sunni_custom_2 sunni_custom_3 sunni_custom_4 muhakkima_1 muhakkima_2 muhakkima_4 muhakkima_5 muhakkima_6 judaism_custom_1 custom_faith_fp1_fenrir custom_faith_fp1_irminsul custom_faith_fp1_jormungandr custom_faith_fp1_odins_ravens custom_faith_fp1_runestone_moon custom_faith_fp1_thors_hammer custom_faith_fp1_valknut custom_faith_fp1_yggdrasil custom_faith_boromian_circles custom_faith_lotus custom_faith_aum_tibetan custom_faith_pentagram custom_faith_pentagram_inverted custom_faith_burning_bush custom_faith_allah custom_faith_gankyil custom_faith_eye_of_providence custom_faith_dove custom_faith_ichthys custom_faith_lamb custom_faith_black_sheep custom_faith_ankh custom_faith_chi_rho custom_faith_hamsa custom_faith_cool_s custom_faith_magatama custom_faith_soto custom_faith_benzhuism
+	}
+
+	holy_order_names = {
+		{ name = "holy_order_wolftails" }
+		{ name = "holy_order_fianna" }
+		{ name = "holy_order_sons_of_gwydion" }
+		{ name = "holy_order_battle_ravens" }
+		{ name = "holy_order_red_dragon_knights" coat_of_arms = "vanity_horler" }
+		{ name = "holy_order_band_of_camulos" }
+	}
+
+	holy_order_maa = { hobelar }
+
+	localization = {
+		# High God
+		HighGodName = gallic_high_god_name
+		HighGodName2 = gallic_high_god_name
+		HighGodNamePossessive = gallic_high_god_name_possessive
+		HighGodNameSheHe = CHARACTER_SHEHE_HE
+		HighGodHerselfHimself = CHARACTER_HIMSELF
+		HighGodHerHis = CHARACTER_HERHIS_HIS
+		HighGodNameAlternate = germanic_high_god_alternate # Allfather
+		HighGodNameAlternatePossessive = germanic_high_god_alternate_possessive
+
+		#Creator
+		CreatorName = gallic_creator_god_name
+		CreatorNamePossessive = gallic_creator_god_name_possessive
+		CreatorSheHe = CHARACTER_SHEHE_HE
+		CreatorHerHis = CHARACTER_HERHIS_HIS
+		CreatorHerHim = CHARACTER_HERHIM_HIM
+
+		#HealthGod
+		HealthGodName = gallic_health_god_name
+		HealthGodNamePossessive = gallic_health_god_name_possessive
+		HealthGodSheHe = CHARACTER_SHEHE_HE
+		HealthGodHerHis = CHARACTER_HERHIS_HIS
+		HealthGodHerHim = CHARACTER_HERHIM_HIM
+		
+		#FertilityGod
+		FertilityGodName = gallic_fertility_god_name
+		FertilityGodNamePossessive = gallic_fertility_god_name_possessive
+		FertilityGodSheHe = CHARACTER_SHEHE_SHE
+		FertilityGodHerHis = CHARACTER_HERHIS_HER
+		FertilityGodHerHim = CHARACTER_HERHIM_HER
+
+		#WealthGod
+		WealthGodName = gallic_wealth_god_name
+		WealthGodNamePossessive = gallic_wealth_god_name_possessive
+		WealthGodSheHe = CHARACTER_SHEHE_HE
+		WealthGodHerHis = CHARACTER_HERHIS_HIS
+		WealthGodHerHim = CHARACTER_HERHIM_HIM
+
+		#HouseholdGod
+		HouseholdGodName = gallic_household_god_name
+		HouseholdGodNamePossessive = gallic_household_god_name_possessive
+		HouseholdGodSheHe = CHARACTER_SHEHE_HE
+		HouseholdGodHerHis = CHARACTER_HERHIS_HIS
+		HouseholdGodHerHim = CHARACTER_HERHIM_HIM
+
+		#FateGod
+		FateGodName = gallic_fate_god_name
+		FateGodNamePossessive = gallic_fate_god_name_possessive
+		FateGodSheHe = CHARACTER_SHEHE_HE
+		FateGodHerHis = CHARACTER_HERHIS_HIS
+		FateGodHerHim = CHARACTER_HERHIM_HIM
+
+		#KnowledgeGod
+		KnowledgeGodName = gallic_knowledge_god_name
+		KnowledgeGodNamePossessive = gallic_knowledge_god_name_possessive
+		KnowledgeGodSheHe = CHARACTER_SHEHE_HE
+		KnowledgeGodHerHis = CHARACTER_HERHIS_HIS
+		KnowledgeGodHerHim = CHARACTER_HERHIM_HIM
+
+		#WarGod
+		WarGodName = gallic_war_god_name
+		WarGodNamePossessive = gallic_war_god_name_possessive
+		WarGodSheHe = CHARACTER_SHEHE_HE
+		WarGodHerHis = CHARACTER_HERHIS_HIS
+		WarGodHerHim = CHARACTER_HERHIM_HIM
+
+		#TricksterGod
+		TricksterGodName = gallic_trickster_god_name
+		TricksterGodNamePossessive = gallic_trickster_god_name_possessive
+		TricksterGodSheHe = CHARACTER_SHEHE_HE
+		TricksterGodHerHis = CHARACTER_HERHIS_HIS
+		TricksterGodHerHim = CHARACTER_HERHIM_HIM
+
+		#NightGod
+		NightGodName = gallic_night_god_name
+		NightGodNamePossessive = gallic_night_god_name_possessive
+		NightGodSheHe = CHARACTER_SHEHE_HE
+		NightGodHerHis = CHARACTER_HERHIS_HIS
+		NightGodHerHim = CHARACTER_HERHIM_HIM
+
+		#WaterGod
+		WaterGodName = gallic_water_god_name
+		WaterGodNamePossessive = gallic_water_god_name_possessive
+		WaterGodSheHe = CHARACTER_SHEHE_SHE
+		WaterGodHerHis = CHARACTER_HERHIS_HER
+		WaterGodHerHim = CHARACTER_HERHIM_HER
+
+
+		PantheonTerm = religion_the_gods
+		PantheonTerm2 = religion_the_gods_2
+		PantheonTerm3 = religion_the_gods_3
+		PantheonTermHasHave = pantheon_term_have
+		GoodGodNames = { gallic_high_god_name gallic_high_god_name_alternate gallic_death_deity_name gallic_creator_god_name gallic_health_god_name gallic_fertility_god_name gallic_wealth_god_name gallic_household_god_name gallic_fate_god_name gallic_knowledge_god_name gallic_war_god_name gallic_trickster_god_name gallic_night_god_name gallic_water_god_name gallic_god_esus }
+		DevilName = gallic_devil_name
+		DevilNamePossessive = gallic_devil_name_possessive
+		DevilSheHe = CHARACTER_SHEHE_HE
+		DevilHerHis = CHARACTER_HERHIS_HIS
+		DevilHerselfHimself = CHARACTER_HIMSELF
+		EvilGodNames = { gallic_devil_name gallic_high_god_name gallic_household_god_name gallic_witch_god_name paganism_evil_god_decay }
+		HouseOfWorship = celtic_house_of_worship
+		HouseOfWorship2 = celtic_house_of_worship
+		HouseOfWorship3 = celtic_house_of_worship
+		HouseOfWorshipPlural = celtic_house_of_worship_plural
+		ReligiousSymbol = celtic_religious_symbol
+		ReligiousSymbol2 = celtic_religious_symbol
+		ReligiousSymbol3 = celtic_religious_symbol
+		ReligiousText = celtic_religious_text
+		ReligiousText2 = celtic_religious_text
+		ReligiousText3 = celtic_religious_text
+
+		# Devotees
+		DevoteeMale = paganism_devotee
+		DevoteeMalePlural = paganism_devoteeplural
+		DevoteeFemale = paganism_devotee
+		DevoteeFemalePlural = paganism_devoteeplural
+		DevoteeNeuter = paganism_devotee
+		DevoteeNeuterPlural = paganism_devoteeplural
+
+		# Religious Priests
+		ReligiousHeadName = celtic_religious_head_title
+		ReligiousHeadTitleName = paganism_religious_head_title_name
+		PriestMale = celtic_priest_male
+		PriestMalePlural = celtic_priest_plural
+		PriestFemale = celtic_priest_female
+		PriestFemalePlural = celtic_priest_female_plural
+		PriestNeuter = celtic_priest_neuter
+		PriestNeuterPlural = celtic_priest_neuter_plural
+		AltPriestTermPlural = celtic_priest_alternate_plural
+		BishopMale = celtic_bishop_male
+		BishopMalePlural = celtic_priest_plural
+		BishopFemale = celtic_bishop_female
+		BishopFemalePlural = celtic_bishop_female_plural
+		BishopNeuter = celtic_bishop_male
+		BishopNeuterPlural = celtic_bishop_male_plural
+
+		DivineRealm = celtic_divine_realm
+		DivineRealm2 = celtic_divine_realm
+		DivineRealm3 = celtic_divine_realm
+		PositiveAfterLife = celtic_divine_realm
+		PositiveAfterLife2 = celtic_divine_realm
+		PositiveAfterLife3 = celtic_divine_realm
+		NegativeAfterLife = paganism_afterlife
+		NegativeAfterLife2 = paganism_afterlife
+		NegativeAfterLife3 = paganism_afterlife
+
+		DeathDeityName = gallic_death_deity_name
+		DeathDeityNamePossessive = gallic_death_deity_name_possessive
+		DeathDeitySheHe = CHARACTER_SHEHE_HE
+		DeathDeityHerHis = CHARACTER_HERHIS_HIS
+		DeathDeityHerHim = CHARACTER_HERHIM_HIM
+
+		WitchGodName = gallic_witch_god_name
+		WitchGodNamePossessive = gallic_witch_god_name_possessive
+		WitchGodSheHe = CHARACTER_SHEHE_SHE
+		WitchGodHerHis = CHARACTER_HERHIS_HER
+		WitchGodHerHim = CHARACTER_HERHIM_HER
+		WitchGodMistressMaster = witch_mistress
+		WitchGodMotherFather = witch_mother
+
+		GHWName = ghw_great_holy_war
+		GHWNamePlural = ghw_great_holy_wars
+	}
+
+	faiths = {
+		#WtWSMS Differences: no raiding, no gavelkind restriction, 
+		celtic_pagan = {
+			color = briton
+			icon = mfi_triskelion
+			reformed_icon = mfi_celtic_pagan_reformed
+			doctrine = unreformed_faith_doctrine
+
+			#WtWSMS: Vannes, Dyfed, Isle of Man, Gowrie, Dublin
+			holy_site = vannes
+			holy_site = lyon
+			holy_site = isle_of_man
+			holy_site = gowrie
+			holy_site = armagh #Replaces Dublin for both Celtic Pagan and Insular Celtic
+			holy_site = legio
+
+			doctrine = tenet_warmonger #Matches WtWSMS war traits
+			doctrine = tenet_sanctity_of_nature
+			
+			doctrine_selection_pair = {
+				requires_dlc_flag = all_under_heaven
+				doctrine = tenet_cranial_trophies
+				fallback_doctrine = tenet_human_sacrifice #WtWSMS feature
+			}
+			
+			doctrine = special_doctrine_runestones
+			localization = {
+				# High God
+				HighGodName = celtic_high_god_name
+				HighGodName2 = celtic_high_god_name
+				HighGodNamePossessive = celtic_high_god_name_possessive
+				HighGodNameSheHe = CHARACTER_SHEHE_HE
+				HighGodHerselfHimself = CHARACTER_HIMSELF
+				HighGodHerHis = CHARACTER_HERHIS_HIS
+
+				#Creator
+				CreatorName = celtic_creator_god_name
+				CreatorNamePossessive = celtic_creator_god_name_possessive
+				CreatorSheHe = CHARACTER_SHEHE_SHE
+				CreatorHerHis = CHARACTER_HERHIS_HER
+				CreatorHerHim = CHARACTER_HERHIM_HER
+
+				#HealthGod
+				HealthGodName = celtic_health_god_name
+				HealthGodNamePossessive = celtic_health_god_name_possessive
+				HealthGodSheHe = CHARACTER_SHEHE_HE
+				HealthGodHerHis = CHARACTER_HERHIS_HIS
+				HealthGodHerHim = CHARACTER_HERHIM_HIM
+				
+				#FertilityGod
+				FertilityGodName = celtic_fertility_god_name
+				FertilityGodNamePossessive = celtic_fertility_god_name_possessive
+				FertilityGodSheHe = CHARACTER_SHEHE_SHE
+				FertilityGodHerHis = CHARACTER_HERHIS_HER
+				FertilityGodHerHim = CHARACTER_HERHIM_HER
+
+				#WealthGod
+				WealthGodName = celtic_wealth_god_name
+				WealthGodNamePossessive = celtic_wealth_god_name_possessive
+				WealthGodSheHe = CHARACTER_SHEHE_SHE
+				WealthGodHerHis = CHARACTER_HERHIS_HER
+				WealthGodHerHim = CHARACTER_HERHIM_HER
+
+				#HouseholdGod
+				HouseholdGodName = celtic_household_god_name
+				HouseholdGodNamePossessive = celtic_household_god_name_possessive
+				HouseholdGodSheHe = CHARACTER_SHEHE_SHE
+				HouseholdGodHerHis = CHARACTER_HERHIS_HER
+				HouseholdGodHerHim = CHARACTER_HERHIM_HER
+
+				#FateGod
+				FateGodName = celtic_fate_god_name
+				FateGodNamePossessive = celtic_fate_god_name_possessive
+				FateGodSheHe = CHARACTER_SHEHE_SHE
+				FateGodHerHis = CHARACTER_HERHIS_HER
+				FateGodHerHim = CHARACTER_HERHIM_HER
+
+				#KnowledgeGod
+				KnowledgeGodName = celtic_knowledge_god_name
+				KnowledgeGodNamePossessive = celtic_knowledge_god_name_possessive
+				KnowledgeGodSheHe = CHARACTER_SHEHE_HE
+				KnowledgeGodHerHis = CHARACTER_HERHIS_HIS
+				KnowledgeGodHerHim = CHARACTER_HERHIM_HIM
+
+				#WarGod
+				WarGodName = celtic_war_god_name
+				WarGodNamePossessive = celtic_war_god_name_possessive
+				WarGodSheHe = CHARACTER_SHEHE_SHE
+				WarGodHerHis = CHARACTER_HERHIS_HER
+				WarGodHerHim = CHARACTER_HERHIM_HER
+
+				#TricksterGod
+				TricksterGodName = celtic_trickster_god_name
+				TricksterGodNamePossessive = celtic_trickster_god_name_possessive
+				TricksterGodSheHe = CHARACTER_SHEHE_HE
+				TricksterGodHerHis = CHARACTER_HERHIS_HIS
+				TricksterGodHerHim = CHARACTER_HERHIM_HIM
+
+				#NightGod
+				NightGodName = celtic_night_god_name
+				NightGodNamePossessive = celtic_night_god_name_possessive
+				NightGodSheHe = CHARACTER_SHEHE_SHE
+				NightGodHerHis = CHARACTER_HERHIS_HER
+				NightGodHerHim = CHARACTER_HERHIM_HER
+
+				#WaterGod
+				WaterGodName = celtic_water_god_name
+				WaterGodNamePossessive = celtic_water_god_name_possessive
+				WaterGodSheHe = CHARACTER_SHEHE_HE
+				WaterGodHerHis = CHARACTER_HERHIS_HIS
+				WaterGodHerHim = CHARACTER_HERHIM_HIM
+
+
+				PantheonTerm = celtic_divine_realm
+				PantheonTerm2 = celtic_divine_realm
+				PantheonTerm3 = celtic_divine_realm
+				PantheonTermHasHave = pantheon_term_have
+				GoodGodNames = { celtic_good_god_lugh celtic_good_god_aine celtic_good_god_brighid celtic_good_god_manannan celtic_good_god_ogma celtic_good_god_nuada celtic_good_god_macha }
+				DevilName = celtic_devil_name
+				DevilNamePossessive = celtic_devil_name_possessive
+				DevilSheHe = CHARACTER_SHEHE_HE
+				DevilHerHis = CHARACTER_HERHIS_HIS
+				DevilHerselfHimself = CHARACTER_HIMSELFHERSELF_HIMSELF
+				EvilGodNames = { celtic_devil_name celtic_death_deity_name celtic_creator_god_name celtic_god_morrigan paganism_evil_god_decay }
+
+				DeathDeityName = celtic_death_deity_name
+				DeathDeityNamePossessive = celtic_death_deity_name_possessive
+				DeathDeitySheHe = CHARACTER_SHEHE_HE
+				DeathDeityHerHis = CHARACTER_HERHIS_HIS
+				DeathDeityHerHim = CHARACTER_HERHIM_HIM
+
+				WitchGodName = celtic_creator_god_name
+				WitchGodNamePossessive = celtic_creator_god_name_possessive
+				WitchGodSheHe = CHARACTER_SHEHE_SHE
+				WitchGodHerHis = CHARACTER_HERHIS_HER
+				WitchGodHerHim = CHARACTER_HERHIM_HER
+				WitchGodMistressMaster = witch_mistress
+				WitchGodMotherFather = witch_mother
+			}
+		}
+		romano_celtic_pagan = { #Gallic Paganism; Heavily Romanized and Organized
+			color = gallic
+			icon = mfi_celtic_pagan
+			reformed_icon = mfi_celtic_pagan_reformed
+
+			holy_site = vannes
+			holy_site = lyon
+			holy_site = bordeaux
+			holy_site = cologne
+			holy_site = beziers
+
+			doctrine = doctrine_monogamy
+			doctrine = doctrine_gender_male_dominated
+			doctrine = doctrine_theocracy_lay_clergy
+
+			doctrine = doctrine_roman_polytheist
+
+			doctrine = tenet_sanctity_of_nature
+			doctrine = tenet_hellenic_syncretism_pagan_only
+			#Cranial trophies seemed to continue, but not quite as warmonger-y or human sacrificing
+			doctrine_selection_pair = {
+				requires_dlc_flag = all_under_heaven
+				doctrine = tenet_cranial_trophies
+				fallback_doctrine = tenet_unrelenting_faith
+			}
+			
+			doctrine = special_doctrine_runestones
+			
+			localization = {
+				HighGodNameAlternate = gallic_high_god_name_alternate
+				HighGodNameAlternatePossessive = gallic_high_god_name_alternate_possessive
+
+				ReligiousHeadName = hellenic_pagan_religious_head_title
+				ReligiousHeadTitleName = hellenic_pagan_religious_head_title_name
+				PriestMale = romano_celtic_priest_male
+				PriestMalePlural = romano_celtic_priest_male_plural
+				PriestFemale = romano_celtic_priest_female
+				PriestFemalePlural = romano_celtic_priest_female_plural
+				PriestNeuter = romano_celtic_priest_neuter
+				PriestNeuterPlural = romano_celtic_priest_neuter_plural
+				AltPriestTermPlural = roman_priest_alternate_plural
+				BishopMale = romano_celtic_priest_male
+				BishopMalePlural = romano_celtic_priest_male_plural
+				BishopFemale = romano_celtic_priest_female
+				BishopFemalePlural = romano_celtic_priest_female_plural
+				BishopNeuter = romano_celtic_priest_neuter
+				BishopNeuterPlural = romano_celtic_priest_neuter_plural
+			}
+		}
+	}
+}

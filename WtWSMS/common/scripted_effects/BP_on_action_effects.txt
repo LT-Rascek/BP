@@ -1,4 +1,12 @@
-﻿bp_propagate_ecumenism_effect = {
+﻿bp_devolve_roman_federate_effect = { #Char root
+	if = {
+		limit = { valid_for_federate_to_be_high_tribal_trigger = yes }
+		change_government = high_tribal_government
+	}
+	else = { change_government = tribal_government }
+}
+
+bp_propagate_ecumenism_effect = {
 	#Christian Faiths
 	if = {
 		limit = { scope:old_faith = { has_doctrine = special_doctrine_nicene_ecumenism } }
@@ -193,10 +201,10 @@ set_court_language_from_effect = {
 	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_beja } NOT = { has_court_language = language_beja } NOT = { has_court_language = language_beja } } $CHARACTER$ = { set_court_language = language_beja } }
 	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_sidamic } NOT = { has_court_language = language_sidamic } NOT = { has_court_language = language_sidamic } } $CHARACTER$ = { set_court_language = language_sidamic } }
 	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_cushitic } NOT = { has_court_language = language_cushitic } NOT = { has_court_language = language_cushitic } } $CHARACTER$ = { set_court_language = language_cushitic } }
-	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_kemetic } NOT = { has_court_language = language_kemetic } NOT = { has_court_language = language_kemetic } } $CHARACTER$ = { set_court_language = language_kemetic } }
+	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_egyptian } NOT = { has_court_language = language_egyptian } NOT = { has_court_language = language_egyptian } } $CHARACTER$ = { set_court_language = language_egyptian } }
 	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_coptic } NOT = { has_court_language = language_coptic } NOT = { has_court_language = language_coptic } } $CHARACTER$ = { set_court_language = language_coptic } }
 	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_omotic } NOT = { has_court_language = language_omotic } NOT = { has_court_language = language_omotic } } $CHARACTER$ = { set_court_language = language_omotic } }
-	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_punic } NOT = { has_court_language = language_punic } NOT = { has_court_language = language_punic } } $CHARACTER$ = { set_court_language = language_punic } }
+	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_carthaginian } NOT = { has_court_language = language_carthaginian } NOT = { has_court_language = language_carthaginian } } $CHARACTER$ = { set_court_language = language_carthaginian } }
 	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_israelite } NOT = { has_court_language = language_israelite } NOT = { has_court_language = language_israelite } } $CHARACTER$ = { set_court_language = language_israelite } }
 	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_aramaic } NOT = { has_court_language = language_aramaic } NOT = { has_court_language = language_aramaic } } $CHARACTER$ = { set_court_language = language_aramaic } }
 	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_arabic } NOT = { has_court_language = language_arabic } NOT = { has_court_language = language_arabic } } $CHARACTER$ = { set_court_language = language_arabic } }
@@ -389,10 +397,10 @@ match_court_languages_effect = {
 	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_beja } } $CURRENT_COURT$ = { set_court_language = language_beja } }
 	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_sidamic } } $CURRENT_COURT$ = { set_court_language = language_sidamic } }
 	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_cushitic } } $CURRENT_COURT$ = { set_court_language = language_cushitic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_kemetic } } $CURRENT_COURT$ = { set_court_language = language_kemetic } }
+	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_egyptian } } $CURRENT_COURT$ = { set_court_language = language_egyptian } }
 	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_coptic } } $CURRENT_COURT$ = { set_court_language = language_coptic } }
 	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_omotic } } $CURRENT_COURT$ = { set_court_language = language_omotic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_punic } } $CURRENT_COURT$ = { set_court_language = language_punic } }
+	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_carthaginian } } $CURRENT_COURT$ = { set_court_language = language_carthaginian } }
 	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_israelite } } $CURRENT_COURT$ = { set_court_language = language_israelite } }
 	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_aramaic } } $CURRENT_COURT$ = { set_court_language = language_aramaic } }
 	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_arabic } } $CURRENT_COURT$ = { set_court_language = language_arabic } }
@@ -457,59 +465,4 @@ match_court_languages_effect = {
 	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_burusho } } $CURRENT_COURT$ = { set_court_language = language_burusho } }
 	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_trojan } } $CURRENT_COURT$ = { set_court_language = language_trojan } }
 	else = { debug_log = "MISSING A LANGUAGE: match_court_languages_effect?" }
-}
-
-create_bagudae_holder_game_start_effect = {
-	$HOLDER$ ?= {
-		add_realm_law_skip_effects = camp_purpose_brigands
-		add_gold = 50
-		this.domicile = {
-			change_provisions = starting_provisions_value
-			add_domicile_building = camp_main_02
-			add_domicile_building = camp_main_03
-			add_domicile_building = proving_grounds_01
-			add_domicile_building = proving_grounds_02
-			add_domicile_building = baggage_train_01
-			add_domicile_building = baggage_train_02
-		}
-		create_maa_regiment = {
-			type = armored_footmen
-			check_can_recruit = yes
-			size = 3
-		}
-		create_maa_regiment = {
-			type = light_footmen
-			check_can_recruit = yes
-			size = 3
-		}
-		create_maa_regiment = {
-			type = light_footmen
-			check_can_recruit = yes
-			size = 3
-		}
-		create_maa_regiment = {
-			type = bowmen
-			check_can_recruit = yes
-			size = 3
-		}
-		#They are free-booters, raiders, lower class revolting peasants
-		add_trait_xp = {
-			trait = gallowsbait
-			track = bandit
-			value = 100
-		}
-		add_trait_xp = {
-			trait = gallowsbait
-			track = poacher
-			value = 50
-		}
-		add_trait_xp = {
-			trait = gallowsbait
-			track = marauder
-			value = 25
-		}
-		create_character = { gender = male employer = $HOLDER$ }
-		create_character = { gender = male employer = $HOLDER$ }
-		create_character = { gender = male employer = $HOLDER$ }
-	}
 }
