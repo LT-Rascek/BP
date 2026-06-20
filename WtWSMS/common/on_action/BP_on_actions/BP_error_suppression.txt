@@ -1,0 +1,443 @@
+﻿#HT to Ant0nidas who I ended up referencing but not using becuase I hate JS.
+#
+#https://github.com/Ant0nidas/Scripts-for-CK3-Modding/blob/main/CMH_error_suppression.js
+
+#This will suppress certain events that are no longer applicable in WtWSMS
+on_game_start = {
+	on_actions = {
+		orphaned_events
+		set_unused_variables
+		fix_scope_errors
+		fix_modifier_errors
+		fix_list_errors
+	}
+}
+
+orphaned_events = {
+	trigger = { always = no } #These should never fire
+	random_events = {
+		chance_to_happen = 0
+			1 = bookmark.0001
+			1 = bookmark.0003
+			1 = bookmark.0101
+			1 = bookmark.0200
+			1 = bookmark.0211
+			1 = bookmark.0300
+			1 = bookmark.0400
+			1 = bookmark.0500
+			1 = bookmark.1066
+			1 = bookmark.1067
+			1 = bookmark.1068
+			1 = bookmark.1069
+			1 = bookmark.1070
+			1 = bookmark.1072
+			1 = bookmark.1073
+			1 = british_isles.1011
+			1 = british_isles.1031
+			1 = british_isles.1061
+			1 = british_isles.1062
+			1 = british_isles.1063
+			1 = british_isles.2001
+			1 = british_isles.3001
+			1 = british_isles.4001
+			1 = british_isles.4002
+			1 = central_asia.0011
+			1 = central_asia.0012
+			1 = central_asia.0013
+			1 = cid.0001
+			1 = culture_emergence_events.0001
+			1 = culture_notification.1011
+			1 = diarchy.0012 #Tied to a specific Vanilla character, fyi
+			1 = east_europe.0001
+			1 = east_europe.0002
+			1 = east_europe.0005
+			1 = east_europe.0006
+			1 = east_europe.0010
+			1 = east_europe.0011
+			1 = east_europe.0030
+			1 = east_europe.0032
+			1 = east_europe.0101
+			1 = east_europe.0102
+			1 = east_europe.0111
+			1 = east_europe.0141
+			1 = east_europe.0200
+			1 = east_europe.0201
+			1 = easteregg_event.0001
+			1 = ep3_decisions_event.3000
+			1 = ep3_decisions_event.3100
+			1 = ep3_decisions_event.4000
+			1 = ep3_decisions_event.4010
+			1 = ep3_decisions_event.4011
+			1 = ep3_decisions_event.4020
+			1 = ep3_decisions_event.4030
+			1 = ep3_decisions_event.4040
+			1 = ep3_decisions_event.5020
+			1 = ep3_decisions_event.5030
+			1 = ep3_emperor_yearly.2000
+			1 = ep3_frankokratia_events.0080
+			1 = ep3_frankokratia_events.0090
+			1 = ep3_laamps.5999
+			1 = ep3_roman_restoration.0100
+			1 = ep3_story_cycle_violet_poet.0001
+			1 = ep3_yearly.3000
+			1 = faith_creation.1001
+			1 = fp2_other_decisions.1100
+			1 = fp2_yearly.9000
+			1 = fp2_yearly.9005
+			1 = fp2_yearly.9006
+			1 = game_rule.1151
+			1 = game_rule.1152
+			1 = hasan_sabbah.1000
+			1 = historical_artifacts.0023
+			1 = iberia_north_africa.0001
+			1 = iberia_north_africa.0002
+			1 = iberia_north_africa.0005
+			1 = iberia_north_africa.0006
+			1 = iberia_north_africa.0010
+			1 = iberia_north_africa.0011
+			1 = iberia_north_africa.0015
+			1 = iberia_north_africa.0016
+			1 = iberia_north_africa.0101
+			1 = iberia_north_africa.0111
+			1 = iberia_north_africa.0121
+			1 = iberia_north_africa.0131
+			1 = iberia_north_africa.2100
+			1 = iberia_north_africa.2105
+			1 = iberia_north_africa.9101
+			1 = major_decisions.0001
+			1 = major_decisions.0002
+			1 = major_decisions.3400 #Carantania
+			1 = major_decisions.3500 #Cumbria
+			1 = major_decisions.4000
+			1 = major_decisions.4001
+			1 = major_decisions.5000
+			1 = major_decisions.5001
+			1 = major_decisions.6000
+			1 = major_decisions.6003
+			1 = major_decisions.7000
+			1 = major_decisions.7001
+			1 = major_decisions.8000
+			1 = major_decisions.9000
+			1 = middle_east_decisions.0001
+			1 = middle_east_decisions.0009
+			1 = middle_east_decisions.0011
+			1 = middle_east_decisions.0014
+			1 = middle_east_decisions.1100 # Dar al-Islam
+			1 = middle_east_decisions.1101 # Dar al-Islam
+			1 = middle_east_decisions.1102 # Dar al-Islam
+			1 = middle_europe_decisions.0001
+			1 = middle_europe_decisions.0003
+			1 = middle_europe_decisions.0005
+			1 = middle_europe_decisions.0007
+			1 = middle_europe_decisions.0010
+			1 = middle_europe_decisions.0015
+			1 = middle_europe_decisions.0016
+			1 = middle_europe_decisions.0017
+			1 = middle_europe_decisions.0018
+			1 = mpo_decisions_events.0400
+			1 = roman_restoration.0001
+			1 = roman_restoration.0003
+			1 = roman_restoration.0100
+			1 = roman_restoration.0120
+			1 = roman_restoration.0122
+			1 = roman_restoration.0124
+			1 = roman_restoration.0130
+			1 = roman_restoration.0140
+			1 = roman_restoration.0150
+			1 = roman_restoration.0160
+			1 = roman_restoration.0170
+			1 = roman_restoration.1200
+			1 = roman_restoration.1204
+			1 = tgp_genpei_character.1000
+			1 = tgp_genpei_character.1090
+			1 = tgp_genpei_character.1100
+			1 = tgp_genpei_character.2000
+			1 = tgp_genpei_character.2010
+			1 = tgp_genpei_character.3000
+			1 = tgp_genpei_character.3100
+			1 = tgp_genpei_character.4000
+			1 = tgp_japan_career.0001
+			1 = tgp_japan_decision.9002
+			1 = tgp_japan_decision.9101
+			1 = tgp_japan_decision.9201
+			1 = tgp_japan_decision.9301
+			1 = tgp_japan_decision.9401
+			1 = tgp_japan_decision.9500
+			1 = tgp_japan_decision.9601
+			1 = tgp_japan_decision.9606
+			1 = tgp_japan_decision.9901
+			1 = tgp_japan_decision.9911
+			1 = tgp_japan_decision.9960
+			1 = tgp_japan_general.8800
+			1 = tgp_japan_general.9550
+			1 = tgp_silk_road_events.0010
+	}
+}
+
+#is used but never set errors
+set_unused_variables = {
+	trigger = { always = no } #These should never fire
+	effect = {
+		add_variable_to_suppress_it_effect = { NAME = achievement_mother_of_us_all_achamanism }
+		add_variable_to_suppress_it_effect = { NAME = achievement_mother_of_us_all_kushitism }
+		add_variable_to_suppress_it_effect = { NAME = acolyte }
+		add_variable_to_suppress_it_effect = { NAME = acolyte_host }
+		add_variable_to_suppress_it_effect = { NAME = africa_uniter }
+		add_variable_to_suppress_it_effect = { NAME = already_called_my_suzerain }
+		add_variable_to_suppress_it_effect = { NAME = any_ruler_designed_character_achievement }
+		add_variable_to_suppress_it_effect = { NAME = artefact_santiago_bells }
+		add_variable_to_suppress_it_effect = { NAME = artifact_succession_title }
+		add_variable_to_suppress_it_effect = { NAME = atoned_krstjani_leader_flag }
+		add_variable_to_suppress_it_effect = { NAME = base_faith }
+		add_variable_to_suppress_it_effect = { NAME = bastard_cultures }
+		add_variable_to_suppress_it_effect = { NAME = block_conversion_till_decision_taken }
+		add_variable_to_suppress_it_effect = { NAME = block_conversion_till_nebulous_circumstances }
+		add_variable_to_suppress_it_effect = { NAME = block_reformation_var }
+		add_variable_to_suppress_it_effect = { NAME = buddhist_school_kadam_formed }
+		add_variable_to_suppress_it_effect = { NAME = buddhist_school_kagyu_formed }
+		add_variable_to_suppress_it_effect = { NAME = buddhist_school_sakya_formed }
+		add_variable_to_suppress_it_effect = { NAME = celtic_group }
+		add_variable_to_suppress_it_effect = { NAME = crown_of_justinian }
+		add_variable_to_suppress_it_effect = { NAME = custom_map_tributary_target }
+		add_variable_to_suppress_it_effect = { NAME = declare_canarias_decision }
+		add_variable_to_suppress_it_effect = { NAME = finished_ep4_07_cut_off_the_head_and_the_body_will_follow_achievement }
+		add_variable_to_suppress_it_effect = { NAME = flag_emperor_challenging_byz }
+		add_variable_to_suppress_it_effect = { NAME = flag_emperor_challenging_hre }
+		add_variable_to_suppress_it_effect = { NAME = flag_formed_kingdom_of_aragon }
+		add_variable_to_suppress_it_effect = { NAME = flag_united_the_husamguk }
+		add_variable_to_suppress_it_effect = { NAME = foederatus_tributary }
+		add_variable_to_suppress_it_effect = { NAME = form_portugal_decision }
+		add_variable_to_suppress_it_effect = { NAME = founder_culture }
+		add_variable_to_suppress_it_effect = { NAME = fp2_james_0002_conversos_character }
+		add_variable_to_suppress_it_effect = { NAME = fp3_the_umma_strikes_back_achievement_tracker }
+		add_variable_to_suppress_it_effect = { NAME = frankish_christian_faith }
+		add_variable_to_suppress_it_effect = { NAME = full_tutorial_selected }
+		add_variable_to_suppress_it_effect = { NAME = genghis }
+		add_variable_to_suppress_it_effect = { NAME = hindu_philosophy_dvaita_vedanta_formed }
+		add_variable_to_suppress_it_effect = { NAME = hindu_philosophy_vishishtadvaita_formed }
+		add_variable_to_suppress_it_effect = { NAME = is_in_tutorial }
+		add_variable_to_suppress_it_effect = { NAME = justinian }
+		add_variable_to_suppress_it_effect = { NAME = lesson_chain_war_tutorial_started }
+		add_variable_to_suppress_it_effect = { NAME = muhammad_sword_name }
+		add_variable_to_suppress_it_effect = { NAME = new_saxon_king }
+		add_variable_to_suppress_it_effect = { NAME = pishdadian }
+		add_variable_to_suppress_it_effect = { NAME = pope_hat }
+		add_variable_to_suppress_it_effect = { NAME = portugal_former }
+		add_variable_to_suppress_it_effect = { NAME = potential_cultures }
+		add_variable_to_suppress_it_effect = { NAME = potential_faiths }
+		add_variable_to_suppress_it_effect = { NAME = quick_tutorial_selected }
+		add_variable_to_suppress_it_effect = { NAME = reichskrone }
+		add_variable_to_suppress_it_effect = { NAME = religious_leader }
+		add_variable_to_suppress_it_effect = { NAME = romano_african }
+		add_variable_to_suppress_it_effect = { NAME = seceding_county }
+		add_variable_to_suppress_it_effect = { NAME = seceding_duchy }
+		add_variable_to_suppress_it_effect = { NAME = spain_uniter }
+		add_variable_to_suppress_it_effect = { NAME = started_a_e_i_o_u_and_me_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_a_knights_tale_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_a_thousand_and_one_nights_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_a_true_and_perfect_knight_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_ahab_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_beta_israel_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_black_dinner_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_bod_chen_po_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_brave_and_bold_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_changing_course_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_converging_paths_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_creme_de_la_creme_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_delusions_of_grandeur_achievement_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_fly_my_pretty_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_give_a_dog_a_bone_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_hoarder_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_hunting_accident_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_i_made_this_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_im_in_my_elements_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_imperial_march_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_inspirational_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_like_no_one_ever_was_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_lingua_franca_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_lions_and_tigers_and_bears_oh_my_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_nobody_comes_to_fika_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_norman_yoke_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_one_of_a_kind_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_pathway_to_heaven_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_patronage_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_polyglot_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_rise_of_the_ghurids_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_sir_lance_a_lot_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_the_grandest_tour_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_the_iron_and_golden_king_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_the_true_royal_court_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_the_very_best_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_there_and_back_again_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_they_belong_in_a_museum_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_true_tolerance_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_turkish_eagle_achievement }
+		add_variable_to_suppress_it_effect = { NAME = started_your_eternal_reward_achievement }
+		add_variable_to_suppress_it_effect = { NAME = tai_migration_target_counties }
+		add_variable_to_suppress_it_effect = { NAME = the_albanian_reformer }
+		add_variable_to_suppress_it_effect = { NAME = throne_scone }
+		add_variable_to_suppress_it_effect = { NAME = tributary_succ_var }
+		add_variable_to_suppress_it_effect = { NAME = tutorial_completed }
+		add_variable_to_suppress_it_effect = { NAME = unavailable_achievements }
+		add_variable_to_suppress_it_effect = { NAME = unite_africa_decision }
+		add_variable_to_suppress_it_effect = { NAME = unite_the_spanish_thrones_decision }
+		add_variable_to_suppress_it_effect = { NAME = unite_the_spanish_thrones_decision_title }
+		add_variable_to_suppress_it_effect = { NAME = visigothic_culture_split }
+	}
+}
+
+#Event Target is used but never set errors
+fix_scope_errors = {
+	trigger = { always = no }
+	effect = {
+		fix_scope_error_effect = { SCOPE = acolyte }
+		fix_scope_error_effect = { SCOPE = acolyte_host }
+		fix_scope_error_effect = { SCOPE = africa_uniter }
+		fix_scope_error_effect = { SCOPE = celtic_group }
+		fix_scope_error_effect = { SCOPE = founder_culture }
+		fix_scope_error_effect = { SCOPE = fp2_james_0002_conversos_character }
+		fix_scope_error_effect = { SCOPE = frankish_christian_faith }
+		fix_scope_error_effect = { SCOPE = loser_temp }
+		fix_scope_error_effect = { SCOPE = mount_tai_location }
+		fix_scope_error_effect = { SCOPE = muhammad_sword_name }
+		fix_scope_error_effect = { SCOPE = new_saxon_king }
+		fix_scope_error_effect = { SCOPE = portugal_former }
+		fix_scope_error_effect = { SCOPE = religious_leader }
+		fix_scope_error_effect = { SCOPE = scandalised_cleric }
+		fix_scope_error_effect = { SCOPE = seceding_county }
+		fix_scope_error_effect = { SCOPE = seceding_duchy }
+		fix_scope_error_effect = { SCOPE = spain_uniter }
+		fix_scope_error_effect = { SCOPE = the_albanian_reformer }
+	}
+}
+
+#Modifer 'x' was not used by the script or code but exists
+fix_modifier_errors = {
+	trigger = { always = no }
+	effect = {
+		random_living_character = {
+			add_character_modifier = al_dawat_modifier
+			add_character_modifier = al_hafir_modifier
+			add_character_modifier = al_jabal_modifier
+			add_character_modifier = al_sayf_al_khass_modifier
+			add_character_modifier = al_taj_modifier
+			add_character_modifier = angelicas_ring_modifier
+			add_character_modifier = artifact_chinese_armillary_sphere
+			add_character_modifier = bactria_royal_tolls_modifier
+			add_character_modifier = banner_kaviani_modifier
+			add_character_modifier = banner_thankfulness
+			add_character_modifier = bp3_conqueror_black_sea_modifier
+			add_character_modifier = byz_throne_modifier
+			add_character_modifier = chalice_of_dona_urraca_modifier
+			add_character_modifier = colada_modifier
+			add_character_modifier = complete_essentials_for_the_military_classics
+			add_character_modifier = curtana_modifier
+			add_character_modifier = dojigiri_sword_modifier
+			add_character_modifier = dragvandil_modifier
+			add_character_modifier = durendal_modifier
+			add_character_modifier = edmund_head_modifier
+			add_character_modifier = eight_fold_chest_modifier
+			add_character_modifier = essen_crown_modifier
+			add_character_modifier = excalibur_modifier
+			add_character_modifier = fp2_aragon_title_reward_house_modifier
+			add_character_modifier = fp2_conversos_persecution_modifier
+			add_character_modifier = fp2_religious_riots_defused_modifier
+			add_character_modifier = fp2_religious_riots_modifier
+			add_character_modifier = fp2_religious_riots_suppressed_modifier
+			add_character_modifier = goujian_sword_1_modifier
+			add_character_modifier = goujian_sword_2_modifier
+			add_character_modifier = goujian_sword_3_modifier
+			add_character_modifier = goujian_sword_4_modifier
+			add_character_modifier = goujian_sword_5_modifier
+			add_character_modifier = goujian_sword_6_modifier
+			add_character_modifier = goujian_sword_7_modifier
+			add_character_modifier = goujian_sword_8_modifier
+			add_character_modifier = goujian_sword_modifier
+			add_character_modifier = gyerimro_dagger_modifier
+			add_character_modifier = hamayumi_bow_modifier
+			add_character_modifier = heirloom_seal_modifier
+			add_character_modifier = higekiri_sword_modifier
+			add_character_modifier = hizamaru_sword_modifier
+			add_character_modifier = insence_burner_modifier
+			add_character_modifier = iron_crown_modifier
+			add_character_modifier = joyeuse_modifier
+			add_character_modifier = justinian_crown_modifier
+			add_character_modifier = karakawa_armor_modifier
+			add_character_modifier = kogarasumaru_sword_modifier
+			add_character_modifier = koh_i_noor
+			add_character_modifier = legbiter_modifier
+			add_character_modifier = magyar_appreciation_modifier
+			add_character_modifier = majapahit_empire_founding_modifier
+			add_character_modifier = mantle_prophet_modifier
+			add_character_modifier = mikazuki_munechika_sword_modifier
+			add_character_modifier = monomachus_crown_modifier
+			add_character_modifier = muhammed_sword_1_modifier
+			add_character_modifier = muhammed_sword_2_modifier
+			add_character_modifier = muhammed_sword_3_modifier
+			add_character_modifier = muhammed_sword_4_modifier
+			add_character_modifier = muhammed_sword_5_modifier
+			add_character_modifier = muhammed_sword_6_modifier
+			add_character_modifier = muhammed_sword_7_modifier
+			add_character_modifier = muhammed_sword_8_modifier
+			add_character_modifier = muhammed_sword_modifier
+			add_character_modifier = nagelring_modifier
+			add_character_modifier = nikephoros_crown_modifier
+			add_character_modifier = nukemaru_sword_modifier
+			add_character_modifier = odenta_sword_modifier
+			add_character_modifier = olifant_modifier
+			add_character_modifier = pentapyrgion_modifier
+			add_character_modifier = qadib_al_mulk_modifier
+			add_character_modifier = quernbiter_modifier
+			add_character_modifier = ruler_objective_region_conquered_modifier
+			add_character_modifier = ryukyu_empire_founding_province_modifier
+			add_character_modifier = sakanoue_sword_modifier
+			add_character_modifier = seven_branched_sword_modifier
+			add_character_modifier = skull_cap_charlemagne_modifier
+			add_character_modifier = spear_prophet_modifier
+			add_character_modifier = statue_amitabha_buddha_modifier
+			add_character_modifier = szczerbiec_modifier
+			add_character_modifier = tgp_grand_canal_modifier
+			add_character_modifier = tgp_japan_train_with_troops_modifier
+			add_character_modifier = tgp_moved_shogun_court_modifier
+			add_character_modifier = tgp_strengthen_capital_architects_modifier
+			add_character_modifier = tgp_strengthen_capital_character_modifier
+			add_character_modifier = tgp_strengthen_capital_engineers_modifier
+			add_character_modifier = tgp_strengthen_capital_sculptors_modifier
+			add_character_modifier = throne_charlemagne_modifier
+			add_character_modifier = throne_scone_modifier
+			add_character_modifier = tizona_modifier
+			add_character_modifier = tutorial_extra_success_chance_modifier
+			add_character_modifier = votive_crown_modifier
+		}
+	}
+}
+
+fix_list_errors = {
+	effect = {
+		add_to_list = disciple
+		add_to_list = elders
+		add_to_list = the_province_with_available_city_holdings
+		add_to_list = vasconia_duchies
+		add_to_list = vasconia_kingdoms
+		remove_from_list = disciple
+		remove_from_list = elders
+		remove_from_list = the_province_with_available_city_holdings
+		remove_from_list = vasconia_duchies
+		remove_from_list = vasconia_kingdoms
+	}
+}
+
+#Fix some events that require specific scopes
+on_culture_created = {
+	on_actions = {
+		orphaned_culture_events
+	}
+}
+
+orphaned_culture_events = {
+	trigger = { always = no } #These should never fire
+	random_events = {
+		chance_to_happen = 0
+		1 = culture_tradition_events.0099
+	}
+}

@@ -5,8 +5,8 @@ nakharar_armenian_male = {
 	special = holder
 	tier = duchy
 	priority = 30
-	governments = { iranian_dynastic_government prefeudal_government subroman_dynastic_government administrative_government }
-	name_lists = { name_list_armenian }
+	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government subroman_dynastic_government subroman_administrative_government iranian_dynastic_government }
+	name_lists = { name_list_armenian name_list_corduenian }
 	flavourization_rules = {
 		top_liege = no
 	}
@@ -66,6 +66,31 @@ court_chaplain_male_armenian = {
 		top_liege = no
 	}
 }
+#Georgian
+king_georgian_male = {
+	type = character
+	gender = male
+	special = holder
+	tier = kingdom
+	priority = 47
+	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government administrative_government roman_dynastic_government roman_administrative_government subroman_dynastic_government subroman_administrative_government }
+	name_lists = { name_list_georgian }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+king_georgian_female = {
+	type = character
+	gender = male
+	special = holder
+	tier = kingdom
+	priority = 47
+	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government administrative_government roman_dynastic_government roman_administrative_government subroman_dynastic_government subroman_administrative_government }
+	name_lists = { name_list_georgian }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
 
 #Macronians/Lazics
 duke_male_macronian = {
@@ -74,7 +99,7 @@ duke_male_macronian = {
 	special = holder
 	tier = duchy
 	priority = 27
-	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government roman_dynastic_government subroman_dynastic_government }
+	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government administrative_government roman_dynastic_government roman_administrative_government subroman_dynastic_government subroman_administrative_government }
 	name_lists = { name_list_lazic }
 	flavourization_rules = {
 		top_liege = no
@@ -86,7 +111,7 @@ duke_female_macronian = {
 	special = holder
 	tier = duchy
 	priority = 27
-	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government roman_dynastic_government subroman_dynastic_government }
+	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government administrative_government roman_dynastic_government roman_administrative_government subroman_dynastic_government subroman_administrative_government }
 	name_lists = { name_list_lazic }
 	flavourization_rules = {
 		top_liege = no
@@ -96,7 +121,7 @@ duchy_macronian = {
 	type = title
 	tier = duchy
 	priority = 27
-	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government roman_dynastic_government subroman_dynastic_government }
+	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government administrative_government roman_dynastic_government roman_administrative_government subroman_dynastic_government subroman_administrative_government }
 	name_lists = { name_list_lazic }
 	flavourization_rules = {
 		top_liege = no

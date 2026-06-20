@@ -187,6 +187,7 @@ picchieri = {
 	icon = pikemen
 }
 
+##### Changed from Vanilla: Made unlocked by culture parameter, only allowed for top liege
 praetorian = {
 	type = heavy_infantry
 	
@@ -199,6 +200,19 @@ praetorian = {
 		pikemen = 1
 		peasant_militia = 2
 	}
+	
+	##### Changed from Vanilla vvvvv
+	can_recruit = {
+		valid_for_maa_trigger = { PARAMETER = unlock_maa_praetorian }
+		is_independent_ruler = yes
+		exists = scope:title #Title MAA only
+		scope:title ?= { this.tier >= tier_kingdom }
+		number_title_maa_regiments_of_type = {
+			target = praetorian
+			value < 1
+		}
+	}
+	##### Changed from Vanilla ^^^^^
 	
 	buy_cost = { gold = praetorian_recruitment_cost }
 	low_maintenance_cost = { gold = praetorian_low_maint_cost }
@@ -252,6 +266,7 @@ monaspa = {
 	icon = monaspa
 }
 
+##### Changed from Vanilla: Made unrecruitable
 cataphract = {
 	type = heavy_cavalry
 	
@@ -279,7 +294,7 @@ cataphract = {
 		harsh_winter = { damage = -30 toughness = -10 }
 	}
 	
-	##### Changed from Vanilla: Unlocked by innovation
+	can_recruit = { always = no }
 
 	buy_cost = { gold = cataphract_recruitment_cost }
 	low_maintenance_cost = { gold = cataphract_low_maint_cost }

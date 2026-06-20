@@ -15,6 +15,9 @@
 - Helleno-Coptic name_list from @Asakhra on the PDX forums: https://forum.paradoxplaza.com/forum/threads/new-cultures.610605/page-40#post-19562981
 - Insular Celtic suggestions from @maniacalbrain on the PDX forums: https://forum.paradoxplaza.com/forum/threads/suggestions-and-fixes-for-insular-christianity.1425623/
 
+## Thanks to our Play Testers
+c_loving_bones, Nero
+
 ## Others Who Provided Code that was Later Deprecated
 
 - @Knuckey for his Imperial Government Mod https://forum.paradoxplaza.com/forum/threads/mod-imperial-government.1416854/

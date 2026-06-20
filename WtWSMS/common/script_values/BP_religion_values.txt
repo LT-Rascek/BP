@@ -42,7 +42,7 @@ bp_faith_changed_doctrine_cost_mult_four_step = 3.50
 
 christian_doctrine_unchanged_cost_mult = 0
 
-hellenism_syncretic_mutual_opinion_bonus_value = 10
+hellenism_syncretic_mutual_opinion_bonus_value = 30
 egyptian_syncretic_mutual_opinion_bonus_value = 10
 
 #Heresy events
@@ -66,4 +66,10 @@ piety_from_infidel_raiding_multiplier = 0.25
 loot_piety_value = {
 	value = root.var:raid_loot
 	multiply = piety_from_infidel_raiding_multiplier
+}
+
+piety_level_high_minus_current = {
+	value = high_piety_level
+	add = { value = piety_level multiply = -1 }
+	min = 1
 }

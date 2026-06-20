@@ -21,8 +21,8 @@ k_africa = {
 	}
 	-25.1.1={
 		holder = MarcusAciliusGlabrio1 # Marcus Acilius Glabrio
-		government = roman_dynastic_government
-		liege = e_roman_empire
+		government = roman_administrative_government
+		liege = h_roman_empire
 	}
 	-23.1.1={
 		holder = 0
@@ -426,7 +426,7 @@ k_africa = {
 	}
 	591.7.1={ #Exarchate of Africa
 		holder = 1300647 #Gennadius
-		liege = e_byzantium
+		liege = h_eastern_roman_empire
 	}
 	598.1.1={
 		holder = 1300650 #Heraclius the Elder
@@ -439,7 +439,7 @@ k_africa = {
 d_carthago = {
 	336.1.1={
 		holder=190016 # Lollianus Mavortius
-		liege=e_roman_empire
+		liege=h_roman_empire
 	}
 	337.1.1={
 		holder=36083 # Antonius Marcellinus
@@ -542,7 +542,7 @@ d_carthago = {
 	#Roman Reconquest
 	534.1.1={
 		holder = 462172 # Archelaus Agricolus 
-		liege="e_byzantium"
+		liege="h_eastern_roman_empire"
 	}
 	535.1.1={
 		holder = 90108 # Solomon of Idriphthon
@@ -614,7 +614,7 @@ c_tunis = {
 	#Rulers
 	334.1.1={
 		holder=190016 # Lollianus Mavortius
-		liege = e_roman_empire
+		liege = h_roman_empire
 	}
 	337.1.1={
 		holder=36083 # Antonius Marcellinus
@@ -715,7 +715,7 @@ c_tunis = {
 	}
 	534.1.1={
 		holder = 462172 # Archelaus Agricolus 
-		liege="e_byzantium"
+		liege="h_eastern_roman_empire"
 	}
 	535.1.1={
 		holder = 90108 # Solomon of Idriphthon
@@ -776,7 +776,7 @@ c_satfura = { #c_bizerte history
 	#Rulers
 	334.1.1={
 		holder=190016 # Lollianus Mavortius
-		liege = e_roman_empire
+		liege = h_roman_empire
 	}
 	337.1.1={
 		holder=36083 # Antonius Marcellinus
@@ -877,7 +877,7 @@ c_satfura = { #c_bizerte history
 	}
 	534.1.1={
 		holder = 462172 # Archelaus Agricolus 
-		liege="e_byzantium"
+		liege="h_eastern_roman_empire"
 	}
 	535.1.1={
 		holder = 90108 # Solomon of Idriphthon
@@ -988,7 +988,7 @@ d_byzacena = {
 	443.1.1 = {
 		holder = 95
 		liege = k_vandalica
-		government = subroman_dynastic_government
+		government = subroman_administrative_government
 	}
 	#Huneric rises to the throne, and seizes Theodoric's holdings
 	477.1.25={ holder = 0 }
@@ -1035,14 +1035,14 @@ c_mahdiya = {
 	}
 	534.1.1={
 		holder = 1300969 # Himerius
-		liege = k_africa_prefect
+		liege = e_praetorian_prefecture_africa
 	}
 	545.1.1={
 		holder = 1300643 #Marcentius
 	}
 	546.1.1={
 		holder = 90109 # Athanasius of Idriphthon
-		liege = e_byzantium
+		liege = h_eastern_roman_empire
 	}
 	552.1.1={
 		holder = 94003 # Paul Makris
@@ -1073,7 +1073,7 @@ c_mahdiya = {
 	}
 	591.7.1={ #Exarchate of Africa
 		holder = 1300647 #Gennadius
-		liege = e_byzantium
+		liege = h_eastern_roman_empire
 	}
 	598.1.1={
 		holder = 1300650 #Heraclius the Elder
@@ -1116,14 +1116,14 @@ c_kairwan = {
 	}
 	534.1.1={
 		holder = 1300969 # Himerius
-		liege = k_africa_prefect
+		liege = e_praetorian_prefecture_africa
 	}
 	545.1.1={
 		holder = 1300643 #Marcentius
 	}
 	546.1.1={
 		holder = 90109 # Athanasius of Idriphthon
-		liege = e_byzantium
+		liege = h_eastern_roman_empire
 	}
 	552.1.1={
 		holder = 94003 # Paul Makris
@@ -1154,7 +1154,7 @@ c_kairwan = {
 	}
 	591.7.1={ #Exarchate of Africa
 		holder = 1300647 #Gennadius
-		liege = e_byzantium
+		liege = h_eastern_roman_empire
 	}
 	598.1.1={
 		holder = 1300650 #Heraclius the Elder
@@ -1197,14 +1197,14 @@ c_sfax = {
 	}
 	534.1.1={
 		holder = 1300969 # Himerius
-		liege = k_africa_prefect
+		liege = e_praetorian_prefecture_africa
 	}
 	545.1.1={
 		holder = 1300643 #Marcentius
 	}
 	546.1.1={
 		holder = 90109 # Athanasius of Idriphthon
-		liege = e_byzantium
+		liege = h_eastern_roman_empire
 	}
 	552.1.1={
 		holder = 94003 # Paul Makris
@@ -1235,7 +1235,7 @@ c_sfax = {
 	}
 	591.7.1={ #Exarchate of Africa
 		holder = 1300647 #Gennadius
-		liege = e_byzantium
+		liege = h_eastern_roman_empire
 	}
 	598.1.1={
 		holder = 1300650 #Heraclius the Elder
@@ -1265,25 +1265,20 @@ d_numidia = {
 	420.1.1 = {
 		holder = 1300909 #Aurelius Ianuarius
 	}
-	#Vandal Interlude: d_carthago in CK2, but that doesn't mesh well with CK3
-	429.1.1={
-		holder = 36065 # Geilar Silingi
-		liege=k_vandalica
-		government = subroman_dynastic_government
+	# Vandals 
+	432.1.1 ={ #Gaiseric; first Vandalic Capital
+		holder = 93
+		liege = k_vandalica
+		government = subroman_administrative_government
 	}
-	432.1.1={
-		holder = 36067 # Maioric Silingi
-	}
-	477.1.1={
-		holder = 36068 # Wisimar Silingi
-	}
-	495.1.1={
-		holder = 36066 # Gamuth Silingi
-	}
+	439.1.1 = { holder = 36067 } #Maioric Silingi
+	468.1.1 = { holder = PLRE2_Heldica }
+	484.1.1 = { holder = 36068 } #Armogas Silingi
+	510.1.1 = { holder = 36068_son } #Austrareiks Silingi
 	#Roman Reconquest
 	534.1.1 = {
 		holder = 1300703 #Valerianus
-		liege = k_africa_prefect
+		liege = e_praetorian_prefecture_africa
 	}
 	536.1.1 = {
 		holder = 1300609 #Marcellus
@@ -1293,10 +1288,10 @@ d_numidia = {
 	}
 	545.1.1 = {
 		holder = 1301196 # Guntharis, dux Numidiae
-		liege = k_africa_prefect
+		liege = e_praetorian_prefecture_africa
 	}
 	546.1.1 = {
-		liege = e_byzantium
+		liege = h_eastern_roman_empire
 	}
 	546.2.6 = {
 		holder = 0
@@ -1305,35 +1300,35 @@ d_numidia = {
 c_constantine = {
 	334.1.1={
 		holder=190016 # Lollianus Mavortius
-		liege = "e_roman_empire"
+		liege = "h_roman_empire"
 	}
 	337.1.1={
 		holder=36083 # Antonius Marcellinus
-		liege = "e_roman_empire"
+		liege = "h_roman_empire"
 	}
 	338.1.1={
 		holder=1900018 # Aurelius Celsinus
-		liege = "e_roman_empire"
+		liege = "h_roman_empire"
 	}
 	339.1.1={
 		holder=36085 # Proculus Celsinus
-		liege = "e_roman_empire"
+		liege = "h_roman_empire"
 	}
 	357.1.1={
 		holder=36086 # Julius Favianus
-		liege = "e_roman_empire"
+		liege = "h_roman_empire"
 	}
 	358.1.1={
 		holder=36088 # Sextus Claudius Pestronius Probus
-		liege = "e_roman_empire"
+		liege = "h_roman_empire"
 	}
 	359.1.1={
 		holder=36092 # Julius Proclianus
-		liege = "e_roman_empire"
+		liege = "h_roman_empire"
 	}
 	395.1.1={
 		holder=1000500 # Ennodius
-		liege = e_roman_empire
+		liege = h_roman_empire
 	}
 	395.1.17={
 		liege = e_wre
@@ -1350,22 +1345,15 @@ c_constantine = {
 		liege = "e_wre"
 	}
 	# Vandals 
-	429.1.1={
-		holder = 36065 # Geilar Silingi
-		liege=k_vandalica
-	}
-	432.1.1={
-		holder = 36067 # Maioric Silingi
-	}
-	477.1.1={
-		holder = 36068 # Wisimar Silingi
-	}
-	495.1.1={
-		holder = 36066 # Gamuth Silingi
-	}
+	432.1.1 ={ holder = 93 } #Gaiseric; first Vandalic Capital
+	439.1.1 = { holder = 36067 } #Maioric Silingi
+	468.1.1 = { holder = PLRE2_Heldica }
+	484.1.1 = { holder = 36068 } #Armogas Silingi
+	510.1.1 = { holder = 36068_son } #Austrareiks Silingi
+	#Romans
 	534.1.1={
 		holder = 462172 # Archelaus Agricolus 
-		liege="e_byzantium"
+		liege="h_eastern_roman_empire"
 	}
 	535.1.1={
 		holder = 90108 # Solomon of Idriphthon
@@ -1425,35 +1413,35 @@ c_constantine = {
 c_tabassa = { #c_biskra history (changed from c_fses history)
 	334.1.1={
 		holder=190016 # Lollianus Mavortius
-		liege = "e_roman_empire"
+		liege = "h_roman_empire"
 	}
 	337.1.1={
 		holder=36083 # Antonius Marcellinus
-		liege = "e_roman_empire"
+		liege = "h_roman_empire"
 	}
 	338.1.1={
 		holder=1900018 # Aurelius Celsinus
-		liege = "e_roman_empire"
+		liege = "h_roman_empire"
 	}
 	339.1.1={
 		holder=36085 # Proculus Celsinus
-		liege = "e_roman_empire"
+		liege = "h_roman_empire"
 	}
 	357.1.1={
 		holder=36086 # Julius Favianus
-		liege = "e_roman_empire"
+		liege = "h_roman_empire"
 	}
 	358.1.1={
 		holder=36088 # Sextus Claudius Pestronius Probus
-		liege = "e_roman_empire"
+		liege = "h_roman_empire"
 	}
 	359.1.1={
 		holder=36092 # Julius Proclianus
-		liege = "e_roman_empire"
+		liege = "h_roman_empire"
 	}
 	395.1.1={
 		holder=1000500 # Ennodius
-		liege = e_roman_empire
+		liege = h_roman_empire
 	}
 	395.1.17={
 		liege = e_wre
@@ -1470,22 +1458,15 @@ c_tabassa = { #c_biskra history (changed from c_fses history)
 		liege = "e_wre"
 	}
 	# Vandals 
-	429.1.1={
-		holder = 36065 # Geilar Silingi
-		liege=k_vandalica
-	}
-	432.1.1={
-		holder = 36067 # Maioric Silingi
-	}
-	477.1.1={
-		holder = 36068 # Wisimar Silingi
-	}
-	495.1.1={
-		holder = 36066 # Gamuth Silingi
-	}
+	432.1.1 ={ holder = 93 } #Gaiseric; first Vandalic Capital
+	439.1.1 = { holder = 36067 } #Maioric Silingi
+	468.1.1 = { holder = PLRE2_Heldica }
+	484.1.1 = { holder = 36068 } #Armogas Silingi
+	510.1.1 = { holder = 36068_son } #Austrareiks Silingi
+	#Romans
 	534.1.1={
 		holder = 462172 # Archelaus Agricolus 
-		liege="e_byzantium"
+		liege="h_eastern_roman_empire"
 	}
 	535.1.1={
 		holder = 90108 # Solomon of Idriphthon
@@ -1546,7 +1527,7 @@ c_annaba = {
 	#Rulers
 	334.1.1={
 		holder=190016 # Lollianus Mavortius
-		liege = e_roman_empire
+		liege = h_roman_empire
 	}
 	337.1.1={
 		holder=36083 # Antonius Marcellinus
@@ -1627,22 +1608,15 @@ c_annaba = {
 		holder=36073 # Bonifacius
 	}
 	# Vandals 
-	429.1.1={
-		holder = 36065 # Geilar Silingi
-		liege=k_vandalica
-	}
-	432.1.1={
-		holder = 36067 # Maioric Silingi
-	}
-	477.1.1={
-		holder = 36068 # Wisimar Silingi
-	}
-	495.1.1={
-		holder = 36066 # Gamuth Silingi
-	}
+	432.1.1 ={ holder = 93 } #Gaiseric; first Vandalic Capital
+	439.1.1 = { holder = 36067 } #Maioric Silingi
+	468.1.1 = { holder = PLRE2_Heldica }
+	484.1.1 = { holder = 36068 } #Armogas Silingi
+	510.1.1 = { holder = 36068_son } #Austrareiks Silingi
+	#Romans
 	534.1.1={
 		holder = 462172 # Archelaus Agricolus 
-		liege="e_byzantium"
+		liege="h_eastern_roman_empire"
 	}
 	535.1.1={
 		holder = 90108 # Solomon of Idriphthon
@@ -1723,35 +1697,35 @@ d_south_numidia = {
 c_bilizma = { #c_constantine history (changed from c_biskra (elimination))
 	334.1.1={
 		holder=190016 # Lollianus Mavortius
-		liege = "e_roman_empire"
+		liege = "h_roman_empire"
 	}
 	337.1.1={
 		holder=36083 # Antonius Marcellinus
-		liege = "e_roman_empire"
+		liege = "h_roman_empire"
 	}
 	338.1.1={
 		holder=1900018 # Aurelius Celsinus
-		liege = "e_roman_empire"
+		liege = "h_roman_empire"
 	}
 	339.1.1={
 		holder=36085 # Proculus Celsinus
-		liege = "e_roman_empire"
+		liege = "h_roman_empire"
 	}
 	357.1.1={
 		holder=36086 # Julius Favianus
-		liege = "e_roman_empire"
+		liege = "h_roman_empire"
 	}
 	358.1.1={
 		holder=36088 # Sextus Claudius Pestronius Probus
-		liege = "e_roman_empire"
+		liege = "h_roman_empire"
 	}
 	359.1.1={
 		holder=36092 # Julius Proclianus
-		liege = "e_roman_empire"
+		liege = "h_roman_empire"
 	}
 	395.1.1={
 		holder=1000500 # Ennodius
-		liege = e_roman_empire
+		liege = h_roman_empire
 	}
 	395.1.17={
 		liege = e_wre

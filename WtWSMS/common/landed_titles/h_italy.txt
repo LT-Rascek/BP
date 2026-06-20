@@ -1,0 +1,51 @@
+﻿@correct_culture_primary_score = 100
+@better_than_the_alternatives_score = 50
+@always_primary_score = 1000
+
+#### Other Roman-associated Titles ####
+h_italy = {
+	color = { 244 227 160 }
+	capital = c_ravenna
+	can_be_named_after_dynasty = no
+	
+	can_create = {
+		creation_trigger_k_italy_trigger = yes
+		general_kingdom_title_creation_trigger = yes
+	}
+	can_create_on_partition = { creation_trigger_k_italy_trigger = yes }
+	
+	ai_primary_priority = {
+		if = {
+			limit = { culture = culture:italian }
+			add = @correct_culture_primary_score
+		}
+	}
+	
+	#Minister-Level Titles
+	e_magister_military_italy = {
+		color = { 212 150 69 }
+		landless = yes
+		allow_domicile = no
+		destroy_if_invalid_heir = yes
+		no_automatic_claims = yes
+		de_jure_drift_disabled = yes
+		can_use_nomadic_naming = no
+		can_be_named_after_dynasty = no
+		definite_form = yes
+		ruler_uses_title_name = no
+		capital = c_ravenna
+	}
+	e_magister_offices_italy = {
+		color = { 212 150 69 }
+		landless = yes
+		allow_domicile = no
+		destroy_if_invalid_heir = yes
+		no_automatic_claims = yes
+		de_jure_drift_disabled = yes
+		can_use_nomadic_naming = no
+		can_be_named_after_dynasty = no
+		definite_form = yes
+		ruler_uses_title_name = no
+		capital = c_ravenna
+	}
+}

@@ -1,9 +1,11 @@
-﻿### Major Decisions
+﻿@changed_chariot_support_cooldown_months = 12
+
+### Major Decisions
 ask_for_hre = {
 	picture = {
 		reference = "gfx/interface/illustrations/activity_header_backgrounds/activity_coronation.dds"
 	}
-	decision_group_type = major
+	decision_group_type = roman
 	
 	ai_check_interval_by_tier = {
 		barony = 0
@@ -20,7 +22,8 @@ ask_for_hre = {
 	is_shown = {
 		#Haven't already asked
 		root = { NOT = { has_variable = asked_for_hre } }
-		#WRE/HRE must not exist
+		#West Rome must not exist
+		NOT = { exists = title:h_western_roman_empire.holder }
 		NOT = { exists = title:e_wre.holder }
 		NOT = { exists = title:e_hre.holder }
 		#Have to be in communion with the Pope to do this
@@ -39,26 +42,59 @@ ask_for_hre = {
 			#Can't already be Roman Empire
 			has_title = title:e_wre
 			has_title = title:e_byzantium
-			has_title = title:e_roman_empire
+			has_title = title:h_western_roman_empire
+			has_title = title:h_eastern_roman_empire
+			has_title = title:h_roman_empire
 			#Axum is special
 			has_title = title:e_axum
-			#If you're Italy, why request Rome?
-			has_title = title:e_italy
 		}
 	}
 	
 	is_valid = {
-		gold >= massive_gold_value
+		custom_tooltip = {
+			text = primary_title_must_be_empire
+			primary_title.tier = tier_empire
+		}
+		realm_size >= 255
+		custom_description = {
+			text = must_control_at_least_33_percent_of_wre_territory
+			subject = root
+			title:h_western_roman_empire = {
+				any_county = {
+					percent >= 0.33
+					this.holder.top_liege = root
+				}
+			}
+		}
+		OR = {
+			has_trait = legendary_leader
+			AND = {
+				prestige_level >= 5
+				legitimacy_level >= 5
+			}
+		}
 	}
 	
 	is_valid_showing_failures_only = {
 		is_available_adult = yes
 		is_at_war = no
-		NOT = { realm_size < 255 }
 	}
 	
 	cost = {
-		gold = massive_gold_value
+		treasury = {
+			value = 0
+			if = {
+				limit = { has_treasury = yes }
+				add = massive_gold_value
+			}
+		}
+		gold = {
+			value = 0
+			if = {
+				limit = { has_treasury = no }
+				add = massive_gold_value
+			}
+		}
 	}
 	
 	effect = {
@@ -78,7 +114,12 @@ ask_for_hre = {
 		#Won't do without enough gold
 		modifier = {
 			factor = 0
-			NOT = { gold >= massive_gold_value }
+			NOT = {
+				OR = {
+					gold >= massive_gold_value
+					treasury >= massive_gold_value
+				}
+			}
 		}
 		modifier = {
 			factor = 2.5
@@ -94,7 +135,7 @@ ask_for_wre = {
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/ep3_cerimonial_decision.dds"
 	}
-	decision_group_type = major
+	decision_group_type = roman
 	
 	ai_check_interval_by_tier = {
 		barony = 0
@@ -112,43 +153,79 @@ ask_for_wre = {
 		#Haven't already asked
 		root = { NOT = { has_variable = asked_for_wre } }
 		#WRE must not exist
-		NOT = { exists = title:e_wre.holder }
+		NOT = { exists = title:h_western_roman_empire.holder }
 		#ERE must have a holder
-		exists = title:e_byzantium.holder
+		OR = {
+			exists = title:e_byzantium.holder
+			exists = title:h_eastern_roman_empire.holder
+		}
 		#Have correct religion
 		OR = {
 			religion = religion:christianity_religion
 			religion = religion:hellenism_religion
 		}
-		age >= 16
-		primary_title.tier = tier_empire
+		
 		#Only Romans would dare broach this subject this way
 		culture = { has_ability_to_reform_rome_directly_trigger = yes }
+		root.primary_title.tier < tier_hegemony
 		#Can't be of a specially excluded title
 		NOR = {
-			#Can't already be Roman
+			#Can't already be Roman or other
 			has_title = title:e_wre
 			has_title = title:e_byzantium
-			has_title = title:e_roman_empire
+			has_title = title:h_roman_empire
+			has_title = title:h_western_roman_empire
 			#Axum is special
 			has_title = title:e_axum
-			#If you're Italy, why request Rome?
-			has_title = title:e_italy
 		}
 	}
 	
 	is_valid = {
-		gold >= massive_gold_value
+		custom_tooltip = {
+			text = primary_title_must_be_empire
+			primary_title.tier = tier_empire
+		}
+		realm_size >= 300 #Regardless of the size of Rome, it needs to be *big*;
+		#Control 80% of whatever remains of Western Rome
+		custom_description = {
+			text = must_control_at_least_80_percent_of_wre_territory
+			subject = root
+			title:h_western_roman_empire = {
+				any_county = {
+					percent >= 0.8
+					this.holder.top_liege = root
+				}
+			}
+		}
+		OR = {
+			has_trait = legendary_leader
+			AND = {
+				prestige_level >= 5
+				legitimacy_level >= 5
+			}
+		}
 	}
 	
 	is_valid_showing_failures_only = {
 		is_available_adult = yes
 		is_at_war = no
-		NOT = { realm_size < 255 }
 	}
 	
 	cost = {
-		gold = massive_gold_value
+		treasury = {
+			value = 0
+			if = {
+				limit = { has_treasury = yes }
+				add = 1500
+			}
+		}
+		gold = {
+			value = 0
+			if = {
+				limit = { has_treasury = no }
+				add = 1500
+			}
+		}
 	}
 	
 	effect = {
@@ -156,7 +233,13 @@ ask_for_wre = {
 			set_variable = { name = asked_for_wre }
 			save_scope_as = empire_petitoner
 		}
-		title:e_byzantium.holder = { trigger_event = { id = BP_roman_decisions.0004 days = { 5 17 } } } #The emperor hears the request
+		if = {
+			limit = { exists = title:h_eastern_roman_empire.holder }
+			title:h_eastern_roman_empire.holder = { trigger_event = { id = BP_roman_decisions.0004 days = { 5 17 } } } #The emperor hears the request
+		}
+		else = {
+			title:e_byzantium.holder = { trigger_event = { id = BP_roman_decisions.0004 days = { 5 17 } } } #The emperor hears the request
+		}
 	}
 	
 	ai_potential = { always = yes }
@@ -168,7 +251,12 @@ ask_for_wre = {
 		#Won't do without enough gold
 		modifier = {
 			factor = 0
-			NOT = { gold >= massive_gold_value }
+			NOT = {
+				OR = {
+					gold >= 500
+					treasury >= 500
+				}
+			}
 		}
 		modifier = {
 			factor = 2.5
@@ -184,7 +272,7 @@ sole_roman_empire = {
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/roman_emperor_salute.dds"
 	}
-	decision_group_type = major
+	decision_group_type = roman
 
 	ai_check_interval_by_tier = {
 		barony = 0
@@ -199,32 +287,44 @@ sole_roman_empire = {
 	selection_tooltip = sole_roman_empire_tooltip
 	
 	is_shown = {
-		OR = {
-			has_title = title:e_wre
-			has_title = title:e_byzantium
-		}
-		OR = {
-			NOT = { exists = title:e_wre.holder }
+		#Can't claim to be the sole empire if the other half (or its rump) exists
+		trigger_if = {
+			limit = {
+				OR = {
+					has_title = title:e_wre
+					has_title = title:h_western_roman_empire
+				}
+			}
 			NOT = { exists = title:e_byzantium.holder }
+			NOT = { exists = title:h_eastern_roman_empire.holder }
 		}
+		trigger_else_if = {
+			limit = {
+				OR = {
+					has_title = title:e_byzantium
+					has_title = title:h_eastern_roman_empire
+				}
+			}
+			NOT = { exists = title:e_wre.holder }
+			NOT = { exists = title:h_western_roman_empire.holder }
+		}
+		trigger_else = { always = no }
 		OR = {
 			religion = religion:christianity_religion
 			religion = religion:hellenism_religion
 		}
-		NOT = { has_claim_on = title:e_roman_empire }
+		NOT = { has_claim_on = title:h_roman_empire }
 		culture = { has_ability_to_reform_rome_directly_trigger = yes }
 		NOT = { has_global_variable = sole_roman_empire }
 	}
 	
 	is_valid = {
-		gold >= massive_gold_value
-		trigger_if = {
-			limit = { has_title = title:e_wre }
-			NOT = { exists = title:e_byzantium.holder }
-		}
-		trigger_if = {
-			limit = { has_title = title:e_byzantium }
-			NOT = { exists = title:e_wre.holder }
+		OR = {
+			has_trait = legendary_leader
+			AND = {
+				prestige_level >= 5
+				legitimacy_level >= 5
+			}
 		}
 	}
 	
@@ -234,13 +334,27 @@ sole_roman_empire = {
 	}
 	
 	cost = {
-		gold = massive_gold_value
+		treasury = {
+			value = 0
+			if = {
+				limit = { has_treasury = yes }
+				add = 1000
+			}
+		}
+		gold = {
+			value = 0
+			if = {
+				limit = { has_treasury = no }
+				add = 1000
+			}
+		}
 		prestige = 1500
 	}
 	
 	effect = {
 		set_global_variable = { name = sole_roman_empire }
-		add_pressed_claim = title:e_roman_empire
+		show_as_tooltip = { add_pressed_claim = title:h_roman_empire }
+		custom_tooltip = { text = roman_empire_claim_allows_for_conquest }
 		root = { trigger_event = { id = BP_roman_decisions.0010 } }
 	}
 	
@@ -252,7 +366,7 @@ sole_roman_empire = {
 		#Won't do without enough gold
 		modifier = {
 			factor = 0
-			NOT = { gold >= massive_gold_value }
+			NOT = { gold >= 1000 }
 		}
 	}
 }
@@ -260,7 +374,7 @@ unite_roman_empires = {
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/ep3_decision_hold_triumph.dds"
 	}
-	decision_group_type = major
+	decision_group_type = roman
 	
 	ai_check_interval_by_tier = {
 		barony = 0
@@ -275,25 +389,31 @@ unite_roman_empires = {
 	selection_tooltip = unite_roman_empires_tooltip
 	
 	is_shown = {
-		OR = {
-			has_title = title:e_wre
-			has_title = title:e_byzantium
+		AND = {
+			custom_description = {
+				text = has_a_western_roman_empire
+				OR = {
+					has_title = title:e_wre
+					has_title = title:h_western_roman_empire
+				}
+			}
+			custom_description = {
+				text = has_an_eastern_roman_empire
+				OR = {
+					has_title = title:e_byzantium
+					has_title = title:h_eastern_roman_empire
+				}
+			}
 		}
 		OR = {
 			religion = religion:christianity_religion
 			religion = religion:hellenism_religion
 		}
-		NOT = { has_claim_on = title:e_roman_empire }
+		NOT = { has_claim_on = title:h_roman_empire }
 		NOT = { has_global_variable = rome_restored }
 	}
 	
-	is_valid = {
-		AND = {
-			has_title = title:e_wre
-			has_title = title:e_byzantium
-		}
-		gold >= massive_gold_value
-	}
+	is_valid = {}
 	
 	is_valid_showing_failures_only = {
 		is_available_adult = yes
@@ -301,13 +421,26 @@ unite_roman_empires = {
 	}
 	
 	cost = {
-		gold = massive_gold_value
+		treasury = {
+			value = 0
+			if = {
+				limit = { has_treasury = yes }
+				add = 5000
+			}
+		}
+		gold = {
+			value = 0
+			if = {
+				limit = { has_treasury = no }
+				add = 5000
+			}
+		}
 		prestige = 3000
 	}
 	
 	effect = {
 		set_global_variable = { name = rome_restored }
-		add_pressed_claim = title:e_roman_empire
+		custom_tooltip = { text = roman_empire_reunification_tooltip }
 		root = { trigger_event = { id = BP_roman_decisions.0011 } }
 	}
 	
@@ -319,7 +452,7 @@ unite_roman_empires = {
 		#Won't do without enough gold
 		modifier = {
 			factor = 0
-			NOT = { gold >= massive_gold_value }
+			NOT = { gold >= 5000 }
 		}
 	}
 }
@@ -327,7 +460,7 @@ restore_western_roman_empire = {
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/ep3_decision_roman_restoration.dds"
 	}
-	decision_group_type = major
+	decision_group_type = roman
 	
 	ai_check_interval_by_tier = {
 		barony = 0
@@ -343,12 +476,16 @@ restore_western_roman_empire = {
 	
 	is_shown = {
 		NOT = { exists = title:e_wre.holder }
-		NOT = { exists = title:e_roman_empire.holder }
-		culture = { has_ability_to_reform_rome_directly_trigger = yes }
+		NOT = { exists = title:h_western_roman_empire.holder }
+		NOT = { exists = title:h_roman_empire.holder }
+		NOT = { exists = title:h_eastern_roman_empire.holder } #They can reform directly
+		OR = {
+			culture = { has_ability_to_reform_rome_directly_trigger = yes }
+			dynasty = { has_dynasty_perk = BP_roman_heritage_legacy_5 }
+		}
 	}
 	
 	is_valid = {
-		gold >= massive_gold_value
 		completely_controls_region = world_roman_empire_west_italy
 		OR = {
 			custom_description = { text = roman_capital root.capital_county = title:c_roma }
@@ -366,7 +503,13 @@ restore_western_roman_empire = {
 			tier = tier_kingdom
 			count >= 3
 		}
-		prestige_level >= 3
+		OR = {
+		has_trait = legendary_leader
+			AND = {
+				prestige_level >= 5
+				legitimacy_level >= 5
+			}
+		}
 		##### TODO (Beta): Add legion requirements
 	}
 	
@@ -376,16 +519,41 @@ restore_western_roman_empire = {
 	}
 	
 	cost = {
-		gold = massive_gold_value
+		treasury = {
+			value = 0
+			if = {
+				limit = { has_treasury = yes }
+				add = 1500
+			}
+		}
+		gold = {
+			value = 0
+			if = {
+				limit = { has_treasury = no }
+				add = 1500
+			}
+		}
 	}
 	
 	effect = {
 		root = { save_scope_as = asking_emperor }
-		title:e_wre = { save_scope_as = requested_title }
+		title:h_western_roman_empire = { save_scope_as = requested_title }
 		if = {
-			limit = { exists = title:e_byzantium.holder }
-			title:e_byzantium.holder = { save_scope_as = other_emperor }
-			title:e_byzantium = { save_scope_as = other_empire }
+			limit = {
+				OR = {
+					exists = title:h_eastern_roman_empire.holder
+					exists = title:e_byzantium.holder
+				}
+			}
+			if = {
+				limit = { exists = title:h_eastern_roman_empire.holder }
+				title:h_eastern_roman_empire.holder = { save_scope_as = other_emperor }
+				title:h_eastern_roman_empire = { save_scope_as = other_empire }
+			}
+			else = {
+				title:e_byzantium.holder = { save_scope_as = other_emperor }
+				title:e_byzantium = { save_scope_as = other_empire }
+			}
 		}
 		root = { trigger_event = { id = BP_roman_decisions.0050 } }
 	}
@@ -406,7 +574,7 @@ restore_eastern_roman_empire = {
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/ep3_decision_roman_restoration.dds"
 	}
-	decision_group_type = major
+	decision_group_type = roman
 	
 	ai_check_interval_by_tier = {
 		barony = 0
@@ -422,12 +590,16 @@ restore_eastern_roman_empire = {
 	
 	is_shown = {
 		NOT = { exists = title:e_byzantium.holder }
-		NOT = { exists = title:e_roman_empire.holder }
-		culture = { has_ability_to_reform_rome_directly_trigger = yes }
+		NOT = { exists = title:h_eastern_roman_empire.holder }
+		NOT = { exists = title:h_western_roman_empire.holder }
+		NOT = { exists = title:h_roman_empire.holder }
+		OR = {
+			culture = { has_ability_to_reform_rome_directly_trigger = yes }
+			dynasty = { has_dynasty_perk = BP_roman_heritage_legacy_5 }
+		}
 	}
 	
 	is_valid = {
-		gold >= massive_gold_value
 		completely_controls_region = world_roman_empire_east_asia_minor
 		completely_controls_region = custom_diocese_hellas
 		OR = {
@@ -454,16 +626,41 @@ restore_eastern_roman_empire = {
 	}
 	
 	cost = {
-		gold = massive_gold_value
+		treasury = {
+			value = 0
+			if = {
+				limit = { has_treasury = yes }
+				add = massive_gold_value
+			}
+		}
+		gold = {
+			value = 0
+			if = {
+				limit = { has_treasury = no }
+				add = massive_gold_value
+			}
+		}
 	}
 	
 	effect = {
 		root = { save_scope_as = asking_emperor }
-		title:e_byzantium = { save_scope_as = requested_title }
+		title:h_eastern_roman_empire = { save_scope_as = requested_title }
 		if = {
-			limit = { exists = title:e_wre.holder }
-			title:e_wre.holder = { save_scope_as = other_emperor }
-			title:e_wre = { save_scope_as = other_empire }
+			limit = {
+				OR = {
+					exists = title:h_western_roman_empire.holder
+					exists = title:e_wre.holder
+				}
+			}
+			if = {
+				limit = { exists = title:h_western_roman_empire.holder }
+				title:h_western_roman_empire.holder = { save_scope_as = other_emperor }
+				title:h_western_roman_empire = { save_scope_as = other_empire }
+			}
+			else = {
+				title:e_wre.holder = { save_scope_as = other_emperor }
+				title:e_wre = { save_scope_as = other_empire }
+			}
 		}
 		root = { trigger_event = { id = BP_roman_decisions.0050 } }
 	}
@@ -481,113 +678,147 @@ restore_eastern_roman_empire = {
 	}
 }
 ### Minor Decisions
-support_greens = {
+support_chariot_team_decision = {
 	picture = {
 		reference = "gfx/interface/illustrations/tournament_contest_illustrations/chariots_win_green.dds"
 	}
 
-	ai_check_interval = 60
-	desc = support_greens_desc
-	selection_tooltip = support_greens_tooltip
+	ai_check_interval_by_tier = {
+		barony = 960
+		county = 480
+		duchy = 240
+		kingdom = 180
+		empire = 120
+		hegemony = 60
+	}
+	
+	desc = support_chariot_team_decision_desc
+	selection_tooltip = support_chariot_team_decision_tooltip
 	
 	is_shown = {
-		root.top_liege = { any_realm_province = { has_building_with_flag = chariot_races } }
-		AND = {
-			primary_title.tier >= tier_county
-			is_ruler = yes
+		OR = {
+			#Romans themselves will only do so if their culture supports it
+			this.culture = { has_cultural_parameter = hosts_chariot_races }
+			trigger_if = {
+				limit = { is_landed = yes }
+				#Foreigners, only if Roman Admin
+				AND = {
+					this.capital_county.culture = { has_cultural_parameter = hosts_chariot_races }
+					OR = {
+						government_has_flag = government_is_roman_dynastic
+						government_has_flag = government_is_roman_administrative
+					}
+				}
+			}
 		}
-		NOR = {
-			has_trait = greens_supporter
-			has_trait = blues_supporter
-		}
-		
-	}
-	
-	is_valid = {
-		piety >= 50
-	}
-	
-	is_valid_showing_failures_only = {
-		is_available_adult = yes
-	}
-	
-	cost = { piety = 50 }
-	
-	effect = {
-		add_trait = greens_supporter
-	}
-	
-	ai_potential = { always = yes }
-	
-	ai_will_do = {
-		base = 10 #%10 chance
-		
-		modifier = { #Not for the Zealous
-			factor = 0
-			NOT = { has_trait = zealous }
-		}
-		modifier = { #Cynical are more likely to
-			factor = 1.2
-			has_trait = cynical
-		}
-		modifier = { #We like the get buddy-buddy with our liege
-			factor = 1.2
-			liege = { has_trait = greens_supporter }
-		}
-	}
-}
-support_blues = {
-	picture = {
-		reference = "gfx/interface/illustrations/tournament_contest_illustrations/chariots_win_blue.dds"
 	}
 
-	ai_check_interval = 60
-	desc = support_blues_desc
-	selection_tooltip = support_blues_tooltip
-	
-	is_shown = {
-		root.top_liege = { any_realm_province = { has_building_with_flag = chariot_races } }
-		AND = {
-			primary_title.tier >= tier_county
-			is_ruler = yes
-		}
-		NOR = {
-			has_trait = greens_supporter
-			has_trait = blues_supporter
-		}
-		
-	}
-	
-	is_valid = {
-		piety >= 50
-	}
-	
 	is_valid_showing_failures_only = {
 		is_available_adult = yes
+		is_at_war = no
+		custom_description = {
+			subject = root
+			text = "has_changed_chariot_support_cooldown"
+			NOT = { has_variable = changed_chariot_support }
+		}
 	}
-	
-	cost = { piety = 50 }
-	
+
+	widget = {
+		gui = "decision_view_widget_option_list_generic"
+		controller = decision_option_list_controller
+		decision_to_second_step_button = "change_chariot_support_decision_confirm"
+		show_from_start = yes
+
+		item = {
+			value = support_greens
+			is_valid = { NOT = { has_trait = greens_supporter } }
+			localization = support_greens_item_desc
+			icon = "gfx/interface/icons/traits/greens_supporter.dds"
+			ai_chance = { value = 50 }
+		}
+
+		item = {
+			value = support_blues
+			is_valid = { NOT = { has_trait = blues_supporter } }
+			localization = support_blues_item_desc
+			icon = "gfx/interface/icons/traits/blues_supporter.dds"
+			ai_chance = { value = 50 }
+		}
+
+		item = {
+			value = support_reds
+			is_shown = { always = no }
+			localization = support_reds_item_desc
+			icon = "gfx/interface/icons/traits/reds_supporter.dds"
+			ai_chance = { value = 0 }
+		}
+
+		item = {
+			value = support_whites
+			is_shown = { always = no }
+			localization = support_whites_item_desc
+			icon = "gfx/interface/icons/traits/whites_supporter.dds"
+			ai_chance = { value = 0 }
+		}
+	}
+
 	effect = {
-		add_trait = blues_supporter
+		switch = {
+			trigger = has_trait
+			blues_supporter = { remove_trait = blues_supporter }
+			greens_supporter = { remove_trait = greens_supporter }
+			reds_supporter = { remove_trait = reds_supporter }
+			whites_supporter = { remove_trait = whites_supporter }
+			fallback = {}
+		}
+		if = {
+			limit = { scope:support_greens = yes }
+			custom_tooltip = {
+				text = add_greens_supporter
+				add_trait = greens_supporter
+			}
+		}
+		else_if = {
+			limit = { scope:support_blues = yes }
+			custom_tooltip = {
+				text = add_blues_supporter
+				add_trait = blues_supporter
+			}
+		}
+		else_if = {
+			limit = { scope:support_reds = yes }
+			custom_tooltip = {
+				text = add_reds_supporter
+				add_trait = reds_supporter
+			}
+		}
+		else_if = {
+			limit = { scope:support_whites = yes }
+			custom_tooltip = {
+				text = add_whites_supporter
+				add_trait = whites_supporter
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				name = changed_chariot_support
+				months = @changed_chariot_support_cooldown_months
+			}
+		}
 	}
-	
-	ai_potential = { always = yes }
 	
 	ai_will_do = {
-		base = 10 #%10 chance
-		
-		modifier = { #Not for the cynical
-			factor = 0
-			NOT = { has_trait = cynical }
-		}
-		modifier = { #Cynical are more likely to
-			factor = 1.2
-			has_trait = zealous
-		}
-		modifier = { #We like the get buddy-buddy with our liege
-			factor = 1.2
-			liege = { has_trait = blues_supporter }
+		base = 0
+		modifier = {
+			add = 25
+			OR = {
+				this.primary_title ?= title:h_western_roman_empire
+				this.primary_title ?= title:h_eastern_roman_empire
+				this.primary_title ?= title:h_roman_empire
+				this.liege_or_court_owner.top_liege.primary_title ?= title:h_western_roman_empire
+				this.liege_or_court_owner.top_liege.primary_title ?= title:h_eastern_roman_empire
+				this.liege_or_court_owner.top_liege.primary_title ?= title:h_roman_empire
+			}
 		}
 	}
 }

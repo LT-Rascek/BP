@@ -114,6 +114,30 @@ reclaim_britannia_decision = {
 ##### vvvvv Removed Decisions vvvvv #####
 
 ##### Changed from Vanilla: Removed ineligible decision
+form_cumbria_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	}
+	decision_group_type = major
+
+	ai_check_interval = 36
+
+	desc = embrace_english_culture_decision_desc
+
+	is_shown = { always = no }
+	
+	is_valid = { always = no }
+
+	is_valid_showing_failures_only = { always = no }
+
+	cost = {}
+
+	effect = {}
+	
+	ai_potential = { always = no }
+}
+
+##### Changed from Vanilla: Removed ineligible decision
 embrace_english_culture_decision = {
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"

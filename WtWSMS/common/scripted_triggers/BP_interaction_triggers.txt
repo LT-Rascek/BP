@@ -54,6 +54,33 @@ BP_demand_conversion_trigger = {
 			}
 		}
 	}
-	#Landed Theocrats should always be protected
+	trigger_if = { #Romans are reasonably protected so long as they are separated from their rulers
+		limit = { scope:actor = { has_realm_law_flag = cannot_demand_romans_change_religion } }
+		custom_description = {
+			text = actor_cannont_demand_conversion_when_separated_from_romans
+			subject = scope:actor
+			object = scope:recipient
+			NOT = { scope:recipient.culture = { has_cultural_parameter = greco_roman_social_tradition } }
+		}
+	}
+	trigger_if = { #Federates are protected, unless they are your vassal
+		limit = { scope:recipient = { government_has_flag = government_is_roman_federate } }
+		custom_description = {
+			text = actor_cannont_demand_conversion_of_unrelated_federates
+			subject = scope:actor
+			object = scope:recipient
+			scope:actor.culture = scope:recipient.culture
+		}
+	}
+	trigger_if = { #Roman Senators are protected from forced conversion
+		limit = { scope:actor = { government_has_flag = is_a_roman_government } }
+		custom_description = {
+			text = actor_cannont_demand_conversion_of_roman_senators
+			subject = scope:actor
+			object = scope:recipient
+			NOT = { scope:recipient = { has_trait_with_flag = roman_senator } }
+		}
+	}
+	#Landed Theocrats should always be protected; revoke their titles instead
 	NOT = { scope:recipient = { government_has_flag = government_is_theocracy } }
 }

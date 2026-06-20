@@ -1534,41 +1534,41 @@ tgp_japan_decision.9001 = { # CHOOSE HOUSE NAME EVENT - WITH WIDGET
 				barony = { save_scope_as = random_barony }
 			}
 		}
-		#hidden_effect = {
-		#	if = {
-		#		limit = {
-		#			NOT = { has_character_flag = found_cadet_branch }
-		#		}
-		#		if = {
-		#			limit = { domicile.domicile_location.county ?= title:c_yamashiro }
-		#			while = {
-		#				count = 3
-		#				assign_japanese_house_name_options_kyoto_effect = yes
-		#			}
-		#		}
-		#		else = {
-		#			while = {
-		#				count = 3
-		#				assign_japanese_house_name_options_effect = yes
-		#			}
-		#		}
-		#	}
-		#	else = {
-		#		if = {
-		#			limit = { domicile.domicile_location.county ?= title:c_yamashiro }
-		#			while = {
-		#				count = 1
-		#				assign_japanese_house_name_options_kyoto_effect = yes
-		#			}
-		#		}
-		#		else = {
-		#			while = {
-		#				count = 1
-		#				assign_japanese_house_name_options_effect = yes
-		#			}
-		#		}
-		#	}
-		#}
+####		hidden_effect = {
+####			if = {
+####				limit = {
+####					NOT = { has_character_flag = found_cadet_branch }
+####				}
+####				if = {
+####					limit = { domicile.domicile_location.county ?= title:c_yamashiro }
+####					while = {
+####						count = 3
+####						assign_japanese_house_name_options_kyoto_effect = yes
+####					}
+####				}
+####				else = {
+####					while = {
+####						count = 3
+####						assign_japanese_house_name_options_effect = yes
+####					}
+####				}
+####			}
+####			else = {
+####				if = {
+####					limit = { domicile.domicile_location.county ?= title:c_yamashiro }
+####					while = {
+####						count = 1
+####						assign_japanese_house_name_options_kyoto_effect = yes
+####					}
+####				}
+####				else = {
+####					while = {
+####						count = 1
+####						assign_japanese_house_name_options_effect = yes
+####					}
+####				}
+####			}
+####		}
 		if = {
 			limit = { is_ai = yes }
 			random_list = {
@@ -2403,11 +2403,11 @@ tgp_japan_decision.9602 = { # Vassal AI event
 				}
 				modifier = {
 					add = 15
-					house = { has_house_power_parameter = unlocks_japanese_manor_archive }
+					house = { has_house_aspiration_parameter = unlocks_japanese_manor_archive }
 				}
 				modifier = {
 					add = 15
-					house = { has_house_power_parameter = ceremony_cheaper_feasts }
+					house = { has_house_aspiration_parameter = ceremony_cheaper_feasts }
 				}
 				modifier = {
 					add = 30

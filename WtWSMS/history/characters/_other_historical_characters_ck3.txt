@@ -1770,7 +1770,7 @@ MaeciusCethegus = { # PLRE vol. 1 Cethegus, senator executed for adultery
 	mother = MemmiaPlacida
 	305.1.1 = { birth = yes }
 	325.1.1 = { add_spouse = FabiaPaulina2 }
-	370.1.1 = { death = yes }
+	370.1.1 = { death = { death_reason = death_execution } }
 }
 FuriusMaeciusGracchus = { # PLRE vol. 1 Gracchus 1 and Furius Maecius Gracchus 3, vir clarissimus, corrector of Flaminia and Picenum before 350, PVR of 376-377
 	name = "Gracchus"
@@ -8681,7 +8681,10 @@ AquilinusOfLyon = { #PLRE vol. 2 Aquilinus 3, nobleman at Lyons friend of Sidoni
 	father = DecimiusPlaceholder
 	mother = TulliaDaughterOfEucheriusOfLyon
 	430.1.1 = { birth = yes }
-	450.1.1 = { set_relation_friend = character:1900009 } #Sidonius Apollinaris		
+	450.1.1 = {
+		#employer = 7833 #Gundobald
+		set_relation_friend = character:1900009 #Sidonius Apollinaris
+	}
 	480.1.1 = { death = yes }
 }
 RusticusOfLyon = { #PLRE vol. 2 Rusticus 5, bishop of Lyon in 494-501
@@ -8842,6 +8845,7 @@ PlaceholderFatherOfImpetratusAndLeocadia = { #Placeholder
 	religion = "nicene"
 	culture = "romano_gallic"
 	430.1.1 = { birth = yes }
+	#476.1.1 = { employer = 7023 } #Syagrius
 	490.1.1 = { death = yes }
 }
 Impetratus = { #Impetratus, presbyter at Clermont in 525 and and grand-uncle of Gregory of Tours
@@ -12512,7 +12516,7 @@ UnnamedWifeOfSophistLeontius = { #Unnamed wife of sophist Leontius
 	375.1.1 = { birth = yes }
 	417.1.1 = { death = yes }
 }
-FlaviusAsclepiodotus = { #PLRE vol. 2 Asclepiodotus 3, consul of 423
+FlaviusAsclepiodotus = { #PLRE vol. 2 Asclepiodotus 1, consul of 423
 	name = "Asklepiodotos"
 	dynasty = greek_dynasty_likinios
 	religion = "hellenic_pagan"
@@ -22566,8 +22570,8 @@ FlaviusManliusTheodorus = { #PLRE vol. 1 Flavius Mallius Theodorus 27, consul of
 	350.1.1 = { birth = yes }
 	410.1.1 = { death = yes }
 }
-TheodorusPPOItaliae = { #PLRE vol. 1 Theodorus 9, PPO Italiae in 409
-	name = "Theodorus"
+TheodorusPPOItaliae = { #PLRE vol. 2 Theodorus 9, PPO Italiae in 409
+	name = "Theodorus" #PLRE 2 Theodorus 9
 	dynasty = 1042285
 	religion = "nicene"
 	culture = "roman"

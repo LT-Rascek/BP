@@ -6,30 +6,26 @@
  BP_maintenance_events.0001.subsection_spacer: "\n\n"
  #Intro Stuff
  BP_maintenance_events.0001.t: "Welcome to WtWSMS v$wtwsms_mod_version_number$"
- BP_maintenance_events.0001.desc.opening: "Welcome to the $wtwsms_game_status$ v$wtwsms_mod_version_number$ of \"When the World Stopped Making Sense\"!, or \"WtWSMS\" for short. WtWSMS is a Migrational Era (period sometimes also referred to as the "Dark Ages") massive major overhaul mod for Crusader Kings III."
- BP_maintenance_events.0001.desc.more_information: "\n\nFor more information about the mod, visit:\n\t$EFFECT_LIST_BULLET$ Our $wtwsms_forum_location_type$ at $wtwsms_forum_location$\n\t$EFFECT_LIST_BULLET$ Our wiki page at $wtwsms_wiki_page$."
- BP_maintenance_events.0001.desc.development_info: "\n\nAs it is in development:\n\t$EFFECT_LIST_BULLET$ Save often in case of crashes\n\t$EFFECT_LIST_BULLET$ If you find a consistent bug, please tell us in the WtWSMS bug tracker at $wtwsms_bug_tracker$"
- #Character Description Stuff
- BP_maintenance_events.0001.character_description_intro: "You are playing "
- BP_maintenance_events.0001.character_description: "[ROOT.Char.Custom('SpecialCharacterDescription')]"
- #Rules Information
- BP_maintenance_events.0001.desc.wtwsms_vanilla_change_info: "As a history-focused mod, WtWSMS changes the following Vanilla rules by default:\n"
- BP_maintenance_events.0001.desc.changed_default_heresy_status: "\n@warning_icon!#X \"$rule_regional_heresy$\" to \"$setting_strict_regional_heresy$\" which means $setting_strict_regional_heresy_desc$#!\n"
- BP_maintenance_events.0001.desc.changed_default_faith_conversion_speed: "\n@warning_icon!#X \"$rule_faith_conversion_speed$\" to \"$setting_bp_default_faith_conversion_speed$\" which means $setting_bp_default_faith_conversion_speed_desc$#!\n"
- BP_maintenance_events.0001.desc.changed_default_culture_conversion_speed: "\n@warning_icon!#X \"$rule_culture_conversion_speed$\" to \"$setting_bp_default_culture_conversion_speed$\" which means $setting_bp_default_culture_conversion_speed_desc$#!\n"
- BP_maintenance_events.0001.desc.changed_default_culture_hybrid_divergence_rate: "\n@warning_icon!#X \"$rule_hybrid_and_divergence_cooldowns$\" to \"$setting_bp_default_hybrid_and_divergence_cooldowns$\" which means $setting_bp_default_hybrid_and_divergence_cooldowns_desc$#!\n"
- #WtWSMS-specific rules
- BP_maintenance_events.0001.desc.wtwsms_rule_intro: "You have the following WtWSMS rules in place for this game:\n"
- BP_maintenance_events.0001.desc.tribal_shatter: "\n@warning_icon!#X You have \"$rule_tribal_shatter_mechanic$\" set to \"#V $setting_tribal_shatter_mechanic_enabled$#!\", meaning tribal kingdoms and empires whose ruler culture lacks the $culture_era_tribal$ [innovation|E] $innovation_social_stratification$ will shatter upon the death of their holder.#!\n"
- BP_maintenance_events.0001.desc.strong_believers: "\n@warning_icon!#X You have \"$rule_strong_believers_conversion_resistance$\" set to \"#V $setting_bp_strong_believers_conversion_resistance$#!\", which means #V Strong Believers#! [culture_tradition|E] proved #P [EmptyScope.ScriptValue('conversion_culture_harder_to_convert_BP_value')|0%]#! county conversion resistance instead of the default #P [EmptyScope.ScriptValue('conversion_culture_harder_to_convert_default_value')|0%]#! #!\n"
- BP_maintenance_events.0001.desc.custom_kingdoms_empires: "\n@warning_icon!#X You have \"$rule_custom_kingdom_creation_blocked_for_specific_cases$\" set to \"#V $setting_custom_kingdom_creation_blocked_for_specific_cases_enabled$#!\", which means certain cultures can't create custom kingdoms until they have created a specific title (such as the Franks and the Kingdom of the Franks)#!\n"
- BP_maintenance_events.0001.desc.can_not_freely_create_empires: "\n@warning_icon!#X You have \"$rule_creation_of_empires$\" set to \"#V $setting_can_not_freely_create_empires$#!\", which means outside of special conditions, you cannot make an empire title if you already possess one#!\n"
- BP_maintenance_events.0001.desc.titular_title_restrictions: "\n@warning_icon!#X You have \"$rule_titular_title_creation_restrictions$\" set to \"#V $setting_titular_titles_restricted$#!\", which means $setting_titular_titles_restricted_desc$#!\n"
- BP_maintenance_events.0001.desc.ai_only_titular_titles_restricted: "\n@warning_icon!#X You have \"$rule_titular_title_creation_restrictions$\" set to \"#V $setting_ai_only_titular_titles_restricted$#!\", which means $setting_ai_only_titular_titles_restricted_desc$#!\n"
- BP_maintenance_events.0001.desc.latin_succesion_tradition_access_locked: "\n@warning_icon!#X You have \"$rule_latin_tradition_access$\" set to \"#V $setting_latin_succesion_tradition_access_locked$#!\", which means $setting_latin_succesion_tradition_access_locked_desc$#!\n"
- BP_maintenance_events.0001.desc.latin_succesion_tradition_access_unlocked: "\n@warning_icon!#X You have \"$rule_latin_tradition_access$\" set to \"#V $setting_latin_succesion_tradition_access_unlocked$#!\", which means $setting_latin_succesion_tradition_access_unlocked_desc$#!\n"
- #
- BP_maintenance_events.0001.desc.rule_closing: "\n#bold #italic If any you find any of these rules undesirable for your play style, please go to the main menu and unselect this rule.#!#!"
+ BP_maintenance_events.0001.desc.opening: "Welcome to the $wtwsms_game_status$ v$wtwsms_mod_version_number$ of \"When the World Stopped Making Sense\"!, or \"WtWSMS\" for short. WtWSMS is a Migration Era (period sometimes also referred to as the "Dark Ages") massive major overhaul mod for Crusader Kings III."
+ BP_maintenance_events.0001.desc.more_information: "\n\nFor more information about the mod, visit:\n\t$EFFECT_LIST_BULLET$ Our forum thread at [bp_forum_location|E]\n\t$EFFECT_LIST_BULLET$ Our wiki page at [bp_wiki_location|E]."
+ BP_maintenance_events.0001.desc.development_info: "\n\nAs it is in development:\n\t$EFFECT_LIST_BULLET$ Save often in case of crashes\n\t$EFFECT_LIST_BULLET$If you find a bug, please tell us on the forum or on our Discord Server (link in the forum)"
+ #New Features
+ BP_maintenance_events.0001.new_features_intro: "#T Here's the major new features in v$wtwsms_mod_version_number$#!:\n\n"
+ ## No DLC Features
+ BP_maintenance_events.0001.new_features_list_no_dlc: "$EFFECT_LIST_BULLET$$event_new_feature_hegemonies$\n$EFFECT_LIST_BULLET$$event_new_feature_landed_titles$\n$EFFECT_LIST_BULLET$$event_new_feature_subroman_transition_overhaul$\n$EFFECT_LIST_BULLET$$event_new_feature_high_tribal_changes$\n$EFFECT_LIST_BULLET$$event_new_feature_dynasty_legacy$\n$EFFECT_LIST_BULLET$$event_new_feature_new_flags$"
+ event_new_feature_hegemonies: "Hegemonies for the Roman Empires and Persian Empire have been added"
+ event_new_feature_landed_titles: "Overhaul of landed titles in line with the new hegemonies"
+ event_new_features_tribal_authority: "Both Tribal and High Tribal governments use Tribal Authority now"
+ event_new_feature_subroman_transition_overhaul: "The Sub-Roman Transition events have been extensively overhaul to reduce the system's opacity, improve flexibility, and make it more responsive to the player"
+ event_new_feature_high_tribal_changes: "High Tribal Government has its own transition system via an innovation-driven \"High Tribal Organization\" law that has High Tribal government more closely mold itself towards Feudal government"
+ event_new_feature_dynasty_legacy: "Added a new Dynasty Legacy, \"$BP_roman_heritage_legacy_track_name$\", available for dynasts of Greco-Roman cultures."
+ event_new_feature_new_flags: "Added new realm frames for Roman, Persian, and High Tribal governments"
+ ## DLC Features
+ BP_maintenance_events.0001.new_features_intro_dlc: "If you have #italic Roads to Power#!, then you additionally have:\n\n"
+ BP_maintenance_events.0001.new_features_list_dlc: "$EFFECT_LIST_BULLET$$event_new_feature_roman_admin$\n$EFFECT_LIST_BULLET$$event_new_feature_federate_overhaul$"
+ event_new_feature_roman_admin: "New administrative Roman governments, for both Roman and Sub-Roman Governments, along with a completely new council for Roman administrative hegemonies"
+ event_new_feature_federate_overhaul: "New 'Roman Federate' government to more accurately model the federate system within the Roman bureaucratic government"
+ BP_maintenance_events.0001.closing: "We hope you enjoy this mod, and let us know of any bugs on the forum or on the Discord!"
  #Response
  BP_maintenance_events.0001.a: "Got it, now let me play!"
  

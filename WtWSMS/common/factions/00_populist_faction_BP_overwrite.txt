@@ -119,6 +119,7 @@ populist_faction = {
 		NOT = {
 			has_character_flag = joining_faction_block
 		}
+		is_imprisoned = no
 		
 		##### Changed from Vanilla vvvvv
 		trigger_if = {
@@ -195,7 +196,6 @@ populist_faction = {
 			has_variable = faction_faith
 			root.faith = var:faction_faith
 		}
-		
 		##### Changed from Vanilla vvvvv
 		trigger_if = {
 			limit = { this = { government_has_flag = is_a_roman_government } }
@@ -232,7 +232,6 @@ populist_faction = {
 				has_holding_type = herder_holding
 			}
 		}
-		
 		##### Changed from Vanilla vvvvv
 		trigger_if = {
 			limit = { holder = { government_has_flag = is_a_roman_government } }
@@ -395,20 +394,6 @@ populist_faction = {
 			culture = { has_cultural_parameter = county_peasant_and_populist_factions_more_common }
 		}
 
-		# 10-year 'grace period' from populist factions forming after game start
-		modifier = {
-			years_from_game_start <= 10
-			factor = {
-				value = 0
-				if = {
-					limit = { years_from_game_start >= 5 }
-					add = years_from_game_start
-					subtract = 5
-					divide = 5 # In year 6 factions can begin forming, but at 20% weighting. This increases to 40% in year 7, 60% in year 8, etc., up to 100% in year 10 where things are then normal.
-				}
-			}
-		}
-
 		# Realm Stability Settings
 		modifier = {
 			add = 50
@@ -463,6 +448,20 @@ populist_faction = {
 			scope:target = {
 				top_participant_group:dynastic_cycle ?= {
 					has_participant_group_parameter = dynastic_cycle_more_peasant_factions
+				}
+			}
+		}
+	
+		# 10-year 'grace period' from populist factions forming after game start
+		modifier = {
+			years_from_game_start <= 10
+			factor = {
+				value = 0
+				if = {
+					limit = { years_from_game_start >= 5 }
+					add = years_from_game_start
+					subtract = 5
+					divide = 5 # In year 6 factions can begin forming, but at 20% weighting. This increases to 40% in year 7, 60% in year 8, etc., up to 100% in year 10 where things are then normal.
 				}
 			}
 		}

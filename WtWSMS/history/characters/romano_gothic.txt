@@ -28,7 +28,7 @@
 	female = yes
 	dynasty = 1042165
 	religion = "arian"
-	culture = "ostrogothic" ##### Changed from Vanilla: CK2 romano_gothic
+	culture = "gothic" ##### Changed from Vanilla: CK2 romano_gothic
 	father = 190204
 	mother = 190205
 	trait = "brave"
@@ -37,6 +37,7 @@
 	460.1.1 = {
 		birth = yes
 	}
+	488.1.1 = { culture = ostrogothic }
 	500.1.1 = {
 		add_spouse = 190070
 	}
@@ -48,7 +49,7 @@
 189075 = {
 	name = "Ovida"	#General to Nepos
 	religion = "nicene"
-	culture = "ostrogothic" ##### Changed from Vanilla: CK2 romano_gothic
+	culture = "gothic" ##### Changed from Vanilla: CK2 romano_gothic
 	trait = "education_martial_3"
 	440.1.1 = {
 		birth = "440.1.1"
@@ -65,7 +66,7 @@
 1300110 = {
 	name = "Apsical"	#PLRE
 	religion = "nicene"
-	culture = ostrogothic ##### Changed from Vanilla: CK2 romano_gothic
+	culture = gothic ##### Changed from Vanilla: CK2 romano_gothic
 	martial = 10
 	trait = aggressive_attacker
 	trait = drunkard
@@ -83,7 +84,7 @@
 1310015 = {
 	name = "Gesila"	#PLRE
 	religion = "arian"
-	culture = ostrogothic ##### Changed from Vanilla: CK2 romano_gothic
+	culture = gothic ##### Changed from Vanilla: CK2 romano_gothic
 	dynasty = 1051153
 	martial = 15
 	460.1.1 = {
@@ -98,7 +99,7 @@
 	name = "Rumoridus"	#PLRE vol.1 Fl. Rumoridus
 	#consul of 403
 	religion = irimonic_pagan
-	culture = ostrogothic ##### Changed from Vanilla: CK2 romano_gothic
+	culture = gothic ##### Changed from Vanilla: CK2 romano_gothic
 	trait = zealous
 	350.1.1 = {
 		birth = yes
@@ -135,7 +136,7 @@
 	name = "Arnegisclus"	#PLRE vol.2 Arnegisclus
 	dynasty = 10424395
 	religion = "nicene"
-	culture = ostrogothic ##### Changed from Vanilla: CK2 romano_gothic
+	culture = gothic ##### Changed from Vanilla: CK2 romano_gothic
 	400.1.1 = {
 		birth = yes
 	}
@@ -157,7 +158,7 @@
 	name = "Ursus"	# "People and Identity in Ostrogothic Italy, 489-554", p. 430
 	#dux Norici c. 500/510
 	religion = nicene
-	culture = ostrogothic ##### Changed from Vanilla: CK2 romano_gothic
+	culture = gothic ##### Changed from Vanilla: CK2 romano_gothic
 	trait = roman_nostalgia
 	460.1.1 = {
 		birth = yes
@@ -166,6 +167,7 @@
 	480.1.1 = {
 		add_spouse = 1301028
 	}
+	488.1.1 = { culture = ostrogothic }
 	520.1.1 = {
 		death = yes
 	}
@@ -176,12 +178,13 @@
 	#wife of Ursus
 	female = yes
 	religion = nicene
-	culture = ostrogothic ##### Changed from Vanilla: CK2 romano_gothic
+	culture = gothic ##### Changed from Vanilla: CK2 romano_gothic
 	trait = roman_nostalgia
 	460.1.1 = {
 		birth = yes
 	}
 	476.1.1 = { effect = { learn_language = language_latin } }
+	488.1.1 = { culture = ostrogothic }
 	520.1.1 = {
 		death = yes
 	}
@@ -191,11 +194,12 @@
 	name = "Colosseus"	# PLRE vol. 2 Colosseus
 	#comes Pannoniae Sirmiensis 507/511
 	religion = arian
-	culture = ostrogothic
+	culture = gothic
 	trait = roman_nostalgia
 	480.1.1 = {
 		birth = yes
 	}
+	488.1.1 = { culture = ostrogothic }
 	496.1.1 = { effect = { learn_language = language_latin } } #Romanized
 	540.1.1 = {
 		death = yes

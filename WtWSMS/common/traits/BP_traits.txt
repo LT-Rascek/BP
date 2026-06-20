@@ -683,8 +683,8 @@ power_behind_the_throne = { #Keeps Orestes from inheriting from Romulus
 	shown_in_ruler_designer = no
 	category = fame
 
-	inheritance_blocker = dynasty
-	claim_inheritance_blocker = dynasty
+	inheritance_blocker = all
+	claim_inheritance_blocker = all
 	
 	courtly_opinion = -10
 	parochial_opinion = -10
@@ -770,8 +770,8 @@ blues_supporter = {
 
 	opposites = {
 		greens_supporter
-		reds_supporter
-		whites_supporter
+		#reds_supporter
+		#whites_supporter
 	}
 	
 	same_opinion = 10
@@ -804,8 +804,8 @@ greens_supporter = {
 
 	opposites = {
 		blues_supporter
-		reds_supporter
-		whites_supporter
+		#reds_supporter
+		#whites_supporter
 	}
 	
 	same_opinion = 10
@@ -834,7 +834,7 @@ reds_supporter = {
 	opposites = {
 		blues_supporter
 		greens_supporter
-		whites_supporter
+		#whites_supporter
 	}
 	
 	same_opinion = 10
@@ -862,7 +862,7 @@ whites_supporter = {
 	opposites = {
 		blues_supporter
 		greens_supporter
-		reds_supporter
+		#reds_supporter
 	}
 	
 	same_opinion = 10
@@ -888,12 +888,6 @@ roman_nostalgia = {
 	}
 	martial = -2
 	learning = 3
-	
-	culture_modifier = {
-		parameter = roman_cultural_trait_bonus
-		same_culture_opinion = 10
-		monthly_prestige = 0.1
-	}
 
 	ai_rationality = 40 #Careful to declare war
 	ai_honor = 40 #See themselves as very honorable
@@ -987,4 +981,6 @@ deposed = {
 	flag = cannot_inherit_titles
 
 	shown_in_ruler_designer = no
+	
+	icon = power_behind_the_throne.dds
 }

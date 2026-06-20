@@ -1,0 +1,181 @@
+﻿##### Changed from Vanilla: Urbanizations unlock building domiciles
+estate_main_02 = {
+	slot_type = main
+	internal_slots = 4
+	construction_time = 730
+	allowed_domicile_types = { estate }
+	previous_building = estate_main_01
+	
+	##### Changed from Vanilla vvvvv
+	can_construct = {
+		OR = {
+			culture ?= { has_innovation = innovation_city_planning }
+			culture ?= { has_innovation_flag = unlocks_first_three_domiciles }
+			government_has_flag = government_is_centralized
+		}
+	}
+	##### Changed from Vanilla ^^^^^
+
+	cost = {
+		gold = estate_external_building_high_cost_tier_3_value
+	}
+	
+	parameters = {
+		reduce_success_of_raid_estate = yes
+		estate_increase_house_member_investment_cap_1 = yes
+	}
+
+	character_modifier = {
+		domicile_monthly_gold_add = 0.25
+		domicile_monthly_influence_add = 0.5
+		domicile_external_slots_capacity_add = 1
+	}
+
+	ai_value = {
+		value = 100
+	}
+	
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				has_graphical_east_asia_culture_group_trigger = yes
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_manor.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_manor_chinese.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_manor_chinese_mask.png"
+		soundeffect = "event:/DLC/EP4/SFX/UI/domicile_buildings/tgp_ui_domicile_building_chinese_main_building"
+	}
+	
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_iranian_culture_group_trigger = yes
+					has_graphical_mena_culture_group_trigger = yes
+					has_graphical_steppe_culture_group_trigger = yes
+					has_graphical_african_culture_group_trigger = yes
+					has_graphical_india_culture_group_trigger = yes
+					has_graphical_iberian_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_manor.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_manor_mena.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_manor_mena_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_estate_main_building"
+	}
+
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_western_culture_group_trigger = yes
+					has_graphical_norse_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_manor.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_manor_western.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_manor_western_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_estate_main_building"
+	}
+
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_building_manor.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_manor_byzantine.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_manor_byzantine_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_estate_main_building"
+	}
+}
+
+##### Changed from Vanilla: Urbanizations unlock building domiciles
+estate_main_03 = {
+	slot_type = main
+	internal_slots = 6
+	construction_time = 730
+	allowed_domicile_types = { estate }
+	previous_building = estate_main_02
+	
+	##### Changed from Vanilla vvvvv
+	can_construct = {
+		OR = {
+			culture ?= { has_innovation = innovation_manorialism }
+			culture ?= { has_innovation_flag = unlocks_first_three_domiciles }
+		}
+	}
+	##### Changed from Vanilla ^^^^^
+
+	cost = {
+		gold = estate_external_building_high_cost_tier_4_value
+	}
+	
+	parameters = {
+		reduce_success_of_raid_estate = yes
+		estate_increase_house_member_investment_cap_2 = yes
+	}
+
+	character_modifier = {
+		domicile_monthly_gold_add = 0.5
+		domicile_monthly_gold_mult = 0.02
+		domicile_monthly_influence_add = 0.5
+		domicile_external_slots_capacity_add = 1
+	}
+
+	ai_value = {
+		value = 100
+	}
+	
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				has_graphical_east_asia_culture_group_trigger = yes
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_mansion.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_mansion_chinese.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_mansion_chinese_mask.png"
+		soundeffect = "event:/DLC/EP4/SFX/UI/domicile_buildings/tgp_ui_domicile_building_chinese_main_building"
+	}
+	
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_iranian_culture_group_trigger = yes
+					has_graphical_mena_culture_group_trigger = yes
+					has_graphical_steppe_culture_group_trigger = yes
+					has_graphical_african_culture_group_trigger = yes
+					has_graphical_india_culture_group_trigger = yes
+					has_graphical_iberian_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_mansion.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_mansion_mena.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_mansion_mena_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_estate_main_building"
+	}
+
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_western_culture_group_trigger = yes
+					has_graphical_norse_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_mansion.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_mansion_western.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_mansion_western_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_estate_main_building"
+	}
+
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_building_mansion.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_mansion_byzantine.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_mansion_byzantine_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_estate_main_building"
+	}
+}

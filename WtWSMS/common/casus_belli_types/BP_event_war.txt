@@ -23,12 +23,11 @@ odoacer_takeover_war = { #Cribbed from invasion wars
 
 	valid_to_start = { always = yes }
 
-	should_invalidate = { NOT = { exists = title:e_wre } }
+	should_invalidate = { NOT = { exists = title:h_western_roman_empire } }
 
 	on_invalidated_desc = msg_invasion_war_invalidated_message
 	
-	#If invalidated, destroy the Kingdom of Italy but don't imprison Odacer
-	on_invalidated = { scope:attacker = { destroy_title = title:k_italy } }
+	on_invalidated = {  }
 
 	#No cost, event driven
 	cost = {}
@@ -57,11 +56,7 @@ odoacer_takeover_war = { #Cribbed from invasion wars
 		# Legitimacy
 		add_legitimacy_attacker_victory_effect = yes
 		
-		create_title_and_vassal_change = {
-			type = conquest
-			save_scope_as = change_counties
-			add_claim_on_loss = yes
-		}
+		#Step 0: Determine what to do with WRE titles
 		scope:defender = {
 			#Parse out what to do with Romulus' titles
 			every_held_title = {
@@ -69,6 +64,7 @@ odoacer_takeover_war = { #Cribbed from invasion wars
 					limit = { this.tier > tier_county }
 					this = { add_to_temporary_list = titles_destroyed }
 				}
+				#NB: The actual destruction must happen after vassal transfer because of title destruction on actions
 				else_if = {
 					limit = { this.tier = tier_county }
 					this = { add_to_temporary_list = titles_taken }
@@ -80,7 +76,20 @@ odoacer_takeover_war = { #Cribbed from invasion wars
 			}
 		}
 		
+		#Destroy invalid titles
+		hidden_effect = {
+			every_in_list = {
+				list = titles_destroyed
+				scope:defender = { destroy_title = prev }
+			}
+		}
+		
 		#Step 1: Transfer Counties
+		create_title_and_vassal_change = {
+			type = conquest
+			save_scope_as = change_counties
+			add_claim_on_loss = yes
+		}
 		scope:attacker = {
 			every_war_ally = { #Award Odoacer's compatriots with roof trees...
 				limit = { is_landless_adventurer = yes }
@@ -94,13 +103,6 @@ odoacer_takeover_war = { #Cribbed from invasion wars
 					}
 				}
 				add_to_list = new_vassals
-			}
-		}
-		#Destroy invalid titles
-		hidden_effect = {
-			every_in_list = {
-				list = titles_destroyed
-				scope:defender = { destroy_title = prev }
 			}
 		}
 		#Odoacer gets everything else
@@ -120,7 +122,7 @@ odoacer_takeover_war = { #Cribbed from invasion wars
 			save_scope_as = title_change
 			add_claim_on_loss = no
 		}
-		title:k_italy = {
+		title:h_italy = {
 			change_title_holder = {
 				holder = scope:attacker
 				change = scope:title_change
@@ -128,12 +130,22 @@ odoacer_takeover_war = { #Cribbed from invasion wars
 		}
 		resolve_title_and_vassal_change = scope:title_change
 		
+		scope:attacker = { convert_to_subroman_government_effect = yes }
+		
+		#Step 3: Transfer vassals
+		
+		#Step 3a: Destroy WRE ministries so they are no longer vassals...
+		title:e_magister_military_wre.holder ?= { destroy_title = title:e_magister_military_wre }
+		title:e_magister_offices_wre.holder ?= {
+			save_scope_as = the_wre_MO_char
+			destroy_title = title:e_magister_offices_wre
+		}
+		
 		create_title_and_vassal_change = {
-			type = conquest
+			type = swear_fealty
 			save_scope_as = change_vassals
 			add_claim_on_loss = yes
 		}
-		#Step 3: Transfer vassals
 		every_in_list = {
 			list = vassals_taken
 			if = {
@@ -148,23 +160,160 @@ odoacer_takeover_war = { #Cribbed from invasion wars
 		
 		#Step 4: Odoacer's compatriots get their due
 		create_title_and_vassal_change = {
-			type = swear_fealty
+			type = granted #Odoacer is granting this to his followers; also enables federate logic directly
 			save_scope_as = change_fealty
 			add_claim_on_loss = no
 		}
-		every_in_list = {
-			list = new_vassals
-			change_liege = {
-				liege = scope:attacker
-				change = scope:change_fealty
-			}
+		
+		title:d_laamp_odoacer_skirian.holder = { save_scope_as = skirian_title_holder }
+		title:d_laamp_odoacer_heruli.holder = { save_scope_as = heruli_title_holder }
+		title:d_laamp_odoacer_rugii.holder = { save_scope_as = rugii_title_holder }
+		land_odoacers_forces_effect = {
+			CHAR = scope:skirian_title_holder
+			LANDED_TITLE = title:d_umbria
+			CHANGE = scope:change_fealty
+		}
+		land_odoacers_forces_effect = {
+			CHAR = scope:heruli_title_holder
+			LANDED_TITLE = title:d_histria
+			CHANGE = scope:change_fealty
+		}
+		land_odoacers_forces_effect = {
+			CHAR = scope:rugii_title_holder
+			LANDED_TITLE = title:d_venetia
+			CHANGE = scope:change_fealty
 		}
 		resolve_title_and_vassal_change = scope:change_fealty
+		#Have to hard-code the transition because the on-action isn't picking up the grants
+		scope:skirian_title_holder = {
+			convert_personal_troops_to_title_troops_effect = yes
+			change_government_subroman_administrative_effect = yes
+		}
+		scope:heruli_title_holder = {
+			convert_to_roman_federate_government_effect = yes
+			trigger_event = { on_action = BP_create_federate_commander }
+			trigger_event = { on_action = BP_create_federate_commander }
+			trigger_event = { on_action = BP_create_federate_commander }
+		}
+		scope:rugii_title_holder = {
+			convert_to_roman_federate_government_effect = yes
+			trigger_event = { on_action = BP_create_federate_commander }
+			trigger_event = { on_action = BP_create_federate_commander }
+			trigger_event = { on_action = BP_create_federate_commander }
+		}
 		
 		#Step 5: Clean up extraneous claims of unlanded defenders
 		if = {
 			limit = { scope:defender = { is_landed = no } }
 			scope:defender = { every_claim = { prev = { remove_claim = prev } } }
+		}
+		
+		#Step 6: Handle the offices if playing with the DLC
+		if = {
+			limit = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
+			#Setup Italian Magister Officiorum
+			custom_tooltip = {
+				text = roman_offices_instantiated
+				create_title_and_vassal_change = {
+					type = created
+					save_scope_as = create_ministries
+				}
+				title:e_magister_offices_italy = {
+					change_title_holder = {
+						holder = scope:the_wre_MO_char
+						change = scope:create_ministries
+					}
+				}
+				scope:the_wre_MO_char = {
+					change_liege = {
+						liege = scope:attacker
+						change = scope:create_ministries
+					}
+				}
+				#Setup Italian Magister Militum
+				if = { #If Tufa is valid, use him particularly
+					limit = {
+						exists = character:55_cousin
+						scope:attacker = { is_employer_of = character:55_cousin }
+					}
+					character:55_cousin = { save_scope_as = the_italy_MM_char }
+				}
+				#Otherwise, create a martial character and give him the title
+				else = {
+					create_character = {
+						template = new_commander_character
+						gender = male
+						employer = scope:attacker
+						save_scope_as = the_new_char
+					}
+					scope:the_new_char = { save_scope_as = the_italy_MM_char }
+				}
+				title:e_magister_military_italy = {
+					change_title_holder = {
+						holder = scope:the_italy_MM_char
+						change = scope:create_ministries
+					}
+				}
+				scope:the_italy_MM_char = {
+					change_liege = {
+						liege = scope:attacker
+						change = scope:create_ministries
+					}
+				}
+				resolve_title_and_vassal_change = scope:create_ministries
+				#Make the new title holders councilors
+				scope:attacker = {
+					make_councilor_of_type_if_not_already_effect = {
+						TARGET_CHAR = scope:the_wre_MO_char
+						POSITION = councillor_chancellor_roman
+					}
+				}
+				scope:attacker = {
+					make_councilor_of_type_if_not_already_effect = {
+						TARGET_CHAR = scope:the_italy_MM_char
+						POSITION = councillor_marshal_roman
+					}
+				}
+			}
+			#Land Odoacer's troops
+			custom_tooltip = {
+				text = your_troops_become_title_troops
+				scope:attacker = {
+					convert_personal_troops_to_title_troops_effect = yes
+					#Personal Retinue so he's not denuded
+					create_maa_regiment = {
+						type = armored_footmen
+						size = 2
+					}
+				}
+			}
+			#Give the MM some troops to start
+			custom_tooltip = {
+				text = the_mm_gathers_some_troops
+				title:e_magister_military_italy.holder = {
+					#Personal Retinue so he's not denuded
+					create_maa_regiment = {
+						type = armored_footmen
+						size = 2
+					}
+					#Title Troops
+					create_maa_regiment = {
+						type = light_footmen
+						size = 4
+						title = title:e_magister_military_italy
+					}
+					create_maa_regiment = {
+						type = armored_footmen
+						size = 4
+						title = title:e_magister_military_italy
+					}
+					create_maa_regiment = {
+						type = light_horsemen
+						size = 2
+						title = title:e_magister_military_italy
+					}
+				}
+			}
 		}
 		
 		# Attacker gets Prestige Experience, Defender loses Prestige, all other participants gain Prestige based on their war contribution.
@@ -182,6 +331,126 @@ odoacer_takeover_war = { #Cribbed from invasion wars
 		# Truce
 		add_truce_attacker_victory_effect = yes
 		
+		#Give Odoacer some cash to start
+		scope:attacker = { add_treasury = 1000 }
+		
+		#Odoacer starts at peace with his neighbors; railroading for now
+		scope:attacker = {
+			if = {
+				limit = { title:k_visigoths.holder ?= { is_ai = yes } }
+				create_title_and_vassal_change = {
+					type = conquest
+					save_scope_as = transfer_land_to_visigoths
+					add_claim_on_loss = no
+				}
+				
+				if = {
+					limit = { title:c_venaissin.holder.top_liege = scope:attacker }
+					title:c_venaissin = {
+						change_title_holder = {
+							holder = title:k_visigoths.holder
+							change = scope:transfer_land_to_visigoths
+							take_baronies = yes
+						}
+					}
+				}
+				if = {
+					limit = { title:c_forcalquier.holder.top_liege = scope:attacker }
+					title:c_forcalquier = {
+						change_title_holder = {
+							holder = title:k_visigoths.holder
+							change = scope:transfer_land_to_visigoths
+							take_baronies = yes
+						}
+					}
+				}
+				if = {
+					limit = { title:c_provence.holder.top_liege = scope:attacker }
+					title:c_provence = {
+						change_title_holder = {
+							holder = title:k_visigoths.holder
+							change = scope:transfer_land_to_visigoths
+							take_baronies = yes
+						}
+					}
+				}
+				if = {
+					limit = { title:c_nice.holder.top_liege = scope:attacker }
+					title:c_nice = {
+						change_title_holder = {
+							holder = title:k_visigoths.holder
+							change = scope:transfer_land_to_visigoths
+							take_baronies = yes
+						}
+					}
+				}
+				hidden_effect = { title:e_praetorian_prefecture_gaul.holder ?= { destroy_title = title:e_praetorian_prefecture_gaul } }
+				add_truce_both_ways = { character = title:k_visigoths.holder years = 10 name = odoacer_peace_visigoths }
+				add_truce_both_ways = { character = title:k_visigoths.holder.primary_heir years = 10 name = odoacer_peace_vandals }
+				resolve_title_and_vassal_change = scope:transfer_land_to_visigoths
+			}
+			if = {
+				limit = { title:k_vandalica.holder ?= { is_ai = yes } }
+				create_title_and_vassal_change = {
+					type = conquest
+					save_scope_as = transfer_land_from_vandals
+					add_claim_on_loss = no
+				}
+				
+				if = {
+					limit = { title:c_palermo.holder.top_liege = title:k_vandalica.holder }
+					title:c_palermo = {
+						change_title_holder = {
+							holder = title:h_italy.holder
+							change = scope:transfer_land_from_vandals
+							take_baronies = yes
+						}
+					}
+				}
+				if = {
+					limit = { title:c_messina.holder.top_liege = title:k_vandalica.holder }
+					title:c_messina = {
+						change_title_holder = {
+							holder = title:h_italy.holder
+							change = scope:transfer_land_from_vandals
+							take_baronies = yes
+						}
+					}
+				}
+				if = {
+					limit = { title:c_siracusa.holder.top_liege = title:k_vandalica.holder }
+					title:c_siracusa = {
+						change_title_holder = {
+							holder = title:h_italy.holder
+							change = scope:transfer_land_from_vandals
+							take_baronies = yes
+						}
+					}
+				}
+				if = {
+					limit = { title:c_agrigento.holder.top_liege = title:k_vandalica.holder }
+					title:c_agrigento = {
+						change_title_holder = {
+							holder = title:h_italy.holder
+							change = scope:transfer_land_from_vandals
+							take_baronies = yes
+						}
+					}
+				}
+				add_truce_both_ways = { character = title:k_vandalica.holder years = 10 name = odoacer_peace_vandals }
+				add_truce_both_ways = { character = title:k_vandalica.holder.primary_heir years = 10 name = odoacer_peace_vandals }
+				resolve_title_and_vassal_change = scope:transfer_land_from_vandals
+			}
+			#WRE peace if possible
+			if = {
+				limit = { exists = character:175110 }
+				add_truce_both_ways = { character = character:175110 years = 10 name = odoacer_peace_wre }
+			}
+		}
+		
+		#Other final effects
+		
+		#Set up Regnum Italiae so that it doesn't implode
 		scope:attacker.culture = {
 			change_cultural_acceptance = {
 				target = culture:roman
@@ -190,14 +459,66 @@ odoacer_takeover_war = { #Cribbed from invasion wars
 			}
 		}
 		scope:attacker = { set_realm_capital = title:c_ravenna }
-		scope:attacker = { change_government = roman_dynastic_government }
 		scope:attacker = { add_legitimacy = 500 }
-		hidden_effect = { #Fix govenrment flipping issues
+		scope:attacker = { add_realm_law = non_roman_minority_rule_law_3 }
+		hidden_effect = { #Fix vassal governments
 			scope:attacker = {
-				add_realm_law_skip_effects = single_heir_succession_law
 				every_vassal_or_below = {
-					limit = { has_government = subroman_dynastic_government }
-					change_government = roman_dynastic_government
+					limit = { has_main_roman_government_trigger = yes }
+					convert_to_subroman_government_effect = yes
+					if = {
+						limit = { BP_has_dlc_necessary_for_roman_governments_trigger = no }
+						add_realm_law_skip_effects = single_heir_succession_law
+					}
+				}
+			}
+		}
+		
+		#Imprison Orestes and Romulus Augustulus
+		scope:defender = {
+			add_trait = deposed
+			
+			# Set up artifact transfers
+			hidden_effect = {
+				# Diadem is special, should be handled with the WRE transfer event
+				every_character_artifact = {
+					limit = { has_variable = western_roman_imperial_diadem }
+					save_scope_as = diadem_artifact
+				}
+				# Steal all court artifacts
+				every_character_artifact = {
+					limit = {
+						NOT = { has_variable = western_roman_imperial_diadem }
+						NOT = { has_variable = banner_house } # Don't steal house banners
+						ep1_artifact_is_court_artifact_trigger = yes
+					}
+					set_owner = {
+						target = scope:attacker
+						history = {
+							type = conquest
+							actor = scope:defender
+							recipient = scope:attacker
+						}
+					}
+				}
+			}
+		}
+		scope:attacker = { imprison = { target = scope:defender type = house_arrest } }
+		if = {
+			limit = { scope:defender = character:96054 }
+			character:96054 = { add_trait = deposed }
+			scope:attacker = { imprison = { target = character:96054 type = house_arrest } }
+			scope:attacker = { imprison = { target = character:1210007 type = dungeon } }
+			scope:attacker = { imprison = { target = character:96055 type = dungeon } }
+		}
+		
+		#Make sure Nepos becomes the next WRE holder
+		hidden_effect = {
+			if = {
+				limit = { exists = 175110 }
+				character:175110 = {
+					save_scope_as = the_last_wre_holder
+					trigger_event = { id = bp_narrative_events.0002 }
 				}
 			}
 		}
@@ -392,7 +713,8 @@ zenos_claim_cb = { #Like a claim_cb, but has war-scoped special troops
 			limit = {
 				OR = {
 					root = title:e_byzantium
-					root = title:e_roman_empire
+					root = title:h_eastern_roman_empire
+					root = title:h_roman_empire
 				}
 				scope:defender.culture = { has_cultural_pillar = heritage_byzantine }
 			}
@@ -562,10 +884,6 @@ zenos_claim_cb = { #Like a claim_cb, but has war-scoped special troops
 					limit = { is_a_permanent_contract_trigger = yes }
 					
 					if = {
-						limit = { has_subject_contract_group = BP_federate_tributary }
-						this = { add_character_flag = default_federate }
-					}
-					else_if = {
 						limit = { has_subject_contract_group = BP_fixed_tributary }
 						this = { add_character_flag = default_fixed_tributary }
 					}
@@ -640,7 +958,10 @@ zenos_claim_cb = { #Like a claim_cb, but has war-scoped special troops
 		# truce
 		add_truce_attacker_victory_effect = yes
 
-		# FP1: note the victory for future memorialisation via stele (if applicable).
+		#Give Zeno some cash to start
+		scope:attacker = { add_treasury = 1000 }
+
+		# FP1: note the victory for future memorialization via stele (if applicable).
 		scope:attacker = { fp1_remember_recent_conquest_victory_effect = yes }
 		
 		#Imprison Basilicus

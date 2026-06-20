@@ -19,7 +19,7 @@ d_tripolitania = {
 		##vice_royalty = yes
 		holder = 1300902 #Simplicius
 		liege = k_africa
-		government = roman_dynastic_government
+		government = roman_administrative_government
 	}
 	400.1.1 = {
 		holder = 1300903 #...por...
@@ -27,10 +27,22 @@ d_tripolitania = {
 	420.1.1 = {
 		holder = 1300904 #...ianus
 	}
-	440.1.1 = { holder = 0 }
+	#Vandalic Conquest
+	440.1.1={
+		holder = 36059 # Alans
+		liege="k_vandalica"
+		government = roman_federate_government
+	}
+	450.2.9={
+		holder = 36060 # Alans
+	}
+	490.1.1={
+		holder = 36063 # Alans
+	}
+	#Roman Reconquest
 	534.1.1={
 		holder = 462172 # Archelaus Agricolus 
-		liege="e_byzantium"
+		liege="h_eastern_roman_empire"
 	}
 	535.1.1={
 		holder = 90108 # Solomon of Idriphthon
@@ -43,10 +55,10 @@ d_tripolitania = {
 	}
 	543.1.1={
 		holder = 479 # Sergius of Idriphthon
-		liege = k_africa_prefect
+		liege = e_praetorian_prefecture_africa
 	}
 	544.1.1={
-		liege = e_byzantium
+		liege = h_eastern_roman_empire
 	}
 	545.1.1={
 		holder = 90109 # Athanasius of Idriphthon
@@ -74,7 +86,7 @@ d_tripolitania = {
 	}
 	585.1.1 = {
 		holder = 1210008 # Cyrillus, dux of Tripolitania
-		liege = k_africa_prefect
+		liege = e_praetorian_prefecture_africa
 	}
 	591.7.1={
 		liege = k_africa
@@ -91,28 +103,20 @@ c_tripolitana = {
 	420.1.1 = {
 		holder = 1300904 #...ianus
 	}
+	#Vandalic Conquest
 	440.1.1={
-		holder = 93
-		liege = 0
+		holder = 36059 # Alans
 	}
-	477.1.25={
-		holder = 92
+	450.2.9={
+		holder = 36060 # Alans
 	}
-	484.1.1={
-		holder = 97
+	490.1.1={
+		holder = 36063 # Alans
 	}
-	496.1.1={
-		holder = 190070
-	}
-	523.1.1={
-		holder = 94
-	}
-	530.1.1={
-		holder = 190071
-	}
+	#Roman Reconquest
 	534.1.1={
 		holder = 462172 # Archelaus Agricolus 
-		liege="e_byzantium"
+		liege="h_eastern_roman_empire"
 	}
 	535.1.1={
 		holder = 90108 # Solomon of Idriphthon
@@ -125,10 +129,10 @@ c_tripolitana = {
 	}
 	543.1.1={
 		holder = 479 # Sergius of Idriphthon
-		liege = k_africa_prefect
+		liege = e_praetorian_prefecture_africa
 	}
 	544.1.1={
-		liege = e_byzantium
+		liege = h_eastern_roman_empire
 	}
 	545.1.1={
 		holder = 90109 # Athanasius of Idriphthon
@@ -156,7 +160,7 @@ c_tripolitana = {
 	}
 	585.1.1 = {
 		holder = 1210008 # Cyrillus, dux of Tripolitania - no longer history of African Prefect
-		liege = k_africa_prefect
+		liege = e_praetorian_prefecture_africa
 	}
 	591.7.1={
 		liege = k_africa
@@ -173,28 +177,20 @@ c_djerba = { #c_igenaigena history (changed from c_djerba history)
 	420.1.1 = {
 		holder = 1300904 #...ianus
 	}
+	#Vandalic Conquest
 	440.1.1={
-		holder = 93
-		liege = 0
+		holder = 36059 # Alans
 	}
-	477.1.25={
-		holder = 92
+	450.2.9={
+		holder = 36060 # Alans
 	}
-	484.1.1={
-		holder = 97
+	490.1.1={
+		holder = 36063 # Alans
 	}
-	496.1.1={
-		holder = 190070
-	}
-	523.1.1={
-		holder = 94
-	}
-	530.1.1={
-		holder = 190071
-	}
+	#Roman Reconquest
 	534.1.1={
 		holder = 462172 # Archelaus Agricolus 
-		liege="e_byzantium"
+		liege="h_eastern_roman_empire"
 	}
 	535.1.1={
 		holder = 90108 # Solomon of Idriphthon
@@ -207,10 +203,10 @@ c_djerba = { #c_igenaigena history (changed from c_djerba history)
 	}
 	543.1.1={
 		holder = 479 # Sergius of Idriphthon
-		liege = k_africa_prefect
+		liege = e_praetorian_prefecture_africa
 	}
 	544.1.1={
-		liege = e_byzantium
+		liege = h_eastern_roman_empire
 	}
 	545.1.1={
 		holder = 90109 # Athanasius of Idriphthon
@@ -238,7 +234,7 @@ c_djerba = { #c_igenaigena history (changed from c_djerba history)
 	}
 	585.1.1 = {
 		holder = 1210008 # Cyrillus, dux of Tripolitania - no longer history of African Prefect
-		liege = k_africa_prefect
+		liege = e_praetorian_prefecture_africa
 	}
 	591.7.1={
 		liege = k_africa
@@ -275,28 +271,20 @@ c_gabes = { #c_igenaigena history (changed from c_gabes history)
 	420.1.1 = {
 		holder = 1300904 #...ianus
 	}
+	#Vandalic Conquest
 	440.1.1={
-		holder = 93
-		liege = 0
+		holder = 36059 # Alans
 	}
-	477.1.25={
-		holder = 92
+	450.2.9={
+		holder = 36060 # Alans
 	}
-	484.1.1={
-		holder = 97
+	490.1.1={
+		holder = 36063 # Alans
 	}
-	496.1.1={
-		holder = 190070
-	}
-	523.1.1={
-		holder = 94
-	}
-	530.1.1={
-		holder = 190071
-	}
+	#Roman Reconquest
 	534.1.1={
 		holder = 462172 # Archelaus Agricolus 
-		liege="e_byzantium"
+		liege="h_eastern_roman_empire"
 	}
 	535.1.1={
 		holder = 90108 # Solomon of Idriphthon
@@ -309,10 +297,10 @@ c_gabes = { #c_igenaigena history (changed from c_gabes history)
 	}
 	543.1.1={
 		holder = 479 # Sergius of Idriphthon
-		liege = k_africa_prefect
+		liege = e_praetorian_prefecture_africa
 	}
 	544.1.1={
-		liege = e_byzantium
+		liege = h_eastern_roman_empire
 	}
 	545.1.1={
 		holder = 90109 # Athanasius of Idriphthon
@@ -340,7 +328,7 @@ c_gabes = { #c_igenaigena history (changed from c_gabes history)
 	}
 	585.1.1 = {
 		holder = 1210008 # Cyrillus, dux of Tripolitania - no longer history of African Prefect
-		liege = k_africa_prefect
+		liege = e_praetorian_prefecture_africa
 	}
 	591.7.1={
 		liege = k_africa
@@ -365,7 +353,7 @@ d_leptis_magna = { #Empty History
 c_syrte = {
 	336.1.1={
 		holder=190016 # Lollianus Mavortius
-		liege=e_roman_empire
+		liege=h_roman_empire
 	}
 	337.1.1={
 		holder=36083 # Antonius Marcellinus
@@ -408,7 +396,7 @@ c_syrte = {
 	}
 	395.1.1={
 		holder=1000500 # Ennodius
-		liege = e_roman_empire
+		liege = h_roman_empire
 	}
 	395.1.17={
 		liege = e_wre
@@ -446,7 +434,7 @@ c_syrte = {
 c_labda = { #c_leptis_magna history
 	336.1.1={
 		holder=190016 # Lollianus Mavortius
-		liege=e_roman_empire
+		liege=h_roman_empire
 	}
 	337.1.1={
 		holder=36083 # Antonius Marcellinus
@@ -489,7 +477,7 @@ c_labda = { #c_leptis_magna history
 	}
 	395.1.1={
 		holder=1000500 # Ennodius
-		liege = e_roman_empire
+		liege = h_roman_empire
 	}
 	395.1.17={
 		liege = e_wre
@@ -515,28 +503,22 @@ c_labda = { #c_leptis_magna history
 	420.1.1 = {
 		holder = 1300904 #...ianus
 	}
+	#Vandalic Conquest
 	440.1.1={
-		holder = 93
-		liege = 0
+		holder = 36059 # Alans
+		liege="k_vandalica"
+		government = roman_federate_government
 	}
-	477.1.25={
-		holder = 92
+	450.2.9={
+		holder = 36060 # Alans
 	}
-	484.1.1={
-		holder = 97
+	490.1.1={
+		holder = 36063 # Alans
 	}
-	496.1.1={
-		holder = 190070
-	}
-	523.1.1={
-		holder = 94
-	}
-	530.1.1={
-		holder = 190071
-	}
+	#Roman Reconquest
 	534.1.1={
 		holder = 462172 # Archelaus Agricolus 
-		liege="e_byzantium"
+		liege="h_eastern_roman_empire"
 	}
 	535.1.1={
 		holder = 90108 # Solomon of Idriphthon
@@ -549,10 +531,10 @@ c_labda = { #c_leptis_magna history
 	}
 	543.1.1={
 		holder = 479 # Sergius of Idriphthon
-		liege = k_africa_prefect
+		liege = e_praetorian_prefecture_africa
 	}
 	544.1.1={
-		liege = e_byzantium
+		liege = h_eastern_roman_empire
 	}
 	545.1.1={
 		holder = 90109 # Athanasius of Idriphthon
@@ -580,7 +562,7 @@ c_labda = { #c_leptis_magna history
 	}
 	585.1.1 = {
 		holder = 1210008 # Cyrillus, dux of Tripolitania - no longer history of African Prefect
-		liege = k_africa_prefect
+		liege = e_praetorian_prefecture_africa
 	}
 	591.7.1={
 		liege = k_africa
@@ -589,7 +571,7 @@ c_labda = { #c_leptis_magna history
 c_waddan = { #c_qseh history (elimination)
 	336.1.1={
 		holder=190016 # Lollianus Mavortius
-		liege=e_roman_empire
+		liege=h_roman_empire
 	}
 	337.1.1={
 		holder=36083 # Antonius Marcellinus
@@ -632,7 +614,7 @@ c_waddan = { #c_qseh history (elimination)
 	}
 	395.1.1={
 		holder=1000500 # Ennodius
-		liege = e_roman_empire
+		liege = h_roman_empire
 	}
 	395.1.17={
 		liege = e_wre
@@ -667,7 +649,7 @@ c_waddan = { #c_qseh history (elimination)
 	}
 	534.1.1={
 		holder = 462172 # Archelaus Agricolus 
-		liege="e_byzantium"
+		liege="h_eastern_roman_empire"
 	}
 	535.1.1={
 		holder = 90108 # Solomon of Idriphthon

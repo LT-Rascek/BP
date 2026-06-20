@@ -2,7 +2,7 @@
 	color = trojan
 
 	ethos = ethos_bellicose
-	heritage = heritage_trojan
+	heritage = heritage_ancient_greek
 	language = language_trojan
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_domain
@@ -11,6 +11,8 @@
 		tradition_legalistic
 		tradition_astute_diplomats
 		tradition_maritime_mercantilism
+		tradition_city_builders
+		tradition_ce1_ritual_washing
 	}
 	
 	name_list = name_list_trojan
@@ -27,15 +29,15 @@
 		100 = mediterranean_byzantine
 	}
 }
-punic = {
+carthaginian = {
 	color = punic
 	
 	created = 2.1.1
 	history_loc_override = punic_history_loc
 	
 	ethos = ethos_egalitarian #Well-developed polis culture
-	heritage = heritage_punic
-	language = language_punic
+	heritage = heritage_phoenician
+	language = language_carthaginian
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_domain
 	traditions = {
@@ -43,6 +45,7 @@ punic = {
 		tradition_seafaring #Phoenician colony
 		#Regional Traditions
 		#Ritual Traditions
+		tradition_ce1_ritual_washing
 		#Realm Traditions
 		tradition_dryland_dwellers #They _were_ farmers after all
 		tradition_maritime_mercantilism #Phoenician colony
@@ -52,7 +55,7 @@ punic = {
 		tradition_punic_traditions
 	}
 	
-	name_list = name_list_punic
+	name_list = name_list_carthaginian
 	
 	coa_gfx = { berber_group_coa_gfx }
 	building_gfx = { mediterranean_building_gfx }

@@ -1,0 +1,1347 @@
+﻿
+#Imperial Guard director
+imperial_guard_task_side_effect_cooldown = 365
+imperial_guard_task_modifier_duration = 1825
+
+#Clerical Bureau Promulgate Laws Effects
+
+#Timers
+clerical_bureau_director_side_effect_cooldown = 365
+clerical_bureau_director_modifier_duration = 1825
+
+#Influence gain/loss
+clerical_bureau_minor_influence_gain = {
+	value = 50
+}
+clerical_bureau_minor_influence_loss = {
+	value = clerical_bureau_minor_influence_gain
+	multiply = -1
+}
+
+clerical_bureau_director_influence_base = { #1.5% per skill level; it's a multiplier, not an addition
+	add = stewardship
+	multiply = 1.5
+}
+
+clerical_bureau_director_influence_max = {
+	add = clerical_bureau_director_influence_base
+	if = {
+		limit = { councillor_liege_has_erudition_legacy_5_perk = yes }
+		add = clerical_bureau_director_influence_erudition_bonus
+	}
+	if = {
+		limit = { councillor_liege_has_family_business_bonus = yes }
+		add = clerical_bureau_director_influence_family_business_bonus
+	}
+	if = {
+		limit = { councillor_liege_has_consulted_house_bonus = yes }
+		add = clerical_bureau_director_influence_consulted_house_bonus
+	}
+	if = {
+		limit = {
+			scope:councillor_liege = {
+				has_title = title:c_byzantion
+				title:c_byzantion = { has_county_modifier = pandidakterion_university_modifier }
+			}
+		}
+		add = clerical_bureau_director_influence_pandidakterion_bonus
+	}
+}
+
+clerical_bureau_director_influence_monthly_increase = {
+	add = legal_bureau_director_domestic_affairs_opinion_max
+	divide = 24
+}
+
+clerical_bureau_director_influence_scale = {
+	value = 0
+	if = {
+		limit = {
+			scope:councillor_liege = {
+				is_ai = yes
+				top_liege = this
+			}
+		}
+		add = clerical_bureau_director_influence_max
+	}
+	else_if = {
+		limit = {
+			scope:councillor_liege = { has_variable = clerical_bureau_director_influence_value }
+		}
+		add = scope:councillor_liege.var:clerical_bureau_director_influence_value
+	}
+}
+
+clerical_bureau_director_influence_erudition_bonus = {
+	add = clerical_bureau_director_influence_base
+	multiply = {
+		add = erudition_legacy_5_percentage
+		divide = 100
+	}
+}
+
+clerical_bureau_director_influence_family_business_bonus = {
+	add = clerical_bureau_director_influence_base
+	multiply = {
+		add = family_business_councillors_percentage
+		divide = 100
+	}
+}
+
+clerical_bureau_director_influence_consulted_house_bonus = {
+	add = clerical_bureau_director_influence_base
+	multiply = {
+		add = consulted_house_councillors_percentage
+		divide = 100
+	}
+}
+
+clerical_bureau_director_influence_pandidakterion_bonus = {
+	add = clerical_bureau_director_influence_base
+	multiply = {
+		add = 20
+		divide = 100
+	} 
+}
+
+#Fabricate Claim
+clerical_bureau_director_fabricate_claim_monthly_increase_base = {
+	add = stewardship
+	divide = 5
+}
+
+clerical_bureau_director_fabricate_claim_base = {
+	add = 3
+}
+
+clerical_bureau_director_fabricate_claim_base_total = {
+	add = clerical_bureau_director_fabricate_claim_base
+	add = clerical_bureau_director_fabricate_claim_monthly_increase_base
+}
+
+# Bonus from Accomplished Forger Perk
+clerical_bureau_director_fabricate_claim_perk_bonus_monthly_increase = {
+	add = clerical_bureau_director_fabricate_claim_base_total
+	multiply = {
+		add = accomplished_forger_percentage
+		divide = 100
+	}
+}
+
+# Bonus from Bureaucrats
+clerical_bureau_director_fabricate_claim_dynasty_perk_bonus = {
+	add = clerical_bureau_director_fabricate_claim_base_total
+	multiply = {
+		add = erudition_legacy_5_percentage
+		divide = 100
+	}
+}
+
+# From Family Business
+clerical_bureau_director_fabricate_claim_family_business_bonus = {
+	add = clerical_bureau_director_fabricate_claim_base_total
+	multiply = {
+		add = family_business_councillors_percentage
+		divide = 100
+	}
+}
+
+# FP3 Consulted House
+clerical_bureau_director_fabricate_claim_consulted_house_bonus = {
+	add = clerical_bureau_director_fabricate_claim_base_total
+	multiply = {
+		add = consulted_house_councillors_percentage
+		divide = 100
+	}
+}
+
+# Bonus from Land Grants innovation
+clerical_bureau_director_fabricate_claim_innovation_bonus_land_grants = {
+	value = 0
+	add = clerical_bureau_director_fabricate_claim_base_total
+	multiply = 0.50
+}
+
+# Bonus from tradition_language_scholars
+clerical_bureau_director_fabricate_claim_tradition_language_scholars_bonus = {
+	value = 0
+	add = clerical_bureau_director_fabricate_claim_base_total
+	multiply = {
+		add = {
+			value = scope:councillor.liege.num_of_known_languages
+			multiply = 10
+		}
+		divide = 100
+	}
+}
+
+clerical_bureau_director_fabricate_claim_inspection_reward_bonus = {
+	value = 0
+	add = clerical_bureau_director_fabricate_claim_base_total
+	multiply = 0.25
+}
+
+# Relation impact
+clerical_bureau_director_fabricate_claim_monthly_increase_friend_bonus = {
+	value = clerical_bureau_director_fabricate_claim_base_total
+	multiply = {
+		add = council_friend_impact_percentage
+		divide = 100
+	}
+}
+clerical_bureau_director_fabricate_claim_monthly_increase_best_friend_bonus = {
+	value = clerical_bureau_director_fabricate_claim_base_total
+	multiply = {
+		add = council_best_friend_impact_percentage
+		divide = 100
+	}
+}
+clerical_bureau_director_fabricate_claim_monthly_increase_rival_bonus = {
+	value = clerical_bureau_director_fabricate_claim_base_total
+	multiply = {
+		add = council_rival_impact_percentage
+		divide = 100
+	}
+}
+clerical_bureau_director_fabricate_claim_monthly_increase_nemesis_bonus = {
+	value = clerical_bureau_director_fabricate_claim_base_total
+	multiply = {
+		add = council_nemesis_impact_percentage
+		divide = 100
+	}
+}
+
+clerical_bureau_director_fabricate_claim_county_base = 3
+clerical_bureau_director_fabricate_claim_county_min_cost = {
+	value = { 40 60 }
+}
+
+clerical_bureau_director_fabricate_claim_duchy_base = 7
+clerical_bureau_director_fabricate_claim_duchy_min_cost = {
+	value = { 80 100 }
+}
+
+clerical_bureau_director_fabricate_claim_factor = 1
+
+clerical_bureau_director_fabricate_claim_struggle_penalty_multiplier_value = {
+	if = {
+		limit = {
+			exists = scope:county
+			scope:county = {
+				any_county_struggle = {
+					is_struggle_parameter_active_secondary_character_involvement_neither_trigger = {
+						PARAMETER = claims_in_region_more_expensive_to_press_for_uninvolved
+						CHAR = root
+					}
+				}
+			}
+		}
+		value = 2
+	}
+	else = { value = 1 }
+}
+
+clerical_bureau_director_fabricate_claim_county_cost = {
+	# Base cost
+	add = 40
+	subtract = learning
+	# Standard Factors
+	multiply = clerical_bureau_director_fabricate_claim_factor
+	multiply = clerical_bureau_director_fabricate_claim_county_base
+	# Struggle Factors
+	multiply = clerical_bureau_director_fabricate_claim_struggle_penalty_multiplier_value
+
+	min = clerical_bureau_director_fabricate_claim_county_min_cost
+}
+
+clerical_bureau_director_fabricate_claim_duchy_cost = {
+	# Base cost
+	add = 40
+	subtract = learning
+	# Standard Factors
+	multiply = clerical_bureau_director_fabricate_claim_factor
+	multiply = clerical_bureau_director_fabricate_claim_duchy_base
+	# Struggle Factors
+	multiply = clerical_bureau_director_fabricate_claim_struggle_penalty_multiplier_value
+
+	min = clerical_bureau_director_fabricate_claim_duchy_min_cost
+}
+
+clerical_bureau_director_fabricate_claim_not_adjacent_penalty = {
+	value = 0.5
+}
+
+clerical_bureau_director_fabricate_claim_vassal_penalty = {
+	value = 0.3
+}
+
+clerical_bureau_director_heretic_bonus = {
+	value = 1.3
+}
+
+#########################################
+######### PROMOTE CULTURE TASK ##########
+#########################################
+
+legal_bureau_director_task_side_effect_cooldown = 365
+legal_bureau_director_task_modifier_duration = 1825
+
+legal_bureau_director_promote_culture_base = 0.25
+
+legal_bureau_director_promote_culture_monthly_increase = {
+	add = learning
+	divide = 20
+}
+
+legal_bureau_director_promote_culture_contextual_bonuses = {
+	# Relation Bonuses/Penalties
+	if = { # Friend
+		limit = {
+			scope:councillor_liege = {
+				has_relation_friend = scope:councillor
+				NOT = { has_relation_best_friend = scope:councillor }
+			}
+		}
+		add = {
+			value = scope:councillor.legal_bureau_director_promote_culture_monthly_increase_friend_bonus
+			desc = COUNCILLOR_IS_YOUR_FRIEND
+		}
+	}
+	if = { # Best Friend
+		limit = {
+			scope:councillor_liege = {
+				has_relation_best_friend = scope:councillor
+			}
+		}
+		add = {
+			value = scope:councillor.legal_bureau_director_promote_culture_monthly_increase_best_friend_bonus
+			desc = COUNCILLOR_IS_YOUR_BEST_FRIEND
+		}
+	}
+	if = { # Rival
+		limit = {
+			scope:councillor_liege = {
+				has_relation_rival = scope:councillor
+				NOT = { has_relation_nemesis = scope:councillor }
+			}
+		}
+		add = {
+			value = scope:councillor.legal_bureau_director_promote_culture_monthly_increase_rival_bonus
+			desc = COUNCILLOR_IS_YOUR_RIVAL
+		}
+	}
+	if = { # Nemesis
+		limit = {
+			scope:councillor_liege = {
+				has_relation_nemesis = scope:councillor
+			}
+		}
+		add = {
+			value = scope:councillor.legal_bureau_director_promote_culture_monthly_increase_nemesis_bonus
+			desc = COUNCILLOR_IS_YOUR_NEMESIS
+		}
+	}
+	if = {
+		limit = {
+			councillor_liege_has_erudition_legacy_5_perk = yes
+		}
+		add = {
+			value = legal_bureau_director_promote_culture_erudition_bonus
+			desc = ERUDITION_DYNASTY_PERK_BONUS_VALUE
+		}
+	}
+	if = {
+		limit = {
+			councillor_liege_has_family_business_bonus = yes
+		}
+		add = {
+			value = scope:councillor.legal_bureau_director_promote_culture_family_business_bonus
+			desc = FAMILY_BUSINESS_BONUS_VALUE
+		}
+	}
+	if = {
+		limit = {
+			exists = scope:county
+			scope:councillor_liege.culture = {
+				is_hybrid_culture = yes
+				culture_age < culture_hybrid_cooldown
+				any_parent_culture = {
+					this = scope:county.culture
+				}
+			}
+		}
+		add = {
+			value = scope:councillor.legal_bureau_director_promote_culture_hybrid_culture_vs_parents_bonus
+			desc = LEGAL_BUREAU_DIRECTOR_PROMOTE_CULTURE_HYBRID_VS_PARENTS_BONUS_MODIFIER
+		}
+	}
+	if = {
+		limit = {
+			exists = scope:county
+			scope:councillor_liege.culture = {
+				is_divergent_culture = yes
+				culture_age < culture_hybrid_cooldown # Intentional
+				any_parent_culture = {
+					this = scope:county.culture
+				}
+			}
+		}
+		add = {
+			value = scope:councillor.legal_bureau_director_promote_culture_divergent_culture_vs_parents_bonus
+			desc = LEGAL_BUREAU_DIRECTOR_PROMOTE_CULTURE_DIVERGENT_VS_PARENTS_BONUS_MODIFIER
+		}
+	}
+	if = {
+		limit = {
+			exists = scope:county
+			scope:councillor_liege.faith = {
+				has_doctrine_parameter = same_faith_promote_culture_bonus_active
+			}
+			scope:county.faith = scope:councillor_liege.faith
+		}
+		add = {
+			value = scope:councillor.legal_bureau_director_promote_culture_communal_identity_bonus
+			desc = LEGAL_BUREAU_DIRECTOR_PROMOTE_CULTURE_COMMUNAL_IDENTITY_BONUS_MODIFIER
+		}
+	}
+	if = {
+		limit = {
+			exists = scope:county
+			scope:councillor_liege.faith = { has_doctrine_parameter = easier_to_convert_culture_in_same_faith_mountains }
+			scope:county = {
+				faith = scope:councillor_liege.faith
+				county_has_province_with_terrain = {
+					terrain = mountains
+					terrain = desert_mountains
+				}
+			}
+		}
+		add = {
+			value = scope:councillor.legal_bureau_director_promote_culture_easier_to_convert_culture_in_same_faith_mountains_bonus
+			desc = LEGAL_BUREAU_DIRECTOR_PROMOTE_CULTURE_EASIER_TO_CONVERT_CULTURE_IN_SAME_FAITH_MOUNTAINS_BONUS
+		}
+	}
+	if = {
+		limit = {
+			scope:councillor_liege.culture = {
+				has_innovation = innovation_east_settling
+			}
+		}
+		add = {
+			value = scope:councillor.legal_bureau_director_promote_culture_east_settling_bonus
+			desc = LEGAL_BUREAU_DIRECTOR_PROMOTE_CULTURE_INNOVATION_BONUS_EAST_SETTLING
+		}
+	}
+	if = {
+		limit = {
+			exists = scope:county
+			scope:county = { has_county_modifier = 6210_architect_county_modifier }
+		}
+		add = {
+			value = scope:councillor.6210_architect_promote_culture_bonus
+			desc = COURT_CHAPLAIN_CONVERSION_LOCAL_COUNTY_MODIFIERS
+		}
+	}
+	if = {
+		limit = {
+			exists = scope:county
+			scope:county = { has_county_modifier = easier_to_culture_convert }
+		}
+		add = {
+			value = scope:councillor.easier_to_convert_bonus
+			desc = COURT_CHAPLAIN_CONVERSION_LOCAL_COUNTY_MODIFIERS
+		}
+	}
+	if = {
+		limit = {
+			scope:councillor_liege = { has_character_modifier = court_fashion_culture_modifier }
+		}
+		add = {
+			value = scope:councillor.steward_fashion_bonus
+			desc = COUNCILLOR_LIEGE_MODIFIERS_BONUS
+		}
+	}
+	##### Changed from Vanilla vvvvv
+	if = { #Hellenization
+		limit = { scope:councillor_liege.culture = { has_cultural_parameter = improved_promote_culture_speed_hellenization } }
+		add = {
+			value = scope:councillor.promote_culture_hellenization_bonus
+			desc = LEGAL_BUREAU_DIRECTOR_PROMOTE_CULTURE_TRADITION_HELLENIZATION
+		}
+	}
+	if = { #Early Slavs
+		limit = {
+			scope:county ?= { this.title_province = { has_holding_type = tribal_holding } }
+			scope:councillor_liege.culture = { has_cultural_parameter = faster_promote_culture_task_tribal }
+		}
+		add = {
+			value = scope:councillor.promote_culture_early_slav_bonus
+			desc = LEGAL_BUREAU_DIRECTOR_PROMOTE_CULTURE_TRADITION_EARLY_SLAVS
+		}
+	}
+	##### Changed from Vanilla ^^^^^
+	
+	#Reduce for various county modifiers.
+	# Cultural Traditions
+	## Bonuses
+	if = {
+		limit = {
+			exists = scope:county
+			scope:county.culture = { has_cultural_parameter = easier_to_convert_county_culture_with_heritage }
+			scope:councillor_liege.culture = { has_same_culture_heritage = scope:county.culture }
+		}
+		add = {
+			value = legal_bureau_director_conversion_culture_easier_to_culture_change_with_heritage_value
+			desc = TRADITION_EASIER_TO_CULTURE_CONVERT_WITH_HERITAGE_MODIFIER
+		}
+	}
+	if = {
+		limit = {
+			councillor_liege_has_erudition_legacy_5_perk = yes
+		}
+		add = {
+			value = legal_bureau_director_promote_culture_erudition_bonus_monthly_increase
+			desc = ERUDITION_DYNASTY_PERK_BONUS_VALUE
+		}
+	}
+	if = {
+		limit = {
+			councillor_liege_has_family_business_bonus = yes
+		}
+		add = {
+			value = legal_bureau_director_promote_culture_family_business_monthly_increase
+			desc = FAMILY_BUSINESS_BONUS_VALUE
+		}
+	}
+	if = {
+		limit = {
+			councillor_liege_has_consulted_house_bonus = yes
+		}
+		add = {
+			value = legal_bureau_director_promote_culture_consulted_house_monthly_increase
+			desc = CONSULTED_HOUSE_BONUS_VALUE
+		}
+	}
+	if = {
+		limit = {
+			scope:county = {
+				OR = {
+					has_county_modifier = 3020_own_culture_monument
+					has_county_modifier = 3020_multicultural_monument
+				}
+			}
+		}
+		add = {
+			value = hold_court_3020_culture_bonus
+			desc = 3020_MONUMENT_VALUE
+		}
+	}
+	##### Changed from Vanilla: Culture Effects vvvvv
+	if = {
+		limit = {
+			exists = scope:county
+			scope:county.culture = { has_cultural_parameter = easier_to_promote_county_culture }
+		}
+		add = {
+			value = conversion_culture_easier_to_promote_value
+			desc = TRADITION_EASIER_TO_CULTURE_CONVERT_MODIFIER
+		}
+	}
+	##### Changed from Vanilla: Culture Effects ^^^^^
+	
+	## Penalties
+	if = {
+		limit = {
+			exists = scope:county
+			scope:county.culture = { has_cultural_parameter = harder_to_convert_county_culture_without_heritage }
+			NOT = {
+				scope:councillor_liege.culture = { has_same_culture_heritage = scope:county.culture }
+			}
+		}
+		add = {
+			value = conversion_culture_resistant_to_culture_change_without_heritage_value
+			desc = TRADITION_HARDER_TO_CULTURE_CONVERT_WITHOUT_HERITAGE_MODIFIER
+		}
+	}
+
+	if = {
+		limit = {
+			exists = scope:county
+			scope:county.culture = { has_cultural_parameter = harder_to_convert_county_culture }
+		}
+		add = {
+			value = legal_bureau_director_conversion_culture_resistant_to_culture_change
+			desc = TRADITION_HARDER_TO_CULTURE_CONVERT
+		}
+	}
+	##### Changed from Vanilla: Culture Effects vvvvv
+	if = {
+		limit = {
+			exists = scope:county
+			scope:county.culture = { has_cultural_parameter = traditionalist_culture_feature }
+			NOT = {
+				scope:councillor_liege.culture = { has_same_culture_heritage = scope:county.culture }
+			}
+		}
+		add = {
+			value = legal_bureau_director_conversion_culture_resistant_to_culture_change_without_heritage_value
+			desc = TRADITION_HARDER_TO_CULTURE_CONVERT_WITHOUT_HERITAGE_MODIFIER
+		}
+	}
+	if = {
+		limit = {
+			exists = scope:county
+			scope:county.culture = { has_cultural_parameter = very_difficult_to_convert_or_promote }
+		}
+		add = {
+			value = conversion_culture_very_difficult_to_convert_or_promote_value
+			desc = TRADITION_VERY_DIFFICULT_TO_CONVERT_OR_PROMOTE_MODIFIER
+		}
+	}
+	##### Changed from Vanilla: Culture Effects ^^^^^
+	
+	##### Changed from Vanilla vvvvv
+	if = {
+		limit = {
+			exists = scope:county
+			NOT = { scope:county = { any_neighboring_county = { this.culture = scope:councillor_liege.culture } } }
+		}
+		add = {
+			value = conversion_culture_resistant_to_culture_change_without_adjacent
+			desc = TRADITION_HARDER_TO_CULTURE_CONVERT_WITHOUT_ADJACENT
+		}
+	}
+	##### Changed from Vanilla ^^^^^
+
+	# Struggles
+	## Penalties
+	if = {
+		limit = {
+			exists = scope:county
+			scope:county = {
+				any_county_struggle = { has_struggle_phase_parameter = county_culture_conversion_in_region_proceeds_slower }
+			}
+		}
+		add = {
+			value = legal_bureau_director_conversion_culture_resistant_to_culture_change_due_to_struggle_phase_value
+			desc = STRUGGLE_HARDER_TO_CULTURE_CONVERT_DUE_TO_STRUGGLE_PHASE_MODIFIER
+		}
+	}
+	## Bonuses
+	if = {
+		limit = {
+			exists = scope:county
+			scope:county = {
+				any_county_struggle = { has_struggle_phase_parameter = county_culture_conversion_in_region_proceeds_faster }
+			}
+		}
+		add = {
+			value = conversion_culture_accepting_of_culture_change_due_to_struggle_phase_value
+			desc = STRUGGLE_EASIER_TO_CULTURE_CONVERT_DUE_TO_STRUGGLE_PHASE_MODIFIER
+		}
+	}
+	# Decisions
+	if = {
+		limit = {
+			OR = {
+				scope:councillor_liege.culture = { has_cultural_pillar = heritage_goidelic }
+				scope:councillor_liege.culture = { has_cultural_pillar = heritage_brythonic }
+			}
+			exists = scope:county
+			scope:county = {
+				has_county_modifier = reclaim_britannia_culture_modifier
+				NOR= {
+					culture = { has_cultural_pillar = heritage_goidelic }
+					culture = { has_cultural_pillar = heritage_brythonic }
+				}
+			}
+		}
+		add = {
+			value = promote_culture_reclaimed_brittania_bonus
+			desc = LEGAL_BUREAU_DIRECTOR_PROMOTE_CULTURE_RECLAIMING_BRITANNIA
+		}
+	}
+
+	if = {
+		limit = {
+			scope:councillor_liege.culture = { has_cultural_pillar = heritage_syriac }
+			exists = scope:county
+			scope:county = {
+				has_county_modifier = promote_culture_beth_nahrain_modifier
+				NOT = {
+					culture = { has_cultural_pillar = heritage_syriac }
+				}
+			}
+		}
+		add = {
+			value = promote_culture_beth_nahrain_bonus
+			desc = legeal_bureau_director_promote_culture_beth_nahrain
+		}
+	}
+
+	if = {
+		limit = {
+			scope:county.culture ?= { has_cultural_pillar = heritage_iranian }
+			exists = global_var:fp3_struggle_ending  
+			global_var:fp3_struggle_ending = flag:fp3_struggle_rekindle_iran_ending
+
+			NOT = {
+				scope:councillor_liege.culture = { has_same_culture_heritage = scope:county.culture }
+			}
+		}
+		add = {
+			value = legal_bureau_director_conversion_culture_resistant_to_culture_change
+			desc = struggle_persia_ending_rekindle_iran_harder_to_convert_culture_reason
+		}
+	}
+
+	if = {
+		limit = {
+			scope:councillor_liege.culture = { has_cultural_pillar = heritage_iranian }
+			exists = global_var:fp3_struggle_ending  
+			global_var:fp3_struggle_ending = flag:fp3_struggle_rekindle_iran_ending
+
+			NOT = {
+				scope:councillor_liege.culture = { has_same_culture_heritage = scope:county.culture }
+			}
+		}
+		add = {
+			value = legal_bureau_director_conversion_culture_easy
+			desc = struggle_persia_ending_rekindle_iran_harder_to_convert_culture_reason
+		}
+	}
+
+	# Events
+	if = {
+		limit = {
+			exists = scope:county
+			scope:county = {
+				has_county_modifier = governance_1073_conversion_resistance_modifier
+			}
+		}
+		add = {
+			value = scope:councillor.legal_bureau_director_promote_culture_local_traditions_respected_penalty
+			desc = LEGAL_BUREAU_DIRECTOR_PROMOTE_CULTURE_LOCAL_TRADITIONS_RESPECTED
+		}
+	}
+	if = {
+		limit  = {
+			exists = scope:county
+			scope:county = {
+				has_county_modifier = county_shuubiyya_modifier
+			}
+		}
+		add = {
+			value = scope:councillor.legal_bureau_director_promote_culture_shuubiyya_penalty
+			desc = LEGAL_BUREAU_DIRECTOR_PROMOTE_CULTURE_SHUUBIYYA
+		}
+	}
+	if = {
+		limit = {
+			exists = scope:county
+			scope:county = {
+				OR = {
+					has_county_modifier = enthusiastic_nomad_settlement_saharan_modifier
+					has_county_modifier = nomad_settlement_saharan_modifier
+				}
+			}
+		}
+		add = {
+			value = scope:councillor.legal_bureau_director_promote_culture_allowed_nomad_settlement_penalty
+			desc = LEGAL_BUREAU_DIRECTOR_PROMOTE_CULTURE_ALLOWED_NOMAD_SETTLEMENT
+		}
+	}
+	if = {
+		limit = {
+			exists = scope:county
+			scope:county = { has_county_modifier = hold_court_8190_vassal_modifier }
+		}
+		add = {
+			value = scope:councillor.court_8190_vassal_modifier_value
+			desc = COURT_CHAPLAIN_CONVERSION_LOCAL_COUNTY_MODIFIERS
+		}
+	}
+}
+
+legal_bureau_director_promote_culture_monthly_increase_friend_bonus = {
+	value = legal_bureau_director_promote_culture_monthly_increase
+	multiply = {
+		value = council_friend_impact_percentage
+		divide = 100
+	}
+}
+
+legal_bureau_director_promote_culture_base_total = {
+	add = legal_bureau_director_promote_culture_base
+	add = legal_bureau_director_promote_culture_monthly_increase
+}
+
+legal_bureau_director_promote_culture_monthly_increase_best_friend_bonus = {
+	value = legal_bureau_director_promote_culture_base_total
+	multiply = {
+		value = council_best_friend_impact_percentage
+		divide = 100
+	}
+}
+legal_bureau_director_promote_culture_monthly_increase_rival_bonus = {
+	value = legal_bureau_director_promote_culture_base_total
+	multiply = {
+		value = council_rival_impact_percentage
+		divide = 100
+	}
+}
+legal_bureau_director_promote_culture_monthly_increase_nemesis_bonus = {
+	value = legal_bureau_director_promote_culture_base_total
+	multiply = {
+		value = council_nemesis_impact_percentage
+		divide = 100
+	}
+}
+
+legal_bureau_director_promote_culture_erudition_bonus = {
+	add = legal_bureau_director_promote_culture_base_total
+	multiply = {
+		add = erudition_legacy_5_percentage
+		divide = 100
+	}
+}
+
+legal_bureau_director_promote_culture_family_business_bonus = {
+	add = legal_bureau_director_promote_culture_base_total
+	multiply = {
+		add = family_business_councillors_percentage
+		divide = 100
+	}
+}
+
+legal_bureau_director_promote_culture_communal_identity_bonus = {
+	value = 0
+	add = legal_bureau_director_promote_culture_base_total
+	multiply = 0.50
+}
+
+legal_bureau_director_promote_culture_easier_to_convert_culture_in_same_faith_mountains_bonus = {
+	value = legal_bureau_director_promote_culture_base_total
+	multiply = promote_culture_easier_to_convert_culture_in_same_faith_mountains_bonus_root_value
+}
+
+legal_bureau_director_promote_culture_hybrid_culture_vs_parents_bonus = {
+	value = 0
+	add = legal_bureau_director_promote_culture_base_total
+	multiply = 1.5
+}
+
+legal_bureau_director_promote_culture_divergent_culture_vs_parents_bonus = {
+	value = 0
+	add = legal_bureau_director_promote_culture_base_total
+	multiply = 1.3
+}
+
+legal_bureau_director_promote_culture_east_settling_bonus = {
+	value = 0
+	add = legal_bureau_director_promote_culture_base_total
+	multiply = 0.15
+}
+
+promote_culture_reclaimed_brittania_bonus = {
+	value = legal_bureau_director_promote_culture_base_total
+	multiply = 0.75
+}
+
+promote_culture_beth_nahrain_bonus = {
+	value = legal_bureau_director_promote_culture_base_total
+	multiply = 0.75
+}
+
+legal_bureau_director_promote_culture_erudition_bonus_monthly_increase = {
+	value = legal_bureau_director_promote_culture_base_total
+	multiply = {
+		add = erudition_legacy_5_percentage
+		divide = 100
+	}
+}
+
+legal_bureau_director_promote_culture_family_business_monthly_increase = {
+	value = legal_bureau_director_promote_culture_base_total
+	multiply = {
+		add = family_business_councillors_percentage
+		divide = 100
+	}
+}
+
+legal_bureau_director_promote_culture_consulted_house_monthly_increase = {
+	value = legal_bureau_director_promote_culture_base_total
+	multiply = {
+		add = consulted_house_councillors_percentage
+		divide = 100
+	}
+}
+
+legal_bureau_director_promote_culture_local_traditions_respected_penalty = {
+	value = 0
+	add = legal_bureau_director_promote_culture_base_total
+	multiply = -0.75
+}
+
+legal_bureau_director_promote_culture_shuubiyya_penalty = {
+	value = 0
+	if = {
+		limit = {
+			exists = scope:county
+			scope:county = {
+				has_county_modifier = county_shuubiyya_modifier
+			}
+		}
+		add = legal_bureau_director_promote_culture_base_total
+		multiply = -0.75
+	}
+}
+
+legal_bureau_director_promote_culture_allowed_nomad_settlement_penalty = {
+	value = 0
+	add = legal_bureau_director_promote_culture_base_total
+	multiply = -0.8
+}
+
+legal_bureau_director_conversion_culture_easier_to_culture_change_with_heritage_value = {
+	value = 0
+	add = legal_bureau_director_promote_culture_base
+	multiply = 0.3
+}
+
+legal_bureau_director_conversion_culture_resistant_to_culture_change_without_heritage_value = {
+	value = 0
+	subtract = legal_bureau_director_promote_culture_base_total
+	multiply = 0.5
+}
+
+legal_bureau_director_conversion_culture_resistant_to_culture_change = {
+	value = 0
+	subtract = legal_bureau_director_promote_culture_base_total
+	multiply = 0.5
+}
+
+legal_bureau_director_conversion_culture_resistant_to_culture_change_due_to_struggle_phase_value = {
+	value = 0
+	subtract = legal_bureau_director_promote_culture_base
+	multiply = 0.5
+}
+
+conversion_culture_accepting_of_culture_change_due_to_struggle_phase_value = {
+	value = 0
+	subtract = legal_bureau_director_promote_culture_base
+	multiply = -0.5
+}
+
+legal_bureau_director_conversion_culture_easy = {
+	value = 0
+	add = legal_bureau_director_promote_culture_base_total
+	multiply = 0.5
+}
+
+################################
+# Increase Control
+################################
+marshal_increase_control_full_progress = {
+	if = {
+		limit = { exists = scope:county }
+		add = scope:county.monthly_county_control_change
+	}
+}
+
+marshal_increase_control_current_progress = {
+	value = 0
+	if = {
+		limit = { exists = scope:county }
+		add = scope:county.county_control
+	}
+}
+
+legal_bureau_director_increase_control_base = 0.2
+
+legal_bureau_director_increase_county_control_monthly_change = {
+	add = martial
+	divide = 30
+}
+
+legal_bureau_director_increase_control_base_total = {
+	add = marshal_increase_control_base
+	add = legal_bureau_director_increase_county_control_monthly_change
+}
+
+legal_bureau_director_increase_control_monthly_increase_friend_bonus = {
+	if = {
+		limit = {
+			scope:councillor_liege = {
+				has_relation_friend = scope:councillor
+				NOT = { has_relation_best_friend = scope:councillor }
+			}
+		}
+		add = {
+			value = legal_bureau_director_increase_control_base_total
+			multiply = {
+				value = council_friend_impact_percentage
+				divide = 100
+			}
+		}
+	}
+}
+legal_bureau_director_increase_control_monthly_increase_best_friend_bonus = {
+	if = {
+		limit = {
+			scope:councillor_liege = {
+				has_relation_best_friend = scope:councillor
+			}
+		}
+		add = {
+			value = legal_bureau_director_increase_control_base_total
+			multiply = {
+				value = council_best_friend_impact_percentage
+				divide = 100
+			}
+		}
+	}
+}
+legal_bureau_director_increase_control_monthly_increase_rival_bonus = {
+	if = {
+		limit = {
+			scope:councillor_liege = {
+				has_relation_rival = scope:councillor
+				NOT = { has_relation_nemesis = scope:councillor }
+			}
+		}
+		add = {
+			value = legal_bureau_director_increase_control_base_total
+			multiply = {
+				value = council_rival_impact_percentage
+				divide = 100
+			}
+		}
+	}
+}
+legal_bureau_director_increase_control_monthly_increase_nemesis_bonus = {
+	if = {
+		limit = {
+			scope:councillor_liege = {
+				has_relation_nemesis = scope:councillor
+			}
+		}
+		add = {
+			value = legal_bureau_director_increase_control_base_total
+			multiply = {
+				value = council_nemesis_impact_percentage
+				divide = 100
+			}
+		}
+	}
+}
+
+legal_bureau_director_increase_county_control_perk_bonus_monthly_change = {
+	value = 0
+	if = {
+		limit = {
+			liege ?= { has_perk = strict_organization_perk }
+		}
+		add = legal_bureau_director_increase_control_base_total
+		multiply = {
+			add = strict_organization_percentage
+			divide = 100
+		}
+	}
+}
+
+legal_bureau_director_increase_county_control_erudition_bonus_monthly_change = {
+	value = 0
+	add = legal_bureau_director_increase_control_base_total
+	multiply = {
+		add = erudition_legacy_5_percentage
+		divide = 100
+	}
+}
+
+legal_bureau_director_increase_county_control_family_business_bonus_monthly_change = {
+	value = 0
+	add = legal_bureau_director_increase_control_base_total
+	multiply = {
+		add = family_business_councillors_percentage
+		divide = 100
+	}
+}
+
+legal_bureau_director_increase_county_control_consulted_house_bonus_monthly_change = {
+	value = 0
+	add = legal_bureau_director_increase_control_base_total
+	multiply = {
+		add = consulted_house_councillors_percentage
+		divide = 100
+	}
+}
+
+legal_bureau_increase_county_control_experience_bonus_monthly_change = {
+	value = 0	
+	add = legal_bureau_director_increase_control_base_total
+	multiply = {
+		add = 10
+		divide = 100
+	}
+}
+
+legal_bureau_director_increase_control_total = {
+	value = marshal_increase_control_base
+	add = legal_bureau_director_increase_county_control_monthly_change
+	add = legal_bureau_director_increase_control_monthly_increase_friend_bonus
+	add = legal_bureau_director_increase_control_monthly_increase_best_friend_bonus
+	add = legal_bureau_director_increase_control_monthly_increase_rival_bonus
+	add = legal_bureau_director_increase_control_monthly_increase_nemesis_bonus
+	add = legal_bureau_director_increase_county_control_perk_bonus_monthly_change
+	if = {
+		limit = {
+			councillor_liege_has_erudition_legacy_5_perk = yes
+		}
+		add = legal_bureau_director_increase_county_control_erudition_bonus_monthly_change
+	}
+	if = {
+		limit = {
+			councillor_liege_has_family_business_bonus = yes
+		}
+		add = legal_bureau_director_increase_county_control_family_business_bonus_monthly_change
+	}
+	if = {
+		limit = {
+			has_character_modifier = event_bonus_to_county_control
+		}
+		add = legal_bureau_increase_county_control_experience_bonus_monthly_change
+	}
+}
+
+legal_bureau_director_petition_liege_county_control_modifier_value = {
+	value = 0
+	add = legal_bureau_director_increase_control_base_total
+	multiply = 0.1
+}
+
+legal_bureau_director_court_jester_contribution_value = {
+	value = marshal_court_jester_contribution_value
+}
+
+####################
+# Domestic Affairs
+####################
+legal_bureau_director_domestic_affairs_opinion_base = {
+	add = learning
+	divide = 2
+}
+
+legal_bureau_director_domestic_affairs_opinion_chains_of_loyalty_bonus = {
+	add = legal_bureau_director_domestic_affairs_opinion_base
+	multiply = {
+		add = chains_of_loyalty_percentage
+		divide = 100
+	}
+}
+
+legal_bureau_director_domestic_affairs_opinion_erudition_bonus = {
+	add = legal_bureau_director_domestic_affairs_opinion_base
+	multiply = {
+		add = erudition_legacy_5_percentage
+		divide = 100
+	}
+}
+
+legal_bureau_director_domestic_affairs_opinion_family_business_bonus = {
+	add = legal_bureau_director_domestic_affairs_opinion_base
+	multiply = {
+		add = family_business_councillors_percentage
+		divide = 100
+	}
+}
+
+legal_bureau_director_domestic_affairs_opinion_consulted_house_bonus = {
+	add = legal_bureau_director_domestic_affairs_opinion_base
+	multiply = {
+		add = consulted_house_councillors_percentage
+		divide = 100
+	}
+}
+
+legal_bureau_director_domestic_affairs_opinion_pandidakterion_bonus = {
+	add = legal_bureau_director_domestic_affairs_opinion_base
+	multiply = {
+		add = 20
+		divide = 100
+	} 
+}
+
+legal_bureau_director_domestic_affairs_opinion_food_bonus = {
+	add = legal_bureau_director_domestic_affairs_opinion_base
+	multiply = {
+		add = 15
+		divide = 100
+	} 
+}
+
+legal_bureau_director_domestic_affairs_opinion_max = {
+	add = legal_bureau_director_domestic_affairs_opinion_base
+	if = {
+		limit = {
+			scope:councillor_liege = { has_perk = chains_of_loyalty_perk }
+		}
+		add = legal_bureau_director_domestic_affairs_opinion_chains_of_loyalty_bonus
+	}
+	if = {
+		limit = {
+			councillor_liege_has_erudition_legacy_5_perk = yes
+		}
+		add = legal_bureau_director_domestic_affairs_opinion_erudition_bonus
+	}
+	if = {
+		limit = {
+			councillor_liege_has_family_business_bonus = yes
+		}
+		add = legal_bureau_director_domestic_affairs_opinion_family_business_bonus
+	}
+	if = {
+		limit = {
+			councillor_liege_has_consulted_house_bonus = yes
+		}
+		add = legal_bureau_director_domestic_affairs_opinion_consulted_house_bonus
+	}
+	if = {
+		limit = {
+			scope:councillor_liege = {
+				has_title = title:c_byzantion
+				title:c_byzantion = { has_county_modifier = pandidakterion_university_modifier }
+			}
+		}
+		add = legal_bureau_director_domestic_affairs_opinion_pandidakterion_bonus
+	}
+	if = {
+		limit = {
+			scope:councillor_liege = {
+				has_character_flag = food_improves_opinion
+			}
+		}
+		add = legal_bureau_director_domestic_affairs_opinion_food_bonus
+	}
+}
+
+legal_bureau_director_domestic_affairs_opinion_scale = {
+	value = 0
+	if = {
+		limit = {
+			scope:councillor_liege = {
+				is_ai = yes
+				top_liege = this
+			}
+		}
+		add = legal_bureau_director_domestic_affairs_opinion_max
+	}
+	else_if = {
+		limit = {
+			scope:councillor_liege = { has_variable = legal_bureau_director_domestic_affairs_opinion_value }
+		}
+		add = scope:councillor_liege.var:legal_bureau_director_domestic_affairs_opinion_value
+	}
+}
+
+legal_bureau_director_domestic_affairs_monthly_increase = {
+	add = legal_bureau_director_domestic_affairs_opinion_max
+	divide = 24
+}
+
+legal_bureau_director_domestic_affairs_tyranny_base = {
+	add = learning
+	#multiply = 2
+	min = 1
+}
+
+legal_bureau_director_domestic_affairs_tyranny_chains_of_loyalty_bonus = {
+	value = 0
+	if = {
+		limit = {
+			scope:councillor_liege = { has_perk = chains_of_loyalty_perk }
+		}
+		add = {
+			value = legal_bureau_director_domestic_affairs_tyranny_base
+			multiply = {
+				add = chains_of_loyalty_percentage
+				divide = 100
+			}
+		}
+	}
+}
+
+legal_bureau_director_domestic_affairs_tyranny_erudition_bonus = {
+	value = 0
+	if = {
+		limit = {
+			councillor_liege_has_erudition_legacy_5_perk = yes
+		}
+		add = {
+			value = legal_bureau_director_domestic_affairs_tyranny_base
+			multiply = {
+				add = erudition_legacy_5_percentage
+				divide = 100
+			}
+		}
+	}
+}
+
+legal_bureau_director_domestic_affairs_tyranny_family_business_bonus = {
+	value = 0
+	if = {
+		limit = {
+			councillor_liege_has_family_business_bonus = yes
+		}
+		add = {
+			value = legal_bureau_director_domestic_affairs_tyranny_base
+			multiply = {
+				add = family_business_councillors_percentage
+				divide = 100
+			}
+		}
+	}
+}
+
+legal_bureau_director_domestic_affairs_tyranny_consulted_house_bonus = {
+	value = 0
+	if = {
+		limit = {
+			councillor_liege_has_consulted_house_bonus = yes
+		}
+		add = {
+			value = legal_bureau_director_domestic_affairs_tyranny_base
+			multiply = {
+				add = consulted_house_councillors_percentage
+				divide = 100
+			}
+		}
+	}
+}
+
+legal_bureau_director_domestic_affairs_tyranny_food_bonus = {
+	value = 0
+	if = {
+		limit = {
+			scope:councillor_liege = {
+				has_character_flag = food_improves_opinion
+			}
+		}
+		add = {
+			value = legal_bureau_director_domestic_affairs_tyranny_base
+			multiply = {
+				add = 10
+				divide = 100
+			}
+		}
+	}
+}
+
+legal_bureau_director_domestic_affairs_tyranny_total = {
+	add = legal_bureau_director_domestic_affairs_tyranny_base
+	add = legal_bureau_director_domestic_affairs_tyranny_chains_of_loyalty_bonus
+	add = legal_bureau_director_domestic_affairs_tyranny_erudition_bonus
+	add = legal_bureau_director_domestic_affairs_tyranny_family_business_bonus
+	add = legal_bureau_director_domestic_affairs_tyranny_consulted_house_bonus
+	add = legal_bureau_director_domestic_affairs_tyranny_food_bonus
+}

@@ -30,6 +30,7 @@ xiongnu = {
 		requires_dlc_flag = hybridize_culture
 	}
 	
+	name_order_convention = dynasty_always_first
 	name_list = name_list_xiongnu
 	
 	#Graphics
@@ -82,7 +83,7 @@ hunnic = {
 	}
 	
 	dlc_tradition = {
-		trait = tradition_devoted_horsemanship
+		trait = tradition_devoted_horsemanship_western_steppe
 		requires_dlc_flag = khans_of_the_steppe
 		fallback = tradition_horse_lords
 	}
@@ -132,7 +133,7 @@ khuni = {
 	}
 	
 	dlc_tradition = {
-		trait = tradition_devoted_horsemanship
+		trait = tradition_devoted_horsemanship_western_steppe
 		requires_dlc_flag = khans_of_the_steppe
 		fallback = tradition_horse_lords
 	}
@@ -177,7 +178,7 @@ bolghar = {
 	}
 	
 	dlc_tradition = {
-		trait = tradition_devoted_horsemanship
+		trait = tradition_devoted_horsemanship_western_steppe
 		requires_dlc_flag = khans_of_the_steppe
 		fallback = tradition_horse_lords
 	}
@@ -451,7 +452,7 @@ kirghiz = {
 kurykan = { #Remnant Dinglings that became Kurykans/proto-Buryats,Tuvans,Siberian Turks
 	color = kurykan
 	
-	parents = { tiele tungusic }
+	parents = { tiele evenk }
 	created = 2.1.1
 	history_loc_override = kurykan_history_loc
 	

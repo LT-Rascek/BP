@@ -174,6 +174,82 @@ d_laamp_bagaudae_gaul_5 = {
 	}
 	501.1.1 = { holder = 0 }
 }
+#Donatist Bands
+d_laamp_donatist_1 = {
+	467.1.1 = {
+		holder = holder_d_laamp_donatist_1
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			#No variable; don't need the trait
+			destroy_landless_title_no_dlc_effect = { DATE = 467.1.1 }
+		}
+	}
+	501.1.1 = { holder = 0 }
+}
+d_laamp_donatist_2 = {
+	450.1.1 = {
+		holder = holder_d_laamp_donatist_2
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			#No variable; don't need the trait
+			destroy_landless_title_no_dlc_effect = { DATE = 467.1.1 }
+		}
+	}
+	501.1.1 = { holder = 0 }
+}
+d_laamp_donatist_3 = {
+	461.1.1 = {
+		holder = holder_d_laamp_donatist_3
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			#No variable; don't need the trait
+			destroy_landless_title_no_dlc_effect = { DATE = 467.1.1 }
+		}
+	}
+	501.1.1 = { holder = 0 }
+}
+
+#Other 476 adventurers
+d_laamp_britannia_taifali = {
+	395.1.1 = {
+		holder = holder_d_laamp_britannia_taifali_000
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			#No variable; don't need the trait
+			destroy_landless_title_no_dlc_effect = { DATE = 467.1.1 }
+		}
+	}
+	425.1.1 = { holder = holder_d_laamp_britannia_taifali_001 }
+	445.1.1 = { holder = holder_d_laamp_britannia_taifali_002 }
+	465.1.1 = { holder = holder_d_laamp_britannia_taifali_003 }
+	485.1.1 = { holder = 0 }
+}
+d_laamp_britannia_bucinobantes = {
+	395.1.1 = {
+		holder = holder_d_laamp_britannia_bucinobantes_000
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			#No variable; don't need the trait
+			destroy_landless_title_no_dlc_effect = { DATE = 467.1.1 }
+		}
+	}
+	415.1.1 = { holder = holder_d_laamp_britannia_bucinobantes_001 }
+	435.1.1 = { holder = holder_d_laamp_britannia_bucinobantes_002 }
+	455.1.1 = { holder = holder_d_laamp_britannia_bucinobantes_003 }
+	475.1.1 = { holder = holder_d_laamp_britannia_bucinobantes_004 }
+	495.1.1 = { holder = 0 }
+}
+
 #Odoacer and His Merry Band
 d_laamp_odoacer = {
 	476.1.1 = {
@@ -191,7 +267,7 @@ d_laamp_odoacer = {
 }
 d_laamp_odoacer_rugii = { #Rugii Contingent
 	476.1.1 = {
-		holder = 55_cousin #Fictional Rygir for Odoacer, put under Tufa
+		holder = rugii_odoacer_contingent #Fictional Rygir for Odoacer
 		government = landless_adventurer_government
 		succession_laws = { landless_adventurer_succession_law }
 		effect = {

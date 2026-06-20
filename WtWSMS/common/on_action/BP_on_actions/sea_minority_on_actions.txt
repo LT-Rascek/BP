@@ -1,0 +1,551 @@
+﻿
+yearly_global_pulse = {
+	on_actions = {
+		on_yearly_sea_minority_maintainance
+	}
+}
+
+three_year_playable_pulse = {
+	on_actions = {
+		delay = { days = { 30 330 } }
+		spawn_large_minority_characters
+	}
+}
+
+five_year_playable_pulse = {
+	on_actions = {
+		delay = { days = { 30 330 } }
+		spawn_small_minority_characters
+	}
+}
+
+on_yearly_sea_minority_maintainance = {
+	effect = {
+		# Normal culture/faith spread
+		every_county = {
+			limit = { NOT = { has_variable = recent_migration } }
+			save_scope_as = source_county
+			random = {
+				chance = 0.75 #0.75% per annum translates to a MTTH of about 100 years (47.5% of not occurring)
+				trigger_event = {
+					days = { 1 360 }
+					on_action = do_culture_faith_migration
+				}
+			}
+		}
+
+		# Minority culture spread/growth
+		every_county = {
+			limit = {
+				county_has_minority_culture_trigger = yes
+				NOT = { has_variable = recent_culture_growth }
+			}
+
+			save_scope_as = source_county
+			random = {
+				chance = 0.50 #0.75% per annum translates to MTTH of about 125 years (46.56% of not occurring)
+				trigger_event = {
+					days = { 1 360 }
+					on_action = do_minority_culture_growth
+				}
+			}
+		}
+
+		# Minority faith spread/growth
+		every_county = {
+			limit = {
+				county_has_minority_faith_trigger = yes
+				NOT = { has_variable = recent_faith_growth }
+			}
+
+			save_scope_as = source_county
+			random = {
+				chance = 0.50 #0.50% per annum translates to MTTH of about 125 years (46.56% of not occurring)
+				trigger_event = {
+					days = { 1 360 }
+					on_action = do_minority_faith_growth
+				}
+			}
+		}
+
+		#Migratory Minority decline
+		every_county = {
+			limit = {
+				county_has_migratory_minority_culture_trigger = yes
+				NOT = { has_variable = recent_culture_decline }
+			}
+			save_scope_as = source_county
+			random = {
+				chance = 1.25 #1.25% per annum translates to MTTH of about 55 years (50.06% of not occurring)
+				trigger_event = {
+					days = { 1 360 }
+					on_action = do_migratory_minority_decline
+				}
+			}
+		}
+
+		# get innovations from host culture
+	}
+}
+do_culture_faith_migration = {
+	effect = {
+		if = {
+			limit = {
+				scope:source_county = {
+					NOR = {
+						culture = { has_cultural_tradition = tradition_isolationist }
+						faith = { has_doctrine = tenet_communal_identity }
+					}
+				}
+			}
+			county_to_county_culture_faith_migration_effect = yes
+		}
+	}
+}
+do_minority_culture_growth = {
+	effect = {
+		scope:source_county = {
+
+			every_in_list = {
+				variable = culture_minorities_small
+				add_to_temporary_list = potential_cultures
+			}
+			every_in_list = {
+				variable = culture_minorities_large
+				add_to_temporary_list = potential_cultures
+			}
+			every_in_list = {
+				variable = culture_minorities_large
+				add_to_temporary_list = potential_cultures
+			}
+
+			random_in_list = {
+				list = potential_cultures
+				save_scope_as = minority_culture
+				random_list = {
+					50 = { minority_culture_growth_effect = yes }
+					50 = { minority_culture_spread_effect = yes }
+				}
+			}
+		}
+	}
+}
+do_minority_faith_growth = {
+	effect = {
+		scope:source_county = {
+
+			every_in_list = {
+				variable = faith_minorities_small
+				add_to_temporary_list = potential_faiths
+			}
+			every_in_list = {
+				variable = faith_minorities_large
+				add_to_temporary_list = potential_faiths
+			}
+			every_in_list = {
+				variable = faith_minorities_large
+				add_to_temporary_list = potential_faiths
+			}
+
+			random_in_list = {
+				list = potential_faiths
+				save_scope_as = minority_faith
+				random_list = {
+					50 = { minority_faith_growth_effect = yes }
+					50 = { minority_faith_spread_effect = yes }
+				}
+			}
+		}
+	}
+}
+
+do_migratory_minority_decline = {
+	effect = {
+		scope:source_county = {
+			every_in_list = {
+				limit = {
+					this = { has_cultural_tradition = tradition_migratory_culture }
+					NOT = { this.culture = scope:source_county.holder.culture }
+				}
+				variable = culture_minorities_large
+				add_to_temporary_list = potential_cultures
+			}
+			every_in_list = {
+				limit = {
+					this = { has_cultural_tradition = tradition_migratory_culture }
+					NOT = { this.culture = scope:source_county.holder.culture }
+				}
+				variable = culture_minorities_large
+				add_to_temporary_list = potential_cultures
+			}
+			every_in_list = {
+				limit = {
+					this = { has_cultural_tradition = tradition_migratory_culture }
+					NOT = { this.culture = scope:source_county.holder.culture }
+				}
+				variable = culture_minorities_small
+				add_to_temporary_list = potential_cultures
+			}
+			
+			random_in_list = {
+				list = potential_cultures
+				save_scope_as = minority_culture
+				minority_decline_effect = yes
+			}
+		}
+	}
+}
+
+# Root is a count+ character
+spawn_large_minority_characters = {
+	trigger = {
+		exists = root
+		exists = root.capital_province
+		any_sub_realm_county = {
+			OR = {
+				county_has_large_minority_culture_trigger = yes
+				county_has_large_minority_faith_trigger = yes
+			}
+		}
+	}
+	effect = {
+		every_courtier = {
+			culture = { add_to_temporary_list = represented_cultures }
+			faith = { add_to_temporary_list = represented_faiths }
+		}
+
+		every_sub_realm_county = {
+			limit = {
+				OR = {
+					county_has_large_minority_culture_trigger = yes
+					county_has_large_minority_faith_trigger = yes
+				}
+			}
+
+			if = {
+				limit = { county_has_large_minority_faith_trigger = yes }
+
+				# get a random minority faith
+				every_in_list = {
+					variable = faith_minorities_large
+					add_to_temporary_list = potential_faiths
+				}
+
+				random_in_list = {
+					list = potential_faiths
+					save_temporary_scope_as = faith_to_spawn
+				}
+
+				if = {
+					limit = { county_has_large_minority_culture_trigger = yes }
+
+					# randomly get a minority culture or the majority
+					every_in_list = {
+						variable = culture_minorities_large
+						add_to_temporary_list = potential_cultures
+					}
+					culture = {
+						add_to_temporary_list = potential_cultures
+						add_to_temporary_list = potential_cultures
+					}
+
+					random_in_list = {
+						list = potential_cultures
+						save_temporary_scope_as = culture_to_spawn
+					}
+				}
+				else = {
+					# get the majority culture
+					culture = { save_temporary_scope_as = culture_to_spawn }
+				}
+			}
+			else_if = {
+				limit = {
+					county_has_large_minority_culture_trigger = yes
+				}
+
+				# get a random minority culture and the majority faith
+				every_in_list = {
+					variable = culture_minorities_large
+					add_to_temporary_list = potential_cultures
+				}
+
+				random_in_list = {
+					list = potential_cultures
+					save_temporary_scope_as = culture_to_spawn
+				}
+
+				faith = { save_temporary_scope_as = faith_to_spawn }
+			}
+
+			if = {
+				limit = {
+					exists = scope:faith_to_spawn
+					exists = scope:culture_to_spawn
+					NAND = {
+						scope:faith_to_spawn = { is_in_list = represented_faiths }
+						scope:culture_to_spawn = { is_in_list = represented_cultures }
+					}
+				}
+
+				##### Start: Catch Ethnic religions spawning weirdly
+				if = {
+					limit = { #Uncaught case: Both liege *and* new vassal are ethnic religions, but inapplicable cultures
+						scope:faith_to_spawn = { has_variable = ethnic_religion_culture }
+					}
+					if = {
+						limit = { NOT = { scope:culture_to_spawn = scope:faith_to_spawn.var:ethnic_religion_culture } }
+						root.faith = { save_temporary_scope_as = faith_to_spawn }
+					}
+				}
+				if = {
+					limit = { #Uncaught case: Both liege *and* new vassal are ethnic religions, but inapplicable cultures
+						scope:faith_to_spawn = { has_variable = church_culture }
+					}
+					if = {
+						limit = { NOT = { scope:culture_to_spawn = scope:faith_to_spawn.var:church_culture } }
+						root.faith = { save_temporary_scope_as = faith_to_spawn }
+					}
+				}
+				##### End: Catch Ethnic religions spawning weirdly
+
+				##### Start: Fix Jews Spawning Oddly
+				if = {
+					limit = {
+						scope:culture_to_spawn = { has_cultural_pillar = heritage_israelite }
+						#Jews should be Jewish faith or Nazaoreans
+						NOR = {
+							scope:faith_to_spawn.religion = religion:judaism_religion
+							scope:faith_to_spawn = faith:conversos
+						}
+					}
+					faith:rabbinism = { save_temporary_scope_as = faith_to_spawn }
+				}
+				##### End: Fix Jews Spawning Oddly
+
+				create_character = {
+					employer = root
+					age = { 18 50 }
+					gender_female_chance = 50
+					random_traits = yes
+					faith = scope:faith_to_spawn
+					culture = scope:culture_to_spawn
+				}
+
+				scope:faith_to_spawn = { add_to_temporary_list = represented_faiths }
+				scope:culture_to_spawn = { add_to_temporary_list = represented_cultures }
+			}
+
+			clear_variable_list = potential_cultures
+			clear_variable_list = potential_faiths
+			clear_saved_scope = faith_to_spawn
+			clear_saved_scope = culture_to_spawn
+		}
+	}
+}
+
+# Root is a count+ character
+spawn_small_minority_characters = {
+	trigger = {
+		exists = root
+		exists = root.capital_province
+		any_sub_realm_county = {
+			OR = {
+				county_has_small_minority_culture_trigger = yes
+				county_has_small_minority_faith_trigger = yes
+			}
+		}
+	}
+	effect = {
+		every_courtier = {
+			culture = { add_to_temporary_list = represented_cultures }
+			faith = { add_to_temporary_list = represented_faiths }
+		}
+
+		every_sub_realm_county = {
+			limit = {
+				OR = {
+					county_has_small_minority_culture_trigger = yes
+					county_has_small_minority_faith_trigger = yes
+				}
+			}
+
+			if = {
+				limit = { county_has_small_minority_faith_trigger = yes }
+
+				# get a random minority faith
+				every_in_list = {
+					variable = faith_minorities_small
+					add_to_temporary_list = potential_faiths
+				}
+
+				random_in_list = {
+					list = potential_faiths
+					save_temporary_scope_as = faith_to_spawn
+				}
+
+				if = {
+					limit = { county_has_small_minority_culture_trigger = yes }
+
+					# randomly get a minority culture or the majority
+					every_in_list = {
+						variable = culture_minorities_small
+						add_to_temporary_list = potential_cultures
+					}
+					culture = {
+						add_to_temporary_list = potential_cultures
+						add_to_temporary_list = potential_cultures
+					}
+
+					random_in_list = {
+						list = potential_cultures
+						save_temporary_scope_as = culture_to_spawn
+					}
+				}
+				else = {
+					# get the majority culture
+					culture = { save_temporary_scope_as = culture_to_spawn }
+				}
+			}
+			else_if = {
+				limit = {
+					county_has_small_minority_culture_trigger = yes
+				}
+
+				# get a random minority culture and the majority faith
+				every_in_list = {
+					variable = culture_minorities_small
+					add_to_temporary_list = potential_cultures
+				}
+
+				random_in_list = {
+					list = potential_cultures
+					save_temporary_scope_as = culture_to_spawn
+				}
+
+				faith = { save_temporary_scope_as = faith_to_spawn }
+			}
+
+			if = {
+				limit = {
+					exists = scope:faith_to_spawn
+					exists = scope:culture_to_spawn
+					NAND = {
+						scope:faith_to_spawn = { is_in_list = represented_faiths }
+						scope:culture_to_spawn = { is_in_list = represented_cultures }
+					}
+				}
+
+				##### Start: Catch Ethnic religions spawning weirdly
+				if = {
+					limit = { #Uncaught case: Both liege *and* new vassal are ethnic religions, but inapplicable cultures
+						scope:faith_to_spawn = { has_variable = ethnic_religion_culture }
+					}
+					if = {
+						limit = { NOT = { scope:culture_to_spawn = scope:faith_to_spawn.var:ethnic_religion_culture } }
+						root.faith = { save_temporary_scope_as = faith_to_spawn }
+					}
+				}
+				if = {
+					limit = { #Uncaught case: Both liege *and* new vassal are ethnic religions, but inapplicable cultures
+						scope:faith_to_spawn = { has_variable = church_culture }
+					}
+					if = {
+						limit = { NOT = { scope:culture_to_spawn = scope:faith_to_spawn.var:church_culture } }
+						root.faith = { save_temporary_scope_as = faith_to_spawn }
+					}
+				}
+				##### End: Catch Ethnic religions spawning weirdly
+
+				##### Start: Fix Jews Spawning Oddly
+				if = {
+					limit = {
+						scope:culture_to_spawn = { has_cultural_pillar = heritage_israelite }
+						#Jews should be Jewish faith or Nazaoreans
+						NOR = {
+							scope:faith_to_spawn.religion = religion:judaism_religion
+							scope:faith_to_spawn = faith:conversos
+						}
+					}
+					faith:rabbinism = { save_temporary_scope_as = faith_to_spawn }
+				}
+				##### End: Fix Jews Spawning Oddly
+
+				create_character = {
+					employer = root
+					age = { 18 50 }
+					gender_female_chance = 50
+					random_traits = yes
+					faith = scope:faith_to_spawn
+					culture = scope:culture_to_spawn
+				}
+
+				scope:faith_to_spawn = { add_to_temporary_list = represented_faiths }
+				scope:culture_to_spawn = { add_to_temporary_list = represented_cultures }
+			}
+
+			clear_variable_list = potential_cultures
+			clear_variable_list = potential_faiths
+			clear_saved_scope = faith_to_spawn
+			clear_saved_scope = culture_to_spawn
+		}
+	}
+}
+
+# Happens when a culture is created through hybridization or divergence
+# Root = The new culture
+# scope:founder = The founder of the new culture
+on_culture_created = {
+	on_actions = {
+		remove_parent_culture_minorities
+	}
+}
+
+#Clean up parent minorities in newly formed culture counties during hybridization
+remove_parent_culture_minorities = {
+	effect = {
+		every_culture_county = {
+			save_temporary_scope_as = the_county
+			this.culture = {
+				every_parent_culture = {
+					save_temporary_scope_as = the_parent
+					
+					if = {
+						limit = {
+							scope:the_county = { has_variable_list = culture_minorities_small }
+							scope:the_county = {
+								is_target_in_variable_list = {
+									name = culture_minorities_small
+									target = scope:the_parent
+								}
+							}
+						}
+						scope:the_county = {
+							remove_list_variable = {
+								name = culture_minorities_small
+								target = scope:the_parent
+							}
+						}
+					}
+					if = {
+						limit = {
+							scope:the_county = { has_variable_list = culture_minorities_large }
+							scope:the_county = {
+								is_target_in_variable_list = {
+									name = culture_minorities_large
+									target = scope:the_parent
+								}
+							}
+						}
+						scope:the_county = {
+							remove_list_variable = {
+								name = culture_minorities_large
+								target = scope:the_parent
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -411,6 +411,11 @@ war_camps_01 = {
 		stationed_archer_cavalry_toughness_mult = normal_maa_toughness_tier_1
 	}
 
+	county_culture_modifier = {
+		parameter = strength_in_numbers_maa_limit_bonus 
+		levy_size = 0.01
+	}
+
 	province_terrain_modifier = {
 		parameter = coastal_tribe_bonuses
 		is_coastal = yes
@@ -473,9 +478,9 @@ war_camps_02 = {
 		stationed_maa_toughness_mult = normal_maa_toughness_tier_2
 	}
 
-	character_culture_modifier = {
+	county_culture_modifier = {
 		parameter = strength_in_numbers_maa_limit_bonus 
-		men_at_arms_limit = 1
+		levy_size = 0.02
 	}
 	
 	ai_value = {

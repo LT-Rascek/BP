@@ -1,4 +1,4 @@
-﻿##### Changed from Vanilla: Caught issues with vassalization acceptatance
+﻿##### Changed from Vanilla: Caught issues with vassalization acceptance
 offer_vassalization_interaction = {
 	category = interaction_category_vassal
 	icon = icon_vassal
@@ -649,7 +649,14 @@ offer_vassalization_interaction = {
 						character_is_realm_neighbor = scope:recipient
 					}
 				}
-				scope:recipient.capital_province = { squared_distance = { target = scope:actor.capital_province value < 200000 } }
+				scope:recipient = {
+					# landless ruler count as within realm
+					trigger_if = {
+						limit = { is_landed = no }
+						NOT = { capital_county.holder = { target_is_same_character_or_above = scope:actor } }
+					}
+					capital_province = { squared_distance = { target = scope:actor.capital_province value < 200000 } }
+				}
 			}
 			add = -250
 		}
@@ -661,7 +668,14 @@ offer_vassalization_interaction = {
 						character_is_realm_neighbor = scope:recipient
 					}
 				}
-				scope:recipient.capital_province = { squared_distance = { target = scope:actor.capital_province value >= 200000 } }
+				scope:recipient = {
+					# landless ruler count as within realm
+					trigger_if = {
+						limit = { is_landed = no }
+						NOT = { capital_county.holder = { target_is_same_character_or_above = scope:actor } }
+					}
+					capital_province = { squared_distance = { target = scope:actor.capital_province value >= 200000 } }
+				}
 			}
 			add = -500
 		}
@@ -1224,7 +1238,7 @@ offer_vassalization_interaction = {
 			scope:recipient = {
 				AND = {
 					government_has_flag = government_is_feudal
-					NOT = { government_has_flag = government_uses_prefeudal_authority }
+					NOT = { government_has_flag = government_is_prefeudal }
 				}
 			}
 		}
@@ -1238,7 +1252,7 @@ offer_vassalization_interaction = {
 			scope:recipient = {
 				AND = {
 					government_has_flag = government_is_feudal
-					NOT = { government_has_flag = government_uses_prefeudal_authority }
+					NOT = { government_has_flag = government_is_prefeudal }
 				}
 			}
 		}
@@ -1254,7 +1268,7 @@ offer_vassalization_interaction = {
 			scope:recipient = {
 				AND = {
 					government_has_flag = government_is_feudal
-					NOT = { government_has_flag = government_uses_prefeudal_authority }
+					NOT = { government_has_flag = government_is_prefeudal }
 				}
 			}
 		}
@@ -1268,7 +1282,7 @@ offer_vassalization_interaction = {
 			scope:recipient = {
 				AND = {
 					government_has_flag = government_is_feudal
-					NOT = { government_has_flag = government_uses_prefeudal_authority }
+					NOT = { government_has_flag = government_is_prefeudal }
 				}
 			}
 		}
@@ -1278,7 +1292,7 @@ offer_vassalization_interaction = {
 		flag = religious_exemption
 		localization = religious_exemption
 	}
-##### Changed from Vanilla ^^^^^
+	##### Changed from Vanilla ^^^^^
 
 	# Religious exemption, for clans
 	send_option = {
@@ -1389,7 +1403,7 @@ offer_vassalization_interaction = {
 	}
 }
 
-##### Changed from Vanilla: Caught issues with vassalization acceptatance
+##### Changed from Vanilla: Caught issues with vassalization acceptance
 offer_fealty_interaction = {
 	category = interaction_category_vassal
 	icon = icon_liege
@@ -1532,8 +1546,13 @@ offer_fealty_interaction = {
 					NOT = {
 						any_neighboring_top_liege_realm_owner = { this = scope:recipient }
 					}
+					# landless ruler count as within realm
+					trigger_if = {
+						limit = { is_landed = no }
+						NOT = { capital_county.holder = { target_is_same_character_or_above = scope:actor } }
+					}
+					capital_province = { squared_distance = { target = scope:recipient.capital_province value < 200000 } }
 				}
-				scope:actor.capital_province = { squared_distance = { target = scope:recipient.capital_province value < 200000 } }
 			}
 			add = -15
 		}
@@ -1544,14 +1563,13 @@ offer_fealty_interaction = {
 					NOT = {
 						any_neighboring_top_liege_realm_owner = { this = scope:recipient }
 					}
-				}
-				trigger_if = {
-					limit = {
-						exists = scope:recipient.suzerain
-						scope:recipient.suzerain != scope:actor
+					# landless ruler count as within realm
+					trigger_if = {
+						limit = { is_landed = no }
+						NOT = { capital_county.holder = { target_is_same_character_or_above = scope:actor } }
 					}
+					capital_province = { squared_distance = { target = scope:recipient.capital_province value >= 200000 } }
 				}
-				scope:actor.capital_province = { squared_distance = { target = scope:recipient.capital_province value >= 200000 } }
 			}
 			add = -25
 		}
@@ -1717,13 +1735,15 @@ offer_fealty_interaction = {
 		}
 	}
 
+	##### Changed from Vanilla vvvvv
+
 	# Low starting obligations
 	send_option = {
 		is_shown = {
 			scope:actor = {
 				AND = {
 					government_has_flag = government_is_feudal
-					NOT = { government_has_flag = government_uses_prefeudal_authority }
+					NOT = { government_has_flag = government_is_prefeudal }
 				}
 			}
 		}
@@ -1737,7 +1757,7 @@ offer_fealty_interaction = {
 			scope:actor = {
 				AND = {
 					government_has_flag = government_is_feudal
-					NOT = { government_has_flag = government_uses_prefeudal_authority }
+					NOT = { government_has_flag = government_is_prefeudal }
 				}
 			}
 		}
@@ -1753,7 +1773,7 @@ offer_fealty_interaction = {
 			scope:actor = {
 				AND = {
 					government_has_flag = government_is_feudal
-					NOT = { government_has_flag = government_uses_prefeudal_authority }
+					NOT = { government_has_flag = government_is_prefeudal }
 				}
 			}
 		}
@@ -1767,7 +1787,7 @@ offer_fealty_interaction = {
 			scope:actor = {
 				AND = {
 					government_has_flag = government_is_feudal
-					NOT = { government_has_flag = government_uses_prefeudal_authority }
+					NOT = { government_has_flag = government_is_prefeudal }
 				}
 			}
 		}
@@ -1914,3 +1934,4 @@ offer_fealty_interaction = {
 		}
 	}
 }
+

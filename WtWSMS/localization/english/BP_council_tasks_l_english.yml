@@ -1,4 +1,65 @@
 ﻿l_english:
+ #Clerical Bureau Tasks
+ ##Promulgate Laws: Influence-Related Task & Events
+ task_promulgate_laws: "Promulgate Laws"
+ task_promulgate_laws_influence_multiplier: "Promulgate Laws Influence Gain"
+ task_promulgate_laws_effect_desc:  "[influence|E] Multiplier: #P [influence_i]+[SCOPE.ScriptValue('clerical_bureau_director_influence_scale')|1]%#!\n(Increases by #P +#![SCOPE.ScriptValue('clerical_bureau_director_influence_monthly_increase')|2P]#P %#!/month up to #P +#![SCOPE.ScriptValue('clerical_bureau_director_influence_max')|2P]#P %#!)"
+ task_promulgate_laws_desc_bureaucrats_bonus_influence: "\n$TAB$[GetDynastyPerk('erudition_legacy_5').GetName]: #P +#![SCOPE.ScriptValue('clerical_bureau_director_influence_erudition_bonus')|P]"
+ task_promulgate_laws_desc_family_business_bonus_influence: "\n$TAB$$tradition_family_entrepreneurship_name$: #P +#![SCOPE.ScriptValue('clerical_bureau_director_influence_family_business_bonus')|P]"
+ task_promulgate_laws_desc_consulted_house_bonus_influence: "\n$TAB$$unity_consulted_house_member_desc$: #P +#![SCOPE.ScriptValue('clerical_bureau_director_influence_consulted_house_bonus')|P]"
+ task_promulgate_laws_notification_tooltip: "From $task_promulgate_laws$"
+ task_promulgate_laws_gain_influence: "\n$EFFECT_LIST_BULLET$#P Influence Gain#!"
+ task_promulgate_laws_loose_influence: "\n$EFFECT_LIST_BULLET$#N Influence Loss#!"
+ ##Fabricate Claim
+ task_fabricate_claim_roman: "$task_fabricate_claim$"
+ task_fabricate_claim_roman_effect_Desc: "$task_fabricate_claim_effect_desc$"
+ #Imperial guard
+ task_manage_guards_roman: "Manage Imperial Guard"
+ #Justify Rule
+ task_justify_rule_roman: "Justify Rule"
+ #Legal Burau
+ task_domestic_affairs_roman: "Domestic Affairs"
+ task_domestic_affairs_roman_direct_effect_desc: "[direct_vassal|E] Opinion: #P [opinion_i]+[SCOPE.ScriptValue('legal_bureau_director_domestic_affairs_opinion_scale')|1]#!\n(Increases by #P +#![SCOPE.ScriptValue('legal_bureau_director_domestic_affairs_monthly_increase')|2P]/month up to #P +#![SCOPE.ScriptValue('legal_bureau_director_domestic_affairs_opinion_max')|0P])\n$TAB$[councillor.Custom('GetCouncillorKurultaiMemberPossessive')] [diplomacy_i][diplomacy_skill|E]: #P [opinion_i]+[SCOPE.ScriptValue('legal_bureau_director_domestic_affairs_opinion_base')|2]#!"
+ task_domestic_affairs_roman_parochial_effect_desc: "\n\n[GetVassalStance( 'parochial' ).GetTextIcon][GetVassalStance( 'parochial' ).GetName] [vassal|E] Opinion: #P [opinion_i]+[SCOPE.ScriptValue('legal_bureau_director_domestic_affairs_opinion_scale')|1]#!\n(Increases by #P +#![SCOPE.ScriptValue('legal_bureau_director_domestic_affairs_monthly_increase')|2P]/month up to #P +#![SCOPE.ScriptValue('legal_bureau_director_domestic_affairs_opinion_max')|0P])\n$TAB$[councillor.Custom('GetCouncillorKurultaiMemberPossessive')] [diplomacy_i][diplomacy_skill|E]: #P [opinion_i]+[SCOPE.ScriptValue('legal_bureau_director_domestic_affairs_opinion_base')|2]#!"
+ task_domestic_affairs_roman_bureaucrats_bonus_desc: "\n$TAB$[GetDynastyPerk('erudition_legacy_5').GetName]: #P +[SCOPE.ScriptValue('legal_bureau_director_domestic_affairs_opinion_erudition_bonus')|2]#!"
+ task_domestic_affairs_roman_family_business_bonus_desc: "\n$TAB$$tradition_family_entrepreneurship_name$: #P +[SCOPE.ScriptValue('legal_bureau_director_domestic_affairs_opinion_family_business_bonus')|2]#!"
+ task_domestic_affairs_roman_consulted_house_bonus_desc: "\n$TAB$$unity_consulted_house_member_desc$: #P +[SCOPE.ScriptValue('legal_bureau_director_domestic_affairs_opinion_consulted_house_bonus')|2]#!"
+ task_domestic_affairs_roman_chains_of_loyalty_bonus_desc: "\n$TAB$[GetPerk('chains_of_loyalty_perk').GetName(GetPlayer)]: #P +[SCOPE.ScriptValue('legal_bureau_director_domestic_affairs_opinion_chains_of_loyalty_bonus')|2]#!"
+ task_domestic_affairs_roman_tyranny_effect_desc: "\n\n[tyranny|E] Loss: #P +[SCOPE.ScriptValue('legal_bureau_director_domestic_affairs_tyranny_total')|P0]%#!\n$TAB$[councillor.Custom('GetCouncillorKurultaiMemberPossessive')] [diplomacy_i][diplomacy_skill|E]: #P +[SCOPE.ScriptValue('legal_bureau_director_domestic_affairs_tyranny_base')|P0]%#!"
+ task_domestic_affairs_roman_tyranny_bureaucrats_bonus_desc: "\n$TAB$[GetDynastyPerk('erudition_legacy_5').GetName]: #P +[SCOPE.ScriptValue('legal_bureau_director_domestic_affairs_tyranny_erudition_bonus')|P0]%#!"
+ task_domestic_affairs_roman_tyranny_family_business_bonus_desc: "\n$TAB$$tradition_family_entrepreneurship_name$: #P +[SCOPE.ScriptValue('legal_bureau_director_domestic_affairs_tyranny_family_business_bonus')|P0]%#!"
+ task_domestic_affairs_roman_tyranny_consulted_house_bonus_desc: "\n$TAB$$unity_consulted_house_member_desc$: #P +[SCOPE.ScriptValue('legal_bureau_director_domestic_affairs_tyranny_consulted_house_bonus')|P0]%#!"
+ task_domestic_affairs_roman_tyranny_chains_of_loyalty_bonus_desc: "\n$TAB$[GetPerk('chains_of_loyalty_perk').GetName(GetPlayer)]: #P +[SCOPE.ScriptValue('legal_bureau_director_domestic_affairs_tyranny_chains_of_loyalty_bonus')|P0]%#!"
+ #Promote Culture
+ task_promote_culture_roman: "$task_promote_culture$"
+ task_promote_culture_roman_desc: "$task_promote_culture_desc$"
+ 
+ LEGAL_BUREAU_DIRECTOR_PROMOTE_CULTURE_DEVELOPMENT_PENALTY: "$STEWARD_PROMOTE_CULTURE_DEVELOPMENT_PENALTY$"
+ 
+ LEGAL_BUREAU_DIRECTOR_PROMOTE_CULTURE_HYBRID_VS_PARENTS_BONUS_MODIFIER: "$STEWARD_PROMOTE_CULTURE_HYBRID_VS_PARENTS_BONUS_MODIFIER$"
+ LEGAL_BUREAU_DIRECTOR_PROMOTE_CULTURE_DIVERGENT_VS_PARENTS_BONUS_MODIFIER: "$STEWARD_PROMOTE_CULTURE_DIVERGENT_VS_PARENTS_BONUS_MODIFIER$"
+ LEGAL_BUREAU_DIRECTOR_PROMOTE_CULTURE_COMMUNAL_IDENTITY_BONUS_MODIFIER: "$STEWARD_PROMOTE_CULTURE_COMMUNAL_IDENTITY_BONUS_MODIFIER$"
+ LEGAL_BUREAU_DIRECTOR_PROMOTE_CULTURE_EASIER_TO_CONVERT_CULTURE_IN_SAME_FAITH_MOUNTAINS_BONUS: "$STEWARD_PROMOTE_CULTURE_EASIER_TO_CONVERT_CULTURE_IN_SAME_FAITH_MOUNTAINS_BONUS$"
+ LEGAL_BUREAU_DIRECTOR_PROMOTE_CULTURE_INNOVATION_BONUS_EAST_SETTLING: "$STEWARD_PROMOTE_CULTURE_INNOVATION_BONUS_EAST_SETTLING$"
+ LEGAL_BUREAU_DIRECTOR_PROMOTE_CULTURE_TRADITION_HELLENIZATION: "$STEWARD_PROMOTE_CULTURE_TRADITION_HELLENIZATION$"
+ LEGAL_BUREAU_DIRECTOR_PROMOTE_CULTURE_TRADITION_EARLY_SLAVS: "$STEWARD_PROMOTE_CULTURE_TRADITION_EARLY_SLAVS$"
+ LEGAL_BUREAU_DIRECTOR_PROMOTE_CULTURE_RECLAIMING_BRITANNIA: "$STEWARD_PROMOTE_CULTURE_RECLAIMING_BRITANNIA$"
+ legeal_bureau_director_promote_culture_beth_nahrain: "$steward_promote_culture_beth_nahrain$"
+ LEGAL_BUREAU_DIRECTOR_PROMOTE_CULTURE_LOCAL_TRADITIONS_RESPECTED: "$STEWARD_PROMOTE_CULTURE_LOCAL_TRADITIONS_RESPECTED$"
+ LEGAL_BUREAU_DIRECTOR_PROMOTE_CULTURE_SHUUBIYYA: "$STEWARD_PROMOTE_CULTURE_SHUUBIYYA$"
+ LEGAL_BUREAU_DIRECTOR_PROMOTE_CULTURE_ALLOWED_NOMAD_SETTLEMENT: "$STEWARD_PROMOTE_CULTURE_ALLOWED_NOMAD_SETTLEMENT$"
+ 
+ #Control county
+ task_increase_control_roman: "$task_increase_control$"
+ task_increase_control_roman_desc: "$task_increase_control_desc$"
+ LEGAL_BUREAU_DIRECTOR_INCREASE_CONTROL_LOCAL_COUNTY_MODIFIERS: "$MARSHAL_INCREASE_CONTROL_LOCAL_COUNTY_MODIFIERS$"
+ LEGAL_BUREAU_DIRECTOR_INCREASE_CONTROL_MIME_MODIFIER: "$MARSHAL_INCREASE_CONTROL_MIME_MODIFIER$"
+ 
+ ##### TOOLTIPS #####
+ #VALUES
+ task_integrate_title_roman_VALUE_NAME: "[de_jure_drift|E]"
+ task_increase_control_roman_VALUE_NAME: "[county_control|E]"
+ task_develop_county_roman_VALUE_NAME: "[development_growth|E]"
  #COURT CHAPLAIN
  COURT_CHAPLAIN_CONVERSION_TENET_ETHNIC_RELIGION_FOREIGNERS_CONVERSION_RESISTANCE: "[county.GetProvince.GetCounty.GetFaith.GetName] — [GetFaithDoctrine('tenet_ethnic_religion').GetBaseName] Resistance"
  COURT_CHAPLAIN_CONVERSION_TENET_ETHNIC_RELIGION_CONVERTING_FOREIGNERS: "[councillor.GetFaith.GetName] — [GetFaithDoctrine('tenet_ethnic_religion').GetBaseName] Converting Foreigners"
@@ -18,6 +79,7 @@
  COURT_CHAPLAIN_CONVERSION_RIGORISM_PENALTY_MODIFIER: "[GetFaithDoctrine('tenet_rigorism').GetBaseName]"
  COURT_CHAPLAIN_CONVERSION_TENET_ECSTATIC_PROPHECY_MALUS: "[county.GetProvince.GetCounty.GetFaith.GetAdjective] - [GetFaithDoctrine('tenet_ecstatic_prophecy').GetBaseName]"
  COURT_CHAPLAIN_CONVERSION_ORGANIZED_CONVERSIONS_NERFED_MALUS: "[councillor.GetFaith.GetName] — Converting [organized|E] Faith"
+ COURT_CHAPLAIN_CONVERSION_IMPERIAL_CHURCH_DEFENDED: "#V $non_roman_minority_rule_law$#! [law|E]"
  #Generic
  TRADITION_VERY_DIFFICULT_TO_CONVERT_OR_PROMOTE_MODIFIER: "Xenophobia"
  #STEWARD

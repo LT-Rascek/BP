@@ -189,31 +189,48 @@ window = {
 			margin_top = 10
 
 			button_tab = {
-				layoutpolicy_horizontal = expanding
+				shortcut = "tab_1"
 				onclick = "[GetVariableSystem.Set( 'culture_view_tabs', 'overview' )]"
 				onclick = "[CultureWindow.HideReformationMode]"
 				down = "[GetVariableSystem.HasValue( 'culture_view_tabs', 'overview' )]"
 
-				text_single = {
-					parentanchor = center
+				alwaystransparent = "[GetVariableSystem.HasValue( 'culture_view_tabs', 'overview' )]"
+
+				blockoverride "tab_label"
+				{
 					text = "CULTURE_VIEW_OVERVIEW"
-					maximumsize = { 400 -1 }
-					default_format = "#low"
+					max_width = 220
+				}
+
+				blockoverride "icon_visible" {}
+
+				blockoverride "tab_icon"
+				{
+					texture = "gfx/interface/icons/flat_icons/culture.dds"
+					down = "[GetVariableSystem.HasValue( 'culture_view_tabs', 'overview' )]"
 				}
 			}
 
 			button_tab = {
+				shortcut = "tab_2"
 				name = "innovations_tab_tutorial_uses_this"
-				layoutpolicy_horizontal = expanding
+
 				onclick = "[GetVariableSystem.Set( 'culture_view_tabs', 'innovations' )]"
 				onclick = "[CultureWindow.HideReformationMode]"
 				down = "[GetVariableSystem.HasValue( 'culture_view_tabs', 'innovations' )]"
 
-				text_single = {
-					parentanchor = center
+				blockoverride "tab_label"
+				{
 					text = "CULTURE_VIEW_INNOVATIONS"
-					maximumsize = { 400 -1 }
-					default_format = "#low"
+					max_width = 220
+				}
+
+				blockoverride "icon_visible" {}
+
+				blockoverride "tab_icon"
+				{
+					texture = "gfx/interface/icons/flat_icons/innovations.dds"
+					down = "[GetVariableSystem.HasValue( 'culture_view_tabs', 'innovations' )]"
 				}
 			}
 		}
@@ -512,8 +529,8 @@ window = {
 											parentanchor = bottom|hcenter
 											text = "[CultureTradition.GetNameNoTooltip]"
 											using = Font_Size_Medium
-											multiline = yes
 											align = center
+											max_width = 250
 										}
 									}
 
@@ -2265,10 +2282,12 @@ types CultureWindow
 
 			text_single = {
 				text = "CULTURE_WINDOW_NO_HEAD"
+				max_width = 250
 			}
 
 			text_single = {
 				text = "[Culture.GetNoHeadReason]"
+				max_width = 250
 			}
 		}
 

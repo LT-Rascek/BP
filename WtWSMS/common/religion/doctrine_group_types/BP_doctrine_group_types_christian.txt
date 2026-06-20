@@ -1,0 +1,132 @@
+﻿#Christian doctrines
+doctrine_christian_christology = {
+	category = "christian_doctrines"
+	is_available_on_create = {
+		religion_tag = christianity_religion
+	}
+
+	doctrine_types = {
+		doctrine_christian_christology_dyophysitism
+		doctrine_christian_christology_miaphysitism
+		doctrine_christian_christology_monothelitism
+		doctrine_christian_christology_monophysitism
+		doctrine_christian_christology_apollinarism
+		doctrine_christian_christology_eutychianism
+		doctrine_christian_christology_nestorianism
+		doctrine_christian_christology_arianism
+		doctrine_christian_christology_modalistic_monarchianism
+		doctrine_christian_christology_adoptionism
+		doctrine_christian_christology_doceticism
+	}
+}
+
+doctrine_christian_perichoresis = {
+	category = "christian_doctrines"
+	is_available_on_create = {
+		religion_tag = christianity_religion
+	}
+
+	doctrine_types = {
+		doctrine_christian_perichoresis_trinitarianism
+		doctrine_christian_perichoresis_subordinationism
+		doctrine_christian_perichoresis_binitarianism
+		doctrine_christian_perichoresis_modalistic_monarchianism
+		doctrine_christian_perichoresis_dynamic_monarchianism
+		doctrine_christian_perichoresis_unitarianism
+		doctrine_christian_perichoresis_dualism
+	}
+}
+
+doctrine_christian_pneumatology = {
+	category = "christian_doctrines"
+	is_available_on_create = {
+		religion_tag = christianity_religion
+	}
+
+	doctrine_types = {
+		doctrine_christian_pneumatology_consubstantial
+		doctrine_christian_pneumatology_subordinationism
+		doctrine_christian_pneumatology_modalism
+		doctrine_christian_pneumatology_pneumatomachi
+		doctrine_christian_pneumatology_melchisedechian
+		doctrine_christian_pneumatology_subservient
+	}
+}
+
+doctrine_christian_communion = {
+	category = "christian_doctrines"
+	is_available_on_create = {
+		religion_tag = christianity_religion
+	}
+
+	doctrine_types = {
+		doctrine_christian_communion_transubstantiation
+		doctrine_christian_communion_memorialism
+		doctrine_christian_communion_repudiation
+	}
+}
+
+doctrine_christian_soteriology = {
+	category = "christian_doctrines"
+	is_available_on_create = {
+		religion_tag = christianity_religion
+	}
+
+	doctrine_types = {
+		doctrine_christian_soteriology_original_sin
+		doctrine_christian_soteriology_pelagianism
+		doctrine_christian_soteriology_total_depravity
+		doctrine_christian_soteriology_antinomianism
+		doctrine_christian_soteriology_gnosis
+	}
+}
+
+doctrine_christian_judaic_role = {
+	category = "christian_doctrines"
+	is_available_on_create = {
+		religion_tag = christianity_religion
+	}
+
+	doctrine_types = {
+		doctrine_christian_judaic_role_forebears
+		doctrine_christian_judaic_role_judaizers
+		doctrine_christian_judaic_role_demiurge
+	}
+}
+
+doctrine_christian_liturgical_rite = {
+	category = "christian_doctrines"
+	is_available_on_create = {
+		religion_tag = christianity_religion
+	}
+
+	doctrine_types = {
+		doctrine_christian_liturgical_rite_imperial_rite
+		doctrine_christian_liturgical_rite_latin
+		doctrine_christian_liturgical_rite_greek
+		doctrine_christian_liturgical_rite_gallican_rite
+		doctrine_christian_liturgical_rite_moazarbic_rite
+		doctrine_christian_liturgical_rite_celtic_rite
+		doctrine_christian_liturgical_rite_african_rite
+		doctrine_christian_liturgical_rite_west_syriac_rite
+		doctrine_christian_liturgical_rite_armenian_rite
+		doctrine_christian_liturgical_rite_alexandrian_rite
+		doctrine_christian_liturgical_rite_ethiopian_rite
+		doctrine_christian_liturgical_rite_east_syriac_rite
+		doctrine_christian_liturgical_rite_israelite
+		doctrine_christian_liturgical_rite_local_rite
+		doctrine_christian_liturgical_rite_none
+	}
+}
+
+special_doctrine_christian_ecumenism = {
+	category = "christian_doctrines"
+	is_available_on_create = { always = no } # Goes away when creating a new Faith
+
+	doctrine_types = {
+		special_doctrine_nicene_ecumenism
+		special_doctrine_alexandria_ecumenism
+		special_doctrine_nestorian_ecumenism
+		special_doctrine_arian_ecumenism
+	}
+}

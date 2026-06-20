@@ -4924,9 +4924,9 @@ language_cushitic = {
 }
 
 ## Egyptian
-language_kemetic = { #Ancient Egyptian before IIIrd Century
+language_egyptian = { #Ancient Egyptian before IIIrd Century
 	type = language
-	is_shown = { language_is_shown_trigger = { LANGUAGE = language_kemetic } }
+	is_shown = { language_is_shown_trigger = { LANGUAGE = language_egyptian } }
 	
 	parameters = {
 		language_dialect_continuum_kemetic = yes
@@ -4937,7 +4937,7 @@ language_kemetic = { #Ancient Egyptian before IIIrd Century
 	ai_will_do = {
 		value = 10
 		if = {
-			limit = { has_cultural_pillar = language_kemetic }
+			limit = { has_cultural_pillar = language_egyptian }
 			multiply = same_language_choice_factor
 		}
 		else_if = {
@@ -5020,9 +5020,9 @@ language_omotic = {
 
 ## Semitic (Uncontroversial Nodes)
 ### Northwest Semitic
-language_punic = {
+language_carthaginian = {
 	type = language
-	is_shown = { language_is_shown_trigger = { LANGUAGE = language_punic } }
+	is_shown = { language_is_shown_trigger = { LANGUAGE = language_carthaginian } }
 	
 	parameters = {
 		language_group_northwest_semitic = yes
@@ -5033,7 +5033,7 @@ language_punic = {
 	ai_will_do = {
 		value = 10
 		if = {
-			limit = { has_cultural_pillar = language_punic }
+			limit = { has_cultural_pillar = language_carthaginian }
 			multiply = same_language_choice_factor
 		}
 		else_if = {
@@ -7274,7 +7274,7 @@ language_burusho = { #Made an isolate due to competing claims and lack of eviden
 }
 
 #Trojan
-language_trojan = { #Unattested and unknown; might be Luwain or Lemnian-Etruscan
+language_trojan = { #Unattested and unknown; might be Luwian or Lemnian-Etruscan
 	type = language
 	is_shown = { language_is_shown_trigger = { LANGUAGE = language_trojan } }
 	

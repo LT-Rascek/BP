@@ -85,6 +85,16 @@ text_is_a_ruler_and_has_a_player_heir = {
 }
 
 #Roman Restoration
+must_control_at_least_33_percent_of_wre_territory = {
+	first = MUST_CONTROL_AT_LEAST_33_PERCENT_OF_WRE_TERRITORY
+	third = MUST_CONTROL_AT_LEAST_33_PERCENT_OF_WRE_TERRITORY
+	global = MUST_CONTROL_AT_LEAST_33_PERCENT_OF_WRE_TERRITORY
+}
+must_control_at_least_80_percent_of_wre_territory = {
+	first = MUST_CONTROL_AT_LEAST_80_PERCENT_OF_WRE_TERRITORY
+	third = MUST_CONTROL_AT_LEAST_80_PERCENT_OF_WRE_TERRITORY
+	global = MUST_CONTROL_AT_LEAST_80_PERCENT_OF_WRE_TERRITORY
+}
 roman_capital = {
 	first = ROMAN_CAPITAL
 	third = ROMAN_CAPITAL
@@ -109,6 +119,14 @@ nikomedia_capital = {
 	first = NIKOMEDIA_CAPITAL
 	third = NIKOMEDIA_CAPITAL
 }
+has_a_western_roman_empire = {
+	first = HAS_A_WESTERN_ROMAN_EMPIRE
+	third = HAS_A_WESTERN_ROMAN_EMPIRE
+}
+has_an_eastern_roman_empire = {
+	first = HAS_AN_EASTERN_ROMAN_EMPIRE
+	third = HAS_AN_EASTERN_ROMAN_EMPIRE
+}
 
 #Vegetarianism
 has_became_vegetarianism_cooldown = {
@@ -129,11 +147,6 @@ the_capital_duchy_is_your_faith_and_culture = {
 	third = THE_CAPITAL_DUCHY_IS_YOUR_FAITH_AND_CULTURE
 	global = THE_CAPITAL_DUCHY_IS_YOUR_FAITH_AND_CULTURE
 }
-feudalization_is_at_least_level_4_on_roman_territory = {
-	first = FEUDALIZATION_IS_AT_LEAST_LEVEL_4_ON_ROMAN_TERRITORY
-	third = FEUDALIZATION_IS_AT_LEAST_LEVEL_4_ON_ROMAN_TERRITORY
-	global = FEUDALIZATION_IS_AT_LEAST_LEVEL_4_ON_ROMAN_TERRITORY
-}
 primitives_cannot_make_titles_de_jure = {
 	first = PRIMITIVES_CANNOT_MAKE_TITLES_DE_JURE
 	third = PRIMITIVES_CANNOT_MAKE_TITLES_DE_JURE
@@ -148,16 +161,6 @@ you_control_at_least_one_adjoining_kingdom = {
 	first = YOU_CONTROL_AT_LEAST_ONE_ADJOINING_KINGDOM
 	third = YOU_CONTROL_AT_LEAST_ONE_ADJOINING_KINGDOM
 	global = YOU_CONTROL_AT_LEAST_ONE_ADJOINING_KINGDOM
-}
-you_control_half_of_italy = {
-	first = YOU_CONTROL_HALF_OF_ITALY
-	third = YOU_CONTROL_HALF_OF_ITALY
-	global = YOU_CONTROL_HALF_OF_ITALY
-}
-you_control_half_of_byzantium = {
-	first = YOU_CONTROL_HALF_OF_BYZANTIUM
-	third = YOU_CONTROL_HALF_OF_BYZANTIUM
-	global = YOU_CONTROL_HALF_OF_BYZANTIUM
 }
 your_primary_title_is_not_titular = {
 	first = YOUR_PRIMARY_TITLE_IS_NOT_TITULAR
@@ -215,4 +218,10 @@ has_restored_the_constantinople_forum = {
 	global = HAS_RESTORED_THE_CONSTANTINOPLE_FORUM
 	first = HAS_RESTORED_THE_CONSTANTINOPLE_FORUM
 	third = HAS_RESTORED_THE_CONSTANTINOPLE_FORUM
+}
+#Chariot Race
+has_changed_chariot_support_cooldown = {
+	global = HAS_CHANGED_CHARIOT_SUPPORT_COOLDOWN
+	first = HAS_CHANGED_CHARIOT_SUPPORT_COOLDOWN
+	third = HAS_CHANGED_CHARIOT_SUPPORT_COOLDOWN
 }

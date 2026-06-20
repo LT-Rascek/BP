@@ -1,0 +1,497 @@
+﻿#Everything in this file should eventually by moved into individual bookmarks when we've populated
+#395 to 476
+
+#Also a centralized depository for certain notes:
+# MamertusOfVienne (MamertusOfVienne) should be bishop of Vienne from 462-475
+# Aspasius (1001111) should be bishop of Auch/Eauze from 530-560
+# Avitus (190011) should be bishop of Vienne from 494-519
+# Eucherius (1001106) should be bishop of Lyon from 434-449
+
+on_game_start = {
+	on_actions = { bp_global_setup }
+}
+
+bp_global_setup = {
+	on_actions = {
+		BP_set_global_variables_by_date
+		BP_update_culture_traditions_by_date
+		BP_setup_realm_and_title_succession_laws_by_date
+		BP_set_religion_effects_by_date
+		BP_realm_capitals_by_date
+		BP_land_titles_by_date
+		BP_learn_capital_languages
+	}
+}
+
+BP_set_global_variables_by_date = {
+	#Historically unset variables: rome_restored
+	effect = {
+		if = { #The Fall of Rome
+			limit = { current_date >= 476.9.4 }
+			set_global_variable = fall_of_rome
+		}
+		if = { #Clovis ascends the throne
+			limit = { current_date >= 482.1.1 }
+			set_global_variable = formed_frankish_kingdom
+		}
+		if = { #Treaty of Nvarsak
+			limit = { current_date >= 484.1.1 }
+			set_global_variable = persia_legalizes_caucasian_christianity
+		}
+		if = { #Formation of Ostrogothic culture
+			limit = { current_date >= 488.1.1 }
+			set_global_variable = ostrogothic_culture_formed
+		}
+		if = { #Vachagan III re-establishes Albania as a kingdom
+			limit = { current_date >= 485.1.1 }
+			set_global_variable = reestablished_albania
+		}
+		if = { #Justinian Ascends the Throne (enabling reconquests)
+			limit = { current_date >= 527.4.1 }
+			set_global_variable = sole_roman_empire
+		}
+	}
+}
+BP_update_culture_traditions_by_date = {
+	effect = {
+		#Migratory Cultures use Herder determination
+		every_culture_global = {
+			limit = { has_cultural_tradition = tradition_migratory_culture }
+			set_culture_pillar = head_determination_herd
+		}
+		#Change the Saami Traditions to make hybridization basically impossible.
+		culture:sami = {
+			if = {
+				limit = { has_dlc_feature = hybridize_culture }
+				remove_culture_tradition = tradition_forest_wardens
+				add_culture_tradition = tradition_staunch_traditionalists
+			}
+		}
+		if = { #Vandal migration
+			limit = { current_date >= 395.1.1 }
+			if = {
+				limit = { has_dlc_feature = hybridize_culture }
+				culture:vandalic = { add_culture_tradition = tradition_migratory_culture }
+			}
+			else = { culture:vandalic = { add_culture_tradition = tradition_ruling_caste } }
+		}
+		if = { #The Great Migration
+			limit = { current_date >= 406.1.1 }
+			if = {
+				limit = { has_dlc_feature = hybridize_culture }
+				culture:marcomanni = { add_culture_tradition = tradition_migratory_culture }
+				culture:buri = { add_culture_tradition = tradition_migratory_culture }
+				culture:western_alan  = { add_culture_tradition = tradition_migratory_culture }
+			}
+			else = {
+				culture:marcomanni = { add_culture_tradition = tradition_ruling_caste }
+				culture:buri = { add_culture_tradition = tradition_ruling_caste }
+				culture:western_alan  = { add_culture_tradition = tradition_ruling_caste }
+			}
+		}
+		if = { #Attaces killed and the largest Western Alans become Arian
+			limit = { current_date >= 418.1.1 }
+			culture:western_alan = { add_culture_tradition = tradition_concubines }
+		}
+		if = {
+			limit = { current_date >= 439.1.1 }
+			culture:vandalic = { add_culture_tradition = tradition_practiced_pirates }
+		}
+		if = { #Gothic becomes mostly Arian
+			limit = { current_date >= 445.1.1 }
+			culture:gothic = { add_culture_tradition = tradition_concubines }
+		}
+		if = { #Conversion of the Suebi by Ajax
+			limit = { current_date >= 466.1.1 }
+			culture:suebi = { add_culture_tradition = tradition_concubines }
+		}
+		if = { #Skirians get booted from Pannonia
+			limit = { current_date >= 469.1.1 }
+			
+			culture:rygir = { add_culture_tradition = tradition_concubines } #Actually, no later than 482, but this works
+			culture:skirian = { add_culture_tradition = tradition_concubines } #Only ruling component left at this point
+			if = {
+				limit = { has_dlc_feature = diverge_culture }
+				culture:skirian = { add_culture_tradition = tradition_migratory_culture }
+			}
+			else = { culture:skirian = { add_culture_tradition = tradition_ruling_caste } }
+		}
+	}
+}
+BP_setup_realm_and_title_succession_laws_by_date = {
+	effect = {
+		if = { #Visigoths adopt elective
+			limit = { current_date >= 531.1.1 }
+			title:k_visigoths = { add_title_law = feudal_elective_succession_law }
+		}
+	}
+}
+BP_set_religion_effects_by_date = {
+	effect = {
+		#Mazdakism as a strain of mainline Zoroastianism before Sukhra's death, so this is more Zaradushtism
+		#See Crone's "Kavad's Heresy and Mazdak's Revolt" for a thorough treatment
+		if = {
+			limit = { current_date <= 493.1.1 }
+			faith:mazdakism = {
+				#Was less ascetic and more "life is to be enjoyed" (although "Hedonistic" might be too far)
+				swap_doctrine_if_it_has_it_effect = {
+					OLD_DOCTRINE = tenet_asceticism
+					NEW_DOCTRINE = tenet_hedonistic
+				}
+				#Still priestly
+				swap_doctrine_if_it_has_it_effect = {
+					OLD_DOCTRINE = doctrine_theocracy_lay_clergy
+					NEW_DOCTRINE = doctrine_theocracy_temporal
+				}
+				#Male Dominated; more about not hoarding the women
+				swap_doctrine_if_it_has_it_effect = {
+					OLD_DOCTRINE = doctrine_gender_equal
+					NEW_DOCTRINE = doctrine_gender_male_dominated
+				}
+				#Still considered acceptable
+				swap_doctrine_if_it_has_it_effect = {
+					OLD_DOCTRINE = doctrine_heretic_branch_zandik
+					NEW_DOCTRINE = doctrine_major_branch_dorustdin
+				}
+				set_religious_head_title = title:d_mazdayasna
+			}
+		}
+	}
+}
+BP_realm_capitals_by_date = {
+	effect = {
+		#Capital changes for specific time periods
+		title:k_ostrogoths.holder = {
+			if = {
+				limit = { current_date < 488.1.1 }
+				set_realm_capital = title:c_turnovo
+			}
+		}
+		title:k_visigoths.holder = {
+			if = { #Franks force the capital south
+			limit = {
+					AND = {
+						current_date > 507.1.1
+						current_date < 542.1.1
+					}
+				}
+				set_realm_capital = title:c_barcelona
+			}
+			else_if = { #Final move to Toledo
+				limit = { current_date >= 542.1.1 }
+				set_realm_capital = title:c_toledo
+			}
+		}
+		title:k_yarlung.holder = {
+			if = {
+				limit = { current_date < 637.1.1 }
+				set_realm_capital = title:c_zetang
+			}
+		}
+		title:k_kidarite.holder = {
+			if = { #Kidarite Rump Kingdom in Gandhara
+				limit = { current_date >= 467.1.1 }
+				set_realm_capital = title:c_udabhanda
+			}
+		}
+		title:k_caucasian_albania.holder = {
+			if = {
+				limit = { current_date < 500.1.1 }
+				set_realm_capital = title:c_shaki
+			}
+		}
+		title:e_hunnic_empire.holder = {
+			if = {
+				limit = { current_date > 469.1.1 }
+				set_realm_capital = title:c_odessa
+			}
+		}
+	}
+}
+
+BP_land_titles_by_date = {
+	effect = {
+		if = { #Aetius lands the Alans of Orleans; basically proto-Orelans duchy
+			limit = { current_date >= 442.1.1 }
+			title:d_orleans = { set_de_jure_liege_title = title:k_lugdunensis }
+			title:c_chartres = { set_de_jure_liege_title = title:d_orleans }
+			title:c_vendome = { set_de_jure_liege_title = title:d_orleans }
+			title:c_blois = { set_de_jure_liege_title = title:d_orleans }
+			title:c_orleans = { set_de_jure_liege_title = title:d_orleans }
+		}
+	}
+}
+
+BP_learn_capital_languages = {
+	effect = {
+		every_ruler = {
+			if = {
+				limit = {
+					exists = this.capital_county
+					NOT = { knows_language_of_culture = this.capital_county.culture }
+				}
+				learn_language_of_culture = this.capital_county.culture
+			}
+		}
+	}
+}
+
+on_game_start_after_lobby = {
+	on_actions = {
+		give_persian_hegemon_its_kingdoms
+		set_extant_nf_coas
+		BP_set_specific_churches_to_bishops
+		BP_generate_buildings
+	}
+}
+
+#Avoid "Not Rightful Liege" Errors.
+give_persian_hegemon_its_kingdoms = {
+	effect = {
+		if = {
+			limit = { exists = title:h_persia.holder }
+			title:h_persia.holder = {
+				get_title = title:k_asoristan
+				get_title = title:k_makran
+				get_title = title:k_persia
+				get_title = title:k_daylam
+				get_title = title:k_parthia
+			}
+		}
+	}
+}
+
+set_extant_nf_coas = {
+	effect = {
+		every_county = {
+			limit = { is_noble_family_title = yes }
+			set_coa = this.holder.house
+		}
+		every_duchy = {
+			limit = { is_noble_family_title = yes }
+			set_coa = this.holder.house
+		}
+	}
+}
+
+BP_set_specific_churches_to_bishops = {
+	effect = {
+		create_title_and_vassal_change = {
+			type = granted
+			save_scope_as = give_bishops_their_titles
+		}
+		#Bishops of Vienne
+		title:b_vienne = {
+			if = {
+				limit = {
+					current_date >= 475.1.1
+					current_date <  494.1.1
+				}
+				change_title_holder = {
+					holder = character:1007001 # Hesychius
+					change = scope:give_bishops_their_titles
+					government_base = character:1900009
+				}
+			}
+			else_if = {
+				limit = {
+					current_date >= 494.1.1
+					current_date <  519.1.1
+				}
+				change_title_holder = {
+					holder = character:190011 # Avitus
+					change = scope:give_bishops_their_titles
+					government_base = character:1900009
+				}
+			}
+		}
+		#Bishops of Lyon
+		title:b_villars = {
+			if = {
+				limit = {
+					current_date >= 434.1.1
+					current_date <  449.1.1
+				}
+				change_title_holder = {
+					holder = character:1001106 # Eucherius
+					change = scope:give_bishops_their_titles
+					government_base = character:1900009
+				}
+			}
+			else_if = {
+				limit = {
+					current_date >= 456.1.1
+					current_date <  494.1.1
+				}
+				change_title_holder = {
+					holder = character:1001105 # Patiens
+					change = scope:give_bishops_their_titles
+					government_base = character:1900009
+				}
+			}
+			else_if = {
+				limit = {
+					current_date >= 494.1.1
+					current_date <  501.1.1
+				}
+				change_title_holder = {
+					holder = character:RusticusOfLyon # Rusticus
+					change = scope:give_bishops_their_titles
+					government_base = character:1900009
+				}
+			}
+			else_if = {
+				limit = {
+					current_date >= 514.1.1
+					current_date <  524.1.1
+				}
+				change_title_holder = {
+					holder = character:Viventiolus # Viventiolus
+					change = scope:give_bishops_their_titles
+					government_base = character:1900009
+				}
+			}
+			else_if = {
+				limit = {
+					current_date >= 542.1.1
+					current_date <  549.1.1
+				}
+				change_title_holder = {
+					holder = character:LeontiusOfLyon # Leontius of Lyon
+					change = scope:give_bishops_their_titles
+					government_base = character:1900009
+				}
+			}
+			else_if = {
+				limit = {
+					current_date >= 549.1.1
+					current_date <  552.1.1
+				}
+				change_title_holder = {
+					holder = character:SacerdosOfLyon # Sacerdos
+					change = scope:give_bishops_their_titles
+					government_base = character:1900009
+				}
+			}
+			else_if = {
+				limit = {
+					current_date >= 552.1.1
+					current_date <  573.1.1
+				}
+				change_title_holder = {
+					holder = character:NicetiusOfLyon # Nicetius
+					change = scope:give_bishops_their_titles
+					government_base = character:1900009
+				}
+			}
+		}
+		#Bishop of Besacon
+		title:b_ornans = {
+			if = {
+				limit = {
+					current_date >= 445.1.1
+					current_date <  480.1.1
+				}
+				change_title_holder = {
+					holder = character:1001107 # Antidius
+					change = scope:give_bishops_their_titles
+					government_base = character:1900009
+				}
+			}
+		}
+		#Bishop of Bordeaux
+		title:b_fronsac = {
+			if = {
+				limit = {
+					current_date >= 475.1.1
+					current_date <  485.1.1
+				}
+				change_title_holder = {
+					holder = character:1001109 # Amelius
+					change = scope:give_bishops_their_titles
+					government_base = character:1900009
+				}
+			}
+		}
+		#Bishop of Valence
+		title:b_valence = {
+			if = {
+				limit = {
+					current_date >= 442.1.1
+					current_date <  486.1.1
+				}
+				change_title_holder = {
+					holder = character:CariathoOfValence # CariathoOfValence
+					change = scope:give_bishops_their_titles
+					government_base = character:1900009
+				}
+			}
+			else_if = {
+				limit = {
+					current_date >= 486.1.1
+					current_date <  520.1.1
+				}
+				change_title_holder = {
+					holder = character:ApollinarisOfValence # ApollinarisOfValence
+					change = scope:give_bishops_their_titles
+					government_base = character:1900009
+				}
+			}
+		}
+		
+		resolve_title_and_vassal_change = scope:give_bishops_their_titles
+	}
+}
+BP_generate_buildings = {
+	effect = {
+		every_province = {
+			limit = { has_holding = yes }
+			generate_building = yes
+			
+			if = {
+				limit = { county.development_level >= 5 }
+				generate_building = yes
+			}
+			if = {
+				limit = { county.development_level >= 10 }
+				generate_building = yes
+			}
+			if = {
+				limit = { county.development_level >= 15 }
+				generate_building = yes
+			}
+			if = {
+				limit = { county.development_level >= 20 }
+				generate_building = yes
+			}
+			if = {
+				limit = { county.development_level >= 25 }
+				generate_building = yes
+			}
+			if = {
+				limit = { county.development_level >= 30 }
+				generate_building = yes
+			}
+			if = {
+				limit = { county.development_level >= 35 }
+				generate_building = yes
+			}
+			#Government bonuses
+			if = {
+				limit = { this.county.holder.top_liege = { government_has_flag = government_is_centralized } }
+				generate_building = yes
+			}
+		}
+		every_domicile = {
+			limit = {
+				exists = owner
+				is_domicile_type = estate
+			}
+			add_random_internal_estate_building = yes
+			if = {
+				limit = { owner = { government_has_flag = government_is_centralized } }
+				add_random_internal_estate_building = yes
+			}
+		}
+	}
+}

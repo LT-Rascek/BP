@@ -1,0 +1,10 @@
+﻿macro = {
+    description = "3 Terminal Or"
+    definition = "Or3(A,B,C)"
+    replace_with = "Or( Or( A, B), C)"
+}
+macro = {
+    description = "Check for if a faith doctrine is valid for having a unique icon on the RHS panel"
+    definition = "IsValidForUnqiueFaithCreationIcon(FaithDoctrine)"
+    replace_with = "Or3( EqualTo_string( FaithDoctrine.GetGroup.GetCategory, 'main_group' ), EqualTo_string( FaithDoctrine.GetGroup.GetCategory, 'structural_group' ), EqualTo_string( FaithDoctrine.GetGroup.GetCategory, 'ritual_group' ) )"
+}

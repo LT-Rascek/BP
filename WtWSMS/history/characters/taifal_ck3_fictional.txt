@@ -7,7 +7,7 @@
 	450.1.1 = { death = yes }
 }
 TaifalThifalia001 = {
-	name = "Gundobad"
+	name = "Auasis"
 	religion = nicene
 	culture = taifal
 	dynasty = taifal_dynasty_thifalia
@@ -16,7 +16,7 @@ TaifalThifalia001 = {
 	500.1.1 = { death = yes }
 }
 TaifalThifalia002 = {
-	name = "Ovida"
+	name = "BidakE_ss"
 	religion = nicene
 	culture = taifal
 	dynasty = taifal_dynasty_thifalia
@@ -25,7 +25,7 @@ TaifalThifalia002 = {
 	550.1.1 = { death = yes }
 }
 TaifalThifalia003 = {
-	name = "Gunavarman"
+	name = "Phlianos"
 	religion = nicene
 	culture = taifal
 	dynasty = taifal_dynasty_thifalia
@@ -42,21 +42,40 @@ TaifalThifalia004 = {
 	590.1.1 = { birth = yes }
 	640.1.1 = { death = yes }
 }
-TaifalThifalia005 = {
-	name = "Kozgashka"
+
+#Taifals of Britannia
+holder_d_laamp_britannia_taifali_000 = {
+	name = "Ouarazakos"
 	religion = nicene
 	culture = taifal
-	dynasty = taifal_dynasty_thifalia
-	father = TaifalThifalia004
-	620.1.1 = { birth = yes }
-	680.1.1 = { death = yes }
+	dynasty = taifal_dynasty_britain_taifali
+	375.1.1 = { birth = yes }
+	425.1.1 = { death = yes }
 }
-TaifalThifalia006 = {
-	name = "Gundiok"
+holder_d_laamp_britannia_taifali_001 = {
+	name = "Akasas"
 	religion = nicene
 	culture = taifal
-	dynasty = taifal_dynasty_thifalia
-	father = TaifalThifalia005
-	660.1.1 = { birth = yes }
-	720.1.1 = { death = yes }
+	dynasty = taifal_dynasty_britain_taifali
+	father = holder_d_laamp_britannia_taifali_000
+	395.1.1 = { birth = yes }
+	445.1.1 = { death = yes }
+}
+holder_d_laamp_britannia_taifali_002 = {
+	name = "SaitapharnE_s"
+	religion = nicene
+	culture = taifal
+	dynasty = taifal_dynasty_britain_taifali
+	father = holder_d_laamp_britannia_taifali_001
+	415.1.1 = { birth = yes }
+	465.1.1 = { death = yes }
+}
+holder_d_laamp_britannia_taifali_003 = {
+	name = "Toumbagos"
+	religion = nicene
+	culture = taifal
+	dynasty = taifal_dynasty_britain_taifali
+	father = holder_d_laamp_britannia_taifali_002
+	435.1.1 = { birth = yes }
+	485.1.1 = { death = yes }
 }

@@ -94,10 +94,6 @@ HasABlockingTitle = {
 		trigger = { has_title = title:k_vandalica }
 		localization_key = "k_vandalica"
 	}
-	text = {
-		trigger = { has_title = title:k_italy }
-		localization_key = "k_italy"
-	}
 	text = { localization_key = "INFORM_THE_MODS_THAT_YOUR_BLOCKING_TITLE_IS_NOT_HANDLED" }
 }
 HasRomanReformationTradition = {
@@ -108,8 +104,12 @@ HasRomanReformationTradition = {
 		localization_key = "tradition_roman_succession_name"
 	}
 	text = {
-		trigger = { culture = { has_cultural_tradition = tradition_latin_succession } }
-		localization_key = "tradition_latin_succession_name"
+		trigger = { culture = { has_cultural_tradition = tradition_roman_politics } }
+		localization_key = "tradition_roman_politics_name"
+	}
+	text = {
+		trigger = { culture = { has_cultural_tradition = tradition_byzantine_politics } }
+		localization_key = "tradition_roman_politics_name"
 	}
 	text = {
 		trigger = { culture = { has_cultural_tradition = tradition_byzantine_succession } }
