@@ -7,7 +7,7 @@ offer_foederatus_interaction = {
 	special_interaction = grant_titles_interaction
 	interface = grant_titles
 	target_type = title
-	target_filter = actor_domain_titles
+	target_filter = actor_top_liege_de_jure_titles
 	interface_priority = 60
 
 	desc = offer_foederatus_interaction_desc
@@ -55,16 +55,29 @@ offer_foederatus_interaction = {
 	has_valid_target = {
 		scope:target = { is_noble_family_title = no }
 		#Only counties and/or duchies
-		OR = {
-			scope:target.tier = tier_county
-			scope:target.tier = tier_duchy
-		}
-		#Not within the player's capital
+		scope:target.tier = tier_duchy
+		#Not within the actor's capital duchy
 		NOT = { scope:actor.capital_county.duchy = scope:target.duchy }
-		#Not player's titles, please
-		OR = {
-			scope:target.holder = scope:actor
+		#Split logic for admin vs. dynastic
+		trigger_if = {
+			limit = {
+				OR = {
+					scope:actor = { government_has_flag = government_is_roman_administrative }
+					scope:actor = { government_has_flag = government_is_subroman_administrative }
+				}
+			}
 			scope:target.holder = { is_ai = yes }
+			OR = {
+				scope:target.holder = { government_has_flag = government_is_roman_administrative }
+				scope:target.holder = { government_has_flag = government_is_subroman_administrative }
+			}
+		}
+		trigger_else = {
+			#Not player's titles, please
+			OR = {
+				scope:target.holder = scope:actor
+				scope:target.holder = { is_ai = yes }
+			}
 		}
 	}
 
@@ -72,6 +85,22 @@ offer_foederatus_interaction = {
 		scope:target = {
 			is_leased_out = no
 		}
+		trigger_if = {
+			limit = {
+				list_size:target_titles > 0
+			}
+			custom_tooltip = {
+				text = GRANT_TITLES_ITEM_ADMIN_CANT_GIVE_MORE_THAN_ONE
+				any_in_list = {
+					list = target_titles
+					scope:target ?= this
+				}
+			}
+		}
+	}
+	
+	can_send = {
+		#list_size:target_titles <= 1
 	}
 
 	greeting = positive

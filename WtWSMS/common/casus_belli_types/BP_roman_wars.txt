@@ -90,11 +90,9 @@ roman_individual_county_de_jure_cb = {
 				list = target_titles
 				any_in_de_jure_hierarchy = {
 					tier = tier_county
-					holder = {
-						OR = {
-							this = scope:defender
-							target_is_liege_or_above = scope:defender
-						}
+					OR = {
+						holder = scope:defender
+						holder.top_liege = scope:defender
 					}
 				}
 			}
@@ -517,11 +515,9 @@ roman_individual_duchy_de_jure_cb = {
 				list = target_titles
 				any_in_de_jure_hierarchy = {
 					tier = tier_county
-					holder = {
-						OR = {
-							this = scope:defender
-							target_is_liege_or_above = scope:defender
-						}
+					OR = {
+						holder = scope:defender
+						holder.top_liege = scope:defender
 					}
 				}
 			}
@@ -920,12 +916,10 @@ roman_individual_kingdom_de_jure_cb = {
 			any_in_list = {
 				list = target_titles
 				any_in_de_jure_hierarchy = {
-					tier = tier_duchy
-					holder = {
-						OR = {
-							this = scope:defender
-							target_is_liege_or_above = scope:defender
-						}
+					tier = tier_county
+					OR = {
+						holder = scope:defender
+						holder.top_liege = scope:defender
 					}
 				}
 			}
@@ -1267,11 +1261,9 @@ subroman_individual_county_de_jure_cb = {
 				list = target_titles
 				any_in_de_jure_hierarchy = {
 					tier = tier_county
-					holder = {
-						OR = {
-							this = scope:defender
-							target_is_liege_or_above = scope:defender
-						}
+					OR = {
+						holder = scope:defender
+						holder.top_liege = scope:defender
 					}
 				}
 			}
@@ -1629,12 +1621,10 @@ subroman_individual_duchy_de_jure_cb = {
 			any_in_list = {
 				list = target_titles
 				any_in_de_jure_hierarchy = {
-					tier = tier_duchy
-					holder = {
-						OR = {
-							this = scope:defender
-							target_is_liege_or_above = scope:defender
-						}
+					tier = tier_county
+					OR = {
+						holder = scope:defender
+						holder.top_liege = scope:defender
 					}
 				}
 			}
@@ -1989,12 +1979,10 @@ subroman_individual_kingdom_de_jure_cb = {
 			any_in_list = {
 				list = target_titles
 				any_in_de_jure_hierarchy = {
-					tier = tier_kingdom
-					holder = {
-						OR = {
-							this = scope:defender
-							target_is_liege_or_above = scope:defender
-						}
+					tier = tier_county
+					OR = {
+						holder = scope:defender
+						holder.top_liege = scope:defender
 					}
 				}
 			}
