@@ -32,7 +32,7 @@ roman_individual_county_de_jure_cb = {
 	allowed_against_character = {
 		NOT = { scope:defender.religion = religion:islam_religion }
 		trigger_if = {
-			scope:attacker = { has_claim_on = title:h_roman_empire }
+			limit = { scope:attacker = { has_claim_on = title:h_roman_empire } }
 			scope:defender = {
 				any_realm_county = {
 					OR = {
@@ -403,7 +403,7 @@ roman_individual_duchy_de_jure_cb = {
 	allowed_against_character = {
 		NOT = { scope:defender.religion = religion:islam_religion }
 		trigger_if = {
-			scope:attacker = { has_claim_on = title:h_roman_empire }
+			limit = { scope:attacker = { has_claim_on = title:h_roman_empire } }
 			scope:defender = {
 				any_realm_county = {
 					OR = {
@@ -806,7 +806,7 @@ roman_individual_kingdom_de_jure_cb = {
 	allowed_against_character = {
 		NOT = { scope:defender.religion = religion:islam_religion }
 		trigger_if = {
-			scope:attacker = { has_claim_on = title:h_roman_empire }
+			limit = { scope:attacker = { has_claim_on = title:h_roman_empire } }
 			scope:defender = {
 				any_realm_county = {
 					OR = {
