@@ -1,8 +1,3 @@
-- Fixup war code???
-- MO occasionally borking out at start, giving to someone new at game start?
-
-- Fix Senate GUI to bring back family lookup
-
 ==========
 Religion et al.
 ----------
@@ -14,9 +9,6 @@ Bugs:
 - Hepthalites should have Male-Only succession?
 - Remove some artifacts: Visigothic Votive Crowns
 
-- Pre-BGA mechanic cleanup:
-- Remove Cypriot Church and Culture, as the new BGA mechanics
-
 ==========
 Hunter-Gatherer
 ----------
@@ -26,17 +18,21 @@ Hunter-Gatherer
 * Formalized Rituals should unlock coronations and crowning laws
 
 ==========
-Roman Government (MVP)
+0.2.0.1:
 ----------
-- Error Logs
+- Fixup domicile construction tooltip
+- Fix Senate GUI to bring back family lookup
+- Remove Cypriot Church and Culture, as the new BGA mechanics
+
+Bugs:
+
+Verified Bugs:
+- Disappearance of Caecena Family during Odoacer's War
 
 Potential Bugs:
+- MO occasionally borking out at start, giving to someone new at game start?
 - Populist Revolts are becoming Feudal/Clan (Possibly Fixed?)
 - County grants are becoming Roman Admin from Sub-Roman (Reproducer not found yet?)
-- MO occasionally borking out at start, giving to someone new at game start?
-
-Features:
-- Fixup domicile construction tooltip
 
 ==========
 0.2.1:
@@ -44,11 +40,8 @@ Features:
 CBs: Federate Raid Wars
 
 - Need to force title holders to be councilors in non-DLC games
-
 - Add necessary macros to extend and simplify Roman-government GUI hooks
-
 - Ability to remove Augustulus nickname if Augustulus makes it to adulthood and is no longer in a regency _and_ has a hegemony-tier title
-
 - Re-enable minister should be diarch code or not? Seems like we're handling it independently.
 
 - Character Interactions: Enable the ability to give ai-owned lands in your realm to federates as an admin.
