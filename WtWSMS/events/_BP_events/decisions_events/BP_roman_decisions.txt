@@ -26,23 +26,27 @@ scripted_effect create_new_roman_empire_title_effect = {
 	set_primary_title_to = title:$EMPIRE_TITLE$
 	every_held_title = { #Should destroy all other Empires owned at the time.
 		limit = {
-			tier = tier_empire
+			tier >= tier_empire
 			NOT = { this = title:$EMPIRE_TITLE$ }
 		}
 		root = { destroy_title = prev }
 	}
-	#All your kingdom titles acknowledge your rule
+	#All your one-level down titles acknowledge your rule
 	every_held_title = {
 		every_in_de_jure_hierarchy = {
 			limit = { tier = $TIER_ACKNOWLEDGE$ }
 			set_de_jure_liege_title = title:$EMPIRE_TITLE$
 		}
 	}
-	#All your kingdom vassals acknowledge your rule
+	#All your one-level down vassals acknowledge your rule
 	every_vassal = {
 		every_held_title = {
 			limit = { tier = $TIER_ACKNOWLEDGE$ }
-			set_de_jure_liege_title = title:$EMPIRE_TITLE$
+			if = {
+				limit = { has_variable = is_a_roman_ministry_title }
+				prev = { destroy_title = prev }
+			}
+			else = { set_de_jure_liege_title = title:$EMPIRE_TITLE$ }
 		}
 	}
 }
