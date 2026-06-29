@@ -19,6 +19,7 @@ window = {
 		using = Animation_FadeIn_Quick
 		using = Sound_WindowShow_Standard
 		using = Window_Position_MainTab
+		on_start = "[GetVariableSystem.Set('senate_family_window','false')]"
 	}
 	
 	state = {
@@ -26,6 +27,7 @@ window = {
 		using = Animation_FadeOut_Quick
 		using = Sound_WindowHide_Standard
 		using = Window_Position_MainTab_Hide
+		on_start = "[GetVariableSystem.Clear('senate_family_window')]"
 	}
 	
 	margin_widget = {
@@ -231,7 +233,6 @@ window = {
 							using = Background_Area
 						}
 						vbox = {
-							width = 120
 							
 							margin = { 15 15 }
 							hbox = {
@@ -481,12 +482,43 @@ window = {
 										}
 									}
 								}
+								
+								spacer = {
+									size = { 0 15 }
+								}
+								
+								#Senate Family Button
+								vbox = {
+									name = "senate_family_button"
+									
+									button_standard_small = {
+										layoutpolicy_horizontal = expanding
+										size = { 45 45 }
+										
+										tooltip = "senate_families"
+										
+										onclick = "[GetVariableSystem.SetOrToggle('senate_family_window','true')]"
+										down = "[GetVariableSystem.HasValue('senate_family_window','true')]"
+										
+										hbox = {
+											layoutpolicy_horizontal = expanding
+											layoutpolicy_vertical = expanding
+											
+											icon = {
+												size = { 30 30 }
+												texture = "[FutureSituationPhase.GetType.GetIcon]"
+												background = {
+													texture = "gfx/interface/icons/faith_doctrines/doctrine_polytheist.dds"
+													margin = { 5 5 }
+												}
+											}
+										}
+									}
+								}
 							}
 						}
 						
 						vbox = {
-							width = 120
-							
 							margin_right = 15
 							margin_left = 10
 							margin_top = 10
@@ -766,6 +798,11 @@ window = {
 		{
 			text = "[SituationWindow.GetParticipationWindowHeader]"
 		}
+	}
+
+	BP_senate_family_window = {
+		datacontext = "[SituationWindow.GetSelectedSubRegion]"
+		visible = "[GetVariableSystem.HasValue('senate_family_window','true')]"
 	}
 }
 
@@ -1156,6 +1193,353 @@ types BPSenateSituationTypes
 						}
 						
 						expand = {}
+					}
+				}
+			}
+		}
+	}
+
+	type BP_senate_family_window = window {
+		name = "BP_senate_family_window"
+		widgetanchor = right
+		position = { 30 100 }
+		size = { 740 82% }
+
+		layer = middle
+		movable = yes
+
+		using = Window_Background
+		using = Window_Decoration_Spike
+		
+		state = {
+			name = _show
+			using = Animation_FadeIn_Quick
+			on_start = "[GetScriptedGui('get_senate_families_effect').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+		}
+
+		state = {
+			name = _hide
+			using = Animation_FadeOut_Quick
+			on_start = "[GetScriptedGui('clear_senate_families_effect').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+			on_start = "[GetVariableSystem.Set('senate_family_window','false')]"
+		}
+		
+		vbox = {
+			using = Window_Margins
+
+			header_pattern = {
+				layoutpolicy_horizontal = expanding
+
+				blockoverride "header_text"
+				{
+					text = "senate_families"
+				}
+
+				blockoverride "button_close"
+				{
+					onclick = "[GetVariableSystem.Set('senate_family_window','false')]"
+				}
+			}
+
+			vbox = {
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				margin = { 8 0 }
+				margin_bottom = 4
+				
+				background = {
+					using = Background_Area
+					margin = { 0 4 }
+				}
+				
+				spacer = { size = { 15 15 } }
+
+				vbox = {
+					layoutpolicy_horizontal = expanding
+					visible = "[ObjectsEqual( Situation.GetSubRegionByKey('west').Self, SituationSubRegion.Self )]"
+					
+					text_label_center = {
+						text = "WESTERN_SENATE_DYNASTIES"
+						default_format = "#T"
+					}
+					scrollbox = {
+						name = "senate_house_list"
+						parentanchor = top
+						layoutpolicy_vertical = shrinking
+						layoutpolicy_horizontal = shrinking
+						size = { 600 600 }
+						
+						blockoverride "scrollbox_margins" {}
+						blockoverride "scrollbox_content"
+						{
+							hbox = {
+								layoutpolicy_horizontal = expanding
+								layoutpolicy_vertical = expanding
+								spacing = 0
+								
+								vbox = {
+									layoutpolicy_vertical = expanding
+									
+									dynamicgridbox = {
+										datamodel = "[GetSituation('BP_senate').MakeScope.GetList('senate_family_list_west')]"
+										layoutpolicy_horizontal = expanding
+										layoutpolicy_vertical = expanding
+										datamodel_wrap = 5
+										flipdirection = yes
+										item = {
+											coa_dynasty_big = {
+												datacontext = "[Scope.Dynasty]"
+												blockoverride "opinion_box"
+												{
+													visible = "['(bool)yes']"
+												}
+												blockoverride "coa_tooltip"
+												{
+													tooltipwidget = {
+														using = SenateDynastyTooltipWest
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			
+				vbox = {
+					layoutpolicy_horizontal = expanding
+					visible = "[ObjectsEqual( Situation.GetSubRegionByKey('east').Self, SituationSubRegion.Self )]"
+					
+					text_label_center = {
+						text = "EASTERN_SENATE_DYNASTIES"
+						default_format = "#T"
+					}
+					
+					scrollbox = {
+						name = "senate_house_list"
+						parentanchor = top
+						layoutpolicy_vertical = shrinking
+						layoutpolicy_horizontal = shrinking
+						size = { 600 600 }
+						
+						blockoverride "scrollbox_margins" {}
+						blockoverride "scrollbox_content"
+						{
+							hbox = {
+								layoutpolicy_horizontal = expanding
+								layoutpolicy_vertical = expanding
+								spacing = 0
+								
+								vbox = {
+									layoutpolicy_vertical = expanding
+									
+									dynamicgridbox = {
+										datamodel = "[GetSituation('BP_senate').MakeScope.GetList('senate_family_list_east')]"
+										layoutpolicy_horizontal = expanding
+										layoutpolicy_vertical = expanding
+										datamodel_wrap = 5
+										flipdirection = yes
+										item = {
+											coa_dynasty_big = {
+												datacontext = "[Scope.Dynasty]"
+												blockoverride "opinion_box"
+												{
+													visible = "['(bool)yes']"
+												}
+												blockoverride "coa_tooltip"
+												{
+													tooltipwidget = {
+														using = SenateDynastyTooltipWest
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+		}
+	}
+}
+
+#Cribbed from gui/shared/cooltip.gui
+template SenateDynastyTooltipWest {
+	object_tooltip_pop_out = {
+
+		blockoverride "header_additions" {
+			margin_top = 6
+			margin_bottom = -10
+
+			coa_dynasty_small = {
+				blockoverride "coa_tooltip" {}
+			}
+		}
+
+		blockoverride "title_text" {
+			#margin = { 0 8 }
+			margin_right = 16
+			text = "[dynasty|E] [Dynasty.GetNameNoTooltip]"
+			align = nobaseline
+		}
+
+		blockoverride "concept_link" {
+			text = [dynasty|E]
+		}
+
+		blockoverride "extra_data" {
+			cooltip_paragraph = {
+				text = "DYNASTY_VIEW_MY_DYNASTY"
+				visible = "[Dynasty.IsMyDynasty(GetPlayer)]"
+			}
+
+			cooltip_paragraph = {
+				datacontext = [Dynasty]
+				text = "DYNASTY_TT_DYNAST"
+			}
+
+			cooltip_paragraph = {
+				datacontext = [Dynasty]
+				text = "DYNASTY_TT_SPLENDOR_LEVEL"
+			}
+
+			cooltip_paragraph = {
+				text = "DYNASTY_VIEW_PRESTIGE"
+			}
+
+			cooltip_paragraph = {
+				datacontext = [Dynasty]
+				text = "DYNASTY_TT_MEMBERS"
+			}
+
+			cooltip_paragraph = {
+				datacontext = [Dynasty]
+				text = "DYNASTY_TT_NUMBER_OF_SENATORS_WEST"
+			}
+
+			cooltip_paragraph = {
+				datacontext = [Dynasty]
+				text = "DYNASTY_TT_NUMBER_OF_HOLDINGS_WEST"
+			}
+
+		}
+	}
+}
+
+template SenateDynastyTooltipEast {
+	object_tooltip_pop_out = {
+
+		blockoverride "header_additions" {
+			margin_top = 6
+			margin_bottom = -10
+
+			coa_dynasty_small = {
+				blockoverride "coa_tooltip" {}
+			}
+		}
+
+		blockoverride "title_text" {
+			#margin = { 0 8 }
+			margin_right = 16
+			text = "[dynasty|E] [Dynasty.GetNameNoTooltip]"
+			align = nobaseline
+		}
+
+		blockoverride "concept_link" {
+			text = [dynasty|E]
+		}
+
+		blockoverride "extra_data" {
+			cooltip_paragraph = {
+				text = "DYNASTY_VIEW_MY_DYNASTY"
+				visible = "[Dynasty.IsMyDynasty(GetPlayer)]"
+			}
+
+			cooltip_paragraph = {
+				datacontext = [Dynasty]
+				text = "DYNASTY_TT_DYNAST"
+			}
+
+			cooltip_paragraph = {
+				datacontext = [Dynasty]
+				text = "DYNASTY_TT_SPLENDOR_LEVEL"
+			}
+
+			cooltip_paragraph = {
+				text = "DYNASTY_VIEW_PRESTIGE"
+			}
+
+			cooltip_paragraph = {
+				datacontext = [Dynasty]
+				text = "DYNASTY_TT_MEMBERS"
+			}
+
+			cooltip_paragraph = {
+				datacontext = [Dynasty]
+				text = "DYNASTY_TT_NUMBER_OF_SENATORS_EAST"
+			}
+
+			cooltip_paragraph = {
+				datacontext = [Dynasty]
+				text = "DYNASTY_TT_NUMBER_OF_HOLDINGS_EAST"
+			}
+
+		}
+	}
+}
+
+#A non-usable link to the Senate COA field
+types SenateCOATypes {
+	type senate_coa_title_big = button_group {
+		using = CoA_Title_Defaults
+		
+		blockoverride "coa_button" {}
+
+		flowcontainer = {
+			margin = { 3 7 }
+			direction = vertical
+			spacing = -3
+			ignoreinvisible = yes
+
+			icon = {
+				name = "crown"
+				parentanchor = hcenter
+				texture = "gfx/interface/coat_of_arms/crown_strip_115.dds"
+				frame = "[Title.GetTierFrame]"
+				framesize = { 80 56 }
+
+				block "crown" {
+					visible = no
+				}
+			}
+
+			widget = {
+				parentanchor = hcenter
+				size = { 96 96 }
+
+				coat_of_arms_icon = {
+					parentanchor = center
+					size = { 86 86 }
+					coat_of_arms = "[Title.GetTitleCoA.GetTexture('(int32)172','(int32)172')]"
+					coat_of_arms_slot = "[Title.GetTitleCoA.GetSlot('(int32)172','(int32)172')]"
+					coat_of_arms_mask = "gfx/interface/coat_of_arms/title_mask.dds"
+
+
+					coa_title_frame = {
+						texture = "gfx/interface/coat_of_arms/title_86.dds"
+						size = { 96 96 }
+						visible = yes
+					}
+
+					coa_title_frame_no_holder = {
+						texture = "gfx/interface/coat_of_arms/title_no_holder_86.dds"
+						size = { 96 96 }
+						visible = no
 					}
 				}
 			}
