@@ -7,7 +7,7 @@ offer_foederatus_interaction = {
 	special_interaction = grant_titles_interaction
 	interface = grant_titles
 	target_type = title
-	target_filter = actor_top_liege_de_jure_titles
+	target_filter = actor_domain_titles
 	interface_priority = 60
 
 	desc = offer_foederatus_interaction_desc
@@ -18,6 +18,7 @@ offer_foederatus_interaction = {
 
 	is_shown = {
 		scope:actor = {
+			NOT = { government_allows = administrative }
 			is_independent_ruler = yes
 			culture = { has_innovation = innovation_roman_administration }
 			suzerain_can_have_federate_trigger = yes
@@ -54,31 +55,8 @@ offer_foederatus_interaction = {
 
 	has_valid_target = {
 		scope:target = { is_noble_family_title = no }
-		#Only counties and/or duchies
-		scope:target.tier = tier_duchy
-		#Not within the actor's capital duchy
-		NOT = { scope:actor.capital_county.duchy = scope:target.duchy }
-		#Split logic for admin vs. dynastic
-		trigger_if = {
-			limit = {
-				OR = {
-					scope:actor = { government_has_flag = government_is_roman_administrative }
-					scope:actor = { government_has_flag = government_is_subroman_administrative }
-				}
-			}
-			scope:target.holder = { is_ai = yes }
-			OR = {
-				scope:target.holder = { government_has_flag = government_is_roman_administrative }
-				scope:target.holder = { government_has_flag = government_is_subroman_administrative }
-			}
-		}
-		trigger_else = {
-			#Not player's titles, please
-			OR = {
-				scope:target.holder = scope:actor
-				scope:target.holder = { is_ai = yes }
-			}
-		}
+		#Only counties
+		scope:target.tier = tier_county
 	}
 
 	can_be_picked_title = {
@@ -86,21 +64,13 @@ offer_foederatus_interaction = {
 			is_leased_out = no
 		}
 		trigger_if = {
-			limit = {
-				list_size:target_titles > 0
-			}
-			custom_tooltip = {
-				text = GRANT_TITLES_ITEM_ADMIN_CANT_GIVE_MORE_THAN_ONE
-				any_in_list = {
-					list = target_titles
-					scope:target ?= this
-				}
+			limit = { scope:target = scope:actor.capital_county }
+			custom_description = {
+					text = "explicit_is_capital_county"
+					subject = scope:actor.capital_county
+					NOT = { scope:target = scope:actor.capital_county }
 			}
 		}
-	}
-	
-	can_send = {
-		#list_size:target_titles <= 1
 	}
 
 	greeting = positive
@@ -227,10 +197,12 @@ offer_foederatus_interaction = {
 			desc = development_weighted_size_of_domain
 			add = {
 				value = 0
-				every_held_title = {
-					limit = { tier = tier_county }
-					subtract = 10 #There's no place like home
-					subtract = this.foederatus_scaled_development_level_old_land
+				scope:recipient = {
+					every_held_title = {
+						limit = { tier = tier_county }
+						subtract = 10 #There's no place like home
+						subtract = this.foederatus_scaled_development_level_old_land
+					}
 				}
 			}
 		}
@@ -330,7 +302,7 @@ offer_foederatus_interaction = {
 		resolve_title_and_vassal_change = scope:liberate_vassals
 		resolve_title_and_vassal_change = scope:vassalize_federate
 		
-		scope:recipient = { change_government_roman_federate_effect = yes }
+		scope:recipient = { convert_to_roman_federate_government_effect = yes }
 		
 		#Create Titular title if primary isn't titular
 		#Avoids the edge case of migrating a landed title getting usurped almost immediately after migration
@@ -363,6 +335,356 @@ offer_foederatus_interaction = {
 		}
 	}
 }
+
+offer_foederatus_interaction_administrative = {
+	category = interaction_category_diplomacy
+	icon = federate
+	
+	target_type = title
+	target_filter = actor_top_liege_de_jure_titles
+	interface_priority = 60
+
+	desc = offer_foederatus_interaction_desc
+	
+	ai_targets = { ai_recipients = neighboring_rulers }
+	ai_target_quick_trigger = { adult = yes }
+	ai_frequency = 48
+
+	is_shown = {
+		scope:actor = {
+			government_allows = administrative
+			is_independent_ruler = yes
+			culture = { has_innovation = innovation_roman_administration }
+			suzerain_can_have_federate_trigger = yes
+		}
+		scope:recipient = {
+			is_tributary = no
+			NOT = { this = scope:actor }
+			is_landed = yes
+			is_independent_ruler = yes
+			highest_held_title_tier < scope:actor.highest_held_title_tier
+			tributary_can_be_federate_trigger = yes
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			is_at_war = no
+			NOT = { has_character_flag = recently_offered_foederatus }
+		}
+		scope:recipient = {
+			character_is_land_realm_neighbor = scope:actor
+			is_at_war = no
+
+			custom_description = {
+				text = was_recently_granted_independence
+				NOT = {
+					has_opinion_modifier = {
+						modifier = granted_independence_opinion
+						target = scope:actor
+					}
+				}
+			}
+		}
+	}
+
+	has_valid_target = {
+		scope:target = { is_noble_family_title = no }
+		#Only counties and/or duchies
+		scope:target.tier = tier_duchy
+		#Not within the actor's capital duchy
+		NOT = { scope:actor.capital_county.duchy = scope:target.duchy }
+		#Split logic for admin vs. dynastic
+		trigger_if = {
+			limit = {
+				OR = {
+					scope:actor = { government_has_flag = government_is_roman_administrative }
+					scope:actor = { government_has_flag = government_is_subroman_administrative }
+				}
+			}
+			scope:target.holder = { is_ai = yes }
+			OR = {
+				scope:target.holder = { government_has_flag = government_is_roman_administrative }
+				scope:target.holder = { government_has_flag = government_is_subroman_administrative }
+			}
+		}
+		trigger_else = {
+			#Not player's titles, please
+			OR = {
+				scope:target.holder = scope:actor
+				scope:target.holder = { is_ai = yes }
+			}
+		}
+	}
+
+	can_be_picked_title = {
+		scope:target = {
+			is_leased_out = no
+		}
+		trigger_if = {
+			limit = {
+				list_size:target_titles > 0
+			}
+			custom_tooltip = {
+				text = GRANT_TITLES_ITEM_ADMIN_CANT_GIVE_MORE_THAN_ONE
+				any_in_list = {
+					list = target_titles
+					scope:target ?= this
+				}
+			}
+		}
+	}
+	
+	can_send = {}
+
+	greeting = positive
+	notification_text = OFFER_VASSALIZATION_INTERACTION_NOTIFICATION
+
+	ai_min_reply_days = 5
+	ai_max_reply_days = 10
+
+	#can_send_despite_rejection = yes
+
+	ai_accept = {
+		base = -45 #Same as offering vassalization
+		
+		#PERKS
+		modifier = { # Perk boost
+			desc = offer_vassalization_true_ruler_perk_tt
+			trigger = { scope:actor = { has_perk = true_ruler_perk } }
+			add = true_ruler_value
+		}
+		
+		#OPINIONS
+		modifier = { #We just fought against each other.
+			desc = offer_vassalization_interaction_aibehavior_recent_war_tt
+			trigger = {
+				scope:recipient = {
+					any_truce_holder = {
+						this = scope:actor
+					}
+				}
+			}
+			add = -40
+		}
+		modifier = { #I fought an independence war against you.
+			desc = offer_vassalization_interaction_aibehavior_independence_war_tt
+			trigger = {
+				scope:recipient = {
+					exists = var:independence_war_former_liege
+					var:independence_war_former_liege = scope:actor
+				}
+			}
+			add = -100
+		}
+		modifier = { #Friend modifier.
+			desc = offer_vassalization_interaction_aibehavior_friend_tt
+			trigger = {
+				scope:recipient = {
+					has_relation_friend = scope:actor
+					NOT = { has_relation_best_friend = scope:actor }
+				}
+			}
+			add = 10
+		}
+		modifier = { #Best Friend modifier.
+			desc = offer_vassalization_interaction_aibehavior_best_friend_tt
+			trigger = {
+				scope:recipient = {
+					has_relation_best_friend = scope:actor
+				}
+			}
+			add = 20
+		}
+		modifier = { #Rivalry modifier.
+			desc = offer_vassalization_interaction_aibehavior_rival_tt
+			trigger = {
+				scope:recipient = {
+					has_relation_rival = scope:actor
+					NOT = { has_relation_nemesis = scope:actor }
+				}
+			}
+			add = -10
+		}
+		modifier = { #Nemesis modifier.
+			desc = offer_vassalization_interaction_aibehavior_nemesis_tt
+			trigger = {
+				scope:recipient = {
+					has_relation_nemesis = scope:actor
+				}
+			}
+			add = -1000
+		}
+		
+		# OPINION INFLUENCE
+		modifier = {
+			add = intimidated_external_reason_value
+			scope:recipient = {
+				has_dread_level_towards = {
+					target = scope:actor
+					level = 1
+				}
+			}
+			desc = INTIMIDATED_REASON
+		}
+		modifier = {
+			add = cowed_external_reason_value
+			scope:recipient = {
+				has_dread_level_towards = {
+					target = scope:actor
+					level = 2
+				}
+			}
+			desc = COWED_REASON
+		}
+		opinion_modifier = { #Compare Opinion modifier.
+			who = scope:recipient
+			opinion_target = scope:actor
+			multiplier = 0.35
+		}
+		
+		#Size of the offer
+		modifier = {
+			desc = development_weighted_size_of_offering
+			add = {
+				value = 0
+				every_county = {
+					limit = { this.duchy = scope:target }
+					add = 5 #New land should be more developed than the old
+					add = this.foederatus_scaled_development_level_new_land
+				}
+			}
+		}
+		#Size of current holdings
+		modifier = {
+			desc = development_weighted_size_of_domain
+			add = {
+				value = 0
+				every_held_title = {
+					limit = { tier = tier_county }
+					subtract = 10 #There's no place like home
+					subtract = this.foederatus_scaled_development_level_old_land
+				}
+			}
+		}
+		#Kings demand more land, befitting their status
+		modifier = {
+			desc = king_land_demand
+			trigger = { scope:recipient.primary_title.tier = tier_kingdom }
+			add = -30
+		}
+	}
+
+	on_accept = {
+		#Apply actor effects
+		#Setup Title Changes
+		create_title_and_vassal_change = {
+			type = granted
+			save_scope_as = grant_old_titles_to_new_chars
+			add_claim_on_loss = no
+		}
+		create_title_and_vassal_change = {
+			type = conquest
+			save_scope_as = grant_new_counties_to_recipient
+			add_claim_on_loss = no
+		}
+		create_title_and_vassal_change = {
+			type = independency
+			save_scope_as = liberate_vassals
+			add_claim_on_loss = no
+		}
+		create_title_and_vassal_change = {
+			type = swear_fealty
+			save_scope_as = vassalize_federate
+			add_claim_on_loss = no
+		}
+		scope:recipient = {
+			#Mark former counties for release
+			every_held_title = {
+				limit = { this.tier = tier_county }
+				add_to_temporary_list = former_counties
+			}
+			every_vassal = {
+				limit = { this.primary_title.tier >= tier_county }
+				becomes_independent = { change = scope:liberate_vassals }
+			}
+		}
+		every_in_list = {
+			list = former_counties
+			create_character = {
+				location = scope:recipient.location
+				culture = this.culture
+				faith = this.faith
+				gender_female_chance = {
+					if = {
+						limit = { scope:recipient.faith = { has_doctrine = doctrine_gender_male_dominated } }
+						value = 0
+					}
+					else_if = {
+						limit = { scope:recipient.faith = { has_doctrine = doctrine_gender_female_dominated } }
+						value = 100
+					}
+					else = { value = 50 }
+				}
+				save_scope_as = new_char
+			}
+			change_title_holder = {
+				holder = scope:new_char
+				change = scope:grant_old_titles_to_new_chars
+				take_baronies = yes
+			}
+			scope:new_char = { becomes_independent = { change = scope:liberate_vassals } }
+		}
+		#Mark the selected titles for transfer
+		every_county = {
+			limit = { this.duchy = scope:target }
+			change_title_holder = {
+				holder = scope:recipient
+				change = scope:grant_new_counties_to_recipient
+			}
+		}
+		#Make new Liege
+		scope:recipient = { change_liege = { liege = scope:actor change = scope:vassalize_federate } }
+		
+		resolve_title_and_vassal_change = scope:grant_new_counties_to_recipient
+		resolve_title_and_vassal_change = scope:grant_old_titles_to_new_chars
+		resolve_title_and_vassal_change = scope:liberate_vassals
+		resolve_title_and_vassal_change = scope:vassalize_federate
+		
+		scope:recipient = { convert_to_roman_federate_government_effect = yes }
+		
+		#Create Titular title if primary isn't titular
+		#Avoids the edge case of migrating a landed title getting usurped almost immediately after migration
+		#and counties that have been handed out become independent
+		create_titular_title_if_needed_effect = { CHAR = scope:recipient }
+		scope:actor = {
+			add_character_flag = { flag = recently_offered_foederatus years = 10 }
+			trigger_event = BP_federate_interaction_events.0001
+		}
+	}
+
+	on_decline = {
+		scope:actor = {
+			add_character_flag = { flag = recently_offered_foederatus years = 10 }
+			trigger_event = BP_federate_interaction_events.0002
+		}
+	}
+	
+	ai_potential = {
+		is_adult = yes
+		is_independent_ruler = yes
+		highest_held_title_tier > tier_county
+	}
+
+	ai_will_do = {
+		base = 0
+		modifier = { # If the recipient is a player, do not bother sending
+			factor = 0
+			scope:recipient = { is_ai = no }
+		}
+	}
+}
+
 
 ##### TODO (Beta): Convert request_foederatus_interaction to an actual negotiation
 request_foederatus_interaction = {
