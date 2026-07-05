@@ -65,7 +65,7 @@
  SUBROMAN_DEJURE_CB_DUCHY_NAME_GENERIC: "Seize Roman [duchy|E]"
  SUBROMAN_DEJURE_CB_KINGDOM_NAME: "Seize the [TITLE.GetBaseName] #weak ([de_jure|E])#!"
  SUBROMAN_DEJURE_CB_KINGDOM_NAME_GENERIC: "Seize Roman [kingdom|E]"
- only_availble_with_appropriate_roman_law_war: "Requires an appropriate level of $roman_dynastic_authority$"
+ ONLY_AVAILBLE_WITH_APPROPRIATE_ROMAN_LAW_WAR: "Requires an appropriate level of [SelectLocalization( Or( CHARACTER.GetGovernment.HasGovernmentFlag('government_is_roman_administrative'),CHARACTER.GetGovernment.HasGovernmentFlag('government_is_subroman_administrative')) ,'imperial_bureaucracy','roman_dynastic_authority')]
  
  #Unification Wars
  unification_war: "Unification War"

@@ -22,7 +22,11 @@ BP_nominate_western_consul = {
 			RECIPIENT = scope:recipient
 			REGION = west
 		}
-		scope:recipient = { NOT = { has_trait = senator_east } }
+		#For reunited Rome, be the city holder top liege
+		trigger_if = {
+			limit = { NOT = { title:b_roma.holder.top_liege = scope:recipient } }
+			scope:recipient = { NOT = { has_trait = senator_east } }
+		}
 	}
 	
 	is_valid = { #Can only pick people reasonably in Rome or neighboring powers
@@ -239,7 +243,11 @@ BP_nominate_eastern_consul = {
 			RECIPIENT = scope:recipient
 			REGION = east
 		}
-		scope:recipient = { NOT = { has_trait = senator_west } }
+		#For reunited Rome, be the city holder top liege
+		trigger_if = {
+			limit = { NOT = { title:b_constantinople.holder.top_liege = scope:recipient } }
+			scope:recipient = { NOT = { has_trait = senator_west } }
+		}
 	}
 	
 	is_valid = { #Can only pick people reasonably in Rome or neighboring powers

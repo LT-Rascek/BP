@@ -19,8 +19,9 @@ roman_individual_county_de_jure_cb = {
 
 	allowed_for_character_display_regardless = {
 		tgp_japan_offensive_wars_ban_trigger = yes
-		custom_tooltip = {
+		custom_description = {
 			text = only_availble_with_appropriate_roman_law_war
+			subject = scope:attacker
 			OR = {
 				has_realm_law_flag = enables_imperial_roman_county_wars
 				has_realm_law_flag = enables_imperial_roman_duchy_county_wars
@@ -391,8 +392,9 @@ roman_individual_duchy_de_jure_cb = {
 
 	allowed_for_character_display_regardless = {
 		tgp_japan_offensive_wars_ban_trigger = yes
-		custom_tooltip = {
+		custom_description = {
 			text = only_availble_with_appropriate_roman_law_war
+			subject = scope:attacker
 			OR = {
 				has_realm_law_flag = enables_imperial_roman_duchy_county_wars
 				has_realm_law_flag = enables_imperial_roman_kingdom_duchy_county_wars
@@ -797,8 +799,9 @@ roman_individual_kingdom_de_jure_cb = {
 
 	allowed_for_character_display_regardless = {
 		tgp_japan_offensive_wars_ban_trigger = yes
-		custom_tooltip = {
+		custom_description = {
 			text = only_availble_with_appropriate_roman_law_war
+			subject = scope:attacker
 			has_realm_law_flag = enables_imperial_roman_kingdom_duchy_county_wars
 		}
 	}
@@ -1201,8 +1204,9 @@ subroman_individual_county_de_jure_cb = {
 
 	allowed_for_character_display_regardless = {
 		tgp_japan_offensive_wars_ban_trigger = yes
-		custom_tooltip = {
+		custom_description = {
 			text = only_availble_with_appropriate_roman_law_war
+			subject = scope:attacker
 			OR = {
 				has_realm_law_flag = enables_successor_roman_county_wars
 				has_realm_law_flag = enables_successor_roman_duchy_county_wars
@@ -1563,8 +1567,9 @@ subroman_individual_duchy_de_jure_cb = {
 
 	allowed_for_character_display_regardless = {
 		tgp_japan_offensive_wars_ban_trigger = yes
-		custom_tooltip = {
+		custom_description = {
 			text = only_availble_with_appropriate_roman_law_war
+			subject = scope:attacker
 			OR = {
 				has_realm_law_flag = enables_successor_roman_duchy_county_wars
 				has_realm_law_flag = enables_successor_roman_kingdom_duchy_county_wars
@@ -1924,8 +1929,9 @@ subroman_individual_kingdom_de_jure_cb = {
 
 	allowed_for_character_display_regardless = {
 		tgp_japan_offensive_wars_ban_trigger = yes
-		custom_tooltip = {
+		custom_description = {
 			text = only_availble_with_appropriate_roman_law_war
+			subject = scope:attacker
 			has_realm_law_flag = enables_successor_roman_kingdom_duchy_county_wars
 		}
 	}
