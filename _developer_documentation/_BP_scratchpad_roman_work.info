@@ -20,19 +20,29 @@ Hunter-Gatherer
 ==========
 0.2.0.1:
 ----------
+Tooltips:
 - Fixup domicile construction tooltip
-- Fix Senate GUI to bring back family lookup
-- Remove Cypriot Church and Culture, as the new BGA mechanics
+- roman acclamation does not have a description unlike the other successions
 
-Bugs:
+GUI:
+- Senate House Button needs to look better
 
 Verified Bugs:
+- Restrict via CI pipeline usage of change_government_roman_federate_effect, change_government_subroman_administrative_effect, change_government_roman_administrative_effect
 - Disappearance of Caecena Family during Odoacer's War
 
 Potential Bugs:
 - MO occasionally borking out at start, giving to someone new at game start?
 - Populist Revolts are becoming Feudal/Clan (Possibly Fixed?)
 - County grants are becoming Roman Admin from Sub-Roman (Reproducer not found yet?)
+
+==========
+0.2.0.2:
+----------
+CBs:
+- Federate revocation War to replace revoking federate titles
+
+Federates: Fix missing tooltip stuff for federates without DLC
 
 ==========
 0.2.1:
@@ -125,6 +135,8 @@ Stretch:
 - Fix Ministries having a fucking theme contract... (big oof to fix probably)
 
 - Coronation variant for Roman Empires???
+
+- Remove Cypriot Church and Culture, as the new BGA mechanics
 
 Council:
 - More outcomes for: promulgate_laws
