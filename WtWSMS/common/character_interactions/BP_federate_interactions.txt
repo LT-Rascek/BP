@@ -952,7 +952,7 @@ request_foederatus_interaction = {
 		}
 		scope:actor = { change_liege = { liege = scope:recipient change = scope:vassalize_federate } }
 		resolve_title_and_vassal_change = scope:vassalize_federate
-		scope:actor = { change_government_roman_federate_effect = yes }
+		scope:actor = { convert_to_roman_federate_government_effect = yes }
 		
 		scope:actor = { trigger_event = BP_federate_interaction_events.0003 }
 	}
