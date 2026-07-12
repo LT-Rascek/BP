@@ -1098,12 +1098,12 @@ types BPSenateSituationTypes
 			texture = "gfx/portraits/portrait_transparent.dds"
 			mask = "gfx/portraits/portrait_mask_torso.dds"
 		}
-		empty_char = {
-			visible = "[Not(Character.IsValid)]"
-			position = { 55 10 }
-			block "tooltip"
-			{ tooltip = "SENATE_SINE_COLLEGA" }
-		}
+		#empty_char = {
+		#	visible = "[Not(Character.IsValid)]"
+		#	position = { 55 10 }
+		#	block "tooltip"
+		#	{ tooltip = "SENATE_SINE_COLLEGA" }
+		#}
 		
 		portrait_status_icons = {
 			parentanchor = bottom|right

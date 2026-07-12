@@ -212,6 +212,16 @@ percent_of_subroman_administrative_dukes_with_subroman_admin_aristocracy_law_lev
 		add = 1
 	}
 	divide = number_of_subroman_administrative_dukes
+	#Catch Edge case of there being 0 dukes
+	if = {
+		limit = {
+			any_vassal = {
+				count < 1
+				primary_title.tier >= tier_duchy
+			}
+		}
+		add = 1
+	}
 }
 percent_of_subroman_administrative_dukes_with_subroman_admin_aristocracy_law_level_2 = {
 	value = 0
@@ -228,6 +238,16 @@ percent_of_subroman_administrative_dukes_with_subroman_admin_aristocracy_law_lev
 		add = 1
 	}
 	divide = number_of_subroman_administrative_dukes
+	#Catch Edge case of there being 0 dukes
+	if = {
+		limit = {
+			any_vassal = {
+				count < 1
+				primary_title.tier >= tier_duchy
+			}
+		}
+		add = 1
+	}
 }
 percent_of_subroman_administrative_dukes_with_subroman_admin_aristocracy_law_level_3 = {
 	value = 0
@@ -245,4 +265,14 @@ percent_of_subroman_administrative_dukes_with_subroman_admin_aristocracy_law_lev
 		add = 1
 	}
 	divide = number_of_subroman_administrative_dukes
+	#Catch Edge case of there being 0 dukes
+	if = {
+		limit = {
+			any_vassal = {
+				count < 1
+				primary_title.tier >= tier_duchy
+			}
+		}
+		add = 1
+	}
 }
