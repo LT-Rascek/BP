@@ -312,6 +312,7 @@ offer_foederatus_interaction = {
 			add_character_flag = { flag = recently_offered_foederatus years = 10 }
 			trigger_event = BP_federate_interaction_events.0001
 		}
+		scope:recipient = { add_character_flag = { flag = recently_became_foederatus years = 50 } }
 	}
 
 	on_decline = {
@@ -661,6 +662,7 @@ offer_foederatus_interaction_administrative = {
 			add_character_flag = { flag = recently_offered_foederatus years = 10 }
 			trigger_event = BP_federate_interaction_events.0001
 		}
+		scope:recipient = { add_character_flag = { flag = recently_became_foederatus years = 50 } }
 	}
 
 	on_decline = {
@@ -685,6 +687,156 @@ offer_foederatus_interaction_administrative = {
 	}
 }
 
+#To make Federates Revocable
+revoke_foderatus_interaction_adminstrative = { #TODO (BETA): Customize adventurer creation
+		interface_priority = 70
+	category = interaction_category_hostile
+	icon = federate
+
+	desc = offer_foederatus_interaction_desc
+	
+	ai_targets = { ai_recipients = vassals }
+	ai_target_quick_trigger = { adult = yes }
+	ai_frequency = 60
+	
+	popup_on_receive = yes
+	pause_on_receive = yes
+	
+	greeting = negative
+	notification_text = REVOKE_FEDERATE_INTERACTION_NOTIFICATION
+
+	ai_maybe = yes
+
+	ai_min_reply_days = 5
+	ai_max_reply_days = 10
+
+	can_send_despite_rejection = yes
+
+	is_shown = {
+		scope:actor = { any_vassal = { government_has_flag = government_is_roman_federate } }
+		scope:recipient = { government_has_flag = government_is_roman_federate }
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = { is_at_war = no }
+		scope:recipient = { is_at_war = no }
+		custom_tooltip = {
+			text = recent_federate_status
+			NOT = { scope:recipient = { has_character_flag = recently_became_foederatus } }
+		}
+	}
+
+	can_send = {
+		scope:actor = {
+			custom_description = {
+				text = "character_interactions_hostile_actions_disabled_delay"
+				NOT = { has_character_flag = flag_hostile_actions_disabled_delay }
+			}
+		}
+	}
+
+	cost = {
+		prestige = {
+			value = 100
+			if = {
+				limit = { scope:actor = { has_realm_law = imperial_bureaucracy_0 } }
+				multiply = 10
+			}
+			else_if = {
+				limit = { scope:actor = { has_realm_law = imperial_bureaucracy_1 } }
+				multiply = 5
+			}
+			else_if = {
+				limit = { scope:actor = { has_realm_law = imperial_bureaucracy_2 } }
+				multiply = 2.5
+			}
+			else_if = {
+				limit = { scope:actor = { has_realm_law = imperial_bureaucracy_3 } }
+				multiply = 1
+			}
+			else = { multiply = 1 }
+		}
+	}
+
+	ai_accept = {
+		base = -100 #AI will *never* accept the contract revocation, not even by strong hook
+	}
+
+	on_accept = {
+		#On Accept, recipient looses their titles
+		create_title_and_vassal_change = {
+			type = conquest
+			save_scope_as = seize_lands
+			add_claim_on_loss = no
+		}
+		scope:recipient = {
+			every_held_title = {
+				limit = {
+					this.tier = tier_county
+					is_titular = no
+				}
+				change_title_holder = {
+					holder = scope:actor
+					change = scope:seize_lands
+				}
+			}
+		}
+		resolve_title_and_vassal_change = scope:seize_lands
+		#Become an adventurer!
+		custom_description = {
+			text = gets_to_be_an_adventurer
+			object = scope:recipient
+			scope:recipient = {
+				create_landless_adventurer_title_effect = {
+					REASON = flag:conquest
+					FLAVOR_CHAR = scope:recipient
+				}
+			}
+		}
+	}
+
+	on_decline = {
+		#The recipient is the one who declares war; you are exercising your right to revoke their
+		#rented land from them
+		#TODO: Automatically have Federate Vassals of Federates join in the war
+		custom_tooltip = {
+			text = federate_revocation_war_triggered
+			hidden_effect = {
+				scope:actor = { #Failed tooltip here
+					start_war = {
+						casus_belli = roman_federate_revocation_war
+						target = scope:recipient
+					}
+				}
+			}
+		}
+	}
+	
+	ai_potential = {
+		is_adult = yes
+		is_independent_ruler = yes
+		highest_held_title_tier > tier_county
+	}
+
+	ai_will_do = {
+		base = 0
+		modifier = { #AI will only do if rival or nemesis
+			add = 100
+			OR = {
+				scope:recipient = { has_relation_rival = scope:actor }
+				scope:recipient = { has_relation_nemesis = scope:actor }
+			}
+		}
+		modifier = { #AI will *not* do if they don't overpower the federate enough
+			factor = 0
+			scope:recipient.roman_federate_thrice_max_military_strength > scope:actor.current_military_strength
+		}
+		modifier = { # If the recipient is a human player, do not bother sending
+			factor = 0
+			scope:recipient = { is_ai = no }
+		}
+	}
+}
 
 ##### TODO (Beta): Convert request_foederatus_interaction to an actual negotiation
 request_foederatus_interaction = {
@@ -955,6 +1107,8 @@ request_foederatus_interaction = {
 		scope:actor = { convert_to_roman_federate_government_effect = yes }
 		
 		scope:actor = { trigger_event = BP_federate_interaction_events.0003 }
+		
+		scope:recipient = { add_character_flag = { flag = recently_became_foederatus years = 50 } }
 	}
 
 	on_decline = {
