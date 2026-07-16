@@ -9,6 +9,14 @@ Mechanics:
    - Added "Revoke Foederatus" interaction
       - Allows player to revoke lands held by Federates
       - Costs scale inversely to Imperial Bureaucracy law
+      - If accepted, federate becomes an adventurer
+      - If refused, triggers a "Federate Revocation War"
+
+Casus Bellorum:
+- Added "Federate Revocation War"
+   - Triggered when Federates reject revocation, with the Federate as the Defender
+   - If won by the liege, the Federate looses their lands and becomes an adventurer
+   - If won by the federate, they receive a prestige level, exemption from liege taxes, and immunity from Federate Revocation the rest of their life
 
 Tweaks:
 - The Senate Houses can now be found in the Senate Situation GUI

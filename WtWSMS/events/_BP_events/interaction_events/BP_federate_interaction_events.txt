@@ -1,6 +1,7 @@
 ﻿namespace = BP_federate_interaction_events
 
-#0001-0009: Foederatus Events
+#0001-0009: Foederatus Offer Events
+#0100-0199: Foederatus Revocation Events
 
 # Offer Foederatus Response: Accepted
 BP_federate_interaction_events.0001 = {
@@ -74,3 +75,26 @@ BP_federate_interaction_events.0004 = {
 		name = BP_federate_interaction_events.0004.a
 	}
 }
+
+BP_federate_interaction_events.0100 = {
+	type = letter_event
+	content_source = dlc_WtWSMS
+	opening = {
+		desc = BP_federate_interaction_events.0100.opening
+	}
+	desc = BP_federate_interaction_events.0100.desc
+	
+	sender = {
+		character = scope:recipient
+		animation = aggressive_sword
+	}
+
+	immediate = {
+		scope:actor = { federate_revocation_war_start_effect = yes }
+	}
+
+	option = {
+		name = BP_federate_interaction_events.0100.a
+	}
+}
+

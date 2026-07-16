@@ -31,3 +31,12 @@ struggle_bp = {
 		tgp_war_ban_all_ministers_trigger = yes
 	}
 } #Just to avoid issues with the border raid CB
+
+#For event-driven wars that should only be triggered by events
+bp_script_only = {
+	should_check_for_interface_availability = no
+	can_only_start_via_script = yes # Only fired by event
+	allowed_for_character = {
+		herders_and_tributary_constraints = yes
+	}
+}

@@ -84,37 +84,24 @@ fp2_border_raid = {
 		}
 		##### Changed from Vanilla vvvvv
 		trigger_if = {
+			limit = { scope:attacker.primary_title.tier = tier_hegemony }
+			always = yes
+		}
+		trigger_else_if = {
+			limit = { scope:attacker.primary_title.tier = tier_hegemony }
+			scope:defender.primary_title.tier >= tier_empire
+		}
+		trigger_else_if = {
 			limit = { scope:attacker.primary_title.tier = tier_empire }
-			OR = {
-				scope:defender.primary_title.tier = tier_empire
-				scope:defender.primary_title.tier = tier_kingdom
-			}
+			scope:defender.primary_title.tier >= tier_kingdom
 		}
 		trigger_else_if = {
 			limit = { scope:attacker.primary_title.tier = tier_kingdom }
-			OR = {
-				scope:defender.primary_title.tier = tier_empire
-				scope:defender.primary_title.tier = tier_kingdom
-				scope:defender.primary_title.tier = tier_duchy
-			}
+			scope:defender.primary_title.tier >= tier_duchy
 		}
 		trigger_else_if = {
 			limit = { scope:attacker.primary_title.tier = tier_duchy }
-			OR = {
-				scope:defender.primary_title.tier = tier_empire
-				scope:defender.primary_title.tier = tier_kingdom
-				scope:defender.primary_title.tier = tier_duchy
-				scope:defender.primary_title.tier = tier_county
-			}
-		}
-		trigger_else_if = {
-			limit = { scope:attacker.primary_title.tier = tier_county }
-			OR = {
-				scope:defender.primary_title.tier = tier_empire
-				scope:defender.primary_title.tier = tier_kingdom
-				scope:defender.primary_title.tier = tier_duchy
-				scope:defender.primary_title.tier = tier_county
-			}
+			scope:defender.primary_title.tier >= tier_county
 		}
 		trigger_else = { always = no }
 		##### Changed from Vanilla ^^^^^

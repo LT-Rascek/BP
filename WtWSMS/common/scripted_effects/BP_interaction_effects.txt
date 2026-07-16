@@ -1,0 +1,9 @@
+﻿#TODO: Automatically have Federate Vassals of Federates join in the war
+federate_revocation_war_start_effect = {
+	scope:actor = { #Failed tooltip here
+		start_war = {
+			casus_belli = roman_federate_revocation_war
+			target = scope:recipient
+		}
+	}
+}

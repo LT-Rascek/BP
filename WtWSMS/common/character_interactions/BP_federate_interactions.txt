@@ -724,6 +724,10 @@ revoke_foderatus_interaction_adminstrative = { #TODO (BETA): Customize adventure
 			text = recent_federate_status
 			NOT = { scope:recipient = { has_character_flag = recently_became_foederatus } }
 		}
+		custom_tooltip = {
+			text = federate_rights_protected
+			NOT = { scope:recipient = { has_character_flag = federate_rights_protected } }
+		}
 	}
 
 	can_send = {
@@ -798,18 +802,8 @@ revoke_foderatus_interaction_adminstrative = { #TODO (BETA): Customize adventure
 	on_decline = {
 		#The recipient is the one who declares war; you are exercising your right to revoke their
 		#rented land from them
-		#TODO: Automatically have Federate Vassals of Federates join in the war
-		custom_tooltip = {
-			text = federate_revocation_war_triggered
-			hidden_effect = {
-				scope:actor = { #Failed tooltip here
-					start_war = {
-						casus_belli = roman_federate_revocation_war
-						target = scope:recipient
-					}
-				}
-			}
-		}
+		custom_tooltip = federate_revocation_war_triggered
+		scope:actor = { trigger_event = { id = BP_federate_interaction_events.0100 } }
 	}
 	
 	ai_potential = {
