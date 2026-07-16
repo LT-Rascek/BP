@@ -20,8 +20,22 @@ Hunter-Gatherer
 ==========
 0.2.0.1:
 ----------
-CBs:
 - Federate revocation War to replace revoking federate titles
+   - Issues with adventurer creation:
+      - Both the interaction and the war loosing should leave the federate with a number of troops and cash as an adventurer
+      - Fix failing localizations relating to create_landless_adventurer_title_effect or Replace as needed
+   - Update localizations to be dynamic instead of static
+
+- Remove option for letting someone be a federate outside your territory; leave that as tributaries instead
+
+- Review on_declared_war and add to new wars if not added
+- Federates are Roman governments, which allows for dynasty-level uplifting; make limited to Roman Cultures
+- Ius Ad Bellum Innovation missing localizations
+
+Federates:
+- Federates, when sufficiently aristocratic, can't be forced to step down
+- Federates should be exempt from most governor mechanics
+- Make federates untutorable governors
 
 Potential Bugs:
 - MO occasionally borking out at start, giving to someone new at game start?
@@ -31,21 +45,27 @@ Potential Bugs:
 ==========
 0.2.0.2:
 ----------
-Federates: Fix missing tooltip stuff for federates without DLC
+- CBs: Federate Raid Wars
+- Federates: Fix missing tooltip stuff for offering federate status for federates without DLC
+- Symmachus Branch Stuff
 
-Symmachus Branch Stuff
+- SubRoman Dynastic for independent duchies and below, and transition to subroman admin when not
+
+- Great Projects to fixup Feudal Decay
+
+Potential Bugs:
+- MO occasionally borking out at start, giving to someone new at game start?
+- Populist Revolts are becoming Feudal/Clan (Possibly Fixed?)
+- County grants are becoming Roman Admin from Sub-Roman (Reproducer not found yet?)
 
 ==========
 0.2.1:
 ----------
-CBs: Federate Raid Wars
-
 - Need to force title holders to be councilors in non-DLC games
 - Add necessary macros to extend and simplify Roman-government GUI hooks
 - Ability to remove Augustulus nickname if Augustulus makes it to adulthood and is no longer in a regency _and_ has a hegemony-tier title
 - Re-enable minister should be diarch code or not? Seems like we're handling it independently.
 
-- Character Interactions: Enable the ability to give ai-owned lands in your realm to federates as an admin.
 - Great Projects: Projects for Sub-Romans to fight against decay of laws.
 - Add the other two dynasty legacies
 - Make Cataphracts recruitable again
@@ -66,9 +86,6 @@ Culture:
 - Review Taifali, Heruli light horsemen (probably a cultural MAA change)
 - Legal Codex needs work
 
-History:
-- Archonship of Athens as c_attica holder, modeling the city's semi-free status
-
 Government:
 - Ability for Emperor to intervene directly down the hierarchy.
 
@@ -76,13 +93,9 @@ Federate Government:
 - Army call up costs should be weighted by contracts
 
 Decisions:
-- Roman government decision as in adoption of later Admin government in late antique period
-- Non-Romans with Roman government get option to transition to vanilla admin instead of adopt Roman government
-- Decision for unreformed syncretics to change their syncretism (multi-choice decision)
 - Review conditions for restoring Rome/Byzantium vis-a-vis region & restored fora...
 
 Hegemonies:
-- Revamp tributaries in their entirety vis-a-vis hegemons
 - Apply all the stuff listed in h_eastern_roman_empire.txt, h_western_roman_empire.txt landed file (Tributaries)
 
 Localization:
@@ -105,10 +118,9 @@ Activities:
    - Ability to host munera (theater particularly) in Roman Ceremonies
    - Option to pay gold or treasury with slightly different rewards
 
-- Only WRE/ERE/RE can be anointed sovereigns
 - Special themes for diocese and PPs?
 - Council: Judge of the Court needs a second task
-- Odoacer as a notional tributary to Zeno?
+- Odoacer as a notional tributary type to Zeno?
 - Make Fall of Rome/Constantinople a unique memory
 
 State Faith:
@@ -129,8 +141,18 @@ Stretch:
 
 - Remove Cypriot Church and Culture, as the new BGA mechanics
 
+Governments:
+- Roman government decision as in adoption of later Admin government in late antique period
+- Non-Romans with Roman government get option to transition to vanilla admin instead of adopt Roman government
+
 Council:
 - More outcomes for: promulgate_laws
+
+==========
+Silk and Silver:
+----------
+History:
+- Archonship of Athens as c_attica holder, modeling the city's semi-free status
 
 ==========
 Dynasty Legacies:
