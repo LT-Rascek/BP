@@ -2270,7 +2270,6 @@ subroman_individual_kingdom_de_jure_cb = {
 
 #### Federate Wars
 roman_federate_revocation_war = { #War is invalidating in a single day...
-	#TODO: mongol_invasion_cb_ally_prestige,mongol_invasion_cb_prestige_white_peace,mongol_invasion_cb_prestige_gain needs to be changed
 	#TODO: If the Federate Wins, more cash?
 	icon = roman_wars
 	group = bp_script_only
@@ -2375,7 +2374,7 @@ roman_federate_revocation_war = { #War is invalidating in a single day...
 		# Allies on both sides get full prestige value for helping in the war, based on their war participation.
 		modify_allies_of_participants_fame_values = {
 			WINNER = scope:attacker
-			FAME_BASE = mongol_invasion_cb_ally_prestige
+			FAME_BASE = bp_minor_war_prestige_allies
 			IS_RELIGIOUS_WAR = no
 			WINNER_ALLY_FAME_SCALE = 1
 			LOSER_ALLY_FAME_SCALE = 1
@@ -2383,7 +2382,7 @@ roman_federate_revocation_war = { #War is invalidating in a single day...
 		
 		# Prestige level progress for the attacker
 		scope:attacker = {
-			add_prestige_experience = { value = mongol_invasion_cb_prestige_experience_gain }
+			add_prestige_experience = { value = bp_minor_war_cb_prestige_experience_gain }
 		}
 
 		# Truce
@@ -2401,16 +2400,10 @@ roman_federate_revocation_war = { #War is invalidating in a single day...
 		#Federates and the vassals (if human players) become adventurers
 		hidden_effect = {
 			scope:defender = {
-				create_landless_adventurer_title_effect = { #Script system error
-					REASON = flag:conquest
-					FLAVOR_CHAR = scope:recipient
-				}
+				create_federate_adventurer_effect = { ADVENTURER = this }
 				every_vassal = {
 					limit = { is_ai = no }
-					create_landless_adventurer_title_effect = {
-						REASON = flag:conquest
-						FLAVOR_CHAR = scope:recipient
-					}
+					create_federate_adventurer_effect = { ADVENTURER = this }
 				}
 			}
 		}
@@ -2436,7 +2429,7 @@ roman_federate_revocation_war = { #War is invalidating in a single day...
 		# Allies on both sides get full prestige value for helping in the war, based on their war participation.
 		modify_allies_of_participants_fame_values = {
 			WINNER = scope:attacker # Not important as the scales are identical
-			FAME_BASE = mongol_invasion_cb_ally_prestige
+			FAME_BASE = bp_minor_war_prestige_allies
 			IS_RELIGIOUS_WAR = no
 			WINNER_ALLY_FAME_SCALE = 1
 			LOSER_ALLY_FAME_SCALE = 1
@@ -2445,7 +2438,7 @@ roman_federate_revocation_war = { #War is invalidating in a single day...
 		add_truce_white_peace_effect = yes
 
 		scope:attacker = {
-			add_prestige = mongol_invasion_cb_prestige_white_peace
+			add_prestige = bp_minor_war_prestige_white_peace
 			stress_impact = {
 				ambitious = medium_stress_impact_gain
 				arrogant = medium_stress_impact_gain
@@ -2487,7 +2480,7 @@ roman_federate_revocation_war = { #War is invalidating in a single day...
 		# Allies on both sides get full prestige value for helping in the war, based on their war participation.
 		modify_allies_of_participants_fame_values = {
 			WINNER = scope:defender # Not important as the scales are identical
-			FAME_BASE = mongol_invasion_cb_ally_prestige
+			FAME_BASE = bp_minor_war_prestige_allies
 			IS_RELIGIOUS_WAR = no
 			WINNER_ALLY_FAME_SCALE = 1
 			LOSER_ALLY_FAME_SCALE = 1
@@ -2501,7 +2494,7 @@ roman_federate_revocation_war = { #War is invalidating in a single day...
 			list = target_titles
 			
 			scope:defender = {
-				add_prestige = mongol_invasion_cb_prestige_gain
+				add_prestige = bp_minor_war_prestige_main
 			}
 
 			scope:attacker = {
@@ -2524,16 +2517,6 @@ roman_federate_revocation_war = { #War is invalidating in a single day...
 							gold = medium_gold_value
 						}
 					}
-				}
-			}
-		}
-		
-		scope:attacker = {
-			every_vassal = {
-				custom = custom.every_vassal
-				add_opinion = {
-					modifier = liege_lost_mongol_invasion_war
-					target = prev
 				}
 			}
 		}
