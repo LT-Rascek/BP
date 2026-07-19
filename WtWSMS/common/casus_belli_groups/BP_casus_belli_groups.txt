@@ -22,6 +22,7 @@
 		}
 		herders_and_tributary_constraints = yes
 		tgp_war_ban_all_ministers_trigger = yes
+		bp_federate_war_validity_trigger = yes
 	}
 }
 
@@ -29,8 +30,16 @@ struggle_bp = {
 	allowed_for_character = {
 		herders_and_tributary_constraints = yes
 		tgp_war_ban_all_ministers_trigger = yes
+		bp_federate_war_validity_trigger = yes
 	}
 } #Just to avoid issues with the border raid CB
+
+federate_cbs = {
+	allowed_for_character = {
+		herders_and_tributary_constraints = yes
+		tgp_war_ban_all_ministers_trigger = yes
+	}
+}
 
 #For event-driven wars that should only be triggered by events
 bp_script_only = {
@@ -38,5 +47,6 @@ bp_script_only = {
 	can_only_start_via_script = yes # Only fired by event
 	allowed_for_character = {
 		herders_and_tributary_constraints = yes
+		bp_federate_war_validity_trigger = yes
 	}
 }
