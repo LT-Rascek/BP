@@ -4011,6 +4011,7 @@ acknowledge_governor_interaction = {
 
 	desc = acknowledge_governor_interaction_desc
 
+	##### Changed from Vanilla vvvvv
 	is_shown = {
 		scope:actor != scope:recipient
 		scope:recipient = {
@@ -4024,7 +4025,12 @@ acknowledge_governor_interaction = {
 			top_liege = this
 			highest_held_title_tier >= tier_empire
 		}
+		##### Changed from Vanilla vvvvv
+		NOT = { scope:recipient = { government_has_flag = government_is_quasi_feudal } }
+		NOT = { scope:actor = { government_has_flag = government_is_quasi_feudal } }
+		##### Changed from Vanilla ^^^^^
 	}
+	##### Changed from Vanilla ^^^^^
 
 	cooldown_against_recipient = { years = 10 }
 
@@ -4206,6 +4212,7 @@ boost_efficiency_interaction = { #DONE
 		}
 		##### Changed from Vanilla vvvvv
 		NOT = { scope:recipient = { government_has_flag = government_is_quasi_feudal } }
+		NOT = { scope:actor = { government_has_flag = government_is_quasi_feudal } }
 		##### Changed from Vanilla ^^^^^
 	}
 	##### Changed from Vanilla ^^^^^
@@ -4482,6 +4489,7 @@ damage_efficiency_interaction = { #DONE
 		}
 		##### Changed from Vanilla vvvvv
 		NOT = { scope:recipient = { government_has_flag = government_is_quasi_feudal } }
+		NOT = { scope:actor = { government_has_flag = government_is_quasi_feudal } }
 		##### Changed from Vanilla ^^^^^
 	}
 	##### Changed from Vanilla ^^^^^
@@ -6018,6 +6026,7 @@ force_step_down_interaction = { #DONE
 		}
 		##### Changed from Vanilla vvvvv
 		NOT = { scope:recipient = { government_has_flag = government_is_quasi_feudal } }
+		NOT = { scope:actor = { government_has_flag = government_is_quasi_feudal } }
 		##### Changed from Vanilla ^^^^^
 	}
 	##### Changed from Vanilla ^^^^^
@@ -6545,6 +6554,8 @@ force_governor_removal_interaction = {
 			}
 		}
 		##### Changed from Vanilla vvvvv
+		NOT = { scope:recipient = { government_has_flag = government_is_quasi_feudal } }
+		NOT = { scope:actor = { government_has_flag = government_is_quasi_feudal } }
 		NOT = { scope:secondary_recipient = { government_has_flag = government_is_quasi_feudal } }
 		##### Changed from Vanilla ^^^^^
 	}
