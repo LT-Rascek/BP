@@ -17,8 +17,9 @@
  #Revoke Federate
  revoke_foderatus_interaction_adminstrative: "Revoke Foederatus"
  revoke_foderatus_interaction_adminstrative_desc: "Revoke a federate contract that was not recently established, reclaiming the land from the federate. @warning_icon! #XThis will trigger a war#!"
+ every_federate_looses_opinion: "Every [roman_federate_government|E] [vassal|E] looses opinion of you"
  REVOKE_FEDERATE_INTERACTION_NOTIFICATION: "It is our decision that granting you these lands is no longer in the interest of the state and we are revoking the #italic Foederatus#! contract..."
- federate_revocation_war_triggered: "Triggers a $roman_federate_revocation_war$"
+ FEDERATE_REVOCATION_WAR_TRIGGERED: "Triggers a #V $roman_federate_revocation_war$#! [war|E].\n$TAB$If you win, then:\n$TAB$$EFFECT_LIST_BULLET$You reclaim the counties [TARGET_CHARACTER.GetShortUIName] and his [roman_federate_government|E] vassals hold.\n$TAB$$EFFECT_LIST_BULLET$$GETS_TO_BE_AN_ADVENTURER$\n\n$TAB$If you loose, then [TARGET_CHARACTER.GetShortUIName] gains the following:\n$TAB$$EFFECT_LIST_BULLET$[TARGET_CHARACTER.GetShortUIName] gains #P 1#! [prestige_level|E]\n$TAB$$EFFECT_LIST_BULLET$$FEDERATE_STATUS_CANNOT_BE_REVOKED_THIS_LIFETIME$\n$TAB$$EFFECT_LIST_BULLET$$FEDERATE_BECOMES_TAX_EXEMPT$"
  recent_federate_status: "Recently became a federate"
  federate_rights_protected: "Has won a Federate Revocation War"
  #Grant titles

@@ -2535,12 +2535,14 @@ roman_federate_revocation_war = { #War is invalidating in a single day...
 		#Federates cannot be revoked in this lifetime
 		scope:defender = { add_prestige_level = 1 }
 		scope:defender = {
-			custom_tooltip = {
-				text = cannot_be_revoked_this_lifetime
+			custom_description = {
+				text = federate_status_cannot_be_revoked_this_lifetime
+				object = scope:defender
 				add_character_flag = federate_rights_protected
 			}
-			custom_tooltip = {
+			custom_description = {
 				text = federate_becomes_tax_exempt
+				object = scope:defender
 				vassal_contract_set_obligation_level = {
 					type = roman_federate_liege_taxes
 					level = 0

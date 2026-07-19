@@ -79,18 +79,18 @@
  
  #Federate Wars
  roman_federate_revocation_war: "Federate Revocation"
- ROMAN_FEDERATE_REVOCATION_WAR_NAME: "[ATTACKER.GetPrimaryTitle.GetAdjective] Federate Revocation War against [DEFENDER.PrimartyTitle.GetAdjective]"
+ ROMAN_FEDERATE_REVOCATION_WAR_NAME: "[ATTACKER.GetPrimaryTitle.GetAdjective] Federate Revocation War against [DEFENDER.GetPrimaryTitle.GetName]"
  ROMAN_FEDERATE_REVOCATION_WAR_CB_NAME: "Federate Revocation War"
  msg_roman_federate_revocation_war_invalidated_message: "Federate Revocation War invalidated"
- roman_federate_revocation_war_desc_attacker: "[defender.GetShortUIName|U] surrenders its holdings to you"
+ roman_federate_revocation_war_desc_attacker: "[defender.GetShortUIName|U] surrenders [defender.GetHerHis] holdings to you"
  roman_federate_revocation_war_desc: "You loose your lands to [attacker.GetShortUIName|U]"
  roman_federate_revocation_war_white_peace_desc_defender: "You keep the current status quo."
  roman_federate_revocation_war_white_peace_desc: "[defender.GetShortUIName|U] keeps the current status quo."
  roman_federate_revocation_war_defeat_desc_defender: "You remain a Federate, more secure than before."
  roman_federate_revocation_war_defeat_desc: "[defender.GetShortUIName|U] remains a Federate with greater security."
  #Tooltips (make dynamic)
- cannot_be_revoked_this_lifetime: "Federate Status cannot be revoked the rest of the Federate's life" #Make Dynamic
- federate_becomes_tax_exempt: "The Federate is exempt from paying liege taxes the rest of their life" #Make Dynamic
+ FEDERATE_STATUS_CANNOT_BE_REVOKED_THIS_LIFETIME: "Federate Status cannot be revoked the rest of the [TARGET_CHARACTER.GetShortUIName] life"
+ FEDERATE_BECOMES_TAX_EXEMPT: "[TARGET_CHARACTER.GetShortUINamePossessive] is exempt from paying liege taxes the rest of their life"
  
  #Tributary Wars
  tributary_cb: "Extort Tribute"

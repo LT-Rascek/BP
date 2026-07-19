@@ -787,6 +787,7 @@ revoke_foderatus_interaction_adminstrative = { #TODO (BETA): Customize adventure
 	}
 
 	on_accept = {
+		custom_tooltip = every_federate_looses_opinion
 		#On Accept, recipient looses their titles
 		create_title_and_vassal_change = {
 			type = conquest
@@ -813,8 +814,12 @@ revoke_foderatus_interaction_adminstrative = { #TODO (BETA): Customize adventure
 	on_decline = {
 		#The recipient is the one who declares war; you are exercising your right to revoke their
 		#rented land from them
-		custom_tooltip = federate_revocation_war_triggered
-		scope:actor = { trigger_event = { id = BP_federate_interaction_events.0100 } }
+		custom_tooltip = every_federate_looses_opinion
+		custom_description = {
+			text = federate_revocation_war_triggered
+			object = scope:recipient
+			scope:actor = { trigger_event = { id = BP_federate_interaction_events.0100 } }
+		}
 	}
 	
 	ai_potential = {
