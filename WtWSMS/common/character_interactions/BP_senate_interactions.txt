@@ -809,6 +809,7 @@ BP_elevate_dynasty_to_western_senate = {
 			NOT = { scope:recipient.dynasty = { has_dynasty_modifier = roman_senate_family_west } }
 		}
 		scope:recipient = scope:recipient.dynasty.dynast
+		scope:recipient.culture = { has_cultural_parameter = enables_senate_dynasty_elevation }
 		scope:actor = { valid_characteristics_to_interact_with_senate_trigger = yes }
 		scope:recipient = { valid_characteristics_to_interact_with_senate_trigger = yes }
 	}
@@ -1014,6 +1015,7 @@ BP_elevate_dynasty_to_eastern_senate = {
 			NOT = { scope:recipient.dynasty = { has_dynasty_modifier = roman_senate_family_east } }
 		}
 		scope:recipient = scope:recipient.dynasty.dynast
+		scope:recipient.culture = { has_cultural_parameter = enables_senate_dynasty_elevation }
 		scope:actor = { valid_characteristics_to_interact_with_senate_trigger = yes }
 		scope:recipient = { valid_characteristics_to_interact_with_senate_trigger = yes }
 	}
