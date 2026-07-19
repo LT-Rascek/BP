@@ -22,19 +22,13 @@ Hunter-Gatherer
 ----------
 - Federate revocation War to replace revoking federate titles
    - Issues with adventurer creation:
-      - Both the interaction and the war loosing should leave the federate with a number of troops and cash as an adventurer
       - Fix failing localizations relating to create_landless_adventurer_title_effect or Replace as needed
    - Update localizations to be dynamic instead of static
 
-- Remove option for letting someone be a federate outside your territory; leave that as tributaries instead
-
 - Review on_declared_war and add to new wars if not added
-- Federates are Roman governments, which allows for dynasty-level uplifting; make limited to Roman Cultures
-- Ius Ad Bellum Innovation missing localizations
 
 Federates:
 - Federates, when sufficiently aristocratic, can't be forced to step down
-- Federates should be exempt from most governor mechanics
 - Make federates untutorable governors
 
 Potential Bugs:
@@ -45,7 +39,6 @@ Potential Bugs:
 ==========
 0.2.0.2:
 ----------
-- CBs: Federate Raid Wars
 - Federates: Fix missing tooltip stuff for offering federate status for federates without DLC
 - Symmachus Branch Stuff
 
