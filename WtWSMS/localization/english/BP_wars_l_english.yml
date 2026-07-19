@@ -42,9 +42,9 @@
  SUCCESSOR_IMPERIAL_RECONQUEST_SPECIFIC_NAME: "[ATTACKER.GetPrimaryTitle.GetPrefix]-[DEFENDER.GetPrimaryTitle.GetAdjective] Sub-Roman War of Reconquest"
  
  #Roman Wars
- roman_individual_county_de_jure_cb: "$de_jure_cb$"
- roman_individual_duchy_de_jure_cb: "$de_jure_cb$"
- roman_individual_kingdom_de_jure_cb: "$de_jure_cb$"
+ roman_individual_county_de_jure_cb: "Roman Empire [county|E] $de_jure_cb$"
+ roman_individual_duchy_de_jure_cb: "Roman Empire [duchy|E] $de_jure_cb$"
+ roman_individual_kingdom_de_jure_cb: "Roman Empire [kingdom|E] $de_jure_cb$"
  ROMAN_DEJURE_CB_COUNTY_NAME_GENERIC: "Seize [de_jure|E] [county|E]"
  ROMAN_DEJURE_CB_WAR_SPECIFIC_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] De Jure War for the [TITLE.GetBaseName]"
  ROMAN_DEJURE_CB_WAR_SPECIFIC_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
@@ -54,9 +54,9 @@
  ROMAN_DEJURE_CB_KINGDOM_NAME: "Seize the [TITLE.GetBaseName] #weak ([de_jure|E])#!"
  ROMAN_DEJURE_CB_KINGDOM_NAME_GENERIC: "Seize [de_jure|E] [kingdom|E]"
  
- subroman_individual_county_de_jure_cb: "$de_jure_cb$"
- subroman_individual_duchy_de_jure_cb: "$de_jure_cb$"
- subroman_individual_kingdom_de_jure_cb: "$de_jure_cb$"
+ subroman_individual_county_de_jure_cb: "Roman Empire [county|E] $de_jure_cb$"
+ subroman_individual_duchy_de_jure_cb: "Roman Empire [duchy|E] $de_jure_cb$"
+ subroman_individual_kingdom_de_jure_cb: "Roman Empire [kingdom|E] $de_jure_cb$"
  SUBROMAN_DEJURE_CB_COUNTY_NAME_GENERIC: "Seize Roman [county|E]"
  SUBROMAN_DEJURE_CB_WAR_SPECIFIC_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] De Jure War for the [TITLE.GetBaseName]"
  SUBROMAN_DEJURE_CB_WAR_SPECIFIC_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
