@@ -31,6 +31,12 @@ Title Revocation/Retiring:
 - Federates and Sub-Roman, when sufficiently aristocratic, can't be forced to step down and instead get default title revocation
 - Retiring governors should increasingly cost prestige as government becomes more aristocratic
 
+Known Bugs/Issues:
+- Script location: file: common/on_action/BP_on_actions/BP_flavor_on_actions.txt line: 154 (BP_flavor_events_county_pulse)
+- BP_flavor_events_county_pulse has the `Error: Invalid landed title scope for modifier script, must be a county` issue
+- Hang every 1 and 2 January
+- Bug in common/script_values/BP_culture_shift_values.txt and BP_culture_on_actions.txt tied to Jews arising; some math scope existence issues
+
 Potential Bugs:
 - MO occasionally borking out at start, giving to someone new at game start?
 - Populist Revolts are becoming Feudal/Clan (Possibly Fixed?)
