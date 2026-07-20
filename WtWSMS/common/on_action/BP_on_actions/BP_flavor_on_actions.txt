@@ -148,10 +148,11 @@ BP_roman_nostalgia_character_pulse = {
 		chance_to_happen = 10
 		100 = 0
 		100  = bp_historical_flavor.0002		# Gain Roman Nostalgia
-    }
+	}
 }
 
 BP_flavor_events_county_pulse = {
+	trigger = { is_landed = yes }
 	random_events = {
 		chance_of_no_event = 50
 		

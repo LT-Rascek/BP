@@ -4,7 +4,7 @@
 
 	if = { # If your liege has a ministry, set up titles if needed
 		limit = {
-			scope:councillor_liege = {
+			scope:councillor_liege ?= {
 				this != scope:new_minister
 				bp_has_access_to_roman_ministry_trigger = yes
 			}

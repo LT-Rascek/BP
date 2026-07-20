@@ -18,25 +18,6 @@ Hunter-Gatherer
 * Formalized Rituals should unlock coronations and crowning laws
 
 ==========
-0.2.0.1:
-----------
-- Federate revocation War to replace revoking federate titles
-   - Issues with adventurer creation:
-      - Fix failing localizations relating to create_landless_adventurer_title_effect or Replace as needed
-      - Federate revocation war should be a concept or otherwise highlighted in the decline tab of the interaction, with the full list of war effects
-   - Update localizations to be dynamic instead of static
-
-- Review on_declared_war and add to new wars if not added
-
-Federates:
-- Federates, when sufficiently aristocratic, can't be forced to step down
-
-Potential Bugs:
-- MO occasionally borking out at start, giving to someone new at game start?
-- Populist Revolts are becoming Feudal/Clan (Possibly Fixed?)
-- County grants are becoming Roman Admin from Sub-Roman (Reproducer not found yet?)
-
-==========
 0.2.0.2:
 ----------
 - Federates: Fix missing tooltip stuff for offering federate status for federates without DLC
@@ -45,6 +26,10 @@ Potential Bugs:
 - SubRoman Dynastic for independent duchies and below, and transition to subroman admin when not
 
 - Great Projects to fixup Feudal Decay
+
+Title Revocation/Retiring:
+- Federates and Sub-Roman, when sufficiently aristocratic, can't be forced to step down and instead get default title revocation
+- Retiring governors should increasingly cost prestige as government becomes more aristocratic
 
 Potential Bugs:
 - MO occasionally borking out at start, giving to someone new at game start?
