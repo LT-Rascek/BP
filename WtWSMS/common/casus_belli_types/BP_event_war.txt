@@ -133,14 +133,6 @@ odoacer_takeover_war = { #Cribbed from invasion wars
 		scope:attacker = { convert_to_subroman_government_effect = yes }
 		
 		#Step 3: Transfer vassals
-		
-		#Step 3a: Destroy WRE ministries so they are no longer vassals...
-		title:e_magister_military_wre.holder ?= { destroy_title = title:e_magister_military_wre }
-		title:e_magister_offices_wre.holder ?= {
-			save_scope_as = the_wre_MO_char
-			destroy_title = title:e_magister_offices_wre
-		}
-		
 		create_title_and_vassal_change = {
 			type = swear_fealty
 			save_scope_as = change_vassals
@@ -157,6 +149,12 @@ odoacer_takeover_war = { #Cribbed from invasion wars
 			}
 		}
 		resolve_title_and_vassal_change = scope:change_vassals
+		#Step 3a: Destroy WRE ministries so they are no longer vassals...
+		title:e_magister_military_wre.holder ?= { destroy_title = title:e_magister_military_wre }
+		title:e_magister_offices_wre.holder ?= {
+			save_scope_as = the_wre_MO_char
+			destroy_title = title:e_magister_offices_wre
+		}
 		
 		#Step 4: Odoacer's compatriots get their due
 		create_title_and_vassal_change = {
@@ -476,8 +474,6 @@ odoacer_takeover_war = { #Cribbed from invasion wars
 		
 		#Imprison Orestes and Romulus Augustulus
 		scope:defender = {
-			add_trait = deposed
-			
 			# Set up artifact transfers
 			hidden_effect = {
 				# Diadem is special, should be handled with the WRE transfer event
@@ -506,7 +502,6 @@ odoacer_takeover_war = { #Cribbed from invasion wars
 		scope:attacker = { imprison = { target = scope:defender type = house_arrest } }
 		if = {
 			limit = { scope:defender = character:96054 }
-			character:96054 = { add_trait = deposed }
 			scope:attacker = { imprison = { target = character:96054 type = house_arrest } }
 			scope:attacker = { imprison = { target = character:1210007 type = dungeon } }
 			scope:attacker = { imprison = { target = character:96055 type = dungeon } }

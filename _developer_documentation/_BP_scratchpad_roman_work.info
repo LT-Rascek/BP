@@ -1,8 +1,3 @@
-- Fixup war code???
-- MO occasionally borking out at start, giving to someone new at game start?
-
-- Fix Senate GUI to bring back family lookup
-
 ==========
 Religion et al.
 ----------
@@ -14,9 +9,6 @@ Bugs:
 - Hepthalites should have Male-Only succession?
 - Remove some artifacts: Visigothic Votive Crowns
 
-- Pre-BGA mechanic cleanup:
-- Remove Cypriot Church and Culture, as the new BGA mechanics
-
 ==========
 Hunter-Gatherer
 ----------
@@ -26,32 +18,38 @@ Hunter-Gatherer
 * Formalized Rituals should unlock coronations and crowning laws
 
 ==========
-Roman Government (MVP)
+0.2.0.2:
 ----------
-- Error Logs
+- Federates: Fix missing tooltip stuff for offering federate status for federates without DLC
+- Symmachus Branch Stuff
+
+- SubRoman Dynastic for independent duchies and below, and transition to subroman admin when not
+
+- Great Projects to fixup Feudal Decay
+
+Title Revocation/Retiring:
+- Federates and Sub-Roman, when sufficiently aristocratic, can't be forced to step down and instead get default title revocation
+- Retiring governors should increasingly cost prestige as government becomes more aristocratic
+
+Known Bugs/Issues:
+- Script location: file: common/on_action/BP_on_actions/BP_flavor_on_actions.txt line: 154 (BP_flavor_events_county_pulse)
+- BP_flavor_events_county_pulse has the `Error: Invalid landed title scope for modifier script, must be a county` issue
+- Hang every 1 and 2 January
+- Bug in common/script_values/BP_culture_shift_values.txt and BP_culture_on_actions.txt tied to Jews arising; some math scope existence issues
 
 Potential Bugs:
+- MO occasionally borking out at start, giving to someone new at game start?
 - Populist Revolts are becoming Feudal/Clan (Possibly Fixed?)
 - County grants are becoming Roman Admin from Sub-Roman (Reproducer not found yet?)
-- MO occasionally borking out at start, giving to someone new at game start?
-
-Features:
-- Fixup domicile construction tooltip
 
 ==========
 0.2.1:
 ----------
-CBs: Federate Raid Wars
-
 - Need to force title holders to be councilors in non-DLC games
-
 - Add necessary macros to extend and simplify Roman-government GUI hooks
-
 - Ability to remove Augustulus nickname if Augustulus makes it to adulthood and is no longer in a regency _and_ has a hegemony-tier title
-
 - Re-enable minister should be diarch code or not? Seems like we're handling it independently.
 
-- Character Interactions: Enable the ability to give ai-owned lands in your realm to federates as an admin.
 - Great Projects: Projects for Sub-Romans to fight against decay of laws.
 - Add the other two dynasty legacies
 - Make Cataphracts recruitable again
@@ -72,9 +70,6 @@ Culture:
 - Review Taifali, Heruli light horsemen (probably a cultural MAA change)
 - Legal Codex needs work
 
-History:
-- Archonship of Athens as c_attica holder, modeling the city's semi-free status
-
 Government:
 - Ability for Emperor to intervene directly down the hierarchy.
 
@@ -82,13 +77,9 @@ Federate Government:
 - Army call up costs should be weighted by contracts
 
 Decisions:
-- Roman government decision as in adoption of later Admin government in late antique period
-- Non-Romans with Roman government get option to transition to vanilla admin instead of adopt Roman government
-- Decision for unreformed syncretics to change their syncretism (multi-choice decision)
 - Review conditions for restoring Rome/Byzantium vis-a-vis region & restored fora...
 
 Hegemonies:
-- Revamp tributaries in their entirety vis-a-vis hegemons
 - Apply all the stuff listed in h_eastern_roman_empire.txt, h_western_roman_empire.txt landed file (Tributaries)
 
 Localization:
@@ -111,10 +102,9 @@ Activities:
    - Ability to host munera (theater particularly) in Roman Ceremonies
    - Option to pay gold or treasury with slightly different rewards
 
-- Only WRE/ERE/RE can be anointed sovereigns
 - Special themes for diocese and PPs?
 - Council: Judge of the Court needs a second task
-- Odoacer as a notional tributary to Zeno?
+- Odoacer as a notional tributary type to Zeno?
 - Make Fall of Rome/Constantinople a unique memory
 
 State Faith:
@@ -133,8 +123,20 @@ Stretch:
 
 - Coronation variant for Roman Empires???
 
+- Remove Cypriot Church and Culture, as the new BGA mechanics
+
+Governments:
+- Roman government decision as in adoption of later Admin government in late antique period
+- Non-Romans with Roman government get option to transition to vanilla admin instead of adopt Roman government
+
 Council:
 - More outcomes for: promulgate_laws
+
+==========
+Silk and Silver:
+----------
+History:
+- Archonship of Athens as c_attica holder, modeling the city's semi-free status
 
 ==========
 Dynasty Legacies:

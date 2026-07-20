@@ -1,4 +1,4 @@
-﻿##### Changed from Vanilla: Made unavailable to Federates
+﻿##### Changed from Vanilla: Made unavailable to Federates, extended to handling elective laws
 
 # PLAYER ONLY - AI uses the two separate interactions below this ( Promote/Harm Candidacy)
 influence_candidacy_interaction = { #DONE
@@ -716,6 +716,7 @@ support_candidacy_interaction = { #DONE
 			TOP_LIEGE = scope:recipient
 		}
 		##### Changed from Vanilla vvvvv
+		NOT = { scope:target = { has_title_law_flag = elective_succession_law } }
 		NOT = { scope:target.holder = { government_has_flag = government_is_quasi_feudal } }
 		##### Changed from Vanilla ^^^^^
 	}
@@ -1144,6 +1145,9 @@ support_candidacy_interaction = { #DONE
 		# No one promoting... ripe for the taking
 		modifier = {
 			scope:target = {
+				##### Changed from Vanilla vvvvv
+				NOT = { has_title_law_flag = elective_succession_law }
+				##### Changed from Vanilla ^^^^^
 				holder = {
 					has_realm_law_flag = appointment_type_succession
 				}
@@ -1232,7 +1236,7 @@ support_candidacy_interaction = { #DONE
 			scope:secondary_recipient = {
 				any_heir_title = {
 					is_noble_family_title = no
-					holder = {
+					holder ?= {
 						government_allows = administrative
 					}
 				}
@@ -1243,6 +1247,9 @@ support_candidacy_interaction = { #DONE
 		# Promote only one house member for each title
 		modifier = {
 			scope:target = {
+				##### Changed from Vanilla vvvvv
+				NOT = { has_title_law_flag = elective_succession_law }
+				##### Changed from Vanilla ^^^^^
 				holder = {
 					has_realm_law_flag = appointment_type_succession
 				}
@@ -4011,6 +4018,7 @@ acknowledge_governor_interaction = {
 
 	desc = acknowledge_governor_interaction_desc
 
+	##### Changed from Vanilla vvvvv
 	is_shown = {
 		scope:actor != scope:recipient
 		scope:recipient = {
@@ -4024,7 +4032,12 @@ acknowledge_governor_interaction = {
 			top_liege = this
 			highest_held_title_tier >= tier_empire
 		}
+		##### Changed from Vanilla vvvvv
+		NOT = { scope:recipient = { government_has_flag = government_is_quasi_feudal } }
+		NOT = { scope:actor = { government_has_flag = government_is_quasi_feudal } }
+		##### Changed from Vanilla ^^^^^
 	}
+	##### Changed from Vanilla ^^^^^
 
 	cooldown_against_recipient = { years = 10 }
 
@@ -4206,6 +4219,7 @@ boost_efficiency_interaction = { #DONE
 		}
 		##### Changed from Vanilla vvvvv
 		NOT = { scope:recipient = { government_has_flag = government_is_quasi_feudal } }
+		NOT = { scope:actor = { government_has_flag = government_is_quasi_feudal } }
 		##### Changed from Vanilla ^^^^^
 	}
 	##### Changed from Vanilla ^^^^^
@@ -4482,6 +4496,7 @@ damage_efficiency_interaction = { #DONE
 		}
 		##### Changed from Vanilla vvvvv
 		NOT = { scope:recipient = { government_has_flag = government_is_quasi_feudal } }
+		NOT = { scope:actor = { government_has_flag = government_is_quasi_feudal } }
 		##### Changed from Vanilla ^^^^^
 	}
 	##### Changed from Vanilla ^^^^^
@@ -6018,6 +6033,7 @@ force_step_down_interaction = { #DONE
 		}
 		##### Changed from Vanilla vvvvv
 		NOT = { scope:recipient = { government_has_flag = government_is_quasi_feudal } }
+		NOT = { scope:actor = { government_has_flag = government_is_quasi_feudal } }
 		##### Changed from Vanilla ^^^^^
 	}
 	##### Changed from Vanilla ^^^^^
@@ -6545,6 +6561,8 @@ force_governor_removal_interaction = {
 			}
 		}
 		##### Changed from Vanilla vvvvv
+		NOT = { scope:recipient = { government_has_flag = government_is_quasi_feudal } }
+		NOT = { scope:actor = { government_has_flag = government_is_quasi_feudal } }
 		NOT = { scope:secondary_recipient = { government_has_flag = government_is_quasi_feudal } }
 		##### Changed from Vanilla ^^^^^
 	}

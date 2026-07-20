@@ -899,3 +899,564 @@ create_noble_family_effect = {
 
 	debug_log_scopes = yes
 }
+
+##### Changed from Vanilla: Catch some vanilla non-existent scope issues.
+create_landless_adventurer_title_effect = {
+	save_scope_as = new_landless_adventurer
+	if = {
+		limit = {
+			exists = house
+		}
+		house = { save_scope_as = new_landless_adventurer_house }
+	}
+	if = {
+		limit = {
+			exists = location
+		}
+		location = { save_scope_as = new_landless_adventurer_location }
+	}
+	save_scope_value_as = {
+		name = adventurer_creation_reason
+		value = $REASON$
+	}
+	$FLAVOR_CHAR$ = { save_scope_as = adventurer_flavor_char }
+	##### Changed from Vanilla vvvvv
+	hidden_effect = {
+		random_list = {
+			1000 = {
+				trigger = {
+					scope:warrior_youth ?= scope:new_landless_adventurer
+				}
+				create_adventurer_title = {
+					name = adventurer_name_free_warriors
+					holder = scope:new_landless_adventurer
+					article = DEFAULT_TITLE_NAME_ARTICLE
+					save_scope_as = new_title
+				}
+			}
+			1000 = {
+				trigger = {
+					scope:warrior_youth ?= scope:new_landless_adventurer
+					age <= 20
+					exists = scope:host.house
+				}
+				create_adventurer_title = {
+					name = adventurer_name_youths
+					holder = scope:new_landless_adventurer
+					article = DEFAULT_TITLE_NAME_ARTICLE
+					save_scope_as = new_title
+				}
+			}
+			10 = {
+				create_adventurer_title = {
+					name = adventurer_name_001
+					holder = scope:new_landless_adventurer
+					article = DEFAULT_TITLE_NAME_ARTICLE
+					save_scope_as = new_title
+				}
+			}
+			10 = {
+				trigger = {
+					exists = scope:new_landless_adventurer_house
+				}
+				create_adventurer_title = {
+					name = adventurer_name_002
+					holder = scope:new_landless_adventurer
+					article = DEFAULT_TITLE_NAME_ARTICLE
+					save_scope_as = new_title
+				}
+			}
+			10 = {
+				create_adventurer_title = {
+					name = adventurer_name_003
+					holder = scope:new_landless_adventurer
+					article = DEFAULT_TITLE_NAME_ARTICLE
+					save_scope_as = new_title
+				}
+			}
+			10 = {
+				create_adventurer_title = {
+					name = adventurer_name_004
+					holder = scope:new_landless_adventurer
+					article = DEFAULT_TITLE_NAME_ARTICLE
+					save_scope_as = new_title
+				}
+			}
+			10 = {
+				trigger = {
+					NOT = {
+						scope:new_landless_adventurer.culture = culture:kurdish
+					}
+				}
+				create_adventurer_title = {
+					name = adventurer_name_005
+					holder = scope:new_landless_adventurer
+					article = DEFAULT_TITLE_NAME_ARTICLE
+					save_scope_as = new_title
+				}
+			}
+			10 = {
+				create_adventurer_title = {
+					name = adventurer_name_006
+					holder = scope:new_landless_adventurer
+					article = DEFAULT_TITLE_NAME_ARTICLE
+					save_scope_as = new_title
+				}
+			}
+			10 = {
+				create_adventurer_title = {
+					name = adventurer_name_007
+					holder = scope:new_landless_adventurer
+					article = DEFAULT_TITLE_NAME_ARTICLE
+					save_scope_as = new_title
+				}
+			}
+			10 = {
+				trigger = {
+					exists = scope:new_landless_adventurer_house
+				}
+				create_adventurer_title = {
+					name = adventurer_name_008
+					holder = scope:new_landless_adventurer
+					save_scope_as = new_title
+				}
+			}
+			10 = {
+				create_adventurer_title = {
+					name = adventurer_name_009
+					holder = scope:new_landless_adventurer
+					article = DEFAULT_TITLE_NAME_ARTICLE
+					save_scope_as = new_title
+				}
+			}
+			7 = {
+				trigger = {
+					exists = scope:new_landless_adventurer_location
+				}
+				create_adventurer_title = {
+					name = adventurer_name_010
+					holder = scope:new_landless_adventurer
+					article = DEFAULT_TITLE_NAME_ARTICLE
+					save_scope_as = new_title
+				}
+			}
+			7 = {
+				trigger = {
+					exists = scope:new_landless_adventurer_location
+				}
+				create_adventurer_title = {
+					name = adventurer_name_011
+					holder = scope:new_landless_adventurer
+					article = DEFAULT_TITLE_NAME_ARTICLE
+					save_scope_as = new_title
+				}
+			}
+			7 = {
+				trigger = {
+					exists = scope:new_landless_adventurer_location
+				}
+				create_adventurer_title = {
+					name = adventurer_name_012
+					holder = scope:new_landless_adventurer
+					article = DEFAULT_TITLE_NAME_ARTICLE
+					save_scope_as = new_title
+				}
+			}
+			7 = {
+				trigger = {
+					scope:new_landless_adventurer.ai_zeal > 0
+				}
+				create_adventurer_title = {
+					name = adventurer_name_013
+					holder = scope:new_landless_adventurer
+					article = DEFAULT_TITLE_NAME_ARTICLE
+					save_scope_as = new_title
+				}
+			}
+			7 = {
+				trigger = {
+					scope:new_landless_adventurer.ai_zeal > 0
+				}
+				create_adventurer_title = {
+					name = adventurer_name_014
+					holder = scope:new_landless_adventurer
+					article = DEFAULT_TITLE_NAME_ARTICLE
+					save_scope_as = new_title
+				}
+			}
+			7 = {
+				trigger = {
+					scope:new_landless_adventurer.ai_zeal > 0
+				}
+				create_adventurer_title = {
+					name = adventurer_name_015
+					holder = scope:new_landless_adventurer
+					article = DEFAULT_TITLE_NAME_ARTICLE
+					save_scope_as = new_title
+				}
+			}
+			7 = {
+				trigger = {
+					OR = {
+						has_martial_lifestyle_trait_trigger = yes
+						ai_boldness >= medium_positive_ai_value
+						has_trait = education_martial_prowess_1
+						has_trait = education_martial_prowess_2
+						has_trait = education_martial_prowess_3
+						has_trait = education_martial_prowess_4
+						has_education_martial_trigger = yes
+					}
+				}
+				create_adventurer_title = {
+					name = adventurer_name_016
+					holder = scope:new_landless_adventurer
+					article = DEFAULT_TITLE_NAME_ARTICLE
+					save_scope_as = new_title
+				}
+			}
+			7 = {
+				trigger = {
+					OR = {
+						has_martial_lifestyle_trait_trigger = yes
+						has_trait = lifestyle_blademaster
+						has_trait = education_martial_prowess_1
+						has_trait = education_martial_prowess_2
+						has_trait = education_martial_prowess_3
+						has_trait = education_martial_prowess_4
+						has_education_martial_trigger = yes
+					}
+				}
+				create_adventurer_title = {
+					name = adventurer_name_017
+					holder = scope:new_landless_adventurer
+					article = DEFAULT_TITLE_NAME_ARTICLE
+					save_scope_as = new_title
+				}
+			}
+			7 = {
+				trigger = {
+					scope:new_landless_adventurer.ai_zeal > medium_negative_ai_value
+					scope:new_landless_adventurer.ai_boldness >= 0
+					NOT = {
+						scope:new_landless_adventurer = {
+							faith.religion = religion:west_african_bori_religion
+						}
+					}
+				}
+				create_adventurer_title = {
+					name = adventurer_name_018
+					holder = scope:new_landless_adventurer
+					article = DEFAULT_TITLE_NAME_ARTICLE
+					save_scope_as = new_title
+				}
+			}
+			7 = {
+				trigger = {
+					scope:new_landless_adventurer.ai_zeal > medium_negative_ai_value
+					scope:new_landless_adventurer.ai_greed >= 0
+					NOT = {
+						scope:new_landless_adventurer = {
+							faith.religion = religion:west_african_bori_religion
+						}
+					}
+				}
+				create_adventurer_title = {
+					name = adventurer_name_019
+					holder = scope:new_landless_adventurer
+					article = DEFAULT_TITLE_NAME_ARTICLE
+					save_scope_as = new_title
+				}
+			}
+			7 = {
+				trigger = {
+					scope:new_landless_adventurer.ai_zeal > medium_negative_ai_value
+					scope:new_landless_adventurer.ai_compassion >= 0
+					NOT = {
+						scope:new_landless_adventurer = {
+							faith.religion = religion:west_african_bori_religion
+						}
+					}
+				}
+				create_adventurer_title = {
+					name = adventurer_name_020
+					holder = scope:new_landless_adventurer
+					article = DEFAULT_TITLE_NAME_ARTICLE
+					save_scope_as = new_title
+				}
+			}
+			7 = {
+				trigger = {
+					exists = scope:new_landless_adventurer_location.county
+				}
+				scope:new_landless_adventurer_location.county = {
+					save_scope_as = new_landless_adventurer_county
+				}
+				create_adventurer_title = {
+					name = adventurer_name_021
+					holder = scope:new_landless_adventurer
+					article = DEFAULT_TITLE_NAME_ARTICLE
+					save_scope_as = new_title
+				}
+			}
+			7 = {
+				create_adventurer_title = {
+					name = adventurer_name_022
+					holder = scope:new_landless_adventurer
+					article = DEFAULT_TITLE_NAME_ARTICLE
+					save_scope_as = new_title
+				}
+			}
+			10 = {
+				trigger = {
+					exists = scope:new_landless_adventurer_house
+				}
+				create_adventurer_title = {
+					name = adventurer_name_023
+					holder = scope:new_landless_adventurer
+					article = DEFAULT_TITLE_NAME_ARTICLE
+					save_scope_as = new_title
+				}
+			}
+			10 = {
+				trigger = {
+					scope:new_landless_adventurer.ai_zeal > medium_negative_ai_value
+					scope:new_landless_adventurer.ai_rationality >= 0
+					#Many names using Allah already
+					NOT = {
+						scope:new_landless_adventurer = {
+							faith.religion = religion:islam_religion
+						}
+					}
+				}
+				create_adventurer_title = {
+					name = adventurer_name_024
+					holder = scope:new_landless_adventurer
+					article = DEFAULT_TITLE_NAME_ARTICLE
+					save_scope_as = new_title
+				}
+			}
+			7 = {
+				trigger = {
+					scope:new_landless_adventurer.ai_zeal < low_negative_ai_value
+					scope:new_landless_adventurer.ai_compassion < medium_negative_ai_value
+				}
+				create_adventurer_title = {
+					name = adventurer_name_025
+					holder = scope:new_landless_adventurer
+					article = DEFAULT_TITLE_NAME_ARTICLE
+					save_scope_as = new_title
+				}
+			}
+			10 = {
+				create_adventurer_title = {
+					name = adventurer_name_0026
+					holder = scope:new_landless_adventurer
+					save_scope_as = new_title
+				}
+			}
+			5 = {
+				trigger = {
+					exists = scope:new_landless_adventurer.culture
+					OR = {
+						has_martial_lifestyle_trait_trigger = yes
+						ai_boldness >= medium_positive_ai_value
+						has_trait = education_martial_prowess_1
+						has_trait = education_martial_prowess_2
+						has_trait = education_martial_prowess_3
+						has_trait = education_martial_prowess_4
+						has_education_martial_trigger = yes
+					}
+				}
+				create_adventurer_title = {
+					name = adventurer_name_0027
+					holder = scope:new_landless_adventurer
+					article = DEFAULT_TITLE_NAME_ARTICLE
+					save_scope_as = new_title
+				}
+			}
+		}
+
+		scope:new_title ?= {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = {
+				name = adventurer_creation_reason
+				value = scope:adventurer_creation_reason
+			}
+			set_variable = {
+				name = adventurer_flavor_char
+				value = scope:adventurer_flavor_char
+			}
+		}
+
+		scope:new_title = { save_scope_as = new_landless_adventurer_title }
+		scope:new_landless_adventurer = {
+			if = {
+				limit = {
+					NOT = { has_government = landless_adventurer_government }
+				}
+				change_government = landless_adventurer_government
+			}
+			if = {
+				limit = {
+					NOT = { has_realm_law = landless_adventurer_succession_law }
+				}
+				add_realm_law = landless_adventurer_succession_law
+			}
+			if = {
+				limit = {
+					has_realm_law = crown_authority_0
+				}
+				remove_realm_law = crown_authority_0
+			}
+			domicile = { change_provisions = starting_provisions_value }
+		}
+		##### Changed from Vanilla vvvvv
+		every_player = {
+			limit = {
+				##### Changed from Vanilla vvvvv
+				exists = root
+				##### Changed from Vanilla ^^^^^
+				NOR = {
+					root ?= this
+					this = scope:new_landless_adventurer
+				}
+				OR = {
+					# Either they're important to us.
+					is_close_or_extended_family_of = scope:new_landless_adventurer
+					is_consort_of = scope:new_landless_adventurer
+					has_important_relationship_with_character_trigger = { CHARACTER = scope:new_landless_adventurer }
+					# Or they're just close enough.
+					AND = {
+						capital_province = { "squared_distance(scope:new_landless_adventurer.location)" <= squared_distance_medium }
+						OR = {
+							top_liege = root.top_liege
+							any_neighboring_and_across_water_top_liege_realm_owner = { this = root.top_liege }
+						}
+					}
+				}
+			}
+			send_interface_message = {
+				type = msg_landless_adventurer_nearby
+				title = nearby_landless_adventurer_created_message_title
+				left_icon = scope:new_landless_adventurer
+				right_icon = scope:adventurer_flavor_char
+				switch = {
+					trigger = scope:adventurer_creation_reason
+					flag:conquest = { custom_tooltip = nearby_landless_adventurer_created_message_conquest_tt }
+					flag:conquest_claim = { custom_tooltip = nearby_landless_adventurer_created_message_conquest_tt }
+					flag:deposition = { custom_tooltip = nearby_landless_adventurer_created_message_deposition_tt }
+					flag:succession = { custom_tooltip = nearby_landless_adventurer_created_message_succession_tt }
+					flag:exile = { custom_tooltip = nearby_landless_adventurer_created_message_exile_tt }
+					flag:voluntary = { custom_tooltip = nearby_landless_adventurer_created_message_voluntary_tt }
+					flag:revocation = { custom_tooltip = nearby_landless_adventurer_created_message_revocation_tt }
+					flag:runaway_allowed = { custom_tooltip = nearby_landless_adventurer_created_message_runaway_allowed_tt }
+					flag:runaway_forbidden = { custom_tooltip = nearby_landless_adventurer_created_message_runaway_forbidden_tt }
+					flag:wanderer = { custom_tooltip = nearby_landless_adventurer_created_message_wanderer_tt }
+					flag:eradicate = { custom_tooltip = nearby_landless_adventurer_created_message_eradicate_tt }
+					fallback = { custom_tooltip = nearby_landless_adventurer_created_message_fallback_tt }
+				}
+			}
+		}
+		##### Changed from Vanilla ^^^^^
+	}
+	##### Changed from Vanilla ^^^^^
+	custom_tooltip = laamp_become_adventurer_tt
+	if = {
+		limit = {
+			OR = {
+				scope:adventurer_creation_reason = flag:deposition
+				scope:adventurer_creation_reason = flag:conquest
+				scope:adventurer_creation_reason = flag:conquest_claim
+				scope:adventurer_creation_reason = flag:exile
+			}
+			NOT = { this = scope:adventurer_flavor_char }
+		}
+		add_opinion = {
+			target = scope:adventurer_flavor_char
+			modifier = demanded_eviction_opinion
+		}
+		remove_laamp_from_exiled_county_automatically_effect = {
+			PROVINCE = scope:new_landless_adventurer.location
+			LAAMP = scope:new_landless_adventurer
+		}
+		save_scope_value_as = {
+			name = expelled
+			value = yes
+		}
+	}
+	hidden_effect = {
+		if = {
+			limit = {
+				scope:new_landless_adventurer = {
+					is_ai = no
+				}
+				NOT = { exists = scope:expelled }
+			}
+			populate_location_with_contracts_effect = {
+				AREA_CHAR = scope:new_landless_adventurer
+				AMOUNT = 3
+			}
+		}
+		scope:new_landless_adventurer = {
+			every_councillor = {
+				if = {
+					limit = {
+						NOR = {
+							has_council_position = councillor_court_chaplain
+							has_council_position = councillor_spouse
+						}
+					}
+					scope:new_landless_adventurer = {
+						fire_councillor = prev
+					}
+					remove_opinion = {
+						modifier = fired_from_council_opinion
+						target = scope:new_landless_adventurer
+					}
+				}
+				else_if = {
+					limit = {
+						NOR = {
+							is_close_or_extended_family_of = scope:new_landless_adventurer
+							has_relation_lover = scope:new_landless_adventurer
+							has_relation_friend = scope:new_landless_adventurer
+							is_consort_of = scope:new_landless_adventurer
+							has_council_position = councillor_spouse
+						}
+					}
+					death = {
+						death_reason = death_vanished
+					}
+				}
+			}
+			every_courtier = {
+				limit = {
+					NOR = {
+						is_close_or_extended_family_of = scope:new_landless_adventurer
+						has_relation_lover = scope:new_landless_adventurer
+						has_relation_friend = scope:new_landless_adventurer
+						is_consort_of = scope:new_landless_adventurer
+					}
+				}
+				move_to_pool = yes
+			}
+			# Give us a couple of starting chars if we're almost completely bereft.
+			if = {
+				limit = {
+					any_courtier = { count <= 2 }
+				}
+				trigger_event = {
+					id = ep3_laamps.1001
+					weeks = { 2 6 }
+				}
+			}
+		}
+		trigger_event = { id = misc.0001 days = 1 }
+		local_arbitration_boon_change_purpose_effect = yes
+	}
+	add_to_global_variable_list = {
+		name = laamps_tally
+		target = scope:new_landless_adventurer.primary_title
+	}
+	set_variable = flavourise_camp_purpose_wanderers
+}

@@ -285,10 +285,9 @@ scripted_effect bp_viet.4002.noric_herbalist_gifter = {
 			}
 			save_scope_as = gifter
 		}
-		add_visiting_courtier = scope:gifter
 	}
 	# If still not, make one
-	if = {
+	else_if = {
 		limit = { NOT = { exists = scope:gifter } }
 		
 		root.culture = { save_scope_as = faith }
@@ -308,8 +307,8 @@ scripted_effect bp_viet.4002.noric_herbalist_gifter = {
 			template = pool_repopulate_learning
 			save_scope_as = gifter
 		}
-		add_visiting_courtier = scope:gifter
 	}
+	add_visiting_courtier = scope:gifter
 }
 
 # Saliunca herb perfume
@@ -1447,8 +1446,8 @@ bp_viet.4013 = { #WTWSMS id: VIETmisc.4013
 	trigger = {
 		OR = {
 			culture = { the_culture_or_parent_or_above_is_trigger = { CULTURE = culture:corduenian } }
-			any_sub_realm_county = { culture = { the_culture_or_parent_or_above_is_trigger = { CULTURE = culture:corduenian } } }
-			capital_county = { culture = { the_culture_or_parent_or_above_is_trigger = { CULTURE = culture:corduenian } } }
+			any_sub_realm_county ?= { culture = { the_culture_or_parent_or_above_is_trigger = { CULTURE = culture:corduenian } } }
+			capital_county ?= { culture = { the_culture_or_parent_or_above_is_trigger = { CULTURE = culture:corduenian } } }
 		}
 		NOT = { has_sexuality = asexual }
 		OR = {

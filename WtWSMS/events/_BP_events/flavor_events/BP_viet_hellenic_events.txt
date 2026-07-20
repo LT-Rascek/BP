@@ -1691,7 +1691,7 @@ scripted_trigger hellenic_514_galli_courtier_trigger = {
 		has_character_flag = VIET_follower_of_cybele_event
 	}
 	has_court_event_flag = no
-	father = {
+	father ?= {
 		is_available_ai = yes
 		has_court_event_flag = no
 		top_liege = root.top_liege
@@ -2515,7 +2515,10 @@ hellenic.523 = {
 		hellenic_or_syncretic_trigger = yes
 		OR = {
 			culture = { has_cultural_pillar = heritage_byzantine }
-			has_court_language = language_greek
+			trigger_if = {
+				limit = { has_royal_court = yes }
+				has_court_language = language_greek
+			}
 		}
 		any_courtier = {
 			count >= 3
@@ -2948,7 +2951,7 @@ hellenic.529 = {
 	
 	trigger = {
 		truly_hellenic_faith_plus_mithraism_trigger = yes
-		root.dynasty.dynast = {
+		root.dynasty.dynast ?= {
 			exists = yes
 			truly_hellenic_faith_plus_mithraism_trigger = yes
 		}

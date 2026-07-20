@@ -150,6 +150,18 @@ bp_narrative_events.0002 = { #WTWSMS id: zusk_event.26
 		position = lower_center_portrait
 	}
 	
+	immediate = {
+		# Find the Regalia
+		random_artifact = {
+			limit = { has_variable = western_roman_imperial_diadem }
+			save_scope_as = diadem_artifact
+			if = {
+				limit = { artifact_owner != root }
+				artifact_owner = { save_scope_as = regalia_owner }
+			}
+		}
+	}
+	
 	option = {
 		trigger = { root = scope:the_last_wre_holder }
 		name = bp_narrative_events.0002.a

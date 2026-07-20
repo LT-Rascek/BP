@@ -1,3 +1,59 @@
+2026-07-19 v0.2.0.1
+-----------
+
+Mechanics:
+- Federates:
+   - Revamped "Request Foederatus" interaction
+      - If playing without AUH DLC, you can only gift your domain
+      - If playing with AUH DLC, you gift a specific province within your realm that is not your capital
+   - Added "Revoke Foederatus" interaction
+      - Allows player to revoke lands held by Federates
+      - Costs scale inversely to Imperial Bureaucracy law
+      - If accepted, federate becomes an adventurer
+      - If refused, triggers a "Federate Revocation War"
+
+Casus Bellorum:
+- Added "Federate Revocation War"
+   - Triggered when Federates reject revocation, with the Federate as the Defender
+   - If won by the liege, the Federate looses their lands and becomes an adventurer
+   - If won by the federate, they receive a prestige level, exemption from liege taxes, and immunity from Federate Revocation the rest of their life
+- Added "Border Raid" CBs for Federates, available against fellow vassals
+   - Emulates one of the difficulties that Romans had with various federate forces:  frequent raiding
+   - Requires "Fate of Iberia" DLC
+
+Tweaks:
+- Prevented various administrative interactions that are not really useable by federates
+- Removed interaction for acquiring federates without surrendering territory; CK3 tributary mechanics more closely aligns with that functionality
+- A dynasty can be elevated to the Senate only if the dynast is of a Romance or Hellenic culture
+- The Senate Houses can now be found in the Senate Situation GUI
+- Sorted some character interaction categories
+
+Localizations:
+- Cleaned up localization around Imperial Bureaucracy to better clarify how it works with Roman Governments
+- Fixed a number of broken localizations
+- Made localization for Roman War declarations appropriately generic
+- Fixed a number of missing localizations relating to succession laws
+
+Bug Fixes:
+- Fixed Theodoric missing his special troops in the last 476 bookmark
+- Fixed bugs relating to the Border Raid CB in general; should be more readily applicable
+- Fixed a bug where certain border expansion CBs were available to Federates
+- Fixed a bug where the Iranian cultures had "Ius Ad Bellum" innovation incorrectly, locking up Border Wars prematurely
+- Fixed a bug where Federate Exempt Taxes were unselectable
+- Fixed a bug where Romulus Augustulus' noble family was regularly destroyed on loosing the war
+- Fixed a bug where having no duchy-level vassals prevented a liege from increasing Aristocratic Control Law
+- Fixed bug where Roman Acclamation didn't include noble house heads as potential emperors
+- Fixed bug where Vanilla Acclamation/Appointment is available to Roman governments
+- Fixed bug where being an emperor of a reunited Rome would prevent you from ever being consul of either Senate
+- Fixed bug preventing Roman Dynastic and Sub-Roman Dynastic liege's from increasing their realm laws
+- Fixed bug where inapplicable faiths were available during stress breaks
+- Fixed bug where hegemonies but not empires would have cultures diverge heritages
+- Fixed bug where Roman Senators kept getting the Senator event after their 25th birthday
+- Fixed bug leading to invalidation of certain conquest wars in edge conditions
+- Fixed bug preventing Roman Imperial Reconquest CBs from being visible
+- Fixed bug where Roman Ministry titles would get transferred from WRE/ERE to Roman Empire during the reformation decision
+- Fixed bug where Roman Administrative rulers could not revoke theocratic titles
+
 2026-06-20 v0.2.0
 -----------
 - Updated the mod to CK3 Vanilla 1.19

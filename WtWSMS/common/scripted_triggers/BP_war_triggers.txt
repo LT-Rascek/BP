@@ -15,3 +15,27 @@ cb_prestige_level_trigger = {
 	}
 	trigger_else = { prestige_level >= $BASE_PRESTIGE_LEVEL$ }
 }
+#Because we need to make the federates follow very specific constraints when it comes to wars
+bp_federate_war_validity_trigger = {
+	trigger_if = {
+		limit = {
+			government_has_flag = government_is_roman_federate
+			exists = scope:defender
+		}
+		OR = {
+			#Case 1: Not of the same realm
+			scope:defender.top_liege != scope:attacker.top_liege
+			#Case 2: Same Realm, but is not administrative
+			AND = {
+				scope:defender.top_liege = scope:attacker.top_liege
+				NOT = { scope:defender = { government_allows = administrative } }
+			}
+			#Case 3: Same Realm, administrative but is a federate
+			AND = {
+				scope:defender.top_liege = scope:attacker.top_liege
+				scope:defender = { government_allows = administrative }
+				scope:defender = { government_has_flag = government_is_quasi_feudal }
+			}
+		}
+	}
+}

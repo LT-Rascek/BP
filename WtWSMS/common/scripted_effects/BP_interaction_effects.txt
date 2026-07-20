@@ -1,0 +1,46 @@
+﻿#TODO: Automatically have Federate Vassals of Federates join in the war
+federate_revocation_war_start_effect = {
+	scope:actor = { #Failed tooltip here
+		start_war = {
+			casus_belli = roman_federate_revocation_war
+			target = scope:recipient
+		}
+	}
+}
+create_federate_adventurer_effect = {
+	custom_description = {
+		text = gets_to_be_an_adventurer
+		object = $ADVENTURER$
+		$ADVENTURER$ = {
+			create_landless_adventurer_title_effect = {
+				REASON = flag:conquest
+				FLAVOR_CHAR = scope:recipient
+			}
+		}
+		#Starting domicile and troops and cash
+		custom_tooltip = start_with_moderate_camp
+		hidden_effect = {
+			$ADVENTURER$ = {
+				this.domicile = {
+					change_provisions = starting_provisions_value
+					change_provisions = starting_provisions_value
+					change_provisions = starting_provisions_value
+					add_domicile_building = camp_main_02
+					add_domicile_building = baggage_train_01
+					add_domicile_building = baggage_train_02
+				}
+				create_maa_regiment = {
+					type = armored_footmen
+					check_can_recruit = no
+					size = 3
+				}
+				create_maa_regiment = {
+					type = light_footmen
+					check_can_recruit = no
+					size = 3
+				}
+				add_gold = 150
+			}
+		}
+	}
+}

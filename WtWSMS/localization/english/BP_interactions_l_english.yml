@@ -11,6 +11,17 @@
  #Request Foederatus
  request_foederatus_interaction: "Request Foederatus"
  request_foederatus_interaction_desc: "Offer your prospective liege a #italic foederatus#! contract, gifting them your military service in exchange for protection"
+ offer_foederatus_interaction_administrative: "$request_foederatus_interaction$"
+ development_weighted_size_of_offering: "Development of New Land: #P $VALUE|0$#!"
+ development_weighted_size_of_domain: "Development of Current Land: #N $VALUE|0$#!"
+ #Revoke Federate
+ revoke_foderatus_interaction_adminstrative: "Revoke Foederatus"
+ revoke_foderatus_interaction_adminstrative_desc: "Revoke a federate contract that was not recently established, reclaiming the land from the federate. @warning_icon! #XThis will trigger a war#!"
+ every_federate_looses_opinion: "Every [roman_federate_government|E] [vassal|E] looses opinion of you"
+ REVOKE_FEDERATE_INTERACTION_NOTIFICATION: "It is our decision that granting you these lands is no longer in the interest of the state and we are revoking the #italic Foederatus#! contract..."
+ FEDERATE_REVOCATION_WAR_TRIGGERED: "Triggers a #V $roman_federate_revocation_war$#! [war|E].\n$TAB$If you win, then:\n$TAB$$EFFECT_LIST_BULLET$You reclaim the counties [TARGET_CHARACTER.GetShortUIName] and his [roman_federate_government|E] vassals hold.\n$TAB$$EFFECT_LIST_BULLET$$GETS_TO_BE_AN_ADVENTURER$\n\n$TAB$If you loose, then [TARGET_CHARACTER.GetShortUIName] gains the following:\n$TAB$$EFFECT_LIST_BULLET$[TARGET_CHARACTER.GetShortUIName] gains #P 1#! [prestige_level|E]\n$TAB$$EFFECT_LIST_BULLET$$FEDERATE_STATUS_CANNOT_BE_REVOKED_THIS_LIFETIME$\n$TAB$$EFFECT_LIST_BULLET$$FEDERATE_BECOMES_TAX_EXEMPT$"
+ recent_federate_status: "Recently became a federate"
+ federate_rights_protected: "Has won a Federate Revocation War"
  #Grant titles
  cannot_give_more_than_duchies_to_quasi_feudals: "Cannot give a [title|E] of a [title_tier|E] greater than a [duchy|E] for this government"
  can_only_grant_titles_in_same_duchy: "Can only grant titles in the same [duchy|E] as the ruler's [capital|E]"
@@ -25,6 +36,7 @@
  law_prevents_deposition: "The law blocks deposition of governors."
  contract_prevents_deposition: "The contract blocks deposition of governors."
  #Revoke title
+ federate_titles_are_protected: "#italic Foederatus#! titles are protected from revocation"
  non_roman_law_protects_revocation_of_theocrats: "Your #V $non_roman_minority_rule_law$#! protects Romans from having their theocratic titles revoked"
  cannot_revoke_titulars: "Titular Titles cannot be revoked."
  ##### TODO (Alpha): Replace "target's" with working promotes

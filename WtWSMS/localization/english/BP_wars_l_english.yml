@@ -42,9 +42,9 @@
  SUCCESSOR_IMPERIAL_RECONQUEST_SPECIFIC_NAME: "[ATTACKER.GetPrimaryTitle.GetPrefix]-[DEFENDER.GetPrimaryTitle.GetAdjective] Sub-Roman War of Reconquest"
  
  #Roman Wars
- roman_individual_county_de_jure_cb: "$de_jure_cb$"
- roman_individual_duchy_de_jure_cb: "$de_jure_cb$"
- roman_individual_kingdom_de_jure_cb: "$de_jure_cb$"
+ roman_individual_county_de_jure_cb: "Roman Empire [county|E] $de_jure_cb$"
+ roman_individual_duchy_de_jure_cb: "Roman Empire [duchy|E] $de_jure_cb$"
+ roman_individual_kingdom_de_jure_cb: "Roman Empire [kingdom|E] $de_jure_cb$"
  ROMAN_DEJURE_CB_COUNTY_NAME_GENERIC: "Seize [de_jure|E] [county|E]"
  ROMAN_DEJURE_CB_WAR_SPECIFIC_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] De Jure War for the [TITLE.GetBaseName]"
  ROMAN_DEJURE_CB_WAR_SPECIFIC_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
@@ -54,9 +54,9 @@
  ROMAN_DEJURE_CB_KINGDOM_NAME: "Seize the [TITLE.GetBaseName] #weak ([de_jure|E])#!"
  ROMAN_DEJURE_CB_KINGDOM_NAME_GENERIC: "Seize [de_jure|E] [kingdom|E]"
  
- subroman_individual_county_de_jure_cb: "$de_jure_cb$"
- subroman_individual_duchy_de_jure_cb: "$de_jure_cb$"
- subroman_individual_kingdom_de_jure_cb: "$de_jure_cb$"
+ subroman_individual_county_de_jure_cb: "Roman Empire [county|E] $de_jure_cb$"
+ subroman_individual_duchy_de_jure_cb: "Roman Empire [duchy|E] $de_jure_cb$"
+ subroman_individual_kingdom_de_jure_cb: "Roman Empire [kingdom|E] $de_jure_cb$"
  SUBROMAN_DEJURE_CB_COUNTY_NAME_GENERIC: "Seize Roman [county|E]"
  SUBROMAN_DEJURE_CB_WAR_SPECIFIC_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] De Jure War for the [TITLE.GetBaseName]"
  SUBROMAN_DEJURE_CB_WAR_SPECIFIC_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
@@ -65,7 +65,7 @@
  SUBROMAN_DEJURE_CB_DUCHY_NAME_GENERIC: "Seize Roman [duchy|E]"
  SUBROMAN_DEJURE_CB_KINGDOM_NAME: "Seize the [TITLE.GetBaseName] #weak ([de_jure|E])#!"
  SUBROMAN_DEJURE_CB_KINGDOM_NAME_GENERIC: "Seize Roman [kingdom|E]"
- only_availble_with_appropriate_roman_law_war: "Requires an appropriate level of $roman_dynastic_authority$"
+ ONLY_AVAILBLE_WITH_APPROPRIATE_ROMAN_LAW_WAR: "Requires an appropriate level of [SelectLocalization( Or( CHARACTER.GetGovernment.HasGovernmentFlag('government_is_roman_administrative'),CHARACTER.GetGovernment.HasGovernmentFlag('government_is_subroman_administrative')) ,'imperial_bureaucracy','roman_dynastic_authority')]
  
  #Unification Wars
  unification_war: "Unification War"
@@ -76,6 +76,21 @@
  UNIFICATION_WAR_NAME: "[ATTACKER.GetCulture.GetNameNoTooltip] Unification War for [TITLE.GetNameNoTier]"
  UNIFICATION_WAR_NAMEE_BASE: "[ATTACKER.GetCulture.GetNameNoTooltip][TITLE.GetNameNoTier]"
  UNIFICATION_CB_NAME: "[ATTACKER.GetCulture.GetNameNoTooltip] Unification War for [TITLE.GetNameNoTier]"
+ 
+ #Federate Wars
+ roman_federate_revocation_war: "Federate Revocation"
+ ROMAN_FEDERATE_REVOCATION_WAR_NAME: "[ATTACKER.GetPrimaryTitle.GetAdjective] Federate Revocation War against [DEFENDER.GetPrimaryTitle.GetName]"
+ ROMAN_FEDERATE_REVOCATION_WAR_CB_NAME: "Federate Revocation War"
+ msg_roman_federate_revocation_war_invalidated_message: "Federate Revocation War invalidated"
+ roman_federate_revocation_war_desc_attacker: "[defender.GetShortUIName|U] surrenders [defender.GetHerHis] holdings to you"
+ roman_federate_revocation_war_desc: "You loose your lands to [attacker.GetShortUIName|U]"
+ roman_federate_revocation_war_white_peace_desc_defender: "You keep the current status quo."
+ roman_federate_revocation_war_white_peace_desc: "[defender.GetShortUIName|U] keeps the current status quo."
+ roman_federate_revocation_war_defeat_desc_defender: "You remain a Federate, more secure than before."
+ roman_federate_revocation_war_defeat_desc: "[defender.GetShortUIName|U] remains a Federate with greater security."
+ #Tooltips (make dynamic)
+ FEDERATE_STATUS_CANNOT_BE_REVOKED_THIS_LIFETIME: "Federate Status cannot be revoked the rest of the [TARGET_CHARACTER.GetShortUIName] life"
+ FEDERATE_BECOMES_TAX_EXEMPT: "[TARGET_CHARACTER.GetShortUINamePossessive] is exempt from paying liege taxes the rest of their life"
  
  #Tributary Wars
  tributary_cb: "Extort Tribute"

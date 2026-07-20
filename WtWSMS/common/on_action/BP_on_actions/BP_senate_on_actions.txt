@@ -92,6 +92,8 @@ senate_on_25th_birthday = {
 			dynasty = { has_dynasty_modifier = roman_senate_family_west }
 			dynasty = { has_dynasty_modifier = roman_senate_family_east }
 		}
+		NOT = { has_trait = senator_west }
+		NOT = { has_trait = senator_east }
 	}
 	effect = {
 		if = {

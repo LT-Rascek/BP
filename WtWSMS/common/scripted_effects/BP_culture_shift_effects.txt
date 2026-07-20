@@ -171,7 +171,7 @@ generic_shift_culture_event_effect = { #Cf. Vanilla common/on_actions/yearly_on_
 				limit = { always = $UNITED_POLITY_PREVENTS_SHIFT$ }
 				
 				any_ruler = {
-					primary_title.tier = tier_empire
+					primary_title.tier >= tier_empire
 					this.culture = { has_same_culture_$HERITAGE_OR_LANGUAGE$ = scope:shift_culture }
 					this = { save_temporary_scope_as = the_ruler }
 				}

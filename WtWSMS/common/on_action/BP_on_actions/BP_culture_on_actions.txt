@@ -157,11 +157,11 @@ historical_culture_ashkenazi = {
 	effect = {
 		if = {
 			limit = { NOT = { has_global_variable = ashkenazi_culture_already_exists } }
+			save_temporary_scope_value_as = { name = shift_start_year value = 750 }
+			save_temporary_scope_value_as = { name = shift_period_years value = 150 }
 			random = {
 				chance = 0
 				# Melting pot logic
-				save_temporary_scope_value_as = { name = shift_start_year value = 750 }
-				save_temporary_scope_value_as = { name = shift_period_years value = 150 }
 				modifier = { add = 0.25 current_year >= shift_start_year_0_period }
 				modifier = { add = 0.25 current_year >= shift_start_year_1_period }
 				modifier = { add = 0.50 current_year >= shift_start_year_2_period }
@@ -318,11 +318,11 @@ historical_culture_radhanite = {
 	effect = {
 		if = {
 			limit = { NOT = { has_global_variable = radhanite_culture_already_exists } }
+			save_temporary_scope_value_as = { name = shift_start_year value = 850 }
+			save_temporary_scope_value_as = { name = shift_period_years value = 150 }
 			random = {
 				chance = 0
 				# Melting pot logic
-				save_temporary_scope_value_as = { name = shift_start_year value = 850 }
-				save_temporary_scope_value_as = { name = shift_period_years value = 150 }
 				modifier = { add = 0.25 current_year >= shift_start_year_0_period }
 				modifier = { add = 0.25 current_year >= shift_start_year_1_period }
 				modifier = { add = 0.50 current_year >= shift_start_year_2_period }

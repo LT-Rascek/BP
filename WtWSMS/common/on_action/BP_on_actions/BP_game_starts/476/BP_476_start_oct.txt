@@ -14,6 +14,8 @@ bp_game_start_476_oct = {
 		BP_set_lieges_476_oct
 		BP_remove_claims_476_oct
 		BP_senate_476_oct
+		#Warfare
+		BP_create_theodoric_armies_476_oct
 		#culture
 		BP_starting_culture_acceptance_476_oct
 		#Tribs
@@ -659,6 +661,13 @@ BP_senate_476_oct = {
 }
 
 #Warfare
+BP_create_theodoric_armies_476_oct = {
+	effect = {
+		character:63 = {
+			create_theodoric_army_effect = { LOCATION = 3682 }
+		}
+	}
+}
 
 on_game_start_after_lobby = { on_actions = { bp_game_start_after_lobby_476_oct } }
 
