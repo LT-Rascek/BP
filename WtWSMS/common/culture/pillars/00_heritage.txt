@@ -660,7 +660,7 @@ heritage_tibetan = {
 heritage_tocharian = { #Serindian
 	type = heritage
 	is_shown = { heritage_is_shown_trigger = { HERITAGE = heritage_tocharian } }
-	audio_parameter = indian
+	audio_parameter = sea
 	
 	parameters = {
 		heritage_group_greater_chinese = yes
@@ -767,6 +767,18 @@ heritage_yoruba = {
 	parameters = {
 		heritage_group_west_african = yes
 		heritage_family_african = yes
+	}
+}
+heritage_yuezhi = {
+	type = heritage
+	is_shown = { heritage_is_shown_trigger = { HERITAGE = heritage_yuezhi } }
+	audio_parameter = mena
+	
+	parameters = {
+		heritage_kulturbund_scythian = yes
+		heritage_group_eurasian_steppe = yes
+		heritage_family_east_asian = yes
+		heritage_family_eurasian = yes
 	}
 }
 
