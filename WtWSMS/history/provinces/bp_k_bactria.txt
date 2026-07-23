@@ -3,179 +3,6 @@
 
 # k_bactria
 
-## d_kabul ###################################
-
-###c_kabulistan
-4504 = { #Kabul
-	culture = pakthun
-	religion = shaivism
-	holding = castle_holding
-}
-4503 = { #Sukawand
-	holding = none
-}
-###c_nuristan
-4516 = { #Nagarahara
-	culture = nuristani
-	religion = nuristani_pagan
-	holding = castle_holding #aka Dionysopolis
-}
-4508 = { #Lamghan
-	holding = church_holding #Jalabad was a religious region of some note
-}
-###c_bamiyan
-4343 = { # 4343 - Bamiyan
-	culture = kushan
-	religion = mahayana #Early center of pre-5th century Mahayana Buddhism, probably Kushan support
-	holding = castle_holding
-	special_building_slot = buddhas_of_bamian_01
-	570.1.1 = { special_building = buddhas_of_bamian_01 }
-}
-4342 = { #Sakalkand
-	holding = none
-}
-4344 = { #Parwan
-	holding = city_holding #Alexandria-in-the-Caucasus
-}
-4345 = { #Panjhir
-	holding = none #aka Panjshir
-}
-4346 = { #Jarbaya
-	holding = none
-}
-###c_chitral
-4515 = { #Chitral
-	culture = kalash
-	religion = nuristani_pagan
-	holding = tribal_holding
-}
-4514 = { #Kunar
-	holding = none
-}
-
-## d_zabulistan ###################################
-
-###c_ghazana
-4500 = {	# 4500 - Ghazna
-	culture = pakthun
-	religion = mahayana
-	holding = castle_holding #Alexandria-in-Opiana
-}
-4501 = {	# Gardiz
-	holding = none
-}
-4502 = {	# Istakh
-	holding = none
-}
-4505 = {	# Sharan
-	holding = none
-}
-4506 = {	# Moqor
-	holding = none
-}
-###c_zabulistan
-4507 = {	# Jaldak
-	culture = pakthun
-	religion = iranian_pagan
-	holding = tribal_holding
-}
-4509 = {	# Mapan
-	holding = none
-}
-###c_rukhaj
-4499 = {	# Rukhaj
-	culture = pakthun
-	religion = mahayana
-	holding = castle_holding
-}
-4494 = {	# Rudan
-	holding = none
-}
-4495 = {	# Panjway
-	holding = none
-}
-4496 = {	# Bakrawath
-	holding = none
-}
-4498 = {	# Qandahar
-	holding = city_holding #Alexandria-in-Arachosia
-	buildings = {
-		city_02
-	}
-}
-###c_zamindawar
-4489 = {	# Zamindawar
-	culture = pakthun
-	religion = dharmaguptaka
-	holding = castle_holding
-}
-4490 = {	# Sarwan
-	holding = none
-}
-4491 = {	# Bishang
-	holding = none
-}
-4492 = {	# Durgas
-	holding = none
-}
-4493 = {	# Bagnin
-	holding = none
-}
-
-## d_ghur ###################################
-
-###c_ghur
-4225 = {	#Firuzkuh	#AKA Chagcharan
-	culture = abagan
-	religion = iranian_pagan
-	holding = tribal_holding
-}
-4224 = {	#Khasht
-	holding = none
-}
-4226 = {	#Ahanjaran
-	holding = none
-}
-4227 = {	#Ghur
-	holding = none
-}
-###c_darmashan
-4201 = {	#Azadawan
-	culture = abagan
-	religion = iranian_pagan
-	holding = tribal_holding
-}
-4228 = {	#Darmashan
-	holding = none
-}
-4300 = {	#Zirjan
-	holding = none
-}
-###c_upper_ghur
-4231 = {	#Dih-e-Khalaf
-	culture = abagan
-	religion = iranian_pagan
-	holding = tribal_holding
-}
-4232 = {	#Ribat-e-Karyan
-	holding = none
-}
-4233 = {	#Till
-	holding = none
-}
-###c_rivsharan
-4223 = {	#Dizah
-	culture = abagan
-	religion = iranian_pagan
-	holding = tribal_holding
-}
-4229 = {	#Bashin
-	holding = none
-}
-4230 = {	#Shurmin
-	holding = none
-}
-
 ## d_balkh ###################################
 
 #LT-Rascek: Balkh (specifically Tokharestan) appears to be
@@ -202,15 +29,15 @@
 	holding = none
 }
 ###c_west-tokharestan
-4341 = {	#Samanjan
+4340 = {	#Ruy
 	culture = kushan
 	religion = mahayana
 	holding = castle_holding
 }
-4339 = {	#Saan
-	holding = none
+4341 = {	#Samanjan
+	holding = city_holding
 }
-4340 = {	#Ruy
+4339 = {	#Saan
 	holding = none
 }
 ###c_east-tokharestan
@@ -253,5 +80,137 @@
 	holding = none
 }
 4254 = {	#Anbar-Guzgani
+	holding = none
+}
+
+## d_khuttal ###################################
+
+###c_khuttal
+4378 = {	#Pargar
+	culture = kushan
+	religion = khurmazta
+	holding = castle_holding
+}
+4379 = {	#Hulbuk
+	holding = none
+}
+4380 = {	#Munk
+	holding = none
+}
+###c_wakhsh
+4376 = {	#Halavand
+	culture = kushan
+	religion = khurmazta
+	holding = castle_holding
+}
+4374 = {	#Awzaj
+	holding = none
+}
+4375 = {	#Qobadiyan
+	holding = city_holding #possibly founded by Khavad I
+}
+4377 = {	#Livkand
+	holding = none
+}
+###c_chaghaniyan
+4369 = {	#Chaghaniyan
+	culture = kushan
+	religion = khurmazta
+	holding = castle_holding
+}
+4368 = {	#Termez
+	holding = city_holding
+}
+4370 = {	#Rigar
+	holding = church_holding #aka Akhrun
+}
+4371 = {	#Darzanji
+	holding = none
+}
+4372 = {	#Basand
+	holding = none
+}
+4373 = {	#Charmanjan
+	holding = none
+}
+###c_rasht
+4383 = {	#Rasht
+	culture = kushan
+	religion = khurmazta
+	holding = castle_holding
+}
+4381 = {	#Shuman
+	holding = city_holding
+}
+4382 = {	#Vashjird
+	holding = none
+}
+
+##d_badakhshan ###################################
+
+###c_badakhshan
+4355 = {	#Badakhshan
+	culture = pamiri
+	religion = nuristani_pagan
+	holding = tribal_holding
+}
+4353 = {	#Rustaq
+	holding = none
+}
+4354 = {	#Kishm
+	holding = none
+}
+4356 = {	#Jerm
+	holding = none
+}
+###c_munjan
+4357 = {	#Munjan
+	culture = pamiri
+	religion = nuristani_pagan
+	holding = tribal_holding
+}
+4358 = {	#Sanglich
+	holding = none
+}
+4359 = {	#Zaybak
+	holding = none
+}
+###c_wakhan
+4362 = {	#Wakhan
+	culture = pamiri
+	religion = nuristani_pagan
+	holding = tribal_holding
+}
+4360 = {	#Ishkamish
+	holding = none
+}
+4361 = {	#Dar-i-Tubbat
+	holding = none
+}
+###c_shughnan
+4363 = {	#Shughnan
+	culture = pamiri
+	religion = nuristani_pagan
+	holding = tribal_holding
+}
+4364 = {	#Alichur
+	holding = none
+}
+4365 = {	#Murghab
+	holding = none
+}
+7964 = {	#Muji
+	holding = none
+}
+7965 = {	#Badakhshan_TARIM = Rangkul
+	holding = none
+}
+###c_karran
+4366 = {	#Upper Karran
+	culture = pamiri
+	religion = nuristani_pagan
+	holding = tribal_holding
+}
+4367 = {	#Lower Karran
 	holding = none
 }

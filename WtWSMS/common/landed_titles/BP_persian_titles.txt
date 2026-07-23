@@ -75,20 +75,6 @@ e_xiongnu = {
 	can_create = { general_empire_title_creation_trigger = yes }
 }
 
-k_kabulistan = { #replacement of k_afghanistan
-	color = { 163 121 57 }
-	capital = c_kabul # Kabul
-	
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:afghan }
-			add = @always_primary_score
-		}
-	}
-	
-	can_create = { general_kingdom_title_creation_trigger = yes }
-}
-
 k_kidarite = {
 	color={ 143 143 103 }
 	capital = c_herat # Herat
