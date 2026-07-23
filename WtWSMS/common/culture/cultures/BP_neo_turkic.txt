@@ -532,14 +532,14 @@ yuezhi = { #The nomadic Yuezhi
 	}
 }
 kushan = { #The settled Great Yuezhi
-	color = yuezhi
+	color = kushan
 	
 	parents = { yuezhi bactrian }
 	created = 2.1.1
 	history_loc_override = kushan_history_loc
 	
 	ethos = ethos_spiritual
-	heritage = heritage_yuezhi
+	heritage = heritage_tocharian
 	language = language_bactrian
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_herd
@@ -550,7 +550,7 @@ kushan = { #The settled Great Yuezhi
 		tradition_religion_blending
 		tradition_religious_patronage
 		#Realm Traditions
-		tradition_ruling_caste
+		tradition_parochialism
 		#Combat traditions
 	}
 	
@@ -566,7 +566,7 @@ kushan = { #The settled Great Yuezhi
 		fallback = tradition_futuwaa
 	}
 	
-	name_list = name_list_gushi
+	name_list = name_list_bactrian
 	
 	coa_gfx = { bp_scythian_coa_gfx iranian_group_coa_gfx steppe_coa_gfx }
 	coa_gfx = { chinese_group_coa_gfx }
@@ -682,6 +682,49 @@ pakthun = {
 		30 = turkic_west
 	}
 }
+proto_baloch = {
+	color = proto_baloch
+	
+	parents = { parthian }
+	created = 375.1.1
+	history_loc_override = proto_baloch_history_loc
+	
+	ethos = ethos_stoic #FP3 change based on research
+	heritage = heritage_iranian
+	language = language_parthian
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_domain
+	traditions = {
+		#Societal Traditions
+		#Regional Traditions
+		#Ritual Traditions
+		#Realm Traditions
+		tradition_mountain_homes
+		tradition_isolationist
+		#Combat Traditions
+	}
+	
+	# FP3 traditions
+	dlc_tradition = {
+		trait = tradition_fp3_jirga
+		requires_dlc_flag = legacy_of_persia
+	}
+
+	name_list = name_list_baloch
+
+	coa_gfx = { iranian_group_coa_gfx }
+	building_gfx = { iranian_building_gfx }
+	clothing_gfx = { iranian_clothing_gfx mena_clothing_gfx }
+	unit_gfx = { iranian_unit_gfx }
+	house_coa_frame = house_frame_12
+	house_coa_mask_offset = { 0.0 -0.04 }
+	house_coa_mask_scale = { 0.95 0.95 }
+	
+	ethnicities = {
+		100 = iranian
+	}
+}
+
 #Western Turks
 bolghar = {
 	color = bolghar

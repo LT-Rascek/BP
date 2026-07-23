@@ -8,102 +8,6 @@
 #[1] -Yorulmazoglu, Erol. The Turks: The Central Asian Civilization That Bridged the East and the West for Over Two Millennia - volume 1 (p. 223). Kindle Edition. 
 
 
-barsil = {
-	color = barsil
-	
-	ethos = ethos_bellicose
-	heritage = heritage_turkic
-	language = language_oghur
-	martial_custom = martial_custom_male_only
-	head_determination = head_determination_herd
-	traditions = {
-		#Societal Traditions
-		#Regional Traditions
-		#Ritual Traditions
-		#Realm Traditions
-		tradition_pastoralists
-		#Combat Traditions
-	}
-	
-	dlc_tradition = {
-		trait = tradition_devoted_horsemanship
-		requires_dlc_flag = khans_of_the_steppe
-		fallback = tradition_horse_lords
-	}
-	
-	name_list = name_list_barsil
-	
-	coa_gfx = { turkic_group_coa_gfx steppe_coa_gfx }
-	building_gfx = { steppe_building_gfx }
-	clothing_gfx = { turkic_clothing_gfx mongol_clothing_gfx}
-	unit_gfx = { mongol_unit_gfx }
-	house_coa_frame = house_frame_14
-	
-	#Hunnic
-	ethnicities = {
-		36 = turkic
-		28 = iranian
-		20 = mediterranean
-		4 = caucasian_blond
-		4 = caucasian_brown_hair
-		4 = caucasian_dark_hair
-		4 = caucasian_ginger
-	}
-}
-hunas = {
-	color = hunas
-	
-	parents = { xiongnu bactrian }
-	created = 350.1.1
-	history_loc_override = hunas_history_loc
-	
-	ethos = ethos_bellicose
-	heritage = heritage_turkic
-	language = language_bactrian
-	martial_custom = martial_custom_male_only
-	head_determination = head_determination_herd
-	traditions = {
-		#Societal Traditions
-		tradition_warrior_culture
-		#Regional Traditions
-		#Ritual Traditions
-		#Realm Traditions
-		tradition_ruling_caste
-		#Combat Traditions
-	}
-	
-	dlc_tradition = {
-		trait = tradition_devoted_horsemanship
-		requires_dlc_flag = khans_of_the_steppe
-		fallback = tradition_horse_lords
-	}
-	
-	dlc_tradition = {
-		trait = tradition_culture_blending
-		requires_dlc_flag = hybridize_culture
-	}
-	
-	name_list = name_list_hunas
-	
-	coa_gfx = { turkic_group_coa_gfx steppe_coa_gfx }
-	coa_gfx = { iranian_group_coa_gfx }
-	building_gfx = { mena_building_gfx }
-	clothing_gfx = { turkic_clothing_gfx mongol_clothing_gfx}
-	clothing_gfx = { mena_clothing_gfx }
-	unit_gfx = { mongol_unit_gfx }
-	house_coa_frame = house_frame_14
-	
-	#Hunnic/Bactrian Admixture (75%/25%)
-	ethnicities = { #Based on Procopius of Caesarea's description
-		36 = iranian
-		27 = turkic
-		25 = mediterranean
-		3 = caucasian_blond
-		3 = caucasian_brown_hair
-		3 = caucasian_dark_hair
-		3 = caucasian_ginger
-	}
-}
 #Oghuz proto-speakers
 #Siberian Speakers
 kirghiz = {
@@ -143,11 +47,11 @@ kirghiz = {
 	
 	#Historical References to lighter hair colors means some Caucasian Admixture
 	ethnicities = {
-		52 = turkic
-		12 = caucasian_blond
-		12 = caucasian_brown_hair
-		12 = caucasian_dark_hair
-		12 = caucasian_ginger
+		88 = turkic
+		3 = caucasian_blond
+		3 = caucasian_brown_hair
+		3 = caucasian_dark_hair
+		3 = caucasian_ginger
 	}
 }
 kurykan = { #Remnant Dinglings that became Kurykans/proto-Buryats,Tuvans,Siberian Turks
@@ -187,15 +91,9 @@ kurykan = { #Remnant Dinglings that became Kurykans/proto-Buryats,Tuvans,Siberia
 	unit_gfx = { mongol_unit_gfx }
 	house_coa_frame = house_frame_14
 	
-	#Xiongnu with more Asian Admixture (so 1:1 Xiongnu/Asian)
+	#50/50 Manchu/Turkic mixture
 	ethnicities = {
 		50 = asian_manchu_korean
-		34 = turkic
-		7 = iranian
-		5 = mediterranean
-		1 = caucasian_blond
-		1 = caucasian_brown_hair
-		1 = caucasian_dark_hair
-		1 = caucasian_ginger
+		50 = turkic
 	}
 }
