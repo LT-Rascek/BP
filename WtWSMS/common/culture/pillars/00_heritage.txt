@@ -161,6 +161,19 @@ heritage_chinese = {
 		heritage_family_east_asian = yes
 	}
 }
+heritage_chionite = { #Used for the Iranian Huns (Chionite, Kidarites, Alchon, Nezak)
+	type = heritage
+	is_shown = { always = no }
+	audio_parameter = european
+	
+	parameters = {
+		heritage_kulturbund_scythian = yes
+		heritage_kulturbund_turkic = yes
+		heritage_group_eurasian_steppe = yes
+		heritage_group_north_asian = yes
+		heritage_family_eurasian = yes
+	}
+}
 heritage_common_slavic = {
 	type = heritage
 	is_shown = { heritage_is_shown_trigger = { HERITAGE = heritage_common_slavic } }
@@ -272,6 +285,19 @@ heritage_gothic = {
 		heritage_kulturbund_chernyakhov = yes
 		heritage_group_germanic = yes
 		heritage_family_european = yes
+	}
+}
+heritage_hunnic = { #Used for the Far Western Turks (Huns, Bolghars, Sabirs, Magyars?)
+	type = heritage
+	is_shown = { always = no }
+	audio_parameter = european
+	
+	parameters = {
+		heritage_kulturbund_turkic = yes
+		heritage_group_eastern_european = yes
+		heritage_group_eurasian_steppe = yes
+		heritage_group_north_asian = yes
+		heritage_family_eurasian = yes
 	}
 }
 heritage_iberian = {
@@ -403,7 +429,7 @@ heritage_mongolic = {
 	
 	parameters = {
 		heritage_kulturbund_turco_mongol = yes
-		heritage_group_north_asian = yes
+		heritage_group_northeast_asian = yes
 		heritage_group_eurasian_steppe = yes
 		heritage_family_eurasian = yes
 	}
@@ -677,6 +703,7 @@ heritage_turkic = {
 	audio_parameter = sea
 	
 	parameters = {
+		heritage_kulturbund_turkic = yes
 		heritage_kulturbund_turco_mongol = yes
 		heritage_group_eurasian_steppe = yes
 		heritage_group_north_asian = yes
@@ -803,18 +830,6 @@ heritage_goidelic = {
 		heritage_family_european = yes
 	}
 }
-heritage_hunnic = {
-	type = heritage
-	is_shown = { always = no }
-	audio_parameter = european
-	
-	parameters = { # copied from heritage_turkic
-		heritage_kulturbund_turco_mongol = yes
-		heritage_group_eurasian_steppe = yes
-		heritage_group_north_asian = yes
-		heritage_family_eurasian = yes
-	}
-}
 
 #AUH
 heritage_austronesian = {
@@ -902,7 +917,7 @@ heritage_tungusic = {
 	
 	parameters = {
 		heritage_kulturbund_siberian = yes
-		heritage_group_north_asian = yes
+		heritage_group_northeast_asian = yes
 		heritage_group_manchurian = yes
 		heritage_family_eurasian = yes
 	}
@@ -918,7 +933,7 @@ heritage_nivkh = { # Localized as Siberian
 	
 	parameters = {
 		heritage_kulturbund_siberian = yes
-		heritage_group_north_asian = yes
+		heritage_group_northeast_asian = yes
 		heritage_family_eurasian = yes
 	}
 }
@@ -947,7 +962,7 @@ heritage_ainuic = {
 	
 	parameters = {
 		heritage_kulturbund_siberian = yes
-		heritage_group_north_asian = yes
+		heritage_group_northeast_asian = yes
 		heritage_family_east_asian = yes
 	}
 }

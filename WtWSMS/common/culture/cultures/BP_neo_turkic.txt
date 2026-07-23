@@ -1,5 +1,5 @@
-﻿#The Xiongnu, the hardest to nail down
-xiongnu = {
+﻿### Turkic Heritage Cultures (i.e., directly Xiongnu/Tiele related)
+xiongnu = { #The Xiongnu, the hardest to nail down
 	color = xiongnu
 	
 	created = 2.1.1
@@ -42,111 +42,6 @@ xiongnu = {
 		70 = turkic
 		10 = iranian
 		8 = mediterranean
-		3 = caucasian_blond
-		3 = caucasian_brown_hair
-		3 = caucasian_dark_hair
-		3 = caucasian_ginger
-	}
-}
-chionite = { #Chionites, Kidarites, Alchon Huns, Hepthalites
-	color = chionite
-	
-	#Iranic Huns; basically, Sakan/Turkic hybrid
-	parents = { saka xiongnu }
-	created = 250.1.1
-	history_loc_override = chionite_history_loc
-	
-	ethos = ethos_bellicose
-	heritage = heritage_turkic
-	language = language_sakan
-	martial_custom = martial_custom_male_only
-	head_determination = head_determination_herd
-	traditions = {
-		#Societal Traditions
-		tradition_warrior_culture
-		#Regional Traditions
-		#Ritual Traditions
-		#Realm Traditions
-		tradition_ruling_caste
-		#Combat Traditions
-	}
-	
-	dlc_tradition = {
-		trait = tradition_devoted_horsemanship
-		requires_dlc_flag = khans_of_the_steppe
-		fallback = tradition_horse_lords
-	}
-	
-	name_list = name_list_hunas
-	
-	coa_gfx = { turkic_group_coa_gfx steppe_coa_gfx }
-	building_gfx = { steppe_building_gfx }
-	clothing_gfx = { turkic_clothing_gfx mongol_clothing_gfx }
-	unit_gfx = { mongol_unit_gfx }
-	house_coa_frame = house_frame_14
-	
-	#50% Sakan/50% Turkish (West)
-	ethnicities = {
-		50 = turkic_west
-		22 = iranian
-		16 = mediterranean
-		#Historic references to lighter hair colors
-		3 = caucasian_blond
-		3 = caucasian_brown_hair
-		3 = caucasian_dark_hair
-		3 = caucasian_ginger
-	}
-}
-chach = { #North Sogdianan, admixed with Kangju and Chionites
-	color = chach
-	
-	#Kangju long-held capital of Chach, likely intermixed
-	parents = { saka sogdian }
-	created = 2.1.1
-	history_loc_override = chach_history_loc
-	
-	ethos = ethos_egalitarian
-	heritage = heritage_tocharian
-	language = language_sogdian
-	martial_custom = martial_custom_male_only
-	head_determination = head_determination_domain
-	traditions = {
-		#Societal Traditions
-		#Regional Traditions
-		#Ritual Traditions
-		tradition_religion_blending
-		#Realm Traditions
-		tradition_parochialism
-		tradition_dryland_dwellers
-		#Combat Traditions
-	}
-	
-	dlc_tradition = {
-		trait = tradition_devoted_horsemanship
-		requires_dlc_flag = khans_of_the_steppe
-		fallback = tradition_horse_lords
-	}
-	
-	dlc_tradition = {
-		trait = tradition_culture_blending
-		requires_dlc_flag = hybridize_culture
-		fallback = tradition_xenophilic
-	}
-	
-	name_list = name_list_sogdian
-	
-	coa_gfx = { bp_scythian_coa_gfx iranian_group_coa_gfx steppe_coa_gfx }
-	building_gfx = { iranian_building_gfx }
-	clothing_gfx = { iranian_clothing_gfx mena_clothing_gfx }
-	unit_gfx = { iranian_unit_gfx }
-	house_coa_frame = house_frame_12
-	house_coa_mask_offset = { 0.0 -0.04 }
-	house_coa_mask_scale = { 0.95 0.95 }
-	
-	#50-50 Sakan/Sogdian mix
-	ethnicities = {
-		51 = iranian
-		37 = mediterranean
 		3 = caucasian_blond
 		3 = caucasian_brown_hair
 		3 = caucasian_dark_hair
@@ -202,54 +97,6 @@ yueban = { #Southern Xiongnu inheritors
 		3 = caucasian_ginger
 	}
 }
-lushuihu = { #Yuezhi/Greater Qiang mix
-	color = lushuihu
-	
-	#Derived from Xiongnu and local Qiangs
-	parents = { yuezhi tangut }
-	created = 2.1.1
-	history_loc_override = lushuihu_history_loc
-	
-	ethos = ethos_stoic
-	heritage = heritage_qiangic
-	language = language_qiangic
-	martial_custom = martial_custom_male_only
-	head_determination = head_determination_domain
-	traditions = {
-		#Societal Traditions
-		tradition_loyal_soldiers
-		#Regional Traditions
-		tradition_himalayan_settlers
-		#Ritual Traditions
-		tradition_religion_blending
-		#Realm Traditions
-		#Combat Traditions
-	}
-	
-	name_list = name_list_tangut
-	
-	coa_gfx = { bp_scythian_coa_gfx iranian_group_coa_gfx steppe_coa_gfx }
-	coa_gfx = { chinese_group_coa_gfx }
-	building_gfx = { chinese_building_gfx }
-	clothing_gfx = { tangut_clothing_gfx mongol_clothing_gfx }
-	unit_gfx = { mongol_unit_gfx }
-	
-	house_coa_frame = house_frame_12
-	house_coa_mask_offset = { 0.0 -0.04 }
-	house_coa_mask_scale = { 0.95 0.95 }
-	
-	#30% Yuezhi, 70% Qiangic
-	ethnicities = {
-		70 = asian_tibetan
-		14 = iranian
-		8 = mediterranean
-		2 = caucasian_blond
-		2 = caucasian_brown_hair
-		2 = caucasian_dark_hair
-		2 = caucasian_ginger
-	}
-}
-#Eastern Turks
 tiele = {
 	color = tiele
 	
@@ -298,8 +145,7 @@ tiele = {
 		1 = caucasian_ginger
 	}
 }
-#Origin is Xiongnu of Ashina clan, relocated by Rourans to the Altai region in the 450s
-gokturkish = { # Old Eastern Turkish
+gokturkish = { # Old Eastern Turkish; Origin is Xiongnu of Ashina clan, relocated by Rourans to the Altai region in the 450s
 	color = { 0.55 0.85 0.15 }
 	
 	parents = { tiele chionite }
@@ -341,24 +187,26 @@ gokturkish = { # Old Eastern Turkish
 		100 = turkic_west
 	}
 }
-indo_scythian = {
-	color = indo_scythian
+
+### Chionite-Heritage Cultures
+chionite = { #Chionites, Kidarites, Alchon Huns, Hepthalites
+	color = chionite
 	
-	parents = { saka malvi }
-	created = 2.1.1
-	history_loc_override = indo_scythian_history_loc
+	#Iranic Huns; basically, Sakan/Turkic hybrid
+	parents = { saka xiongnu }
+	created = 250.1.1
+	history_loc_override = chionite_history_loc
 	
-	ethos = ethos_spiritual
-	heritage = heritage_sakan
-	language = langauge_apabhramsa
+	ethos = ethos_bellicose
+	heritage = heritage_chionite
+	language = language_sakan
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_herd
 	traditions = {
 		#Societal Traditions
+		tradition_warrior_culture
 		#Regional Traditions
 		#Ritual Traditions
-		tradition_religion_blending
-		tradition_fervent_temple_builders
 		#Realm Traditions
 		tradition_ruling_caste
 		#Combat Traditions
@@ -370,79 +218,235 @@ indo_scythian = {
 		fallback = tradition_horse_lords
 	}
 	
-	name_list = name_list_indo_scythian
+	name_list = name_list_hunas
 	
-	coa_gfx = { bp_scythian_coa_gfx iranian_group_coa_gfx steppe_coa_gfx }
-	building_gfx = { indian_building_gfx }
-	clothing_gfx = { indian_clothing_gfx }
+	coa_gfx = { turkic_group_coa_gfx steppe_coa_gfx }
+	building_gfx = { steppe_building_gfx }
+	clothing_gfx = { turkic_clothing_gfx mongol_clothing_gfx }
 	unit_gfx = { mongol_unit_gfx }
 	house_coa_frame = house_frame_14
 	
-	#50/50 Sakan/Malvi mix
+	#50% Sakan/50% Turkish (West)
 	ethnicities = {
-		50 = indian
+		50 = turkic_west
 		22 = iranian
 		16 = mediterranean
+		#Historic references to lighter hair colors
 		3 = caucasian_blond
 		3 = caucasian_brown_hair
 		3 = caucasian_dark_hair
 		3 = caucasian_ginger
 	}
 }
-fereganan = {
-	color = fereganan
+
+### Western-Turkic Cultures
+bolghar = {
+	color = bolghar
 	
-	parents = { sogdian greek }
-	created = 2.1.1
-	history_loc_override = fereganan_history_loc
+	parents = { chionite tiele }
+	created = 375.1.1
+	history_loc_override = bolghar_history_loc
 	
-	ethos = ethos_egalitarian
-	heritage = heritage_tocharian
-	language = language_sogdian
+	ethos = ethos_communal
+	heritage = heritage_hunnic
+	language = language_oghur
 	martial_custom = martial_custom_male_only
-	head_determination = head_determination_domain
+	head_determination = head_determination_herd
 	traditions = {
 		#Societal Traditions
 		#Regional Traditions
 		#Ritual Traditions
-		tradition_religion_blending
 		#Realm Traditions
-		tradition_agrarian
-		tradition_parochialism
+		tradition_ruling_caste
 		#Combat Traditions
-		tradition_horse_breeder
 	}
 	
-	# FP3 traditions
 	dlc_tradition = {
-		trait = tradition_fp3_frontier_warriors
-		requires_dlc_flag = legacy_of_persia
-		fallback = tradition_futuwaa
+		trait = tradition_devoted_horsemanship_western_steppe
+		requires_dlc_flag = khans_of_the_steppe
+		fallback = tradition_horse_lords
 	}
 	
-	name_list = name_list_sogdian
+	dlc_tradition = {
+		trait = tradition_malleable_invaders
+		requires_dlc_flag = hybridize_culture
+	}
 	
-	coa_gfx = { bp_scythian_coa_gfx iranian_group_coa_gfx steppe_coa_gfx }
-	coa_gfx = { byzantine_group_coa_gfx }
-	building_gfx = { iranian_building_gfx }
-	clothing_gfx = { iranian_clothing_gfx mena_clothing_gfx }
-	unit_gfx = { iranian_unit_gfx }
-	house_coa_frame = house_frame_12
-	house_coa_mask_offset = { 0.0 -0.04 }
-	house_coa_mask_scale = { 0.95 0.95 }
+	name_list = name_list_bolghar
 	
-	#50% Sogdian, 25% Greek, 25% Sakan
+	coa_gfx = { turkic_group_coa_gfx steppe_coa_gfx }
+	building_gfx = { steppe_building_gfx }
+	clothing_gfx = { turkic_clothing_gfx mongol_clothing_gfx}
+	unit_gfx = { mongol_unit_gfx }
+	house_coa_frame = house_frame_14
+	
+	#50% Chionite/50% Sarmatian
 	ethnicities = {
-		40 = iranian
-		28 = mediterranean
-		24 = mediterranean_byzantine
-		#Historic references to lighter hair colors
+		25 = turkic_west
+		26 = iranian
+		17 = mediterranean
+		8 = caucasian_blond
+		8 = caucasian_brown_hair
+		8 = caucasian_dark_hair
+		8 = caucasian_ginger
+	}
+}
+hunnic = { #The great mysterious people... almost certainly Oghuric, but more mixed than the Bolghars, so probably formed further to the west.
+	color = hunnic
+	
+	parents = { chionite alan }
+	created = 350.1.1
+	history_loc_override = hunnic_history_loc
+	
+	ethos = ethos_bellicose
+	heritage = heritage_hunnic
+	language = language_hunnic
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_herd
+	traditions = {
+		#Societal Traditions
+		#Regional Traditions
+		#Ritual Traditions
+		#Realm Traditions
+		tradition_ruling_caste
+		#Combat Traditions
+		tradition_hit_and_run
+	}
+	
+	dlc_tradition = {
+		trait = tradition_devoted_horsemanship_western_steppe
+		requires_dlc_flag = khans_of_the_steppe
+		fallback = tradition_horse_lords
+	}
+	
+	name_list = name_list_hunnic
+	
+	coa_gfx = { turkic_group_coa_gfx steppe_coa_gfx }
+	building_gfx = { steppe_building_gfx }
+	clothing_gfx = { turkic_clothing_gfx mongol_clothing_gfx }
+	unit_gfx = { mongol_unit_gfx }
+	house_coa_frame = house_frame_14
+	
+	#Huns themselves are 
+	#https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7997506/
+	#https://www.cell.com/current-biology/fulltext/S0960-9822(22)00732-1?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0960982222007321%3Fshowall%3Dtrue
+	#
+	#Made a 30% Alanic, 30% Chionite, 40% Turkic West Admix
+	ethnicities = {
+		54 = turkic_west
+		16 = iranian
+		10 = mediterranean
+		5 = caucasian_blond
+		5 = caucasian_brown_hair
+		5 = caucasian_dark_hair
+		5 = caucasian_ginger
+	}
+}
+khuni = {
+	color = khuni
+	
+	parents = { hunnic }
+	created = 465.1.1
+	history_loc_override = khuni_history_loc
+	
+	ethos = ethos_egalitarian
+	heritage = heritage_hunnic
+	language = language_hunnic
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_herd
+	traditions = {
+		#Societal Traditions
+		tradition_religion_blending
+		#Regional Traditions
+		#Ritual Traditions
+		#Realm Traditions
+		tradition_ruling_caste
+		#Combat Traditions
+	}
+	
+	dlc_tradition = {
+		trait = tradition_devoted_horsemanship_western_steppe
+		requires_dlc_flag = khans_of_the_steppe
+		fallback = tradition_horse_lords
+	}
+	
+	name_list = name_list_hunnic
+	
+	coa_gfx = { turkic_group_coa_gfx steppe_coa_gfx }
+	building_gfx = { steppe_building_gfx }
+	clothing_gfx = { turkic_clothing_gfx mongol_clothing_gfx }
+	unit_gfx = { mongol_unit_gfx }
+	house_coa_frame = house_frame_14
+	
+	#Huns themselves are 
+	#https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7997506/
+	#https://www.cell.com/current-biology/fulltext/S0960-9822(22)00732-1?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0960982222007321%3Fshowall%3Dtrue
+	#
+	#Made a 30% Alanic, 30% Chionite, 40% Turkic West Admix
+	ethnicities = {
+		54 = turkic_west
+		16 = iranian
+		10 = mediterranean
+		5 = caucasian_blond
+		5 = caucasian_brown_hair
+		5 = caucasian_dark_hair
+		5 = caucasian_ginger
+	}
+}
+sabir = {
+	color = sabir
+	
+	parents = { chionite tiele }
+	created = 375.1.1
+	history_loc_override = sabir_history_loc
+	
+	ethos = ethos_bellicose
+	heritage = heritage_hunnic
+	language = language_oghur
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_herd
+	traditions = {
+		#Societal Traditions
+		#Regional Traditions
+		#Ritual Traditions
+		#Realm Traditions
+		tradition_pastoralists
+		#Combat Traditions
+	}
+	
+	dlc_tradition = {
+		trait = tradition_devoted_horsemanship
+		requires_dlc_flag = khans_of_the_steppe
+		fallback = tradition_horse_lords
+	}
+	
+	dlc_tradition = {
+		trait = tradition_malleable_invaders
+		requires_dlc_flag = hybridize_culture
+	}
+	
+	name_list = name_list_bolghar
+	
+	coa_gfx = { turkic_group_coa_gfx steppe_coa_gfx }
+	building_gfx = { steppe_building_gfx }
+	clothing_gfx = { turkic_clothing_gfx mongol_clothing_gfx}
+	unit_gfx = { mongol_unit_gfx }
+	house_coa_frame = house_frame_14
+	
+	#50% Chionite/50% Tiele
+	ethnicities = {
+		43 = turkic
+		25 = turkic_west
+		14 = iranian
+		10 = mediterranean
 		2 = caucasian_blond
 		2 = caucasian_brown_hair
 		2 = caucasian_dark_hair
 		2 = caucasian_ginger
 	}
 }
+
+### Yuezhi-Heritage Cultures
 wusun = { #The long-lasting Wusun who maintained a non-Turkic, non-Scythian Identity
 	color = wusun
 	
@@ -531,6 +535,118 @@ yuezhi = { #The nomadic Yuezhi
 		7 = caucasian_ginger
 	}
 }
+
+### Tocharian-Heritage Cultures
+chach = { #North Sogdianan, admixed with Kangju and Chionites
+	color = chach
+	
+	#Kangju long-held capital of Chach, likely intermixed
+	parents = { saka sogdian }
+	created = 2.1.1
+	history_loc_override = chach_history_loc
+	
+	ethos = ethos_egalitarian
+	heritage = heritage_tocharian
+	language = language_sogdian
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_domain
+	traditions = {
+		#Societal Traditions
+		#Regional Traditions
+		#Ritual Traditions
+		tradition_religion_blending
+		#Realm Traditions
+		tradition_parochialism
+		tradition_dryland_dwellers
+		#Combat Traditions
+	}
+	
+	dlc_tradition = {
+		trait = tradition_devoted_horsemanship
+		requires_dlc_flag = khans_of_the_steppe
+		fallback = tradition_horse_lords
+	}
+	
+	dlc_tradition = {
+		trait = tradition_culture_blending
+		requires_dlc_flag = hybridize_culture
+		fallback = tradition_xenophilic
+	}
+	
+	name_list = name_list_sogdian
+	
+	coa_gfx = { bp_scythian_coa_gfx iranian_group_coa_gfx steppe_coa_gfx }
+	building_gfx = { iranian_building_gfx }
+	clothing_gfx = { iranian_clothing_gfx mena_clothing_gfx }
+	unit_gfx = { iranian_unit_gfx }
+	house_coa_frame = house_frame_12
+	house_coa_mask_offset = { 0.0 -0.04 }
+	house_coa_mask_scale = { 0.95 0.95 }
+	
+	#50-50 Sakan/Sogdian mix
+	ethnicities = {
+		51 = iranian
+		37 = mediterranean
+		3 = caucasian_blond
+		3 = caucasian_brown_hair
+		3 = caucasian_dark_hair
+		3 = caucasian_ginger
+	}
+}
+fereganan = {
+	color = fereganan
+	
+	parents = { sogdian greek }
+	created = 2.1.1
+	history_loc_override = fereganan_history_loc
+	
+	ethos = ethos_egalitarian
+	heritage = heritage_tocharian
+	language = language_sogdian
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_domain
+	traditions = {
+		#Societal Traditions
+		#Regional Traditions
+		#Ritual Traditions
+		tradition_religion_blending
+		#Realm Traditions
+		tradition_agrarian
+		tradition_parochialism
+		#Combat Traditions
+		tradition_horse_breeder
+	}
+	
+	# FP3 traditions
+	dlc_tradition = {
+		trait = tradition_fp3_frontier_warriors
+		requires_dlc_flag = legacy_of_persia
+		fallback = tradition_futuwaa
+	}
+	
+	name_list = name_list_sogdian
+	
+	coa_gfx = { bp_scythian_coa_gfx iranian_group_coa_gfx steppe_coa_gfx }
+	coa_gfx = { byzantine_group_coa_gfx }
+	building_gfx = { iranian_building_gfx }
+	clothing_gfx = { iranian_clothing_gfx mena_clothing_gfx }
+	unit_gfx = { iranian_unit_gfx }
+	house_coa_frame = house_frame_12
+	house_coa_mask_offset = { 0.0 -0.04 }
+	house_coa_mask_scale = { 0.95 0.95 }
+	
+	#50% Sogdian, 25% Greek, 25% Sakan
+	ethnicities = {
+		40 = iranian
+		28 = mediterranean
+		24 = mediterranean_byzantine
+		#Historic references to lighter hair colors
+		2 = caucasian_blond
+		2 = caucasian_brown_hair
+		2 = caucasian_dark_hair
+		2 = caucasian_ginger
+	}
+}
 kushan = { #The settled Great Yuezhi
 	color = kushan
 	
@@ -538,7 +654,7 @@ kushan = { #The settled Great Yuezhi
 	created = 2.1.1
 	history_loc_override = kushan_history_loc
 	
-	ethos = ethos_spiritual
+	ethos = ethos_courtly #Noted by China for manners?
 	heritage = heritage_tocharian
 	language = language_bactrian
 	martial_custom = martial_custom_male_only
@@ -587,9 +703,59 @@ kushan = { #The settled Great Yuezhi
 		3 = caucasian_ginger
 	}
 }
-#Northern Afghans, adopted Persian Language (Dari) and later intermixed with Mongols and Turks
-# to become Haraza or Amiq later, but retain significant tribal affiliation.
-abagan = {
+
+### Sakan-Heritage Cultures
+indo_scythian = {
+	color = indo_scythian
+	
+	parents = { saka malvi }
+	created = 2.1.1
+	history_loc_override = indo_scythian_history_loc
+	
+	ethos = ethos_spiritual
+	heritage = heritage_sakan
+	language = langauge_apabhramsa
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_herd
+	traditions = {
+		#Societal Traditions
+		#Regional Traditions
+		#Ritual Traditions
+		tradition_religion_blending
+		tradition_fervent_temple_builders
+		#Realm Traditions
+		tradition_ruling_caste
+		#Combat Traditions
+	}
+	
+	dlc_tradition = {
+		trait = tradition_devoted_horsemanship
+		requires_dlc_flag = khans_of_the_steppe
+		fallback = tradition_horse_lords
+	}
+	
+	name_list = name_list_indo_scythian
+	
+	coa_gfx = { bp_scythian_coa_gfx iranian_group_coa_gfx steppe_coa_gfx }
+	building_gfx = { indian_building_gfx }
+	clothing_gfx = { indian_clothing_gfx }
+	unit_gfx = { mongol_unit_gfx }
+	house_coa_frame = house_frame_14
+	
+	#50/50 Sakan/Malvi mix
+	ethnicities = {
+		50 = indian
+		22 = iranian
+		16 = mediterranean
+		3 = caucasian_blond
+		3 = caucasian_brown_hair
+		3 = caucasian_dark_hair
+		3 = caucasian_ginger
+	}
+}
+
+### Iranian-Heritage Cultures
+abagan = { #Northern Afghans, adopted Persian Language (Dari) and later intermixed with Mongols and Turks to become Haraza or Amiq later, but retain significant tribal affiliation.
 	color = afghan
 	
 	created = 2.1.1
@@ -632,8 +798,7 @@ abagan = {
 		30 = turkic_west
 	}
 }
-#Southern Afghans; Pashtuns, remain strongly entrenched in 
-pakthun = {
+pakthun = { #Southern Afghans; Pashtuns, remain strongly entrenched and kept Eastern Iranic language
 	color = abagan
 	
 	parents = { saka abagan }
@@ -725,208 +890,48 @@ proto_baloch = {
 	}
 }
 
-#Western Turks
-bolghar = {
-	color = bolghar
+### Qiang-Heritage Cultures
+lushuihu = { #Yuezhi/Greater Qiang mix
+	color = lushuihu
 	
-	parents = { chionite tiele }
-	created = 375.1.1
-	history_loc_override = bolghar_history_loc
+	#Derived from Xiongnu and local Qiangs
+	parents = { yuezhi tangut }
+	created = 2.1.1
+	history_loc_override = lushuihu_history_loc
 	
-	ethos = ethos_communal
-	heritage = heritage_turkic
-	language = language_oghur
+	ethos = ethos_stoic
+	heritage = heritage_qiangic
+	language = language_qiangic
 	martial_custom = martial_custom_male_only
-	head_determination = head_determination_herd
+	head_determination = head_determination_domain
 	traditions = {
 		#Societal Traditions
+		tradition_loyal_soldiers
 		#Regional Traditions
+		tradition_himalayan_settlers
 		#Ritual Traditions
-		#Realm Traditions
-		tradition_ruling_caste
-		#Combat Traditions
-	}
-	
-	dlc_tradition = {
-		trait = tradition_devoted_horsemanship_western_steppe
-		requires_dlc_flag = khans_of_the_steppe
-		fallback = tradition_horse_lords
-	}
-	
-	dlc_tradition = {
-		trait = tradition_malleable_invaders
-		requires_dlc_flag = hybridize_culture
-	}
-	
-	name_list = name_list_bolghar
-	
-	coa_gfx = { turkic_group_coa_gfx steppe_coa_gfx }
-	building_gfx = { steppe_building_gfx }
-	clothing_gfx = { turkic_clothing_gfx mongol_clothing_gfx}
-	unit_gfx = { mongol_unit_gfx }
-	house_coa_frame = house_frame_14
-	
-	#50% Chionite/50% Sarmatian
-	ethnicities = {
-		25 = turkic_west
-		26 = iranian
-		17 = mediterranean
-		8 = caucasian_blond
-		8 = caucasian_brown_hair
-		8 = caucasian_dark_hair
-		8 = caucasian_ginger
-	}
-}
-#The great mysterious people... almost certainly Oghuric, but more mixed than the Bolghars
-#So probably formed further to the west.
-hunnic = {
-	color = hunnic
-	
-	parents = { chionite alan }
-	created = 350.1.1
-	history_loc_override = hunnic_history_loc
-	
-	ethos = ethos_bellicose
-	heritage = heritage_turkic
-	language = language_hunnic
-	martial_custom = martial_custom_male_only
-	head_determination = head_determination_herd
-	traditions = {
-		#Societal Traditions
-		#Regional Traditions
-		#Ritual Traditions
-		#Realm Traditions
-		tradition_ruling_caste
-		#Combat Traditions
-		tradition_hit_and_run
-	}
-	
-	dlc_tradition = {
-		trait = tradition_devoted_horsemanship_western_steppe
-		requires_dlc_flag = khans_of_the_steppe
-		fallback = tradition_horse_lords
-	}
-	
-	name_list = name_list_hunnic
-	
-	coa_gfx = { turkic_group_coa_gfx steppe_coa_gfx }
-	building_gfx = { steppe_building_gfx }
-	clothing_gfx = { turkic_clothing_gfx mongol_clothing_gfx }
-	unit_gfx = { mongol_unit_gfx }
-	house_coa_frame = house_frame_14
-	
-	#Huns themselves are 
-	#https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7997506/
-	#https://www.cell.com/current-biology/fulltext/S0960-9822(22)00732-1?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0960982222007321%3Fshowall%3Dtrue
-	#
-	#Made a 30% Alanic, 30% Chionite, 40% Turkic West Admix
-	ethnicities = {
-		54 = turkic_west
-		16 = iranian
-		10 = mediterranean
-		5 = caucasian_blond
-		5 = caucasian_brown_hair
-		5 = caucasian_dark_hair
-		5 = caucasian_ginger
-	}
-}
-khuni = {
-	color = khuni
-	
-	parents = { hunnic }
-	created = 465.1.1
-	history_loc_override = khuni_history_loc
-	
-	ethos = ethos_egalitarian
-	heritage = heritage_turkic
-	language = language_hunnic
-	martial_custom = martial_custom_male_only
-	head_determination = head_determination_herd
-traditions = {
-		#Societal Traditions
 		tradition_religion_blending
-		#Regional Traditions
-		#Ritual Traditions
 		#Realm Traditions
-		tradition_ruling_caste
 		#Combat Traditions
 	}
 	
-	dlc_tradition = {
-		trait = tradition_devoted_horsemanship_western_steppe
-		requires_dlc_flag = khans_of_the_steppe
-		fallback = tradition_horse_lords
-	}
+	name_list = name_list_tangut
 	
-	name_list = name_list_hunnic
-	
-	coa_gfx = { turkic_group_coa_gfx steppe_coa_gfx }
-	building_gfx = { steppe_building_gfx }
-	clothing_gfx = { turkic_clothing_gfx mongol_clothing_gfx }
+	coa_gfx = { bp_scythian_coa_gfx iranian_group_coa_gfx steppe_coa_gfx }
+	coa_gfx = { chinese_group_coa_gfx }
+	building_gfx = { chinese_building_gfx }
+	clothing_gfx = { tangut_clothing_gfx mongol_clothing_gfx }
 	unit_gfx = { mongol_unit_gfx }
-	house_coa_frame = house_frame_14
 	
-	#Huns themselves are 
-	#https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7997506/
-	#https://www.cell.com/current-biology/fulltext/S0960-9822(22)00732-1?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0960982222007321%3Fshowall%3Dtrue
-	#
-	#Made a 30% Alanic, 30% Chionite, 40% Turkic West Admix
+	house_coa_frame = house_frame_12
+	house_coa_mask_offset = { 0.0 -0.04 }
+	house_coa_mask_scale = { 0.95 0.95 }
+	
+	#30% Yuezhi, 70% Qiangic
 	ethnicities = {
-		54 = turkic_west
-		16 = iranian
-		10 = mediterranean
-		5 = caucasian_blond
-		5 = caucasian_brown_hair
-		5 = caucasian_dark_hair
-		5 = caucasian_ginger
-	}
-}
-sabir = {
-	color = sabir
-	
-	parents = { chionite tiele }
-	created = 375.1.1
-	history_loc_override = sabir_history_loc
-	
-	ethos = ethos_bellicose
-	heritage = heritage_turkic
-	language = language_oghur
-	martial_custom = martial_custom_male_only
-	head_determination = head_determination_herd
-	traditions = {
-		#Societal Traditions
-		#Regional Traditions
-		#Ritual Traditions
-		#Realm Traditions
-		tradition_pastoralists
-		#Combat Traditions
-	}
-	
-	dlc_tradition = {
-		trait = tradition_devoted_horsemanship
-		requires_dlc_flag = khans_of_the_steppe
-		fallback = tradition_horse_lords
-	}
-	
-	dlc_tradition = {
-		trait = tradition_malleable_invaders
-		requires_dlc_flag = hybridize_culture
-	}
-	
-	name_list = name_list_bolghar
-	
-	coa_gfx = { turkic_group_coa_gfx steppe_coa_gfx }
-	building_gfx = { steppe_building_gfx }
-	clothing_gfx = { turkic_clothing_gfx mongol_clothing_gfx}
-	unit_gfx = { mongol_unit_gfx }
-	house_coa_frame = house_frame_14
-	
-	#50% Chionite/50% Tiele
-	ethnicities = {
-		43 = turkic
-		25 = turkic_west
+		70 = asian_tibetan
 		14 = iranian
-		10 = mediterranean
+		8 = mediterranean
 		2 = caucasian_blond
 		2 = caucasian_brown_hair
 		2 = caucasian_dark_hair
