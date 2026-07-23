@@ -20,18 +20,23 @@ Hunter-Gatherer
 ==========
 0.2.0.2:
 ----------
-- Federates: Fix missing tooltip stuff for offering federate status for federates without DLC
 - Symmachus Branch Stuff
 
 - SubRoman Dynastic for independent duchies and below, and transition to subroman admin when not
 
 - Great Projects to fixup Feudal Decay
 
+Hegemonies:
+- Apply all the stuff listed in h_eastern_roman_empire.txt, h_western_roman_empire.txt landed file (Tributaries)
+
+History:
+- MO/MM Chars should have dynasty names
+
 Title Revocation/Retiring:
 - Federates and Sub-Roman, when sufficiently aristocratic, can't be forced to step down and instead get default title revocation
 - Retiring governors should increasingly cost prestige as government becomes more aristocratic
 
-Known Bugs/Issues:
+Other Bugs:
 - Script location: file: common/on_action/BP_on_actions/BP_flavor_on_actions.txt line: 154 (BP_flavor_events_county_pulse)
 - BP_flavor_events_county_pulse has the `Error: Invalid landed title scope for modifier script, must be a county` issue
 - Hang every 1 and 2 January
@@ -54,14 +59,11 @@ Potential Bugs:
 - Add the other two dynasty legacies
 - Make Cataphracts recruitable again
 
-History:
-- MO/MM Chars should have dynasty names
-
 Bookmarks: Revamp bookmarks
 - Add 479 bookmark
-- Gylericus et al plotting Nepos death in the 479 scenario. Make _actual_ plotter a random character in the court with a hidden grudge to prevent too much player manipulation, with a special plot modifier to put pressure on the player to find out. Make it also a semi-random thing so that they might just be pissing everyone off for no good reason.
-- Nepos has a modifier wherein his tyranny gain is modified and tyranny loss is nerfed to make North Korea mode unappealing maybe even with an effect of imprisoning Glyericus greatly nukes Papal and Empire of the East opinion. Basically, you _can_ block the plot, but you're putting yourself at long-term risk. 
-- Modifier gets removed by imprisoning Glyericus or the plot ending the first time, regardless of outcome.
+   - Gylericus et al plotting Nepos death in the 479 scenario. Make _actual_ plotter a random character in the court with a hidden grudge to prevent too much player manipulation, with a special plot modifier to put pressure on the player to find out. Make it also a semi-random thing so that they might just be pissing everyone off for no good reason.
+   - Nepos has a modifier wherein his tyranny gain is modified and tyranny loss is nerfed to make North Korea mode unappealing maybe even with an effect of imprisoning Glyericus greatly nukes Papal and Empire of the East opinion. Basically, you _can_ block the plot, but you're putting yourself at long-term risk. 
+   - Modifier gets removed by imprisoning Glyericus or the plot ending the first time, regardless of outcome.
 
 Roman Premierships:
 - Diarch Loyalty Overhaul
@@ -79,11 +81,61 @@ Federate Government:
 Decisions:
 - Review conditions for restoring Rome/Byzantium vis-a-vis region & restored fora...
 
-Hegemonies:
-- Apply all the stuff listed in h_eastern_roman_empire.txt, h_western_roman_empire.txt landed file (Tributaries)
-
 Localization:
+- Dynastic to replace Pre-Feudal as a government term
 - Praeses for counties (still civilian-ish)
+
+==========
+Turkic Stuff:
+----------
+- Might need Hepthalite culture to hand their specialness (status of women, &c.)
+- Di people on the map from the Barbarian uprising
+- West Turkic (Huns, Bolghar, Mogyer) and Iranic Hun (Chionites) heritages
+
+- Cultures to do:
+   - Samaritan heritage
+
+- Separate heritage for West Turks, including Chionites and descendants?
+
+- Name Lists:
+   - Chionite Namelist (Hunas)?
+   - Kushan Namelist for Wusun, Yuezhi, Kushan (the first two without Bactrian cross-samples)
+
+GFX:
+   - Convert Wusun/Kushan/Yuezhi COA graphics into their own blend of Chinese and Scythian
+
+- History:
+   - Kidarites become Bactrian instead of some hybrid; explains the Hepthalite continued sloped headed stuff
+   - Wusun holdings should be nomadic
+
+- Landed Titles:
+   - Update the Sogdia/Bactria/Zabulistan split
+       - Sogdiana: Soghd, Orushana, Fereghana
+       - Bactria/Tokharistan: Balkh(Tokharistan), Khuttal, Merv?
+       - Arachosia/Zabulistan: Badakhshan, Kabulistan, Zabulistan, Ghur]
+   - Swap around some county capitals
+      - Ruy should be capital
+      - Bagram/Kapisa should be capital
+
+- Touch Up Cultural Titles:
+   - Bolghar early title should be Kana Sybigi for kings
+   - Use Yabghu et al for various Iranic Huns and such
+
+- Dynastic Khanate form of government to handle stuff like Kidarites, Hepthalites, Kangju, &c.?
+   - Steppe Overrun flips to feudal, so we need to handle that particular issue
+   - Basically, High Tribal for Nomads (Still have obedience, raze holdings, but no domicile and )
+
+Traditions:
+- Revamp Iron Cavalry's requirements to be much more East-Focused.
+
+GFX:
+- Non-Christian Byzantine COA gfx for Fereganans
+
+- Tribal hierarchy version for nomads with bonuses to Herd Tax and such?
+
+- Remove unneeded cultures (Dahi Scythian, Hunas, &c.)
+
+- Have Parthian culture and language use dynamic name; when Parthian has no more landed rulers, change to Palhavi
 
 ==========
 0.2.2:
@@ -91,10 +143,15 @@ Localization:
 Casus Bellis: Migration War government upgrade mechanics
 Schemes: Add scheme for vassals to try and increase aristocratic control laws
 
+- Special Frankish stuff for ruling over a bunch of Sub-Romans as a quasi-Tribal (contrast with Gothic or Vandal approach)
+   - Increased number of military provinces
+   - Faster military landing effects
+   - The Clerical dimension within the tribal system
+
 - Hegemonies should have an empire-level CB against each other that's terribly devastating (see the Final Roman-Sassanid War or the Gothic War)
    - Should be a great project like the Chinese have
 
-- Feudal Transition Clerical stuff
+- Feudal Transition Clerical stuff (BGA???)
 - Clarify government_is_centralized flag
 - Tweak dynastic aristocratic control laws to push more towards decline in some manner
 
