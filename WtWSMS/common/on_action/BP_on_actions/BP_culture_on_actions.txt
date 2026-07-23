@@ -141,6 +141,15 @@ yearly_culture_pulse = {
 		bp_change_tradition_events.0001 #Remove Migratory Culture Tradition
 		bp_change_tradition_events.0002 #Tribal Hierarchy to Hereditary Hierarchy Tradition
 		bp_change_tradition_events.0003 #Zealous Pagans Tradition Removal
+		
+	}
+}
+
+#Culture name change events
+three_yearly_culture_pulse = {
+	trigger = { this = culture:parthian }
+	events = {
+		bp_change_culture_name_events.0001 #Parthian become Pahlavi
 	}
 }
 

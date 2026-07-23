@@ -1,0 +1,50 @@
+﻿namespace = bp_change_culture_name_events
+
+#Lack of landed Parthian rulers means Parthian changes name to Pahlavi, matching Middle Persian
+scripted_effect change_parthian_to_pahlavi_effect = {
+	culture:parthian = {
+		set_culture_name = {
+			noun = pahlavi
+			collective_noun = pahlavi_collective_noun
+			prefix = pahlavi_prefix
+		}
+	}
+}
+
+bp_change_culture_name_events.0001 = {
+	scope = culture
+	hidden = yes
+	content_source = dlc_WtWSMS
+	
+	trigger = {
+		any_ruler = {
+			count < 1
+			is_landed = yes
+			this.culture = culture:parthian
+		}
+	}
+	
+	immediate = {
+		change_parthian_to_pahlavi_effect = yes
+		every_player = {
+			limit = { is_ai = no }
+			trigger_event = { id = bp_change_culture_name_events.0002 }
+		}
+	}
+}
+
+bp_change_culture_name_events.0002 = {
+	type = character_event
+	title = bp_change_culture_name_events.0002.t
+	desc = bp_change_culture_name_events.0002.desc
+	
+	theme = culture_change
+	override_background = { reference = BP_shift_culture_city }
+	content_source = dlc_WtWSMS
+	
+	immediate = { show_as_tooltip = { change_parthian_to_pahlavi_effect = yes } }
+	
+	option = {
+		name = bp_change_culture_name_events.0002.ok
+	}
+}
