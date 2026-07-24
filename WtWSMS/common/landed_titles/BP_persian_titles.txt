@@ -43,20 +43,6 @@ k_mazandaran = {
 	can_create = { general_kingdom_title_creation_trigger = yes }
 }
 
-k_dahae_confederacy = {
-	color={ 153 153 113 }
-	capital = c_dihistan # Dihistan
-	
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:dahi_scythian }
-			add = @always_primary_score
-		}
-	}
-	
-	can_create = { general_kingdom_title_creation_trigger = yes }
-}
-
 e_xiongnu = {
 	color={ 10 90 10 }
 	capital = c_balkh # Balkh
