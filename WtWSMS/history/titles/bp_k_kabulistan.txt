@@ -1,39 +1,18 @@
-﻿k_kabulistan = { #replacement of k_afghanistan
-	450.1.1 = {
-		holder = 212894 # Datbar Zhunbil
+﻿k_kabulistan = {
+	430.1.1 = {
+		holder = alchon_hun_rulers_1
 		government = prefeudal_government
 	}
-	476.1.1 = {
-		##set_tribute_suzerain = { who = e_xiongnu percentage = 0.50 }
-	}
-	510.1.1 = {
-		holder = 212895 # Zamin Zhunbil
-	}
-	550.1.1 = {
-		holder = 36386 # Bextîyar Zhunbil
-	}
-	580.1.1 = {
-		holder = 36387 # Datbar II Zhunbil
-	}
+	465.1.1 = { holder = alchon_hun_rulers_2 }
+	493.1.1 = { holder = 0 }
 }
 
 d_kabul = {
-	#Development
 	1.1.1 = {}
 }
 c_kabul = {
-	450.1.1={
-		holder=212894 # Datbar Zhunbil
-	}
-	510.1.1={
-		holder=212895 # Zamin Zhunbil
-	}
-	550.1.1={
-		holder=36386 # Bextîyar Zhunbil
-	}
-	580.1.1={
-		holder=36387 # Datbar II Zhunbil
-	}
+	430.1.1 = { holder = alchon_hun_rulers_1 }
+	460.1.1 = { holder = alchon_hun_rulers_2 }
 }
 c_nuristan = { #Ruled by their own on account of long-term independence
 	432.1.1 = {
@@ -47,19 +26,9 @@ c_nuristan = { #Ruled by their own on account of long-term independence
 	552.1.1 = { holder = NuristaniNuristani004 }
 	603.1.1 = { holder = NuristaniNuristani005 }
 }
-c_bamian = { #c_bamiyan history (direct)
-	450.1.1={
-		holder=212894 # Datbar Zhunbil
-	}
-	510.1.1={
-		holder=212895 # Zamin Zhunbil
-	}
-	550.1.1={
-		holder=36386 # Bextîyar Zhunbil
-	}
-	580.1.1={
-		holder=36387 # Datbar II Zhunbil
-	}
+c_bamian = {
+	430.1.1 = { holder = alchon_hun_rulers_1 }
+	460.1.1 = { holder = alchon_hun_rulers_2 }
 }
 c_chitral = { #Ruled by their own on account of long-term independence
 	423.1.1 = { holder = KalashChitral000 }
@@ -71,135 +40,42 @@ c_chitral = { #Ruled by their own on account of long-term independence
 	590.1.1 = { holder = KalashChitral006 }
 }
 
-#County Level Development
-d_zabulistan = { #Empty History
+d_zabulistan = {
 	1.1.1={}
 }
 c_ghazna = {
-	#Development
-	#Rulers
-	450.1.1={
-		holder=212894 # Datbar Zhunbil
-	}
-	510.1.1={
-		holder=212895 # Zamin Zhunbil
-	}
-	550.1.1={
-		holder=36386 # Bextîyar Zhunbil
-	}
-	580.1.1={
-		holder=36387 # Datbar II Zhunbil
-	}
+	430.1.1 = { holder = alchon_hun_rulers_1 }
+	460.1.1 = { holder = alchon_hun_rulers_2 }
 }
-c_zamindawar = { #c_bost history
-	#Development
-	#Rulers
-	450.1.1={
-		holder=212894 # Datbar Zhunbil
-	}
-	510.1.1={
-		holder=212895 # Zamin Zhunbil
-	}
-	550.1.1={
-		holder=36386 # Bextîyar Zhunbil
-	}
-	580.1.1={
-		holder=36387 # Datbar II Zhunbil
-	}
+c_zamindawar = {
+	430.1.1 = { holder = alchon_hun_rulers_1 }
+	460.1.1 = { holder = alchon_hun_rulers_2 }
 }
-c_rukhaj = { #c_bost history
-	#Development
-	#Rulers
-	450.1.1={
-		holder=212894 # Datbar Zhunbil
-	}
-	510.1.1={
-		holder=212895 # Zamin Zhunbil
-	}
-	550.1.1={
-		holder=36386 # Bextîyar Zhunbil
-	}
-	580.1.1={
-		holder=36387 # Datbar II Zhunbil
-	}
+c_rukhaj = {
+	430.1.1 = { holder = alchon_hun_rulers_1 }
+	460.1.1 = { holder = alchon_hun_rulers_2 }
 }
-c_zabulistan = { #c_ghazna history (elimination)
-	450.1.1={
-		holder=212894 # Datbar Zhunbil
-	}
-	510.1.1={
-		holder=212895 # Zamin Zhunbil
-	}
-	550.1.1={
-		holder=36386 # Bextîyar Zhunbil
-	}
-	580.1.1={
-		holder=36387 # Datbar II Zhunbil
-	}
+c_zabulistan = {
+	430.1.1 = { holder = alchon_hun_rulers_1 }
+	460.1.1 = { holder = alchon_hun_rulers_2 }
 }
 
 d_ghur = {
-	#Development
 	1.1.1 = {}
 }
-c_ghur = { #c_mandesh history (elimination)
-	#Rulers
-	450.1.1={
-		holder=212894 # Datbar Zhunbil
-	}
-	510.1.1={
-		holder=212895 # Zamin Zhunbil
-	}
-	550.1.1={
-		holder=36386 # Bextîyar Zhunbil
-	}
-	580.1.1={
-		holder=36387 # Datbar II Zhunbil
-	}
+c_ghur = {
+	430.1.1 = { holder = alchon_hun_rulers_1 }
+	460.1.1 = { holder = alchon_hun_rulers_2 }
 }
-c_darmashan = { #c_mandesh history (elimination)
-	#Rulers
-	450.1.1={
-		holder=212894 # Datbar Zhunbil
-	}
-	510.1.1={
-		holder=212895 # Zamin Zhunbil
-	}
-	550.1.1={
-		holder=36386 # Bextîyar Zhunbil
-	}
-	580.1.1={
-		holder=36387 # Datbar II Zhunbil
-	}
+c_darmashan = {
+	430.1.1 = { holder = alchon_hun_rulers_1 }
+	460.1.1 = { holder = alchon_hun_rulers_2 }
 }
-c_upper_ghur = { #c_mandesh history (elimination)
-	#Rulers
-	450.1.1={
-		holder=212894 # Datbar Zhunbil
-	}
-	510.1.1={
-		holder=212895 # Zamin Zhunbil
-	}
-	550.1.1={
-		holder=36386 # Bextîyar Zhunbil
-	}
-	580.1.1={
-		holder=36387 # Datbar II Zhunbil
-	}
+c_upper_ghur = {
+	430.1.1 = { holder = alchon_hun_rulers_1 }
+	460.1.1 = { holder = alchon_hun_rulers_2 }
 }
-c_rivsharan = { #c_maymana history (examination)
-	#Development
-	#Rulers
-	450.1.1={
-		holder=212894 # Datbar Zhunbil
-	}
-	510.1.1={
-		holder=212895 # Zamin Zhunbil
-	}
-	550.1.1={
-		holder=36386 # Bextîyar Zhunbil
-	}
-	580.1.1={
-		holder=36387 # Datbar II Zhunbil
-	}
+c_rivsharan = {
+	430.1.1 = { holder = alchon_hun_rulers_1 }
+	460.1.1 = { holder = alchon_hun_rulers_2 }
 }
