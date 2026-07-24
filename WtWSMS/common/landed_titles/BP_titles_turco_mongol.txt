@@ -49,19 +49,6 @@ e_turkestan = {
 	
 	can_create = { general_empire_title_creation_trigger = yes }
 }
-k_chuban = {
-	color = { 120 120 25 }
-	capital = c_qayaliq
-	ignore_titularity_for_title_weighting = yes
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:xiongnu }
-			add = @cultural_title_score
-		}
-	}
-	
-	can_create = { general_kingdom_title_creation_trigger = yes }
-}
 k_magyar = {
 	color = { 187 70 70 }
 	capital = c_pest # Pest
@@ -192,37 +179,6 @@ k_dubuo = { #Proto-Tuvans, Eastern Sayan to Tannu-Ola region
 	ai_primary_priority = {
 		if = {
 			limit = { culture = culture:uriankhai }
-			add = @cultural_title_score
-		}
-	}
-}
-#### Yueban Tribes ####
-d_chuyue = { #proto Shatuos in Duzngaria/Barkol
-	color={ 0.69 0.42 0.42 }
-	ignore_titularity_for_title_weighting = yes
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:xiongnu }
-			add = @cultural_title_score
-		}
-	}
-}
-d_chumukun = {
-	color={ 0.75 0.40 0.50 }
-	ignore_titularity_for_title_weighting = yes
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:xiongnu }
-			add = @cultural_title_score
-		}
-	}
-}
-d_chumi = {
-	color={ 0.80 0.30 0.40 }
-	ignore_titularity_for_title_weighting = yes
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:xiongnu }
 			add = @cultural_title_score
 		}
 	}

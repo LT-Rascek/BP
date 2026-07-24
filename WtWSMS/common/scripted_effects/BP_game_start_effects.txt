@@ -473,6 +473,28 @@ BP_476_tributary_setup_effect = {
 
 #Specific Confederation Effects
 create_starting_confederation_476_effect = {
+	#Nomadic Confederations
+	title:c_emil.holder = {
+		create_confederation = {
+			name = CONFEDERATION_NAME_WUSUN
+		}
+		scope:new_confederation = {
+			add_confederation_member = title:c_lepsink.holder
+			add_confederation_member = title:c_karamay.holder
+			add_confederation_member = title:c_yangjibaliq.holder
+		}
+	}
+	title:d_kentarlau.holder= { #Yueban
+		save_temporary_scope_as = confederation_offerer
+		create_confederation = {
+			name = CONFEDERATION_NAME_YUEBAN
+		}
+		scope:new_confederation = {
+			add_confederation_member = title:d_ili-alatau.holder
+			add_confederation_member = title:d_alakol.holder
+			add_confederation_member = title:d_zhetysu.holder
+		}
+	}
 	#Known confederations
 	title:d_austorani.holder = {
 		create_confederation = {

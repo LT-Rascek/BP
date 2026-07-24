@@ -118,15 +118,6 @@ k_magyar = {
 		holder=190087
 	}
 }
-k_chuban = {
-	450.1.1={
-		holder = 96048
-		government = nomad_government
-	}
-	510.1.1={
-		holder = 96049
-	}
-}
 k_tuyuhun = { #swapped with xixia history
 	#Tuyuhun Kingdom
 	284.1.1={
@@ -290,29 +281,4 @@ d_tiele = { #Fulfuluo Clan
 	560.1.1={ 
 		holder=460 # Mi'etu II
 	}
-}
-#### Yueban Tribes ####
-d_chuyue = { #proto Shatuos, part of Yueban in 476
-	460.1.1 = {
-		holder = tieleChuyue000
-		government = nomad_government
-		liege = k_chuban
-	}
-	490.1.1 = { holder = tieleChuyue001 }
-}
-d_chumukun = {
-	420.1.1 = {
-		holder = tieleChumukun000
-		government = nomad_government
-		liege = k_chuban
-	}
-	450.1.1 = { holder = tieleChumukun001 }
-}
-d_chumi = {
-	420.1.1={
-		holder = tieleChumi000
-		government = nomad_government
-		liege = k_chuban
-	}
-	450.1.1={ holder = tieleChumi001 }
 }
