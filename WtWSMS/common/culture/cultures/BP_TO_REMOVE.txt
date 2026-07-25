@@ -1,47 +1,4 @@
-﻿dahi_scythian = {
-	color = dahi_scythian
-	
-	ethos = ethos_bellicose
-	heritage = heritage_sakan
-	language = language_sakan
-	martial_custom = martial_custom_male_only
-	head_determination = head_determination_herd
-	traditions = {
-		#Societal Traditions
-		#Regional Traditions
-		#Ritual Traditions
-		#Realm Traditions
-		#Combat Traditions
-		tradition_horse_breeder
-	}
-	
-	dlc_tradition = {
-		trait = tradition_devoted_horsemanship
-		requires_dlc_flag = khans_of_the_steppe
-		fallback = tradition_horse_lords
-	}
-	
-	name_list = name_list_dahi_scythian
-	
-	coa_gfx = { bp_scythian_coa_gfx iranian_group_coa_gfx steppe_coa_gfx }
-	building_gfx = { steppe_building_gfx }
-	clothing_gfx = { bp_scythian_clothing_gfx }
-	unit_gfx = { mongol_unit_gfx }
-	house_coa_frame = house_frame_14
-	
-	#Ethnicity Mix: Sakan (75% Vanilla Saka, 25% Caucasian)
-	ethnicities = {
-		44 = iranian
-		32 = mediterranean
-		#Historic references to lighter hair colors
-		6 = caucasian_blond
-		6 = caucasian_brown_hair
-		6 = caucasian_dark_hair
-		6 = caucasian_ginger
-	}
-}
-
-barsil = {
+﻿barsil = {
 	color = barsil
 	
 	ethos = ethos_bellicose
@@ -83,61 +40,6 @@ barsil = {
 		4 = caucasian_ginger
 	}
 }
-hunas = {
-	color = hunas
-	
-	parents = { xiongnu bactrian }
-	created = 350.1.1
-	history_loc_override = hunas_history_loc
-	
-	ethos = ethos_bellicose
-	heritage = heritage_turkic
-	language = language_bactrian
-	martial_custom = martial_custom_male_only
-	head_determination = head_determination_herd
-	traditions = {
-		#Societal Traditions
-		tradition_warrior_culture
-		#Regional Traditions
-		#Ritual Traditions
-		#Realm Traditions
-		tradition_ruling_caste
-		#Combat Traditions
-	}
-	
-	dlc_tradition = {
-		trait = tradition_devoted_horsemanship
-		requires_dlc_flag = khans_of_the_steppe
-		fallback = tradition_horse_lords
-	}
-	
-	dlc_tradition = {
-		trait = tradition_culture_blending
-		requires_dlc_flag = hybridize_culture
-	}
-	
-	name_list = name_list_hunas
-	
-	coa_gfx = { turkic_group_coa_gfx steppe_coa_gfx }
-	coa_gfx = { iranian_group_coa_gfx }
-	building_gfx = { mena_building_gfx }
-	clothing_gfx = { turkic_clothing_gfx mongol_clothing_gfx}
-	clothing_gfx = { mena_clothing_gfx }
-	unit_gfx = { mongol_unit_gfx }
-	house_coa_frame = house_frame_14
-	
-	#Hunnic/Bactrian Admixture (75%/25%)
-	ethnicities = { #Based on Procopius of Caesarea's description
-		36 = iranian
-		27 = turkic
-		25 = mediterranean
-		3 = caucasian_blond
-		3 = caucasian_brown_hair
-		3 = caucasian_dark_hair
-		3 = caucasian_ginger
-	}
-}
-
 dranganian = {
 	color = dranganian
 	

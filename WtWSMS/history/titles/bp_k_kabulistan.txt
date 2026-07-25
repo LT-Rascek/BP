@@ -1,9 +1,9 @@
 ﻿k_kabulistan = {
-	430.1.1 = {
-		holder = alchon_hun_rulers_1
+	440.1.1 = {
+		holder = nezak_hun_rulers_1
 		government = prefeudal_government
 	}
-	465.1.1 = { holder = alchon_hun_rulers_2 }
+	484.1.1 = { holder = nezak_hun_rulers_2 }
 	493.1.1 = { holder = 0 }
 }
 
@@ -19,7 +19,7 @@ c_nuristan = { #Ruled by their own on account of long-term independence
 		holder = NuristaniNuristani000
 		government = tribal_government
 	}
-	450.1.1 = { liege = k_kabulistan }
+	450.1.1 = { liege = k_alchon }
 	464.1.1 = { holder = NuristaniNuristani001 }
 	512.1.1 = { holder = NuristaniNuristani002 }
 	529.1.1 = { holder = NuristaniNuristani003 }
@@ -44,38 +44,41 @@ d_zabulistan = {
 	1.1.1={}
 }
 c_ghazna = {
-	430.1.1 = { holder = alchon_hun_rulers_1 }
-	460.1.1 = { holder = alchon_hun_rulers_2 }
+	440.1.1 = { holder = nezak_hun_rulers_1 }
+	484.1.1 = { holder = nezak_hun_rulers_2 }
 }
 c_zamindawar = {
-	430.1.1 = { holder = alchon_hun_rulers_1 }
-	460.1.1 = { holder = alchon_hun_rulers_2 }
+	440.1.1 = { holder = nezak_hun_rulers_1 }
+	484.1.1 = { holder = nezak_hun_rulers_2 }
 }
 c_rukhaj = {
-	430.1.1 = { holder = alchon_hun_rulers_1 }
-	460.1.1 = { holder = alchon_hun_rulers_2 }
+	440.1.1 = { holder = nezak_hun_rulers_1 }
+	484.1.1 = { holder = nezak_hun_rulers_2 }
 }
 c_zabulistan = {
-	430.1.1 = { holder = alchon_hun_rulers_1 }
-	460.1.1 = { holder = alchon_hun_rulers_2 }
+	475.1.1 = {
+		holder = pakthun_zabulistan_000
+		government = tribal_government
+		liege = k_kabulistan
+	}
 }
 
 d_ghur = {
-	1.1.1 = {}
+	475.1.1 = {
+		holder = pakthun_upperGhur_000
+		government = tribal_government
+		liege = e_xiongnu
+	}
 }
 c_ghur = {
-	430.1.1 = { holder = alchon_hun_rulers_1 }
-	460.1.1 = { holder = alchon_hun_rulers_2 }
+	475.1.1 = { holder = pakthun_upperGhur_000 }
 }
 c_darmashan = {
-	430.1.1 = { holder = alchon_hun_rulers_1 }
-	460.1.1 = { holder = alchon_hun_rulers_2 }
+	475.1.1 = { holder = pakthun_upperGhur_000 }
 }
 c_upper_ghur = {
-	430.1.1 = { holder = alchon_hun_rulers_1 }
-	460.1.1 = { holder = alchon_hun_rulers_2 }
+	475.1.1 = { holder = pakthun_upperGhur_000 }
 }
 c_rivsharan = {
-	430.1.1 = { holder = alchon_hun_rulers_1 }
-	460.1.1 = { holder = alchon_hun_rulers_2 }
+	475.1.1 = { holder = pakthun_upperGhur_000 }
 }

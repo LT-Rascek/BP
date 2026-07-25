@@ -7,7 +7,7 @@ bp_change_tradition_events.0001 = {
 	content_source = dlc_WtWSMS
 	
 	trigger = {
-		root = { has_cultural_tradition = tradition_migratory_culture }
+		root = { BP_has_migratory_ruling_caste_tradition_trigger = yes }
 		OR = {
 			root = { any_culture_county = { count >= 5 } }
 			root = { any_culture_county = { count >= 3 any_neighboring_county = { this.culture = prev.culture } } }
@@ -15,23 +15,28 @@ bp_change_tradition_events.0001 = {
 	}
 	
 	immediate = {
-		remove_culture_tradition = tradition_migratory_culture
-		add_culture_tradition = tradition_ruling_caste
+		if = {
+			limit = { has_cultural_tradition = tradition_migratory_culture }
+			remove_culture_tradition = tradition_migratory_culture
+			add_culture_tradition = tradition_ruling_caste
+		}
+		else_if = {
+			limit = { has_cultural_tradition = tradition_nomadic_rulership }
+			remove_culture_tradition = tradition_nomadic_rulership
+			add_culture_tradition = tradition_ruling_caste
+		}
 		#Remove at least one MAA
 		every_ruler = {
 			limit = { this.culture = root }
 			random_maa_regiment = { destroy_maa_regiment = yes }
 		}
-		#Change head determination, if not Turkic, Mongolic, Cushtic, Sakan, or Sarmatian heritage
+		#Change head determination, if not culture head is not nomadic or herder
 		if = {
 			limit = {
 				has_cultural_pillar = head_determination_herd
 				NOR = {
-					has_cultural_pillar = heritage_mongolic
-					has_cultural_pillar = heritage_turkic
-					has_cultural_pillar = heritage_sakan
-					has_cultural_pillar = heritage_sarmatian
-					has_cultural_pillar = heritage_somalian
+					this.culture_head ?= { government_has_flag = government_is_nomadic }
+					this.culture_head ?= { government_has_flag = herder_government }
 				}
 			}
 			set_culture_pillar = head_determination_domain
