@@ -490,10 +490,26 @@ BP_476_tributary_setup_effect = {
 	}
 	title:c_qoshagyl.holder = {
 		save_scope_as = suzerain
+		title:c_kos-buwak.holder = {
+			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+		}
+	}
+	#Chionite remnant
+	title:c_aralkizil.holder = {
+		save_scope_as = suzerain
 		title:c_akkityk.holder = {
 			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
-		title:c_kos-buwak.holder = {
+	}
+	title:c_ak-dzulpas.holder = {
+		save_scope_as = suzerain
+		title:c_barsuki.holder = {
+			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+		}
+	}
+	title:c_terekli.holder = {
+		save_scope_as = suzerain
+		title:c_aral_karakum.holder = {
 			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
 	}
