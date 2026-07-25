@@ -88,16 +88,6 @@ d_avars = {
 		}
 	}
 }
-d_tiele = {
-	color={ 110 150 220 } # Same as d_otuken
-	ignore_titularity_for_title_weighting = yes
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:tiele }
-			add = @always_primary_score
-		}
-	}
-}
 d_ikh_bogdh = {
 	color = { 130 120 240 }
 	ignore_titularity_for_title_weighting = yes
@@ -138,18 +128,6 @@ d_barsils = {
 	}
 }
 #Others
-k_ashina = {
-	color={ 0.55 0.85 0.15 }
-	ignore_titularity_for_title_weighting = yes
-	definite_form = yes
-	can_create = { general_kingdom_title_creation_trigger = yes }
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:gokturkish }
-			add = @always_primary_score
-		}
-	}
-}
 k_gaoche = {
 	color={ 0.50 0.25 0.25 }
 	ignore_titularity_for_title_weighting = yes
