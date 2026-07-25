@@ -381,21 +381,13 @@ BP_476_tributary_setup_effect = {
 	}
 	#Hepthalites
 	title:e_xiongnu.holder = {
-		add_realm_law_skip_effects = prefeudal_authority_1
+		add_realm_law_skip_effects = prefeudal_authority_3
 		save_scope_as = suzerain
 		title:k_kabulistan.holder = {
 			add_character_flag = default_subjugated_tributary
 			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
-		title:d_khuttal.holder = {
-			add_character_flag = default_subjugated_tributary
-			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
-		}
-		title:d_samarkand.holder = {
-			add_character_flag = default_subjugated_tributary
-			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
-		}
-		title:d_bukhara.holder = {
+		title:k_alchon.holder = {
 			add_character_flag = default_subjugated_tributary
 			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
@@ -403,19 +395,31 @@ BP_476_tributary_setup_effect = {
 			add_character_flag = default_subjugated_tributary
 			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
-		title:d_osrushana.holder = {
+		title:d_syr_darya.holder = {
 			add_character_flag = default_subjugated_tributary
 			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
-		title:d_chah.holder = {
+		title:d_muyunkum.holder = {
 			add_character_flag = default_subjugated_tributary
 			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
-		title:d_ferghana.holder = {
+		title:d_balashagun.holder = {
 			add_character_flag = default_subjugated_tributary
 			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
-		title:d_kashgar.holder = {
+		title:d_suyab.holder = {
+			add_character_flag = default_subjugated_tributary
+			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+		}
+	}
+	#Hepthalite Nomadic Vassals Herder Tributaries
+	title:d_syr_darya.holder = {
+		save_scope_as = suzerain
+		title:c_yangikent.holder = {
+			add_character_flag = default_subjugated_tributary
+			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+		}
+		title:c_raimskoe.holder = {
 			add_character_flag = default_subjugated_tributary
 			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
@@ -426,14 +430,6 @@ BP_476_tributary_setup_effect = {
 		save_scope_as = suzerain
 		title:d_suavi.holder = {
 			add_character_flag = default_subjugated_tributary
-			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
-		}
-	}
-	#Unattributed, but likely
-	title:d_muyunkum.holder = {
-		save_scope_as = suzerain
-		title:d_suyab.holder = {
-			add_character_flag = default_settled_tributary 
 			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
 	}
@@ -473,44 +469,44 @@ BP_476_tributary_setup_effect = {
 	title:d_uzboy.holder = {
 		save_scope_as = suzerain
 		title:c_farava.holder = {
-			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
 	}
 	title:c_uzboy.holder = {
 		save_scope_as = suzerain
 		title:c_garabogazkol.holder = {
-			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
 	}
 	title:c_mangyshlak.holder = {
 		save_scope_as = suzerain
 		title:c_ustyurt.holder = {
-			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
 	}
 	title:c_qoshagyl.holder = {
 		save_scope_as = suzerain
 		title:c_kos-buwak.holder = {
-			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
 	}
 	#Chionite remnant
 	title:c_aralkizil.holder = {
 		save_scope_as = suzerain
 		title:c_akkityk.holder = {
-			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
 	}
 	title:c_ak-dzulpas.holder = {
 		save_scope_as = suzerain
 		title:c_barsuki.holder = {
-			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
 	}
 	title:c_terekli.holder = {
 		save_scope_as = suzerain
 		title:c_aral_karakum.holder = {
-			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
 	}
 }
