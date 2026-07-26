@@ -39,7 +39,8 @@ bp_game_start = {
 		#Other Actions
 		update_development_by_terrain_and_circumstances
 		#Things that have to be done last
-		setup_governments_based_on_dlc
+		setup_roman_governments_based_on_dlc
+		setup_other_governments_based_on_dlc
 	}
 }
 
@@ -1436,7 +1437,7 @@ alt_history_effects = {
 }
 
 ## Government Stuff ##
-setup_governments_based_on_dlc = {
+setup_roman_governments_based_on_dlc = {
 	effect = {
 		#Flip Roman governments from administrative to Dynastic if DLC is not available
 		if = {
@@ -1569,5 +1570,28 @@ setup_governments_based_on_dlc = {
 		destroy_PP_title_if_ai_effect = { TITLE = title:e_praetorian_prefecture_illyria }
 		destroy_PP_title_if_ai_effect = { TITLE = title:e_praetorian_prefecture_gaul }
 		destroy_PP_title_if_ai_effect = { TITLE = title:e_praetorian_prefecture_italy }
+	}
+}
+
+setup_other_governments_based_on_dlc = {
+	effect = {
+		#Setup missing NF titles
+		if = {
+			limit = {
+				this = this.house.house_head
+				this.primary_title.tier >= tier_county
+				any_held_title = { count < 1 is_noble_family_title = yes }
+			}
+			if = {
+				limit = { government_has_flag = government_is_meritocratic }
+				give_noble_family_title = {
+					name = noble_family_name
+					tier = county
+					article = DEFAULT_TITLE_NAME_ARTICLE
+					government = meritocratic_government
+					save_scope_as = new_title
+				}
+			}
+		}
 	}
 }
