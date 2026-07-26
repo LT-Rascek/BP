@@ -18,7 +18,7 @@ kirghiz = {
 	
 	ethos = ethos_egalitarian
 	heritage = heritage_turkic
-	language = language_siberian_turkic
+	language = language_turkic
 	martial_custom = martial_custom_equal
 	head_determination = head_determination_herd
 	traditions = {
@@ -54,7 +54,10 @@ kirghiz = {
 		3 = caucasian_ginger
 	}
 }
-kurykan = { #Remnant Dinglings that became Kurykans/proto-Buryats,Tuvans,Siberian Turks
+#Probable origin of the North Siberian Turks, which split linguistically very early, while the rest
+# are likely to have split from the Middle Ages onwards.
+#https://academic.oup.com/view-large/figure/201330592/lzz010f3.tif
+kurykan = {
 	color = kurykan
 	
 	parents = { tiele evenk }
@@ -63,7 +66,7 @@ kurykan = { #Remnant Dinglings that became Kurykans/proto-Buryats,Tuvans,Siberia
 	
 	ethos = ethos_spiritual #Buryat bequethal
 	heritage = heritage_turkic
-	language = language_siberian_turkic
+	language = language_siberian_turkic #This is for the North Siberian languages
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_herd
 	traditions = {

@@ -1,6 +1,102 @@
-﻿#Qibi Tribe
+﻿#Fufuluo Rulers
+fufuluo_000 = {
+	name = "Yizhixie"
+	dynasty = 10424585 #Fufuluo
+	religion = tengri_pagan
+	culture = xiongnu
+	370.1.1 = { birth = yes }
+	420.1.1 = { death = yes }
+}
+fufuluo_001 = {
+	name = "Luanti"
+	dynasty = 10424585 #Fufuluo
+	religion = tengri_pagan
+	culture = xiongnu
+	father = fufuluo_000
+	390.1.1 = { birth = yes }
+	431.1.1 = { culture = tiele }
+	440.1.1 = { death = yes }
+}
+fufuluo_002 = {
+	name = "Zeyhan"
+	dynasty = 10424585 #Fufuluo
+	religion = tengri_pagan
+	culture = xiongnu
+	father = fufuluo_001
+	415.1.1 = { birth = yes }
+	431.1.1 = { culture = tiele }
+	460.1.1 = { death = yes }
+}
+#431: Collapse of Xia/Tiefu, migration into Tiele lands and adoption of tiele identity
+
+#Historic Fufuluo now; seems likely to have been seniority-style succession, from the dates...
+fufuluo_003 = {
+	name = "Afzhiluo"
+	dynasty = 10424585 #Fufuluo
+	religion = tengri_pagan
+	culture = tiele
+	father = fufuluo_002
+	440.1.1 = { birth = yes }
+	503.1.1 = { death = yes }
+}
+fufuluo_004 = {
+	name = "Baliyan"
+	dynasty = 10424585 #Fufuluo
+	religion = tengri_pagan
+	culture = tiele
+	father = fufuluo_002
+	445.1.1 = { birth = yes }
+	505.1.1 = { death = yes }
+}
+fufuluo_005 = {
+	name = "Mi_etu"
+	dynasty = 10424585 #Fufuluo
+	religion = tengri_pagan
+	culture = tiele
+	father = fufuluo_003
+	465.1.1 = { birth = yes }
+	516.1.1 = { death = yes }
+}
+fufuluo_006 = {
+	name = "Yifu"
+	dynasty = 10424585 #Fufuluo
+	religion = tengri_pagan
+	culture = tiele
+	father = fufuluo_004
+	470.1.1 = { birth = yes }
+	524.1.1 = { death = { death_reason = death_battle } } #Repulsed by Rouran for their incursion
+}
+fufuluo_007 = {
+	name = "Yueju"
+	dynasty = 10424585 #Fufuluo
+	religion = tengri_pagan
+	culture = tiele
+	father = fufuluo_005
+	485.1.1 = { birth = yes }
+	536.1.1 = { death = yes }
+}
+fufuluo_008 = {
+	name = "Bizhao"
+	dynasty = 10424585 #Fufuluo
+	religion = tengri_pagan
+	culture = tiele
+	father = fufuluo_006
+	490.1.1 = { birth = yes }
+	540.1.1 = { death = { death_reason = death_battle } }
+}
+fufuluo_009 = {
+	name = "Qubin"
+	dynasty = 10424585 #Fufuluo
+	religion = tengri_pagan
+	culture = tiele
+	father = fufuluo_007
+	505.1.1 = { birth = yes }
+	541.1.1 = { death = { death_reason = death_battle } } #Final collapse of the Fulfuluo
+}
+
+#Qibi Tribe
 tiele_qibi_000 = {
-	name = "Bachman" #  Gokturk Founder's Father
+	name = "Bachman"
 	dynasty = tiele_dynasty_qibi
 	religion = "tengri_pagan"
 	culture = "tiele"
@@ -16,6 +112,8 @@ tiele_bigan_000 = {
 	450.1.1 = { birth = yes }
 	500.1.1 = { death = yes }
 }
+
+
 #Other Tiele Tribes
 tiele_yedie_000 = {
 	name = "Uzluk"
@@ -34,8 +132,24 @@ tiele_boluozhi_000 = {
 	500.1.1 = { death = yes }
 }
 tiele_supo_000 = {
-	name = "Uzluk"
+	name = "Seyhan"
 	dynasty = tiele_dynasty_supo
+	religion = "tengri_pagan"
+	culture = "tiele"
+	450.1.1 = { birth = yes }
+	500.1.1 = { death = yes }
+}
+tiele_nahe_000 = {
+	name = "Sotan"
+	dynasty = tiele_dynasty_nahe
+	religion = "tengri_pagan"
+	culture = "tiele"
+	450.1.1 = { birth = yes }
+	500.1.1 = { death = yes }
+}
+title_uighur_000 = {
+	name = "Uzur"
+	dynasty = tiele_dynasty_uighur
 	religion = "tengri_pagan"
 	culture = "tiele"
 	450.1.1 = { birth = yes }

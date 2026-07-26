@@ -1,12 +1,19 @@
-﻿k_dzungaria = { #Empty History
-	1.1.1={}
+﻿k_dzungaria = { #The center of the Fufuluo Gaoche, given their messing with Gaochang
+	475.1.1 = {
+		holder = fufuluo_003
+		government = nomad_government
+	}
+	503.1.1 = { holder = fufuluo_004 }
+	505.1.1 = { holder = fufuluo_005 }
+	516.1.1 = { holder = fufuluo_006 }
+	524.1.1 = { holder = fufuluo_007 }
+	536.1.1 = { holder = fufuluo_008 }
+	540.1.1 = { holder = fufuluo_009 }
+	541.1.1 = { holder = 0 }
 }
 
 d_kara_khoja = {
-	475.1.1 = {
-		holder = tiele_qibi_000
-		government = nomad_government
-	}
+	1.1.1 = {}
 }
 c_kara_khoja = {
 	#modded to represent Gaochang (Kara Khoja) by Numahr
@@ -58,15 +65,6 @@ c_kara_khoja = {
 	602.1.1={ 
 		holder=219511 # AKA: Qu Qiangu 
 	}
-}
-c_beshbalik = {
-	475.1.1 = { holder = tiele_qibi_000 }
-}
-c_yangjibaliq = {
-	475.1.1 = { holder = tiele_qibi_000 }
-}
-c_barkul = {
-	475.1.1 = { holder = tiele_qibi_000 }
 }
 c_chamil = {
 	420.1.1 = { holder = tieleGaoche000 }
@@ -136,10 +134,28 @@ c_turpan = {
 	}
 }
 
+d_beshbalik = {
+	475.1.1 = {
+		holder = tiele_qibi_000
+		government = nomad_government
+		liege = k_dzungaria
+	}
+}
+c_beshbalik = {
+	475.1.1 = { holder = tiele_qibi_000 }
+}
+c_yangjibaliq = {
+	475.1.1 = { holder = tiele_qibi_000 }
+}
+c_barkul = {
+	475.1.1 = { holder = tiele_qibi_000 }
+}
+
 d_altay = {
 	475.1.1 = {
 		holder = tiele_bigan_000
 		government = nomad_government
+		liege = k_dzungaria
 	}
 }
 c_altay = {
@@ -158,11 +174,11 @@ c_torangy_kul = {
 	475.1.1 = { holder = tiele_bigan_000 }
 }
 
-#c_altay history for duchy (estimation)
-d_gurbantunggut = { #Empty History
+d_gurbantunggut = {
 	475.1.1 = {
 		holder = tiele_yedie_000
 		government = nomad_government
+		liege = k_dzungaria
 	}
 }
 c_hoboksar = {
@@ -176,17 +192,41 @@ c_jie_DZU = {
 }
 
 d_naiman_gobi = {
-	475.1.1 = {
-		holder = tiele_boluozhi_000
+	442.1.1 = {
+		holder = fufuluo_003
 		government = nomad_government
 	}
+	503.1.1 = { holder = fufuluo_004 }
+	505.1.1 = { holder = fufuluo_005 }
+	516.1.1 = { holder = fufuluo_006 }
+	524.1.1 = { holder = fufuluo_007 }
+	536.1.1 = { holder = fufuluo_008 }
+	540.1.1 = { holder = fufuluo_009 }
 }
 c_balgun = {
-	475.1.1 = { holder = tiele_boluozhi_000 }
+	442.1.1 = { holder = fufuluo_003 }
+	503.1.1 = { holder = fufuluo_004 }
+	505.1.1 = { holder = fufuluo_005 }
+	516.1.1 = { holder = fufuluo_006 }
+	524.1.1 = { holder = fufuluo_007 }
+	536.1.1 = { holder = fufuluo_008 }
+	540.1.1 = { holder = fufuluo_009 }
 }
 c_kara_asirgan = {
-	475.1.1 = { holder = tiele_boluozhi_000 }
+	442.1.1 = { holder = fufuluo_003 }
+	503.1.1 = { holder = fufuluo_004 }
+	505.1.1 = { holder = fufuluo_005 }
+	516.1.1 = { holder = fufuluo_006 }
+	524.1.1 = { holder = fufuluo_007 }
+	536.1.1 = { holder = fufuluo_008 }
+	540.1.1 = { holder = fufuluo_009 }
 }
 c_boro_burgasu = {
-	475.1.1 = { holder = tiele_boluozhi_000 }
+	442.1.1 = { holder = fufuluo_003 }
+	503.1.1 = { holder = fufuluo_004 }
+	505.1.1 = { holder = fufuluo_005 }
+	516.1.1 = { holder = fufuluo_006 }
+	524.1.1 = { holder = fufuluo_007 }
+	536.1.1 = { holder = fufuluo_008 }
+	540.1.1 = { holder = fufuluo_009 }
 }

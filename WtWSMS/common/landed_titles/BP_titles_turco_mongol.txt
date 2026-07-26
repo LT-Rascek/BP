@@ -128,28 +128,6 @@ d_barsils = {
 	}
 }
 #Others
-k_gaoche = {
-	color={ 0.50 0.25 0.25 }
-	ignore_titularity_for_title_weighting = yes
-	can_create = { general_kingdom_title_creation_trigger = yes }
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:tiele }
-			add = @cultural_title_score
-		}
-	}
-}
-k_uighur = { #Proto-Uyghurs, Kirghiz under Ninrun domination
-	color={ 0.50 0.50 0.25 }
-	ignore_titularity_for_title_weighting = yes
-	can_create = { general_kingdom_title_creation_trigger = yes }
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:uyghur }
-			add = @cultural_title_score
-		}
-	}
-}
 k_dubuo = { #Proto-Tuvans, Eastern Sayan to Tannu-Ola region
 	color={ 0.25 0.50 0.75 }
 	ignore_titularity_for_title_weighting = yes

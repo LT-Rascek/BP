@@ -148,7 +148,7 @@ tiele = {
 gokturkish = { # Old Eastern Turkish; Origin is Xiongnu of Ashina clan, relocated by Rourans to the Altai region in the 450s
 	color = { 0.55 0.85 0.15 }
 	
-	parents = { tiele chionite }
+	parents = { tiele samoyed }
 	created = 395.1.1
 	history_loc_override = gokturkish_history_loc
 	
@@ -212,7 +212,12 @@ proto_chionite = {
 		#Combat Traditions
 	}
 	
-	name_list = name_list_sakan
+	dlc_tradition = {
+		trait = tradition_staunch_traditionalists
+		requires_dlc_flag = hybridize_culture
+	}
+	
+	name_list = name_list_saka
 	name_list = name_list_xiongnu
 	
 	coa_gfx = { turkic_group_coa_gfx steppe_coa_gfx }
