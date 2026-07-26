@@ -56,32 +56,12 @@ d_acatiri = {
 		}
 	}
 }
-d_sabirs = {
-	color = { 55 35 15 }
-	ignore_titularity_for_title_weighting = yes
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:bolghar }
-			add = @cultural_title_score
-		}
-	}
-}
 d_bulgars = {
 	color={ 193 158 63 }
 	ignore_titularity_for_title_weighting = yes
 	ai_primary_priority = {
 		if = {
 			limit = { culture = culture:bolghar }
-			add = @cultural_title_score
-		}
-	}
-}
-k_var = { #Proto-Avars, the first group that pushed the Sabirs & Bolghars west
-	color={ 200 150 55 }
-	ignore_titularity_for_title_weighting = yes
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:sabir }
 			add = @cultural_title_score
 		}
 	}

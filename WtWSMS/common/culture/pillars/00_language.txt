@@ -6203,9 +6203,9 @@ language_tuyuhun = {
 	
 	color = tuyuhun
 }
-language_ruanruan = {
+language_ninrun = {
 	type = language
-	is_shown = { language_is_shown_trigger = { LANGUAGE = language_ruanruan } }
+	is_shown = { language_is_shown_trigger = { LANGUAGE = language_ninrun } }
 	
 	parameters = {
 		language_group_paramongolic = yes
@@ -6217,7 +6217,7 @@ language_ruanruan = {
 	ai_will_do = {
 		value = 10
 		if = {
-			limit = { has_cultural_pillar = language_ruanruan }
+			limit = { has_cultural_pillar = language_ninrun }
 			multiply = same_language_choice_factor
 		}
 		else_if = {

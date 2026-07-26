@@ -442,18 +442,6 @@ BP_476_tributary_setup_effect = {
 			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
 	}
-	#Hepthalite Nomadic Vassals Herder Tributaries
-	title:d_syr_darya.holder = {
-		save_scope_as = suzerain
-		title:c_yangikent.holder = {
-			add_character_flag = default_subjugated_tributary
-			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
-		}
-		title:c_raimskoe.holder = {
-			add_character_flag = default_subjugated_tributary
-			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
-		}
-	}
 	#Alamania
 	title:k_alamannia.holder = {
 		add_realm_law_skip_effects = tribal_authority_1

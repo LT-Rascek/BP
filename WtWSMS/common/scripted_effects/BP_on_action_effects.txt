@@ -239,7 +239,7 @@ set_court_language_from_effect = {
 	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_mongolic } NOT = { has_court_language = language_mongolic } NOT = { has_court_language = language_mongolic } } $CHARACTER$ = { set_court_language = language_mongolic } }
 	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_tuoba } NOT = { has_court_language = language_tuoba } NOT = { has_court_language = language_tuoba } } $CHARACTER$ = { set_court_language = language_tuoba } }
 	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_tuyuhun } NOT = { has_court_language = language_tuyuhun } NOT = { has_court_language = language_tuyuhun } } $CHARACTER$ = { set_court_language = language_tuyuhun } }
-	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_ruanruan } NOT = { has_court_language = language_ruanruan } NOT = { has_court_language = language_ruanruan } } $CHARACTER$ = { set_court_language = language_ruanruan } }
+	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_ninrun } NOT = { has_court_language = language_ninrun } NOT = { has_court_language = language_ninrun } } $CHARACTER$ = { set_court_language = language_ninrun } }
 	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_yeniseian } NOT = { has_court_language = language_yeniseian } NOT = { has_court_language = language_yeniseian } } $CHARACTER$ = { set_court_language = language_yeniseian } }
 	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_tungusic } NOT = { has_court_language = language_tungusic } NOT = { has_court_language = language_tungusic } } $CHARACTER$ = { set_court_language = language_tungusic } }
 	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_chinese } NOT = { has_court_language = language_chinese } NOT = { has_court_language = language_chinese } } $CHARACTER$ = { set_court_language = language_chinese } }
@@ -435,7 +435,7 @@ match_court_languages_effect = {
 	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_mongolic } } $CURRENT_COURT$ = { set_court_language = language_mongolic } }
 	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_tuoba } } $CURRENT_COURT$ = { set_court_language = language_tuoba } }
 	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_tuyuhun } } $CURRENT_COURT$ = { set_court_language = language_tuyuhun } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_ruanruan } } $CURRENT_COURT$ = { set_court_language = language_ruanruan } }
+	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_ninrun } } $CURRENT_COURT$ = { set_court_language = language_ninrun } }
 	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_yeniseian } } $CURRENT_COURT$ = { set_court_language = language_yeniseian } }
 	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_tungusic } } $CURRENT_COURT$ = { set_court_language = language_tungusic } }
 	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_chinese } } $CURRENT_COURT$ = { set_court_language = language_chinese } }

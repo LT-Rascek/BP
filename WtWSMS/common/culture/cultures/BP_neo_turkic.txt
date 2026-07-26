@@ -238,6 +238,59 @@ proto_chionite = {
 		3 = caucasian_ginger
 	}
 }
+uar = { #For the proto-Avars from the IVth century; not synonymous with the Pannonian Avars, who are more linked with the fall of the Rouran
+	color = uar
+	
+	parents = { proto_chionite }
+	created = 350.1.1
+	history_loc_override = uar_history_loc
+	
+	ethos = ethos_stoic
+	heritage = heritage_hunnic
+	language = language_oghur
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_herd
+	traditions = {
+		#Societal Traditions
+		#Regional Traditions
+		#Ritual Traditions
+		#Realm Traditions
+		tradition_pastoralists
+		#Combat Traditions
+	}
+	
+	dlc_tradition = {
+		trait = tradition_devoted_horsemanship
+		requires_dlc_flag = khans_of_the_steppe
+		fallback = tradition_horse_lords
+	}
+	
+	dlc_tradition = {
+		trait = tradition_staunch_traditionalists
+		requires_dlc_flag = hybridize_culture
+	}
+	
+	name_list = name_list_saka
+	name_list = name_list_xiongnu
+	
+	coa_gfx = { turkic_group_coa_gfx steppe_coa_gfx }
+	building_gfx = { steppe_building_gfx }
+	clothing_gfx = { turkic_clothing_gfx mongol_clothing_gfx}
+	unit_gfx = { mongol_unit_gfx }
+	house_coa_frame = house_frame_14
+	
+	#50% Chionite/50% Sarmatian
+	ethnicities = {
+		25 = turkic_west
+		26 = iranian
+		17 = mediterranean
+		8 = caucasian_blond
+		8 = caucasian_brown_hair
+		8 = caucasian_dark_hair
+		8 = caucasian_ginger
+	}
+}
+# The Chionites proper
 chionite = { #Chionites, Kidarites, Alchon Huns, Hepthalites
 	color = chionite
 	
@@ -557,7 +610,7 @@ khuni = {
 sabir = {
 	color = sabir
 	
-	parents = { chionite tiele }
+	parents = { proto_chionite }
 	created = 375.1.1
 	history_loc_override = sabir_history_loc
 	
