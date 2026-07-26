@@ -82,7 +82,7 @@ tuyuhun = {
 ninrun = { #Sir Diesalot suggestion; proto-Buryats? # WIP Rouran culture
 	color = ninrun
 	
-	parents = { xianbei xiongnu }
+	parents = { xianbei }
 	created = 330.1.1 #Yujiulu Mugulu
 	history_loc_override = ninrun_history_loc
 	
@@ -94,15 +94,15 @@ ninrun = { #Sir Diesalot suggestion; proto-Buryats? # WIP Rouran culture
 	traditions = {
 		#Societal Traditions
 		#Regional Traditions
-		tradition_steppe_tolerance #Mongol/Buryat tradition
+		tradition_xenophilic #Placeholder until we have a Heqin system
 		#Ritual Traditions
 		#Realm Traditions
 		#Combat Traditions
-		tradition_horse_breeder
+		tradition_quarrelsome
 	}
 	
 	dlc_tradition = {
-		trait = tradition_mpo_iron_cavalry
+		trait = tradition_devoted_horsemanship
 		requires_dlc_flag = khans_of_the_steppe
 		fallback = tradition_horse_lords
 	}

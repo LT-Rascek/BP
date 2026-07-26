@@ -11,7 +11,8 @@ bp_game_start_after_lobby_476 = {
 		BP_setup_realm_laws_476
 		BP_setup_realm_laws_476_DLC
 		BP_setup_vassal_contracts_476
-		BP_setup_vassal_contracts_476_DLC
+		BP_setup_vassal_contracts_476_nomad_DLC
+		BP_setup_vassal_contracts_476_rome_DLC
 		BP_setup_capitals_476
 		BP_setup_landless_chars_476
 		BP_set_lieges_476
@@ -291,7 +292,44 @@ BP_setup_vassal_contracts_476 = {
 		}
 	}
 }
-BP_setup_vassal_contracts_476_DLC = {
+BP_setup_vassal_contracts_476_nomad_DLC = {
+	trigger = { has_dlc_feature = khans_of_the_steppe }
+	effect = {
+		#The Rouran are squeezing their vassals, as is their wont
+		title:e_rouran.holder = {
+			every_vassal = {
+				limit = { government_has_flag = government_is_nomadic }
+				if = { #Gokturks and Fufuluo Tiele especially squeezed
+					limit = {
+						OR = {
+							this.primary_title = title:k_dzungaria
+							this.primary_title = title:d_semey
+						}
+					}
+					vassal_contract_set_obligation_level = {
+						type = nomad_government_herd
+						level = herd_tax_extortionate
+					}
+					vassal_contract_set_obligation_level = {
+						type = nomad_government_taxes
+						level = nomad_tax_extortionate
+					}
+				}
+				else = {
+					vassal_contract_set_obligation_level = {
+						type = nomad_government_herd
+						level = herd_tax_high
+					}
+					vassal_contract_set_obligation_level = {
+						type = nomad_government_taxes
+						level = nomad_tax_high
+					}
+				}
+			}
+		}
+	}
+}
+BP_setup_vassal_contracts_476_rome_DLC = {
 	trigger = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes }
 	effect = {
 		#Remnant Limitanei
