@@ -150,8 +150,6 @@ ask_for_wre = {
 	selection_tooltip = ask_for_wre_tooltip
 	
 	is_shown = {
-		#Haven't already asked
-		root = { NOT = { has_variable = asked_for_wre } }
 		#WRE must not exist
 		NOT = { exists = title:h_western_roman_empire.holder }
 		#ERE must have a holder
@@ -159,15 +157,6 @@ ask_for_wre = {
 			exists = title:e_byzantium.holder
 			exists = title:h_eastern_roman_empire.holder
 		}
-		#Have correct religion
-		OR = {
-			religion = religion:christianity_religion
-			religion = religion:hellenism_religion
-		}
-		
-		#Only Romans would dare broach this subject this way
-		culture = { has_ability_to_reform_rome_directly_trigger = yes }
-		root.primary_title.tier < tier_hegemony
 		#Can't be of a specially excluded title
 		NOR = {
 			#Can't already be Roman or other
@@ -186,13 +175,13 @@ ask_for_wre = {
 			primary_title.tier = tier_empire
 		}
 		realm_size >= 300 #Regardless of the size of Rome, it needs to be *big*;
-		#Control 80% of whatever remains of Western Rome
+		#Control 50% of whatever remains of Western Rome
 		custom_description = {
-			text = must_control_at_least_80_percent_of_wre_territory
+			text = must_control_at_least_50_percent_of_wre_territory
 			subject = root
 			title:h_western_roman_empire = {
 				any_county = {
-					percent >= 0.8
+					percent > 0.5
 					this.holder.top_liege = root
 				}
 			}
@@ -209,6 +198,23 @@ ask_for_wre = {
 	is_valid_showing_failures_only = {
 		is_available_adult = yes
 		is_at_war = no
+		#Have correct religion
+		OR = {
+			religion = religion:christianity_religion
+			religion = religion:hellenism_religion
+		}
+		#Haven't already asked
+		custom_tooltip = {
+			text = have_already_asked_for_the_wre
+			NOT = { has_variable = asked_for_wre }
+		}
+		#Only Romans would dare broach this subject this way
+		OR = {
+			culture = { has_ability_to_reform_rome_directly_trigger = yes }
+			dynasty = { has_dynasty_perk = BP_roman_heritage_legacy_5 }
+		}
+		#Can't already have a hegemony
+		root.primary_title.tier < tier_hegemony
 	}
 	
 	cost = {
@@ -479,10 +485,6 @@ restore_western_roman_empire = {
 		NOT = { exists = title:h_western_roman_empire.holder }
 		NOT = { exists = title:h_roman_empire.holder }
 		NOT = { exists = title:h_eastern_roman_empire.holder } #They can reform directly
-		OR = {
-			culture = { has_ability_to_reform_rome_directly_trigger = yes }
-			dynasty = { has_dynasty_perk = BP_roman_heritage_legacy_5 }
-		}
 	}
 	
 	is_valid = {
@@ -498,11 +500,6 @@ restore_western_roman_empire = {
 			text = has_restored_the_roman_forum
 			title:b_roma.title_province = { has_building = the_colosseum_02 }
 		}
-		#At least 3 kingdoms
-		any_held_title = {
-			tier = tier_kingdom
-			count >= 3
-		}
 		OR = {
 		has_trait = legendary_leader
 			AND = {
@@ -516,6 +513,11 @@ restore_western_roman_empire = {
 	is_valid_showing_failures_only = {
 		is_available_adult = yes
 		is_at_war = no
+		#Have to be a Roman to consider it
+		OR = {
+			culture = { has_ability_to_reform_rome_directly_trigger = yes }
+			dynasty = { has_dynasty_perk = BP_roman_heritage_legacy_5 }
+		}
 	}
 	
 	cost = {
@@ -593,10 +595,6 @@ restore_eastern_roman_empire = {
 		NOT = { exists = title:h_eastern_roman_empire.holder }
 		NOT = { exists = title:h_western_roman_empire.holder }
 		NOT = { exists = title:h_roman_empire.holder }
-		OR = {
-			culture = { has_ability_to_reform_rome_directly_trigger = yes }
-			dynasty = { has_dynasty_perk = BP_roman_heritage_legacy_5 }
-		}
 	}
 	
 	is_valid = {
@@ -611,11 +609,6 @@ restore_eastern_roman_empire = {
 			text = has_restored_the_constantinople_forum
 			title:b_constantinople.title_province = { has_building = the_constantinople_forum_02 }
 		}
-		#At least 3 kingdoms
-		any_held_title = {
-			tier = tier_kingdom
-			count >= 3
-		}
 		prestige_level >= 3
 		##### TODO (Beta): Add legion requirements
 	}
@@ -623,6 +616,11 @@ restore_eastern_roman_empire = {
 	is_valid_showing_failures_only = {
 		is_available_adult = yes
 		is_at_war = no
+		#Have to be a Roman
+		OR = {
+			culture = { has_ability_to_reform_rome_directly_trigger = yes }
+			dynasty = { has_dynasty_perk = BP_roman_heritage_legacy_5 }
+		}
 	}
 	
 	cost = {
