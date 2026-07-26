@@ -20,6 +20,12 @@ Hunter-Gatherer
 ==========
 0.2.0.2:
 ----------
+- Meritocratics not spawning noble families
+- No border raids for Nomads
+
+==========
+0.2.0.2:
+----------
 - Symmachus Branch Stuff
 
 - SubRoman Dynastic for independent duchies and below, and transition to subroman admin when not
@@ -88,44 +94,51 @@ Localization:
 ==========
 Turkic Stuff:
 ----------
-- Might need Hepthalite culture to hand their specialness (status of women, &c.)
-- Di people on the map from the Barbarian uprising
+History:
+- Make Hunno-Sakan nomads
+- Wei Western Regions kingdom should just be k_xia instead
+- Tribal Holdings in Sabir lands need to be nomadic
+- Some tribal polities (e.g., Balti) should be confederations instead
+- More at-start troops for Gokturks and Hepthalites (Personal MAA)
+- Fixup Northern Wei ruler history
+- Culture Tech History...
 
-GFX:
-   - Convert Wusun/Kushan/Yuezhi COA graphics into their own blend of Chinese and Scythian
+Culture:
+- Fixup various cultural history notes and the like.
+- Nomadic Rulers tradition should unlock tributary war support with nomads
+- Xenophobic should drop the zealous bonus, add a nerf for joining a confederation.
+- Tokhari language needs to be its own branch
 
-- History:
-   - Kidarites become Bactrian instead of some hybrid; explains the Hepthalite continued sloped headed stuff
-   - Wusun holdings should be nomadic
+Post-History
+- Remove unneeded cultures (Dahi Scythian, Hunas, &c.)
+- Revies Hepthalitism, see about replacing Divine Marriage with something representing polyandry
 
-- Landed Titles:
-   - Update the Sogdia/Bactria/Zabulistan split
-       - Sogdiana: Soghd, Orushana, Fereghana
-       - Bactria/Tokharistan: Balkh(Tokharistan), Khuttal, Merv?
-       - Arachosia/Zabulistan: Badakhshan, Kabulistan, Zabulistan, Ghur]
-   - Swap around some county capitals
-      - Ruy should be capital
-      - Bagram/Kapisa should be capital
+Localization:
+- Tiele names should map to Turkish naming instead of Chinese naming
+
+Traditions:
+- Revamp Iron Cavalry's requirements to be much more East-Focused.
+
+Other:
+- Delete chars in hepthalite.txt
+- Selenium bonus for Fereganan cavalry
+- Fixup Religious Renown Bonus per Era
+- Ruling Caste needs to be blocked for migratory culture, nomadic rulership
+- Alchons need some sort of Kidarite-type CB
+- Nomads that take over castles et al need to flip
+- Head-Shape tradition
+- Revise Tributary setup effect so not so many truces
 
 - Touch Up Cultural Titles:
    - Bolghar early title should be Kana Sybigi for kings
    - Use Yabghu et al for various Iranic Huns and such
 
-- Dynastic Khanate form of government to handle stuff like Kidarites, Hepthalites, Kangju, &c.?
-   - Steppe Overrun flips to feudal, so we need to handle that particular issue
-   - Basically, High Tribal for Nomads (Still have obedience, raze holdings, but no domicile and )
-
-Traditions:
-- Revamp Iron Cavalry's requirements to be much more East-Focused.
-
 GFX:
 - Non-Christian Byzantine COA gfx for Fereganans
+- Convert Wusun/Kushan/Yuezhi COA graphics into their own blend of Chinese and Scythian
 
-- Tribal hierarchy version for nomads with bonuses to Herd Tax and such?
-
-- Remove unneeded cultures (Dahi Scythian, Hunas, &c.)
-
-- Have Parthian culture and language use dynamic name; when Parthian has no more landed rulers, change to Palhavi
+Future:
+- Make Pakthun evolve into Pastho language when no Bactrian speaking court exists and start as Bactrian
 
 ==========
 0.2.2:
@@ -144,6 +157,11 @@ Schemes: Add scheme for vassals to try and increase aristocratic control laws
 - Feudal Transition Clerical stuff (BGA???)
 - Clarify government_is_centralized flag
 - Tweak dynastic aristocratic control laws to push more towards decline in some manner
+
+Government:
+- Dynastic Khanate form of government to handle stuff like Kidarites, Hepthalites, Kangju, &c.?
+   - Steppe Overrun flips to feudal, so we need to handle that particular issue
+   - Basically, High Tribal for Nomads (Still have obedience, raze holdings, but no domicile and )
 
 Activities:
    - Ability to host munera (theater particularly) in Roman Ceremonies
