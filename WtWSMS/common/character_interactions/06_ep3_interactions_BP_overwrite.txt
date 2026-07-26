@@ -4829,6 +4829,7 @@ governor_removal_interaction = { #DONE
 		}
 	}
 
+	##### Changed from Vanilla vvvvv
 	cost = {
 		influence = {
 			value = 0
@@ -4948,8 +4949,38 @@ governor_removal_interaction = { #DONE
 					}
 				}
 			}
+			##### Changed from Vanilla vvvvv
+			if = {
+				limit = {
+					OR = {
+						has_realm_law_flag = revoke_depose_governors_costs_more_influence_1
+						vassal_contract_has_flag = revoke_depose_governors_costs_more_influence_1
+					}
+				}
+				multiply = 1.25
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_realm_law_flag = revoke_depose_governors_costs_more_influence_2
+						vassal_contract_has_flag = revoke_depose_governors_costs_more_influence_2
+					}
+				}
+				multiply = 1.50
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_realm_law_flag = revoke_depose_governors_costs_more_influence_3
+						vassal_contract_has_flag = revoke_depose_governors_costs_more_influence_3
+					}
+				}
+				multiply = 2.0
+			}
+			##### Changed from Vanilla ^^^^^
 		}
 	}
+	##### Changed from Vanilla ^^^^^
 
 	on_accept = {
 		scope:actor = {
@@ -6032,8 +6063,10 @@ force_step_down_interaction = { #DONE
 			top_liege = scope:actor.top_liege
 		}
 		##### Changed from Vanilla vvvvv
-		NOT = { scope:recipient = { government_has_flag = government_is_quasi_feudal } }
 		NOT = { scope:actor = { government_has_flag = government_is_quasi_feudal } }
+		NOT = { scope:recipient = { government_has_flag = government_is_quasi_feudal } }
+		NOT = { scope:recipient = { government_has_flag = governorship_cannot_be_revoked_freely } }
+		NOT = { scope:recipient = { vassal_contract_has_flag = governorship_cannot_be_revoked_freely } }
 		##### Changed from Vanilla ^^^^^
 	}
 	##### Changed from Vanilla ^^^^^
@@ -6561,9 +6594,11 @@ force_governor_removal_interaction = {
 			}
 		}
 		##### Changed from Vanilla vvvvv
-		NOT = { scope:recipient = { government_has_flag = government_is_quasi_feudal } }
 		NOT = { scope:actor = { government_has_flag = government_is_quasi_feudal } }
 		NOT = { scope:secondary_recipient = { government_has_flag = government_is_quasi_feudal } }
+		NOT = { scope:recipient = { government_has_flag = government_is_quasi_feudal } }
+		NOT = { scope:recipient = { government_has_flag = governorship_cannot_be_revoked_freely } }
+		NOT = { scope:recipient = { vassal_contract_has_flag = governorship_cannot_be_revoked_freely } }
 		##### Changed from Vanilla ^^^^^
 	}
 	##### Changed from Vanilla ^^^^^
@@ -6671,6 +6706,7 @@ force_governor_removal_interaction = {
 		}
 	}
 
+	##### Changed from Vanilla vvvvv
 	cost = {
 		influence = {
 			value = 0
@@ -6775,8 +6811,38 @@ force_governor_removal_interaction = {
 					}
 				}
 			}
+			##### Changed from Vanilla vvvvv
+			if = {
+				limit = {
+					OR = {
+						has_realm_law_flag = revoke_depose_governors_costs_more_influence_1
+						vassal_contract_has_flag = revoke_depose_governors_costs_more_influence_1
+					}
+				}
+				multiply = 1.25
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_realm_law_flag = revoke_depose_governors_costs_more_influence_2
+						vassal_contract_has_flag = revoke_depose_governors_costs_more_influence_2
+					}
+				}
+				multiply = 1.50
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_realm_law_flag = revoke_depose_governors_costs_more_influence_3
+						vassal_contract_has_flag = revoke_depose_governors_costs_more_influence_3
+					}
+				}
+				multiply = 2.0
+			}
+			##### Changed from Vanilla ^^^^^
 		}
 	}
+	##### Changed from Vanilla ^^^^^
 
 	on_accept = {
 		scope:actor = {
