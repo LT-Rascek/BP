@@ -189,11 +189,55 @@ gokturkish = { # Old Eastern Turkish; Origin is Xiongnu of Ashina clan, relocate
 }
 
 ### Chionite-Heritage Cultures
+proto_chionite = {
+	color = proto_chionite
+	
+	#Iranic Huns; basically, Sakan/Turkic hybrid
+	parents = { saka xiongnu }
+	created = 2.1.1
+	history_loc_override = proto_chionite_history_loc
+	
+	ethos = ethos_communal
+	heritage = heritage_turkic
+	language = language_oghur
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_herd
+	traditions = {
+		#Societal Traditions
+		#Regional Traditions
+		#Ritual Traditions
+		#Realm Traditions
+		tradition_pastoralists
+		tradition_isolationist
+		#Combat Traditions
+	}
+	
+	name_list = name_list_sakan
+	name_list = name_list_xiongnu
+	
+	coa_gfx = { turkic_group_coa_gfx steppe_coa_gfx }
+	building_gfx = { steppe_building_gfx }
+	clothing_gfx = { turkic_clothing_gfx mongol_clothing_gfx }
+	unit_gfx = { mongol_unit_gfx }
+	house_coa_frame = house_frame_14
+	
+	#50% Sakan/50% Turkish (West)
+	ethnicities = {
+		50 = turkic_west
+		22 = iranian
+		16 = mediterranean
+		#Historic references to lighter hair colors
+		3 = caucasian_blond
+		3 = caucasian_brown_hair
+		3 = caucasian_dark_hair
+		3 = caucasian_ginger
+	}
+}
 chionite = { #Chionites, Kidarites, Alchon Huns, Hepthalites
 	color = chionite
 	
 	#Iranic Huns; basically, Sakan/Turkic hybrid
-	parents = { saka xiongnu }
+	parents = { proto_chionite }
 	created = 250.1.1
 	history_loc_override = chionite_history_loc
 	
@@ -355,7 +399,7 @@ hepthalite = {
 bolghar = {
 	color = bolghar
 	
-	parents = { chionite tiele }
+	parents = { proto_chionite }
 	created = 375.1.1
 	history_loc_override = bolghar_history_loc
 	
@@ -406,7 +450,7 @@ bolghar = {
 hunnic = { #The great mysterious people... almost certainly Oghuric, but more mixed than the Bolghars, so probably formed further to the west.
 	color = hunnic
 	
-	parents = { chionite alan }
+	parents = { proto_chionite alan }
 	created = 350.1.1
 	history_loc_override = hunnic_history_loc
 	
