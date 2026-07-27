@@ -1,4 +1,4 @@
-﻿@subroman_admin_aristocracy_law_cooldown = 10
+﻿@subroman_administrative_aristocracy_law_cooldown = 10
 @non_roman_minority_rule_law_cooldown = 30
 
 #Covers Non-Romans ruling a Roman Realm; Visigothica, Ostrogothica, Vandalica, Italia, &c. ...
@@ -1166,13 +1166,13 @@ non_roman_minority_rule_law = {
 
 #The overall military landing mechanic; focused on centralization
 #  We don't have many examples of Non-Roman Sub-Roman states, so this is a little odd
-subroman_admin_military_centralization_top_liege_law = {
-	default = subroman_admin_military_centralization_top_liege_law_0
+subroman_administrative_military_centralization_top_liege_law = {
+	default = subroman_administrative_military_centralization_top_liege_law_0
 	cumulative = no
 	
-	flag = subroman_admin_military_centralization_law
+	flag = subroman_administrative_military_centralization_law
 	
-	subroman_admin_military_centralization_top_liege_law_0 = {
+	subroman_administrative_military_centralization_top_liege_law_0 = {
 		modifier = {
 			#Imperial Troops
 			men_at_arms_title_limit = 3
@@ -1204,7 +1204,7 @@ subroman_admin_military_centralization_top_liege_law = {
 				text = every_subroman_vassal_adopts_centralization_0
 				every_vassal_or_below = {
 					limit = { bp_realm_law_use_subroman_administrative_military_centralization_vassal_trigger = yes }
-					add_realm_law_skip_effects = subroman_admin_military_centralization_vassal_law_0
+					add_realm_law_skip_effects = subroman_administrative_military_centralization_vassal_law_0
 				}
 			}
 		}
@@ -1212,7 +1212,7 @@ subroman_admin_military_centralization_top_liege_law = {
 		ai_will_do = {}
 	}
 	
-	subroman_admin_military_centralization_top_liege_law_1 = {
+	subroman_administrative_military_centralization_top_liege_law_1 = {
 		modifier = {
 			#Imperial Troops
 			men_at_arms_title_limit = 2
@@ -1243,7 +1243,7 @@ subroman_admin_military_centralization_top_liege_law = {
 				text = every_subroman_vassal_adopts_centralization_1
 				every_vassal_or_below = {
 					limit = { bp_realm_law_use_subroman_administrative_military_centralization_vassal_trigger = yes }
-					add_realm_law_skip_effects = subroman_admin_military_centralization_vassal_law_1
+					add_realm_law_skip_effects = subroman_administrative_military_centralization_vassal_law_1
 				}
 			}
 		}
@@ -1251,7 +1251,7 @@ subroman_admin_military_centralization_top_liege_law = {
 		ai_will_do = {}
 	}
 	
-	subroman_admin_military_centralization_top_liege_law_2 = {
+	subroman_administrative_military_centralization_top_liege_law_2 = {
 		modifier = {
 			#Imperial Troops
 			men_at_arms_title_limit = 1
@@ -1283,7 +1283,7 @@ subroman_admin_military_centralization_top_liege_law = {
 				text = every_subroman_vassal_adopts_centralization_2
 				every_vassal_or_below = {
 					limit = { bp_realm_law_use_subroman_administrative_military_centralization_vassal_trigger = yes }
-					add_realm_law_skip_effects = subroman_admin_military_centralization_vassal_law_2
+					add_realm_law_skip_effects = subroman_administrative_military_centralization_vassal_law_2
 				}
 			}
 		}
@@ -1291,7 +1291,7 @@ subroman_admin_military_centralization_top_liege_law = {
 		ai_will_do = {}
 	}
 	
-	subroman_admin_military_centralization_top_liege_law_3 = {
+	subroman_administrative_military_centralization_top_liege_law_3 = {
 		modifier = {
 			#Imperial Troops
 			men_at_arms_title_limit = -1
@@ -1323,7 +1323,7 @@ subroman_admin_military_centralization_top_liege_law = {
 				text = every_subroman_vassal_adopts_centralization_3
 				every_vassal_or_below = {
 					limit = { bp_realm_law_use_subroman_administrative_military_centralization_vassal_trigger = yes }
-					add_realm_law_skip_effects = subroman_admin_military_centralization_vassal_law_3
+					add_realm_law_skip_effects = subroman_administrative_military_centralization_vassal_law_3
 				}
 			}
 		}
@@ -1331,7 +1331,7 @@ subroman_admin_military_centralization_top_liege_law = {
 		ai_will_do = {}
 	}
 	
-	subroman_admin_military_centralization_top_liege_law_4 = {
+	subroman_administrative_military_centralization_top_liege_law_4 = {
 		modifier = {
 			#Imperial Troops
 			men_at_arms_title_limit = -3
@@ -1363,7 +1363,7 @@ subroman_admin_military_centralization_top_liege_law = {
 				text = every_subroman_vassal_adopts_centralization_4
 				every_vassal_or_below = {
 					limit = { bp_realm_law_use_subroman_administrative_military_centralization_vassal_trigger = yes }
-					add_realm_law_skip_effects = subroman_admin_military_centralization_vassal_law_4
+					add_realm_law_skip_effects = subroman_administrative_military_centralization_vassal_law_4
 				}
 			}
 		}
@@ -1371,7 +1371,7 @@ subroman_admin_military_centralization_top_liege_law = {
 		ai_will_do = {}
 	}
 	
-	subroman_admin_military_centralization_top_liege_law_5 = {
+	subroman_administrative_military_centralization_top_liege_law_5 = {
 		modifier = {
 			#Imperial Troops
 			men_at_arms_title_limit = -6
@@ -1405,7 +1405,7 @@ subroman_admin_military_centralization_top_liege_law = {
 				text = every_subroman_vassal_adopts_centralization_5
 				every_vassal_or_below = {
 					limit = { bp_realm_law_use_subroman_administrative_military_centralization_vassal_trigger = yes }
-					add_realm_law_skip_effects = subroman_admin_military_centralization_vassal_law_5
+					add_realm_law_skip_effects = subroman_administrative_military_centralization_vassal_law_5
 				}
 			}
 		}
@@ -1414,13 +1414,13 @@ subroman_admin_military_centralization_top_liege_law = {
 	}
 }
 
-subroman_admin_military_centralization_vassal_law = {
-	default = subroman_admin_military_centralization_vassal_law_0
+subroman_administrative_military_centralization_vassal_law = {
+	default = subroman_administrative_military_centralization_vassal_law_0
 	cumulative = no
 	
-	flag = subroman_admin_military_centralization_law
+	flag = subroman_administrative_military_centralization_law
 	
-	subroman_admin_military_centralization_vassal_law_0 = {
+	subroman_administrative_military_centralization_vassal_law_0 = {
 		modifier = {
 			#Personal Troops
 			men_at_arms_limit = 0
@@ -1456,7 +1456,7 @@ subroman_admin_military_centralization_vassal_law = {
 		ai_will_do = {}
 	}
 	
-	subroman_admin_military_centralization_vassal_law_1 = {
+	subroman_administrative_military_centralization_vassal_law_1 = {
 		modifier = {
 			#Personal Troops
 			men_at_arms_limit = 1
@@ -1492,7 +1492,7 @@ subroman_admin_military_centralization_vassal_law = {
 		ai_will_do = {}
 	}
 	
-	subroman_admin_military_centralization_vassal_law_2 = {
+	subroman_administrative_military_centralization_vassal_law_2 = {
 		modifier = {
 			#Personal Troops
 			men_at_arms_limit = 1
@@ -1529,7 +1529,7 @@ subroman_admin_military_centralization_vassal_law = {
 		ai_will_do = {}
 	}
 	
-	subroman_admin_military_centralization_vassal_law_3 = {
+	subroman_administrative_military_centralization_vassal_law_3 = {
 		modifier = {
 			#Personal Troops
 			men_at_arms_limit = 2
@@ -1566,7 +1566,7 @@ subroman_admin_military_centralization_vassal_law = {
 		ai_will_do = {}
 	}
 	
-	subroman_admin_military_centralization_vassal_law_4 = {
+	subroman_administrative_military_centralization_vassal_law_4 = {
 		modifier = {
 			#Personal Troops
 			men_at_arms_limit = 2
@@ -1604,7 +1604,7 @@ subroman_admin_military_centralization_vassal_law = {
 		ai_will_do = {}
 	}
 	
-	subroman_admin_military_centralization_vassal_law_5 = {
+	subroman_administrative_military_centralization_vassal_law_5 = {
 		modifier = {
 			#Personal Troops
 			men_at_arms_limit = 3
@@ -1644,13 +1644,13 @@ subroman_admin_military_centralization_vassal_law = {
 	}
 }
 
-subroman_admin_taxation_top_liege_law = {
-	default = subroman_admin_taxation_top_liege_law_0
+subroman_administrative_taxation_top_liege_law = {
+	default = subroman_administrative_taxation_top_liege_law_0
 	cumulative = no
 	
-	flag = subroman_admin_taxation_law
+	flag = subroman_administrative_taxation_law
 	
-	subroman_admin_taxation_top_liege_law_0 = {
+	subroman_administrative_taxation_top_liege_law_0 = {
 		modifier = {
 			domain_limit = 4
 			domain_tax_mult = 0.20
@@ -1675,7 +1675,7 @@ subroman_admin_taxation_top_liege_law = {
 				text = every_subroman_vassal_adopts_taxation_0
 				every_vassal_or_below = {
 					limit = { bp_realm_law_use_subroman_administrative_military_centralization_vassal_trigger = yes }
-					add_realm_law_skip_effects = subroman_admin_taxation_vassal_law_0
+					add_realm_law_skip_effects = subroman_administrative_taxation_vassal_law_0
 				}
 			}
 		}
@@ -1683,7 +1683,7 @@ subroman_admin_taxation_top_liege_law = {
 		ai_will_do = {}
 	}
 	
-	subroman_admin_taxation_top_liege_law_1 = {
+	subroman_administrative_taxation_top_liege_law_1 = {
 		modifier = {
 			domain_limit = 3
 			domain_tax_mult = 0.15
@@ -1708,7 +1708,7 @@ subroman_admin_taxation_top_liege_law = {
 				text = every_subroman_vassal_adopts_taxation_1
 				every_vassal_or_below = {
 					limit = { bp_realm_law_use_subroman_administrative_military_centralization_vassal_trigger = yes }
-					add_realm_law_skip_effects = subroman_admin_taxation_vassal_law_1
+					add_realm_law_skip_effects = subroman_administrative_taxation_vassal_law_1
 				}
 			}
 		}
@@ -1716,7 +1716,7 @@ subroman_admin_taxation_top_liege_law = {
 		ai_will_do = {}
 	}
 	
-	subroman_admin_taxation_top_liege_law_2 = {
+	subroman_administrative_taxation_top_liege_law_2 = {
 		modifier = {
 			domain_limit = 2
 			domain_tax_mult = 0.10
@@ -1741,7 +1741,7 @@ subroman_admin_taxation_top_liege_law = {
 				text = every_subroman_vassal_adopts_taxation_2
 				every_vassal_or_below = {
 					limit = { bp_realm_law_use_subroman_administrative_military_centralization_vassal_trigger = yes }
-					add_realm_law_skip_effects = subroman_admin_taxation_vassal_law_2
+					add_realm_law_skip_effects = subroman_administrative_taxation_vassal_law_2
 				}
 			}
 		}
@@ -1749,7 +1749,7 @@ subroman_admin_taxation_top_liege_law = {
 		ai_will_do = {}
 	}
 	
-	subroman_admin_taxation_top_liege_law_3 = {
+	subroman_administrative_taxation_top_liege_law_3 = {
 		modifier = {
 			domain_limit = 1
 			domain_tax_mult = 0.05
@@ -1774,7 +1774,7 @@ subroman_admin_taxation_top_liege_law = {
 				text = every_subroman_vassal_adopts_taxation_3
 				every_vassal_or_below = {
 					limit = { bp_realm_law_use_subroman_administrative_military_centralization_vassal_trigger = yes }
-					add_realm_law_skip_effects = subroman_admin_taxation_vassal_law_3
+					add_realm_law_skip_effects = subroman_administrative_taxation_vassal_law_3
 				}
 			}
 		}
@@ -1782,7 +1782,7 @@ subroman_admin_taxation_top_liege_law = {
 		ai_will_do = {}
 	}
 	
-	subroman_admin_taxation_top_liege_law_4 = {
+	subroman_administrative_taxation_top_liege_law_4 = {
 		modifier = {
 			domicile_monthly_gold_mult = -0.80
 			
@@ -1806,7 +1806,7 @@ subroman_admin_taxation_top_liege_law = {
 				text = every_subroman_vassal_adopts_taxation_4
 				every_vassal_or_below = {
 					limit = { bp_realm_law_use_subroman_administrative_military_centralization_vassal_trigger = yes }
-					add_realm_law_skip_effects = subroman_admin_taxation_vassal_law_4
+					add_realm_law_skip_effects = subroman_administrative_taxation_vassal_law_4
 				}
 			}
 		}
@@ -1815,13 +1815,13 @@ subroman_admin_taxation_top_liege_law = {
 	}
 }
 
-subroman_admin_taxation_vassal_law = {
-	default = subroman_admin_taxation_vassal_law_0
+subroman_administrative_taxation_vassal_law = {
+	default = subroman_administrative_taxation_vassal_law_0
 	cumulative = no
 	
-	flag = subroman_admin_taxation_law
+	flag = subroman_administrative_taxation_law
 	
-	subroman_admin_taxation_vassal_law_0 = {
+	subroman_administrative_taxation_vassal_law_0 = {
 		modifier = {
 			domain_limit = 4
 			domain_tax_mult = 0.20
@@ -1835,8 +1835,8 @@ subroman_admin_taxation_vassal_law = {
 		can_keep = {
 			bp_realm_law_use_subroman_administrative_taxation_vassal_trigger = yes
 			OR = {
-				liege = { has_realm_law = subroman_admin_taxation_vassal_law_0 }
-				liege = { has_realm_law = subroman_admin_taxation_top_liege_law_0 }
+				liege = { has_realm_law = subroman_administrative_taxation_vassal_law_0 }
+				liege = { has_realm_law = subroman_administrative_taxation_top_liege_law_0 }
 			}
 		}
 		
@@ -1852,7 +1852,7 @@ subroman_admin_taxation_vassal_law = {
 		ai_will_do = {}
 	}
 	
-	subroman_admin_taxation_vassal_law_1 = {
+	subroman_administrative_taxation_vassal_law_1 = {
 		modifier = {
 			domain_limit = 3
 			domain_tax_mult = 0.15
@@ -1866,8 +1866,8 @@ subroman_admin_taxation_vassal_law = {
 		can_keep = {
 			bp_realm_law_use_subroman_administrative_taxation_vassal_trigger = yes
 			OR = {
-				liege = { has_realm_law = subroman_admin_taxation_vassal_law_1 }
-				liege = { has_realm_law = subroman_admin_taxation_top_liege_law_1 }
+				liege = { has_realm_law = subroman_administrative_taxation_vassal_law_1 }
+				liege = { has_realm_law = subroman_administrative_taxation_top_liege_law_1 }
 			}
 		}
 		
@@ -1883,7 +1883,7 @@ subroman_admin_taxation_vassal_law = {
 		ai_will_do = {}
 	}
 	
-	subroman_admin_taxation_vassal_law_2 = {
+	subroman_administrative_taxation_vassal_law_2 = {
 		modifier = {
 			domain_limit = 2
 			domain_tax_mult = 0.10
@@ -1897,8 +1897,8 @@ subroman_admin_taxation_vassal_law = {
 		can_keep = {
 			bp_realm_law_use_subroman_administrative_taxation_vassal_trigger = yes
 			OR = {
-				liege = { has_realm_law = subroman_admin_taxation_vassal_law_2 }
-				liege = { has_realm_law = subroman_admin_taxation_top_liege_law_2 }
+				liege = { has_realm_law = subroman_administrative_taxation_vassal_law_2 }
+				liege = { has_realm_law = subroman_administrative_taxation_top_liege_law_2 }
 			}
 		}
 		
@@ -1914,7 +1914,7 @@ subroman_admin_taxation_vassal_law = {
 		ai_will_do = {}
 	}
 	
-	subroman_admin_taxation_vassal_law_3 = {
+	subroman_administrative_taxation_vassal_law_3 = {
 		modifier = {
 			domain_limit = 1
 			domain_tax_mult = 0.05
@@ -1928,8 +1928,8 @@ subroman_admin_taxation_vassal_law = {
 		can_keep = {
 			bp_realm_law_use_subroman_administrative_taxation_vassal_trigger = yes
 			OR = {
-				liege = { has_realm_law = subroman_admin_taxation_vassal_law_3 }
-				liege = { has_realm_law = subroman_admin_taxation_top_liege_law_3 }
+				liege = { has_realm_law = subroman_administrative_taxation_vassal_law_3 }
+				liege = { has_realm_law = subroman_administrative_taxation_top_liege_law_3 }
 			}
 		}
 		
@@ -1945,7 +1945,7 @@ subroman_admin_taxation_vassal_law = {
 		ai_will_do = {}
 	}
 	
-	subroman_admin_taxation_vassal_law_4 = {
+	subroman_administrative_taxation_vassal_law_4 = {
 		modifier = {
 			domicile_monthly_gold_mult = -0.80
 			
@@ -1958,8 +1958,8 @@ subroman_admin_taxation_vassal_law = {
 		can_keep = {
 			bp_realm_law_use_subroman_administrative_taxation_vassal_trigger = yes
 			OR = {
-				liege = { has_realm_law = subroman_admin_taxation_vassal_law_4 }
-				liege = { has_realm_law = subroman_admin_taxation_top_liege_law_4 }
+				liege = { has_realm_law = subroman_administrative_taxation_vassal_law_4 }
+				liege = { has_realm_law = subroman_administrative_taxation_top_liege_law_4 }
 			}
 		}
 		
@@ -1977,13 +1977,13 @@ subroman_admin_taxation_vassal_law = {
 }
 
 #Somewhat unique:  you can't have better than your liege, but it's not locked to the liege's
-subroman_admin_aristocracy_law = {
-	default = subroman_admin_aristocracy_law_0
+subroman_administrative_aristocracy_law = {
+	default = subroman_administrative_aristocracy_law_0
 	cumulative = no
 	
-	flag = subroman_admin_aristocracy_law
+	flag = subroman_administrative_aristocracy_law
 	
-	subroman_admin_aristocracy_law_0 = {
+	subroman_administrative_aristocracy_law_0 = {
 		modifier = {
 			monthly_influence_mult = 0.0
 			title_creation_cost_mult = 0.0
@@ -1991,7 +1991,7 @@ subroman_admin_aristocracy_law = {
 		}
 		flag = succession_weight_dynastic_1
 		flag = governor_efficency_weight_1
-		flag = subroman_admin_aristocracy_law_0
+		flag = subroman_administrative_aristocracy_law_0
 		
 		can_keep = {
 			bp_realm_law_use_subroman_administrative_aristocracy_trigger = yes
@@ -2008,23 +2008,23 @@ subroman_admin_aristocracy_law = {
 			trigger_else = {
 				custom_description = {
 					subject = root
-					text = "has_subroman_admin_aristocracy_law_cooldown"
+					text = "has_subroman_administrative_aristocracy_law_cooldown"
 					NAND = {
-						has_variable = subroman_admin_aristocracy_law_cooldown
+						has_variable = subroman_administrative_aristocracy_law_cooldown
 						NOT = { culture = { has_innovation = innovation_all_things } }
 					}
 				}
 				#Adjacency
-				has_realm_law = subroman_admin_aristocracy_law_1
+				has_realm_law = subroman_administrative_aristocracy_law_1
 				#At least 50 percent plus one of your vassals are at this law or better
 				custom_tooltip = {
 					text = half_of_subroman_duke_vassals_has_law_0_or_better
-					root.percent_of_subroman_administrative_dukes_with_subroman_admin_aristocracy_law_level_0 > root.subroman_vassal_with_law_cutoff_percent
+					root.percent_of_subroman_administrative_dukes_with_subroman_administrative_aristocracy_law_level_0 > root.subroman_vassal_with_law_cutoff_percent
 				}
 				#Trying to improve the law means you'll need some prestige and influence
 				trigger_if = {
 					limit = {
-						has_realm_law = subroman_admin_aristocracy_law_1
+						has_realm_law = subroman_administrative_aristocracy_law_1
 						is_ai = no
 					}
 					prestige_level >= 3
@@ -2040,18 +2040,18 @@ subroman_admin_aristocracy_law = {
 			}
 			else = {
 				set_variable = {
-					name = subroman_admin_aristocracy_law_cooldown
-					years = @subroman_admin_aristocracy_law_cooldown
+					name = subroman_administrative_aristocracy_law_cooldown
+					years = @subroman_administrative_aristocracy_law_cooldown
 				}
 				if = {
-					limit = { has_realm_law = subroman_admin_aristocracy_law_1 }
+					limit = { has_realm_law = subroman_administrative_aristocracy_law_1 }
 					custom_tooltip = {
 						text = every_vassal_may_decline_their_aristocracy_one_level
 						every_vassal = { #Decline Law One Level
 							limit = {
 								bp_realm_law_use_subroman_administrative_aristocracy_trigger = yes
-								NOT = { has_realm_law = subroman_admin_aristocracy_law_0 }
-								NOT = { has_realm_law = subroman_admin_aristocracy_law_4 }
+								NOT = { has_realm_law = subroman_administrative_aristocracy_law_0 }
+								NOT = { has_realm_law = subroman_administrative_aristocracy_law_4 }
 							}
 							random = {
 								chance = subroman_chance_vassal_gets_aristocratic_law_decline_one_level
@@ -2071,7 +2071,7 @@ subroman_admin_aristocracy_law = {
 		ai_will_do = {
 			#AI will improve to this law if they're running short on prestige or influence
 			if = {
-				limit = { has_realm_law = subroman_admin_aristocracy_law_1 }
+				limit = { has_realm_law = subroman_administrative_aristocracy_law_1 }
 				if = {
 					limit = { this.prestige < 0 }
 					value = 100
@@ -2085,7 +2085,7 @@ subroman_admin_aristocracy_law = {
 		}
 	}
 	
-	subroman_admin_aristocracy_law_1 = {
+	subroman_administrative_aristocracy_law_1 = {
 		modifier = {
 			monthly_influence_mult = 0.10
 			title_creation_cost_mult = 0.10
@@ -2094,7 +2094,7 @@ subroman_admin_aristocracy_law = {
 		flag = revoke_depose_governors_costs_more_influence_1
 		flag = succession_weight_dynastic_2
 		flag = governor_efficency_weight_2
-		flag = subroman_admin_aristocracy_law_1
+		flag = subroman_administrative_aristocracy_law_1
 		flag = governor_retire_cost_multiplier_1
 		
 		can_keep = {
@@ -2112,26 +2112,26 @@ subroman_admin_aristocracy_law = {
 			trigger_else = {
 				custom_description = {
 					subject = root
-					text = "has_subroman_admin_aristocracy_law_cooldown"
+					text = "has_subroman_administrative_aristocracy_law_cooldown"
 					NAND = {
-						has_variable = subroman_admin_aristocracy_law_cooldown
+						has_variable = subroman_administrative_aristocracy_law_cooldown
 						NOT = { culture = { has_innovation = innovation_all_things } }
 					}
 				}
 				#Adjacency
 				OR = {
-					has_realm_law = subroman_admin_aristocracy_law_0
-					has_realm_law = subroman_admin_aristocracy_law_2
+					has_realm_law = subroman_administrative_aristocracy_law_0
+					has_realm_law = subroman_administrative_aristocracy_law_2
 				}
 				#At least 50 percent plus one of your vassals are at this law or better
 				custom_tooltip = {
 					text = half_of_subroman_duke_vassals_has_law_1_or_better
-					root.percent_of_subroman_administrative_dukes_with_subroman_admin_aristocracy_law_level_1 > root.subroman_vassal_with_law_cutoff_percent
+					root.percent_of_subroman_administrative_dukes_with_subroman_administrative_aristocracy_law_level_1 > root.subroman_vassal_with_law_cutoff_percent
 				}
 				#Trying to improve the law means you'll need some prestige and influence
 				trigger_if = {
 					limit = {
-						has_realm_law = subroman_admin_aristocracy_law_2
+						has_realm_law = subroman_administrative_aristocracy_law_2
 						is_ai = no
 					}
 					prestige_level >= 3
@@ -2147,11 +2147,11 @@ subroman_admin_aristocracy_law = {
 			}
 			else = {
 				set_variable = {
-					name = subroman_admin_aristocracy_law_cooldown
-					years = @subroman_admin_aristocracy_law_cooldown
+					name = subroman_administrative_aristocracy_law_cooldown
+					years = @subroman_administrative_aristocracy_law_cooldown
 				}
 				if = {
-					limit = { has_realm_law = subroman_admin_aristocracy_law_0 }
+					limit = { has_realm_law = subroman_administrative_aristocracy_law_0 }
 					add_prestige = 150
 					change_influence = 150
 					custom_tooltip = {
@@ -2159,7 +2159,7 @@ subroman_admin_aristocracy_law = {
 						every_vassal = { #Improve Law One Level
 							limit = {
 								bp_realm_law_use_subroman_administrative_aristocracy_trigger = yes
-								NOT = { has_realm_law = subroman_admin_aristocracy_law_4 }
+								NOT = { has_realm_law = subroman_administrative_aristocracy_law_4 }
 							}
 							random = {
 								chance = subroman_chance_vassal_gets_aristocratic_law_improve_one_level
@@ -2174,14 +2174,14 @@ subroman_admin_aristocracy_law = {
 					}
 				}
 				else_if = {
-					limit = { has_realm_law = subroman_admin_aristocracy_law_2 }
+					limit = { has_realm_law = subroman_administrative_aristocracy_law_2 }
 					custom_tooltip = {
 						text = every_vassal_may_decline_their_aristocracy_one_level
 						every_vassal = { #Decline Law One Level
 							limit = {
 								bp_realm_law_use_subroman_administrative_aristocracy_trigger = yes
-								NOT = { has_realm_law = subroman_admin_aristocracy_law_0 }
-								NOT = { has_realm_law = subroman_admin_aristocracy_law_4 }
+								NOT = { has_realm_law = subroman_administrative_aristocracy_law_0 }
+								NOT = { has_realm_law = subroman_administrative_aristocracy_law_4 }
 							}
 							random = {
 								chance = subroman_chance_vassal_gets_aristocratic_law_decline_one_level
@@ -2202,7 +2202,7 @@ subroman_admin_aristocracy_law = {
 		ai_will_do = {
 			#AI will improve to this law if they're running short on prestige or influence
 			if = {
-				limit = { has_realm_law = subroman_admin_aristocracy_law_2 }
+				limit = { has_realm_law = subroman_administrative_aristocracy_law_2 }
 				if = {
 					limit = { this.prestige < 0 }
 					value = 100
@@ -2215,7 +2215,7 @@ subroman_admin_aristocracy_law = {
 			}
 			#AI will decline to this the law when their children are not in succession
 			if = {
-				limit = { has_realm_law = subroman_admin_aristocracy_law_0 }
+				limit = { has_realm_law = subroman_administrative_aristocracy_law_0 }
 				if = {
 					limit = { NOT = { any_child = { is_primary_heir_of = root } } }
 					value = 100
@@ -2225,7 +2225,7 @@ subroman_admin_aristocracy_law = {
 		}
 	}
 	
-	subroman_admin_aristocracy_law_2 = {
+	subroman_administrative_aristocracy_law_2 = {
 		modifier = {
 			monthly_influence_mult = 0.20
 			title_creation_cost_mult = 0.20
@@ -2235,7 +2235,7 @@ subroman_admin_aristocracy_law = {
 		flag = succession_weight_dynastic_3
 		flag = governor_efficency_weight_3
 		flag = subroman_can_establish_de_jure_kingdom
-		flag = subroman_admin_aristocracy_law_2
+		flag = subroman_administrative_aristocracy_law_2
 		flag = governor_retire_cost_multiplier_2
 		
 		can_keep = {
@@ -2253,26 +2253,26 @@ subroman_admin_aristocracy_law = {
 			trigger_else = {
 				custom_description = {
 					subject = root
-					text = "has_subroman_admin_aristocracy_law_cooldown"
+					text = "has_subroman_administrative_aristocracy_law_cooldown"
 					NAND = {
-						has_variable = subroman_admin_aristocracy_law_cooldown
+						has_variable = subroman_administrative_aristocracy_law_cooldown
 						NOT = { culture = { has_innovation = innovation_all_things } }
 					}
 				}
 				#Adjacency
 				OR = {
-					has_realm_law = subroman_admin_aristocracy_law_1
-					has_realm_law = subroman_admin_aristocracy_law_3
+					has_realm_law = subroman_administrative_aristocracy_law_1
+					has_realm_law = subroman_administrative_aristocracy_law_3
 				}
 				#At least 50 percent plus one of your vassals are at this law or better
 				custom_tooltip = {
 					text = half_of_subroman_duke_vassals_has_law_2_or_better
-					root.percent_of_subroman_administrative_dukes_with_subroman_admin_aristocracy_law_level_2 > root.subroman_vassal_with_law_cutoff_percent
+					root.percent_of_subroman_administrative_dukes_with_subroman_administrative_aristocracy_law_level_2 > root.subroman_vassal_with_law_cutoff_percent
 				}
 				#Trying to improve the law means you'll need some prestige and influence
 				trigger_if = {
 					limit = {
-						has_realm_law = subroman_admin_aristocracy_law_3
+						has_realm_law = subroman_administrative_aristocracy_law_3
 						is_ai = no
 					}
 					prestige_level >= 3
@@ -2288,11 +2288,11 @@ subroman_admin_aristocracy_law = {
 			}
 			else = {
 				set_variable = {
-					name = subroman_admin_aristocracy_law_cooldown
-					years = @subroman_admin_aristocracy_law_cooldown
+					name = subroman_administrative_aristocracy_law_cooldown
+					years = @subroman_administrative_aristocracy_law_cooldown
 				}
 				if = {
-					limit = { has_realm_law = subroman_admin_aristocracy_law_1 }
+					limit = { has_realm_law = subroman_administrative_aristocracy_law_1 }
 					add_prestige = 150
 					change_influence = 150
 					custom_tooltip = {
@@ -2300,7 +2300,7 @@ subroman_admin_aristocracy_law = {
 						every_vassal = { #Improve Law One Level
 							limit = {
 								bp_realm_law_use_subroman_administrative_aristocracy_trigger = yes
-								NOT = { has_realm_law = subroman_admin_aristocracy_law_4 }
+								NOT = { has_realm_law = subroman_administrative_aristocracy_law_4 }
 							}
 							random = {
 								chance = subroman_chance_vassal_gets_aristocratic_law_improve_one_level
@@ -2315,14 +2315,14 @@ subroman_admin_aristocracy_law = {
 					}
 				}
 				else_if = {
-					limit = { has_realm_law = subroman_admin_aristocracy_law_3 }
+					limit = { has_realm_law = subroman_administrative_aristocracy_law_3 }
 					custom_tooltip = {
 						text = every_vassal_may_decline_their_aristocracy_one_level
 						every_vassal = { #Decline Law One Level
 							limit = {
 								bp_realm_law_use_subroman_administrative_aristocracy_trigger = yes
-								NOT = { has_realm_law = subroman_admin_aristocracy_law_0 }
-								NOT = { has_realm_law = subroman_admin_aristocracy_law_4 }
+								NOT = { has_realm_law = subroman_administrative_aristocracy_law_0 }
+								NOT = { has_realm_law = subroman_administrative_aristocracy_law_4 }
 							}
 							random = {
 								chance = subroman_chance_vassal_gets_aristocratic_law_decline_one_level
@@ -2343,7 +2343,7 @@ subroman_admin_aristocracy_law = {
 		ai_will_do = {
 			#AI will improve to this law if they're running short on prestige or influence
 			if = {
-				limit = { has_realm_law = subroman_admin_aristocracy_law_3 }
+				limit = { has_realm_law = subroman_administrative_aristocracy_law_3 }
 				if = {
 					limit = { this.prestige < 0 }
 					value = 100
@@ -2356,7 +2356,7 @@ subroman_admin_aristocracy_law = {
 			}
 			#AI will decline to this the law when their children are not in succession
 			if = {
-				limit = { has_realm_law = subroman_admin_aristocracy_law_1 }
+				limit = { has_realm_law = subroman_administrative_aristocracy_law_1 }
 				if = {
 					limit = { NOT = { any_child = { is_primary_heir_of = root } } }
 					value = 100
@@ -2366,7 +2366,7 @@ subroman_admin_aristocracy_law = {
 		}
 	}
 	
-	subroman_admin_aristocracy_law_3 = {
+	subroman_administrative_aristocracy_law_3 = {
 		modifier = {
 			monthly_influence_mult = 0.30
 			title_creation_cost_mult = 0.30
@@ -2378,7 +2378,7 @@ subroman_admin_aristocracy_law = {
 		flag = subroman_can_establish_de_jure_kingdom
 		flag = subroman_can_establish_de_jure_empire
 		flag = cannot_depose_holders
-		flag = subroman_admin_aristocracy_law_3
+		flag = subroman_administrative_aristocracy_law_3
 		flag = governor_retire_cost_multiplier_3
 		
 		can_keep = {
@@ -2396,26 +2396,26 @@ subroman_admin_aristocracy_law = {
 			trigger_else = {
 				custom_description = {
 					subject = root
-					text = "has_subroman_admin_aristocracy_law_cooldown"
+					text = "has_subroman_administrative_aristocracy_law_cooldown"
 					NAND = {
-						has_variable = subroman_admin_aristocracy_law_cooldown
+						has_variable = subroman_administrative_aristocracy_law_cooldown
 						NOT = { culture = { has_innovation = innovation_all_things } }
 					}
 				}
 				#Adjacency
 				OR = {
-					has_realm_law = subroman_admin_aristocracy_law_2
-					has_realm_law = subroman_admin_aristocracy_law_4
+					has_realm_law = subroman_administrative_aristocracy_law_2
+					has_realm_law = subroman_administrative_aristocracy_law_4
 				}
 				#At least 50 percent plus one of your vassals are at this law or better
 				custom_tooltip = {
 					text = half_of_subroman_duke_vassals_has_law_3_or_better
-					root.percent_of_subroman_administrative_dukes_with_subroman_admin_aristocracy_law_level_3 > root.subroman_vassal_with_law_cutoff_percent
+					root.percent_of_subroman_administrative_dukes_with_subroman_administrative_aristocracy_law_level_3 > root.subroman_vassal_with_law_cutoff_percent
 				}
 				#Trying to improve the law means you'll need some prestige and influence
 				trigger_if = {
 					limit = {
-						has_realm_law = subroman_admin_aristocracy_law_4
+						has_realm_law = subroman_administrative_aristocracy_law_4
 						is_ai = no
 					}
 					prestige_level >= 3
@@ -2431,11 +2431,11 @@ subroman_admin_aristocracy_law = {
 			}
 			else = {
 				set_variable = {
-					name = subroman_admin_aristocracy_law_cooldown
-					years = @subroman_admin_aristocracy_law_cooldown
+					name = subroman_administrative_aristocracy_law_cooldown
+					years = @subroman_administrative_aristocracy_law_cooldown
 				}
 				if = {
-					limit = { has_realm_law = subroman_admin_aristocracy_law_2 }
+					limit = { has_realm_law = subroman_administrative_aristocracy_law_2 }
 					add_prestige = 150
 					change_influence = 150
 					custom_tooltip = {
@@ -2443,7 +2443,7 @@ subroman_admin_aristocracy_law = {
 						every_vassal = { #Improve Law One Level
 							limit = {
 								bp_realm_law_use_subroman_administrative_aristocracy_trigger = yes
-								NOT = { has_realm_law = subroman_admin_aristocracy_law_4 }
+								NOT = { has_realm_law = subroman_administrative_aristocracy_law_4 }
 							}
 							random = {
 								chance = subroman_chance_vassal_gets_aristocratic_law_improve_one_level
@@ -2458,14 +2458,14 @@ subroman_admin_aristocracy_law = {
 					}
 				}
 				else_if = {
-					limit = { has_realm_law = subroman_admin_aristocracy_law_4 }
+					limit = { has_realm_law = subroman_administrative_aristocracy_law_4 }
 					custom_tooltip = {
 						text = every_vassal_may_decline_their_aristocracy_one_level
 						every_vassal = { #Decline Law One Level
 							limit = {
 								bp_realm_law_use_subroman_administrative_aristocracy_trigger = yes
-								NOT = { has_realm_law = subroman_admin_aristocracy_law_0 }
-								NOT = { has_realm_law = subroman_admin_aristocracy_law_4 }
+								NOT = { has_realm_law = subroman_administrative_aristocracy_law_0 }
+								NOT = { has_realm_law = subroman_administrative_aristocracy_law_4 }
 							}
 							random = {
 								chance = subroman_chance_vassal_gets_aristocratic_law_decline_one_level
@@ -2485,7 +2485,7 @@ subroman_admin_aristocracy_law = {
 		ai_will_do = {
 			#AI will improve to this law if they're running short on prestige or influence
 			if = {
-				limit = { has_realm_law = subroman_admin_aristocracy_law_4 }
+				limit = { has_realm_law = subroman_administrative_aristocracy_law_4 }
 				if = {
 					limit = { this.prestige < 0 }
 					value = 100
@@ -2498,7 +2498,7 @@ subroman_admin_aristocracy_law = {
 			}
 			#AI will decline to this the law when their children are not in succession
 			if = {
-				limit = { has_realm_law = subroman_admin_aristocracy_law_2 }
+				limit = { has_realm_law = subroman_administrative_aristocracy_law_2 }
 				if = {
 					limit = { NOT = { any_child = { is_primary_heir_of = root } } }
 					value = 100
@@ -2508,7 +2508,7 @@ subroman_admin_aristocracy_law = {
 		}
 	}
 	
-	subroman_admin_aristocracy_law_4 = {
+	subroman_administrative_aristocracy_law_4 = {
 		modifier = {
 			monthly_influence_mult = 0.40
 			title_creation_cost_mult = 0.40
@@ -2519,7 +2519,7 @@ subroman_admin_aristocracy_law = {
 		flag = subroman_can_establish_de_jure_kingdom
 		flag = subroman_can_establish_de_jure_empire
 		flag = cannot_depose_holders
-		flag = subroman_admin_aristocracy_law_4
+		flag = subroman_administrative_aristocracy_law_4
 		
 		can_keep = {
 			bp_realm_law_use_subroman_administrative_aristocracy_trigger = yes
@@ -2536,13 +2536,13 @@ subroman_admin_aristocracy_law = {
 			trigger_else = {
 				custom_description = {
 					subject = root
-					text = "has_subroman_admin_aristocracy_law_cooldown"
+					text = "has_subroman_administrative_aristocracy_law_cooldown"
 					NAND = {
-						has_variable = subroman_admin_aristocracy_law_cooldown
+						has_variable = subroman_administrative_aristocracy_law_cooldown
 						NOT = { culture = { has_innovation = innovation_all_things } }
 					}
 				}
-				has_realm_law = subroman_admin_aristocracy_law_3
+				has_realm_law = subroman_administrative_aristocracy_law_3
 			}
 		}
 		
@@ -2553,11 +2553,11 @@ subroman_admin_aristocracy_law = {
 			}
 			else = {
 				set_variable = {
-					name = subroman_admin_aristocracy_law_cooldown
-					years = @subroman_admin_aristocracy_law_cooldown
+					name = subroman_administrative_aristocracy_law_cooldown
+					years = @subroman_administrative_aristocracy_law_cooldown
 				}
 				if = {
-					limit = { has_realm_law = subroman_admin_aristocracy_law_3 }
+					limit = { has_realm_law = subroman_administrative_aristocracy_law_3 }
 					add_prestige = 150
 					change_influence = 150
 					custom_tooltip = {
@@ -2565,8 +2565,8 @@ subroman_admin_aristocracy_law = {
 						every_vassal = { #Improve Law One Level
 							limit = {
 								bp_realm_law_use_subroman_administrative_aristocracy_trigger = yes
-								NOT = { has_realm_law = subroman_admin_aristocracy_law_0 }
-								NOT = { has_realm_law = subroman_admin_aristocracy_law_4 }
+								NOT = { has_realm_law = subroman_administrative_aristocracy_law_0 }
+								NOT = { has_realm_law = subroman_administrative_aristocracy_law_4 }
 							}
 							random = {
 								chance = subroman_chance_vassal_gets_aristocratic_law_improve_one_level
@@ -2586,7 +2586,7 @@ subroman_admin_aristocracy_law = {
 		ai_will_do = {
 			#AI will decline to this the law when their children are not in succession
 			if = {
-				limit = { has_realm_law = subroman_admin_aristocracy_law_3 }
+				limit = { has_realm_law = subroman_administrative_aristocracy_law_3 }
 				if = {
 					limit = { NOT = { any_child = { is_primary_heir_of = root } } }
 					value = 100

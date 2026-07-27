@@ -11,6 +11,15 @@ BP_flip_federate_when_not_below_roman = {
 }
 #Whenever we have rank change as subroman governments
 # we might change from Sub-Roman Admin to Dynastic and vice-versa
+BP_subroman_dynastic_under_subroman_admin = {
+	trigger = {
+		BP_has_dlc_necessary_for_roman_governments_trigger = yes
+		has_government = subroman_dynastic_government
+		is_independent_ruler = no
+		this.liege = { has_government = subroman_administrative_government }
+	}
+	on_actions = { BP_convert_sub_roman_dynastic_to_admin }
+}
 BP_convert_sub_roman_admin_to_dynastic = {
 	trigger = {
 		BP_has_dlc_necessary_for_roman_governments_trigger = yes
@@ -29,7 +38,7 @@ BP_convert_sub_roman_admin_to_dynastic = {
 		change_government = subroman_dynastic_government
 		#Set Laws accordingly and clear flags
 		set_sub_roman_type_law_effect = {
-			SOURCE_TYPE = admin
+			SOURCE_TYPE = administrative
 			TARGET_TYPE = dynastic
 		}
 	}
@@ -71,9 +80,17 @@ BP_convert_sub_roman_dynastic_to_admin = {
 		#Set Laws accordingly and clear flags
 		set_sub_roman_type_law_effect = {
 			SOURCE_TYPE = dynastic
-			TARGET_TYPE = admin
+			TARGET_TYPE = administrative
 		}
 	}
+}
+BP_subroman_under_roman_admin = {
+	trigger = {
+		BP_has_dlc_necessary_for_roman_governments_trigger = yes
+		is_independent_ruler = no
+		this.liege = { has_government = roman_administrative_government }
+	}
+	effect = { change_government_roman_administrative_effect = yes }
 }
 
 # A title is transferred to a new character
@@ -209,12 +226,18 @@ BP_grants_to_tribals_become_federate = {
 	}
 }
 
+# A vassal changes their liege
+# root = vassal changing their status
+# scope:old_liege = the previous liege of the vassal
+# It is also fired for rulers gaining independence, those can be identified by checking current liege
 on_vassal_change = {
-	events = {}
 	on_actions = {
 		BP_independent_ministry_cleanup
 		BP_independent_roman_government_checks
 		BP_flip_federate_when_not_below_roman
+		BP_subroman_dynastic_under_subroman_admin
+		BP_convert_sub_roman_admin_to_dynastic
+		BP_subroman_under_roman_admin
 	}
 }
 BP_independent_ministry_cleanup = {
@@ -274,47 +297,47 @@ BP_independent_roman_government_checks = {
 			limit = { government_has_flag = subroman_administrative_government }
 			switch = {
 				trigger = has_realm_law
-				subroman_admin_taxation_vassal_law_0 = {
-					add_realm_law = subroman_admin_taxation_top_liege_law_0
+				subroman_administrative_taxation_vassal_law_0 = {
+					add_realm_law = subroman_administrative_taxation_top_liege_law_0
 				}
-				subroman_admin_taxation_vassal_law_1 = {
-					add_realm_law = subroman_admin_taxation_top_liege_law_1
+				subroman_administrative_taxation_vassal_law_1 = {
+					add_realm_law = subroman_administrative_taxation_top_liege_law_1
 				}
-				subroman_admin_taxation_vassal_law_2 = {
-					add_realm_law = subroman_admin_taxation_top_liege_law_2
+				subroman_administrative_taxation_vassal_law_2 = {
+					add_realm_law = subroman_administrative_taxation_top_liege_law_2
 				}
-				subroman_admin_taxation_vassal_law_3 = {
-					add_realm_law = subroman_admin_taxation_top_liege_law_3
+				subroman_administrative_taxation_vassal_law_3 = {
+					add_realm_law = subroman_administrative_taxation_top_liege_law_3
 				}
-				subroman_admin_taxation_vassal_law_4 = {
-					add_realm_law = subroman_admin_taxation_top_liege_law_4
+				subroman_administrative_taxation_vassal_law_4 = {
+					add_realm_law = subroman_administrative_taxation_top_liege_law_4
 				}
 				fallback = {
-					add_realm_law = subroman_admin_taxation_top_liege_law_0
+					add_realm_law = subroman_administrative_taxation_top_liege_law_0
 				}
 			}
 			switch = {
 				trigger = has_realm_law
-				subroman_admin_military_centralization_vassal_law_0 = {
-					add_realm_law = subroman_admin_military_centralization_top_liege_law_0
+				subroman_administrative_military_centralization_vassal_law_0 = {
+					add_realm_law = subroman_administrative_military_centralization_top_liege_law_0
 				}
-				subroman_admin_military_centralization_vassal_law_1 = {
-					add_realm_law = subroman_admin_military_centralization_top_liege_law_1
+				subroman_administrative_military_centralization_vassal_law_1 = {
+					add_realm_law = subroman_administrative_military_centralization_top_liege_law_1
 				}
-				subroman_admin_military_centralization_vassal_law_2 = {
-					add_realm_law = subroman_admin_military_centralization_top_liege_law_2
+				subroman_administrative_military_centralization_vassal_law_2 = {
+					add_realm_law = subroman_administrative_military_centralization_top_liege_law_2
 				}
-				subroman_admin_military_centralization_vassal_law_3 = {
-					add_realm_law = subroman_admin_military_centralization_top_liege_law_3
+				subroman_administrative_military_centralization_vassal_law_3 = {
+					add_realm_law = subroman_administrative_military_centralization_top_liege_law_3
 				}
-				subroman_admin_military_centralization_vassal_law_4 = {
-					add_realm_law = subroman_admin_military_centralization_top_liege_law_4
+				subroman_administrative_military_centralization_vassal_law_4 = {
+					add_realm_law = subroman_administrative_military_centralization_top_liege_law_4
 				}
-				subroman_admin_military_centralization_vassal_law_5 = {
-					add_realm_law = subroman_admin_military_centralization_top_liege_law_5
+				subroman_administrative_military_centralization_vassal_law_5 = {
+					add_realm_law = subroman_administrative_military_centralization_top_liege_law_5
 				}
 				fallback = {
-					add_realm_law = subroman_admin_military_centralization_top_liege_law_0
+					add_realm_law = subroman_administrative_military_centralization_top_liege_law_0
 				}
 			}
 		}

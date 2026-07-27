@@ -1577,23 +1577,22 @@ setup_roman_governments_based_on_dlc = {
 }
 
 setup_other_governments_based_on_dlc = {
+	trigger = { has_dlc_feature = all_under_heaven }
 	effect = {
 		#Setup missing NF titles
-		if = {
+		every_ruler = {
 			limit = {
 				this = this.house.house_head
 				this.primary_title.tier >= tier_county
 				any_held_title = { count < 1 is_noble_family_title = yes }
+				government_has_flag = government_is_meritocratic
 			}
-			if = {
-				limit = { government_has_flag = government_is_meritocratic }
-				give_noble_family_title = {
-					name = noble_family_name
-					tier = county
-					article = DEFAULT_TITLE_NAME_ARTICLE
-					government = meritocratic_government
-					save_scope_as = new_title
-				}
+			give_noble_family_title = {
+				name = noble_family_name
+				tier = county
+				article = DEFAULT_TITLE_NAME_ARTICLE
+				government = meritocratic_government
+				save_scope_as = new_title
 			}
 		}
 	}
