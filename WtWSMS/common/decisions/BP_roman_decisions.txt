@@ -51,20 +51,16 @@ ask_for_hre = {
 	}
 	
 	is_valid = {
-		custom_tooltip = {
+		custom_description = {
 			text = primary_title_must_be_empire
+			subject = root
 			primary_title.tier = tier_empire
 		}
 		realm_size >= 255
 		custom_description = {
 			text = must_control_at_least_33_percent_of_wre_territory
 			subject = root
-			title:h_western_roman_empire = {
-				any_county = {
-					percent >= 0.33
-					this.holder.top_liege = root
-				}
-			}
+			root.percent_controlled_wre > 0.33
 		}
 		OR = {
 			has_trait = legendary_leader
@@ -170,8 +166,9 @@ ask_for_wre = {
 	}
 	
 	is_valid = {
-		custom_tooltip = {
+		custom_description = {
 			text = primary_title_must_be_empire
+			subject = root
 			primary_title.tier = tier_empire
 		}
 		realm_size >= 300 #Regardless of the size of Rome, it needs to be *big*;
@@ -179,12 +176,7 @@ ask_for_wre = {
 		custom_description = {
 			text = must_control_at_least_50_percent_of_wre_territory
 			subject = root
-			title:h_western_roman_empire = {
-				any_county = {
-					percent > 0.5
-					this.holder.top_liege = root
-				}
-			}
+			root.percent_controlled_wre > 0.5
 		}
 		OR = {
 			has_trait = legendary_leader
@@ -239,12 +231,15 @@ ask_for_wre = {
 			set_variable = { name = asked_for_wre }
 			save_scope_as = empire_petitoner
 		}
-		if = {
-			limit = { exists = title:h_eastern_roman_empire.holder }
-			title:h_eastern_roman_empire.holder = { trigger_event = { id = BP_roman_decisions.0004 days = { 5 17 } } } #The emperor hears the request
-		}
-		else = {
-			title:e_byzantium.holder = { trigger_event = { id = BP_roman_decisions.0004 days = { 5 17 } } } #The emperor hears the request
+		custom_tooltip = {
+			text = you_ask_the_ere_holder_for_the_empire
+			if = {
+				limit = { exists = title:h_eastern_roman_empire.holder }
+				title:h_eastern_roman_empire.holder = { trigger_event = { id = BP_roman_decisions.0004 days = { 5 17 } } } #The emperor hears the request
+			}
+			else = {
+				title:e_byzantium.holder = { trigger_event = { id = BP_roman_decisions.0004 days = { 5 17 } } } #The emperor hears the request
+			}
 		}
 	}
 	
