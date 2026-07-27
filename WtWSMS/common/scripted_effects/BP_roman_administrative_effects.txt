@@ -613,7 +613,12 @@ change_government_subroman_administrative_effect = {
 	if = {
 		limit = {
 			this = this.house.house_head
-			this.primary_title.tier >= tier_duchy #Don't want nf running counties...
+			OR = {
+				this.primary_title.tier >= tier_duchy #Don't want nf running counties...
+				#Senators are always noble
+				has_trait = senator_west
+				has_trait = senator_east
+			}
 			any_held_title = { count < 1 is_noble_family_title = yes }
 		}
 		create_noble_family_effect = { GOVERNMENT_GIVER = this }
@@ -628,5 +633,287 @@ change_government_roman_administrative_effect = {
 			any_held_title = { count < 1 is_noble_family_title = yes }
 		}
 		create_noble_family_effect = { GOVERNMENT_GIVER = this }
+	}
+}
+courtiers_become_subroman_admins_effect = {
+	if = {
+		limit = {
+			this = this.house.house_head
+			OR = {
+				#Senators are always noble
+				has_trait = senator_west
+				has_trait = senator_east
+			}
+			any_held_title = { count < 1 is_noble_family_title = yes }
+		}
+		create_noble_family_effect = { GOVERNMENT_GIVER = $TOP_LIEGE$ }
+		change_government = subroman_administrative_government
+	}
+}
+
+#For saving references to Sub-Roman Laws for hand-off between $TARGET_TYPE$ and $SOURCE_TYPE$ Governments
+save_sub_roman_type_law_effect = { #Top Liege Root
+	#Military Centralization
+	if = {
+		limit = {
+			OR = {
+				has_realm_law = subroman_$SOURCE_TYPE$_military_centralization_top_liege_law_0
+				has_realm_law = subroman_$SOURCE_TYPE$_military_centralization_vassal_law_0
+			}
+		}
+		add_character_flag = subroman_$SOURCE_TYPE$_military_centralization_top_liege_law_0
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_realm_law = subroman_$SOURCE_TYPE$_military_centralization_top_liege_law_1
+				has_realm_law = subroman_$SOURCE_TYPE$_military_centralization_vassal_law_1
+			}
+		}
+		add_character_flag = subroman_$SOURCE_TYPE$_military_centralization_top_liege_law_1
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_realm_law = subroman_$SOURCE_TYPE$_military_centralization_top_liege_law_2
+				has_realm_law = subroman_$SOURCE_TYPE$_military_centralization_vassal_law_2
+			}
+		}
+		add_character_flag = subroman_$SOURCE_TYPE$_military_centralization_top_liege_law_2
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_realm_law = subroman_$SOURCE_TYPE$_military_centralization_top_liege_law_3
+				has_realm_law = subroman_$SOURCE_TYPE$_military_centralization_vassal_law_3
+			}
+		}
+		add_character_flag = subroman_$SOURCE_TYPE$_military_centralization_top_liege_law_3
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_realm_law = subroman_$SOURCE_TYPE$_military_centralization_top_liege_law_4
+				has_realm_law = subroman_$SOURCE_TYPE$_military_centralization_vassal_law_4
+			}
+		}
+		add_character_flag = subroman_$SOURCE_TYPE$_military_centralization_top_liege_law_4
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_realm_law = subroman_$SOURCE_TYPE$_military_centralization_top_liege_law_5
+				has_realm_law = subroman_$SOURCE_TYPE$_military_centralization_vassal_law_5
+			}
+		}
+		add_character_flag = subroman_$SOURCE_TYPE$_military_centralization_top_liege_law_5
+	}
+	else = { add_character_flag = subroman_$SOURCE_TYPE$_military_centralization_top_liege_law_0 }
+	#Tax Law
+	if = {
+		limit = {
+			OR = {
+				has_realm_law = subroman_$SOURCE_TYPE$_taxation_top_liege_law_0
+				has_realm_law = subroman_$SOURCE_TYPE$_military_centralization_vassal_law_0
+			}
+		}
+		add_character_flag = subroman_$SOURCE_TYPE$_taxation_top_liege_law_0
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_realm_law = subroman_$SOURCE_TYPE$_taxation_top_liege_law_1
+				has_realm_law = subroman_$SOURCE_TYPE$_taxation_vassal_law_1
+			}
+		}
+		add_character_flag = subroman_$SOURCE_TYPE$_taxation_top_liege_law_1
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_realm_law = subroman_$SOURCE_TYPE$_taxation_top_liege_law_2
+				has_realm_law = subroman_$SOURCE_TYPE$_taxation_vassal_law_2
+			}
+		}
+		add_character_flag = subroman_$SOURCE_TYPE$_taxation_top_liege_law_2
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_realm_law = subroman_$SOURCE_TYPE$_taxation_top_liege_law_3
+				has_realm_law = subroman_$SOURCE_TYPE$_taxation_vassal_law_3
+			}
+		}
+		add_character_flag = subroman_$SOURCE_TYPE$_taxation_top_liege_law_3
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_realm_law = subroman_$SOURCE_TYPE$_taxation_top_liege_law_4
+				has_realm_law = subroman_$SOURCE_TYPE$_taxation_vassal_law_4
+			}
+		}
+		add_character_flag = subroman_$SOURCE_TYPE$_taxation_top_liege_law_4
+	}
+	else = { add_character_flag = subroman_$SOURCE_TYPE$_taxation_top_liege_law_0 }
+	#Aristocracy law
+	if = {
+		limit = { has_realm_law = subroman_$SOURCE_TYPE$_aristocracy_law_0 }
+		add_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_0
+	}
+	else_if = {
+		limit = { has_realm_law = subroman_$SOURCE_TYPE$_aristocracy_law_1 }
+		add_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_1
+	}
+	else_if = {
+		limit = { has_realm_law = subroman_$SOURCE_TYPE$_aristocracy_law_2 }
+		add_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_2
+	}
+	else_if = {
+		limit = { has_realm_law = subroman_$SOURCE_TYPE$_aristocracy_law_3 }
+		add_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_3
+	}
+	else_if = {
+		limit = { has_realm_law = subroman_$SOURCE_TYPE$_aristocracy_law_4 }
+		add_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_4
+	}
+	else = { add_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_0 }
+	every_vassal_or_below = {
+		limit = { has_government = subroman_$SOURCE_TYPE$istrative_government }
+		if = {
+			limit = { has_realm_law = subroman_$SOURCE_TYPE$_aristocracy_law_0 }
+			add_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_0
+		}
+		else_if = {
+			limit = { has_realm_law = subroman_$SOURCE_TYPE$_aristocracy_law_1 }
+			add_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_1
+		}
+		else_if = {
+			limit = { has_realm_law = subroman_$SOURCE_TYPE$_aristocracy_law_2 }
+			add_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_2
+		}
+		else_if = {
+			limit = { has_realm_law = subroman_$SOURCE_TYPE$_aristocracy_law_3 }
+			add_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_3
+		}
+		else_if = {
+			limit = { has_realm_law = subroman_$SOURCE_TYPE$_aristocracy_law_4 }
+			add_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_4
+		}
+		else = { add_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_0 }
+	}
+}
+set_sub_roman_type_law_effect = { #Top Liege Root
+	#Military Centralization
+	if = {
+		limit = { has_character_flag = subroman_$SOURCE_TYPE$_military_centralization_top_liege_law_0 }
+		add_realm_law = subroman_$TARGET_TYPE$_military_centralization_top_liege_law_0
+		remove_character_flag = subroman_$SOURCE_TYPE$_military_centralization_top_liege_law_0
+	}
+	else_if = {
+		limit = { has_character_flag = subroman_$SOURCE_TYPE$_military_centralization_top_liege_law_1 }
+		add_realm_law = subroman_$TARGET_TYPE$_military_centralization_top_liege_law_1
+		remove_character_flag = subroman_$SOURCE_TYPE$_military_centralization_top_liege_law_1
+	}
+	else_if = {
+		limit = { has_character_flag = subroman_$SOURCE_TYPE$_military_centralization_top_liege_law_2 }
+		add_realm_law = subroman_$TARGET_TYPE$_military_centralization_top_liege_law_2
+		remove_character_flag = subroman_$SOURCE_TYPE$_military_centralization_top_liege_law_2
+	}
+	else_if = {
+		limit = { has_character_flag = subroman_$SOURCE_TYPE$_military_centralization_top_liege_law_3 }
+		add_realm_law = subroman_$TARGET_TYPE$_military_centralization_top_liege_law_3
+		remove_character_flag = subroman_$SOURCE_TYPE$_military_centralization_top_liege_law_3
+	}
+	else_if = {
+		limit = { has_character_flag = subroman_$SOURCE_TYPE$_military_centralization_top_liege_law_4 }
+		add_realm_law = subroman_$TARGET_TYPE$_military_centralization_top_liege_law_4
+		remove_character_flag = subroman_$SOURCE_TYPE$_military_centralization_top_liege_law_4
+	}
+	else_if = {
+		limit = { has_character_flag = subroman_$SOURCE_TYPE$_military_centralization_top_liege_law_5 }
+		add_realm_law = subroman_$TARGET_TYPE$_military_centralization_top_liege_law_5
+		remove_character_flag = subroman_$SOURCE_TYPE$_military_centralization_top_liege_law_5
+	}
+	#Tax Law
+	if = {
+		limit = { has_character_flag = subroman_$SOURCE_TYPE$_military_centralization_top_liege_law_5 }
+		add_realm_law = subroman_$TARGET_TYPE$_taxation_top_liege_law_0
+		remove_character_flag = subroman_$SOURCE_TYPE$_taxation_top_liege_law_0
+	}
+	else_if = {
+		limit = { has_character_flag = subroman_$SOURCE_TYPE$_military_centralization_top_liege_law_5 }
+		add_realm_law = subroman_$TARGET_TYPE$_taxation_top_liege_law_1
+		remove_character_flag = subroman_$SOURCE_TYPE$_taxation_top_liege_law_1
+	}
+	else_if = {
+		limit = { has_character_flag = subroman_$SOURCE_TYPE$_military_centralization_top_liege_law_5 }
+		add_realm_law = subroman_$TARGET_TYPE$_taxation_top_liege_law_2
+		remove_character_flag = subroman_$SOURCE_TYPE$_taxation_top_liege_law_2
+	}
+	else_if = {
+		limit = { has_character_flag = subroman_$SOURCE_TYPE$_military_centralization_top_liege_law_5 }
+		add_realm_law = subroman_$TARGET_TYPE$_taxation_top_liege_law_3
+		remove_character_flag = subroman_$SOURCE_TYPE$_taxation_top_liege_law_3
+	}
+	else_if = {
+		limit = { has_character_flag = subroman_$SOURCE_TYPE$_military_centralization_top_liege_law_5 }
+		add_realm_law = subroman_$TARGET_TYPE$_taxation_top_liege_law_4
+		remove_character_flag = subroman_$SOURCE_TYPE$_taxation_top_liege_law_4
+	}
+	#Aristocracy law
+	if = {
+		limit = { has_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_0 }
+		add_realm_law = subroman_$TARGET_TYPE$_aristocracy_law_0
+		remove_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_0
+	}
+	else_if = {
+		limit = { has_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_1 }
+		add_realm_law = subroman_$TARGET_TYPE$_aristocracy_law_1
+		remove_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_1
+	}
+	else_if = {
+		limit = { has_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_2 }
+		add_realm_law = subroman_$TARGET_TYPE$_aristocracy_law_2
+		remove_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_2
+	}
+	else_if = {
+		limit = { has_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_3 }
+		add_realm_law = subroman_$TARGET_TYPE$_aristocracy_law_3
+		remove_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_3
+	}
+	else_if = {
+		limit = { has_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_4 }
+		add_realm_law = subroman_$TARGET_TYPE$_aristocracy_law_4
+		remove_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_4
+	}
+	else = { remove_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_0 }
+	every_vassal_or_below = {
+		limit = { has_government = subroman_$TARGET_TYPE$_government }
+		if = {
+			limit = { has_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_0 }
+			add_realm_law = subroman_$TARGET_TYPE$_aristocracy_law_0
+			remove_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_0
+		}
+		else_if = {
+			limit = { has_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_1 }
+			add_realm_law = subroman_$TARGET_TYPE$_aristocracy_law_1
+			remove_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_1
+		}
+		else_if = {
+			limit = { has_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_2 }
+			add_realm_law = subroman_$TARGET_TYPE$_aristocracy_law_2
+			remove_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_2
+		}
+		else_if = {
+			limit = { has_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_3 }
+			add_realm_law = subroman_$TARGET_TYPE$_aristocracy_law_3
+			remove_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_3
+		}
+		else_if = {
+			limit = { has_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_4 }
+			add_realm_law = subroman_$TARGET_TYPE$_aristocracy_law_4
+			remove_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_4
+		}
 	}
 }

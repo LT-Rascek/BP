@@ -1501,6 +1501,9 @@ setup_roman_governments_based_on_dlc = {
 			}
 			every_ruler = {
 				limit = {
+					#Only applies to Kings and up...
+					is_independent_ruler = yes
+					primary_title.tier >= tier_kingdom
 					OR = {
 						government_has_flag = government_is_roman_administrative
 						government_has_flag = government_is_subroman_administrative
