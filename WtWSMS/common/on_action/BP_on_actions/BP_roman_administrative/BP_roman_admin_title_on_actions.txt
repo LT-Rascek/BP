@@ -11,15 +11,6 @@ BP_flip_federate_when_not_below_roman = {
 }
 #Whenever we have rank change as subroman governments
 # we might change from Sub-Roman Admin to Dynastic and vice-versa
-BP_subroman_dynastic_under_subroman_admin = {
-	trigger = {
-		BP_has_dlc_necessary_for_roman_governments_trigger = yes
-		has_government = subroman_dynastic_government
-		is_independent_ruler = no
-		this.liege = { has_government = subroman_administrative_government }
-	}
-	on_actions = { BP_convert_sub_roman_dynastic_to_admin }
-}
 BP_convert_sub_roman_admin_to_dynastic = {
 	trigger = {
 		BP_has_dlc_necessary_for_roman_governments_trigger = yes
@@ -28,18 +19,10 @@ BP_convert_sub_roman_admin_to_dynastic = {
 		primary_title.tier <= tier_duchy
 	}
 	effect = {
-		#Save Law References
-		save_sub_roman_type_law_effect = { SOURCE_TYPE = admin }
-		#Convert government and to all vassals; reverse order for safety
-		every_vassal_or_below = {
-			limit = { has_government = subroman_administrative_government }
-			change_government = subroman_dynastic_government
-		}
-		change_government = subroman_dynastic_government
-		#Set Laws accordingly and clear flags
-		set_sub_roman_type_law_effect = {
+		flip_subroman_government_types_effect = {
 			SOURCE_TYPE = administrative
 			TARGET_TYPE = dynastic
+			ENOBLE_COURTIERS = no
 		}
 	}
 }
@@ -51,36 +34,26 @@ BP_convert_sub_roman_dynastic_to_admin = {
 		primary_title.tier > tier_duchy
 	}
 	effect = {
-		#Save Law References
-		save_sub_roman_type_law_effect = { SOURCE_TYPE = dynastic }
-		#Convert government and to all vassals
-		change_government_subroman_administrative_effect = yes
-		#Random senators get Noble families if house heads
-		every_courtier = {
-			courtiers_become_subroman_admins_effect = { TOP_LIEGE = this.court_owner.top_liege }
-		}
-		every_vassal_or_below = {
-			limit = { has_government = subroman_administrative_government }
-			change_government_subroman_administrative_effect = yes
-			#Random senators get Noble families if house heads
-			every_courtier = {
-				if = {
-					limit = {
-						OR = {
-							has_trait = senator_west
-							has_trait = senator_east
-						}
-					}
-					set_employer = this.court_owner.top_liege
-					courtiers_become_subroman_admins_effect = { TOP_LIEGE = this.court_owner.top_liege }
-				}
-			}
-		}
-		
-		#Set Laws accordingly and clear flags
-		set_sub_roman_type_law_effect = {
+		flip_subroman_government_types_effect = {
 			SOURCE_TYPE = dynastic
 			TARGET_TYPE = administrative
+			ENOBLE_COURTIERS = yes
+		}
+	}
+}
+#Being Dynastic under administrative
+BP_subroman_dynastic_under_subroman_admin = {
+	trigger = {
+		BP_has_dlc_necessary_for_roman_governments_trigger = yes
+		has_government = subroman_dynastic_government
+		is_independent_ruler = no
+		this.liege = { has_government = subroman_administrative_government }
+	}
+	effect = {
+		flip_subroman_government_types_effect = {
+			SOURCE_TYPE = dynastic
+			TARGET_TYPE = administrative
+			ENOBLE_COURTIERS = yes
 		}
 	}
 }
@@ -89,6 +62,7 @@ BP_subroman_under_roman_admin = {
 		BP_has_dlc_necessary_for_roman_governments_trigger = yes
 		is_independent_ruler = no
 		this.liege = { has_government = roman_administrative_government }
+		government_has_flag = government_is_subroman_administrative_or_dynastic
 	}
 	effect = { change_government_roman_administrative_effect = yes }
 }
@@ -291,10 +265,20 @@ BP_independent_roman_government_checks = {
 			}
 			bp_devolve_roman_federate_effect = yes
 		}
+		if = {
+			limit = { is_independent_ruler = yes }
+			every_vassal_or_below = {
+				limit = { government_has_flag = is_a_roman_government }
+				trigger_event = { on_action = BP_independent_roman_government_checks }
+			}
+		}
 		#Independent SubRoman Admins swap their existing laws for liege laws
 		#NB: Aristocracy laws are independent of each other so not needed to manipulate
 		if = {
-			limit = { government_has_flag = subroman_administrative_government }
+			limit = {
+				is_independent_ruler = yes
+				government_has_flag = subroman_administrative_government
+			}
 			switch = {
 				trigger = has_realm_law
 				subroman_administrative_taxation_vassal_law_0 = {
@@ -311,9 +295,6 @@ BP_independent_roman_government_checks = {
 				}
 				subroman_administrative_taxation_vassal_law_4 = {
 					add_realm_law = subroman_administrative_taxation_top_liege_law_4
-				}
-				fallback = {
-					add_realm_law = subroman_administrative_taxation_top_liege_law_0
 				}
 			}
 			switch = {
@@ -335,9 +316,6 @@ BP_independent_roman_government_checks = {
 				}
 				subroman_administrative_military_centralization_vassal_law_5 = {
 					add_realm_law = subroman_administrative_military_centralization_top_liege_law_5
-				}
-				fallback = {
-					add_realm_law = subroman_administrative_military_centralization_top_liege_law_0
 				}
 			}
 		}

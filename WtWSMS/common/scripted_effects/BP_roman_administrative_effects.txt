@@ -635,20 +635,8 @@ change_government_roman_administrative_effect = {
 		create_noble_family_effect = { GOVERNMENT_GIVER = this }
 	}
 }
-courtiers_become_subroman_admins_effect = {
-	if = {
-		limit = {
-			this = this.house.house_head
-			OR = {
-				#Senators are always noble
-				has_trait = senator_west
-				has_trait = senator_east
-			}
-			any_held_title = { count < 1 is_noble_family_title = yes }
-		}
-		create_noble_family_effect = { GOVERNMENT_GIVER = $TOP_LIEGE$ }
-		change_government = subroman_administrative_government
-	}
+change_government_subroman_dynastic_effect = {
+	change_government = subroman_dynastic_government
 }
 
 #For saving references to Sub-Roman Laws for hand-off between $TARGET_TYPE$ and $SOURCE_TYPE$ Governments
@@ -915,5 +903,66 @@ set_sub_roman_type_law_effect = { #Top Liege Root
 			add_law_if_not_has_it_effect = { LAW = subroman_$TARGET_TYPE$_aristocracy_law_4 }
 			remove_character_flag = subroman_$SOURCE_TYPE$_aristocracy_law_4
 		}
+	}
+}
+#The Actual Hand-off Code
+flip_subroman_government_types_effect = { #Root Char 
+		#Save Law References
+		save_sub_roman_type_law_effect = { SOURCE_TYPE = $SOURCE_TYPE$ }
+		#Convert government and to all vassals
+		change_government_subroman_$TARGET_TYPE$_effect = yes
+		#Random senators get Noble families if house heads
+		if = {
+			limit = { always = $ENOBLE_COURTIERS$ }
+			every_courtier = {
+				courtiers_become_admins_effect = {
+					TOP_LIEGE = this.court_owner.top_liege
+					TYPE = $TARGET_TYPE$
+				}
+			}
+		}
+		every_vassal_or_below = {
+			limit = { has_government = subroman_$SOURCE_TYPE$_government }
+			change_government_subroman_$TARGET_TYPE$_effect = yes
+			#Random senators get Noble families if house heads
+			if = {
+				limit = { always = $ENOBLE_COURTIERS$ }
+				every_courtier = {
+					if = {
+						limit = {
+							OR = {
+								has_trait = senator_west
+								has_trait = senator_east
+							}
+						}
+						set_employer = this.court_owner.top_liege
+						courtiers_become_admins_effect = {
+							TOP_LIEGE = this.court_owner.top_liege
+							TYPE = $TARGET_TYPE$
+						}
+					}
+				}
+			}
+		}
+		
+		#Set Laws accordingly and clear flags
+		set_sub_roman_type_law_effect = {
+			SOURCE_TYPE = $SOURCE_TYPE$
+			TARGET_TYPE = $TARGET_TYPE$
+		}
+}
+courtiers_become_admins_effect = {
+	if = {
+		limit = {
+			this = this.house.house_head
+			OR = {
+				#Senators are always noble
+				has_trait = senator_west
+				has_trait = senator_east
+			}
+			any_held_title = { count < 1 is_noble_family_title = yes }
+		}
+		create_noble_family_effect = { GOVERNMENT_GIVER = $TOP_LIEGE$ }
+		change_government = subroman_$TYPE$_government
 	}
 }
