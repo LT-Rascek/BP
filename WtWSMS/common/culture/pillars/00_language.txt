@@ -6166,9 +6166,9 @@ language_tuoba = {
 	
 	color = xianbei
 }
-language_tuyuhun = {
+language_xianbei = {
 	type = language
-	is_shown = { language_is_shown_trigger = { LANGUAGE = language_tuyuhun } }
+	is_shown = { language_is_shown_trigger = { LANGUAGE = language_tuoba } }
 	
 	parameters = {
 		language_group_paramongolic = yes
@@ -6180,7 +6180,7 @@ language_tuyuhun = {
 	ai_will_do = {
 		value = 10
 		if = {
-			limit = { has_cultural_pillar = language_tuyuhun }
+			limit = { has_cultural_pillar = language_tuoba }
 			multiply = same_language_choice_factor
 		}
 		else_if = {
@@ -6201,11 +6201,11 @@ language_tuyuhun = {
 		}
 	}
 	
-	color = tuyuhun
+	color = xianbei
 }
-language_ninrun = {
+language_tuyuhun = {
 	type = language
-	is_shown = { language_is_shown_trigger = { LANGUAGE = language_ninrun } }
+	is_shown = { language_is_shown_trigger = { LANGUAGE = language_tuyuhun } }
 	
 	parameters = {
 		language_group_paramongolic = yes
@@ -6217,7 +6217,7 @@ language_ninrun = {
 	ai_will_do = {
 		value = 10
 		if = {
-			limit = { has_cultural_pillar = language_ninrun }
+			limit = { has_cultural_pillar = language_tuyuhun }
 			multiply = same_language_choice_factor
 		}
 		else_if = {
@@ -7232,6 +7232,26 @@ language_hmongic = {
 }
 
 #ISOLATES
+
+language_xiongnu = {
+	type = language
+	is_shown = { language_is_shown_trigger = { LANGUAGE = language_xiongnu } }
+	
+	parameters = {
+		language_branch_isolate = yes
+		language_family_isolate = yes
+	}
+	
+	ai_will_do = {
+		value = 10
+		if = {
+			limit = { has_cultural_pillar = language_xiongnu }
+			multiply = same_language_choice_factor
+		}
+	}
+	
+	color = xiongnu
+}
 
 language_basque = {
 	type = language
