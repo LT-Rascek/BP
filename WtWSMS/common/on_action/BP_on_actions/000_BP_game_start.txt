@@ -1226,7 +1226,12 @@ update_development_by_terrain_and_circumstances = {
 			if = { #Dacia should only have development in non-tribal counties
 				limit = { this.kingdom = title:k_dacia }
 				if = {
-					limit = { any_county_province = { has_holding_type = tribal_holding } }
+					limit = {
+						OR = {
+							any_county_province = { has_holding_type = tribal_holding }
+							any_county_province = { has_holding_type = nomad_holding }
+						}
+					}
 					change_development_level = {
 						value = this.development_level
 						multiply = -1.00
@@ -1236,7 +1241,12 @@ update_development_by_terrain_and_circumstances = {
 			if = { #Syr Darya is only for non-tribal counties
 				limit = { this.kingdom = title:k_syr_darya }
 				if = {
-					limit = { any_county_province = { has_holding_type = tribal_holding } }
+					limit = {
+						OR = {
+							any_county_province = { has_holding_type = tribal_holding }
+							any_county_province = { has_holding_type = nomad_holding }
+						}
+					}
 					change_development_level = {
 						value = this.development_level
 						multiply = -1.00
@@ -1352,14 +1362,24 @@ update_development_by_terrain_and_circumstances = {
 			}
 			## Effects of Tribal holdings on development
 			if = {
-				limit = { this.title_province = { has_holding_type = tribal_holding } }
+				limit = {
+					OR = {
+						this.title_province = { has_holding_type = tribal_holding }
+						this.title_province = { has_holding_type = nomad_holding }
+					}
+				}
 				change_development_level = {
 					value = this.development_level
 					multiply = -0.75
 				}
 			}
 			else_if = {
-				limit = { any_county_province = { has_holding_type = tribal_holding } }
+				limit = {
+					OR = {
+						any_county_province = { has_holding_type = tribal_holding }
+						any_county_province = { has_holding_type = nomad_holding }
+					}
+				}
 				change_development_level = {
 					value = this.development_level
 					multiply = -0.50
