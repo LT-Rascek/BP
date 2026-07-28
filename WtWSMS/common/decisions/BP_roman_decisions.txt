@@ -52,9 +52,9 @@ ask_for_hre = {
 	
 	is_valid = {
 		custom_description = {
-			text = primary_title_must_be_empire
+			text = primary_title_must_be_kingdom
 			subject = root
-			primary_title.tier = tier_empire
+			primary_title.tier = tier_kingdom
 		}
 		realm_size >= 255
 		custom_description = {
@@ -98,7 +98,10 @@ ask_for_hre = {
 			set_variable = { name = asked_for_hre }
 			save_scope_as = empire_petitoner
 		}
-		this.faith.religious_head = { trigger_event = { id = BP_roman_decisions.0001 days = { 5 17 } } }
+		custom_tooltip = {
+			text = you_ask_the_pope_for_the_empire
+			faith:nicene.religious_head = { trigger_event = { id = BP_roman_decisions.0001 days = { 5 17 } } }
+		}
 	}
 	
 	ai_potential = { always = yes }

@@ -2,10 +2,17 @@
  #### BP_roman_decisions
  #Major Decisions
  ## Ask for HRE
- ask_for_hre: "Ask Pope for Coronation"
+ ask_for_hre: "Ask the Pope for Imperial Recognition"
  ask_for_hre_desc: "Ask if the Pope may recognize you as the legitimate successor to the Western Roman Empire."
  ask_for_hre_tooltip: "Attempt to lay claim to the heritage of the Western Roman Empire"
  ask_for_hre_confirm: "Confirm"
+ you_ask_the_pope_for_the_empire: "You ask the [GetTitleByKey('d_papal_state').GetHolder.GetName] to grant you the [GetTitleByKey('e_hre').GetName]. He will either approve or disapprove.\n\n$hre_asking_near_certain_good_conditions$\n\n$hre_asking_very_good_conditions$\n\n$hre_asking_bad_conditions$\n\n$hre_asking_near_certain_bad_conditions$\n\n$hre_asking_scale_conditions$"
+ hre_asking_near_certain_good_conditions: "#weak Having a [strong_hook|E] on [GetTitleByKey('d_papal_state').GetHolder.GetFirstNameNoTooltip], being [GetTitleByKey('d_papal_state').GetHolder.GetFirstNamePossessiveNoTooltip] [lover|E] or [best_friend|E] will be very helpful to your chances.#!"
+ hre_asking_very_good_conditions: "#weak Being [GetTitleByKey('d_papal_state').GetHolder.GetFirstNamePossessiveNoTooltip] [friend|E], [GetTitleByKey('c_roma').GetName] and [GetTitleByKey('c_byzantion').GetName] being held by non-Christians will help your chances notably.#!"
+ hre_asking_good_conditions: "#weak [GetTitleByKey('c_antiocheia').GetName], [GetTitleByKey('c_alexandria').GetName], [GetTitleByKey('c_jerusalem').GetName], [GetTitleByKey('c_tunis').GetName], [GetTitleByKey('c_ile_de_france').GetName], and [GetFaithByKey('catholic').GetName] [holy_sites|E] being held by non-Christians will help, as having the [GetTrait('zealous').GetName(GetNullCharacter)] [trait|E] will help#!"
+ hre_asking_scale_conditions: "#weak Your [piety_level|E] and [GetTitleByKey('d_papal_state').GetHolder.GetFirstNamePossessiveNoTooltip] [opinion|E] of you will also impact the odds#!"
+ hre_asking_bad_conditions: "#weak The holder of [GetTitleByKey('c_paderborn').GetName] not being Christian will hurt your odds, as will having the [GetTrait('cynical').GetName(GetNullCharacter)] [trait|E]#!"
+ hre_asking_near_certain_bad_conditions: "#weak [GetTitleByKey('d_papal_state').GetHolder.GetFirstNameNoTooltip] having a [grudge|E] with you, a [rivalry|E] with you, considering you a [nemesis|E], and considering your [faith|E] #V Evil#! will very strongly hurt your chances#!"
  ## Ask for WRE
  ask_for_wre: "Ask for Western Roman Empire"
  ask_for_wre_desc: "Ask the Eastern Emperor to grant you the crown of the Western Roman Empire."
