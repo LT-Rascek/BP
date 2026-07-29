@@ -4,26 +4,6 @@
 
 @cultural_title_score = 500
 
-### Chinese Titles
-
-#On map portion of China in 476
-k_wei_western_regions = {
-	color={ 245 240 10 }
-	capital = c_liangzhou
-	ignore_titularity_for_title_weighting = yes
-	definite_form = yes
-	ruler_uses_title_name = no
-	
-	ai_primary_priority = { add = @always_primary_score }
-	
-	can_create = { custom_description = { text = cannot_create_title always = no } }
-	
-	destroy_if_invalid_heir = yes
-	no_automatic_claims = yes
-	always_follows_primary_heir = yes
-	de_jure_drift_disabled = yes
-}
-
 #Other Eastern Titles
 k_yarlung = {
 	color={ 209 52 80 }

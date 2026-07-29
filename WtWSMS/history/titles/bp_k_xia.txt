@@ -1,8 +1,4 @@
-﻿#Notes:
-# Wei control extented as far ad Dunhuang, but left Xia with a few duchies to avoid eliminating them for the time being
-
-
-k_xia = { #replacing k_tuyuhun history; more accurate division
+﻿k_xia = { #replacing k_tuyuhun history; more accurate division
 	#Development
 	100.1.1 = { change_development_level = 01 }
 	200.1.1 = { change_development_level = 02 }
@@ -13,6 +9,25 @@ k_xia = { #replacing k_tuyuhun history; more accurate division
 	700.1.1 = { change_development_level = 07 }
 	800.1.1 = { change_development_level = 08 }
 	867.1.1 = { change_development_level = 09 }
+	
+	386.1.1 = {
+		holder = TuobaWei000
+		government = meritocratic_government
+	}
+	409.1.1 = { holder = TuobaWei001 }
+	424.1.1 = { holder = TuobaWei002 }
+	452.1.1 = { holder = TuobaWei003 }
+	465.1.1 = { holder = TuobaWei004 }
+	471.1.1 = { holder = TuobaWei005 }
+	499.1.1 = { holder = TuobaWei006 }
+	515.1.1 = { holder = TuobaWei007 }
+	528.1.1 = { holder = TuobaWei008 }
+	530.1.1 = { holder = TuobaWei009 }
+	532.1.1 = { holder = TuobaWei010 }
+	535.1.1 = { holder = TuobaWei011 }
+	552.1.1 = { holder = TuobaWei012 }
+	554.1.1 = { holder = TuobaWei013 }
+	557.1.1 = { holder = TuobaWei014 }
 }
 
 d_zhenfan = { #Empty History
@@ -199,40 +214,16 @@ c_kuozhou = { #(fictional)
 }
 
 d_qilin = {
-	460.1.1 = {
-		holder = tangutQilin000
+	475.1.1 = {
+		holder = lushuihu_DQilin_000
 		government = tribal_government
 	}
-	490.1.1 = { holder = tangutQilin001 }
-	520.1.1 = { holder = tangutQilin002 }
-	550.1.1 = { holder = tangutQilin003 }
-	580.1.1 = { holder = tangutQilin004 }
-	610.1.1 = { holder = tangutQilin005 }
-	640.1.1 = { holder = tangutQilin006 }
-	670.1.1 = { holder = tangutQilin007 }
-	700.1.1 = { holder = tangutQilin008 }
 }
 c_qilin = {
-	460.1.1 = { holder = tangutQilin000 }
-	490.1.1 = { holder = tangutQilin001 }
-	520.1.1 = { holder = tangutQilin002 }
-	550.1.1 = { holder = tangutQilin003 }
-	580.1.1 = { holder = tangutQilin004 }
-	610.1.1 = { holder = tangutQilin005 }
-	640.1.1 = { holder = tangutQilin006 }
-	670.1.1 = { holder = tangutQilin007 }
-	700.1.1 = { holder = tangutQilin008 }
+	475.1.1 = { holder = lushuihu_DQilin_000 }
 }
 c_yalong = {
-	460.1.1 = { holder = tangutQilin000 }
-	490.1.1 = { holder = tangutQilin001 }
-	520.1.1 = { holder = tangutQilin002 }
-	550.1.1 = { holder = tangutQilin003 }
-	580.1.1 = { holder = tangutQilin004 }
-	610.1.1 = { holder = tangutQilin005 }
-	640.1.1 = { holder = tangutQilin006 }
-	670.1.1 = { holder = tangutQilin007 }
-	700.1.1 = { holder = tangutQilin008 }
+	475.1.1 = { holder = lushuihu_DQilin_000 }
 }
 
 #c_jiuquan history
