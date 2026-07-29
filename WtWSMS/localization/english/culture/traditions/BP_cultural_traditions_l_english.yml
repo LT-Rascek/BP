@@ -88,6 +88,7 @@
  culture_parameter_unlock_maa_roman_heavy_infantry: "Can recruit [GetMaA('roman_heavy_infantry').GetName] as [men_at_arms|E]"
  culture_parameter_unlock_maa_roman_light_infantry: "Can recruit [GetMaA('roman_light_infantry').GetName] as [men_at_arms|E]"
  culture_parameter_unlock_maa_sarmatian_lancers: "Can recruit [GetMaA('sarmatian_lancers').GetName] as [men_at_arms|E]"
+ culture_parameter_unlock_maa_alan_light_cavalry: "Can recruit [GetMaA('alan_light_cavalry').GetName] as [men_at_arms|E]"
  
  ##### WtWSMS Cultural Parameters #####
  culture_parameter_autochthon_baseline_acceptance: "Has a #P +[EmptyScope.ScriptValue('autochthon_baseline_acceptance_value')]#! [cultural_acceptance|E] baseline with other cultures with this tradition"
@@ -216,6 +217,8 @@
  #### Steppe Traditions ####
  tradition_devoted_horsemanship_western_steppe_name: "Pontic Horsemanship"
  tradition_devoted_horsemanship_western_steppe_desc: "These people, having lived in the Pontic Steppe, cannot be kept from the saddle. Wherever they find themselves, their herds are there too, and the horses are tended to with a careful eye."
+ tradition_light_cavalry_western_steppe_name: "Cavalry Skirmishers"
+ tradition_light_cavalry_western_steppe_desc: "$tradition_devoted_horsemanship_western_steppe_desc$"
  
  #### Combat Traditions ####
  #Gothic Warfare
