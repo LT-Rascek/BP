@@ -143,6 +143,7 @@
  culture_parameter_uses_special_hybrid_event_roman: "[bp_roman_event_hybrid_tradition|E]"
  culture_parameter_very_difficult_to_convert_or_promote: "#V Convert County#! Task: #N -[EmptyScope.ScriptValue('conversion_culture_very_difficult_to_convert_or_promote_value')|0%]#!\n$TAB$$EFFECT_LIST_BULLET$#EMP Resistance and Speed#!\n$EFFECT_LIST_BULLET$#V Promote Culture#! Task: #N -[EmptyScope.ScriptValue('conversion_culture_very_difficult_to_convert_or_promote_value')|0%]#!\n$TAB$$EFFECT_LIST_BULLET$#EMP Resistance and Speed#!"
  culture_parameter_very_expensive_convert_to_local_culture: "#V $convert_to_local_culture_decision$#! [decision|E] Cost: [prestige_i]#N +500%#!"
+ culture_parameter_baseline_chinese_acceptance_increased: "Has a #P +[EmptyScope.ScriptValue('sinophilic_tradition_acceptance_value')]#! [cultural_acceptance|E] baseline cultures of #V $heritage_chinese_name$#! [heritage|E]"
  
  ##### Other Important Text #####
  impact_early_slavs: "$tradition_early_slavic_traditions_name$"
