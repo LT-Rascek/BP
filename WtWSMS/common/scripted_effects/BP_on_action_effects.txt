@@ -279,7 +279,7 @@ set_court_language_from_effect = {
 	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_wallachian } NOT = { has_court_language = language_cappadocian } NOT = { has_court_language = language_wallachian } } $CHARACTER$ = { set_court_language = language_wallachian } }
 	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_west_baltic } NOT = { has_court_language = language_cappadocian } NOT = { has_court_language = language_west_baltic } } $CHARACTER$ = { set_court_language = language_west_baltic } }
 	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_western_berber } NOT = { has_court_language = language_cappadocian } NOT = { has_court_language = language_western_berber } } $CHARACTER$ = { set_court_language = language_western_berber } }
-	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_wusun } NOT = { has_court_language = language_cappadocian } NOT = { has_court_language = language_wusun } } $CHARACTER$ = { set_court_language = language_wusun } }
+	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_tokhari } NOT = { has_court_language = language_cappadocian } NOT = { has_court_language = language_tokhari } } $CHARACTER$ = { set_court_language = language_tokhari } }
 	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_xianbei } NOT = { has_court_language = language_cappadocian } NOT = { has_court_language = language_xianbei } } $CHARACTER$ = { set_court_language = language_xianbei } }
 	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_xiongnu } NOT = { has_court_language = language_cappadocian } NOT = { has_court_language = language_xiongnu } } $CHARACTER$ = { set_court_language = language_xiongnu } }
 	else_if = { limit = { $CULTURE$ = { has_cultural_pillar = language_yeniseian } NOT = { has_court_language = language_cappadocian } NOT = { has_court_language = language_yeniseian } } $CHARACTER$ = { set_court_language = language_yeniseian } }
@@ -287,198 +287,214 @@ set_court_language_from_effect = {
 	else = { debug_log = "MISSING A LANGUAGE: set_court_language_from_effect?" }
 }
 match_court_languages_effect = {
-	if = { limit = { $TOP_COURT$ = { has_court_language = language_albanian } } $CURRENT_COURT$ = { set_court_language = language_albanian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_cappadocian } } $CURRENT_COURT$ = { set_court_language = language_cappadocian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_isaurian } } $CURRENT_COURT$ = { set_court_language = language_isaurian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_armenian } } $CURRENT_COURT$ = { set_court_language = language_armenian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_thracian } } $CURRENT_COURT$ = { set_court_language = language_thracian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_dacian } } $CURRENT_COURT$ = { set_court_language = language_dacian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_illyrian } } $CURRENT_COURT$ = { set_court_language = language_illyrian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_baltic } } $CURRENT_COURT$ = { set_court_language = language_baltic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_west_baltic } } $CURRENT_COURT$ = { set_court_language = language_west_baltic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_common_slavic } } $CURRENT_COURT$ = { set_court_language = language_common_slavic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_east_slavic } } $CURRENT_COURT$ = { set_court_language = language_east_slavic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_south_slavic } } $CURRENT_COURT$ = { set_court_language = language_south_slavic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_slavonic } } $CURRENT_COURT$ = { set_court_language = language_slavonic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_lechitic } } $CURRENT_COURT$ = { set_court_language = language_lechitic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_czech_slovak } } $CURRENT_COURT$ = { set_court_language = language_czech_slovak } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_hispanoceltic } } $CURRENT_COURT$ = { set_court_language = language_hispanoceltic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_gallaecian } } $CURRENT_COURT$ = { set_court_language = language_gallaecian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_gaulish } } $CURRENT_COURT$ = { set_court_language = language_gaulish } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_galatian } } $CURRENT_COURT$ = { set_court_language = language_galatian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_brythonic } } $CURRENT_COURT$ = { set_court_language = language_brythonic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_goidelic } } $CURRENT_COURT$ = { set_court_language = language_goidelic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_gothic } } $CURRENT_COURT$ = { set_court_language = language_gothic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_vandalic } } $CURRENT_COURT$ = { set_court_language = language_vandalic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_skirian } } $CURRENT_COURT$ = { set_court_language = language_skirian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_norse } } $CURRENT_COURT$ = { set_court_language = language_norse } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_central_germanic } } $CURRENT_COURT$ = { set_court_language = language_central_germanic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_north_sea_germanic } } $CURRENT_COURT$ = { set_court_language = language_north_sea_germanic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_frankish } } $CURRENT_COURT$ = { set_court_language = language_frankish } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_anglic } } $CURRENT_COURT$ = { set_court_language = language_anglic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_dutch } } $CURRENT_COURT$ = { set_court_language = language_dutch } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_high_german } } $CURRENT_COURT$ = { set_court_language = language_high_german } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_saxon } } $CURRENT_COURT$ = { set_court_language = language_saxon } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_greek } } $CURRENT_COURT$ = { set_court_language = language_greek } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_doric } } $CURRENT_COURT$ = { set_court_language = language_doric } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_phrygian } } $CURRENT_COURT$ = { set_court_language = language_phrygian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_sanskrit } } $CURRENT_COURT$ = { set_court_language = language_sanskrit } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_kashmiri } } $CURRENT_COURT$ = { set_court_language = language_kashmiri } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_gandhari } } $CURRENT_COURT$ = { set_court_language = language_gandhari } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_pahari } } $CURRENT_COURT$ = { set_court_language = language_pahari } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_magadhan } } $CURRENT_COURT$ = { set_court_language = language_magadhan } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_kamarupan } } $CURRENT_COURT$ = { set_court_language = language_kamarupan } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_sauraseni } } $CURRENT_COURT$ = { set_court_language = language_sauraseni } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = langauge_apabhramsa } } $CURRENT_COURT$ = { set_court_language =langauge_apabhramsa } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_vrachada } } $CURRENT_COURT$ = { set_court_language = language_vrachada } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_maharashtri } } $CURRENT_COURT$ = { set_court_language = language_maharashtri } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_elu } } $CURRENT_COURT$ = { set_court_language = language_elu } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_kalasha } } $CURRENT_COURT$ = { set_court_language = language_kalasha } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_bengali } } $CURRENT_COURT$ = { set_court_language = language_bengali } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_oriya } } $CURRENT_COURT$ = { set_court_language = language_oriya } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_bihari } } $CURRENT_COURT$ = { set_court_language = language_bihari } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_assamese } } $CURRENT_COURT$ = { set_court_language = language_assamese } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_awadhi } } $CURRENT_COURT$ = { set_court_language = language_awadhi } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_braj } } $CURRENT_COURT$ = { set_court_language = language_braj } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_kannauji } } $CURRENT_COURT$ = { set_court_language = language_kannauji } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_rajasthani } } $CURRENT_COURT$ = { set_court_language = language_rajasthani } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_bhil } } $CURRENT_COURT$ = { set_court_language = language_bhil } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_gujarati } } $CURRENT_COURT$ = { set_court_language = language_gujarati } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_sindhi } } $CURRENT_COURT$ = { set_court_language = language_sindhi } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_punjabi } } $CURRENT_COURT$ = { set_court_language = language_punjabi } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_marathi } } $CURRENT_COURT$ = { set_court_language = language_marathi } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_konkani } } $CURRENT_COURT$ = { set_court_language = language_konkani } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_sinhalese } } $CURRENT_COURT$ = { set_court_language = language_sinhalese } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_scythian } } $CURRENT_COURT$ = { set_court_language = language_scythian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_sogdian } } $CURRENT_COURT$ = { set_court_language = language_sogdian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_sakan } } $CURRENT_COURT$ = { set_court_language = language_sakan } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_bactrian } } $CURRENT_COURT$ = { set_court_language = language_bactrian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_pamir } } $CURRENT_COURT$ = { set_court_language = language_pamir } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_pashto } } $CURRENT_COURT$ = { set_court_language = language_pashto } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_iranian } } $CURRENT_COURT$ = { set_court_language = language_iranian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_parthian } } $CURRENT_COURT$ = { set_court_language = language_parthian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_median } } $CURRENT_COURT$ = { set_court_language = language_median } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_caspian_iranian } } $CURRENT_COURT$ = { set_court_language = language_caspian_iranian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_adharic } } $CURRENT_COURT$ = { set_court_language = language_adharic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_pahlavi } } $CURRENT_COURT$ = { set_court_language = language_pahlavi } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_balochi } } $CURRENT_COURT$ = { set_court_language = language_balochi } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_sabaki } } $CURRENT_COURT$ = { set_court_language = language_sabaki } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_nuristani } } $CURRENT_COURT$ = { set_court_language = language_nuristani } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_latin } } $CURRENT_COURT$ = { set_court_language = language_latin } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_sardinian } } $CURRENT_COURT$ = { set_court_language = language_sardinian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_proto_ibero_romance } } $CURRENT_COURT$ = { set_court_language = language_proto_ibero_romance } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_proto_gallo_romance } } $CURRENT_COURT$ = { set_court_language = language_proto_gallo_romance } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_proto_british_romance } } $CURRENT_COURT$ = { set_court_language = language_proto_british_romance } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_proto_british_romance } } $CURRENT_COURT$ = { set_court_language = language_proto_british_romance } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_proto_african_romance } } $CURRENT_COURT$ = { set_court_language = language_proto_african_romance } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_proto_african_romance } } $CURRENT_COURT$ = { set_court_language = language_proto_african_romance } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_proto_raetonorican_romance } } $CURRENT_COURT$ = { set_court_language = language_proto_raetonorican_romance } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_proto_pannonian_romance } } $CURRENT_COURT$ = { set_court_language = language_proto_pannonian_romance } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_proto_eastern_romance } } $CURRENT_COURT$ = { set_court_language = language_proto_eastern_romance } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_proto_syrian_romance } } $CURRENT_COURT$ = { set_court_language = language_proto_syrian_romance } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_proto_sardinian } } $CURRENT_COURT$ = { set_court_language = language_proto_sardinian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_doc_romance } } $CURRENT_COURT$ = { set_court_language = language_doc_romance } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_catalan } } $CURRENT_COURT$ = { set_court_language = language_catalan } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_arpitan } } $CURRENT_COURT$ = { set_court_language = language_arpitan } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_occitano_romance } } $CURRENT_COURT$ = { set_court_language = language_occitano_romance } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_iberian_romance } } $CURRENT_COURT$ = { set_court_language = language_iberian_romance } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_iberian } } $CURRENT_COURT$ = { set_court_language = language_iberian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_mozarabic } } $CURRENT_COURT$ = { set_court_language = language_mozarabic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_french } } $CURRENT_COURT$ = { set_court_language = language_french } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_gallic_romance } } $CURRENT_COURT$ = { set_court_language = language_gallic_romance } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_british_romance } } $CURRENT_COURT$ = { set_court_language = language_british_romance } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_germano_italian_romance } } $CURRENT_COURT$ = { set_court_language = language_germano_italian_romance } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_venetian } } $CURRENT_COURT$ = { set_court_language = language_venetian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_sicilian } } $CURRENT_COURT$ = { set_court_language = language_sicilian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_italian } } $CURRENT_COURT$ = { set_court_language = language_italian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_noric_romance } } $CURRENT_COURT$ = { set_court_language = language_noric_romance } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_rhaeto_romance } } $CURRENT_COURT$ = { set_court_language = language_rhaeto_romance } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_dalmatian } } $CURRENT_COURT$ = { set_court_language = language_dalmatian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_pannonian_romance } } $CURRENT_COURT$ = { set_court_language = language_pannonian_romance } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_wallachian } } $CURRENT_COURT$ = { set_court_language = language_wallachian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_syrian_romance } } $CURRENT_COURT$ = { set_court_language = language_syrian_romance } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_germano_african_romance } } $CURRENT_COURT$ = { set_court_language = language_germano_african_romance } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_african_romance } } $CURRENT_COURT$ = { set_court_language = language_african_romance } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_galician } } $CURRENT_COURT$ = { set_court_language = language_galician } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_asturleonese } } $CURRENT_COURT$ = { set_court_language = language_asturleonese } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_castilian } } $CURRENT_COURT$ = { set_court_language = language_castilian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_tocharian } } $CURRENT_COURT$ = { set_court_language = language_tocharian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_gushi } } $CURRENT_COURT$ = { set_court_language = language_gushi } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_guanche } } $CURRENT_COURT$ = { set_court_language = language_guanche } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_northern_berber } } $CURRENT_COURT$ = { set_court_language = language_northern_berber } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_tuareg } } $CURRENT_COURT$ = { set_court_language = language_tuareg } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_eastern_berber } } $CURRENT_COURT$ = { set_court_language = language_eastern_berber } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_western_berber } } $CURRENT_COURT$ = { set_court_language = language_western_berber } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_chadic } } $CURRENT_COURT$ = { set_court_language = language_chadic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_beja } } $CURRENT_COURT$ = { set_court_language = language_beja } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_sidamic } } $CURRENT_COURT$ = { set_court_language = language_sidamic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_cushitic } } $CURRENT_COURT$ = { set_court_language = language_cushitic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_egyptian } } $CURRENT_COURT$ = { set_court_language = language_egyptian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_coptic } } $CURRENT_COURT$ = { set_court_language = language_coptic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_omotic } } $CURRENT_COURT$ = { set_court_language = language_omotic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_carthaginian } } $CURRENT_COURT$ = { set_court_language = language_carthaginian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_israelite } } $CURRENT_COURT$ = { set_court_language = language_israelite } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_aramaic } } $CURRENT_COURT$ = { set_court_language = language_aramaic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_arabic } } $CURRENT_COURT$ = { set_court_language = language_arabic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_himyaritic } } $CURRENT_COURT$ = { set_court_language = language_himyaritic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_south_arabian } } $CURRENT_COURT$ = { set_court_language = language_south_arabian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_ethiopic } } $CURRENT_COURT$ = { set_court_language = language_ethiopic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_tamil } } $CURRENT_COURT$ = { set_court_language = language_tamil } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_kannada } } $CURRENT_COURT$ = { set_court_language = language_kannada } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_telugu } } $CURRENT_COURT$ = { set_court_language = language_telugu } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_gondi } } $CURRENT_COURT$ = { set_court_language = language_gondi } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_brahui } } $CURRENT_COURT$ = { set_court_language = language_brahui } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_basque } } $CURRENT_COURT$ = { set_court_language = language_basque } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_georgian } } $CURRENT_COURT$ = { set_court_language = language_georgian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_lazic } } $CURRENT_COURT$ = { set_court_language = language_lazic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_svan } } $CURRENT_COURT$ = { set_court_language = language_svan } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_avaric } } $CURRENT_COURT$ = { set_court_language = language_avaric } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_lezgic } } $CURRENT_COURT$ = { set_court_language = language_lezgic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_nakh } } $CURRENT_COURT$ = { set_court_language = language_nakh } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_abaza } } $CURRENT_COURT$ = { set_court_language = language_abaza } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_adyghes } } $CURRENT_COURT$ = { set_court_language = language_adyghes } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_finnic } } $CURRENT_COURT$ = { set_court_language = language_finnic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_sami } } $CURRENT_COURT$ = { set_court_language = language_sami } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_magyar } } $CURRENT_COURT$ = { set_court_language = language_magyar } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_ugric } } $CURRENT_COURT$ = { set_court_language = language_ugric } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_permic } } $CURRENT_COURT$ = { set_court_language = language_permic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_volga_finnic } } $CURRENT_COURT$ = { set_court_language = language_volga_finnic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_samoyedic } } $CURRENT_COURT$ = { set_court_language = language_samoyedic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_oghur } } $CURRENT_COURT$ = { set_court_language = language_oghur } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_hunnic } } $CURRENT_COURT$ = { set_court_language = language_hunnic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_turkic } } $CURRENT_COURT$ = { set_court_language = language_turkic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_siberian_turkic } } $CURRENT_COURT$ = { set_court_language = language_siberian_turkic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_mongolic } } $CURRENT_COURT$ = { set_court_language = language_mongolic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_tuoba } } $CURRENT_COURT$ = { set_court_language = language_tuoba } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_tuyuhun } } $CURRENT_COURT$ = { set_court_language = language_tuyuhun } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_ninrun } } $CURRENT_COURT$ = { set_court_language = language_ninrun } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_yeniseian } } $CURRENT_COURT$ = { set_court_language = language_yeniseian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_tungusic } } $CURRENT_COURT$ = { set_court_language = language_tungusic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_chinese } } $CURRENT_COURT$ = { set_court_language = language_chinese } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_tibetan } } $CURRENT_COURT$ = { set_court_language = language_tibetan } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_kirati } } $CURRENT_COURT$ = { set_court_language = language_kirati } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_kirati } } $CURRENT_COURT$ = { set_court_language = language_kirati } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_meitei } } $CURRENT_COURT$ = { set_court_language = language_meitei } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_kachari } } $CURRENT_COURT$ = { set_court_language = language_kachari } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_pyu } } $CURRENT_COURT$ = { set_court_language = language_pyu } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_qiangic } } $CURRENT_COURT$ = { set_court_language = language_qiangic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_burmese } } $CURRENT_COURT$ = { set_court_language = language_burmese } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_kokborok } } $CURRENT_COURT$ = { set_court_language = language_kokborok } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_gur } } $CURRENT_COURT$ = { set_court_language = language_gur } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_kru } } $CURRENT_COURT$ = { set_court_language = language_kru } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_kwa } } $CURRENT_COURT$ = { set_court_language = language_kwa } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_yoruba } } $CURRENT_COURT$ = { set_court_language = language_yoruba } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_senegambian } } $CURRENT_COURT$ = { set_court_language = language_senegambian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_manding } } $CURRENT_COURT$ = { set_court_language = language_manding } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_soninke } } $CURRENT_COURT$ = { set_court_language = language_soninke } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_ayneha } } $CURRENT_COURT$ = { set_court_language = language_ayneha } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_sudanic } } $CURRENT_COURT$ = { set_court_language = language_sudanic } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_tubu } } $CURRENT_COURT$ = { set_court_language = language_tubu } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_munda } } $CURRENT_COURT$ = { set_court_language = language_munda } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_mon } } $CURRENT_COURT$ = { set_court_language = language_mon } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_khasi } } $CURRENT_COURT$ = { set_court_language = language_khasi } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_corduenian } } $CURRENT_COURT$ = { set_court_language = language_corduenian } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_burusho } } $CURRENT_COURT$ = { set_court_language = language_burusho } }
-	else_if = { limit = { $TOP_COURT$ = { has_court_language = language_trojan } } $CURRENT_COURT$ = { set_court_language = language_trojan } }
+if = { limit = { $TOP_COURT$ = { has_court_language = language_abaza } } $CURRENT_COURT$ = { set_court_language = language_abaza } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_adharic } } $CURRENT_COURT$ = { set_court_language = language_adharic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_adyghes } } $CURRENT_COURT$ = { set_court_language = language_adyghes } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_african_romance } } $CURRENT_COURT$ = { set_court_language = language_african_romance } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_ainu } } $CURRENT_COURT$ = { set_court_language = language_ainu } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_albanian } } $CURRENT_COURT$ = { set_court_language = language_albanian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_anglic } } $CURRENT_COURT$ = { set_court_language = language_anglic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_arabic } } $CURRENT_COURT$ = { set_court_language = language_arabic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_aramaic } } $CURRENT_COURT$ = { set_court_language = language_aramaic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_armenian } } $CURRENT_COURT$ = { set_court_language = language_armenian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_arpitan } } $CURRENT_COURT$ = { set_court_language = language_arpitan } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_asli } } $CURRENT_COURT$ = { set_court_language = language_asli } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_assamese } } $CURRENT_COURT$ = { set_court_language = language_assamese } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_asturleonese } } $CURRENT_COURT$ = { set_court_language = language_asturleonese } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_austronesian } } $CURRENT_COURT$ = { set_court_language = language_austronesian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_avaric } } $CURRENT_COURT$ = { set_court_language = language_avaric } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_avestan } } $CURRENT_COURT$ = { set_court_language = language_avestan } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_awadhi } } $CURRENT_COURT$ = { set_court_language = language_awadhi } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_ayneha } } $CURRENT_COURT$ = { set_court_language = language_ayneha } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_bactrian } } $CURRENT_COURT$ = { set_court_language = language_bactrian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_balochi } } $CURRENT_COURT$ = { set_court_language = language_balochi } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_baltic } } $CURRENT_COURT$ = { set_court_language = language_baltic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_basque } } $CURRENT_COURT$ = { set_court_language = language_basque } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_beja } } $CURRENT_COURT$ = { set_court_language = language_beja } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_bengali } } $CURRENT_COURT$ = { set_court_language = language_bengali } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_bhil } } $CURRENT_COURT$ = { set_court_language = language_bhil } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_bihari } } $CURRENT_COURT$ = { set_court_language = language_bihari } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_brahui } } $CURRENT_COURT$ = { set_court_language = language_brahui } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_braj } } $CURRENT_COURT$ = { set_court_language = language_braj } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_british_romance } } $CURRENT_COURT$ = { set_court_language = language_british_romance } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_brythonic } } $CURRENT_COURT$ = { set_court_language = language_brythonic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_burmese } } $CURRENT_COURT$ = { set_court_language = language_burmese } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_burusho } } $CURRENT_COURT$ = { set_court_language = language_burusho } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_cappadocian } } $CURRENT_COURT$ = { set_court_language = language_cappadocian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_carthaginian } } $CURRENT_COURT$ = { set_court_language = language_carthaginian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_caspian_iranian } } $CURRENT_COURT$ = { set_court_language = language_caspian_iranian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_castilian } } $CURRENT_COURT$ = { set_court_language = language_castilian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_catalan } } $CURRENT_COURT$ = { set_court_language = language_catalan } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_central_germanic } } $CURRENT_COURT$ = { set_court_language = language_central_germanic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_chadic } } $CURRENT_COURT$ = { set_court_language = language_chadic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_chamic } } $CURRENT_COURT$ = { set_court_language = language_chamic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_chinese } } $CURRENT_COURT$ = { set_court_language = language_chinese } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_common_slavic } } $CURRENT_COURT$ = { set_court_language = language_common_slavic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_coptic } } $CURRENT_COURT$ = { set_court_language = language_coptic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_corduenian } } $CURRENT_COURT$ = { set_court_language = language_corduenian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_cushitic } } $CURRENT_COURT$ = { set_court_language = language_cushitic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_czech_slovak } } $CURRENT_COURT$ = { set_court_language = language_czech_slovak } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_dacian } } $CURRENT_COURT$ = { set_court_language = language_dacian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_dalmatian } } $CURRENT_COURT$ = { set_court_language = language_dalmatian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_doc_romance } } $CURRENT_COURT$ = { set_court_language = language_doc_romance } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_doric } } $CURRENT_COURT$ = { set_court_language = language_doric } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_dutch } } $CURRENT_COURT$ = { set_court_language = language_dutch } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_east_slavic } } $CURRENT_COURT$ = { set_court_language = language_east_slavic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_eastern_berber } } $CURRENT_COURT$ = { set_court_language = language_eastern_berber } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_egyptian } } $CURRENT_COURT$ = { set_court_language = language_egyptian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_elu } } $CURRENT_COURT$ = { set_court_language = language_elu } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_ethiopic } } $CURRENT_COURT$ = { set_court_language = language_ethiopic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_finnic } } $CURRENT_COURT$ = { set_court_language = language_finnic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_frankish } } $CURRENT_COURT$ = { set_court_language = language_frankish } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_french } } $CURRENT_COURT$ = { set_court_language = language_french } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_galatian } } $CURRENT_COURT$ = { set_court_language = language_galatian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_galician } } $CURRENT_COURT$ = { set_court_language = language_galician } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_gallaecian } } $CURRENT_COURT$ = { set_court_language = language_gallaecian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_gallic_romance } } $CURRENT_COURT$ = { set_court_language = language_gallic_romance } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_gandhari } } $CURRENT_COURT$ = { set_court_language = language_gandhari } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_gaulish } } $CURRENT_COURT$ = { set_court_language = language_gaulish } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_georgian } } $CURRENT_COURT$ = { set_court_language = language_georgian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_germano_african_romance } } $CURRENT_COURT$ = { set_court_language = language_germano_african_romance } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_germano_italian_romance } } $CURRENT_COURT$ = { set_court_language = language_germano_italian_romance } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_goidelic } } $CURRENT_COURT$ = { set_court_language = language_goidelic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_gondi } } $CURRENT_COURT$ = { set_court_language = language_gondi } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_gothic } } $CURRENT_COURT$ = { set_court_language = language_gothic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_greek } } $CURRENT_COURT$ = { set_court_language = language_greek } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_guanche } } $CURRENT_COURT$ = { set_court_language = language_guanche } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_gujarati } } $CURRENT_COURT$ = { set_court_language = language_gujarati } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_gur } } $CURRENT_COURT$ = { set_court_language = language_gur } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_gushi } } $CURRENT_COURT$ = { set_court_language = language_gushi } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_high_german } } $CURRENT_COURT$ = { set_court_language = language_high_german } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_himyaritic } } $CURRENT_COURT$ = { set_court_language = language_himyaritic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_hispanoceltic } } $CURRENT_COURT$ = { set_court_language = language_hispanoceltic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_hmongic } } $CURRENT_COURT$ = { set_court_language = language_hmongic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_hunnic } } $CURRENT_COURT$ = { set_court_language = language_hunnic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_iberian } } $CURRENT_COURT$ = { set_court_language = language_iberian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_iberian_romance } } $CURRENT_COURT$ = { set_court_language = language_iberian_romance } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_illyrian } } $CURRENT_COURT$ = { set_court_language = language_illyrian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_iranian } } $CURRENT_COURT$ = { set_court_language = language_iranian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_isaurian } } $CURRENT_COURT$ = { set_court_language = language_isaurian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_israelite } } $CURRENT_COURT$ = { set_court_language = language_israelite } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_italian } } $CURRENT_COURT$ = { set_court_language = language_italian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_japonic } } $CURRENT_COURT$ = { set_court_language = language_japonic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_kachari } } $CURRENT_COURT$ = { set_court_language = language_kachari } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_kalasha } } $CURRENT_COURT$ = { set_court_language = language_kalasha } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_kamarupan } } $CURRENT_COURT$ = { set_court_language = language_kamarupan } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_kannada } } $CURRENT_COURT$ = { set_court_language = language_kannada } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_kannauji } } $CURRENT_COURT$ = { set_court_language = language_kannauji } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_kashmiri } } $CURRENT_COURT$ = { set_court_language = language_kashmiri } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_khasi } } $CURRENT_COURT$ = { set_court_language = language_khasi } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_khitan } } $CURRENT_COURT$ = { set_court_language = language_khitan } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_kirati } } $CURRENT_COURT$ = { set_court_language = language_kirati } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_kokborok } } $CURRENT_COURT$ = { set_court_language = language_kokborok } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_konkani } } $CURRENT_COURT$ = { set_court_language = language_konkani } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_korean } } $CURRENT_COURT$ = { set_court_language = language_korean } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_kru } } $CURRENT_COURT$ = { set_court_language = language_kru } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_kwa } } $CURRENT_COURT$ = { set_court_language = language_kwa } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_latin } } $CURRENT_COURT$ = { set_court_language = language_latin } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_lazic } } $CURRENT_COURT$ = { set_court_language = language_lazic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_lechitic } } $CURRENT_COURT$ = { set_court_language = language_lechitic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_lezgic } } $CURRENT_COURT$ = { set_court_language = language_lezgic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_magadhan } } $CURRENT_COURT$ = { set_court_language = language_magadhan } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_magyar } } $CURRENT_COURT$ = { set_court_language = language_magyar } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_maharashtri } } $CURRENT_COURT$ = { set_court_language = language_maharashtri } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_manding } } $CURRENT_COURT$ = { set_court_language = language_manding } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_marathi } } $CURRENT_COURT$ = { set_court_language = language_marathi } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_median } } $CURRENT_COURT$ = { set_court_language = language_median } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_meitei } } $CURRENT_COURT$ = { set_court_language = language_meitei } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_mon } } $CURRENT_COURT$ = { set_court_language = language_mon } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_mon_khmer } } $CURRENT_COURT$ = { set_court_language = language_mon_khmer } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_mongolic } } $CURRENT_COURT$ = { set_court_language = language_mongolic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_mozarabic } } $CURRENT_COURT$ = { set_court_language = language_mozarabic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_munda } } $CURRENT_COURT$ = { set_court_language = language_munda } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_nakh } } $CURRENT_COURT$ = { set_court_language = language_nakh } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_nivkh } } $CURRENT_COURT$ = { set_court_language = language_nivkh } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_noric_romance } } $CURRENT_COURT$ = { set_court_language = language_noric_romance } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_norse } } $CURRENT_COURT$ = { set_court_language = language_norse } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_north_sea_germanic } } $CURRENT_COURT$ = { set_court_language = language_north_sea_germanic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_northern_berber } } $CURRENT_COURT$ = { set_court_language = language_northern_berber } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_nuristani } } $CURRENT_COURT$ = { set_court_language = language_nuristani } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_occitano_romance } } $CURRENT_COURT$ = { set_court_language = language_occitano_romance } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_oghur } } $CURRENT_COURT$ = { set_court_language = language_oghur } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_omotic } } $CURRENT_COURT$ = { set_court_language = language_omotic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_oriya } } $CURRENT_COURT$ = { set_court_language = language_oriya } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_pahari } } $CURRENT_COURT$ = { set_court_language = language_pahari } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_pahlavi } } $CURRENT_COURT$ = { set_court_language = language_pahlavi } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_pamir } } $CURRENT_COURT$ = { set_court_language = language_pamir } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_pannonian_romance } } $CURRENT_COURT$ = { set_court_language = language_pannonian_romance } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_papuan } } $CURRENT_COURT$ = { set_court_language = language_papuan } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_parthian } } $CURRENT_COURT$ = { set_court_language = language_parthian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_pashto } } $CURRENT_COURT$ = { set_court_language = language_pashto } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_permic } } $CURRENT_COURT$ = { set_court_language = language_permic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_phrygian } } $CURRENT_COURT$ = { set_court_language = language_phrygian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_proto_african_romance } } $CURRENT_COURT$ = { set_court_language = language_proto_african_romance } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_proto_british_romance } } $CURRENT_COURT$ = { set_court_language = language_proto_british_romance } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_proto_eastern_romance } } $CURRENT_COURT$ = { set_court_language = language_proto_eastern_romance } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_proto_gallo_romance } } $CURRENT_COURT$ = { set_court_language = language_proto_gallo_romance } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_proto_ibero_romance } } $CURRENT_COURT$ = { set_court_language = language_proto_ibero_romance } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_proto_illyrian_romance } } $CURRENT_COURT$ = { set_court_language = language_proto_illyrian_romance } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_proto_italian_romance } } $CURRENT_COURT$ = { set_court_language = language_proto_italian_romance } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_proto_pannonian_romance } } $CURRENT_COURT$ = { set_court_language = language_proto_pannonian_romance } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_proto_raetonorican_romance } } $CURRENT_COURT$ = { set_court_language = language_proto_raetonorican_romance } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_proto_sardinian } } $CURRENT_COURT$ = { set_court_language = language_proto_sardinian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_proto_syrian_romance } } $CURRENT_COURT$ = { set_court_language = language_proto_syrian_romance } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_punjabi } } $CURRENT_COURT$ = { set_court_language = language_punjabi } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_pyu } } $CURRENT_COURT$ = { set_court_language = language_pyu } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_qiangic } } $CURRENT_COURT$ = { set_court_language = language_qiangic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_rajasthani } } $CURRENT_COURT$ = { set_court_language = language_rajasthani } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_rhaeto_romance } } $CURRENT_COURT$ = { set_court_language = language_rhaeto_romance } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_sabaki } } $CURRENT_COURT$ = { set_court_language = language_sabaki } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_sakan } } $CURRENT_COURT$ = { set_court_language = language_sakan } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_sami } } $CURRENT_COURT$ = { set_court_language = language_sami } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_samoyedic } } $CURRENT_COURT$ = { set_court_language = language_samoyedic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_sanskrit } } $CURRENT_COURT$ = { set_court_language = language_sanskrit } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_sardinian } } $CURRENT_COURT$ = { set_court_language = language_sardinian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_sauraseni } } $CURRENT_COURT$ = { set_court_language = language_sauraseni } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_saxon } } $CURRENT_COURT$ = { set_court_language = language_saxon } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_scythian } } $CURRENT_COURT$ = { set_court_language = language_scythian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_senegambian } } $CURRENT_COURT$ = { set_court_language = language_senegambian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_siberian_turkic } } $CURRENT_COURT$ = { set_court_language = language_siberian_turkic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_sicilian } } $CURRENT_COURT$ = { set_court_language = language_sicilian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_sidamic } } $CURRENT_COURT$ = { set_court_language = language_sidamic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_sindhi } } $CURRENT_COURT$ = { set_court_language = language_sindhi } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_sinhalese } } $CURRENT_COURT$ = { set_court_language = language_sinhalese } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_skirian } } $CURRENT_COURT$ = { set_court_language = language_skirian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_slavonic } } $CURRENT_COURT$ = { set_court_language = language_slavonic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_sogdian } } $CURRENT_COURT$ = { set_court_language = language_sogdian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_soninke } } $CURRENT_COURT$ = { set_court_language = language_soninke } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_south_arabian } } $CURRENT_COURT$ = { set_court_language = language_south_arabian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_south_slavic } } $CURRENT_COURT$ = { set_court_language = language_south_slavic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_sudanic } } $CURRENT_COURT$ = { set_court_language = language_sudanic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_svan } } $CURRENT_COURT$ = { set_court_language = language_svan } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_syrian_romance } } $CURRENT_COURT$ = { set_court_language = language_syrian_romance } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_tai } } $CURRENT_COURT$ = { set_court_language = language_tai } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_tamil } } $CURRENT_COURT$ = { set_court_language = language_tamil } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_tani } } $CURRENT_COURT$ = { set_court_language = language_tani } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_telugu } } $CURRENT_COURT$ = { set_court_language = language_telugu } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_thracian } } $CURRENT_COURT$ = { set_court_language = language_thracian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_tibetan } } $CURRENT_COURT$ = { set_court_language = language_tibetan } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_tocharian } } $CURRENT_COURT$ = { set_court_language = language_tocharian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_tokhari } } $CURRENT_COURT$ = { set_court_language = language_tokhari } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_trojan } } $CURRENT_COURT$ = { set_court_language = language_trojan } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_tuareg } } $CURRENT_COURT$ = { set_court_language = language_tuareg } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_tubu } } $CURRENT_COURT$ = { set_court_language = language_tubu } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_tungusic } } $CURRENT_COURT$ = { set_court_language = language_tungusic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_tuoba } } $CURRENT_COURT$ = { set_court_language = language_tuoba } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_turkic } } $CURRENT_COURT$ = { set_court_language = language_turkic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_tuyuhun } } $CURRENT_COURT$ = { set_court_language = language_tuyuhun } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_ugric } } $CURRENT_COURT$ = { set_court_language = language_ugric } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_vandalic } } $CURRENT_COURT$ = { set_court_language = language_vandalic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_venetian } } $CURRENT_COURT$ = { set_court_language = language_venetian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_venetic_baltic } } $CURRENT_COURT$ = { set_court_language = language_venetic_baltic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_vietnamese } } $CURRENT_COURT$ = { set_court_language = language_vietnamese } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_volga_finnic } } $CURRENT_COURT$ = { set_court_language = language_volga_finnic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_vrachada } } $CURRENT_COURT$ = { set_court_language = language_vrachada } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_wallachian } } $CURRENT_COURT$ = { set_court_language = language_wallachian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_west_baltic } } $CURRENT_COURT$ = { set_court_language = language_west_baltic } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_western_berber } } $CURRENT_COURT$ = { set_court_language = language_western_berber } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_xianbei } } $CURRENT_COURT$ = { set_court_language = language_xianbei } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_xiongnu } } $CURRENT_COURT$ = { set_court_language = language_xiongnu } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_yeniseian } } $CURRENT_COURT$ = { set_court_language = language_yeniseian } }
+else_if = { limit = { $TOP_COURT$ = { has_court_language = language_yoruba } } $CURRENT_COURT$ = { set_court_language = language_yoruba } }
 	else = { debug_log = "MISSING A LANGUAGE: match_court_languages_effect?" }
 }

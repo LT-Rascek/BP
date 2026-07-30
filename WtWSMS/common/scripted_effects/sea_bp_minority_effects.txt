@@ -1,7 +1,13 @@
 ﻿#Wrappers for various game start on actions
 add_small_culture_to_county_effect = {
 	if = {
-		limit = { NOT = { this.title_province = { has_holding_type = tribal_holding } } }
+		limit = {
+			NOR = {
+				this.title_province = { has_holding_type = tribal_holding }
+				this.title_province = { has_holding_type = nomad_holding }
+				this.title_province = { has_holding_type = herder_holding }
+			}
+		}
 		add_culture_minority_effect = {
 			CULTURE = $CULTURE$
 			SIZE = small
@@ -18,7 +24,13 @@ add_small_culture_to_county_tribal_effect = {
 }
 add_small_faith_to_county_effect = {
 	if = {
-		limit = { NOT = { this.title_province = { has_holding_type = tribal_holding } } }
+		limit = {
+			NOR = {
+				this.title_province = { has_holding_type = tribal_holding }
+				this.title_province = { has_holding_type = nomad_holding }
+				this.title_province = { has_holding_type = herder_holding }
+			}
+		}
 		add_faith_minority_effect = {
 			FAITH = $FAITH$
 			SIZE = small
@@ -39,7 +51,13 @@ add_small_culture_and_faith_to_county_effect = {
 }
 add_large_culture_to_county_effect = {
 	if = {
-		limit = { NOT = { this.title_province = { has_holding_type = tribal_holding } } }
+		limit = {
+			NOR = {
+				this.title_province = { has_holding_type = tribal_holding }
+				this.title_province = { has_holding_type = nomad_holding }
+				this.title_province = { has_holding_type = herder_holding }
+			}
+		}
 		add_culture_minority_effect = {
 			CULTURE = $CULTURE$
 			SIZE = large
@@ -56,7 +74,13 @@ add_large_culture_to_county_tribal_effect = {
 }
 add_large_faith_to_county_effect = {
 	if = {
-		limit = { NOT = { this.title_province = { has_holding_type = tribal_holding } } }
+		limit = {
+			NOR = {
+				this.title_province = { has_holding_type = tribal_holding }
+				this.title_province = { has_holding_type = nomad_holding }
+				this.title_province = { has_holding_type = herder_holding }
+			}
+		}
 		add_faith_minority_effect = {
 			FAITH = $FAITH$
 			SIZE = large

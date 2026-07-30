@@ -140,6 +140,7 @@ ccu_initialize_language_branch_effect = {
 	else_if = { limit = { has_cultural_parameter = language_branch_sudanic } set_variable = { name = language_branch value = flag:language_branch_sudanic } }
 	else_if = { limit = { has_cultural_parameter = language_branch_tibeto_burman } set_variable = { name = language_branch value = flag:language_branch_tibeto_burman } }
 	else_if = { limit = { has_cultural_parameter = language_branch_tocharian } set_variable = { name = language_branch value = flag:language_branch_tocharian } }
+	else_if = { limit = { has_cultural_parameter = language_branch_tokhari } set_variable = { name = language_branch value = flag:language_branch_tokhari } }
 	else_if = { limit = { has_cultural_parameter = language_branch_tubu } set_variable = { name = language_branch value = flag:language_branch_tubu } }
 	else_if = { limit = { has_cultural_parameter = language_branch_tungusic } set_variable = { name = language_branch value = flag:language_branch_tungusic } }
 	else_if = { limit = { has_cultural_parameter = language_branch_urgic } set_variable = { name = language_branch value = flag:language_branch_urgic } }

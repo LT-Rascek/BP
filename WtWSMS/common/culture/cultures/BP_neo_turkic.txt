@@ -4,7 +4,7 @@ wusun = { #The long-lasting Wusun who maintained a non-Turkic, non-Scythian Iden
 	
 	ethos = ethos_communal
 	heritage = heritage_yuezhi
-	language = language_wusun
+	language = language_tokhari
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_herd
 	traditions = {
@@ -47,7 +47,7 @@ yuezhi = { #The nomadic Yuezhi
 	
 	ethos = ethos_stoic
 	heritage = heritage_yuezhi
-	language = language_wusun
+	language = language_tokhari
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_herd
 	traditions = {
@@ -558,11 +558,16 @@ ninrun = { #Sir Diesalot suggestion; proto-Buryats? # WIP Rouran culture
 	traditions = {
 		#Societal Traditions
 		#Regional Traditions
-		tradition_xenophilic #Placeholder until we have a Heqin system
 		#Ritual Traditions
 		#Realm Traditions
+		tradition_ruling_caste
 		#Combat Traditions
-		tradition_quarrelsome
+	}
+	
+	dlc_tradition = { #Should only really apply after 464...
+		trait = tradition_sinophilic
+		requires_dlc_flag = all_under_heaven
+		fallback = tradition_xenophilic
 	}
 	
 	dlc_tradition = {
@@ -1176,11 +1181,11 @@ tiele = {
 	traditions = {
 		#Societal Traditions
 		#Regional Traditions
-		tradition_xenophilic #Placeholder until a Heqin system can be worked out
 		#Ritual Traditions
 		#Realm Traditions
 		#Combat Traditions
 		tradition_quarrelsome
+		tradition_swords_for_hire #Relatively common in Oghuz Turks down the line, some tribes were readily subordinated to China
 	}
 	
 	dlc_tradition = {
@@ -1209,9 +1214,7 @@ tiele = {
 		1 = caucasian_ginger
 	}
 }
-#Oghuz proto-speakers
-#Siberian Speakers
-kirghiz = {
+kirghiz = { #Long listed as separate from the other Tiele, but still Tiele
 	color = kirghiz
 	
 	created = 2.1.1
@@ -1265,17 +1268,17 @@ kurykan = {
 	created = 2.1.1
 	history_loc_override = kurykan_history_loc
 	
-	ethos = ethos_spiritual #Buryat bequethal
+	ethos = ethos_spiritual #Buryat bequeathal
 	heritage = heritage_tiele
-	language = language_siberian_turkic #This is for the North Siberian languages
+	language = language_siberian_turkic #This is for the North Siberian languages; the South Siberians fit more with Common Turkic
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_herd
 	traditions = {
 		#Societal Traditions
 		#Regional Traditions
-		tradition_mystical_ancestors #Buryat et al bequethal
+		tradition_mystical_ancestors #Buryat et al bequeathal
 		#Ritual Traditions
-		tradition_sacred_mountains #Buryat bequethal
+		tradition_sacred_mountains #Buryat bequeathal
 		#Realm Traditions
 		#Combat Traditions
 	}
