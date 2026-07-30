@@ -880,14 +880,14 @@ world_steppe_central = { ##### Changed from Vanilla
 	}
 	duchies = {
 		#Sibr
-		d_ala_tau d_baraba_steppe d_kulyndy_steppe d_salair d_tavan_bogd
+		d_ala_tau d_baraba_steppe d_kulyndy_steppe d_salair
 		#Ob
 		d_lanikaz d_tavan_bogd
 	}
 }
-world_steppe_east = { ##### Changed from Vanilla
+world_steppe_east = { ##### Changed from Vanilla; overhaul when adding Asia
 	kingdoms = {
-		k_dzungaria k_mongolia k_tuva k_khakassia k_angara k_buryatia k_xia
+		k_dzungaria k_mongolia k_tuva k_khakassia k_angara k_buryatia k_xia k_hexi
 	}
 }
 world_siberia = { ##### Changed from Vanilla
@@ -910,7 +910,7 @@ world_tibet = {
 		#Kham
 		d_qamdo d_boyul d_nyingchi d_nangqen d_lhatok d_lingtsang d_dege d_batang d_litang
 		#Amdo
-		d_xining d_tuyuhun d_nagormo d_amdo d_zadoi d_qumarleb
+		d_xining d_tuyuhun d_nagormo d_amdo d_zadoi d_qumarleb d_aksay
 		#Gyalrong
 		d_gyalrong d_chakla d_golog d_malho d_gainlho
 		#Guge
@@ -2474,9 +2474,9 @@ special_mongol_empire_conquest_region_prio_1_alpha = {
 
 		#XIA
 		#k_xia
-		     
-		#
-		    
+		d_xiutu d_juyan
+		#k_hexi
+		d_hexi d_longyou d_qilian d_gansu d_guasha
 
 		#Central Asia/Kara Khitai
 		# k_dzungaria
@@ -4621,7 +4621,15 @@ dlc_mpo_steppe_siberia_further_expansion = { # k_yugra and bits of k_ob and k_si
 
 dlc_mpo_steppe_e_amur_expansion = {} ##### Changed from Vanilla
 
-dlc_mpo_steppe_hexi_tarim_expansion = {} ##### Changed from Vanilla
+dlc_mpo_steppe_hexi_tarim_expansion = {
+	regions = {
+		world_steppe_tarim
+	}
+	duchies = {
+		# k_hexi
+		d_hexi d_longyou d_qilian d_gansu d_guasha
+	}
+}
 
 dlc_mpo_steppe_north_china_expansion = {} ##### Changed from Vanilla
 
