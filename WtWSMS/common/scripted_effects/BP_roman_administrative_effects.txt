@@ -924,7 +924,7 @@ flip_subroman_government_types_effect = { #Root Char
 		every_vassal_or_below = {
 			limit = { has_government = subroman_$SOURCE_TYPE$_government }
 			change_government_subroman_$TARGET_TYPE$_effect = yes
-			#Random senators get Noble families if house heads
+			#Random senators get Noble families if house heads (dynastic2admin)
 			if = {
 				limit = { always = $ENOBLE_COURTIERS$ }
 				every_courtier = {
@@ -944,7 +944,6 @@ flip_subroman_government_types_effect = { #Root Char
 				}
 			}
 		}
-		
 		#Set Laws accordingly and clear flags
 		set_sub_roman_type_law_effect = {
 			SOURCE_TYPE = $SOURCE_TYPE$

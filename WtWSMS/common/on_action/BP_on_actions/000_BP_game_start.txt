@@ -1566,7 +1566,7 @@ setup_roman_governments_based_on_dlc = {
 					}
 				}
 				else = {
-					this.house_head = {
+					this.house.house_head = {
 					if = {
 						limit = { prev = { government_has_flag = government_is_roman_administrative } }
 							give_noble_family_title = {
@@ -1592,7 +1592,6 @@ setup_roman_governments_based_on_dlc = {
 							scope:new_title = { set_coa = scope:noble_family_head.house }
 						}
 					}
-				}
 				}
 				#Move Estate to actual capital location
 				this.domicile ?= { move_domicile = prev.capital_county.title_province }

@@ -19,10 +19,28 @@ BP_convert_sub_roman_admin_to_dynastic = {
 		primary_title.tier <= tier_duchy
 	}
 	effect = {
+		#Human players who are landless get to become adventurers!
+		every_vassal_or_below = {
+			limit = {
+				is_landless_ruler = yes
+				is_ai = no
+			}
+			create_landless_adventurer_title_effect = {
+				REASON = flag:deposition
+				FLAVOR_CHAR = this
+			}
+		}
 		flip_subroman_government_types_effect = {
 			SOURCE_TYPE = administrative
 			TARGET_TYPE = dynastic
 			ENOBLE_COURTIERS = no
+		}
+		#Eliminate noble family titles
+		every_vassal_or_below = {
+			every_held_title = {
+				limit = { is_landless_type_title = yes }
+				prev = { destroy_title = prev }
+			}
 		}
 	}
 }
