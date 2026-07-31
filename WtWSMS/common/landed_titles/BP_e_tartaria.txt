@@ -28,6 +28,11 @@ e_tartaria = { #Really Serindia
 		
 		can_create = { general_kingdom_title_creation_trigger = yes }
 		
+		cultural_names = {
+				name_list_tocharian = cn_A_rS_i_KuC_i
+				name_list_gushi = cn_A_rS_i_KuC_i
+		}
+		
 		d_khotan = {
 			color = { 100 180 240 }
 			capital = c_khotan # Khotan
@@ -186,35 +191,6 @@ e_tartaria = { #Really Serindia
 					color = { 15 60 120 }
 				}
 			}
-			c_aksu = {
-				color = { 90 200 230 }
-				
-				b_aksu_mongolia = {
-					province = 1445
-
-					color = { 90 200 230 }
-				}
-				b_barchuk = {
-					province = 7970
-					
-					color = { 90 200 230 }
-				}
-				b_tumshuk = {
-					province = 7971
-					
-					color = { 90 200 230 }
-				}
-				b_uch_TARIM = {
-					province = 7972
-					
-					color = { 90 200 230 }
-				}
-				b_stwerap = {
-					province = 7973
-					
-					color = { 90 200 230 }
-				}
-			}
 			c_yarkand = {
 				color = { 35 80 140 }
 				
@@ -309,45 +285,6 @@ e_tartaria = { #Really Serindia
 					color = { 93 165 240 }
 				}
 			}
-			c_kucha = {
-				color = { 70 150 185 }
-				
-				cultural_names = {
-					name_list_gushi = cn_kuw-dzi
-					name_list_tocharian = cn_kuw-dzi
-				}
-				
-				b_kucha = {
-					province = 1444
-					
-					color = { 70 150 185 }
-					
-					cultural_names = {
-						name_list_gushi = cn_kuw-dzi
-						name_list_tocharian = cn_kuw-dzi
-					}
-				}
-				b_jigdalik = {
-					province = 7974
-					
-					color = { 70 150 185 }
-				}
-				b_duldulokur = {
-					province = 7975
-					
-					color = { 70 150 185 }
-				}
-				b_toksu = {
-					province = 7976
-					
-					color = { 70 150 185 }
-				}
-				b_shayar = {
-					province = 7977
-					
-					color = { 70 150 185 }
-				}
-			}
 			c_luntai = {
 				color = { 45 180 180 }
 				
@@ -381,6 +318,12 @@ e_tartaria = { #Really Serindia
 		d_charkliq = {
 			color = { 50 180 200 }
 			capital = c_charkliq
+			
+			cultural_names = {
+				#Tocharians
+				name_list_tocharian = cn_kroA_n
+				name_list_gushi = cn_kroA_n
+			}
 			
 			c_charkliq = {
 				color = { 70 140 180 }
@@ -483,6 +426,83 @@ e_tartaria = { #Really Serindia
 					province = 7996
 					
 					color = { 70 95 200 }
+				}
+			}
+		}
+		d_kucha = {
+			color = { 70 150 185 }
+			
+			cultural_names = {
+				name_list_gushi = cn_kuw-dzi
+				name_list_tocharian = cn_kuw-dzi
+			}
+		
+			c_kucha = {
+				color = { 70 150 185 }
+				
+				cultural_names = {
+					name_list_gushi = cn_kuw-dzi
+					name_list_tocharian = cn_kuw-dzi
+				}
+				
+				b_kucha = {
+					province = 1444
+					
+					color = { 70 150 185 }
+					
+					cultural_names = {
+						name_list_gushi = cn_kuw-dzi
+						name_list_tocharian = cn_kuw-dzi
+					}
+				}
+				b_jigdalik = {
+					province = 7974
+					
+					color = { 70 150 185 }
+				}
+				b_duldulokur = {
+					province = 7975
+					
+					color = { 70 150 185 }
+				}
+				b_toksu = {
+					province = 7976
+					
+					color = { 70 150 185 }
+				}
+				b_shayar = {
+					province = 7977
+					
+					color = { 70 150 185 }
+				}
+			}
+			c_aksu = {
+				color = { 90 200 230 }
+				
+				b_aksu_mongolia = {
+					province = 1445
+
+					color = { 90 200 230 }
+				}
+				b_barchuk = {
+					province = 7970
+					
+					color = { 90 200 230 }
+				}
+				b_tumshuk = {
+					province = 7971
+					
+					color = { 90 200 230 }
+				}
+				b_uch_TARIM = {
+					province = 7972
+					
+					color = { 90 200 230 }
+				}
+				b_stwerap = {
+					province = 7973
+					
+					color = { 90 200 230 }
 				}
 			}
 		}
