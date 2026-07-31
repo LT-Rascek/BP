@@ -1,4 +1,5 @@
-﻿tradition_sinophilic = {
+﻿##### Changed from Vanilla: Increased baseline acceptance with heritage_chinese cultures, unlocked Chinese Urbanization
+tradition_sinophilic = {
 	category = regional
 
 	layers = {
@@ -15,11 +16,14 @@
 		}
 	}
 
+	##### Changed from Vanilla vvvvv
 	parameters = {
 		more_successful_kowtows = yes
 		may_adopt_silk_road_innovations = yes
 		baseline_chinese_acceptance_increased = yes
+		unlocks_some_chinese_innovations = yes
 	}
+	##### Changed from Vanilla ^^^^^
 
 	character_modifier = {
 		artifact_decay_reduction_mult = -0.15
