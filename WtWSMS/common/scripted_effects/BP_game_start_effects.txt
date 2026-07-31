@@ -518,6 +518,17 @@ create_starting_confederation_476_effect = {
 			add_confederation_member = title:c_qoshagyl.holder
 		}
 	}
+	title:d_volga_bulgaria.holder = {
+		create_confederation = {
+			name = CONFEDERATION_NAME_MOGYAR
+		}
+		scope:new_confederation = {
+			add_confederation_member = title:d_jalmat.holder
+			add_confederation_member = title:d_bugurslan.holder
+			add_confederation_member = title:d_bashkiria.holder
+			add_confederation_member = title:d_sakmara.holder
+		}
+	}
 	#Known confederations
 	title:d_austorani.holder = {
 		create_confederation = {

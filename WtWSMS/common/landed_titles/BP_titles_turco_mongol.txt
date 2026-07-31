@@ -49,21 +49,6 @@ e_turkestan = {
 	
 	can_create = { general_empire_title_creation_trigger = yes }
 }
-k_magyar = {
-	color = { 187 70 70 }
-	capital = c_pest # Pest
-	ignore_titularity_for_title_weighting = yes
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:mogyer }
-			add = @always_primary_score
-		}
-	}
-	
-	definite_form = yes
-	de_jure_drift_disabled = yes
-	can_create = { general_kingdom_title_creation_trigger = yes }
-}
 k_tuyuhun = {
 	color={ 100 230 255 } # Same as c_dunhuang
 	capital = c_fuqi
