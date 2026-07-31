@@ -92,6 +92,7 @@
  
  ##### WtWSMS Cultural Parameters #####
  culture_parameter_autochthon_baseline_acceptance: "Has a #P +[EmptyScope.ScriptValue('autochthon_baseline_acceptance_value')]#! [cultural_acceptance|E] baseline with other cultures with this tradition"
+ culture_parameter_baseline_chinese_acceptance_increased: "Has a #P +[EmptyScope.ScriptValue('sinophilic_tradition_acceptance_value')]#! [cultural_acceptance|E] baseline with cultures of #V $heritage_chinese_name$#! [heritage|E]"
  culture_parameter_becomes_roman_federates_in_most_cases: "[SelectLocalization(HasDlcFeature('landless_playable'),'When landed in a Roman Government, characters may become $roman_federate_government|q$ unless they are of the ruling dynasty or the same culture as the ruling dynasty','')]"
  culture_parameter_blocks_certain_hybrids: "Blocks hybridization with cultures with [bp_unhybridizable_traditions|E]"
  culture_parameter_blocks_populist_revolts_against_roman_governments: "Prevents [popular_faction|E] [factions|E] against rulers with Roman governments."
@@ -140,11 +141,10 @@
  culture_parameter_unlock_persian_urbanization: "Unlocks $innovation_persian_urbanization$ [innovation|E] in the $culture_era_late_antiquity$ [era]"
  culture_parameter_unlocks_chariot_support: "Unlocks the ability to select a chariot #italic deme#! to support"
  culture_parameter_unlocks_desert_buildings_early: "Enables the first 3 levels of desert buildings"
+ culture_parameter_unlocks_some_chinese_innovations: "Unlocks #V $innovation_chinese_urbanization$#! and #V $innovation_sanitation$#! innovations"
  culture_parameter_uses_special_hybrid_event_roman: "[bp_roman_event_hybrid_tradition|E]"
  culture_parameter_very_difficult_to_convert_or_promote: "#V Convert County#! Task: #N -[EmptyScope.ScriptValue('conversion_culture_very_difficult_to_convert_or_promote_value')|0%]#!\n$TAB$$EFFECT_LIST_BULLET$#EMP Resistance and Speed#!\n$EFFECT_LIST_BULLET$#V Promote Culture#! Task: #N -[EmptyScope.ScriptValue('conversion_culture_very_difficult_to_convert_or_promote_value')|0%]#!\n$TAB$$EFFECT_LIST_BULLET$#EMP Resistance and Speed#!"
  culture_parameter_very_expensive_convert_to_local_culture: "#V $convert_to_local_culture_decision$#! [decision|E] Cost: [prestige_i]#N +500%#!"
- culture_parameter_baseline_chinese_acceptance_increased: "Has a #P +[EmptyScope.ScriptValue('sinophilic_tradition_acceptance_value')]#! [cultural_acceptance|E] baseline cultures of #V $heritage_chinese_name$#! [heritage|E]"
- culture_parameter_unlocks_some_chinese_innovations: "Unlocks #V $innovation_chinese_urbanization$#! and #V $innovation_sanitation$#! innovations"
  
  ##### Other Important Text #####
  impact_early_slavs: "$tradition_early_slavic_traditions_name$"
