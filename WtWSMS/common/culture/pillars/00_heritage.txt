@@ -293,7 +293,6 @@ heritage_hunnic = { #Used for the Far Western Turks (Oghurs)
 	audio_parameter = european
 	
 	parameters = {
-		heritage_kulturbund_turkic = yes
 		heritage_group_eastern_european = yes
 		heritage_group_eurasian_steppe = yes
 		heritage_group_north_asian = yes
@@ -458,6 +457,19 @@ heritage_north_germanic = {
 		heritage_group_germanic = yes
 		heritage_group_fennoscandian = yes
 		heritage_family_european = yes
+	}
+}
+heritage_oghuric = {
+	type = heritage
+	is_shown = { always = no }
+	audio_parameter = european
+	
+	parameters = {
+		heritage_kulturbund_turkic = yes
+		heritage_group_eastern_european = yes
+		heritage_group_eurasian_steppe = yes
+		heritage_group_north_asian = yes
+		heritage_family_eurasian = yes
 	}
 }
 heritage_albanian = {
@@ -683,6 +695,18 @@ heritage_syriac = {
 	parameters = {
 		heritage_group_west_asian = yes
 		heritage_family_west_asian = yes
+	}
+}
+heritage_tartar = {
+	type = heritage
+	is_shown = { heritage_is_shown_trigger = { HERITAGE = heritage_tartar } }
+	audio_parameter = sea
+	
+	parameters = {
+		heritage_kulturbund_turco_mongol = yes
+		heritage_group_northeast_asian = yes
+		heritage_group_eurasian_steppe = yes
+		heritage_family_eurasian = yes
 	}
 }
 heritage_tibetan = {

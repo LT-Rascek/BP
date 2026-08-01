@@ -494,7 +494,7 @@ xianbei = {
 	history_loc_override = xianbei_history_loc
 	
 	ethos = ethos_bellicose
-	heritage = heritage_mongolic
+	heritage = heritage_tartar
 	language = language_xianbei
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_herd
@@ -532,7 +532,7 @@ tuoba = { #Heavily Sinicized Xianbei, but still distinct
 	created = 386.1.1 #Northern Wei establishment, likely hybridization here
 	
 	ethos = ethos_courtly
-	heritage = heritage_mongolic
+	heritage = heritage_tartar
 	language = language_tuoba
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_domain
@@ -589,7 +589,7 @@ ninrun = { #Sir Diesalot suggestion; proto-Buryats? # WIP Rouran culture
 	history_loc_override = ninrun_history_loc
 	
 	ethos = ethos_egalitarian
-	heritage = heritage_mongolic
+	heritage = heritage_tartar
 	language = language_xianbei
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_herd
@@ -1004,7 +1004,7 @@ bolghar = { #Initially localized as Oghur; shifts to Bolghar and Bolghar name_li
 	history_loc_override = bolghar_history_loc
 	
 	ethos = ethos_communal
-	heritage = heritage_hunnic
+	heritage = heritage_oghuric
 	language = language_oghur
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_herd
@@ -1043,66 +1043,15 @@ bolghar = { #Initially localized as Oghur; shifts to Bolghar and Bolghar name_li
 		8 = caucasian_ginger
 	}
 }
-hunnic = { #The great mysterious people... almost certainly Oghuric, but more mixed than the Bolghars, so probably formed further to the west.
-	color = hunnic
-	
-	parents = { hunno_sakan alan }
-	created = 350.1.1
-	history_loc_override = hunnic_history_loc
-	
-	ethos = ethos_bellicose
-	heritage = heritage_hunnic
-	language = language_hunnic
-	martial_custom = martial_custom_male_only
-	head_determination = head_determination_herd
-	traditions = {
-		#Societal Traditions
-		#Regional Traditions
-		#Ritual Traditions
-		#Realm Traditions
-		tradition_ruling_caste
-		#Combat Traditions
-		tradition_hit_and_run
-	}
-	
-	dlc_tradition = {
-		trait = tradition_devoted_horsemanship_western_steppe
-		requires_dlc_flag = khans_of_the_steppe
-		fallback = tradition_horse_lords
-	}
-	
-	name_list = name_list_hunnic
-	
-	coa_gfx = { turkic_group_coa_gfx steppe_coa_gfx }
-	building_gfx = { steppe_building_gfx }
-	clothing_gfx = { turkic_clothing_gfx mongol_clothing_gfx }
-	unit_gfx = { mongol_unit_gfx }
-	house_coa_frame = house_frame_14
-	
-	#Huns themselves are 
-	#https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7997506/
-	#https://www.cell.com/current-biology/fulltext/S0960-9822(22)00732-1?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0960982222007321%3Fshowall%3Dtrue
-	#
-	#Made a 30% Alanic, 30% Chionite, 40% Turkic West Admix
-	ethnicities = {
-		54 = turkic_west
-		16 = iranian
-		10 = mediterranean
-		5 = caucasian_blond
-		5 = caucasian_brown_hair
-		5 = caucasian_dark_hair
-		5 = caucasian_ginger
-	}
-}
-khuni = {
+khuni = { #The Hunno-Bulgars
 	color = khuni
 	
-	parents = { hunnic }
+	parents = { hunnic bolghar }
 	created = 465.1.1
 	history_loc_override = khuni_history_loc
 	
 	ethos = ethos_egalitarian
-	heritage = heritage_hunnic
+	heritage = heritage_oghuric
 	language = language_hunnic
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_herd
@@ -1122,7 +1071,7 @@ khuni = {
 		fallback = tradition_horse_lords
 	}
 	
-	name_list = name_list_hunnic
+	name_list = name_list_hunno_bulgar
 	
 	coa_gfx = { turkic_group_coa_gfx steppe_coa_gfx }
 	building_gfx = { steppe_building_gfx }
@@ -1153,7 +1102,7 @@ sabir = {
 	history_loc_override = sabir_history_loc
 	
 	ethos = ethos_bellicose
-	heritage = heritage_hunnic
+	heritage = heritage_oghuric
 	language = language_oghur
 	martial_custom = martial_custom_equal
 	head_determination = head_determination_herd
@@ -1164,17 +1113,13 @@ sabir = {
 		#Realm Traditions
 		tradition_pastoralists
 		#Combat Traditions
+		tradition_swords_for_hire
 	}
 	
 	dlc_tradition = {
 		trait = tradition_devoted_horsemanship
 		requires_dlc_flag = khans_of_the_steppe
 		fallback = tradition_horse_lords
-	}
-	
-	dlc_tradition = {
-		trait = tradition_malleable_invaders
-		requires_dlc_flag = hybridize_culture
 	}
 	
 	name_list = name_list_oghur
@@ -1204,7 +1149,7 @@ barsil = { #Diverged from the Bolghars by settling in the Wetlands
 	created = 450.1.1
 	
 	ethos = ethos_stoic
-	heritage = heritage_hunnic
+	heritage = heritage_oghuric
 	language = language_oghur
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_herd
@@ -1425,5 +1370,57 @@ gokturkish = { # Old Eastern Turkish; Origin is Xiongnu of Ashina clan, relocate
 	#100% Turkish West (Proto-Oghuz)
 	ethnicities = {
 		100 = turkic_west
+	}
+}
+
+#The Huns; natures most obscure preditor...
+hunnic = { #The great mysterious people... almost certainly Oghuric, but more mixed than the Bolghars, so probably formed further to the west.
+	color = hunnic
+	
+	created = 350.1.1
+	history_loc_override = hunnic_history_loc
+	
+	ethos = ethos_bellicose
+	heritage = heritage_hunnic
+	language = language_hunnic
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_herd
+	traditions = {
+		#Societal Traditions
+		#Regional Traditions
+		#Ritual Traditions
+		#Realm Traditions
+		tradition_ruling_caste
+		#Combat Traditions
+		tradition_hit_and_run
+	}
+	
+	dlc_tradition = {
+		trait = tradition_devoted_horsemanship_western_steppe
+		requires_dlc_flag = khans_of_the_steppe
+		fallback = tradition_horse_lords
+	}
+	
+	name_list = name_list_hunnic
+	
+	coa_gfx = { turkic_group_coa_gfx steppe_coa_gfx }
+	building_gfx = { steppe_building_gfx }
+	clothing_gfx = { turkic_clothing_gfx mongol_clothing_gfx }
+	unit_gfx = { mongol_unit_gfx }
+	house_coa_frame = house_frame_14
+	
+	#Huns themselves are 
+	#https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7997506/
+	#https://www.cell.com/current-biology/fulltext/S0960-9822(22)00732-1?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0960982222007321%3Fshowall%3Dtrue
+	#
+	#Made a 30% Alanic, 30% Chionite, 40% Turkic West Admix
+	ethnicities = {
+		54 = turkic_west
+		16 = iranian
+		10 = mediterranean
+		5 = caucasian_blond
+		5 = caucasian_brown_hair
+		5 = caucasian_dark_hair
+		5 = caucasian_ginger
 	}
 }
