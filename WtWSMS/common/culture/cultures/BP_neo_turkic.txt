@@ -528,7 +528,7 @@ xianbei = {
 tuoba = { #Heavily Sinicized Xianbei, but still distinct
 	color = tuoba
 	
-	parents = { xianbei han }
+	parents = { xianbei }
 	created = 386.1.1 #Northern Wei establishment, likely hybridization here
 	
 	ethos = ethos_courtly
@@ -873,8 +873,7 @@ hunno_sakan = {
 		requires_dlc_flag = hybridize_culture
 	}
 	
-	name_list = name_list_saka
-	name_list = name_list_xiongnu
+	name_list = name_list_yueban
 	
 	coa_gfx = { turkic_group_coa_gfx steppe_coa_gfx }
 	building_gfx = { steppe_building_gfx }
@@ -923,7 +922,7 @@ yueban = { #Northern Xiongnu inheritors
 		fallback = tradition_horse_lords
 	}
 	
-	name_list = name_list_tiele
+	name_list = name_list_yueban
 	
 	coa_gfx = { turkic_group_coa_gfx steppe_coa_gfx }
 	building_gfx = { steppe_building_gfx }
@@ -997,7 +996,7 @@ uar = { #For the proto-Avars from the IVth century; not synonymous with the Pann
 }
 
 ### Western-Turkic Cultures (Oghuric)
-bolghar = {
+bolghar = { #Initially localized as Oghur; shifts to Bolghar and Bolghar name_list when unified
 	color = bolghar
 	
 	parents = { hunno_sakan }
@@ -1015,6 +1014,7 @@ bolghar = {
 		#Ritual Traditions
 		#Realm Traditions
 		tradition_ruling_caste
+		tradition_astute_diplomats
 		#Combat Traditions
 	}
 	
@@ -1024,12 +1024,7 @@ bolghar = {
 		fallback = tradition_horse_lords
 	}
 	
-	dlc_tradition = {
-		trait = tradition_malleable_invaders
-		requires_dlc_flag = hybridize_culture
-	}
-	
-	name_list = name_list_bolghar
+	name_list = name_list_oghur
 	
 	coa_gfx = { turkic_group_coa_gfx steppe_coa_gfx }
 	building_gfx = { steppe_building_gfx }
@@ -1182,7 +1177,7 @@ sabir = {
 		requires_dlc_flag = hybridize_culture
 	}
 	
-	name_list = name_list_bolghar
+	name_list = name_list_oghur
 	
 	coa_gfx = { turkic_group_coa_gfx steppe_coa_gfx }
 	building_gfx = { steppe_building_gfx }
@@ -1347,7 +1342,7 @@ kurykan = {
 gokturkish = { # Old Eastern Turkish; Origin is Xiongnu of Ashina clan, relocated by Rourans to the Altai region in the 450s
 	color = { 0.55 0.85 0.15 }
 	
-	parents = { tiele samoyed }
+	parents = { tiele }
 	created = 395.1.1
 	history_loc_override = gokturkish_history_loc
 	
