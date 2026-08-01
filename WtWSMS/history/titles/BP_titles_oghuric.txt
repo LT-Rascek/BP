@@ -1,45 +1,14 @@
 ﻿#Bolghars
-d_utigurs = {
-	466.1.1={
-		holder = 112 # Isperikh
-		government = nomad_government
-	} 
-	500.1.1={
-		holder = 33084 # Dristar Isperikhid
-	} 
-	550.1.1={
-		holder = 33085 # Böri Isperikhid
-	} 
-	565.1.1={
-		liege="e_avar"
-	}
-}
-d_saragurs = {
-	466.1.1={
-		holder = 114
+d_acatiri = {
+	#Akatziri were attested upto the reign of Ellac, afterwards not much is heard.
+	421.1.1 = {
+		holder = KaradachAkatziri
 		government = nomad_government
 	}
-}
-d_ogurs = {
-	466.1.1={
-		holder = 113
-		government = nomad_government
+	448.1.1={
+		holder = 67 # Ellak
 	}
-}
-d_kutrigurs = {
-	470.1.1={
-		holder = 108 # Batir 
-		government = nomad_government
-	}
-	500.1.1={
-		holder = 33082 # Apskhih Batirid
-	}
-	550.1.1={
-		holder = 33083 # Khudbard Batirid
-	}
-	565.1.1={
-		liege="e_avar"
-	}
+	454.1.1={ holder = 0 } #End of independent identity
 }
 d_bulgars = { ##### TODO (BETA): Make use of d_bulgars for Great Old Bulgaria
 	1.1.1={ government = nomad_government }
