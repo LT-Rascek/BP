@@ -51,6 +51,10 @@ BP_set_global_variables_by_date = {
 			limit = { current_date >= 527.4.1 }
 			set_global_variable = sole_roman_empire
 		}
+		if = { #Bolghar Culture forms
+			limit = { current_date >= 632.1.1 }
+			set_global_variable = bolghar_idenity_formed
+		}
 	}
 }
 BP_update_culture_traditions_by_date = {
@@ -116,6 +120,17 @@ BP_update_culture_traditions_by_date = {
 				culture:skirian = { add_culture_tradition = tradition_migratory_culture }
 			}
 			else = { culture:skirian = { add_culture_tradition = tradition_ruling_caste } }
+		}
+		if = { #Bolghar Culture forms
+			limit = { current_date >= 632.1.1 }
+			culture:bolghar = {
+				set_culture_name = {
+					noun = true_bolghar
+					collective_noun = true_bolghar_collective_noun
+					prefix = true_bolghar_prefix
+				}
+				set_name_list = name_list_bolghar
+			}
 		}
 	}
 }

@@ -7,7 +7,7 @@ BP_major_culture_decisions.0001 = {
 	type = character_event
 	title = BP_major_culture_decisions.0001.t
 	theme = culture_change
-	override_background = { reference = fp1_throneroom_tribal }
+	override_background = { reference = throne_room_scope }
 	content_source = dlc_WtWSMS
 	
 	desc = {
@@ -40,6 +40,8 @@ BP_major_culture_decisions.0001 = {
 	lower_right_portrait = scope:your_portrait
 	
 	immediate = {
+	scope:culture_former = { save_scope_as = background_throne_room_scope }
+	
 		#We show as tooltip so that it appears as "has happened" to others.
 		if = {
 			limit = { NOT = { root = scope:culture_former } }
@@ -69,6 +71,7 @@ BP_major_culture_decisions.0001 = {
 					this.culture = culture:gothic
 				}
 				NOT = { this = scope:culture_former }
+				is_ai = no
 			}
 			trigger_event = { id = BP_major_culture_decisions.0001 }
 		}
@@ -77,5 +80,87 @@ BP_major_culture_decisions.0001 = {
 		fallback = yes
 		trigger = { NOT = { this = scope:culture_former } }
 		name = BP_major_culture_decisions.0001.neutral
+	}
+}
+#Establishment of Bolghar Culture
+BP_major_culture_decisions.0002 = {
+	type = character_event
+	title = BP_major_culture_decisions.0002.t
+	theme = culture_change
+	
+	override_background = { reference = throne_room_scope }
+	
+	content_source = dlc_WtWSMS
+	
+	desc = {
+		triggered_desc = {
+			trigger = {
+				NOR = {
+					root = scope:culture_former
+					this.culture = scope:culture_former.culture
+					this.culture = { has_same_culture_heritage = scope:culture_former.culture }
+				}
+			}
+			desc = BP_major_culture_decisions.0002.others.desc
+		}
+		triggered_desc = {
+			trigger = {
+				NOT = { root = scope:culture_former }
+				this.culture = { has_same_culture_heritage = scope:culture_former.culture }
+				this.culture = { general_culture_will_not_flip_culture_trigger = yes }
+			}
+			desc = BP_major_culture_decisions.0002.other_oghurs.desc
+		}
+		triggered_desc = {
+			trigger = { root = scope:culture_former }
+			desc = BP_major_culture_decisions.0002.culture_former.desc
+		}
+	}
+	
+	left_portrait = {
+		character = scope:culture_former
+		animation = personality_bold
+	}
+	lower_right_portrait = scope:your_portrait
+	
+	immediate = {
+		scope:culture_former = { save_scope_as = background_throne_room_scope }
+		
+		if = {
+			limit = { NOT = { root = scope:culture_former } }
+			show_as_tooltip = { create_bolghar_culture_effect = { THE_CULTURE = scope:culture_former.culture } }
+		}
+		if = {
+			limit = {
+				culture = { has_same_culture_heritage = scope:culture_former.culture }
+				culture = { general_culture_will_not_flip_culture_trigger = yes }
+			}
+			save_scope_as = your_portrait
+		}
+	}
+	
+	option = { #The reformer
+		trigger = { this = scope:culture_former }
+		name = BP_major_culture_decisions.0002.the_former
+		
+		create_bolghar_culture_effect = { THE_CULTURE = scope:culture_former.culture }
+		
+		#Every relatively close ruler gets informed
+		every_player = {
+			limit = {
+				OR = {
+					this = { in_diplomatic_range = root }
+					this.culture = { has_same_culture_heritage = scope:culture_former.culture }
+				}
+				NOT = { this = scope:culture_former }
+				is_ai = no
+			}
+			trigger_event = { id = BP_major_culture_decisions.0002 }
+		}
+	}
+	option = { #The fallback option
+		fallback = yes
+		trigger = { NOT = { this = scope:culture_former } }
+		name = BP_major_culture_decisions.0002.neutral
 	}
 }
