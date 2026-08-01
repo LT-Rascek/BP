@@ -9,6 +9,14 @@
 	selection_tooltip = create_ostrogothic_culture_decision_tooltip
 	sort_order = 5000
 
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 60
+		kingdom = 60
+		empire = 60
+		hegemony = 60
+	}
 
 	is_shown = {
 		root.culture = culture:gothic
@@ -55,15 +63,6 @@
 		save_scope_as = culture_former
 		show_as_tooltip = { create_ostrogothic_culture_effect = { CREATING_CHAR = root } }
 		trigger_event = BP_major_culture_decisions.0001
-	}
-
-	ai_check_interval_by_tier = {
-		barony = 0
-		county = 120
-		duchy = 120
-		kingdom = 120
-		empire = 120
-		hegemony = 120
 	}
 
 	#This is mostly to make it rare for the AI to actually attempt

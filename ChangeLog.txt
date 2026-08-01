@@ -43,6 +43,8 @@ Tweaks:
 - Nomads no longer have Border Raid CBs, as they have plenty of CBs already
 
 Bug Fixes:
+- Fixed a bug where certain decisions were being checked too often by certain title tier rulers
+- Fixed a bug where nomads would adopt feudal government when settling in conquered lands
 - Fixed a bug where Language Isolates would trigger the Creole flag
 - Fixed part of the Don River being impassible
 - Fixed bug where ERE was not getting many noble families at start
@@ -57,6 +59,7 @@ Bug Fixes:
 - Fixed a bug wherein Federates could flip to feudal governments in some edge cases
 
 Localization:
+- Fixed a duplicate localization that incorrectly identified some tributary types
 - Updated the name of the Vistula, Rhine, and Danube River to be the Late Antique Latin names
 - Changed a number of localizations for seas and rivers to better reflect the Late Antique period
 - Improved Roman Empire Request/formation localizations, including highlighting conditions which help and hurt the changes for approval

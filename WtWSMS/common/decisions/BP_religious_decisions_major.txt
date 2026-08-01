@@ -9,6 +9,15 @@ establish_autocephalous_church_decision = {
 	}
 	decision_group_type = BP_religious_decisions_major
 
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 60
+		empire = 60
+		hegemony = 60
+	}
+
 	desc = establish_autocephalous_church_decision_desc
 	selection_tooltip = establish_autocephalous_church_decision_tooltip
 	
@@ -158,8 +167,6 @@ establish_autocephalous_church_decision = {
 		every_ruler = { trigger_event = { id = BP_religious_decisions_major.0001 } }
 	}
 	
-	ai_check_interval = 60
-	
 	ai_potential = {
 		is_at_war = no
 	}
@@ -182,6 +189,15 @@ legalize_caucasian_christianity = {
 		reference = "gfx/interface/illustrations/decisions/the_return_to_the_homeland.dds"
 	}
 	decision_group_type = BP_religious_decisions_major
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 60
+		kingdom = 60
+		empire = 60
+		hegemony = 60
+	}
 
 	desc = legalize_caucasian_christianity_desc
 	selection_tooltip = legalize_caucasian_christianity_tooltip
@@ -239,8 +255,6 @@ legalize_caucasian_christianity = {
 		}
 	}
 	
-	ai_check_interval = 60
-	
 	ai_potential = {
 		is_at_war = no
 	}
@@ -287,6 +301,15 @@ adopt_human_sacrifice_decision = {
 
 	desc = adopt_human_sacrifice_decision_desc
 	selection_tooltip = adopt_human_sacrifice_decision_tooltip
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 0
+		empire = 0
+		hegemony = 0
+	}
 
 	is_shown = {
 		is_ai = no
@@ -339,8 +362,6 @@ adopt_human_sacrifice_decision = {
 		hidden_effect = { every_player = { trigger_event = { id = BP_religious_decisions_major.0202 } } }
 	}
 	
-	ai_check_interval = 60
-	
 	ai_potential = { always = no }
 
 	#AI will never do this
@@ -357,6 +378,15 @@ adopt_the_blot_decision = {
 
 	desc = adopt_the_blot_decision_desc
 	selection_tooltip = adopt_the_blot_decision_tooltip
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 0
+		empire = 0
+		hegemony = 0
+	}
 
 	is_shown = {
 		top_liege = this
@@ -443,8 +473,6 @@ adopt_the_blot_decision = {
 		hidden_effect = { every_player = { trigger_event = { id = BP_religious_decisions_major.0201 } } }
 	}
 	
-	ai_check_interval = 60
-	
 	ai_potential = {
 		is_at_war = no
 		is_landed = yes
@@ -520,6 +548,15 @@ adopt_warmongering_decision = {
 	desc = adopt_warmongering_decision_desc
 	selection_tooltip = adopt_warmongering_decision_tooltip
 
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 0
+		empire = 0
+		hegemony = 0
+	}
+
 	is_shown = {
 		is_ai = no
 		top_liege = this
@@ -567,8 +604,6 @@ adopt_warmongering_decision = {
 		show_as_tooltip = { establish_warmonger_effect = yes }
 		hidden_effect = { every_player = { trigger_event = { id = BP_religious_decisions_major.0203 } } }
 	}
-	
-	ai_check_interval = 60
 	
 	ai_potential = { always = no }
 
