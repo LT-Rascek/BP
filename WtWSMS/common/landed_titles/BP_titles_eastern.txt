@@ -33,15 +33,3 @@ d_sumparu = {
 		}
 	}
 }
-#For the Balti Regions of Kashmir/Manyul
-d_balti = {
-	color={ 255 70 35 }
-	ignore_titularity_for_title_weighting = yes
-	capital = c_skardu
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:zhangzhung }
-			add = @cultural_title_score
-		}
-	}
-}

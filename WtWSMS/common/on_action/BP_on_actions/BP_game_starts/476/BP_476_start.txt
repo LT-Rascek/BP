@@ -303,7 +303,7 @@ BP_setup_vassal_contracts_476_nomad_DLC = {
 					limit = {
 						OR = {
 							this.primary_title = title:k_dzungaria
-							this.primary_title = title:d_semey
+							this.primary_title = title:d_ovorkhangai
 						}
 					}
 					vassal_contract_set_obligation_level = {
@@ -687,11 +687,15 @@ BP_create_armies_476 = {
 		character:63 = {
 			create_theodoric_army_effect = { LOCATION = 3682 }
 		}
+		title:d_ovorkhangai.holder = {
+			create_gokturk_maa_476_effect = yes
+		}
 		title:e_xiongnu.holder = {
 			create_hephthalite_476_army_effect = { LOCATION = 4335 }
 			create_hephthalite_476_army_effect = { LOCATION = 4335 }
 			create_hephthalite_476_army_effect = { LOCATION = 4335 }
 			create_hephthalite_476_army_effect = { LOCATION = 4335 }
+			create_hepthalite_maa_476_effect = yes
 		}
 	}
 }
