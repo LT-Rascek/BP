@@ -1197,6 +1197,52 @@ sabir = {
 		2 = caucasian_ginger
 	}
 }
+barsil = { #Diverged from the Bolghars by settling in the Wetlands
+	color = barsil
+	
+	parents = { bolghar }
+	created = 450.1.1
+	
+	ethos = ethos_stoic
+	heritage = heritage_hunnic
+	language = language_oghur
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_herd
+	traditions = {
+		#Societal Traditions
+		#Regional Traditions
+		#Ritual Traditions
+		#Realm Traditions
+		tradition_wetlanders
+		tradition_isolationist
+		#Combat Traditions
+	}
+	
+	dlc_tradition = {
+		trait = tradition_devoted_horsemanship_western_steppe
+		requires_dlc_flag = khans_of_the_steppe
+		fallback = tradition_horse_lords
+	}
+	
+	name_list = name_list_oghur
+	
+	coa_gfx = { turkic_group_coa_gfx steppe_coa_gfx }
+	building_gfx = { steppe_building_gfx }
+	clothing_gfx = { turkic_clothing_gfx mongol_clothing_gfx}
+	unit_gfx = { mongol_unit_gfx }
+	house_coa_frame = house_frame_14
+	
+	#50% Chionite/50% Sarmatian
+	ethnicities = {
+		25 = turkic_west
+		26 = iranian
+		17 = mediterranean
+		8 = caucasian_blond
+		8 = caucasian_brown_hair
+		8 = caucasian_dark_hair
+		8 = caucasian_ginger
+	}
+}
 
 ### Tiele Turks
 tiele = {

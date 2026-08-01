@@ -32,9 +32,6 @@ e_caspian-pontic_steppe = {
 			color = { 153 60 74 }
 			capital = c_kerch # Kerch
 			
-			can_create = { creation_trigger_d_crimea_trigger = yes }
-			can_create_on_partition = { creation_trigger_d_crimea_trigger = yes }
-			
 			c_kerch = {
 				color = { 124 52 63 }
 				
@@ -616,25 +613,6 @@ e_caspian-pontic_steppe = {
 					color = { 125 80 18 }
 				}
 			}
-			c_astrakhan = {
-				color = { 151 118 30 }
-				
-				b_astrakhan = {
-					province = 5311
-				
-					color = { 151 118 30 }
-				}
-				b_sara = {
-					province = 5312
-				
-					color = { 151 118 30 }
-				}
-				b_khazaran = {
-					province = 604
-				
-					color = { 151 118 30 }
-				}
-			}
 			c_beksima = {
 				color = { 145 100 38 }
 				
@@ -657,7 +635,7 @@ e_caspian-pontic_steppe = {
 		}
 		d_alania = {
 			color = { 110 65 29 }
-			capital = c_samander # Maghas
+			capital = c_majar
 			
 			c_samiran = {
 				color = { 141 51 30 }
@@ -692,6 +670,11 @@ e_caspian-pontic_steppe = {
 					color = { 54 25 8 }
 				}
 			}
+		}
+		d_astrakhan = {
+			capital = c_astrakhan
+			color = { 151 118 30 }
+			
 			c_samander = {
 				color = { 148 35 9 }
 				
@@ -711,116 +694,23 @@ e_caspian-pontic_steppe = {
 					color = { 141 51 30 }
 				}
 			}
-		}
-		d_adigey = {
-			color = { 100 44 16 }
-			capital = c_zichia
-			
-			c_zichia = {
-				color = { 100 44 16 }
+			c_astrakhan = {
+				color = { 151 118 30 }
 				
-				b_ulmi = {
-					province = 5298
+				b_astrakhan = {
+					province = 5311
 				
-					color = { 100 44 16 }
+					color = { 151 118 30 }
 				}
-				b_zapaxi = {
-					province = 5297
+				b_sara = {
+					province = 5312
 				
-					color = { 100 44 16 }
+					color = { 151 118 30 }
 				}
-				b_nicopsia = { #Mentioned historically as part of Zichia
-					province = 600
-					
-					color = { 255 255 255 }
-				}
-			}
-			c_maghas = {
-				color = { 85 50 22 }
+				b_khazaran = {
+					province = 604
 				
-				b_maghas = {
-					province = 5299
-				
-					color = { 85 50 22 }
-				}
-				b_etzeri = {
-					province = 5300
-				
-					color = { 85 50 22 }
-				}
-				b_betzini = {
-					province = 5301
-				
-					color = { 85 50 22 }
-				}
-			}
-			c_cabardinia = {
-				color = { 54 25 8 }
-				
-				b_tatartopa = {
-					province = 5302
-				
-					color = { 54 25 8 }
-				}
-				b_petigoria = {
-					province = 606
-				
-					color = { 54 25 8 }
-				}
-			}
-		}
-		d_ciscaucasia = {
-			color = { 168 59 34 }
-			capital = c_derbent
-			
-			c_derbent = {
-				color = { 128 40 20 }
-				
-				cultural_names = {
-					name_list_caucasian_albanian = cn_chola
-				}
-				
-				b_derbent = {
-					province = 674
-					
-					cultural_names = {
-						name_list_caucasian_albanian = cn_chola
-					}
-					
-					color = { 128 40 20 }
-				}
-				b_balanjar = {
-					province = 5304
-				
-					color = { 128 40 20 }
-				}
-			}
-			c_sarir = {
-				color = { 128 40 20 }
-				b_kumukh = {
-					province = 675
-				
-					color = { 128 40 20 }
-				}
-				b_sambalut = {
-					province = 5342
-				
-					color = { 148 35 9 }
-				}
-			}
-			
-			c_durdzukia = {
-				color = { 145 50 35 }
-				
-				b_durdzukia = {
-					province = 5306
-				
-					color = { 148 35 9 }
-				}
-				b_cabarda = { #Not *actually* the right location...
-					province = 603
-				
-					color = { 54 25 8 }
+					color = { 151 118 30 }
 				}
 			}
 		}
@@ -1639,6 +1529,123 @@ e_caspian-pontic_steppe = {
 					province = 602
 					
 					color = { 190 50 10 }
+				}
+			}
+		}
+	}
+	k_ciscaucasia = {
+		capital = c_derbent
+		color = { 168 59 34 }
+		
+		d_adigey = {
+			color = { 100 44 16 }
+			capital = c_zichia
+			
+			c_zichia = {
+				color = { 100 44 16 }
+				
+				b_ulmi = {
+					province = 5298
+				
+					color = { 100 44 16 }
+				}
+				b_zapaxi = {
+					province = 5297
+				
+					color = { 100 44 16 }
+				}
+				b_nicopsia = { #Mentioned historically as part of Zichia
+					province = 600
+					
+					color = { 255 255 255 }
+				}
+			}
+			c_maghas = {
+				color = { 85 50 22 }
+				
+				b_maghas = {
+					province = 5299
+				
+					color = { 85 50 22 }
+				}
+				b_etzeri = {
+					province = 5300
+				
+					color = { 85 50 22 }
+				}
+				b_betzini = {
+					province = 5301
+				
+					color = { 85 50 22 }
+				}
+			}
+			c_cabardinia = {
+				color = { 54 25 8 }
+				
+				b_tatartopa = {
+					province = 5302
+				
+					color = { 54 25 8 }
+				}
+				b_petigoria = {
+					province = 606
+				
+					color = { 54 25 8 }
+				}
+			}
+		}
+		d_ciscaucasia = {
+			color = { 168 59 34 }
+			capital = c_derbent
+			
+			c_derbent = {
+				color = { 128 40 20 }
+				
+				cultural_names = {
+					name_list_caucasian_albanian = cn_chola
+				}
+				
+				b_derbent = {
+					province = 674
+					
+					cultural_names = {
+						name_list_caucasian_albanian = cn_chola
+					}
+					
+					color = { 128 40 20 }
+				}
+				b_balanjar = {
+					province = 5304
+				
+					color = { 128 40 20 }
+				}
+			}
+			c_sarir = {
+				color = { 128 40 20 }
+				b_kumukh = {
+					province = 675
+				
+					color = { 128 40 20 }
+				}
+				b_sambalut = {
+					province = 5342
+				
+					color = { 148 35 9 }
+				}
+			}
+			
+			c_durdzukia = {
+				color = { 145 50 35 }
+				
+				b_durdzukia = {
+					province = 5306
+				
+					color = { 148 35 9 }
+				}
+				b_cabarda = { #Not *actually* the right location...
+					province = 603
+				
+					color = { 54 25 8 }
 				}
 			}
 		}

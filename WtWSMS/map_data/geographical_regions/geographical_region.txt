@@ -870,7 +870,7 @@ world_steppe_tarim = {
 }
 world_steppe_west = { ##### Changed from Vanilla
 	kingdoms = {
-		k_taurica k_pontic_steppe k_mordvinia k_caucasus k_caspian_steppe k_volga_bulgaria
+		k_taurica k_pontic_steppe k_mordvinia k_caucasus k_ciscaucasia k_caspian_steppe k_volga_bulgaria
 		k_bashkiria
 	}
 }
@@ -1088,7 +1088,7 @@ material_wood_maple = {
 		#Zaporizhia
 		d_yedisan d_kizilyedisan d_levedia d_red_levedia d_don_valley d_tana d_crimea
 		#Caucasus
-		d_khazaria d_azov d_alania d_ciscaucasia
+		d_khazaria d_astrakhan d_azov d_alania d_ciscaucasia d_adigey
 		#Punjab
 		d_multan d_lahore d_gandhara
 		#Delhi
@@ -2333,7 +2333,7 @@ world_horse_buildings_in_hills_and_mountains = {
 		d_ostyaki d_konda d_pelym d_kazym d_sibir d_ishim d_tara d_lanikaz
 		d_salair   d_ala_tau d_vasyugan_mire d_baraba_steppe d_kulyndy_steppe d_tavan_bogd
 		#Pontic Steppe
-		d_yedisan  d_levedia  d_don_valley  d_khazaria d_ciscaucasia d_itil d_crimea d_alania d_azov d_pecheneg
+		d_yedisan  d_levedia  d_don_valley  d_khazaria d_astrakhan d_ciscaucasia d_adigey d_itil d_crimea d_alania d_azov d_pecheneg
 		#Turkestan
 		d_transcaspiana  d_barsuki  d_zhetysu d_tarbagatai d_jemba d_aral_il d_chah d_syr_darya d_muyunkum  d_alakol d_ili-alatau
 		#Cumania
@@ -2603,8 +2603,8 @@ special_mongol_empire_conquest_region_prio_4 = {
 		d_diyarrabia d_diyarmudar d_diyarbakr d_euphrates d_kurdistan
 
 		#Western Steppe
-		# k_caucasus
-		d_khazaria d_azov d_alania d_ciscaucasia
+		# k_caucasus k_ciscaucasia
+		d_khazaria d_astrakhan d_azov d_alania d_ciscaucasia d_adigey
 		# k_pontic_steppe
 		d_yedisan d_kizilyedisan d_levedia d_red_levedia d_don_valley d_tana d_crimea
 		# k_mordvinia
@@ -2832,7 +2832,7 @@ special_mongol_empire_golden_horde_region = {
 		#Bjarmaland
 		d_biarmia d_vologda d_chudia d_ustyug
 		#Pontic Steppe
-		d_yedisan d_kizilyedisan d_levedia d_red_levedia d_don_valley d_tana d_khazaria d_ciscaucasia d_itil d_crimea d_alania d_azov d_pecheneg
+		d_yedisan d_kizilyedisan d_levedia d_red_levedia d_don_valley d_tana d_khazaria d_astrakhan d_ciscaucasia d_adigey d_itil d_crimea d_alania d_azov d_pecheneg
 		#Volga Bulgaria
 		d_volga_bulgaria d_kazan d_bashkiria  d_voronezh d_mordvinia  d_chuvashia d_khopyor  d_ural d_udmurtia d_martyuba d_uraltau d_aqtobe d_jalmat  d_vogulia d_perm
 		#Cumania
@@ -2849,7 +2849,7 @@ golden_horde_de_jure_region = {
 		#Turkestan
 		d_transcaspiana  d_jemba d_barsuki  d_aral_il d_khorezm
 		#Pontic Steppe
-		d_yedisan d_kizilyedisan d_levedia d_red_levedia d_don_valley d_tana d_khazaria d_ciscaucasia d_itil d_crimea d_alania d_azov d_pecheneg
+		d_yedisan d_kizilyedisan d_levedia d_red_levedia d_don_valley d_tana d_khazaria d_astrakhan d_ciscaucasia d_adigey d_itil d_crimea d_alania d_azov d_pecheneg
 		#Cumania
 		d_kurgan d_mugodzhar_hills d_atyrau  d_turgay  d_kush-murun  d_saryarka  d_kazakh  d_kentarlau d_karkaraly d_karabas  d_betpa d_semey  
 	}
@@ -3085,7 +3085,7 @@ ghw_region_caucasus = {
 		#Western Daylam
 		d_shirvan d_azerbaijan d_daylam
 		#Caucasus
-		d_khazaria d_azov d_alania d_ciscaucasia
+		d_khazaria d_astrakhan d_azov d_alania d_ciscaucasia d_adigey
 	}
 }
 ghw_region_anatolia = {
@@ -3639,7 +3639,7 @@ ghw_region_crimea = {
 		#Zaporizhia
 		d_yedisan d_kizilyedisan d_levedia d_red_levedia d_don_valley d_tana d_crimea
 		#Caucasus
-		d_khazaria d_azov d_alania d_ciscaucasia
+		d_khazaria d_astrakhan d_azov d_alania d_ciscaucasia d_adigey
 	}
 }
 ghw_region_poland_bohemia_bavaria = {
@@ -4453,7 +4453,7 @@ dlc_mpo_1178_herders = {
 dlc_mpo_867_nomads = {
 	duchies = {
 		#Pontic Steppe
-		d_yedisan d_kizilyedisan d_levedia d_red_levedia d_don_valley d_tana d_khazaria d_azov
+		d_yedisan d_kizilyedisan d_levedia d_red_levedia d_don_valley d_tana d_khazaria d_astrakhan d_azov
 		#Volga Bulgaria
 		d_bashkiria  d_uraltau d_aqtobe  d_vogulia d_itil d_pecheneg d_jalmat d_chuvashia d_volga_bulgaria
 
@@ -4481,7 +4481,7 @@ dlc_mpo_867_nomads = {
 dlc_mpo_1066_nomads = {
 	duchies = {
 		#Pontic Steppe
-		d_yedisan d_kizilyedisan d_levedia d_red_levedia d_don_valley d_tana d_khazaria
+		d_yedisan d_kizilyedisan d_levedia d_red_levedia d_don_valley d_tana d_khazaria d_astrakhan
 		#Volga Bulgaria
 		d_bashkiria  d_uraltau d_aqtobe  d_vogulia 
 
@@ -4516,7 +4516,7 @@ dlc_mpo_1066_nomads = {
 dlc_mpo_1178_nomads = {
 	duchies = {
 		# Pontic Steppe - starting to become sedentary.
-			d_levedia d_red_levedia d_don_valley d_tana d_khazaria
+			d_levedia d_red_levedia d_don_valley d_tana d_khazaria d_astrakhan
 		# Volga Bulgaria
 			d_bashkiria  d_uraltau d_aqtobe  d_vogulia d_itil
 
@@ -4542,7 +4542,7 @@ dlc_mpo_1178_nomads = {
 			c_khumar c_azov
 		# d_crimea, omitting counties controlled by Byzantium
 			c_perekop c_kalos_limen
-		# d_ciscaucasia
+		# d_ciscaucasia d_adigey
 			c_samiran 
 		# d_pecheneg, minus c_jambalar
 			c_pecheneg  c_yaitsk
@@ -4638,7 +4638,7 @@ dlc_mpo_steppe_central_china_expansion = {} ##### Changed from Vanilla
 heritage_area_pontic_steppe = {
 	duchies = {
 		#Pontic Steppe
-		d_yedisan d_kizilyedisan d_levedia d_red_levedia d_don_valley d_tana d_khazaria d_ciscaucasia d_itil d_crimea d_alania d_azov d_pecheneg
+		d_yedisan d_kizilyedisan d_levedia d_red_levedia d_don_valley d_tana d_khazaria d_astrakhan d_ciscaucasia d_adigey d_itil d_crimea d_alania d_azov d_pecheneg
 	}
 }
 
@@ -5027,9 +5027,9 @@ tgp_silk_road_transcaspia_region = {
 	duchies = {
 		d_chah
 		d_syr_darya
-		d_khazaria
+		d_khazaria d_astrakhan
 		d_azov
-		d_ciscaucasia
+		d_ciscaucasia d_adigey
 		d_alania
 		d_atyrau # Caspian Steppe
 		d_aral_il  d_barsuki  d_jemba d_transcaspiana # Oghuz-il

@@ -348,20 +348,6 @@ d_thracian_goths = {
 		}
 	}
 }
-d_goths = {
-	color = { 123 123 10 }
-	capital = c_kerch
-	ignore_titularity_for_title_weighting = yes
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:crimean_gothic }
-			add = @cultural_title_score
-		}
-	}
-	
-	#title = "DRUHTINAZ"
-	#foa = "DRUHTINAZ_FOA"
-}
 
 #### frankish titles
 k_franks = {

@@ -68,7 +68,20 @@
 }
 
 d_crimea = {
-	1.1.1 = {}
+	# Crimean Goths # 
+	460.1.1={
+		holder = 110 # Alaric Crimling
+		government = tribal_government
+	}
+	485.1.1={
+		holder = 36411 # Fridarik Crimling
+	}
+	530.1.1={
+		holder = 36412 # Theudafrid Crimling
+	}
+	560.1.1={
+		holder = 36413 # Fridarik II Crimling
+	}
 }
 c_kerch = {
 	10.1.1 = { holder = 1310006 }
@@ -202,57 +215,30 @@ c_tmutarakan = {
 	491.1.1 = { holder = 112 } #Fridarik Crimling; Fall of the Bosporan Kingdom
 	##### TODO (Beta): Add Barbarian Interlude history to c_tmutarakan
 }
-c_khumar = { #c_azov history
-	466.1.1={
-		holder = 112 # Isperikh
-	} 
-	500.1.1={
-		holder = 33084 # Dristar Isperikhid
-	} 
-	550.1.1={
-		holder = 33085 # Böri Isperikhid
-	} 
-	565.1.1={
-		holder=155185 # Avars
-	}
-	577.1.1={
-		holder=330931 # Kharaton Yeçtirekid
-		liege=0
-	}
+c_khumar = {
+	#Utigurs
+	466.1.1={ holder = 112 }
+	500.1.1={ holder = 33084 }
+	550.1.1={ holder = 33085 }
+	#Avars
+	565.1.1={ holder=155185 } # Avars
+	577.1.1={ holder=330931 } # Kharaton Yeçtirekid
 }
 c_azov = {
-	466.1.1={
-		holder = 112 # Isperikh
-	} 
-	500.1.1={
-		holder = 33084 # Dristar Isperikhid
-	} 
-	550.1.1={
-		holder = 33085 # Böri Isperikhid
-	} 
-	565.1.1={
-		holder=155185 # Avars
-	}
-	577.1.1={
-		holder=330931 # Kharaton Yeçtirekid
-		liege=0
-	}
+	#Utigurs
+	466.1.1={ holder = 112 }
+	500.1.1={ holder = 33084 }
+	550.1.1={ holder = 33085 }
+	#Avars
+	565.1.1={ holder=155185 } # Avars
+	577.1.1={ holder=330931 } # Kharaton Yeçtirekid
 }
 c_kuban = {
-	466.1.1={
-		holder = 112 # Isperikh
-	} 
-	500.1.1={
-		holder = 33084 # Dristar Isperikhid
-	} 
-	550.1.1={
-		holder = 33085 # Böri Isperikhid
-	} 
-	565.1.1={
-		holder=155185 # Avars
-	}
-	577.1.1={
-		holder=330931 # Kharaton Yeçtirekid
-		liege=0
-	}
+	#Utigurs
+	466.1.1={ holder = 112 }
+	500.1.1={ holder = 33084 }
+	550.1.1={ holder = 33085 }
+	#Avars
+	565.1.1={ holder=155185 } # Avars
+	577.1.1={ holder=330931 } # Kharaton Yeçtirekid
 }
