@@ -433,7 +433,12 @@ get_paganify_faith_effect = {
 			set_variable = { value = faith:siberian_pagan name = paganify_faith days = 1 }
 		}
 		else_if = {
-			limit = { culture = { has_cultural_parameter = heritage_kulturbund_turco_mongol } }
+			limit = {
+				OR = {
+					culture = { has_cultural_parameter = heritage_kulturbund_tartar }
+					culture = { has_cultural_pillar = heritage_kulturbund_mongolic }
+				}
+			}
 			set_variable = { value = faith:tengri_pagan name = paganify_faith days = 1 }
 		}
 		else_if = {
