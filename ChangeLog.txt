@@ -19,13 +19,15 @@ Culture:
    - Hunas Cultures:
       - Added Chionite culture, representing the various nomadic groups who conquered and lived in Bactria and Northwest India during the period
          - Stoic Ethos, Hunas Heritage, Sakan Language, Turkic and Sakan COAs, Turkic clothing, Steppe Architecture
-         - Uses "Warrior Culture", "Ruling Caste", and "Devoted Horsemanship"/"Horse Lords" Traditions
+         - Uses "Warrior Culture", "Shaped to Rule", and "Devoted Horsemanship"/"Horse Lords" Traditions
       - Added Hunas culture, representing the Alchon and Nezak Huns who branched off from the Chionites
          - Bellicose Ethos, Hunas Heritage, Bactrian Language, Turkic and Sakan COAs, Turkic clothing, Steppe Architecture
-         - Uses "Nomadic Rulership", "Religious Patronage", "Quarrelsome", and "Devoted Horsemanship"/"Horse Lords" Traditions
+         - Uses "Nomadic Rulership"/"Shaped to Rule", "Religious Patronage", "Quarrelsome", and "Devoted Horsemanship"/"Horse Lords" Traditions
       - Added Hepthalite culture, representing the Hepthalites who were distinguished from the Alchons and Nezaks
          - Communal Ethos, Hunas Heritage, Bactrian Language, Turkic and Sakan COAs, Turkic clothing, Steppe Architecture
-         - Uses "Zealous People", "Nomadic Rulership", "Castle Keepers", and "Devoted Horsemanship"/"Horse Lords" Traditions
+         - Uses "Zealous People", "Nomadic Rulership"/"Shaped to Rule", "Castle Keepers", and "Devoted Horsemanship"/"Horse Lords" Traditions
+   - Hunnic Cultures:
+      - Hunnic uses "Shaped to Rule" Tradition instead of "Ruling Caste" Tradition
    - Iranian Cultures:
       - Added Pakthun culture for the proto-Pashtuns in modern Afghanistan
          - Communal Ethos, Iranian Heritage, Pastho Language, Iranian Aesthetics
@@ -33,14 +35,16 @@ Culture:
       - Added Koyfar culture for the proto-Baloch population in Makran
          - Communal Ethos, Iranian Heritage, Pastho Language, Iranian Aesthetics
          - Uses "Mountain Homes", "Isolationist", and "Jirga" (with Legacy of Persia) Traditions
+   - Mogyer Cultures:
+      - Mogyer replaces "Strong Believers" with "Shaped to Rule" Tradition
    - Oghuric Cultures:
       - Oghuric (Bolghar), Khuni, Sabir cultures put in this group
       - Oghuric (formerly Bolghar):
-         - Replaces "Malleable Invaders" Tradition with "Astute Diplomats" Tradition
+         - Replaces "Malleable Invaders" Tradition with "Astute Diplomats" Tradition, replaces "Ruling Caste" with "Shaped to Rule" Tradition
       - Added Barsil culture for the long-lasting Oghur Turks of the Astrakhan Wetland
          - Stoic Ethos, Oghuric Heritage, Oghur Language, Turkic Aesthetics
-         - Uses "Wetlanders", "Isolationist", "Pontic Horsemanship"
-      - Khuni made a hybrid Hunnic-Oghuric (Bolghar) culture, using its own name list from CK2
+         - Uses "Wetlanders", "Shaped to Rule", "Pontic Horsemanship"
+      - Khuni made a hybrid Hunnic-Oghuric (Bolghar) culture, using its own name list from CK2, replaces "Ruling Caste" with "Shaped to Rule" Tradition
       - Sabirs replace "Malleable Invaders" Tradition with "Swords for Hire" Tradition
    - Oghuzic Cultures:
       - Kirghiz, Kuryakan cultures in this group
@@ -61,12 +65,16 @@ Culture:
       - Added Lushuihu culture, representing the Yuezhi-admixed Qiangic peoples near the Hexi corridor who played a role in the end of the Jin Dynasty
          - Stoic Ethos, Qiangic Heritage, Tangut Language, Tangut aesthetics, Iranian House Frame
          - Uses "Mountain Homes", "Mountaineers", and "Swords for Hire" Traditions
+   - Sarmatian Cultures:
+      - Alan Culture replaces "Steppe Tolerance" with "Shaped to Rule"
+      - Alauni (Western Alan) Culture replaces "Steppe Tolerance" with "Nomadic Rulership"/"Shaped to Rule"
    - Sakan Cultures:
       - Overhauled Indo-Scythian culture:
          - Descend from Malvi instead of Gurjati
          - Spiritual Ethos, Sakan Heritage, Apabhrasmsa Pakrit Language, Scythian COAs and Frames, Indian Clothing and Architecture, Scythian unit graphics
          - Uses "Religion Blending", "Fervent Temple Builders", "Nomadic Rulership", and "Devoted Horsemanship"/"Horse Lords" Traditions
-      - Tweaked Dahae culture: Uses Communal Ethos instead of Bellicose Ethos
+      - Dahae Culture uses Communal Ethos instead of Bellicose Ethos, adds "Shaped to Rule" Tradition
+      - Sakan Culture uses "Shaped to Rule" Tradition instead of "Culture Blending"/"Xenophilic" Tradition
    - Serindian Cultures:
       - Added Fereghan culture, representing the culture that admixed Sogdian, Greek, and Sakan influences
          - Cosmopolitan Ethos, Serindian Heritage, Sogdian Language, Turkic aesthetics, Sogdian aesthetics with Greek influences
@@ -95,7 +103,7 @@ Culture:
          - Uses "Hill Dwellers", "Mountain Homes", and "Staunch Traditionalists"/"Isolationist" Traditions
       - Added Yuezhi culture, representing the nomadic Yuezhi peoples that eventually formed the Kushan Empire
          - Stoic Ethos, Tokhari Heritage, Tokhari Language, Steppe aesthetics with Scythian and Chinese COA graphics
-         - Uses "Horse Breeders", "Warriors of the Dry", and "Frontier Warriors"/"Horse Lords" Traditions
+         - Uses "Shaped to Rule", "Warriors of the Dry", and "Frontier Warriors"/"Horse Lords" Traditions
    - Turkic Cultures:
       - Added Turuk culture, representing the nascent Turks, who were consider not a part of either the Tolis and Yueban peoples
          - Spiritual Ethos, Turkic Heritage, Shaz Turkic Language, Turkic aesthetics
@@ -113,7 +121,21 @@ Culture:
    - Hunnic made an isolate language
    - Removed "Ninrun" language
 - Traditions:
-   - "Ruling Caste" Tradition is not selectable if one's Culture has "Migratory Culture" Tradition or "Nomadic Rulership" Tradition
+   - Added New Traditions:
+      - "Shaped to Rule" Tradition: Models the practices of Steppe Peoples who practiced Artificial Cranial Deformation and remained somewhat insular
+         - Courtiers are less likely to leave a court of the same culture
+         - Rulers are less likely to convert culture
+         - The "Cranial Deformation" Trait gives a monthly prestige multiplier, prestige, direct vassal opinion, and attraction opinion
+      - "Nomadic Rulership" Tradition: Models the cultures that ruled a number of kingdoms in Bactria and Central Asia from a small elite
+         - Makes peasant and populists factions less common
+         - Rulers are less likely to use the "Promote Culture" Council Task
+         - Rulers are less likely to force conversion of Vassals
+         - Rulers are less likely to use the "Convert Culture" Decision
+         - The "Cranial Deformation" Trait gives a monthly prestige multiplier, prestige, direct vassal opinion, and attraction opinion
+         - If 3 contiguous counties of this culture or 5 total counties of this culture appear on the map, this tradition is replaced with "Ruling Caste"
+      - Added Alternate "Nomadic Rulership" tradition for cultures that don't use Cranial Defomration
+   - "Ruling Caste" Tradition is not selectable if one's Culture has "Migratory Culture" Tradition or "Shaped to Rule" or "Nomadic Rulership" Tradition
+   - "Isolationst" Tradition is not selectable if one's Culture has "Migratory Culture" Tradition or "Shaped to Rule" or "Nomadic Rulership" Tradition
    - Xenophobic Tradition no longer encourages the Zealous trait
    - Sinophilic Tradition increases baseline cultural acceptance with Chinese heritage cultures by 10
 - Rebalanced many cultures' ethnicities
@@ -155,6 +177,13 @@ History:
 - The Hepthalites directly control most of their vassals, excepting Khwarezmia, the Alchon Huns, the Nezak Huns, and their nomadic tributaries
 - Xianbei Western Regions rulers are Xianbei until Emperor Xiaowen's Sinicization in 496
 - Attila has the "Dynastic Kinslayer" trait for executing some members of his dynasy
+
+Traits:
+- Added "Cranial Deformation" trait, for Steppe cultures which practiced cranial Deformation
+   - All noble characters of cultures with the "Shaped to Rule" or "Nomadic Rulership" traditions gain the trait at birth
+   - The trait gains XP every birthday until after the 6th birthday
+   - Each rank in the trait increases Prestige Gain, Monthly Prestige, Direct Vassal Opinion, and Atraction opinion
+   - For cultures that do not value Cranial Deformation, each rank of the trait negatively impacts the Direct Vassal Opinion and Attraction Opinion
 
 Decisions:
 - Added a decision for leaders of Oghuric cultures to form the Bolghar Identity, if they gather enough of the Oghurs under their banner

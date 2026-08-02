@@ -18,7 +18,7 @@ chionite = { #Chionites, Kidarites, Alchon Huns, Hepthalites
 		#Regional Traditions
 		#Ritual Traditions
 		#Realm Traditions
-		tradition_ruling_caste
+		tradition_cranial_deformation
 		#Combat Traditions
 	}
 	
@@ -68,12 +68,17 @@ hunas = {
 	traditions = {
 		#Societal Traditions
 		#Regional Traditions
-		tradition_nomadic_rulership
 		#Ritual Traditions
 		tradition_religious_patronage
 		#Realm Traditions
 		#Combat Traditions
 		tradition_quarrelsome
+	}
+	
+	dlc_tradition = {
+		trait = tradition_nomadic_rulership_cranial_deformation
+		requires_dlc_flag = khans_of_the_steppe
+		fallback = tradition_cranial_deformation
 	}
 	
 	dlc_tradition = {
@@ -130,11 +135,16 @@ hepthalite = {
 		#Societal Traditions
 		tradition_zealous_people
 		#Regional Traditions
-		tradition_nomadic_rulership
 		#Ritual Traditions
 		#Realm Traditions
 		tradition_castle_keepers #Fortification Experts
 		#Combat Traditions
+	}
+	
+	dlc_tradition = {
+		trait = tradition_nomadic_rulership_cranial_deformation
+		requires_dlc_flag = khans_of_the_steppe
+		fallback = tradition_cranial_deformation
 	}
 	
 	dlc_tradition = {

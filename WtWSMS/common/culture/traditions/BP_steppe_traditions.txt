@@ -165,3 +165,289 @@ tradition_light_cavalry_western_steppe = {
 		value = 400
 	}
 }
+#Captures the Cranial deformation. Functions as Ruling Caste-like, isolationist tradition
+tradition_cranial_deformation = {
+	category = regional
+
+	layers = {
+		0 = steward
+		1 = steppe
+		4 = greeting.dds
+	}
+	
+	is_shown = { has_cultural_tradition = tradition_cranial_deformation }
+	can_pick = {
+		#government_has_flag = government_is_nomadic
+		OR = {
+			has_cultural_tradition = tradition_cranial_deformation
+			culture_tradition:tradition_cranial_deformation = { is_in_list = traits }
+		}
+		custom_tooltip = {
+			text = cannot_have_tradition_ruling_caste
+			NOT = { culture_tradition:tradition_ruling_caste = { is_in_list = traits } }
+		}
+	}
+	can_pick_for_hybridization = {
+		#government_has_flag = government_is_nomadic
+		OR = {
+			has_cultural_tradition = tradition_cranial_deformation
+			culture_tradition:tradition_cranial_deformation = { is_in_list = traits }
+		}
+		custom_tooltip = {
+			text = cannot_have_tradition_ruling_caste
+			NOT = { culture_tradition:tradition_ruling_caste = { is_in_list = traits } }
+		}
+	}
+	
+	parameters = {
+		courtiers_less_likely_to_leave_same_culture_court = yes
+		peasant_and_populist_factions_less_common = yes
+		less_likely_to_culture_convert = yes
+		cranial_deformation_give_bonus = yes
+	}
+	culture_modifier = {
+		cultural_acceptance_gain_mult = -0.30
+	}
+	character_modifier = {
+		same_culture_opinion = 5
+	}
+	
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_spiritual = { is_in_list = traits }
+						culture_pillar:ethos_courtly = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_spiritual_or_courtly_desc
+				}
+			}
+			if = {
+				limit = {
+					scope:character = {
+						any_councillor = {
+							NOR = {
+								culture = scope:character.culture
+								is_spouse_of = scope:character # Might be hard to have the right culture for the Spouse; but we can remove this helper if needed
+							}
+						}
+					}
+				}
+				add = {
+					value = tradition_unfulfilled_criteria_penalty
+					desc = has_other_cultures_in_council_desc
+				}
+			}
+			if = {
+				limit = {
+					has_variable = aggressive_traditionalist_discount
+				}
+				add = {
+					value = traditionalist_discount
+					desc = traditionalist_discount_desc
+				}
+			}
+			
+			if = {
+				limit = {
+					culture_tradition_reduction_trigger = { TRADITION = tradition_cranial_deformation }
+				}
+				multiply = {
+					value = 0.5
+					desc = inspired_by_culture_desc
+				}
+			}
+			
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+	
+	ai_will_do = { 
+		value = 100
+		if = {
+			limit = {
+				scope:character.dread < 25
+			}
+			multiply = 0.5
+		}
+		if = {
+			limit = {
+				scope:character.tyranny < 25
+			}
+			multiply = 0.5
+		}
+	}
+}
+#The Nomadic Version of Migratory Culture; mostly used for the Central Asian Kingdoms
+tradition_nomadic_rulership_cranial_deformation = {
+	category = regional
+
+	layers = {
+		0 = steward
+		1 = mena
+		4 = king.dds
+	}
+	
+	is_shown = { always = no }
+	can_pick = { always = no }
+	can_pick_for_hybridization = { always = no }
+	
+	parameters = {
+		peasant_and_populist_factions_less_common = yes
+		less_likely_to_promote_culture = yes
+		less_likely_to_force_conversion = yes
+		less_likely_to_culture_convert = yes
+		is_changed_if_enough_counties = yes #Just for flavor; has to be a per-tradition check
+		cranial_deformation_give_bonus = yes
+	}
+	culture_modifier = {
+		cultural_acceptance_gain_mult = -0.50
+	}
+	character_modifier = {
+		revolting_siege_morale_loss_mult = 0.25
+		men_at_arms_cap = 1
+		men_at_arms_limit = 1
+		different_faith_county_opinion_mult = -0.25 # reduced penalty for different faiths (note this appears confusing in the UI right now)
+	}
+	
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_spiritual = { is_in_list = traits }
+						culture_pillar:ethos_courtly = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_spiritual_or_courtly_desc
+				}
+			}
+			if = {
+				limit = {
+					scope:character = {
+						any_councillor = {
+							NOR = {
+								culture = scope:character.culture
+								is_spouse_of = scope:character # Might be hard to have the right culture for the Spouse; but we can remove this helper if needed
+							}
+						}
+					}
+				}
+				add = {
+					value = tradition_unfulfilled_criteria_penalty
+					desc = has_other_cultures_in_council_desc
+				}
+			}
+			if = {
+				limit = {
+					has_variable = aggressive_traditionalist_discount
+				}
+				add = {
+					value = traditionalist_discount
+					desc = traditionalist_discount_desc
+				}
+			}
+			
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+	
+	ai_will_do = { value = 100 }
+}
+tradition_nomadic_rulership = {
+	category = regional
+
+	layers = {
+		0 = steward
+		1 = mena
+		4 = king.dds
+	}
+	
+	is_shown = { always = no }
+	can_pick = { always = no }
+	can_pick_for_hybridization = { always = no }
+	
+	parameters = {
+		peasant_and_populist_factions_less_common = yes
+		less_likely_to_promote_culture = yes
+		less_likely_to_force_conversion = yes
+		less_likely_to_culture_convert = yes
+		is_changed_if_enough_counties = yes #Just for flavor; has to be a per-tradition check
+	}
+	culture_modifier = {
+		cultural_acceptance_gain_mult = -0.50
+	}
+	character_modifier = {
+		revolting_siege_morale_loss_mult = 0.25
+		men_at_arms_cap = 1
+		men_at_arms_limit = 1
+		different_faith_county_opinion_mult = -0.25 # reduced penalty for different faiths (note this appears confusing in the UI right now)
+	}
+	
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_spiritual = { is_in_list = traits }
+						culture_pillar:ethos_courtly = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_spiritual_or_courtly_desc
+				}
+			}
+			if = {
+				limit = {
+					scope:character = {
+						any_councillor = {
+							NOR = {
+								culture = scope:character.culture
+								is_spouse_of = scope:character # Might be hard to have the right culture for the Spouse; but we can remove this helper if needed
+							}
+						}
+					}
+				}
+				add = {
+					value = tradition_unfulfilled_criteria_penalty
+					desc = has_other_cultures_in_council_desc
+				}
+			}
+			if = {
+				limit = {
+					has_variable = aggressive_traditionalist_discount
+				}
+				add = {
+					value = traditionalist_discount
+					desc = traditionalist_discount_desc
+				}
+			}
+			
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+	
+	ai_will_do = { value = 100 }
+}

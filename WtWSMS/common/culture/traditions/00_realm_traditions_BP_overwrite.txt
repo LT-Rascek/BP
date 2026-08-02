@@ -726,6 +726,22 @@ tradition_ruling_caste = {
 			text = cannot_have_tradition_hellenizers
 			NOT = { culture_tradition:tradition_hellenizers = { is_in_list = traits } }
 		}
+		custom_tooltip = {
+			text = cannot_have_tradition_cranial_deformation
+			NOT = { culture_tradition:tradition_cranial_deformation = { is_in_list = traits } }
+		}
+		custom_tooltip = {
+			text = cannot_have_tradition_nomadic_rulership
+			NOT = { culture_tradition:tradition_nomadic_rulership_cranial_deformation = { is_in_list = traits } }
+		}
+		custom_tooltip = {
+			text = cannot_have_tradition_nomadic_rulership
+			NOT = { culture_tradition:tradition_nomadic_rulership = { is_in_list = traits } }
+		}
+		custom_tooltip = {
+			text = cannot_have_tradition_migratory_culture
+			NOT = { culture_tradition:tradition_migratory_culture = { is_in_list = traits } }
+		}
 	}
 	##### Changed from Vanilla ^^^^^
 	
@@ -934,41 +950,69 @@ tradition_staunch_traditionalists = {
 	}
 }
 
-##### Changed from Vanilla: Made transitively
-tradition_ruling_caste = {
+##### Changed from Vanilla: Made transitively unselectable with new traditions
+tradition_isolationist = {
 	category = realm
 
 	layers = {
 		0 = intrigue
 		1 = mediterranean
-		4 = king.dds
+		4 = noble.dds
 	}
 	
 	##### Changed from Vanilla vvvvv
 	can_pick = {
+		# Mutually exclusive with other Isolationist
+		NOR = {
+			culture_tradition:tradition_tgp_inward_perfection = { is_in_list = traits }
+			culture_tradition:tradition_cultural_primacy = { is_in_list = traits }
+		}
+		##### Changed from Vanilla vvvvv
 		custom_tooltip = {
-			text = cannot_have_tradition_migratory_culture
-			NOT = { culture_tradition:tradition_migratory_culture = { is_in_list = traits } }
+			text = cannot_have_tradition_persian_traditions
+			NOT = { culture_tradition:tradition_persian_traditions = { is_in_list = traits } }
+		}
+		custom_tooltip = {
+			text = cannot_have_tradition_cranial_deformation
+			NOT = { culture_tradition:tradition_cranial_deformation = { is_in_list = traits } }
+		}
+		custom_tooltip = {
+			text = cannot_have_tradition_nomadic_rulership
+			NOT = { culture_tradition:tradition_nomadic_rulership_cranial_deformation = { is_in_list = traits } }
 		}
 		custom_tooltip = {
 			text = cannot_have_tradition_nomadic_rulership
 			NOT = { culture_tradition:tradition_nomadic_rulership = { is_in_list = traits } }
 		}
+		custom_tooltip = {
+			text = cannot_have_tradition_migratory_culture
+			NOT = { culture_tradition:tradition_migratory_culture = { is_in_list = traits } }
+		}
+		##### Changed from Vanilla ^^^^^
 	}
 	##### Changed from Vanilla ^^^^^
 	
 	parameters = {
-		peasant_and_populist_factions_less_common = yes
-		expensive_convert_to_local_culture = yes
-		less_likely_to_promote_culture = yes
+		courtiers_less_likely_to_leave_same_culture_court = yes
+		dislikes_marrying_outside_of_culture = yes
+		ai_doesnt_marry_outside_culture = yes
+		less_likely_to_culture_convert = yes
+		less_plague_spread_culture = yes
+		cultrad_unlocks_t3_strengthen_sentries = yes
+		cultrad_unlocks_t3_redouble_guards = yes
 	}
 	culture_modifier = {
-		cultural_acceptance_gain_mult = -0.25
+		cultural_acceptance_gain_mult = -0.35
 	}
 	character_modifier = {
-		dread_per_tyranny_add = 0.3
-		dread_decay_mult = -0.3
-		revolting_siege_morale_loss_mult = 0.25
+		diplomatic_range_mult = -0.25
+		same_culture_opinion = 5
+		
+		ai_war_chance = -0.5
+		ai_war_cooldown = 5
+	}
+	county_modifier = {
+		monthly_county_control_growth_add = 0.5
 	}
 	
 	cost = {
@@ -981,34 +1025,41 @@ tradition_ruling_caste = {
 			if = {
 				limit = {
 					NOR = {
+						culture_pillar:ethos_communal = { is_in_list = traits }
 						culture_pillar:ethos_spiritual = { is_in_list = traits }
-						culture_pillar:ethos_courtly = { is_in_list = traits }
+						culture_pillar:ethos_stoic = { is_in_list = traits }
 					}
 				}
 				add = {
 					value = tradition_incompatible_ethos_penalty
-					desc = not_spiritual_or_courtly_desc
+					desc = not_communal_spiritual_or_stoic_desc
 				}
 			}
 			if = {
 				limit = {
 					scope:character = {
-						any_councillor = {
-							NOR = {
-								culture = scope:character.culture
-								is_spouse_of = scope:character # Might be hard to have the right culture for the Spouse; but we can remove this helper if needed
+						any_sub_realm_county = {
+							culture = scope:character.culture
+							any_neighboring_county = {
+								culture != scope:character.culture
+								culture = {
+									cultural_acceptance = { target = scope:character.culture value >= 40 }
+								}
 							}
 						}
 					}
 				}
 				add = {
 					value = tradition_unfulfilled_criteria_penalty
-					desc = has_other_cultures_in_council_desc
+					desc = non_tolerated_cultures_desc
 				}
 			}
 			if = {
 				limit = {
-					has_variable = aggressive_traditionalist_discount
+					OR = {
+						has_variable = defensive_traditionalist_discount
+						has_variable = aggressive_traditionalist_discount
+					}
 				}
 				add = {
 					value = traditionalist_discount
@@ -1018,7 +1069,7 @@ tradition_ruling_caste = {
 
 			if = {
 				limit = {
-					culture_tradition_reduction_trigger = { TRADITION = tradition_ruling_caste }
+					culture_tradition_reduction_trigger = { TRADITION = tradition_isolationist }
 				}
 				multiply = {
 					value = 0.5
@@ -1030,19 +1081,22 @@ tradition_ruling_caste = {
 		}
 	}
 	
-	ai_will_do = { 
-		value = 50
+
+	ai_will_do = {
+		value = 100
 		if = {
 			limit = {
-				scope:character.dread < 25
+				NOT = {
+					is_divergent_culture = yes
+				}
 			}
-			multiply = 0.5
+			multiply = 0
 		}
 		if = {
 			limit = {
-				scope:character.tyranny < 25
+				culture_pillar:ethos_egalitarian = { is_in_list = traits }
 			}
-			multiply = 0.5
+			multiply = 0
 		}
 	}
 }

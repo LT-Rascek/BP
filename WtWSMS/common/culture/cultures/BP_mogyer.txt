@@ -14,13 +14,13 @@ mogyer = {
 	head_determination = head_determination_domain
 	traditions = {
 		tradition_tribe_unity
-		tradition_zealous_people
+		tradition_cranial_deformation
 	}
 	
 	dlc_tradition = {
 		trait = tradition_devoted_horsemanship
 		requires_dlc_flag = khans_of_the_steppe
-		requires_dlc_flag = hybridize_culture
+		fallback = tradition_horse_lords
 	}
 
 	name_order_convention = dynasty_always_first
