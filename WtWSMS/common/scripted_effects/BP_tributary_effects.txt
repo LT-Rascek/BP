@@ -52,5 +52,28 @@ BP_break_subject_contract_and_establish_tributary_effect = {
 				remove_character_flag = default_subjugated_tributary
 			}
 		}
+		default_settled_tributary = {
+			$TRIBUTARY$ = {
+				start_tributary = {
+					contract_group = tributary_settled
+					suzerain = $SUZERAIN$
+				}
+				tributary_contract_set_obligation_level = { type = default_tributary_taxes level = 1 }
+				tributary_contract_set_obligation_level = { type = default_tributary_levies level = 1 }
+				tributary_contract_set_obligation_level = { type = default_tributary_prestige level = 1 }
+				remove_character_flag = default_settled_tributary
+			}
+		}
+		default_tributary_nomadic = {
+			$TRIBUTARY$ = {
+				start_tributary = {
+					contract_group = tributary_nomadic
+					suzerain = $SUZERAIN$
+				}
+				tributary_contract_set_obligation_level = { type = nomad_government_herd level = 1 } #herd_tax_low
+				tributary_contract_set_obligation_level = { type = nomad_government_prestige level = 1 }
+				remove_character_flag = default_tributary_nomadic
+			}
+		}
 	}
 }
