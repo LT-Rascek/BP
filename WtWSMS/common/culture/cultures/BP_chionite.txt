@@ -1,0 +1,166 @@
+﻿### Chionite-Heritage Cultures
+chionite = { #Chionites, Kidarites, Alchon Huns, Hepthalites
+	color = chionite
+	
+	#Iranic Huns; basically, Sakan/Turkic hybrid
+	parents = { hunno_sakan }
+	created = 250.1.1
+	history_loc_override = chionite_history_loc
+	
+	ethos = ethos_stoic
+	heritage = heritage_chionite
+	language = language_sakan
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_herd
+	traditions = {
+		#Societal Traditions
+		tradition_warrior_culture
+		#Regional Traditions
+		#Ritual Traditions
+		#Realm Traditions
+		tradition_ruling_caste
+		#Combat Traditions
+	}
+	
+	dlc_tradition = {
+		trait = tradition_devoted_horsemanship
+		requires_dlc_flag = khans_of_the_steppe
+		fallback = tradition_horse_lords
+	}
+	
+	name_list = name_list_hunas
+	
+	coa_gfx = { turkic_group_coa_gfx steppe_coa_gfx }
+	coa_gfx = { bp_scythian_coa_gfx iranian_group_coa_gfx steppe_coa_gfx }
+	building_gfx = { steppe_building_gfx }
+	clothing_gfx = { turkic_clothing_gfx mongol_clothing_gfx }
+	unit_gfx = { mongol_unit_gfx }
+	house_coa_frame = house_frame_14
+
+	
+	#50% Sakan/50% Turkish (West)
+	ethnicities = {
+		50 = turkic_west
+		22 = iranian
+		16 = mediterranean
+		#Historic references to lighter hair colors
+		3 = caucasian_blond
+		3 = caucasian_brown_hair
+		3 = caucasian_dark_hair
+		3 = caucasian_ginger
+	}
+}
+hunas = {
+	# Alchon and Nezak Hun Society
+	
+	color = hepthalite
+	
+	#Iranic Huns; basically, Sakan/Turkic hybrid
+	parents = { chionite }
+	created = 350.1.1
+	history_loc_override = hunas_history_loc
+	
+	ethos = ethos_bellicose
+	heritage = heritage_chionite
+	language = language_bactrian
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_herd
+	traditions = {
+		#Societal Traditions
+		tradition_warrior_culture
+		#Regional Traditions
+		tradition_nomadic_rulership
+		#Ritual Traditions
+		tradition_religious_patronage
+		#Realm Traditions
+		#Combat Traditions
+	}
+	
+	dlc_tradition = {
+		trait = tradition_devoted_horsemanship
+		requires_dlc_flag = khans_of_the_steppe
+		fallback = tradition_horse_lords
+	}
+	
+	name_list = name_list_hunas
+	
+	coa_gfx = { turkic_group_coa_gfx steppe_coa_gfx }
+	coa_gfx = { bp_scythian_coa_gfx iranian_group_coa_gfx steppe_coa_gfx }
+	building_gfx = { steppe_building_gfx }
+	clothing_gfx = { turkic_clothing_gfx mongol_clothing_gfx }
+	unit_gfx = { mongol_unit_gfx }
+	house_coa_frame = house_frame_14
+	
+	#50% Sakan/50% Turkish (West)
+	ethnicities = {
+		50 = turkic_west
+		22 = iranian
+		16 = mediterranean
+		#Historic references to lighter hair colors
+		3 = caucasian_blond
+		3 = caucasian_brown_hair
+		3 = caucasian_dark_hair
+		3 = caucasian_ginger
+	}
+}
+hepthalite = {
+	# Hepthalites seem to have had cultural, religious, and other differences from the Chionites and 
+	# other Huns, and thus might be a later arising admixture in the Syr Daya/Fereghanan frontier.
+	#
+	# To match etymologically, they were probably the Western Chionites (hence White) in the early
+	# Chionite period, and were pushed south by the rising Gokturks, which would explain some of the
+	# additional Turkicification/ANA seeming influences.
+	#
+	# But the whole thing is complicated. We'll just leave them as Iranic Huns with some more Turkic
+	# influx from Rouran pressure
+	
+	color = hepthalite
+	
+	#Iranic Huns; basically, Sakan/Turkic hybrid
+	parents = { chionite }
+	created = 440.1.1
+	history_loc_override = hepthalite_history_loc
+	
+	ethos = ethos_communal
+	heritage = heritage_chionite
+	language = language_bactrian
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_herd
+	traditions = {
+		#Societal Traditions
+		tradition_zealous_people
+		#Regional Traditions
+		tradition_nomadic_rulership
+		#Ritual Traditions
+		#Realm Traditions
+		tradition_castle_keepers #Fortification Experts
+		#Combat Traditions
+	}
+	
+	dlc_tradition = {
+		trait = tradition_devoted_horsemanship
+		requires_dlc_flag = khans_of_the_steppe
+		fallback = tradition_horse_lords
+	}
+	
+	name_list = name_list_hunas
+	
+	coa_gfx = { turkic_group_coa_gfx steppe_coa_gfx }
+	coa_gfx = { bp_scythian_coa_gfx iranian_group_coa_gfx steppe_coa_gfx }
+	building_gfx = { steppe_building_gfx }
+	clothing_gfx = { turkic_clothing_gfx mongol_clothing_gfx }
+	unit_gfx = { mongol_unit_gfx }
+	house_coa_frame = house_frame_14
+	
+	#50% Sakan/50% Turkish (West)
+	ethnicities = {
+		50 = turkic_west
+		22 = iranian
+		16 = mediterranean
+		#Historic references to lighter hair colors
+		3 = caucasian_blond
+		3 = caucasian_brown_hair
+		3 = caucasian_dark_hair
+		3 = caucasian_ginger
+	}
+}

@@ -46,6 +46,55 @@
 		6 = caucasian_ginger
 	}
 }
+indo_scythian = {
+	color = indo_scythian
+	
+	parents = { saka malvi }
+	created = 2.1.1
+	history_loc_override = indo_scythian_history_loc
+	
+	ethos = ethos_spiritual
+	heritage = heritage_sakan
+	language = langauge_apabhramsa
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_herd
+	traditions = {
+		#Societal Traditions
+		#Regional Traditions
+		tradition_nomadic_rulership
+		#Ritual Traditions
+		tradition_religion_blending
+		tradition_fervent_temple_builders
+		#Realm Traditions
+		#Combat Traditions
+	}
+	
+	dlc_tradition = {
+		trait = tradition_devoted_horsemanship
+		requires_dlc_flag = khans_of_the_steppe
+		fallback = tradition_horse_lords
+	}
+	
+	name_list = name_list_indo_scythian
+	
+	coa_gfx = { bp_scythian_coa_gfx iranian_group_coa_gfx steppe_coa_gfx }
+	building_gfx = { indian_building_gfx }
+	clothing_gfx = { indian_clothing_gfx }
+	unit_gfx = { mongol_unit_gfx }
+	house_coa_frame = house_frame_14
+	
+	#50/50 Sakan/Malvi mix
+	ethnicities = {
+		50 = indian
+		22 = iranian
+		16 = mediterranean
+		3 = caucasian_blond
+		3 = caucasian_brown_hair
+		3 = caucasian_dark_hair
+		3 = caucasian_ginger
+	}
+}
+
 dahi_scythian = {
 	color = dahi_scythian
 	

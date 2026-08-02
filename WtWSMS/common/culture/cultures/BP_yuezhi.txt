@@ -1,0 +1,89 @@
+﻿### Yuezhi-Heritage Cultures
+wusun = { #The long-lasting Wusun who maintained a non-Turkic, non-Scythian Identity
+	color = wusun
+	
+	ethos = ethos_communal
+	heritage = heritage_yuezhi
+	language = language_tokhari
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_herd
+	traditions = {
+		#Societal Traditions
+		#Regional Traditions
+		#Ritual Traditions
+		#Realm Traditions
+		tradition_hill_dwellers
+		tradition_mountain_homes
+	}
+	
+	dlc_tradition = {
+		trait = tradition_staunch_traditionalists
+		requires_dlc_flag = hybridize_culture
+		fallback = tradition_isolationist
+	}
+	
+	name_list = name_list_gushi
+	
+	coa_gfx = { bp_scythian_coa_gfx iranian_group_coa_gfx steppe_coa_gfx }
+	coa_gfx = { chinese_group_coa_gfx }
+	building_gfx = { steppe_building_gfx }
+	clothing_gfx = { turkic_clothing_gfx mongol_clothing_gfx}
+	unit_gfx = { mongol_unit_gfx }
+	house_coa_frame = house_frame_14
+	
+	#50% Sakan, 50% Tocharian
+	ethnicities = {
+		47 = iranian
+		25 = mediterranean
+		#Historic references to lighter hair colors
+		7 = caucasian_blond
+		7 = caucasian_brown_hair
+		7 = caucasian_dark_hair
+		7 = caucasian_ginger
+	}
+}
+yuezhi = { #The nomadic Yuezhi
+	color = yuezhi
+	
+	ethos = ethos_stoic
+	heritage = heritage_yuezhi
+	language = language_tokhari
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_herd
+	traditions = {
+		#Societal Traditions
+		#Regional Traditions
+		#Ritual Traditions
+		#Realm Traditions
+		tradition_horse_breeder
+		#Combat traditions
+		tradition_warriors_of_the_dry
+	}
+	
+	# FP3 traditions
+	dlc_tradition = {
+		trait = tradition_fp3_frontier_warriors
+		requires_dlc_flag = legacy_of_persia
+		fallback = tradition_horse_lords
+	}
+	
+	name_list = name_list_gushi
+	
+	coa_gfx = { bp_scythian_coa_gfx iranian_group_coa_gfx steppe_coa_gfx }
+	coa_gfx = { chinese_group_coa_gfx }
+	building_gfx = { steppe_building_gfx }
+	clothing_gfx = { turkic_clothing_gfx mongol_clothing_gfx}
+	unit_gfx = { mongol_unit_gfx }
+	house_coa_frame = house_frame_14
+	
+	#50% Sakan, 50% Tocharian
+	ethnicities = {
+		47 = iranian
+		25 = mediterranean
+		#Historic references to lighter hair colors
+		7 = caucasian_blond
+		7 = caucasian_brown_hair
+		7 = caucasian_dark_hair
+		7 = caucasian_ginger
+	}
+}

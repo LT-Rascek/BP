@@ -30,6 +30,51 @@
 	
 	ethnicities = { 100 = asian_tibetan }
 }
+lushuihu = { #Yuezhi/Greater Qiang mix
+	color = lushuihu
+	
+	#Derived from Yuezhi and local Qiangs
+	parents = { yuezhi tangut }
+	created = 2.1.1
+	history_loc_override = lushuihu_history_loc
+	
+	ethos = ethos_stoic
+	heritage = heritage_qiangic
+	language = language_qiangic
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_domain
+	traditions = {
+		#Societal Traditions
+		#Regional Traditions
+		#Ritual Traditions
+		#Realm Traditions
+		tradition_mountain_homes
+		#Combat Traditions
+		tradition_mountaineers
+		tradition_swords_for_hire
+	}
+	
+	name_list = name_list_tangut
+	
+	coa_gfx = { bp_scythian_coa_gfx iranian_group_coa_gfx steppe_coa_gfx }
+	coa_gfx = { chinese_group_coa_gfx }
+	building_gfx = { chinese_building_gfx }
+	clothing_gfx = { tangut_clothing_gfx mongol_clothing_gfx }
+	unit_gfx = { mongol_unit_gfx }
+	house_coa_frame = house_frame_14
+	
+	#30% Yuezhi, 70% Qiangic
+	ethnicities = {
+		70 = asian_tibetan
+		14 = iranian
+		8 = mediterranean
+		2 = caucasian_blond
+		2 = caucasian_brown_hair
+		2 = caucasian_dark_hair
+		2 = caucasian_ginger
+	}
+}
+
 qiang = { # Various Qiangic linguistic tribes (Pumi; Muya; Ersu; Rgyalrong; etc.)
 	color = qiang
 	
