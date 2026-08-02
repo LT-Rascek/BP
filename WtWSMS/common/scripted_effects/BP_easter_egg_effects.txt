@@ -436,7 +436,7 @@ get_paganify_faith_effect = {
 			limit = {
 				OR = {
 					culture = { has_cultural_parameter = heritage_kulturbund_tartar }
-					culture = { has_cultural_pillar = heritage_kulturbund_mongolic }
+					culture = { has_cultural_parameter = heritage_kulturbund_mongolic }
 				}
 			}
 			set_variable = { value = faith:tengri_pagan name = paganify_faith days = 1 }
