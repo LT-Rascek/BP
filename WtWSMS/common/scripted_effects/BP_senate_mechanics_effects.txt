@@ -621,7 +621,7 @@ make_west_senate_family_effect = {
 
 make_senate_noble_families_effect = {
 	if = {
-		limit = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
+		limit = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes }
 		every_dynasty_member = {
 			limit = {
 				is_house_head = yes

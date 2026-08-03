@@ -1,4 +1,10 @@
-﻿BP_has_dlc_necessary_for_roman_governments_trigger = {
+﻿BP_has_dlc_necessary_for_roman_admin_governments_trigger = {
+	OR = {
+		has_dlc_feature = roads_to_power
+		has_dlc_feature = all_under_heaven
+	}
+}
+BP_has_dlc_necessary_for_roman_ministries_trigger = {
 	has_dlc_feature = roads_to_power
 }
 ##### Religion Stuff #####

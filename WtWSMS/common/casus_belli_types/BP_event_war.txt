@@ -209,7 +209,7 @@ odoacer_takeover_war = { #Cribbed from invasion wars
 		
 		#Step 6: Handle the offices if playing with the DLC
 		if = {
-			limit = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
+			limit = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes }
 			#Setup Italian Magister Officiorum
 			custom_tooltip = {
 				text = roman_offices_instantiated
@@ -489,7 +489,7 @@ odoacer_takeover_war = { #Cribbed from invasion wars
 					limit = { has_main_roman_government_trigger = yes }
 					convert_to_subroman_government_effect = yes
 					if = {
-						limit = { BP_has_dlc_necessary_for_roman_governments_trigger = no }
+						limit = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = no }
 						add_realm_law_skip_effects = single_heir_succession_law
 					}
 				}
@@ -498,8 +498,6 @@ odoacer_takeover_war = { #Cribbed from invasion wars
 		
 		#Imprison Orestes and Romulus Augustulus
 		scope:defender = {
-			add_trait = deposed
-			
 			# Set up artifact transfers
 			hidden_effect = {
 				# Diadem is special, should be handled with the WRE transfer event

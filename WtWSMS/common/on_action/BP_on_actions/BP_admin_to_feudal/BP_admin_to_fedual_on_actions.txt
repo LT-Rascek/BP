@@ -53,7 +53,7 @@ on_war_won_attacker = {
 #As is per-war instead of per 5 year block, it's a 50% chance every 10 wars won
 BP_admin_to_fedual_military_landing_post_war = {
 	trigger = {
-		BP_has_dlc_necessary_for_roman_governments_trigger = yes
+		BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes
 		scope:attacker.top_liege ?= scope:attacker
 	}
 	effect = {

@@ -568,7 +568,7 @@ has_a_greco_roman_social_traditon_trigger = {
 	has_cultural_parameter = greco_roman_social_tradition
 }
 
-is_romance_heritage = { # Romance heritages except for Latin
+is_romance_heritage_trigger = { # Romance heritages except for Latin
 	#has_cultural_parameter = heritage_group_romance
 	OR = {
 		has_cultural_pillar = heritage_iberian
@@ -582,7 +582,7 @@ is_romance_heritage = { # Romance heritages except for Latin
 	}
 }
 
-is_migratory_germanic_heritage = {
+is_migratory_germanic_heritage_trigger = {
 	OR = {
 		has_cultural_pillar = heritage_jutlandic
 		has_cultural_pillar = heritage_gothic
@@ -594,7 +594,7 @@ is_migratory_germanic_heritage = {
 	}
 }
 
-is_medieval_germanic_heritage = {
+is_medieval_germanic_heritage_trigger = {
 	OR = {
 		has_cultural_pillar = heritage_central_germanic
 		has_cultural_pillar = heritage_east_germanic

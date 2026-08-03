@@ -17,15 +17,6 @@ destroy_PP_title_if_ai_effect = {
 		$TITLE$.holder ?= { destroy_title = $TITLE$ }
 	}
 }
-destroy_title_if_landless_effect = {
-	if = {
-		limit = {
-			exists = $TITLE$.holder
-			$TITLE$ = { is_landless_type_title = yes }
-		}
-		$TITLE$.holder = { destroy_title = $TITLE$ }
-	}
-}
 make_councilor_of_type_if_not_already_effect = { #Scope is council owner
 	if = {
 		limit = { NOT = { $TARGET_CHAR$ ?= { has_council_position = $POSITION$ } } }

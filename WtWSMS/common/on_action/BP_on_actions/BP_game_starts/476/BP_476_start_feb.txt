@@ -97,7 +97,7 @@ BP_character_events_476_feb = {
 	}
 }
 BP_character_events_476_feb_DLC = {
-	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
+	trigger = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes }
 	effect = {
 		#Orestes and Romulus are allied
 		character:96055 ?= {
@@ -156,7 +156,7 @@ BP_setup_realm_laws_476_feb = {
 	}
 }
 BP_setup_realm_laws_476_feb_DLC = {
-	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
+	trigger = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes }
 	effect = {
 		#Roman Diarchy Laws
 		if = {
@@ -300,7 +300,7 @@ BP_setup_vassal_contracts_476_feb = {
 	}
 }
 BP_setup_vassal_contracts_476_feb_DLC = {
-	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
+	trigger = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes }
 	effect = {
 		#Remnant Limitanei
 		title:d_noricum_ripense.holder = {
@@ -431,7 +431,7 @@ BP_setup_vassal_contracts_476_feb_DLC = {
 }
 
 BP_starting_state_faiths_476_feb_DLC = {
-	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
+	trigger = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes }
 	effect = {
 		title:h_eastern_roman_empire = { set_state_faith = faith:nicene }
 	}
@@ -1015,7 +1015,7 @@ bp_game_start_after_lobby_476_feb = {
 }
 
 BP_setup_roman_border_troops_476_feb_DLC = {
-	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
+	trigger = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes }
 	effect = {
 		title:d_noricum_ripense.holder = {
 			title:d_noricum_ripense = { every_title_maa_regiment = { destroy_maa_regiment = yes } }
@@ -1105,7 +1105,7 @@ BP_setup_roman_border_troops_476_feb_DLC = {
 }
 
 BP_setup_federate_troops_476_feb_DLC = {
-	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
+	trigger = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes }
 	effect = {
 		title:d_orleans.holder = {
 			title:d_orleans = { every_title_maa_regiment = { destroy_maa_regiment = yes } }
@@ -1132,17 +1132,18 @@ BP_setup_federate_troops_476_feb_DLC = {
 }
 
 BP_setup_roman_council_476_feb = {
+	trigger = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = no }
 	effect = {
 		#WRE
 		title:h_western_roman_empire = {
-			give_roman_council_position = { POSITION_TYPE = councillor_chancellor }
-			give_roman_council_position = { POSITION_TYPE = councillor_marshal }
+			give_roman_council_position_effect = { POSITION_TYPE = councillor_chancellor }
+			give_roman_council_position_effect = { POSITION_TYPE = councillor_marshal }
 		}
 		
 		#ERE
 		title:h_eastern_roman_empire = {
-			give_roman_council_position = { POSITION_TYPE = councillor_chancellor }
-			give_roman_council_position = { POSITION_TYPE = councillor_marshal }
+			give_roman_council_position_effect = { POSITION_TYPE = councillor_chancellor }
+			give_roman_council_position_effect = { POSITION_TYPE = councillor_marshal }
 		}
 	}
 }
@@ -1160,7 +1161,7 @@ BP_setup_other_councils_476_feb = {
 }
 
 BP_set_armies_476_feb_DLC = {
-	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
+	trigger = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes }
 	effect = {
 		title:h_western_roman_empire.holder = {
 			title:h_western_roman_empire = { every_title_maa_regiment = { destroy_maa_regiment = yes } }
@@ -1298,7 +1299,7 @@ BP_set_armies_476_feb_DLC = {
 }
 
 BP_set_employers_476_feb_no_DLC = {
-	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = no }
+	trigger = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = no }
 	#Otherwise landed chars should be sent to employers
 	effect = {
 		character:1100013 = { set_employer = character:145226 } #Basilicus

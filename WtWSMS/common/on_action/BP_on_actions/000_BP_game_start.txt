@@ -579,7 +579,7 @@ setup_realm_and_title_succession_laws = {
 setup_realm_and_title_succession_laws_DLC = {
 	effect = {
 		if = {
-			limit = { BP_has_dlc_necessary_for_roman_governments_trigger = no }
+			limit = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = no }
 			#Imperial Elective
 			every_ruler = {
 				every_held_title = {
@@ -1440,7 +1440,7 @@ setup_governments_based_on_dlc = {
 	effect = {
 		#Flip Roman governments from administrative to Dynastic if DLC is not available
 		if = {
-			limit = { BP_has_dlc_necessary_for_roman_governments_trigger = no }
+			limit = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = no }
 			#Roman Admin
 			every_ruler = {
 				limit = { has_government = roman_administrative_government }

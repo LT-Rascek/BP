@@ -2520,7 +2520,7 @@ grant_governorship_interaction = {
 		##### Changed from Vanilla vvvvv
 		if = {
 			limit = {
-				BP_has_dlc_necessary_for_roman_governments_trigger = yes
+				BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes
 				scope:recipient = { bp_can_become_federate_trigger = yes }
 			}
 			custom_tooltip = will_convert_to_a_federate

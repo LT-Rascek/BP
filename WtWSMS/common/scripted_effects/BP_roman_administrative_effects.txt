@@ -41,7 +41,7 @@
 					value = prev
 					days = 1
 				}
-				give_roman_council_position = { POSITION_TYPE = councillor_marshal }
+				give_roman_council_position_effect = { POSITION_TYPE = councillor_marshal }
 			}
 		}
 	}
@@ -73,7 +73,7 @@ setup_magister_offices_effect = {
 						days = 1
 					}
 				}
-				give_roman_council_position = { POSITION_TYPE = councillor_chancellor }
+				give_roman_council_position_effect = { POSITION_TYPE = councillor_chancellor }
 			}
 		}
 	}
@@ -96,9 +96,9 @@ setup_magister_offices_effect = {
 }
 
 # Passed a character from variable after lobby
-give_roman_council_position = {
+give_roman_council_position_effect = {
 
-	var:$POSITION_TYPE$ = { save_scope_as = councillor }
+	var:$POSITION_TYPE$ ?= { save_scope_as = councillor }
 	
 	# Add to court first
 	scope:councillor = {
