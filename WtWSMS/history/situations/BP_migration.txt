@@ -1,0 +1,13 @@
+﻿395.1.1 = {
+	effect = {
+			start_situation = {
+				type = BP_migration_situation
+				start_phase = BP_migration_period
+			}
+			situation:BP_migration_situation = { # A bit skewed so you don't start in an immediate bad situation
+				situation_sub_region:migration_region_wre = {
+					change_phase = { phase = BP_migration_period }
+				}
+			}
+	}
+} 

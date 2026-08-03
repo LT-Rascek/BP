@@ -1,0 +1,10 @@
+﻿BP_can_be_migrator_cultural_religious_trigger = {
+	OR = {
+		faith.religion = religion:tengrism_religion
+		faith.religion = religion:slavic_religion
+		faith.religion = religion:germanic_religion
+	}
+}
+BP_can_be_migrator_governmental_trigger = {
+	government_has_flag = government_can_migrate
+}

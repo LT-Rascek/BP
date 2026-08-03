@@ -1,0 +1,90 @@
+﻿BP_migration_situation = {
+	gui_window_name = "BP_window_migration_situation"
+	gui_participation_window_name = "window_situation_participation"
+	illustration = "gfx/interface/illustrations/terrain_types/mpo_season_abudant_grazing.dds"
+	situation_group_type = major
+	map_mode = sub_regions
+
+	is_unique = yes # It can only exist once in the world
+
+	##################################################
+	# Regions
+	##################################################
+	sub_regions = {
+		migration_region_wre = {
+			icon = "gfx/interface/icons/situations/debug_situation/steppe_west.dds"
+			geographical_regions = { migration_region_roman_empire }
+		}
+	}
+	
+	##################################################
+	# On Actions
+	##################################################
+	# on_monthly = {
+	# }
+
+	##################################################
+	# Groups
+	##################################################
+	participant_groups = {
+		migrators = {
+			is_character_valid = {
+				BP_can_be_migrator_cultural_religious_trigger = yes
+				BP_can_be_migrator_governmental_trigger = yes
+			}
+			on_join = {
+			}
+			on_leave = {
+			}
+			
+			map_color = hsv{ 0.37 1.00 0.78 }
+		}
+	}
+	
+	##################################################
+	# Phases
+	##################################################
+	start_phase = situation_BP_migration_migration_period
+
+	phases = {
+		BP_migration_period = {
+			icon = "gfx/interface/icons/situations/debug_situation/plentiful_harvest.dds"
+			
+			on_start = {}
+			on_end = {}
+			
+			max_duration = { years = 400 }
+			
+			future_phases = {}
+			
+			parameters = {}
+			
+			modifier_sets = {
+				BP_migration_period_war_effects = {
+					all = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					migrators = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+				}
+				BP_migration_culture_effects = {
+					all = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					migrators = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+				}
+			}
+		}
+	}
+}
