@@ -688,7 +688,23 @@ BP_create_armies_476 = {
 			create_theodoric_army_effect = { LOCATION = 3682 }
 		}
 		title:d_ovorkhangai.holder = {
-			create_gokturk_maa_476_effect = yes
+			if = { #Can't be dispatched to an effect for some reason
+				limit = { government_has_flag = government_is_nomadic }
+				create_maa_regiment = {
+					type = cataphract_archers
+					size = 2
+				}
+			}
+			else = {
+				create_maa_regiment = {
+					type = horse_archers
+					size = 2
+				}
+			}
+			create_maa_regiment = {
+				type = horse_archers
+				size = 2
+			}
 		}
 		title:e_xiongnu.holder = {
 			create_hephthalite_476_army_effect = { LOCATION = 4335 }

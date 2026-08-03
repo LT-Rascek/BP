@@ -710,25 +710,6 @@ create_theodoric_army_effect = {
 		inheritable = no
 	}
 }
-create_gokturk_maa_476_effect = { #Not working?
-	if = {
-		limit = { has_dlc_feature = khans_of_the_steppe }
-		create_maa_regiment = {
-			type = cataphract_archers
-			size = 1
-		}
-	}
-	else = {
-		create_maa_regiment = {
-			type = horse_archers
-			size = 1
-		}
-	}
-	create_maa_regiment = {
-		type = horse_archers
-		size = 1
-	}
-}
 create_hepthalite_maa_476_effect = {
 	if = {
 		limit = { has_dlc_feature = khans_of_the_steppe }
