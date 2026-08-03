@@ -2,8 +2,16 @@
  situation_BP_migration_situation: "The Migration Period"
  
  #Groups
+ BP_migration_situation_participant_group_civilized_polities: "Civilized Polities"
+ BP_migration_situation_participant_group_civilized_polities_desc: "Civilized Polities Description"
+ BP_migration_situation_participant_group_barbarian_polities: "Barbarian Polities"
+ BP_migration_situation_participant_group_barbarian_polities_desc: "Barbarian Polities Description"
  BP_migration_situation_participant_group_migrators: "Migrators"
  BP_migration_situation_participant_group_migrators_desc: "Migrator Description"
+ BP_migration_situation_participant_group_successor_states: "Successor States"
+ BP_migration_situation_participant_group_successor_states_desc: "Successor States Description"
+ BP_migration_situation_participant_group_tribals: "Tribals"
+ BP_migration_situation_participant_group_tribals_desc: "Tribals Description"
  
  #Phases
  BP_migration_situation_BP_migration_period_situation_phase: "Migration Phase"
@@ -11,3 +19,19 @@
  BP_migration_period_war_effects_concept: "War Effects Desc"
  BP_migration_culture_effects: "Culture Effects"
  BP_migration_culture_effects_concept: "Culture Effects Desc"
+ BP_transition_period: "Transition Phase"
+ BP_transition_period_desc: "Transition Phase Desc"
+ 
+ #Parameters (all need to be added in)
+ situation_parameter_targetable_by_migration_cbs: "Can be targeted by MIGRATION_CASUS_BELLI"
+ situation_parameter_migration_cbs_enabled: "Enables MIGRATION_CASUS_BELLI"
+ situation_parameter_unlocks_passing_culture_law: "Unlocks the decision to PASS_CULTURE_LAW"
+ situation_parameter_increased_subjugation_limit: "$culture_parameter_increased_subjugation_limit$"
+ situation_parameter_more_liberal_divergence_hybridization_time: "Reduces time required for CULTURE_HYBRID_DIVERGENCE" #Make into Select Localization
+ situation_parameter_cultural_unification_cb_enabled: "Enables CULTURE_UNIFICATION_CB"
+ situation_parameter_easier_adventurer_invasions: "ADVENTURER_INVASIONS are easier"
+ 
+ #Catalysts
+ catalyst_situation_passing_of_time_migration: "Yearly Drift [situation_catalyst|E]"
+ catalyst_situation_passing_of_time_migration_desc: "$catylst_situation_passing_of_time_migration$"
+ 

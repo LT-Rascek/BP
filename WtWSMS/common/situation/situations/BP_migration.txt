@@ -20,17 +20,78 @@
 	##################################################
 	# On Actions
 	##################################################
-	# on_monthly = {
-	# }
+	on_monthly = {}
+	on_yearly = {
+		#Yearly Tick of situation
+		trigger_situation_catalyst = catalyst_situation_passing_of_time_migration
+	}
 
 	##################################################
 	# Groups
 	##################################################
 	participant_groups = {
+		civilized_polities = {
+			is_character_valid = {
+				BP_can_be_migrator_cultural_religious_trigger = no
+				BP_can_be_civilized_polity_government_trigger = yes
+				is_independent_ruler = yes
+				is_landed = yes
+			}
+			on_join = {
+			}
+			on_leave = {
+			}
+			
+			map_color = hsv{ 0.37 1.00 0.78 }
+		}
+		barbarian_polities = {
+			is_character_valid = {
+				BP_can_be_migrator_cultural_religious_trigger = yes
+				BP_can_be_barbarian_polity_governmental_trigger = yes
+				is_independent_ruler = yes
+				is_landed = yes
+			}
+			on_join = {
+			}
+			on_leave = {
+			}
+			
+			map_color = hsv{ 0.37 1.00 0.78 }
+		}
 		migrators = {
 			is_character_valid = {
 				BP_can_be_migrator_cultural_religious_trigger = yes
 				BP_can_be_migrator_governmental_trigger = yes
+				this.primary_title.tier >= tier_county
+			}
+			on_join = {
+			}
+			on_leave = {
+			}
+			
+			map_color = hsv{ 0.37 1.00 0.78 }
+		}
+		successor_states = {
+			is_character_valid = {
+				BP_can_be_migrator_cultural_religious_trigger = no
+				BP_can_be_migrator_governmental_trigger = no
+				BP_can_be_civilized_polity_government_trigger = no
+				is_independent_ruler = yes
+				is_landed = yes
+			}
+			on_join = {
+			}
+			on_leave = {
+			}
+			
+			map_color = hsv{ 0.37 1.00 0.78 }
+		}
+		tribals = {
+			is_character_valid = {
+				BP_can_be_migrator_cultural_religious_trigger = no
+				BP_can_be_migrator_governmental_trigger = yes
+				is_independent_ruler = yes
+				is_landed = yes
 			}
 			on_join = {
 			}
@@ -53,9 +114,107 @@
 			on_start = {}
 			on_end = {}
 			
-			max_duration = { years = 400 }
+			future_phases = {
+				BP_transition_period = {
+					takeover_type = points
+					takeover_points = 400
+					catalysts = {
+						#Passage of Time
+						catalyst_situation_passing_of_time_migration = BP_migration_catalyst_yearly_tick
+					}
+				}
+			}
 			
-			future_phases = {}
+			parameters = {}
+			
+			modifier_sets = {
+				BP_migration_period_war_effects = {
+					all = {
+						parameters = {
+							targetable_by_migration_cbs = yes
+						}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					civilized_polities = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					barbarian_polities = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					migrators = {
+						parameters = {
+							migration_cbs_enabled = yes
+							increased_subjugation_limit = yes
+							cultural_unification_cb_enabled = yes
+							easier_adventurer_invasions = yes
+						}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					successor_states = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					tribals = {
+						parameters = {
+							increased_subjugation_limit = yes
+							cultural_unification_cb_enabled = yes
+						}
+						character_modifier = {}
+						county_modifier = {}
+					}
+				}
+				BP_migration_culture_effects = {
+					all = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					civilized_polities = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					barbarian_polities = {
+						parameters = {
+							unlocks_passing_culture_law = yes
+						}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					migrators = {
+						parameters = {
+							more_liberal_divergence_hybridization_time = yes
+						}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					successor_states = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					tribals = {
+						parameters = {
+							more_liberal_divergence_hybridization_time = yes
+						}
+						character_modifier = {}
+						county_modifier = {}
+					}
+				}
+			}
+		}
+		BP_transition_period = {
+			max_duration = { years = 5 }
+			
+			on_start = {}
+			on_end = {}
 			
 			parameters = {}
 			
@@ -66,7 +225,27 @@
 						character_modifier = {}
 						county_modifier = {}
 					}
+					civilized_polities = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					barbarian_polities = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
 					migrators = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					successor_states = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					tribals = {
 						parameters = {}
 						character_modifier = {}
 						county_modifier = {}
@@ -78,7 +257,27 @@
 						character_modifier = {}
 						county_modifier = {}
 					}
+					civilized_polities = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					barbarian_polities = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
 					migrators = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					successor_states = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					tribals = {
 						parameters = {}
 						character_modifier = {}
 						county_modifier = {}

@@ -1,10 +1,21 @@
-﻿BP_can_be_migrator_cultural_religious_trigger = {
+﻿#Culture/Religion Group Triggers
+BP_can_be_migrator_cultural_religious_trigger = {
 	OR = {
 		faith.religion = religion:tengrism_religion
 		faith.religion = religion:slavic_religion
 		faith.religion = religion:germanic_religion
+		culture = { has_cultural_parameter = heritage_group_slavic }
+		culture = { has_cultural_parameter = heritage_kulturbund_scythian }
+		culture = { has_cultural_parameter = heritage_group_germanic }
 	}
 }
+#Government Group Triggers
 BP_can_be_migrator_governmental_trigger = {
 	government_has_flag = government_can_migrate
+}
+BP_can_be_barbarian_polity_governmental_trigger = {
+	government_has_flag = government_is_centralized
+}
+BP_can_be_civilized_polity_government_trigger = {
+	government_has_flag = government_is_centralized
 }
