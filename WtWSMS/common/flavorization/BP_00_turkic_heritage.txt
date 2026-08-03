@@ -1,55 +1,9 @@
-﻿#Bolghar Titles
-king_male_nomad_bolghar = {
-	type = character
-	gender = male
-	special = holder
-	tier = kingdom
-	priority = 49
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government nomad_government administrative_government }
-	name_lists = { name_list_xiongnu name_list_bolghar name_list_hunnic name_list_bolghar }
-	flavourization_rules = {
-		top_liege = no
-	}
-}
-kingdom_nomad_bolghar = {
-	type = title
-	tier = kingdom
-	priority = 49
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government nomad_government administrative_government }
-	name_lists = { name_list_xiongnu name_list_bolghar name_list_hunnic name_list_bolghar }
-	flavourization_rules = {
-		top_liege = no
-	}
-}
-emperor_male_nomad_bolghar = {
-	type = character
-	gender = male
-	special = holder
-	tier = empire
-	priority = 103
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government nomad_government administrative_government }
-	name_lists = { name_list_xiongnu name_list_bolghar name_list_hunnic name_list_bolghar }
-	flavourization_rules = {
-		top_liege = no
-	}
-}
-empire_nomad_bolghar = {
-	type = title
-	tier = empire
-	priority = 103
-	governments = { nomad_government administrative_government }
-	name_lists = { name_list_xiongnu name_list_bolghar name_list_hunnic name_list_bolghar }
-	flavourization_rules = {
-		top_liege = no
-	}
-}
-
-#Bolghar
+﻿#Bolghar
 barony_bolghar = {
 	type = title
 	tier = barony
 	priority = 7
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government nomad_government administrative_government }
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
 	name_lists = { name_list_bolghar }
 	flavourization_rules = {
 		top_liege = no
@@ -61,7 +15,7 @@ count_male_bolghar = {
 	special = holder
 	tier = county
 	priority = 18
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government nomad_government administrative_government }
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
 	name_lists = { name_list_bolghar }
 	flavourization_rules = {
 		top_liege = no
@@ -71,7 +25,7 @@ county_bolghar = {
 	type = title
 	tier = county
 	priority = 18
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government nomad_government administrative_government }
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
 	name_lists = { name_list_bolghar }
 	flavourization_rules = {
 		top_liege = no
@@ -83,7 +37,7 @@ duke_male_bolghar = {
 	special = holder
 	tier = duchy
 	priority = 27
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government nomad_government administrative_government }
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
 	name_lists = { name_list_bolghar }
 	flavourization_rules = {
 		top_liege = no
@@ -93,7 +47,7 @@ duchy_bolghar = {
 	type = title
 	tier = duchy
 	priority = 27
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government nomad_government administrative_government }
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
 	name_lists = { name_list_bolghar }
 	flavourization_rules = {
 		top_liege = no
@@ -105,7 +59,7 @@ king_male_bolghar = {
 	special = holder
 	tier = kingdom
 	priority = 48
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government nomad_government administrative_government }
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
 	name_lists = { name_list_bolghar }
 	flavourization_rules = {
 		top_liege = no
@@ -115,7 +69,7 @@ kingdom_bolghar = {
 	type = title
 	tier = kingdom
 	priority = 48
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government nomad_government administrative_government }
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
 	name_lists = { name_list_bolghar }
 	flavourization_rules = {
 		top_liege = no
@@ -141,7 +95,7 @@ count_male_oghur = {
 	special = holder
 	tier = county
 	priority = 18
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government administrative_government }
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
 	name_lists = { name_list_oghur }
 	flavourization_rules = {
 		top_liege = no
@@ -151,7 +105,7 @@ county_oghur = {
 	type = title
 	tier = county
 	priority = 18
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government administrative_government }
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
 	name_lists = { name_list_oghur }
 	flavourization_rules = {
 		top_liege = no
@@ -163,7 +117,7 @@ duke_male_oghur = {
 	special = holder
 	tier = duchy
 	priority = 27
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government administrative_government }
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
 	name_lists = { name_list_oghur }
 	flavourization_rules = {
 		top_liege = no
@@ -173,7 +127,7 @@ duchy_oghur = {
 	type = title
 	tier = duchy
 	priority = 27
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government administrative_government }
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
 	name_lists = { name_list_oghur }
 	flavourization_rules = {
 		top_liege = no
@@ -185,7 +139,7 @@ king_male_oghur = {
 	special = holder
 	tier = kingdom
 	priority = 48
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government administrative_government }
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
 	name_lists = { name_list_oghur }
 	flavourization_rules = {
 		top_liege = no
@@ -195,7 +149,7 @@ kingdom_oghur = {
 	type = title
 	tier = kingdom
 	priority = 48
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government administrative_government }
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
 	name_lists = { name_list_oghur }
 	flavourization_rules = {
 		top_liege = no
@@ -209,7 +163,7 @@ king_male_hunnic = {
 	special = holder
 	tier = kingdom
 	priority = 48
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government nomad_government administrative_government }
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
 	name_lists = { name_list_hunnic }
 	flavourization_rules = {
 		top_liege = no
@@ -219,21 +173,53 @@ kingdom_hunnic = {
 	type = title
 	tier = kingdom
 	priority = 48
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government nomad_government administrative_government }
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
+	name_lists = { name_list_hunnic }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+emperor_male_hunnic = {
+	type = character
+	gender = male
+	special = holder
+	tier = empire
+	priority = 103
+	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government nomad_government administrative_government }
+	name_lists = { name_list_hunnic }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+empire_hunnic = {
+	type = title
+	tier = empire
+	priority = 103
+	governments = { nomad_government administrative_government }
 	name_lists = { name_list_hunnic }
 	flavourization_rules = {
 		top_liege = no
 	}
 }
 
-#Hepthalites
+#Hunas
 baron_male_hunas = {
 	type = character
 	gender = male
 	special = holder
 	tier = barony
 	priority = 7
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government nomad_government administrative_government }
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
+	name_lists = { name_list_hunas }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+barony_hunas = {
+	type = title
+	tier = barony
+	priority = 7
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government }
 	name_lists = { name_list_hunas }
 	flavourization_rules = {
 		top_liege = no
@@ -245,7 +231,7 @@ count_male_hunas = {
 	special = holder
 	tier = county
 	priority = 18
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government nomad_government administrative_government }
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
 	name_lists = { name_list_hunas }
 	flavourization_rules = {
 		top_liege = no
@@ -255,7 +241,7 @@ county_hunas = {
 	type = title
 	tier = county
 	priority = 18
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government nomad_government administrative_government }
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
 	name_lists = { name_list_hunas }
 	flavourization_rules = {
 		top_liege = no
@@ -267,7 +253,7 @@ duke_male_hunas = {
 	special = holder
 	tier = duchy
 	priority = 27
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government nomad_government administrative_government }
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
 	name_lists = { name_list_hunas }
 	flavourization_rules = {
 		top_liege = no
@@ -277,7 +263,7 @@ duchy_hunas = {
 	type = title
 	tier = duchy
 	priority = 27
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government nomad_government administrative_government }
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
 	name_lists = { name_list_hunas }
 	flavourization_rules = {
 		top_liege = no
@@ -289,7 +275,7 @@ king_male_hunas = {
 	special = holder
 	tier = kingdom
 	priority = 48
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government nomad_government administrative_government }
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
 	name_lists = { name_list_hunas }
 	flavourization_rules = {
 		top_liege = no
@@ -299,7 +285,7 @@ kingdom_hunas = {
 	type = title
 	tier = kingdom
 	priority = 48
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government nomad_government administrative_government }
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
 	name_lists = { name_list_hunas }
 	flavourization_rules = {
 		top_liege = no
@@ -311,21 +297,241 @@ emperor_male_hunas = {
 	special = holder
 	tier = empire
 	priority = 102
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government nomad_government administrative_government }
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
+	name_lists = { name_list_hunas }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+empire_hunas = {
+	type = title
+	tier = empire
+	priority = 103
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
 	name_lists = { name_list_hunas }
 	flavourization_rules = {
 		top_liege = no
 	}
 }
 
-#Xiongnu
-chanyu_xiongnu_male = {
+#Yueban
+baron_male_yueban = {
+	type = character
+	gender = male
+	special = holder
+	tier = barony
+	priority = 10
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
+	name_lists = { name_list_yueban }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+baron_female_yueban = {
+	type = character
+	gender = female
+	special = holder
+	tier = barony
+	priority = 10
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
+	name_lists = { name_list_yueban }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+barony_yueban = {
+	type = title
+	tier = barony
+	priority = 7
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
+	name_lists = { name_list_yueban }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+count_male_yueban = {
+	type = character
+	gender = male
+	special = holder
+	tier = county
+	priority = 21
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
+	name_lists = { name_list_yueban }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+count_female_yueban = {
+	type = character
+	gender = female
+	special = holder
+	tier = county
+	priority = 21
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
+	name_lists = { name_list_yueban }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+county_yueban = {
+	type = title
+	tier = county
+	priority = 21
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
+	name_lists = { name_list_yueban }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+duke_male_yueban = {
+	type = character
+	gender = male
+	special = holder
+	tier = duchy
+	priority = 30
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
+	name_lists = { name_list_yueban }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+duke_female_yueban = {
+	type = character
+	gender = female
+	special = holder
+	tier = duchy
+	priority = 30
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
+	name_lists = { name_list_yueban }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+duchy_yueban = {
+	type = title
+	tier = duchy
+	priority = 30
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
+	name_lists = { name_list_yueban }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+king_male_yueban = {
+	type = character
+	gender = male
+	special = holder
+	tier = kingdom
+	priority = 48
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
+	name_lists = { name_list_yueban }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+king_female_yueban = {
+	type = character
+	gender = female
+	special = holder
+	tier = kingdom
+	priority = 48
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
+	name_lists = { name_list_yueban }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+kingdom_yueban = {
+	type = title
+	tier = kingdom
+	priority = 48
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
+	name_lists = { name_list_yueban }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+emperor_male_yueban = {
 	type = character
 	gender = male
 	special = holder
 	tier = empire
-	priority = 110
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government nomad_government }
-	name_lists = { name_list_xiongnu }
+	priority = 102
+	
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
+	name_lists = { name_list_yueban }
+	flavourization_rules = {
+		only_independent = yes
+		top_liege = no
+	}
+}
+emperor_female_yueban = {
+	type = character
+	gender = female
+	special = holder
+	tier = empire
+	priority = 102
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
+	name_lists = { name_list_yueban }
+	flavourization_rules = {
+		only_independent = yes
+		top_liege = no
+	}
+}
+empire_yueban = {
+	type = title
+	tier = empire
+	priority = 102
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
+	name_lists = { name_list_yueban }
+	flavourization_rules = {
+		only_independent = yes
+		top_liege = no
+	}
 }
 
+#Xiongnu
+king_male_xiongnu = {
+	type = character
+	gender = male
+	special = holder
+	tier = kingdom
+	priority = 49
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
+	name_lists = { name_list_xiongnu }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+kingdom_xiongnu = {
+	type = title
+	tier = kingdom
+	priority = 49
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
+	name_lists = { name_list_xiongnu }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+emperor_male_xiongnu = {
+	type = character
+	gender = male
+	special = holder
+	tier = empire
+	priority = 103
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
+	name_lists = { name_list_xiongnu }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+empire_xiongnu = {
+	type = title
+	tier = empire
+	priority = 103
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government nomad_government }
+	name_lists = { name_list_xiongnu }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
