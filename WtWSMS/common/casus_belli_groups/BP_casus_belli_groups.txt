@@ -26,6 +26,17 @@
 	}
 }
 
+migration_situation = {
+	allowed_for_character = {
+		is_landed = yes
+		any_character_situation = { has_sub_region_phase_parameter = migration_cbs_enabled }
+	}
+	allowed_against_character = {
+		is_landed = yes
+		any_character_situation = { has_sub_region_phase_parameter = targetable_by_migration_cbs }
+	}
+}
+
 struggle_bp = {
 	allowed_for_character = {
 		herders_and_tributary_constraints = yes

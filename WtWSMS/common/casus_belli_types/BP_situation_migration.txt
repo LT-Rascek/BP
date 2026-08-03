@@ -1,0 +1,560 @@
+﻿#Migration CBs
+# Originally written by Zusk, ported and overhauled to CK3 by LT-Rascek
+
+#TODO: Re-enable declaration events
+bp_migration_war = {
+	group = migration
+	icon = invasion
+	
+	allow_hostages = no
+
+	combine_into_one = yes
+	should_show_war_goal_subview = yes
+	mutually_exclusive_titles = { always = yes }
+
+	allowed_for_character = {
+		this.primary_title.tier > tier_county
+		this.primary_title.tier < tier_empire
+		#Franks shouldn't migrate
+		trigger_if = {
+			limit = { this.culture = culture:old_frankish }
+			is_ai = no
+		}
+	}
+
+	allowed_for_character_display_regardless = {
+		this.prestige_level > this.migration_war_required_fame_level
+		custom_description = {
+			text = has_launched_migration_war_recently
+			NOT = { has_character_flag = launched_migration_war_recently }
+		}
+	}
+	
+	allowed_against_character = {
+		scope:attacker = {
+			ALL_FALSE = {
+				top_liege = scope:defender.top_liege
+				liege = scope:defender
+			}
+		}
+		#No migrations against your own culture; use unification CBs instead
+		NOT = { scope:attacker.culture = scope:defender.culture }
+	}
+	
+	target_titles = neighbor_land_or_water
+	target_title_tier = kingdom
+	target_de_jure_regions_above = yes
+	ignore_effect = change_title_holder
+	
+	max_ai_diplo_distance_to_title = 250 #Roughly one Ireland away
+	
+	ai_score_mult = {
+		value = 1
+		# Prefer (strongly) to target non-tribal locations if they are at least non-tribal
+		add = {
+			every_in_list = {
+				list = target_titles
+				if = { limit = { general_bp_migration_constraints_trigger = yes } add = -1000 }
+			}
+		}
+	}
+
+	valid_to_start = {
+		scope:target = {
+			any_in_de_jure_hierarchy = {
+				tier = tier_county
+				neighboring_county_or_viking_conquest_trigger = { CHARACTER = root }
+			}
+		}
+		#Don't touch the steppe with WtWSMS migrations
+		target_title_not_in_great_steppe_trigger = {
+			TARGET_TITLE = scope:target
+			TIER = kingdom
+		}
+	}
+
+	cost = {
+		prestige = scope:attacker.migration_war_prestige_cost_kingdom
+	}
+
+	on_declaration = {
+		on_declared_war = yes
+		#For localization
+		random_in_list = {
+			list = target_titles
+			limit = { tier = tier_kingdom }
+			save_scope_as = target_kingdom
+		}
+		#Add attackers, liberate non-participants
+		custom_tooltip = {
+			text = text_some_vassals_may_join
+			scope:attacker = { #TODO: Make new events
+				trigger_event = migration_war.0001
+				every_vassal = {
+					limit = { primary_title.tier > tier_barony }
+					save_scope_as = target_vassal
+					trigger_event = migration_war.0002
+				}
+			}
+		}
+		#Spawn armies
+		custom_tooltip = {
+			text = armies_spawn_from_development
+			scope:attacker = {
+				every_held_title = {
+					limit = {
+						tier = tier_county
+						is_landless_type_title = no
+						AND = {
+							this.culture = scope:attacker.culture
+							this.faith = scope:attacker.faith
+						}
+					}
+					
+					
+					prev = {
+						spawn_army = {
+							name = event_troop_default_name
+							levies = prev.bp_migration_levies
+							location = prev.title_province
+							uses_supply = no
+							war = scope:war
+							inheritable = no
+						}
+					}
+				}
+			}
+		}
+		hidden_effect = { scope:attacker = { update_number_of_bp_migrations_effect = yes } }
+	}
+	
+	should_invalidate = {
+		NOT = {
+			any_in_list = {
+				list = target_titles
+				any_in_de_jure_hierarchy = {
+					tier = tier_county
+					holder = { target_is_same_character_or_above = scope:defender }
+				}
+			}
+		}
+	}
+	
+	on_invalidated_desc = {}
+	
+	on_invalidated = {}
+	
+	on_victory_desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:attacker = { is_local_player = yes } }
+				desc = migration_war_victory_desc_attacker
+			}
+			desc = migration_war_victory_desc
+		}
+		triggered_desc = {
+			trigger = { scope:attacker = { is_local_player = yes } }
+			desc = migration_war_warning_desc
+		}
+	}
+	
+	on_victory = {
+		scope:attacker = { show_pow_release_message_effect = yes }
+		
+		# Legitimacy
+		add_legitimacy_attacker_victory_effect  = yes
+		
+		#### Add necessary title/vassal changes
+		
+		create_title_and_vassal_change = {
+			type = independency
+			save_scope_as = change_attacker_titles_vassals_independent
+			add_claim_on_loss = no
+		}
+		create_title_and_vassal_change = {
+			type = swear_fealty
+			save_scope_as = change_attacker_titles_vassals_to_liege
+			add_claim_on_loss = no
+		}
+		create_title_and_vassal_change = {
+			type = conquest
+			save_scope_as = change_conquered_new_lands
+			add_claim_on_loss = yes
+		}
+		
+		#### Build necessary lists
+		
+		#migration_source_counties: Counties for which migration modifiers should be applied
+		#attacker_titles_to_liege: Attacker titles going to an existing liege
+		#attacker_titles_to_independent: Attacker titles going to be independent
+		#defender_titles_taken_in_target: Defender titles taken within the target
+		#migrating_attackers: attackers who are migrating
+		#attacker_liberated_vassals: vassals of attackers who get liberated
+		#attacker_handed_off_vassals: vassals of attackers who get handed off as vassals
+		
+		save_temporary_scope_as = the_war
+		
+		scope:attacker = { #War Attackers and Vassal Handling
+			save_temporary_scope_as = war_leader
+			add_to_temporary_list = migrating_attackers
+			every_vassal = {
+				if = {
+					limit = { has_character_flag = participating_vassal }
+					add_to_temporary_list = migrating_attackers
+				}
+				else_if = {
+					limit = { this.top_liege = scope:war_leader }
+					add_to_temporary_list = attacker_liberated_vassals
+				}
+				else = { add_to_temporary_list = attacker_handed_off_vassals }
+			}
+		}
+		
+		#### TODO: Mark attacker de jure kingdoms/duchies to be destroyed
+		
+		every_in_list = { #Migration Source Counties
+			list = migrating_attackers
+			every_held_title = {
+				limit = {
+					is_landless_type_title = no
+					this.tier = tier_county
+					this.culture = prev.culture
+					this.faith = prev.faith
+				}
+				add_to_temporary_list = migration_source_counties
+			}
+		}
+		
+		every_in_list = { #Migration Source Counties
+			list = migrating_attackers
+			every_held_title = {
+				limit = {
+					is_landless_type_title = no
+					this.tier = tier_county
+					this.culture = prev.culture
+					this.faith = prev.faith
+				}
+				if = { #Case liege is migrator
+					limit = { this.holder.top_liege = scope:war_leader }
+					add_to_temporary_list = attacker_titles_to_independent
+				}
+				else = { add_to_temporary_list = attacker_titles_to_liege }
+			}
+		}
+		
+		every_in_list = { #Defender target titles
+			list = target_titles
+			every_in_de_jure_hierarchy = {
+				limit = {
+					is_landless_type_title = no
+					tier = tier_county
+					OR = {
+						this.holder = scope:defender
+						this.holder = { target_is_liege_or_above = scope:defender }
+					}
+				}
+				add_to_temporary_list = defender_titles_taken
+			}
+		}
+		
+		#### TODO: Mark defender de jure title to be destroyed if it exists
+		
+		#### Hand off attacker titles
+		every_in_list = {
+			list = attacker_titles_to_independent
+			
+			create_character = {
+				location = scope:war_leader.location
+				culture = this.culture
+				faith = this.faith
+				gender_female_chance = {
+					if = {
+						limit = { this.faith = { has_doctrine = doctrine_gender_male_dominated } }
+						value = 0
+					}
+					else_if = {
+						limit = { this.faith = { has_doctrine = doctrine_gender_female_dominated } }
+						value = 100
+					}
+					else = { value = 50 }
+				}
+				save_scope_as = new_char
+			}
+			scope:new_char = { add_to_list = new_holders }
+			change_title_holder = {
+				holder = scope:new_char
+				change = scope:change_attacker_titles_vassals_independent
+				take_baronies = yes
+			}
+			scope:new_char = { becomes_independent = { change = scope:change_attacker_titles_vassals_independent } }
+		}
+		every_in_list = {
+			list = attacker_titles_to_liege
+			change_title_holder = {
+				holder = this.liege
+				change = scope:change_attacker_titles_vassals_to_liege
+				take_baronies = yes
+			}
+		}
+		
+		#### Handle attacker vassals
+		every_in_list = {
+			list = attacker_liberated_vassals
+			becomes_independent = { change = scope:change_attacker_titles_vassals_independent }
+		}
+		every_in_list = {
+			list = attacker_handed_off_vassals
+			change_liege = { liege = this.liege.liege change = scope:change_attacker_titles_vassals_to_liege }
+		}
+		
+		#### Take Defender Titles
+		every_in_list = { #TODO: Federates/tribals/high tribals stick around as vassals
+			list = defender_titles_taken
+			change_title_holder = {
+				holder = scope:attacker
+				change = scope:change_conquered_new_lands
+				take_baronies = yes
+			}
+		}
+		
+		#### Update the changes
+		resolve_title_and_vassal_change = scope:change_conquered_new_lands
+		resolve_title_and_vassal_change = scope:change_attacker_titles_vassals_to_liege
+		resolve_title_and_vassal_change = scope:change_attacker_titles_vassals_independent
+		
+		#### Apply various modifiers
+		
+		#### Update Counties
+		
+		#### Test environment
+		every_in_list = {
+			list = migrating_attackers
+			add_character_modifier = pilgrimage_mendicant_preachers_modifier
+		}
+		every_in_list = {
+			list = attacker_titles_to_independent
+			add_county_modifier = reclaim_britannia_culture_modifier
+		}
+		every_in_list = {
+			list = attacker_titles_to_liege
+			add_county_modifier = peasant_war_lost_county_modifier
+		}
+		every_in_list = {
+			list = defender_titles_taken
+			add_county_modifier = county_increased_opinion_modifier
+		}
+		#### END MIGRATION MANAGEMENT
+		
+		# Attacker gets Prestige Experience, Defender loses Prestige, all other participants gain Prestige based on their war contribution.
+		modify_all_participants_fame_values = {
+			WINNER = scope:attacker
+			LOSER = scope:defender
+			FAME_BASE = 200
+			IS_RELIGIOUS_WAR = no
+			WINNER_FAME_SCALE = 1
+			LOSER_FAME_SCALE = -1
+			WINNER_ALLY_FAME_SCALE = 1
+			LOSER_ALLY_FAME_SCALE = 1
+		}
+
+		# Truce
+		add_truce_attacker_victory_effect = yes
+
+		# FP1: note the victory for future memorialisation via stele (if applicable).
+		scope:attacker = { fp1_remember_recent_conquest_victory_effect = yes }
+	}
+	
+	on_white_peace_desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:defender = { is_local_player = yes } }
+				desc = migration_war_white_peace_desc_defender
+			}
+			desc = migration_war_white_peace_desc
+		}
+		triggered_desc = {
+			trigger = { scope:attacker = { is_local_player = yes } }
+			desc = migration_war_warning_desc
+		}
+	}
+	
+	on_white_peace = {
+		scope:attacker = { show_pow_release_message_effect = yes }
+
+		# Prestige for the attacker's war allies
+		add_from_contribution_attackers = {
+			prestige = major_prestige_value
+			opinion = {
+				modifier = contributed_in_war
+			}
+		}
+
+		# Prestige for the defender's war allies
+		add_from_contribution_defenders = {
+			prestige = major_prestige_value
+			opinion = { modifier = contributed_in_war }
+		}
+
+		# Truce
+		add_truce_white_peace_effect = yes
+
+		scope:attacker = {
+			add_prestige = mongol_invasion_cb_prestige_white_peace
+			stress_impact = {
+				ambitious = medium_stress_impact_gain
+				arrogant = medium_stress_impact_gain
+			}
+		}
+		
+		#Add failed migration county modifiers
+		scope:attacker = {
+			every_held_title = {
+				limit = {
+					tier = tier_county
+					major_migration_valid_source_counties_trigger = { ATTACKER = scope:attacker }
+				}
+				add_county_modifier = {
+					modifier = county_failed_migraiton_modifier
+					years = 10
+				}
+			}
+			every_vassal = {
+				limit = { primary_title.tier > tier_barony }
+				every_held_title = {
+					limit = {
+						tier = tier_county
+						major_migration_valid_source_counties_trigger = { ATTACKER = scope:attacker }
+					}
+					add_county_modifier = {
+						modifier = county_failed_migraiton_modifier
+						years = 10
+					}
+				}
+			}
+		}
+
+		scope:defender = { stress_impact = { arrogant = medium_stress_impact_gain } }
+		
+		#Add migratory invasion flag
+		if = {
+			limit = { scope:attacker.culture = { has_cultural_parameter = easier_migration_cbs } }
+			scope:attacker = { add_character_flag = { flag = launched_migration_war_recently years = major_migration_wait_time_easier } }
+		}
+		else = {
+			scope:attacker = { add_character_flag = { flag = launched_migration_war_recently years = major_migration_wait_time } }
+		}
+	}
+	
+	on_defeat_desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:defender = { is_local_player = yes } }
+				desc = minor_migration_war_defeat_desc_defender
+			}
+			desc = minor_migration_war_defeat_desc
+		}
+		triggered_desc = {
+			trigger = { scope:attacker = { is_local_player = yes } }
+			desc = minor_migration_war_warning_desc
+		}
+	}
+	
+	on_defeat = {
+		scope:attacker = { show_pow_release_message_effect = yes }
+
+		# Legitimacy
+		add_legitimacy_attacker_defeat_effect = yes
+
+		# Prestige loss for the attacker
+		scope:attacker = {
+			pay_short_term_gold = {
+				gold = 3
+				target = scope:defender
+				yearly_income = yes
+			}
+			add_prestige = {
+				value = massive_prestige_value
+				multiply = -1.0
+			}
+		}
+		
+		#Add failed migration county modifiers
+		scope:attacker = {
+			every_held_title = {
+				limit = {
+					tier = tier_county
+					major_migration_valid_source_counties_trigger = { ATTACKER = scope:attacker }
+				}
+				add_county_modifier = {
+					modifier = county_failed_migraiton_modifier
+					years = 10
+				}
+			}
+			every_vassal = {
+				limit = { primary_title.tier > tier_barony }
+				every_held_title = {
+					limit = {
+						tier = tier_county
+						major_migration_valid_source_counties_trigger = { ATTACKER = scope:attacker }
+					}
+					add_county_modifier = {
+						modifier = county_failed_migraiton_modifier
+						years = 10
+					}
+				}
+			}
+		}
+		
+		setup_invasion_cb = {
+			titles = target_titles
+			attacker = scope:attacker
+			defender = scope:defender
+			claimant = scope:claimant
+			victory = no
+		}
+
+		# Attacker loses Prestige, all other war participants gain Prestige (Defender gains full prestige, all allies on both sides gain based on war contribution).
+		modify_all_participants_fame_values = {
+			WINNER = scope:defender
+			LOSER = scope:attacker
+			FAME_BASE = scope:cb_prestige_factor # Set by 'setup_claim_cb'
+			IS_RELIGIOUS_WAR = no
+			WINNER_FAME_SCALE = 10
+			LOSER_FAME_SCALE = -10
+			WINNER_ALLY_FAME_SCALE = 10
+			LOSER_ALLY_FAME_SCALE = 10
+		}
+	
+		add_truce_attacker_defeat_effect = yes
+		
+		scope:attacker = { save_temporary_scope_as = loser }
+		on_lost_aggression_war_discontent_loss = yes
+		
+		#Add migratory invasion flag
+		if = {
+			limit = { scope:attacker.culture = { has_cultural_parameter = easier_migration_cbs } }
+			scope:attacker = { add_character_flag = { flag = launched_migration_war_recently years = major_migration_wait_time_easier } }
+		}
+		else = {
+			scope:attacker = { add_character_flag = { flag = launched_migration_war_recently years = major_migration_wait_time } }
+		}
+	}
+	
+	transfer_behavior = transfer
+	
+	on_primary_attacker_death = inherit
+	on_primary_defender_death = inherit
+	
+	attacker_allies_inherit = no
+	defender_allies_inherit = no
+	
+	war_name = "BP_MIGRATION_WAR_NAME"
+	war_name_base = "BP_MIGRATION_WAR_NAME_BASE"
+	cb_name = "BP_MIGRATION_CB_NAME"
+	
+	interface_priority = 100
+	
+	use_de_jure_wargoal_only = yes
+	
+	attacker_wargoal_percentage = 0.8
+}

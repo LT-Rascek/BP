@@ -1,3 +1,33 @@
 ﻿#Catalysts
 BP_migration_catalyst_yearly_tick = 1
 BP_migration_max_phase_points = 400
+
+#CB Values
+migration_war_required_fame_level = {
+	value = 3
+	add = { #AKA, county adds 2, duchy adds 1, kingdom adds 0
+		value = this.primary_title.tier
+		multiply = -1.0
+		add = 3
+	}
+	min = low_prestige_level
+	max = max_prestige_level
+}
+migration_war_prestige_cost_duchy = 100
+migration_war_prestige_cost_kingdom = 500
+#Creation of Armies Values
+bp_migration_levies = {
+	value = county.development_level
+	multiply = 100
+	#Sensible max-mins.
+	min = 100
+	max = 1000
+	#Give a whole number.
+	floor = yes
+}
+bp_migration_depopulation = {
+	value = county.development_level
+	multiply = -0.33
+	#Give a whole number.
+	floor = yes
+}

@@ -19,3 +19,10 @@ BP_can_be_barbarian_polity_governmental_trigger = {
 BP_can_be_civilized_polity_government_trigger = {
 	government_has_flag = government_is_centralized
 }
+#CBs
+general_bp_migration_constraints_trigger = {
+	#Pass on targets who have less total development than what we currently have
+	this.total_target_development <= scope:defender.total_realm_development
+	#Pass on targets smaller than our current realm size
+	this.target_size <= scope:attacker.realm_size
+}

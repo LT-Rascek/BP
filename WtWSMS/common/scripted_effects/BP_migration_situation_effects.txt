@@ -1,0 +1,7 @@
+﻿update_number_of_bp_migrations_effect = {
+	if = {
+		limit = { has_variable = number_of_migrations_attempted }
+		change_variable = { name = number_of_migrations_attempted add = 1 }
+	}
+	else = { set_variable = { name = number_of_migrations_attempted value = 1 } }
+}
