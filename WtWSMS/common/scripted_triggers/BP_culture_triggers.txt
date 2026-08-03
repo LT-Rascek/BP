@@ -568,6 +568,41 @@ has_a_greco_roman_social_traditon_trigger = {
 	has_cultural_parameter = greco_roman_social_tradition
 }
 
+is_romance_heritage = { # Romance heritages except for Latin
+	#has_cultural_parameter = heritage_group_romance
+	OR = {
+		has_cultural_pillar = heritage_iberian
+		has_cultural_pillar = heritage_frankish
+		has_cultural_pillar = heritage_gallic_romance
+		has_cultural_pillar = heritage_romano_british
+		has_cultural_pillar = heritage_romano_aramean
+		has_cultural_pillar = heritage_romano_african
+		has_cultural_pillar = heritage_vlach
+		has_cultural_pillar = heritage_italian
+	}
+}
+
+is_migratory_germanic_heritage = {
+	OR = {
+		has_cultural_pillar = heritage_jutlandic
+		has_cultural_pillar = heritage_gothic
+		has_cultural_pillar = heritage_nordwestblock
+		has_cultural_pillar = heritage_saxon
+		has_cultural_pillar = heritage_scandzan
+		has_cultural_pillar = heritage_suebic
+		has_cultural_pillar = heritage_przeworsk
+	}
+}
+
+is_medieval_germanic_heritage = {
+	OR = {
+		has_cultural_pillar = heritage_central_germanic
+		has_cultural_pillar = heritage_east_germanic
+		has_cultural_pillar = heritage_north_germanic
+		has_cultural_pillar = heritage_west_germanic
+	}
+}
+
 BP_is_valid_to_diverge_conditions_trigger = {
 	custom_description = {
 		text = must_not_be_under_culture_head_tradition

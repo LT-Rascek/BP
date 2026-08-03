@@ -1,8 +1,11 @@
 ﻿PLRE2_Severus_Antoninus_2 = { #MO West ca. 476-483
 	name = "Antoninus"
+	dynasty = roman_dynn_severus_antonius
 	religion = nicene
 	culture = roman
 	440.1.1 = { birth = yes }
+	476.1.1 = { employer = 96054 } # Romulus
+	#476.9.4 = { employer = 55 } # Odovacar
 	500.1.1 = { death = yes }
 }
 
@@ -29,16 +32,17 @@ PLRE2_Theoctistus3 = { #MO East ca. 475-476
 			}
 		}
 	}
-	475.1.1 = {
-		trait = diplomat
-	}
+	475.1.1 = { trait = diplomat }
+	475.1.1 = { employer = 145226 } # Basilicus
 	500.1.1 = { death = yes } #A mob demanded his death, but it's not clear he was killed by a mob
 	#TODO: Add Theopompus (his brother, monk)
 }
 PLRE2_Felix_17 = { #MO East Late V
 	name = "Felix"
+	dynasty = roman_dynn_felix_17
 	religion = nicene
 	culture = roman
 	440.1.1 = { birth = yes }
+	476.8.14 = { employer = 70515 } # Zeno
 	500.1.1 = { death = yes }
 }

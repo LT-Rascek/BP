@@ -86,7 +86,7 @@ BP_character_events_476_feb = {
 			NEW_DIARCH = character:96055
 			LIEGE = character:96054
 		}
-		#Romulus is not crowned at his age, but give him a smidge of legitimacy
+		# Romulus is not crowned at his age, but give him a smidge of legitimacy
 		if = {
 			limit = { has_dlc_feature = coronations }
 			character:96054 = { add_realm_law_skip_effects = uncrowned }
@@ -100,11 +100,11 @@ BP_character_events_476_feb_DLC = {
 	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
 	effect = {
 		#Orestes and Romulus are allied
-		title:e_magister_military_wre.holder = {
+		character:96055 ?= {
 			create_alliance = {
-				target = title:h_western_roman_empire.holder
-				allied_through_owner = title:e_magister_military_wre.holder
-				allied_through_target = title:h_western_roman_empire.holder
+				target = character:96054
+				allied_through_owner = character:96055
+				allied_through_target = character:96054
 			}
 		}
 	}
@@ -159,8 +159,11 @@ BP_setup_realm_laws_476_feb_DLC = {
 	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
 	effect = {
 		#Roman Diarchy Laws
-		title:h_eastern_roman_empire.holder = { add_realm_law_skip_effects = roman_chancellor_law }
-		title:h_western_roman_empire.holder = { add_realm_law_skip_effects = roman_marshal_law }
+		if = {
+			limit = { has_tgp_dlc_trigger = yes } # Needs ministry titles to exist
+			title:h_eastern_roman_empire.holder = { add_realm_law_skip_effects = roman_chancellor_law }
+			title:h_western_roman_empire.holder = { add_realm_law_skip_effects = roman_marshal_law }
+		}
 		#Barbarian State Roman Orientations
 		title:k_visigoths.holder = {
 			add_law_if_not_has_it_propagate_minority_law_effect = { LAW = non_roman_minority_rule_law_2 }
@@ -1129,54 +1132,17 @@ BP_setup_federate_troops_476_feb_DLC = {
 }
 
 BP_setup_roman_council_476_feb = {
-	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
 	effect = {
 		#WRE
-		title:h_western_roman_empire.holder = {
-			make_councilor_of_type_if_not_already_effect = {
-				TARGET_CHAR = title:e_magister_military_wre.holder
-				POSITION = councillor_marshal_roman
-			}
-			make_councilor_of_type_if_not_already_effect = {
-				TARGET_CHAR = title:e_magister_offices_wre.holder
-				POSITION = councillor_chancellor_roman
-			}
-		}
-		title:e_magister_offices_wre.holder = {
-			vassal_contract_set_obligation_level = {
-				type = roman_administrative_themes
-				level = roman_admin_theme_ministry_civilian_value
-			}
-		}
-		title:e_magister_military_wre.holder = {
-			vassal_contract_set_obligation_level = {
-				type = roman_administrative_themes
-				level = roman_admin_theme_ministry_military_value
-			}
+		title:h_western_roman_empire = {
+			give_roman_council_position = { POSITION_TYPE = councillor_chancellor }
+			give_roman_council_position = { POSITION_TYPE = councillor_marshal }
 		}
 		
 		#ERE
-		title:h_eastern_roman_empire.holder = {
-			make_councilor_of_type_if_not_already_effect = {
-				TARGET_CHAR = title:e_magister_military_ere.holder
-				POSITION = councillor_marshal_roman
-			}
-			make_councilor_of_type_if_not_already_effect = {
-				TARGET_CHAR = title:e_magister_offices_ere.holder
-				POSITION = councillor_chancellor_roman
-			}
-		}
-		title:e_magister_offices_ere.holder = {
-			vassal_contract_set_obligation_level = {
-				type = roman_administrative_themes
-				level = roman_admin_theme_ministry_civilian_value
-			}
-		}
-		title:e_magister_military_ere.holder = {
-			vassal_contract_set_obligation_level = {
-				type = roman_administrative_themes
-				level = roman_admin_theme_ministry_military_value
-			}
+		title:h_eastern_roman_empire = {
+			give_roman_council_position = { POSITION_TYPE = councillor_chancellor }
+			give_roman_council_position = { POSITION_TYPE = councillor_marshal }
 		}
 	}
 }
@@ -1218,7 +1184,7 @@ BP_set_armies_476_feb_DLC = {
 				title = title:h_western_roman_empire
 			}
 		}
-		title:e_magister_military_wre.holder = {
+		title:e_magister_military_wre.holder ?= {
 			create_maa_regiment = {
 				type = roman_heavy_infantry
 				check_can_recruit = no
@@ -1244,7 +1210,7 @@ BP_set_armies_476_feb_DLC = {
 				title = title:e_magister_military_wre
 			}
 		}
-		title:e_magister_military_ere.holder = {
+		title:e_magister_military_ere.holder ?= {
 			#Create the ERE MM Army
 			create_maa_regiment = {
 				type = roman_heavy_infantry

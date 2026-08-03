@@ -114,16 +114,20 @@ faiths_are_in_western_christianity_group = {
 		$FAITH_1$ = faith:nicene
 		$FAITH_1$ = faith:priscillianism
 		$FAITH_1$ = faith:insular_celtic
+		$FAITH_1$ = faith:pelagianism
+		$FAITH_1$ = faith:lollardy
 	}
 	OR = {
 		$FAITH_2$ = faith:catholic
 		$FAITH_2$ = faith:nicene
 		$FAITH_2$ = faith:priscillianism
 		$FAITH_2$ = faith:insular_celtic
+		$FAITH_2$ = faith:pelagianism
+		$FAITH_2$ = faith:lollardy
 	}
 }
 
-##### Changed from Vanilla: Overhauled with new faiths, removed bogomilist
+##### Changed from Vanilla: Overhauled with new faiths
 faiths_are_in_orthodox_christianity_group = {
 	OR = {
 		$FAITH_1$ = faith:orthodox
@@ -137,6 +141,7 @@ faiths_are_in_orthodox_christianity_group = {
 			limit = { BP_iconoclasm_trigger = yes }
 			this = faith:iconoclast
 		}
+		$FAITH_1$ = faith:bogomilist
 	}
 	OR = {
 		$FAITH_2$ = faith:orthodox
@@ -150,6 +155,7 @@ faiths_are_in_orthodox_christianity_group = {
 			limit = { BP_iconoclasm_trigger = yes }
 			this = faith:iconoclast
 		}
+		$FAITH_2$ = faith:bogomilist
 	}
 }
 

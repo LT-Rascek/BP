@@ -1,7 +1,127 @@
 ﻿#councillor_count_imperial_treasury
 task_great_projects_roman = {
 	position = councillor_count_imperial_treasury
-	clone = task_great_projects
+	#Duplicate to prevent redundant defaults
+	#clone = task_great_projects
+	is_shown = { has_tgp_dlc_trigger = yes } # Great projects must be accessible
+
+	task_type = task_type_general
+	task_progress = task_progress_infinite
+
+	asset = {
+		icon = "gfx/interface/icons/council_task_types/task_great_project.dds"
+		background = "gfx/interface/buttons/button_round_bg.dds"
+		frame = "gfx/interface/buttons/button_round_frame.dds"
+		glow = "gfx/particles/halo.dds"
+	}
+
+	effect_desc = {
+		desc = task_great_projects_effect_desc
+		# Disciples tooltip
+		triggered_desc = {
+			trigger = {
+				num_of_relation_disciple > 0
+			}
+			desc = task_great_projects_effect_desc_disciple_bonus
+		}
+		# Bureaucrats tooltip
+		triggered_desc = {
+			trigger = {
+				councillor_liege_has_erudition_legacy_5_perk = yes
+			}
+			desc = task_great_projects_erudition_bonus_desc
+		}
+		# Family Business tooltip
+		triggered_desc = {
+			trigger = {
+				councillor_liege_has_family_business_bonus = yes
+			}
+			desc = task_great_projects_family_business_bonus_desc
+		}
+		desc = {
+			desc = council_task_possible_side_effects
+			triggered_desc = {
+				trigger = {
+					stewardship > mediocre_skill_rating
+				}
+				desc = task_collect_taxes_extra_taxes
+			}
+			triggered_desc = {
+				trigger = {
+					stewardship < high_skill_rating
+					liege = {
+						any_sub_realm_county = {
+							steward_task_county_corruption_county_trigger = yes
+						}
+					}	
+				}
+				desc = task_collect_taxes_county_corruption
+			}
+		}
+	}
+
+	council_owner_modifier = {
+		name = task_collect_taxes_modifier
+		great_project_build_speed = -0.05
+		scale = task_great_projects_total_scale_value
+	}
+
+	monthly_on_action = task_collect_taxes_side_effects
+
+	ai_will_do = {
+		value = 1 # Always a good backup
+		
+		if = { # Very greedy rulers prefer this over increasing Acceptance, in most cases
+			limit = {
+				scope:councillor_liege.ai_greed > 0
+			}
+			add = {
+				value = scope:councillor_liege.ai_greed
+				divide = 5
+			}
+		}
+		
+		if = {
+			# Wealth Focused characters like this
+			limit = {
+				scope:councillor_liege = {
+					has_focus = stewardship_wealth_focus
+				}
+			}
+			add = 15
+		}
+		
+		if = {
+			# And those with the Tax Man perk
+			limit = {
+				scope:councillor_liege = {
+					has_perk = tax_man_perk
+				}
+			}
+			add = 15
+		}
+		if = {
+			limit = {
+				scope:councillor_liege.primary_title.tier >= tier_duchy
+				scope:councillor_liege.gold < 100
+			}
+			add = 500
+		}
+		else_if = {
+			limit = {
+				scope:councillor_liege.gold < 10
+			}
+			add = 500
+		}
+		if = { # Conquerors want more money
+			limit = {
+				scope:councillor_liege = {
+					has_variable = conqueror
+				}
+			}
+			add = 500
+		}
+	}
 }
 task_collect_taxes_roman = {
 	position = councillor_count_imperial_treasury

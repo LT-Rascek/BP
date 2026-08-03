@@ -54,10 +54,10 @@ BP_senate = {
 		ambience = "event:/SFX/Events/Backgrounds/corner_of_tavern"
 	}
 }
-BP_shift_culture_city = {
+BP_culture_drift_city = {
 	background = {
 		trigger = {
-			scope:shift_culture = { has_graphical_african_culture_group_trigger = yes }
+			scope:drift_culture = { has_graphical_african_culture_group_trigger = yes }
 		}
 		reference = "gfx/interface/illustrations/event_scenes/ep2_feast_sub_saharan.dds"
 		environment = "environment_sub-saharan_feast"
@@ -65,7 +65,7 @@ BP_shift_culture_city = {
 	}
 	background = {
 		trigger = {
-			scope:shift_culture = { 
+			scope:drift_culture = { 
 				OR = {
 					has_cultural_pillar = heritage_caucasian
 					has_building_gfx = iranian_building_gfx
@@ -78,7 +78,7 @@ BP_shift_culture_city = {
 	}
 	background = {
 		trigger = {
-			scope:shift_culture = {
+			scope:drift_culture = {
 				OR = {
 					has_graphical_steppe_culture_group_trigger = yes
 					culture_head = { government_has_flag = government_is_nomadic }
@@ -95,7 +95,7 @@ BP_shift_culture_city = {
 	}
 	background = {
 		trigger = {
-			scope:shift_culture = { has_graphical_mena_culture_group_trigger = yes }
+			scope:drift_culture = { has_graphical_mena_culture_group_trigger = yes }
 		}
 		reference = "gfx/interface/illustrations/activity_splash_screens/tour_arrival_mena_neutral.dds"
 		environment = "environment_ep2_tour_arrival_mena_neutral"
@@ -103,7 +103,7 @@ BP_shift_culture_city = {
 	}
 	background = {
 		trigger = {
-			scope:shift_culture = {
+			scope:drift_culture = {
 				has_graphical_india_culture_group_trigger = yes
 				culture_head = { government_has_flag = government_is_tribal }
 			}
@@ -114,7 +114,7 @@ BP_shift_culture_city = {
 	}
 	background = {
 		trigger = {
-			scope:shift_culture = { has_graphical_india_culture_group_trigger = yes }
+			scope:drift_culture = { has_graphical_india_culture_group_trigger = yes }
 		}
 		reference = "gfx/interface/illustrations/activity_splash_screens/tour_arrival_indian_neutral.dds"
 		environment = "environment_ep2_tour_arrival_indian_neutral"
@@ -122,7 +122,7 @@ BP_shift_culture_city = {
 	}
 	background = {
 		trigger = {
-			scope:shift_culture = { has_graphical_east_asia_culture_group_trigger = yes }
+			scope:drift_culture = { has_graphical_east_asia_culture_group_trigger = yes }
 		}
 		reference = "gfx/interface/illustrations/activity_splash_screens/tour_arrival_asia_neutral.dds"
 		environment = "environment_tgp_courtyard_asia"
@@ -130,7 +130,7 @@ BP_shift_culture_city = {
 	}
 	background = { # Western tribals
 		trigger = {
-			scope:shift_culture = {
+			scope:drift_culture = {
 				culture_head = { government_has_flag = government_is_tribal }
 			}
 		}
@@ -140,7 +140,7 @@ BP_shift_culture_city = {
 	}
 	background = {
 		trigger = {
-			scope:shift_culture = {
+			scope:drift_culture = {
 				OR = {
 					has_graphical_iberian_culture_group_trigger = yes
 					has_graphical_mediterranean_culture_group_trigger = yes

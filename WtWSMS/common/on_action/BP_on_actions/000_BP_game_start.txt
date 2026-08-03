@@ -1059,7 +1059,6 @@ set_autocephalous_church_flags = {
 	effect = {
 		faith:armenian_apostolic = { set_variable = { name = church_culture value = culture:armenian } }
 		faith:georgian_orthodox = { set_variable = { name = church_culture value = culture:georgian } }
-		faith:cypriot_church = { set_variable = { name = church_culture value = culture:cypriot } }
 	}
 }
 set_ethnic_religion_flags = {
@@ -1489,19 +1488,6 @@ setup_governments_based_on_dlc = {
 				}
 				change_government = roman_dynastic_government
 			}
-			
-			#Cleanup landless titles
-			
-			#Destroy Roman Offices
-			destroy_title_if_landless_effect = { TITLE = title:e_magister_offices_roman_empire }
-			destroy_title_if_landless_effect = { TITLE = title:e_magister_offices_wre }
-			destroy_title_if_landless_effect = { TITLE = title:e_magister_offices_ere }
-			destroy_title_if_landless_effect = { TITLE = title:e_magister_offices_italy }
-			
-			destroy_title_if_landless_effect = { TITLE = title:e_magister_military_roman_empire }
-			destroy_title_if_landless_effect = { TITLE = title:e_magister_military_wre }
-			destroy_title_if_landless_effect = { TITLE = title:e_magister_military_ere }
-			destroy_title_if_landless_effect = { TITLE = title:e_magister_military_italy }
 		}
 		else = {
 			every_ruler = {
@@ -1566,98 +1552,17 @@ setup_governments_based_on_dlc = {
 				#Move Estate to actual capital location
 				this.domicile ?= { move_domicile = prev.capital_county.title_province }
 			}
-			
-			#Roman Offices need the appropriate flags at start
-			title:e_magister_military_roman_empire = {
-				set_variable = is_supreme_roman_military_title
-				set_variable = is_a_roman_ministry_title
-				if = {
-					limit = {
-						exists = this.holder
-						NOT = { has_title_law = roman_administrative_magister_military_appointment_succession_law }
-					}
-					add_title_law = roman_administrative_magister_military_appointment_succession_law
-				}
-			}
-			title:e_magister_military_ere = {
-				set_variable = is_supreme_roman_military_title
-				set_variable = is_a_roman_ministry_title
-				if = {
-					limit = {
-						exists = this.holder
-						NOT = { has_title_law = roman_administrative_magister_military_appointment_succession_law }
-					}
-					add_title_law = roman_administrative_magister_military_appointment_succession_law
-				}
-			}
-			title:e_magister_military_wre = {
-				set_variable = is_supreme_roman_military_title
-				set_variable = is_a_roman_ministry_title
-				if = {
-					limit = {
-						exists = this.holder
-						NOT = { has_title_law = roman_administrative_magister_military_appointment_succession_law }
-					}
-					add_title_law = roman_administrative_magister_military_appointment_succession_law
-				}
-			}
-			title:e_magister_military_italy = {
-				set_variable = is_supreme_roman_military_title
-				set_variable = is_a_roman_ministry_title
-				if = {
-					limit = {
-						exists = this.holder
-						NOT = { has_title_law = roman_administrative_magister_military_appointment_succession_law }
-					}
-					add_title_law = roman_administrative_magister_military_appointment_succession_law
-				}
-			}
-			
-			title:e_magister_offices_roman_empire = {
-				set_variable = is_supreme_roman_ministry_title
-				set_variable = is_a_roman_ministry_title
-				if = {
-					limit = {
-						exists = this.holder
-						NOT = { has_title_law = roman_administrative_ministry_appointment_succession_law }
-					}
-					add_title_law = roman_administrative_ministry_appointment_succession_law
-				}
-			}
-			title:e_magister_offices_ere = {
-				set_variable = is_supreme_roman_ministry_title
-				set_variable = is_a_roman_ministry_title
-				if = {
-					limit = {
-						exists = this.holder
-						NOT = { has_title_law = roman_administrative_ministry_appointment_succession_law }
-					}
-					add_title_law = roman_administrative_ministry_appointment_succession_law
-				}
-			}
-			title:e_magister_offices_wre = {
-				set_variable = is_supreme_roman_ministry_title
-				set_variable = is_a_roman_ministry_title
-				if = {
-					limit = {
-						exists = this.holder
-						NOT = { has_title_law = roman_administrative_ministry_appointment_succession_law }
-					}
-					add_title_law = roman_administrative_ministry_appointment_succession_law
-				}
-			}
-			title:e_magister_offices_italy = {
-				set_variable = is_supreme_roman_ministry_title
-				set_variable = is_a_roman_ministry_title
-				if = {
-					limit = {
-						exists = this.holder
-						NOT = { has_title_law = roman_administrative_ministry_appointment_succession_law }
-					}
-					add_title_law = roman_administrative_ministry_appointment_succession_law
-				}
-			}
 		}
+		#Roman Offices need the appropriate flags at start
+		title:e_magister_military_roman_empire = { setup_magister_military_effect = yes }
+		title:e_magister_military_wre = { setup_magister_military_effect = yes }
+		title:e_magister_military_ere = { setup_magister_military_effect = yes }
+		title:e_magister_military_italy = { setup_magister_military_effect = yes }
+		
+		title:e_magister_offices_roman_empire = { setup_magister_offices_effect = yes }
+		title:e_magister_offices_wre = { setup_magister_offices_effect = yes }
+		title:e_magister_offices_ere = { setup_magister_offices_effect = yes }
+		title:e_magister_offices_italy = { setup_magister_offices_effect = yes }
 		
 		#Destroy PP titles as they currently bork lots of game math and logic
 		destroy_PP_title_if_ai_effect = { TITLE = title:e_praetorian_prefecture_east }

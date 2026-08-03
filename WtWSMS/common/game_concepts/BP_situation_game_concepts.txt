@@ -1,0 +1,21 @@
+﻿#Senate Situation
+bp_senate = {
+	texture = "gfx/interface/icons/situation_types/BP_senate.dds"
+	parent = situation
+}
+bp_senator = {
+	alias = { bp_senators }
+	texture = "gfx/interface/icons/traits/senator_west.dds"
+	parent = bp_senate
+}
+bp_senate_family = {
+	alias = { bp_senate_families }
+	texture = "gfx/interface/icons/traits/senator_west.dds"
+	parent = bp_senate
+}
+bp_dynastic_estates = {
+	texture = "gfx/interface/icons/map_icons/onmap_holding_icon.dds"
+	parent = bp_senate
+}
+
+	

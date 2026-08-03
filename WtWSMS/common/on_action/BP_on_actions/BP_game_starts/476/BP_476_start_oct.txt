@@ -146,7 +146,10 @@ BP_setup_realm_laws_476_oct_DLC = {
 	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
 	effect = {
 		#Roman Diarchy/Minority Laws
-		title:h_eastern_roman_empire.holder = { add_realm_law_skip_effects = roman_chancellor_law }
+		if = {
+			limit = { has_tgp_dlc_trigger = yes } # Needs ministry titles to exist
+			title:h_eastern_roman_empire.holder = { add_realm_law_skip_effects = roman_chancellor_law }
+		}
 		#Barbarian State Roman Orientations
 		title:h_italy.holder = {
 			add_law_if_not_has_it_propagate_minority_law_effect = { LAW = non_roman_minority_rule_law_3 }
@@ -1046,71 +1049,28 @@ BP_setup_federate_troops_476_oct_DLC = {
 }
 
 BP_setup_roman_council_476_oct = {
-	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
 	effect = {
-		#Set Various Roman Offices
-		title:h_western_roman_empire.holder ?= {
-			#Populate Nepos' realm with a few characters so he can fill his council
-			add_more_wre_courtiers_effect = yes
-		}
-		title:h_western_roman_empire.holder = { fire_councillor_skip_effects = cp:councillor_chancellor_roman }
-		title:e_magister_military_wre.holder ?= {
-			vassal_contract_set_obligation_level = {
-				type = roman_administrative_themes
-				level = roman_admin_theme_ministry_military_value
+	
+		#WRE
+		title:h_western_roman_empire = {
+			give_roman_council_position = { POSITION_TYPE = councillor_chancellor }
+			give_roman_council_position = { POSITION_TYPE = councillor_marshal }
+			holder ?= {
+				#Populate Nepos' realm with a few characters so he can fill his council
+				add_more_wre_courtiers_effect = yes
 			}
 		}
 		
-		title:h_eastern_roman_empire.holder ?= {
-			make_councilor_of_type_if_not_already_effect = {
-				TARGET_CHAR = title:e_magister_military_ere.holder
-				POSITION = councillor_marshal_roman
-			}
-			make_councilor_of_type_if_not_already_effect = {
-				TARGET_CHAR = title:e_magister_offices_ere.holder
-				POSITION = councillor_chancellor_roman
-			}
-			assign_councillor_type = {
-				type = councillor_chancellor_roman
-				target = character:PLRE2_Felix_17
-				remove_existing_councillor = yes
-			}
-		}
-		title:e_magister_offices_ere.holder ?= {
-			vassal_contract_set_obligation_level = {
-				type = roman_administrative_themes
-				level = roman_admin_theme_ministry_civilian_value
-			}
-		}
-		title:e_magister_military_ere.holder ?= {
-			vassal_contract_set_obligation_level = {
-				type = roman_administrative_themes
-				level = roman_admin_theme_ministry_military_value
-			}
+		#ERE
+		title:h_eastern_roman_empire = {
+			give_roman_council_position = { POSITION_TYPE = councillor_chancellor }
+			give_roman_council_position = { POSITION_TYPE = councillor_marshal }
 		}
 		
 		#Italia
-		title:h_italy.holder = {
-			make_councilor_of_type_if_not_already_effect = {
-				TARGET_CHAR = title:e_magister_offices_italy.holder
-				POSITION = councillor_chancellor_roman
-			}
-			make_councilor_of_type_if_not_already_effect = {
-				TARGET_CHAR = title:e_magister_military_italy.holder
-				POSITION = councillor_marshal_roman
-			}
-		}
-		title:e_magister_offices_italy.holder ?= {
-			vassal_contract_set_obligation_level = {
-				type = roman_administrative_themes
-				level = roman_admin_theme_ministry_civilian_value
-			}
-		}
-		title:e_magister_military_italy.holder ?= {
-			vassal_contract_set_obligation_level = {
-				type = roman_administrative_themes
-				level = roman_admin_theme_ministry_military_value
-			}
+		title:h_italy = {
+			give_roman_council_position = { POSITION_TYPE = councillor_chancellor }
+			give_roman_council_position = { POSITION_TYPE = councillor_marshal }
 		}
 	}
 }
@@ -1241,7 +1201,7 @@ BP_set_armies_476_oct_DLC = {
 				title = title:k_soissons
 			}
 		}
-		title:e_magister_military_italy.holder = {
+		title:e_magister_military_italy.holder ?= {
 			create_maa_regiment = {
 				type = armored_footmen
 				check_can_recruit = no

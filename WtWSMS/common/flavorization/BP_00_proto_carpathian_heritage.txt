@@ -1,4 +1,38 @@
 ﻿#Daco-Thracian
+baron_male_daco_thracian = { # Roman fallback
+	type = character
+	gender = male
+	special = holder
+	tier = barony
+	priority = 6
+	governments = { roman_federate_government prefeudal_government feudal_government clan_government administrative_government }
+	name_lists = { name_list_dacian name_list_thracian }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+baron_female_daco_thracian = { # Roman fallback
+	type = character
+	gender = female
+	special = holder
+	tier = barony
+	priority = 6
+	governments = { roman_federate_government prefeudal_government feudal_government clan_government administrative_government }
+	name_lists = { name_list_dacian name_list_thracian }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+barony_daco_thracian = {
+	type = title
+	tier = barony
+	priority = 6
+	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government administrative_government }
+	name_lists = { name_list_dacian name_list_thracian }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
 count_male_daco_thracian = {
 	type = character
 	gender = male
@@ -6,6 +40,18 @@ count_male_daco_thracian = {
 	tier = county
 	priority = 18
 	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government administrative_government }
+	name_lists = { name_list_dacian name_list_thracian }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+count_female_daco_thracian = { # Roman fallback
+	type = character
+	gender = female
+	special = holder
+	tier = county
+	priority = 18
+	governments = { roman_federate_government prefeudal_government feudal_government clan_government administrative_government }
 	name_lists = { name_list_dacian name_list_thracian }
 	flavourization_rules = {
 		top_liege = no
@@ -33,6 +79,18 @@ duke_male_daco_thracian = {
 		top_liege = no
 	}
 }
+duke_female_daco_thracian = { # Roman fallback
+	type = character
+	gender = female
+	special = holder
+	tier = duchy
+	priority = 27
+	governments = { roman_federate_government prefeudal_government feudal_government clan_government administrative_government }
+	name_lists = { name_list_dacian name_list_thracian }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
 duchy_daco_thracian = {
 	type = title
 	tier = duchy
@@ -49,6 +107,52 @@ king_male_daco_thracian = {
 	special = holder
 	tier = kingdom
 	priority = 48
+	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government administrative_government }
+	name_lists = { name_list_dacian name_list_thracian }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+king_female_daco_thracian = {
+	type = character
+	gender = female
+	special = holder
+	tier = kingdom
+	priority = 48
+	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government administrative_government }
+	name_lists = { name_list_dacian name_list_thracian }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+emperor_male_daco_thracian= {
+	type = character
+	gender = male
+	special = holder
+	tier = empire
+	priority = 101
+	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government administrative_government }
+	name_lists = { name_list_dacian name_list_thracian }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+emperor_female_daco_thracian = {
+	type = character
+	gender = female
+	special = holder
+	tier = empire
+	priority = 101
+	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government administrative_government }
+	name_lists = { name_list_dacian name_list_thracian }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+empire_daco_thracian = {
+	type = title
+	tier = empire
+	priority = 101
 	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government administrative_government }
 	name_lists = { name_list_dacian name_list_thracian }
 	flavourization_rules = {

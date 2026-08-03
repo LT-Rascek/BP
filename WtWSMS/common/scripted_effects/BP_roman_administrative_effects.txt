@@ -1,4 +1,130 @@
-﻿got_roman_administrative_minister_position_effect = {
+﻿setup_magister_military_effect = {
+	if = {
+	# Ministries enabled
+		limit = { has_tgp_dlc_trigger = yes }
+		set_variable = is_supreme_roman_military_title
+		set_variable = is_a_roman_ministry_title
+		if = {
+			limit = {
+				exists = this.holder
+				NOT = { has_title_law = roman_administrative_magister_military_appointment_succession_law }
+			}
+			add_title_law = roman_administrative_magister_military_appointment_succession_law
+			
+			# Add to council
+			holder ?= {
+				vassal_contract_set_obligation_level = {
+					type = roman_administrative_themes
+					level = roman_admin_theme_ministry_civilian_value
+				}
+				
+				prev.hegemony = {
+					set_variable = {
+						name = councillor_marshal
+						value = prev
+						days = 1
+					}
+				}
+			}
+		}
+	}
+	# Destroy title without DLC
+	else = {
+		holder ?= {
+			# Clears liquid treasury whenever balance > 0
+			empty_treasury_when_abandoning_landed_life_effect = yes
+			destroy_title = prev
+			
+			prev.hegemony = {
+				set_variable = {
+					name = councillor_marshal
+					value = prev
+					days = 1
+				}
+				give_roman_council_position = { POSITION_TYPE = councillor_marshal }
+			}
+		}
+	}
+}
+
+setup_magister_offices_effect = {
+	if = {
+	# Ministries enabled
+		limit = { has_tgp_dlc_trigger = yes }
+		set_variable = is_supreme_roman_ministry_title
+		set_variable = is_a_roman_ministry_title
+		if = {
+			limit = {
+				exists = this.holder
+				NOT = { has_title_law = roman_administrative_ministry_appointment_succession_law }
+			}
+			add_title_law = roman_administrative_ministry_appointment_succession_law
+			
+			holder ?= {
+				vassal_contract_set_obligation_level = {
+					type = roman_administrative_themes
+					level = roman_admin_theme_ministry_civilian_value
+				}
+				
+				prev.hegemony = {
+					set_variable = {
+						name = councillor_chancellor
+						value = prev
+						days = 1
+					}
+				}
+				give_roman_council_position = { POSITION_TYPE = councillor_chancellor }
+			}
+		}
+	}
+	# Destroy title without DLC
+	else = {
+		holder ?= {
+			# Clears liquid treasury whenever balance > 0
+			empty_treasury_when_abandoning_landed_life_effect = yes
+			destroy_title = prev
+			
+			prev.hegemony = {
+				set_variable = {
+					name = councillor_chancellor
+					value = prev
+					days = 1
+				}
+			}
+		}
+	}
+}
+
+# Passed a character from variable after lobby
+give_roman_council_position = {
+
+	var:$POSITION_TYPE$ = { save_scope_as = councillor }
+	
+	# Add to court first
+	scope:councillor = {
+		if = {
+			limit = { is_ruler = no }
+			set_employer = prev.holder
+		}
+	}
+	holder = {
+		if = {
+			limit = { bp_has_access_to_roman_ministry_trigger = yes }
+			make_councilor_of_type_if_not_already_effect = {
+				POSITION = $POSITION_TYPE$_roman
+				TARGET_CHAR = scope:councillor
+			}
+		}
+		else = {
+			make_councilor_of_type_if_not_already_effect = {
+				POSITION = $POSITION_TYPE$
+				TARGET_CHAR = scope:councillor
+			}
+		}
+	}
+}
+
+got_roman_administrative_minister_position_effect = {
 	save_scope_as = new_minister
 	scope:councillor_liege = { save_scope_as = the_top_liege }
 

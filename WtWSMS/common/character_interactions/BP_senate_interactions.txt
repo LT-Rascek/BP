@@ -3,6 +3,7 @@ BP_nominate_western_consul = {
 	category = interaction_senate
 	icon = council
 	desc = BP_nominate_western_consul_desc
+	filter_tags = { admin_house_head senate }
 	
 	is_shown = {
 		scope:actor = title:b_roma.holder.top_liege
@@ -224,6 +225,7 @@ BP_nominate_eastern_consul = {
 	category = interaction_senate
 	icon = council
 	desc = BP_nominate_eastern_consul_desc
+	filter_tags = { admin_house_head senate }
 	
 	is_shown = {
 		scope:actor = title:b_constantinople.holder.top_liege
@@ -447,6 +449,7 @@ BP_nominate_western_senator = {
 	category = interaction_senate
 	icon = council
 	desc = BP_nominate_western_senator_desc
+	filter_tags = { admin_house_head senate }
 	
 	is_shown = {
 		OR = {
@@ -622,6 +625,7 @@ BP_nominate_eastern_senator = {
 	category = interaction_senate
 	icon = council
 	desc = BP_nominate_eastern_senator_desc
+	filter_tags = { admin_house_head senate }
 	
 	is_shown = {
 		OR = {
@@ -797,6 +801,7 @@ BP_elevate_dynasty_to_western_senate = {
 	category = interaction_senate
 	icon = council
 	desc = BP_elevate_dynasty_to_western_senate_desc
+	filter_tags = { admin_house_head senate }
 	
 	is_shown = {
 		OR = {
@@ -805,7 +810,7 @@ BP_elevate_dynasty_to_western_senate = {
 		}
 		scope:recipient = { is_male = yes } #Female Senators are rare for a reason
 		trigger_if = {
-			limit = { exists = this.dynasty }
+			limit = { exists = scope:recipient.dynasty }
 			NOT = { scope:recipient.dynasty = { has_dynasty_modifier = roman_senate_family_west } }
 		}
 		scope:recipient = scope:recipient.dynasty.dynast
@@ -1003,6 +1008,7 @@ BP_elevate_dynasty_to_eastern_senate = {
 	category = interaction_senate
 	icon = council
 	desc = BP_elevate_dynasty_to_eastern_senate_desc
+	filter_tags = { admin_house_head senate }
 	
 	is_shown = {
 		OR = {
@@ -1011,7 +1017,7 @@ BP_elevate_dynasty_to_eastern_senate = {
 		}
 		scope:recipient = { is_male = yes } #Female Senators are rare for a reason
 		trigger_if = {
-			limit = { exists = this.dynasty }
+			limit = { exists = scope:recipient.dynasty }
 			NOT = { scope:recipient.dynasty = { has_dynasty_modifier = roman_senate_family_east } }
 		}
 		scope:recipient = scope:recipient.dynasty.dynast

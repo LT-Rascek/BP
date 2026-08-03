@@ -41,6 +41,7 @@
 @farm_02 = "gfx/interface/icons/culture_innovations/agriculture_02.dds"
 @roman_civil = "gfx/interface/icons/culture_innovations/roman_civil_innovations.dds"
 @roman_military = "gfx/interface/icons/culture_innovations/roman_military_innovations.dds"
+@ck2_bishop = "gfx/interface/icons/culture_innovations/ck2_bishop.dds"
 
 #culture_group_military
 innovation_battlements = {
@@ -111,19 +112,10 @@ innovation_burhs = { # Stone Forts in-game
 		name = innovation_burhs_chinese
 	}
 
-	# Burhs
-	asset = {
-		trigger = {
-			has_cultural_pillar = heritage_west_germanic
-		}
-		icon = @civil_construction_2
-		name = innovation_burhs_anglo_saxon
-	}
-
 	# Castra
 	asset = {
 		trigger = {
-			has_cultural_pillar = heritage_latin
+			has_cultural_parameter = heritage_group_romance
 		}
 		icon = @civil_construction_2
 		name = innovation_burhs_latin
@@ -323,7 +315,7 @@ innovation_scriptural_cannon = {
 	skill = learning
 	group = culture_group_civic
 	culture_era = culture_era_early_medieval
-	icon = @administration_2
+	icon = @ck2_bishop
 
 	custom = enables_duchy_holy_war_effect
 	custom = enables_kingdom_holy_war_effect

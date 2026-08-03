@@ -28,9 +28,12 @@
 @innovation_farm = "gfx/interface/icons/culture_innovations/innovation_farm.dds"
 @coins = "gfx/interface/icons/culture_innovations/innovation_welfare_01.dds"
 @misc_inventions = "gfx/interface/icons/culture_innovations/innovation_misc_inventions.dds"
+@currency = "gfx/interface/icons/culture_innovations/innovation_currency.dds"
+@advanced_bowmaking = "gfx/interface/icons/culture_innovations/innovation_advanced_bowmaking.dds"
 @coinage = "gfx/interface/icons/culture_innovations/innovation_coinage.dds"
 @horseshoes = "gfx/interface/icons/culture_innovations/innovation_horseshoes.dds"
-@cloud_ladder = "gfx/interface/icons/culture_innovations/innovation_auh_cloud_ladder.dds"
+@siege_crossbow = "gfx/interface/icons/culture_innovations/innovation_auh_ballista.dds"
+@wootz_steel = "gfx/interface/icons/culture_innovations/innovation_wotz_steel.dds"
 
 @camel = "gfx/interface/icons/culture_innovations/innovation_camel.dds"
 @elephant = "gfx/interface/icons/culture_innovations/innovation_elephant.dds"
@@ -41,6 +44,7 @@
 @farm_02 = "gfx/interface/icons/culture_innovations/agriculture_02.dds"
 @roman_civil = "gfx/interface/icons/culture_innovations/roman_civil_innovations.dds"
 @roman_military = "gfx/interface/icons/culture_innovations/roman_military_innovations.dds"
+@ck2_bishop = "gfx/interface/icons/culture_innovations/ck2_bishop.dds"
 
 #Military Innovations
 innovation_metalurgy = { #Aka, Ironworking
@@ -101,6 +105,14 @@ innovation_conscription = {
 	group = culture_group_military
 	culture_era = culture_era_classical_antiquity
 	icon = @leadership_2
+	
+	asset = {
+		trigger = {
+			has_cultural_parameter = heritage_group_romance
+		}
+		icon = @leadership_2
+		name = innovation_conscription_latin
+	}
 
 	character_modifier = {
 		men_at_arms_cap = 1
@@ -113,11 +125,20 @@ innovation_muri = {
 	skill = stewardship
 	group = culture_group_military
 	culture_era = culture_era_classical_antiquity
-	icon = @fortifications
+	icon = @civil_construction_2
 	
 	custom = unlocks_castle_01_for_advanced_governments
 	custom = unlocks_second_level_walls
 	custom = unlocks_special_walls
+	
+	# Burgs
+	asset = {
+		trigger = {
+			has_cultural_parameter = heritage_group_germanic
+		}
+		icon = @civil_construction_2
+		name = innovation_muri_anglo_saxon
+	}
 
 	flag = global_regular
 	flag = late_antiquity_era_regular
@@ -150,7 +171,7 @@ innovation_currency_01 = { #Coinage
 	skill = stewardship
 	group = culture_group_civic
 	culture_era = culture_era_classical_antiquity
-	icon = @majesty_02
+	icon = @currency
 
 	character_modifier = {
 		development_growth_factor = 0.1
@@ -163,7 +184,22 @@ innovation_fora = {
 	skill = stewardship
 	group = culture_group_civic
 	culture_era = culture_era_classical_antiquity
-	icon = @civil_construction_2
+	icon = @nobility_03
+	
+	asset = {
+		trigger = {
+			has_cultural_parameter = heritage_group_romance
+		}
+		icon = @nobility_03
+		name = innovation_fora_latin
+	}
+	asset = {
+		trigger = {
+			has_cultural_pillar = heritage_byzantine
+		}
+		icon = @nobility_03
+		name = innovation_fora_greek
+	}
 
 	custom = unlocks_city_01_for_advanced_governments
 	unlock_building = guild_halls_01
@@ -191,6 +227,37 @@ innovation_mundium = {
 	group = culture_group_civic
 	culture_era = culture_era_classical_antiquity
 	icon = @majesty_01
+	
+	asset = {
+		trigger = {
+			OR = {
+				has_cultural_pillar = heritage_frankish
+				has_cultural_parameter = heritage_group_germanic
+			}
+		}
+		icon = @majesty_01
+		name = innovation_mundium_germanic
+	}
+	asset = {
+		trigger = {
+			OR = {
+				has_cultural_pillar = heritage_byzantine
+				has_cultural_parameter = heritage_group_romance
+			}
+		}
+		icon = @majesty_01
+		name = innovation_mundium_latin
+	}
+	asset = {
+		trigger = {
+			OR = {
+				has_cultural_pillar = heritage_arabic
+				has_cultural_pillar = heritage_berber
+			}
+		}
+		icon = @nobility_02
+		name = innovation_mundium_arabic
+	}
 
 	unlock_law = high_tribal_organization_2
 	unlock_law = prefeudal_authority_2
@@ -205,9 +272,10 @@ innovation_state_religion = {
 	skill = learning
 	group = culture_group_civic
 	culture_era = culture_era_classical_antiquity
-	icon = @leadership_1
+	icon = @ck2_bishop
 	
-	custom = unlocks_temple_01_for_advanced_governments
+	#TODO: Add to building code
+	#custom = unlocks_temple_01_for_advanced_governments
 	
 	unlock_building = monastic_schools_01
 	
@@ -227,7 +295,7 @@ innovation_wootz_steel = {
 	group = culture_group_military
 	culture_era = culture_era_classical_antiquity
 	region = world_india_deccan
-	icon = @weapons_and_armor_01
+	icon = @wootz_steel
 
 	custom = unlock_wind_furnaces
 
@@ -290,7 +358,7 @@ innovation_marzban = {
 	skill = martial
 	group = culture_group_military
 	culture_era = culture_era_classical_antiquity
-	icon = @administration_1
+	icon = @maa_02
 	
 	potential = { has_cultural_pillar = heritage_iranian }
 
@@ -303,7 +371,7 @@ innovation_wuzurgan = {
 	skill = diplomacy
 	group = culture_group_civic
 	culture_era = culture_era_classical_antiquity
-	icon = @administration_1
+	icon = @nobility_02
 	
 	potential = { has_cultural_pillar = heritage_iranian }
 
@@ -319,7 +387,7 @@ innovation_persian_urbanization = {
 	culture_era = culture_era_classical_antiquity
 	icon = @civil_construction_2
 	
-	potential = { has_cultural_parameter = unlock_persian_urbanization }
+	potential = { has_cultural_pillar = heritage_iranian }
 
 	character_modifier = { development_growth_factor = 0.10 }
 
@@ -417,7 +485,7 @@ innovation_repeating_crossbow = {
 	skill = martial
 	group = culture_group_military
 	culture_era = culture_era_classical_antiquity
-	icon = @special_maa_02
+	icon = @advanced_bowmaking
 	
 	potential = {
 		trigger_if = {
@@ -441,7 +509,7 @@ innovation_repeating_crossbow = {
 		trigger = {
 			has_cultural_pillar = heritage_chinese
 		}
-		icon = @special_maa_02
+		icon = @advanced_bowmaking
 		name = innovation_repeating_crossbow_chinese
 	}
 	

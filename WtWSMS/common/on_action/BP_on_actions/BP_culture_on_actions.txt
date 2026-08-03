@@ -157,19 +157,19 @@ historical_culture_ashkenazi = {
 	effect = {
 		if = {
 			limit = { NOT = { has_global_variable = ashkenazi_culture_already_exists } }
-			save_temporary_scope_value_as = { name = shift_start_year value = 750 }
-			save_temporary_scope_value_as = { name = shift_period_years value = 150 }
+			save_temporary_scope_value_as = { name = drift_start_year value = 750 }
+			save_temporary_scope_value_as = { name = drift_period_years value = 150 }
 			random = {
 				chance = 0
 				# Melting pot logic
-				modifier = { add = 0.25 current_year >= shift_start_year_0_period }
-				modifier = { add = 0.25 current_year >= shift_start_year_1_period }
-				modifier = { add = 0.50 current_year >= shift_start_year_2_period }
-				modifier = { add = 1.00 current_year >= shift_start_year_3_period }
-				modifier = { add = 2.00 current_year >= shift_start_year_4_period }
-				modifier = { add = 2.00 current_year >= shift_start_year_5_period }
-				modifier = { add = 3.00 current_year >= shift_start_year_6_period }
-				modifier = { add = 5.00 current_year >= shift_start_year_7_period }
+				modifier = { add = 0.25 current_year >= drift_start_year_0_period }
+				modifier = { add = 0.25 current_year >= drift_start_year_1_period }
+				modifier = { add = 0.50 current_year >= drift_start_year_2_period }
+				modifier = { add = 1.00 current_year >= drift_start_year_3_period }
+				modifier = { add = 2.00 current_year >= drift_start_year_4_period }
+				modifier = { add = 2.00 current_year >= drift_start_year_5_period }
+				modifier = { add = 3.00 current_year >= drift_start_year_6_period }
+				modifier = { add = 5.00 current_year >= drift_start_year_7_period }
 				# Accelerate timeline if Crusades have been called for
 				modifier = { add = 5.00 religion:christianity_religion = { exists = var:variable_ghw_unlocked } }
 				
@@ -318,19 +318,19 @@ historical_culture_radhanite = {
 	effect = {
 		if = {
 			limit = { NOT = { has_global_variable = radhanite_culture_already_exists } }
-			save_temporary_scope_value_as = { name = shift_start_year value = 850 }
-			save_temporary_scope_value_as = { name = shift_period_years value = 150 }
+			save_temporary_scope_value_as = { name = drift_start_year value = 850 }
+			save_temporary_scope_value_as = { name = drift_period_years value = 150 }
 			random = {
 				chance = 0
 				# Melting pot logic
-				modifier = { add = 0.25 current_year >= shift_start_year_0_period }
-				modifier = { add = 0.25 current_year >= shift_start_year_1_period }
-				modifier = { add = 0.50 current_year >= shift_start_year_2_period }
-				modifier = { add = 1.00 current_year >= shift_start_year_3_period }
-				modifier = { add = 2.00 current_year >= shift_start_year_4_period }
-				modifier = { add = 2.00 current_year >= shift_start_year_5_period }
-				modifier = { add = 3.00 current_year >= shift_start_year_6_period }
-				modifier = { add = 5.00 current_year >= shift_start_year_7_period }
+				modifier = { add = 0.25 current_year >= drift_start_year_0_period }
+				modifier = { add = 0.25 current_year >= drift_start_year_1_period }
+				modifier = { add = 0.50 current_year >= drift_start_year_2_period }
+				modifier = { add = 1.00 current_year >= drift_start_year_3_period }
+				modifier = { add = 2.00 current_year >= drift_start_year_4_period }
+				modifier = { add = 2.00 current_year >= drift_start_year_5_period }
+				modifier = { add = 3.00 current_year >= drift_start_year_6_period }
+				modifier = { add = 5.00 current_year >= drift_start_year_7_period }
 				# Accelerate timeline if Crusades have been called for
 				modifier = { add = 5.00 religion:christianity_religion = { exists = var:variable_ghw_unlocked } }
 				

@@ -87,11 +87,12 @@ roman_administrative_treasury = {
 	}
 }
 
-#Roman Empire's should be able to set things themselves at all levels
+#Roman Empires should be able to set things themselves at all levels
 roman_administrative_themes = {
 	display_mode = radiobutton
 	is_shown = {
 		scope:subject = {
+			is_landed = yes
 			OR = {
 				highest_held_title_tier >= main_administrative_tier
 				highest_held_title_tier >= min_title_maa_tier
@@ -100,8 +101,8 @@ roman_administrative_themes = {
 	}
 	obligation_levels = {
 		roman_admin_theme_civilian = {
-			is_shown = { scope:subject = { is_landed = yes } }
-			is_valid = { scope:subject = { is_landed = yes } }
+			#is_shown = { scope:subject = { is_landed = yes } }
+			#is_valid = { scope:subject = { is_landed = yes } }
 			default = yes
 			position = { 0 0 }
 			icon = "gfx/interface/icons/theme_administration_types/icon_civilian_administration.dds"
@@ -434,6 +435,9 @@ roman_administrative_military_landed = {
 	display_mode = tree
 	icon = soldier_icon
 	defaults_to_highest_valid_level = yes
+	
+	# FIXME: logged errors
+	# Obligation level 'roman_administrative_military_landed_0' in 'roman_administrative_military_landed' is marked as default but has is_valid/is_shown
 	
 	obligation_levels = {
 		roman_administrative_military_landed_0 = { #Fully standing army
@@ -800,12 +804,12 @@ roman_administrative_ministry_obligations = {
 			icon = "gfx/interface/icons/celestial_administration_types/icon_standard_administration.dds"
 			gui_tags = { civilian }
 			default = yes
-			is_valid = {
-				OR = {
-					any_held_title = { has_variable = is_supreme_roman_military_title }
-					any_held_title = { has_variable = is_supreme_roman_ministry_title }
-				}
-			}
+			#is_valid = {
+			#	OR = {
+			#		any_held_title = { has_variable = is_supreme_roman_military_title }
+			#		any_held_title = { has_variable = is_supreme_roman_ministry_title }
+			#	}
+			#}
 
 			ai_liege_desire = {
 				value = 1

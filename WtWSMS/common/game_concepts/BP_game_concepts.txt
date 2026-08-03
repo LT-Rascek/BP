@@ -1,10 +1,11 @@
 ﻿#New CBs
 bp_major_war = {
+	texture = "gfx/interface/icons/war_status/war_icon.dds"
 	parent = casus_belli
 	alias = { bp_major_wars bp_major_war_marker }
 }
 migration_war = {
-	texture = "gfx/interface/icons/war_status/war_icon.dds"
+	texture = "gfx/interface/icons/casus_bellis/de_jure_cb.dds"
 	parent = casus_belli
 	alias = { migration_wars }
 }
@@ -22,65 +23,156 @@ imperial_reconquest_war = {
 }
 #Other Concepts
 bp_roman_government = {
+	parent = government
+	texture = "gfx/interface/icons/government_types/roman_dynastic_government.dds"
 	alias = { bp_roman_governments }
 }
 bp_roman_empire_restoration = {
-	texture = "gfx/interface/icons/message_feed/alliance.dds"
+	texture = "gfx/interface/icons/government_types/roman_dynastic_government.dds"
+}
+bp_culture_drift = {
+	parent = culture
+	texture = "gfx/interface/icons/icon_culture.dds"
 }
 bp_religion_changes = {
-	texture = "gfx/interface/icons/event_types/type_faith.dds"
+	parent = faith
+	texture = "gfx/interface/icons/vassal_directives/convert_faith.dds"
 }
 bp_christian_doctrines = {
+	parent = doctrines
 	texture = "gfx/interface/icons/event_types/type_faith.dds"
 	alias = { bp_christian_doctrine }
 }
 bp_creed = {
+	parent = doctrines
 	texture = "gfx/interface/icons/event_types/type_faith.dds"
 	alias = { bp_creeds }
 }
 bp_faith_culture = {
-	texture = "gfx/interface/icons/event_types/type_faith.dds"
+	texture = "gfx/interface/icons/scheme_types/icon_scheme_crypto_religion.dds"
 	alias = { bp_faith_culture_possessive }
 }
 bp_autocephalous_church = {
+	parent = faith
 	texture = "gfx/interface/icons/event_types/type_faith.dds"
 	alias = { bp_autocephalous_churches }
 }
 bp_unhybridizable_traditions = {
+	parent = culture_tradition
 	texture = "gfx/interface/icons/icon_culture.dds"
 }
-bp_feudalization = {}
-#
+bp_feudalization = {
+	texture = "gfx/interface/icons/government_types/feudal_government.dds"
+}
 bp_centralized_government = {
+	parent = government
+	texture = "gfx/interface/skinned/hud_maintab/maintab_administrative.dds"
 	alias = { bp_centralized_governments }
 }
 
 #For localization
-bp_holy_war_unlocked_condition = { shown_in_encyclopedia = no }
-bp_ecumenical = { shown_in_encyclopedia = no }
-organized_government = { shown_in_encyclopedia = no }
-bp_greco_latin_classical_antiquity_civic_innovations = { shown_in_encyclopedia = no }
-bp_greco_latin_late_antiquity_civic_innovations = { shown_in_encyclopedia = no }
-bp_faith_child_culture = { shown_in_encyclopedia = no }
-bp_faith_unrelated_culture = { shown_in_encyclopedia = no }
-bp_urbanization_innovations = { shown_in_encyclopedia = no }
+bp_holy_war_unlocked_condition = {
+	parent = holy_war
+	shown_in_encyclopedia = no
+	texture = "gfx/interface/icons/casus_bellis/religious_war.dds"
+}
+bp_ecumenical = {
+	parent = doctrines
+	texture = "gfx/interface/icons/event_types/type_faith.dds"
+	shown_in_encyclopedia = no
+}
+organized_government = {
+	shown_in_encyclopedia = no
+}
+bp_greco_latin_classical_antiquity_civic_innovations = {
+	parent = innovation
+	texture = "gfx/interface/icons/message_feed/technology.dds"
+	shown_in_encyclopedia = no
+}
+bp_greco_latin_late_antiquity_civic_innovations = {
+	parent = innovation
+	texture = "gfx/interface/icons/message_feed/technology.dds"
+	shown_in_encyclopedia = no
+}
+bp_faith_child_culture = {
+	parent = bp_faith_culture
+	texture = "gfx/interface/icons/scheme_types/icon_scheme_crypto_religion.dds"
+	shown_in_encyclopedia = no
+}
+bp_faith_unrelated_culture = {
+	parent = bp_faith_culture
+	texture = "gfx/interface/icons/scheme_types/icon_scheme_crypto_religion.dds"
+	shown_in_encyclopedia = no
+}
+bp_urbanization_innovations = {
+	parent = innovation
+	texture = "gfx/interface/icons/message_feed/technology.dds"
+	shown_in_encyclopedia = no
+}
+
 #Certain pairwise tradition blocks
-bp_body_status_tradition = { shown_in_encyclopedia = no }
-bp_cultural_combat_tradition = { shown_in_encyclopedia = no }
-bp_eunuch_status_tradition = { shown_in_encyclopedia = no }
-bp_monolithic_culture_tradition = { shown_in_encyclopedia = no }
-bp_traditionalist_culture_tradition = { shown_in_encyclopedia = no }
-bp_legal_tradition = { shown_in_encyclopedia = no }
+bp_body_status_tradition = {
+	parent = culture_tradition
+	texture = "gfx/interface/icons/traits/one_eyed.dds"
+	shown_in_encyclopedia = no
+}
+bp_cultural_combat_tradition = {
+	parent = culture_tradition
+	texture = "gfx/interface/icons/traits/sea_raider.dds"
+	shown_in_encyclopedia = no
+}
+bp_eunuch_status_tradition = {
+	parent = culture_tradition
+	texture = "gfx/interface/icons/traits/eunuch_1.dds"
+	shown_in_encyclopedia = no
+}
+bp_monolithic_culture_tradition = {
+	parent = culture_tradition
+	texture = "gfx/interface/icons/icon_culture.dds"
+	shown_in_encyclopedia = no
+}
+bp_traditionalist_culture_tradition = {
+	parent = culture_tradition
+	texture = "gfx/interface/icons/icon_culture.dds"
+	shown_in_encyclopedia = no
+}
+bp_legal_tradition = {
+	parent = culture_tradition
+	texture = "gfx/interface/icons/icon_culture.dds"
+	shown_in_encyclopedia = no
+}
 bp_greco_roman_social_traditions = {
+	parent = culture_tradition
 	shown_in_encyclopedia = no
 	alias = { bp_greco_roman_social_tradition }
-	texture = "gfx/interface/icons/icon_culture.dds"
+	texture = "gfx/interface/icons/event_types/type_ep3_emperor.dds"
 }
 bp_roman_event_hybrid_tradition = {
+	parent = culture_tradition
 	shown_in_encyclopedia = no
 	texture = "gfx/interface/icons/icon_culture.dds"
 }
-bp_roman_empire = { shown_in_encyclopedia = no }
+bp_roman_empire = {
+	parent = title
+	texture = "gfx/interface/icons/message_feed/titles.dds"
+	shown_in_encyclopedia = no
+}
+bp_romance_heritages = {
+	parent = heritage
+	texture = "gfx/interface/icons/icon_culture.dds"
+	shown_in_encyclopedia = no
+}
+bp_romance_language = {
+	parent = language
+	texture = "gfx/interface/icons/scheme_types/icon_scheme_learn_language.dds"
+	alias = { bp_romance_languages }
+	shown_in_encyclopedia = no
+}
+bp_early_germanic_heritages = {
+	parent = heritage
+	texture = "gfx/interface/icons/icon_culture.dds"
+	shown_in_encyclopedia = no
+}
 
 bp_forum_location = { shown_in_encyclopedia = no }
 bp_wiki_location = { shown_in_encyclopedia = no }

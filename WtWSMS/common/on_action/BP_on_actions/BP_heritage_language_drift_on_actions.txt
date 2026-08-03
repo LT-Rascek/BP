@@ -1,11 +1,11 @@
 ﻿yearly_global_pulse = {
 	on_actions = {
-		liguistic_shift
-		heritage_shift
+		liguistic_drift
+		heritage_drift
 	}
 }
 
-liguistic_shift = {
+liguistic_drift = {
 	effect = {
 		every_culture_global = {
 			limit = {
@@ -38,256 +38,256 @@ liguistic_shift = {
 					has_cultural_pillar = language_parthian
 				}
 			}
-			save_scope_as = shift_culture
+			save_scope_as = drift_culture
 			
 			#Latin
 			if = {
 				limit = { has_cultural_pillar = language_latin }
-				generic_shift_culture_event_effect = {
+				generic_drift_culture_event_effect = {
 					EVENT_ID = bp_heritage_linguistic_drift.0001
 					HERITAGE_OR_LANGUAGE = language
-					SHIFT_START_YEAR = 500
-					SHIFT_PERIOD_YEARS = 25
-					UNITED_POLITY_PREVENTS_SHIFT = yes
+					DRIFT_START_YEAR = 500
+					DRIFT_PERIOD_YEARS = 25
+					UNITED_POLITY_PREVENTS_DRIFT = yes
 				}
 			}
 			#Proto-Romance Language Splits
 			else_if = {
 				limit = { has_cultural_pillar = language_proto_ibero_romance }
-				generic_shift_culture_event_effect = {
+				generic_drift_culture_event_effect = {
 					EVENT_ID = bp_heritage_linguistic_drift.0001
 					HERITAGE_OR_LANGUAGE = language
-					SHIFT_START_YEAR = 700
-					SHIFT_PERIOD_YEARS = 25
-					UNITED_POLITY_PREVENTS_SHIFT = yes
+					DRIFT_START_YEAR = 700
+					DRIFT_PERIOD_YEARS = 25
+					UNITED_POLITY_PREVENTS_DRIFT = yes
 				}
 			}
 			else_if = {
 				limit = { has_cultural_pillar = language_proto_gallo_romance }
-				generic_shift_culture_event_effect = {
+				generic_drift_culture_event_effect = {
 					EVENT_ID = bp_heritage_linguistic_drift.0001
 					HERITAGE_OR_LANGUAGE = language
-					SHIFT_START_YEAR = 700
-					SHIFT_PERIOD_YEARS = 25
-					UNITED_POLITY_PREVENTS_SHIFT = yes
+					DRIFT_START_YEAR = 700
+					DRIFT_PERIOD_YEARS = 25
+					UNITED_POLITY_PREVENTS_DRIFT = yes
 				}
 			}
 			else_if = {
 				limit = { has_cultural_pillar = language_proto_british_romance }
-				generic_shift_culture_event_effect = {
+				generic_drift_culture_event_effect = {
 					EVENT_ID = bp_heritage_linguistic_drift.0001
 					HERITAGE_OR_LANGUAGE = language
-					SHIFT_START_YEAR = 700
-					SHIFT_PERIOD_YEARS = 25
-					UNITED_POLITY_PREVENTS_SHIFT = yes
+					DRIFT_START_YEAR = 700
+					DRIFT_PERIOD_YEARS = 25
+					UNITED_POLITY_PREVENTS_DRIFT = yes
 				}
 			}
 			else_if = {
 				limit = { has_cultural_pillar = language_proto_italian_romance }
-				generic_shift_culture_event_effect = {
+				generic_drift_culture_event_effect = {
 					EVENT_ID = bp_heritage_linguistic_drift.0001
 					HERITAGE_OR_LANGUAGE = language
-					SHIFT_START_YEAR = 700
-					SHIFT_PERIOD_YEARS = 25
-					UNITED_POLITY_PREVENTS_SHIFT = yes
+					DRIFT_START_YEAR = 700
+					DRIFT_PERIOD_YEARS = 25
+					UNITED_POLITY_PREVENTS_DRIFT = yes
 				}
 			}
 			else_if = {
 				limit = { has_cultural_pillar = language_proto_raetonorican_romance }
-				generic_shift_culture_event_effect = {
+				generic_drift_culture_event_effect = {
 					EVENT_ID = bp_heritage_linguistic_drift.0001
 					HERITAGE_OR_LANGUAGE = language
-					SHIFT_START_YEAR = 700
-					SHIFT_PERIOD_YEARS = 25
-					UNITED_POLITY_PREVENTS_SHIFT = yes
+					DRIFT_START_YEAR = 700
+					DRIFT_PERIOD_YEARS = 25
+					UNITED_POLITY_PREVENTS_DRIFT = yes
 				}
 			}
 			else_if = {
 				limit = { has_cultural_pillar = language_proto_illyrian_romance }
-				generic_shift_culture_event_effect = {
+				generic_drift_culture_event_effect = {
 					EVENT_ID = bp_heritage_linguistic_drift.0001
 					HERITAGE_OR_LANGUAGE = language
-					SHIFT_START_YEAR = 700
-					SHIFT_PERIOD_YEARS = 25
-					UNITED_POLITY_PREVENTS_SHIFT = yes
+					DRIFT_START_YEAR = 700
+					DRIFT_PERIOD_YEARS = 25
+					UNITED_POLITY_PREVENTS_DRIFT = yes
 				}
 			}
 			else_if = {
 				limit = { has_cultural_pillar = language_proto_pannonian_romance }
-				generic_shift_culture_event_effect = {
+				generic_drift_culture_event_effect = {
 					EVENT_ID = bp_heritage_linguistic_drift.0001
 					HERITAGE_OR_LANGUAGE = language
-					SHIFT_START_YEAR = 700
-					SHIFT_PERIOD_YEARS = 25
-					UNITED_POLITY_PREVENTS_SHIFT = yes
+					DRIFT_START_YEAR = 700
+					DRIFT_PERIOD_YEARS = 25
+					UNITED_POLITY_PREVENTS_DRIFT = yes
 				}
 			}
 			else_if = {
 				limit = { has_cultural_pillar = language_proto_eastern_romance }
-				generic_shift_culture_event_effect = {
+				generic_drift_culture_event_effect = {
 					EVENT_ID = bp_heritage_linguistic_drift.0001
 					HERITAGE_OR_LANGUAGE = language
-					SHIFT_START_YEAR = 700
-					SHIFT_PERIOD_YEARS = 25
-					UNITED_POLITY_PREVENTS_SHIFT = yes
+					DRIFT_START_YEAR = 700
+					DRIFT_PERIOD_YEARS = 25
+					UNITED_POLITY_PREVENTS_DRIFT = yes
 				}
 			}
 			else_if = {
 				limit = { has_cultural_pillar = language_proto_syrian_romance }
-				generic_shift_culture_event_effect = {
+				generic_drift_culture_event_effect = {
 					EVENT_ID = bp_heritage_linguistic_drift.0001
 					HERITAGE_OR_LANGUAGE = language
-					SHIFT_START_YEAR = 700
-					SHIFT_PERIOD_YEARS = 25
-					UNITED_POLITY_PREVENTS_SHIFT = yes
+					DRIFT_START_YEAR = 700
+					DRIFT_PERIOD_YEARS = 25
+					UNITED_POLITY_PREVENTS_DRIFT = yes
 				}
 			}
 			else_if = {
 				limit = { has_cultural_pillar = language_proto_african_romance }
-				generic_shift_culture_event_effect = {
+				generic_drift_culture_event_effect = {
 					EVENT_ID = bp_heritage_linguistic_drift.0001
 					HERITAGE_OR_LANGUAGE = language
-					SHIFT_START_YEAR = 700
-					SHIFT_PERIOD_YEARS = 25
-					UNITED_POLITY_PREVENTS_SHIFT = yes
+					DRIFT_START_YEAR = 700
+					DRIFT_PERIOD_YEARS = 25
+					UNITED_POLITY_PREVENTS_DRIFT = yes
 				}
 			}
 			else_if = {
 				limit = { has_cultural_pillar = language_proto_sardinian }
-				generic_shift_culture_event_effect = {
+				generic_drift_culture_event_effect = {
 					EVENT_ID = bp_heritage_linguistic_drift.0001
 					HERITAGE_OR_LANGUAGE = language
-					SHIFT_START_YEAR = 650 #_Slightly_ earlier than the others
-					SHIFT_PERIOD_YEARS = 25
-					UNITED_POLITY_PREVENTS_SHIFT = yes
+					DRIFT_START_YEAR = 650 #_Slightly_ earlier than the others
+					DRIFT_PERIOD_YEARS = 25
+					UNITED_POLITY_PREVENTS_DRIFT = yes
 				}
 			}
 			#Later Romance Splits
 			else_if = { #Occitano to Catalan/Arpitan/Occitan
 				limit = { has_cultural_pillar = language_doc_romance }
-				generic_shift_culture_event_effect = {
+				generic_drift_culture_event_effect = {
 					EVENT_ID = bp_heritage_linguistic_drift.0001
 					HERITAGE_OR_LANGUAGE = language
-					SHIFT_START_YEAR = 900
-					SHIFT_PERIOD_YEARS = 25
-					UNITED_POLITY_PREVENTS_SHIFT = no
+					DRIFT_START_YEAR = 900
+					DRIFT_PERIOD_YEARS = 25
+					UNITED_POLITY_PREVENTS_DRIFT = no
 				}
 			}
 			else_if = { #D'Oil to Arpitan (Special Case)
 				limit = {
 					has_cultural_pillar = language_french
-					scope:shift_culture = {
+					scope:drift_culture = {
 						any_culture_county = {
 							percent >= 0.50
 							title_province = { geographical_region = custom_arpitan }
 						}
 					}
 				}
-				generic_shift_culture_event_effect = {
+				generic_drift_culture_event_effect = {
 					EVENT_ID = bp_heritage_linguistic_drift.0001
 					HERITAGE_OR_LANGUAGE = language
-					SHIFT_START_YEAR = 900
-					SHIFT_PERIOD_YEARS = 25
-					UNITED_POLITY_PREVENTS_SHIFT = no
+					DRIFT_START_YEAR = 900
+					DRIFT_PERIOD_YEARS = 25
+					UNITED_POLITY_PREVENTS_DRIFT = no
 				}
 			}
 			else_if = { #Iberian Vulgar to children
 				limit = { has_cultural_pillar = language_iberian }
-				generic_shift_culture_event_effect = {
+				generic_drift_culture_event_effect = {
 					EVENT_ID = bp_heritage_linguistic_drift.0001
 					HERITAGE_OR_LANGUAGE = language
-					SHIFT_START_YEAR = 900
-					SHIFT_PERIOD_YEARS = 25
-					UNITED_POLITY_PREVENTS_SHIFT = no
+					DRIFT_START_YEAR = 900
+					DRIFT_PERIOD_YEARS = 25
+					UNITED_POLITY_PREVENTS_DRIFT = no
 				}
 			}
 			#Indo-Aryan
 			else_if = {
 				limit = { has_cultural_pillar = language_magadhan }
-				generic_shift_culture_event_effect = {
+				generic_drift_culture_event_effect = {
 					EVENT_ID = bp_heritage_linguistic_drift.0001
 					HERITAGE_OR_LANGUAGE = language
-					SHIFT_START_YEAR = 700
-					SHIFT_PERIOD_YEARS = 25
-					UNITED_POLITY_PREVENTS_SHIFT = yes
+					DRIFT_START_YEAR = 700
+					DRIFT_PERIOD_YEARS = 25
+					UNITED_POLITY_PREVENTS_DRIFT = yes
 				}
 			}
 			else_if = {
 				limit = { has_cultural_pillar = language_kamarupan }
-				generic_shift_culture_event_effect = {
+				generic_drift_culture_event_effect = {
 					EVENT_ID = bp_heritage_linguistic_drift.0001
 					HERITAGE_OR_LANGUAGE = language
-					SHIFT_START_YEAR = 700
-					SHIFT_PERIOD_YEARS = 25
-					UNITED_POLITY_PREVENTS_SHIFT = yes
+					DRIFT_START_YEAR = 700
+					DRIFT_PERIOD_YEARS = 25
+					UNITED_POLITY_PREVENTS_DRIFT = yes
 				}
 			}
 			else_if = {
 				limit = { has_cultural_pillar = language_sauraseni }
-				generic_shift_culture_event_effect = {
+				generic_drift_culture_event_effect = {
 					EVENT_ID = bp_heritage_linguistic_drift.0001
 					HERITAGE_OR_LANGUAGE = language
-					SHIFT_START_YEAR = 700
-					SHIFT_PERIOD_YEARS = 25
-					UNITED_POLITY_PREVENTS_SHIFT = yes
+					DRIFT_START_YEAR = 700
+					DRIFT_PERIOD_YEARS = 25
+					UNITED_POLITY_PREVENTS_DRIFT = yes
 				}
 			}
 			else_if = {
 				limit = { has_cultural_pillar = langauge_apabhramsa }
-				generic_shift_culture_event_effect = {
+				generic_drift_culture_event_effect = {
 					EVENT_ID = bp_heritage_linguistic_drift.0001
 					HERITAGE_OR_LANGUAGE = language
-					SHIFT_START_YEAR = 700
-					SHIFT_PERIOD_YEARS = 25
-					UNITED_POLITY_PREVENTS_SHIFT = yes
+					DRIFT_START_YEAR = 700
+					DRIFT_PERIOD_YEARS = 25
+					UNITED_POLITY_PREVENTS_DRIFT = yes
 				}
 			}
 			else_if = {
 				limit = { has_cultural_pillar = language_vrachada }
-				generic_shift_culture_event_effect = {
+				generic_drift_culture_event_effect = {
 					EVENT_ID = bp_heritage_linguistic_drift.0001
 					HERITAGE_OR_LANGUAGE = language
-					SHIFT_START_YEAR = 700
-					SHIFT_PERIOD_YEARS = 25
-					UNITED_POLITY_PREVENTS_SHIFT = yes
+					DRIFT_START_YEAR = 700
+					DRIFT_PERIOD_YEARS = 25
+					UNITED_POLITY_PREVENTS_DRIFT = yes
 				}
 			}
 			else_if = {
 				limit = { has_cultural_pillar = language_maharashtri }
-				generic_shift_culture_event_effect = {
+				generic_drift_culture_event_effect = {
 					EVENT_ID = bp_heritage_linguistic_drift.0001
 					HERITAGE_OR_LANGUAGE = language
-					SHIFT_START_YEAR = 700
-					SHIFT_PERIOD_YEARS = 25
-					UNITED_POLITY_PREVENTS_SHIFT = yes
+					DRIFT_START_YEAR = 700
+					DRIFT_PERIOD_YEARS = 25
+					UNITED_POLITY_PREVENTS_DRIFT = yes
 				}
 			}
 			else_if = {
 				limit = { has_cultural_pillar = language_elu }
-				generic_shift_culture_event_effect = {
+				generic_drift_culture_event_effect = {
 					EVENT_ID = bp_heritage_linguistic_drift.0001
 					HERITAGE_OR_LANGUAGE = language
-					SHIFT_START_YEAR = 500
-					SHIFT_PERIOD_YEARS = 25
-					UNITED_POLITY_PREVENTS_SHIFT = yes
+					DRIFT_START_YEAR = 500
+					DRIFT_PERIOD_YEARS = 25
+					UNITED_POLITY_PREVENTS_DRIFT = yes
 				}
 			}
 			#Iranian
 			else_if = {
 				limit = { has_cultural_pillar = language_parthian }
-				generic_shift_culture_event_effect = {
+				generic_drift_culture_event_effect = {
 					EVENT_ID = bp_heritage_linguistic_drift.0001
 					HERITAGE_OR_LANGUAGE = language
-					SHIFT_START_YEAR = 500
-					SHIFT_PERIOD_YEARS = 25
-					UNITED_POLITY_PREVENTS_SHIFT = no
+					DRIFT_START_YEAR = 500
+					DRIFT_PERIOD_YEARS = 25
+					UNITED_POLITY_PREVENTS_DRIFT = no
 				}
 			}
 		}
 	}
 }
 
-heritage_shift = {
+heritage_drift = {
 	effect = {
 		every_culture_global = {
 			limit = {
@@ -304,86 +304,86 @@ heritage_shift = {
 					has_cultural_pillar = heritage_saxon
 				}
 			}
-			save_scope_as = shift_culture
+			save_scope_as = drift_culture
 			
 			if = {
 				limit = { has_cultural_pillar = heritage_latin }
-				generic_shift_culture_event_effect = {
+				generic_drift_culture_event_effect = {
 					EVENT_ID = bp_heritage_linguistic_drift.0101
 					HERITAGE_OR_LANGUAGE = heritage
-					SHIFT_START_YEAR = 500
-					SHIFT_PERIOD_YEARS = 25
-					UNITED_POLITY_PREVENTS_SHIFT = yes
+					DRIFT_START_YEAR = 500
+					DRIFT_PERIOD_YEARS = 25
+					UNITED_POLITY_PREVENTS_DRIFT = yes
 				}
 			}
 			else_if = {
 				limit = { has_cultural_pillar = heritage_suebic }
-				generic_shift_culture_event_effect = {
+				generic_drift_culture_event_effect = {
 					EVENT_ID = bp_heritage_linguistic_drift.0101
 					HERITAGE_OR_LANGUAGE = heritage
-					SHIFT_START_YEAR = 500
-					SHIFT_PERIOD_YEARS = 25
-					UNITED_POLITY_PREVENTS_SHIFT = no
+					DRIFT_START_YEAR = 500
+					DRIFT_PERIOD_YEARS = 25
+					UNITED_POLITY_PREVENTS_DRIFT = no
 				}
 			}
 			else_if = {
 				limit = { has_cultural_pillar = heritage_scandzan }
-				generic_shift_culture_event_effect = {
+				generic_drift_culture_event_effect = {
 					EVENT_ID = bp_heritage_linguistic_drift.0101
 					HERITAGE_OR_LANGUAGE = heritage
-					SHIFT_START_YEAR = 500
-					SHIFT_PERIOD_YEARS = 25
-					UNITED_POLITY_PREVENTS_SHIFT = no
+					DRIFT_START_YEAR = 500
+					DRIFT_PERIOD_YEARS = 25
+					UNITED_POLITY_PREVENTS_DRIFT = no
 				}
 			}
 			else_if = {
 				limit = { has_cultural_pillar = heritage_nordwestblock }
-				generic_shift_culture_event_effect = {
+				generic_drift_culture_event_effect = {
 					EVENT_ID = bp_heritage_linguistic_drift.0101
 					HERITAGE_OR_LANGUAGE = heritage
-					SHIFT_START_YEAR = 500
-					SHIFT_PERIOD_YEARS = 25
-					UNITED_POLITY_PREVENTS_SHIFT = no
+					DRIFT_START_YEAR = 500
+					DRIFT_PERIOD_YEARS = 25
+					UNITED_POLITY_PREVENTS_DRIFT = no
 				}
 			}
 			else_if = {
 				limit = { has_cultural_pillar = heritage_jutlandic }
-				generic_shift_culture_event_effect = {
+				generic_drift_culture_event_effect = {
 					EVENT_ID = bp_heritage_linguistic_drift.0101
 					HERITAGE_OR_LANGUAGE = heritage
-					SHIFT_START_YEAR = 500
-					SHIFT_PERIOD_YEARS = 25
-					UNITED_POLITY_PREVENTS_SHIFT = no
+					DRIFT_START_YEAR = 500
+					DRIFT_PERIOD_YEARS = 25
+					UNITED_POLITY_PREVENTS_DRIFT = no
 				}
 			}
 			else_if = {
 				limit = { has_cultural_pillar = heritage_gothic }
-				generic_shift_culture_event_effect = {
+				generic_drift_culture_event_effect = {
 					EVENT_ID = bp_heritage_linguistic_drift.0101
 					HERITAGE_OR_LANGUAGE = heritage
-					SHIFT_START_YEAR = 500
-					SHIFT_PERIOD_YEARS = 25
-					UNITED_POLITY_PREVENTS_SHIFT = no
+					DRIFT_START_YEAR = 500
+					DRIFT_PERIOD_YEARS = 25
+					UNITED_POLITY_PREVENTS_DRIFT = no
 				}
 			}
 			else_if = {
 				limit = { has_cultural_pillar = heritage_przeworsk }
-				generic_shift_culture_event_effect = {
+				generic_drift_culture_event_effect = {
 					EVENT_ID = bp_heritage_linguistic_drift.0101
 					HERITAGE_OR_LANGUAGE = heritage
-					SHIFT_START_YEAR = 500
-					SHIFT_PERIOD_YEARS = 25
-					UNITED_POLITY_PREVENTS_SHIFT = no
+					DRIFT_START_YEAR = 500
+					DRIFT_PERIOD_YEARS = 25
+					UNITED_POLITY_PREVENTS_DRIFT = no
 				}
 			}
 			else_if = {
 				limit = { has_cultural_pillar = heritage_saxon }
-				generic_shift_culture_event_effect = {
+				generic_drift_culture_event_effect = {
 					EVENT_ID = bp_heritage_linguistic_drift.0101
 					HERITAGE_OR_LANGUAGE = heritage
-					SHIFT_START_YEAR = 500
-					SHIFT_PERIOD_YEARS = 25
-					UNITED_POLITY_PREVENTS_SHIFT = no
+					DRIFT_START_YEAR = 500
+					DRIFT_PERIOD_YEARS = 25
+					UNITED_POLITY_PREVENTS_DRIFT = no
 				}
 			}
 		}

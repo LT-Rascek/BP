@@ -8,7 +8,8 @@
  SENATE_SINE_COLLEGA: "#italic SINE COLLEGA#!\nIn late Antiquity, Roman consuls acting alone were referred to as #italic consul sine collega#! (literally: Consul without colleagues)."
  YOU_HAVE_DIFFERENT_UNIVERSALITY: "@warning_icon!#X You have either #V $rajamandala_government$#! or #V $iranian_dynastic_government$#! governments, which have different models of universality than the Roman model.#!"
  YOU_HAVE_ALREADY_ASKED_A_SENATE: "@warning_icon!#X You have already asked a Senate for recognition#!"
- senate_families: "Senate Houses"
+ senate_families: "#T View Senate Families#!"
+ SENATE_DYNASTY_WITH_NAME: "Gens [Dynasty.GetName]"
  #Roman Senate
  WESTERN_SENATE_EMPEROR: "Emperor"
  SENATE_TOP_LIEGE_OF_ROME: "[GetTitleByKey('c_roma').GetNameNoTier] [top_liege|E]"
@@ -71,10 +72,10 @@
  ROMAN_SENATE_DISBAND_TOOLTIP_HAS_ROMAN_GOVERNMENT: "@warning_icon!#X You have #V $roman_dynastic_government$#! or #V Sub-Roman Government#!#!"
  RECENTLY_ASKED_THE_SENATE_OR_MADE_A_DETERMINATION: "@warning_icon!#X You have recently interacted with the Senate #italic or#! decided #V permanently#! your relationship with the Senate#!"
  #Tool Tips
- DYNASTY_TT_NUMBER_OF_SENATORS_WEST: "Roman Senators ([GetTitleByKey('c_roma').GetNameNoTierNoTooltip]/Total): [Dynasty.MakeScope.ScriptValue('number_of_west_senators_in_rome_dynasty')|0V]/[Dynasty.MakeScope.ScriptValue('number_of_west_senators_in_family')|0V]"
- DYNASTY_TT_NUMBER_OF_HOLDINGS_WEST: "Dynastic Estates: [Dynasty.MakeScope.ScriptValue('number_of_holdings_in_family')|0V] out of [Dynasty.MakeScope.ScriptValue('number_of_expected_holdings_for_family')|0V] expected."
- DYNASTY_TT_NUMBER_OF_SENATORS_EAST: "Constantinopolitan Senators ([GetTitleByKey('c_byzantion').GetNameNoTierNoTooltip]/Total): [Dynasty.MakeScope.ScriptValue('number_of_east_senators_in_constantinople_dynasty')|0V]/[Dynasty.MakeScope.ScriptValue('number_of_east_senators_in_family')|0V]"
- DYNASTY_TT_NUMBER_OF_HOLDINGS_EAST: "Dynastic Estates: [Dynasty.MakeScope.ScriptValue('number_of_holdings_in_family')|0V] out of [Dynasty.MakeScope.ScriptValue('number_of_expected_holdings_for_family')|0V] expected."
+ SENATE_DYNASTY_INTERACTIONS_BUTTON_TOOLTIP: "#T Show [bp_senate|E] Interactions#!"
+ DYNASTY_TT_NUMBER_OF_SENATORS_WEST: "[bp_senators|E] ([GetTitleByKey('c_roma').GetNameNoTierNoTooltip]/Total): [Dynasty.MakeScope.ScriptValue('number_of_west_senators_in_rome_dynasty')|0V]/[Dynasty.MakeScope.ScriptValue('number_of_west_senators_in_family')|0V]"
+ DYNASTY_TT_NUMBER_OF_SENATORS_EAST: "[bp_senators|E] ([GetTitleByKey('c_byzantion').GetNameNoTierNoTooltip]/Total): [Dynasty.MakeScope.ScriptValue('number_of_east_senators_in_constantinople_dynasty')|0V]/[Dynasty.MakeScope.ScriptValue('number_of_east_senators_in_family')|0V]"
+ DYNASTY_TT_NUMBER_OF_SENATE_HOLDINGS: "[bp_dynastic_estates|E]: [Dynasty.MakeScope.ScriptValue('number_of_holdings_in_family')|0V] out of [Dynasty.MakeScope.ScriptValue('number_of_expected_holdings_for_family')|0V] expected"
  
  #To Use in the Future
  SENATE_SUPPORTERS: "Supporters"
@@ -83,14 +84,14 @@
  
  #Situation
  situation_BP_senate: "The Roman Senates"
- situation_BP_senate_desc: "$BP_senate_participant_group_city_holder_desc$"
+ situation_BP_senate_desc: "Though one of the most enduring Roman institutions, the Senate has changed greatly since the days of the Republic and holds only ceremonial power.\nEach traditional Roman capital, both Rome proper and Constantinople, is home to a gathering of wealthy landowning [bp_senators|E].\nThe Senate's main functions are to legitimize the ruler and distribute [bp_dynastic_estates|E] to its most prestigious [bp_senate_families|E]."
  situation_type_BP_senate: "$situation_BP_senate$"
  situation_type_BP_senate_desc: "$situation_BP_senate_desc$"
  
  BP_senate_participant_group_city_holder: "De Facto Liege"
- BP_senate_participant_group_city_holder_desc: "By Roman tradition, any ruler of the City must take heed of the Senate."
+ BP_senate_participant_group_city_holder_desc: "By Roman tradition, any ruler of the City must take heed of the Senate. However, this responsibility comes with the right to interfere in the Senate's affairs."
  BP_senate_participant_group_senator: "Senators"
- BP_senate_participant_group_senator_desc: "Senators within the City's limits can be nominated to succeed the consul."
+ BP_senate_participant_group_senator_desc: "$game_concept_bp_senator_desc$"
  BP_senate_participant_group_senator_away: "Senators (Away)"
  BP_senate_participant_group_senator_away_desc: "Senators outside of the Empire retain the prestige of their position, but aren't influential within the #italic pomerium#!."
  

@@ -1,0 +1,15 @@
+﻿l_english:
+ #The Senate
+ game_concept_bp_senate: "Senate"
+ game_concept_bp_senate_desc: "$situation_BP_senate_desc$"
+ 
+ game_concept_bp_senator: "Senator"
+ game_concept_bp_senators: "Senators"
+ game_concept_bp_senator_desc: "Characters with the [GetTrait('senator_west').GetName( GetNullCharacter )] or [GetTrait('senator_east').GetName( GetNullCharacter )] [traits|E] are participants in the corresponding [bp_senate|E].\nSenators take offense to their [liege|E] unjustly [revoking|E] [titles|E] from other Senators, as well as any [interactions|E] that influence the Senate."
+ 
+ game_concept_bp_senate_family: "Senate Family"
+ game_concept_bp_senate_families: "Senate Families"
+ game_concept_bp_senate_family_desc: "A [dynasty|E] given permanent status in the [bp_senate|E]. Men of this Dynasty will automatically become a [bp_senator|E] on their 25th birthday.\nSenate Families demand [bp_dynastic_estates|E] from their [liege|E], and will only be satisfied if they control more [holdings|E] than their [dynasty_prestige_level|E]."
+ 
+ game_concept_bp_dynastic_estates: "Dynastic Estates"
+ game_concept_bp_dynastic_estates_desc: "[bp_senate_families|E] expect to have more [holdings|E] among their entire [dynasty|E] than their [dynasty_prestige_level|E].\nIf they don't have enough, they will take the [decision|E] to #V $demand_land_for_family_west$#! from their [liege|E]."

@@ -1,4 +1,7 @@
 ﻿l_english:
+ #Magister Militum Tasks
+ task_organize_levies_roman: "$task_organize_levies$"
+ task_organize_levies_roman_effect_desc: "$task_organize_levies_effect_desc$"
  #Clerical Bureau Tasks
  ##Promulgate Laws: Influence-Related Task & Events
  task_promulgate_laws: "Promulgate Laws"
@@ -13,11 +16,11 @@
  ##Fabricate Claim
  task_fabricate_claim_roman: "$task_fabricate_claim$"
  task_fabricate_claim_roman_effect_Desc: "$task_fabricate_claim_effect_desc$"
- #Imperial guard
+ #Imperial Guard
  task_manage_guards_roman: "Manage Imperial Guard"
  #Justify Rule
  task_justify_rule_roman: "Justify Rule"
- #Legal Burau
+ #Legal Bureau
  task_domestic_affairs_roman: "Domestic Affairs"
  task_domestic_affairs_roman_direct_effect_desc: "[direct_vassal|E] Opinion: #P [opinion_i]+[SCOPE.ScriptValue('legal_bureau_director_domestic_affairs_opinion_scale')|1]#!\n(Increases by #P +#![SCOPE.ScriptValue('legal_bureau_director_domestic_affairs_monthly_increase')|2P]/month up to #P +#![SCOPE.ScriptValue('legal_bureau_director_domestic_affairs_opinion_max')|0P])\n$TAB$[councillor.Custom('GetCouncillorKurultaiMemberPossessive')] [diplomacy_i][diplomacy_skill|E]: #P [opinion_i]+[SCOPE.ScriptValue('legal_bureau_director_domestic_affairs_opinion_base')|2]#!"
  task_domestic_affairs_roman_parochial_effect_desc: "\n\n[GetVassalStance( 'parochial' ).GetTextIcon][GetVassalStance( 'parochial' ).GetName] [vassal|E] Opinion: #P [opinion_i]+[SCOPE.ScriptValue('legal_bureau_director_domestic_affairs_opinion_scale')|1]#!\n(Increases by #P +#![SCOPE.ScriptValue('legal_bureau_director_domestic_affairs_monthly_increase')|2P]/month up to #P +#![SCOPE.ScriptValue('legal_bureau_director_domestic_affairs_opinion_max')|0P])\n$TAB$[councillor.Custom('GetCouncillorKurultaiMemberPossessive')] [diplomacy_i][diplomacy_skill|E]: #P [opinion_i]+[SCOPE.ScriptValue('legal_bureau_director_domestic_affairs_opinion_base')|2]#!"
@@ -54,6 +57,10 @@
  task_increase_control_roman_desc: "$task_increase_control_desc$"
  LEGAL_BUREAU_DIRECTOR_INCREASE_CONTROL_LOCAL_COUNTY_MODIFIERS: "$MARSHAL_INCREASE_CONTROL_LOCAL_COUNTY_MODIFIERS$"
  LEGAL_BUREAU_DIRECTOR_INCREASE_CONTROL_MIME_MODIFIER: "$MARSHAL_INCREASE_CONTROL_MIME_MODIFIER$"
+ 
+ #Treasury
+ task_great_projects_roman: "$task_great_projects$"
+ task_great_projects_roman_effect_desc: "$task_great_projects_effect_desc$"
  
  ##### TOOLTIPS #####
  #VALUES

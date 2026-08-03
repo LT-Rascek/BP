@@ -1,9 +1,9 @@
 ﻿##### FIXME: calc_culture_dominant_religion/calc_culture_dominant_faith seems to be borked (requires PDX fix)
 
 ### Culture/Language shift stuff
-generic_shift_culture_event_effect = { #Cf. Vanilla common/on_actions/yearly_on_actions.txt:yearly_global_pulse
-	save_temporary_scope_value_as = { name = shift_start_year value = $SHIFT_START_YEAR$ }
-	save_temporary_scope_value_as = { name = shift_period_years value = $SHIFT_PERIOD_YEARS$ }
+generic_drift_culture_event_effect = { #Cf. Vanilla common/on_actions/yearly_on_actions.txt:yearly_global_pulse
+	save_temporary_scope_value_as = { name = drift_start_year value = $DRIFT_START_YEAR$ }
+	save_temporary_scope_value_as = { name = drift_period_years value = $DRIFT_PERIOD_YEARS$ }
 	
 	#Now do some additional considerations
 	random = {
@@ -88,36 +88,36 @@ generic_shift_culture_event_effect = { #Cf. Vanilla common/on_actions/yearly_on_
 		#      6 | 241-280 |     8.00% |     96.44% |     99.97% |
 		#      7 | 281-320 |    13.00% |     99.62% |    >99.99% |
 		#
-		modifier = { add = 0.25 current_year >= shift_start_year_0_period }
-		modifier = { add = 0.25 current_year >= shift_start_year_1_period }
-		modifier = { add = 0.50 current_year >= shift_start_year_2_period }
-		modifier = { add = 1.00 current_year >= shift_start_year_3_period }
-		modifier = { add = 2.00 current_year >= shift_start_year_4_period }
-		modifier = { add = 2.00 current_year >= shift_start_year_5_period }
-		modifier = { add = 3.00 current_year >= shift_start_year_6_period }
-		modifier = { add = 5.00 current_year >= shift_start_year_7_period }
+		modifier = { add = 0.25 current_year >= drift_start_year_0_period }
+		modifier = { add = 0.25 current_year >= drift_start_year_1_period }
+		modifier = { add = 0.50 current_year >= drift_start_year_2_period }
+		modifier = { add = 1.00 current_year >= drift_start_year_3_period }
+		modifier = { add = 2.00 current_year >= drift_start_year_4_period }
+		modifier = { add = 2.00 current_year >= drift_start_year_5_period }
+		modifier = { add = 3.00 current_year >= drift_start_year_6_period }
+		modifier = { add = 5.00 current_year >= drift_start_year_7_period }
 		
 		### Culture Situation....
 		#... modifies the odds (how likely the peasants and the elites mix)
 		#More common if the dominant religions of county holders are shared
 		modifier = {
 			factor = 2.0
-			scope:shift_culture = {
-				calc_culture_dominant_religion = { save_temporary_scope_as = shift_culture_dominant_religion }
+			scope:drift_culture = {
+				calc_culture_dominant_religion = { save_temporary_scope_as = drift_culture_dominant_religion }
 				any_culture_county = {
 					percent >= 0.50
-					holder = { religion = scope:shift_culture_dominant_religion }
+					holder = { religion = scope:drift_culture_dominant_religion }
 				}
 			}
 		}
 		#More common if the dominant faiths of county holders are shared (cumulative with religion)
 		modifier = {
 			factor = 2.0
-			scope:shift_culture = {
-				calc_culture_dominant_faith = { save_temporary_scope_as = shift_culture_dominant_faith }
+			scope:drift_culture = {
+				calc_culture_dominant_faith = { save_temporary_scope_as = drift_culture_dominant_faith }
 				any_culture_county = {
 					percent >= 0.50
-					holder = { faith = scope:shift_culture_dominant_faith }
+					holder = { faith = scope:drift_culture_dominant_faith }
 				}
 			}
 		}
@@ -126,7 +126,7 @@ generic_shift_culture_event_effect = { #Cf. Vanilla common/on_actions/yearly_on_
 		#Being dominated by an advanced government reduces the odds
 		modifier = {
 			factor = 0.707 #SQRT(1/2)
-			scope:shift_culture = {
+			scope:drift_culture = {
 				any_culture_county = {
 					percent >= 0.50
 					holder = { government_has_flag = government_is_centralized }
@@ -135,7 +135,7 @@ generic_shift_culture_event_effect = { #Cf. Vanilla common/on_actions/yearly_on_
 		}
 		modifier = {
 			factor = 0.707 #SQRT(1/2)
-			scope:shift_culture = {
+			scope:drift_culture = {
 				any_culture_county = {
 					percent = 1.00
 					holder = { government_has_flag = government_is_centralized }
@@ -145,7 +145,7 @@ generic_shift_culture_event_effect = { #Cf. Vanilla common/on_actions/yearly_on_
 		#Every county being held by tribals/quasi-tribals increases the odds
 		modifier = {
 			factor = 1.414 #SQRT(2)
-			scope:shift_culture = {
+			scope:drift_culture = {
 				any_culture_county = {
 					percent >= 0.50
 					holder = { government_has_flag = government_is_tribal }
@@ -154,7 +154,7 @@ generic_shift_culture_event_effect = { #Cf. Vanilla common/on_actions/yearly_on_
 		}
 		modifier = {
 			factor = 1.414 #SQRT(2)
-			scope:shift_culture = {
+			scope:drift_culture = {
 				any_culture_county = {
 					percent = 1.00
 					holder = { government_has_flag = government_is_tribal }
@@ -168,14 +168,14 @@ generic_shift_culture_event_effect = { #Cf. Vanilla common/on_actions/yearly_on_
 		modifier = {
 			factor = 0
 			trigger_if = {
-				limit = { always = $UNITED_POLITY_PREVENTS_SHIFT$ }
+				limit = { always = $UNITED_POLITY_PREVENTS_DRIFT$ }
 				
 				any_ruler = {
 					primary_title.tier >= tier_empire
-					this.culture = { has_same_culture_$HERITAGE_OR_LANGUAGE$ = scope:shift_culture }
+					this.culture = { has_same_culture_$HERITAGE_OR_LANGUAGE$ = scope:drift_culture }
 					this = { save_temporary_scope_as = the_ruler }
 				}
-				scope:shift_culture = {
+				scope:drift_culture = {
 					any_culture_county = {
 						percent >= 0.50
 						OR = {
@@ -188,6 +188,6 @@ generic_shift_culture_event_effect = { #Cf. Vanilla common/on_actions/yearly_on_
 			trigger_else = { always = no }
 		}
 		
-		scope:shift_culture = { trigger_event = { id = $EVENT_ID$ } }
+		scope:drift_culture = { trigger_event = { id = $EVENT_ID$ } }
 	}
 }

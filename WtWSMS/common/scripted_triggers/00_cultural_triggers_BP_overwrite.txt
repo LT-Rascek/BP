@@ -76,6 +76,29 @@ is_valid_for_hybridising_trigger = {
 				primary_title.tier >= tier_duchy
 			}
 		}
+		custom_description = {
+			text = cannot_hybridize_culture_drift
+			NOR = {
+				#Can't combine Latin + Romance
+				AND = {
+					culture = { is_romance_heritage = yes }
+					$CULTURE$ = { has_cultural_pillar = heritage_latin }
+				}
+				AND = {
+					$CULTURE$ = { is_romance_heritage = yes }
+					culture = { has_cultural_pillar = heritage_latin }
+				}
+				#Can't combine Migration + Medieval Germanic
+				AND = {
+					culture = { is_migratory_germanic_heritage = yes }
+					$CULTURE$ = { is_medieval_germanic_heritage = yes }
+				}
+				AND = {
+					$CULTURE$ = { is_migratory_germanic_heritage = yes }
+					culture = { is_medieval_germanic_heritage = yes }
+				}
+			}
+		}
 		##### Changed from Vanilla ^^^^^
 	}
 }

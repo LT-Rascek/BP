@@ -1905,7 +1905,7 @@
 }
 
 145290 = {
-	name = "Augustus"
+	name = "Caesar" #Augustus in vanilla
 	# Gaius Iulius Caesar Octavianus Divi Filius Augustus
 	dna = 145290_augustus_octavius
 	dynasty = 8648
@@ -2556,7 +2556,7 @@
 }
 
 175110 = {
-	name = "Nepos"	# PLRE vol. 2 Iulius Nepos 3
+	name = "Iulius"	# PLRE vol. 2 Iulius Nepos 3
 	# Julius Nepos
 	dna = 175110_julius_nepos
 	dynasty = 1042306
@@ -9115,10 +9115,11 @@
 	culture = romano_thracian
 	father = 56 # Edeko
 	mother = 1100013_mother #Implied Sister of Verina and of Nepos' wife to link him by blood to Edeko and Veneria
-	dynasty = 1022189
+	dynasty_house = house_verinus_flavius
 	intrigue = 15
 	447.9.1 = { #Made older than CK2 so his son could actually become a priest
-		birth = yes #Probably not a bastard, but some sort of weird relations or polygamy or Edeko being a widower
+		birth = yes
+		trait = "disputed_heritage" #Probably not a bastard, but some sort of weird relations or polygamy or Edeko being a widower
 		#Physical Traits
 		trait = "physique_good_1"
 		trait = "agile"
@@ -9134,7 +9135,10 @@
 		trait = "education_martial_2"
 	}
 	474.1.1 = { set_relation_lover = character:1001003 } #Zenonis
-	#476.2.2 = { employer = 145226 } #Basiliskos
+	475.1.9 = {
+		employer = 145226								#Basiliskos
+		give_council_position = councillor_marshal_roman
+	}
 	#476.8.15 = { employer = 70515 } #Zenon again
 	477.6.1 = {
 		death = {

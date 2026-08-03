@@ -31,10 +31,11 @@
 @special_maa_01 = "gfx/interface/icons/culture_innovations/innovation_special_maa_01.dds"
 @special_maa_02 = "gfx/interface/icons/culture_innovations/innovation_special_maa_02.dds"
 
-@farm_01 = "gfx/interface/icons/culture_innovations/agriculture_01.dds"
+@farm_01 = "gfx/interface/icons/culture_innovations/innovation_farm.dds"
 @farm_02 = "gfx/interface/icons/culture_innovations/agriculture_02.dds"
 @roman_civil = "gfx/interface/icons/culture_innovations/roman_civil_innovations.dds"
 @roman_military = "gfx/interface/icons/culture_innovations/roman_military_innovations.dds"
+@ck2_bishop = "gfx/interface/icons/culture_innovations/ck2_bishop.dds"
 
 #Military Innovations
 innovation_bannus = {
@@ -72,7 +73,18 @@ innovation_hereditary_soldiers = {
 	group = culture_group_military
 	culture_era = culture_era_late_antiquity
 	icon = @leadership_1
-	icon = @leadership_1
+	
+	asset = {
+		trigger = {
+			OR = {
+				has_cultural_pillar = heritage_indo_aryan
+				has_cultural_pillar = heritage_dravidian
+			}
+		}
+		icon = @leadership_2
+		name = innovation_hereditary_soldiers_indian
+	}
+
 
 	character_modifier = {
 		men_at_arms_limit = 1
@@ -86,7 +98,35 @@ innovation_motte = {
 	group = culture_group_military
 	culture_era = culture_era_late_antiquity
 	icon = @fortifications
+	
+	# Muri
+	asset = {
+		trigger = {
+			OR = {
+				has_cultural_parameter = heritage_group_romance
+				has_cultural_pillar = heritage_byzantine
+			}
+		}
+		icon = @fortifications
+		name = innovation_motte_latin
+	}
 
+	# Motte
+	asset = {
+		trigger = {
+			OR = {
+				has_cultural_parameter = heritage_group_germanic
+				has_cultural_parameter = heritage_group_celtic
+				has_cultural_pillar = heritage_frankish
+				has_cultural_pillar = heritage_iberian
+				has_cultural_pillar = heritage_west_slavic
+			}
+		}
+		icon = @fortifications
+		name = innovation_motte_actual_motte
+	}
+
+	custom = unlocks_castle_holding
 	unlock_building = castle_01
 	custom = unlocks_third_level_walls
 
@@ -97,7 +137,7 @@ innovation_late_antique_warfare = {
 	skill = martial
 	group = culture_group_military
 	culture_era = culture_era_late_antiquity
-	icon = @maa_01
+	icon = @special_maa_01
 	
 	custom = unlocks_third_level_military_buildings
 	
@@ -105,8 +145,8 @@ innovation_late_antique_warfare = {
 	flag = late_antiquity_era_regular
 }
 #Civic Innovations
-innovation_ius_ad_bellum = {
-	skill = learning
+innovation_casus_belli = {
+	skill = diplomacy
 	group = culture_group_civic
 	culture_era = culture_era_late_antiquity
 	icon = @administration_1
@@ -137,6 +177,8 @@ innovation_city_planning = {
 	culture_era = culture_era_late_antiquity
 	icon = @civil_construction_2
 
+	custom = unlocks_city_holding
+	custom = unlocks_temple_holding
 	unlock_building = city_01
 	unlock_building = guild_halls_02
 	unlock_building = common_tradeport_02
@@ -179,7 +221,7 @@ innovation_doctrine_and_dogma = {
 	skill = learning
 	group = culture_group_civic
 	culture_era = culture_era_late_antiquity
-	icon = @leadership_1
+	icon = @ck2_bishop
 	
 	unlock_building = temple_01
 	unlock_building = monastic_schools_02
@@ -205,7 +247,7 @@ innovation_algebra = {
 	skill = learning
 	group = culture_group_civic
 	culture_era = culture_era_late_antiquity
-	icon = @administration_1
+	icon = @administration_2
 
 	potential = {
 		#this.culture_group = culture_group:central_semitic_group

@@ -51,12 +51,24 @@ odoacer_takeover_war = { #Cribbed from invasion wars
 	}
 	
 	on_victory = {
-		scope:attacker = { show_pow_release_message_effect = yes }
+		scope:attacker = {
+			show_pow_release_message_effect = yes
+			# Trigger narrative event before other events relating to title change
+			set_global_variable = {
+				name = fall_of_rome
+				value = scope:attacker
+			}
+			trigger_event = bp_narrative_events.0001
+		}
 		
 		# Legitimacy
 		add_legitimacy_attacker_victory_effect = yes
 		
-		#Step 0: Determine what to do with WRE titles
+		create_title_and_vassal_change = {
+			type = conquest
+			save_scope_as = change_counties
+			add_claim_on_loss = yes
+		}
 		scope:defender = {
 			#Parse out what to do with Romulus' titles
 			every_held_title = {
@@ -76,20 +88,7 @@ odoacer_takeover_war = { #Cribbed from invasion wars
 			}
 		}
 		
-		#Destroy invalid titles
-		hidden_effect = {
-			every_in_list = {
-				list = titles_destroyed
-				scope:defender = { destroy_title = prev }
-			}
-		}
-		
 		#Step 1: Transfer Counties
-		create_title_and_vassal_change = {
-			type = conquest
-			save_scope_as = change_counties
-			add_claim_on_loss = yes
-		}
 		scope:attacker = {
 			every_war_ally = { #Award Odoacer's compatriots with roof trees...
 				limit = { is_landless_adventurer = yes }
@@ -133,6 +132,14 @@ odoacer_takeover_war = { #Cribbed from invasion wars
 		scope:attacker = { convert_to_subroman_government_effect = yes }
 		
 		#Step 3: Transfer vassals
+		
+		#Step 3a: Destroy WRE ministries so they are no longer vassals...
+		title:e_magister_military_wre.holder ?= { destroy_title = title:e_magister_military_wre }
+		title:e_magister_offices_wre.holder ?= {
+			save_scope_as = the_wre_MO_char
+			destroy_title = title:e_magister_offices_wre
+		}
+		
 		create_title_and_vassal_change = {
 			type = swear_fealty
 			save_scope_as = change_vassals
@@ -149,12 +156,6 @@ odoacer_takeover_war = { #Cribbed from invasion wars
 			}
 		}
 		resolve_title_and_vassal_change = scope:change_vassals
-		#Step 3a: Destroy WRE ministries so they are no longer vassals...
-		title:e_magister_military_wre.holder ?= { destroy_title = title:e_magister_military_wre }
-		title:e_magister_offices_wre.holder ?= {
-			save_scope_as = the_wre_MO_char
-			destroy_title = title:e_magister_offices_wre
-		}
 		
 		#Step 4: Odoacer's compatriots get their due
 		create_title_and_vassal_change = {
@@ -329,6 +330,14 @@ odoacer_takeover_war = { #Cribbed from invasion wars
 		# Truce
 		add_truce_attacker_victory_effect = yes
 		
+		#Destroy invalid titles
+		hidden_effect = {
+			every_in_list = {
+				list = titles_destroyed
+				scope:defender = { destroy_title = prev }
+			}
+		}
+		
 		#Give Odoacer some cash to start
 		scope:attacker = { add_treasury = 1000 }
 		
@@ -459,7 +468,22 @@ odoacer_takeover_war = { #Cribbed from invasion wars
 		scope:attacker = { set_realm_capital = title:c_ravenna }
 		scope:attacker = { add_legitimacy = 500 }
 		scope:attacker = { add_realm_law = non_roman_minority_rule_law_3 }
-		hidden_effect = { #Fix vassal governments
+		hidden_effect = {
+			#Vassalize Augustulus
+			create_title_and_vassal_change = {
+				type = conquest
+				save_scope_as = vassalize_defender
+			}
+			scope:defender = {
+				change_liege = {
+					liege = scope:attacker
+					change = scope:vassalize_defender
+				}
+				convert_to_subroman_government_effect = yes
+			}
+			resolve_title_and_vassal_change = scope:vassalize_defender
+			
+			#Fix vassal governments
 			scope:attacker = {
 				every_vassal_or_below = {
 					limit = { has_main_roman_government_trigger = yes }
@@ -474,6 +498,8 @@ odoacer_takeover_war = { #Cribbed from invasion wars
 		
 		#Imprison Orestes and Romulus Augustulus
 		scope:defender = {
+			add_trait = deposed
+			
 			# Set up artifact transfers
 			hidden_effect = {
 				# Diadem is special, should be handled with the WRE transfer event
@@ -502,8 +528,6 @@ odoacer_takeover_war = { #Cribbed from invasion wars
 		scope:attacker = { imprison = { target = scope:defender type = house_arrest } }
 		if = {
 			limit = { scope:defender = character:96054 }
-			scope:attacker = { imprison = { target = character:96054 type = house_arrest } }
-			scope:attacker = { imprison = { target = character:1210007 type = dungeon } }
 			scope:attacker = { imprison = { target = character:96055 type = dungeon } }
 		}
 		
@@ -513,6 +537,13 @@ odoacer_takeover_war = { #Cribbed from invasion wars
 				limit = { exists = 175110 }
 				character:175110 = {
 					save_scope_as = the_last_wre_holder
+					
+					# These relationships are set in the history files
+					remove_relation_rival = scope:defender
+					set_relation_rival = {
+						target = scope:attacker
+						reason = rival_claimed_my_title
+					}
 					trigger_event = { id = bp_narrative_events.0002 }
 				}
 			}
@@ -956,7 +987,7 @@ zenos_claim_cb = { #Like a claim_cb, but has war-scoped special troops
 		#Give Zeno some cash to start
 		scope:attacker = { add_treasury = 1000 }
 
-		# FP1: note the victory for future memorialization via stele (if applicable).
+		# FP1: note the victory for future memorialisation via stele (if applicable).
 		scope:attacker = { fp1_remember_recent_conquest_victory_effect = yes }
 		
 		#Imprison Basilicus
