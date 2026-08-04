@@ -65,7 +65,7 @@ migration_flip_holding_to_tribal_effect = {
 migration_flip_culture_faith_effect = {
 	#Development of 30 should stop it.
 	# Each era beyond Tribal reduces odds by 5%
-	$THE_COUNTY$.culture = { save_temporary_scope_value_as = the_county_culture }
+	$THE_COUNTY$.culture = { save_temporary_scope_as = the_county_culture }
 	save_temporary_scope_value_as = { name = the_county_development value = $THE_COUNTY$.development_level }
 	
 	random = {
@@ -104,5 +104,239 @@ migration_flip_culture_faith_effect = {
 				10 = {}
 			}
 		}
+	}
+}
+save_sub_roman_type_laws_for_migration_effect = {
+	#Military Centralization
+	if = {
+		limit = {
+			OR = {
+				$SOURCE_CHAR$ = { has_realm_law = subroman_administrative_military_centralization_top_liege_law_0 }
+				$SOURCE_CHAR$ = { has_realm_law = subroman_dynastic_military_centralization_top_liege_law_0 }
+			}
+		}
+		$TARGET_CHAR$ = { add_character_flag = military_centralization_top_liege_law_0 }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				$SOURCE_CHAR$ = { has_realm_law = subroman_administrative_military_centralization_top_liege_law_1 }
+				$SOURCE_CHAR$ = { has_realm_law = subroman_dynastic_military_centralization_top_liege_law_1 }
+			}
+		}
+		$TARGET_CHAR$ = { add_character_flag = military_centralization_top_liege_law_1 }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				$SOURCE_CHAR$ = { has_realm_law = subroman_administrative_military_centralization_top_liege_law_2 }
+				$SOURCE_CHAR$ = { has_realm_law = subroman_dynastic_military_centralization_top_liege_law_2 }
+			}
+		}
+		$TARGET_CHAR$ = { add_character_flag = military_centralization_top_liege_law_2 }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				$SOURCE_CHAR$ = { has_realm_law = subroman_administrative_military_centralization_top_liege_law_3 }
+				$SOURCE_CHAR$ = { has_realm_law = subroman_dynastic_military_centralization_top_liege_law_3 }
+			}
+		}
+		$TARGET_CHAR$ = { add_character_flag = military_centralization_top_liege_law_3 }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				$SOURCE_CHAR$ = { has_realm_law = subroman_administrative_military_centralization_top_liege_law_4 }
+				$SOURCE_CHAR$ = { has_realm_law = subroman_dynastic_military_centralization_top_liege_law_4 }
+			}
+		}
+		$TARGET_CHAR$ = { add_character_flag = military_centralization_top_liege_law_4 }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				$SOURCE_CHAR$ = { has_realm_law = subroman_administrative_military_centralization_top_liege_law_5 }
+				$SOURCE_CHAR$ = { has_realm_law = subroman_dynastic_military_centralization_top_liege_law_5 }
+			}
+		}
+		$TARGET_CHAR$ = { add_character_flag = military_centralization_top_liege_law_5 }
+	}
+	#Taxation
+	if = {
+		limit = {
+			OR = {
+				$SOURCE_CHAR$ = { has_realm_law = subroman_administrative_taxation_top_liege_law_0 }
+				$SOURCE_CHAR$ = { has_realm_law = subroman_dynastic_taxation_top_liege_law_0 }
+			}
+		}
+		$TARGET_CHAR$ = { add_character_flag = taxation_top_liege_law_0 }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				$SOURCE_CHAR$ = { has_realm_law = subroman_administrative_taxation_top_liege_law_1 }
+				$SOURCE_CHAR$ = { has_realm_law = subroman_dynastic_taxation_top_liege_law_1 }
+			}
+		}
+		$TARGET_CHAR$ = { add_character_flag = taxation_top_liege_law_1 }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				$SOURCE_CHAR$ = { has_realm_law = subroman_administrative_taxation_top_liege_law_2 }
+				$SOURCE_CHAR$ = { has_realm_law = subroman_dynastic_taxation_top_liege_law_2 }
+			}
+		}
+		$TARGET_CHAR$ = { add_character_flag = taxation_top_liege_law_2 }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				$SOURCE_CHAR$ = { has_realm_law = subroman_administrative_taxation_top_liege_law_3 }
+				$SOURCE_CHAR$ = { has_realm_law = subroman_dynastic_taxation_top_liege_law_3 }
+			}
+		}
+		$TARGET_CHAR$ = { add_character_flag = taxation_top_liege_law_3 }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				$SOURCE_CHAR$ = { has_realm_law = subroman_administrative_taxation_top_liege_law_4 }
+				$SOURCE_CHAR$ = { has_realm_law = subroman_dynastic_taxation_top_liege_law_4 }
+			}
+		}
+		$TARGET_CHAR$ = { add_character_flag = taxation_top_liege_law_4 }
+	}
+	#Aristocracy Law
+	if = {
+		limit = {
+			OR = {
+				$SOURCE_CHAR$ = { has_realm_law = subroman_administrative_aristocracy_law_0 }
+				$SOURCE_CHAR$ = { has_realm_law = subroman_dynastic_aristocracy_law_0 }
+			}
+		}
+		$TARGET_CHAR$ = { add_character_flag = aristocracy_law_0 }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				$SOURCE_CHAR$ = { has_realm_law = subroman_administrative_aristocracy_law_1 }
+				$SOURCE_CHAR$ = { has_realm_law = subroman_dynastic_aristocracy_law_1 }
+			}
+		}
+		$TARGET_CHAR$ = { add_character_flag = aristocracy_law_1 }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				$SOURCE_CHAR$ = { has_realm_law = subroman_administrative_aristocracy_law_2 }
+				$SOURCE_CHAR$ = { has_realm_law = subroman_dynastic_aristocracy_law_2 }
+			}
+		}
+		$TARGET_CHAR$ = { add_character_flag = aristocracy_law_2 }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				$SOURCE_CHAR$ = { has_realm_law = subroman_administrative_aristocracy_law_3 }
+				$SOURCE_CHAR$ = { has_realm_law = subroman_dynastic_aristocracy_law_3 }
+			}
+		}
+		$TARGET_CHAR$ = { add_character_flag = aristocracy_law_3 }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				$SOURCE_CHAR$ = { has_realm_law = subroman_administrative_aristocracy_law_4 }
+				$SOURCE_CHAR$ = { has_realm_law = subroman_dynastic_aristocracy_law_4 }
+			}
+		}
+		$TARGET_CHAR$ = { add_character_flag = aristocracy_law_4 }
+	}
+}
+set_sub_roman_type_laws_for_migration_effect = {
+	#Military Centralization
+	if = {
+		limit = { has_character_flag = military_centralization_top_liege_law_0 }
+		$TARGET_CHAR$ = { add_law_if_not_has_it_effect = { LAW = subroman_$TYPE$_military_centralization_top_liege_law_0 } }
+		remove_character_flag = military_centralization_top_liege_law_0
+	}
+	else_if = {
+		limit = { has_character_flag = military_centralization_top_liege_law_1 }
+		$TARGET_CHAR$ = { add_law_if_not_has_it_effect = { LAW = subroman_$TYPE$_military_centralization_top_liege_law_1 } }
+		remove_character_flag = military_centralization_top_liege_law_1
+	}
+	else_if = {
+		limit = { has_character_flag = military_centralization_top_liege_law_2 }
+		$TARGET_CHAR$ = { add_law_if_not_has_it_effect = { LAW = subroman_$TYPE$_military_centralization_top_liege_law_2 } }
+		remove_character_flag = military_centralization_top_liege_law_2
+	}
+	else_if = {
+		limit = { has_character_flag = military_centralization_top_liege_law_3 }
+		$TARGET_CHAR$ = { add_law_if_not_has_it_effect = { LAW = subroman_$TYPE$_military_centralization_top_liege_law_3 } }
+		remove_character_flag = military_centralization_top_liege_law_3
+	}
+	else_if = {
+		limit = { has_character_flag = military_centralization_top_liege_law_4 }
+		$TARGET_CHAR$ = { add_law_if_not_has_it_effect = { LAW = subroman_$TYPE$_military_centralization_top_liege_law_4 } }
+		remove_character_flag = military_centralization_top_liege_law_4
+	}
+	else_if = {
+		limit = { has_character_flag = military_centralization_top_liege_law_5 }
+		$TARGET_CHAR$ = { add_law_if_not_has_it_effect = { LAW = subroman_$TYPE$_military_centralization_top_liege_law_5 } }
+		remove_character_flag = military_centralization_top_liege_law_5
+	}
+	#Taxation
+	if = {
+		limit = { has_character_flag = taxation_top_liege_law_0 }
+		$TARGET_CHAR$ = { add_law_if_not_has_it_effect = { LAW = subroman_$TYPE$_taxation_top_liege_law_0 } }
+		remove_character_flag = taxation_top_liege_law_0
+	}
+	else_if = {
+		limit = { has_character_flag = taxation_top_liege_law_1 }
+		$TARGET_CHAR$ = { add_law_if_not_has_it_effect = { LAW = subroman_$TYPE$_taxation_top_liege_law_1 } }
+		remove_character_flag = taxation_top_liege_law_1
+	}
+	else_if = {
+		limit = { has_character_flag = taxation_top_liege_law_2 }
+		$TARGET_CHAR$ = { add_law_if_not_has_it_effect = { LAW = subroman_$TYPE$_taxation_top_liege_law_2 } }
+		remove_character_flag = taxation_top_liege_law_2
+	}
+	else_if = {
+		limit = { has_character_flag = taxation_top_liege_law_3 }
+		$TARGET_CHAR$ = { add_law_if_not_has_it_effect = { LAW = subroman_$TYPE$_taxation_top_liege_law_3 } }
+		remove_character_flag = taxation_top_liege_law_3
+	}
+	else_if = {
+		limit = { has_character_flag = taxation_top_liege_law_4 }
+		$TARGET_CHAR$ = { add_law_if_not_has_it_effect = { LAW = subroman_$TYPE$_taxation_top_liege_law_4 } }
+		remove_character_flag = taxation_top_liege_law_4
+	}
+	#Aristocracy Law
+	if = {
+		limit = { has_character_flag = aristocracy_law_0 }
+		$TARGET_CHAR$ = { add_law_if_not_has_it_effect = { LAW = subroman_$TYPE$_aristocracy_law_0 } }
+		remove_character_flag = aristocracy_law_0
+	}
+	else_if = {
+		limit = { has_character_flag = aristocracy_law_1 }
+		$TARGET_CHAR$ = { add_law_if_not_has_it_effect = { LAW = subroman_$TYPE$_aristocracy_law_1 } }
+		remove_character_flag = aristocracy_law_1
+	}
+	else_if = {
+		limit = { has_character_flag = aristocracy_law_2 }
+		$TARGET_CHAR$ = { add_law_if_not_has_it_effect = { LAW = subroman_$TYPE$_aristocracy_law_2 } }
+		remove_character_flag = aristocracy_law_2
+	}
+	else_if = {
+		limit = { has_character_flag = aristocracy_law_3 }
+		$TARGET_CHAR$ = { add_law_if_not_has_it_effect = { LAW = subroman_$TYPE$_aristocracy_law_3 } }
+		remove_character_flag = aristocracy_law_3
+	}
+	else_if = {
+		limit = { has_character_flag = aristocracy_law_4 }
+		$TARGET_CHAR$ = { add_law_if_not_has_it_effect = { LAW = subroman_$TYPE$_aristocracy_law_4 } }
+		remove_character_flag = aristocracy_law_4
 	}
 }

@@ -24,6 +24,12 @@ add_law_if_not_has_it_skip_effects_effect = {
 		add_realm_law_skip_effects = $LAW$
 	}
 }
+add_law_if_not_has_it_effect = {
+	if = {
+		limit = { NOT = { has_realm_law = $LAW$ } }
+		add_realm_law = $LAW$
+	}
+}
 
 # Find wandering characters in your realm, for events involving generic characters that could potentially exist
 find_pool_characters_effect = {

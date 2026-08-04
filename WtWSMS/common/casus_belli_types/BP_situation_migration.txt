@@ -70,6 +70,7 @@ bp_migration_war = {
 		}
 	}
 
+	#If the government is centralized, can't be a giant blob of Tribals (need to conquer instead)
 	can_pick_title = {
 		trigger_if = {
 			limit = { scope:defender = { government_has_flag = government_is_centralized } }
@@ -113,18 +114,8 @@ bp_migration_war = {
 			limit = { tier = tier_kingdom }
 			save_scope_as = target_kingdom
 		}
-		#Add attackers, liberate non-participants
-		custom_tooltip = {
-			text = text_some_vassals_may_join
-			scope:attacker = { #TODO: Make new events
-				trigger_event = migration_war.0001
-				every_vassal = {
-					limit = { primary_title.tier > tier_barony }
-					save_scope_as = target_vassal
-					trigger_event = migration_war.0002
-				}
-			}
-		}
+		#TODO: Add attackers, liberate non-participants
+		
 		#Spawn armies
 		custom_tooltip = {
 			text = armies_spawn_from_development
@@ -154,23 +145,6 @@ bp_migration_war = {
 			}
 		}
 		hidden_effect = { scope:attacker = { update_number_of_bp_migrations_effect = yes } }
-		#Human defenders will join the fight
-		every_in_list = {
-			list = target_titles
-			every_in_de_jure_hierarchy = {
-				limit = {
-					tier = tier_county
-					is_landless_type_title = no
-				}
-				if = {
-					limit = {
-						this.holder.top_liege = scope:defender
-						this.holder = { is_ai = no }
-					}
-					scope:war = { add_defender = prev.holder }
-				}
-			}
-		}
 	}
 	
 	should_invalidate = {
@@ -331,7 +305,12 @@ bp_migration_war = {
 				add_to_temporary_list = defender_vassals_to_transfer
 			}
 			else_if = {
-				limit = { this.primary_title.tier >= scope:attacker.primary_title.tier }
+				limit = {
+					OR = {
+						this.primary_title.tier >= scope:attacker.primary_title.tier
+						is_ai = no #Humans get liberated
+					}
+				}
 				add_to_temporary_list = defender_vassals_to_liberate
 			}
 		}
@@ -422,6 +401,20 @@ bp_migration_war = {
 		every_in_list = {
 			list = defender_vassals_to_liberate
 			becomes_independent = { change = scope:change_defender_vassals_independent }
+		}
+		
+		#Record government information for events
+		if = {
+			limit = { scope:defender = { government_has_flag = government_is_centralized } }
+			scope:attacker = { add_character_flag = centralized_government_bootstrap_available }
+		}
+		if = {
+			limit = { scope:defender = { government_has_flag = is_a_roman_government } }
+			scope:attacker = { add_character_flag = roman_government_bootstrap_available }
+			save_sub_roman_type_laws_for_migration_effect = {
+				SOURCE_CHAR = scope:defender
+				TARGET_CHAR = scope:attacker
+			}
 		}
 		
 		#### Update the changes
@@ -561,8 +554,16 @@ bp_migration_war = {
 		# Truce
 		add_truce_attacker_victory_effect = yes
 
-		# FP1: note the victory for future memorialisation via stele (if applicable).
+		# FP1: note the victory for future memorialization via stele (if applicable).
 		scope:attacker = { fp1_remember_recent_conquest_victory_effect = yes }
+		
+		if = {
+			limit = { scope:attacker = { has_character_flag = centralized_government_bootstrap_available } }
+			custom_description = {
+				text = will_have_the_option_of_changing_governments
+				scope:attacker = { trigger_event = { id = migration_situation_war.0100 } }
+			}
+		}
 	}
 	
 	on_white_peace_desc = {

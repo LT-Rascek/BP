@@ -1,0 +1,124 @@
+﻿namespace = migration_situation_war
+
+# 0100-0199: Government Bootstrapping
+
+scripted_effect remove_character_flag_if_has_it_effect = {
+	if = {
+		limit = { has_character_flag = $FLAG$ }
+		remove_character_flag = $FLAG$
+	}
+}
+
+migration_situation_war.0100 = {
+	type = character_event
+	theme = realm
+	content_source = dlc_WtWSMS
+	override_background = { reference = throne_room_scope }
+	
+	
+	title = migration_situation_war.0100.t
+	
+	desc = {
+		desc = migration_situation_war.0100.desc.opening
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:scheme = { scheme_type = murder } }
+				desc = migration_situation_war.0100.desc.roman
+			}
+			desc = migration_situation_war.0100.desc.fallback
+		}
+	}
+	
+	desc = migration_situation_war.0100.desc
+	
+	trigger = {
+		OR = { #For safety
+			has_character_flag = roman_government_bootstrap_available
+			has_character_flag = centralized_government_bootstrap_available
+		}
+	}
+	immediate = {
+		root = { save_scope_as = background_throne_room_scope }
+	}
+	after = {
+		#Cleanup Flags if any weren't already collected
+		remove_character_flag_if_has_it_effect = { FLAG = roman_government_bootstrap_available }
+		remove_character_flag_if_has_it_effect = { FLAG = centralized_government_bootstrap_available }
+		remove_character_flag_if_has_it_effect = { FLAG = military_centralization_top_liege_law_0 }
+		remove_character_flag_if_has_it_effect = { FLAG = military_centralization_top_liege_law_1 }
+		remove_character_flag_if_has_it_effect = { FLAG = military_centralization_top_liege_law_2 }
+		remove_character_flag_if_has_it_effect = { FLAG = military_centralization_top_liege_law_3 }
+		remove_character_flag_if_has_it_effect = { FLAG = military_centralization_top_liege_law_4 }
+		remove_character_flag_if_has_it_effect = { FLAG = military_centralization_top_liege_law_5 }
+		remove_character_flag_if_has_it_effect = { FLAG = taxation_top_liege_law_0 }
+		remove_character_flag_if_has_it_effect = { FLAG = taxation_top_liege_law_1 }
+		remove_character_flag_if_has_it_effect = { FLAG = taxation_top_liege_law_2 }
+		remove_character_flag_if_has_it_effect = { FLAG = taxation_top_liege_law_3 }
+		remove_character_flag_if_has_it_effect = { FLAG = taxation_top_liege_law_4 }
+		remove_character_flag_if_has_it_effect = { FLAG = aristocracy_law_0 }
+		remove_character_flag_if_has_it_effect = { FLAG = aristocracy_law_1 }
+		remove_character_flag_if_has_it_effect = { FLAG = aristocracy_law_2 }
+		remove_character_flag_if_has_it_effect = { FLAG = aristocracy_law_3 }
+		remove_character_flag_if_has_it_effect = { FLAG = aristocracy_law_4 }
+	}
+	
+	left_portrait = {
+		character = ROOT
+		animation = war_attacker
+	}
+	
+	option = {
+		name = migration_situation_war.0100.adopt_advanced_government
+		
+		change_government = high_tribal_government
+		every_vassal_or_below = {
+			limit = { this.capital_barony.title_province = { has_holding_type = castle_holding } }
+			change_government = high_tribal_government
+		}
+		add_character_modifier = upgraded_government_modifier
+	}
+	option = {
+		trigger = { has_character_flag = roman_government_bootstrap_available }
+		name = migration_situation_war.0100.adopt_subroman_government
+		
+		convert_to_subroman_government_effect = yes
+		every_vassal_or_below = {
+			limit = { this.capital_barony.title_province = { has_holding_type = castle_holding } }
+			if = { #Your culture becomes Roman Admin
+				limit = { this.culture = ROOT.culture }
+				convert_to_subroman_government_effect = yes
+			}
+			else_if = {
+				limit = { bp_can_become_federate_trigger = yes }
+				convert_to_roman_federate_government_effect = yes
+			}
+		}
+		#Should propagate down the whole tree
+		if = {
+			limit = { government_has_flag = government_is_subroman_administrative }
+			set_sub_roman_type_laws_for_migration_effect = { TARGET_CHAR = ROOT TYPE = administrative }
+		}
+		else = {
+			set_sub_roman_type_laws_for_migration_effect = { TARGET_CHAR = ROOT TYPE = dynastic }
+		}
+		#Minor bit of cultural acceptance
+		every_realm_county = {
+			limit = {
+				this.culture = { has_cultural_parameter = greco_roman_social_tradition }
+				this.culture = { has_cultural_parameter = can_restore_roman_empire }
+			}
+			this.culture = { add_to_temporary_list = romance_cultures_in_realm }
+		}
+		every_in_list = {
+			list = romance_cultures_in_realm
+			change_cultural_acceptance = { target = this value = 5 }
+		}
+	}
+	option = {
+		fallback = yes
+		name = migration_situation_war.0100.keep_current_government
+		#A reward for not doing so
+		add_prestige = 250
+		add_prestige_level = 1
+	}
+}
