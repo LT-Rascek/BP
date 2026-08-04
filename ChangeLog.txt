@@ -1,17 +1,47 @@
-2026-MM-DD v0.2.0.2
+2026-MM-DD v0.2.1
 -----------
 
+"By God Alone" DLC Preparation:
+- Removed Cypriot culture and faith to prepare for BGA
+- Readded Bogomilism, Lollardy, Catharism
+- Touched up heresy emergence events
+
 Mechanics:
-- Roman government unlocked with either "Roads to Power" or "All Under Heaven" DLC now
+- Roman Administrative Government DLC Locks:
+   - Roman Administrative governments unlocked with either "Roads to Power" or "All Under Heaven" DLC now
    - Roman Ministries are locked with "All Under Heaven" DLC, however
+- Culture Drift:
+   - Standardized terminology for Culture Drift
+   - Culture Drift heritages block hybridization between the ancestors and descendants, preventing certain odd edge-cases from appearing
+
+User Interface:
+- Improved the Senate Family interface notably
 
 Culture:
-- Cultures:
+- Culture Changes:
    - Fixed up "Southern Arabian" culture
       - Re-localized to be "Soqotri"
       - Uses "Dexterous Fishermen", "Maritime Mercantilism", and "Isolationist" Traditions
    - Replaced "Gothic Warfare" with "Cavalry Skirmishers"/"Horse Lords" for Heruli
    - Replaced "Devoted Horsemanship" with "Cavalry Skirmishers" for Taifali
+- Renamed various references to "Old" and "Proto" within languages and cultures
+   - Used Vulgar for Proto-Romance
+   - Diversified language names to better correspond to historical cultures
+- Culture Creation Names:
+   - Adjusted language-based creation names for more endonym usage
+   - Adjusted some Romance culture creation logic for consistency between language and name lists
+- Updated cultural graphics for more consistency
+   - Mauritanian Architecture is Iberian
+   - Phrygian and Galatian Architecture is Byzantine
+   - Carthaginians use Arabic COAs and Iberian Architecture
+   - Latin Cultures heavily overhauled:
+      - Romano-Gallic uses French clothing
+      - Roman-African uses Iberian COAs, Iberian Architecture, and Iberian Clothing
+      - Romano-British uses British Clothing and Byzantine Military Units
+      - Romano-Hispanic uses Iberian Christian Clothing
+      - Romano-Aramean uses Iberian Architecture, Middle Eastern Clothes, and Byzantine Military Units
+      - Romano-Punic uses Iberian COAs, Iberian Architecture, and Iberian Muslim Clothing
+- Added special clothing triggers for sub-Roman cultures, allowing them to wear Roman-style clothing but automatically transition to appropriate medieval clothing when they stop being Latin
 - Traditions:
    - "Pontic Horsemanship" Tradition no longer provides light cavalry bonuses
    - Added "Cavalry Skirmishers" Tradition for Taifal and Heruli culture, reflecting their use of light cavalry in contrast to Gothic heavy cavalry
@@ -38,13 +68,23 @@ History:
 - Modified some dynasty names of historical characters to better match history
 
 Tweaks:
+- Added new links and icons for WtWSMS concepts
+- Generalized some tradition unlocks to be more consistent throughout the Late Antique and Early Medieval Periods
 - Removed superfluous truces relating to some polities tributaries
 - Removed Childeric's War against Sigobert at start to be more in line with history
 - Increased applicant pool for MO offices
 - Added duplicate candidate influence interaction to handle edge case of titular titles
 - Nomads no longer have Border Raid CBs, as they have plenty of CBs already
 
+GFX:
+- Moorish Architecture requires counties of that culture rather than being intrinsic to the peninsula
+- Added WtWSMS emblems to the COA designer
+- Updated assets for a number of innovations
+- Updated generic temples for Hellenism, Judaism
+
 Bug Fixes:
+- Proper handoff of Imperial Diadem during the Fall of Rome
+- Removed a number of duplicate artifacts
 - Fixed a bug where certain decisions were being checked too often by certain title tier rulers
 - Fixed a bug where nomads would adopt feudal government when settling in conquered lands
 - Fixed a bug where Language Isolates would trigger the Creole flag
@@ -61,67 +101,15 @@ Bug Fixes:
 - Fixed a bug wherein Federates could flip to feudal governments in some edge cases
 
 Localization:
+- Fixed up grammar and localization in various places
+- Cleaned up a number of flavorizations of Semitic, Latin cultures
+- Made certain innovation localizations culture-dependent
+- Updated localizations to be more neutral in tone
 - Fixed a duplicate localization that incorrectly identified some tributary types
 - Updated the name of the Vistula, Rhine, and Danube River to be the Late Antique Latin names
 - Changed a number of localizations for seas and rivers to better reflect the Late Antique period
 - Improved Roman Empire Request/formation localizations, including highlighting conditions which help and hurt the changes for approval
 - Replaced "Pre-Feudal" with "Aristocratic" as the term for all the non-tribal, non-nomadic, non-centralized governments before the Era of Feudalism
-
-2026-MM-DD v0.2.0.2 (Kraken)
------------
-
-"By God Alone" DLC Preparation:
-- Removed Cypriot culture and faith to prepare for BGA
-- Readded Bogomilism, Lollardy, Catharism
-- Touched up heresy emergence events
-
-Mechanics:
-- Culture Drift:
-   - Standardized terminology for Culture Drift
-   - Culture Drift heritages block hybridization between the ancestors and descendants, preventing certain odd edge-cases from appearing
-
-User Interface:
-- Improved the Senate Family interface notably
-
-Culture:
-- Renamed various references to "Old" and "Proto" within languages and cultures
-   - Used Vulgar for Proto-Romance
-   - Diversified language names to better correspond to historical cultures
-- Culture Creation Names:
-   - Adjusted language-based creation names for more endonym usage
-   - Adjusted some Romance culture creation logic for consistency between language and name lists
-- Updated cultural graphics for more consistency
-   - Mauritanian Architecture is Iberian
-   - Phrygian and Galatian Architecture is Byzantine
-   - Carthaginians use Arabic COAs and Iberian Architecture
-   - Latin Cultures heavily overhauled:
-      - Romano-Gallic uses French clothing
-      - Roman-African uses Iberian COAs, Iberian Architecture, and Iberian Clothing
-      - Romano-British uses British Clothing and Byzantine Military Units
-      - Romano-Hispanic uses Iberian Christian Clothing
-      - Romano-Aramean uses Iberian Architecture, Middle Eastern Clothes, and Byzantine Military Units
-      - Romano-Punic uses Iberian COAs, Iberian Architecture, and Iberian Muslim Clothing
-- Added special clothing triggers for sub-Roman cultures, allowing them to wear Roman-style clothing but automatically transition to appropriate medieval clothing when they stop being Latin
-
-Tweaks:
-- Removed a number of duplicate artifacts
-- Added new links and icons for WtWSMS concepts
-- Generalized some tradition unlocks to be more consistent throughout the Late Antique and Early Medieval Periods
-
-GFX:
-- Moorish Architecture requires counties of that culture rather than being intrinsic to the peninsula
-- Added WtWSMS emblems to the COA designer
-- Updated assets for a number of innovations
-- Updated generic temples for Hellenism, Judaism
-
-Bug Fixes:
-- Proper handoff of Imperial Diadem during the Fall of Rome
-
-Localization:
-- Fixed up grammar and localization in various places
-- Cleaned up a number of flavorizations of Semitic, Latin cultures
-- Made certain innovation localizations culture-dependent
-- Updated localizations to be more neutral in tone
 
 2026-07-19 v0.2.0.1
 -----------
