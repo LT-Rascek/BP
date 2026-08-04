@@ -129,25 +129,26 @@
 			
 			modifier_sets = {
 				BP_migration_period_war_effects = {
-					all = {
+					all = { #Only for display it seems
 						parameters = {
-							targetable_by_migration_cbs = yes
+							targetable_by_migration_cbs_loc = yes
 						}
 						character_modifier = {}
 						county_modifier = {}
 					}
 					civilized_polities = {
-						parameters = {}
+						parameters = { targetable_by_migration_cbs = yes } #Hidden
 						character_modifier = {}
 						county_modifier = {}
 					}
 					barbarian_polities = {
-						parameters = {}
+						parameters = { targetable_by_migration_cbs = yes }
 						character_modifier = {}
 						county_modifier = {}
 					}
 					migrators = {
 						parameters = {
+							targetable_by_migration_cbs = yes #Hidden
 							migration_cbs_enabled = yes
 							increased_subjugation_limit = yes
 							cultural_unification_cb_enabled = yes
@@ -157,12 +158,13 @@
 						county_modifier = {}
 					}
 					successor_states = {
-						parameters = {}
+						parameters = { targetable_by_migration_cbs = yes } #Hidden
 						character_modifier = {}
 						county_modifier = {}
 					}
 					tribals = {
 						parameters = {
+							targetable_by_migration_cbs = yes #Hidden
 							increased_subjugation_limit = yes
 							cultural_unification_cb_enabled = yes
 						}

@@ -37,8 +37,19 @@ bp_migration_war = {
 				liege = scope:defender
 			}
 		}
+		#Base Requirements
+		is_landed = yes 
 		#No migrations against your own culture; use unification CBs instead
 		NOT = { scope:attacker.culture = scope:defender.culture }
+		#Has the Appropriate Situation Parameter
+		any_character_situation = {
+			any_situation_sub_region = {
+				any_situation_sub_region_participant_group = {
+					participant_group_has_character = scope:defender
+					has_participant_group_parameter = targetable_by_migration_cbs
+				}
+			}
+		}
 	}
 	
 	target_titles = neighbor_land_or_water
@@ -126,6 +137,23 @@ bp_migration_war = {
 			}
 		}
 		hidden_effect = { scope:attacker = { update_number_of_bp_migrations_effect = yes } }
+		#Human defenders will join the fight
+		every_in_list = {
+			list = target_titles
+			every_in_de_jure_hierarchy = {
+				limit = {
+					tier = tier_county
+					is_landless_type_title = no
+				}
+				if = {
+					limit = {
+						this.holder.top_liege = scope:defender
+						this.holder = { is_ai = no }
+					}
+					scope:war = { add_defender = prev.holder }
+				}
+			}
+		}
 	}
 	
 	should_invalidate = {
@@ -177,6 +205,16 @@ bp_migration_war = {
 			add_claim_on_loss = no
 		}
 		create_title_and_vassal_change = {
+			type = swear_fealty
+			save_scope_as = change_defender_vassals_to_attacker
+			add_claim_on_loss = no
+		}
+		create_title_and_vassal_change = {
+			type = independency
+			save_scope_as = change_defender_vassals_independent
+			add_claim_on_loss = no
+		}
+		create_title_and_vassal_change = {
 			type = conquest
 			save_scope_as = change_conquered_new_lands
 			add_claim_on_loss = yes
@@ -184,13 +222,16 @@ bp_migration_war = {
 		
 		#### Build necessary lists
 		
-		#migration_source_counties: Counties for which migration modifiers should be applied
-		#attacker_titles_to_liege: Attacker titles going to an existing liege
-		#attacker_titles_to_independent: Attacker titles going to be independent
-		#defender_titles_taken_in_target: Defender titles taken within the target
-		#migrating_attackers: attackers who are migrating
-		#attacker_liberated_vassals: vassals of attackers who get liberated
 		#attacker_handed_off_vassals: vassals of attackers who get handed off as vassals
+		#attacker_liberated_vassals: vassals of attackers who get liberated
+		#attacker_titles_to_independent: Attacker titles going to be independent
+		#attacker_titles_to_liege: Attacker titles going to an existing liege
+		#defender_titles_taken_in_target: Defender titles taken within the target
+		#defender_vassals_in_conquest_region: defending vassals in the conquest region
+		#defender_vassals_to_liberate: defending vassals that get liberated
+		#defender_vassals_to_transfer: defending vassals that get to become your vassals
+		#migrating_attackers: attackers who are migrating
+		#migration_source_counties: Counties for which migration modifiers should be applied
 		
 		save_temporary_scope_as = the_war
 		
@@ -242,7 +283,7 @@ bp_migration_war = {
 			}
 		}
 		
-		every_in_list = { #Defender target titles
+		every_in_list = { #Defender vassal sorting and title reclaimation
 			list = target_titles
 			every_in_de_jure_hierarchy = {
 				limit = {
@@ -254,6 +295,47 @@ bp_migration_war = {
 					}
 				}
 				add_to_temporary_list = defender_titles_taken
+				if = {
+					limit = { NOT = { this.holder = scope:defender } }
+					this.holder = { add_to_temporary_list = defender_vassals_in_conquest_region }
+				}
+			}
+		}
+		
+		every_in_list = { #Defender vassal liberate/subjugate/conquer sorting
+			list = defender_vassals_in_conquest_region
+			limit = {
+				OR = {
+					government_has_flag = government_is_tribal
+					government_has_flag = government_is_roman_federate
+				}
+			}
+			if = {
+				limit = { this.primary_title.tier < scope:attacker.primary_title.tier }
+				add_to_temporary_list = defender_vassals_to_transfer
+			}
+			else_if = {
+				limit = { this.primary_title.tier >= scope:attacker.primary_title.tier }
+				add_to_temporary_list = defender_vassals_to_liberate
+			}
+		}
+		
+		every_in_list = {
+			list = defender_titles_taken
+			save_temporary_scope_as = the_title_in_question
+			every_in_list = {
+				list = defender_vassals_to_transfer
+				if = {
+					limit = { this = scope:the_title_in_question.holder }
+					scope:the_title_in_question = { remove_from_list = defender_titles_taken }
+				}
+			}
+			every_in_list = {
+				list = defender_vassals_to_liberate
+				if = {
+					limit = { this = scope:the_title_in_question.holder }
+					scope:the_title_in_question = { remove_from_list = defender_titles_taken }
+				}
 			}
 		}
 		
@@ -308,7 +390,7 @@ bp_migration_war = {
 		}
 		
 		#### Take Defender Titles
-		every_in_list = { #TODO: Federates/tribals/high tribals stick around as vassals
+		every_in_list = {
 			list = defender_titles_taken
 			change_title_holder = {
 				holder = scope:attacker
@@ -316,33 +398,66 @@ bp_migration_war = {
 				take_baronies = yes
 			}
 		}
+		#### Handle Defender vassals
+		every_in_list = {
+			list = defender_vassals_to_transfer
+			change_liege = { liege = scope:attacker change = scope:change_defender_vassals_to_attacker }
+		}
+		every_in_list = {
+			list = defender_vassals_to_liberate
+			becomes_independent = { change = scope:change_defender_vassals_independent }
+		}
 		
 		#### Update the changes
+		resolve_title_and_vassal_change = scope:change_defender_vassals_to_attacker
 		resolve_title_and_vassal_change = scope:change_conquered_new_lands
 		resolve_title_and_vassal_change = scope:change_attacker_titles_vassals_to_liege
 		resolve_title_and_vassal_change = scope:change_attacker_titles_vassals_independent
+		resolve_title_and_vassal_change = scope:change_defender_vassals_independent
 		
-		#### Apply various modifiers
+		#### Disconnected realms become independent
+		create_title_and_vassal_change = {
+			type = independency
+			save_scope_as = change_defender_vassals_exclave_independent
+			add_claim_on_loss = no
+		}
+		scope:defender = { #Hide this because of tooltips...
+			every_vassal = {
+				limit = {
+					is_landed = yes
+					primary_title.tier >= tier_county
+					#####
+					any_held_title = {
+						is_landless_type_title = no
+						this.tier = tier_county
+						NOT = {
+							is_connected_to = {
+								target = scope:defender.capital_county
+								max_naval_distance = 2000
+							}
+						}
+					}
+				}
+				becomes_independent = { change = scope:change_defender_vassals_exclave_independent }
+			}
+		}
+		resolve_title_and_vassal_change = scope:change_defender_vassals_exclave_independent
 		
-		#### Update Counties
+		#### Apply source county modifiers
+		every_in_list = {
+			list = migration_source_counties
+			add_county_modifier = recent_migration_away_modifier
+			years = 10
+		}
 		
-		#### Test environment
-		every_in_list = {
-			list = migrating_attackers
-			add_character_modifier = pilgrimage_mendicant_preachers_modifier
+		#### Update County culture/faiths
+		scope:attacker = {
+			every_realm_county = {
+				save_temporary_scope_as = the_county
+				
+			}
 		}
-		every_in_list = {
-			list = attacker_titles_to_independent
-			add_county_modifier = reclaim_britannia_culture_modifier
-		}
-		every_in_list = {
-			list = attacker_titles_to_liege
-			add_county_modifier = peasant_war_lost_county_modifier
-		}
-		every_in_list = {
-			list = defender_titles_taken
-			add_county_modifier = county_increased_opinion_modifier
-		}
+		
 		#### END MIGRATION MANAGEMENT
 		
 		# Attacker gets Prestige Experience, Defender loses Prestige, all other participants gain Prestige based on their war contribution.

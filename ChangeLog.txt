@@ -1,6 +1,38 @@
 2026-MM-DD Migration Rework
 -----------
 
+Migration Situation: Added a new situation to subsume our disparate migration mechanics
+   - Participant Groups:
+      - Migrators: German, Slavic, or Sarmatian heritage or Germanic, Slavic, or Steppe religion tribals and adventurers
+      - Civilized Polities: Nations with centralized governments
+      - Barbarian Polities: Former Migrators that now rule centralized governments
+      - Successor States: All other participants
+      - Tribals: Groups with tribal governments who aren't Migrators
+   - Regions: The former Roman Empire
+   - Phases:
+      - Migration Phase:
+         - Lasts until AD 800
+         - Everyone is targetable by Migration CBs, in general
+         - Migrators:
+            - Migration CB Enabled
+            - Cultural Unification CBs are enabled
+            - Lifetime Subjugation CBs are increased by one
+            - Adventurer CBs are cheaper
+            - Time required for Hybridization/Divergence cooldown is reduced
+         - Tribals:
+            - Lifetime Subjugation CBs are increased by one
+            - Cultural Unification CBs are enabled
+            - Time required for Hybridization/Divergence cooldown is reduced
+         - Barbarian Polities:
+            - Passing of a Law is enabled, with various benefits and drawbacks, modeling the Lex Burgundiorum and Lex Visigothorum
+      - Transition Phase:
+         - TBD
+
+Casus Belli:
+- Overhaul Migration CB:
+   - Tribal, High Tribal, and Roman Federate vassals within the conquest region will either become your vassals or become independent, depending on their title tier compared to yours
+   - Exclaves become independent if there is no path to the capital, potentially shattering realms
+
 2026-MM-DD v0.3.0
 -----------
 

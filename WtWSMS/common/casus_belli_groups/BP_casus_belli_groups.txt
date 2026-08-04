@@ -29,11 +29,14 @@
 migration_situation = {
 	allowed_for_character = {
 		is_landed = yes
-		any_character_situation = { has_sub_region_phase_parameter = migration_cbs_enabled }
-	}
-	allowed_against_character = {
-		is_landed = yes
-		any_character_situation = { has_sub_region_phase_parameter = targetable_by_migration_cbs }
+		any_character_situation = {
+			any_situation_sub_region = {
+				any_situation_sub_region_participant_group = {
+					participant_group_has_character = scope:attacker
+					has_participant_group_parameter = migration_cbs_enabled
+				}
+			}
+		}
 	}
 }
 
