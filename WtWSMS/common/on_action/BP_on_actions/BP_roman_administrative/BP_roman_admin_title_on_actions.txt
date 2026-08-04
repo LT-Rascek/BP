@@ -1,7 +1,7 @@
 ﻿##### General On Actions (referenced multiple times)
 BP_flip_federate_when_not_below_roman = {
 	trigger = {
-		BP_has_dlc_necessary_for_roman_governments_trigger = yes
+		BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes
 		has_government = roman_federate_government
 		NOT = { top_liege = { government_has_flag = is_a_roman_government } }
 	}
@@ -13,7 +13,7 @@ BP_flip_federate_when_not_below_roman = {
 # we might change from Sub-Roman Admin to Dynastic and vice-versa
 BP_convert_sub_roman_admin_to_dynastic = {
 	trigger = {
-		BP_has_dlc_necessary_for_roman_governments_trigger = yes
+		BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes
 		has_government = subroman_administrative_government
 		is_independent_ruler = yes
 		primary_title.tier <= tier_duchy
@@ -46,7 +46,7 @@ BP_convert_sub_roman_admin_to_dynastic = {
 }
 BP_convert_sub_roman_dynastic_to_admin = {
 	trigger = {
-		BP_has_dlc_necessary_for_roman_governments_trigger = yes
+		BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes
 		has_government = subroman_dynastic_government
 		is_independent_ruler = yes
 		primary_title.tier > tier_duchy
@@ -62,7 +62,7 @@ BP_convert_sub_roman_dynastic_to_admin = {
 #Being Dynastic under administrative
 BP_subroman_dynastic_under_subroman_admin = {
 	trigger = {
-		BP_has_dlc_necessary_for_roman_governments_trigger = yes
+		BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes
 		has_government = subroman_dynastic_government
 		is_independent_ruler = no
 		this.liege = { has_government = subroman_administrative_government }
@@ -77,7 +77,7 @@ BP_subroman_dynastic_under_subroman_admin = {
 }
 BP_subroman_under_roman_admin = {
 	trigger = {
-		BP_has_dlc_necessary_for_roman_governments_trigger = yes
+		BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes
 		is_independent_ruler = no
 		this.liege = { has_government = roman_administrative_government }
 		government_has_flag = government_is_subroman_administrative_or_dynastic

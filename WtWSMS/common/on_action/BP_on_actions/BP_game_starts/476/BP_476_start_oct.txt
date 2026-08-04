@@ -48,7 +48,7 @@ BP_setup_legitimacy_476_oct = {
 }
 ## Legal Stuff
 BP_setup_realm_laws_476_oct_DLC = {
-	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
+	trigger = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes }
 	effect = {
 		#Roman Diarchy/Minority Laws
 		title:h_western_roman_empire.holder = { add_realm_law_skip_effects = roman_chancellor_law }
@@ -60,7 +60,7 @@ BP_setup_realm_laws_476_oct_DLC = {
 	}
 }
 BP_setup_vassal_contracts_476_oct_DLC = {
-	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
+	trigger = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes }
 	effect = {
 		#Italia
 		title:d_umbria.holder = {
@@ -138,7 +138,7 @@ BP_starting_culture_acceptance_476_oct = {
 }
 
 BP_setup_roman_council_476_oct = {
-	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
+	trigger = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes }
 	effect = {
 		#Set Various Roman Offices
 		title:h_western_roman_empire.holder ?= {
@@ -208,7 +208,7 @@ BP_setup_roman_council_476_oct = {
 }
 
 BP_set_armies_476_oct_DLC = {
-	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
+	trigger = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes }
 	effect = {
 		title:h_western_roman_empire.holder = {
 			title:h_western_roman_empire = { every_title_maa_regiment = { destroy_maa_regiment = yes } }
@@ -363,7 +363,7 @@ BP_set_armies_476_oct_DLC = {
 }
 
 BP_place_specific_domiciles_476_oct = {
-	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
+	trigger = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes }
 	effect = {
 		#Romulus Augustulus' retires to Naples
 		title:c_nf_roman_dynn_Caecina = {

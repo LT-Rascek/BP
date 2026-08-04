@@ -152,7 +152,7 @@ BP_setup_realm_laws_476 = {
 	}
 }
 BP_setup_realm_laws_476_DLC = {
-	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
+	trigger = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes }
 	effect = {
 		#Roman Diarchy Laws
 		title:h_eastern_roman_empire.holder = { add_realm_law_skip_effects = roman_chancellor_law }
@@ -292,7 +292,7 @@ BP_setup_vassal_contracts_476 = {
 	}
 }
 BP_setup_vassal_contracts_476_DLC = {
-	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
+	trigger = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes }
 	effect = {
 		#Remnant Limitanei
 		title:d_noricum_ripense.holder = {
@@ -663,7 +663,7 @@ BP_reduce_hunnic_herd_476 = {
 	}
 }
 BP_setup_roman_border_troops_476_DLC = {
-	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
+	trigger = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes }
 	effect = {
 		title:d_noricum_ripense.holder = {
 			title:d_noricum_ripense = { every_title_maa_regiment = { destroy_maa_regiment = yes } }
@@ -752,7 +752,7 @@ BP_setup_roman_border_troops_476_DLC = {
 	}
 }
 BP_setup_federate_troops_476_DLC = {
-	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
+	trigger = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes }
 	effect = {
 		title:d_orleans.holder = {
 			title:d_orleans = { every_title_maa_regiment = { destroy_maa_regiment = yes } }

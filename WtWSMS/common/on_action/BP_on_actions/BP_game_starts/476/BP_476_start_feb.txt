@@ -40,7 +40,7 @@ BP_character_events_476_feb = {
 	}
 }
 BP_character_events_476_feb_DLC = {
-	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
+	trigger = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes }
 	effect = {
 		#Orestes and Romulus are allied
 		title:e_magister_military_wre.holder = {
@@ -64,14 +64,14 @@ BP_setup_legitimacy_476_feb = {
 }
 ## Legal Stuff
 BP_setup_realm_laws_476_feb_DLC = {
-	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
+	trigger = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes }
 	effect = {
 		#Roman Diarchy Laws
 		title:h_western_roman_empire.holder = { add_realm_law_skip_effects = roman_marshal_law }
 	}
 }
 BP_starting_state_faiths_476_feb_DLC = {
-	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
+	trigger = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes }
 	effect = {
 		title:h_eastern_roman_empire = { set_state_faith = faith:nicene }
 	}
@@ -425,7 +425,7 @@ bp_game_start_after_lobby_476_feb = {
 }
 
 BP_setup_roman_council_476_feb = {
-	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
+	trigger = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes }
 	effect = {
 		#WRE
 		title:h_western_roman_empire.holder = {
@@ -478,7 +478,7 @@ BP_setup_roman_council_476_feb = {
 }
 
 BP_set_armies_476_feb_DLC = {
-	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
+	trigger = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes }
 	effect = {
 		title:h_western_roman_empire.holder = {
 			title:h_western_roman_empire = { every_title_maa_regiment = { destroy_maa_regiment = yes } }
@@ -616,7 +616,7 @@ BP_set_armies_476_feb_DLC = {
 }
 
 BP_set_employers_476_feb_no_DLC = {
-	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = no }
+	trigger = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = no }
 	#Otherwise landed chars should be sent to employers
 	effect = {
 		character:1100013 = { set_employer = character:145226 } #Basilicus
