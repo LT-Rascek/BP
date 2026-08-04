@@ -1,8 +1,9 @@
-﻿mogyer = {
+﻿### Old Magyars
+mogyer = {
 	color = { 0.3 0.4 0.1 }
 	
 	#See: Torok, T. "Integrating Linguistic, Archaeological, and Genetic Perspectives Unfold the Origin of Ugrians"
-	parents = { gorokhovo xiongnu }
+	parents = { gorokhovo hunno_sakan }
 	created = 2.1.1
 	history_loc_override = mogyer_history_loc
 
@@ -13,13 +14,13 @@
 	head_determination = head_determination_domain
 	traditions = {
 		tradition_tribe_unity
-		tradition_zealous_people
+		tradition_cranial_deformation
 	}
 	
 	dlc_tradition = {
 		trait = tradition_devoted_horsemanship
 		requires_dlc_flag = khans_of_the_steppe
-		requires_dlc_flag = hybridize_culture
+		fallback = tradition_horse_lords
 	}
 
 	name_order_convention = dynasty_always_first

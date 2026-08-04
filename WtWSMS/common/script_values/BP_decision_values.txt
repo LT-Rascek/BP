@@ -264,3 +264,63 @@ num_raised_circumcellions_infantry = {
 establish_de_jure_cost_0 = 1000
 establish_de_jure_cost_1 = 1500
 establish_de_jure_cost_2 = 2500
+
+prestige_distance_oghuric = {
+	value = 100
+	if = { #1000; Constantinople to adjoining baronies
+		limit = { prestige_level >= 1 }
+		multiply = 10
+	}
+	if = { #10 000; Constantinople to the closing of the Marma
+		limit = { prestige_level >= 2 }
+		multiply = 10
+	}
+	if = { #100 000; Constantinople to Thessalonika/mouth of Danube
+		limit = { prestige_level >= 3 }
+		multiply = 10
+	}
+	if = { #1 000 000; Constantinople to the start of the Game Nile
+		limit = { prestige_level >= 4 }
+		multiply = 10
+	}
+	if = { #1 0000 000 000; the whole friggin map
+		limit = { prestige_level >= 5 }
+		multiply = 1000
+	}
+}
+number_of_owned_self_culture_counties = {
+	value = 0
+	every_realm_county = {
+		limit = { this.culture = root.culture }
+		add = 1
+	}
+}
+number_of_total_self_culture_counties = {
+	value = 0
+	root.culture = { every_culture_county = { add = 1 } }
+}
+percent_of_self_culture_counties_owned = {
+	value = number_of_owned_self_culture_counties
+	divide = number_of_total_self_culture_counties
+}
+number_of_owned_oghur_heritage_counties = {
+	value = 0
+	every_realm_county = {
+		limit = { this.culture = { has_cultural_pillar = heritage_oghuric } }
+		add = 1
+	}
+}
+number_of_total_oghur_heritage_counties = {
+	value = 0
+	every_county = {
+		limit = {
+			is_landless_type_title = no
+			this.culture = { has_cultural_pillar = heritage_oghuric }
+		}
+		add = 1
+	}
+}
+percent_of_oghur_heritage_counties_owned = {
+	value = number_of_owned_oghur_heritage_counties
+	divide = number_of_total_oghur_heritage_counties
+}

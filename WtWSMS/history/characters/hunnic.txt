@@ -43,15 +43,10 @@
 	trait = "greedy"
 	trait = "legendary_leader"
 	father = 1210000
-	405.1.1 = {
-		birth = yes
-		#create_bloodline = {
-		#	type = attila
-		#	has_dlc = "Holy Fury"
-		#}
-	}
+	405.1.1 = { birth = yes }
 	#NB: Tengrism uses Concubines when this was updated; if we switch to polygamy, the Concubines should be spouses
 	419.1.1 = { add_spouse = 1210002 } # Erekan
+	435.1.1 = { trait = kinslayer_1 } #Kills some of his dynasty
 	449.1.1 = { add_concubine = attila_wife_2 } # daughter of Eskam
 	450.3.1 = { set_relation_lover = character:444408 } # Honoria, Valentinian III's sister.
 	452.1.1 = { trait = "open_terrain_expert" }

@@ -1,0 +1,86 @@
+﻿#### At some point, the Kidarites adopt Kushano-Sassanian culture, because the Hepthalites and Alchons
+#### went reactionary. The reign of Kidara seems somewhat pivotal, so let's go with that.
+kidarite_ruler_1 = {
+	name = "Kirada"
+	dynasty = 10424242
+	culture = "chionite"
+	religion = scythian_pagan
+	295.1.1 = { birth = yes }
+	360.1.1 = { death = yes }
+}
+kidarite_ruler_2 = {
+	name = "Piroysa"
+	dynasty = 10424242
+	culture = "chionite"
+	religion = scythian_pagan
+	father = kidarite_ruler_1
+	315.1.1 = { birth = yes }
+	370.1.1 = { death = yes }
+}
+kidarite_ruler_3 = {
+	name = "Kidara"
+	dynasty = 10424242
+	culture = "chionite"
+	religion = scythian_pagan
+	father = kidarite_ruler_2
+	340.1.1 = { birth = yes }
+	365.1.1 = {
+		culture = kushan
+		religion = mahayana
+	}
+	400.1.1 = { death = yes }
+}
+kidarite_ruler_4 = {
+	name = "Varhran"
+	dynasty = 10424242
+	culture = "kushan"
+	religion = mahayana
+	father = kidarite_ruler_3
+	380.1.1 = { birth = yes }
+	440.1.1 = { death = yes }
+}
+kidarite_ruler_5 = {
+	name = "Khunkha"
+	dynasty = 10424242
+	culture = "kushan"
+	religion = mahayana
+	father = kidarite_ruler_4
+	405.1.1 = { birth = yes }
+	465.1.1 = { death = yes }
+}
+168348 = {
+	name = "Vinayaditya"
+	dna = 168348_vinayaditya
+	# Vinayaditya Kidara
+	dynasty = 10424242
+	culture = "kushan"
+	religion = mahayana
+	father = kidarite_ruler_5
+	440.1.1 = { birth = yes }
+	510.1.1 = { death = yes }
+}
+168349 = {
+	name = "Kandik"
+	# Kandik Kidara
+	dynasty = 10424242
+	culture = "kushan"
+	religion = mahayana
+	father = 168348
+	465.1.1 = { birth = yes }
+	550.1.1 = { death = yes }
+}
+
+36026 = {
+	name = "Kandik" # Last Kidarite
+	# Kandik Kidara
+	dynasty = 10424242
+	religion = "dharmaguptaka"
+	culture = "kushan"
+	father = 168349
+	530.1.1 = {
+		birth = "530.1.1"
+	}
+	600.1.1 = {
+		death = "600.1.1"
+	}
+}

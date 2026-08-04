@@ -20,24 +20,25 @@ Hunter-Gatherer
 ==========
 0.2.0.2:
 ----------
-- Federates: Fix missing tooltip stuff for offering federate status for federates without DLC
-- Symmachus Branch Stuff
+To test:
+	- ERE noble family shortage at start (NOT FIXED)
 
-- SubRoman Dynastic for independent duchies and below, and transition to subroman admin when not
+==========
+0.2.0.2:
+----------
+Review Error log and fix bugs
 
-- Great Projects to fixup Feudal Decay
+- Albania is a permanent *tribal* tributary... fix?
+- Heruli Odoacer contingent can't recruit Meikeismen
 
-Title Revocation/Retiring:
-- Federates and Sub-Roman, when sufficiently aristocratic, can't be forced to step down and instead get default title revocation
-- Retiring governors should increasingly cost prestige as government becomes more aristocratic
-
-Known Bugs/Issues:
+Other Bugs:
 - Script location: file: common/on_action/BP_on_actions/BP_flavor_on_actions.txt line: 154 (BP_flavor_events_county_pulse)
 - BP_flavor_events_county_pulse has the `Error: Invalid landed title scope for modifier script, must be a county` issue
 - Hang every 1 and 2 January
 - Bug in common/script_values/BP_culture_shift_values.txt and BP_culture_on_actions.txt tied to Jews arising; some math scope existence issues
 
 Potential Bugs:
+- SubRoman Dynastic for independent duchies and below, and transition to subroman admin when not
 - MO occasionally borking out at start, giving to someone new at game start?
 - Populist Revolts are becoming Feudal/Clan (Possibly Fixed?)
 - County grants are becoming Roman Admin from Sub-Roman (Reproducer not found yet?)
@@ -54,36 +55,64 @@ Potential Bugs:
 - Add the other two dynasty legacies
 - Make Cataphracts recruitable again
 
-History:
-- MO/MM Chars should have dynasty names
+- Symmachus Branch Stuff for cultural title names
 
 Bookmarks: Revamp bookmarks
 - Add 479 bookmark
-- Gylericus et al plotting Nepos death in the 479 scenario. Make _actual_ plotter a random character in the court with a hidden grudge to prevent too much player manipulation, with a special plot modifier to put pressure on the player to find out. Make it also a semi-random thing so that they might just be pissing everyone off for no good reason.
-- Nepos has a modifier wherein his tyranny gain is modified and tyranny loss is nerfed to make North Korea mode unappealing maybe even with an effect of imprisoning Glyericus greatly nukes Papal and Empire of the East opinion. Basically, you _can_ block the plot, but you're putting yourself at long-term risk. 
-- Modifier gets removed by imprisoning Glyericus or the plot ending the first time, regardless of outcome.
+   - Gylericus et al plotting Nepos death in the 479 scenario. Make _actual_ plotter a random character in the court with a hidden grudge to prevent too much player manipulation, with a special plot modifier to put pressure on the player to find out. Make it also a semi-random thing so that they might just be pissing everyone off for no good reason.
+   - Nepos has a modifier wherein his tyranny gain is modified and tyranny loss is nerfed to make North Korea mode unappealing maybe even with an effect of imprisoning Glyericus greatly nukes Papal and Empire of the East opinion. Basically, you _can_ block the plot, but you're putting yourself at long-term risk. 
+   - Modifier gets removed by imprisoning Glyericus or the plot ending the first time, regardless of outcome.
 
 Roman Premierships:
 - Diarch Loyalty Overhaul
 
-Culture:
-- Review Taifali, Heruli light horsemen (probably a cultural MAA change)
-- Legal Codex needs work
-
 Government:
-- Ability for Emperor to intervene directly down the hierarchy.
-
-Federate Government:
-- Army call up costs should be weighted by contracts
+- Ability for Emperor to intervene directly down the hierarchy?
 
 Decisions:
 - Review conditions for restoring Rome/Byzantium vis-a-vis region & restored fora...
 
-Hegemonies:
-- Apply all the stuff listed in h_eastern_roman_empire.txt, h_western_roman_empire.txt landed file (Tributaries)
-
 Localization:
+- Dynastic to replace Pre-Feudal as a government term
 - Praeses for counties (still civilian-ish)
+
+==========
+Turkic Stuff:
+----------
+History:
+- Tuyuhun kingdom cleanup (culture, vassals, &c.); maybe need Amdo title?
+- Some tribal polities (e.g., Balti, Kinnaur??, Lhomon???) should be confederations instead
+- More at-start troops for Gokturks and Hepthalites (Personal MAA)
+- Attila gets Kinslayer trait for killing dynastic members
+
+Culture:
+- Ruling Caste needs to be blocked for migratory culture, nomadic rulership
+- Fixup various cultural history notes and the like.
+- Nomadic Rulers tradition should unlock tributary war support with nomads
+
+Traditions:
+- Revamp Iron Cavalry's requirements to be much more East-Focused.
+
+Other:
+- Add decision to unite the Oghurs to shift namelist and culture name to Bolghars
+- Alchon and Nezak COAs
+- Delete chars in hepthalite.txt
+- Selenium bonus for Fereganan cavalry
+- Alchons need some sort of Kidarite-type CB
+- Nomads that take over castles et al need to flip
+- Head-Shape tradition
+- Revise Tributary setup effect so not so many truces
+
+- Touch Up Cultural Titles:
+   - Bolghar early title should be Kana Sybigi for kings
+   - Use Yabghu et al for various Iranic Huns and such
+
+GFX:
+- Non-Christian Byzantine COA gfx for Fereganans
+- Convert Wusun/Kushan/Yuezhi COA graphics into their own blend of Chinese and Scythian
+
+Future:
+- Make Pakthun evolve into Pastho language when no Bactrian speaking court exists and start as Bactrian
 
 ==========
 0.2.2:
@@ -91,12 +120,26 @@ Localization:
 Casus Bellis: Migration War government upgrade mechanics
 Schemes: Add scheme for vassals to try and increase aristocratic control laws
 
+- Special Frankish stuff for ruling over a bunch of Sub-Romans as a quasi-Tribal (contrast with Gothic or Vandal approach)
+   - Increased number of military provinces
+   - Faster military landing effects
+   - The Clerical dimension within the tribal system
+
 - Hegemonies should have an empire-level CB against each other that's terribly devastating (see the Final Roman-Sassanid War or the Gothic War)
    - Should be a great project like the Chinese have
 
-- Feudal Transition Clerical stuff
+- Feudal Transition Clerical stuff (BGA???)
 - Clarify government_is_centralized flag
 - Tweak dynastic aristocratic control laws to push more towards decline in some manner
+
+Hegemonies:
+- Apply all the stuff listed in h_eastern_roman_empire.txt, h_western_roman_empire.txt landed file (Tributaries)
+- Perhaps need its own form of tributary instead of something with standing
+
+Government:
+- Dynastic Khanate form of government to handle stuff like Kidarites, Hepthalites, Kangju, &c.?
+   - Steppe Overrun flips to feudal, so we need to handle that particular issue
+   - Basically, High Tribal for Nomads (Still have obedience, raze holdings, but no domicile and )
 
 Activities:
    - Ability to host munera (theater particularly) in Roman Ceremonies

@@ -1,0 +1,129 @@
+﻿on_game_start_after_lobby = {
+	on_actions = { find_chars_to_give_cranial_deformation_to }
+}
+
+find_chars_to_give_cranial_deformation_to = {
+	effect = {
+		every_ruler = {
+			if = {
+				limit = {
+					exists = this.dynasty
+					culture = { has_cultural_parameter = cranial_deformation_give_bonus }
+				}
+				trigger_event = { on_action = give_char_cranial_deformation_traits }
+			}
+			every_courtier_or_guest = {
+				limit = {
+					exists = this.dynasty
+					culture = { has_cultural_parameter = cranial_deformation_give_bonus }
+				}
+				trigger_event = { on_action = give_char_cranial_deformation_traits }
+			}
+		}
+	}
+}
+
+give_char_cranial_deformation_traits = {
+	trigger = {
+		exists = this.dynasty
+		culture = { has_cultural_parameter = cranial_deformation_give_bonus }
+	}
+	effect = {
+		add_trait = cranial_deformation
+		if = {
+			limit = { age >= 0 }
+			add_trait_xp = {
+				trait = cranial_deformation
+				track = cranial_deformation
+				value = { 0 10 }
+			}
+		}
+		if = { limit = { age >= 1 }
+			add_trait_xp = {
+				trait = cranial_deformation
+				track = cranial_deformation
+				value = { 5 20 }
+			}
+		}
+		if = {
+			limit = { age >= 2 }
+			add_trait_xp = {
+				trait = cranial_deformation
+				track = cranial_deformation
+				value = { 5 20 }
+			}
+		}
+		if = {
+			limit = { age >= 3 }
+			add_trait_xp = {
+				trait = cranial_deformation
+				track = cranial_deformation
+				value = { 5 20 }
+			}
+		}
+		if = {
+			limit = { age >= 4 }
+			add_trait_xp = {
+				trait = cranial_deformation
+				track = cranial_deformation
+				value = { 5 20 }
+			}
+		}
+		if = {
+			limit = { age >= 5 }
+			add_trait_xp = {
+				trait = cranial_deformation
+				track = cranial_deformation
+				value = { 5 20 }
+			}
+		}
+		if = {
+			limit = { age >= 6 }
+			add_trait_xp = {
+				trait = cranial_deformation
+				track = cranial_deformation
+				value = { 5 20 }
+			}
+		}
+	}
+}
+
+on_birth_child = {
+	on_actions = { add_cranial_deformation_trait }
+}
+
+add_cranial_deformation_trait = {
+	trigger = {
+		exists = this.dynasty
+		culture = { has_cultural_parameter = cranial_deformation_give_bonus }
+	}
+	effect = {
+		add_trait = cranial_deformation
+		add_trait_xp = {
+			trait = cranial_deformation
+			track = cranial_deformation
+			value = { 0 10 }
+		}
+	}
+}
+
+on_birthday = {
+	on_actions = { add_cranial_deformation_xp }
+}
+
+add_cranial_deformation_xp = {
+	trigger = {
+		has_trait = cranial_deformation
+		exists = this.dynasty
+		culture = { has_cultural_parameter = cranial_deformation_give_bonus }
+		age > 0
+		age <= 6
+	}
+	effect = {
+		add_trait_xp = {
+			trait = cranial_deformation
+			track = cranial_deformation
+			value = { 5 20 }
+		}
+	}
+}

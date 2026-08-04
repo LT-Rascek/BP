@@ -20,24 +20,6 @@
 	#potential Khazar settlement
 	holding = none
 }
-###c_astrakhan
-5311 = {	#Astrakhan
-	culture = alan
-	religion = scythian_pagan
-	holding = nomad_holding
-	395.1.1 = {
-		culture = hunnic
-		religion = tengri_pagan
-	}
-	465.1.1 = { culture = khuni }
-}
-5312 = {	#Sara
-	holding = none
-}
-604 = {		#Khazaran
-	holding = none
-	#holding = none
-}
 ###c_beksima
 	#Mostly placeholder places
 605 = {		#Beksima
@@ -48,7 +30,7 @@
 		culture = hunnic
 		religion = tengri_pagan
 	}
-	465.1.1 = { culture = bolghar }
+	465.1.1 = { culture = barsil }
 }
 5333 = {	#Sarepta
 	holding = none
@@ -138,22 +120,6 @@
 5304 = {	#Balanjar
 	holding = none
 }
-###c_samander
-5305 = {	#Samander
-	culture = alan
-	religion = scythian_pagan
-	holding = nomad_holding
-	465.1.1 = {
-		culture = khuni
-		religion = tengri_pagan
-	}
-}
-5307 = {	#Kizlyar
-	holding = none
-}
-5343 = {	#Samiran	#Khazar settlement
-	holding = none
-}
 ###c_durdzukia
 5306 = {	#Durdzukia
 	#city and region
@@ -171,5 +137,42 @@
 	holding = tribal_holding
 }
 5342 = {	#Sambalut
+	holding = none
+}
+
+## d_astrakhan ###################################
+
+###c_astrakhan
+5311 = {	#Astrakhan
+	culture = alan
+	religion = scythian_pagan
+	holding = nomad_holding
+	395.1.1 = {
+		culture = hunnic
+		religion = tengri_pagan
+	}
+	465.1.1 = { culture = barsil }
+}
+5312 = {	#Sara
+	holding = none
+}
+604 = {		#Khazaran
+	holding = none
+	#holding = none
+}
+###c_samander
+5305 = {	#Samander
+	culture = alan
+	religion = scythian_pagan
+	holding = nomad_holding
+	465.1.1 = {
+		culture = khuni
+		religion = tengri_pagan
+	}
+}
+5307 = {	#Kizlyar
+	holding = none
+}
+5343 = {	#Samiran	#Khazar settlement
 	holding = none
 }

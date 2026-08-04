@@ -161,6 +161,19 @@ heritage_chinese = {
 		heritage_family_east_asian = yes
 	}
 }
+heritage_chionite = { #Used for the Iranian Huns (Chionite, Kidarites, Alchon, Nezak)
+	type = heritage
+	is_shown = { always = no }
+	audio_parameter = european
+	
+	parameters = {
+		heritage_kulturbund_scythian = yes
+		heritage_kulturbund_turkic = yes
+		heritage_group_eurasian_steppe = yes
+		heritage_group_north_asian = yes
+		heritage_family_eurasian = yes
+	}
+}
 heritage_common_slavic = {
 	type = heritage
 	is_shown = { heritage_is_shown_trigger = { HERITAGE = heritage_common_slavic } }
@@ -272,6 +285,18 @@ heritage_gothic = {
 		heritage_kulturbund_chernyakhov = yes
 		heritage_group_germanic = yes
 		heritage_family_european = yes
+	}
+}
+heritage_hunnic = { #Used for the Far Western Turks (Oghurs)
+	type = heritage
+	is_shown = { always = no }
+	audio_parameter = european
+	
+	parameters = {
+		heritage_group_eastern_european = yes
+		heritage_group_eurasian_steppe = yes
+		heritage_group_north_asian = yes
+		heritage_family_eurasian = yes
 	}
 }
 heritage_iberian = {
@@ -402,9 +427,25 @@ heritage_mongolic = {
 	audio_parameter = sea
 	
 	parameters = {
-		heritage_kulturbund_turco_mongol = yes
-		heritage_group_north_asian = yes
+		heritage_kulturbund_mongolic = yes
+		heritage_kulturbund_tartar = yes
+		heritage_group_northeast_asian = yes
 		heritage_group_eurasian_steppe = yes
+		heritage_family_eurasian = yes
+	}
+}
+heritage_nivkh = { # Localized as Siberian
+	type = heritage
+	is_shown = {
+		heritage_is_shown_trigger = {
+			HERITAGE = heritage_nivkh
+		}
+	}
+	audio_parameter = sea
+	
+	parameters = {
+		heritage_kulturbund_siberian = yes
+		heritage_group_northeast_asian = yes
 		heritage_family_eurasian = yes
 	}
 }
@@ -417,6 +458,19 @@ heritage_north_germanic = {
 		heritage_group_germanic = yes
 		heritage_group_fennoscandian = yes
 		heritage_family_european = yes
+	}
+}
+heritage_oghuric = {
+	type = heritage
+	is_shown = { always = no }
+	audio_parameter = european
+	
+	parameters = {
+		heritage_kulturbund_turkic = yes
+		heritage_group_eastern_european = yes
+		heritage_group_eurasian_steppe = yes
+		heritage_group_north_asian = yes
+		heritage_family_eurasian = yes
 	}
 }
 heritage_albanian = {
@@ -644,6 +698,19 @@ heritage_syriac = {
 		heritage_family_west_asian = yes
 	}
 }
+heritage_tartar = {
+	type = heritage
+	is_shown = { heritage_is_shown_trigger = { HERITAGE = heritage_tartar } }
+	audio_parameter = sea
+	
+	parameters = {
+		heritage_kulturbund_mongolic = yes
+		heritage_kulturbund_tartar = yes
+		heritage_group_northeast_asian = yes
+		heritage_group_eurasian_steppe = yes
+		heritage_family_eurasian = yes
+	}
+}
 heritage_tibetan = {
 	type = heritage
 	is_shown = { heritage_is_shown_trigger = { HERITAGE = heritage_tibetan } }
@@ -657,10 +724,23 @@ heritage_tibetan = {
 		heritage_family_south_asian = yes
 	}
 }
+heritage_tiele = { #Tiele Confederation Turks
+	type = heritage
+	is_shown = { heritage_is_shown_trigger = { HERITAGE = heritage_tiele } }
+	audio_parameter = sea
+	
+	parameters = {
+		heritage_kulturbund_turkic = yes
+		heritage_kulturbund_tartar = yes
+		heritage_group_eurasian_steppe = yes
+		heritage_group_northeast_asian = yes
+		heritage_family_eurasian = yes
+	}
+}
 heritage_tocharian = { #Serindian
 	type = heritage
 	is_shown = { heritage_is_shown_trigger = { HERITAGE = heritage_tocharian } }
-	audio_parameter = indian
+	audio_parameter = sea
 	
 	parameters = {
 		heritage_group_greater_chinese = yes
@@ -671,13 +751,14 @@ heritage_tocharian = { #Serindian
 		heritage_family_west_asian = yes
 	}
 }
-heritage_turkic = {
+heritage_turkic = { #True Turkish; used for the Gokturks at least
 	type = heritage
 	is_shown = { heritage_is_shown_trigger = { HERITAGE = heritage_turkic } }
 	audio_parameter = sea
 	
 	parameters = {
-		heritage_kulturbund_turco_mongol = yes
+		heritage_kulturbund_turkic = yes
+		heritage_kulturbund_tartar = yes
 		heritage_group_eurasian_steppe = yes
 		heritage_group_north_asian = yes
 		heritage_family_eurasian = yes
@@ -692,6 +773,7 @@ heritage_ugro_permian = {
 		heritage_kulturbund_siberian = yes
 		heritage_group_eastern_european = yes
 		heritage_group_north_asian = yes
+		heritage_group_northeast_asian = yes
 		heritage_family_eurasian = yes
 	}
 }
@@ -759,6 +841,23 @@ heritage_west_slavic = {
 		heritage_family_european = yes
 	}
 }
+heritage_xiongnu = {
+	type = heritage
+	is_shown = { heritage_is_shown_trigger = { HERITAGE = heritage_yuezhi } }
+	audio_parameter = mena
+	
+	parameters = {
+		heritage_kulturbund_turkic = yes
+		heritage_kulturbund_tartar = yes
+		heritage_kulturbund_scythian = yes
+		heritage_kulturbund_siberian = yes
+		heritage_group_eurasian_steppe = yes
+		heritage_group_north_asian = yes
+		heritage_group_northeast_asian = yes
+		heritage_family_east_asian = yes
+		heritage_family_eurasian = yes
+	}
+}
 heritage_yoruba = {
 	type = heritage
 	is_shown = { heritage_is_shown_trigger = { HERITAGE = heritage_yoruba } }
@@ -767,6 +866,30 @@ heritage_yoruba = {
 	parameters = {
 		heritage_group_west_african = yes
 		heritage_family_african = yes
+	}
+}
+heritage_yueban = { #Central Turks
+	type = heritage
+	is_shown = { heritage_is_shown_trigger = { HERITAGE = heritage_yueban } }
+	audio_parameter = mena
+	
+	parameters = {
+		heritage_kulturbund_turkic = yes
+		heritage_group_eurasian_steppe = yes
+		heritage_group_north_asian = yes
+		heritage_family_eurasian = yes
+	}
+}
+heritage_yuezhi = {
+	type = heritage
+	is_shown = { heritage_is_shown_trigger = { HERITAGE = heritage_yuezhi } }
+	audio_parameter = mena
+	
+	parameters = {
+		heritage_kulturbund_scythian = yes
+		heritage_group_eurasian_steppe = yes
+		heritage_family_east_asian = yes
+		heritage_family_eurasian = yes
 	}
 }
 
@@ -789,18 +912,6 @@ heritage_goidelic = {
 	parameters = { # copied from heritage_celtic
 		heritage_group_celtic = yes
 		heritage_family_european = yes
-	}
-}
-heritage_hunnic = {
-	type = heritage
-	is_shown = { always = no }
-	audio_parameter = european
-	
-	parameters = { # copied from heritage_turkic
-		heritage_kulturbund_turco_mongol = yes
-		heritage_group_eurasian_steppe = yes
-		heritage_group_north_asian = yes
-		heritage_family_eurasian = yes
 	}
 }
 
@@ -890,23 +1001,8 @@ heritage_tungusic = {
 	
 	parameters = {
 		heritage_kulturbund_siberian = yes
-		heritage_group_north_asian = yes
+		heritage_group_northeast_asian = yes
 		heritage_group_manchurian = yes
-		heritage_family_eurasian = yes
-	}
-}
-heritage_nivkh = { # Localized as Siberian
-	type = heritage
-	is_shown = {
-		heritage_is_shown_trigger = {
-			HERITAGE = heritage_nivkh
-		}
-	}
-	audio_parameter = sea
-	
-	parameters = {
-		heritage_kulturbund_siberian = yes
-		heritage_group_north_asian = yes
 		heritage_family_eurasian = yes
 	}
 }
@@ -935,7 +1031,7 @@ heritage_ainuic = {
 	
 	parameters = {
 		heritage_kulturbund_siberian = yes
-		heritage_group_north_asian = yes
+		heritage_group_northeast_asian = yes
 		heritage_family_east_asian = yes
 	}
 }

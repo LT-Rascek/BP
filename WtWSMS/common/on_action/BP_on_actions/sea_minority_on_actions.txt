@@ -164,7 +164,7 @@ do_migratory_minority_decline = {
 		scope:source_county = {
 			every_in_list = {
 				limit = {
-					this = { has_cultural_tradition = tradition_migratory_culture }
+					this.culture = { BP_has_migratory_ruling_caste_tradition_trigger = yes }
 					NOT = { this.culture = scope:source_county.holder.culture }
 				}
 				variable = culture_minorities_large

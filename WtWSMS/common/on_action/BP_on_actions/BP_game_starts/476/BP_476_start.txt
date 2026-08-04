@@ -16,14 +16,15 @@ bp_game_start_after_lobby_476 = {
 		BP_setup_realm_laws_476
 		BP_setup_realm_laws_476_DLC
 		BP_setup_vassal_contracts_476
-		BP_setup_vassal_contracts_476_DLC
+		BP_setup_vassal_contracts_476_nomad_DLC
+		BP_setup_vassal_contracts_476_rome_DLC
 		BP_setup_capitals_476
 		BP_setup_landless_chars_476
 		BP_set_lieges_476
 		BP_remove_claims_476
 		BP_setup_other_councils_476
 		# Armies
-		BP_create_theodoric_armies_476
+		BP_create_armies_476
 		BP_reduce_hunnic_herd_476
 		BP_setup_roman_border_troops_476_DLC
 		BP_setup_federate_troops_476_DLC
@@ -296,7 +297,44 @@ BP_setup_vassal_contracts_476 = {
 		}
 	}
 }
-BP_setup_vassal_contracts_476_DLC = {
+BP_setup_vassal_contracts_476_nomad_DLC = {
+	trigger = { has_dlc_feature = khans_of_the_steppe }
+	effect = {
+		#The Rouran are squeezing their vassals, as is their wont
+		title:e_rouran.holder = {
+			every_vassal = {
+				limit = { government_has_flag = government_is_nomadic }
+				if = { #Gokturks and Fufuluo Tiele especially squeezed
+					limit = {
+						OR = {
+							this.primary_title = title:k_dzungaria
+							this.primary_title = title:d_ovorkhangai
+						}
+					}
+					vassal_contract_set_obligation_level = {
+						type = nomad_government_herd
+						level = herd_tax_extortionate
+					}
+					vassal_contract_set_obligation_level = {
+						type = nomad_government_taxes
+						level = nomad_tax_extortionate
+					}
+				}
+				else = {
+					vassal_contract_set_obligation_level = {
+						type = nomad_government_herd
+						level = herd_tax_high
+					}
+					vassal_contract_set_obligation_level = {
+						type = nomad_government_taxes
+						level = nomad_tax_high
+					}
+				}
+			}
+		}
+	}
+}
+BP_setup_vassal_contracts_476_rome_DLC = {
 	trigger = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes }
 	effect = {
 		#Remnant Limitanei
@@ -649,10 +687,36 @@ BP_setup_other_councils_476 = {
 	}
 }
 #Armies
-BP_create_theodoric_armies_476 = {
+BP_create_armies_476 = {
 	effect = {
 		character:63 = {
 			create_theodoric_army_effect = { LOCATION = 3682 }
+		}
+		title:d_ovorkhangai.holder = {
+			if = { #Can't be dispatched to an effect for some reason
+				limit = { government_has_flag = government_is_nomadic }
+				create_maa_regiment = {
+					type = cataphract_archers
+					size = 2
+				}
+			}
+			else = {
+				create_maa_regiment = {
+					type = horse_archers
+					size = 2
+				}
+			}
+			create_maa_regiment = {
+				type = horse_archers
+				size = 2
+			}
+		}
+		title:e_xiongnu.holder = {
+			create_hephthalite_476_army_effect = { LOCATION = 4335 }
+			create_hephthalite_476_army_effect = { LOCATION = 4335 }
+			create_hephthalite_476_army_effect = { LOCATION = 4335 }
+			create_hephthalite_476_army_effect = { LOCATION = 4335 }
+			create_hepthalite_maa_476_effect = yes
 		}
 	}
 }

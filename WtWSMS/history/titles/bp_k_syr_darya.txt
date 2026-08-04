@@ -11,72 +11,31 @@
 }
 
 d_syr_darya = {
-	463.1.1 = {
-		holder = SakanSyrDarya000
+	475.1.1 = {
+		holder = chioniteDSyrDaya000
 		government = nomad_government
 	}
-	490.1.1 = { holder = SakanSyrDarya001 }
-	525.1.1 = { holder = SakanSyrDarya002 }
-	556.1.1 = { holder = SakanSyrDarya003 }
-	569.1.1 = { holder = SakanSyrDarya004 }
-	612.1.1 = { holder = SakanSyrDarya005 }
-	655.1.1 = { holder = SakanSyrDarya006 }
-	678.1.1 = { holder = SakanSyrDarya007 }
-	720.1.1 = { holder = SakanSyrDarya008 }
-	715.1.1 = { holder = SakanSyrDarya009 }
 }
 c_jend = {
-	463.1.1 = { holder = SakanSyrDarya000 }
-	490.1.1 = { holder = SakanSyrDarya001 }
-	525.1.1 = { holder = SakanSyrDarya002 }
-	556.1.1 = { holder = SakanSyrDarya003 }
-	569.1.1 = { holder = SakanSyrDarya004 }
-	612.1.1 = { holder = SakanSyrDarya005 }
-	655.1.1 = { holder = SakanSyrDarya006 }
-	678.1.1 = { holder = SakanSyrDarya007 }
-	720.1.1 = { holder = SakanSyrDarya008 }
-	715.1.1 = { holder = SakanSyrDarya009 }
+	475.1.1 = { holder = chioniteDSyrDaya000 }
 }
 c_sighnaq = {
-	463.1.1 = { holder = SakanSyrDarya000 }
-	490.1.1 = { holder = SakanSyrDarya001 }
-	525.1.1 = { holder = SakanSyrDarya002 }
-	556.1.1 = { holder = SakanSyrDarya003 }
-	569.1.1 = { holder = SakanSyrDarya004 }
-	612.1.1 = { holder = SakanSyrDarya005 }
-	655.1.1 = { holder = SakanSyrDarya006 }
-	678.1.1 = { holder = SakanSyrDarya007 }
-	720.1.1 = { holder = SakanSyrDarya008 }
-	715.1.1 = { holder = SakanSyrDarya009 }
+	475.1.1 = { holder = chioniteDSyrDaya000 }
 }
 c_uzgend_KARA = {
-	463.1.1 = { holder = SakanSyrDarya000 }
-	490.1.1 = { holder = SakanSyrDarya001 }
-	525.1.1 = { holder = SakanSyrDarya002 }
-	556.1.1 = { holder = SakanSyrDarya003 }
-	569.1.1 = { holder = SakanSyrDarya004 }
-	612.1.1 = { holder = SakanSyrDarya005 }
-	655.1.1 = { holder = SakanSyrDarya006 }
-	678.1.1 = { holder = SakanSyrDarya007 }
-	720.1.1 = { holder = SakanSyrDarya008 }
-	715.1.1 = { holder = SakanSyrDarya009 }
+	475.1.1 = { holder = chioniteDSyrDaya000 }
 }
 
 #c_chach history
 d_chah = {
-	#Development
-	#Rulers
-	
 	#edited by Numahr
 	100.1.1={
 		government = prefeudal_government
 	}
 	438.1.1={
-		##set_tribute_suzerain = { who = e_xiongnu percentage = 0.50 }
-	}
-	438.1.1={
 		holder=166722
 	}
+	475.1.1 = { liege = e_xiongnu }
 	476.1.1={
 		holder=166723
 	}
@@ -145,37 +104,12 @@ c_sutkend = {
 }
 
 d_muyunkum = {
-	435.1.1 = {
-		holder = SakanMuyunkum000
+	475.1.1 = {
+		holder = chioniteDMuyunkum000
 		government = nomad_government
 	}
-	472.1.1 = { holder = SakanMuyunkum001 }
-	504.1.1 = { holder = SakanMuyunkum002 }
-	516.1.1 = { holder = SakanMuyunkum003 }
-	580.1.1 = { holder = SakanMuyunkum004 }
-	605.1.1 = { holder = SakanMuyunkum005 }
-	626.1.1 = { holder = SakanMuyunkum006 }
-	664.1.1 = { holder = SakanMuyunkum007 }
-	694.1.1 = { holder = SakanMuyunkum008 }
-	728.1.1 = { holder = SakanMuyunkum009 }
-}
-c_balashagun = {
-	#Development
-	#Rulers
-	435.1.1 = { holder = SakanMuyunkum000 }
-	472.1.1 = { holder = SakanMuyunkum001 }
-	504.1.1 = { holder = SakanMuyunkum002 }
-	516.1.1 = { holder = SakanMuyunkum003 }
-	580.1.1 = { holder = SakanMuyunkum004 }
-	605.1.1 = { holder = SakanMuyunkum005 }
-	626.1.1 = { holder = SakanMuyunkum006 }
-	664.1.1 = { holder = SakanMuyunkum007 }
-	694.1.1 = { holder = SakanMuyunkum008 }
-	728.1.1 = { holder = SakanMuyunkum009 }
 }
 c_suyab = { #Vth century Silk Road City
-	#Development
-	#Rulers
 	430.1.1 = { holder = SogdianSuyab000 }
 	450.1.1 = { holder = SogdianSuyab001 }
 	501.1.1 = { holder = SogdianSuyab002 }
@@ -187,55 +121,25 @@ c_suyab = { #Vth century Silk Road City
 	684.1.1 = { holder = SogdianSuyab008 }
 	710.1.1 = { holder = SogdianSuyab009 }
 }
-c_taraz = {
-#Rulers
-	435.1.1 = { holder = SakanMuyunkum000 }
-	472.1.1 = { holder = SakanMuyunkum001 }
-	504.1.1 = { holder = SakanMuyunkum002 }
-	516.1.1 = { holder = SakanMuyunkum003 }
-	580.1.1 = { holder = SakanMuyunkum004 }
-	605.1.1 = { holder = SakanMuyunkum005 }
-	626.1.1 = { holder = SakanMuyunkum006 }
-	664.1.1 = { holder = SakanMuyunkum007 }
-	694.1.1 = { holder = SakanMuyunkum008 }
-	728.1.1 = { holder = SakanMuyunkum009 }
-}
 c_shelji = {
-	#Development
-	#Rulers
-	435.1.1 = { holder = SakanMuyunkum000 }
-	472.1.1 = { holder = SakanMuyunkum001 }
-	504.1.1 = { holder = SakanMuyunkum002 }
-	516.1.1 = { holder = SakanMuyunkum003 }
-	580.1.1 = { holder = SakanMuyunkum004 }
-	605.1.1 = { holder = SakanMuyunkum005 }
-	626.1.1 = { holder = SakanMuyunkum006 }
-	664.1.1 = { holder = SakanMuyunkum007 }
-	694.1.1 = { holder = SakanMuyunkum008 }
-	728.1.1 = { holder = SakanMuyunkum009 }
+	475.1.1 = { holder = chioniteDMuyunkum000 }
 }
 c_quriltay = {
-	435.1.1 = { holder = SakanMuyunkum000 }
-	472.1.1 = { holder = SakanMuyunkum001 }
-	504.1.1 = { holder = SakanMuyunkum002 }
-	516.1.1 = { holder = SakanMuyunkum003 }
-	580.1.1 = { holder = SakanMuyunkum004 }
-	605.1.1 = { holder = SakanMuyunkum005 }
-	626.1.1 = { holder = SakanMuyunkum006 }
-	664.1.1 = { holder = SakanMuyunkum007 }
-	694.1.1 = { holder = SakanMuyunkum008 }
-	728.1.1 = { holder = SakanMuyunkum009 }
+	475.1.1 = { holder = chioniteDMuyunkum000 }
+}
+
+d_balashagun = {
+	475.1.1 = {
+		holder = chioniteDBalashagun000
+		government = nomad_government
+	}
+}
+c_balashagun = {
+	475.1.1 = { holder = chioniteDBalashagun000 }
+}
+c_taraz = {
+	475.1.1 = { holder = chioniteDBalashagun000 }
 }
 c_cherik = {
-#Rulers
-	435.1.1 = { holder = SakanMuyunkum000 }
-	472.1.1 = { holder = SakanMuyunkum001 }
-	504.1.1 = { holder = SakanMuyunkum002 }
-	516.1.1 = { holder = SakanMuyunkum003 }
-	580.1.1 = { holder = SakanMuyunkum004 }
-	605.1.1 = { holder = SakanMuyunkum005 }
-	626.1.1 = { holder = SakanMuyunkum006 }
-	664.1.1 = { holder = SakanMuyunkum007 }
-	694.1.1 = { holder = SakanMuyunkum008 }
-	728.1.1 = { holder = SakanMuyunkum009 }
+	475.1.1 = { holder = chioniteDBalashagun000 }
 }

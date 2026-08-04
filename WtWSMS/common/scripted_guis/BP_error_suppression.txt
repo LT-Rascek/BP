@@ -97,6 +97,7 @@ bp_dummy = {
 		if = { limit = { exists = var:dante_alighieri var:dante_alighieri = flag:dante_alighieri } set_variable = { name = dante_alighieri value = flag:dante_alighieri } }
 		if = { limit = { exists = var:daun_penh var:daun_penh = flag:daun_penh } set_variable = { name = daun_penh value = flag:daun_penh } }
 		if = { limit = { exists = var:default_settled_tributary var:default_settled_tributary = flag:default_settled_tributary } set_variable = { name = default_settled_tributary value = flag:default_settled_tributary } }
+		if = { limit = { exists = var:default_tributary_nomadic var:default_tributary_nomadic = flag:default_tributary_nomadic } set_variable = { name = default_tributary_nomadic value = flag:default_tributary_nomadic } }
 		if = { limit = { exists = var:demetrios_kydones var:demetrios_kydones = flag:demetrios_kydones } set_variable = { name = demetrios_kydones value = flag:demetrios_kydones } }
 		if = { limit = { exists = var:descendants_of_brahman_legend var:descendants_of_brahman_legend = flag:descendants_of_brahman_legend } set_variable = { name = descendants_of_brahman_legend value = flag:descendants_of_brahman_legend } }
 		if = { limit = { exists = var:deterministic_conquest_of_england_1066 var:deterministic_conquest_of_england_1066 = flag:deterministic_conquest_of_england_1066 } set_variable = { name = deterministic_conquest_of_england_1066 value = flag:deterministic_conquest_of_england_1066 } }

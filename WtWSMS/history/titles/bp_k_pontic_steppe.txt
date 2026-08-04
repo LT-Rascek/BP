@@ -206,8 +206,11 @@ c_dnipro = { #c_oleshye history (elimination)
 	}
 }
 
-d_levedia = { #Empty History
-	1.1.1={}
+d_levedia = {
+	466.1.1={
+		holder = 114
+		government = nomad_government
+	}
 }
 c_khortytsia = { #c_lower_dnieper history (elimination)
 	470.1.1={
@@ -265,8 +268,20 @@ c_samar = {
 	466.1.1 = { holder=114 } #Saragurs
 }
 
-d_don_valley = { #Empty History
-	1.1.1={}
+d_don_valley = {
+	470.1.1={
+		holder = 108 # Batir 
+		government = nomad_government
+	}
+	500.1.1={
+		holder = 33082 # Apskhih Batirid
+	}
+	550.1.1={
+		holder = 33083 # Khudbard Batirid
+	}
+	565.1.1={
+		liege="e_avar"
+	}
 }
 c_tana = {
 	#Kutrigurs

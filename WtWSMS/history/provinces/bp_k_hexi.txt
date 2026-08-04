@@ -1,0 +1,249 @@
+##d_hexi ###################################
+
+###c_baishan # BAISHAN
+9525 = {	# Dajing
+	culture = han
+	religion = dharmaguptaka
+	holding = castle_holding
+}
+9529 = {	# XIANQUAN
+	holding = city_holding
+}
+###c_fanhe # FANHE
+9516 = {
+	culture = han
+	religion = dharmaguptaka
+	holding = castle_holding
+}
+9517 = {	# XIUTU
+	holding = city_holding
+}
+###c_guangwu # GUANGWU
+9528 = {	# Yongdeng
+	culture = han
+	religion = dharmaguptaka
+	holding = castle_holding
+}
+9526 = {	# WUCHENG 1
+	holding = city_holding
+}
+9524 = {	# HERONG
+	holding = church_holding
+}
+###c_liangzhou # LIANGZHOU
+9521 = {
+	culture = han
+	religion = dharmaguptaka
+	holding = castle_holding
+}
+9523 = {	# CHANGSONG
+	holding = city_holding
+}
+9522 = {	# JIALIN
+	holding = church_holding
+}
+###c_zhanyin # ZHANYIN
+9531 = {	# Baiyin
+	culture = han
+	religion = dharmaguptaka
+	holding = castle_holding
+}
+9530 = {	# AOWEI
+	holding = city_holding
+}
+9527 = {	# ZHIYANG
+	holding = church_holding
+}
+
+##d_longyou ###################################
+
+###c_kuozhou # KUOZHOU
+9419 = {	# Kuozhou
+	culture = tangut #TODO (Beta): Might be Han actually
+	religion = melieism
+	holding = tribal_holding
+}
+9420 = {	# MICHUAN
+	holding = none
+}
+###c_xiningzhou # SHANZHOU 1
+9418 = {	# Shanzhou/Zongge (Ping'an)
+	culture = tangut #TODO (Beta): Might be Han actually
+	religion = melieism
+	holding = tribal_holding
+}
+9417 = {	# LONGZHI
+	holding = none
+}
+9416 = {	# MIAOCHUAN
+	holding = none
+}
+9415 = {	# GEMEN
+	holding = none
+}
+
+##d_qilian ###################################
+###c_qilin # QILIN
+9511 = {	# Babao (Qilin)
+	culture = lushuihu
+	religion = melieism
+	holding = tribal_holding
+}
+9512 = {	# SEMNYI
+	holding = none
+}
+###c_yalong # YALONG
+9490 = {	# Yalong
+	culture = lushuihu
+	religion = melieism
+	holding = tribal_holding
+}
+9497 = {	# YENIUGOU
+	holding = none
+}
+
+##d_gansu ###################################
+
+###c_ganzhou # GANZHOU
+9513 = {	# Ganzhou (Zhangye)
+	culture = han
+	religion = dharmaguptaka
+	holding = castle_holding
+}
+9514 = {	# SHANDAN
+	holding = city_holding
+}
+9515 = {	# YANZHI
+	holding = church_holding
+}
+###c_jiankang # JIANKANG
+9502 = {	# Gaotai
+	culture = han
+	religion = dharmaguptaka
+	holding = castle_holding
+}
+9499 = {	# QILIAN
+	holding = city_holding
+}
+###c_liaoquan # LIAOQUAN
+9500 = {	# Linze
+	culture = han
+	religion = dharmaguptaka
+	holding = castle_holding
+}
+9501 = {	# GANJUN
+	holding = city_holding
+}
+9503 = {	# HELI
+	holding = church_holding
+}
+###c_jiuquan # SUZHOU 1
+9494 = {	# Jiayuguan
+	culture = han
+	religion = dharmaguptaka
+	holding = castle_holding
+}
+9493 = {	# TONGTING
+	holding = city_holding
+}
+9498 = {	# FULU
+	holding = church_holding
+}
+###c_yumen # YUMEN
+9487 = {	# YUMEN
+	culture = han
+	religion = dharmaguptaka
+	holding = castle_holding
+}
+9491 = {	# Chijin
+	# Misc
+	# religion = avatamsaka
+	holding = city_holding
+}
+9492 = {	# DUDENG
+	holding = church_holding
+}
+###c_zhenwu_1 # ZHENWU 1
+9496 = {	# Jinta
+	culture = han
+	religion = dharmaguptaka
+	holding = castle_holding
+}
+9495 = {	# BAITING
+	holding = city_holding
+}
+
+##d_guasha ###################################
+
+###c_guazhou # GUAZHOU
+9481 = {	# Guazhou
+	culture = han
+	religion = dharmaguptaka
+	holding = castle_holding
+}
+9482 = {	# CHANGLE
+	holding = city_holding
+}
+9478 = {	# YONGGUI
+	holding = church_holding
+}
+###c_hehe # HEHE
+9483 = {	# Hongliuyuan
+	culture = han
+	religion = dharmaguptaka
+	holding = castle_holding
+}
+9488 = {	# BAIZHANG
+	holding = city_holding
+}
+9484 = {	# XINGHU
+	holding = church_holding
+}
+###c_shazhou # SHAZHOU
+9476 = {	# Shazhou (Dunhuang/Dukhan)
+	culture = han
+	religion = dharmaguptaka
+	holding = castle_holding
+	effect = {
+		if = {
+			limit = {
+				has_tgp_dlc_trigger = yes
+			}
+			add_special_building_slot = dunhuang_market_01
+			add_special_building = dunhuang_market_01
+		}
+	}
+}
+9477 = {	# MOGAO
+	holding = city_holding
+}
+###c_shouchang # SHOUCHANG
+9474 = {	# Yumenguan
+	culture = han
+	religion = dharmaguptaka
+	holding = castle_holding
+}
+9473 = {	# YANGGUAN
+	holding = city_holding
+}
+9475 = {	# LONGLE
+	holding = church_holding
+}
+###c_xincheng # XINCHENG
+9486 = {	# Changma
+	culture = han
+	religion = dharmaguptaka
+	holding = castle_holding
+}
+9485 = {	# MINGSHUI
+	holding = city_holding
+}
+###c_ziting # ZITING
+9479 = {	# Subei
+	culture = tuyuhun
+	religion = tengri_pagan
+	holding = nomad_holding
+}
+9480 = {	# GANQUAN
+	holding = none
+}

@@ -1,0 +1,84 @@
+﻿k_kabulistan = {
+	440.1.1 = {
+		holder = nezak_hun_rulers_1
+		government = prefeudal_government
+	}
+	484.1.1 = { holder = nezak_hun_rulers_2 }
+	493.1.1 = { holder = 0 }
+}
+
+d_kabul = {
+	1.1.1 = {}
+}
+c_kabul = {
+	430.1.1 = { holder = 178000 }
+	460.1.1 = { holder = alchon_hun_rulers_2 }
+}
+c_nuristan = { #Ruled by their own on account of long-term independence
+	432.1.1 = {
+		holder = NuristaniNuristani000
+		government = tribal_government
+	}
+	450.1.1 = { liege = k_alchon }
+	464.1.1 = { holder = NuristaniNuristani001 }
+	512.1.1 = { holder = NuristaniNuristani002 }
+	529.1.1 = { holder = NuristaniNuristani003 }
+	552.1.1 = { holder = NuristaniNuristani004 }
+	603.1.1 = { holder = NuristaniNuristani005 }
+}
+c_bamian = {
+	430.1.1 = { holder = 178000 }
+	460.1.1 = { holder = alchon_hun_rulers_2 }
+}
+c_chitral = { #Ruled by their own on account of long-term independence
+	423.1.1 = { holder = KalashChitral000 }
+	465.1.1 = { holder = KalashChitral001 }
+	467.1.1 = { holder = KalashChitral002 }
+	479.1.1 = { holder = KalashChitral003 }
+	525.1.1 = { holder = KalashChitral004 }
+	575.1.1 = { holder = KalashChitral005 }
+	590.1.1 = { holder = KalashChitral006 }
+}
+
+d_zabulistan = {
+	1.1.1={}
+}
+c_ghazna = {
+	440.1.1 = { holder = nezak_hun_rulers_1 }
+	484.1.1 = { holder = nezak_hun_rulers_2 }
+}
+c_zamindawar = {
+	440.1.1 = { holder = nezak_hun_rulers_1 }
+	484.1.1 = { holder = nezak_hun_rulers_2 }
+}
+c_rukhaj = {
+	440.1.1 = { holder = nezak_hun_rulers_1 }
+	484.1.1 = { holder = nezak_hun_rulers_2 }
+}
+c_zabulistan = {
+	475.1.1 = {
+		holder = pakthun_zabulistan_000
+		government = tribal_government
+		liege = k_kabulistan
+	}
+}
+
+d_ghur = {
+	475.1.1 = {
+		holder = pakthun_upperGhur_000
+		government = tribal_government
+		liege = e_xiongnu
+	}
+}
+c_ghur = {
+	475.1.1 = { holder = pakthun_upperGhur_000 }
+}
+c_darmashan = {
+	475.1.1 = { holder = pakthun_upperGhur_000 }
+}
+c_upper_ghur = {
+	475.1.1 = { holder = pakthun_upperGhur_000 }
+}
+c_rivsharan = {
+	475.1.1 = { holder = pakthun_upperGhur_000 }
+}

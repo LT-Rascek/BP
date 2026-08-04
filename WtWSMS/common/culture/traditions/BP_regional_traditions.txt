@@ -236,7 +236,6 @@ tradition_xenophobic = {
 		courtiers_less_likely_to_leave_same_culture_court = yes
 		dislikes_marrying_outside_of_culture = yes
 		ai_doesnt_marry_outside_culture = yes
-		zealous_trait_more_common = yes
 		harder_to_hybridize = yes
 		very_difficult_to_convert_or_promote = yes
 		very_expensive_convert_to_local_culture = yes
@@ -2506,7 +2505,7 @@ tradition_migratory_culture = {
 		peasant_and_populist_factions_less_common = yes
 		less_likely_to_promote_culture = yes
 		becomes_roman_federates_in_most_cases = yes
-		is_changed_if_enough_counties = yes #Just for flavor
+		is_changed_if_enough_counties = yes #Just for flavor; has to be a per-tradition check
 	}
 	culture_modifier = {
 		cultural_acceptance_gain_mult = -0.50

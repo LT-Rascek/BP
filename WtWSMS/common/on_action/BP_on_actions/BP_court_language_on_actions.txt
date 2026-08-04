@@ -133,6 +133,22 @@ setup_administrative_languages = {
 					LANGUAGE = language_sanskrit
 				}
 			}
+			if = { #Iranian Huns use Bactrian
+				limit = {
+					OR = {
+						this.culture = culture:hepthalite
+						this.culture = culture:chionite
+					}
+				}
+				setup_the_court_language_effect = {
+					CHAR = this
+					LANGUAGE = language_bactrian
+				}
+				setup_learnt_language_effect = {
+					CHAR = this
+					LANGUAGE = language_bactrian
+				}
+			}
 		}
 		#All learned Jewish rulers should know Hebrew
 		every_ruler = {

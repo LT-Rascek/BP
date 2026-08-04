@@ -49,34 +49,6 @@ e_turkestan = {
 	
 	can_create = { general_empire_title_creation_trigger = yes }
 }
-k_chuban = {
-	color = { 120 120 25 }
-	capital = c_qayaliq
-	ignore_titularity_for_title_weighting = yes
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:xiongnu }
-			add = @cultural_title_score
-		}
-	}
-	
-	can_create = { general_kingdom_title_creation_trigger = yes }
-}
-k_magyar = {
-	color = { 187 70 70 }
-	capital = c_pest # Pest
-	ignore_titularity_for_title_weighting = yes
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:mogyer }
-			add = @always_primary_score
-		}
-	}
-	
-	definite_form = yes
-	de_jure_drift_disabled = yes
-	can_create = { general_kingdom_title_creation_trigger = yes }
-}
 k_tuyuhun = {
 	color={ 100 230 255 } # Same as c_dunhuang
 	capital = c_fuqi
@@ -97,16 +69,6 @@ d_avars = {
 	ai_primary_priority = {
 		if = {
 			limit = { culture = culture:avar }
-			add = @always_primary_score
-		}
-	}
-}
-d_tiele = {
-	color={ 110 150 220 } # Same as d_otuken
-	ignore_titularity_for_title_weighting = yes
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:tiele }
 			add = @always_primary_score
 		}
 	}
@@ -136,94 +98,4 @@ k_khazaria = {
 		general_kingdom_title_creation_trigger = yes
 	}
 	can_create_on_partition = { creation_trigger_k_khazaria_trigger = yes }
-}
-
-d_barsils = {
-	color={ 225 165 4 }
-	ignore_titularity_for_title_weighting = yes
-	cultural_names = { name_list_barsil = cn_barsilia }
-	capital = c_astrakhan
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:barsil }
-			add = @always_primary_score
-		}
-	}
-}
-#Others
-k_ashina = {
-	color={ 0.55 0.85 0.15 }
-	ignore_titularity_for_title_weighting = yes
-	definite_form = yes
-	can_create = { general_kingdom_title_creation_trigger = yes }
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:gokturkish }
-			add = @always_primary_score
-		}
-	}
-}
-k_gaoche = {
-	color={ 0.50 0.25 0.25 }
-	ignore_titularity_for_title_weighting = yes
-	can_create = { general_kingdom_title_creation_trigger = yes }
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:tiele }
-			add = @cultural_title_score
-		}
-	}
-}
-k_uighur = { #Proto-Uyghurs, Kirghiz under Ninrun domination
-	color={ 0.50 0.50 0.25 }
-	ignore_titularity_for_title_weighting = yes
-	can_create = { general_kingdom_title_creation_trigger = yes }
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:uyghur }
-			add = @cultural_title_score
-		}
-	}
-}
-k_dubuo = { #Proto-Tuvans, Eastern Sayan to Tannu-Ola region
-	color={ 0.25 0.50 0.75 }
-	ignore_titularity_for_title_weighting = yes
-	can_create = { general_kingdom_title_creation_trigger = yes }
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:uriankhai }
-			add = @cultural_title_score
-		}
-	}
-}
-#### Yueban Tribes ####
-d_chuyue = { #proto Shatuos in Duzngaria/Barkol
-	color={ 0.69 0.42 0.42 }
-	ignore_titularity_for_title_weighting = yes
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:xiongnu }
-			add = @cultural_title_score
-		}
-	}
-}
-d_chumukun = {
-	color={ 0.75 0.40 0.50 }
-	ignore_titularity_for_title_weighting = yes
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:xiongnu }
-			add = @cultural_title_score
-		}
-	}
-}
-d_chumi = {
-	color={ 0.80 0.30 0.40 }
-	ignore_titularity_for_title_weighting = yes
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:xiongnu }
-			add = @cultural_title_score
-		}
-	}
 }

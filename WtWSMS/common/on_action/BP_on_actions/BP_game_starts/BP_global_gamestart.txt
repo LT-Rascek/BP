@@ -19,6 +19,7 @@ bp_global_setup = {
 		BP_set_religion_effects_by_date
 		BP_realm_capitals_by_date
 		BP_land_titles_by_date
+		BP_set_dynasty_names_by_date
 		BP_learn_capital_languages
 	}
 }
@@ -49,6 +50,10 @@ BP_set_global_variables_by_date = {
 		if = { #Justinian Ascends the Throne (enabling reconquests)
 			limit = { current_date >= 527.4.1 }
 			set_global_variable = sole_roman_empire
+		}
+		if = { #Bolghar Culture forms
+			limit = { current_date >= 632.1.1 }
+			set_global_variable = bolghar_idenity_formed
 		}
 	}
 }
@@ -81,12 +86,12 @@ BP_update_culture_traditions_by_date = {
 				limit = { has_dlc_feature = hybridize_culture }
 				culture:marcomanni = { add_culture_tradition = tradition_migratory_culture }
 				culture:buri = { add_culture_tradition = tradition_migratory_culture }
-				culture:western_alan  = { add_culture_tradition = tradition_migratory_culture }
+				culture:western_alan  = { remove_culture_tradition = tradition_cranial_deformation }
+				culture:western_alan  = { add_culture_tradition = tradition_nomadic_rulership_cranial_deformation }
 			}
 			else = {
 				culture:marcomanni = { add_culture_tradition = tradition_ruling_caste }
 				culture:buri = { add_culture_tradition = tradition_ruling_caste }
-				culture:western_alan  = { add_culture_tradition = tradition_ruling_caste }
 			}
 		}
 		if = { #Attaces killed and the largest Western Alans become Arian
@@ -115,6 +120,17 @@ BP_update_culture_traditions_by_date = {
 				culture:skirian = { add_culture_tradition = tradition_migratory_culture }
 			}
 			else = { culture:skirian = { add_culture_tradition = tradition_ruling_caste } }
+		}
+		if = { #Bolghar Culture forms
+			limit = { current_date >= 632.1.1 }
+			culture:bolghar = {
+				set_culture_name = {
+					noun = true_bolghar
+					collective_noun = true_bolghar_collective_noun
+					prefix = true_bolghar_prefix
+				}
+				set_name_list = name_list_bolghar
+			}
 		}
 	}
 }
@@ -190,8 +206,8 @@ BP_realm_capitals_by_date = {
 		}
 		title:k_kidarite.holder = {
 			if = { #Kidarite Rump Kingdom in Gandhara
-				limit = { current_date >= 467.1.1 }
-				set_realm_capital = title:c_udabhanda
+				limit = { current_date >= 465.1.1 }
+				set_realm_capital = title:c_lahur
 			}
 		}
 		title:e_hunnic_empire.holder = {
@@ -212,6 +228,15 @@ BP_land_titles_by_date = {
 			title:c_vendome = { set_de_jure_liege_title = title:d_orleans }
 			title:c_blois = { set_de_jure_liege_title = title:d_orleans }
 			title:c_orleans = { set_de_jure_liege_title = title:d_orleans }
+		}
+	}
+}
+
+BP_set_dynasty_names_by_date = {
+	effect = {
+		if = {
+			limit = { current_date >= 493.1.1 }
+			dynasty:1029300 = { set_dynasty_name = "dynn_Yuan" }
 		}
 	}
 }

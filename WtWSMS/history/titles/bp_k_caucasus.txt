@@ -3,7 +3,10 @@
 }
 
 d_khazaria = { #Empty History
-	1.1.1={}
+	468.1.1 = {
+		holder = 119
+		government = nomad_government
+	}
 }
 c_sarkel = { #Utigurs
 	466.1.1={
@@ -23,39 +26,21 @@ c_sarkel = { #Utigurs
 		liege=0
 	}
 }
-c_astrakhan = {
-	446.1.1 = { holder = holder_k_north_caucasian_huns000 }
-	455.1.1 = { holder = holder_k_north_caucasian_huns001 }
-	486.1.1 = { holder = holder_k_north_caucasian_huns002 }
-	514.1.1 = { holder = holder_k_north_caucasian_huns003 } #PLRE Vol 2 Zilgibis
-	522.1.1 = { holder = holder_k_north_caucasian_huns004 }
-	548.1.1 = { holder = holder_k_north_caucasian_huns005 }
-	587.1.1 = { holder = holder_k_north_caucasian_huns006 }
-	601.1.1 = { holder = holder_k_north_caucasian_huns007 }
-	615.1.1 = { holder = holder_k_north_caucasian_huns008 }
-	623.1.1 = { holder = holder_k_north_caucasian_huns009 }
-}
 c_beksima = {
-	466.1.1={
-		holder = 112 # Isperikh
-	} 
-	500.1.1={
-		holder = 33084 # Dristar Isperikhid
-	} 
-	550.1.1={
-		holder = 33085 # Böri Isperikhid
-	} 
-	565.1.1={
-		holder=155185 # Avars
-	}
-	577.1.1={
-		holder=330931 # Kharaton Yeçtirekid
-		liege=0
-	}
+	468.1.1 = { holder = 119 } #Barsils
 }
 
-d_alania = { #Empty History
-	1.1.1={}
+d_alania = {
+	466.1.1={
+		holder=118 # Durgulel Halani
+		government = nomad_government
+	}
+	510.1.1={
+		holder=33088 # Akhsar Halani
+	}
+	550.1.1={
+		holder=33089 # Khætag Halani
+	}
 }
 c_majar = { #d_alans history
 	466.1.1={
@@ -68,22 +53,6 @@ c_majar = { #d_alans history
 		holder=33089 # Khætag Halani
 	}
 }
-c_samander = { #North Caucasian Huns
-	446.1.1 = { holder = holder_k_north_caucasian_huns000 }
-	455.1.1 = { holder = holder_k_north_caucasian_huns001 }
-	486.1.1 = { holder = holder_k_north_caucasian_huns002 }
-	514.1.1 = { holder = holder_k_north_caucasian_huns003 } #PLRE Vol 2 Zilgibis
-	522.1.1 = { holder = holder_k_north_caucasian_huns004 }
-	548.1.1 = { holder = holder_k_north_caucasian_huns005 }
-	587.1.1 = { holder = holder_k_north_caucasian_huns006 }
-	601.1.1 = { holder = holder_k_north_caucasian_huns007 }
-	615.1.1 = { holder = holder_k_north_caucasian_huns008 }
-	623.1.1 = { holder = holder_k_north_caucasian_huns009 }
-}
-
-d_ciscaucasia = { #Empty History
-	1.1.1={}
-}
 c_samiran = { #d_alans history (substitution)
 	466.1.1={
 		holder=118 # Durgulel Halani
@@ -94,6 +63,10 @@ c_samiran = { #d_alans history (substitution)
 	550.1.1={
 		holder=33089 # Khætag Halani
 	}
+}
+
+d_ciscaucasia = { #Empty History
+	1.1.1={}
 }
 c_derbent = { #Part of Balasagan, so ruled by same ruler
 	#Development
@@ -129,7 +102,6 @@ c_sarir = { #Capital of Sarir Kingdom
 	510.1.1={ holder = 131727 }
 	560.1.1={ holder = 131728 } # Dies 620
 }
-
 c_durdzukia = {
 	425.1.1 = {
 		holder = NakhDurdzukia000
@@ -172,17 +144,39 @@ c_cabardinia = {
 	573.1.1 = { holder = AdyghesCabardinia005 }
 	608.1.1 = { holder = AdyghesCabardinia006 }
 }
-c_maghas = { #c_semender history (substitution)
-	466.1.1={
-		holder=118 # Durgulel Halani
-	}
-	500.1.1={
-		holder=118 # Durgulel Halani
-	}
-	510.1.1={
-		holder=33088 # Akhsar Halani
-	}
-	550.1.1={
-		holder=33089 # Khætag Halani
+c_maghas = {
+	475.1.1 = {
+		holder = adyghes_CMaghas_000
+		government = tribal_government
 	}
 }
+
+d_astrakhan = {
+	454.1.1 = { government = nomad_government }
+	454.1.1 = { holder = holder_k_north_caucasian_huns000 }
+	455.1.1 = { holder = holder_k_north_caucasian_huns001 }
+	486.1.1 = { holder = holder_k_north_caucasian_huns002 }
+	514.1.1 = { holder = holder_k_north_caucasian_huns003 }
+	523.1.1 = { holder = holder_k_north_caucasian_huns004 }
+	548.1.1 = { holder = holder_k_north_caucasian_huns005 }
+	587.1.1 = { holder = holder_k_north_caucasian_huns006 }
+	601.1.1 = { holder = holder_k_north_caucasian_huns007 }
+	615.1.1 = { holder = holder_k_north_caucasian_huns008 }
+	623.1.1 = { holder = holder_k_north_caucasian_huns009 }
+}
+c_astrakhan = {
+	468.1.1 = { holder = 119 } #Barsils
+}
+c_samander = { #North Caucasian Huns
+	446.1.1 = { holder = holder_k_north_caucasian_huns000 }
+	455.1.1 = { holder = holder_k_north_caucasian_huns001 }
+	486.1.1 = { holder = holder_k_north_caucasian_huns002 }
+	514.1.1 = { holder = holder_k_north_caucasian_huns003 } #PLRE Vol 2 Zilgibis
+	522.1.1 = { holder = holder_k_north_caucasian_huns004 }
+	548.1.1 = { holder = holder_k_north_caucasian_huns005 }
+	587.1.1 = { holder = holder_k_north_caucasian_huns006 }
+	601.1.1 = { holder = holder_k_north_caucasian_huns007 }
+	615.1.1 = { holder = holder_k_north_caucasian_huns008 }
+	623.1.1 = { holder = holder_k_north_caucasian_huns009 }
+}
+

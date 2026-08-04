@@ -361,41 +361,63 @@ BP_476_tributary_setup_effect = {
 	#Rouran
 	title:e_rouran.holder = {
 		save_scope_as = suzerain
-		title:k_gaochang.holder = {
-			add_character_flag = default_settled_tributary 
+		title:d_kara_khoja.holder = {
+			add_character_flag = default_settled_tributary
 			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
-		#Should be independent with Khans of the Steppe
-		title:k_gaoche.holder = {
-			add_character_flag = default_settled_tributary 
+		#Tributized tribals
+		
+		#Kirghiz
+		title:d_eastern_sayan.holder = {
+			add_character_flag = default_settled_tributary
 			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
-		title:k_ashina.holder = {
-			add_character_flag = default_tributary_nomadic
+		title:d_togina.holder = {
+			add_character_flag = default_settled_tributary
 			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
-		title:d_tiele.holder = {
-			add_character_flag = default_tributary_nomadic
+		title:d_kargassia.holder = {
+			add_character_flag = default_settled_tributary
+			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+		}
+		title:d_khakass_hollow.holder = {
+			add_character_flag = default_settled_tributary
+			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+		}
+		title:d_shoria.holder = {
+			add_character_flag = default_settled_tributary
+			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+		}
+		title:d_western_sayan.holder = {
+			add_character_flag = default_settled_tributary
+			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+		}
+		title:d_tannu_ola.holder = {
+			add_character_flag = default_settled_tributary
+			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+		}
+		#Evenks
+		every_ruler = {
+			limit = { this.culture = culture:evenk }
+			add_character_flag = default_settled_tributary
+			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+		}
+		#Kurykans
+		every_ruler = {
+			limit = { this.culture = culture:kurykan }
+			add_character_flag = default_settled_tributary
 			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
 	}
 	#Hepthalites
 	title:e_xiongnu.holder = {
-		add_realm_law_skip_effects = prefeudal_authority_1
+		add_realm_law_skip_effects = prefeudal_authority_3
 		save_scope_as = suzerain
 		title:k_kabulistan.holder = {
 			add_character_flag = default_subjugated_tributary
 			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
-		title:d_khuttal.holder = {
-			add_character_flag = default_subjugated_tributary
-			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
-		}
-		title:d_samarkand.holder = {
-			add_character_flag = default_subjugated_tributary
-			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
-		}
-		title:d_bukhara.holder = {
+		title:k_alchon.holder = {
 			add_character_flag = default_subjugated_tributary
 			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
@@ -403,19 +425,19 @@ BP_476_tributary_setup_effect = {
 			add_character_flag = default_subjugated_tributary
 			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
-		title:d_osrushana.holder = {
+		title:d_syr_darya.holder = {
 			add_character_flag = default_subjugated_tributary
 			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
-		title:d_chah.holder = {
+		title:d_muyunkum.holder = {
 			add_character_flag = default_subjugated_tributary
 			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
-		title:d_ferghana.holder = {
+		title:d_balashagun.holder = {
 			add_character_flag = default_subjugated_tributary
 			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
-		title:d_kashgar.holder = {
+		title:d_suyab.holder = {
 			add_character_flag = default_subjugated_tributary
 			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
@@ -426,14 +448,6 @@ BP_476_tributary_setup_effect = {
 		save_scope_as = suzerain
 		title:d_suavi.holder = {
 			add_character_flag = default_subjugated_tributary
-			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
-		}
-	}
-	#Unattributed, but likely
-	title:d_muyunkum.holder = {
-		save_scope_as = suzerain
-		title:d_suyab.holder = {
-			add_character_flag = default_settled_tributary 
 			BP_break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
 	}
@@ -473,6 +487,48 @@ BP_476_tributary_setup_effect = {
 
 #Specific Confederation Effects
 create_starting_confederation_476_effect = {
+	#Nomadic Confederations
+	title:c_emil.holder = {
+		create_confederation = {
+			name = CONFEDERATION_NAME_WUSUN
+		}
+		scope:new_confederation = {
+			add_confederation_member = title:c_lepsink.holder
+			add_confederation_member = title:c_karamay.holder
+		}
+	}
+	title:d_kentarlau.holder= { #Yueban
+		save_temporary_scope_as = confederation_offerer
+		create_confederation = {
+			name = CONFEDERATION_NAME_YUEBAN
+		}
+		scope:new_confederation = {
+			add_confederation_member = title:d_ili-alatau.holder
+			add_confederation_member = title:d_alakol.holder
+			add_confederation_member = title:d_zhetysu.holder
+		}
+	}
+	title:d_uzboy.holder = {
+		create_confederation = {
+			name = CONFEDERATION_NAME_DAHAE
+		}
+		scope:new_confederation = {
+			add_confederation_member = title:c_uzboy.holder
+			add_confederation_member = title:c_mangyshlak.holder
+			add_confederation_member = title:c_qoshagyl.holder
+		}
+	}
+	title:d_volga_bulgaria.holder = {
+		create_confederation = {
+			name = CONFEDERATION_NAME_MOGYAR
+		}
+		scope:new_confederation = {
+			add_confederation_member = title:d_jalmat.holder
+			add_confederation_member = title:d_bugurslan.holder
+			add_confederation_member = title:d_bashkiria.holder
+			add_confederation_member = title:d_sakmara.holder
+		}
+	}
 	#Known confederations
 	title:d_austorani.holder = {
 		create_confederation = {
@@ -521,6 +577,21 @@ create_starting_confederation_476_effect = {
 			add_confederation_member = title:d_ostfalen.holder
 			add_confederation_member = title:d_nordalbingia.holder
 			add_confederation_member = title:d_albis.holder
+		}
+	}
+	title:c_leh.holder = {
+		create_confederation = {
+			name = CONFEDERATION_NAME_BALTI
+		}
+		scope:new_confederation = {
+			add_confederation_member = title:c_demchok.holder
+			add_confederation_member = title:c_diskit.holder
+			add_confederation_member = title:c_padum.holder
+			add_confederation_member = title:c_darcha.holder
+			add_confederation_member = title:c_purig.holder
+			add_confederation_member = title:c_skardu.holder
+			add_confederation_member = title:c_shigar.holder
+			add_confederation_member = title:c_khaplu.holder
 		}
 	}
 }
@@ -577,5 +648,122 @@ create_bagudae_holder_game_start_effect = {
 		create_character = { gender = male employer = $HOLDER$ }
 		create_character = { gender = male employer = $HOLDER$ }
 		create_character = { gender = male employer = $HOLDER$ }
+	}
+}
+
+### Army Spawns
+create_zeno_army_effect = {
+	spawn_army = {
+		name = event_troop_default_name
+		levies = 1500
+		men_at_arms = {
+			type = light_footmen
+			stacks = 4
+		}
+		men_at_arms = {
+			type = bowmen
+			stacks = 3
+		}
+		men_at_arms = {
+			type = pikemen_unit
+			stacks = 2
+		}
+		men_at_arms = {
+			type = cataphract
+			stacks = 1
+		}
+		men_at_arms = {
+			type = onager
+			stacks = 1
+		}
+		location = province:$LOCATION$
+		war = scope:war
+		inheritable = no
+		uses_supply = no
+	}
+}
+create_theodoric_army_effect = {
+	spawn_army = {
+		name = event_troop_default_name
+		levies = 1000
+		men_at_arms = {
+			type = light_footmen
+			stacks = 3
+		}
+		men_at_arms = {
+			type = armored_footmen
+			stacks = 3
+		}
+		men_at_arms = {
+			type = bowmen
+			stacks = 3
+		}
+		men_at_arms = {
+			type = pikemen_unit
+			stacks = 2
+		}
+		men_at_arms = {
+			type = onager
+			stacks = 1
+		}
+		location = province:$LOCATION$
+		inheritable = no
+	}
+}
+create_hepthalite_maa_476_effect = {
+	if = {
+		limit = { has_dlc_feature = khans_of_the_steppe }
+		create_maa_regiment = {
+			type = tarkhan
+			size = 3
+		}
+	}
+	else = {
+		create_maa_regiment = {
+			type = horse_archers
+			size = 3
+		}
+	}
+	create_maa_regiment = {
+		type = horse_archers
+		size = 3
+	}
+}
+create_germanic_476_army_effect = { #In Britain
+	spawn_army = { #unraised inheritable special troops
+		name = event_troop_default_name
+		levies = 500
+		men_at_arms = {
+			type = light_footmen
+			stacks = 2
+		}
+		men_at_arms = {
+			type = bowmen
+			stacks = 2
+		}
+		location = province:$LOCATION$
+	}
+}
+create_hephthalite_476_army_effect = {
+	spawn_army = { #unraised inheritable special troops
+		name = event_troop_default_name
+		levies = 1000
+		men_at_arms = {
+			type = light_footmen
+			stacks = 2
+		}
+		men_at_arms = {
+			type = bowmen
+			stacks = 1
+		}
+		men_at_arms = {
+			type = light_horsemen
+			stacks = 3
+		}
+		men_at_arms = {
+			type = horse_archers
+			stacks = 2
+		}
+		location = province:$LOCATION$
 	}
 }

@@ -292,3 +292,147 @@ establish_warmonger_effect = {
 		}
 	}
 }
+
+### Create Bolghar culture
+create_bolghar_culture_effect = {
+	custom_description = {
+		text = your_culture_adopts_the_bulghar_identity
+		subject = root
+		$THE_CULTURE$ = {
+			set_culture_name = {
+				noun = true_bolghar
+				collective_noun = true_bolghar_collective_noun
+				prefix = true_bolghar_prefix
+			}
+			set_name_list = name_list_bolghar
+		}
+	}
+	
+	#All your Oghuric Vassals adopt your culture, regardless of their own
+	custom_description = {
+		text = all_oghuric_vassals_adopt_your_culture
+		subject = root
+		
+		every_vassal_or_below = {
+			limit = {
+				NOT = { this.culture = $THE_CULTURE$ }
+				culture = { has_cultural_pillar = heritage_oghuric }
+			}
+			set_culture = $THE_CULTURE$
+			every_courtier_or_guest = {
+				limit = {
+					NOT = { this.culture = $THE_CULTURE$ }
+					culture = { has_cultural_pillar = heritage_oghuric }
+				}
+				set_culture = $THE_CULTURE$
+			}
+		}
+		
+		every_tributary = {
+			limit = {
+				NOT = { this.culture = $THE_CULTURE$ }
+				culture = { has_cultural_pillar = heritage_oghuric }
+			}
+			set_culture = $THE_CULTURE$
+			every_courtier_or_guest = {
+				limit = {
+					NOT = { this.culture = $THE_CULTURE$ }
+					culture = { has_cultural_pillar = heritage_oghuric }
+				}
+				set_culture = $THE_CULTURE$
+			}
+			every_vassal_or_below = {
+				limit = {
+					NOT = { this.culture = $THE_CULTURE$ }
+					culture = { has_cultural_pillar = heritage_oghuric }
+				}
+				set_culture = $THE_CULTURE$
+			}
+		}
+	}
+	
+	custom_description = {
+		text = all_oghuric_vassal_counties_adopt_your_culture
+		subject = root
+		
+		every_realm_county = {
+			limit = {
+				NOT = { this.culture = $THE_CULTURE$ }
+				culture = { has_cultural_pillar = heritage_oghuric }
+			}
+			set_county_culture = $THE_CULTURE$
+		}
+		
+		every_tributary = {
+			limit = {
+				NOT = { this.culture = $THE_CULTURE$ }
+				culture = { has_cultural_pillar = heritage_oghuric }
+			}
+			every_realm_county = {
+				limit = {
+					NOT = { this.culture = $THE_CULTURE$ }
+					culture = { has_cultural_pillar = heritage_oghuric }
+				}
+				set_county_culture = $THE_CULTURE$
+			}
+		}
+	}
+	
+	custom_description = {
+		text = nearby_oghur_rulers_adopt_your_culture
+		subject = root
+		
+		every_ruler = {
+			limit = {
+				is_landed = yes
+				NOT = { this.culture = $THE_CULTURE$ }
+				culture = { has_cultural_pillar = heritage_oghuric }
+				NOT = { root = { target_is_vassal_or_below = prev } }
+				NOT = { is_tributary_of = root }
+				culture = { general_culture_will_not_flip_culture_trigger = no }
+				#Distance Calculation; scope issues making script values difficult
+				root = { realm_to_title_distance_squared = { target = prev.primary_title value <= root.prestige_distance_oghuric } }
+			}
+			set_culture = $THE_CULTURE$
+			every_courtier_or_guest = {
+				limit = {
+					NOT = { this.culture = $THE_CULTURE$ }
+					culture = { has_cultural_pillar = heritage_oghuric }
+					culture = { general_culture_will_not_flip_culture_trigger = no }
+				}
+				set_culture = $THE_CULTURE$
+			}
+			every_vassal_or_below = {
+				limit = {
+					NOT = { this.culture = $THE_CULTURE$ }
+					culture = { has_cultural_pillar = heritage_oghuric }
+					culture = { general_culture_will_not_flip_culture_trigger = no }
+				}
+				set_culture = $THE_CULTURE$
+			}
+		}
+	}
+	
+	#Flip Counties
+	custom_description = {
+		text = nearby_oghur_counties_adopt_your_culture
+		subject = root
+		
+		every_county = {
+			limit = {
+				is_landless_type_title = no
+				this.culture = { has_cultural_pillar = heritage_oghuric }
+				NOT = { this.culture = $THE_CULTURE$ }
+				NOT = { root = { target_is_vassal_or_below = prev.holder } }
+				NOT = { this.holder = { is_tributary_of = root } }
+				culture = { general_culture_will_not_flip_culture_trigger = no }
+				#Distance Calculation; scope issues making script values difficult
+				root = { realm_to_title_distance_squared = { target = prev.primary_title value <= root.prestige_distance_oghuric } }
+			}
+			set_county_culture = $THE_CULTURE$
+		}
+	}
+	
+	hidden_effect = { set_global_variable = bolghar_idenity_formed }
+}
+
