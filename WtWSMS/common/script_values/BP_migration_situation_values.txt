@@ -31,3 +31,61 @@ bp_migration_depopulation = {
 	#Give a whole number.
 	floor = yes
 }
+migration_innovation_weight = { #Max value: 10; used for determining if counties flip during migration
+	value = 0
+	if = {
+		limit = { has_innovation = innovation_quilted_armor }
+		add = 0.5
+	}
+	if = {
+		limit = { has_innovation = innovation_primitive_leverage }
+		add = 0.5
+	}
+	if = {
+		limit = { has_innovation = innovation_mustering_grounds }
+		add = 0.5
+	}
+	if = {
+		limit = { has_innovation = innovation_castrae }
+		add = 0.5
+	}
+	if = {
+		limit = { has_innovation = innovation_tribal_warfare }
+		add = 0.5
+	}
+	if = {
+		limit = { has_innovation = innovation_development_bp_00 }
+		add = 1
+	}
+	if = {
+		limit = { has_innovation = innovation_barter }
+		add = 1
+	}
+	if = {
+		limit = { has_innovation = innovation_oppidum }
+		add = 1
+	}
+	if = {
+		limit = { has_innovation = innovation_leges_barbarorum }
+		add = 1.5
+	}
+	if = {
+		limit = { has_innovation = innovation_social_stratification }
+		add = 1.5
+	}
+	if = {
+		limit = { has_innovation = innovation_writing }
+		add = 1.5
+	}
+}
+migration_change_of_flip = {
+	value = 20
+	subtract = {
+		value = scope:the_county_development
+		multiply = 2
+	}
+	subtract = {
+		value = scope:the_attacker_culture_weight
+		multiply = 2
+	}
+}
