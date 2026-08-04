@@ -113,21 +113,28 @@ BP_roman_decisions.0001 = {
 		ai_chance = {
 			base = 10
 			
-			modifier = { #You've got me by the nads...
+			modifier = { #You make a good point...
 				add = 1000
-				scope:empire_petitoner = { has_strong_hook = root }
+				root = { has_strong_hook = scope:empire_petitoner }
+				has_relation_best_friend = scope:empire_petitoner
+				has_relation_lover = scope:empire_petitoner
 			}
 			modifier = { #Get Bent, you twat!
 				add = -1000
 				OR = {
 					has_relation_rival = scope:empire_petitoner
 					has_relation_grudge = scope:empire_petitoner
+					has_relation_nemesis = scope:empire_petitoner
 				}
 			}
 			#Rome has fallen!
 			modifier = {
 				add = 100
 				NOT = { title:c_roma.holder.religion = religion:christianity_religion }
+			}
+			modifier = { #Well, as a favor...
+				add = 50
+				has_relation_friend = scope:empire_petitoner
 			}
 			#New Rome is down.
 			modifier = {
@@ -207,6 +214,7 @@ BP_roman_decisions.0001 = {
 					opinion = { target = scope:empire_petitoner value < -50 }
 					has_relation_rival = scope:empire_petitoner
 					has_relation_grudge = scope:empire_petitoner
+					has_relation_nemesis = scope:empire_petitoner
 				}
 			}
 			modifier = { #I've got you by the nads and I don't like you
@@ -216,6 +224,7 @@ BP_roman_decisions.0001 = {
 					opinion = { target = scope:empire_petitoner value < 0 }
 					has_relation_rival = scope:empire_petitoner
 					has_relation_grudge = scope:empire_petitoner
+					has_relation_nemesis = scope:empire_petitoner
 				}
 			}
 			modifier = { #Get Bent, you twat!
@@ -223,6 +232,7 @@ BP_roman_decisions.0001 = {
 				OR = {
 					has_relation_rival = scope:empire_petitoner
 					has_relation_grudge = scope:empire_petitoner
+					has_relation_nemesis = scope:empire_petitoner
 				}
 			}
 			#Status of Major Pagan Holdings
@@ -348,13 +358,20 @@ BP_roman_decisions.0004 = {
 			modifier = { #You make a good point...
 				add = 1000
 				root = { has_strong_hook = scope:empire_petitoner }
+				has_relation_best_friend = scope:empire_petitoner
+				has_relation_lover = scope:empire_petitoner
 			}
 			modifier = { #Get Bent, you twat!
 				add = -1000
 				OR = {
 					has_relation_rival = scope:empire_petitoner
 					has_relation_grudge = scope:empire_petitoner
+					has_relation_nemesis = scope:empire_petitoner
 				}
+			}
+			modifier = { #Well, as a favor...
+				add = 50
+				has_relation_friend = scope:empire_petitoner
 			}
 			#Nice-to-have
 			modifier = {
@@ -404,7 +421,19 @@ BP_roman_decisions.0004 = {
 				OR = {
 					has_relation_rival = scope:empire_petitoner
 					has_relation_grudge = scope:empire_petitoner
+					has_relation_nemesis = scope:empire_petitoner
 				}
+			}
+			modifier = { #Well, as a favor...
+				add = -100
+				OR = {
+					has_relation_best_friend = scope:empire_petitoner
+					has_relation_lover = scope:empire_petitoner
+				}
+			}
+			modifier = { #Well, as a favor...
+				add = -50
+				has_relation_friend = scope:empire_petitoner
 			}
 			#Religion matters
 			modifier = {

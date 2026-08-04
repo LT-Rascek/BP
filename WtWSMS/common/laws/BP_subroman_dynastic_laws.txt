@@ -6,7 +6,7 @@ subroman_dynastic_military_centralization_top_liege_law = {
 	default = subroman_dynastic_military_centralization_top_liege_law_0
 	cumulative = no
 	
-	flag = subroman_admin_military_centralization_law
+	flag = subroman_administrative_military_centralization_law
 	
 	subroman_dynastic_military_centralization_top_liege_law_0 = {
 		modifier = {
@@ -217,7 +217,7 @@ subroman_dynastic_military_centralization_vassal_law = {
 	default = subroman_dynastic_military_centralization_vassal_law_0
 	cumulative = no
 	
-	flag = subroman_admin_military_centralization_law
+	flag = subroman_administrative_military_centralization_law
 	
 	subroman_dynastic_military_centralization_vassal_law_0 = {
 		modifier = {
@@ -398,7 +398,7 @@ subroman_dynastic_taxation_top_liege_law = {
 	default = subroman_dynastic_taxation_top_liege_law_0
 	cumulative = no
 	
-	flag = subroman_admin_taxation_law
+	flag = subroman_administrative_taxation_law
 	
 	subroman_dynastic_taxation_top_liege_law_0 = {
 		modifier = {
@@ -554,7 +554,7 @@ subroman_dynastic_taxation_vassal_law = {
 	default = subroman_dynastic_taxation_vassal_law_0
 	cumulative = no
 	
-	flag = subroman_admin_taxation_law
+	flag = subroman_administrative_taxation_law
 	
 	subroman_dynastic_taxation_vassal_law_0 = {
 		modifier = {
@@ -716,7 +716,7 @@ subroman_dynastic_aristocracy_law = {
 	default = subroman_dynastic_aristocracy_law_0
 	cumulative = no
 	
-	flag = subroman_admin_aristocracy_law
+	flag = subroman_administrative_aristocracy_law
 	
 	subroman_dynastic_aristocracy_law_0 = {
 		modifier = {
@@ -726,7 +726,7 @@ subroman_dynastic_aristocracy_law = {
 		}
 		flag = succession_weight_dynastic_1
 		flag = governor_efficency_weight_1
-		flag = subroman_admin_aristocracy_law_0
+		flag = subroman_administrative_aristocracy_law_0
 		
 		can_keep = {
 			bp_realm_law_use_subroman_dynastic_aristocracy_trigger = yes
@@ -754,7 +754,7 @@ subroman_dynastic_aristocracy_law = {
 				#At least 50 percent plus one of your vassals are at this law or better
 				custom_tooltip = {
 					text = half_of_subroman_dynastic_duke_vassals_has_law_0_or_better
-					root.percent_of_subroman_administrative_dukes_with_subroman_admin_aristocracy_law_level_0 > root.subroman_vassal_with_law_cutoff_percent
+					root.percent_of_subroman_administrative_dukes_with_subroman_administrative_aristocracy_law_level_0 > root.subroman_vassal_with_law_cutoff_percent
 				}
 				#Trying to improve the law means you'll need some prestige and influence
 				trigger_if = {
@@ -826,7 +826,7 @@ subroman_dynastic_aristocracy_law = {
 		flag = revoke_depose_governors_costs_more_influence_1
 		flag = succession_weight_dynastic_2
 		flag = governor_efficency_weight_2
-		flag = subroman_admin_aristocracy_law_1
+		flag = subroman_administrative_aristocracy_law_1
 		
 		can_keep = {
 			bp_realm_law_use_subroman_dynastic_aristocracy_trigger = yes
@@ -857,7 +857,7 @@ subroman_dynastic_aristocracy_law = {
 				#At least 50 percent plus one of your vassals are at this law or better
 				custom_tooltip = {
 					text = half_of_subroman_dynastic_duke_vassals_has_law_1_or_better
-					root.percent_of_subroman_administrative_dukes_with_subroman_admin_aristocracy_law_level_1 > root.subroman_vassal_with_law_cutoff_percent
+					root.percent_of_subroman_administrative_dukes_with_subroman_administrative_aristocracy_law_level_1 > root.subroman_vassal_with_law_cutoff_percent
 				}
 				#Trying to improve the law means you'll need some prestige and influence
 				trigger_if = {
@@ -961,7 +961,7 @@ subroman_dynastic_aristocracy_law = {
 		flag = succession_weight_dynastic_3
 		flag = governor_efficency_weight_3
 		flag = subroman_can_establish_de_jure_kingdom
-		flag = subroman_admin_aristocracy_law_2
+		flag = subroman_administrative_aristocracy_law_2
 		
 		can_keep = {
 			bp_realm_law_use_subroman_dynastic_aristocracy_trigger = yes
@@ -992,7 +992,7 @@ subroman_dynastic_aristocracy_law = {
 				#At least 50 percent plus one of your vassals are at this law or better
 				custom_tooltip = {
 					text = half_of_subroman_dynastic_duke_vassals_has_law_2_or_better
-					root.percent_of_subroman_administrative_dukes_with_subroman_admin_aristocracy_law_level_2 > root.subroman_vassal_with_law_cutoff_percent
+					root.percent_of_subroman_administrative_dukes_with_subroman_administrative_aristocracy_law_level_2 > root.subroman_vassal_with_law_cutoff_percent
 				}
 				#Trying to improve the law means you'll need some prestige and influence
 				trigger_if = {
@@ -1098,7 +1098,7 @@ subroman_dynastic_aristocracy_law = {
 		flag = subroman_can_establish_de_jure_kingdom
 		flag = subroman_can_establish_de_jure_empire
 		flag = cannot_depose_holders
-		flag = subroman_admin_aristocracy_law_3
+		flag = subroman_administrative_aristocracy_law_3
 		
 		can_keep = {
 			bp_realm_law_use_subroman_dynastic_aristocracy_trigger = yes
@@ -1129,7 +1129,7 @@ subroman_dynastic_aristocracy_law = {
 				#At least 50 percent plus one of your vassals are at this law or better
 				custom_tooltip = {
 					text = half_of_subroman_dynastic_duke_vassals_has_law_3_or_better
-					root.percent_of_subroman_administrative_dukes_with_subroman_admin_aristocracy_law_level_3 > root.subroman_vassal_with_law_cutoff_percent
+					root.percent_of_subroman_administrative_dukes_with_subroman_administrative_aristocracy_law_level_3 > root.subroman_vassal_with_law_cutoff_percent
 				}
 				#Trying to improve the law means you'll need some prestige and influence
 				trigger_if = {
@@ -1230,11 +1230,11 @@ subroman_dynastic_aristocracy_law = {
 		}
 		flag = governorship_cannot_be_revoked_freely
 		flag = succession_is_purely_dynastic
-		flag = subroman_admin_aristocracy_law_4
+		flag = subroman_administrative_aristocracy_law_4
 		flag = subroman_can_establish_de_jure_kingdom
 		flag = subroman_can_establish_de_jure_empire
 		flag = cannot_depose_holders
-		flag = subroman_admin_aristocracy_law_4
+		flag = subroman_administrative_aristocracy_law_4
 		
 		can_keep = {
 			bp_realm_law_use_subroman_dynastic_aristocracy_trigger = yes

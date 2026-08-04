@@ -194,12 +194,6 @@ BP_realm_capitals_by_date = {
 				set_realm_capital = title:c_udabhanda
 			}
 		}
-		title:k_caucasian_albania.holder = {
-			if = {
-				limit = { current_date < 500.1.1 }
-				set_realm_capital = title:c_shaki
-			}
-		}
 		title:e_hunnic_empire.holder = {
 			if = {
 				limit = { current_date > 469.1.1 }

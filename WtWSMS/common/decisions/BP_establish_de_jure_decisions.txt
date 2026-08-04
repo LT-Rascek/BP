@@ -365,10 +365,10 @@ swap_roman_province_decision = {
 						}
 					}
 					value = 0
-					if = { limit = { has_realm_law = subroman_admin_aristocracy_law_0 } add = subroman_administrative_title_cost_0 }
-					else_if = { limit = { has_realm_law = subroman_admin_aristocracy_law_0 } add = subroman_administrative_title_cost_1 }
-					else_if = { limit = { has_realm_law = subroman_admin_aristocracy_law_0 } add = subroman_administrative_title_cost_2 }
-					else_if = { limit = { has_realm_law = subroman_admin_aristocracy_law_0 } add = subroman_administrative_title_cost_3 }
+					if = { limit = { has_realm_law = subroman_administrative_aristocracy_law_0 } add = subroman_administrative_title_cost_0 }
+					else_if = { limit = { has_realm_law = subroman_administrative_aristocracy_law_0 } add = subroman_administrative_title_cost_1 }
+					else_if = { limit = { has_realm_law = subroman_administrative_aristocracy_law_0 } add = subroman_administrative_title_cost_2 }
+					else_if = { limit = { has_realm_law = subroman_administrative_aristocracy_law_0 } add = subroman_administrative_title_cost_3 }
 					else = { add = subroman_administrative_title_cost_4 }
 				}
 				else_if = { #Default cost for Roman Governments

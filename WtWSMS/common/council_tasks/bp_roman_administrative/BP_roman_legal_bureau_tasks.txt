@@ -291,6 +291,13 @@ task_promote_culture_roman = {
 					culture != scope:councillor_liege.var:hold_court_8130_culture_block
 				}
 			}
+			##### changed from Vanilla vvvvv
+			custom_tooltip = {
+				text = roman_federates_are_culturally_protected
+				NOT = { this.holder = { government_has_flag = government_is_roman_federate } }
+				NOT = { this.holder = { any_liege_or_above = { government_has_flag = government_is_roman_federate } } }
+			}
+			##### changed from Vanilla ^^^^^
 		}
 		trigger_if = {
 			limit = {

@@ -371,3 +371,14 @@ reduce_county_development_effect = {
 		change_development_progress = { value = -100 }
 	}
 }
+nomad_convert_people_to_prefeudal_effect = {
+	change_government = prefeudal_government
+
+	#Start off crown authorities.
+	if = {
+		limit = {
+			NOT = { has_realm_law = prefeudal_authority_1 }
+		}
+		add_realm_law_skip_effects = prefeudal_authority_1
+	}
+}

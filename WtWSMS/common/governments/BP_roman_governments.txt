@@ -254,7 +254,10 @@ roman_federate_government = {
 	vassal_contract_group = roman_federate
 
 	can_get_government = {
-		top_liege = { government_has_flag = is_a_roman_government }
+		OR = {
+			top_liege = { government_has_flag = is_a_roman_government }
+			government_has_flag = government_is_roman_federate
+		}
 		#The LAAMP Construct Holding decision
 		trigger_if = {
 			limit = {

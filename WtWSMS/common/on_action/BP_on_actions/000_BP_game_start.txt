@@ -39,7 +39,8 @@ bp_game_start = {
 		#Other Actions
 		update_development_by_terrain_and_circumstances
 		#Things that have to be done last
-		setup_governments_based_on_dlc
+		setup_roman_governments_based_on_dlc
+		setup_other_governments_based_on_dlc
 	}
 }
 
@@ -1225,7 +1226,12 @@ update_development_by_terrain_and_circumstances = {
 			if = { #Dacia should only have development in non-tribal counties
 				limit = { this.kingdom = title:k_dacia }
 				if = {
-					limit = { any_county_province = { has_holding_type = tribal_holding } }
+					limit = {
+						OR = {
+							any_county_province = { has_holding_type = tribal_holding }
+							any_county_province = { has_holding_type = nomad_holding }
+						}
+					}
 					change_development_level = {
 						value = this.development_level
 						multiply = -1.00
@@ -1235,7 +1241,12 @@ update_development_by_terrain_and_circumstances = {
 			if = { #Syr Darya is only for non-tribal counties
 				limit = { this.kingdom = title:k_syr_darya }
 				if = {
-					limit = { any_county_province = { has_holding_type = tribal_holding } }
+					limit = {
+						OR = {
+							any_county_province = { has_holding_type = tribal_holding }
+							any_county_province = { has_holding_type = nomad_holding }
+						}
+					}
 					change_development_level = {
 						value = this.development_level
 						multiply = -1.00
@@ -1351,14 +1362,24 @@ update_development_by_terrain_and_circumstances = {
 			}
 			## Effects of Tribal holdings on development
 			if = {
-				limit = { this.title_province = { has_holding_type = tribal_holding } }
+				limit = {
+					OR = {
+						this.title_province = { has_holding_type = tribal_holding }
+						this.title_province = { has_holding_type = nomad_holding }
+					}
+				}
 				change_development_level = {
 					value = this.development_level
 					multiply = -0.75
 				}
 			}
 			else_if = {
-				limit = { any_county_province = { has_holding_type = tribal_holding } }
+				limit = {
+					OR = {
+						any_county_province = { has_holding_type = tribal_holding }
+						any_county_province = { has_holding_type = nomad_holding }
+					}
+				}
 				change_development_level = {
 					value = this.development_level
 					multiply = -0.50
@@ -1436,7 +1457,7 @@ alt_history_effects = {
 }
 
 ## Government Stuff ##
-setup_governments_based_on_dlc = {
+setup_roman_governments_based_on_dlc = {
 	effect = {
 		#Flip Roman governments from administrative to Dynastic if DLC is not available
 		if = {
@@ -1500,6 +1521,9 @@ setup_governments_based_on_dlc = {
 			}
 			every_ruler = {
 				limit = {
+					#Only applies to Kings and up...
+					is_independent_ruler = yes
+					primary_title.tier >= tier_kingdom
 					OR = {
 						government_has_flag = government_is_roman_administrative
 						government_has_flag = government_is_subroman_administrative
@@ -1515,15 +1539,7 @@ setup_governments_based_on_dlc = {
 				
 				#Setup missing NF titles
 				if = {
-					limit = {
-						this = this.house.house_head
-						OR = {
-							this.primary_title.tier >= tier_duchy #Don't want nf running counties...
-							dynasty = { has_dynasty_modifier = roman_senate_family_east }
-							dynasty = { has_dynasty_modifier = roman_senate_family_west }
-						}
-						any_held_title = { count < 1 is_noble_family_title = yes }
-					}
+					limit = { this = this.house.house_head }
 					if = {
 						limit = { government_has_flag = government_is_roman_administrative }
 						give_noble_family_title = {
@@ -1549,6 +1565,34 @@ setup_governments_based_on_dlc = {
 						scope:new_title = { set_coa = scope:noble_family_head.house }
 					}
 				}
+				else = {
+					this.house.house_head = {
+					if = {
+						limit = { prev = { government_has_flag = government_is_roman_administrative } }
+							give_noble_family_title = {
+								name = noble_family_name
+								tier = county
+								article = DEFAULT_TITLE_NAME_ARTICLE
+								government = roman_administrative_government
+								save_scope_as = new_title
+							}
+						}
+						else_if = {
+							limit = { prev = { government_has_flag = government_is_subroman_administrative } }
+							give_noble_family_title = {
+								name = noble_family_name
+								tier = county
+								article = DEFAULT_TITLE_NAME_ARTICLE
+								government = subroman_administrative_government
+								save_scope_as = new_title
+							}
+						}
+						scope:new_title.holder ?= {
+							save_scope_as = noble_family_head
+							scope:new_title = { set_coa = scope:noble_family_head.house }
+						}
+					}
+				}
 				#Move Estate to actual capital location
 				this.domicile ?= { move_domicile = prev.capital_county.title_province }
 			}
@@ -1569,5 +1613,27 @@ setup_governments_based_on_dlc = {
 		destroy_PP_title_if_ai_effect = { TITLE = title:e_praetorian_prefecture_illyria }
 		destroy_PP_title_if_ai_effect = { TITLE = title:e_praetorian_prefecture_gaul }
 		destroy_PP_title_if_ai_effect = { TITLE = title:e_praetorian_prefecture_italy }
+	}
+}
+
+setup_other_governments_based_on_dlc = {
+	trigger = { has_dlc_feature = all_under_heaven }
+	effect = {
+		#Setup missing NF titles
+		every_ruler = {
+			limit = {
+				this = this.house.house_head
+				this.primary_title.tier >= tier_county
+				any_held_title = { count < 1 is_noble_family_title = yes }
+				government_has_flag = government_is_meritocratic
+			}
+			give_noble_family_title = {
+				name = noble_family_name
+				tier = county
+				article = DEFAULT_TITLE_NAME_ARTICLE
+				government = meritocratic_government
+				save_scope_as = new_title
+			}
+		}
 	}
 }
