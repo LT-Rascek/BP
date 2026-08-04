@@ -14,6 +14,14 @@ migration_flip_holding_to_tribal_effect = {
 	random = {
 		chance = migration_chance_of_flip_holding
 		$THE_COUNTY$ = {
+			every_province = {
+				limit = {
+					is_county_capital = no
+					has_province_modifier = recently_looted_modifier
+				}
+				remove_province_modifier = recently_looted_modifier
+			}
+			
 			raze_county = {
 				holding_type = tribal_holding
 				purge_secondary_holdings = yes
@@ -23,6 +31,7 @@ migration_flip_holding_to_tribal_effect = {
 			
 			set_county_culture = $THE_ATTACKER$.culture
 			set_county_faith = $THE_ATTACKER$.faith
+			
 			random_list = {
 				60 = {
 					add_culture_minority_effect = {

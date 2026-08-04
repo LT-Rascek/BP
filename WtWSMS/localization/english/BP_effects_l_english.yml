@@ -30,5 +30,12 @@
  destroy_noble_family_titles: "Noble Family titles are destroyed"
  GETS_TO_BE_AN_ADVENTURER: "#mixed_value #BER [TARGET_CHARACTER.GetShortUIName|U] will establish an [adventurer|E] [camp|E]#!#!"
  start_with_moderate_camp: "Start with a camp with moderate domicile buildings and soldiers"
+#Migration CB
+ YOU_ABANDON_YOUR_CURRENT_LANDS: "You will abandon your current [domain|E] and take control of [counties|E] in [TARGET_TITLE.GetName]"
+ MIGRATION_SOURCE_COUNTIES_GET_MIGRATED_AWAY_MODIFIER: "Every county of your [culture|E] and [faith|E] currently in your realm gets the [GetModifier('recent_migration_away_modifier').GetNameWithTooltip] for #V 10#! years"
+ ALL_NEW_PROVINCES_GET_LOOTED: "Every conquered province in [TARGET_TITLE.GetBaseName] gets the [GetModifier('recently_looted_modifier').GetNameWithTooltip] for #V 5#! years"
+ ALL_CONQUERED_COUNTIES_GET_RECENT_MIGRATION: "Every conquered province in [TARGET_TITLE.GetBaseName] gets the [GetModifier('recent_migration_to_modifier').GetNameWithTooltip] for #V 10#! years"
+ COUNTIES_MAY_BE_CONVERTED_TO_TRIBAL_HOLDINGS: "Every conquered county in [TARGET_TITLE.GetBaseName] may be be razed and converted to a $tribal_holding$ [holding|E]\n$TAB$#weak [Concept('razing_holding_math','Various factors influence these odds')|E]#!"
+ ALL_CONQUERED_COUNTIES_MAY_FLIP_CULTURE_FAITH: "Every conquered county in [TARGET_TITLE.GetBaseName] may change its [culture|E] and [faith|E] to match the new holder's [culture|E] and [faith|E]\n$TAB$#weak [Concept('culture_faith_flipping_math','Various factors influence these odds')|E]#!"
  #Other
  you_get_a_domicile_in_your_capital: "Your [domicile|E] will be located in your capital"

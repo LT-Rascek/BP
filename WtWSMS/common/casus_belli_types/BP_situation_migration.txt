@@ -70,6 +70,23 @@ bp_migration_war = {
 		}
 	}
 
+	can_pick_title = {
+		trigger_if = {
+			limit = { scope:defender = { government_has_flag = government_is_centralized } }
+			scope:target = {
+				any_in_de_jure_hierarchy = {
+					count >= 1
+					is_landless_type_title = no
+					this.tier = tier_county
+					OR = {
+						this.holder = { government_has_flag = government_is_tribal }
+						this.holder = { government_has_flag = government_is_roman_federate }
+					}
+				}
+			}
+		}
+	}
+
 	valid_to_start = {
 		scope:target = {
 			any_in_de_jure_hierarchy = {
@@ -281,7 +298,7 @@ bp_migration_war = {
 			}
 		}
 		
-		every_in_list = { #Defender vassal sorting and title reclaimation
+		every_in_list = { #Defender vassal sorting and title reclamation
 			list = target_titles
 			every_in_de_jure_hierarchy = {
 				limit = {
@@ -303,6 +320,7 @@ bp_migration_war = {
 		every_in_list = { #Defender vassal liberate/subjugate/conquer sorting
 			list = defender_vassals_in_conquest_region
 			limit = {
+				scope:defender = { government_has_flag = government_is_centralized }
 				OR = {
 					government_has_flag = government_is_tribal
 					government_has_flag = government_is_roman_federate
@@ -424,7 +442,6 @@ bp_migration_war = {
 				limit = {
 					is_landed = yes
 					primary_title.tier >= tier_county
-					#####
 					any_held_title = {
 						is_landless_type_title = no
 						this.tier = tier_county
@@ -441,54 +458,88 @@ bp_migration_war = {
 		}
 		resolve_title_and_vassal_change = scope:change_defender_vassals_exclave_independent
 		
+		random_in_list = {
+			list = target_titles
+			save_temporary_scope_as = the_target_title
+		}
+		
+		custom_description = {
+			text = you_abandon_your_current_lands
+			object = scope:the_target_title
+		}
+		
 		#### Apply source county modifiers
-		every_in_list = {
-			list = migration_source_counties
-			if = {
-				limit = { has_county_modifier = recent_migration_away_modifier }
-				add_county_modifier = recent_migration_away_modifier
+		custom_description = {
+			text = migration_source_counties_get_migrated_away_modifier
+			every_in_list = {
+				list = migration_source_counties
+				if = {
+					limit = { has_county_modifier = recent_migration_away_modifier }
+					add_county_modifier = recent_migration_away_modifier
+				}
+				add_county_modifier = { modifier = recent_migration_away_modifier years = 10 }
 			}
-			add_county_modifier = { modifier = recent_migration_away_modifier years = 10 }
 		}
 		
 		#### Update County culture/faiths and damage
-		scope:attacker = {
-			every_realm_province = { #Everything gets looted
-				limit = { has_holding = yes }
-				if = {
-					limit = { has_province_modifier = recently_looted_modifier }
-					remove_province_modifier = recently_looted_modifier
-				}
-				add_province_modifier = {
-					modifier = recently_looted_modifier
-					years = 5
-				}
-			}
-			every_realm_county = {
-				if = {
-					limit = { has_county_modifier = recent_migration_to_modifier }
-					remove_county_modifier = recent_migration_to_modifier
-				}
-				add_county_modifier = {
-					modifier = recent_migration_to_modifier
-					years = 5
+		custom_description = {
+			text = all_new_provinces_get_looted
+			object = scope:the_target_title
+			scope:attacker = {
+				every_realm_province = { #Everything gets looted
+					limit = { has_holding = yes }
+					if = {
+						limit = { has_province_modifier = recently_looted_modifier }
+						remove_province_modifier = recently_looted_modifier
+					}
+					add_province_modifier = {
+						modifier = recently_looted_modifier
+						years = 5
+					}
 				}
 			}
-			every_realm_county = {
-				limit = { NOT = { any_in_list = { list = migrating_attackers this = prev.holder } } }
-				migration_flip_holding_to_tribal_effect = {
-					THE_ATTACKER = scope:attacker
-					THE_COUNTY = this
+		}
+		custom_description = {
+			text = all_conquered_counties_get_recent_migration
+			object = scope:the_target_title
+			scope:attacker = {
+				every_realm_county = {
+					if = {
+						limit = { has_county_modifier = recent_migration_to_modifier }
+						remove_county_modifier = recent_migration_to_modifier
+					}
+					add_county_modifier = {
+						modifier = recent_migration_to_modifier
+						years = 5
+					}
 				}
 			}
-			every_realm_county = {
-				limit = {
-					NOT = { this.culture = scope:attacker.culture }
-					NOT = { any_in_list = { list = migrating_attackers this = prev.holder } }
+		}
+		custom_description = {
+			text = counties_may_be_converted_to_tribal_holdings
+			object = scope:the_target_title
+			scope:attacker = {
+				every_realm_county = {
+					limit = { NOT = { any_in_list = { list = migrating_attackers this = prev.holder } } }
+					migration_flip_holding_to_tribal_effect = {
+						THE_ATTACKER = scope:attacker
+						THE_COUNTY = this
+					}
 				}
-				migration_flip_holding_to_tribal_effect = {
-					THE_ATTACKER = scope:attacker
-					THE_COUNTY = this
+			}
+		}
+		custom_description = {
+			text = all_conquered_counties_may_flip_culture_faith
+			scope:attacker = {
+				every_realm_county = {
+					limit = {
+						NOT = { this.culture = scope:attacker.culture }
+						NOT = { any_in_list = { list = migrating_attackers this = prev.holder } }
+					}
+					migration_flip_culture_faith_effect = {
+						THE_ATTACKER = scope:attacker
+						THE_COUNTY = this
+					}
 				}
 			}
 		}
