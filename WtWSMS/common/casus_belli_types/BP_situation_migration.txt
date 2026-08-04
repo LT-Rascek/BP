@@ -272,8 +272,6 @@ bp_migration_war = {
 				limit = {
 					is_landless_type_title = no
 					this.tier = tier_county
-					this.culture = prev.culture
-					this.faith = prev.faith
 				}
 				if = { #Case liege is migrator
 					limit = { this.holder.top_liege = scope:war_leader }
@@ -446,13 +444,49 @@ bp_migration_war = {
 		#### Apply source county modifiers
 		every_in_list = {
 			list = migration_source_counties
+			if = {
+				limit = { has_county_modifier = recent_migration_away_modifier }
+				add_county_modifier = recent_migration_away_modifier
+			}
 			add_county_modifier = { modifier = recent_migration_away_modifier years = 10 }
 		}
 		
-		#### Update County culture/faiths
+		#### Update County culture/faiths and damage
 		scope:attacker = {
+			every_realm_province = { #Everything gets looted
+				limit = { has_holding = yes }
+				if = {
+					limit = { has_province_modifier = recently_looted_modifier }
+					remove_province_modifier = recently_looted_modifier
+				}
+				add_province_modifier = {
+					modifier = recently_looted_modifier
+					years = 5
+				}
+			}
 			every_realm_county = {
-				migration_flip_hold_to_tribal_effect = {
+				if = {
+					limit = { has_county_modifier = recent_migration_to_modifier }
+					remove_county_modifier = recent_migration_to_modifier
+				}
+				add_county_modifier = {
+					modifier = recent_migration_to_modifier
+					years = 5
+				}
+			}
+			every_realm_county = {
+				limit = { NOT = { any_in_list = { list = migrating_attackers this = prev.holder } } }
+				migration_flip_holding_to_tribal_effect = {
+					THE_ATTACKER = scope:attacker
+					THE_COUNTY = this
+				}
+			}
+			every_realm_county = {
+				limit = {
+					NOT = { this.culture = scope:attacker.culture }
+					NOT = { any_in_list = { list = migrating_attackers this = prev.holder } }
+				}
+				migration_flip_holding_to_tribal_effect = {
 					THE_ATTACKER = scope:attacker
 					THE_COUNTY = this
 				}

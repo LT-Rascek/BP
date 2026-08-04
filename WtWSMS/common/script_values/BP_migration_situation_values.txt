@@ -78,8 +78,8 @@ migration_innovation_weight = { #Max value: 10; used for determining if counties
 		add = 1.5
 	}
 }
-migration_change_of_flip = {
-	value = 20
+migration_chance_of_flip_holding = {
+	value = 30
 	subtract = {
 		value = scope:the_county_development
 		multiply = 2
@@ -87,5 +87,32 @@ migration_change_of_flip = {
 	subtract = {
 		value = scope:the_attacker_culture_weight
 		multiply = 2
+	}
+}
+migration_chance_of_flip_culture_faith = {
+	value = 30
+	subtract = {
+		value = scope:the_county_development
+		multiply = 2
+	}
+	if = {
+		limit = { scope:the_county_culture = { num_discovered_innovations_in_era = { target = culture_era_classical_antiquity value > 0 } } }
+		subtract = 5
+	}
+	if = {
+		limit = { scope:the_county_culture = { num_discovered_innovations_in_era = { target = culture_era_late_antiquity value > 0 } } }
+		subtract = 5
+	}
+	if = {
+		limit = { scope:the_county_culture = { num_discovered_innovations_in_era = { target = culture_era_early_medieval value > 0 } } }
+		subtract = 5
+	}
+	if = {
+		limit = { scope:the_county_culture = { num_discovered_innovations_in_era = { target = culture_era_high_medieval value > 0 } } }
+		subtract = 5
+	}
+	if = {
+		limit = { scope:the_county_culture = { num_discovered_innovations_in_era = { target = culture_era_late_medieval value > 0 } } }
+		subtract = 5
 	}
 }

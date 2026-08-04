@@ -5,18 +5,94 @@
 	}
 	else = { set_variable = { name = number_of_migrations_attempted value = 1 } }
 }
-migration_flip_hold_to_tribal_effect = {
+migration_flip_holding_to_tribal_effect = {
 	#migration_innovation_weight has a max value of 10
 	#Development of 10 or all necessary innovations should stop it
-	save_temporary_scope_value_as = { name = the_county_development value = scope:$THE_COUNTY$.development_level }
+	save_temporary_scope_value_as = { name = the_county_development value = $THE_COUNTY$.development_level }
 	save_temporary_scope_value_as = { name = the_attacker_culture_weight value = $THE_ATTACKER$.culture.migration_innovation_weight }
 	
 	random = {
-		chance = 100#migration_change_of_flip
+		chance = migration_chance_of_flip_holding
 		$THE_COUNTY$ = {
 			raze_county = {
 				holding_type = tribal_holding
 				purge_secondary_holdings = yes
+			}
+			$THE_COUNTY$.culture = { save_temporary_scope_as = the_culture }
+			$THE_COUNTY$.faith = { save_temporary_scope_as = the_faith }
+			
+			set_county_culture = $THE_ATTACKER$.culture
+			set_county_faith = $THE_ATTACKER$.faith
+			random_list = {
+				60 = {
+					add_culture_minority_effect = {
+						COUNTY = this
+						CULTURE = scope:the_culture
+						SIZE = large
+					}
+					add_faith_minority_effect = {
+						COUNTY = this
+						FAITH = scope:the_faith
+						SIZE = large
+					}
+				}
+				30 = {
+					add_culture_minority_effect = {
+						COUNTY = this
+						CULTURE = scope:the_culture
+						SIZE = small
+					}
+					add_faith_minority_effect = {
+						COUNTY = this
+						FAITH = scope:the_faith
+						SIZE = small
+					}
+				}
+				10 = {}
+			}
+		}
+	}
+}
+migration_flip_culture_faith_effect = {
+	#Development of 30 should stop it.
+	# Each era beyond Tribal reduces odds by 5%
+	$THE_COUNTY$.culture = { save_temporary_scope_value_as = the_county_culture }
+	save_temporary_scope_value_as = { name = the_county_development value = $THE_COUNTY$.development_level }
+	
+	random = {
+		chance = migration_chance_of_flip_culture_faith
+		$THE_COUNTY$ = {
+			$THE_COUNTY$.culture = { save_temporary_scope_as = the_culture }
+			$THE_COUNTY$.faith = { save_temporary_scope_as = the_faith }
+			
+			set_county_culture = $THE_ATTACKER$.culture
+			set_county_faith = $THE_ATTACKER$.faith
+			random_list = {
+				60 = {
+					add_culture_minority_effect = {
+						COUNTY = this
+						CULTURE = scope:the_culture
+						SIZE = large
+					}
+					add_faith_minority_effect = {
+						COUNTY = this
+						FAITH = scope:the_faith
+						SIZE = large
+					}
+				}
+				30 = {
+					add_culture_minority_effect = {
+						COUNTY = this
+						CULTURE = scope:the_culture
+						SIZE = small
+					}
+					add_faith_minority_effect = {
+						COUNTY = this
+						FAITH = scope:the_faith
+						SIZE = small
+					}
+				}
+				10 = {}
 			}
 		}
 	}
