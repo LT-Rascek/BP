@@ -121,7 +121,9 @@ duchy_value_as_capital = {
 	value = 0
 	every_county = {
 		limit = { this.duchy = prev }
-		add = this.development_level
-		add = 1 #So there's implicit value in the large duchies
+		add = {
+			value = this.development_level
+			add = 1 #So duchy size matters
+		}
 	}
 }

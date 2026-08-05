@@ -236,6 +236,11 @@ bp_migration_war = {
 		#migrating_attackers: attackers who are migrating
 		#migration_source_counties: Counties for which migration modifiers should be applied
 		
+		random_in_list = {
+			list = target_titles
+			save_temporary_scope_as = the_target_title
+		}
+		
 		save_temporary_scope_as = the_war
 		
 		#If the attacker's primary title is de jure and has no titulars
