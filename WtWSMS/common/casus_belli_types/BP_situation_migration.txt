@@ -77,6 +77,9 @@ bp_migration_war = {
 				neighboring_county_or_viking_conquest_trigger = { CHARACTER = root }
 			}
 		}
+		#Can't multi-migrate
+		NOT = { scope:attacker = { any_character_war = { using_cb = bp_migration_war } } }
+		
 		#Don't touch the steppe with WtWSMS migrations
 		target_title_not_in_great_steppe_trigger = {
 			TARGET_TITLE = scope:target
@@ -158,7 +161,16 @@ bp_migration_war = {
 	
 	on_invalidated_desc = {}
 	
-	on_invalidated = {}
+	on_invalidated = {
+		hidden_effect = {
+			scope:attacker = {
+				add_character_flag = {
+					flag = launched_migration_war_recently
+					years = migration_war_wait_years
+				}
+			}
+		}
+	}
 	
 	on_victory_desc = {
 		first_valid = {
@@ -225,6 +237,41 @@ bp_migration_war = {
 		#migration_source_counties: Counties for which migration modifiers should be applied
 		
 		save_temporary_scope_as = the_war
+		
+		#If the attacker's primary title is de jure and has no titulars
+		#of the same rank, give them one, then destroy the de jure titles
+		scope:attacker = {
+			if = {
+				limit = {
+					any_held_title = {
+						count < 1
+						is_titular = yes
+						this.tier = prev.primary_title.tier
+					}
+				}
+				create_dynamic_title = {
+					tier = this.primary_title.tier
+					name = MIGRATORY_TITLE_NAME
+				}
+				every_held_title = {
+					limit = {
+						this.tier = scope:new_title.tier
+						NOT = { this = scope:new_title }
+					}
+					prev = { destroy_title = prev }
+				}
+			}
+		}
+		#Destroy all de jure duchies/kingdoms/empires/&c.
+		scope:attacker = {
+			every_held_title = {
+				limit = {
+					is_titular = no
+					this.tier >= tier_duchy
+				}
+				prev = { destroy_title = prev }
+			}
+		}
 		
 		scope:attacker = { #War Attackers and Vassal Handling
 			save_temporary_scope_as = war_leader
@@ -309,6 +356,7 @@ bp_migration_war = {
 			}
 		}
 		
+		#Remove titles from vassals that survive
 		every_in_list = {
 			list = defender_titles_taken
 			save_temporary_scope_as = the_title_in_question
@@ -395,7 +443,7 @@ bp_migration_war = {
 			becomes_independent = { change = scope:change_defender_vassals_independent }
 		}
 		
-		#Record government information for events
+		#Record government information for downstream events
 		if = {
 			limit = { scope:defender = { government_has_flag = government_is_centralized } }
 			scope:attacker = { add_character_flag = centralized_government_bootstrap_available }
@@ -409,12 +457,26 @@ bp_migration_war = {
 			}
 		}
 		
+		#Figure out the optimal capital location
+		every_in_list = {
+			list = defender_titles_taken
+			this.duchy = { add_to_list = list_of_duchies }
+		}
+		ordered_in_list = {
+			list = list_of_duchies
+			order_by = this.duchy_value_as_capital
+			this.title_capital_county = { save_temporary_scope_as = the_new_capital }
+		}
+		
 		#### Update the changes
 		resolve_title_and_vassal_change = scope:change_defender_vassals_to_attacker
 		resolve_title_and_vassal_change = scope:change_conquered_new_lands
 		resolve_title_and_vassal_change = scope:change_attacker_titles_vassals_to_liege
 		resolve_title_and_vassal_change = scope:change_attacker_titles_vassals_independent
 		resolve_title_and_vassal_change = scope:change_defender_vassals_independent
+		
+		#### Set your new capital
+		scope:attacker = { set_realm_capital = scope:the_new_capital }
 		
 		#### Disconnected realms become independent
 		create_title_and_vassal_change = {
@@ -442,11 +504,6 @@ bp_migration_war = {
 			}
 		}
 		resolve_title_and_vassal_change = scope:change_defender_vassals_exclave_independent
-		
-		random_in_list = {
-			list = target_titles
-			save_temporary_scope_as = the_target_title
-		}
 		
 		custom_description = {
 			text = you_abandon_your_current_lands
@@ -550,6 +607,15 @@ bp_migration_war = {
 		# FP1: note the victory for future memorialization via stele (if applicable).
 		scope:attacker = { fp1_remember_recent_conquest_victory_effect = yes }
 		
+		hidden_effect = {
+			scope:attacker = {
+				add_character_flag = {
+					flag = launched_migration_war_recently
+					years = migration_war_wait_years
+				}
+			}
+		}
+		
 		if = {
 			limit = { scope:attacker = { has_character_flag = centralized_government_bootstrap_available } }
 			custom_description = {
@@ -639,6 +705,15 @@ bp_migration_war = {
 		}
 		
 		scope:defender = { stress_impact = { arrogant = medium_stress_impact_gain } }
+		
+		hidden_effect = {
+			scope:attacker = {
+				add_character_flag = {
+					flag = launched_migration_war_recently
+					years = migration_war_wait_years
+				}
+			}
+		}
 	}
 	
 	on_defeat_desc = {
@@ -737,6 +812,15 @@ bp_migration_war = {
 		}
 		
 		scope:attacker = { add_prestige_level = -1 }
+		
+		hidden_effect = {
+			scope:attacker = {
+				add_character_flag = {
+					flag = launched_migration_war_recently
+					years = migration_war_wait_years
+				}
+			}
+		}
 	}
 	
 	transfer_behavior = transfer
