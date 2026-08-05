@@ -13,12 +13,47 @@ bp_migration_war = {
 	mutually_exclusive_titles = { always = yes }
 
 	allowed_for_character = {
-		this.primary_title.tier > tier_county
-		this.primary_title.tier < tier_empire
+		OR = {
+			this.primary_title.tier = tier_duchy
+			this.primary_title.tier = tier_kingdom
+		}
 		#Franks shouldn't migrate
 		trigger_if = {
-			limit = { this.culture = culture:old_frankish }
-			is_ai = no
+			limit = {
+				has_game_rule = migration_behavior_historical
+				is_ai = yes
+			}
+			NOR = {
+				#Goths
+				this.culture = culture:thracian_gothic
+				this.culture = culture:crimean_gothic
+				this.culture = culture:carpodaci
+				this.culture = culture:gepid
+				#Jutlandic
+				this.culture = culture:reudignian
+				#Nordwestbloc
+				this.culture = culture:chatti
+				this.culture = culture:old_frankish
+				this.culture = culture:cheruscii
+				#Przeworsk
+				this.culture = culture:gustow
+				this.culture = culture:przeworsk
+				this.culture = culture:wielbark
+				this.culture = culture:denziner
+				this.culture = culture:vidivarii
+				#Scandzans
+				this.culture = culture:norse
+				this.culture = culture:swede
+				this.culture = culture:dane
+				this.culture = culture:geatish
+				this.culture = culture:gutnish
+				this.culture = culture:auiones
+				#Suebics
+				this.culture = culture:danubian_suebi
+				this.culture = culture:juthungi
+				this.culture = culture:alamannian
+				this.culture = culture:lebus
+			}
 		}
 	}
 
@@ -114,8 +149,6 @@ bp_migration_war = {
 			limit = { tier = tier_kingdom }
 			save_scope_as = target_kingdom
 		}
-		#TODO: Add attackers, liberate non-participants
-		
 		#Spawn armies
 		custom_description = {
 			text = armies_spawn_from_development
@@ -845,4 +878,6 @@ bp_migration_war = {
 	use_de_jure_wargoal_only = yes
 	
 	attacker_wargoal_percentage = 0.8
+	
+	ai_only_against_neighbors = yes
 }

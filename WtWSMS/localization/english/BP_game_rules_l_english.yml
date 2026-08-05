@@ -46,7 +46,13 @@
  setting_paganify_enabled: "Enabled"
  setting_paganify_enabled_desc: "Most characters and counties will instead use a pagan or similar [faith|E] determined by their [culture|E], though minorities and custom characters retain their faith."
  
- #Vanilla Rule Overwrites
+ rule_migration_behavior: "$wtwsms_highlighted$ Migration Behavior"
+ migration_behavior_classic: "Classic"
+ migration_behavior_classic_desc: "CK2 Behavior: All cultures that satisfy the triggers will be capable of migration"
+ migration_behavior_historical: "Historical"
+ migration_behavior_historical_desc: "Cultures that did not migrate historically, like the Franks and Alamannii, will not migrate"
+ 
+ ##### Vanilla Rule Overwrites #####
  setting_bp_default_faith_conversion_speed: "$wtwsms_highlighted$ Historic"
  setting_bp_default_faith_conversion_speed_desc: "The speed is reduced to fall in lines with estimates from the WtWSMS team"
  GAME_RULE_DEFAULT_BP_FAITH_CONVERSION_VALUE: "Game Rule: #N $multiplication_sign$#![SCOPE.ScriptValue('bp_default_faith_conversion_value')|N]"

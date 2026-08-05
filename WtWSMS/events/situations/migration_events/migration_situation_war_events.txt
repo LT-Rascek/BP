@@ -75,6 +75,24 @@ migration_situation_war.0100 = {
 			change_government = high_tribal_government
 		}
 		add_character_modifier = upgraded_government_modifier
+		
+		ai_chance = {
+			base = 10
+			modifier = { #Traditionalist Culture doesn't like it
+				factor = 0
+				OR = {
+					culture = { has_cultural_tradition = tradition_xenophobic }
+					culture = { has_cultural_tradition = tradition_xenophobic_non_dlc }
+					culture = { has_cultural_tradition = tradition_strong_kinship }
+					culture = { has_cultural_tradition = tradition_staunch_traditionalists }
+					culture = { has_cultural_tradition = tradition_mpo_northern_tribes }
+					culture = { has_cultural_tradition = tradition_zealous_pagans }
+					culture = { has_cultural_tradition = tradition_zealous_pagans_non_dlc }
+					culture = { has_cultural_tradition = tradition_decentralized }
+					culture = { has_cultural_tradition = tradition_decentralized_non_dlc }
+				}
+			}
+		}
 	}
 	option = {
 		trigger = { has_character_flag = roman_government_bootstrap_available }
@@ -121,7 +139,95 @@ migration_situation_war.0100 = {
 			limit = { has_dlc_feature = hybridize_culture }
 			custom_tooltip = {
 				text = may_have_option_to_diverge_culture
-				root = { trigger_event = { id = migration_situation_war.0200 } }
+				root = { trigger_event = { id = migration_situation_war.0200 days = { 7 14 } } }
+			}
+		}
+		
+		ai_chance = {
+			base = 10
+			modifier = { #Traditionalist Culture doesn't like it
+				factor = 0
+				OR = {
+					culture = { has_cultural_tradition = tradition_xenophobic }
+					culture = { has_cultural_tradition = tradition_xenophobic_non_dlc }
+					culture = { has_cultural_tradition = tradition_strong_kinship }
+					culture = { has_cultural_tradition = tradition_staunch_traditionalists }
+					culture = { has_cultural_tradition = tradition_mpo_northern_tribes }
+					culture = { has_cultural_tradition = tradition_zealous_pagans }
+					culture = { has_cultural_tradition = tradition_zealous_pagans_non_dlc }
+					culture = { has_cultural_tradition = tradition_decentralized }
+					culture = { has_cultural_tradition = tradition_decentralized_non_dlc }
+				}
+			}
+			modifier = { #These guys just don't like Romanism in particular
+				factor = 0
+				OR = {
+					culture = { has_cultural_tradition = tradition_cultural_primacy }
+					culture = { has_cultural_tradition = tradition_stratified_society }
+					culture = { has_cultural_tradition = tradition_scholar_officials }
+					culture = { has_cultural_tradition = tradition_sinophilic }
+					culture = { has_cultural_tradition = tradition_cultivation }
+					culture = { has_cultural_tradition = tradition_marauders }
+					culture = { has_cultural_tradition = tradition_marauders_non_dlc }
+					culture = { has_cultural_tradition = tradition_persian_traditions }
+					culture = { has_cultural_tradition = tradition_persian_traditions_non_dlc }
+					culture = { has_cultural_tradition = tradition_punic_traditions }
+					culture = { has_cultural_tradition = tradition_caucasian_mountain_homes }
+					culture = { has_cultural_tradition = tradition_caucasian_mountain_homes_non_dlc }
+				}
+			}
+			modifier= { #These guys historically worked for Rome
+				factor = 1000
+				OR = {
+					culture = { has_cultural_tradition = tradition_frankish_traditions }
+					culture = { has_cultural_tradition = tradition_gothic_warfare }
+					culture = { has_cultural_tradition = tradition_migratory_culture }
+					culture = { has_cultural_tradition = tradition_cranial_deformation }
+					culture = { has_cultural_tradition = tradition_nomadic_rulership_cranial_deformation }
+					culture = { has_cultural_tradition = tradition_nomadic_rulership }
+					#Some Sort of Romans will definitely do this
+					culture = { has_cultural_tradition = tradition_greek_succession }
+					culture = { has_cultural_tradition = tradition_roman_succession }
+					culture = { has_cultural_tradition = tradition_roman_politics }
+					culture = { has_cultural_tradition = tradition_byzantine_politics }
+					culture = { has_cultural_tradition = tradition_colonizers }
+					culture = { has_cultural_tradition = tradition_hellenizers }
+					culture = { has_cultural_tradition = tradition_romance_culture }
+					culture = { has_cultural_tradition = tradition_romance_culture_non_dlc }
+					culture = { has_cultural_tradition = tradition_hellenic_culture }
+					culture = { has_cultural_tradition = tradition_hellenic_culture_non_dlc }
+					culture = { has_cultural_tradition = tradition_western_roman_legacy }
+					culture = { has_cultural_tradition = tradition_roman_military }
+				}
+			}
+			modifier = { #Fighting Ruling Class
+				factor = 20
+				OR = {
+					#Sure, let's be the ruling fighting caste
+					culture = { has_cultural_tradition = tradition_ruling_caste }
+					culture = { has_cultural_tradition = tradition_warrior_culture }
+					culture = { has_cultural_tradition = tradition_martial_admiration }
+					culture = { has_cultural_tradition = tradition_swords_for_hire }
+					culture = { has_cultural_tradition = tradition_reverence_for_veterans }
+					culture = { has_cultural_tradition = tradition_formation_fighting }
+					culture = { has_cultural_tradition = tradition_warriors_by_merit }
+					culture = { has_cultural_tradition = tradition_hereditary_hierarchy }
+				}
+			}
+			modifier = { #Prefer to be ponderers or separate
+				factor = 10
+				culture = { has_cultural_tradition = tradition_ruling_caste }
+				culture = { has_cultural_tradition = tradition_philosopher_culture }
+				culture = { has_cultural_tradition = tradition_isolationist }
+			}
+			modifier = { #Fluid identities will take it
+				factor = 10
+				OR = {
+					culture = { has_cultural_tradition = tradition_malleable_invaders }
+					culture = { has_cultural_tradition = tradition_xenophilic }
+					culture = { has_cultural_tradition = tradition_religion_blending }
+					culture = { has_cultural_tradition = tradition_fp2_malleable_subjects }
+				}
 			}
 		}
 	}
@@ -131,6 +237,40 @@ migration_situation_war.0100 = {
 		#A reward for not doing so
 		add_prestige = 250
 		add_prestige_level = 1
+		
+		ai_chance = {
+			base = 10
+			modifier = { #Traditionalist Culture likes it
+				factor = 1000
+				OR = {
+					culture = { has_cultural_tradition = tradition_xenophobic }
+					culture = { has_cultural_tradition = tradition_xenophobic_non_dlc }
+					culture = { has_cultural_tradition = tradition_strong_kinship }
+					culture = { has_cultural_tradition = tradition_staunch_traditionalists }
+					culture = { has_cultural_tradition = tradition_mpo_northern_tribes }
+					culture = { has_cultural_tradition = tradition_zealous_pagans }
+					culture = { has_cultural_tradition = tradition_zealous_pagans_non_dlc }
+					culture = { has_cultural_tradition = tradition_decentralized }
+					culture = { has_cultural_tradition = tradition_decentralized_non_dlc }
+				}
+			}
+			modifier = { #Tribalist orientation/culture really likes it
+				factor = 20
+				OR = {
+					culture = { has_cultural_tradition = tradition_tribe_unity }
+					culture = { has_cultural_tradition = tradition_the_witenagemot }
+					culture = { has_cultural_tradition = tradition_steppe_tolerance }
+					culture = { has_cultural_tradition = tradition_fp1_trials_by_combat }
+					culture = { has_cultural_tradition = tradition_fp1_performative_honour }
+				}
+			}
+			modifier = { #Familial oriented prefers Tribal/Feudal over Admin
+				add = 10
+				OR = {
+					culture = { has_cultural_tradition = tradition_family_entrepreneurship }
+				}
+			}
+		}
 	}
 }
 
@@ -246,9 +386,73 @@ migration_situation_war.0200 = {
 			recalculate_cultural_heads_of_type = domain
 			recalculate_cultural_heads_of_type = herd
 		}
+		
+		ai_chance = {
+			base = 90
+			modifier = { #Traditionalists Cultures say we won't do this
+				factor = 0
+				OR = {
+					culture = { has_cultural_tradition = tradition_xenophobic }
+					culture = { has_cultural_tradition = tradition_xenophobic_non_dlc }
+					culture = { has_cultural_tradition = tradition_strong_kinship }
+					culture = { has_cultural_tradition = tradition_staunch_traditionalists }
+					culture = { has_cultural_tradition = tradition_mpo_northern_tribes }
+					culture = { has_cultural_tradition = tradition_zealous_pagans }
+					culture = { has_cultural_tradition = tradition_zealous_pagans_non_dlc }
+					culture = { has_cultural_tradition = tradition_decentralized }
+					culture = { has_cultural_tradition = tradition_decentralized_non_dlc }
+				}
+			}
+			#Distance Ladder
+			modifier = { #We're abutting our homeland
+				factor = 0
+				any_realm_county = { any_neighboring_county = { this.culture = root.culture } }
+			}
+			modifier = { #Our homeland is close
+				factor = 0.1
+				any_county = {
+					squared_distance = { target = root.capital_county value < 10000 }
+					this.culture = root.culture
+				}
+			}
+			modifier = { #Our homeland is kinda close
+				factor = 0.25
+				any_county = {
+					squared_distance = { target = root.capital_county value >= 10000 }
+					squared_distance = { target = root.capital_county value < 50000 }
+					this.culture = root.culture
+				}
+			}
+			modifier = { #Our homeland is a bit of a walk
+				factor = 0.50
+				any_county = {
+					squared_distance = { target = root.capital_county value >= 50000 }
+					squared_distance = { target = root.capital_county value < 100000 }
+					this.culture = root.culture
+				}
+			}
+		}
 	}
 	option = {
 		name = migration_situation_war.do_not_become_migratory_culture
+		
+		ai_chance = {
+			base = 10
+			modifier = { #Traditionalists Cultures say we keep to our ways
+				factor = 1000
+				OR = {
+					culture = { has_cultural_tradition = tradition_xenophobic }
+					culture = { has_cultural_tradition = tradition_xenophobic_non_dlc }
+					culture = { has_cultural_tradition = tradition_strong_kinship }
+					culture = { has_cultural_tradition = tradition_staunch_traditionalists }
+					culture = { has_cultural_tradition = tradition_mpo_northern_tribes }
+					culture = { has_cultural_tradition = tradition_zealous_pagans }
+					culture = { has_cultural_tradition = tradition_zealous_pagans_non_dlc }
+					culture = { has_cultural_tradition = tradition_decentralized }
+					culture = { has_cultural_tradition = tradition_decentralized_non_dlc }
+				}
+			}
+		}
 	}
 }
 
