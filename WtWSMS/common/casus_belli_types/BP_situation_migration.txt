@@ -70,8 +70,19 @@ bp_migration_war = {
 		}
 	}
 
-	#If the government is centralized, can't be a giant blob of Tribals (need to conquer instead)
-	can_pick_title = {
+	valid_to_start = {
+		scope:target = {
+			any_in_de_jure_hierarchy = {
+				tier = tier_county
+				neighboring_county_or_viking_conquest_trigger = { CHARACTER = root }
+			}
+		}
+		#Don't touch the steppe with WtWSMS migrations
+		target_title_not_in_great_steppe_trigger = {
+			TARGET_TITLE = scope:target
+			TIER = kingdom
+		}
+		#If the government is centralized, can't be a giant blob of Tribals (need to conquer instead)
 		trigger_if = {
 			limit = { scope:defender = { government_has_flag = government_is_centralized } }
 			scope:target = {
@@ -85,20 +96,6 @@ bp_migration_war = {
 					}
 				}
 			}
-		}
-	}
-
-	valid_to_start = {
-		scope:target = {
-			any_in_de_jure_hierarchy = {
-				tier = tier_county
-				neighboring_county_or_viking_conquest_trigger = { CHARACTER = root }
-			}
-		}
-		#Don't touch the steppe with WtWSMS migrations
-		target_title_not_in_great_steppe_trigger = {
-			TARGET_TITLE = scope:target
-			TIER = kingdom
 		}
 	}
 
@@ -117,7 +114,7 @@ bp_migration_war = {
 		#TODO: Add attackers, liberate non-participants
 		
 		#Spawn armies
-		custom_tooltip = {
+		custom_description = {
 			text = armies_spawn_from_development
 			scope:attacker = {
 				every_held_title = {
@@ -518,6 +515,7 @@ bp_migration_war = {
 		}
 		custom_description = {
 			text = all_conquered_counties_may_flip_culture_faith
+			object = scope:the_target_title
 			scope:attacker = {
 				every_realm_county = {
 					limit = {
@@ -621,7 +619,7 @@ bp_migration_war = {
 			}
 		}
 		custom_description = {
-			text = attacker_counties_get_failed_migration
+			text = attacker_counties_get_failed_migration_5
 			subject = scope:attacker
 			every_in_list = {
 				list = migration_source_counties
@@ -676,33 +674,6 @@ bp_migration_war = {
 			}
 		}
 		
-		#Add failed migration county modifiers
-		scope:attacker = {
-			every_held_title = {
-				limit = {
-					tier = tier_county
-					major_migration_valid_source_counties_trigger = { ATTACKER = scope:attacker }
-				}
-				add_county_modifier = {
-					modifier = county_failed_migraiton_modifier
-					years = 10
-				}
-			}
-			every_vassal = {
-				limit = { primary_title.tier > tier_barony }
-				every_held_title = {
-					limit = {
-						tier = tier_county
-						major_migration_valid_source_counties_trigger = { ATTACKER = scope:attacker }
-					}
-					add_county_modifier = {
-						modifier = county_failed_migraiton_modifier
-						years = 10
-					}
-				}
-			}
-		}
-		
 		setup_invasion_cb = {
 			titles = target_titles
 			attacker = scope:attacker
@@ -746,7 +717,7 @@ bp_migration_war = {
 			}
 		}
 		custom_description = {
-			text = attacker_counties_get_failed_migration
+			text = attacker_counties_get_failed_migration_10
 			subject = scope:attacker
 			every_in_list = {
 				list = migration_source_counties

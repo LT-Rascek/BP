@@ -29,8 +29,6 @@ migration_situation_war.0100 = {
 		}
 	}
 	
-	desc = migration_situation_war.0100.desc
-	
 	trigger = {
 		OR = { #For safety
 			has_character_flag = roman_government_bootstrap_available
@@ -111,7 +109,11 @@ migration_situation_war.0100 = {
 		}
 		every_in_list = {
 			list = romance_cultures_in_realm
-			change_cultural_acceptance = { target = this value = 5 }
+			change_cultural_acceptance = {
+				target = scope:attacker.culture
+				value = 5
+				desc = migration_war_picked_subroman
+			}
 		}
 	}
 	option = {
