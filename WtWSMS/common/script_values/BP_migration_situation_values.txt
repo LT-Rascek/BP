@@ -127,3 +127,27 @@ duchy_value_as_capital = {
 		}
 	}
 }
+total_target_development = {
+	value = 0
+	every_county = {
+		limit = {
+			OR = {
+				this.duchy = prev
+				this.kingdom = prev
+			}
+		}
+		add = this.development_level
+	}
+}
+target_size = {
+	value = 0
+	every_county = {
+		limit = {
+			OR = {
+				this.duchy = prev
+				this.kingdom = prev
+			}
+		}
+		add = 1
+	}
+}

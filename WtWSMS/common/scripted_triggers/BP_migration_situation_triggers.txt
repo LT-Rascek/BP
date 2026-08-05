@@ -26,3 +26,13 @@ general_bp_migration_constraints_trigger = {
 	#Pass on targets smaller than our current realm size
 	this.target_size <= scope:attacker.realm_size
 }
+target_title_not_in_great_steppe_trigger = {
+	NOT = {
+		situation:the_great_steppe = {
+			any_situation_county = {
+				count >= 1
+				this.$TIER$ = $TARGET_TITLE$
+			}
+		}
+	}
+}

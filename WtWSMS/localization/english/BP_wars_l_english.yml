@@ -1,40 +1,4 @@
 ﻿l_english:
- #Minor Migration Wars
- minor_migration_war: "Minor $MIGRATION_WAR_CB_NAME$"
- minor_migration_war_warning_desc: "\n\n#X You may only attempt a migratory invasion once every 10 years#!\n"
- minor_migration_war_victory_desc_attacker: "You seize all titles within [defender.GetShortUINamePossessive] realm belonging [de_jure|E] to the target title."
- minor_migration_war_victory_desc: "[ATTACKER.GetShortUIName|U] seizes all titles within [defender.GetShortUINamePossessive] realm belonging [de_jure|E] to the target title, and all occupied counties outside it."
- minor_migration_war_white_peace_desc_defender: "You keep your titles."
- minor_migration_war_white_peace_desc: "[defender.GetShortUIName|U] keeps [defender.GetHerHis] titles."
- minor_migration_war_defeat_desc_defender: "You keep your titles."
- minor_migration_war_defeat_desc: "[defender.GetShortUIName|U] keeps [defender.GetHerHis] titles."
- MINOR_MIGRATION_WAR_NAME: "[ATTACKER.GetCulture.GetNameNoTooltip] Minor Migratory War for [TITLE.GetNameNoTier]"
- MINOR_MIGRATION_WAR_NAME_BASE: "[ATTACKER.GetCulture.GetNameNoTooltip][TITLE.GetNameNoTier]"
- MINOR_MIGRATION_CB_NAME: "[ATTACKER.GetCulture.GetNameNoTooltip] Minor Migratory War for [TITLE.GetNameNoTier]"
- vassals_become_independent: "Your vassals, if you have any, become independent if you are independent. Otherwise, they become your liege's vassals."
- you_become_independent: "You become independent, if you already are not."
- your_old_counties_handled: "New rulers will recieve your old counties, if you are independent. Otherwise, your liege recieves your counties."
- # Kingdom-Level Migrations Wars
- minor_migration_war_kingdom: "$MIGRATION_WAR_CB_NAME$"
- MINOR_MIGRATION_KINGDOM_WAR_NAME: "[ATTACKER.GetCulture.GetNameNoTooltip] Migratory War for [TITLE.GetNameNoTier]"
- MINOR_MIGRATION_KINGDOM_WAR_NAME_BASE: "[ATTACKER.GetCulture.GetNameNoTooltip][TITLE.GetNameNoTier]"
- MINOR_MIGRATION_KINGDOM_CB_NAME: "[ATTACKER.GetCulture.GetNameNoTooltip] Migratory War for [TITLE.GetNameNoTier]"
- #Major Migration Wars
- major_migration_war: "Migratory Invasion"
- migration_war_warning_desc: "\n\n#X You may only attempt a migratory invasion once every 10 years#!\n"
- migration_war_victory_desc_attacker: "You seize all titles within [defender.GetShortUINamePossessive] realm belonging [de_jure|E] to the target title, and all occupied counties outside it."
- migration_war_victory_desc: "[ATTACKER.GetShortUIName|U] seizes all titles within [defender.GetShortUINamePossessive] realm belonging [de_jure|E] to the target title, and all occupied counties outside it."
- migration_war_white_peace_desc_defender: "You keep your titles."
- migration_war_white_peace_desc: "[defender.GetShortUIName|U] keeps [defender.GetHerHis] titles."
- migration_war_defeat_desc_defender: "You keep your titles."
- migration_war_defeat_desc: "[defender.GetShortUIName|U] keeps [defender.GetHerHis] titles."
- MAJOR_MIGRATION_WAR_NAME: "[ATTACKER.GetCulture.GetNameNoTooltip] Migration to [TITLE.GetNameNoTier]"
- MAJOR_MIGRATION_WAR_NAME_BASE: "[ATTACKER.GetCulture.GetNameNoTooltip][TITLE.GetNameNoTier]"
- MAJOR_MIGRATION_CB_NAME: "[bp_major_war_marker] [ATTACKER.GetCulture.GetNameNoTooltip] Migration to [TITLE.GetNameNoTier]"
- major_migration_culture_changes_tt: "All [counties|E] have a chance of establishing [minority_culture|E] or [minority_faith|E] populations of their new rulers\n$TAB$$EFFECT_LIST_BULLET$ If the development of the county is less than [EmptyScope.ScriptValue('major_migration_max_development_for_large_minority')], it is possible that this minority will be large instead of small.\n$TAB$$EFFECT_LIST_BULLET$ If the county has a [development|E] of less than [EmptyScope.ScriptValue('major_migration_max_development_for_flip')], the invader's population #italic may#! become a majority instead.\n$TAB$$EFFECT_LIST_BULLET$Counties with low [development|E] have a risk of having [castle_holdings|E] converted to [tribal_holdings|E]"
- #Other Migration Stuff
- SOME_VASSALS_MAY_JOIN: "Some Vassals may join the migration"
- 
  #Imperial Reconquests
  SUCCESSOR_IMPERIAL_RECONQUEST_WAR_SPECIFIC_NAME: "[ATTACKER.GetPrimaryTitle.GetPrefix]-[DEFENDER.GetPrimaryTitle.GetAdjective] Sub-Roman War of Reconquest"
  SUCCESSOR_IMPERIAL_RECONQUEST_WAR_SPECIFIC_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
@@ -90,28 +54,6 @@
  #Tooltips (make dynamic)
  FEDERATE_STATUS_CANNOT_BE_REVOKED_THIS_LIFETIME: "Federate Status cannot be revoked the rest of the [TARGET_CHARACTER.GetShortUIName] life"
  FEDERATE_BECOMES_TAX_EXEMPT: "[TARGET_CHARACTER.GetShortUINamePossessive] is exempt from paying liege taxes the rest of their life"
- 
- #Tributary Wars
- tributary_cb: "Extort Tribute"
- TRIBUTARY_CB_NAME: "Tributary Subjugation of [DEFENDER.GetShortUIName]"
- TRIBUTARY_CB_SPECIFIC_NAME: "Tributary Subjugation [DEFENDER.GetShortUIName]"
- TRIBUTARY_WAR_NAME: "$ORDER$ [ATTACKER.GetPrimaryTitle.GetPrefix]-[DEFENDER.GetPrimaryTitle.GetAdjective] Tributary War"
- TRIBUTARY_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
- msg_tributary_war_invalidated_message: "Tributary War invalidated"
- tributary_cb_victory_desc_attacker: "[defender.GetShortUIName|U] becomes your [vassal|E] with a tributary contract."
- tributary_cb_victory_desc_defender: "You become [attacker.GetShortUINamePossessive] [vassal|E] with a tributary contract."
- tributary_cb_victory_desc: "[defender.GetShortUIName|U] becomes [attacker.GetShortUINamePossessive] [vassal|E] with a tributary contract."
- tributary_cb_white_peace_desc_defender: "You keep the current status quo."
- tributary_cb_white_peace_desc: "[defender.GetShortUIName|U] keeps the current status quo."
- tributary_cb_defeat_desc_attacker: "[defender.GetShortUIName|U] remains independent. All [factions|E] against you increase their [discontent|E]."
- 
- tributary_state_cb: "Establish Tribute"
- tributary_state_cb_victory_desc_attacker: "[defender.GetShortUIName|U] becomes your [vassal|E] with a tributary state contract."
- tributary_state_cb_victory_desc_defender: "You become [attacker.GetShortUINamePossessive] [vassal|E] with a tributary state contract."
- tributary_state_cb_victory_desc: "[defender.GetShortUIName|U] becomes [attacker.GetShortUINamePossessive] [vassal|E] with a tributary state contract."
- tributary_state_cb_white_peace_desc_defender: "You keep the current status quo."
- tributary_state_cb_white_peace_desc: "[defender.GetShortUIName|U] keeps the current status quo."
- tributary_state_cb_defeat_desc_attacker: "[defender.GetShortUIName|U] remains independent. All [factions|E] against you increase their [discontent|E]."
  
  #Event Wars
  odoacer_takeover_war: "$invasion_war$"

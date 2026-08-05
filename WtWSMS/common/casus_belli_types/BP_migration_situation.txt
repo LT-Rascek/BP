@@ -725,13 +725,13 @@ bp_migration_war = {
 		first_valid = {
 			triggered_desc = {
 				trigger = { scope:defender = { is_local_player = yes } }
-				desc = minor_migration_war_defeat_desc_defender
+				desc = migration_war_defeat_desc_defender
 			}
-			desc = minor_migration_war_defeat_desc
+			desc = migration_war_defeat_desc
 		}
 		triggered_desc = {
 			trigger = { scope:attacker = { is_local_player = yes } }
-			desc = minor_migration_war_warning_desc
+			desc = migration_war_warning_desc
 		}
 	}
 	

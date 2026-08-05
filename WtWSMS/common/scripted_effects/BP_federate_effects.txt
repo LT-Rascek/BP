@@ -1,0 +1,51 @@
+﻿#Create Titular title if primary isn't titular
+#Avoids the edge case of migrating a landed title getting usurped almost immediately after migration
+#and counties that have been handed out become independent
+create_titular_title_if_needed_effect = {
+	#If our primary title **isn't** titular, create a new one of the same rank
+	#Avoids the edge case of migrating a landed title getting usurped almost immediately after migration
+	#and counties that have been handed out become independent
+	if = {
+		limit = { $CHAR$.primary_title = { is_titular = no } }
+		
+		create_title_and_vassal_change = {
+			type = created
+			save_scope_as = change_primary_title
+			add_claim_on_loss = no
+		}
+		
+		$CHAR$ = {
+			primary_title = { save_scope_as = old_title }
+			
+			if = {
+				limit = { $CHAR$.primary_title.tier = tier_duchy }
+				create_dynamic_title = {
+					tier = duchy
+					name = MIGRATORY_TITLE_NAME
+				}
+			}
+			else = {
+				create_dynamic_title = {
+					tier = kingdom
+					name = MIGRATORY_TITLE_NAME
+				}
+			}
+			scope:new_title = {
+				change_title_holder = {
+					holder = $CHAR$
+					change = scope:change_primary_title
+				}
+			}
+		}
+		resolve_title_and_vassal_change = scope:change_primary_title
+		$CHAR$ = {
+			scope:new_title = {
+				set_coa = $CHAR$.house
+				set_color_from_title = $CHAR$.capital_province.county
+				set_capital_county = $CHAR$.capital_province.county
+			}
+			set_primary_title_to = scope:new_title
+			destroy_title = scope:old_title
+		}
+	}
+}
