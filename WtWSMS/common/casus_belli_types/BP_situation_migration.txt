@@ -211,6 +211,9 @@ bp_migration_war = {
 			add_claim_on_loss = yes
 		}
 		
+		#### TODO: Mark defender de jure title to be destroyed if it exists
+		#### TODO: Mark attacker de jure kingdoms/duchies to be destroyed
+		
 		#### Build necessary lists
 		
 		#attacker_handed_off_vassals: vassals of attackers who get handed off as vassals
@@ -231,18 +234,12 @@ bp_migration_war = {
 			add_to_temporary_list = migrating_attackers
 			every_vassal = {
 				if = {
-					limit = { has_character_flag = participating_vassal }
-					add_to_temporary_list = migrating_attackers
-				}
-				else_if = {
 					limit = { this.top_liege = scope:war_leader }
 					add_to_temporary_list = attacker_liberated_vassals
 				}
 				else = { add_to_temporary_list = attacker_handed_off_vassals }
 			}
 		}
-		
-		#### TODO: Mark attacker de jure kingdoms/duchies to be destroyed
 		
 		every_in_list = { #Migration Source Counties
 			list = migrating_attackers
@@ -257,7 +254,7 @@ bp_migration_war = {
 			}
 		}
 		
-		every_in_list = { #Migration Source Counties
+		every_in_list = { #Attacker title handling
 			list = migrating_attackers
 			every_held_title = {
 				limit = {
@@ -333,8 +330,6 @@ bp_migration_war = {
 				}
 			}
 		}
-		
-		#### TODO: Mark defender de jure title to be destroyed if it exists
 		
 		#### Hand off attacker titles
 		every_in_list = {
@@ -608,43 +603,44 @@ bp_migration_war = {
 			}
 		}
 		
-		#Add failed migration county modifiers
-		scope:attacker = {
+		#Your Provinces get looted and failed migration modifiers
+		scope:attacker = { #War Attackers and Vassal Handling
+			save_temporary_scope_as = war_leader
+			add_to_temporary_list = migrating_attackers
+		}
+		every_in_list = { #Migration Source Counties
+			list = migrating_attackers
 			every_held_title = {
 				limit = {
-					tier = tier_county
-					major_migration_valid_source_counties_trigger = { ATTACKER = scope:attacker }
+					is_landless_type_title = no
+					this.tier = tier_county
+					this.culture = prev.culture
+					this.faith = prev.faith
 				}
-				add_county_modifier = {
-					modifier = county_failed_migraiton_modifier
-					years = 10
-				}
+				add_to_temporary_list = migration_source_counties
 			}
-			every_vassal = {
-				limit = { primary_title.tier > tier_barony }
-				every_held_title = {
-					limit = {
-						tier = tier_county
-						major_migration_valid_source_counties_trigger = { ATTACKER = scope:attacker }
-					}
-					add_county_modifier = {
-						modifier = county_failed_migraiton_modifier
-						years = 10
-					}
+		}
+		custom_description = {
+			text = attacker_counties_get_failed_migration
+			subject = scope:attacker
+			every_in_list = {
+				list = migration_source_counties
+				add_county_modifier = { modifier = failed_migration_modifier years = 5 }
+			}
+		}
+		custom_description = {
+			text = attacker_counties_get_looted
+			subject = scope:attacker
+			every_in_list = {
+				list = migration_source_counties
+				every_county_province = {
+					limit = { has_holding = yes }
+					add_province_modifier = { modifier = recently_looted_modifier years = 5 }
 				}
 			}
 		}
-
-		scope:defender = { stress_impact = { arrogant = medium_stress_impact_gain } }
 		
-		#Add migratory invasion flag
-		if = {
-			limit = { scope:attacker.culture = { has_cultural_parameter = easier_migration_cbs } }
-			scope:attacker = { add_character_flag = { flag = launched_migration_war_recently years = major_migration_wait_time_easier } }
-		}
-		else = {
-			scope:attacker = { add_character_flag = { flag = launched_migration_war_recently years = major_migration_wait_time } }
-		}
+		scope:defender = { stress_impact = { arrogant = medium_stress_impact_gain } }
 	}
 	
 	on_defeat_desc = {
@@ -732,14 +728,44 @@ bp_migration_war = {
 		scope:attacker = { save_temporary_scope_as = loser }
 		on_lost_aggression_war_discontent_loss = yes
 		
-		#Add migratory invasion flag
-		if = {
-			limit = { scope:attacker.culture = { has_cultural_parameter = easier_migration_cbs } }
-			scope:attacker = { add_character_flag = { flag = launched_migration_war_recently years = major_migration_wait_time_easier } }
+		#Your Provinces get looted and failed migration modifiers
+		scope:attacker = { #War Attackers and Vassal Handling
+			save_temporary_scope_as = war_leader
+			add_to_temporary_list = migrating_attackers
 		}
-		else = {
-			scope:attacker = { add_character_flag = { flag = launched_migration_war_recently years = major_migration_wait_time } }
+		every_in_list = { #Migration Source Counties
+			list = migrating_attackers
+			every_held_title = {
+				limit = {
+					is_landless_type_title = no
+					this.tier = tier_county
+					this.culture = prev.culture
+					this.faith = prev.faith
+				}
+				add_to_temporary_list = migration_source_counties
+			}
 		}
+		custom_description = {
+			text = attacker_counties_get_failed_migration
+			subject = scope:attacker
+			every_in_list = {
+				list = migration_source_counties
+				add_county_modifier = { modifier = failed_migration_modifier years = 10 }
+			}
+		}
+		custom_description = {
+			text = attacker_counties_get_looted
+			subject = scope:attacker
+			every_in_list = {
+				list = migration_source_counties
+				every_county_province = {
+					limit = { has_holding = yes }
+					add_province_modifier = { modifier = recently_looted_modifier years = 5 }
+				}
+			}
+		}
+		
+		scope:attacker = { add_prestige_level = -1 }
 	}
 	
 	transfer_behavior = transfer

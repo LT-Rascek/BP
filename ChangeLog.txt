@@ -30,23 +30,31 @@ Migration Situation: Added a new situation to subsume our disparate migration me
 
 Casus Belli:
 - Overhaul Migration CB:
-   - Exclaves become independent if there is no path to the capital, potentially shattering realms
-   - If the kingdom holder has a Centralized Government, Tribal, High Tribal, Roman Federate, and player vassals within the conquest region will either become your vassals or become independent, depending on their title tier compared to yours
-   - All provinces will be looted for 5 years and counties have a modifier nerfing garrison and levies by 33%
-   - Greatly simplified the impact of innovations on tribalization of holdings
-      - Odds of flipping holdings to tribal: Base 20%
-         - Reduced by 2% for each level of development
-         - Reduced 0.5% for each Tribal Era Military Innovation and 1% for each Tribal Era Civic Innovation, with "Oral Law", "Writing", and "Social Stratification" each reducing the odds by 1.5%
-   - Greatly simplified the flipping of county culture/faith during migration
-      - Odds of flipping culture/faith: Base 30%
-         - Reduced 2% for each level of development
-         - Each era, beyond the Tribal Era, for which the county culture has at least one innovation reduces odds by 5%
-   - If the target of the migration has a Centralized Government, an event will fire allowing the attacker to adopt Hight Tribal Government
-      - If adopting the High Tribal government, the ruler receives a modifier increasing monthly control growth and reducing different faith Popular Opinion
-      - If declining to upgrade the government, the ruler receives prestige and a Level of Fame
-      - If that Centralized Government is a Roman Government, there is also the option to adopt Sub-Roman government
-         - This inherits the Sub-Roman Transition state from the previous government as well
-         - Adopting Roman government gives 5% cultural acceptance with all cultures with a Roman Political or Cultural Tradition
+   - On Victory:
+      - Exclaves become independent if there is no path to the capital, potentially shattering realms
+      - If the kingdom holder has a Centralized Government, Tribal, High Tribal, Roman Federate, and player vassals within the conquest region will either become your vassals or become independent, depending on their title tier compared to yours
+      - All conquered provinces will be looted for 5 years and counties have a modifier nerfing garrison and levies by 33%
+      - Greatly simplified the impact of innovations on tribalization of holdings
+         - Odds of flipping holdings to tribal: Base 20%
+            - Reduced by 2% for each level of development
+            - Reduced 0.5% for each Tribal Era Military Innovation and 1% for each Tribal Era Civic Innovation, with "Oral Law", "Writing", and "Social Stratification" each reducing the odds by 1.5%
+      - Greatly simplified the flipping of county culture/faith during migration
+         - Odds of flipping culture/faith: Base 30%
+            - Reduced 2% for each level of development
+            - Each era, beyond the Tribal Era, for which the county culture has at least one innovation reduces odds by 5%
+      - If the target of the migration has a Centralized Government, an event will fire allowing the attacker to adopt Hight Tribal Government
+         - If adopting the High Tribal government, the ruler receives a modifier increasing monthly control growth and reducing different faith Popular Opinion
+         - If declining to upgrade the government, the ruler receives prestige and a Level of Fame
+         - If that Centralized Government is a Roman Government, there is also the option to adopt Sub-Roman government
+            - This inherits the Sub-Roman Transition state from the previous government as well
+            - Adopting Roman government gives 5% cultural acceptance with all cultures with a Roman Political or Cultural Tradition
+   - On White Peace:
+      - All attacker counties get a modifier reducing garrison, levies, taxes, and increasing build speed for 5 years
+      - All attacker provinces get the looted modifier for 5 years
+   - On Defeat:
+      - Attacker looses a level of fame
+      - All attacker counties get a modifier reducing garrison, levies, taxes, and increasing build speed for 10 years
+      - All attacker provinces get the looted modifier for 5 years
 
 2026-MM-DD v0.3.0
 -----------
