@@ -626,3 +626,19 @@ BP_has_migratory_ruling_caste_tradition_trigger = {
 		has_cultural_tradition = tradition_nomadic_rulership
 	}
 }
+#Culture Root
+BP_migratory_ruling_cast_tradition_too_many_counties_trigger = {
+	OR = {
+		root = { any_culture_county = { count >= 5 } }
+		root = { any_culture_county = { count >= 3 any_neighboring_county = { this.culture = prev.culture } } }
+	}
+}
+BP_diverge_culture_during_migration_trigger = { #Top Liege root; should match above
+	NOR = {
+		any_realm_county = { count >= 5 this.culture = root.culture }
+		any_realm_county = {
+			count >= 3 this.culture = root.culture
+			any_neighboring_county = { this.culture = root.culture }
+		}
+	}
+}

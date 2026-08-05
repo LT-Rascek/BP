@@ -1,6 +1,7 @@
 ﻿namespace = migration_situation_war
 
 # 0100-0199: Government Bootstrapping
+# 0200-0299: Culture Events Bootstrapping
 
 scripted_effect remove_character_flag_if_has_it_effect = {
 	if = {
@@ -22,7 +23,7 @@ migration_situation_war.0100 = {
 		desc = migration_situation_war.0100.desc.opening
 		first_valid = {
 			triggered_desc = {
-				trigger = { scope:scheme = { scheme_type = murder } }
+				trigger = { has_character_flag = roman_government_bootstrap_available }
 				desc = migration_situation_war.0100.desc.roman
 			}
 			desc = migration_situation_war.0100.desc.fallback
@@ -115,6 +116,14 @@ migration_situation_war.0100 = {
 				desc = migration_war_picked_subroman
 			}
 		}
+		
+		if = {
+			limit = { has_dlc_feature = hybridize_culture }
+			custom_tooltip = {
+				text = may_have_option_to_diverge_culture
+				root = { trigger_event = { id = migration_situation_war.0200 } }
+			}
+		}
 	}
 	option = {
 		fallback = yes
@@ -124,3 +133,122 @@ migration_situation_war.0100 = {
 		add_prestige_level = 1
 	}
 }
+
+#Culture diverges and adopts traditions
+migration_situation_war.0200 = {
+	type = character_event
+	theme = culture_change
+	content_source = dlc_WtWSMS
+	override_background = { reference = throne_room_scope }
+	
+	
+	title = migration_situation_war.0200.t
+	
+	desc = migration_situation_war.0200.desc
+	
+	trigger = {
+		has_dlc_feature = hybridize_culture #Safety
+		BP_diverge_culture_during_migration_trigger = yes
+		NOR = {
+			culture = { has_cultural_tradition = tradition_nomadic_rulership }
+			culture = { has_cultural_tradition = tradition_nomadic_rulership_cranial_deformation }
+			culture = { has_cultural_tradition = tradition_migratory_culture }
+		}
+	}
+	immediate = {}
+	after = {}
+	
+	left_portrait = {
+		character = ROOT
+		animation = thinking
+	}
+	
+	option = {
+		name = migration_situation_war.become_migratory_culture
+		
+		custom_description = {
+			text = new_culture_summary
+			subject = root.culture
+		}
+		
+		#Insert any culture name or name list shenanigans tooltips here
+		
+		if = {
+			limit = { culture = { has_cultural_tradition = tradition_ruling_caste } }
+			custom_tooltip = remove_ruling_cast_tradition
+		}
+		if = {
+			limit = { culture = { has_cultural_tradition = tradition_cranial_deformation } }
+			custom_tooltip = adopt_nomadic_rulership_cranial_deformation_tradition
+		}
+		else = { custom_tooltip = adopt_migratory_culture_tradition }
+		
+		hidden_effect = {
+			create_divergent_culture = yes
+			
+			#Insert any culture name or name list shenanigans here
+			
+			scope:new_culture ?= {
+				hidden_effect = {
+					if = {
+						limit = { NOT = { has_cultural_pillar = head_determination_herd } }
+						set_culture_pillar = head_determination_herd
+					}
+				}
+				#Ethos Determination
+				random_list = {
+					10 = {
+						set_culture_pillar = ethos_bellicose
+						modifier = { has_cultural_pillar = ethos_bellicose factor = 0 }
+					}
+					10 = {
+						set_culture_pillar = ethos_stoic
+						modifier = { has_cultural_pillar = ethos_stoic factor = 0 }
+					}
+					10 = {
+						set_culture_pillar = ethos_bellicose
+						modifier = { has_cultural_pillar = ethos_bellicose factor = 0 }
+					}
+					10 = {
+						set_culture_pillar = ethos_bureaucratic
+						modifier = { has_cultural_pillar = ethos_bureaucratic factor = 0 }
+					}
+					10 = {
+						set_culture_pillar = ethos_spiritual
+						modifier = { has_cultural_pillar = ethos_spiritual factor = 0 }
+					}
+					10 = {
+						set_culture_pillar = ethos_courtly
+						modifier = { has_cultural_pillar = ethos_courtly factor = 0 }
+					}
+					10 = {
+						set_culture_pillar = ethos_egalitarian
+						modifier = { has_cultural_pillar = ethos_egalitarian factor = 0 }
+					}
+					10 = {
+						set_culture_pillar = ethos_communal
+						modifier = { has_cultural_pillar = ethos_communal factor = 0 }
+					}
+				}
+				#Tradition padding
+				if = {
+					limit = { has_cultural_tradition = tradition_ruling_caste }
+					remove_culture_tradition = tradition_ruling_caste
+				}
+				if = {
+					limit = { has_cultural_tradition = tradition_cranial_deformation }
+					remove_culture_tradition = tradition_cranial_deformation
+					add_culture_tradition = tradition_nomadic_rulership_cranial_deformation
+				}
+				else = { add_culture_tradition = tradition_migratory_culture }
+			}
+			
+			recalculate_cultural_heads_of_type = domain
+			recalculate_cultural_heads_of_type = herd
+		}
+	}
+	option = {
+		name = migration_situation_war.do_not_become_migratory_culture
+	}
+}
+
