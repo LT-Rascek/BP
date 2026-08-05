@@ -118,6 +118,9 @@ migration_situation_war.0100 = {
 		else = {
 			set_sub_roman_type_laws_for_migration_effect = { TARGET_CHAR = ROOT TYPE = dynastic }
 		}
+		#Set the non-Roman Rule Law
+		add_realm_law_skip_effects = non_roman_minority_rule_law_2
+		
 		#Minor bit of cultural acceptance
 		every_realm_county = {
 			limit = {
