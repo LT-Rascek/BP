@@ -229,7 +229,11 @@
 							increased_subjugation_limit = yes
 							cultural_unification_cb_enabled = yes
 						}
-						character_modifier = {}
+						character_modifier = {
+							#AI Weights
+							ai_war_chance = 0.5
+							ai_boldness = 0.25
+						}
 						county_modifier = {}
 					}
 					others = {

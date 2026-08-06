@@ -3,21 +3,21 @@
  
  #Groups
  BP_migration_situation_participant_group_barbarian_kings: "Barbarian Kings"
- BP_migration_situation_participant_group_barbarian_kings_desc: "DESC"
+ BP_migration_situation_participant_group_barbarian_kings_desc: "Former $BP_migration_situation_participant_group_migrators$ and $BP_migration_situation_participant_group_tribals, who now rule Centralized Realms in this [situation_sub_region|E"
  BP_migration_situation_participant_group_migrators: "Migrators"
- BP_migration_situation_participant_group_migrators_desc: "DESC"
+ BP_migration_situation_participant_group_migrators_desc: "DESC" #FIXME
  BP_migration_situation_participant_group_others: "Others"
- BP_migration_situation_participant_group_others_desc: "DESC"
+ BP_migration_situation_participant_group_others_desc: "All other rulers in this [situation_sub_region|E]"
  BP_migration_situation_participant_group_roman_emperors: "Roman Emperors"
- BP_migration_situation_participant_group_roman_emperors_desc: "DESC"
+ BP_migration_situation_participant_group_roman_emperors_desc: "The Roman Emperors in this [situation_sub_region|E]"
  BP_migration_situation_participant_group_roman_successors: "Roman Successors"
- BP_migration_situation_participant_group_roman_successors_desc: "DESC"
+ BP_migration_situation_participant_group_roman_successors_desc: "The various Sub-Roman and Roman States that derive from the Roman Empire and maintain Roman legal or cultural customs in this [situation_sub_region|E"
  BP_migration_situation_participant_group_tribals: "Tribals"
- BP_migration_situation_participant_group_tribals_desc: "DESC"
+ BP_migration_situation_participant_group_tribals_desc: "DESC" #FIXME
  
  #Phases
  BP_migration_situation_BP_dormant_phase_situation_phase: "Dormant Phase"
- BP_migration_situation_BP_dormant_phase_situation_phase_desc: "Dormant Phase Desc"
+ BP_migration_situation_BP_dormant_phase_situation_phase_desc: "This region is currently dormant; players should not be seeing this phase"
  
  BP_migration_situation_BP_migration_period_situation_phase: "Migration Phase"
  BP_migration_situation_BP_migration_period_situation_phase_desc: "Migration Phase Desc"
@@ -44,6 +44,7 @@
  situation_parameter_easier_adventurer_invasions: "ADVENTURER_INVASIONS are easier"
  situation_parameter_increased_subjugation_limit: "$culture_parameter_increased_subjugation_limit$"
  situation_parameter_increased_subroman_decay: "Increased SUB_ROMAN_DECAY"
+ situation_parameter_lower_acceptance_for_hybridization: "Halves the required [cultural_acceptance|E] needed to create a [hybrid_culture|E]\n$TAB$#weak Does not stack with [GetTrait('nomadic_philosophy').GetName( GetNullCharacter )] or $culture_parameter_easier_to_hybridize$ culture features#!"
  situation_parameter_migration_cbs_enabled: "Enables MIGRATION_CASUS_BELLI"
  situation_parameter_targetable_by_migration_cbs_loc: "Can be targeted by MIGRATION_CASUS_BELLI"
  situation_parameter_unlocks_passing_culture_law: "Unlocks the decision to PASS_CULTURE_LAW"
