@@ -38,6 +38,16 @@ conversion_culture_very_difficult_to_convert_or_promote_steward_value = {
 	}
 }
 
+#Culture diverge/hybrid timelines are no scoped, so we have to define them without scope
+BP_culture_divergence_cooldown_halved = {
+	value = culture_divergence_cooldown
+	multiply = 0.5
+}
+BP_culture_hybrid_cooldown_halved = {
+	value = culture_divergence_cooldown
+	multiply = 0.5
+}
+
 #Acceptance values
 heritage_tradition_acceptance_value = 5
 sinophilic_tradition_acceptance_value = 15

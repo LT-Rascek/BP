@@ -1,0 +1,40 @@
+﻿#Insert widget and controller to give options of:
+# - Become more Roman
+# - Become less Roman
+# - Stay the same
+#
+# - Option to Promulgate a Law (e.g., Lex Visogothicorum, Lex Burgundiorum)
+#	- Non-Roman Rule Law must not be at either extreme to use
+#	- Only able to be done once per culture, this variable gets inherited by child cultures and will not be applied to 395 tribal cultures (so no Lex Isaurianorum)
+# - One of 3 effects:
+#	- Culture gets "Oral Law" Innovation if not already held and Mundium Innovation progress
+#	- Culture gets "Mundium" Innovation
+#	- Culture gets progress towards "Hereditary Rule" and "Aristocracy" Innovations
+# - Gets "Lawgiver" nickname
+# - Has 3 options:
+#	- More Barbarian: Shifts Non-Roman Rule law one against the Romans. Gain Piety (if not of Roman faith), Gain Renown, dynasty gets same culture opinion modifier for 100 years
+#	- Balanced: Gain Prestige, Culture Fascination Modifier speed for dynasty for 100 years
+#	- More Roman:  Shifts Non-Roman Rule law one in favor of the Romans, unlocks legal codex regardless of traditions, increases Roman/Barbarian cultural acceptance, costs prestige
+pass_cultural_law = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_found_kingdom.dds"
+	}
+	decision_group_type = major
+
+	ai_check_interval = 0
+
+	desc = create_outremer_empire_decision_desc
+	selection_tooltip = create_outremer_empire_decision_tooltip
+	
+	is_shown = { always = no }
+	
+	is_valid = { always = no }
+
+	is_valid_showing_failures_only = { always = no }
+
+	cost = {}
+
+	effect = {}
+	
+	ai_potential = { always = no }
+}

@@ -2,16 +2,18 @@
  situation_BP_migration_situation: "The Migration Period"
  
  #Groups
- BP_migration_situation_participant_group_civilized_polities: "Civilized Polities"
- BP_migration_situation_participant_group_civilized_polities_desc: "Civilized Polities Description"
- BP_migration_situation_participant_group_barbarian_polities: "Barbarian Polities"
- BP_migration_situation_participant_group_barbarian_polities_desc: "Barbarian Polities Description"
+ BP_migration_situation_participant_group_barbarian_kings: "Barbarian Kings"
+ BP_migration_situation_participant_group_barbarian_kings_desc: "DESC"
  BP_migration_situation_participant_group_migrators: "Migrators"
- BP_migration_situation_participant_group_migrators_desc: "Migrator Description"
- BP_migration_situation_participant_group_successor_states: "Successor States"
- BP_migration_situation_participant_group_successor_states_desc: "Successor States Description"
+ BP_migration_situation_participant_group_migrators_desc: "DESC"
+ BP_migration_situation_participant_group_others: "Others"
+ BP_migration_situation_participant_group_others_desc: "DESC"
+ BP_migration_situation_participant_group_roman_emperors: "Roman Emperors"
+ BP_migration_situation_participant_group_roman_emperors_desc: "DESC"
+ BP_migration_situation_participant_group_roman_successors: "Roman Successors"
+ BP_migration_situation_participant_group_roman_successors_desc: "DESC"
  BP_migration_situation_participant_group_tribals: "Tribals"
- BP_migration_situation_participant_group_tribals_desc: "Tribals Description"
+ BP_migration_situation_participant_group_tribals_desc: "DESC"
  
  #Phases
  BP_migration_situation_BP_migration_period_situation_phase: "Migration Phase"
@@ -19,17 +21,32 @@
  BP_migration_period_war_effects_concept: "War Effects Desc"
  BP_migration_culture_effects: "Culture Effects"
  BP_migration_culture_effects_concept: "Culture Effects Desc"
+ BP_migration_other_effects: "Other Effects"
+ BP_migration_other_effects_desc: "Other Effects Desc"
  BP_transition_period: "Transition Phase"
  BP_transition_period_desc: "Transition Phase Desc"
  
+ #Regions
+ BP_migration_situation_sub_region_migration_region_wre: "Western Roman Empire"
+ BP_migration_situation_sub_region_migration_region_ere: "Eastern Roman Empire"
+ BP_migration_situation_sub_region_migration_region_britannia: "Britannia"
+ BP_migration_situation_sub_region_migration_region_barbaria: "Germania and Slavia"
+ BP_migration_situation_sub_region_migration_region_steppe: "The Great Steppe"
+ 
  #Parameters (all need to be added in)
- situation_parameter_targetable_by_migration_cbs_loc: "Can be targeted by MIGRATION_CASUS_BELLI"
- situation_parameter_migration_cbs_enabled: "Enables MIGRATION_CASUS_BELLI"
- situation_parameter_unlocks_passing_culture_law: "Unlocks the decision to PASS_CULTURE_LAW"
- situation_parameter_increased_subjugation_limit: "$culture_parameter_increased_subjugation_limit$"
- situation_parameter_more_liberal_divergence_hybridization_time: "Reduces time required for CULTURE_HYBRID_DIVERGENCE" #Make into Select Localization
+ #TODO: Make situation_parameter_faster_divergence_hybridization_time into Select Localization
  situation_parameter_cultural_unification_cb_enabled: "Enables CULTURE_UNIFICATION_CB"
  situation_parameter_easier_adventurer_invasions: "ADVENTURER_INVASIONS are easier"
+ situation_parameter_increased_subjugation_limit: "$culture_parameter_increased_subjugation_limit$"
+ situation_parameter_increased_subroman_decay: "Increased SUB_ROMAN_DECAY"
+ situation_parameter_migration_cbs_enabled: "Enables MIGRATION_CASUS_BELLI"
+ situation_parameter_targetable_by_migration_cbs_loc: "Can be targeted by MIGRATION_CASUS_BELLI"
+ situation_parameter_unlocks_passing_culture_law: "Unlocks the decision to PASS_CULTURE_LAW"
+ #Needs to be Select Localized
+ situation_parameter_confederation_tribal_authority: "$culture_parameter_confederation_tribal_authority$"
+ situation_parameter_faster_divergence_hybridization_time: "Halves time required to create a [divergent_culture|E] or [hybrid_culture|E]"
+ situation_parameter_forming_confederations_is_easier: "$culture_parameter_forming_confederations_is_easier$"
+ situation_parameter_invite_to_confederation_extra_reasons: "$culture_parameter_invite_to_confederation_extra_reasons$"
  
  #Catalysts
  catalyst_situation_passing_of_time_migration: "Yearly Drift [situation_catalyst|E]"

@@ -13,7 +13,28 @@
 	sub_regions = {
 		migration_region_wre = {
 			icon = "gfx/interface/icons/situations/debug_situation/steppe_west.dds"
-			geographical_regions = { migration_region_roman_empire }
+			map_color = { 220 20 60 }
+			geographical_regions = { migration_region_wre }
+		}
+		migration_region_ere = {
+			map_color = { 150 35 165 }
+			icon = "gfx/interface/icons/situations/debug_situation/steppe_west.dds"
+			geographical_regions = { migration_region_ere }
+		}
+		migration_region_britannia = {
+			map_color = { 172 22 22 }
+			icon = "gfx/interface/icons/situations/debug_situation/steppe_west.dds"
+			geographical_regions = { migration_region_britannia }
+		}
+		migration_region_barbaria = {
+			map_color = { 90 90 90 }
+			icon = "gfx/interface/icons/situations/debug_situation/steppe_west.dds"
+			geographical_regions = { migration_region_barbaria }
+		}
+		migration_region_steppe = {
+			map_color = { 211 177 80 }
+			icon = "gfx/interface/icons/situations/debug_situation/steppe_west.dds"
+			geographical_regions = { migration_region_steppe }
 		}
 	}
 	
@@ -30,10 +51,10 @@
 	# Groups
 	##################################################
 	participant_groups = {
-		civilized_polities = {
+		roman_emperors = {
+			icon = "gfx/interface/icons/modifiers/byzantine_crown_mixed.dds"
 			is_character_valid = {
-				BP_can_be_migrator_cultural_religious_trigger = no
-				BP_can_be_civilized_polity_government_trigger = yes
+				BP_can_be_roman_emperor_participant_trigger = yes
 				is_independent_ruler = yes
 				is_landed = yes
 			}
@@ -44,10 +65,27 @@
 			
 			map_color = hsv{ 0.37 1.00 0.78 }
 		}
-		barbarian_polities = {
+		roman_successors = {
+			icon = "gfx/interface/icons/modifiers/byzantine_eagle_mixed.dds"
 			is_character_valid = {
-				BP_can_be_migrator_cultural_religious_trigger = yes
-				BP_can_be_barbarian_polity_governmental_trigger = yes
+				BP_can_be_roman_emperor_participant_trigger = no
+				BP_can_be_roman_successor_governmental_trigger = yes
+				is_independent_ruler = yes
+				is_landed = yes
+			}
+			on_join = {
+			}
+			on_leave = {
+			}
+			
+			map_color = hsv{ 0.37 1.00 0.78 }
+		}
+		barbarian_kings = {
+			icon = "gfx/interface/icons/modifiers/prowess_mixed.dds"
+			is_character_valid = {
+				BP_can_be_roman_emperor_participant_trigger = no
+				BP_can_be_roman_successor_governmental_trigger = no
+				BP_can_be_barbarian_king_trigger = yes
 				is_independent_ruler = yes
 				is_landed = yes
 			}
@@ -59,10 +97,15 @@
 			map_color = hsv{ 0.37 1.00 0.78 }
 		}
 		migrators = {
+			icon = "gfx/interface/icons/modifiers/asatru_raven_mixed.dds"
 			is_character_valid = {
 				BP_can_be_migrator_cultural_religious_trigger = yes
-				BP_can_be_migrator_governmental_trigger = yes
-				this.primary_title.tier >= tier_county
+				BP_can_be_tribals_trigger = yes
+				is_independent_ruler = yes
+				OR = {
+					government_has_flag = landless_adventurer_government
+					is_landed = yes
+				}
 			}
 			on_join = {
 			}
@@ -71,11 +114,11 @@
 			
 			map_color = hsv{ 0.37 1.00 0.78 }
 		}
-		successor_states = {
+		tribals = {
+			icon = "gfx/interface/icons/modifiers/dread_mixed.dds"
 			is_character_valid = {
 				BP_can_be_migrator_cultural_religious_trigger = no
-				BP_can_be_migrator_governmental_trigger = no
-				BP_can_be_civilized_polity_government_trigger = no
+				BP_can_be_tribals_trigger = yes
 				is_independent_ruler = yes
 				is_landed = yes
 			}
@@ -86,10 +129,14 @@
 			
 			map_color = hsv{ 0.37 1.00 0.78 }
 		}
-		tribals = {
+		others = {
+			icon = "gfx/interface/icons/modifiers/legitimacy_mixed.dds"
 			is_character_valid = {
+				BP_can_be_roman_emperor_participant_trigger = no
+				BP_can_be_roman_successor_governmental_trigger = no
+				BP_can_be_barbarian_king_trigger = no
 				BP_can_be_migrator_cultural_religious_trigger = no
-				BP_can_be_migrator_governmental_trigger = yes
+				BP_can_be_tribals_trigger = no
 				is_independent_ruler = yes
 				is_landed = yes
 			}
@@ -129,6 +176,7 @@
 			
 			modifier_sets = {
 				BP_migration_period_war_effects = {
+					icon = "gfx/interface/icons/struggle_effects/war.dds"
 					all = { #Only for display it seems
 						parameters = {
 							targetable_by_migration_cbs_loc = yes
@@ -136,14 +184,23 @@
 						character_modifier = {}
 						county_modifier = {}
 					}
-					civilized_polities = {
+					roman_emperors = {
 						parameters = { targetable_by_migration_cbs = yes } #Hidden
 						character_modifier = {}
 						county_modifier = {}
 					}
-					barbarian_polities = {
-						parameters = { targetable_by_migration_cbs = yes }
+					roman_successors = {
+						parameters = { targetable_by_migration_cbs = yes } #Hidden
 						character_modifier = {}
+						county_modifier = {}
+					}
+					barbarian_kings = {
+						parameters = { targetable_by_migration_cbs = yes } #Hidden
+						character_modifier = {
+							#AI Weights
+							ai_war_chance = 0.5
+							ai_boldness = 0.25
+						}
 						county_modifier = {}
 					}
 					migrators = {
@@ -154,12 +211,11 @@
 							cultural_unification_cb_enabled = yes
 							easier_adventurer_invasions = yes
 						}
-						character_modifier = {}
-						county_modifier = {}
-					}
-					successor_states = {
-						parameters = { targetable_by_migration_cbs = yes } #Hidden
-						character_modifier = {}
+						character_modifier = {
+							#AI Weights
+							ai_war_chance = 1.0
+							ai_boldness = 0.50
+						}
 						county_modifier = {}
 					}
 					tribals = {
@@ -171,19 +227,30 @@
 						character_modifier = {}
 						county_modifier = {}
 					}
+					others = {
+						parameters = { targetable_by_migration_cbs = yes } #Hidden
+						character_modifier = {}
+						county_modifier = {}
+					}
 				}
 				BP_migration_culture_effects = {
+					icon = "gfx/interface/icons/struggle_effects/culture.dds"
 					all = {
 						parameters = {}
 						character_modifier = {}
 						county_modifier = {}
 					}
-					civilized_polities = {
+					roman_emperors = {
 						parameters = {}
 						character_modifier = {}
 						county_modifier = {}
 					}
-					barbarian_polities = {
+					roman_successors = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					barbarian_kings = {
 						parameters = {
 							unlocks_passing_culture_law = yes
 						}
@@ -192,21 +259,83 @@
 					}
 					migrators = {
 						parameters = {
-							more_liberal_divergence_hybridization_time = yes
+							faster_divergence_hybridization_time = yes
+							lower_acceptance_for_hybridization = yes
 						}
-						character_modifier = {}
-						county_modifier = {}
-					}
-					successor_states = {
-						parameters = {}
 						character_modifier = {}
 						county_modifier = {}
 					}
 					tribals = {
 						parameters = {
-							more_liberal_divergence_hybridization_time = yes
+							faster_divergence_hybridization_time = yes
+							lower_acceptance_for_hybridization = yes
 						}
 						character_modifier = {}
+						county_modifier = {}
+					}
+					others = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+				}
+				BP_migration_other_effects = {
+					icon = "gfx/interface/icons/struggle_effects/other.dds"
+					all = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					roman_emperors = {
+						parameters = {}
+						character_modifier = {
+							independent_ruler_opinion = -10
+						}
+						county_modifier = {}
+					}
+					roman_successors = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					barbarian_kings = {
+						parameters = {
+							increased_subroman_decay = yes
+						}
+						character_modifier = {
+							same_culture_opinion = 5
+						}
+						county_modifier = {}
+					}
+					migrators = {
+						parameters = {
+							forming_confederations_is_easier = yes
+							invite_to_confederation_extra_reasons = yes
+							confederation_tribal_authority = yes
+						}
+						character_modifier = {
+							same_culture_opinion = 5
+							fellow_confederation_member_opinion = 5
+						}
+						county_modifier = {}
+					}
+					tribals = {
+						parameters = {
+							forming_confederations_is_easier = yes
+							invite_to_confederation_extra_reasons = yes
+							confederation_tribal_authority = yes
+						}
+						character_modifier = {
+							same_culture_opinion = 5
+							fellow_confederation_member_opinion = 5
+						}
+						county_modifier = {}
+					}
+					others = {
+						parameters = {}
+						character_modifier = {
+							same_culture_opinion = 5
+						}
 						county_modifier = {}
 					}
 				}
@@ -222,17 +351,23 @@
 			
 			modifier_sets = {
 				BP_migration_period_war_effects = {
+					icon = "gfx/interface/icons/struggle_effects/war.dds"
 					all = {
 						parameters = {}
 						character_modifier = {}
 						county_modifier = {}
 					}
-					civilized_polities = {
+					roman_emperors = {
 						parameters = {}
 						character_modifier = {}
 						county_modifier = {}
 					}
-					barbarian_polities = {
+					roman_successors = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					barbarian_kings = {
 						parameters = {}
 						character_modifier = {}
 						county_modifier = {}
@@ -242,29 +377,35 @@
 						character_modifier = {}
 						county_modifier = {}
 					}
-					successor_states = {
+					tribals = {
 						parameters = {}
 						character_modifier = {}
 						county_modifier = {}
 					}
-					tribals = {
+					others = {
 						parameters = {}
 						character_modifier = {}
 						county_modifier = {}
 					}
 				}
 				BP_migration_culture_effects = {
+					icon = "gfx/interface/icons/struggle_effects/culture.dds"
 					all = {
 						parameters = {}
 						character_modifier = {}
 						county_modifier = {}
 					}
-					civilized_polities = {
+					roman_emperors = {
 						parameters = {}
 						character_modifier = {}
 						county_modifier = {}
 					}
-					barbarian_polities = {
+					roman_successors = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					barbarian_kings = {
 						parameters = {}
 						character_modifier = {}
 						county_modifier = {}
@@ -274,12 +415,50 @@
 						character_modifier = {}
 						county_modifier = {}
 					}
-					successor_states = {
+					tribals = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					others = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+				}
+				BP_migration_other_effects = {
+					icon = "gfx/interface/icons/struggle_effects/other.dds"
+					all = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					roman_emperors = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					roman_successors = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					barbarian_kings = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					migrators = {
 						parameters = {}
 						character_modifier = {}
 						county_modifier = {}
 					}
 					tribals = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					others = {
 						parameters = {}
 						character_modifier = {}
 						county_modifier = {}

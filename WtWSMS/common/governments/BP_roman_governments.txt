@@ -40,6 +40,8 @@ roman_dynastic_government = {
 		government_is_roman_dynastic
 		
 		roman_dynastic_goverment_character_modifier
+		
+		government_is_roman_administrative_or_dynastic
 	}
 	
 	mechanic_type = feudal
@@ -204,6 +206,8 @@ roman_administrative_government = {
 		government_uses_domicile_but_not_adventurer
 		government_uses_domain_limit
 		government_uses_admin_province_obligations
+		
+		government_has_flag = government_is_roman_administrative_or_dynastic
 	}
 
 	mechanic_type = administrative

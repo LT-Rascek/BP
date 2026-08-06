@@ -92,11 +92,26 @@ faith_conversion = {
 }
 
 ##### Changed from Vanilla: Tied in with limitation_on_divergence_hybridization_culture_head
+##### Changed from Vanilla: Tied in with faster_divergence_hybridization_time
 
 # Is this character allowed to diverge their culture?
 # root: Character
 can_diverge_culture = {
-	culture = { culture_age >= culture_divergence_cooldown }
+	##### Changed from Vanilla vvvvv
+	trigger_if = {
+		limit = {
+			exists = culture.culture_head
+			general_situation_regional_parameter_trigger = {
+				CHAR = culture.culture_head
+				PARAMETER = faster_divergence_hybridization_time
+			}
+		}
+		culture = { culture_age >= BP_culture_divergence_cooldown_halved }
+	}
+	trigger_else = {
+		culture = { culture_age >= culture_divergence_cooldown }
+	}
+	##### Changed from Vanilla ^^^^^^
 	custom_description = {
 		text = culture_present_in_realm_for_divergence
 		any_sub_realm_county = {
