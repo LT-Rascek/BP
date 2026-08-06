@@ -8,6 +8,8 @@ bp_game_start_after_lobby_476 = {
 		}
 	}
 	on_actions = {
+		# Situations
+		setup_steppe_status_no_nomad_DLC
 		# Character stuff
 		BP_character_events_476
 		BP_setup_legitimacy_476
@@ -36,6 +38,19 @@ bp_game_start_after_lobby_476 = {
 	}
 	effect = {
 		trigger_event = { on_action = BP_update_specific_title_courtiers_476 delayed = yes }
+	}
+}
+
+# Situations
+setup_steppe_status_no_nomad_DLC = {
+	trigger = { BP_has_dlc_necessary_for_great_steppe_situation_trigger = no }
+	effect = {
+		situation:BP_migration_situation ?= {
+			situation_sub_region:migration_region_steppe = {
+				change_phase = { phase = BP_migration_period }
+				add_geographical_region = migration_region_steppe
+			}
+		}
 	}
 }
 
@@ -298,7 +313,7 @@ BP_setup_vassal_contracts_476 = {
 	}
 }
 BP_setup_vassal_contracts_476_nomad_DLC = {
-	trigger = { has_dlc_feature = khans_of_the_steppe }
+	trigger = { BP_has_dlc_necessary_for_great_steppe_situation_trigger = yes }
 	effect = {
 		#The Rouran are squeezing their vassals, as is their wont
 		title:e_rouran.holder = {
