@@ -91,6 +91,10 @@ window = {
 
 							datamodel = "[Situation.GetSubRegions]"
 
+							text_single = {
+								text = "[SituationSubRegion.GetCurrentPhase.GetName]"
+							}
+
 							item = {
 								button_situation_subregion = { }
 							}
@@ -739,6 +743,8 @@ types MigrationSituationTypes
 {
 	type button_situation_subregion = button_standard {
 		minimumsize = { 527 50 }
+
+		visible = "[Not(ObjectsEqual(SituationSubRegion.GetCurrentPhase.GetName,'Dormant Phase'))]"
 
 		layoutpolicy_horizontal = expanding
 

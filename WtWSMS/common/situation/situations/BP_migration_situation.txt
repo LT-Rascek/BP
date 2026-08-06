@@ -155,6 +155,11 @@
 	start_phase = situation_BP_migration_migration_period
 
 	phases = {
+		BP_dormant_phase = { #For regions not in use
+			icon = "gfx/interface/icons/situations/debug_situation/plentiful_harvest.dds"
+			on_start = {}
+			on_end = {}
+		}
 		BP_migration_period = {
 			icon = "gfx/interface/icons/situations/debug_situation/plentiful_harvest.dds"
 			
