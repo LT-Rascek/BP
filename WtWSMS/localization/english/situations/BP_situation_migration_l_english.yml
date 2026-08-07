@@ -3,7 +3,7 @@
  
  #Groups
  BP_migration_situation_participant_group_barbarian_kings: "Barbarian Kings"
- BP_migration_situation_participant_group_barbarian_kings_desc: "Former $BP_migration_situation_participant_group_migrators$ and $BP_migration_situation_participant_group_tribals, who now rule Centralized Realms in this [situation_sub_region|E"
+ BP_migration_situation_participant_group_barbarian_kings_desc: "Former $BP_migration_situation_participant_group_migrators$ and $BP_migration_situation_participant_group_tribals$, who now rule Centralized Realms in this [situation_sub_region|E]"
  BP_migration_situation_participant_group_migrators: "Migrators"
  BP_migration_situation_participant_group_migrators_desc: "DESC" #FIXME
  BP_migration_situation_participant_group_others: "Others"
@@ -40,19 +40,19 @@
  
  #Parameters (all need to be added in)
  #TODO: Make situation_parameter_faster_divergence_hybridization_time into Select Localization
- situation_parameter_cultural_unification_cb_enabled: "Enables CULTURE_UNIFICATION_CB"
- situation_parameter_easier_adventurer_invasions: "ADVENTURER_INVASIONS are easier"
+ situation_parameter_cultural_unification_cb_enabled: "Can use the #V [GetCasusBelliType('bp_cultural_unification_cb').GetName]#! [casus_belli|E]"
+ situation_parameter_targetable_by_migration_cbs_loc: "Can be targeted by #V [GetCasusBelliType('bp_migration_war_cb').GetName]#! [casus_belli|E]"
+ situation_parameter_migration_cbs_enabled: "Can use the #V [GetCasusBelliType('bp_migration_war_cb').GetName]#! [casus_belli|E]"
  situation_parameter_increased_subjugation_limit: "$culture_parameter_increased_subjugation_limit$"
- situation_parameter_increased_subroman_decay: "Increased SUB_ROMAN_DECAY"
  situation_parameter_lower_acceptance_for_hybridization: "Halves the required [cultural_acceptance|E] needed to create a [hybrid_culture|E]\n$TAB$#weak Does not stack with [GetTrait('nomadic_philosophy').GetName( GetNullCharacter )] or $culture_parameter_easier_to_hybridize$ culture features#!"
- situation_parameter_migration_cbs_enabled: "Enables MIGRATION_CASUS_BELLI"
- situation_parameter_targetable_by_migration_cbs_loc: "Can be targeted by MIGRATION_CASUS_BELLI"
- situation_parameter_unlocks_passing_culture_law: "Unlocks the decision to PASS_CULTURE_LAW"
- #Needs to be Select Localized
- situation_parameter_confederation_tribal_authority: "$culture_parameter_confederation_tribal_authority$"
  situation_parameter_faster_divergence_hybridization_time: "Halves time required to create a [divergent_culture|E] or [hybrid_culture|E]"
- situation_parameter_forming_confederations_is_easier: "$culture_parameter_forming_confederations_is_easier$"
- situation_parameter_invite_to_confederation_extra_reasons: "$culture_parameter_invite_to_confederation_extra_reasons$"
+  situation_parameter_easier_adventurer_invasions: "ADVENTURER_INVASIONS are easier"
+  situation_parameter_increased_subroman_decay: "Increased SUB_ROMAN_DECAY"
+  situation_parameter_unlocks_passing_culture_law: "Unlocks the decision to PASS_CULTURE_LAW"
+  #Needs to be Select Localized
+  situation_parameter_confederation_tribal_authority: "$culture_parameter_confederation_tribal_authority$"
+  situation_parameter_forming_confederations_is_easier: "$culture_parameter_forming_confederations_is_easier$"
+  situation_parameter_invite_to_confederation_extra_reasons: "$culture_parameter_invite_to_confederation_extra_reasons$"
  
  #Catalysts
  catalyst_situation_passing_of_time_migration: "Yearly Drift [situation_catalyst|E]"

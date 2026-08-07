@@ -1,4 +1,6 @@
 ﻿l_english:
+ #Migration War
+ bp_migration_war: "Migration War"
  BP_MIGRATION_CB_NAME: "[bp_major_war_marker] [ATTACKER.GetCulture.GetNameNoTooltip] Migration to [TITLE.GetNameNoTier]"
  BP_MIGRATION_WAR_NAME: "[ATTACKER.GetCulture.GetNameNoTooltip] Migration to [TITLE.GetNameNoTier]"
  BP_MIGRATION_WAR_NAME_BASE: "[ATTACKER.GetCulture.GetNameNoTooltip][TITLE.GetNameNoTier]"
@@ -9,5 +11,13 @@
  migration_war_warning_desc: "\n\n#X You may only attempt a migratory invasion once every 10 years#!\n"
  migration_war_white_peace_desc: "[defender.GetShortUIName|U] keeps [defender.GetHerHis] titles."
  migration_war_white_peace_desc_defender: "You keep your titles."
+ #Cultural Unification CB
+ bp_cultural_unification_cb: "Cultural Unification"
+ BP_CULTURAL_UNIFICATION_WAR_NAME: "[ATTACKER.GetNamePossessiveNoTooltip] Unification of the [ATTACKER.GetCulture.GetName] Peoples"
+ BP_CULTURAL_UNIFICATION_WAR_NAME_BASE: "[ATTACKER.GetNamePossessiveNoTooltip] Unification of the [ATTACKER.GetCulture.GetName] Peoples"
+ BP_CULTURAL_UNIFICATION_WAR_CB_NAME: "[ATTACKER.GetNamePossessiveNoTooltip] Culture Unification"
+ CB_COST_ATTACKING_SUPERIOR: "Attacking Higher Ranked Title"
+ CB_COST_ATTACKING_CULTURE_HEAD: "Attacking Culture Head"
  #Custom Title Name
  MIGRATORY_TITLE_NAME: "[char.GetHouse.GetBaseNameNoTooltip]-[char.GetCulture.GetCollectiveNounNoTooltip]"
+ 

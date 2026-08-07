@@ -101,9 +101,11 @@ can_diverge_culture = {
 	trigger_if = {
 		limit = {
 			exists = culture.culture_head
-			general_situation_regional_parameter_trigger = {
-				CHAR = culture.culture_head
-				PARAMETER = faster_divergence_hybridization_time
+			this.culture_head = {
+				general_situation_regional_parameter_trigger = {
+					CHAR = culture.culture_head
+					PARAMETER = faster_divergence_hybridization_time
+				}
 			}
 		}
 		culture = { culture_age >= BP_culture_divergence_cooldown_halved }
