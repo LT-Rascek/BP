@@ -324,6 +324,10 @@ migration_situation_war.0200 = {
 			limit = { culture = { has_cultural_tradition = tradition_cranial_deformation } }
 			custom_tooltip = adopt_nomadic_rulership_cranial_deformation_tradition
 		}
+		else_if = {
+			limit = { has_character_flag = nomadic_invader }
+			custom_tooltip = adopt_nomadic_rulership_tradition
+		}
 		else = { custom_tooltip = adopt_migratory_culture_tradition }
 		
 		hidden_effect = {
@@ -382,6 +386,11 @@ migration_situation_war.0200 = {
 					limit = { has_cultural_tradition = tradition_cranial_deformation }
 					remove_culture_tradition = tradition_cranial_deformation
 					add_culture_tradition = tradition_nomadic_rulership_cranial_deformation
+				}
+				else_if = {
+					limit = { has_character_flag = nomadic_invader }
+					remove_character_flag = nomadic_invader
+					add_culture_tradition = tradition_nomadic_rulership
 				}
 				else = { add_culture_tradition = tradition_migratory_culture }
 			}
