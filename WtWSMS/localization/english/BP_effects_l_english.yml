@@ -32,19 +32,4 @@
  start_with_moderate_camp: "Start with a camp with moderate domicile buildings and soldiers"
  #Other
  you_get_a_domicile_in_your_capital: "Your [domicile|E] will be located in your capital"
- #Migration CB
- YOU_ABANDON_YOUR_CURRENT_LANDS: "You will abandon your current [domain|E] and take control of [counties|E] in [TARGET_TITLE.GetName]"
- MIGRATION_SOURCE_COUNTIES_GET_MIGRATED_AWAY_MODIFIER: "Every county of your [culture|E] and [faith|E] currently in your realm gets the [GetModifier('recent_migration_away_modifier').GetNameWithTooltip] for #V 10#! years"
- ALL_NEW_PROVINCES_GET_LOOTED: "Every conquered province in [TARGET_TITLE.GetBaseName] gets the [GetModifier('recently_looted_modifier').GetNameWithTooltip] for #V 5#! years"
- ALL_CONQUERED_COUNTIES_GET_RECENT_MIGRATION: "Every conquered province in [TARGET_TITLE.GetBaseName] gets the [GetModifier('recent_migration_to_modifier').GetNameWithTooltip] for #V 10#! years"
- COUNTIES_MAY_BE_CONVERTED_TO_TRIBAL_HOLDINGS: "Every conquered county in [TARGET_TITLE.GetBaseName] may be be razed and converted to a $tribal_holding$ [holding|E]\n$TAB$#weak [Concept('razing_holding_math','Various factors influence these odds')|E]#!"
- ALL_CONQUERED_COUNTIES_MAY_FLIP_CULTURE_FAITH: "Every conquered county in [TARGET_TITLE.GetBaseName] may change its [culture|E] and [faith|E] to match the new holder's [culture|E] and [faith|E]\n$TAB$#weak [Concept('culture_faith_flipping_math','Various factors influence these odds')|E]#!"
- WILL_HAVE_THE_OPTION_OF_CHANGING_GOVERNMENTS: "We will have the option of changing our [government|E] to a more advanced one at the end of the war."
- ATTACKER_COUNTIES_GET_FAILED_MIGRATION: "All [CHARACTER.GetCulture.GetFullNamePossessive] [CHARACTER.GetCulture.GetName] [CHARACTER.GetFaith.GetName] [counties|E] get the [GetModifier('failed_migration_modifier').GetNameWithTooltip] for #V 5#! years"
- ATTACKER_COUNTIES_GET_LOOTED: "All [CHARACTER.GetCulture.GetFullNamePossessive] [CHARACTER.GetCulture.GetName] [CHARACTER.GetFaith.GetName] [counties|E] get the [GetModifier('recently_looted_modifier').GetNameWithTooltip] for #V 5#! years"
- ATTACKER_COUNTIES_GET_FAILED_MIGRATION_5: "All [CHARACTER.GetFullNamePossessive] [CHARACTER.GetCulture.GetName] [CHARACTER.GetFaith.GetName] [counties|E] get the [GetModifier('failed_migration_modifier').GetNameWithTooltip] for #V 5#! years"
- ATTACKER_COUNTIES_GET_FAILED_MIGRATION_10: "All [CHARACTER.GetFullNamePossessive] [CHARACTER.GetCulture.GetName] [CHARACTER.GetFaith.GetName] [counties|E] get the [GetModifier('failed_migration_modifier').GetNameWithTooltip] for #V 10#! years"
- ATTACKER_COUNTIES_GET_LOOTED: "All [CHARACTER.GetFullNamePossessive] [CHARACTER.GetCulture.GetName] [CHARACTER.GetFaith.GetName] [counties|E] get the [GetModifier('recently_looted_modifier').GetNameWithTooltip] for #V 5#! years"
- ARMIES_SPAWN_FROM_DEVELOPMENT: "Armies will spawn for the attacker based on the [development|E] of the [county|E] if the [county|E] is of the attacker's [culture|E] and [faith|E]"
- NEW_CULTURE_SUMMARY: "We will diverge from [CULTURE.GetName] and form a new [divergent_culture|E]. This new culture will adopt a random [ethos|E] and will:"
  

@@ -38,6 +38,10 @@ migration_situation_war.0100 = {
 	}
 	immediate = {
 		root = { save_scope_as = background_throne_room_scope }
+		if = {
+			limit = { root.culture.culture_head = root }
+			add_character_flag = was_culture_head
+		}
 	}
 	after = {
 		#Cleanup Flags if any weren't already collected
@@ -75,6 +79,13 @@ migration_situation_war.0100 = {
 			change_government = high_tribal_government
 		}
 		add_character_modifier = upgraded_government_modifier
+		
+		hidden_effect = {
+			if = {
+				limit = { has_character_flag = was_culture_head }
+				remove_character_flag = was_culture_head
+			}
+		}
 		
 		ai_chance = {
 			base = 10
@@ -142,7 +153,7 @@ migration_situation_war.0100 = {
 			limit = { has_dlc_feature = hybridize_culture }
 			custom_tooltip = {
 				text = may_have_option_to_diverge_culture
-				root = { trigger_event = { id = migration_situation_war.0200 days = { 7 14 } } }
+				root = { trigger_event = { id = migration_situation_war.0200 days = { 1 3 } } }
 			}
 		}
 		
@@ -241,6 +252,13 @@ migration_situation_war.0100 = {
 		add_prestige = 250
 		add_prestige_level = 1
 		
+		hidden_effect = {
+			if = {
+				limit = { has_character_flag = was_culture_head }
+				remove_character_flag = was_culture_head
+			}
+		}
+		
 		ai_chance = {
 			base = 10
 			modifier = { #Traditionalist Culture likes it
@@ -278,6 +296,252 @@ migration_situation_war.0100 = {
 }
 
 #Culture diverges and adopts traditions
+scripted_effect create_divergent_culture_effect = {
+	create_divergent_culture = yes
+	
+	#Insert any culture name or name list shenanigans here
+	
+	scope:new_culture ?= {
+		#Ethos Determination
+		random_list = {
+			10 = {
+				set_culture_pillar = ethos_bellicose
+				modifier = { has_cultural_pillar = ethos_bellicose factor = 0 }
+			}
+			10 = {
+				set_culture_pillar = ethos_stoic
+				modifier = { has_cultural_pillar = ethos_stoic factor = 0 }
+			}
+			10 = {
+				set_culture_pillar = ethos_bellicose
+				modifier = { has_cultural_pillar = ethos_bellicose factor = 0 }
+			}
+			10 = {
+				set_culture_pillar = ethos_bureaucratic
+				modifier = { has_cultural_pillar = ethos_bureaucratic factor = 0 }
+			}
+			10 = {
+				set_culture_pillar = ethos_spiritual
+				modifier = { has_cultural_pillar = ethos_spiritual factor = 0 }
+			}
+			10 = {
+				set_culture_pillar = ethos_courtly
+				modifier = { has_cultural_pillar = ethos_courtly factor = 0 }
+			}
+			10 = {
+				set_culture_pillar = ethos_egalitarian
+				modifier = { has_cultural_pillar = ethos_egalitarian factor = 0 }
+			}
+			10 = {
+				set_culture_pillar = ethos_communal
+				modifier = { has_cultural_pillar = ethos_communal factor = 0 }
+			}
+		}
+	}
+}
+scripted_effect apply_traditions_to_ruler_culture_effect = {
+	hidden_effect = {
+		if = {
+			limit = { NOT = { culture = { has_cultural_pillar = head_determination_herd } } }
+			culture = { set_culture_pillar = head_determination_herd }
+		}
+	}
+	#Tradition padding
+	if = {
+		limit = { culture = { has_cultural_tradition = tradition_ruling_caste } }
+		culture = { remove_culture_tradition = tradition_ruling_caste }
+	}
+	if = {
+		limit = { culture = { has_cultural_tradition = tradition_cranial_deformation } }
+		culture = {
+			remove_culture_tradition = tradition_cranial_deformation
+			add_culture_tradition = tradition_nomadic_rulership_cranial_deformation
+		}
+	}
+	else_if = {
+		limit = { has_character_flag = nomadic_invader }
+		culture = { add_culture_tradition = tradition_nomadic_rulership }
+	}
+	else = { culture = { add_culture_tradition = tradition_migratory_culture } }
+}
+scripted_effect remove_tradition_if_has_it_effect = {
+	if = {
+		limit = { has_cultural_tradition = $TRADITION$ }
+		remove_culture_tradition = $TRADITION$
+	}
+}
+scripted_effect add_random_peasant_culture_tradition = {
+	random_list = {
+		50 = {
+			trigger = { NOT = { has_cultural_tradition = tradition_collective_lands } }
+			add_culture_tradition = tradition_collective_lands
+		}
+		50 = {
+			trigger = {
+				has_dlc_feature = hybridize_culture
+				NOT = { has_cultural_tradition = tradition_culture_blending }
+			}
+			add_culture_tradition = tradition_culture_blending
+		}
+		50 = {
+			trigger = { NOT = { has_cultural_tradition = tradition_equitable } }
+			add_culture_tradition = tradition_equitable
+		}
+		25 = {
+			trigger = { NOT = { has_cultural_tradition = tradition_stalwart_defenders } }
+			add_culture_tradition = tradition_stalwart_defenders
+		}
+		25 = {
+			trigger = { NOT = { has_cultural_tradition = tradition_loyal_soldiers } }
+			add_culture_tradition = tradition_loyal_soldiers
+		}
+		
+		25 = {
+			trigger = { NOT = { has_cultural_tradition = tradition_stand_and_fight } }
+			add_culture_tradition = tradition_stand_and_fight
+		}
+		25 = {
+			trigger = { NOT = { has_cultural_tradition = tradition_strength_in_numbers } }
+			add_culture_tradition = tradition_strength_in_numbers
+		}
+		25 = {
+			trigger = { NOT = { has_cultural_tradition = tradition_xenophilic } }
+			add_culture_tradition = tradition_xenophilic
+		}
+		25 = {
+			trigger = { NOT = { has_cultural_tradition = tradition_religion_blending } }
+			add_culture_tradition = tradition_religion_blending
+		}
+		#Random Realm Features to fill things out
+		10 = { #Forest Folk
+			trigger = {
+				any_culture_county = {
+					county_has_province_with_terrain = {
+						terrain = forest
+						terrain = taiga
+					}
+				}
+				NOT = { has_cultural_tradition = tradition_forest_wardens }
+				NOT = { has_cultural_tradition = tradition_forest_folk }
+			}
+			add_culture_tradition = tradition_forest_folk
+		}
+		10 = { #Dryland Dwellers
+			trigger = {
+				any_culture_county = {
+					county_has_province_with_terrain = {
+						terrain = drylands
+						terrain = desert
+					}
+				}
+				NOT = { has_cultural_tradition = tradition_fp3_irrigation_experts }
+				NOT = { has_cultural_tradition = tradition_dryland_dwellers }
+			}
+			add_culture_tradition = tradition_dryland_dwellers
+		}
+		10 = { #Hill Dwellers
+			trigger = {
+				any_culture_county = {
+					county_has_province_with_terrain = {
+						terrain = hills
+					}
+				}
+				NOR = {
+					this = culture:ethiopian
+					any_parent_culture_or_above = {
+						this = culture:ethiopian
+					}
+				}
+				NOT = { has_cultural_tradition = tradition_amharic_highlanders }
+				NOT = { has_cultural_tradition = tradition_hill_dwellers }
+			}
+			add_culture_tradition = tradition_hill_dwellers
+		}
+		10 = { #Mountain Homes
+			trigger = {
+				any_culture_county = {
+					county_has_province_with_terrain = {
+						terrain = mountains
+						terrain = desert_mountains
+					}
+				}
+				NOT = { has_cultural_tradition = tradition_amharic_highlanders }
+				NOT = { has_cultural_tradition = tradition_himalayan_settlers }
+				NOT = { has_cultural_tradition = tradition_mountaineer_ruralism }
+				NOT = { has_cultural_tradition = tradition_mountain_herding }
+				NOT = { has_cultural_tradition = tradition_mountain_homes }
+			}
+			add_culture_tradition = tradition_mountain_homes
+		}
+		10 = { #Jungle Dwellers
+			trigger = {
+				any_culture_county = {
+					county_has_province_with_terrain = {
+						terrain = jungle
+					}
+				}
+				NOT = { has_cultural_tradition = tradition_hidden_cities }
+				NOT = { has_cultural_tradition = tradition_jungle_dwellers }
+			}
+			add_culture_tradition = tradition_jungle_dwellers
+		}
+		10 = { #Agrarian
+			trigger = {
+				any_culture_county = {
+					county_has_province_with_terrain = {
+						terrain = farmlands
+						terrain = floodplains
+					}
+				}
+				NOT = { has_cultural_tradition = tradition_agrarian }
+			}
+			add_culture_tradition = tradition_agrarian
+		}
+	}
+}
+scripted_effect change_original_culture_traditions_effect = {
+	#Remove Old Traditions associated with elite sort of rule
+	remove_tradition_if_has_it_effect = { TRADITION = tradition_ruling_caste }
+	remove_tradition_if_has_it_effect = { TRADITION = tradition_staunch_traditionalists }
+	remove_tradition_if_has_it_effect = { TRADITION = tradition_tribe_unity }
+	remove_tradition_if_has_it_effect = { TRADITION = tradition_malleable_invaders }
+	remove_tradition_if_has_it_effect = { TRADITION = tradition_only_the_strong }
+	remove_tradition_if_has_it_effect = { TRADITION = tradition_warrior_monks }
+	remove_tradition_if_has_it_effect = { TRADITION = tradition_warriors_by_merit }
+	remove_tradition_if_has_it_effect = { TRADITION = tradition_faith_bound }
+	remove_tradition_if_has_it_effect = { TRADITION = tradition_mystical_ancestors }
+	remove_tradition_if_has_it_effect = { TRADITION = tradition_religious_patronage }
+	remove_tradition_if_has_it_effect = { TRADITION = tradition_sinophilic }
+	remove_tradition_if_has_it_effect = { TRADITION = tradition_reverence_for_veterans }
+	remove_tradition_if_has_it_effect = { TRADITION = tradition_legalistic }
+	
+	#Repeatedly add random traditions until free slots are filled
+	if = {
+		limit = { free_tradition_slot > 1 }
+		add_random_peasant_culture_tradition = yes
+	}
+	if = {
+		limit = { free_tradition_slot > 1 }
+		add_random_peasant_culture_tradition = yes
+	}
+	if = {
+		limit = { free_tradition_slot > 1 }
+		add_random_peasant_culture_tradition = yes
+	}
+	if = {
+		limit = { free_tradition_slot > 1 }
+		add_random_peasant_culture_tradition = yes
+	}
+	if = {
+		limit = { free_tradition_slot > 1 }
+		add_random_peasant_culture_tradition = yes
+	}
+	if = {
+		limit = { free_tradition_slot > 1 }
+		add_random_peasant_culture_tradition = yes
+	}
+}
+
 migration_situation_war.0200 = {
 	type = character_event
 	theme = culture_change
@@ -298,8 +562,40 @@ migration_situation_war.0200 = {
 			culture = { has_cultural_tradition = tradition_migratory_culture }
 		}
 	}
-	immediate = {}
-	after = {}
+	immediate = {
+		#Pick who actually diverges the culture
+		if = { #I am the culture head; the peasants diverge!
+			limit = {
+				OR = {
+					root = root.culture.culture_head
+					has_character_flag = was_culture_head
+				}
+			}
+			random_ruler = {
+				limit = {
+					this.culture = root.culture
+					NOT = { this = { any_liege_or_above = { this = root } } }
+				}
+				this = { save_scope_as = culture_former }
+			}
+		}
+		else = { #I am not the culture head; I change and the peasants shift
+			root = { save_scope_as = culture_former }
+		}
+		#Fallback; nobody was picked. Shouldn't happen, but might with nomad wonkiness
+		if = {
+			limit = { NOT = { exists = scope:culture_former } }
+			root = { save_scope_as = culture_former }
+		}
+	}
+	after = {
+		hidden_effect = {
+			if = {
+				limit = { has_character_flag = was_culture_head }
+				remove_character_flag = was_culture_head
+			}
+		}
+	}
 	
 	left_portrait = {
 		character = ROOT
@@ -309,9 +605,20 @@ migration_situation_war.0200 = {
 	option = {
 		name = migration_situation_war.become_migratory_culture
 		
-		custom_description = {
-			text = new_culture_summary
-			subject = root.culture
+		#Summarize Changes
+		if = {
+			limit = { root = scope:culture_former }
+			custom_description = {
+				text = new_culture_summary_me
+				subject = root.culture
+			}
+		}
+		else = {
+			custom_description = {
+				text = new_culture_summary_them
+				subject = scope:culture_former.culture
+			}
+			custom_tooltip = old_culture_adopts_new_traditions
 		}
 		
 		#Insert any culture name or name list shenanigans tooltips here
@@ -330,70 +637,20 @@ migration_situation_war.0200 = {
 		}
 		else = { custom_tooltip = adopt_migratory_culture_tradition }
 		
+		#Do the Changes
 		hidden_effect = {
-			create_divergent_culture = yes
-			
-			#Insert any culture name or name list shenanigans here
-			
-			scope:new_culture ?= {
-				hidden_effect = {
-					if = {
-						limit = { NOT = { has_cultural_pillar = head_determination_herd } }
-						set_culture_pillar = head_determination_herd
+			scope:culture_former = { create_divergent_culture_effect = yes }
+			if = {
+				limit = { NOT = { root = scope:culture_former } }
+				scope:culture_former.culture = { change_original_culture_traditions_effect = yes }
+				root.culture = {
+					every_culture_county = {
+						limit = { NOT = { this.holder = { any_liege_or_above = { this = root } } } }
+						set_county_culture = scope:culture_former.culture
 					}
 				}
-				#Ethos Determination
-				random_list = {
-					10 = {
-						set_culture_pillar = ethos_bellicose
-						modifier = { has_cultural_pillar = ethos_bellicose factor = 0 }
-					}
-					10 = {
-						set_culture_pillar = ethos_stoic
-						modifier = { has_cultural_pillar = ethos_stoic factor = 0 }
-					}
-					10 = {
-						set_culture_pillar = ethos_bellicose
-						modifier = { has_cultural_pillar = ethos_bellicose factor = 0 }
-					}
-					10 = {
-						set_culture_pillar = ethos_bureaucratic
-						modifier = { has_cultural_pillar = ethos_bureaucratic factor = 0 }
-					}
-					10 = {
-						set_culture_pillar = ethos_spiritual
-						modifier = { has_cultural_pillar = ethos_spiritual factor = 0 }
-					}
-					10 = {
-						set_culture_pillar = ethos_courtly
-						modifier = { has_cultural_pillar = ethos_courtly factor = 0 }
-					}
-					10 = {
-						set_culture_pillar = ethos_egalitarian
-						modifier = { has_cultural_pillar = ethos_egalitarian factor = 0 }
-					}
-					10 = {
-						set_culture_pillar = ethos_communal
-						modifier = { has_cultural_pillar = ethos_communal factor = 0 }
-					}
-				}
-				#Tradition padding
-				if = {
-					limit = { has_cultural_tradition = tradition_ruling_caste }
-					remove_culture_tradition = tradition_ruling_caste
-				}
-				if = {
-					limit = { has_cultural_tradition = tradition_cranial_deformation }
-					remove_culture_tradition = tradition_cranial_deformation
-					add_culture_tradition = tradition_nomadic_rulership_cranial_deformation
-				}
-				else_if = {
-					limit = { has_character_flag = nomadic_invader }
-					remove_character_flag = nomadic_invader
-					add_culture_tradition = tradition_nomadic_rulership
-				}
-				else = { add_culture_tradition = tradition_migratory_culture }
 			}
+			root = { apply_traditions_to_ruler_culture_effect = yes }
 			
 			recalculate_cultural_heads_of_type = domain
 			recalculate_cultural_heads_of_type = herd
@@ -447,6 +704,9 @@ migration_situation_war.0200 = {
 	}
 	option = {
 		name = migration_situation_war.do_not_become_migratory_culture
+		
+		add_prestige = 500
+		add_prestige_level = 1
 		
 		ai_chance = {
 			base = 10

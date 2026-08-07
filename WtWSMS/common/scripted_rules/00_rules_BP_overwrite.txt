@@ -100,10 +100,9 @@ can_diverge_culture = {
 	##### Changed from Vanilla vvvvv
 	trigger_if = {
 		limit = {
-			exists = culture.culture_head
-			this.culture_head = {
+			root = {
 				general_situation_regional_parameter_trigger = {
-					CHAR = culture.culture_head
+					CHAR = root
 					PARAMETER = faster_divergence_hybridization_time
 				}
 			}

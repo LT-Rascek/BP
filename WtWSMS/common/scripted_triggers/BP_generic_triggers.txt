@@ -1,6 +1,6 @@
 ﻿#General Situation Trigger; char scope
 general_situation_regional_parameter_trigger = {
-	any_character_situation = {
+	any_character_situation ?= {
 		any_situation_sub_region = {
 			any_situation_sub_region_participant_group = {
 				participant_group_has_character = $CHAR$

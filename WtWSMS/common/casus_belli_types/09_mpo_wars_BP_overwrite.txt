@@ -1185,7 +1185,11 @@ mpo_nomad_invasion_cb = {
 		##### Changed from Vanilla vvvvv
 		custom_description = {
 			text = may_have_option_to_diverge_culture
-			add_character_flag = nomadic_invader
+			scope:attacker = { add_character_flag = nomadic_invader }
+			if = {
+				limit = { scope:attacker.culture.culture_head = scope:attacker }
+				scope:attacker = { add_character_flag = was_culture_head }
+			}
 			scope:attacker = { trigger_event = { id = migration_situation_war.0200 days = { 7 14 } } }
 		}
 		##### Changed from Vanilla ^^^^^
@@ -2245,7 +2249,11 @@ mpo_nomad_duchy_invasion_cb = {
 		##### Changed from Vanilla vvvvv
 		custom_description = {
 			text = may_have_option_to_diverge_culture
-			add_character_flag = nomadic_invader
+			scope:attacker = { add_character_flag = nomadic_invader }
+			if = {
+				limit = { scope:attacker.culture.culture_head = scope:attacker }
+				scope:attacker = { add_character_flag = was_culture_head }
+			}
 			scope:attacker = { trigger_event = { id = migration_situation_war.0200 days = { 7 14 } } }
 		}
 		##### Changed from Vanilla ^^^^^
