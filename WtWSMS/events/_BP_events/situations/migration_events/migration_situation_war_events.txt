@@ -9,6 +9,28 @@ scripted_effect remove_character_flag_if_has_it_effect = {
 		remove_character_flag = $FLAG$
 	}
 }
+scripted_effect jumpstart_culture_progress_effect = {
+	$SOURCE_CULTURE$ = {
+		every_known_innovation = {
+			limit = { innovation_era = culture_era_tribal }
+			save_temporary_scope_as = the_innovation
+			if = {
+				limit = { NOT = { $TARGET_CULTURE$ = { has_innovation = scope:the_innovation } } }
+				add_to_list = innovations_to_add
+			}
+		}
+	}
+	every_in_list = {
+		list = innovations_to_add
+		$TARGET_CULTURE$ = { add_innovation_progress = { value = 5 target = scope:the_innovation } }
+	}
+	$TARGET_CULTURE$ = {
+		if = {
+			limit = { NOT = { has_cultural_era_or_later = culture_era_classical_antiquity } }
+			join_era = culture_era_classical_antiquity
+		}
+	}
+}
 
 migration_situation_war.0100 = {
 	type = character_event
@@ -80,10 +102,23 @@ migration_situation_war.0100 = {
 		}
 		add_character_modifier = upgraded_government_modifier
 		
-		hidden_effect = {
-			if = {
-				limit = { has_character_flag = was_culture_head }
-				remove_character_flag = was_culture_head
+		#custom_tooltip = {
+		#	text = jumpstart_culture_tech
+			jumpstart_culture_progress_effect = {
+				SOURCE_CULTURE = root.capital_county.culture
+				TARGET_CULTURE = root.culture
+			}
+		#}
+		
+		if = {
+			limit = { has_dlc_feature = hybridize_culture }
+			custom_tooltip = {
+				text = may_have_option_to_diverge_culture
+				if = {
+					limit = { root.culture.culture_head = root }
+					add_character_flag = was_culture_head
+				}
+				root = { trigger_event = { id = migration_situation_war.0200 days = { 7 14 } } }
 			}
 		}
 		
@@ -149,11 +184,23 @@ migration_situation_war.0100 = {
 			}
 		}
 		
+		#custom_tooltip = {
+		#	text = jumpstart_culture_tech
+			jumpstart_culture_progress_effect = {
+				SOURCE_CULTURE = root.capital_county.culture
+				TARGET_CULTURE = root.culture
+			}
+		#}
+		
 		if = {
 			limit = { has_dlc_feature = hybridize_culture }
 			custom_tooltip = {
 				text = may_have_option_to_diverge_culture
-				root = { trigger_event = { id = migration_situation_war.0200 days = { 1 3 } } }
+				if = {
+					limit = { root.culture.culture_head = root }
+					add_character_flag = was_culture_head
+				}
+				root = { trigger_event = { id = migration_situation_war.0200 days = { 7 14 } } }
 			}
 		}
 		
@@ -253,10 +300,7 @@ migration_situation_war.0100 = {
 		add_prestige_level = 1
 		
 		hidden_effect = {
-			if = {
-				limit = { has_character_flag = was_culture_head }
-				remove_character_flag = was_culture_head
-			}
+			remove_character_flag_if_has_it_effect = { FLAG = was_culture_head }
 		}
 		
 		ai_chance = {
@@ -514,30 +558,31 @@ scripted_effect change_original_culture_traditions_effect = {
 	remove_tradition_if_has_it_effect = { TRADITION = tradition_sinophilic }
 	remove_tradition_if_has_it_effect = { TRADITION = tradition_reverence_for_veterans }
 	remove_tradition_if_has_it_effect = { TRADITION = tradition_legalistic }
+	remove_tradition_if_has_it_effect = { TRADITION = tradition_warrior_culture }
 	
 	#Repeatedly add random traditions until free slots are filled
 	if = {
-		limit = { free_tradition_slot > 1 }
+		limit = { free_tradition_slot > 0 }
 		add_random_peasant_culture_tradition = yes
 	}
 	if = {
-		limit = { free_tradition_slot > 1 }
+		limit = { free_tradition_slot > 0 }
 		add_random_peasant_culture_tradition = yes
 	}
 	if = {
-		limit = { free_tradition_slot > 1 }
+		limit = { free_tradition_slot > 0 }
 		add_random_peasant_culture_tradition = yes
 	}
 	if = {
-		limit = { free_tradition_slot > 1 }
+		limit = { free_tradition_slot > 0 }
 		add_random_peasant_culture_tradition = yes
 	}
 	if = {
-		limit = { free_tradition_slot > 1 }
+		limit = { free_tradition_slot > 0 }
 		add_random_peasant_culture_tradition = yes
 	}
 	if = {
-		limit = { free_tradition_slot > 1 }
+		limit = { free_tradition_slot > 0 }
 		add_random_peasant_culture_tradition = yes
 	}
 }
@@ -575,6 +620,7 @@ migration_situation_war.0200 = {
 				limit = {
 					this.culture = root.culture
 					NOT = { this = { any_liege_or_above = { this = root } } }
+					is_landed = yes
 				}
 				this = { save_scope_as = culture_former }
 			}
@@ -590,10 +636,7 @@ migration_situation_war.0200 = {
 	}
 	after = {
 		hidden_effect = {
-			if = {
-				limit = { has_character_flag = was_culture_head }
-				remove_character_flag = was_culture_head
-			}
+			remove_character_flag_if_has_it_effect = { FLAG = was_culture_head }
 		}
 	}
 	
@@ -645,8 +688,23 @@ migration_situation_war.0200 = {
 				scope:culture_former.culture = { change_original_culture_traditions_effect = yes }
 				root.culture = {
 					every_culture_county = {
-						limit = { NOT = { this.holder = { any_liege_or_above = { this = root } } } }
+						limit = {
+							NOT = { this.holder = { any_liege_or_above = { this = root } } }
+							NOT = { this.holder = root }
+						}
 						set_county_culture = scope:culture_former.culture
+					}
+					every_ruler = {
+						limit = {
+							this.culture = root.culture
+							NOT = { this = { any_liege_or_above = { this = root } } }
+							NOT = { this = root }
+						}
+						set_culture = scope:culture_former.culture
+						every_courtier = {
+							limit = { this.culture = root.culture }
+							set_culture = scope:culture_former.culture
+						}
 					}
 				}
 			}
@@ -677,29 +735,29 @@ migration_situation_war.0200 = {
 				factor = 0
 				any_realm_county = { any_neighboring_county = { this.culture = root.culture } }
 			}
-			modifier = { #Our homeland is close
-				factor = 0.1
-				any_county = {
-					squared_distance = { target = root.capital_county value < 10000 }
-					this.culture = root.culture
-				}
-			}
-			modifier = { #Our homeland is kinda close
-				factor = 0.25
-				any_county = {
-					squared_distance = { target = root.capital_county value >= 10000 }
-					squared_distance = { target = root.capital_county value < 50000 }
-					this.culture = root.culture
-				}
-			}
-			modifier = { #Our homeland is a bit of a walk
-				factor = 0.50
-				any_county = {
-					squared_distance = { target = root.capital_county value >= 50000 }
-					squared_distance = { target = root.capital_county value < 100000 }
-					this.culture = root.culture
-				}
-			}
+			#modifier = { #Our homeland is close
+			#	factor = 0.1
+			#	any_county = {
+			#		this.title_province = { squared_distance = { target = root.capital_county.title_province value < 10000 } }
+			#		this.culture = root.culture
+			#	}
+			#}
+			#modifier = { #Our homeland is kinda close
+			#	factor = 0.25
+			#	any_county = {
+			#		this.title_province = { squared_distance = { target = root.capital_county.title_province value >= 10000 } }
+			#		this.title_province = { squared_distance = { target = root.capital_county.title_province value < 50000 } }
+			#		this.culture = root.culture
+			#	}
+			#}
+			#modifier = { #Our homeland is a bit of a walk
+			#	factor = 0.50
+			#	any_county = {
+			#		this.title_province = { squared_distance = { target = root.capital_county.title_province value >= 50000 } }
+			#		this.title_province = { squared_distance = { target = root.capital_county.title_province value < 100000 } }
+			#		this.culture = root.culture
+			#	}
+			#}
 		}
 	}
 	option = {
