@@ -100,11 +100,10 @@ can_diverge_culture = {
 	##### Changed from Vanilla vvvvv
 	trigger_if = {
 		limit = {
-			root = {
-				general_situation_regional_parameter_trigger = {
-					CHAR = root
-					PARAMETER = faster_divergence_hybridization_time
-				}
+			exists = root
+			general_situation_regional_parameter_trigger = {
+				CHARACTER = root
+				PARAMETER = faster_divergence_hybridization_time
 			}
 		}
 		culture = { culture_age >= BP_culture_divergence_cooldown_halved }

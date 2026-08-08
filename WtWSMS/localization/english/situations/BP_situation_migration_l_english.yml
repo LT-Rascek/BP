@@ -46,7 +46,7 @@
  situation_parameter_increased_subjugation_limit: "$culture_parameter_increased_subjugation_limit$"
  situation_parameter_lower_acceptance_for_hybridization: "Halves the required [cultural_acceptance|E] needed to create a [hybrid_culture|E]\n$TAB$#weak Does not stack with [GetTrait('nomadic_philosophy').GetName( GetNullCharacter )] or $culture_parameter_easier_to_hybridize$ culture features#!"
  situation_parameter_faster_divergence_hybridization_time: "Halves time required to create a [divergent_culture|E] or [hybrid_culture|E]"
-  situation_parameter_easier_adventurer_invasions: "ADVENTURER_INVASIONS are easier"
+ situation_parameter_cheaper_adventurer_invasions: "[ep3_laamp_adventurer_invasion_war|E] cost half the prestige"
   situation_parameter_increased_subroman_decay: "Increased SUB_ROMAN_DECAY"
   situation_parameter_unlocks_passing_culture_law: "Unlocks the decision to PASS_CULTURE_LAW"
   #Needs to be Select Localized
@@ -57,4 +57,7 @@
  #Catalysts
  catalyst_situation_passing_of_time_migration: "Yearly Drift [situation_catalyst|E]"
  catalyst_situation_passing_of_time_migration_desc: "$catylst_situation_passing_of_time_migration$"
+ 
+ #Others
+ cheaper_adventurer_invasions_tt: "$BP_migration_situation_BP_migration_period_situation_phase$"
  

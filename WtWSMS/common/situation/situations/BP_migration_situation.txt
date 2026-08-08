@@ -101,10 +101,13 @@
 			is_character_valid = {
 				BP_can_be_migrator_cultural_religious_trigger = yes
 				BP_can_be_tribals_trigger = yes
-				is_independent_ruler = yes
 				OR = {
 					government_has_flag = landless_adventurer_government
-					is_landed = yes
+					AND = {
+						is_independent_ruler = yes
+						is_landed = yes
+					}
+					is_ai = no
 				}
 			}
 			on_join = {
@@ -214,7 +217,7 @@
 							migration_cbs_enabled = yes
 							increased_subjugation_limit = yes
 							cultural_unification_cb_enabled = yes
-							easier_adventurer_invasions = yes
+							cheaper_adventurer_invasions = yes
 						}
 						character_modifier = {
 							#AI Weights
@@ -316,28 +319,23 @@
 						parameters = {
 							forming_confederations_is_easier = yes
 							invite_to_confederation_extra_reasons = yes
-							confederation_tribal_authority = yes
+							#confederation_tribal_authority = yes #Not implemented in Vanilla?
 						}
-						character_modifier = {
-							same_culture_opinion = 5
-							fellow_confederation_member_opinion = 5
-						}
+						character_modifier = {}
 						county_modifier = {}
 					}
 					tribals = {
 						parameters = {
 							forming_confederations_is_easier = yes
 							invite_to_confederation_extra_reasons = yes
-							confederation_tribal_authority = yes
+							#confederation_tribal_authority = yes #Not implemented in Vanilla?
 						}
 						character_modifier = {}
 						county_modifier = {}
 					}
 					others = {
 						parameters = {}
-						character_modifier = {
-							same_culture_opinion = 5
-						}
+						character_modifier = {}
 						county_modifier = {}
 					}
 				}

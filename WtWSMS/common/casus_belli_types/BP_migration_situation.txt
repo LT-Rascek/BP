@@ -915,7 +915,7 @@ bp_cultural_unification_cb = {
 	allowed_for_character = {
 		is_landed = yes
 		general_situation_regional_parameter_trigger = {
-			CHAR = scope:attacker
+			CHARACTER = scope:attacker
 			PARAMETER = cultural_unification_cb_enabled
 		}
 		#AI will only do this if they are the culture head
@@ -935,7 +935,7 @@ bp_cultural_unification_cb = {
 	allowed_against_character = {
 		is_landed = yes
 		general_situation_regional_parameter_trigger = {
-			CHAR = scope:attacker
+			CHARACTER = scope:attacker
 			PARAMETER = cultural_unification_cb_enabled
 		}
 		scope:attacker.culture = scope:defender.culture
