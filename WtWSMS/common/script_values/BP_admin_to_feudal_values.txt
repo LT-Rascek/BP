@@ -276,3 +276,58 @@ percent_of_subroman_administrative_dukes_with_subroman_administrative_aristocrac
 		add = 1
 	}
 }
+
+#Transition Chances:
+BP_admin_to_feudal_base_chance = 7 #7% every 5 years implies a bit less than 67% chance every 75 years
+BP_admin_to_feudal_mutation_chance = {
+	value = BP_admin_to_feudal_base_chance #7% base value
+	if = {
+		limit = {
+			general_situation_regional_parameter_trigger = {
+				CHARACTER = this
+				PARAMETER = increased_subroman_decay
+			}
+		}
+		multiply = 1.5 #At 10%, there's over 50% chance every 70 years
+	}
+	floor = yes
+}
+BP_admin_to_feudal_aristocracy_solidification_chance = {
+	value = BP_admin_to_feudal_base_chance #7% base value
+	if = {
+		limit = {
+			general_situation_regional_parameter_trigger = {
+				CHARACTER = this
+				PARAMETER = increased_subroman_decay
+			}
+		}
+		multiply = 1.5 #At 10%, there's over 50% chance every 70 years
+	}
+	floor = yes
+}
+BP_admin_to_feudal_military_landing_chance = {
+	value = BP_admin_to_feudal_base_chance #7% base value
+	if = {
+		limit = {
+			general_situation_regional_parameter_trigger = {
+				CHARACTER = this
+				PARAMETER = increased_subroman_decay
+			}
+		}
+		multiply = 1.5 #At 10%, there's over 50% chance every 70 years
+	}
+	floor = yes
+}
+BP_admin_to_feudal_domestic_taxation_chance = {
+	value = BP_admin_to_feudal_base_chance #7% base value
+	if = {
+		limit = {
+			general_situation_regional_parameter_trigger = {
+				CHARACTER = this
+				PARAMETER = increased_subroman_decay
+			}
+		}
+		multiply = 1.5 #At 10%, there's over 50% chance every 70 years
+	}
+	floor = yes
+}

@@ -433,7 +433,14 @@ bp_migration_war_cb = {
 					}
 					else = { value = 50 }
 				}
+				trait = peasant_leader
 				save_scope_as = new_char
+				after_creation = {
+					add_trait_xp = {
+						trait = peasant_leader
+						value = { 10 90 }
+					}
+				}
 			}
 			scope:new_char = { add_to_list = new_holders }
 			change_title_holder = {

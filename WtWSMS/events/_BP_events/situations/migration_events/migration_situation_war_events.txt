@@ -617,6 +617,7 @@ migration_situation_war.0200 = {
 			limit = { NOT = { exists = scope:culture_former } }
 			root = { save_scope_as = culture_former }
 		}
+		scope:culture_former = { save_scope_as = background_throne_room_scope }
 	}
 	after = {
 		hidden_effect = {

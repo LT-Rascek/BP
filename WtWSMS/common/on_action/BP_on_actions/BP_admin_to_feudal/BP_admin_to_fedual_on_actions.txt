@@ -11,7 +11,7 @@
 BP_admin_to_feudal_mutation = {
 	trigger = { bp_meets_requirements_to_fedualize_trigger = yes }
 	random_events = {
-		chance_to_happen = 7 #7% every 5 years implies a bit less than 67% chance every 75 years
+		chance_to_happen = BP_admin_to_feudal_mutation_chance
 		100 = BP_admin_to_feudal_events.0050
 	}
 }
@@ -19,7 +19,7 @@ BP_admin_to_feudal_mutation = {
 BP_admin_to_feudal_aristocracy_solidification = {
 	trigger = { bp_meets_requirements_to_fedualize_trigger = yes }
 	random_events = {
-		chance_to_happen = 7 #7% every 5 years implies a bit less than 67% chance every 75 years
+		chance_to_happen = BP_admin_to_feudal_aristocracy_solidification_chance
 		100 = BP_admin_to_feudal_events.0100
 	}
 }
@@ -29,7 +29,7 @@ BP_admin_to_feudal_military_landing = {
 		bp_meets_requirements_for_military_increase_trigger = yes
 	}
 	random_events = {
-		chance_to_happen = 7 #7% every 5 years implies a bit less than 67% chance every 75 years
+		chance_to_happen = BP_admin_to_feudal_military_landing_chance
 		100 = BP_admin_to_feudal_events.0200
 	}
 }
@@ -37,7 +37,7 @@ BP_admin_to_feudal_military_landing = {
 BP_admin_to_feudal_domestic_taxation = {
 	trigger = { bp_meets_requirements_to_fedualize_trigger = yes }
 	random_events = {
-		chance_to_happen = 7 #7% every 5 years implies a bit less than 67% chance every 75 years
+		chance_to_happen = BP_admin_to_feudal_domestic_taxation_chance
 		100 = BP_admin_to_feudal_events.0300
 	}
 }
