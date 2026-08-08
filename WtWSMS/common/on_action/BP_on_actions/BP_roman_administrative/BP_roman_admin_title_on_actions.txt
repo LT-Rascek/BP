@@ -6,7 +6,13 @@ BP_flip_federate_when_not_below_roman = {
 		NOT = { top_liege = { government_has_flag = is_a_roman_government } }
 	}
 	effect = {
-		bp_devolve_roman_federate_effect = yes
+		#If you're a king-level federate, congrats you're now sub-roman ruling over the federates
+		if = {
+			limit = { primary_title.tier >= tier_kingdom }
+			change_government_subroman_administrative_effect = yes
+		}
+		#Otherwise, devolved the government
+		else = { bp_devolve_roman_federate_effect = yes }
 	}
 }
 #Whenever we have rank change as subroman governments
@@ -282,7 +288,7 @@ BP_independent_roman_government_checks = {
 			limit = {
 				government_has_flag = government_becomes_tribal_high_tribal_if_independent_or_not_under_roman
 			}
-			bp_devolve_roman_federate_effect = yes
+			trigger_event = { on_action = BP_flip_federate_when_not_below_roman }
 		}
 		if = {
 			limit = { is_independent_ruler = yes }

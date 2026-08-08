@@ -93,6 +93,17 @@ migration_chance_of_flip_culture_faith = {
 	value = 30
 	subtract = {
 		value = scope:the_county_development
+		subtract = 5
+		multiply = 2
+	}
+	if = {
+		limit = {
+			OR = {
+				scope:the_county.title_province = { has_holding_type = tribal_holding }
+				scope:the_county.title_province = { has_holding_type = nomad_holding }
+				scope:the_county.title_province = { has_holding_type = herder_holding }
+			}
+		}
 		multiply = 2
 	}
 	if = {

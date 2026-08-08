@@ -243,8 +243,8 @@ bp_migration_war_cb = {
 			add_claim_on_loss = no
 		}
 		create_title_and_vassal_change = {
-			type = independency
-			save_scope_as = change_defender_vassals_independent
+			type = swear_fealty
+			save_scope_as = change_defender_vassals_tributized
 			add_claim_on_loss = no
 		}
 		create_title_and_vassal_change = {
@@ -264,7 +264,7 @@ bp_migration_war_cb = {
 		#attacker_titles_to_liege: Attacker titles going to an existing liege
 		#defender_titles_taken_in_target: Defender titles taken within the target
 		#defender_vassals_in_conquest_region: defending vassals in the conquest region
-		#defender_vassals_to_liberate: defending vassals that get liberated
+		#defender_vassals_to_tributize: defending vassals that get liberated
 		#defender_vassals_to_transfer: defending vassals that get to become your vassals
 		#migrating_attackers: attackers who are migrating
 		#migration_source_counties: Counties for which migration modifiers should be applied
@@ -387,10 +387,10 @@ bp_migration_war_cb = {
 				limit = {
 					OR = {
 						this.primary_title.tier >= scope:attacker.primary_title.tier
-						is_ai = no #Humans get liberated
+						is_ai = no #Humans get liberated/tributized definitionally
 					}
 				}
-				add_to_temporary_list = defender_vassals_to_liberate
+				add_to_temporary_list = defender_vassals_to_tributize
 			}
 		}
 		
@@ -406,7 +406,7 @@ bp_migration_war_cb = {
 				}
 			}
 			every_in_list = {
-				list = defender_vassals_to_liberate
+				list = defender_vassals_to_tributize
 				if = {
 					limit = { this = scope:the_title_in_question.holder }
 					scope:the_title_in_question = { remove_from_list = defender_titles_taken }
@@ -477,8 +477,17 @@ bp_migration_war_cb = {
 			change_liege = { liege = scope:attacker change = scope:change_defender_vassals_to_attacker }
 		}
 		every_in_list = {
-			list = defender_vassals_to_liberate
-			becomes_independent = { change = scope:change_defender_vassals_independent }
+			list = defender_vassals_to_tributize
+			becomes_independent = { change = scope:change_defender_vassals_tributized }
+			custom_tooltip = {
+				text = convert_to_a_tributary
+				subject = this
+				add_character_flag = default_subjugated_tributary
+				BP_break_subject_contract_and_establish_tributary_effect = {
+					TRIBUTARY = this
+					SUZERAIN = scope:attacker
+				}
+			}
 		}
 		
 		#Record government information for downstream events
@@ -511,7 +520,7 @@ bp_migration_war_cb = {
 		resolve_title_and_vassal_change = scope:change_conquered_new_lands
 		resolve_title_and_vassal_change = scope:change_attacker_titles_vassals_to_liege
 		resolve_title_and_vassal_change = scope:change_attacker_titles_vassals_independent
-		resolve_title_and_vassal_change = scope:change_defender_vassals_independent
+		resolve_title_and_vassal_change = scope:change_defender_vassals_tributized
 		
 		#### Set your new capital
 		scope:attacker = { set_realm_capital = scope:the_new_capital }
@@ -584,6 +593,7 @@ bp_migration_war_cb = {
 			object = scope:the_target_title
 			scope:attacker = {
 				every_realm_county = {
+					limit = { is_target_in_variable_list = { name = migrating_attackers target = this.holder } }
 					if = {
 						limit = { has_county_modifier = recent_migration_to_modifier }
 						remove_county_modifier = recent_migration_to_modifier
@@ -615,7 +625,7 @@ bp_migration_war_cb = {
 				every_realm_county = {
 					limit = {
 						NOT = { this.culture = scope:attacker.culture }
-						NOT = { any_in_list = { list = migrating_attackers this = prev.holder } }
+						any_in_list = { list = migrating_attackers this = prev.holder }
 					}
 					migration_flip_culture_faith_effect = {
 						THE_ATTACKER = scope:attacker
@@ -659,6 +669,17 @@ bp_migration_war_cb = {
 			custom_description = {
 				text = will_have_the_option_of_changing_governments
 				scope:attacker = { trigger_event = { id = migration_situation_war.0100 } }
+			}
+		}
+		if = {
+			limit = { has_dlc_feature = diverge_culture }
+			custom_tooltip = {
+				text = may_have_option_to_diverge_culture
+				if = {
+					limit = { scope:attacker.culture.culture_head = scope:attacker }
+					scope:attacker = { add_character_flag = was_culture_head }
+				}
+				scope:attacker = { trigger_event = { id = migration_situation_war.0200 days = { 7 14 } } }
 			}
 		}
 	}

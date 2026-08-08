@@ -65,6 +65,7 @@ migration_flip_holding_to_tribal_effect = {
 migration_flip_culture_faith_effect = {
 	#Development of 30 should stop it.
 	# Each era beyond Tribal reduces odds by 5%
+	$THE_COUNTY$ = { save_temporary_scope_as = the_county }
 	$THE_COUNTY$.culture = { save_temporary_scope_as = the_county_culture }
 	save_temporary_scope_value_as = { name = the_county_development value = $THE_COUNTY$.development_level }
 	

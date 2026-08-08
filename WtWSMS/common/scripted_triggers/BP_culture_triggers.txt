@@ -640,5 +640,13 @@ BP_diverge_culture_during_migration_trigger = { #Top Liege root; should match ab
 			count >= 3 this.culture = root.culture
 			any_neighboring_county = { this.culture = root.culture }
 		}
+		#If we overrun a small polity, no elite transfer (too gamey a tactic)
+		trigger_if = {
+			limit = { this.realm_size < 15 }
+			any_realm_county = {
+				percent < 0.5
+				this.culture = root.culture
+			}
+		}
 	}
 }
