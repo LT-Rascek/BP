@@ -225,7 +225,7 @@ migration_situation_war.0100 = {
 				OR = {
 					culture = { has_cultural_tradition = tradition_frankish_traditions }
 					culture = { has_cultural_tradition = tradition_gothic_warfare }
-					culture = { has_cultural_tradition = tradition_migratory_culture }
+					culture = { has_cultural_tradition = tradition_elite_rulership }
 					culture = { has_cultural_tradition = tradition_cranial_deformation }
 					culture = { has_cultural_tradition = tradition_nomadic_rulership_cranial_deformation }
 					culture = { has_cultural_tradition = tradition_nomadic_rulership }
@@ -389,7 +389,7 @@ scripted_effect apply_traditions_to_ruler_culture_effect = {
 		limit = { has_character_flag = nomadic_invader }
 		culture = { add_culture_tradition = tradition_nomadic_rulership }
 	}
-	else = { culture = { add_culture_tradition = tradition_migratory_culture } }
+	else = { culture = { add_culture_tradition = tradition_elite_rulership } }
 }
 scripted_effect remove_tradition_if_has_it_effect = {
 	if = {
@@ -588,7 +588,7 @@ migration_situation_war.0200 = {
 		NOR = {
 			culture = { has_cultural_tradition = tradition_nomadic_rulership }
 			culture = { has_cultural_tradition = tradition_nomadic_rulership_cranial_deformation }
-			culture = { has_cultural_tradition = tradition_migratory_culture }
+			culture = { has_cultural_tradition = tradition_elite_rulership }
 		}
 	}
 	immediate = {

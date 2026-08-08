@@ -42,7 +42,7 @@
  cannot_have_tradition_malleable_invaders: "$cannot_combine_tradition_trigger_desc$ #high $tradition_malleable_invaders_name$#!"
  cannot_have_tradition_marauders: "$cannot_combine_tradition_trigger_desc$ #high $tradition_marauders_name$#!"
  cannot_have_tradition_mercenary_army: "$cannot_combine_tradition_trigger_desc$ #high $tradition_mercenary_army_name$#!"
- cannot_have_tradition_migratory_culture: "$cannot_combine_tradition_trigger_desc$ #high $tradition_migratory_culture_name$#!"
+ cannot_have_tradition_elite_rulership: "$cannot_combine_tradition_trigger_desc$ #high $tradition_elite_rulership_name$#!"
  cannot_have_tradition_mountain_homes: "$cannot_combine_tradition_trigger_desc$ #high $tradition_mountain_homes_name$#!"
  cannot_have_tradition_nomadic_rulership: "$cannot_combine_tradition_trigger_desc$ #high $tradition_nomadic_rulership_name$#!"
  cannot_have_tradition_persian_traditions: "$cannot_combine_tradition_trigger_desc$ #high $tradition_persian_traditions_name$#!"
@@ -149,6 +149,7 @@
  culture_parameter_uses_special_hybrid_event_roman: "[bp_roman_event_hybrid_tradition|E]"
  culture_parameter_very_difficult_to_convert_or_promote: "#V Convert County#! Task: #N -[EmptyScope.ScriptValue('conversion_culture_very_difficult_to_convert_or_promote_value')|0%]#!\n$TAB$$EFFECT_LIST_BULLET$#EMP Resistance and Speed#!\n$EFFECT_LIST_BULLET$#V Promote Culture#! Task: #N -[EmptyScope.ScriptValue('conversion_culture_very_difficult_to_convert_or_promote_value')|0%]#!\n$TAB$$EFFECT_LIST_BULLET$#EMP Resistance and Speed#!"
  culture_parameter_very_expensive_convert_to_local_culture: "#V $convert_to_local_culture_decision$#! [decision|E] Cost: [prestige_i]#N +500%#!"
+ culture_parameter_learning_education_less_valued: "The [learning|E] [education|E] [traits|E] are less valued"
  
  ##### Other Important Text #####
  impact_early_slavs: "$tradition_early_slavic_traditions_name$"
@@ -217,8 +218,8 @@
  tradition_early_slavic_traditions_non_dlc_name: "$tradition_early_slavic_traditions_name$"
  tradition_early_slavic_traditions_non_dlc_desc: "$tradition_early_slavic_traditions_desc$"
  #Migratory Tribes
- tradition_migratory_culture_name: "Migratory Culture"
- tradition_migratory_culture_desc: "This culture formed as a result of a migration of peoples, creating a separate identity from their brethren. While their numbers are small, they are focused martially."
+ tradition_elite_rulership_name: "Stratocratic Elite"
+ tradition_elite_rulership_desc: "This culture formed as a result of a migration of peoples, creating a thin but effective stratocratic hierarchy atop the more numerous commoners. While their numbers are small, they are focused martially."
  
  #### Steppe Traditions ####
  tradition_devoted_horsemanship_western_steppe_name: "Pontic Horsemanship"

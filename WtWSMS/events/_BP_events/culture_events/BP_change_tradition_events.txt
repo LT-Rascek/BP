@@ -13,8 +13,8 @@ bp_change_tradition_events.0001 = {
 	
 	immediate = {
 		if = {
-			limit = { has_cultural_tradition = tradition_migratory_culture }
-			remove_culture_tradition = tradition_migratory_culture
+			limit = { has_cultural_tradition = tradition_elite_rulership }
+			remove_culture_tradition = tradition_elite_rulership
 			add_culture_tradition = tradition_ruling_caste
 		}
 		else_if = {
