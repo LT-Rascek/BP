@@ -650,3 +650,10 @@ BP_diverge_culture_during_migration_trigger = { #Top Liege root; should match ab
 		}
 	}
 }
+
+is_a_romance_culture_general_trigger = { #Culture Root
+	OR = {
+		has_cultural_parameter = greco_roman_social_tradition
+		has_cultural_parameter = can_restore_roman_empire
+	}
+}

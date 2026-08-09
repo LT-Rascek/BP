@@ -198,3 +198,24 @@ cultural_unification_cb_prestige_cost = {
 	}
 	multiply = common_cb_prestige_cost_multiplier
 }
+#Pass Law Values
+gold_treasury_cost_from_realm_size = {
+	value = 0
+	every_realm_county = {
+		add = {
+			value = this.development_level
+			min = 5
+		}
+	}
+	if = {
+		limit = { NOT = { culture = { has_innovation = innovation_leges_barbarorum } } }
+		multiply = 2.0
+		desc = NOT_HAS_INNOVATION_LEGES_BARBARORUM
+	}
+	if = {
+		limit = { NOT = { culture = { has_innovation = innovation_mundium } } }
+		multiply = 1.5
+		desc = NOT_HAS_INNOVATION_MUNDIUM
+	}
+	ceiling = yes
+}

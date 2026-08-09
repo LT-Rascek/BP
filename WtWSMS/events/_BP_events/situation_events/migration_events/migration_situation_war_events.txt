@@ -164,10 +164,7 @@ migration_situation_war.0100 = {
 		
 		#Minor bit of cultural acceptance
 		every_realm_county = {
-			limit = {
-				this.culture = { has_cultural_parameter = greco_roman_social_tradition }
-				this.culture = { has_cultural_parameter = can_restore_roman_empire }
-			}
+			limit = { this.culture = { is_a_romance_culture_general_trigger = yes } }
 			this.culture = { add_to_temporary_list = romance_cultures_in_realm }
 		}
 		every_in_list = {

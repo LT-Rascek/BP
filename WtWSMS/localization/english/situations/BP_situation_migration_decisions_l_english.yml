@@ -1,0 +1,34 @@
+﻿l_english:
+ #Culture Law
+ pass_cultural_law: "Pass [ROOT.Char.Custom('NameForCulturalLawDecision')]"
+ pass_cultural_law_desc: "As a a non-Roman ruler of of a Sub-Roman Realm, we can take inspiration from Roman Law and codify our own ancient practices in a similar way, making it clear how we are to relate to the Romans we rule."
+ pass_cultural_law_tooltip: "Pass a law on how your [culture|E] will relate to the Roman peoples under you."
+ pass_cultural_law_confirm: "Confirm"
+ 
+ reinforce_tribal_identity: "Reinforce Original Identity"
+ reinforce_tribal_identity_tooltip: "Reinforce our Origin, encouraging greater separation between us and Romans"
+ reinforce_status_quo: "Reinforce the Status Quo"
+ reinforce_status_quo_tooltip: "We emphasize the difference between us and Romans, but do not further reinforce the separation"
+ become_more_roman: "Become more like Romans"
+ become_more_roman_tooltip: "We move away from our origins and adopt more Roman mores"
+ 
+ your_dynasty_does_not_have_a_cultural_law_modifier: "Your [dynasty|E] does not have the [GetModifier('adopted_barbarian_law').GetNameWithTooltip], [GetModifier('adopted_status_quo_law').GetNameWithTooltip], or [GetModifier('adopted_roman_law').GetNameWithTooltip] dynasty modifier"
+ 
+ adopted_barbarian_law_culture_effect: "$adopted_roman_law_culture_effect$"
+ adopted_roman_law_culture_effect: "Adopted Legal Code"
+ 
+ NOT_HAS_INNOVATION_LEGES_BARBARORUM: "Does not have the #V $innovation_leges_barbarorum$#! [innovation|E]"
+ NOT_HAS_INNOVATION_MUNDIUM: "Does not have the #V $innovation_mundium$#! [innovation|E]"
+ WE_ALREADY_HAVE_A_BODY_OF_LAWS: "We have a body of laws based on Roman and [CULTURE.GetName] mores"
+ 
+ #Custom Localization for Various possible law names
+ NameForCulturalLawDecision_Anglo: "Lex Anglorum"
+ NameForCulturalLawDecision_Burgundian: "Lex Burgundorum"
+ NameForCulturalLawDecision_OldFrankish: "Lex Francorum"
+ NameForCulturalLawDecision_OldSaxon: "Lex Saxonum"
+ NameForCulturalLawDecision_Ostrogothic: "Lex Ostrogothorum"
+ NameForCulturalLawDecision_Skirian: "Lex Scriorum"
+ NameForCulturalLawDecision_Vandalic: "Lex Vandalorum"
+ NameForCulturalLawDecision_Visigothic: "Lex Visigothorum"
+ NameForCulturalLawDecision_Generic: "a Cultural Law"
+ 

@@ -40,18 +40,18 @@
  
  #Parameters (all need to be added in)
  #TODO: Make situation_parameter_faster_divergence_hybridization_time into Select Localization
- situation_parameter_cultural_unification_cb_enabled: "Can use the #V [GetCasusBelliType('bp_cultural_unification_cb').GetName]#! [casus_belli|E]"
- situation_parameter_targetable_by_migration_cbs_loc: "Can be targeted by #V [GetCasusBelliType('bp_migration_war_cb').GetName]#! [casus_belli|E]"
- situation_parameter_migration_cbs_enabled: "Can use the #V [GetCasusBelliType('bp_migration_war_cb').GetName]#! [casus_belli|E]"
- situation_parameter_increased_subjugation_limit: "$culture_parameter_increased_subjugation_limit$"
- situation_parameter_lower_acceptance_for_hybridization: "Halves the required [cultural_acceptance|E] needed to create a [hybrid_culture|E]\n$TAB$#weak Does not stack with [GetTrait('nomadic_philosophy').GetName( GetNullCharacter )] or $culture_parameter_easier_to_hybridize$ culture features#!"
- situation_parameter_faster_divergence_hybridization_time: "Halves time required to create a [divergent_culture|E] or [hybrid_culture|E]"
- situation_parameter_cheaper_adventurer_invasions: "[ep3_laamp_adventurer_invasion_war|E] cost half the prestige"
- situation_parameter_increased_subroman_decay: "Increased chances for [bp_feudalization|E] events"
  #situation_parameter_confederation_tribal_authority: "$culture_parameter_confederation_tribal_authority$"
+ situation_parameter_cheaper_adventurer_invasions: "[ep3_laamp_adventurer_invasion_war|E] cost half the prestige"
+ situation_parameter_cultural_unification_cb_enabled: "Can use the #V [GetCasusBelliType('bp_cultural_unification_cb').GetName]#! [casus_belli|E]"
+ situation_parameter_faster_divergence_hybridization_time: "Halves time required to create a [divergent_culture|E] or [hybrid_culture|E]"
  situation_parameter_forming_confederations_is_easier: "$culture_parameter_forming_confederations_is_easier$"
+ situation_parameter_increased_subjugation_limit: "$culture_parameter_increased_subjugation_limit$"
+ situation_parameter_increased_subroman_decay: "Increased chances for [bp_feudalization|E] events"
  situation_parameter_invite_to_confederation_extra_reasons: "$culture_parameter_invite_to_confederation_extra_reasons$"
-  situation_parameter_unlocks_passing_culture_law: "Unlocks the decision to PASS_CULTURE_LAW"
+ situation_parameter_lower_acceptance_for_hybridization: "Halves the required [cultural_acceptance|E] needed to create a [hybrid_culture|E]\n$TAB$#weak Does not stack with [GetTrait('nomadic_philosophy').GetName( GetNullCharacter )] or $culture_parameter_easier_to_hybridize$ culture features#!"
+ situation_parameter_migration_cbs_enabled: "Can use the #V [GetCasusBelliType('bp_migration_war_cb').GetName]#! [casus_belli|E]"
+ situation_parameter_targetable_by_migration_cbs_loc: "Can be targeted by #V [GetCasusBelliType('bp_migration_war_cb').GetName]#! [casus_belli|E]"
+ situation_parameter_unlocks_passing_culture_law: "Unlocks the decision to #V $pass_cultural_law$#!"
  
  #Catalysts
  catalyst_situation_passing_of_time_migration: "Yearly Drift [situation_catalyst|E]"

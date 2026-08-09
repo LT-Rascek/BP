@@ -44,6 +44,21 @@ Traditions:
    - Has "The Learning Education Traits are less valued" parameter
    - Adds a -5 opinion of different cultures
 
+Decisions:
+- Added "Pass a Cultural Law" decision, modeling the Late Antique legal codices such as Lex Visigothorum and Lex Burgundorum
+   - The decision has customizable localization name for some cultures
+   - Only AI Visigoths and Burgundians will use this decision
+   - May only be passed once per culture, including child cultures who share a heritage with the culture that passed it
+   - Costs gold/treasury equivalent to your realm's net development (minimum of 5 per county, doubled cost without Oral Law and 50% more expensive without Mundium), and costs 500 prestige as well when binding closer to Roman culture
+   - Given three options:  Emphasize your culture's origins, assert the status quo, or blend with Romans
+      - The first option gives you the nickname "the True <CultureName>", gives your dynasty 250 Renown, moves your Non-Roman rule law one harsher towards Rome, and reduces cultural acceptance with Romance cultures in your realm by 10
+         - Gain the "Adopted Law" Dynasty Modifier, giving same culture vassal opinion and same culture opinion, reducing minority vassal option, and giving 2.5% more renown per character for 100 years
+      - The second option gives you the nickname "the Lawgiver", gives you 500 prestige, and a level of fame
+         - Gain the "Adopted Law" Dynasty Modifier, giving 5% Culture Head Fascination, 5% legitimacy gain, and 5% prestige for dynasty characters for 100 years
+      - The third option gives you the nickname "the Roman", moves your Non-Roman rule law one level more agreeable to Rome, and increases cultural acceptance with Romance cultures in your realm by 10
+         - Gain the "Adopted Law" Dynasty Modifier, giving 20% control growth, 20% progress in sieges against revolts, 5% monthly influence, and 5% development growth for dynasty characters for 100 years
+   - Regardless of Choice, the decision also gives you one of "Oral Law", "Mundium", or a random available civic innovation, in that order
+
 Casus Belli:
 - Overhauled Migration Casus Belli:
    - Available to Dukes and Kings
