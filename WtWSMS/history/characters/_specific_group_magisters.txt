@@ -1,8 +1,21 @@
 ﻿PLRE2_Severus_Antoninus_2 = { #MO West ca. 476-483
 	name = "Antoninus"
+	dynasty = roman_dynn_severus_antonius
 	religion = nicene
 	culture = roman
 	440.1.1 = { birth = yes }
+	476.1.1 = {
+		if = {
+			limit = { BP_has_dlc_necessary_for_roman_ministries_trigger = no }
+			set_employer = character:96054 # Romulus
+		}
+	}
+	476.9.4 = {
+		if = {
+			limit = { BP_has_dlc_necessary_for_roman_ministries_trigger = no }
+			set_employer = character:55 # Odovacar
+		}
+	}
 	500.1.1 = { death = yes }
 }
 
@@ -10,6 +23,7 @@ PLRE2_Theoctistus3 = { #MO East ca. 475-476
 	name = "Theoktistos" #PLRE vol. 2 Theoctistus 3
 	religion = "coptic"
 	culture = "helleno_coptic"
+	dynasty = dynn_plre2_theoctistus_3
 	440.1.1 = { birth = yes }
 	456.1.1 = {
 		trait = education_learning_3
@@ -29,16 +43,17 @@ PLRE2_Theoctistus3 = { #MO East ca. 475-476
 			}
 		}
 	}
-	475.1.1 = {
-		trait = diplomat
-	}
+	475.1.1 = { trait = diplomat }
+	475.1.1 = { employer = 145226 } # Basilicus
 	500.1.1 = { death = yes } #A mob demanded his death, but it's not clear he was killed by a mob
 	#TODO: Add Theopompus (his brother, monk)
 }
 PLRE2_Felix_17 = { #MO East Late V
 	name = "Felix"
+	dynasty = roman_dynn_felix_17
 	religion = nicene
 	culture = roman
 	440.1.1 = { birth = yes }
+	476.8.14 = { employer = 70515 } # Zeno
 	500.1.1 = { death = yes }
 }

@@ -892,78 +892,6 @@
 				ReligiousText = syrian_orthodox_religious_text
 			}
 		}
-		cypriot_church = { #Autocephaly recognized at the Council of Ephesus in 431
-			icon = fic_alt_orthodox
-			color = { 0.75 0.75 0.30 }
-			religious_head = d_cypriot_church
-			
-			holy_site = jerusalem
-			holy_site = constantinople
-			holy_site = alexandria
-			holy_site = antioch
-			holy_site = nicosia
-
-			#Special Tolerance
-			doctrine = special_doctrine_nicene_ecumenism
-
-			#Christian Doctrines
-			doctrine = doctrine_christian_liturgical_rite_imperial_rite
-
-			#Tenets
-			doctrine = tenet_autocephaly
-			doctrine = tenet_communion
-			doctrine = tenet_cenobitic_monasticism
-
-			holy_order_names = {}
-
-			localization = { # Utilizes the 'West Christian' Saints, shared by Catholics and Orthodox
-				#FertilityGod
-				FertilityGodName = west_christian_fertility_god_name
-				FertilityGodNamePossessive = west_christian_fertility_god_name_possessive
-				FertilityGodSheHe = CHARACTER_SHEHE_SHE
-				FertilityGodHerHis = CHARACTER_HERHIS_HER
-				FertilityGodHerHim = CHARACTER_HERHIM_HER
-
-				#WealthGod
-				WealthGodName = west_christian_wealth_god_name
-				WealthGodNamePossessive = west_christian_wealth_god_name_possessive
-				WealthGodSheHe = CHARACTER_SHEHE_HE
-				WealthGodHerHis = CHARACTER_HERHIS_HIS
-				WealthGodHerHim = CHARACTER_HERHIM_HIM
-
-				#HouseholdGod
-				HouseholdGodName = west_christian_household_god_name
-				HouseholdGodNamePossessive = west_christian_household_god_name_possessive
-				HouseholdGodSheHe = CHARACTER_SHEHE_HE
-				HouseholdGodHerHis = CHARACTER_HERHIS_HIS
-				HouseholdGodHerHim = CHARACTER_HERHIM_HIM
-
-				#KnowledgeGod
-				KnowledgeGodName = west_christian_knowledge_god_name
-				KnowledgeGodNamePossessive = west_christian_knowledge_god_name_possessive
-				KnowledgeGodSheHe = CHARACTER_SHEHE_SHE
-				KnowledgeGodHerHis = CHARACTER_HERHIS_HER
-				KnowledgeGodHerHim = CHARACTER_HERHIM_HER
-
-				#WarGod
-				WarGodName = west_christian_war_god_name
-				WarGodNamePossessive = west_christian_war_god_name_possessive
-				WarGodSheHe = CHARACTER_SHEHE_HE
-				WarGodHerHis = CHARACTER_HERHIS_HIS
-				WarGodHerHim = CHARACTER_HERHIM_HIM
-
-				#WaterGod
-				WaterGodName = west_christian_water_god_name
-				WaterGodNamePossessive = west_christian_water_god_name_possessive
-				WaterGodSheHe = CHARACTER_SHEHE_HE
-				WaterGodHerHis = CHARACTER_HERHIS_HIS
-				WaterGodHerHim = CHARACTER_HERHIM_HIM
-
-				# Patriarchs instead of Popes
-				ReligiousHeadName = cypriot_religious_head_title
-				ReligiousHeadTitleName = cypriot_religious_head_title_name
-			}
-		}
 		### Miaphysite Church and Related Faiths
 		coptic = { # Miaphysitism (Coptic+)
 			icon = coptic
@@ -1541,6 +1469,113 @@
 			}
 		}
 		### Gnostic Faiths
+		cathar = {
+			color = { 0.5 0.5 0.9 }
+			icon = christianity_cathar
+			graphical_faith = "catholic_gfx"
+
+			#Shared with Catholics
+			holy_site = jerusalem
+			holy_site = rome
+			holy_site = cologne
+			holy_site = albi
+			holy_site = kent
+
+			#Main Group
+			doctrine = doctrine_no_head
+			doctrine = doctrine_gender_equal
+
+			#Marriage
+			doctrine = doctrine_divorce_disallowed
+
+			#Crimes
+			doctrine = doctrine_homosexuality_accepted
+			doctrine = doctrine_adultery_men_shunned
+			doctrine = doctrine_adultery_women_shunned
+
+			#Clerical Functions
+			doctrine = doctrine_clerical_function_alms_and_pacification
+			doctrine = doctrine_clerical_gender_either
+
+			#Tenets
+			doctrine = tenet_reincarnation
+			doctrine = tenet_pacifism
+			doctrine = tenet_consolamentum
+
+			#Coronation tradition
+			doctrine = doctrine_no_anointment
+
+			#Christian Doctrines
+			doctrine = doctrine_christian_christology_doceticism
+			doctrine = doctrine_christian_perichoresis_modalistic_monarchianism
+			doctrine = doctrine_christian_pneumatology_modalism
+			doctrine = doctrine_christian_communion_repudiation
+			doctrine = doctrine_christian_soteriology_gnosis
+			doctrine = doctrine_christian_judaic_role_demiurge
+			doctrine = doctrine_christian_liturgical_rite_none
+
+			#Unique Localization
+			localization = {
+				PriestMale = cathar_priest_male
+				PriestMalePlural = cathar_priest_male_plural
+				PriestFemale = cathar_priest_female
+				PriestFemalePlural = cathar_priest_female_plural
+				PriestNeuter = cathar_priest_neuter
+				PriestNeuterPlural = cathar_priest_neuter_plural
+			}
+		}
+		bogomilist = {
+			color = { 0.7 0 0.2 }
+			icon = christianity_bogomilist
+			graphical_faith = "orthodox_gfx"
+
+			#Shared with Orthodox
+			holy_site = jerusalem
+			holy_site = constantinople
+			holy_site = rome
+			holy_site = alexandria
+			holy_site = antioch
+
+			#Main Gorup
+			doctrine = doctrine_no_head
+			doctrine = doctrine_gender_equal
+			doctrine = doctrine_theocracy_lay_clergy
+
+			#Clerical Functions
+			doctrine = doctrine_clerical_function_alms_and_pacification
+			doctrine = doctrine_clerical_gender_either
+
+			#Tenets
+			doctrine = tenet_aniconism
+			doctrine = tenet_pacifism
+			doctrine = tenet_mendicant_preachers
+
+			#Coronation tradition
+			doctrine = doctrine_no_anointment
+
+			#Christian Doctrines
+			doctrine = doctrine_christian_christology_adoptionism
+			doctrine = doctrine_christian_perichoresis_dynamic_monarchianism
+			doctrine = doctrine_christian_pneumatology_modalism
+			doctrine = doctrine_christian_communion_memorialism
+			doctrine = doctrine_christian_soteriology_gnosis
+			doctrine = doctrine_christian_judaic_role_demiurge
+			doctrine = doctrine_christian_liturgical_rite_none
+
+			#Unique Localization
+			localization = {
+				PriestMale = bogomilist_priest
+				PriestMalePlural = bogomilist_priest_plural
+				PriestFemale = bogomilist_priest
+				PriestFemalePlural = bogomilist_priest_plural
+				PriestNeuter = bogomilist_priest
+				PriestNeuterPlural = bogomilist_priest_plural
+
+				# Patriarchs instead of Popes
+				ReligiousHeadName = orthodox_religious_head_title
+				ReligiousHeadTitleName = orthodox_religious_head_title_name						
+			}
+		}
 		paulician  = {
 			color = { 0.6 0.1 0.4 }
 			icon = christianity_paulicanism
@@ -2403,6 +2438,35 @@
 				GHWName = ghw_march_of_good_example
 				GHWNamePlural = ghw_march_of_good_examples
 			}
+		}
+		lollard = {
+			color = { 0.5 0.8 0.8 }
+			icon = christianity_lollard
+			graphical_faith = "catholic_gfx"
+
+			#Shared with Catholics
+			holy_site = jerusalem
+			holy_site = rome
+			holy_site = cologne
+			holy_site = santiago
+			holy_site = kent
+
+			#Main Gorup
+			doctrine = doctrine_theocracy_lay_clergy
+			doctrine = doctrine_pilgrimage_forbidden
+
+			#Clerical Functions
+			doctrine = doctrine_clerical_marriage_allowed
+
+			#Tenets
+			doctrine = tenet_pacifism
+			doctrine = tenet_aniconism
+			doctrine = tenet_literalism
+			
+			#Christian Doctrines
+			doctrine = doctrine_christian_soteriology_total_depravity
+			doctrine = doctrine_christian_communion_memorialism
+			doctrine = doctrine_christian_liturgical_rite_none
 		}
 		total_depravity = { #Assumed to be the Total Depravity current within the Imperial Church
 			color = { 1.0 0.0 0.1 }

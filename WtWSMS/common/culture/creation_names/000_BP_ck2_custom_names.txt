@@ -84,7 +84,7 @@ pannonian_romance = { #WtWSMS_pots.119; Romano-Pannonian to Pannonian Romance
 romansh = { #WtWSMS_pots.101; Romano-Noric/Romano-Raetian to Romansh
 	trigger = {
 		OR = {
-			scope:culture = culture:romano_noric
+			#scope:culture = culture:romano_noric
 			scope:culture = culture:romano_raetian
 		}
 		romansh_culture_already_exists_trigger = no

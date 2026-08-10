@@ -279,10 +279,7 @@ BP_fall_of_rome = {
 				name = fall_of_rome
 				value = title:c_roma.holder.top_liege
 			}
-			every_ruler = { #Inform all playable characters
-				limit = { primary_title.tier >= tier_county }
-				trigger_event = { id = bp_narrative_events.0001 }
-			}
+			title:c_roma.holder.top_liege = { trigger_event = bp_narrative_events.0001 }
 		}
 	}
 }

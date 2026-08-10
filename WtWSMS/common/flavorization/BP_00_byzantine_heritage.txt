@@ -423,7 +423,31 @@ emperor_male_bosporan = {
 	gender = male
 	special = holder
 	tier = empire
-	priority = 102
+	priority = 105
+	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government administrative_government roman_dynastic_government roman_administrative_government subroman_dynastic_government subroman_administrative_government }
+	name_lists = { name_list_bosporan }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+emperor_female_bosporan = {
+	type = character
+	gender = male
+	special = holder
+	tier = empire
+	priority = 105
+	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government administrative_government roman_dynastic_government roman_administrative_government subroman_dynastic_government subroman_administrative_government }
+	name_lists = { name_list_bosporan }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+empire_male_bosporan = {
+	type = character
+	gender = male
+	special = holder
+	tier = empire
+	priority = 105
 	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government administrative_government roman_dynastic_government roman_administrative_government subroman_dynastic_government subroman_administrative_government }
 	name_lists = { name_list_bosporan }
 	flavourization_rules = {

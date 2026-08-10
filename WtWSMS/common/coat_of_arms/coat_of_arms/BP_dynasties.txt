@@ -96,7 +96,7 @@ house_syagrius = { #Syagrius ; Kingdom of Soissons
 		instance = { position = { 0.75 0.75 } scale = { 0.25 0.25 } }
 	}
 }
-1022189 = { # Vernius
+1022189 = { # Verinus
 	pattern = "pattern_chief.dds"
 	color1 = green
 	color2 = white
@@ -120,6 +120,27 @@ house_syagrius = { #Syagrius ; Kingdom of Soissons
 		color1 = black
 		color2 = grey
 		instance = { position = { 0.5 0.6 } scale = { 0.6 0.6 } rotation = 180 }
+	}
+}
+house_verinus_flavius={
+	pattern="pattern_solid.dds"
+	color1=red
+	color2=white
+	colored_emblem={
+		color1=white
+		texture="ce_star_08.dds"
+		instance={ position={ 0.82 0.5 } scale={ 0.31 0.31 } }
+	}
+	colored_emblem={
+		color1=white
+		color2=white
+		texture="ce_sword_simple.dds"
+		instance={ position={ 0.2 0.5 } scale={ 0.87 -0.87 } }
+	}
+	colored_emblem={
+		color1=white
+		texture="ce_warrior_angel.dds"
+		instance={ position={ 0.5 0.54 } scale={ 0.62 0.62 } }
 	}
 }
 

@@ -53,19 +53,19 @@ scripted_effect increase_hereditary_rights_one_level_effect = {
 		government_is_subroman_administrative = {
 			if = {
 				limit = { has_realm_law_flag = succession_weight_dynastic_1 }
-				add_realm_law = subroman_admin_aristocracy_law_1
+				add_realm_law = subroman_administrative_aristocracy_law_1
 			}
 			else_if = {
 				limit = { has_realm_law_flag = succession_weight_dynastic_2 }
-				add_realm_law = subroman_admin_aristocracy_law_2
+				add_realm_law = subroman_administrative_aristocracy_law_2
 			}
 			else_if = {
 				limit = { has_realm_law_flag = succession_weight_dynastic_3 }
-				add_realm_law = subroman_admin_aristocracy_law_3
+				add_realm_law = subroman_administrative_aristocracy_law_3
 			}
 			else_if = {
 				limit = { has_realm_law_flag = succession_weight_dynastic_4 }
-				add_realm_law = subroman_admin_aristocracy_law_4
+				add_realm_law = subroman_administrative_aristocracy_law_4
 			}
 			else_if = {
 				limit = { has_realm_law_flag = succession_is_purely_dynastic }
@@ -124,24 +124,24 @@ scripted_effect increase_military_landing_one_level_effect = {
 		government_is_subroman_administrative = {
 			this.top_liege = {
 				if = {
-					limit = { has_realm_law = subroman_admin_military_centralization_top_liege_law_0 }
-					add_realm_law = subroman_admin_military_centralization_top_liege_law_1
+					limit = { has_realm_law = subroman_administrative_military_centralization_top_liege_law_0 }
+					add_realm_law = subroman_administrative_military_centralization_top_liege_law_1
 				}
 				else_if = {
-					limit = { has_realm_law = subroman_admin_military_centralization_top_liege_law_1 }
-					add_realm_law = subroman_admin_military_centralization_top_liege_law_2
+					limit = { has_realm_law = subroman_administrative_military_centralization_top_liege_law_1 }
+					add_realm_law = subroman_administrative_military_centralization_top_liege_law_2
 				}
 				else_if = {
-					limit = { has_realm_law = subroman_admin_military_centralization_top_liege_law_2 }
-					add_realm_law = subroman_admin_military_centralization_top_liege_law_3
+					limit = { has_realm_law = subroman_administrative_military_centralization_top_liege_law_2 }
+					add_realm_law = subroman_administrative_military_centralization_top_liege_law_3
 				}
 				else_if = {
-					limit = { has_realm_law = subroman_admin_military_centralization_top_liege_law_3 }
-					add_realm_law = subroman_admin_military_centralization_top_liege_law_4
+					limit = { has_realm_law = subroman_administrative_military_centralization_top_liege_law_3 }
+					add_realm_law = subroman_administrative_military_centralization_top_liege_law_4
 				}
 				else_if = {
-					limit = { has_realm_law = subroman_admin_military_centralization_top_liege_law_4 }
-					add_realm_law = subroman_admin_military_centralization_top_liege_law_5
+					limit = { has_realm_law = subroman_administrative_military_centralization_top_liege_law_4 }
+					add_realm_law = subroman_administrative_military_centralization_top_liege_law_5
 				}
 			}
 		}
@@ -195,20 +195,20 @@ scripted_effect decay_domestic_taxation_one_level_effect = {
 		government_is_subroman_administrative = {
 			this.top_liege = {
 				if = {
-					limit = { has_realm_law = subroman_admin_taxation_top_liege_law_0 }
-					add_realm_law = subroman_admin_taxation_top_liege_law_1
+					limit = { has_realm_law = subroman_administrative_taxation_top_liege_law_0 }
+					add_realm_law = subroman_administrative_taxation_top_liege_law_1
 				}
 				else_if = {
-					limit = { has_realm_law = subroman_admin_taxation_top_liege_law_1 }
-					add_realm_law = subroman_admin_taxation_top_liege_law_2
+					limit = { has_realm_law = subroman_administrative_taxation_top_liege_law_1 }
+					add_realm_law = subroman_administrative_taxation_top_liege_law_2
 				}
 				else_if = {
-					limit = { has_realm_law = subroman_admin_taxation_top_liege_law_2 }
-					add_realm_law = subroman_admin_taxation_top_liege_law_3
+					limit = { has_realm_law = subroman_administrative_taxation_top_liege_law_2 }
+					add_realm_law = subroman_administrative_taxation_top_liege_law_3
 				}
 				else_if = {
-					limit = { has_realm_law = subroman_admin_taxation_top_liege_law_3 }
-					add_realm_law = subroman_admin_taxation_top_liege_law_4
+					limit = { has_realm_law = subroman_administrative_taxation_top_liege_law_3 }
+					add_realm_law = subroman_administrative_taxation_top_liege_law_4
 				}
 			}
 		}
@@ -294,8 +294,8 @@ scripted_effect shift_government_effect = {
 		transition_to_feudal_government = {
 			change_government = feudal_government
 			hidden_effect = {
-				add_law_if_not_has_it_effect = { LAW = confederate_partition_succession_law }
-				add_law_if_not_has_it_effect = { LAW = crown_authority_0 }
+				add_law_if_not_has_it_skip_effects_effect = { LAW = confederate_partition_succession_law }
+				add_law_if_not_has_it_skip_effects_effect = { LAW = crown_authority_0 }
 			}
 			remove_character_flag = transition_to_feudal_government
 			#Continue Religious rights if necessary
@@ -304,8 +304,8 @@ scripted_effect shift_government_effect = {
 		transition_to_clan_government = {
 			change_government = clan_government
 			hidden_effect = {
-				add_law_if_not_has_it_effect = { LAW = clan_impassive_partition_succession_law }
-				add_law_if_not_has_it_effect = { LAW = crown_authority_0 }
+				add_law_if_not_has_it_skip_effects_effect = { LAW = clan_impassive_partition_succession_law }
+				add_law_if_not_has_it_skip_effects_effect = { LAW = crown_authority_0 }
 			}
 			remove_character_flag = transition_to_clan_government
 			#Continue Religious rights if necessary
@@ -314,8 +314,8 @@ scripted_effect shift_government_effect = {
 		transition_to_high_tribal_government = {
 			change_government = high_tribal_government
 			hidden_effect = {
-				add_law_if_not_has_it_effect = { LAW = clan_impassive_partition_succession_law }
-				add_law_if_not_has_it_effect = { LAW = crown_authority_0 }
+				add_law_if_not_has_it_skip_effects_effect = { LAW = clan_impassive_partition_succession_law }
+				add_law_if_not_has_it_skip_effects_effect = { LAW = crown_authority_0 }
 			}
 			remove_character_flag = transition_to_high_tribal_government
 			#Continue Religious rights if necessary
@@ -324,8 +324,8 @@ scripted_effect shift_government_effect = {
 		transition_to_tribal_government = {
 			change_government = tribal_government
 			hidden_effect = {
-				add_law_if_not_has_it_effect = { LAW = confederate_partition_succession_law }
-				add_law_if_not_has_it_effect = { LAW = tribal_authority_0 }
+				add_law_if_not_has_it_skip_effects_effect = { LAW = confederate_partition_succession_law }
+				add_law_if_not_has_it_skip_effects_effect = { LAW = tribal_authority_0 }
 			}
 			remove_character_flag = transition_to_tribal_government
 		}

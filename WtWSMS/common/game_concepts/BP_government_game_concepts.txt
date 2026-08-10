@@ -1,6 +1,7 @@
 ﻿#High Tribal
 high_tribal_government = {
 	parent = government
+	texture = "gfx/interface/icons/government_types/high_tribal_government.dds"
 	alias = { high_tribal_short high_tribal_noun high_tribal_i }
 }
 high_tribal_organization = {
@@ -31,11 +32,13 @@ high_tribal_organization_3 = {
 #Prefeudal
 prefeudal_government = {
 	parent = government
+	texture = "gfx/interface/icons/government_types/prefeudal_government.dds"
 	alias = { prefeudal_short prefeudal_noun prefeudal_i }
 }
 #Gupta
 rajamandala_government = {
 	parent = government
+	texture = "gfx/interface/icons/government_types/rajamandala_government.dds"
 	alias = { rajamandala_short rajamandala_noun rajamandala_i }
 }
 rajamandala_authority = {
@@ -45,6 +48,7 @@ rajamandala_authority = {
 #Iranian_Dynastic
 iranian_dynastic_government = {
 	parent = government
+	texture = "gfx/interface/icons/government_types/iranian_dynastic_government.dds"
 	alias = { iranian_dynastic_government_short iranian_dynastic_government_noun iranian_dynastic_government_i }
 }
 #Iranian_Dynastic Secular Authority
@@ -60,6 +64,7 @@ clerical_influence = {
 #Roman Dynastic
 roman_dynastic_government = {
 	parent = government
+	texture = "gfx/interface/icons/government_types/roman_dynastic_government.dds"
 	alias = { roman_dynastic_government_short roman_dynastic_government_noun roman_dynastic_government_i }
 }
 roman_dynastic_authority = {
@@ -69,29 +74,24 @@ roman_dynastic_authority = {
 #Roman Administrative
 roman_administrative_government = {
 	parent = government
+	texture = "gfx/interface/icons/government_types/roman_administrative_government.dds"
 	alias = { roman_administrative_government_short roman_administrative_government_noun roman_administrative_government_i }
 }
+#Subroman Government
 subroman_administrative_government = {
 	parent = government
+	texture = "gfx/interface/icons/government_types/subroman_administrative_government.dds"
 	alias = { subroman_administrative_government_short subroman_administrative_government_noun subroman_administrative_government_i }
 }
 roman_federate_government = {
 	parent = government
+	texture = "gfx/interface/icons/government_types/roman_federate_government.dds"
 	alias = { roman_federate_government_short roman_federate_government_noun roman_federate_government_i }
 }
-#Subroman Government
 subroman_dynastic_government = {
 	parent = government
+	texture = "gfx/interface/icons/government_types/subroman_dynastic_government.dds"
 	alias = { subroman_dynastic_government_short subroman_dynastic_government_noun subroman_dynastic_government_i }
-}
-#Sub-Roman Administrative
-subroman_administrative_government = {
-	parent = government
-	alias = { subroman_administrative_government_short subroman_administrative_government_noun subroman_administrative_government_i }
-}
-roman_federate_government = {
-	parent = government
-	alias = { roman_federate_government_short roman_federate_government_noun roman_federate_government_i }
 }
 
 #Federates
@@ -104,10 +104,10 @@ federate = {
 #Tributaries
 BP_fixed_tributary = {
 	texture = "gfx/interface/icons/tributary.dds"
-	parent = subject
+	parent = tributary_contract
 }
 
 BP_tribal_fixed_tributary = {
 	texture = "gfx/interface/icons/tributary.dds"
-	parent = subject
+	parent = tributary_contract
 }

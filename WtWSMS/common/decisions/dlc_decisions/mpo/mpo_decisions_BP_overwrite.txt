@@ -813,3 +813,1082 @@ settle_the_steppe_decision = {
 		base = 10
 	}
 }
+
+##### Changed from Vanilla: Tweaked Feudal flip to be pre-feudal in most cases
+
+### Move into Conquered Lands ###
+settle_people_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/holding_types/city_western.dds"
+	} 
+	decision_group_type = nomad_major
+	
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 36
+		duchy = 36
+		kingdom = 36
+		empire = 36
+		hegemony = 36
+	}
+
+	desc = settle_people_decision_desc
+	selection_tooltip = settle_people_decision_tooltip
+
+	is_shown = {
+		has_mpo_dlc_trigger = yes
+		government_has_flag = government_is_nomadic
+		is_playable_character = yes
+	}
+
+	is_valid = {
+		OR = {
+			has_realm_law = nomadic_authority_3
+			has_realm_law = nomadic_authority_4
+			has_realm_law = nomadic_authority_5
+		}
+		custom_tooltip = {
+			text = step_away_from_the_steppe_decision_holding_tt
+			any_sub_realm_county = {
+				title_province = {
+					NOR = { 
+						has_holding_type = nomad_holding 
+						has_holding_type = herder_holding 
+					}
+				}
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_at_war = no
+		is_available = yes
+	}
+
+	cost = {
+		prestige = {
+			value = medium_prestige_value
+		}
+	}
+
+	##### Changed from Vanilla vvvvv
+	effect = {
+		#GoK stops really being GoK
+		gok_government_change_story_end_effect = yes
+
+		save_scope_as = nomad_settling_down
+		domicile.domicile_culture = { save_scope_as = invading_culture }
+		domicile.domicile_faith = { save_scope_as = invading_faith }
+		save_scope_value_as = {
+			name = invading_herd_value
+			value = domicile.herd
+		}
+		nomad_domicile_refund_effect = yes
+		nomad_convert_herds_to_gold_special_troops_effect = yes
+		every_sub_realm_county = {
+			limit = {
+				title_province = {
+					NOR = { 
+						has_holding_type = nomad_holding 
+						has_holding_type = herder_holding 
+					}
+				}
+			}
+			add_to_list = potential_new_capitals
+		}
+		every_held_title = {
+			limit = {
+				tier = tier_county
+				title_province = {
+					NOR = { 
+						has_holding_type = nomad_holding 
+						has_holding_type = herder_holding 
+					}
+				}
+			}
+			add_to_list = potential_new_capitals
+		}
+		ordered_in_list = {
+			order_by = development_level
+			list = potential_new_capitals
+			save_scope_as = new_capital
+		}
+		if = {
+			limit = {
+				capital_county = {
+					title_province = {
+						NOR = { 
+							has_holding_type = nomad_holding 
+							has_holding_type = herder_holding 
+						}
+					}
+				}
+			}
+			capital_county = {
+				save_scope_as = new_capital
+			}
+		}
+		if = {
+			limit = {
+				exists = scope:new_capital
+				capital_county != scope:new_capital
+			}
+			if = {
+				limit = {
+					scope:new_capital.holder != root
+				}
+				create_title_and_vassal_change = {
+					type = usurped
+					save_scope_as = change
+					add_claim_on_loss = yes
+				}
+				scope:new_capital = {
+					change_title_holder = {
+						holder = root
+						change = scope:change
+					}
+				}
+				resolve_title_and_vassal_change = scope:change
+			}
+			set_realm_capital = scope:new_capital
+		}
+		scope:new_capital.duchy = { save_scope_as = nomad_duchy_for_name }
+		#Should gain target title, if possible
+		if = {
+			limit = {
+				OR = {
+					scope:new_capital.kingdom.holder ?= root
+					is_independent_ruler = no
+				}
+			}
+			# Already holds it, or is a vassal
+		}
+		else_if = {
+			limit = {
+				scope:new_capital.kingdom = {
+					NOT = {
+						exists = holder
+					}
+				}
+			}
+			create_title_and_vassal_change = {
+				type = created
+				save_scope_as = change
+				add_claim_on_loss = yes
+			}
+			scope:new_capital.kingdom = {
+				save_scope_as = new_primary
+				change_title_holder = {
+					holder = scope:attacker
+					change = scope:change
+				}
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+		else = {
+			#Gain capital duchy, if possible
+			if = {
+				limit = {
+					scope:new_capital.duchy = {
+						NOT = {
+							exists = holder
+						}
+					}
+				}
+				hidden_effect = {
+					create_title_and_vassal_change = {
+						type = created
+						save_scope_as = change_1
+						add_claim_on_loss = yes
+					}
+					scope:new_capital.duchy = {
+						change_title_holder = {
+							holder = root
+							change = scope:change_1
+						}
+					}
+					resolve_title_and_vassal_change = scope:change_1
+				}
+			}
+			#Gain titular kingdom
+			if = {
+				limit = {
+					OR = {
+						highest_held_title_tier < tier_kingdom
+						NOT = {
+							any_held_title = {
+								tier = tier_kingdom
+								any_in_de_jure_hierarchy = {
+									tier = tier_county
+									holder.top_liege = root
+									title_province = {
+										NOR = {
+											has_holding_type = nomad_holding 
+											has_holding_type = herder_holding 
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				custom_tooltip = overrunning_gain_titular_kingdom_tt
+				hidden_effect = {
+					create_dynamic_title = {
+						tier = kingdom
+						name = SETTLED_NOMAD_KINGDOM_NAME
+						adj = SETTLED_NOMAD_KINGDOM_NAME_ADJ
+					}
+					scope:new_title = {
+						save_scope_as = new_primary
+						set_definitive_form = yes
+					}
+					create_title_and_vassal_change = {
+						type = created
+						save_scope_as = change_2
+						add_claim_on_loss = no
+					}
+					scope:new_title = {
+						set_can_be_named_after_dynasty = yes
+						change_title_holder = {
+							holder = root
+							change = scope:change_2
+						}
+					}
+					resolve_title_and_vassal_change = scope:change_2
+					scope:new_title = { generate_coa = yes }
+				}
+			}
+		}
+
+		#Make this their primary title, if highest tier
+		hidden_effect = {
+			if = {
+				limit = {
+					exists = scope:new_primary
+					NOT = {
+						highest_held_title_tier > scope:new_primary.tier
+					}
+				}
+				set_primary_title_to = scope:new_primary
+			}
+			# Destroy kingdoms you no longer have land in
+			every_held_title = {
+				limit = {
+					tier = tier_kingdom
+					is_titular = no
+					NOT = {
+						any_in_de_jure_hierarchy = {
+							tier = tier_county
+							holder.top_liege = root
+							title_province = {
+								NOR = {
+									has_holding_type = nomad_holding 
+									has_holding_type = herder_holding 
+								}
+							}
+						}
+					}
+				}
+				root = {
+					destroy_title = prev
+				}
+			}
+		}
+
+		every_held_title = {
+			limit = {
+				tier >= tier_county
+				title_province = {
+					OR = {
+						has_holding_type = nomad_holding 
+						has_holding_type = herder_holding 
+					}
+				}
+			}
+			save_temporary_scope_as = nomadic_county
+			create_character = {
+				location = scope:nomadic_county.title_province
+				template = nomadic_chieftain_character
+				save_scope_as = new_nomadic_chieftain
+			}
+
+			if = {
+				limit = { 
+					root = {
+						is_independent_ruler = yes 
+						is_tributary = no
+					}
+				}
+
+				#Assign the seceding titles to the new nomadic chieftain
+				create_title_and_vassal_change = {
+					type = independency
+					save_scope_as = change
+					add_claim_on_loss = no
+				}
+				change_title_holder = {
+					holder = scope:new_nomadic_chieftain
+					change = scope:change
+					take_baronies = yes
+				}
+
+				#And give the chieftain their independence.
+				scope:new_nomadic_chieftain = {
+					becomes_independent = { change = scope:change }
+				}
+				resolve_title_and_vassal_change = scope:change
+
+				scope:new_nomadic_chieftain = {
+					hidden_effect = {
+						change_government = nomad_government
+					}
+				}
+			}
+			else_if = {
+				limit = { 
+					root = { 
+						is_independent_ruler = yes 
+						is_tributary = yes
+					}
+				}
+
+				#Assign the seceding titles to the new nomadic chieftain
+				create_title_and_vassal_change = {
+					type = independency
+					save_scope_as = change
+					add_claim_on_loss = no
+				}
+				change_title_holder = {
+					holder = scope:new_nomadic_chieftain
+					change = scope:change
+					take_baronies = yes
+				}
+
+				#And make the chieftain a tributary of root's suzerain
+				start_tributary_interaction_effect = {
+					TRIBUTARY = scope:new_nomadic_chieftain
+					SUZERAIN = root.suzerain
+				}
+
+				resolve_title_and_vassal_change = scope:change
+
+				scope:new_nomadic_chieftain = {
+					hidden_effect = {
+						change_government = nomad_government
+					}
+				}
+			}
+			else = {
+				# root = { is_independent_ruler = no }, i.e. a vassal
+
+				#Assign the seceding titles to the new nomadic chieftain
+				create_title_and_vassal_change = {
+					type = independency
+					save_scope_as = change
+					add_claim_on_loss = no
+				}
+				change_title_holder = {
+					holder = scope:new_nomadic_chieftain
+					change = scope:change
+					take_baronies = yes
+				}
+
+				#And make the chieftain vassal of root's liege
+				scope:new_nomadic_chieftain = {
+					change_liege = {
+						liege = root.liege
+						change = scope:change
+					}
+				}
+				resolve_title_and_vassal_change = scope:change
+
+				scope:new_nomadic_chieftain = {
+					hidden_effect = {
+						change_government = nomad_government
+					}
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				scope:new_capital.title_province ?= {
+					has_holding_type = tribal_holding
+				}
+			}
+			change_government = tribal_government
+			if = {
+				limit = {
+					NOT = { has_realm_law = tribal_authority_3 }
+				}
+				hidden_effect = {
+					add_realm_law_skip_effects = tribal_authority_3
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ep3_is_clan_inclined_trigger = yes
+			}
+			change_government = clan_government
+			if = {
+				limit = {
+					NOT = { has_realm_law = crown_authority_3 }
+				}
+				hidden_effect = {
+					add_realm_law_skip_effects = crown_authority_3
+				}
+			}
+		}
+		##### Changed from Vanilla vvvvv
+		else_if = {
+			limit = {
+				NAND = {
+					culture = { has_innovation = innovation_aristocracy }
+					culture = { has_innovation = innovation_hereditary_rule }
+				}
+			}
+			change_government = prefeudal_government
+			if = {
+				limit = { NOT = { has_realm_law = prefeudal_authority_3 } }
+				hidden_effect = { add_realm_law_skip_effects = prefeudal_authority_3 }
+			}
+		}
+		##### Changed from Vanilla ^^^^^
+		else = {
+			change_government = feudal_government
+
+			if = {
+				limit = {
+					NOT = { has_realm_law = crown_authority_3 }
+				}
+				hidden_effect = {
+					add_realm_law_skip_effects = crown_authority_3
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_held_title = {
+					is_nomad_title = yes
+				}
+			}
+			every_held_title = {
+				limit = {
+					is_nomad_title = yes
+				}
+				root = {
+					destroy_title = prev
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				any_vassal = {
+					OR = {
+						has_government = nomad_government
+						has_government = herder_government
+					}
+					capital_county = {
+						title_province = {
+							NOR = { 
+								has_holding_type = nomad_holding 
+								has_holding_type = herder_holding 
+							}
+						}
+					}
+				}
+			}
+			custom_tooltip = {
+				text = step_away_from_the_steppe_decision_vassal_convert
+				
+				every_vassal = {
+					limit = {
+						OR = {
+							has_government = nomad_government
+							has_government = herder_government
+						}
+						capital_county = {
+							title_province = {
+								NOR = { 
+									has_holding_type = nomad_holding 
+									has_holding_type = herder_holding 
+								}
+							}
+						}
+					}
+					nomad_domicile_refund_effect = yes
+					nomad_convert_herds_to_gold_special_troops_effect = yes
+					if = {
+						limit = {
+							scope:new_capital.title_province = {
+								has_holding_type = tribal_holding
+							}
+						}
+						change_government = tribal_government
+						if = {
+							limit = {
+								NOT = { has_realm_law = tribal_authority_1 }
+							}
+							hidden_effect = {
+								add_realm_law_skip_effects = tribal_authority_1
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							ep3_is_clan_inclined_trigger = yes
+						}
+						change_government = clan_government
+						if = {
+							limit = {
+								NOT = { has_realm_law = crown_authority_1 }
+							}
+							hidden_effect = {
+								add_realm_law_skip_effects = crown_authority_1
+							}
+						}
+					}
+					else = {
+						change_government = feudal_government
+
+						if = {
+							limit = {
+								NOT = { has_realm_law = crown_authority_1 }
+							}
+							hidden_effect = {
+								add_realm_law_skip_effects = crown_authority_1
+							}
+						}
+					}
+
+					if = {
+						limit = {
+							any_held_title = {
+								is_nomad_title = yes
+							}
+						}
+						every_held_title = {
+							limit = {
+								is_nomad_title = yes
+							}
+							root = {
+								destroy_title = prev
+							}
+						}
+					}
+					every_vassal = {
+						limit = {
+							OR = {
+								has_government = nomad_government
+								has_government = herder_government
+							}
+							capital_county = {
+								title_province = {
+									NOR = { 
+										has_holding_type = nomad_holding 
+										has_holding_type = herder_holding 
+									}
+								}
+							}
+						}
+						nomad_domicile_refund_effect = yes
+						nomad_convert_herds_to_gold_special_troops_effect = yes
+						if = {
+							limit = {
+								scope:new_capital.title_province = {
+									has_holding_type = tribal_holding
+								}
+							}
+							change_government = tribal_government
+							if = {
+								limit = {
+									NOT = { has_realm_law = tribal_authority_1 }
+								}
+								hidden_effect = {
+									add_realm_law_skip_effects = tribal_authority_1
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								ep3_is_clan_inclined_trigger = yes
+							}
+							change_government = clan_government
+							if = {
+								limit = {
+									NOT = { has_realm_law = crown_authority_1 }
+								}
+								hidden_effect = {
+									add_realm_law_skip_effects = crown_authority_1
+								}
+							}
+						}
+						else = {
+							change_government = feudal_government
+
+							if = {
+								limit = {
+									NOT = { has_realm_law = crown_authority_1 }
+								}
+								hidden_effect = {
+									add_realm_law_skip_effects = crown_authority_1
+								}
+							}
+						}
+						
+						if = {
+							limit = {
+								any_held_title = {
+									is_nomad_title = yes
+								}
+							}
+							every_held_title = {
+								limit = {
+									is_nomad_title = yes
+								}
+								root = {
+									destroy_title = prev
+								}
+							}
+						}
+						
+						every_vassal = {
+							limit = {
+								OR = {
+									has_government = nomad_government
+									has_government = herder_government
+								}
+								capital_county = {
+									title_province = {
+										NOR = { 
+											has_holding_type = nomad_holding 
+											has_holding_type = herder_holding 
+										}
+									}
+								}
+							}
+							nomad_domicile_refund_effect = yes
+							nomad_convert_herds_to_gold_special_troops_effect = yes
+							if = {
+								limit = {
+									scope:new_capital.title_province = {
+										has_holding_type = tribal_holding
+									}
+								}
+								change_government = tribal_government
+								if = {
+									limit = {
+										NOT = { has_realm_law = tribal_authority_1 }
+									}
+									hidden_effect = {
+										add_realm_law_skip_effects = tribal_authority_1
+									}
+								}
+							}
+							else_if = {
+								limit = {
+									ep3_is_clan_inclined_trigger = yes
+								}
+								change_government = clan_government
+								if = {
+									limit = {
+										NOT = { has_realm_law = crown_authority_1 }
+									}
+									hidden_effect = {
+										add_realm_law_skip_effects = crown_authority_1
+									}
+								}
+							}
+							else = {
+								change_government = feudal_government
+
+								if = {
+									limit = {
+										NOT = { has_realm_law = crown_authority_1 }
+									}
+									hidden_effect = {
+										add_realm_law_skip_effects = crown_authority_1
+									}
+								}
+							}
+							if = {
+								limit = {
+									any_held_title = {
+										is_nomad_title = yes
+									}
+								}
+								every_held_title = {
+									limit = {
+										is_nomad_title = yes
+									}
+									root = {
+										destroy_title = prev
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			text = settle_people_decision_usurp_until_domain_limit
+			hidden_effect = {
+				while = {
+					limit = {
+						domain_size <= domain_limit
+						any_sub_realm_county = {
+							holder != root
+							holder = { is_ai = yes }
+							OR = {
+								target_is_de_jure_liege_or_above = root.capital_county.kingdom
+								any_neighboring_county = {
+									holder = root
+								}
+							}
+							title_province = {
+								NOR = {
+									has_holding_type = nomad_holding
+									has_holding_type = herder_holding
+								}
+							}
+						}
+					}
+					random_sub_realm_county = {
+						limit = {
+							holder != root
+							holder = { is_ai = yes }
+							OR = {
+								target_is_de_jure_liege_or_above = root.capital_county.kingdom
+								any_neighboring_county = {
+									holder = root
+								}
+							}
+							title_province = {
+								NOR = {
+									has_holding_type = nomad_holding
+									has_holding_type = herder_holding
+								}
+							}
+						}
+						weight = {
+							base = 1
+							modifier = {
+								add = {
+									every_neighboring_county = {
+										limit = {
+											holder = root
+										}
+										add = 100
+									}
+								}
+								any_neighboring_county = {
+									holder = root
+								}
+							}
+							modifier = {
+								add = 10000
+								any_neighboring_county = {
+									this = root.capital_county
+								}
+							}
+						}
+						create_title_and_vassal_change = {
+							type = revoked
+							save_scope_as = change
+							add_claim_on_loss = yes
+						}
+						change_title_holder = {
+							holder = root
+							change = scope:change
+						}
+						resolve_title_and_vassal_change = scope:change
+					}
+				}
+			}
+		}
+		
+		custom_tooltip = {
+			text = settle_people_decision_culture_shift
+			hidden_effect = {
+				capital_county = {
+					set_county_culture = scope:invading_culture
+					set_county_faith = scope:invading_faith
+				}
+				every_vassal = {
+					limit = {
+						culture = root.culture
+						highest_held_title_tier >= tier_duchy
+					}
+					#Convert capital to their culture
+					capital_county = {
+						set_county_culture = scope:invading_culture
+						set_county_faith = scope:invading_faith
+					}
+				}
+				while = {
+					limit = {
+						scope:invading_herd_value >= 2500
+						any_sub_realm_county = {
+							NOT = {
+								culture = scope:invading_culture
+							}
+						}
+					}
+					random_sub_realm_county = {
+						limit = {
+							NOT = {
+								culture = scope:invading_culture
+							}
+						}
+						weight = {
+							base = 1
+							modifier = {
+								add = {
+									every_neighboring_county = {
+										limit = {
+											culture = scope:invading_culture
+										}
+										add = 100
+									}
+								}
+								any_neighboring_county = {
+									culture = scope:invading_culture
+								}
+							}
+							modifier = {
+								add = 10000
+								any_neighboring_county = {
+									this = root.capital_county
+								}
+							}
+						}
+						set_county_culture = scope:invading_culture
+						set_county_faith = scope:invading_faith
+					}
+					save_scope_value_as = {
+						name = invading_herd_value
+						value = {
+							add = scope:invading_herd_value
+							subtract = 2500
+						}
+					}
+				}
+			}
+		}
+
+		custom_tooltip = {
+			text = step_away_from_the_steppe_decision_vassal_loss
+
+			every_vassal = {
+				limit = {
+					OR = {
+						has_government = nomad_government
+						has_government = herder_government
+					}
+					NOT = {
+						capital_county = {
+							title_province = {
+								NOR = { 
+									has_holding_type = nomad_holding 
+									has_holding_type = herder_holding 
+								}
+							}
+						}
+					}
+				}
+				
+				create_title_and_vassal_change = {
+					type = independency
+					save_scope_as = change
+					add_claim_on_loss = no
+				}
+				becomes_independent = { change = scope:change }
+				resolve_title_and_vassal_change = scope:change
+			}
+
+			every_tributary = {
+				# all tributaries end
+				end_tributary = yes
+			}
+		}
+	}
+
+	ai_potential = {
+		NOR = {
+			has_trait = greatest_of_khans
+			has_trait = conqueror
+			any_owned_story = {
+				OR = {
+					story_type = story_mongol_invasion
+					story_type = story_greatest_of_khans
+				}
+			}
+		}
+		OR = {
+			has_trait = content
+			domicile.herd <= 500
+			is_independent_ruler = no
+			AND = {
+				culture = { has_cultural_pillar = heritage_magyar }
+				OR = {
+					has_title = title:k_hungary
+					has_title = title:e_carpathia
+				}
+			}
+			NOT = {
+				any_sub_realm_county = {
+					title_province = {
+						has_holding_type = nomad_holding
+					}
+				}
+			}
+		}
+	}
+	##### Changed from Vanilla ^^^^^
+
+	ai_will_do = {
+		base = 0
+
+		# different holdings are valued more or less
+
+		modifier = {
+			add = 100
+			any_sub_realm_county = {
+				count >= 3
+				title_province = {
+					has_holding_type = castle_holding
+				}
+			}
+		}
+
+		modifier = {
+			add = 10
+			any_sub_realm_county = {
+				count >= 3
+				title_province = {
+					has_holding_type = tribal_holding
+				}
+			}
+		}
+
+		modifier = {
+			add = 20
+			any_sub_realm_county = {
+				count >= 3
+				title_province = {
+					NOT = { has_holding_type = nomad_holding }
+				}
+			}
+		}
+
+		# development checks
+
+		modifier = {
+			add = 25
+			any_sub_realm_county = {
+				count >= 3
+				root.capital_county != this
+				title_province = {
+					NOT = { has_holding_type = nomad_holding }
+				}
+				development_level >= root.capital_county.development_level
+			}
+		}
+
+		modifier = {
+			add = 25
+			any_held_title = {
+				count >= 5
+				tier = tier_county
+				title_province = {
+					NOT = { has_holding_type = nomad_holding }
+				}
+			}
+		}
+
+		# traits
+
+		modifier = {
+			add = 10
+			OR = {
+				highest_skill = learning
+				highest_skill = stewardship
+			}
+		}
+		modifier = {
+			add = 10
+			OR = {
+				has_trait = craven
+				has_trait = lazy
+				has_trait = greedy
+				has_trait = reclusive
+			}
+		}
+		modifier = {
+			add = -25
+			OR = {
+				highest_skill = martial
+				has_trait = athletic
+			}
+		}
+		modifier = {
+			add = -50
+			has_trait = ambitious
+		}
+
+		# Hungarians want to settle
+		modifier = {
+			add = 1000
+			culture = { has_cultural_pillar = heritage_magyar }
+			OR = {
+				has_title = title:k_hungary
+				has_title = title:e_carpathia
+			}
+		}
+
+		# Nomadic Vassals of non-Nomads want to settle down
+		modifier = {
+			add = 100
+			top_liege != root
+			NOT = {
+				top_liege = {
+					government_has_flag = government_is_nomadic
+				}
+			}
+		}
+
+		# Nomadic Vassals of Nomads do NOT want to settle down
+		modifier = {
+			factor = 0
+			top_liege != root
+			top_liege = {
+				government_has_flag = government_is_nomadic
+			}
+		}
+
+		modifier = {
+			factor = 0
+			top_liege = {
+				government_has_flag = government_is_nomadic
+			}
+			highest_held_title_tier >= tier_kingdom
+			NOR = {
+				has_title = title:k_hungary
+				has_title = title:e_carpathia
+				any_sub_realm_county = {
+					count >= 10
+					title_province = {
+						OR = {
+							has_holding_type = castle_holding
+							has_holding_type = tribal_holding
+						}
+					}
+				}
+			}
+		}
+	}
+}

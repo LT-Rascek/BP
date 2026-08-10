@@ -39,17 +39,18 @@
 @special_maa_01 = "gfx/interface/icons/culture_innovations/innovation_special_maa_01.dds"
 @special_maa_02 = "gfx/interface/icons/culture_innovations/innovation_special_maa_02.dds"
 
-@farm_01 = "gfx/interface/icons/culture_innovations/agriculture_01.dds"
+@farm_01 = "gfx/interface/icons/culture_innovations/innovation_farm.dds"
 @farm_02 = "gfx/interface/icons/culture_innovations/agriculture_02.dds"
 @roman_civil = "gfx/interface/icons/culture_innovations/roman_civil_innovations.dds"
 @roman_military = "gfx/interface/icons/culture_innovations/roman_military_innovations.dds"
+@tribal_religion = "gfx/interface/icons/culture_innovations/tribal_religion.dds"
 
 #Military Innovations
 innovation_quilted_armor = { #Aka, Ironworking
 	skill = martial
 	group = culture_group_military
 	culture_era = culture_era_tribal
-	icon = @weapons_and_armor_02
+	icon = @quilted_armor
 
 	custom = unlock_maa_armored_footmen
 
@@ -94,24 +95,14 @@ innovation_castrae = {
 	culture_era = culture_era_tribal
 	icon = @fortifications
 
+
 	asset = {
 		trigger = {
-			OR = {
-				has_cultural_pillar = heritage_frankish
-				has_cultural_pillar = heritage_central_germanic
-				has_cultural_pillar = heritage_west_germanic
-				has_cultural_pillar = heritage_north_germanic
-				has_cultural_pillar = heritage_iberian
-				has_cultural_pillar = heritage_brythonic
-				has_cultural_pillar = heritage_goidelic
-				has_cultural_pillar = heritage_latin
-				has_cultural_pillar = heritage_west_slavic
-			}
+			has_cultural_parameter = heritage_group_celtic
 		}
 		icon = @fortifications
-		name = innovation_motte_actual_motte
+		name = innovation_earthworks_celtic
 	}
-
 	asset = {
 		trigger = {
 			has_cultural_pillar = heritage_chinese
@@ -136,7 +127,7 @@ innovation_tribal_warfare = {
 	skill = martial
 	group = culture_group_military
 	culture_era = culture_era_tribal
-	icon = @raised_banner
+	icon = @hird
 
 	unlock_building = war_camps_02
 	custom = improves_migration_tribal_odds
@@ -170,7 +161,7 @@ innovation_barter = {
 	skill = stewardship
 	group = culture_group_civic
 	culture_era = culture_era_tribal
-	icon = @administration_2
+	icon = @currency
 
 	unlock_building = guild_halls_00
 	unlock_building = common_tradeport_00
@@ -197,6 +188,17 @@ innovation_oppidum = {
 	unlock_building = longhouses_02
 	unlock_building = tribe_02
 	custom = improves_migration_tribal_odds
+	
+	asset = {
+		trigger = {
+			OR = {
+				has_cultural_parameter = heritage_group_celtic
+				has_cultural_parameter = heritage_group_romance
+			}
+		}
+		icon = @civil_construction_2
+		name = innovation_oppidum_celtic
+	}
 
 	character_modifier = {
 		herd_capacity_mult = 0.05
@@ -209,7 +211,15 @@ innovation_leges_barbarorum = {
 	skill = learning
 	group = culture_group_civic
 	culture_era = culture_era_tribal
-	icon = @administration_3
+	icon = @tribal_religion
+	
+	asset = {
+		trigger = {
+			has_cultural_parameter = heritage_group_germanic
+		}
+		icon = @tribal_religion
+		name = innovation_leges_germanic
+	}
 
 	unlock_law = prefeudal_authority_1
 	unlock_law = confederate_partition_succession_law
@@ -263,7 +273,7 @@ innovation_social_stratification = {
 	skill = diplomacy
 	group = culture_group_civic
 	culture_era = culture_era_tribal
-	icon = @nobility_01
+	icon = @plenary_assemblies
 
 	character_modifier = { vassal_limit = 10 }
 	
@@ -290,7 +300,7 @@ innovation_longboats = {
 	group = culture_group_regional
 	culture_era = culture_era_tribal
 	region = world_europe_north
-	icon = @misc_inventions
+	icon = @longboats
 
 	character_modifier = {
 		embarkation_cost_mult = -0.75
@@ -338,7 +348,7 @@ innovation_african_canoes = {
 	group = culture_group_regional
 	culture_era = culture_era_tribal
 	region = world_africa_west
-	icon = @majesty_01
+	icon = @longboats
 
 	character_modifier = {
 		embarkation_cost_mult = -0.25

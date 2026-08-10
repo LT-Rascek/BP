@@ -10,35 +10,35 @@
 ##### Language
 
 ##### TRIGGERS
-scripted_trigger ruler_is_valid_to_hear_about_culture_shift_trigger = { #Scope is ruler in question
+scripted_trigger ruler_is_valid_to_hear_about_culture_drift_trigger = { #Scope is ruler in question
 	is_ai = no #Otherwise hangs
 	OR = {
 		#Same Language/Heritage always tells your
-		this.culture = { $HAS_SAME_LANGUAGE_HERITAGE_TRIGGER$ = scope:shift_culture }
+		this.culture = { $HAS_SAME_LANGUAGE_HERITAGE_TRIGGER$ = scope:drift_culture }
 		#Adjacent to your realm
-		any_realm_county = { any_neighboring_county = { this.culture = scope:shift_culture } }
+		any_realm_county = { any_neighboring_county = { this.culture = scope:drift_culture } }
 		#Is a small but close culture
 		AND = {
-			scope:shift_culture = { any_culture_county = { count <= 5 } }
-			scope:shift_culture = { any_culture_county = { squared_distance < 100000 } }
+			scope:drift_culture = { any_culture_county = { count <= 5 } }
+			scope:drift_culture = { any_culture_county = { squared_distance < 100000 } }
 		}
 		#Is a medium culture
 		AND = {
-			scope:shift_culture = { any_culture_county = { count <= 10 } }
-			scope:shift_culture = { any_culture_county = { squared_distance < 500000 } }
+			scope:drift_culture = { any_culture_county = { count <= 10 } }
+			scope:drift_culture = { any_culture_county = { squared_distance < 500000 } }
 		}
 		#Is a large culture
 		AND = {
-			scope:shift_culture = { any_culture_county = { count <= 15 } }
-			scope:shift_culture = { any_culture_county = { squared_distance < 1000000 } }
+			scope:drift_culture = { any_culture_county = { count <= 15 } }
+			scope:drift_culture = { any_culture_county = { squared_distance < 1000000 } }
 		}
 		#Is a huge culture
 		AND = {
-			scope:shift_culture = { any_culture_county = { count <= 20 } }
-			scope:shift_culture = { any_culture_county = { squared_distance < 5000000 } }
+			scope:drift_culture = { any_culture_county = { count <= 20 } }
+			scope:drift_culture = { any_culture_county = { squared_distance < 5000000 } }
 		}
 		#Gargantuan cultures you always hear about
-		scope:shift_culture = { any_culture_county = { count >= 21 } }
+		scope:drift_culture = { any_culture_county = { count >= 21 } }
 	}
 }
 
@@ -120,7 +120,7 @@ scripted_effect teach_chars_new_language = {
 
 #Latin to Children
 scripted_effect shift_language_latin_to_protoromance_effect = {
-	scope:shift_culture = {
+	scope:drift_culture = {
 		if = {
 			limit = {
 				OR = {
@@ -209,7 +209,7 @@ scripted_effect shift_language_latin_to_protoromance_effect = {
 }
 #Proto-Romance to Romance
 scripted_effect shift_language_proto_ibero_romance_to_children_effect = {
-	scope:shift_culture = {
+	scope:drift_culture = {
 		if = {
 			limit = { is_a_iberian_romance_hybrid_culture_trigger = yes }
 			if = {
@@ -242,7 +242,7 @@ scripted_effect shift_language_proto_ibero_romance_to_children_effect = {
 	
 }
 scripted_effect shift_language_proto_gallo_romance_to_children_effect = {
-	scope:shift_culture = {
+	scope:drift_culture = {
 		if = {
 			limit = { is_culture_mostly_in_linguistic_region_trigger = { REGION = custom_doc_region } }
 			set_culture_pillar = language_doc_romance
@@ -267,13 +267,13 @@ scripted_effect shift_language_proto_gallo_romance_to_children_effect = {
 	}
 }
 scripted_effect shift_language_proto_british_romance_to_children_effect = {
-	scope:shift_culture = {
+	scope:drift_culture = {
 		set_culture_pillar = language_british_romance
 		ccu_culture_created_or_changed_effect = yes
 	}
 }
 scripted_effect shift_language_proto_italian_romance_to_children_effect = {
-	scope:shift_culture = {
+	scope:drift_culture = {
 		if = {
 			limit = { is_culture_mostly_in_linguistic_region_trigger = { REGION = custom_gallo_italic } }
 			if = {
@@ -300,7 +300,7 @@ scripted_effect shift_language_proto_italian_romance_to_children_effect = {
 	}
 }
 scripted_effect shift_language_proto_raetonorican_romance_to_children_effect = {
-	scope:shift_culture = {
+	scope:drift_culture = {
 		if = {
 			limit = { the_culture_or_parent_or_above_is_trigger = { CULTURE = culture:romano_noric } }
 			set_culture_pillar = language_noric_romance
@@ -313,31 +313,31 @@ scripted_effect shift_language_proto_raetonorican_romance_to_children_effect = {
 	}
 }
 scripted_effect shift_language_proto_illyrian_romance_to_children_effect = {
-	scope:shift_culture = {
+	scope:drift_culture = {
 		set_culture_pillar = language_dalmatian
 		ccu_culture_created_or_changed_effect = yes
 	}
 }
 scripted_effect shift_language_proto_pannonian_romance_to_children_effect = {
-	scope:shift_culture = {
+	scope:drift_culture = {
 		set_culture_pillar = language_pannonian_romance
 		ccu_culture_created_or_changed_effect = yes
 	}
 }
 scripted_effect shift_language_proto_eastern_romance_to_children_effect = {
-	scope:shift_culture = {
+	scope:drift_culture = {
 		set_culture_pillar = language_wallachian
 		ccu_culture_created_or_changed_effect = yes
 	}
 }
 scripted_effect shift_language_proto_syrian_romance_to_children_effect = {
-	scope:shift_culture = {
+	scope:drift_culture = {
 		set_culture_pillar = language_syrian_romance
 		ccu_culture_created_or_changed_effect = yes
 	}
 }
 scripted_effect shift_language_proto_african_romance_to_children_effect = {
-	scope:shift_culture = {
+	scope:drift_culture = {
 		if = {
 			limit = { a_culture_parent_is_a_germanic_culture_trigger = yes }
 			set_culture_pillar = language_germano_african_romance
@@ -350,14 +350,14 @@ scripted_effect shift_language_proto_african_romance_to_children_effect = {
 	}
 }
 scripted_effect shift_language_proto_sardinian_to_children_effect = {
-	scope:shift_culture = {
+	scope:drift_culture = {
 		set_culture_pillar = language_sardinian
 		ccu_culture_created_or_changed_effect = yes
 	}
 }
 #Later Romance Languages
 scripted_effect shift_language_doc_romance_to_children_effect = {
-	scope:shift_culture = {
+	scope:drift_culture = {
 		if = {
 			limit = { the_culture_or_parent_or_above_is_trigger = { CULTURE = culture:romano_hispanic } }
 			set_culture_pillar = language_catalan
@@ -375,13 +375,13 @@ scripted_effect shift_language_doc_romance_to_children_effect = {
 	}
 }
 scripted_effect shift_language_french_to_children_effect = {
-	scope:shift_culture = {
+	scope:drift_culture = {
 		set_culture_pillar = language_arpitan
 		ccu_culture_created_or_changed_effect = yes
 	}
 }
 scripted_effect shift_language_iberian_to_children_effect = {
-	scope:shift_culture = {
+	scope:drift_culture = {
 		if = {
 			limit = {
 				the_culture_or_parent_or_above_is_trigger = { CULTURE = culture:danubian_suebi }
@@ -408,7 +408,7 @@ scripted_effect shift_language_iberian_to_children_effect = {
 }
 #Indo-Aryan
 scripted_effect shift_language_magadhan_to_children_effect = {
-	scope:shift_culture = {
+	scope:drift_culture = {
 		if = {
 			limit = { the_culture_or_parent_or_above_is_trigger = { CULTURE = culture:bengali } }
 			set_culture_pillar = language_bengali
@@ -442,13 +442,13 @@ scripted_effect shift_language_magadhan_to_children_effect = {
 	}
 }
 scripted_effect shift_language_kamarupan_to_children_effect = {
-	scope:shift_culture = {
+	scope:drift_culture = {
 		set_culture_pillar = language_assamese
 		ccu_culture_created_or_changed_effect = yes
 	}
 }
 scripted_effect shift_language_sauraseni_to_children_effect = {
-	scope:shift_culture = {
+	scope:drift_culture = {
 		if = {
 			limit = { the_culture_or_parent_or_above_is_trigger = { CULTURE = culture:awadhi } }
 			set_culture_pillar = language_awadhi
@@ -471,7 +471,7 @@ scripted_effect shift_language_sauraseni_to_children_effect = {
 	}
 }
 scripted_effect shift_langauge_apabhramsa_to_children_effect = {
-	scope:shift_culture = {
+	scope:drift_culture = {
 		if = {
 			limit = {
 				OR = {
@@ -504,7 +504,7 @@ scripted_effect shift_langauge_apabhramsa_to_children_effect = {
 	}
 }
 scripted_effect shift_language_vrachada_to_children_effect = {
-	scope:shift_culture = {
+	scope:drift_culture = {
 		if = {
 			limit = { the_culture_or_parent_or_above_is_trigger = { CULTURE = culture:sindhi } }
 			set_culture_pillar = language_sindhi
@@ -522,7 +522,7 @@ scripted_effect shift_language_vrachada_to_children_effect = {
 	}
 }
 scripted_effect shift_language_maharashtri_to_children_effect = {
-	scope:shift_culture = {
+	scope:drift_culture = {
 		if = {
 			limit = { the_culture_or_parent_or_above_is_trigger = { CULTURE = culture:marathi } }
 			set_culture_pillar = language_marathi
@@ -540,14 +540,14 @@ scripted_effect shift_language_maharashtri_to_children_effect = {
 	}
 }
 scripted_effect shift_language_elu_to_children_effect = {
-	scope:shift_culture = {
+	scope:drift_culture = {
 		set_culture_pillar = language_sinhalese
 		ccu_culture_created_or_changed_effect = yes
 	}
 }
 #Iranian
 scripted_effect shift_language_parthian_to_children_effect = {
-	scope:shift_culture = {
+	scope:drift_culture = {
 		if = {
 			limit = {
 				OR = {
@@ -572,7 +572,7 @@ scripted_effect shift_language_parthian_to_children_effect = {
 
 #Main Language Shift Effect
 scripted_effect shift_language_effect = {
-	scope:shift_culture = {
+	scope:drift_culture = {
 		#First find all applicable minorities
 		find_same_language_minorities = yes
 		
@@ -673,7 +673,7 @@ scripted_effect shift_language_effect = {
 			limit = { has_cultural_pillar = language_parthian }
 			shift_language_parthian_to_children_effect = yes
 		}
-		else = { debug_log = "UNHANDLED LANGUAGE SHIFT!" }
+		else = { debug_log = "UNHANDLED LANGUAGE DRIFT!" }
 	}
 	# Finalize minorities, name lists, character languages
 	propagate_language_effect = yes
@@ -681,13 +681,13 @@ scripted_effect shift_language_effect = {
 
 # Make list of this culture and all cultures that exist only as minorities under them
 scripted_effect find_same_language_minorities = {
-	# Start with scope:shift_culture
-	add_to_list = all_shift_cultures
+	# Start with scope:drift_culture
+	add_to_list = all_drift_cultures
 	
 	# No counties, same language
 	every_culture_global = {
 		limit = {
-			has_same_culture_language = scope:shift_culture
+			has_same_culture_language = scope:drift_culture
 			any_culture_county = { count = 0 }
 		}
 		add_to_temporary_list = check_culture_minorities
@@ -700,10 +700,10 @@ scripted_effect find_same_language_minorities = {
 		# If most are under the shift culture, save them to the persistent list
 		if = {
 			limit = {
-				this.number_of_shift_culture_counties_with_minority > 0
-				this.number_of_shift_culture_counties_with_minority >= this.half_number_of_counties_with_minority
+				this.number_of_drift_culture_counties_with_minority > 0
+				this.number_of_drift_culture_counties_with_minority >= this.half_number_of_counties_with_minority
 			}
-			add_to_list = all_shift_cultures
+			add_to_list = all_drift_cultures
 		}
 	}
 }
@@ -711,12 +711,12 @@ scripted_effect find_same_language_minorities = {
 # Make list of this culture and all cultures that exist only as minorities under them
 scripted_effect propagate_language_effect = {
 	every_in_list = {
-		list = all_shift_cultures
+		list = all_drift_cultures
 		
 		# If they don't know the new language
 		teach_chars_new_language = yes
 		
-		set_language_from = scope:shift_culture
+		set_language_from = scope:drift_culture
 		
 		#Name lists
 		if = {
@@ -819,7 +819,12 @@ scripted_effect propagate_language_effect = {
 				set_name_list = name_list_pannonian_romance
 			}
 			else_if = {
-				limit = { has_cultural_pillar = language_germano_african_romance }
+				limit = {
+					OR = {
+						has_cultural_pillar = language_african_romance
+						has_cultural_pillar = language_germano_african_romance
+					}
+				}
 				set_name_list = name_list_african_romance
 			}
 			else_if = {
@@ -836,10 +841,10 @@ scripted_effect propagate_language_effect = {
 }
 
 #For testing, sets to the root character
-scripted_effect debug_set_shift_culture = {
+scripted_effect debug_set_drift_culture = {
 	if = {
-		limit = { NOT = { exists = scope:shift_culture } }
-		root.culture = { save_scope_as = shift_culture }
+		limit = { NOT = { exists = scope:drift_culture } }
+		root.culture = { save_scope_as = drift_culture }
 	}
 }
 
@@ -851,18 +856,18 @@ bp_heritage_linguistic_drift.0001 = {
 	content_source = dlc_WtWSMS
 	
 	immediate = {
-		debug_set_shift_culture = yes
+		debug_set_drift_culture = yes
 		hidden_effect = { shift_language_effect = yes }
 		#If the culture head exists, inform him/her first
 		if = {
-			limit = { exists = scope:shift_culture.culture_head }
-			scope:shift_culture.culture_head = { trigger_event = { id = bp_heritage_linguistic_drift.0002 } }
+			limit = { exists = scope:drift_culture.culture_head }
+			scope:drift_culture.culture_head = { trigger_event = { id = bp_heritage_linguistic_drift.0002 } }
 		}
 		#Otherwise, tell everyone
 		else = {
 			every_ruler = { #Informational event
 				limit = {
-					ruler_is_valid_to_hear_about_culture_shift_trigger = {
+					ruler_is_valid_to_hear_about_culture_drift_trigger = {
 						HAS_SAME_LANGUAGE_HERITAGE_TRIGGER = has_same_culture_language
 					}
 				}
@@ -879,11 +884,11 @@ bp_heritage_linguistic_drift.0002 = {
 		first_valid = {
 			#Latin to Proto-Romance
 			triggered_desc = {
-				trigger = { has_proto_romance_language_trigger = { CULTURE = scope:shift_culture } }
+				trigger = { has_proto_romance_language_trigger = { CULTURE = scope:drift_culture } }
 				desc = bp_heritage_linguistic_drift.0002.desc.latin
 			}
 			triggered_desc = {
-				trigger = { has_proto_romance_language_trigger = { CULTURE = scope:shift_culture } }
+				trigger = { has_proto_romance_language_trigger = { CULTURE = scope:drift_culture } }
 				desc = bp_heritage_linguistic_drift.0002.desc.old_romance
 			}
 			#Default
@@ -891,27 +896,27 @@ bp_heritage_linguistic_drift.0002 = {
 		}
 		# List a minority if shifted
 		triggered_desc = {
-			trigger = { any_in_list = { list = all_shift_cultures count > 1 } }
+			trigger = { any_in_list = { list = all_drift_cultures count > 1 } }
 			desc = bp_heritage_linguistic_drift.0002.desc.minority
 		}
 	}
 	
 	theme = culture_change
 	content_source = dlc_WtWSMS
-	override_background = { reference = BP_shift_culture_city }
+	override_background = { reference = BP_culture_drift_city }
 	left_portrait = root
 	
 	immediate = {
 		#Pick random shifted minority
 		random_in_list = {
-			list = all_shift_cultures
-			limit = { NOT = { this = scope:shift_culture } }
+			list = all_drift_cultures
+			limit = { NOT = { this = scope:drift_culture } }
 			save_scope_as = check_minority_culture
 		}
 		#Show language shifts
 		show_as_tooltip = {
 			every_in_list = {
-				list = all_shift_cultures
+				list = all_drift_cultures
 				set_language_from = this
 			}
 		}
@@ -921,7 +926,7 @@ bp_heritage_linguistic_drift.0002 = {
 		name = bp_heritage_linguistic_drift.0002.accept
 		every_player = {
 			limit = {
-				ruler_is_valid_to_hear_about_culture_shift_trigger = {
+				ruler_is_valid_to_hear_about_culture_drift_trigger = {
 					HAS_SAME_LANGUAGE_HERITAGE_TRIGGER = has_same_culture_language
 				}
 				NOT = { this = root }
@@ -929,7 +934,7 @@ bp_heritage_linguistic_drift.0002 = {
 			trigger_event = { id = bp_heritage_linguistic_drift.0003 }
 		}
 		#flavor = bp_heritage_linguistic_drift.0002.accept.tooltip
-		show_as_tooltip = { learn_language_of_culture = scope:shift_culture }
+		show_as_tooltip = { learn_language_of_culture = scope:drift_culture }
 	}
 }
 
@@ -940,11 +945,11 @@ bp_heritage_linguistic_drift.0003 = {
 		first_valid = {
 			#Latin to Proto-Romance
 			triggered_desc = {
-				trigger = { has_proto_romance_language_trigger = { CULTURE = scope:shift_culture } }
+				trigger = { has_proto_romance_language_trigger = { CULTURE = scope:drift_culture } }
 				desc = bp_heritage_linguistic_drift.0003.desc.latin
 			}
 			triggered_desc = {
-				trigger = { has_proto_romance_language_trigger = { CULTURE = scope:shift_culture } }
+				trigger = { has_proto_romance_language_trigger = { CULTURE = scope:drift_culture } }
 				desc = bp_heritage_linguistic_drift.0003.desc.old_romance
 			}
 			#Default
@@ -952,25 +957,25 @@ bp_heritage_linguistic_drift.0003 = {
 		}
 		# List a minority if shifted
 		triggered_desc = {
-			trigger = { any_in_list = { list = all_shift_cultures count > 1 } }
+			trigger = { any_in_list = { list = all_drift_cultures count > 1 } }
 			desc = bp_heritage_linguistic_drift.0003.desc.minority
 		}
 	}
 	theme = culture_change
 	content_source = dlc_WtWSMS
-	override_background = { reference = BP_shift_culture_city }
+	override_background = { reference = BP_culture_drift_city }
 	left_portrait = scope:bg_override_char
 	lower_right_portrait = scope:my_portrait
 	
 	immediate = {
 		if = {
-			limit = { exists = scope:shift_culture.culture_head }
-			scope:shift_culture.culture_head = { save_scope_as = bg_override_char }
+			limit = { exists = scope:drift_culture.culture_head }
+			scope:drift_culture.culture_head = { save_scope_as = bg_override_char }
 		}
 		else_if = {
 			limit = {
 				any_ruler = {
-					culture = scope:shift_culture
+					culture = scope:drift_culture
 					NOR = { #Keep it to chars functionally on the map please
 						government_has_flag = cannot_be_vassal_or_liege
 						government_has_flag = government_is_herder
@@ -978,25 +983,25 @@ bp_heritage_linguistic_drift.0003 = {
 				}
 			}
 			random_ruler = {
-				limit = { culture = scope:shift_culture }
+				limit = { culture = scope:drift_culture }
 				save_scope_as = bg_override_char
 			}
 		}
 		# Add your portrait if your culture matches
 		if = {
-			limit = { root.culture = scope:shift_culture }
+			limit = { root.culture = scope:drift_culture }
 			save_scope_as = my_portrait
 		}
 		#Pick random shifted minority
 		random_in_list = {
-			list = all_shift_cultures
-			limit = { NOT = { this = scope:shift_culture } }
+			list = all_drift_cultures
+			limit = { NOT = { this = scope:drift_culture } }
 			save_scope_as = check_minority_culture
 		}
 		#Show language shifts
 		show_as_tooltip = {
 			every_in_list = {
-				list = all_shift_cultures
+				list = all_drift_cultures
 				set_language_from = this
 			}
 		}
@@ -1006,14 +1011,14 @@ bp_heritage_linguistic_drift.0003 = {
 	option = {
 		name = bp_heritage_linguistic_drift.0003.accept_same_culture
 		#flavor = bp_heritage_linguistic_drift.0003.accept_same_culture.tooltip
-		trigger = { root.culture = { is_in_list = all_shift_cultures } }
-		show_as_tooltip = { learn_language_of_culture = scope:shift_culture }
+		trigger = { root.culture = { is_in_list = all_drift_cultures } }
+		show_as_tooltip = { learn_language_of_culture = scope:drift_culture }
 	}
 	#For other rulers not of the culture
 	option = {
 		name = bp_heritage_linguistic_drift.0003.accept_different_culture
 		#flavor = bp_heritage_linguistic_drift.0003.accept_different_culture.tooltip
-		trigger = { NOT = { root.culture = { has_same_culture_language = scope:shift_culture } } }
+		trigger = { NOT = { root.culture = { has_same_culture_language = scope:drift_culture } } }
 		fallback = yes
 	}
 }
@@ -1021,7 +1026,7 @@ bp_heritage_linguistic_drift.0003 = {
 ##### Heritage
 
 scripted_effect shift_latin_heritage_to_children_effect = {
-	scope:shift_culture = {
+	scope:drift_culture = {
 		if = {
 			limit = { the_culture_or_parent_or_above_is_trigger = { CULTURE = culture:romano_hispanic } }
 			set_culture_pillar = heritage_iberian
@@ -1093,6 +1098,7 @@ scripted_effect shift_latin_heritage_to_children_effect = {
 	}
 }
 
+# Saxony is Central, but Anglo-Saxons are West
 scripted_trigger is_central_germanic_saxon_trigger = {
 	has_cultural_pillar = heritage_saxon
 	is_culture_mostly_in_linguistic_region_trigger = { REGION = custom_ashkenaz }
@@ -1101,6 +1107,17 @@ scripted_trigger is_central_germanic_saxon_trigger = {
 scripted_trigger is_west_germanic_saxon_trigger = {
 	has_cultural_pillar = heritage_saxon
 	NOT = { is_culture_mostly_in_linguistic_region_trigger = { REGION = custom_ashkenaz } }
+}
+
+# Jutes in Cimbria become North, Anglos in Britain become West
+scripted_trigger is_north_germanic_jutlandic_trigger = {
+	has_cultural_pillar = heritage_jutlandic
+	is_culture_mostly_in_linguistic_region_trigger = { REGION = world_europe_north }
+}
+
+scripted_trigger is_west_germanic_jutlandic_trigger = {
+	has_cultural_pillar = heritage_jutlandic
+	NOT = { is_culture_mostly_in_linguistic_region_trigger = { REGION = world_europe_north } }
 }
 
 scripted_trigger is_carpodaci_trigger = {
@@ -1115,13 +1132,13 @@ scripted_effect germanic_shift_by_local_cultures_effect = {
 				percent > 0.5
 				any_neighboring_county = {
 					OR = {
-						culture = { has_cultural_pillar = heritage_nordwestblock }
-						culture = { has_cultural_pillar = heritage_west_germanic }
+						culture = { has_cultural_pillar = heritage_scandzan }
+						culture = { has_cultural_pillar = heritage_north_germanic }
 					}
 				}
 			}
 		}
-		set_culture_pillar = heritage_west_germanic
+		set_culture_pillar = heritage_north_germanic
 		ccu_culture_created_or_changed_effect = yes
 	}
 	else_if = {
@@ -1130,13 +1147,13 @@ scripted_effect germanic_shift_by_local_cultures_effect = {
 				percent > 0.5
 				any_neighboring_county = {
 					OR = {
-						culture = { has_cultural_pillar = heritage_scandzan }
-						culture = { has_cultural_pillar = heritage_north_germanic }
+						culture = { has_cultural_pillar = heritage_nordwestblock }
+						culture = { has_cultural_pillar = heritage_west_germanic }
 					}
 				}
 			}
 		}
-		set_culture_pillar = heritage_north_germanic
+		set_culture_pillar = heritage_west_germanic
 		ccu_culture_created_or_changed_effect = yes
 	}
 	else_if = {
@@ -1178,19 +1195,24 @@ scripted_effect germanic_shift_by_local_cultures_effect = {
 }
 
 scripted_effect shift_germanic_heritage_to_children_effect = {
-	scope:shift_culture = {
+	scope:drift_culture = {
 		if = {
 			limit = {
 				OR = {
 					has_cultural_pillar = heritage_nordwestblock
-					has_cultural_pillar = heritage_jutlandic
+					is_west_germanic_jutlandic_trigger = yes
 					is_west_germanic_saxon_trigger = yes
 				}
 			}
 			germanic_shift_by_local_cultures_effect = { DEFAULT_MEDIEVAL_HERITAGE = heritage_west_germanic }
 		}
 		else_if = {
-			limit = { has_cultural_pillar = heritage_scandzan }
+			limit = {
+				OR = {
+					has_cultural_pillar = heritage_scandzan
+					is_north_germanic_jutlandic_trigger = yes
+				}
+			}
 			germanic_shift_by_local_cultures_effect = { DEFAULT_MEDIEVAL_HERITAGE = heritage_north_germanic }
 		}
 		else_if = {
@@ -1216,12 +1238,12 @@ scripted_effect shift_germanic_heritage_to_children_effect = {
 }
 
 scripted_effect shift_special_heritage_to_children_effect = {
-	scope:shift_culture = {
+	scope:drift_culture = {
 		if = {
 			limit = { is_carpodaci_trigger = yes }
-			calc_culture_dominant_faith = { save_temporary_scope_as = shift_culture_dominant_religion }
+			calc_culture_dominant_faith = { save_temporary_scope_as = drift_culture_dominant_religion }
 			if = {
-				limit = { scope:shift_culture_dominant_religion = religion:christianity_religion }
+				limit = { scope:drift_culture_dominant_religion = religion:christianity_religion }
 				set_culture_pillar = heritage_vlach
 			}
 			else = {
@@ -1245,22 +1267,22 @@ bp_heritage_linguistic_drift.0101 = {
 	content_source = dlc_WtWSMS
 	
 	immediate = {
-		debug_set_shift_culture = yes
+		debug_set_drift_culture = yes
 		#If the culture head exists, inform him/her first
 		if = {
-			limit = { exists = scope:shift_culture.culture_head }
+			limit = { exists = scope:drift_culture.culture_head }
 			if = {
 				# Certain cultures should get to decide their heritage
 				limit = {
-					scope:shift_culture = {
+					scope:drift_culture = {
 						culture_head = { is_ai = no }
 						is_carpodaci_trigger = yes
 					}
 				}
-				scope:shift_culture.culture_head = { trigger_event = { id = bp_heritage_linguistic_drift.0104 } }
+				scope:drift_culture.culture_head = { trigger_event = { id = bp_heritage_linguistic_drift.0104 } }
 			}	
 			else = {
-				scope:shift_culture.culture_head = { trigger_event = { id = bp_heritage_linguistic_drift.0102 } }
+				scope:drift_culture.culture_head = { trigger_event = { id = bp_heritage_linguistic_drift.0102 } }
 			}
 		}
 		#Otherwise, directly change the culture and tell everyone
@@ -1268,7 +1290,7 @@ bp_heritage_linguistic_drift.0101 = {
 			shift_heritage_effect = yes
 			every_ruler = { #Informational event
 				limit = {
-					ruler_is_valid_to_hear_about_culture_shift_trigger = {
+					ruler_is_valid_to_hear_about_culture_drift_trigger = {
 						HAS_SAME_LANGUAGE_HERITAGE_TRIGGER = has_same_culture_heritage
 					}
 				}
@@ -1285,12 +1307,12 @@ bp_heritage_linguistic_drift.0102 = {
 		first_valid = {
 			#Latin to Romance, Roman addition
 			triggered_desc = {
-				trigger = { scope:shift_culture = culture:roman }
+				trigger = { scope:drift_culture = culture:roman }
 				desc = bp_heritage_linguistic_drift.0102.roman.desc
 			}
 			#Latin to Romance
 			triggered_desc = {
-				trigger = { scope:shift_culture = { has_cultural_pillar = heritage_latin } }
+				trigger = { scope:drift_culture = { has_cultural_pillar = heritage_latin } }
 				desc = bp_heritage_linguistic_drift.0102.latin.desc
 			}
 			#Default
@@ -1299,7 +1321,7 @@ bp_heritage_linguistic_drift.0102 = {
 	}
 	
 	theme = culture_change
-	override_background = { reference = BP_shift_culture_city }
+	override_background = { reference = BP_culture_drift_city }
 	content_source = dlc_WtWSMS
 	left_portrait = root
 	
@@ -1309,7 +1331,7 @@ bp_heritage_linguistic_drift.0102 = {
 		name = bp_heritage_linguistic_drift.0102.accept
 		every_player = {
 			limit = {
-				ruler_is_valid_to_hear_about_culture_shift_trigger = {
+				ruler_is_valid_to_hear_about_culture_drift_trigger = {
 					HAS_SAME_LANGUAGE_HERITAGE_TRIGGER = has_same_culture_heritage
 				}
 				NOT = { this = root }
@@ -1327,7 +1349,7 @@ bp_heritage_linguistic_drift.0103 = {
 		first_valid = {
 			#Latin to Romance
 			triggered_desc = {
-				trigger = { scope:shift_culture = { has_cultural_pillar = heritage_latin } }
+				trigger = { scope:drift_culture = { has_cultural_pillar = heritage_latin } }
 				desc = bp_heritage_linguistic_drift.0103.latin.desc
 			}
 			#Default
@@ -1335,20 +1357,20 @@ bp_heritage_linguistic_drift.0103 = {
 		}
 	}
 	theme = culture_change
-	override_background = { reference = BP_shift_culture_city }
+	override_background = { reference = BP_culture_drift_city }
 	content_source = dlc_WtWSMS
 	left_portrait = scope:bg_override_char
 	lower_right_portrait = scope:my_portrait
 	
 	immediate = {
 		if = {
-			limit = { exists = scope:shift_culture.culture_head }
-			scope:shift_culture.culture_head = { save_scope_as = bg_override_char }
+			limit = { exists = scope:drift_culture.culture_head }
+			scope:drift_culture.culture_head = { save_scope_as = bg_override_char }
 		}
 		else_if = {
 			limit = {
 				any_ruler = {
-					culture = scope:shift_culture
+					culture = scope:drift_culture
 					NOR = { #Keep it to chars functionally on the map please
 						government_has_flag = cannot_be_vassal_or_liege
 						government_has_flag = government_is_herder
@@ -1356,13 +1378,13 @@ bp_heritage_linguistic_drift.0103 = {
 				}
 			}
 			random_ruler = {
-				limit = { culture = scope:shift_culture }
+				limit = { culture = scope:drift_culture }
 				save_scope_as = bg_override_char
 			}
 		}
 		# Add your portrait if your culture matches
 		if = {
-			limit = { root.culture = scope:shift_culture }
+			limit = { root.culture = scope:drift_culture }
 			save_scope_as = my_portrait
 		}
 	}
@@ -1371,13 +1393,13 @@ bp_heritage_linguistic_drift.0103 = {
 	option = {
 		name = bp_heritage_linguistic_drift.0103.accept_same_culture
 		flavor = bp_heritage_linguistic_drift.0103.accept_same_culture.tooltip
-		trigger = { root.culture = scope:shift_culture }
+		trigger = { root.culture = scope:drift_culture }
 	}
 	#For other rulers not of the culture
 	option = {
 		name = bp_heritage_linguistic_drift.0103.accept_different_culture
 		flavor = bp_heritage_linguistic_drift.0103.accept_different_culture.tooltip
-		trigger = { NOT = { root.culture = scope:shift_culture } }
+		trigger = { NOT = { root.culture = scope:drift_culture } }
 		fallback = yes
 	}
 }
@@ -1407,7 +1429,7 @@ bp_heritage_linguistic_drift.0104 = {
 	#Become Vlach
 	option = {
 		name = bp_heritage_linguistic_drift.0104.vlach
-		flavor = bp_heritage_linguistic_drift.0104.vlach.flavor
+		flavor = bp_heritage_linguistic_drift.0104.vlach.tt
 		trigger = { root.culture = { is_carpodaci_trigger = yes } }
 		root.culture = {
 			set_culture_pillar = heritage_vlach
@@ -1417,7 +1439,7 @@ bp_heritage_linguistic_drift.0104 = {
 	#Become Carpathian
 	option = {
 		name = bp_heritage_linguistic_drift.0104.carpathian
-		flavor = bp_heritage_linguistic_drift.0104.carpathian.flavor
+		flavor = bp_heritage_linguistic_drift.0104.carpathian.tt
 		trigger = { root.culture = { is_carpodaci_trigger = yes } }
 		root.culture = {
 			set_culture_pillar = heritage_albanian

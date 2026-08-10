@@ -1,8 +1,5 @@
 ﻿bp_has_access_to_roman_ministry_trigger = {
-	OR = {
-		government_has_flag = government_is_roman_administrative
-		government_has_flag = government_is_subroman_administrative
-	}
+	government_has_flag = is_a_roman_government
 	highest_held_title_tier >= tier_hegemony
 }
 bp_can_be_roman_minister_trigger = {
@@ -12,11 +9,18 @@ bp_can_be_roman_minister_trigger = {
 		is_ruler = no
 		AND = {
 			is_landless_ruler = yes
-			government_has_flag = government_is_roman_administrative
+			OR = {
+				government_has_flag = government_is_roman_administrative
+				government_has_flag = government_is_subroman_administrative
+			}
 		}
 		AND = {
-			is_landless_ruler = yes
-			government_has_flag = government_is_subroman_administrative
+			highest_held_title_tier = tier_barony
+			OR = {
+				government_has_flag = government_is_republic
+				government_has_flag = government_is_roman_dynastic
+				government_has_flag = government_is_subroman_dynastic
+			}
 		}
 	}
 	# Gender is based on laws of the liege
@@ -94,6 +98,11 @@ bp_can_become_federate_trigger = { #Root is char under consideration
 				culture = { has_cultural_parameter = becomes_roman_federates_in_most_cases }
 				NOT = { dynasty ?= liege_or_court_owner.top_liege.dynasty }
 			}
+		}
+		#Either liege_or_court_owner is federate or title size is duchy
+		OR = {
+			liege_or_court_owner = { government_has_flag = government_is_roman_federate }
+			this.primary_title.tier = tier_duchy #Duchy Appointment
 		}
 	}
 	trigger_else = { always = no }

@@ -50,7 +50,7 @@
  kingdom_heritage_byzantine: "$kingdom_feudal_greek$"
  emperor_male_heritage_byzantine: "$emperor_feudal_male_greek$"
  emperor_female_heritage_byzantine: "$emperor_feudal_female_greek$"
- empire_heritage_byzantine: "$empire_roman_government_byzantine$"
+ empire_heritage_byzantine: "Basileía"
  #Republics
  duke_republic_male_heritage_byzantine: "$duke_republic_male_byzantine_group$"
  duke_republic_female_heritage_byzantine: "$duke_republic_female_byzantine_group$"
@@ -74,7 +74,9 @@
  king_male_bosporan: "Vasiliás"
  king_female_bosporan: "Vasílissa"
  kingdom_bosporan: "Vasíleio"
- emperor_male_bosporan: "Autokrator"
+ emperor_male_bosporan: "$emperor_roman_government_male_byzantine$"
+ emperor_female_bosporan: "$emperor_roman_government_female_byzantine$"
+ empire_bosporan: "$empire_roman_government_byzantine$"
  #Jobs
  chancellor_male_bosporan: "Presveftís"
  steward_male_bosporan: "Oikonómos"
@@ -112,7 +114,7 @@
  duchy_republic_suebi: "Epistylii"
  king_republic_male_suebi: "Avarreikist"
  kingdom_republic_suebi: "Populeuch"
- emperor_republic_male_suebi: "Die Glorreiche"
+ emperor_republic_male_suebi: "Glorreiche"
  #Feudal-Type
  baron_male_suebi: "Lichtori"
  barony_suebi: "$barony_castle_holding_suebi$"
@@ -211,13 +213,6 @@
  #Titles:title_prince_anglo: Æðelings, title_prince_female_anglo: Æðelings
  
  ### Central Semitic Heritage
- #Adnanite
- count_male_adnanite: "$count_feudal_male_arabic_group$"
- county_adnanite: "$county_feudal_arabic_group$"
- duke_male_adnanite: "$duke_feudal_male_arabic_group$"
- duchy_adnanite: "$duchy_feudal_arabic_group$"
- king_male_adnanite: "Malik"
- kingdom_adnanite: "Malikate"
  #Yathribi
  duke_republic_male_yathribi: "Madina-Amir"
  duchy_republic_yathribi: "Madina-Qabayla"
@@ -491,7 +486,7 @@
  spymaster_male_gutnish: "$spymaster_male_east_germanic$"
  
  ### Northwest Semitic Heritage
- #Aramean
+ #Aramean/Nabatean
  #Holdings
  barony_church_holding_aramean: "Dowrpir"
  barony_city_holding_aramean: "Kapra"
@@ -522,40 +517,23 @@
  marshal_male_aramean: "Estratega"
  spymaster_male_aramean: "Lyl"
  court_chaplain_male_aramean: "Mnahhesa"
- #Nabatean
- baron_male_nabatean: "Ownys"
- barony_nabatean: "Gawsaqa"
- count_male_nabatean: "Eygmowna"
- county_nabatean: "Midinta"
- duke_male_nabatean: "Mery"
- duchy_nabatean: "Yatba"
- king_male_nabatean: "Meleke"
- kingdom_nabatean: "Melekwat"
- #Republics
- baron_republic_male_nabatean: "Hazin"
- barony_republic_nabatean: "Kapra"
- count_republic_male_nabatean: "Mishyr"
- county_republic_nabatean: "Bzyyl"
- duke_republic_male_nabatean: "Arkonta"
- duchy_republic_nabatean: "Lowplegmownyqy"
- king_republic_male_nabatean: "Owprik"
- kingdom_republic_nabatean: "Demowsyon"
- #Theocracies
- barony_theocracy_nabatean: "Dowrpir"
- #Jobs
- chancellor_male_nabatean: "Himyr"
- steward_male_nabatean: "Owqinowm"
- marshal_male_nabatean: "Estratega"
- spymaster_male_nabatean: "Lyl"
- court_chaplain_male_nabatean: "Mnahhesa"
  
  ### Proto-Carpathian
+ baron_male_daco_thracian: "$baron_male_romano_dacian$"
+ baron_female_daco_thracian: "$baron_female_romano_dacian$"
  barony_daco_thracian: "Deiza"
  count_male_daco_thracian: "Suras"
+ count_female_daco_thracian: "$count_female_romano_dacian$"
  county_daco_thracian: "Para"
  duke_male_daco_thracian: "Zibythide"
+ duke_female_daco_thracian: "$duke_female_romano_dacian$"
  duchy_daco_thracian: "Sturia"
  king_male_daco_thracian: "Rézas"
+ king_female_daco_thracian: "$king_female_romano_dacian$"
+ kingdom_daco_thracian: "$kingdom_romano_dacian$"
+ emperor_male_daco_thracian: "$emperor_male_romano_dacian$"
+ emperor_female_daco_thracian: "$emperor_female_romano_dacian$"
+ empire_daco_thracian: "$empire_romano_dacian$"
  #Republics
  barony_republic_daco_thracian: "Bria"
  #Albanian
@@ -606,12 +584,12 @@
  king_male_himyarite: "Melkey"
  kingdom_himyarite: "Melekya"
  #Tribal Arab
- count_male_tribal_arab: "Hokem"
- county_tribal_arab: "Hokembaka"
- duke_male_tribal_arab: "Yezeman"
- duchy_tribal_arab: "Gyrbaka"
- king_male_tribal_arab: "Meleket"
- kingdom_tribal_arab: "Melekbaka"
+ count_male_soqotri: "Hokem"
+ county_soqotri: "Hokembaka"
+ duke_male_soqotri: "Yezeman"
+ duchy_soqotri: "Gyrbaka"
+ king_male_soqotri: "Meleket"
+ kingdom_soqotri: "Melekbaka"
  #Khalan
  count_male_khalan: "$count_feudal_male_arabic_group$"
  county_khalan: "$county_feudal_arabic_group$"
@@ -772,7 +750,7 @@
  count_roman_government_male: "Comes"
  count_roman_government_female: "Comitissa"
  county_roman_government: "Comitātus"
- duke_roman_government_male: "Praetor"
+ duke_roman_government_male: "Praeses"
  duke_roman_government_female: "Praetrix"
  duchy_roman_government: "Provincia"
  # roman_government: Greek
@@ -806,9 +784,9 @@
  emperor_roman_government_male_byzantine: "Autokrator"
  emperor_roman_government_female_byzantine: "Autokrator"
  empire_roman_government_byzantine: "Autokratoría"
- hegemon_roman_government_male_byzantine: "Basileus"
- hegemon_roman_government_female_byzantine: "Basilissa"
- hegemony_roman_government_byzantine: "Basileía"
+ emperor_byzantine_male_independent: "$emperor_feudal_male_greek$"
+ emperor_byzantine_female_independent: "$emperor_feudal_female_greek$"
+ empire_byzantine_independent: "$empire_heritage_byzantine$"
  # Special
  emperor_roman_praetor_male: "Praetorian Prefect"
  emperor_roman_praetor_female: "Praetorian Prefecta"

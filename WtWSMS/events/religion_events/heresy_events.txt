@@ -147,14 +147,15 @@ heresy.0001 = {
 					# Abrahamics also get bonus dualistic heresies
 					limit = { is_in_family = rf_abrahamic }
 					#Add all Dualist faiths
-					faith:manichean = { add_to_list = potential_heresies }
-					faith:valentinianism = { add_to_list = potential_heresies }
-					faith:sethianism = { add_to_list = potential_heresies }
-					faith:priscillianism = { add_to_list = potential_heresies }
-					faith:marcosianism = { add_to_list = potential_heresies }
-					faith:mandeaism = { add_to_list = potential_heresies }
-					faith:sabianism = { add_to_list = potential_heresies }
-					faith:cainitism = { add_to_list = potential_heresies }
+					religion:dualism_religion = {
+						every_faith = {
+							add_to_list = potential_heresies
+						}
+					}
+				}
+				if = {
+					limit = { this = religion:judaism_religion }
+					faith:conversos = { add_to_list = potential_heresies }
 				}
 			}
 
@@ -298,8 +299,46 @@ heresy.0001 = {
 						this = faith:donatism
 						scope:heretic_capital = { title_province = { geographical_region = world_africa_north_west } }
 					}
+					# Pelagians centered around Italy, Gaul, and the Isles
+					modifier = {
+						factor = regional_heresy_factor
+						this = faith:pelagianism
+						scope:heretic_capital = {
+							title_province = {
+								OR = {
+									geographical_region = world_europe_south_italy
+									geographical_region = world_europe_west_francia
+									geographical_region = world_europe_west_britannia
+								}
+							}
+						}
+					}
+					
 					### Minor Faiths ###
 					
+					# Lollards more likely in England.
+					modifier = {
+						factor = regional_heresy_factor
+						this = faith:lollard
+						scope:heretic_capital = {
+							title_province = {
+								OR = {
+									geographical_region = custom_netherlands
+									geographical_region = world_europe_west_britannia
+								}
+							}
+						}
+					}
+					# Cathars more likely in France
+					modifier = {
+						factor = regional_heresy_factor
+						this = faith:cathar
+						scope:heretic_capital = {
+							title_province = {
+								geographical_region = world_europe_west_francia
+							}
+						}
+					}
 					# Paulicians more likely in Anatolia
 					modifier = {
 						factor = regional_heresy_factor
@@ -312,7 +351,16 @@ heresy.0001 = {
 						this = faith:iconoclast
 						scope:heretic_capital = { title_province = { geographical_region = custom_k_thessalonika } }
 					}
-
+					# Bogomils more likely in West ERE
+					modifier = {
+						factor = regional_heresy_factor
+						this = faith:bogomilist
+						scope:heretic_capital = {
+							title_province = {
+								geographical_region = world_europe_south_east
+							}
+						}
+					}
 					# Priscillianism more likely in Egypt or Iberia
 					modifier = {
 						factor = regional_heresy_factor
@@ -323,6 +371,37 @@ heresy.0001 = {
 									geographical_region = world_africa_north_east
 									geographical_region = world_europe_west_iberia
 								}
+							}
+						}
+					}
+					
+					# FP3 - Khurramism more likely in Iran
+					modifier = {
+						factor = regional_heresy_factor
+						this = faith:khurramism
+						scope:heretic_capital = {
+							title_province = {						
+								geographical_region = world_middle_east_persia									
+							}
+						}
+					}
+					# FP3 - The "arch heresy", aka Mazdakism more likely in Iran
+					modifier = {
+						factor = regional_heresy_factor
+						this = faith:mazdakism
+						scope:heretic_capital = {
+							title_province = {						
+								geographical_region = world_middle_east_persia
+							}
+						}
+					}
+					# FP3 - Manicheanism more likely in Iran
+					modifier = {
+						factor = regional_heresy_factor
+						this = faith:manichean
+						scope:heretic_capital = {
+							title_province = {						
+								geographical_region = world_middle_east_persia
 							}
 						}
 					}
@@ -380,6 +459,20 @@ heresy.0001 = {
 								}
 							}
 						}
+					}
+					
+					# Block certain historical faiths until they can reasonably emerge
+					# TODO: Better blocking conditions, mazdakism
+
+					modifier = {
+						factor = 0
+						OR = {
+							this = faith:khurramism # 8th century, post-Islamic
+							this = faith:cathar # 10th century, label predates Albigenses
+							this = faith:bogomilist # 10th century, post-Slavic
+							this = faith:lollard # 14th century, proto-Protestant
+						}
+						current_year < 700
 					}
 				}
 				save_scope_as = heretic_faith

@@ -13,6 +13,7 @@ title_succession_laws = {
 		}
 		can_title_have = {
 			NOT = { has_variable = is_supreme_roman_military_title }
+			is_noble_family_title = no
 		}
 		can_realm_have = {
 			always = no
@@ -43,6 +44,7 @@ title_succession_laws = {
 		}
 		can_title_have = {
 			has_variable = is_supreme_roman_military_title
+			is_noble_family_title = no
 		}
 		can_realm_have = {
 			always = no
@@ -73,6 +75,7 @@ roman_diarchy_law = {
 		
 		can_have = {
 			bp_has_access_to_roman_ministry_trigger = yes
+			has_tgp_dlc_trigger = yes # Needs ministry titles to exist
 		}
 
 		can_pass = {
@@ -141,6 +144,7 @@ roman_diarchy_law = {
 		flag = roman_chancellor_law
 		can_have = {
 			bp_has_access_to_roman_ministry_trigger = yes
+			has_tgp_dlc_trigger = yes # Needs ministry titles to exist
 			any_vassal = { any_held_title = { has_variable = is_supreme_roman_ministry_title } }
 		}
 		can_pass = {
@@ -210,6 +214,7 @@ roman_diarchy_law = {
 		flag = roman_marshal_law
 		can_have = {
 			bp_has_access_to_roman_ministry_trigger = yes
+			has_tgp_dlc_trigger = yes # Needs ministry titles to exist
 			any_vassal = { any_held_title = { has_variable = is_supreme_roman_military_title } }
 		}
 

@@ -47,7 +47,7 @@
  can_create_de_jure_kingdoms_if_settled: "Can create [de_jure|E] [kingdoms|E] with [organized_government|E] government"
  unlocks_megaliths: "Unlocks the Megalith line of buildings"
  allows_confederation_to_kingdom: "Unlocks the [GetDecision('confederation_kingdom_decision').GetName] [decision|E]"
- unlocks_domicile_buildings: "[SelectLocalization( HasDlcFeature( 'landless_playable' ), 'Unlocks the first 3 levels of administrative main domicile buildings', 'BLANK' )]
+ unlocks_domicile_buildings: "[SelectLocalization( HasDlcFeature( 'landless_playable' ), 'Unlocks the first 3 levels of administrative main domicile buildings', 'BLANK' )]"
  #######################
  # Classical Antiquity #
  #######################
@@ -134,8 +134,6 @@
  unlocks_third_level_walls: "Unlocks the third level of [fortification_buildings|E]"
  innovation_ius_ad_bellum: "Ius ad Bellum"
  innovation_ius_ad_bellum_desc: "Literally 'Right to War', as time goes on the state must refine the conditions under which it wages wars"
- locks_raid_wars: "[SelectLocalization( HasDlcFeature( 'the_fate_of_iberia' ), 'LOCKS_RAID_WARS', 'BLANK' )]"
- LOCKS_RAID_WARS: "Prevents most Raid Wars [casus_belli|E]"
  #Civic Innovations
  #innovation_city_planning
  unlocks_city_holding: "Unlocks [city_holding|E]"
@@ -144,7 +142,7 @@
  reduce_develop_county_penalty_innovation_crop_rotation: "Counties now reach the maximum [existing_development|E] penalty at 26 [development|E]"
  unlocks_third_level_economic_buildings: "Unlocks the third level of [economic_buildings|E]"
  innovation_aristocracy: "Aristocratic Expansion"
- innovation_aristocracy_desc: "While aristocracy has always existed, the expansion and greater formalization of aristocratic classes has lended itself to new power structures and an expansion of personal domains."
+ innovation_aristocracy_desc: "While aristocracy has always existed, the expansion and greater formalization of aristocratic classes has lent itself to new power structures and an expansion of personal domains."
  innovation_doctrine_and_dogma: "Doctrine and Dogma"
  innovation_doctrine_and_dogma_desc: "As our religious structures formalize, we must draw up a set of doctrines and dogmas to differentiate our faith from those of the unbelievers around us."
  enables_county_holy_war_effect: "Enables [county|E] [holy_war|E], [Concept('bp_holy_war_unlocked_condition','if holy wars are not otherwise available')|E]"
@@ -174,5 +172,5 @@
  unlocks_holy_orders: "Unlocks the [GetDecision('create_holy_order_decision').GetName] [decision|E]"
  head_of_faith_may_request_marital_practice_change: "If the [culture_head|E]'s [faith|E] has a [head_of_faith|E], it may request that marital practices traditions which don't align with the faith be stopped"
  locks_raid_wars: "[SelectLocalization( HasDlcFeature( 'the_fate_of_iberia' ), 'LOCKS_RAID_WARS', 'BLANK' )]"
- LOCKS_RAID_WARS: "Prevents use of Raid War [casus_belli|E], outside of [struggle|E]s"
+ LOCKS_RAID_WARS: "Prevents use of Raid War [casus_belli|E], outside of [struggle_struggles|E]"
  

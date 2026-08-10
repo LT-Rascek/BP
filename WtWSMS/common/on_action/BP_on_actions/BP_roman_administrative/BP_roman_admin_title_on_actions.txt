@@ -1,4 +1,91 @@
-﻿# A title is transferred to a new character
+﻿##### General On Actions (referenced multiple times)
+BP_flip_federate_when_not_below_roman = {
+	trigger = {
+		BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes
+		has_government = roman_federate_government
+		NOT = { top_liege = { government_has_flag = is_a_roman_government } }
+	}
+	effect = {
+		bp_devolve_roman_federate_effect = yes
+	}
+}
+#Whenever we have rank change as subroman governments
+# we might change from Sub-Roman Admin to Dynastic and vice-versa
+BP_convert_sub_roman_admin_to_dynastic = {
+	trigger = {
+		BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes
+		has_government = subroman_administrative_government
+		is_independent_ruler = yes
+		primary_title.tier <= tier_duchy
+	}
+	effect = {
+		#Human players who are landless get to become adventurers!
+		every_vassal_or_below = {
+			limit = {
+				is_landless_ruler = yes
+				is_ai = no
+			}
+			create_landless_adventurer_title_effect = {
+				REASON = flag:deposition
+				FLAVOR_CHAR = this
+			}
+		}
+		flip_subroman_government_types_effect = {
+			SOURCE_TYPE = administrative
+			TARGET_TYPE = dynastic
+			ENOBLE_COURTIERS = no
+		}
+		#Eliminate noble family titles
+		every_vassal_or_below = {
+			every_held_title = {
+				limit = { is_landless_type_title = yes }
+				prev = { destroy_title = prev }
+			}
+		}
+	}
+}
+BP_convert_sub_roman_dynastic_to_admin = {
+	trigger = {
+		BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes
+		has_government = subroman_dynastic_government
+		is_independent_ruler = yes
+		primary_title.tier > tier_duchy
+	}
+	effect = {
+		flip_subroman_government_types_effect = {
+			SOURCE_TYPE = dynastic
+			TARGET_TYPE = administrative
+			ENOBLE_COURTIERS = yes
+		}
+	}
+}
+#Being Dynastic under administrative
+BP_subroman_dynastic_under_subroman_admin = {
+	trigger = {
+		BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes
+		has_government = subroman_dynastic_government
+		is_independent_ruler = no
+		this.liege = { has_government = subroman_administrative_government }
+	}
+	effect = {
+		flip_subroman_government_types_effect = {
+			SOURCE_TYPE = dynastic
+			TARGET_TYPE = administrative
+			ENOBLE_COURTIERS = yes
+		}
+	}
+}
+BP_subroman_under_roman_admin = {
+	trigger = {
+		BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes
+		is_independent_ruler = no
+		this.liege ?= { has_government = roman_administrative_government }
+		government_has_flag = government_is_subroman_administrative_or_dynastic
+	}
+	effect = { change_government_roman_administrative_effect = yes }
+}
+
+# A title is transferred to a new character
 # root = the new holder
 # scope:title = the title that changes hands
 # scope:previous_holder = previous holder. Might be dead
@@ -12,12 +99,15 @@ on_title_gain = {
 		BP_flip_federate_when_not_below_roman
 		BP_flip_federate_on_circumstance
 		BP_grants_to_tribals_become_federate
+		#Possibly during execution; the triggers do not overlap, so it *should* be safe
+		BP_convert_sub_roman_dynastic_to_admin
+		BP_convert_sub_roman_admin_to_dynastic
 	}
 }
 
 BP_got_a_roman_ministry = {
 	trigger = {
-		BP_has_dlc_necessary_for_roman_governments_trigger = yes
+		BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes
 		scope:title.tier = tier_empire
 		scope:title = { has_variable = is_a_roman_ministry_title }
 	}
@@ -51,7 +141,7 @@ BP_got_a_roman_ministry = {
 }
 BP_minister_gets_land = {
 	trigger = {
-		BP_has_dlc_necessary_for_roman_governments_trigger = yes
+		BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes
 		#Have a ministry and am landed
 		any_held_title = { has_variable = is_a_roman_ministry_title }
 		scope:title = { is_titular = no }
@@ -59,7 +149,7 @@ BP_minister_gets_land = {
 	effect = { fired_roman_minister_position_effect = yes }
 }
 BP_got_a_roman_province = {
-	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
+	trigger = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes }
 	effect = {
 		if = {
 			limit = {
@@ -72,7 +162,7 @@ BP_got_a_roman_province = {
 }
 BP_keep_roman_federate_government = {
 	trigger = {
-		BP_has_dlc_necessary_for_roman_governments_trigger = yes
+		BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes
 		is_independent_ruler = no
 		this.top_liege = { government_has_flag = is_a_roman_government }
 	}
@@ -83,19 +173,9 @@ BP_keep_roman_federate_government = {
 		}
 	}
 }
-BP_flip_federate_when_not_below_roman = {
-	trigger = {
-		BP_has_dlc_necessary_for_roman_governments_trigger = yes
-		has_government = roman_federate_government
-		NOT = { top_liege = { government_has_flag = is_a_roman_government } }
-	}
-	effect = {
-		bp_devolve_roman_federate_effect = yes
-	}
-}
 BP_flip_federate_on_circumstance = {
 	trigger = {
-		BP_has_dlc_necessary_for_roman_governments_trigger = yes
+		BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes
 		has_government = roman_federate_government
 		root = liege
 	}
@@ -138,15 +218,22 @@ BP_grants_to_tribals_become_federate = {
 	}
 }
 
+# A vassal changes their liege
+# root = vassal changing their status
+# scope:old_liege = the previous liege of the vassal
+# It is also fired for rulers gaining independence, those can be identified by checking current liege
 on_vassal_change = {
-	events = {}
 	on_actions = {
 		BP_independent_ministry_cleanup
 		BP_independent_roman_government_checks
+		BP_flip_federate_when_not_below_roman
+		BP_subroman_dynastic_under_subroman_admin
+		BP_convert_sub_roman_admin_to_dynastic
+		BP_subroman_under_roman_admin
 	}
 }
 BP_independent_ministry_cleanup = {
-	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
+	trigger = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes }
 	effect = {
 		if = { # Destroy independent ministry empire titles
 			limit = {
@@ -178,7 +265,7 @@ BP_independent_ministry_cleanup = {
 }
 BP_independent_roman_government_checks = {
 	trigger = {
-		BP_has_dlc_necessary_for_roman_governments_trigger = yes
+		BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes
 		root = liege
 	}
 	effect = {
@@ -196,53 +283,57 @@ BP_independent_roman_government_checks = {
 			}
 			bp_devolve_roman_federate_effect = yes
 		}
+		if = {
+			limit = { is_independent_ruler = yes }
+			every_vassal_or_below = {
+				limit = { government_has_flag = is_a_roman_government }
+				trigger_event = { on_action = BP_independent_roman_government_checks }
+			}
+		}
 		#Independent SubRoman Admins swap their existing laws for liege laws
 		#NB: Aristocracy laws are independent of each other so not needed to manipulate
 		if = {
-			limit = { government_has_flag = subroman_administrative_government }
+			limit = {
+				is_independent_ruler = yes
+				government_has_flag = subroman_administrative_government
+			}
 			switch = {
 				trigger = has_realm_law
-				subroman_admin_taxation_vassal_law_0 = {
-					add_realm_law = subroman_admin_taxation_top_liege_law_0
+				subroman_administrative_taxation_vassal_law_0 = {
+					add_realm_law = subroman_administrative_taxation_top_liege_law_0
 				}
-				subroman_admin_taxation_vassal_law_1 = {
-					add_realm_law = subroman_admin_taxation_top_liege_law_1
+				subroman_administrative_taxation_vassal_law_1 = {
+					add_realm_law = subroman_administrative_taxation_top_liege_law_1
 				}
-				subroman_admin_taxation_vassal_law_2 = {
-					add_realm_law = subroman_admin_taxation_top_liege_law_2
+				subroman_administrative_taxation_vassal_law_2 = {
+					add_realm_law = subroman_administrative_taxation_top_liege_law_2
 				}
-				subroman_admin_taxation_vassal_law_3 = {
-					add_realm_law = subroman_admin_taxation_top_liege_law_3
+				subroman_administrative_taxation_vassal_law_3 = {
+					add_realm_law = subroman_administrative_taxation_top_liege_law_3
 				}
-				subroman_admin_taxation_vassal_law_4 = {
-					add_realm_law = subroman_admin_taxation_top_liege_law_4
-				}
-				fallback = {
-					add_realm_law = subroman_admin_taxation_top_liege_law_0
+				subroman_administrative_taxation_vassal_law_4 = {
+					add_realm_law = subroman_administrative_taxation_top_liege_law_4
 				}
 			}
 			switch = {
 				trigger = has_realm_law
-				subroman_admin_military_centralization_vassal_law_0 = {
-					add_realm_law = subroman_admin_military_centralization_top_liege_law_0
+				subroman_administrative_military_centralization_vassal_law_0 = {
+					add_realm_law = subroman_administrative_military_centralization_top_liege_law_0
 				}
-				subroman_admin_military_centralization_vassal_law_1 = {
-					add_realm_law = subroman_admin_military_centralization_top_liege_law_1
+				subroman_administrative_military_centralization_vassal_law_1 = {
+					add_realm_law = subroman_administrative_military_centralization_top_liege_law_1
 				}
-				subroman_admin_military_centralization_vassal_law_2 = {
-					add_realm_law = subroman_admin_military_centralization_top_liege_law_2
+				subroman_administrative_military_centralization_vassal_law_2 = {
+					add_realm_law = subroman_administrative_military_centralization_top_liege_law_2
 				}
-				subroman_admin_military_centralization_vassal_law_3 = {
-					add_realm_law = subroman_admin_military_centralization_top_liege_law_3
+				subroman_administrative_military_centralization_vassal_law_3 = {
+					add_realm_law = subroman_administrative_military_centralization_top_liege_law_3
 				}
-				subroman_admin_military_centralization_vassal_law_4 = {
-					add_realm_law = subroman_admin_military_centralization_top_liege_law_4
+				subroman_administrative_military_centralization_vassal_law_4 = {
+					add_realm_law = subroman_administrative_military_centralization_top_liege_law_4
 				}
-				subroman_admin_military_centralization_vassal_law_5 = {
-					add_realm_law = subroman_admin_military_centralization_top_liege_law_5
-				}
-				fallback = {
-					add_realm_law = subroman_admin_military_centralization_top_liege_law_0
+				subroman_administrative_military_centralization_vassal_law_5 = {
+					add_realm_law = subroman_administrative_military_centralization_top_liege_law_5
 				}
 			}
 		}
@@ -253,10 +344,11 @@ on_title_lost = {
 	events = {}
 	on_actions = {
 		BP_flip_federate_to_admin_when_landless
+		BP_convert_sub_roman_admin_to_dynastic
 	}
 }
 BP_flip_federate_to_admin_when_landless = {
-	trigger = { BP_has_dlc_necessary_for_roman_governments_trigger = yes }
+	trigger = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes }
 	effect = {
 		if = {
 			limit = { is_landless_ruler = yes }
@@ -269,5 +361,23 @@ BP_flip_federate_to_admin_when_landless = {
 				change_government_subroman_administrative_effect = yes
 			}
 		}
+	}
+}
+
+# A title change makes the character rank up in the landed tiers (eg Duke -> King)
+# root = character ranking up
+# scope:title = old primary title
+on_rank_up = { # Will not fire during history execution or for dying characters
+	on_actions = {
+		BP_convert_sub_roman_dynastic_to_admin
+	}
+}
+
+# A title change makes the character rank down in the landed tiers (eg King -> Duke)
+# root = character ranking down
+# scope:title = old primary title
+on_rank_down = { # Will not fire during history execution or for dying characters
+	on_actions = {
+		BP_convert_sub_roman_admin_to_dynastic
 	}
 }

@@ -87,6 +87,7 @@ councillor_chancellor_roman = {
 		got_council_position_effect = yes
 		if = {
 			limit = {
+				has_tgp_dlc_trigger = yes # Needs ministry titles to exist
 				scope:councillor_liege.primary_title.tier = tier_hegemony
 				OR = {
 					scope:councillor_liege = { government_has_flag = government_is_roman_administrative }
@@ -184,13 +185,14 @@ councillor_marshal_roman = {
 		exists = root.liege_or_court_owner
 		bp_can_be_roman_minister_trigger = { COURT_OWNER = root.liege_or_court_owner }
 		tgp_is_ceremonial_liege_trigger = no
-		NOT = { has_council_position = councillor_chancellor_roman }
+		#NOT = { has_council_position = councillor_chancellor_roman }
 	}
 
 	on_get_position = {
 		got_council_position_effect = yes
 		if = {
 			limit = {
+				has_tgp_dlc_trigger = yes # Needs ministry titles to exist
 				scope:councillor_liege.primary_title.tier = tier_hegemony
 				OR = {
 					scope:councillor_liege = { government_has_flag = government_is_roman_administrative }

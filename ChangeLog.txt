@@ -1,3 +1,130 @@
+2026-08-10 v0.2.1
+-----------
+
+"By God Alone" DLC Preparation:
+- Removed Cypriot culture and faith to prepare for BGA
+- Readded Bogomilism, Lollardy, Catharism
+- Touched up heresy emergence events
+
+Mechanics:
+- Culture Drift:
+   - Standardized terminology for Culture Drift
+   - Culture Drift heritages block hybridization between the ancestors and descendants, preventing certain odd edge-cases from appearing
+
+User Interface:
+- Improved the Senate Family interface notably
+
+Culture:
+- Culture Changes:
+   - Fixed up "Southern Arabian" culture
+      - Re-localized to be "Soqotri"
+      - Uses "Dexterous Fishermen", "Maritime Mercantilism", and "Isolationist" Traditions
+   - Replaced "Gothic Warfare" with "Cavalry Skirmishers"/"Horse Lords" for Heruli
+   - Replaced "Devoted Horsemanship" with "Cavalry Skirmishers" for Taifali
+   - Irish gets "Pastoralists" Tradition
+- Renamed various references to "Old" and "Proto" within languages and cultures
+   - Used Vulgar for Proto-Romance
+   - Diversified language names to better correspond to historical cultures
+- Culture Creation Names:
+   - Adjusted language-based creation names for more endonym usage
+   - Adjusted some Romance culture creation logic for consistency between language and name lists
+- Updated cultural graphics for more consistency
+   - Mauritanian Architecture is Iberian
+   - Phrygian and Galatian Architecture is Byzantine
+   - Carthaginians use Arabic COAs and Iberian Architecture
+   - Latin Cultures heavily overhauled:
+      - Romano-Gallic uses French clothing
+      - Roman-African uses Iberian COAs, Iberian Architecture, and Iberian Clothing
+      - Romano-British uses British Clothing and Byzantine Military Units
+      - Romano-Hispanic uses Iberian Christian Clothing
+      - Romano-Aramean uses Iberian Architecture, Middle Eastern Clothes, and Byzantine Military Units
+      - Romano-Punic uses Iberian COAs, Iberian Architecture, and Iberian Muslim Clothing
+- Added special clothing triggers for sub-Roman cultures, allowing them to wear Roman-style clothing but automatically transition to appropriate medieval clothing when they stop being Latin
+- Traditions:
+   - "Pontic Horsemanship" Tradition no longer provides light cavalry bonuses
+   - Added "Cavalry Skirmishers" Tradition for Taifal and Heruli culture, reflecting their use of light cavalry in contrast to Gothic heavy cavalry
+
+Governments:
+- Because of state faith limitations, with "All Under Heaven", Sub-Roman Dynastic is applied for all Sub-Roman titles duchy and below
+   - If one acquires a kingdom, with the DLC enabled, the government automatically transitions to Sub-Roman administrative
+   - If a realm shatters or Sub-Roman Administrative title ends up independent with less than a kingdom, it automatically becomes a Sub-Roman Dynastic realm
+   - Sub-Roman Dynastic titles that end up under Roman Administrative titles become Roman Administrative
+   - On the off-chance a player has only a noble family title when the government changes to Sub-Roman Dynastic, the player will become an adventurer
+   - Slightly Tweaked government colors for (Sub-)Roman Dynastic governments to make them more distinguishable
+
+Decisions:
+- Clarified "Restore the Western Roman Empire" and "Restore the Eastern Roman Empire" requirements
+   - Three Kingdoms no longer required for the decisions
+   - To ask the Eastern Emperor for the Western Empire, you only have to have 50% of the Western Roman Empire territory, instead of 80%
+   - Provided additional effect descriptions to elucidate how to influence the Eastern Emperor's decision
+- Clarified the Holy Roman Empire creation decision
+   - Re-localized the decision to be "Ask the Pope for Imperial Recognition"
+   - Provided additional effect descriptions to elucidate how to influence the Pope's decision
+
+History:
+- Some Alan characters in Hispania are fixed to be Alauni (Western Alan) culture
+- Caucasian Albania's capital is Partav in the Vth Century, as per history
+- Applied Level 5 education traits to certain historical characters who deserved it.
+- Modified some dynasty names of historical characters to better match history
+
+Tweaks:
+- Reduced lag on certain dates
+- If a Federate has a kingdom title (or greater), then it adopts Sub-Roman Government upon independence
+- Added new links and icons for WtWSMS concepts
+- Generalized some tradition unlocks to be more consistent throughout the Late Antique and Early Medieval Periods
+- Removed superfluous truces relating to some polities tributaries
+- Removed Childeric's War against Sigobert at start to be more in line with history
+- Increased applicant pool for MO offices
+- Added duplicate candidate influence interaction to handle edge case of titular titles
+- Nomads no longer have Border Raid CBs, as they have plenty of CBs already
+
+GFX:
+- Moorish Architecture requires counties of that culture rather than being intrinsic to the peninsula
+- Added WtWSMS emblems to the COA designer
+- Updated assets for a number of innovations
+- Updated generic temples for Hellenism, Judaism
+
+Bug Fixes:
+- Fixed a bug where Feudal/Clan governments could sneak in early from Nomadic Migration
+- Fixed a bug where Roman Federates couldn't grant titles to anyone not already landed
+- FIxed a bug where Noble families could have Ministry-style appointment
+- Fixed a bug where most top liege's lacked a noble family at start
+- Fixed a bug with Vernerius Noble family being duplicated
+- Fixed an edge case in which Cilicia could end up independent of the ERE on succession
+- Fixed a bug with granting of multiple noble family titles to some characters
+- Fixed a bug with AI granting individuals counties to create federates instead of duchies, as intended
+- Adopting Sub-Roman Administrative Government will adopt the appropriate acclamation/appointment succession laws
+- Fixed Nyitra not being part of Germania Magna region
+- Fixed bug where not enough Noble Families were populating in the WRE and ERE
+- Proper handoff of Imperial Diadem during the Fall of Rome
+- Removed a number of duplicate artifacts
+- Fixed a bug where certain decisions were being checked too often by certain title tier rulers
+- Fixed a bug where nomads would adopt feudal government when settling in conquered lands
+- Fixed a bug where Language Isolates would trigger the Creole flag
+- Fixed part of the Don River being impassible
+- Fixed bug where ERE was not getting many noble families at start
+- Blocked the ability of liege's to convert the culture of the counties of Roman Federates
+- Increased number of noble families in the Eastern Roman Empire at start
+- Fixed a bug where Ravenna had no development
+- Fixed bugs with being unable to Request or Restore the Western Empire
+- Fixed a bug with title creation triggers
+- Fixed bug where influence costs were not scaling correctly as Aristocratic Control increased
+- Meritocratic rulers will spawn noble families appropriately at game start now
+- Fixed a bug wherein Titular Titles could not have candidacy influence
+- Fixed a bug wherein Federates could flip to feudal governments in some edge cases
+
+Localization:
+- Fixed some specific localization and formatting issues (Thanks @awak!)
+- Fixed up grammar and localization in various places
+- Cleaned up a number of flavorizations of Semitic, Latin cultures
+- Made certain innovation localizations culture-dependent
+- Updated localizations to be more neutral in tone
+- Fixed a duplicate localization that incorrectly identified some tributary types
+- Updated the name of the Vistula, Rhine, and Danube River to be the Late Antique Latin names
+- Changed a number of localizations for seas and rivers to better reflect the Late Antique period
+- Improved Roman Empire Request/formation localizations, including highlighting conditions which help and hurt the changes for approval
+- Replaced "Pre-Feudal" with "Aristocratic" as the term for all the non-tribal, non-nomadic, non-centralized governments before the Era of Feudalism
+
 2026-07-19 v0.2.0.1
 -----------
 

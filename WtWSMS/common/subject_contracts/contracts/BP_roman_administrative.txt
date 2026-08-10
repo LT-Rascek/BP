@@ -87,11 +87,17 @@ roman_administrative_treasury = {
 	}
 }
 
-#Roman Empire's should be able to set things themselves at all levels
+#Roman Empires should be able to set things themselves at all levels
 roman_administrative_themes = {
 	display_mode = radiobutton
 	is_shown = {
 		scope:subject = {
+			#DO NOT, UNDER ANY CIRCUMSTANCE, MAKE THIS LANDED ONLY, OR THE MM TITLES
+			# WON'T HAVE TROOPS, AS THEY THEN ADOPT roman_admin_theme_civilian BECAUSE
+			# THAT IS THE DEFAULT. - LT-RASCEK.
+			#
+			#If we can make it so the MM/MO titles do not use roman_administrative_themes at all,
+			#_then_ we can make this landed only and rework Roman Themes.
 			OR = {
 				highest_held_title_tier >= main_administrative_tier
 				highest_held_title_tier >= min_title_maa_tier
@@ -100,8 +106,8 @@ roman_administrative_themes = {
 	}
 	obligation_levels = {
 		roman_admin_theme_civilian = {
-			is_shown = { scope:subject = { is_landed = yes } }
-			is_valid = { scope:subject = { is_landed = yes } }
+			#is_shown = { scope:subject = { is_landed = yes } }
+			#is_valid = { scope:subject = { is_landed = yes } }
 			default = yes
 			position = { 0 0 }
 			icon = "gfx/interface/icons/theme_administration_types/icon_civilian_administration.dds"
@@ -329,7 +335,7 @@ roman_administrative_themes = {
 		}
 		##### Sub-Roman Themes
 		roman_admin_theme_military = {
-			#This is for land 
+			#This is for land
 			is_shown = {
 				scope:liege = { government_has_flag = government_is_subroman_administrative }
 				scope:subject = { government_has_flag = government_is_subroman_administrative }
@@ -435,12 +441,15 @@ roman_administrative_military_landed = {
 	icon = soldier_icon
 	defaults_to_highest_valid_level = yes
 	
+	# FIXME: logged errors
+	# Obligation level 'roman_administrative_military_landed_0' in 'roman_administrative_military_landed' is marked as default but has is_valid/is_shown
+	
 	obligation_levels = {
 		roman_administrative_military_landed_0 = { #Fully standing army
 			is_shown = { scope:subject = { vassal_contract_has_flag = roman_landed_military_contract } }
 			is_valid = {
 				scope:subject = { vassal_contract_has_flag = roman_landed_military_contract }
-				scope:subject = { has_realm_law = subroman_admin_military_centralization_vassal_law_0 }
+				scope:subject = { has_realm_law = subroman_administrative_military_centralization_vassal_law_0 }
 			}
 			parent = roman_administrative_military_landed_0
 			position = { 0 0 }
@@ -478,7 +487,7 @@ roman_administrative_military_landed = {
 			is_shown = { scope:subject = { vassal_contract_has_flag = roman_landed_military_contract } }
 			is_valid = {
 				scope:subject = { vassal_contract_has_flag = roman_landed_military_contract }
-				scope:subject = { has_realm_law = subroman_admin_military_centralization_vassal_law_1 }
+				scope:subject = { has_realm_law = subroman_administrative_military_centralization_vassal_law_1 }
 			}
 			parent = roman_administrative_military_landed_1
 			position = { 1 0 }
@@ -516,7 +525,7 @@ roman_administrative_military_landed = {
 			is_shown = { scope:subject = { vassal_contract_has_flag = roman_landed_military_contract } }
 			is_valid = {
 				scope:subject = { vassal_contract_has_flag = roman_landed_military_contract }
-				scope:subject = { has_realm_law = subroman_admin_military_centralization_vassal_law_2 }
+				scope:subject = { has_realm_law = subroman_administrative_military_centralization_vassal_law_2 }
 			}
 			parent = roman_administrative_military_landed_2
 			position = { 2 0 }
@@ -554,7 +563,7 @@ roman_administrative_military_landed = {
 			is_shown = { scope:subject = { vassal_contract_has_flag = roman_landed_military_contract } }
 			is_valid = {
 				scope:subject = { vassal_contract_has_flag = roman_landed_military_contract }
-				scope:subject = { has_realm_law = subroman_admin_military_centralization_vassal_law_3 }
+				scope:subject = { has_realm_law = subroman_administrative_military_centralization_vassal_law_3 }
 			}
 			parent = roman_administrative_military_landed_3
 			position = { 3 0 }
@@ -592,7 +601,7 @@ roman_administrative_military_landed = {
 			is_shown = { scope:subject = { vassal_contract_has_flag = roman_landed_military_contract } }
 			is_valid = {
 				scope:subject = { vassal_contract_has_flag = roman_landed_military_contract }
-				scope:subject = { has_realm_law = subroman_admin_military_centralization_vassal_law_4 }
+				scope:subject = { has_realm_law = subroman_administrative_military_centralization_vassal_law_4 }
 			}
 			parent = roman_administrative_military_landed_4
 			position = { 4 0 }
@@ -632,7 +641,7 @@ roman_administrative_military_landed = {
 			is_shown = { scope:subject = { vassal_contract_has_flag = roman_landed_military_contract } }
 			is_valid = {
 				scope:subject = { vassal_contract_has_flag = roman_landed_military_contract }
-				scope:subject = { has_realm_law = subroman_admin_military_centralization_vassal_law_5 }
+				scope:subject = { has_realm_law = subroman_administrative_military_centralization_vassal_law_5 }
 			}
 			parent = roman_administrative_military_landed_5
 			position = { 5 0 }
@@ -800,12 +809,12 @@ roman_administrative_ministry_obligations = {
 			icon = "gfx/interface/icons/celestial_administration_types/icon_standard_administration.dds"
 			gui_tags = { civilian }
 			default = yes
-			is_valid = {
-				OR = {
-					any_held_title = { has_variable = is_supreme_roman_military_title }
-					any_held_title = { has_variable = is_supreme_roman_ministry_title }
-				}
-			}
+			#is_valid = {
+			#	OR = {
+			#		any_held_title = { has_variable = is_supreme_roman_military_title }
+			#		any_held_title = { has_variable = is_supreme_roman_ministry_title }
+			#	}
+			#}
 
 			ai_liege_desire = {
 				value = 1
