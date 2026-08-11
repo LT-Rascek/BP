@@ -52,6 +52,7 @@ can_have_roman_appointment_succession_law_trigger = {
 	OR = {
 		government_has_flag = government_is_subroman_administrative
 		government_has_flag = government_is_roman_administrative
+		government_has_flag = government_is_tribal_subroman_administrative
 	}
 }
 
@@ -116,7 +117,10 @@ realm_law_vassal_has_liege_law_level_subroman_dynastic_trigger = { #can_pass
 
 #Others
 realm_law_use_high_tribal_organization_trigger = {
-	government_has_flag = government_is_high_tribal
+	OR = {
+		government_has_flag = government_is_high_tribal
+		government_has_flag = government_is_tribal_subroman_administrative
+	}
 }
 realm_law_can_keep_high_tribal_organization_1_trigger = {
 	#Cultural Requirements
@@ -184,6 +188,7 @@ bp_can_have_roman_minority_law_trigger = {
 	OR = {
 		government_has_flag = government_is_subroman_dynastic
 		government_has_flag = government_is_subroman_administrative
+		government_has_flag = government_is_tribal_subroman_administrative
 		government_has_flag = government_is_roman_federate
 	}
 	#Only valid if your top liege is not a Roman

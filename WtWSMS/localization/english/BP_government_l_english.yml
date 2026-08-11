@@ -264,7 +264,6 @@
  #Others
  ROMAN_ADMIN_TROOP_COST_REDUCTION: "$roman_administrative_government_adjective$ Military"
  
- 
  roman_administrative_government_house_attribute_flavor_name: "[powerful_family_attribute|E]"
  roman_administrative_government_house_attribute_flavor_name_no_tooltip: "$game_concept_powerful_family_attribute$"
  subroman_administrative_government_house_attribute_flavor_name: "[powerful_family_attribute|E]"
@@ -407,6 +406,18 @@
  federate_levies_low_short: "Low"
  federate_levies_moderate_short: "Moderate"
  federate_levies_high_short: "High"
+ 
+ #Tribal Subroman Government
+ tribal_subroman_government: "Tribal Sub-Roman"
+ tribal_subroman_government_with_icon: "@government_type_subroman_dynastic! $tribal_subroman_government$"
+ tribal_subroman_government_adjective: "Tribal Sub-Roman"
+ tribal_subroman_government_realm: "$tribal_subroman_government_adjective$ Realm"
+ tribal_subroman_government_desc: "$game_concept_tribal_subroman_government_desc$"
+ tribal_subroman_government_vassals_label: "[administrative|E] [obligations|E] are based on [GetPlayer.Custom('GetProvinceAdministrationConcept')]"
+ tribal_subroman_vassal: "Sub-Roman Tribal"
+ tribal_subroman_government_filter_option: "$tribal_subroman_government$"
+ tribal_subroman_government_filter_option_desc: "Only show characters with [tribal_subroman_government|E]"
+ 
  
  #WtWSMS Tributaries
  BP_fixed_tributary: "$game_concept_BP_fixed_tributary$"

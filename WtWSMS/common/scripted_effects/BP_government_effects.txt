@@ -214,6 +214,14 @@ convert_to_subroman_government_effect = {
 	else = { change_government = subroman_dynastic_government }
 }
 
+convert_to_tribal_subroman_government_effect = {
+	if = {
+		limit = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes }
+		change_government_tribal_subroman_effect = yes
+	}
+	else = { change_government = subroman_dynastic_government }
+}
+
 convert_to_roman_federate_government_effect = {
 	if = {
 		limit = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes }

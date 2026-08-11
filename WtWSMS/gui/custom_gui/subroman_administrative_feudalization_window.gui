@@ -6,7 +6,7 @@
 	layoutpolicy_vertical = expanding
 	using = Animation_Tab_Switch
 	size = { 100% 100% }
-	visible = "[GetPlayer.GetGovernment.IsType( 'subroman_administrative_government' )]"
+	visible = "[Or(GetPlayer.GetGovernment.IsType( 'subroman_administrative_government' ),GetPlayer.GetGovernment.IsType( 'tribal_subroman_government' ))]"
 
 		vbox = {
 			layoutpolicy_horizontal = expanding

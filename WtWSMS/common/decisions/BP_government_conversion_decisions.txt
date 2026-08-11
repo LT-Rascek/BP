@@ -186,6 +186,83 @@ convert_to_roman_government_decision = {
 	ai_will_do = { base = 100 }
 }
 
+convert_to_tribal_subroman_government_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/ep3_cerimonial_decision.dds"
+	}
+	decision_group_type = major
+	desc = convert_to_tribal_subroman_government_decision_desc
+	
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 72
+		duchy = 60
+		kingdom = 48
+		empire = 36
+		hegemony = 36
+	}
+	
+	is_shown = {
+		government_has_flag = government_is_tribal
+		any_vassal = {
+			primary_title.tier >= tier_county
+			government_has_flag = is_a_roman_government
+		}
+	}
+	
+	is_valid = {
+		primary_title.tier >= tier_kingdom
+		top_liege = this #Must be independent
+		highest_held_title_tier >= tier_kingdom #Must be a kingdom or empire or hegemony
+		
+		#Have to have enough political clout
+		OR = {
+			AND = {
+				prestige_level >= 3
+				legitimacy_level >= 3
+			}
+			has_trait = legendary_leader
+		}
+		
+		#Tribal Innovations
+		culture = { has_innovation = innovation_leges_barbarorum }
+		culture = { has_innovation = innovation_writing }
+		culture = { has_innovation = innovation_social_stratification }
+		#At least half the realm has to be held by Sub-Romans or you
+		any_realm_county = {
+			percent >= 0.50
+			OR = {
+				this.holder = root
+				this.holder = { government_has_flag = is_a_roman_government }
+			}
+		}
+	}
+	
+	cost = { prestige = 250 }
+	
+	effect = {
+		convert_to_tribal_subroman_government_effect = yes
+		every_vassal_or_below = {
+			limit = {
+				OR = {
+					government_has_flag = government_is_tribal
+					government_has_flag = is_a_roman_government
+				}
+			}
+			convert_to_tribal_subroman_government_effect = yes
+		}
+		
+		#trigger_event = BP_government_conversion.0021
+		#save_scope_as = actor
+		#show_as_tooltip = { convert_to_roman_government_effect = yes }
+	}
+	
+	ai_potential = { always = yes }
+	
+	ai_will_do = { base = 100 }
+}
+
+
 convert_to_feudalism_decision = {
 	picture = {
 		reference = "gfx/interface/illustrations/loading_screens/council.dds"

@@ -639,6 +639,7 @@ change_government_subroman_administrative_effect = {
 			}
 			else = { this.domicile = { move_domicile = prev.top_liege.capital_county.title_province } }
 		}
+	}
 }
 change_government_roman_administrative_effect = {
 	change_government = roman_administrative_government
@@ -653,6 +654,36 @@ change_government_roman_administrative_effect = {
 }
 change_government_subroman_dynastic_effect = {
 	change_government = subroman_dynastic_government
+}
+change_government_tribal_subroman_effect = {
+	change_government = tribal_subroman_government
+	if = {
+		limit = {
+			this = this.house.house_head
+			OR = {
+				this.primary_title.tier >= tier_duchy #Don't want nf running counties...
+				#Senators are always noble
+				has_trait = senator_west
+				has_trait = senator_east
+			}
+			any_held_title = { count < 1 is_noble_family_title = yes }
+		}
+		create_noble_family_effect = { GOVERNMENT_GIVER = this }
+		#So domiciles aren't out-of-realm after migration because location hasn't updated...
+		custom_tooltip = {
+			text = you_get_a_domicile_in_your_capital
+			if = {
+				limit = { is_landed = yes }
+				this.domicile = { move_domicile = prev.capital_county.title_province }
+			}
+			else = { this.domicile = { move_domicile = prev.top_liege.capital_county.title_province } }
+		}
+	}
+	#Succession Law update
+	if = {
+		limit = { is_independent_ruler = no }
+		add_law_if_not_has_it_skip_effects_effect = { LAW = roman_appointment_succession_law }
+	}
 }
 
 #For saving references to Sub-Roman Laws for hand-off between $TARGET_TYPE$ and $SOURCE_TYPE$ Governments
