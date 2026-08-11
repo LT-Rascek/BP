@@ -10,6 +10,7 @@ bp_game_start_after_lobby_476 = {
 	on_actions = {
 		# Situations
 		setup_steppe_status_no_nomad_DLC
+		setup_situation_points
 		# Character stuff
 		BP_character_events_476
 		BP_setup_legitimacy_476
@@ -49,6 +50,53 @@ setup_steppe_status_no_nomad_DLC = {
 			situation_sub_region:migration_region_steppe = {
 				change_phase = { phase = BP_migration_period }
 				add_geographical_region = migration_region_steppe
+			}
+		}
+	}
+}
+
+#Must be after setup_steppe_status_no_nomad_DLC to check existing phase
+setup_situation_points = {
+	effect = {
+		situation:BP_migration_situation = {
+			situation_sub_region:migration_region_wre = {
+				add_takeover_phase_points = {
+					phase = BP_transition_period
+					points = 76
+				}
+			}
+			situation_sub_region:migration_region_ere = {
+				add_takeover_phase_points = {
+					phase = BP_transition_period
+					points = 76
+				}
+			}
+			situation_sub_region:migration_region_britannia = {
+				add_takeover_phase_points = {
+					phase = BP_transition_period
+					points = 76
+				}
+			}
+			situation_sub_region:migration_region_barbaria = {
+				add_takeover_phase_points = {
+					phase = BP_transition_period
+					points = 76
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						situation_sub_region:migration_region_steppe = {
+							sub_region_current_phase = BP_dormant_phase
+						}
+					}
+				}
+				situation_sub_region:migration_region_barbaria = {
+					add_takeover_phase_points = {
+						phase = BP_transition_period
+						points = 76
+					}
+				}
 			}
 		}
 	}
