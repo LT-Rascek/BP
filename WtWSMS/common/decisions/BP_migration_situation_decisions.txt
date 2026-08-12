@@ -138,7 +138,7 @@ pass_cultural_law = {
 		if = {
 			limit = { scope:reinforce_tribal_identity = yes }
 			give_nickname = nick_the_true_culture
-			add_dynasty_prestige = 250
+			this.dynasty = { add_dynasty_prestige = 250 }
 			root.dynasty ?= { add_dynasty_modifier = { modifier = adopted_barbarian_law years = 100 } }
 			#Loose acceptance with Romance cultures in realm
 			every_realm_county = {
