@@ -45,6 +45,11 @@ Traditions:
    - Adds a -5 opinion of different cultures
 
 Decisions:
+- Extended the "Convert to High Tribal" decision to small, independent Sub-Roman Dynastic realms, modeling the more immediate decay of Roman government in Britannia and among semi-Romanized Groups
+   - Only for Sub-Roman types of governments
+   - If a Romance Culture character, requires a realm size of 1, not being a tributary, or having an obscure dynasty
+   - If not a Romance Culture character, the realm size must be less than or equal to 3
+   - Much cheaper prestige cost to devolve a Sub-Roman government than to adopt it as a tribal government
 - Added "Pass a Cultural Law" decision, modeling the Late Antique legal codices such as Lex Visigothorum and Lex Burgundorum
    - The decision has customizable localization name for some cultures
    - Only AI Visigoths and Burgundians will use this decision
@@ -113,6 +118,9 @@ Events:
       - Gains enough traditions to fill its free slots from a list of traditions that are not elite-related, like "Collective Lands", or encourage further hybridization, like "Culture Blending" or "Xenophilic"
       - Other traditions chosen to emphasize a non-elite approach, like "Strength in Numbers" or "Religion Blending"
       - Also has some realm terrain-related traditions like "Forest Folk" and "Mountain Homes" as choices
+
+History:
+- Fixed up history of Brittany region
 
 2026-MM-DD v0.3.0
 -----------

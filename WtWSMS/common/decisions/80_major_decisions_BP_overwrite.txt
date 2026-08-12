@@ -1,4 +1,95 @@
-﻿##### Changed from Vanilla: Removed in cases where culture kingdoms can be founded
+﻿##### Changed from Vanilla: 
+found_duchy_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_found_kingdom.dds"
+	}
+	decision_group_type = major
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 60
+		duchy = 0
+		kingdom = 0
+		empire = 0
+		hegemony = 0
+	}
+
+	cooldown = { years = 10 }
+
+	is_shown = {
+		highest_held_title_tier = tier_county
+		is_landed = yes
+		OR = {
+			AND = {
+				is_ai = no
+				has_game_rule = on_custom_duchies_player
+			}
+			has_game_rule = on_custom_duchies
+		}
+		NOR = {
+			government_allows = administrative
+			government_has_flag = government_is_nomadic
+			government_is_japanese_trigger = yes
+		}
+	}
+
+	is_valid = {
+		is_independent_ruler = yes
+		trigger_if = {
+			limit = {
+				has_legitimacy = yes
+			}
+			OR = {
+				prestige_level >= 3
+				legitimacy_level >= 4
+			}
+		}
+		trigger_else = {
+			prestige_level >= 4
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+		is_at_war = no
+	}
+
+	cost = {
+		gold = {
+			value = 0
+			if = {
+				limit = {
+					has_treasury = no
+				}
+				add = massive_gold_value
+			}
+		}
+		treasury = {
+			value = 0
+			if = {
+				limit = {
+					has_treasury = yes
+				}
+				add = massive_gold_value
+			}
+		}
+		prestige = 250
+		piety = 200
+	}
+
+	effect = {
+		create_custom_duchy_effect = yes
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+
+##### Changed from Vanilla: Removed in cases where culture kingdoms can be founded
 found_kingdom_decision = {
 	picture = {
 		trigger = {
