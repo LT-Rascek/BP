@@ -49,6 +49,7 @@ bp_game_start_after_lobby = {
 		create_BP_artifacts
 		give_chavez_to_the_buri
 		alt_history_effects
+		move_domiciles
 		#Other Events
 		trigger_needed_events
 		delay = { days = 1 }
@@ -1173,6 +1174,15 @@ block_specific_chars_from_having_families = {
 	}
 }
 
+move_domiciles = {
+	effect = {
+		every_ruler = {
+			limit = { has_domicile = yes }
+			this.domicile = { move_domicile = prev.capital_county.title_province }
+		}
+	}
+}
+
 #Other Events
 trigger_needed_events = {
 	effect = {
@@ -1575,7 +1585,7 @@ setup_roman_governments_based_on_dlc = {
 						scope:new_title = { set_coa = scope:noble_family_head.house }
 					}
 					#Move Estate to actual capital location
-					this.domicile ?= { move_domicile = prev.capital_county.title_province }
+					this.domicile ?= { move_domicile = prev.primary_title.title_province }
 				}
 				
 				#Set Up Realm Laws
@@ -1592,7 +1602,7 @@ setup_roman_governments_based_on_dlc = {
 						is_landed = yes
 						any_held_title = { count < 1 is_noble_family_title = yes }
 					}
-					save_temporary_scope_as = the_ruler
+					save_scope_as = the_ruler
 					if = {
 						limit = { this = this.house.house_head }
 						if = {
@@ -1665,7 +1675,7 @@ setup_roman_governments_based_on_dlc = {
 					}
 					#Move Estate to actual capital location
 					scope:noble_family_head ?= {
-						this.domicile ?= { move_domicile = scope:the_ruler.capital_county.title_province }
+						this.domicile ?= { move_domicile = scope:the_ruler.primary_title.title_province }
 					}
 				}
 			}
