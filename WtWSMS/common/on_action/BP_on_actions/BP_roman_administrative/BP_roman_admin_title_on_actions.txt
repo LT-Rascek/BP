@@ -3,7 +3,7 @@ BP_flip_federate_when_not_below_roman = {
 	trigger = {
 		BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes
 		has_government = roman_federate_government
-		NOT = { top_liege = { government_has_flag = is_a_roman_government } }
+		is_independent_ruler = yes
 	}
 	effect = {
 		bp_devolve_roman_federate_effect = yes
