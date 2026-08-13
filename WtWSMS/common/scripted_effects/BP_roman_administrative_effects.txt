@@ -126,15 +126,20 @@ give_roman_council_position_effect = {
 
 got_roman_administrative_minister_position_effect = {
 	save_scope_as = new_minister
-	scope:new_minister.top_liege = { save_scope_as = the_top_liege }
-
+	if = {
+		limit = { exists = scope:councillor_liege }
+		scope:councillor_liege = { save_scope_as = the_top_liege }
+	}
+	else = {
+		scope:new_minister.top_liege = { save_scope_as = the_top_liege }
+	}
 	if = { # If your liege has a ministry, set up titles if needed
 		limit = {
-			scope:councillor_liege ?= {
+			scope:the_top_liege ?= {
 				this != scope:new_minister
 				bp_has_access_to_roman_ministry_trigger = yes
 			}
-			NOT = { exists = scope:swapped_position }
+			#NOT = { exists = scope:swapped_position }
 		}
 		# Grant the ministry title if councilor doesn't have it
 		if = {
@@ -149,7 +154,7 @@ got_roman_administrative_minister_position_effect = {
 
 			if = {
 				limit = {
-					scope:councillor_liege = {
+					scope:the_top_liege = {
 						bp_has_access_to_roman_ministry_trigger = yes
 					}
 					# retire from other ministry primary titles
@@ -191,7 +196,7 @@ got_roman_administrative_minister_position_effect = {
 		}
 		
 		#Fix Government if needed
-		scope:councillor_liege = {
+		scope:the_top_liege = {
 			switch = {
 				trigger = has_government
 				roman_administrative_government = {

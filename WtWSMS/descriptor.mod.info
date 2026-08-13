@@ -1,5 +1,6 @@
 name = "When the World Stopped Making Sense"
 tags={
+	"1.19 'Scribe'"
 	"Bookmarks"
 	"Culture"
 	"Events"

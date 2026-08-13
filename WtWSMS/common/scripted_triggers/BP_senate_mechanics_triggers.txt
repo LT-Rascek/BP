@@ -35,6 +35,19 @@ character_in_senate_region_trigger = {
 		}
 	}
 	trigger_else_if = {
+		limit = {
+			is_landless_ruler = yes
+			is_independent_ruler = no
+		}
+		OR = {
+			custom_description = {
+				text = the_city_is_part_of_the_realm
+				this.top_liege = { any_sub_realm_barony = { this = title:$THE_CITY$ } }
+			}
+			this.capital_barony.title_province = { geographical_region = $THE_REGION$ }
+		}
+	}
+	trigger_else_if = {
 		limit = { exists = this.employer }
 		OR = {
 			custom_description = {

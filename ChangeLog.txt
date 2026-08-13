@@ -277,7 +277,16 @@ Culture:
       - Required to reform a faith but not create a new one
 - Rebalanced many cultures' ethnicities
 
+Laws:
+- High Tribal Organization impacts cost of feudalization, title creation, army maintenance, and men at arms maintenance and recruitment
+   - Values vary from -40% off to -10% off each
+   - Prestige multiplier decreases from 15% to 0%
+   - Feudalization costs depend on High Tribal Organization:
+      - Gold cost starts at 50 and increases by 50 for each level of High Tribal Organization
+      - Prestige cost starts at 200 and decreases by 50 for each level of High Tribal Organization
+
 Landed Titles:
+- Made the Praetorian Prefectures landless titles and restored previous empire titles, as the PP system was inoperable
 - Overhauled Persian Hegemony
    - Add the Bactrian Empire to Persia and put Bactria, Sogdiana, and Kabulistan in it
 - Moved various titles to be De Jure instead of Titular in line with CK3 DLC mechanics:
@@ -356,7 +365,13 @@ History:
 - Xianbei Western Regions rulers are Xianbei until Emperor Xiaowen's Sinicization in 496
 - Attila has the "Dynastic Kinslayer" trait for executing some members of his dynasy
 
+Council Tasks:
+- Made "Promote Culture" Task have a minimum speed
+
 Traits:
+- Modified some traits in light of the "Strengthen Bloodline" Decision
+   - Good Physical Traits: Tall, Agile, Ambidextrous, Left-Handed, Melodious Voice, Powerful Voice, Calm Voice
+   - Bad Physical Traits: Absentminded, Wrymouth, Harelip
 - Added "Cranial Deformation" trait, for Steppe cultures which practiced cranial Deformation
    - All noble characters of cultures with the "Shaped to Rule" or "Nomadic Rulership" traditions gain the trait at birth
    - The trait gains XP every birthday until after the 6th birthday
@@ -463,7 +478,11 @@ Events:
 GFX:
 - Added new COA emblems for the Alchon and Nezak Huns
 
+Music:
+- "When the World Stopped Making Sense" music is now interrupted in game by war declarations
+
 Tweaks:
+- Restructured the Roman/Sub-Roman Reconquest CBs to more closely follow the Roman Invasion War CB effects
 - In general, if a character has only a landless title under a government that is not administrative, the title is destroyed (and the character becomes an adventurer if the character is a player)
 - Members are more inclined to leave large confederations (i.e., more than 8 members)
 - AI is inclined to promote culture more in counties with "Recent Emigration" modifier
@@ -479,6 +498,21 @@ Localization:
 - Renamed "Ruanruan" language to "Ninrun"
 
 Bug Fixes:
+- Fixed a bug where Primogeniture wasn't being shown in Administrative governments
+- Dead Senators should not haunt the Senate anymore
+- Western Roman Emperors get the "Augustus" trait upon gaining the throne
+- Fixed a bug blocking House Seniority Succession for Centralized Dynastic Realms
+- Fixed a bug where Roman and Sub-Roman Administrative vassals had normal appointment succession instead of Roman Appointment Succession
+- Centralized, Administrative realms loose access to most non-appointment, non-acclamation succession laws
+- Fixed a bug where High Tribals were not able to Feudalize holdings but were able to Tribalize holdings
+- Fixed a bug where Roman and Sub-Roman Administrative titles would get title laws applied incorrectly in some circumstances
+- Fixed a bug with landless senator trigger checks
+- Fixed a bug that allowed MM and MO titles to become landed in some edge cases
+- Fixed a number of bugs relating to the MM and MO titles not assigning correctly
+- Fixed a bug where certain laws weren't showing in the GUI for Administrative governments
+- Fixed a bug with Roman Federate transition triggers
+- Fixed a bug with Federate Revocation Wars in certain circumstances
+- Fixed various domicile location at start
 - Fixed a bug where Federates couldn't use the "Promote Culture" task
 - Fixed changing to Administrative government types having 0 treasury at start
 - "Move into Conquered Lands" decision will no longer let you sneak into being a feudal ruler early

@@ -774,14 +774,16 @@ revoke_foderatus_interaction_adminstrative = { #TODO (BETA): Customize adventure
 				target = scope:actor
 			}
 		}
-		every_vassal = {
-			limit = {
-				NOT = { this = scope:recipient }
-				government_has_flag = government_is_roman_federate
-			}
-			add_opinion = {
-				modifier = attempted_revocation_of_federates_other
-				target = scope:actor
+		scope:actor = {
+			every_vassal = {
+				limit = {
+					NOT = { this = scope:recipient }
+					government_has_flag = government_is_roman_federate
+				}
+				add_opinion = {
+					modifier = attempted_revocation_of_federates_other
+					target = scope:actor
+				}
 			}
 		}
 	}

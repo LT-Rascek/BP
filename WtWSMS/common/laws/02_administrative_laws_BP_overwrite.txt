@@ -9,7 +9,7 @@ province_war_law = {
 	default = province_war_law_0
 	cumulative = yes
 	flag = admin_law
-	flag = other_law #aka, not a true "Realm Law"; not manipulable like one
+	flag = succession_gender_laws #For UI positioning
 	
 	province_war_law_0 = {
 		modifier = {
@@ -282,7 +282,7 @@ province_border_law = {
 	default = province_border_law_0
 	cumulative = no
 	flag = admin_law
-	flag = other_law #aka, not a true "Realm Law"; not manipulable like one
+	flag = succession_gender_laws #For UI positioning
 	
 	province_border_law_0 = {
 		modifier = {

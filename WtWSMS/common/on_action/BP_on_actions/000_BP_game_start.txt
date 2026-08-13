@@ -51,6 +51,7 @@ bp_game_start_after_lobby = {
 		create_BP_artifacts
 		give_chavez_to_the_buri
 		alt_history_effects
+		move_domiciles
 		#Other Events
 		trigger_needed_events
 		delay = { days = 1 }
@@ -292,7 +293,10 @@ setup_realm_and_title_succession_laws = {
 		
 		### Governments
 		every_ruler = { #Roman Governments
-			limit = { government_has_flag = is_a_roman_government }
+			limit = {
+				government_has_flag = government_is_roman_dynastic
+				government_has_flag = government_is_subroman_dynastic
+			}
 			if = {
 				limit = { NOT = { has_realm_law = single_heir_succession_law } }
 				add_realm_law_skip_effects = single_heir_succession_law
@@ -1181,6 +1185,15 @@ block_specific_chars_from_having_families = {
 	}
 }
 
+move_domiciles = {
+	effect = {
+		every_ruler = {
+			limit = { has_domicile = yes }
+			this.domicile = { move_domicile = prev.capital_county.title_province }
+		}
+	}
+}
+
 #Other Events
 trigger_needed_events = {
 	effect = {
@@ -1586,15 +1599,8 @@ setup_roman_governments_based_on_dlc = {
 						scope:new_title = { set_coa = scope:noble_family_head.house }
 					}
 					#Move Estate to actual capital location
-					this.domicile ?= { move_domicile = prev.capital_county.title_province }
+					this.domicile ?= { move_domicile = prev.primary_title.title_province }
 				}
-				
-				#Set Up Realm Laws
-				if = {
-					limit = { top_liege = this }
-					add_law_if_not_has_it_skip_effects_effect = { LAW = roman_acclamation_succession_law }
-				}
-				else = { add_law_if_not_has_it_skip_effects_effect = { LAW = roman_appointment_succession_law } }
 				
 				#Setup missing NF titles
 				every_vassal_or_below = {
@@ -1603,7 +1609,7 @@ setup_roman_governments_based_on_dlc = {
 						is_landed = yes
 						any_held_title = { count < 1 is_noble_family_title = yes }
 					}
-					save_temporary_scope_as = the_ruler
+					save_scope_as = the_ruler
 					if = {
 						limit = { this = this.house.house_head }
 						if = {
@@ -1676,9 +1682,23 @@ setup_roman_governments_based_on_dlc = {
 					}
 					#Move Estate to actual capital location
 					scope:noble_family_head ?= {
-						this.domicile ?= { move_domicile = scope:the_ruler.capital_county.title_province }
+						this.domicile ?= { move_domicile = scope:the_ruler.primary_title.title_province }
 					}
 				}
+			}
+			every_ruler = {
+				limit = {
+					OR = {
+						government_has_flag = government_is_roman_administrative
+						government_has_flag = government_is_subroman_administrative
+					}
+				}
+				#Set Up Realm Laws
+				if = {
+					limit = { top_liege = this }
+					add_law_if_not_has_it_skip_effects_effect = { LAW = roman_acclamation_succession_law }
+				}
+				else = { add_law_if_not_has_it_skip_effects_effect = { LAW = roman_appointment_succession_law } }
 			}
 		}
 		#Roman Offices need the appropriate flags at start
