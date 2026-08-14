@@ -136,12 +136,12 @@ BP_character_events_476 = {
 		#Arbogast and Soissons should start allied
 		title:k_soissons.holder = {
 			create_alliance = {
-				target = title:d_triveria.holder
+				target = title:d_belgica_prima.holder
 				allied_through_owner = title:k_soissons.holder
-				allied_through_target = title:d_triveria.holder
+				allied_through_target = title:d_belgica_prima.holder
 			}
 		}
-		title:d_triveria.holder = {
+		title:d_belgica_prima.holder = {
 			add_opinion = {
 				modifier = perk_negotiated_alliance_opinion
 				target = title:k_soissons.holder
@@ -262,7 +262,7 @@ BP_setup_realm_laws_476_DLC = {
 			add_law_if_not_has_it_skip_effects_effect = { LAW = budget_allocation_military_40 }
 			remove_variable = non_roman_minority_rule_law_cooldown
 		}
-		title:d_triveria.holder = {
+		title:d_belgica_prima.holder = {
 			add_law_if_not_has_it_propagate_minority_law_effect = { LAW = non_roman_minority_rule_law_4 }
 			add_law_if_not_has_it_skip_effects_effect = { LAW = budget_allocation_salary_40 }
 			add_law_if_not_has_it_skip_effects_effect = { LAW = budget_allocation_military_40 }

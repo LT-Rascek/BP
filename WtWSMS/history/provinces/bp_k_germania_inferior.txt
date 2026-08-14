@@ -34,26 +34,6 @@
 
 ## d_germania_superior #############################
 
-###c_koblenz
-2084 = {	#KOBLENZ
-	culture = romano_gallic
-	religion = gallican_church
-	holding = castle_holding
-	450.1.1 = { #Atilla sacks the region
-		holding = tribal_holding
-		culture = old_frankish
-		religion = frankish_pagan
-	}
-}
-2086 = {	#ADENAU
-	holding = none
-}
-2697 = {	#COCHEM
-	holding = none
-}
-2696 = {	#SPONHEM
-	holding = none
-}
 ###c_kaiserlautern
 2731 = {	#WORMS
 	culture = romano_gallic #Brisgavi integrated (but probably Christianized)
@@ -156,45 +136,6 @@
 
 ## d_germania_inferior #############################
 
-###c_zeeland
-2112 = {	#MIDDELBURG
-	culture = old_frankish
-	religion = frankish_pagan
-	holding = tribal_holding
-	844.1.1 = { holding = castle_holding } #Year monastery was built
-}
-2113 = {	#BERGEN OP ZOOM
-	holding = none
-}
-2401 = {	#BRIELLE
-	holding = none
-}
-###c_antwerpen
-2106 = {	#ANTWERP
-	culture = old_frankish
-	religion = frankish_pagan
-	holding = tribal_holding #aka Anderpus
-	508.12.25 = { religion = gallican_church }
-}
-2108 = {	#ROSENDAAL
-	holding = none
-}
-2109 = {	#BREDA
-	holding = none
-}
-###c_maastricht
-2099 = {	#MAASTRICHT
-	culture = old_frankish
-	religion = frankish_pagan
-	holding = tribal_holding #aka Traiectus (?)
-	508.12.25 = { religion = gallican_church }
-}
-2100 = {	#EINDHOVEN
-	holding = none
-}
-2110 = {	#TILBURG
-	holding = none
-}
 ###c_cleves
 2104 = {	#KLEVE
 	culture = old_frankish
@@ -232,20 +173,6 @@
 2685 = {	#NAUENAHR
 	holding = none
 }
-###c_brabant
-2105 = {	#LEUVEN
-	culture = old_frankish
-	religion = frankish_pagan
-	holding = tribal_holding
-	508.12.25 = { religion = gallican_church }
-}
-2107 = {	#BRUSSELS
-	holding = none
-	580.1.1 = { holding = city_holding } #Chapel construction 580
-}
-2111 = {	#TURNHOUT
-	holding = none
-}
 ###c_guelders
 2450 = {	#GELDERN
 	culture = old_frankish
@@ -256,6 +183,26 @@
 }
 2103 = {	#NIJMEGEN
 	holding = city_holding #aka Batavodurum
+}
+###c_koblenz
+2084 = {	#KOBLENZ
+	culture = romano_gallic
+	religion = gallican_church
+	holding = castle_holding
+	450.1.1 = { #Atilla sacks the region
+		holding = tribal_holding
+		culture = old_frankish
+		religion = frankish_pagan
+	}
+}
+2086 = {	#ADENAU
+	holding = none
+}
+2697 = {	#COCHEM
+	holding = none
+}
+2696 = {	#SPONHEM
+	holding = none
 }
 
 ## d_belgica_prima #############################
@@ -278,48 +225,6 @@
 	450.1.1 = { holding = none }
 }
 2089 = {	#DIEKIRCH
-	holding = none
-}
-###c_bouillon
-2091 = {	#BOUILLON
-	culture = romano_gallic
-	religion = gallican_church
-	holding = tribal_holding
-}
-2686 = {	#CHINY
-	holding = none
-}
-2687 = {	#SAINT HUBERT
-	holding = none
-}
-2095 = {	#VIRTON
-	holding = city_holding #aka Vertunum
-}
-###c_liege
-2097 = {	#LIEGE
-	culture = romano_gallic
-	religion = gallican_church
-	holding = tribal_holding
-	558.1.1 = { holding = castle_holding } #First references to city
-}
-2094 = {	#LA ROCHE
-	holding = none
-}
-2096 = {	#HUY
-	holding = church_holding #Ancient Roman Castrum; church_holding for diversity
-	451.1.1 = { holding = none }
-}
-###c_namur
-2098 = {	#NAMUR
-	culture = romano_gallic
-	religion = gallican_church
-	holding = castle_holding #Roman castrum
-	451.1.1 = { holding = tribal_holding }
-}
-2116 = {	#CHARLEROI
-	holding = none
-}
-2122 = {	#COUVIN
 	holding = none
 }
 ###c_trier
@@ -371,3 +276,115 @@
 2711 = {	#FAULQUEMONT
 	holding = none
 }
+###c_briey
+2706 = {	#BRIEY
+	culture = romano_gallic
+	religion = gallican_church
+	holding = castle_holding
+}
+2080 = {	#HAYANGE
+	holding = none
+}
+
+## d_texandria #############################
+
+###c_maastricht
+2099 = {	#MAASTRICHT
+	culture = old_frankish
+	religion = frankish_pagan
+	holding = tribal_holding #aka Traiectus (?)
+	508.12.25 = { religion = gallican_church }
+}
+2100 = {	#EINDHOVEN
+	holding = none
+}
+2110 = {	#TILBURG
+	holding = none
+}
+###c_brabant
+2105 = {	#LEUVEN
+	culture = old_frankish
+	religion = frankish_pagan
+	holding = tribal_holding
+	508.12.25 = { religion = gallican_church }
+}
+2107 = {	#BRUSSELS
+	holding = none
+	580.1.1 = { holding = city_holding } #Chapel construction 580
+}
+2111 = {	#TURNHOUT
+	holding = none
+}
+###c_zeeland
+2112 = {	#MIDDELBURG
+	culture = old_frankish
+	religion = frankish_pagan
+	holding = tribal_holding
+	844.1.1 = { holding = castle_holding } #Year monastery was built
+}
+2113 = {	#BERGEN OP ZOOM
+	holding = none
+}
+2401 = {	#BRIELLE
+	holding = none
+}
+###c_antwerpen
+2106 = {	#ANTWERP
+	culture = old_frankish
+	religion = frankish_pagan
+	holding = tribal_holding #aka Anderpus
+	508.12.25 = { religion = gallican_church }
+}
+2108 = {	#ROSENDAAL
+	holding = none
+}
+2109 = {	#BREDA
+	holding = none
+}
+
+## d_mosania #############################
+
+###c_liege
+2097 = {	#LIEGE
+	culture = romano_gallic
+	religion = gallican_church
+	holding = tribal_holding
+	558.1.1 = { holding = castle_holding } #First references to city
+}
+2094 = {	#LA ROCHE
+	holding = none
+}
+2096 = {	#HUY
+	holding = church_holding #Ancient Roman Castrum; church_holding for diversity
+	451.1.1 = { holding = none }
+}
+###c_bouillon
+2091 = {	#BOUILLON
+	culture = romano_gallic
+	religion = gallican_church
+	holding = tribal_holding
+}
+2686 = {	#CHINY
+	holding = none
+}
+2687 = {	#SAINT HUBERT
+	holding = none
+}
+2095 = {	#VIRTON
+	holding = city_holding #aka Vertunum
+}
+###c_namur
+2098 = {	#NAMUR
+	culture = romano_gallic
+	religion = gallican_church
+	holding = castle_holding #Roman castrum
+	451.1.1 = { holding = tribal_holding }
+}
+2116 = {	#CHARLEROI
+	holding = none
+}
+2122 = {	#COUVIN
+	holding = none
+}
+
+
