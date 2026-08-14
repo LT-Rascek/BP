@@ -11,3 +11,15 @@ general_situation_regional_parameter_trigger = {
 		}
 	}
 }
+general_situation_is_participant_type_trigger = {
+	$CHARACTER$ = {
+		any_character_situation ?= {
+			any_situation_sub_region = {
+				any_situation_sub_region_participant_group = {
+					participant_group_has_character = $CHARACTER$
+					participant_group_type = $GROUP_TYPE$
+				}
+			}
+		}
+	}
+}

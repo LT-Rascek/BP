@@ -412,7 +412,8 @@ call_for_confederation_decision = {
 	}
 }
 
-##### Changed from Vanilla: Blocked before innovation_leges_barbarorum & 
+##### Changed from Vanilla; Added specific hooks for WtWSMS things
+##### Changed from Vanilla: Blocked before innovation_leges_barbarorum & innovation_social_stratification
 confederation_kingdom_decision = {
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/mpo_decision_confederation.dds"
@@ -520,12 +521,30 @@ confederation_kingdom_decision = {
 		}
 	}
 
+	##### Changed from Vanilla vvvvv
 	effect = {
 		custom_tooltip = confederation_kingdom_creation_tt
 		custom_tooltip = confederation_succession_tt
 		custom_tooltip = confederation_king_modifier_tt
 		custom_tooltip = confederation_vassal_modifier_tt
 		custom_tooltip = confederation_county_modifier_tt
+		##### Changed from Vanilla vvvvv
+		if = {
+			limit = {
+				OR = {
+					general_situation_is_participant_type_trigger = {
+						CHARACTER = root
+						GROUP_TYPE = migrators
+					}
+					general_situation_is_participant_type_trigger = {
+						CHARACTER = root
+						GROUP_TYPE = tribals
+					}
+				}
+			}
+			custom_tooltip = unlocks_one_major_cb_against_roman_state
+		}
+		##### Changed from Vanilla ^^^^^
 		save_scope_as = new_king_ruler
 		hidden_effect = {
 			confederation = {
@@ -626,6 +645,27 @@ confederation_kingdom_decision = {
 				add_title_law = confederation_elective_succession_law
 				set_capital_county = root.capital_county
 			}
+			##### Changed from Vanilla vvvvv
+			if = {
+				limit = {
+					OR = {
+						general_situation_is_participant_type_trigger = {
+							CHARACTER = root
+							GROUP_TYPE = migrators
+						}
+						general_situation_is_participant_type_trigger = {
+							CHARACTER = root
+							GROUP_TYPE = tribals
+						}
+					}
+				}
+				scope:new_title = {
+					set_title_name_dynamic = cn_migration_confed_dynamic
+					set_coa = scope:old_title
+				}
+				add_character_flag = available_realm_conquest_cb_against_centralized_state
+			}
+			##### Changed from Vanilla ^^^^^
 			set_primary_title_to = scope:new_title
 			confederation = {
 				disband_confederation = yes
@@ -640,6 +680,7 @@ confederation_kingdom_decision = {
 			trigger_event = mpo_decisions_events.0005
 		}
 	}
+	##### Changed from Vanilla ^^^^^
 
 	ai_potential = {
 		is_confederation_member = yes

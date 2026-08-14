@@ -781,6 +781,29 @@ BP_create_armies_476 = {
 			create_hephthalite_476_army_effect = { LOCATION = 4335 }
 			create_hepthalite_maa_476_effect = yes
 		}
+		title:d_belgica_prima.holder = {
+			#Create the ERE MM Army
+			create_maa_regiment = {
+				type = roman_light_infantry
+				check_can_recruit = no
+				size = 3
+			}
+			create_maa_regiment = {
+				type = roman_heavy_infantry
+				check_can_recruit = no
+				size = 2
+			}
+			create_maa_regiment = {
+				type = bowmen
+				check_can_recruit = no
+				size = 2
+			}
+			create_maa_regiment = {
+				type = pikemen_unit
+				check_can_recruit = no
+				size = 1
+			}
+		}
 	}
 }
 BP_reduce_hunnic_herd_476 = {
