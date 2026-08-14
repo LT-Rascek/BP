@@ -10659,14 +10659,106 @@ h_western_roman_empire = {
 				}
 			}
 			d_belgica_secunda = { #7
-				color={ 0 30 0 }
-				capital = c_guines
+				color={ 110 95 145 }
+				capital = c_hainaut
 				
 				cultural_names = {
 					name_list_old_frankish = cn_salia
 					name_list_chatti = cn_salia
 				}
 				
+				c_hainaut = {
+					color = { 110 95 145 }
+					
+					cultural_names = {
+						#Roman Cultures
+						name_list_roman = cn_castrilocus
+						name_list_romano_gallic = cn_castrilocus
+						name_list_romano_hispanic = cn_castrilocus
+						name_list_romano_british = cn_castrilocus
+						name_list_romano_african = cn_castrilocus
+						name_list_romano_raetian = cn_castrilocus
+						name_list_romano_thracian = cn_castrilocus
+						name_list_romano_illyrian = cn_castrilocus
+						name_list_romano_pannonian = cn_castrilocus
+						name_list_dalmatian = cn_castrilocus
+						name_list_romano_noric = cn_castrilocus
+						name_list_romano_gothic = cn_castrilocus
+						name_list_romano_dacian = cn_castrilocus
+						name_list_romano_aramean = cn_castrilocus
+						#Germanic Cultures
+						name_list_old_frankish = cn_buargains
+						name_list_old_frisian = cn_henegouwen
+					}
+					
+					b_tournai = {
+						province = 2127
+						cultural_names = {
+							#Roman Cultures
+							name_list_roman = cn_tornacum
+							name_list_romano_gallic = cn_tornacum
+							name_list_romano_hispanic = cn_tornacum
+							name_list_romano_british = cn_tornacum
+							name_list_romano_african = cn_tornacum
+							name_list_romano_raetian = cn_tornacum
+							name_list_romano_thracian = cn_tornacum
+							name_list_romano_illyrian = cn_tornacum
+							name_list_romano_pannonian = cn_tornacum
+							name_list_dalmatian = cn_tornacum
+							name_list_romano_noric = cn_tornacum
+							name_list_romano_gothic = cn_tornacum
+							name_list_romano_dacian = cn_tornacum
+							name_list_romano_aramean = cn_tornacum
+							name_list_romano_vandalic = cn_tornacum
+						}
+						color = { 110 95 145 }
+					}
+					b_mons = {
+						province = 2117
+						cultural_names = {
+							#Roman Cultures
+							name_list_roman = cn_castrilocus
+							name_list_romano_gallic = cn_castrilocus
+							name_list_romano_hispanic = cn_castrilocus
+							name_list_romano_british = cn_castrilocus
+							name_list_romano_african = cn_castrilocus
+							name_list_romano_raetian = cn_castrilocus
+							name_list_romano_thracian = cn_castrilocus
+							name_list_romano_illyrian = cn_castrilocus
+							name_list_romano_pannonian = cn_castrilocus
+							name_list_dalmatian = cn_castrilocus
+							name_list_romano_noric = cn_castrilocus
+							name_list_romano_gothic = cn_castrilocus
+							name_list_romano_dacian = cn_castrilocus
+							name_list_romano_aramean = cn_castrilocus
+							#Germanic Cultures
+							name_list_old_frankish = cn_buargains
+							name_list_old_frisian = cn_henegouwen
+						}
+						color = { 110 95 145 }
+					}
+					b_ath = {
+						province = 2120
+						cultural_names = {
+							#Roman Cultures
+							name_list_roman = cn_athum
+							name_list_romano_gallic = cn_athum
+							name_list_romano_hispanic = cn_athum
+							name_list_romano_british = cn_athum
+							name_list_romano_african = cn_athum
+							name_list_romano_raetian = cn_athum
+							name_list_romano_thracian = cn_athum
+							name_list_romano_illyrian = cn_athum
+							name_list_romano_pannonian = cn_athum
+							name_list_dalmatian = cn_athum
+							name_list_romano_noric = cn_athum
+							name_list_romano_gothic = cn_athum
+							name_list_romano_dacian = cn_athum
+							name_list_romano_aramean = cn_athum
+						}
+						color = { 110 95 145 }
+					}
+				}
 				c_boulogne = {
 					color = { 78 103 165 }
 					
@@ -11096,97 +11188,6 @@ h_western_roman_empire = {
 							name_list_visigothic = cn_area
 						}
 						color = { 75 115 205 }
-					}
-				}
-				c_hainaut = {
-					color = { 110 95 145 }
-					
-					cultural_names = {
-						#Roman Cultures
-						name_list_roman = cn_castrilocus
-						name_list_romano_gallic = cn_castrilocus
-						name_list_romano_hispanic = cn_castrilocus
-						name_list_romano_british = cn_castrilocus
-						name_list_romano_african = cn_castrilocus
-						name_list_romano_raetian = cn_castrilocus
-						name_list_romano_thracian = cn_castrilocus
-						name_list_romano_illyrian = cn_castrilocus
-						name_list_romano_pannonian = cn_castrilocus
-						name_list_dalmatian = cn_castrilocus
-						name_list_romano_noric = cn_castrilocus
-						name_list_romano_gothic = cn_castrilocus
-						name_list_romano_dacian = cn_castrilocus
-						name_list_romano_aramean = cn_castrilocus
-						#Germanic Cultures
-						name_list_old_frankish = cn_buargains
-						name_list_old_frisian = cn_henegouwen
-					}
-					b_mons = {
-						province = 2117
-						cultural_names = {
-							#Roman Cultures
-							name_list_roman = cn_castrilocus
-							name_list_romano_gallic = cn_castrilocus
-							name_list_romano_hispanic = cn_castrilocus
-							name_list_romano_british = cn_castrilocus
-							name_list_romano_african = cn_castrilocus
-							name_list_romano_raetian = cn_castrilocus
-							name_list_romano_thracian = cn_castrilocus
-							name_list_romano_illyrian = cn_castrilocus
-							name_list_romano_pannonian = cn_castrilocus
-							name_list_dalmatian = cn_castrilocus
-							name_list_romano_noric = cn_castrilocus
-							name_list_romano_gothic = cn_castrilocus
-							name_list_romano_dacian = cn_castrilocus
-							name_list_romano_aramean = cn_castrilocus
-							#Germanic Cultures
-							name_list_old_frankish = cn_buargains
-							name_list_old_frisian = cn_henegouwen
-						}
-						color = { 110 95 145 }
-					}
-					b_tournai = {
-						province = 2127
-						cultural_names = {
-							#Roman Cultures
-							name_list_roman = cn_tornacum
-							name_list_romano_gallic = cn_tornacum
-							name_list_romano_hispanic = cn_tornacum
-							name_list_romano_british = cn_tornacum
-							name_list_romano_african = cn_tornacum
-							name_list_romano_raetian = cn_tornacum
-							name_list_romano_thracian = cn_tornacum
-							name_list_romano_illyrian = cn_tornacum
-							name_list_romano_pannonian = cn_tornacum
-							name_list_dalmatian = cn_tornacum
-							name_list_romano_noric = cn_tornacum
-							name_list_romano_gothic = cn_tornacum
-							name_list_romano_dacian = cn_tornacum
-							name_list_romano_aramean = cn_tornacum
-							name_list_romano_vandalic = cn_tornacum
-						}
-						color = { 110 95 145 }
-					}
-					b_ath = {
-						province = 2120
-						cultural_names = {
-							#Roman Cultures
-							name_list_roman = cn_athum
-							name_list_romano_gallic = cn_athum
-							name_list_romano_hispanic = cn_athum
-							name_list_romano_british = cn_athum
-							name_list_romano_african = cn_athum
-							name_list_romano_raetian = cn_athum
-							name_list_romano_thracian = cn_athum
-							name_list_romano_illyrian = cn_athum
-							name_list_romano_pannonian = cn_athum
-							name_list_dalmatian = cn_athum
-							name_list_romano_noric = cn_athum
-							name_list_romano_gothic = cn_athum
-							name_list_romano_dacian = cn_athum
-							name_list_romano_aramean = cn_athum
-						}
-						color = { 110 95 145 }
 					}
 				}
 				c_cambray = {
@@ -11724,7 +11725,7 @@ h_western_roman_empire = {
 				}
 			}
 			d_germania_inferior = { #8
-				color={ 154 205 50 }
+				color={ 150 145 180 }
 				capital = c_cologne
 				
 				cultural_names = {

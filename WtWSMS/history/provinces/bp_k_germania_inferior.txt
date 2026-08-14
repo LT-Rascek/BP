@@ -116,7 +116,7 @@
 2092 = {	#AACHEN
 	culture = old_frankish
 	religion = frankish_pagan
-	holding = tribal_holding
+	holding = castle_holding #Too important not too
 	special_building_slot = palace_of_aachen_01
 	508.12.25 = { religion = gallican_church }
 }
@@ -125,6 +125,7 @@
 }
 2093 = {	#DUREN
 	holding = castle_holding #aka Colonia Claudia Ara Agrippinensium
+	451.1.1 = { holding = none }
 }
 2683 = {	#ESCHWEILER
 	holding = none
@@ -178,8 +179,8 @@
 	culture = old_frankish
 	religion = frankish_pagan
 	holding = tribal_holding
-	900.1.1 = { holding = castle_holding }
 	508.12.25 = { religion = gallican_church }
+	900.1.1 = { holding = castle_holding }
 }
 2103 = {	#NIJMEGEN
 	holding = city_holding #aka Batavodurum
@@ -232,7 +233,6 @@
 	culture = romano_gallic
 	religion = gallican_church
 	holding = castle_holding #Augusta Treverorum
-	#450.1.1 = { holding = tribal_holding } #Atilla sacks the region
 }
 2085 = {	#BEDA
 	holding = none
@@ -260,6 +260,7 @@
 }
 2695 = {	#BOPPARD
 	holding = city_holding #aka Vicus Baudobriga
+	445.1.1 = { holding = none }
 }
 ###c_metz
 2708 = {	#METZ
@@ -348,7 +349,12 @@
 2097 = {	#LIEGE
 	culture = romano_gallic
 	religion = gallican_church
-	holding = tribal_holding
+	holding = castle_holding
+	451.1.1 = {
+		culture = old_frankish
+		religion = frankish_pagan
+		holding = tribal_holding
+	}
 	558.1.1 = { holding = castle_holding } #First references to city
 }
 2094 = {	#LA ROCHE
@@ -362,7 +368,7 @@
 2091 = {	#BOUILLON
 	culture = romano_gallic
 	religion = gallican_church
-	holding = tribal_holding
+	holding = castle_holding
 }
 2686 = {	#CHINY
 	holding = none
@@ -378,7 +384,11 @@
 	culture = romano_gallic
 	religion = gallican_church
 	holding = castle_holding #Roman castrum
-	451.1.1 = { holding = tribal_holding }
+	451.1.1 = {
+		culture = old_frankish
+		religion = frankish_pagan
+		holding = tribal_holding
+	}
 }
 2116 = {	#CHARLEROI
 	holding = none
