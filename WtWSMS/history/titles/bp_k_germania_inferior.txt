@@ -54,43 +54,10 @@ d_germania_superior = {
 		holder = 0
 	}
 }
-c_mainz = { #Chararic's Franks
-	460.1.1={
-		holder = 36107 # Chararic
-	}
-	507.1.1={
-		holder = 40 # Clovis
-	}
-	511.1.1={
-		holder = 106524 # Theuderic Meroving 
-	}
-	534.1.1={
-		holder = 106525 # Theudebert Meroving  
-	}
-	548.1.1={
-		holder = 106529 # Theudebald Meroving 
-	}
-	555.1.1={
-		holder = 106522 # Chlothar Meroving
-	}
-	561.11.29={
-		holder = 231004 # Sigebert Meroving
-	}
-	575.1.1={
-		holder = 30010 # Childebert II Meroving
-	}
-	595.1.1={
-		holder = 30011 # Theudebert Meroving
-	}
-	612.1.1={
-		holder = 30014 # Theuderic II Meroving 
-	}
-	613.1.1={
-		holder = 30015 # Sigebert Meroving 
-	}
-	614.1.1={
-		holder = 30029 # Chlothar II Meroving 
-	}
+c_mainz = {
+	475.1.1 = { holder = old_frankish_CMainz_001 }
+	475.1.1 = { government = tribal_government }
+	475.1.1 = { liege = 0 }
 }
 c_kaiserslautern = { #c_pfalz history
 	466.1.1={
@@ -355,11 +322,21 @@ d_germania_inferior = {
 	}
 }
 c_zeeland = {
-	457.1.1={
-		holder = 39 
+	475.1.1 = { holder = old_frankish_CZeeland_001 }
+	475.1.1 = { government = tribal_government }
+	475.1.1 = { liege = 0 }
+}
+c_antwerpen = {
+	475.1.1 = { holder = old_frankish_CAntwerpen_001 }
+	475.1.1 = { government = tribal_government }
+	475.1.1 = { liege = 0 }
+}
+c_maastricht = {
+	460.1.1={
+		holder = 36107 # Chararic
 	}
-	481.1.1={
-		holder = 40
+	507.1.1={
+		holder = 40 #Clovis I
 	}
 	511.1.1={
 		holder = 106522 # Chlothar Meroving 
@@ -380,58 +357,6 @@ c_zeeland = {
 		holder = 30015 # Sigebert Meroving 
 	}
 	614.1.1={
-		holder = 30029 # Chlothar II Meroving 
-	}
-}
-c_antwerpen = { #c_brabant history
-	457.1.1={
-		holder = 39 
-	}
-	481.1.1={
-		holder = 40
-	}
-	511.1.1={
-		holder = 106522 # Chlothar Meroving 
-	}
-	561.11.29={
-		holder = 231004 # Sigebert Meroving
-	}
-	575.1.1={
-		holder = 30010 # Childebert II Meroving
-	}
-	595.1.1={
-		holder = 30011 # Theudebert Meroving
-	}
-	612.1.1={
-		holder = 30014 # Theuderic II Meroving 
-	}
-	613.1.1={
-		holder = 30015 # Sigebert Meroving 
-	}
-	614.1.1={
-		holder = 30029 # Chlothar II Meroving 
-	}
-}
-c_maastricht = { #Salian Franks
-	457.1.1={
-		holder = 39 
-	}
-	481.1.1={
-		holder = 40
-	}
-	511.1.1={
-		holder = 106520 # Childebert Meroving 
-	}
-	558.1.1={
-		holder = 106522 # Chlothar Meroving 
-	}
-	561.11.29={
-		holder = 206851 # Charibert Meroving 
-	}
-	567.1.1={
-		holder = 30021 # Chilperic Meroving 
-	}
-	584.9.27={
 		holder = 30029 # Chlothar II Meroving 
 	}
 }
@@ -503,40 +428,11 @@ c_cologne = { #Ripurian Franks (Sigebert)
 	}
 }
 c_brabant = {
-	457.1.1={
-		holder = 39 
+	460.1.1={
+		holder = 36107 # Chararic
 	}
-	481.1.1={
-		holder = 40
-	}
-	511.1.1={
-		holder = 106522 # Chlothar Meroving 
-	}
-	561.11.29={
-		holder = 231004 # Sigebert Meroving
-	}
-	575.1.1={
-		holder = 30010 # Childebert II Meroving
-	}
-	595.1.1={
-		holder = 30011 # Theudebert Meroving
-	}
-	612.1.1={
-		holder = 30014 # Theuderic II Meroving 
-	}
-	613.1.1={
-		holder = 30015 # Sigebert Meroving 
-	}
-	614.1.1={
-		holder = 30029 # Chlothar II Meroving 
-	}
-}
-c_guelders = { #Ripurian Franks
-	457.1.1={
-		holder = 20785  
-	}
-	482.1.1={
-		holder = 40
+	507.1.1={
+		holder = 40 #Clovis I
 	}
 	511.1.1={
 		holder = 106522 # Chlothar Meroving 
@@ -560,43 +456,15 @@ c_guelders = { #Ripurian Franks
 		holder = 30029 # Chlothar II Meroving 
 	}
 }
-c_aachen = { #Ripurian Franks (Sigebert)
-	457.1.1={
-		holder = 20785  
-	}
-	482.1.1={
-		holder = 40
-	}
-	511.1.1={
-		holder = 106524 # Theuderic Meroving 
-	}
-	534.1.1={
-		holder = 106525 # Theudebert Meroving  
-	}
-	548.1.1={
-		holder = 106529 # Theudebald Meroving 
-	}
-	555.1.1={
-		holder = 106522 # Chlothar Meroving
-	}
-	561.11.29={
-		holder = 231004 # Sigebert Meroving
-	}
-	575.1.1={
-		holder = 30010 # Childebert II Meroving
-	}
-	595.1.1={
-		holder = 30011 # Theudebert Meroving
-	}
-	612.1.1={
-		holder = 30014 # Theuderic II Meroving 
-	}
-	613.1.1={
-		holder = 30015 # Sigebert Meroving 
-	}
-	614.1.1={
-		holder = 30029 # Chlothar II Meroving 
-	}
+c_guelders = {
+	475.1.1 = { holder = old_frankish_CGuelders_001 }
+	475.1.1 = { government = tribal_government }
+	475.1.1 = { liege = 0 }
+}
+c_aachen = {
+	475.1.1 = { holder = old_frankish_CAachen_001 }
+	475.1.1 = { government = tribal_government }
+	475.1.1 = { liege = 0 }
 }
 
 d_belgica_prima = {
@@ -762,85 +630,15 @@ c_trier = {
 		holder = 30029 # Chlothar II Meroving 
 	}
 }
-c_luxembourg = { #Ragnachar's Franks
-	#Development
-	#Rulers
-	460.1.1={
-		holder = 36109 # Ragnachar
-	}
-	509.1.1={
-		holder = 40 # Clovis
-	}
-	511.1.1={
-		holder = 106524 # Theuderic Meroving 
-	}
-	534.1.1={
-		holder = 106525 # Theudebert Meroving  
-	}
-	548.1.1={
-		holder = 106529 # Theudebald Meroving 
-	}
-	555.1.1={
-		holder = 106522 # Chlothar Meroving
-	}
-	561.11.29={
-		holder = 231004 # Sigebert Meroving
-	}
-	575.1.1={
-		holder = 30010 # Childebert II Meroving
-	}
-	595.1.1={
-		holder = 30011 # Theudebert Meroving
-	}
-	612.1.1={
-		holder = 30014 # Theuderic II Meroving 
-	}
-	613.1.1={
-		holder = 30015 # Sigebert Meroving 
-	}
-	614.1.1={
-		holder = 30029 # Chlothar II Meroving 
-	}
+c_luxembourg = {
+	475.1.1 = { holder = old_frankish_CLuxembourg_001 }
+	475.1.1 = { government = tribal_government }
+	475.1.1 = { liege = 0 }
 }
 c_bouillon = { #Ragnachar's Franks
-	#Development
-	#Rulers
-	460.1.1={
-		holder = 36109 # Ragnachar
-	}
-	509.1.1={
-		holder = 40 # Clovis
-	}
-	511.1.1={
-		holder = 106524 # Theuderic Meroving 
-	}
-	534.1.1={
-		holder = 106525 # Theudebert Meroving  
-	}
-	548.1.1={
-		holder = 106529 # Theudebald Meroving 
-	}
-	555.1.1={
-		holder = 106522 # Chlothar Meroving
-	}
-	561.11.29={
-		holder = 231004 # Sigebert Meroving
-	}
-	575.1.1={
-		holder = 30010 # Childebert II Meroving
-	}
-	595.1.1={
-		holder = 30011 # Theudebert Meroving
-	}
-	612.1.1={
-		holder = 30014 # Theuderic II Meroving 
-	}
-	613.1.1={
-		holder = 30015 # Sigebert Meroving 
-	}
-	614.1.1={
-		holder = 30029 # Chlothar II Meroving 
-	}
+	475.1.1 = { holder = old_frankish_CBouillon_001 }
+	475.1.1 = { government = tribal_government }
+	475.1.1 = { liege = 0 }
 }
 c_metz = { #c_trier history (changed from c_metz history)
 	#Development

@@ -556,7 +556,7 @@ create_starting_confederation_476_effect = {
 		}
 	}
 	#Likely Confederations
-	title:d_werle.holder = {
+	title:d_werle.holder = { #Warni
 		create_confederation = {
 			name = CONFEDERATION_NAME_WARNIC
 		}
@@ -567,7 +567,7 @@ create_starting_confederation_476_effect = {
 			add_confederation_member = title:c_werle.holder
 		}
 	}
-	title:d_angria.holder = {
+	title:d_angria.holder = { #Saxons
 		create_confederation = {
 			name = CONFEDERATION_NAME_OLD_SAXON
 		}
@@ -579,7 +579,7 @@ create_starting_confederation_476_effect = {
 			add_confederation_member = title:d_albis.holder
 		}
 	}
-	title:c_leh.holder = {
+	title:c_leh.holder = { #Balti
 		create_confederation = {
 			name = CONFEDERATION_NAME_BALTI
 		}
@@ -592,6 +592,53 @@ create_starting_confederation_476_effect = {
 			add_confederation_member = title:c_skardu.holder
 			add_confederation_member = title:c_shigar.holder
 			add_confederation_member = title:c_khaplu.holder
+		}
+	}
+	title:c_waldeck.holder = { #Chatti
+		create_confederation = {
+			name = CONFEDERATION_NAME_CHATTI
+		}
+		scope:new_confederation = {
+			add_confederation_member = title:c_kassel.holder
+			add_confederation_member = title:c_fulda.holder
+			add_confederation_member = title:c_marburg.holder
+		}
+	}
+	title:d_ripuria.holder = { #Ripuarian Franks
+		create_confederation = {
+			name = CONFEDERATION_NAME_RIPUARIAN_FRANKS
+		}
+		scope:new_confederation = {
+			add_confederation_member = title:c_aachen.holder
+			add_confederation_member = title:c_guelders.holder
+		}
+	}
+	title:d_baroia.holder = { #Chararic Franks
+		create_confederation = {
+			name = CONFEDERATION_NAME_CHARARIC_FRANKS
+		}
+		scope:new_confederation = {
+			add_confederation_member = title:c_antwerpen.holder
+		}
+	}
+	title:d_mosania.holder = { #Ragnachar Franks
+		create_confederation = {
+			name = CONFEDERATION_NAME_RAGNACHAR_FRANKS
+		}
+		scope:new_confederation = {
+			add_confederation_member = title:c_bouillon.holder
+			add_confederation_member = title:c_luxembourg.holder
+		}
+	}
+	title:d_salia.holder = { #Childeric/Clovis Franks
+		create_confederation = {
+			name = CONFEDERATION_NAME_SALIAN_FRANKS
+		}
+		scope:new_confederation = {
+			add_confederation_member = title:c_guines.holder
+			add_confederation_member = title:c_boulogne.holder
+			add_confederation_member = title:c_amiens.holder
+			add_confederation_member = title:c_zeeland.holder
 		}
 	}
 }

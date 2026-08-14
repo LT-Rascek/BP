@@ -68,17 +68,13 @@ call_for_confederation_decision = {
 		##### Changed from Vanilla vvvvv
 		trigger_if = {
 			limit = {
-				OR = {
-					NOT = {
-						culture = {
-							has_cultural_parameter = forming_confederations_is_easier 
-						}
+				NOR = {
+					culture = {
+						has_cultural_parameter = forming_confederations_is_easier 
 					}
-					NOT = {
-						general_situation_regional_parameter_trigger = {
-							CHARACTER = root
-							PARAMETER = forming_confederations_is_easier
-						}
+					general_situation_regional_parameter_trigger = {
+						CHARACTER = root
+						PARAMETER = forming_confederations_is_easier
 					}
 				}
 			} #When adjusting, adjust culture_parameter_forming_confederations_is_easier string
