@@ -1,0 +1,79 @@
+﻿namespace = migration_title_decision_events
+
+#Generic Kingdom Formation Event for migrators and tribals
+migration_title_decision_events.0001 = {
+	type = character_event
+	title = migration_title_decision_events.0001.t
+	desc = migration_title_decision_events.0001.desc
+	theme = realm
+	override_background = { reference = BP_tour_arrival_norse_welcome }
+	content_source = dlc_WtWSMS
+	
+	left_portrait = {
+		character = scope:the_kingdom_former
+		animation = celebrate_sword
+	}
+	
+	immediate = {
+		land_migration_tribal_kingdom_effect = yes
+	}
+	
+	option = {
+		trigger = { this = scope:the_kingdom_former }
+		name = migration_title_decision_events.0001.the_king
+		
+		every_player = {
+			limit = {
+				is_ai = no
+				NOT = { this = root }
+				this = { in_diplomatic_range = root }
+			}
+			trigger_event = { id = migration_title_decision_events.0002 } #Inform the rest
+		}
+	}
+}
+migration_title_decision_events.0002 = {
+	type = character_event
+	title = migration_title_decision_events.0002.t
+	desc = migration_title_decision_events.0002.desc
+	theme = realm
+	override_background = { reference = BP_tour_arrival_norse_welcome }
+	content_source = dlc_WtWSMS
+	
+	left_portrait = {
+		character = scope:the_kingdom_former
+		animation = celebrate_sword
+	}
+	
+	immediate = {
+		show_as_tooltip = { scope:kingdom_former = { land_migration_tribal_kingdom_effect = yes } }
+	}
+	
+	option = {
+		trigger = {
+			NOT = { this = scope:the_kingdom_former }
+			this = { opinion = { target = scope:the_kingdom_former value >= 30 } }
+		}
+		name = migration_title_decision_events.0002.good
+	}
+	option = {
+		fallback = yes
+		trigger = {
+			NOT = { this = scope:the_kingdom_former }
+			this = {
+				AND = {
+					opinion = { target = scope:the_kingdom_former value < 30 }
+					opinion = { target = scope:the_kingdom_former value > -30 }
+				}
+			}
+		}
+		name = migration_title_decision_events.0002.neutral
+	}
+	option = {
+		trigger = {
+			NOT = { this = scope:the_kingdom_former }
+			this = { opinion = { target = scope:the_kingdom_former value <= -30 } }
+		}
+		name = migration_title_decision_events.0002.bad
+	}
+}

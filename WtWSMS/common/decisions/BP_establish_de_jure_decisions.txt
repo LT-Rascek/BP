@@ -38,6 +38,24 @@
 				has_subroman_government_trigger = yes
 			}
 		}
+		#Don't show in certain circumstances
+		
+		#Tribal/Migrators use a different decision
+		trigger_if = {
+			limit = {
+				OR = {
+					general_situation_is_participant_type_trigger = {
+						CHARACTER = root
+						GROUP_TYPE = migrators
+					}
+					general_situation_is_participant_type_trigger = {
+						CHARACTER = root
+						GROUP_TYPE = tribals
+					}
+				}
+			}
+			always = no
+		}
 	}
 
 	is_valid = {

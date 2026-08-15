@@ -415,6 +415,12 @@ call_for_confederation_decision = {
 ##### Changed from Vanilla; Added specific hooks for WtWSMS things
 ##### Changed from Vanilla: Blocked before innovation_leges_barbarorum & innovation_social_stratification
 confederation_kingdom_decision = {
+	##### Changed from Vanilla vvvvv
+	picture = {
+		trigger = { culture = { has_cultural_pillar = heritage_nordwestblock } }
+		reference = "gfx/interface/illustrations/decisions/pharamond_on_a_shield.dds"
+	}
+	##### Changed from Vanilla ^^^^^
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/mpo_decision_confederation.dds"
 	}
@@ -547,8 +553,12 @@ confederation_kingdom_decision = {
 		##### Changed from Vanilla ^^^^^
 		save_scope_as = new_king_ruler
 		hidden_effect = {
+			##### Changed from Vanilla vvvvv
 			confederation = {
 				every_confederation_member = {
+					##### Changed from Vanilla vvvvv
+					limit = { NOT = { this = root } }
+					##### Changed from Vanilla ^^^^^
 					add_to_list = confederation_vassals
 					every_tributary = {
 						limit = {
@@ -558,6 +568,7 @@ confederation_kingdom_decision = {
 					}
 				}
 			}
+			##### Changed from Vanilla ^^^^^
 			primary_title = {
 				save_scope_as = old_title
 			}
@@ -667,9 +678,11 @@ confederation_kingdom_decision = {
 			}
 			##### Changed from Vanilla ^^^^^
 			set_primary_title_to = scope:new_title
-			confederation = {
+			##### Changed from Vanilla vvvvv
+			confederation ?= {
 				disband_confederation = yes
 			}
+			##### Changed from Vanilla ^^^^^
 			every_in_list = {
 				list = confederation_vassals
 				limit = {
