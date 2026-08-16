@@ -158,8 +158,7 @@ bp_migration_war_cb = {
 							this.faith = scope:attacker.faith
 						}
 					}
-					
-					
+					change_development_level = bp_migration_depopulation
 					prev = {
 						spawn_army = {
 							name = event_troop_default_name
@@ -1039,7 +1038,7 @@ bp_migration_war_duchy_cb = {
 	}
 
 	cost = {
-		prestige = scope:attacker.migration_war_prestige_cost_kingdom
+		prestige = scope:attacker.migration_war_prestige_cost_duchy
 	}
 
 	on_declaration = {
@@ -1063,8 +1062,7 @@ bp_migration_war_duchy_cb = {
 							this.faith = scope:attacker.faith
 						}
 					}
-					
-					
+					change_development_level = bp_migration_depopulation
 					prev = {
 						spawn_army = {
 							name = event_troop_default_name
