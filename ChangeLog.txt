@@ -138,6 +138,24 @@ Events:
       - Gains enough traditions to fill its free slots from a list of traditions that are not elite-related, like "Collective Lands", or encourage further hybridization, like "Culture Blending" or "Xenophilic"
       - Other traditions chosen to emphasize a non-elite approach, like "Strength in Numbers" or "Religion Blending"
       - Also has some realm terrain-related traditions like "Forest Folk" and "Mountain Homes" as choices
+- Added an event chain modeling the Battle of Tolbiac
+   - For Migrators and Tribals in the Migration Situation
+   - If you are landed duke or better, have an unreformed faith, and either a spouse, a concubine, a consort, or some county in your realm has an organized faith, the event may fire if you are outnumbered in the fight
+   - At the start of the chain, you get an option to appeal to this foreign god for Victory
+      - If you do so, you replace the Zealous Trait with the Cynical Trait and loose "Faithful Blade" Commander Trait and get a random modifier that will add a random amount of positive or negative advantage for the battle
+      - If you instead pray to the old gods, you gain the "Cautious Leader" Commander Trait and gain XP for it
+   - If you win the battle and prayed to the new god you can:
+      - Keep your promise
+         - You gain the Zealous trait, gain the "Faith Warrior" Trait, gain the "Faithful Blade" Commander Trait and a good amount of XP for that trait, and you get the typical events that fire when converting
+      - Welch on your promise: Has similar effects to loosing the battle
+      - In either case, new and old faiths gain and loose some fervor as appropriate
+   - If you win the battle and prayed to the old gods you gain:
+      - A Level of Fame, a Level of Piety, gain the "Faith Warrior" Trait, gain the "Faithful Blade" Commander Trait and XP for it
+      - The new and old faiths gain and loose some fervor as appropriate
+   - If you loose the battle, you have:
+      - Loose a Level of Fame and a Level of Piety
+      - Have any of a number of random effects occur (e.g., Nothing, Stress Gain, Stress Loss, Personality Trait changes, Lunacy, Faltering Heart, Death)
+   - The initial event can never occur more than once in a character's life and will never happen again if a character wins the battle praying to the new gods, wins, and converts
 
 Landed Titles:
 - Reorganized some titles in Germania Inferior and Belgica

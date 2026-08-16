@@ -77,7 +77,8 @@ scripted_effect battle_of_tolbiac_picked_right_new_god_effect = {
 	
 	set_character_faith = root.var:the_tolbiac_faith
 	
-	if = { limit = { has_trait = cynical } remove_trait = cynical add_trait = zealous }
+	if = { limit = { has_trait = cynical } remove_trait = cynical }
+	add_trait = zealous
 	add_trait = faith_warrior
 	
 	if = {

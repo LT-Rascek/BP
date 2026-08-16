@@ -77,7 +77,10 @@ battle_of_tolbiac_character_trigger = {
 		}
 	}
 	$CHAR_1$ = {
+		#Have to have _some_ sort of realm of note
 		is_landed = yes
+		is_independent_ruler = yes
+		primary_title.tier >= tier_duchy
 		this.faith = { has_doctrine_parameter = unreformed }
 		OR = {
 			any_realm_county = { count > 0 NOT = { this.faith = { has_doctrine_parameter = unreformed } } }
