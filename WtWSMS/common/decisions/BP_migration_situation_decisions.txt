@@ -298,15 +298,15 @@ land_migration_tribal_kingdom = {
 			text = has_maxed_out_authority
 			has_realm_law_flag = max_authority_level
 		}
-	}
-	custom_tooltip = {
-		text = powerful_vassals_think_highly_of_you
-		NOT = {
-			any_powerful_vassal = {
-				this != root
-				opinion = {
-					target = root
-					value < 35
+		custom_tooltip = {
+			text = powerful_vassals_think_highly_of_you
+			NOT = {
+				any_powerful_vassal = {
+					this != root
+					opinion = {
+						target = root
+						value < 35
+					}
 				}
 			}
 		}
