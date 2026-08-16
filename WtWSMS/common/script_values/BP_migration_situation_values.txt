@@ -6,10 +6,16 @@ BP_migration_max_phase_points = 400
 migration_war_required_fame_level = {
 	value = 3
 	add = { #AKA, county adds 2, duchy adds 1, kingdom adds 0
-		value = this.primary_title.tier
+		value = primary_title.tier
 		multiply = -1.0
 		add = 3
 	}
+	min = low_prestige_level
+	max = max_prestige_level
+}
+minor_migration_war_required_fame_level = {
+	value = migration_war_required_fame_level
+	subtract = 1
 	min = low_prestige_level
 	max = max_prestige_level
 }

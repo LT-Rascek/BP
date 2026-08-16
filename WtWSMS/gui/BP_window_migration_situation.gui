@@ -250,7 +250,7 @@ window = {
 								text_single = {
 									layoutpolicy_horizontal = expanding
 
-									text = "SITUATION_CURRENT_PHASE_ENDS"
+									text = "MIGRATION_SITUATION_CURRENT_PHASE_ENDS"
 									default_format = "#Weak"
 									align = nobaseline
 								}
@@ -1050,7 +1050,7 @@ types MigrationSituationTypes
 			icon_button_mapmode = {
 				blockoverride = "mm_datacontext"
 				{
-					datacontext = "[GetMapMode( 'migration_counties' )]"
+					datacontext = "[GetMapMode( 'cultures' )]"
 				}
 
 				blockoverride "mm_button"
@@ -1062,7 +1062,7 @@ types MigrationSituationTypes
 			icon_button_mapmode = {
 				blockoverride = "mm_datacontext"
 				{
-					datacontext = "[GetMapMode( 'cultures' )]"
+					datacontext = "[GetMapMode( 'religions' )]"
 				}
 
 				blockoverride "mm_button"

@@ -166,7 +166,7 @@ migration_situation_war.0100 = {
 		if = { #If you are zealous and don't like the Romans, be less neutral
 			limit = {
 				OR = {
-					culture = { has_cultural_tradition = tradition_strong_believers }
+					culture = { has_cultural_tradition = tradition_zealous_people }
 					culture = { has_cultural_tradition = tradition_zealous_pagans }
 					culture = { has_cultural_tradition = tradition_zealous_pagans_non_dlc }
 				}

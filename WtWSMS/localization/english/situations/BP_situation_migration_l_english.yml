@@ -5,7 +5,7 @@
  BP_migration_situation_participant_group_barbarian_kings: "Barbarian Kings"
  BP_migration_situation_participant_group_barbarian_kings_desc: "Former $BP_migration_situation_participant_group_migrators$ and $BP_migration_situation_participant_group_tribals$, who now rule Centralized Realms in this [situation_sub_region|E]"
  BP_migration_situation_participant_group_migrators: "Migrators"
- BP_migration_situation_participant_group_migrators_desc: "DESC" #FIXME
+ BP_migration_situation_participant_group_migrators_desc: "Tribal and Nomad rulers in the [situation_sub_region|E] and have a Germanic, Slavic, or Scythian culture or a Germanic, Slavic, or Steppe Faith"
  BP_migration_situation_participant_group_others: "Others"
  BP_migration_situation_participant_group_others_desc: "All other rulers in this [situation_sub_region|E]"
  BP_migration_situation_participant_group_roman_emperors: "Roman Emperors"
@@ -13,7 +13,7 @@
  BP_migration_situation_participant_group_roman_successors: "Roman Successors"
  BP_migration_situation_participant_group_roman_successors_desc: "The various Sub-Roman and Roman States that derive from the Roman Empire and maintain Roman legal or cultural customs in this [situation_sub_region|E]"
  BP_migration_situation_participant_group_tribals: "Tribals"
- BP_migration_situation_participant_group_tribals_desc: "DESC" #FIXME
+ BP_migration_situation_participant_group_tribals_desc: "Tribal and Nomad rulers who do not meet the requirements to be part of the $BP_migration_situation_participant_group_migrators$ group"
  
  #Phases
  BP_migration_situation_BP_dormant_phase_situation_phase: "Dormant Phase"
@@ -51,11 +51,11 @@
  situation_parameter_lower_acceptance_for_hybridization: "Halves the required [cultural_acceptance|E] needed to create a [hybrid_culture|E]\n$TAB$#weak Does not stack with [GetTrait('nomadic_philosophy').GetName( GetNullCharacter )] or $culture_parameter_easier_to_hybridize$ culture features#!"
  situation_parameter_migration_cbs_enabled: "Can use the #V [GetCasusBelliType('bp_migration_war_cb').GetName]#! [casus_belli|E]"
  situation_parameter_targetable_by_migration_cbs_loc: "Can be targeted by #V [GetCasusBelliType('bp_migration_war_cb').GetName]#! [casus_belli|E]"
- situation_parameter_unlocks_passing_culture_law: "Unlocks the decision to #V $pass_cultural_law$#!"
+ situation_parameter_unlocks_passing_culture_law: "Unlocks the decision to #V Pass a [bp_cultural_law|L]#!"
  
  #Catalysts
  catalyst_situation_passing_of_time_migration: "Yearly Drift [situation_catalyst|E]"
- catalyst_situation_passing_of_time_migration_desc: "$catylst_situation_passing_of_time_migration$"
+ catalyst_situation_passing_of_time_migration_desc: "$catalyst_situation_passing_of_time_migration$"
  
  #Others
  cheaper_adventurer_invasions_tt: "$BP_migration_situation_BP_migration_period_situation_phase$"
