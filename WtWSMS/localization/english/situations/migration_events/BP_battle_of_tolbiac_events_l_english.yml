@@ -1,0 +1,30 @@
+﻿l_english:
+ battle_of_tolbiac.0001.t: "The Battle of [ROOT.Char.GetCurrentLocation.GetNameNoTooltip]"
+ battle_of_tolbiac.0001.desc: "We are badly outnumbered! Do I pray to [ROOT.Char.MakeScope.Var('the_tolbiac_faith').Faith.HighGodNameAlternate]?"
+ battle_of_tolbiac.0001.accept_the_new_god: "Yes I pray to [ROOT.Char.MakeScope.Var('the_tolbiac_faith').Faith.HighGodNameAlternate]"
+ battle_of_tolbiac.0001.keep_the_old_gods: "I cannot forsake [ROOT.Char.GetFaith.HighGodName]"
+ get_random_battle_modifier: "You receive a random modifier for the duration of the battle that will influence it's course..."
+ 
+ battle_of_tolbiac.0009.t: "A Battle won by Divine Aid?"
+ battle_of_tolbiac.0009.desc: "[battle_of_tolbiac_winner.GetName] recently won a battle with the aid of a foreign god and has converted to [battle_of_tolbiac_winner.GetFaith.GetName]."
+ battle_of_tolbiac.0009.good: "Wonderful!"
+ battle_of_tolbiac.0009.ok: "Good to Know."
+ battle_of_tolbiac.0009.bad: "Fools bickering."
+ battle_of_tolbiac.0009.terrible: "What a disaster!"
+ 
+ battle_of_tolbiac.0011.t: "Victory at [ROOT.Char.GetCurrentLocation.GetNameNoTooltip]"
+ battle_of_tolbiac.0011.desc: "I prayed to [ROOT.Char.MakeScope.Var('the_tolbiac_faith').Faith.HighGodNameAlternate] and won. What now?"
+ battle_of_tolbiac.0011.i_will_keep_my_promise: "I will become a [ROOT.Char.MakeScope.Var('the_tolbiac_faith').Faith.GetAdjectiveNoTooltip]"
+ battle_of_tolbiac.0011.it_was_a_moment_of_weakness: "It was just a moment of weakness!"
+ 
+ battle_of_tolbiac.0012.t: "Victory at [ROOT.Char.GetCurrentLocation.GetNameNoTooltip]"
+ battle_of_tolbiac.0012.desc: "I prayed to [ROOT.Char.GetFaith.HighGodName] and won. That proves it!"
+ battle_of_tolbiac.0012.i_am_ever_faithful: "I am faithful to [ROOT.Char.GetFaith.HighGodName]"
+ 
+ battle_of_tolbiac.0020.t: "Defeat at [ROOT.Char.GetCurrentLocation.GetNameNoTooltip]"
+ battle_of_tolbiac.0020.desc: "I prayed to [ROOT.Char.GetFaith.HighGodName] and lost. What happens now?"
+ battle_of_tolbiac.0020.i_was_a_fool: "I was a fool"
+ 
+ battle_of_tolbiac_won: "Co-Religionist won a Battle by Divine Aid"
+ battle_of_tolbiac_lost: "Heathens won a Battle by Divine Aid"
+ 

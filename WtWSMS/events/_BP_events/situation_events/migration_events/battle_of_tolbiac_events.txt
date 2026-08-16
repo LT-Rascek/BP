@@ -1,0 +1,359 @@
+﻿namespace = battle_of_tolbiac
+
+
+#Cleanup effects
+scripted_effect add_tolbiac_modifier_effect = {
+	random_list = {
+		10 = { add_character_modifier = battle_of_tolbiac_0 }
+		10 = { add_character_modifier = battle_of_tolbiac_1 }
+		10 = { add_character_modifier = battle_of_tolbiac_2 }
+		10 = { add_character_modifier = battle_of_tolbiac_3 }
+		10 = { add_character_modifier = battle_of_tolbiac_4 }
+		10 = { add_character_modifier = battle_of_tolbiac_5 }
+		10 = { add_character_modifier = battle_of_tolbiac_6 }
+		10 = { add_character_modifier = battle_of_tolbiac_7 }
+		10 = { add_character_modifier = battle_of_tolbiac_8 }
+		10 = { add_character_modifier = battle_of_tolbiac_9 }
+	}
+}
+scripted_effect remove_a_tolbiac_modifier_effect = {
+	if = {
+		limit = { has_character_modifier = battle_of_tolbiac_$NUM$ }
+		remove_character_modifier = battle_of_tolbiac_$NUM$
+	}
+}
+scripted_effect cleanup_tolbiac_vars_flags_modifiers_effect = {
+	if = {
+		limit = { has_character_flag = accepted_the_new_god }
+		remove_character_flag = accepted_the_new_god
+	}
+	if = {
+		limit = { has_character_flag = kept_the_old_gods }
+		remove_character_flag = kept_the_old_gods
+	}
+	remove_variable = the_tolbiac_faith
+	
+	remove_a_tolbiac_modifier_effect = { NUM = 0 }
+	remove_a_tolbiac_modifier_effect = { NUM = 1 }
+	remove_a_tolbiac_modifier_effect = { NUM = 2 }
+	remove_a_tolbiac_modifier_effect = { NUM = 3 }
+	remove_a_tolbiac_modifier_effect = { NUM = 4 }
+	remove_a_tolbiac_modifier_effect = { NUM = 5 }
+	remove_a_tolbiac_modifier_effect = { NUM = 6 }
+	remove_a_tolbiac_modifier_effect = { NUM = 7 }
+	remove_a_tolbiac_modifier_effect = { NUM = 8 }
+	remove_a_tolbiac_modifier_effect = { NUM = 9 }
+}
+#Choice Effects
+scripted_effect battle_of_tolbiac_picked_wrong_effect = {
+	add_piety_level = -1
+	add_prestige_level = -1
+	
+	#Possible random bad effect
+	random_list = {
+		100 = {} #Nothing
+		#Well, I was just being crazy
+		100 = { add_stress = -25 }
+		50 = { add_stress = -50 }
+		25 = { add_stress = -100 }
+		#This was possibly Divine Providence, are you sure?
+		100 = { add_stress = 50 }
+		50 = { add_stress = 100 }
+		25 = { add_stress = 150 }
+		10 = { add_stress = 200 }
+		#Your personality undergoes a change from doing this
+		25 = { trigger = { has_trait = fickle } add_trait = stubborn }
+		25 = { trigger = { has_trait = brave } add_trait = craven }
+		25 = { trigger = { has_trait = trusting } add_trait = paranoid }
+		25 = { trigger = { NOT = { has_trait = lunatic_1 } } add_trait = lunatic_1 }
+		#And there's a tiny chance when you welch God strikes you down/the stress _really_ gets to you...
+		5 = { trigger = { NOT = { has_trait = faltering_heart } } add_trait = faltering_heart }
+		1 = { death = natural }
+	}
+}
+scripted_effect battle_of_tolbiac_picked_right_new_god_effect = {
+	$OLD_FAITH$ = { save_scope_as = old_faith }
+	this = { save_scope_as = actor }
+	
+	set_character_faith = root.var:the_tolbiac_faith
+	
+	if = { limit = { has_trait = cynical } remove_trait = cynical add_trait = zealous }
+	add_trait = faith_warrior
+	
+	if = {
+		limit = {
+			number_of_commander_traits < 3
+			NOT = { has_trait = holy_warrior }
+		}
+		add_trait = holy_warrior
+		add_trait_xp = {
+			trait = holy_warrior
+			value = { 25 75 }
+		}
+	}
+	
+	#Duplicate, make more powerful, and fire without rescoping
+	trigger_event = { id = faith_conversion.0001 } #Convert Capital County
+	trigger_event = { id = faith_conversion.0003 } # Convert close family
+	trigger_event = { id = faith_conversion.1002 } # Player-only narrative-notification event
+	trigger_event = { id = faith_conversion.1101 } # Notify vassals of conversion
+	
+	$NEW_FAITH$ = { change_fervor = {value = 10 desc = battle_of_tolbiac_won } }
+	$OLD_FAITH$ = { change_fervor = {value = -5 desc = battle_of_tolbiac_lost } }
+	
+	set_global_variable = battle_of_tolbiac_happened
+}
+scripted_effect battle_of_tolbiac_picked_right_old_gods_effect = {
+	add_piety_level = 1
+	add_prestige_level = 1
+	
+	add_trait = faith_warrior
+	
+	if = {
+		limit = {
+			number_of_commander_traits < 3
+			NOT = { has_trait = holy_warrior }
+		}
+		add_trait = holy_warrior
+		add_trait_xp = {
+			trait = holy_warrior
+			value = { 25 75 }
+		}
+	}
+	
+	$NEW_FAITH$ = { change_fervor = { value = -5 desc = battle_of_tolbiac_lost } }
+	$OLD_FAITH$ = { change_fervor = { value = 10 desc = battle_of_tolbiac_won } }
+}
+
+##### Events Themselves #####
+
+#You get a chance to have the Battle of Tolbiac Event
+battle_of_tolbiac.0001 = {
+	type = character_event
+	theme = faith
+	content_source = dlc_WtWSMS
+	override_background = { reference = battlefield }
+	
+	
+	title = battle_of_tolbiac.0001.t
+	
+	desc = battle_of_tolbiac.0001.desc
+	
+	immediate = {
+		add_character_flag = battle_of_tolbiac_happened_personal #Only ever once per character
+	}
+	
+	left_portrait = {
+		character = ROOT
+		animation = personality_cynical
+	}
+	
+	option = {
+		name = battle_of_tolbiac.0001.accept_the_new_god
+		
+		#You can't be zealous now
+		if = { limit = { has_trait = zealous } remove_trait = zealous add_trait = cynical }
+		if = { limit = { has_trait = holy_warrior } remove_trait = holy_warrior }
+		
+		custom_tooltip = {
+			text = get_random_battle_modifier
+			
+			#Add Random Character Modifier via random list
+			add_tolbiac_modifier_effect = yes
+		}
+		
+		#Flags for bookkeeping
+		add_character_flag = accepted_the_new_god
+		add_character_flag = battle_of_tolbiac_in_progress_char
+		
+		ai_chance = { base = 50 }
+	}
+	option = {
+		name = battle_of_tolbiac.0001.keep_the_old_gods
+		if = {
+			limit = { NOT = { has_trait = cautious_leader } }
+			add_trait = cautious_leader
+			add_trait_xp = { trait = cautious_leader value = { 25 50 } }
+		}
+		else = { add_trait_xp = { trait = cautious_leader value = 25 } }
+		
+		#Flags for bookkeeping
+		add_character_flag = kept_the_old_gods
+		add_character_flag = battle_of_tolbiac_in_progress_char
+		
+		ai_chance = { base = 50 }
+	}
+}
+#General Notification Event
+battle_of_tolbiac.0009 = {
+	type = character_event
+	theme = faith
+	content_source = dlc_WtWSMS
+	override_background = { reference = throne_room_scope }
+	
+	
+	title = battle_of_tolbiac.0009.t
+	
+	desc = battle_of_tolbiac.0009.desc
+	
+	immediate = {
+		scope:battle_of_tolbiac_winner = { save_scope_as = background_throne_room_scope }
+	}
+	
+	right_portrait = {
+		character = scope:battle_of_tolbiac_winner
+		animation = prayer
+	}
+	
+	option = {
+		trigger = {
+			scope:battle_of_tolbiac_winner.faith = {
+				faith_hostility_level = { target = root.faith value <= faith_astray_level }
+			}
+		}
+		name = battle_of_tolbiac.0009.good
+	}
+	option = {
+		fallback = yes
+		name = battle_of_tolbiac.0009.ok
+	}
+	option = {
+		trigger = {
+			scope:battle_of_tolbiac_winner.faith = {
+				faith_hostility_level = { target = root.faith value > faith_astray_level }
+			}
+			NOT = { root.faith = scope:old_faith }
+		}
+		name = battle_of_tolbiac.0009.bad
+	}
+	option = {
+		trigger = { root.faith = scope:old_faith }
+		name = battle_of_tolbiac.0009.terrible
+	}
+}
+
+#Battle of Tolbiac won Battle Dispatch
+battle_of_tolbiac.0010 = {
+	scope = character
+	hidden = yes
+	content_source = dlc_WtWSMS
+	
+	immediate = {
+		if = {
+			limit = { has_character_flag = accepted_the_new_god }
+			trigger_event = { id = battle_of_tolbiac.0011 }
+		}
+		if = {
+			limit = { has_character_flag = kept_the_old_gods }
+			trigger_event = { id = battle_of_tolbiac.0012 }
+		}
+	}
+}
+#Won the Battle: Accepted the New God
+battle_of_tolbiac.0011 = {
+	type = character_event
+	theme = faith
+	content_source = dlc_WtWSMS
+	override_background = { reference = battlefield }
+	
+	
+	title = battle_of_tolbiac.0011.t
+	
+	desc = battle_of_tolbiac.0011.desc
+	
+	left_portrait = {
+		character = ROOT
+		animation = personality_zealous
+	}
+	
+	immediate = {
+		root.faith = { save_scope_as = old_faith }
+	}
+	
+	after = { cleanup_tolbiac_vars_flags_modifiers_effect = yes }
+	
+	option = {
+		name = battle_of_tolbiac.0011.i_will_keep_my_promise
+		
+		battle_of_tolbiac_picked_right_new_god_effect = {
+			OLD_FAITH = scope:old_faith
+			NEW_FAITH = root.var:the_tolbiac_faith
+		}
+		
+		#Inform players in range 
+		save_scope_as = battle_of_tolbiac_winner
+		every_player = {
+			limit = {
+				#NOT = { this = ROOT }
+				#in_diplomatic_range = scope:battle_of_tolbiac_winner
+				always = yes
+			}
+			trigger_event = { id = battle_of_tolbiac.0009 }
+		}
+		
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = battle_of_tolbiac.0011.it_was_a_moment_of_weakness
+		
+		battle_of_tolbiac_picked_wrong_effect = yes
+		
+		ai_chance = { base = 0 }
+	}
+}
+#Won the Battle: Kept the Old Gods
+battle_of_tolbiac.0012 = {
+	type = character_event
+	theme = faith
+	content_source = dlc_WtWSMS
+	override_background = { reference = battlefield }
+	
+	
+	title = battle_of_tolbiac.0012.t
+	
+	desc = battle_of_tolbiac.0012.desc
+	
+	immediate = {}
+	after = { cleanup_tolbiac_vars_flags_modifiers_effect = yes }
+	
+	left_portrait = {
+		character = ROOT
+		animation = personality_zealous
+	}
+	
+	option = {
+		name = battle_of_tolbiac.0012.i_am_ever_faithful
+		
+		battle_of_tolbiac_picked_right_old_gods_effect = {
+			NEW_FAITH = root.var:the_tolbiac_faith
+			OLD_FAITH = this.faith
+		}
+	}
+}
+
+#Battle of Tolbiac lost
+battle_of_tolbiac.0020 = {
+	type = character_event
+	theme = faith
+	content_source = dlc_WtWSMS
+	override_background = { reference = battlefield }
+	
+	
+	title = battle_of_tolbiac.0020.t
+	
+	desc = battle_of_tolbiac.0020.desc
+	
+	immediate = {}
+	after = { cleanup_tolbiac_vars_flags_modifiers_effect = yes }
+	
+	left_portrait = {
+		character = ROOT
+		animation = disappointed
+	}
+	
+	option = {
+		name = battle_of_tolbiac.0020.i_was_a_fool
+		
+		battle_of_tolbiac_picked_wrong_effect = yes
+	}
+}

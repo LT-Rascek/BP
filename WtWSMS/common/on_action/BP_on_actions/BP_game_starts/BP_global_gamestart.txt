@@ -47,6 +47,10 @@ BP_set_global_variables_by_date = {
 			limit = { current_date >= 485.1.1 }
 			set_global_variable = reestablished_albania
 		}
+		if = { #Battle of Tolbiac happens
+			limit = { current_date >= 497.1.1 }
+			set_global_variable = battle_of_tolbiac_happened
+		}
 		if = { #Justinian Ascends the Throne (enabling reconquests)
 			limit = { current_date >= 527.4.1 }
 			set_global_variable = sole_roman_empire
