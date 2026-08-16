@@ -138,10 +138,59 @@ battle_of_tolbiac.0001 = {
 	
 	title = battle_of_tolbiac.0001.t
 	
-	desc = battle_of_tolbiac.0001.desc
+	desc = {
+		desc = battle_of_tolbiac.0001.desc_opening
+		first_valid = {
+			triggered_desc = {
+				trigger = { exists = scope:spouse_faith }
+				desc = battle_of_tolbiac.0001.desc_spouse
+			}
+			triggered_desc = {
+				trigger = { exists = scope:concubine_faith }
+				desc = battle_of_tolbiac.0001.desc_concubine
+			}
+			triggered_desc = {
+				trigger = { exists = scope:consort_faith }
+				desc = battle_of_tolbiac.0001.desc_consort
+			}
+			triggered_desc = {
+				trigger = { exists = scope:capital_faith }
+				desc = battle_of_tolbiac.0001.desc_capital
+			}
+			desc = battle_of_tolbiac.0001.desc_county
+		}
+		desc = battle_of_tolbiac.0001.desc_closing
+	}
 	
 	immediate = {
 		add_character_flag = battle_of_tolbiac_happened_personal #Only ever once per character
+		save_scope_as = the_char
+		
+		if = {
+			limit = { any_spouse = { this.faith = root.var:the_tolbiac_faith } }
+			ordered_spouse = {
+				order_by = "reverse_opinion(scope:the_char)"
+				save_scope_as = spouse_faith
+			}
+		}
+		else_if = {
+			limit = { any_concubine = { this.faith = root.var:the_tolbiac_faith } }
+			ordered_concubine = {
+				order_by = "reverse_opinion(scope:the_char)"
+				save_scope_as = concubine_faith
+			}
+		}
+		else_if = {
+			limit = { any_consort = { this.faith = root.var:the_tolbiac_faith } }
+			ordered_consort = {
+				order_by = "reverse_opinion(scope:the_char)"
+				save_scope_as = consort_faith
+			}
+		}
+		else_if = {
+			limit = { this.capital_county.faith = root.var:the_tolbiac_faith }
+			save_scope_as = capital_faith
+		}
 	}
 	
 	left_portrait = {
@@ -151,6 +200,31 @@ battle_of_tolbiac.0001 = {
 	
 	option = {
 		name = battle_of_tolbiac.0001.accept_the_new_god
+		
+		#Special Flavor depending on the religion
+		flavor = {
+			first_valid = {
+				#Clovis Plea to the heavens
+				triggered_desc = {
+					trigger = {
+						root.culture = culture:old_frankish
+						root.var:the_tolbiac_faith.religion = religion:christianity_religion
+					}
+					desc = battle_of_tolbiac.0001.accept_the_new_god.flavor.clovis
+				}
+				#If already cynical
+				triggered_desc = {
+					trigger = { has_trait = cynical }
+					desc = battle_of_tolbiac.0001.accept_the_new_god.flavor.cynical
+				}
+				#The Our Father
+				triggered_desc = {
+					trigger = { root.var:the_tolbiac_faith.religion = religion:christianity_religion }
+					desc = battle_of_tolbiac.0001.accept_the_new_god.flavor.christian
+				}
+				desc = battle_of_tolbiac.0001.accept_the_new_god.generic
+			}
+		}
 		
 		#You can't be zealous now
 		if = { limit = { has_trait = zealous } remove_trait = zealous add_trait = cynical }
@@ -177,6 +251,16 @@ battle_of_tolbiac.0001 = {
 			add_trait_xp = { trait = cautious_leader value = { 25 50 } }
 		}
 		else = { add_trait_xp = { trait = cautious_leader value = 25 } }
+		
+		flavor = {
+			first_valid = {
+				triggered_desc = {
+					trigger = { has_trait = cynical }
+					desc = battle_of_tolbiac.0001.keep_the_old_gods.flavor.cynical
+				}
+				desc = battle_of_tolbiac.0001.keep_the_old_gods.generic
+			}
+		}
 		
 		#Flags for bookkeeping
 		add_character_flag = kept_the_old_gods
@@ -339,10 +423,27 @@ battle_of_tolbiac.0020 = {
 	content_source = dlc_WtWSMS
 	override_background = { reference = battlefield }
 	
+	#Need this split because your location will change if there's a stack wipe
+	title = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { exists = scope:wipe }
+				desc = battle_of_tolbiac.0020.t_wipe
+			}
+			desc = battle_of_tolbiac.0020.t
+		}
+	}
 	
-	title = battle_of_tolbiac.0020.t
-	
-	desc = battle_of_tolbiac.0020.desc
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { this.faith = this.var:the_tolbiac_faith }
+				desc = battle_of_tolbiac.0020.defeated_new_faith
+			}
+			desc = battle_of_tolbiac.0020.defeated_old_faith
+		}
+		desc = battle_of_tolbiac.0020.desc_closing
+	}
 	
 	immediate = {}
 	after = { cleanup_tolbiac_vars_flags_modifiers_effect = yes }
