@@ -12,7 +12,10 @@ scripted_effect remove_character_flag_if_has_it_effect = {
 scripted_effect jumpstart_culture_progress_effect = {
 	$SOURCE_CULTURE$ = {
 		every_known_innovation = {
-			limit = { innovation_era = culture_era_tribal }
+			limit = {
+				innovation_era = culture_era_tribal
+				has_innovation_flag = tribal_era_regular
+			}
 			save_temporary_scope_as = the_innovation
 			if = {
 				limit = { NOT = { $TARGET_CULTURE$ = { has_innovation = scope:the_innovation } } }
@@ -160,8 +163,22 @@ migration_situation_war.0100 = {
 			set_sub_roman_type_laws_for_migration_effect = { TARGET_CHAR = ROOT TYPE = dynastic }
 		}
 		#Set the non-Roman Rule Law
-		add_realm_law_skip_effects = non_roman_minority_rule_law_2
-		
+		if = { #If you are zealous and don't like the Romans, be less neutral
+			limit = {
+				OR = {
+					culture = { has_cultural_tradition = tradition_strong_believers }
+					culture = { has_cultural_tradition = tradition_zealous_pagans }
+					culture = { has_cultural_tradition = tradition_zealous_pagans_non_dlc }
+				}
+				OR = {
+					root.capital_county.culture = { has_cultural_parameter = greco_roman_social_tradition }
+					root.capital_county.culture = { has_cultural_parameter = can_restore_roman_empire }
+				}
+				root.faith = { faith_hostility_level = { target = root.faith value > faith_hostile_level } }
+			}
+			add_realm_law_skip_effects = non_roman_minority_rule_law_1
+		}
+		else = { add_realm_law_skip_effects = non_roman_minority_rule_law_2 }
 		#Minor bit of cultural acceptance
 		every_realm_county = {
 			limit = { this.culture = { is_a_romance_culture_general_trigger = yes } }
