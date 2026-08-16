@@ -23,10 +23,10 @@ battle_of_tolbiac_dispatch = {
 					CHAR_1 = scope:the_attacker
 					CHAR_2 = scope:the_defender
 				}
-				#battle_of_tolbiac_side_trigger = {
-				#	SIDE_1 = scope:the_attacker
-				#	SIDE_2 = scope:the_defender
-				#}
+				battle_of_tolbiac_side_trigger = {
+					SIDE_1 = scope:the_attacker
+					SIDE_2 = scope:the_defender
+				}
 			}
 			scope:the_attacker = {
 				save_scope_as = the_character_in_question
@@ -89,51 +89,46 @@ battle_of_tolbiac_event_fire = {
 			#Simplify the references
 			set_variable = { name = the_tolbiac_faith value = scope:the_tolbiac_faith }
 			random = {
-				chance = 100
-				modifier = {
-					add = -1000
-					is_ai = yes
+				chance = 0.5 #1-in-200 combats where outnumbered
+				#Additive modifiers
+				modifier = { #Cynicism helps a good bit
+					has_trait = cynical
+					add = 0.5
 				}
-				#chance = 0.5 #1-in-200 combats
-				##Additive modifiers
-				#modifier = { #Cynicism helps a good bit
-				#	has_trait = cynical
-				#	add = 0.5
-				#}
-				##As does being sinful; the more sinful you are, the more likely your new faith will accept you
-				#modifier = {
-				#	num_sinful_traits > 0
-				#	add = 0.25
-				#}
-				#modifier = {
-				#	num_sinful_traits > 1
-				#	add = 0.25
-				#}
-				#modifier = {
-				#	num_sinful_traits > 2
-				#	add = 0.25
-				#}
-				#
-				##Multiplicative modifiers
-				#modifier = {
-				#	has_trait = legendary_leader
-				#	multiply = 3
-				#}
-				#modifier = { #Possessed makes it more likely
-				#	OR = {
-				#		has_trait = possessed_1
-				#		has_trait = possessed_genetic
-				#	}
-				#	multiply = 2
-				#}
-				#modifier = { #Zealous turns the odds way down, but still *could* happen (St. Paul, Clovis, &c.)
-				#	has_trait = zealous
-				#	multiply = 0.1
-				#}
-				#
-				##Net math: Cynical Legendary Leader (Clovis) will fire it once every 50 battles in which they are loosing
-				##Maximal Odds (super sinful, legendary, possessed): 9% of the time (when outnumbered)
-				##Minimal Odds: (zealous and nothing else): 1-in-2000 odds (when outnumbered)
+				#As does being sinful; the more sinful you are, the more likely your new faith will accept you
+				modifier = {
+					num_sinful_traits > 0
+					add = 0.25
+				}
+				modifier = {
+					num_sinful_traits > 1
+					add = 0.25
+				}
+				modifier = {
+					num_sinful_traits > 2
+					add = 0.25
+				}
+				
+				#Multiplicative modifiers
+				modifier = {
+					has_trait = legendary_leader
+					factor = 3
+				}
+				modifier = { #Possessed makes it more likely
+					OR = {
+						has_trait = possessed_1
+						has_trait = possessed_genetic
+					}
+					factor = 2
+				}
+				modifier = { #Zealous turns the odds way down, but still *could* happen (St. Paul, Clovis, &c.)
+					has_trait = zealous
+					factor = 0.1
+				}
+				
+				#Net math: Cynical Legendary Leader (Clovis) will fire it once every 50 battles in which they are loosing
+				#Maximal Odds (super sinful, legendary, possessed): 9% of the time (when outnumbered)
+				#Minimal Odds: (zealous and nothing else): 1-in-2000 odds (when outnumbered)
 				
 				trigger_event = battle_of_tolbiac.0001
 			}
