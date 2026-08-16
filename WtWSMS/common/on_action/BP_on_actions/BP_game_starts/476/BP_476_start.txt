@@ -13,6 +13,7 @@ bp_game_start_after_lobby_476 = {
 		setup_situation_points
 		# Character stuff
 		BP_character_events_476
+		BP_setup_education_476
 		BP_setup_legitimacy_476
 		BP_update_specific_title_courtiers_476
 		#Realm Stuff
@@ -158,6 +159,28 @@ BP_character_events_476 = {
 		
 		#Entrench Diarchies and adjust senate approval; done in each to ensure only one application at a time
 		#trigger_event = { id = BP_maintenance_events.1000 }
+	}
+}
+BP_setup_education_476 = {
+	effect = {
+		character:40 = {
+			#There's auto-assigned personality traits; have to clear and set
+			clear_traits = yes
+			add_trait = rowdy
+			add_trait = ambitious
+			add_trait = agile
+			add_trait = legendary_leader
+			
+			#Update the underlying education
+			set_focus = education_intrigue
+			set_variable = { name = education_intrigue_variable value = education_level_2 }
+			set_variable = { name = education_martial_variable value = education_level_2 }
+			remove_variable = diplomacy_previous_education
+			remove_variable = martial_previous_education
+			remove_variable = stewardship_previous_education
+			remove_variable = intrigue_previous_education
+			remove_variable = learning_previous_education
+		}
 	}
 }
 BP_update_specific_title_courtiers_476 = {
