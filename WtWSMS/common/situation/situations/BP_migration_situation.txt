@@ -271,6 +271,7 @@
 						parameters = {
 							faster_divergence_hybridization_time = yes
 							lower_acceptance_for_hybridization = yes
+							faster_culture_promotion_in_tribal_counties = yes
 						}
 						character_modifier = {}
 						county_modifier = {}
@@ -279,6 +280,49 @@
 						parameters = {
 							faster_divergence_hybridization_time = yes
 							lower_acceptance_for_hybridization = yes
+							faster_culture_promotion_in_tribal_counties = yes
+						}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					others = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+				}
+				BP_migration_faith_effects = {
+					icon = "gfx/interface/icons/struggle_effects/faith.dds"
+					all = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					roman_emperors = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					roman_successors = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					barbarian_kings = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					migrators = {
+						parameters = {
+							faster_faith_conversion_in_tribal_counties = yes
+						}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					tribals = {
+						parameters = {
+							faster_faith_conversion_in_tribal_counties = yes
 						}
 						character_modifier = {}
 						county_modifier = {}
@@ -302,7 +346,9 @@
 						county_modifier = {}
 					}
 					roman_successors = {
-						parameters = {}
+						parameters = {
+							faster_integrate_title_task = yes
+						}
 						character_modifier = {}
 						county_modifier = {}
 					}
@@ -310,6 +356,7 @@
 						parameters = {
 							increased_subroman_decay = yes
 							unlocks_passing_culture_law = yes
+							faster_integrate_title_task = yes
 						}
 						character_modifier = {}
 						county_modifier = {}
@@ -391,6 +438,44 @@
 				}
 				BP_migration_culture_effects = {
 					icon = "gfx/interface/icons/struggle_effects/culture.dds"
+					all = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					roman_emperors = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					roman_successors = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					barbarian_kings = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					migrators = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					tribals = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					others = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+				}
+				BP_migration_faith_effects = {
+					icon = "gfx/interface/icons/struggle_effects/faith.dds"
 					all = {
 						parameters = {}
 						character_modifier = {}

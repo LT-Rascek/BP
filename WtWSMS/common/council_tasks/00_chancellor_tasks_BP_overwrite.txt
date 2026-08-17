@@ -1,0 +1,185 @@
+﻿##### Changed from Vanilla: Tied factors into migration
+task_integrate_title = {
+	position = councillor_chancellor
+	task_type = task_type_county
+	county_target = realm
+	task_progress = task_progress_value
+	task_current_value = scope:councillor_liege.chancellor_integrate_title_current_progress
+
+	task_max_value = define:NTitle|DRIFT_PROGRESS_LIMIT
+
+	asset = {
+		icon = "gfx/interface/icons/council_task_types/task_integrate_title.dds"
+		background = "gfx/interface/buttons/button_round_bg.dds"
+		frame = "gfx/interface/buttons/button_round_frame.dds"
+		glow = "gfx/particles/halo.dds"
+	}
+
+	effect_desc = {
+		desc = task_integrate_title_effect_desc
+		desc = {
+			desc = council_task_possible_side_effects
+			triggered_desc = {
+				trigger = {
+					diplomacy > mediocre_skill_rating
+				}
+				desc = task_integrate_title_nobles_support_integration
+			}
+			triggered_desc = {
+				trigger = {
+					diplomacy > mediocre_skill_rating
+				}
+				desc = task_integrate_title_culture_supports_integration
+			}
+			triggered_desc = {
+				trigger = {
+					diplomacy < high_skill_rating
+				}
+				desc = task_integrate_title_nobles_resist_integration
+			}
+			triggered_desc = {
+				trigger = {
+					diplomacy < high_skill_rating
+				}
+				desc = task_integrate_title_culture_resists_integration
+			}
+		}
+	}
+
+	is_valid_showing_failures_only =  {
+		liege = {
+			custom_description = {
+				text = "is_king_or_emperor"
+				highest_held_title_tier >= tier_kingdom
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_tgp_dlc_trigger = yes
+				top_liege = {
+					top_participant_group:dynastic_cycle ?= {
+						participant_group_type = hegemon_ruler
+					}
+				}
+			}
+			custom_tooltip = {
+				text = dynastic_cycle_locks_title_integration_tt
+				top_liege = {
+					top_participant_group:dynastic_cycle ?= {
+						NOT = { has_participant_group_parameter = dynastic_cycle_locks_title_integration }
+					}
+				}
+			}
+		}
+	}
+
+	on_finish_task_county = {
+		start_default_task = yes
+		# Add the title to the Dynastic Cycle core region
+		if = {
+			limit = {
+				scope:councillor_liege = {
+					top_participant_group:dynastic_cycle ?= {
+						participant_group_type = hegemon_ruler
+					} 
+				}
+			}
+			situation:dynastic_cycle.situation_sub_region:core = { add_dejure_title_to_sub_region = scope:county.empire }
+		}
+	}
+
+	potential_county = {
+		scope:county = {
+			is_landless_type_title = no
+			de_jure_drifting_towards = scope:councillor_liege.primary_title
+		}
+		# Asturias wants to survive and integrate Castille if possible.
+		trigger_if = {
+			limit = {
+				scope:councillor_liege = {
+					has_title = title:k_asturias
+					NOT = { has_title = title:k_castille }
+					any_sub_realm_county = {
+						any_this_title_or_de_jure_above = { this = title:k_castille }
+					}
+				}
+			}
+			scope:county = {
+				any_this_title_or_de_jure_above = { this = title:k_castille }
+			}
+		}
+	}
+
+	#### Changed from Vanilla vvvvv
+	progress = {
+		value = 0
+		add = {
+			value = define:NTitle|DRIFT_MONTHLY_PROGRESS_INCREASE
+			desc = PASSIVE_INTEGRATION_PROGRESS_VALUE
+		}
+		add = {
+			value = scope:councillor.chancellor_integrate_title_progress_gain
+			desc = SCALED_COUNCILLOR_DIPLOMACY_VALUE
+		}
+		add = chancellor_integrate_title_contextual_bonuses
+		
+		#### Changed from Vanilla vvvvv
+		
+		#Situation Mechanics
+		if = {
+			limit = {
+				general_situation_regional_parameter_trigger = {
+					CHARACTER = scope:councillor_liege
+					PARAMETER = faster_integrate_title_task
+				}
+			}
+			multiply = {
+				value = migration_integrate_title_speed_improvement_value
+				desc = migration_integrate_title_speed_improvement_desc
+			}
+		}
+		#### Changed from Vanilla ^^^^^
+	}
+	#### Changed from Vanilla ^^^^^
+
+	monthly_on_action = task_integrate_title_side_effects
+
+	on_monthly_county = {
+		if = {
+			# Due to code setup, it might not have invalidated yet if this is not the case
+			limit = {
+				scope:county = {
+					de_jure_drifting_towards = scope:councillor_liege.primary_title
+				}
+			}
+			scope:county = {
+				change_de_jure_drift_progress = {
+					target = scope:councillor_liege.primary_title
+					value = scope:councillor.chancellor_integrate_title_progress_gain
+				}
+				change_de_jure_drift_progress = {
+					target = scope:councillor_liege.primary_title
+					value = scope:councillor.chancellor_integrate_title_contextual_bonuses
+				}
+			}
+		}
+	}
+
+	ai_will_do = {
+		value = 10 # Prefer this if available
+
+		# Asturias wants to survive and integrate Castille if possible.
+		if = {
+			limit = {
+				scope:councillor_liege = {
+					has_title = title:k_asturias
+					NOT = { has_title = title:k_castille }
+					any_sub_realm_county = {
+						any_this_title_or_de_jure_above = { this = title:k_castille }
+					}
+				}
+			}
+			add = 100000
+		}
+	}
+}

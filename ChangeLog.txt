@@ -13,23 +13,47 @@ Migration Situation: Added a new situation to subsume our disparate migration me
       - If playing without "Khans of the Steppe", the Steppe will also be its own region
    - Phases:
       - Migration Phase:
-         - Lasts until AD 800
+         - Lasts until AD 795
          - Everyone is targetable by Migration CBs, in general
          - Migrators:
-            - Migration CB Enabled
-            - Cultural Unification CBs are enabled
-            - Lifetime Subjugation CBs are increased by one
-            - Adventurer CBs are cheaper
-            - Time required for Hybridization/Divergence cooldown is halved
-            - AI is bolder and more aggressive
+            - War Effects:
+               - Migration CB is enabled
+               - Cultural Unification CB is enabled
+               - Lifetime Subjugation CB is increased by one
+               - Adventurer CBs are less expensive
+            - Culture Effects:
+               - Time required for Hybridization/Divergence cooldown is halved
+               - Required Cultural Hybridization acceptance lowered in most instances
+               - Faster "Promote Culture" Task in counties with just tribal holdings
+            - Faith Effects:
+               - Faster "Convert Faith" Task in counties with just tribal holdings
+            - Other Effects:
+               - Forming Confederation is easier
+               - AI is more inclined to accept confederations
+               - AI is bolder and more aggressive
          - Tribals:
-            - Lifetime Subjugation CBs are increased by one
-            - Cultural Unification CBs are enabled
-            - Time required for Hybridization/Divergence cooldown is halved
-            - AI is bolder and more aggressive
+            - War Effects:
+               - Cultural Unification CB is enabled
+               - Lifetime Subjugation CB is increased by one
+            - Culture Effects:
+               - Time required for Hybridization/Divergence cooldown is halved
+               - Required Cultural Hybridization acceptance lowered in most instances
+               - Faster "Promote Culture" Task in counties with just tribal holdings
+            - Faith Effects:
+               - Faster "Convert Faith" Task in counties with just tribal holdings
+            - Other Effects:
+               - Forming Confederation is easier
+               - AI is more inclined to accept confederations
+               - AI is bolder and more aggressive
          - Barbarian Polities:
-            - Passing of a Law is enabled, with various benefits and drawbacks, modeling the Lex Burgundiorum and Lex Visigothorum
-            - AI is bolder and more aggressive
+            - Other Effects:
+               - Sub-Roman Decay events happen faster
+               - "Integrate Title" Task completes faster
+               - Passing of a Cultural Law is enabled, with various benefits and drawbacks, modeling the Lex Burgundiorum and Lex Visigothorum
+               - AI is bolder and more aggressive
+         - Roman Successors:
+            - Other Effects:
+               - "Integrate Title" Task completes faster
       - Transition Phase:
          - TBD
 

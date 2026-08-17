@@ -23,3 +23,11 @@ general_situation_is_participant_type_trigger = {
 		}
 	}
 }
+county_is_simple_tribal_trigger = { #County Scope
+	is_landless_type_title = no
+	this.title_province = { has_holding_type = tribal_holding }
+	any_county_province = {
+		NOT = { this = this.county.title_province }
+		has_holding = no
+	}
+}
