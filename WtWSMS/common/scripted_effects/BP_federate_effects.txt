@@ -21,13 +21,13 @@ create_titular_title_if_needed_effect = {
 				limit = { $CHAR$.primary_title.tier = tier_duchy }
 				create_dynamic_title = {
 					tier = duchy
-					name = MIGRATORY_TITLE_NAME
+					name = FEDERATE_TITLE_NAME
 				}
 			}
 			else = {
 				create_dynamic_title = {
 					tier = kingdom
-					name = MIGRATORY_TITLE_NAME
+					name = FEDERATE_TITLE_NAME
 				}
 			}
 			scope:new_title = {

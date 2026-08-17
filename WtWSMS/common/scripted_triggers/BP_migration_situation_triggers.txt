@@ -47,6 +47,40 @@ BP_can_be_tribals_trigger = {
 	}
 	NOT = { government_has_flag = government_is_high_tribal }
 }
+#General Triggers
+is_historical_non_migrator_culture_trigger = { #Culture Scope
+	NOR = {
+		#Goths
+		this = culture:thracian_gothic
+		this = culture:crimean_gothic
+		this = culture:carpodaci
+		this = culture:gepid
+		#Jutlandic
+		this = culture:reudignian
+		#Nordwestbloc
+		this = culture:chatti
+		this = culture:old_frankish
+		this = culture:cheruscii
+		#Przeworsk
+		this = culture:gustow
+		this = culture:przeworsk
+		this = culture:wielbark
+		this = culture:denziner
+		this = culture:vidivarii
+		#Scandzans
+		this = culture:norse
+		this = culture:swede
+		this = culture:dane
+		this = culture:geatish
+		this = culture:gutnish
+		this = culture:auiones
+		#Suebics
+		this = culture:danubian_suebi
+		this = culture:juthungi
+		this = culture:alamannian
+		this = culture:lebus
+	}
+}
 #CBs
 general_bp_migration_constraints_trigger = {
 	#Pass on targets who have less total development than what we currently have
