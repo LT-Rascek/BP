@@ -179,6 +179,8 @@ BP_character_events_476 = {
 BP_setup_education_476 = {
 	effect = {
 		character:40 = {
+			set_sexuality = heterosexual
+			
 			#There's auto-assigned personality traits; have to clear and set
 			clear_traits = yes
 			add_trait = rowdy
