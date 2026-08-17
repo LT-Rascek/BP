@@ -1,0 +1,198 @@
+# Event window widget to show situation info about specifically the great steppe
+# Required controller: situation_info
+
+vbox = {
+	name = "event_window_widget_situation_info_migration_period"
+	MigrationEventWindowWidget = {
+		blockoverride "situation_info_content"
+		{
+			hbox = {
+				layoutpolicy_vertical = expanding
+				layoutpolicy_horizontal = fixed
+				spacing = 15
+				datacontext = "[EventWindowCustomWidgetSituationInfo.GetSituation]"
+				datacontext = "[GetPlayer]"
+				
+				ParticipantGroupInfo = {
+					blockoverride "situation_tooltip"
+					{
+						tooltipwidget = {
+							using = situation_info_tooltip
+							blockoverride "title_text" {
+								text = "MIGRATION_PERIOD_SITUATION_INFO_ROMAN_EMPERORS_TITLE"
+							}
+							blockoverride "header_icon"
+							{
+								texture = "gfx/interface/icons/modifiers/byzantine_crown_mixed.dds"
+							}
+							blockoverride "localization_text"
+							{
+								text = "MIGRATION_PERIOD_SITUATION_INFO_ROMAN_EMPERORS_EXPLANATION"
+							}
+						}
+					}
+					blockoverride "situation_icon"
+					{
+						texture = "gfx/interface/icons/modifiers/byzantine_crown_mixed.dds"
+					}
+					blockoverride "situation_text"
+					{
+						text = "MIGRATION_PERIOD_SITUATION_INFO_ROMAN_EMPERORS_TITLE"
+					}
+				}
+				
+				ParticipantGroupInfo = {
+					
+					blockoverride "situation_tooltip"
+					{
+						tooltipwidget = {
+							using = situation_info_tooltip
+							blockoverride "title_text" {
+								text = "MIGRATION_PERIOD_SITUATION_INFO_ROMAN_SUCCESSORS_TITLE"
+							}
+							blockoverride "header_icon"
+							{
+								texture = "gfx/interface/icons/modifiers/byzantine_eagle_mixed.dds"
+							}
+							blockoverride "localization_text"
+							{
+								datacontext = "[Character.GetCurrentLocation.GetCounty]"
+								datacontext = "[County.GetSubRegionInSituation(Situation.Self)]"
+								text = "MIGRATION_PERIOD_SITUATION_INFO_ROMAN_SUCCESSORS_EXPLANATION"
+							}
+						}
+					}
+					blockoverride "situation_icon"
+					{
+						texture = "gfx/interface/icons/modifiers/byzantine_eagle_mixed.dds"
+					}
+					blockoverride "situation_text"
+					{
+						text = "MIGRATION_PERIOD_SITUATION_INFO_ROMAN_SUCCESSORS_TITLE"
+					}
+				}
+
+				expand = {}
+				
+				ParticipantGroupInfo = {
+					blockoverride "situation_tooltip"
+					{
+						tooltipwidget = {
+							using = situation_info_tooltip
+							blockoverride "title_text" {
+								text = "MIGRATION_PERIOD_SITUATION_INFO_BARABARIAN_KINGS_TITLE"
+							}
+							blockoverride "header_icon"
+							{
+								texture = "gfx/interface/icons/modifiers/prowess_mixed.dds"
+							}
+							blockoverride "localization_text"
+							{
+								text = "MIGRATION_PERIOD_SITUATION_INFO_BARABARIAN_KINGS_EXAMPLE"
+							}
+						}
+					}
+					blockoverride "situation_icon"
+					{
+						texture = "gfx/interface/icons/modifiers/prowess_mixed.dds"
+					}
+					blockoverride "situation_text"
+					{
+						text = "MIGRATION_PERIOD_SITUATION_INFO_BARABARIAN_KINGS_TITLE"
+					}
+				}
+				
+				expand = {}
+				
+				ParticipantGroupInfo = {
+					blockoverride "situation_tooltip"
+					{
+						tooltipwidget = {
+							using = situation_info_tooltip
+							blockoverride "title_text" {
+								text = "MIGRATION_PERIOD_SITUATION_INFO_MIGRATORS_TITLE"
+							}
+							blockoverride "header_icon"
+							{
+								texture = "gfx/interface/icons/modifiers/asatru_raven_mixed.dds"
+							}
+							blockoverride "localization_text"
+							{
+								text = "MIGRATION_PERIOD_SITUATION_INFO_MIGRATORS_EXAMPLE"
+							}
+						}
+					}
+					blockoverride "situation_icon"
+					{
+						texture = "gfx/interface/icons/modifiers/asatru_raven_mixed.dds"
+					}
+					blockoverride "situation_text"
+					{
+						text = "MIGRATION_PERIOD_SITUATION_INFO_MIGRATORS_TITLE"
+					}
+				}
+				
+				expand = {}
+				
+				ParticipantGroupInfo = {
+					blockoverride "situation_tooltip"
+					{
+						tooltipwidget = {
+							using = situation_info_tooltip
+							blockoverride "title_text" {
+								text = "MIGRATION_PERIOD_SITUATION_INFO_TRIBALS_TITLE"
+							}
+							blockoverride "header_icon"
+							{
+								texture = "gfx/interface/icons/modifiers/dread_mixed.dds"
+							}
+							blockoverride "localization_text"
+							{
+								text = "MIGRATION_PERIOD_SITUATION_INFO_TRIBALS_EXPLANATION"
+							}
+						}
+					}
+					blockoverride "situation_icon"
+					{
+						texture = "gfx/interface/icons/modifiers/dread_mixed.dds"
+					}
+					blockoverride "situation_text"
+					{
+						text = "MIGRATION_PERIOD_SITUATION_INFO_TRIBALS_TITLE"
+					}
+				}
+				
+				expand = {}
+				
+				ParticipantGroupInfo = {
+					blockoverride "situation_tooltip"
+					{
+						tooltipwidget = {
+							using = situation_info_tooltip
+							blockoverride "title_text" {
+								text = "MIGRATION_PERIOD_SITUATION_INFO_OTHERS_TITLE"
+							}
+							blockoverride "header_icon"
+							{
+								texture = "gfx/interface/icons/modifiers/legitimacy_mixed.dds"
+							}
+							blockoverride "localization_text"
+							{
+								text = "MIGRATION_PERIOD_SITUATION_INFO_OTHERS_EXPLANATION"
+							}
+						}
+					}
+					blockoverride "situation_icon"
+					{
+						texture = "gfx/interface/icons/modifiers/legitimacy_mixed.dds"
+					}
+					blockoverride "situation_text"
+					{
+						text = "MIGRATION_PERIOD_SITUATION_INFO_OTHERS_TITLE"
+					}
+				}
+			}
+		}
+	}
+}
+

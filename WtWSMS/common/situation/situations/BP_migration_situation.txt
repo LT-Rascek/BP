@@ -27,7 +27,7 @@
 			geographical_regions = { migration_region_britannia }
 		}
 		migration_region_barbaria = {
-			map_color = { 90 90 90 }
+			map_color = { 0.35 0.5 0.30 }
 			icon = "gfx/interface/icons/situations/debug_situation/steppe_west.dds"
 			geographical_regions = { migration_region_barbaria }
 		}
@@ -59,9 +59,15 @@
 				is_landed = yes
 			}
 			on_join = {
+				if = {
+					limit = {
+						is_ai = no
+						NOT = { has_character_flag = migration_general_events_0001_var }
+					}
+					trigger_event = migration_general_events.0001
+				}
 			}
-			on_leave = {
-			}
+			on_leave = {}
 			
 			map_color = hsv{ 0.37 1.00 0.78 }
 		}
@@ -74,9 +80,15 @@
 				is_landed = yes
 			}
 			on_join = {
+				if = {
+					limit = {
+						is_ai = no
+						NOT = { has_character_flag = migration_general_events_0001_var }
+					}
+					trigger_event = migration_general_events.0001
+				}
 			}
-			on_leave = {
-			}
+			on_leave = {}
 			
 			map_color = hsv{ 0.37 1.00 0.78 }
 		}
@@ -90,9 +102,15 @@
 				is_landed = yes
 			}
 			on_join = {
+				if = {
+					limit = {
+						is_ai = no
+						NOT = { has_character_flag = migration_general_events_0001_var }
+					}
+					trigger_event = migration_general_events.0001
+				}
 			}
-			on_leave = {
-			}
+			on_leave = {}
 			
 			map_color = hsv{ 0.37 1.00 0.78 }
 		}
@@ -111,9 +129,15 @@
 				}
 			}
 			on_join = {
+				if = {
+					limit = {
+						is_ai = no
+						NOT = { has_character_flag = migration_general_events_0001_var }
+					}
+					trigger_event = migration_general_events.0001
+				}
 			}
-			on_leave = {
-			}
+			on_leave = {}
 			
 			map_color = hsv{ 0.37 1.00 0.78 }
 		}
@@ -126,9 +150,15 @@
 				is_landed = yes
 			}
 			on_join = {
+				if = {
+					limit = {
+						is_ai = no
+						NOT = { has_character_flag = migration_general_events_0001_var }
+					}
+					trigger_event = migration_general_events.0001
+				}
 			}
-			on_leave = {
-			}
+			on_leave = {}
 			
 			map_color = hsv{ 0.37 1.00 0.78 }
 		}
@@ -144,9 +174,15 @@
 				is_landed = yes
 			}
 			on_join = {
+				if = {
+					limit = {
+						is_ai = no
+						NOT = { has_character_flag = migration_general_events_0001_var }
+					}
+					trigger_event = migration_general_events.0001
+				}
 			}
-			on_leave = {
-			}
+			on_leave = {}
 			
 			map_color = hsv{ 0.37 1.00 0.78 }
 		}
