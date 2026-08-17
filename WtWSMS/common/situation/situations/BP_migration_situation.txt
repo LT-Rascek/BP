@@ -428,10 +428,20 @@
 			}
 		}
 		BP_transition_period = {
-			max_duration = { years = 5 }
+			max_duration = { months = 1 }
 			
 			on_start = {}
-			on_end = {}
+			on_end = {
+				scope:situation_sub_region = {
+					every_situation_sub_region_participant = {
+						limit = {
+							is_ai = no
+							NOT = { has_character_flag = migration_general_events_0002_var }
+						}
+						trigger_event = migration_general_events.0002
+					}
+				}
+			}
 			
 			parameters = {}
 			
