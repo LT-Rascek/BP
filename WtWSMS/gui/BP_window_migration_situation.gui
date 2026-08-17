@@ -248,9 +248,18 @@ window = {
 								}
 
 								text_single = {
+									visible = "[ObjectsEqual( SituationWindow.GetSelectedSubRegion.GetCurrentPhase.GetName, 'Migration Phase' )]"
 									layoutpolicy_horizontal = expanding
 
 									text = "MIGRATION_SITUATION_CURRENT_PHASE_ENDS"
+									default_format = "#Weak"
+									align = nobaseline
+								}
+								text_single = {
+									visible = "[Not(ObjectsEqual( SituationWindow.GetSelectedSubRegion.GetCurrentPhase.GetName, 'Migration Phase' ))]"
+									layoutpolicy_horizontal = expanding
+								
+									text = "SITUATION_CURRENT_PHASE_ENDS"
 									default_format = "#Weak"
 									align = nobaseline
 								}
@@ -750,6 +759,13 @@ types MigrationSituationTypes
 
 		onclick = "[SituationWindow.SetSelectedSubRegion( SituationSubRegion.Self )]"
 		down = "[ObjectsEqual( SituationWindow.GetSelectedSubRegion.Self, SituationSubRegion.Self )]"
+
+		blockoverride "background"
+		{
+			texture = "gfx/interface/buttons/button_standard.dds"
+			framesize = { 252 80 }
+			frame = 1
+		}
 
 		hbox = {
 			layoutpolicy_vertical = expanding

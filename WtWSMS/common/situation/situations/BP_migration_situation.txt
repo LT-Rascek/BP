@@ -5,6 +5,8 @@
 	situation_group_type = major
 	map_mode = sub_regions
 
+	icon = "gfx/interface/icons/message_feed/marshal_job.dds"
+
 	is_unique = yes # It can only exist once in the world
 
 	##################################################
@@ -12,28 +14,28 @@
 	##################################################
 	sub_regions = {
 		migration_region_wre = {
-			icon = "gfx/interface/icons/situations/debug_situation/steppe_west.dds"
+			icon = "gfx/interface/icons/situations/BP_migration_situation/wre_region_icon.dds"
 			map_color = { 220 20 60 }
 			geographical_regions = { migration_region_wre }
 		}
 		migration_region_ere = {
 			map_color = { 150 35 165 }
-			icon = "gfx/interface/icons/situations/debug_situation/steppe_west.dds"
+			icon = "gfx/interface/icons/situations/BP_migration_situation/ere_region_icon.dds"
 			geographical_regions = { migration_region_ere }
 		}
 		migration_region_britannia = {
 			map_color = { 172 22 22 }
-			icon = "gfx/interface/icons/situations/debug_situation/steppe_west.dds"
+			icon = "gfx/interface/icons/situations/BP_migration_situation/britannia_region_icon.dds"
 			geographical_regions = { migration_region_britannia }
 		}
 		migration_region_barbaria = {
 			map_color = { 0.35 0.5 0.30 }
-			icon = "gfx/interface/icons/situations/debug_situation/steppe_west.dds"
+			icon = "gfx/interface/icons/situations/BP_migration_situation/barbaria_region_icon.dds"
 			geographical_regions = { migration_region_barbaria }
 		}
 		migration_region_steppe = {
 			map_color = { 211 177 80 }
-			icon = "gfx/interface/icons/situations/debug_situation/steppe_west.dds"
+			icon = "gfx/interface/icons/situations/BP_migration_situation/steppe_region_icon.dds"
 			geographical_regions = { migration_region_steppe }
 		}
 	}
@@ -206,7 +208,7 @@
 			on_end = {}
 		}
 		BP_migration_period = {
-			icon = "gfx/interface/icons/situations/debug_situation/plentiful_harvest.dds"
+			icon = "gfx/interface/icons/message_feed/martial.dds"
 			
 			on_start = {}
 			on_end = {}
@@ -434,6 +436,8 @@
 			}
 		}
 		BP_transition_period = {
+			icon = "gfx/interface/icons/message_feed/alliance.dds"
+			
 			max_duration = { months = 1 }
 			
 			on_start = {}
