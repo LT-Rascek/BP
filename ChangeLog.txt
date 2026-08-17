@@ -29,6 +29,7 @@ Migration Situation: Added a new situation to subsume our disparate migration me
                - Faster "Convert Faith" Task in counties with just tribal holdings
             - Other Effects:
                - Forming Confederation is easier
+               - Can form Titular Duchies
                - AI is more inclined to accept confederations
                - AI is bolder and more aggressive
          - Tribals:
@@ -43,6 +44,7 @@ Migration Situation: Added a new situation to subsume our disparate migration me
                - Faster "Convert Faith" Task in counties with just tribal holdings
             - Other Effects:
                - Forming Confederation is easier
+               - Can form Titular Duchies
                - AI is more inclined to accept confederations
                - AI is bolder and more aggressive
          - Barbarian Polities:
@@ -61,6 +63,7 @@ Game Rules:
 - Added "Migration Behavior" Game Rule giving players more control over AI migration Behavior
    - "Classic" (Default): Based on CK2 WtWSMS. So long as an AI is capable, it will consider migrations
    - "Historical": Cultures that did not migrate historically, such as the Franks or Alemannians or Gepids, will not use the Migration Casus Belli
+- Removed "Custom Kingdom Blocked" Rule, as it is superseded by migration mechanics
 
 Traditions:
 - Renamed "Migratory Culture" Tradition to "Elite Rulership"
@@ -69,6 +72,10 @@ Traditions:
    - Adds a -5 opinion of different cultures
 
 Decisions:
+- Added "Form a Tribe" Decision for Tribals and Migrators
+   - Cheaper form of "Form a Duchy" decision
+   - Creates only a titular duchy instead of a de jure Duchy
+- "Found Duchy" decision is unavailable for Tribals and Migrators, as they have access to "Form a Tribe" decision
 - Overhauled and Generalized the "Claim Frankish Kingdom" Decision
    - Instead lands a currently titular kingdom title, such as those created by the "Elevate Confederation" decision
    - Requires:
@@ -82,6 +89,7 @@ Decisions:
       - Your capital duchy and all completely controlled duchies become 
       - You receive a pressed claim on the empire containing your capital duchy for yourself and your heirs, unlocking the Unification War Casus Belli
 - Tweaked the "Elevate Confederation" Decision
+   - Requires no other Confederate has a title with a tier higher than yours
    - Added custom picture for decision in some circumstances
    - Different custom names are used for Migrators and Tribals in the Migration Situation for the newly formed kingdom
    - Gives the character a Major Conquest Casus Belli

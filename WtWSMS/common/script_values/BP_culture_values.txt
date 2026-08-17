@@ -53,3 +53,8 @@ heritage_tradition_acceptance_value = 5
 sinophilic_tradition_acceptance_value = 15
 greco_roman_tradition_acceptance_value = 20
 autochthon_baseline_acceptance_value = 20
+
+number_of_counties_of_ruler_culture = { #Char Scope
+	value = 0
+	every_county = { limit = { this.culture = root.culture } add = 1 }
+}

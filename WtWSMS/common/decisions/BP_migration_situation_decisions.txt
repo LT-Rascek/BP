@@ -254,15 +254,9 @@ land_migration_tribal_kingdom = {
 	selection_tooltip = land_migration_tribal_kingdom_tooltip
 	
 	is_shown = {
-		OR = {
-			general_situation_is_participant_type_trigger = {
-				CHARACTER = root
-				GROUP_TYPE = migrators
-			}
-			general_situation_is_participant_type_trigger = {
-				CHARACTER = root
-				GROUP_TYPE = tribals
-			}
+		general_situation_regional_parameter_trigger = {
+			CHARACTER = root
+			PARAMETER = custom_kingdom_creation_restrictions
 		}
 		top_liege = this
 		highest_held_title_tier = tier_kingdom
@@ -282,6 +276,10 @@ land_migration_tribal_kingdom = {
 				CHARACTER = root
 				PERCENTAGE = 0.66
 			}
+		}
+		custom_description = {
+			text = at_least_five_culture_counties_on_the_map
+			root.culture = { any_culture_county = { count >= 5 } }
 		}
 		custom_tooltip = {
 			text = realm_size_is_over_25
@@ -343,6 +341,103 @@ land_migration_tribal_kingdom = {
 		base = 100
 	}
 }
+#The Billion Migration Titular Duchies
+found_titular_duchy_decision = {
+	picture = {
+		trigger = { culture = { has_cultural_pillar = heritage_nordwestblock } }
+		reference = "gfx/interface/illustrations/decisions/pharamond_on_a_shield.dds"
+	}
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_found_kingdom.dds"
+	}
+	decision_group_type = major
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 60
+		duchy = 0
+		kingdom = 0
+		empire = 0
+		hegemony = 0
+	}
 
+	cooldown = { years = 10 }
 
+	is_shown = {
+		highest_held_title_tier = tier_county
+		is_landed = yes
+		NOR = {
+			government_has_flag = government_is_nomadic
+			government_is_japanese_trigger = yes
+		}
+		general_situation_regional_parameter_trigger = {
+			CHARACTER = root
+			PARAMETER = different_custom_duchy_decision
+		}
+	}
+
+	is_valid = {
+		is_independent_ruler = yes
+		is_confederation_member = no
+		is_tributary = no
+		realm_size >= 2
+		trigger_if = {
+			limit = {
+				has_legitimacy = yes
+			}
+			prestige_level >= 3
+			legitimacy_level >= 2
+		}
+		trigger_else = {
+			prestige_level >= 3
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+		is_at_war = no
+	}
+
+	cost = {
+		gold = {
+			value = 0
+			if = {
+				limit = {
+					has_treasury = no
+				}
+				add = medium_gold_value
+			}
+		}
+		prestige = 50
+		piety = 50
+	}
+
+	effect = {
+		create_custom_titular_duchy_effect = yes
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	#Only prestigious and non-collectivist cultures will do this
+	ai_will_do = {
+		base = 0
+		modifier = {
+			NOT = { culture = { has_cultural_tradition = tradition_collective_lands } }
+			add = 50
+		}
+		modifier = {
+			prestige_level >= 4
+			add = 25
+		}
+		modifier = {
+			prestige_level >= 5
+			add = 25
+		}
+		modifier = {
+			culture = { has_cultural_tradition = tradition_collective_lands }
+			factor = 0
+		}
+	}
+}
 

@@ -1,4 +1,4 @@
-﻿##### Changed from Vanilla: 
+﻿##### Changed from Vanilla: blocked for certain situation parameters
 found_duchy_decision = {
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_found_kingdom.dds"
@@ -15,6 +15,7 @@ found_duchy_decision = {
 
 	cooldown = { years = 10 }
 
+	##### Changed from Vanilla vvvvv
 	is_shown = {
 		highest_held_title_tier = tier_county
 		is_landed = yes
@@ -30,7 +31,16 @@ found_duchy_decision = {
 			government_has_flag = government_is_nomadic
 			government_is_japanese_trigger = yes
 		}
+		##### Changed from Vanilla vvvvv
+		NOT = {
+			general_situation_regional_parameter_trigger = {
+				CHARACTER = root
+				PARAMETER = different_custom_duchy_decision
+			}
+		}
+		##### Changed from Vanilla ^^^^^
 	}
+	##### Changed from Vanilla ^^^^^
 
 	is_valid = {
 		is_independent_ruler = yes
@@ -123,18 +133,10 @@ found_kingdom_decision = {
 		NOT = { has_game_rule = off_custom_kingdoms }
 		is_landed_or_landless_administrative = yes
 		is_confederation_member = no
-		##### Changed from Vanilla vvvvv
-		trigger_if = {
-			limit = { has_game_rule = custom_kingdom_creation_blocked_for_specific_cases_enabled }
-			NOR = { #Franks should try to form Francia first
-				root.culture = culture:old_frankish
-				has_global_variable = formed_frankish_kingdom
-			}
-		}
-		##### Changed from Vanilla ^^^^^
 	}
 	##### Changed from Vanilla ^^^^^
 
+	##### Changed from Vanilla vvvvv
 	is_valid = {
 		prestige_level >= 3
 		top_liege = this
@@ -158,7 +160,31 @@ found_kingdom_decision = {
 				has_realm_law = nomadic_authority_3
 			}
 		}
+		#Migration Situation has its own mechanics
+		trigger_if = {
+			limit = {
+				general_situation_regional_parameter_trigger = {
+					CHARACTER = root
+					PARAMETER = custom_kingdom_creation_restrictions
+				}
+			}
+			#Must control 66% of your culture's counties
+			custom_description = {
+				text = controls_least_two_thirds_of_counties_with_culture
+				subject = root
+				check_if_control_percentage_of_all_counties_with_condition_trigger = {
+					FEATURE = culture
+					CHARACTER = root
+					PERCENTAGE = 0.66
+				}
+			}
+			custom_description = {
+				text = at_least_five_culture_counties_on_the_map
+				root.culture = { any_culture_county = { count >= 5 } }
+			}
+		}
 	}
+	##### Changed from Vanilla ^^^^^
 
 	is_valid_showing_failures_only = {
 		is_available_adult = yes
@@ -271,10 +297,7 @@ found_empire_decision = {
 		is_landed_or_landless_administrative = yes
 		is_confederation_member = no
 		##### Changed from Vanilla vvvvv
-		trigger_if = {
-			limit = { has_game_rule = custom_kingdom_creation_blocked_for_specific_cases_enabled }
-			always = yes
-		}
+		this.primary_title = { is_titular = no }
 		##### Changed from Vanilla ^^^^^
 	}
 	##### Changed from Vanilla ^^^^^

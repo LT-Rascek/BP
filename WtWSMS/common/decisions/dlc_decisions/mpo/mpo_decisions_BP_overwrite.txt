@@ -481,6 +481,16 @@ confederation_kingdom_decision = {
 			}
 		}
 		##### Changed from Vanilla vvvvv
+		custom_tooltip = {
+			text = confederation_kingdom_decision_vassal_title_tier_req
+			NOT = {
+				confederation = {
+					any_confederation_member = {
+						this.primary_title.tier > root.primary_title.tier
+					}
+				}
+			}
+		}
 		culture = { has_innovation = innovation_leges_barbarorum }
 		culture = { has_innovation = innovation_social_stratification }
 		##### Changed from Vanilla ^^^^^
