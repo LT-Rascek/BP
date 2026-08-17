@@ -61,27 +61,39 @@ setup_situation_points = {
 	effect = {
 		situation:BP_migration_situation = {
 			situation_sub_region:migration_region_wre = {
-				add_takeover_phase_points = {
-					phase = BP_transition_period
-					points = 76
+				if = {
+					limit = { sub_region_current_phase = BP_migration_period }
+					add_takeover_phase_points = {
+						phase = BP_transition_period
+						points = 81
+					}
 				}
 			}
 			situation_sub_region:migration_region_ere = {
-				add_takeover_phase_points = {
-					phase = BP_transition_period
-					points = 76
+				if = {
+					limit = { sub_region_current_phase = BP_migration_period }
+					add_takeover_phase_points = {
+						phase = BP_transition_period
+						points = 81
+					}
 				}
 			}
 			situation_sub_region:migration_region_britannia = {
-				add_takeover_phase_points = {
-					phase = BP_transition_period
-					points = 76
+				if = {
+					limit = { sub_region_current_phase = BP_migration_period }
+					add_takeover_phase_points = {
+						phase = BP_transition_period
+						points = 81
+					}
 				}
 			}
 			situation_sub_region:migration_region_barbaria = {
-				add_takeover_phase_points = {
-					phase = BP_transition_period
-					points = 76
+				if = {
+					limit = { sub_region_current_phase = BP_migration_period }
+					add_takeover_phase_points = {
+						phase = BP_transition_period
+						points = 81
+					}
 				}
 			}
 			if = {
@@ -92,10 +104,13 @@ setup_situation_points = {
 						}
 					}
 				}
-				situation_sub_region:migration_region_barbaria = {
-					add_takeover_phase_points = {
-						phase = BP_transition_period
-						points = 76
+				situation_sub_region:migration_region_steppe = {
+					if = {
+						limit = { sub_region_current_phase = BP_migration_period }
+						add_takeover_phase_points = {
+							phase = BP_transition_period
+							points = 81
+						}
 					}
 				}
 			}

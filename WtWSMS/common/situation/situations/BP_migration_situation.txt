@@ -63,6 +63,7 @@
 					limit = {
 						is_ai = no
 						NOT = { has_character_flag = migration_general_events_0001_var }
+						has_game_rule = wtwsms_start_event_migration_period_v0001_enabled
 					}
 					trigger_event = migration_general_events.0001
 				}
@@ -84,6 +85,7 @@
 					limit = {
 						is_ai = no
 						NOT = { has_character_flag = migration_general_events_0001_var }
+						has_game_rule = wtwsms_start_event_migration_period_v0001_enabled
 					}
 					trigger_event = migration_general_events.0001
 				}
@@ -106,6 +108,7 @@
 					limit = {
 						is_ai = no
 						NOT = { has_character_flag = migration_general_events_0001_var }
+						has_game_rule = wtwsms_start_event_migration_period_v0001_enabled
 					}
 					trigger_event = migration_general_events.0001
 				}
@@ -133,6 +136,7 @@
 					limit = {
 						is_ai = no
 						NOT = { has_character_flag = migration_general_events_0001_var }
+						has_game_rule = wtwsms_start_event_migration_period_v0001_enabled
 					}
 					trigger_event = migration_general_events.0001
 				}
@@ -154,6 +158,7 @@
 					limit = {
 						is_ai = no
 						NOT = { has_character_flag = migration_general_events_0001_var }
+						has_game_rule = wtwsms_start_event_migration_period_v0001_enabled
 					}
 					trigger_event = migration_general_events.0001
 				}
@@ -178,6 +183,7 @@
 					limit = {
 						is_ai = no
 						NOT = { has_character_flag = migration_general_events_0001_var }
+						has_game_rule = wtwsms_start_event_migration_period_v0001_enabled
 					}
 					trigger_event = migration_general_events.0001
 				}
@@ -208,7 +214,7 @@
 			future_phases = {
 				BP_transition_period = {
 					takeover_type = points
-					takeover_points = 400
+					takeover_points = 405
 					catalysts = {
 						#Passage of Time
 						catalyst_situation_passing_of_time_migration = BP_migration_catalyst_yearly_tick
