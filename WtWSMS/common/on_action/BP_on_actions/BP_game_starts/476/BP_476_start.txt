@@ -38,6 +38,8 @@ bp_game_start_after_lobby_476 = {
 		BP_setup_confederations_476
 		# Culture stuff
 		BP_starting_culture_acceptance_476
+		#Development Effects
+		BP_development_effects_476
 	}
 	effect = {
 		trigger_event = { on_action = BP_update_specific_title_courtiers_476 delayed = yes }
@@ -1204,6 +1206,36 @@ BP_starting_culture_acceptance_476 = {
 			set_cultural_acceptance = {
 				target = culture:caucasian_albanian
 				value = 16
+			}
+		}
+	}
+}
+
+BP_development_effects_476 = {
+	effect = {
+		#North Gaul is devastated
+		every_county = {
+			limit = {
+				OR = {
+					this.duchy = title:d_brittany
+					this.duchy = title:d_orleans
+					this.duchy = title:d_celtica
+					this.duchy = title:d_gallia
+					this.duchy = title:d_noviodunum
+					this.duchy = title:d_durocotorum
+					this.duchy = title:d_belgica_prima
+					this.duchy = title:d_mosania
+					this.duchy = title:d_belgica_secunda
+					this.duchy = title:d_germania_inferior
+					this.duchy = title:d_texandria
+					this.duchy = title:d_germania_superior
+					this.duchy = title:d_lugdunensis_tertia
+					this.duchy = title:d_verodunum
+				}
+			}
+			change_development_level = {
+				value = this.development_level
+				multiply = -0.50
 			}
 		}
 	}
