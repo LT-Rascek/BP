@@ -106,6 +106,13 @@ BP_update_culture_traditions_by_date = {
 			limit = { current_date >= 439.1.1 }
 			culture:vandalic = { add_culture_tradition = tradition_practiced_pirates }
 		}
+		if = {
+			limit = { current_date >= 443.1.1 }
+			culture:burgundian = {
+				remove_culture_tradition = tradition_ruling_caste
+				add_culture_tradition = tradition_elite_rulership
+			}
+		}
 		if = { #Gothic becomes mostly Arian
 			limit = { current_date >= 445.1.1 }
 			culture:gothic = { add_culture_tradition = tradition_concubines }
@@ -265,6 +272,7 @@ on_game_start_after_lobby = {
 		set_extant_nf_coas
 		BP_set_specific_churches_to_bishops
 		BP_generate_buildings
+		BP_remove_specific_variables
 	}
 }
 
@@ -515,6 +523,15 @@ BP_generate_buildings = {
 				limit = { owner = { government_has_flag = government_is_centralized } }
 				add_random_internal_estate_building = yes
 			}
+		}
+	}
+}
+
+BP_remove_specific_variables = {
+	effect = {
+		every_ruler = {
+			limit = { has_variable = new_confederate }
+			remove_variable = new_confederate
 		}
 	}
 }
