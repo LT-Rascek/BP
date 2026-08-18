@@ -32,6 +32,7 @@ bp_game_start_after_lobby_476 = {
 		BP_reduce_hunnic_herd_476
 		BP_setup_roman_border_troops_476_DLC
 		BP_setup_federate_troops_476_DLC
+		BP_setup_admin_troops_476_DLC
 		#Tributaries and Confederations
 		BP_setup_tributaries_476
 		BP_setup_confederations_476
@@ -815,8 +816,9 @@ BP_create_armies_476 = {
 			create_hephthalite_476_army_effect = { LOCATION = 4335 }
 			create_hepthalite_maa_476_effect = yes
 		}
+		#Army for Arbogast
 		title:d_belgica_prima.holder = {
-			#Create the ERE MM Army
+			every_maa_regiment = { destroy_maa_regiment = yes }
 			create_maa_regiment = {
 				type = roman_light_infantry
 				check_can_recruit = no
@@ -836,6 +838,25 @@ BP_create_armies_476 = {
 				type = pikemen_unit
 				check_can_recruit = no
 				size = 1
+			}
+		}
+		#Army for Childeric
+		title:d_belgica_secunda.holder = {
+			every_maa_regiment = { destroy_maa_regiment = yes }
+			create_maa_regiment = {
+				type = armored_footmen
+				check_can_recruit = no
+				size = 1
+			}
+			create_maa_regiment = {
+				type = light_footmen
+				check_can_recruit = no
+				size = 2
+			}
+			create_maa_regiment = {
+				type = bowmen
+				check_can_recruit = no
+				size = 2
 			}
 		}
 	}
@@ -958,14 +979,47 @@ BP_setup_federate_troops_476_DLC = {
 				title = title:d_orleans
 			}
 			create_maa_regiment = {
-				type = light_footmen
+				type = sarmatian_lancers
 				check_can_recruit = no
-				size = 2
+				size = 1
 				title = title:d_orleans
 			}
 		}
 	}
 }
+BP_setup_admin_troops_476_DLC = {
+	trigger = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes }
+	effect = {
+		title:k_soissons.holder = {
+			title:k_soissons = { every_title_maa_regiment = { destroy_maa_regiment = yes } }
+			create_maa_regiment = {
+				type = roman_heavy_infantry
+				check_can_recruit = no
+				size = 3
+				title = title:k_soissons
+			}
+			create_maa_regiment = {
+				type = roman_light_infantry
+				check_can_recruit = no
+				size = 3
+				title = title:k_soissons
+			}
+			create_maa_regiment = {
+				type = bowmen
+				check_can_recruit = no
+				size = 3
+				title = title:k_soissons
+			}
+			create_maa_regiment = {
+				type = pikemen_unit
+				check_can_recruit = no
+				size = 3
+				title = title:k_soissons
+			}
+		}
+	}
+}
+
 #Tributaries
 BP_setup_tributaries_476 = {
 	effect = {

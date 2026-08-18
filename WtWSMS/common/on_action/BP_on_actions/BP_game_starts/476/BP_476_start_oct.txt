@@ -294,33 +294,6 @@ BP_set_armies_476_oct_DLC = {
 				title = title:e_magister_military_ere
 			}
 		}
-		title:k_soissons.holder = {
-			title:k_soissons = { every_title_maa_regiment = { destroy_maa_regiment = yes } }
-			create_maa_regiment = {
-				type = roman_heavy_infantry
-				check_can_recruit = no
-				size = 5
-				title = title:k_soissons
-			}
-			create_maa_regiment = {
-				type = roman_light_infantry
-				check_can_recruit = no
-				size = 3
-				title = title:k_soissons
-			}
-			create_maa_regiment = {
-				type = bowmen
-				check_can_recruit = no
-				size = 2
-				title = title:k_soissons
-			}
-			create_maa_regiment = {
-				type = pikemen_unit
-				check_can_recruit = no
-				size = 2
-				title = title:k_soissons
-			}
-		}
 		title:e_magister_military_italy.holder = {
 			create_maa_regiment = {
 				type = armored_footmen

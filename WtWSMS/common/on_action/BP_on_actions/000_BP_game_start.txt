@@ -1250,13 +1250,6 @@ update_development_by_terrain_and_circumstances = {
 					}
 				}
 			}
-####			if = { #Xia should emphasize d_xia
-####				limit = { this.duchy = title:d_xia }
-####				change_development_level = {
-####					value = this.development_level
-####					multiply = 0.33
-####				}
-####			}
 			
 			# Impact of Terrain
 			if = {
@@ -1382,6 +1375,8 @@ update_development_by_terrain_and_circumstances = {
 					multiply = -0.50
 				}
 			}
+			## Other Special Effects
+			
 		}
 	}
 }
