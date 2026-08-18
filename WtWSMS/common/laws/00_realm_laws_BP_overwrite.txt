@@ -440,13 +440,13 @@ tribal_authority = {
 				limit = {
 					NOT = {
 						culture = {
-							has_cultural_parameter = forming_confederations_is_easier 
+							has_cultural_parameter = confederation_tribal_authority
 						}
 					}
 					NOT = {
 						general_situation_regional_parameter_trigger = {
 							CHARACTER = root
-							PARAMETER = forming_confederations_is_easier
+							PARAMETER = confederation_tribal_authority
 						}
 					}
 				}
@@ -525,13 +525,13 @@ tribal_authority = {
 				limit = {
 					NOT = {
 						culture = {
-							has_cultural_parameter = forming_confederations_is_easier 
+							has_cultural_parameter = confederation_tribal_authority
 						}
 					}
 					NOT = {
 						general_situation_regional_parameter_trigger = {
 							CHARACTER = root
-							PARAMETER = forming_confederations_is_easier
+							PARAMETER = confederation_tribal_authority
 						}
 					}
 				}
