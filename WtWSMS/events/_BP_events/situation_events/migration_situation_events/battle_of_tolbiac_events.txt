@@ -94,7 +94,7 @@ scripted_effect battle_of_tolbiac_picked_right_new_god_effect = {
 	}
 	
 	#Duplicate, make more powerful, and fire without rescoping
-	trigger_event = { id = faith_conversion.0001 } #Convert Capital County
+	trigger_event = { id = faith_conversion.0001 } # Convert Capital County
 	trigger_event = { id = faith_conversion.0003 } # Convert close family
 	trigger_event = { id = faith_conversion.1002 } # Player-only narrative-notification event
 	trigger_event = { id = faith_conversion.1101 } # Notify vassals of conversion

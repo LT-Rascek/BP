@@ -43,6 +43,19 @@
 	##################################################
 	# On Actions
 	##################################################
+
+	#Global join of the situation
+	on_join = {
+		if = {
+			limit = {
+				is_ai = no
+				NOT = { has_character_flag = migration_general_events_0001_var }
+				has_game_rule = wtwsms_start_event_migration_period_v0001_enabled
+			}
+			trigger_event = migration_general_events.0001
+		}
+	}
+
 	on_monthly = {}
 	on_yearly = {
 		#Yearly Tick of situation
@@ -60,16 +73,7 @@
 				is_independent_ruler = yes
 				is_landed = yes
 			}
-			on_join = {
-				if = {
-					limit = {
-						is_ai = no
-						NOT = { has_character_flag = migration_general_events_0001_var }
-						has_game_rule = wtwsms_start_event_migration_period_v0001_enabled
-					}
-					trigger_event = migration_general_events.0001
-				}
-			}
+			on_join = {}
 			on_leave = {}
 			
 			map_color = hsv{ 0.37 1.00 0.78 }
@@ -82,16 +86,7 @@
 				is_independent_ruler = yes
 				is_landed = yes
 			}
-			on_join = {
-				if = {
-					limit = {
-						is_ai = no
-						NOT = { has_character_flag = migration_general_events_0001_var }
-						has_game_rule = wtwsms_start_event_migration_period_v0001_enabled
-					}
-					trigger_event = migration_general_events.0001
-				}
-			}
+			on_join = {}
 			on_leave = {}
 			
 			map_color = hsv{ 0.37 1.00 0.78 }
@@ -105,16 +100,7 @@
 				is_independent_ruler = yes
 				is_landed = yes
 			}
-			on_join = {
-				if = {
-					limit = {
-						is_ai = no
-						NOT = { has_character_flag = migration_general_events_0001_var }
-						has_game_rule = wtwsms_start_event_migration_period_v0001_enabled
-					}
-					trigger_event = migration_general_events.0001
-				}
-			}
+			on_join = {}
 			on_leave = {}
 			
 			map_color = hsv{ 0.37 1.00 0.78 }
@@ -133,16 +119,7 @@
 					is_ai = no
 				}
 			}
-			on_join = {
-				if = {
-					limit = {
-						is_ai = no
-						NOT = { has_character_flag = migration_general_events_0001_var }
-						has_game_rule = wtwsms_start_event_migration_period_v0001_enabled
-					}
-					trigger_event = migration_general_events.0001
-				}
-			}
+			on_join = {}
 			on_leave = {}
 			
 			map_color = hsv{ 0.37 1.00 0.78 }
@@ -155,16 +132,7 @@
 				is_independent_ruler = yes
 				is_landed = yes
 			}
-			on_join = {
-				if = {
-					limit = {
-						is_ai = no
-						NOT = { has_character_flag = migration_general_events_0001_var }
-						has_game_rule = wtwsms_start_event_migration_period_v0001_enabled
-					}
-					trigger_event = migration_general_events.0001
-				}
-			}
+			on_join = {}
 			on_leave = {}
 			
 			map_color = hsv{ 0.37 1.00 0.78 }
@@ -180,16 +148,7 @@
 				is_independent_ruler = yes
 				is_landed = yes
 			}
-			on_join = {
-				if = {
-					limit = {
-						is_ai = no
-						NOT = { has_character_flag = migration_general_events_0001_var }
-						has_game_rule = wtwsms_start_event_migration_period_v0001_enabled
-					}
-					trigger_event = migration_general_events.0001
-				}
-			}
+			on_join = {}
 			on_leave = {}
 			
 			map_color = hsv{ 0.37 1.00 0.78 }
