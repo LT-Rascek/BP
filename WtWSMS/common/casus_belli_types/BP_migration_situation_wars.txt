@@ -383,7 +383,7 @@ bp_migration_war_duchy_cb = {
 	}
 
 	allowed_for_character_display_regardless = {
-		this.prestige_level > this.migration_war_required_fame_level
+		this.prestige_level > this.minor_migration_war_required_fame_level
 		custom_description = {
 			text = has_launched_migration_war_recently
 			NOT = { has_character_flag = launched_migration_war_recently }
@@ -459,7 +459,7 @@ bp_migration_war_duchy_cb = {
 	}
 
 	cost = {
-		prestige = scope:attacker.migration_war_prestige_cost_kingdom
+		prestige = scope:attacker.migration_war_prestige_cost_duchy
 	}
 
 	on_declaration = {
