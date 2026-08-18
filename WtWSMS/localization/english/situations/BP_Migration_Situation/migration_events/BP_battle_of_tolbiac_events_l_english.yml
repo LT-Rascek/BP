@@ -17,6 +17,10 @@
  battle_of_tolbiac.0001.keep_the_old_gods: "I cannot forsake [ROOT.Char.GetFaith.HighGodName]"
  battle_of_tolbiac.0001.keep_the_old_gods.flavor.cynical: "#weak [ROOT.Char.GetFaith.HighGodName|U], if you exist, I pray that Thou does for [ROOT.Char.GetFirstNameNoTooltip] as you would have [ROOT.Char.GetFirstNameNoTooltip] do for you, if [ROOT.Char.GetSheHe] were a god and you were [ROOT.Char.GetFirstNameNoTooltip].#!"
  battle_of_tolbiac.0001.keep_the_old_gods.generic: "[ROOT.Char.GetFaith.HighGodNameAlternate|U], grant me victory against mine enemies!"
+ battle_of_tolbiac.0001.rely_on_myself: "Neither; I shall rely on myself and myself alone!"
+ battle_of_tolbiac.0001.rely_on_myself.generic: "[SelectLocalization(ROOT.Char.GetFaith.HasDoctrine(GetFaithDoctrine( 'doctrine_polytheist' )),'$heaven_helps_those_who_help_themselves$','$the_gods_help_those_who_help_themselves$')]"
+ heaven_helps_those_who_help_themselves: "Heaven helps those who help themselves!"
+ the_gods_help_those_who_help_themselves: "The gods help those who help themselves!"
  
  battle_of_tolbiac.0009.t: "A Battle won by Divine Aid?"
  battle_of_tolbiac.0009.desc: "[battle_of_tolbiac_winner.GetName] recently won a battle with the aid of a foreign god and has converted to [battle_of_tolbiac_winner.GetFaith.GetName]. This may mark the beginning of a new era..."
