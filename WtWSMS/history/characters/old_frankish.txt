@@ -13,16 +13,8 @@
 	trait = "ambitious"
 	trait = "education_martial_2"
 	#trait="merovingian" # trait doesn't exist
-	411.1.2 = {
-		birth = yes
-		#create_bloodline = {
-		#	type = merovingian
-		#	has_dlc = "Holy Fury"
-		#}
-	}
-	457.1.1 = {
-		death = "457.1.1"
-	}
+	411.1.2 = { birth = yes }
+	457.1.1 = { death = yes }
 }
 
 39 = {
@@ -40,28 +32,15 @@
 	trait = "wrathful"
 	trait = "ambitious"
 	trait = "education_martial_2"
-	trait = "education_intrigue_1"
+	trait = "education_intrigue_2" #Level 1 traits negatively impact demesne limit now
 	father = 38
-	440.1.2 = {
-		birth = "440.1.2"
-	}
-	457.1.1 = {
-		add_spouse = 36641		# Basina of Thuringia
-	}
-	476.1.1 = {
-		# Childeric's forces
-		effect = {
-			create_germanic_476_army_effect = { LOCATION = 2106 } #Antwerp
-			create_germanic_476_army_effect = { LOCATION = 2106 } #Antwerp
-		}
-	}
-	481.1.1 = {
-		death = "481.1.1"
-	}
+	440.1.2 = { birth = yes }
+	457.1.1 = { add_spouse = 36641 } # Basina of Thuringia
+	481.1.1 = { death = yes }
 }
 
 40 = {
-	name = "Clovis"	#PLRE vol. 2 Chlodovechus
+	name = "Clovis" #PLRE vol. 2 Chlodovechus
 	dna = 40_clovis
 	dynasty = 1042151
 	martial = 10
@@ -70,29 +49,36 @@
 	stewardship = 5
 	religion = "frankish_pagan"
 	culture = "old_frankish"
-	trait = "cynical"
-	trait = "diligent"
-	trait = "wrathful"
-	trait = "lustful"
-	trait = "trusting"
-	trait = "ambitious"
-	trait = "education_martial_2"
-	trait = "legendary_leader"
-	trait = "agile"
 	father = 39
 	mother = 36641
 	466.1.1 = {
-		birth = "466.1.1"
-		#effect = { set_character_flag = is_clovis }
+		birth = yes
+		add_trait = agile
+		add_trait = legendary_leader
 	}
-	490.1.1 = {
-		add_spouse = 36653		# Clotilde 
+	#Childhood; gains childhood trait at 6, gain personality traits at 9, 11, 13, 14, 15; Sexuality at 10
+	#Done in order of most to least important in modeling his personality
+	472.1.1 = { add_trait = rowdy } #6
+	475.1.1 = { add_trait = ambitious } #9
+	476.1.1 = { set_sexuality = heterosexual } #10
+	477.1.1 = { add_trait = brave } #11
+	479.1.1 = { add_trait = wrathful } #13
+	481.1.1 = { add_trait = cynical } #15
+	482.1.1 = { #16
+		remove_trait = rowdy
+		add_trait = education_intrigue_3
+		add_trait = education_martial_prowess_2
 	}
+	484.1.1 = { add_spouse = 40_other_spouse } #Evochilde
+	490.1.1 = { add_spouse = 36653 } # Clotilde
 	496.12.25 = {
-		religion = "nicene"
+		religion = nicene
+		remove_trait = cynical
+		add_trait = zealous
 	}
 	511.11.27 = {
-		death = "511.11.27"
+		death = yes
+		add_trait = saint
 	}
 }
 
@@ -213,16 +199,19 @@
 
 10075 = {
 	name = "Ignomer"
-	# Ignomer Meroving 
+	# Ignomer Meroving (died in infancy)
 	dynasty = 1042151
 	religion = "frankish_pagan"
 	culture = "old_frankish"
 	father = 40
-	480.1.1 = {
-		birth = "480.1.1"
-	}
+	mother = 36653
 	494.1.1 = {
-		death = "494.1.1"
+		birth = yes
+		add_trait = sickly
+	}
+	495.1.1 = { #Died shortly after Baptism, made Clovis turn against Nicene Christianity
+		religion = nicene
+		death = { death_reason = death_sickly }
 	}
 }
 
@@ -962,6 +951,7 @@
 	religion = "frankish_pagan"
 	culture = "old_frankish"
 	father = 40
+	mother = 40_other_spouse
 	485.1.1 = {
 		birth = "485.1.1"
 	}

@@ -116,7 +116,6 @@ tribal_government = {
 		government_is_tribal
 		government_is_tribal_excluding_wanua
 		government_is_settled
-		government_can_migrate
 		cannot_advance_beyond_tribal_era #Just informative
 		
 		tribal_character_modifiers
@@ -193,7 +192,6 @@ nomad_government = {
 	# Use flags instead of has_government for moddability if possible (i.e., wherever not visible to the player).
 	flags = {
 		government_is_nomadic
-		government_can_migrate
 		government_can_raid_rule
 		government_can_use_tributary_men_at_arms
 		can_start_war_with_raised_troops

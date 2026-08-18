@@ -1,3 +1,227 @@
+2026-MM-DD Migration Rework
+-----------
+
+Migration Situation: Added a new situation to subsume our disparate migration mechanics
+   - Participant Groups:
+      - Migrators: German, Slavic, or Sarmatian heritage or Germanic, Slavic, or Steppe religion tribals and adventurers
+      - Civilized Polities: Nations with centralized governments
+      - Barbarian Polities: Former Migrators that now rule centralized governments
+      - Successor States: All other participants
+      - Tribals: Groups with tribal governments who aren't Migrators
+   - Regions:
+      - Western Roman Empire, Eastern Roman Empire, Britannia, Germania and Slavia
+      - If playing without "Khans of the Steppe", the Steppe will also be its own region
+   - Phases:
+      - Migration Phase:
+         - Lasts until AD 795
+         - Everyone is targetable by Migration CBs, in general
+         - Migrators:
+            - War Effects:
+               - Migration CB is enabled
+               - Cultural Unification CB is enabled
+               - Lifetime Subjugation CB is increased by one
+               - Adventurer CBs are less expensive
+            - Culture Effects:
+               - Time required for Hybridization/Divergence cooldown is halved
+               - Required Cultural Hybridization acceptance lowered in most instances
+               - Faster "Promote Culture" Task in counties with just tribal holdings
+            - Faith Effects:
+               - Faster "Convert Faith" Task in counties with just tribal holdings
+            - Other Effects:
+               - Forming Confederation is easier
+               - Can form Titular Duchies
+               - AI is more inclined to accept confederations
+               - AI is bolder and more aggressive
+         - Tribals:
+            - War Effects:
+               - Cultural Unification CB is enabled
+               - Lifetime Subjugation CB is increased by one
+            - Culture Effects:
+               - Time required for Hybridization/Divergence cooldown is halved
+               - Required Cultural Hybridization acceptance lowered in most instances
+               - Faster "Promote Culture" Task in counties with just tribal holdings
+            - Faith Effects:
+               - Faster "Convert Faith" Task in counties with just tribal holdings
+            - Other Effects:
+               - Forming Confederation is easier
+               - Can form Titular Duchies
+               - AI is more inclined to accept confederations
+               - AI is bolder and more aggressive
+         - Barbarian Polities:
+            - Other Effects:
+               - Sub-Roman Decay events happen faster
+               - "Integrate Title" Task completes faster
+               - Passing of a Cultural Law is enabled, with various benefits and drawbacks, modeling the Lex Burgundiorum and Lex Visigothorum
+               - AI is bolder and more aggressive
+         - Roman Successors:
+            - Other Effects:
+               - "Integrate Title" Task completes faster
+      - Transition Phase:
+         - Runs for 1 year, then ending the situation
+
+Game Rules:
+- Added "Migration Behavior" Game Rule giving players more control over AI migration Behavior
+   - "Historical" (Default): AI rulers of cultures that did not migrate historically, such as the Franks or Alemannians or Gepids, will not use the Migration Casus Belli
+   - "Classic": Based on CK2 WtWSMS. So long as an AI is capable, it will consider migrations
+- Removed "Custom Kingdom Blocked" Rule, as it is superseded by migration mechanics
+
+Traditions:
+- Renamed "Migratory Culture" Tradition to "Elite Rulership"
+   - Added "The Martial Education Traits are more valued" parameter
+   - Has "The Learning Education Traits are less valued" parameter
+   - Adds a -5 opinion of different cultures
+
+Decisions:
+- Added "Form a Tribe" Decision for Tribals and Migrators
+   - Cheaper form of "Form a Duchy" decision
+   - Creates only a titular duchy instead of a de jure Duchy
+- "Found Duchy" decision is unavailable for Tribals and Migrators, as they have access to "Form a Tribe" decision
+- Overhauled and Generalized the "Claim Frankish Kingdom" Decision
+   - Instead lands a currently titular kingdom title, such as those created by the "Elevate Confederation" decision
+   - Requires:
+      - Have to have controlled your primary titular kingdom title for 10 years
+      - Only available to Migrators and Tribals (Otherwise must use the existing de jure decision)
+      - Requires a large number of culture counties (25), of which the ruler controls 66% of them
+      - Requires a realm size of over 25 and all powerful vassals having an opinion of at least 35 with you
+      - Requires a Prestige Level of "Exalted among Men" and  a Legitimacy Level of "True", or the trait "Legendary Leader", and Maximum Tribal authority
+   - Effect:
+      - If Frankish, replace your titular confederal title with Francia; otherwise, your title gets renamed
+      - Your capital duchy and all completely controlled duchies become 
+      - You receive a pressed claim on the empire containing your capital duchy for yourself and your heirs, unlocking the Unification War Casus Belli
+- Tweaked the "Elevate Confederation" Decision
+   - Requires no other Confederate has a title with a tier higher than yours
+   - Added custom picture for decision in some circumstances
+   - Different custom names are used for Migrators and Tribals in the Migration Situation for the newly formed kingdom
+   - Gives the character a Major Conquest Casus Belli
+- Extended the "Convert to High Tribal" decision to small, independent Sub-Roman Dynastic realms, modeling the more immediate decay of Roman government in Britannia and among semi-Romanized Groups
+   - Only for Sub-Roman types of governments
+   - If a Romance Culture character, requires a realm size of 1, not being a tributary, or having an obscure dynasty
+   - If not a Romance Culture character, the realm size must be less than or equal to 3
+   - Much cheaper prestige cost to devolve a Sub-Roman government than to adopt it as a tribal government
+- Added "Pass a Cultural Law" decision, modeling the Late Antique legal codices such as Lex Visigothorum and Lex Burgundorum
+   - The decision has customizable localization name for some cultures
+   - Only AI Visigoths and Burgundians will use this decision
+   - May only be passed once per culture, including child cultures who share a heritage with the culture that passed it
+   - Costs gold/treasury equivalent to your realm's net development (minimum of 5 per county, doubled cost without Oral Law and 50% more expensive without Mundium), and costs 500 prestige as well when binding closer to Roman culture
+   - Given three options:  Emphasize your culture's origins, assert the status quo, or blend with Romans
+      - The first option gives you the nickname "the True <CultureName>", gives your dynasty 250 Renown, moves your Non-Roman rule law one harsher towards Rome, and reduces cultural acceptance with Romance cultures in your realm by 10
+         - Gain the "Adopted Law" Dynasty Modifier, giving same culture vassal opinion and same culture opinion, reducing minority vassal option, and giving 2.5% more renown per character for 100 years
+      - The second option gives you the nickname "the Lawgiver", gives you 500 prestige, and a level of fame
+         - Gain the "Adopted Law" Dynasty Modifier, giving 5% Culture Head Fascination, 5% legitimacy gain, and 5% prestige for dynasty characters for 100 years
+      - The third option gives you the nickname "the Roman", moves your Non-Roman rule law one level more agreeable to Rome, and increases cultural acceptance with Romance cultures in your realm by 10
+         - Gain the "Adopted Law" Dynasty Modifier, giving 20% control growth, 20% progress in sieges against revolts, 5% monthly influence, and 5% development growth for dynasty characters for 100 years
+   - Regardless of Choice, the decision also gives you one of "Oral Law", "Mundium", or a random available civic innovation, in that order
+
+Casus Belli:
+- Overhauled Migration Casus Belli:
+   - Kingdom Level Migration:
+      - Available to Dukes and Kings
+      - On Victory:
+         - Attacker gets a new titular title matching their primary title's rank, if their primary title isn't titular and looses all de jure Duchies and higher ranked titles
+            - Avoids edge case where someone migrates with de jure titles only to have them usurped shortly afterwards
+         - The attackers previous counties get handed off to characters of their faith and culture with the "Peasant Leader" trait
+         - Exclaves become independent if there is no path to the capital, potentially shattering realms
+         - If the kingdom holder has a Centralized Government, Tribal, High Tribal, Roman Federate, and player vassals within the conquest region will either become your vassals or become your tributaries, depending on their title tier compared to yours
+         - All conquered provinces will be looted for 5 years and counties have a modifier nerfing garrison and levies by 33%
+         - Greatly simplified the impact of innovations on tribalization of holdings
+            - Odds of flipping holdings to tribal: Base 20%
+               - Reduced by 2% for each level of development
+               - Reduced 0.5% for each Tribal Era Military Innovation and 1% for each Tribal Era Civic Innovation, with "Oral Law", "Writing", and "Social Stratification" each reducing the odds by 1.5%
+         - Greatly simplified the flipping of county culture/faith during migration
+            - Odds of flipping culture/faith: Base 30%
+               - Reduced 2% for each level of development over 5, and increased 2% by each level of development under 5
+               - Odds doubled if the title province holding is a tribal, herder, or nomad holding
+               - Each era, beyond the Tribal Era, for which the county culture has at least one innovation reduces odds by 5%
+         - "A New Administration?" and "A New Culture?" events may fire under certain conditions
+   - On White Peace:
+         - All attacker counties get a modifier reducing garrison, levies, taxes, and increasing build speed for 5 years
+         - All attacker provinces get the looted modifier for 5 years
+      - On Defeat:
+         - Attacker looses a level of fame
+         - All attacker counties get a modifier reducing garrison, levies, taxes, and increasing build speed for 10 years
+         - All attacker provinces get the looted modifier for 5 years
+   - Duchy Level Migration:
+      - Similar to the above, but only available to counts and dukes
+      - Does not get "A New Culture?" event if victorious
+- Added Cultural Unification Casus Belli:
+   - Cheaper, unlimited variant of Tribal Subjugation Casus Belli for Migrators, Tribals, and Others
+   - Only targets characters of the same culture
+   - Costs more to attack higher ranked title holders and costs more to attack the culture head
+   - AI culture heads will be the only AI characters to use it
+- Modified Overrun Duchy/Kingdom Casus Bellorum (with "Khans of the Steppe" DLC):
+   - A victorious attacker will get an event that gives the choice of adopting "Nomadic Rulership" Tradition (with or without Cranial Deformation features depending on the existing traditions)
+
+Events:
+- Added "A New Administration?" event that fires under certain wars, namely Migrations and "Overrun Duchy/Kingdom" Casus Belli
+   - If the target of the migration has a Centralized Government, an event will fire allowing the attacker to adopt Hight Tribal Government
+      - If adopting the High Tribal government, the ruler receives a modifier increasing monthly control growth and reducing different faith Popular Opinion
+      - If declining to upgrade the government, the ruler receives prestige and a Level of Fame
+      - If that Centralized Government is a Roman Government, there is also the option to adopt Sub-Roman government
+         - This inherits the Sub-Roman Transition state from the previous government as well
+         - Adopting Roman government gives 5% cultural acceptance with all cultures with a Roman Political or Cultural Tradition
+         - Will have a chance to diverge your culture and give either "Migratory Culture" Tradition or "Nomadic Rulership" Tradition (if having "Shaped to Rule" Tradition)
+- Added "A New Culture?" event that fires under certain wars, namely Migrations and "Overrun Duchy/Kingdom" Casus Belli
+   - Models "Elite Transfer" sort of migration, wherein the cultural elite move instead of the whole populace
+   - You either adopt a new divergent culture or your culture diverges from yours (if you were the culture head)
+   - If accepted, "Ruling Caste" and "Shaped to Rule" Traditions will be removed from your resulting culture and either "Migratory Culture" or "Nomadic Rulership" will be adopted as traditions
+   - If declined, gain a Level of Fame and 500 Prestige
+   - If you were the culture head, the following happens to your old culture:
+      - Looses all traditions associated with elite sort of rule (e.g., "Ruling Caste", "Staunch Traditionalists", "Trial Unity", "Sinophilic", &c.)
+      - Gains enough traditions to fill its free slots from a list of traditions that are not elite-related, like "Collective Lands", or encourage further hybridization, like "Culture Blending" or "Xenophilic"
+      - Other traditions chosen to emphasize a non-elite approach, like "Strength in Numbers" or "Religion Blending"
+      - Also has some realm terrain-related traditions like "Forest Folk" and "Mountain Homes" as choices
+- Added an event chain modeling the Battle of Tolbiac
+   - For Migrators and Tribals in the Migration Situation
+   - If you are landed duke or better, have an unreformed faith, and either a spouse, a concubine, a consort, or some county in your realm has an organized faith, the event may fire if you are outnumbered in the fight
+   - At the start of the chain, you get an option to appeal to this foreign god for Victory
+      - If you do so, you replace the Zealous Trait with the Cynical Trait and loose "Faithful Blade" Commander Trait and get a random modifier that will add a random amount of positive or negative advantage for the battle
+      - If you instead pray to the old gods, you gain the "Cautious Leader" Commander Trait and gain XP for it
+   - If you win the battle and prayed to the new god you can:
+      - Keep your promise
+         - You gain the Zealous trait, gain the "Faith Warrior" Trait, gain the "Faithful Blade" Commander Trait and a good amount of XP for that trait, and you get the typical events that fire when converting
+      - Welch on your promise: Has similar effects to loosing the battle
+      - In either case, new and old faiths gain and loose some fervor as appropriate
+   - If you win the battle and prayed to the old gods you gain:
+      - A Level of Fame, a Level of Piety, gain the "Faith Warrior" Trait, gain the "Faithful Blade" Commander Trait and XP for it
+      - The new and old faiths gain and loose some fervor as appropriate
+   - If you loose the battle, you have:
+      - Loose a Level of Fame and a Level of Piety
+      - Have any of a number of random effects occur (e.g., Nothing, Stress Gain, Stress Loss, Personality Trait changes, Lunacy, Faltering Heart, Death)
+   - The initial event can never occur more than once in a character's life and will never happen again if a character wins the battle praying to the new gods, wins, and converts
+
+Landed Titles:
+- Reorganized some titles in Germania Inferior and Belgica
+   - Added Texandria and Mosiana as de jure duchies to Germania Inferior
+      - Texandria include Maastricht, Zeeland, Brabant, and Antwerp
+      - Mosiana inclues Liege, Boullion, and Namur
+   - Koblenz is de jure part of Germania Inferior Duchy
+   - Briey is part of the Belgica Prima duchy
+   - Triveria is the cultural title for Franks controlling Belgica Prima
+   - Tournai made the capital of Hainaut
+- Greatly reduced non-tribal holdings in Frankish counties
+
+History:
+- At start military modifications:
+   - Removed Merovingian Special at start troops and tweaked their starting Men-At-Arms
+   - Added Contus Bearer Men-At-Arms to Orleans Alans at start troops
+   - Reduced Soissons at start title troops
+   - Overhauled troops of Triveria
+- Fixed up history of Brittany region
+   - Britons now run most of Armorica
+- Fixed up Frankish character history
+   - Ragnachar, Chararic, Childeric, and Sigobert's polities are in more likely locations
+   - Created some confederations centered on Ragnachar/Chararic/Childeric/Sigobert on the Roman side of the Rhine to model the proto-state formation ongoing before the establishment of Francia
+   - Broke up the Frankish holdings on the opposite side of the Rhine into individual tribal units
+   - Landed the Frankish duchies to better conform with CK3 expectations with respect to duchies
+   - Added Evochilde as the mother of Theuderic I of Metz
+   - Overhauled Clovis' history so he isn't a stack of traits
+   - Clovis acquires traits in history more in line with CK3's childhood system
+      - In 476, he starts as a Rowdy, Ambitious, Agile, Legendary Leader
+      - Clovis education is intrigue-aligned now, becoming (historically) an "Intricate Webweaver"
+      - Clovis is Cynical and becomes zealous after the Battle of Tolbiac
+- The Frisians are downgraded to a duchy instead of a kingdom
+- Northern Gaul has reduced development
+
 2026-MM-DD v0.3.0
 -----------
 

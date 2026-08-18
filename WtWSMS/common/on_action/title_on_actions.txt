@@ -2542,7 +2542,7 @@ on_title_gain = {
 					}
 				}
 			}
-			scope:bloc = { add_confederation_member = scope:bloc_joiner }
+			scope:bloc ?= { add_confederation_member = scope:bloc_joiner } ##### Changed from Vanilla: Seems to bork out
 		}
 		#Coronation modifier is lost
 		if = {

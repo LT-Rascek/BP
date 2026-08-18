@@ -1444,3 +1444,78 @@ house_power_score = {
 
 	round = yes
 }
+
+##### Changed from Vanilla: tied into situation mechanics
+ep3_laamp_invasion_cb_cost = {
+	add = {
+		if = {
+			limit = {
+				any_in_list = {
+					list = target_titles
+					tier >= tier_empire
+				}
+			}
+			add = 10000
+		}
+		else_if = {
+			limit = {
+				any_in_list = {
+					list = target_titles
+					tier >= tier_kingdom
+				}
+			}
+			add = 5000
+		}
+		else_if = {
+			limit = {
+				any_in_list = {
+					list = target_titles
+					tier >= tier_duchy
+				}
+			}
+			add = 2000
+		}
+		else = { add = 500 }
+		desc = "CB_BASE_COST"
+	}
+
+	# Reduce the cost to make this more feasible for the AI.
+	scope:attacker = {
+		if = {
+			limit = { is_ai = yes }
+			multiply = 0.1
+		}
+	}
+
+	#Halve cost if Lust for Land modifier
+	if = {
+		limit = {
+			scope:attacker = {
+				has_character_modifier = ep3_lust_for_land_modifier
+			}
+		}
+		divide = {
+			value = 2
+			desc = "lust_for_land_modifier_tt"
+		}
+	}
+
+	##### Changed from Vanilla vvvvv
+	
+	#Situation Parameter
+	
+	if = {
+		limit = {
+			general_situation_regional_parameter_trigger = {
+				CHARACTER = scope:attacker
+				PARAMETER = cheaper_adventurer_invasions
+			}
+		}
+		divide = {
+			value = 2
+			desc = "cheaper_adventurer_invasions_tt"
+		}
+	}
+	##### Changed from Vanilla ^^^^^
+}
+

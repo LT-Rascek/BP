@@ -1,0 +1,443 @@
+﻿#Lex Visigothorum, Lex Burgundorum
+pass_cultural_law = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+	decision_group_type = major
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 120
+		empire = 120
+		hegemony = 60
+	}
+
+	desc = pass_cultural_law_desc
+	selection_tooltip = pass_cultural_law_tooltip
+	
+	is_shown = {
+		general_situation_regional_parameter_trigger = {
+			CHARACTER = root
+			PARAMETER = unlocks_passing_culture_law
+		}
+		has_realm_law_in_group = non_roman_minority_rule_law #Safety
+	}
+	
+	is_valid = {
+		NOT = { has_realm_law = non_roman_minority_rule_law_0 }
+		NOT = { has_realm_law = non_roman_minority_rule_law_4 }
+		custom_tooltip = {
+			text = you_are_the_culture_head
+			root = root.culture.culture_head
+		}
+		#No stacking please
+		custom_tooltip = {
+			text = your_dynasty_does_not_have_a_cultural_law_modifier
+			subject = root
+			NOR = {
+				root.dynasty ?= { has_dynasty_modifier = adopted_barbarian_law }
+				root.dynasty ?= { has_dynasty_modifier = adopted_status_quo_law }
+				root.dynasty ?= { has_dynasty_modifier = adopted_roman_law }
+			}
+		}
+		root.primary_title.tier >= tier_kingdom
+	}
+
+	is_valid_showing_failures_only = {
+		trigger_if = {
+			limit = { exists = root.culture.var:passed_cultural_law }
+			custom_description = {
+				text = we_already_have_a_body_of_laws
+				subject = root.culture.var:passed_cultural_law
+				always = no
+			}
+		}
+	}
+
+	widget = {
+		gui = "decision_view_widget_option_list_generic"
+		controller = decision_option_list_controller
+		decision_to_second_step_button = "CHOOSE_GOVERNMENT_NEXT_STEP_BUTTON"
+		show_from_start = yes
+
+		item = {
+			value = reinforce_tribal_identity
+			current_description = reinforce_tribal_identity
+			localization = reinforce_tribal_identity
+			icon = "gfx/interface/icons/government_types/tribal_government.dds"
+			ai_chance = { value = 0 }
+		}
+
+		item = {
+			value = reinforce_status_quo
+			current_description = reinforce_status_quo
+			localization = reinforce_status_quo
+			icon = "gfx/interface/icons/government_types/mercenary_government.dds"
+			ai_chance = { value = 100 }
+		}
+
+		item = {
+			value = become_more_roman
+			current_description = become_more_roman
+			localization = become_more_roman
+			icon = "gfx/interface/icons/government_types/roman_administrative_government.dds"
+			ai_chance = { value = 0 }
+		}
+	}
+
+	cost = {
+		gold = {
+			value = 0
+			if = {
+				limit = { has_treasury = no }
+				add = gold_treasury_cost_from_realm_size
+			}
+		}
+		treasury = {
+			value = 0
+			if = {
+				limit = { has_treasury = yes }
+				add = gold_treasury_cost_from_realm_size
+			}
+		}
+		prestige = {
+			value = 0
+			if = {
+				limit = {
+					OR = {
+						scope:become_more_roman = yes
+						scope:reinforce_tribal_identity = yes
+					}
+				}
+				add = 500
+			}
+		}
+	}
+
+	effect = {
+		root.culture = { set_variable = { name = passed_cultural_law value = root.culture } }
+		#Effects from decision
+		if = {
+			limit = { scope:reinforce_tribal_identity = yes }
+			give_nickname = nick_the_true_culture
+			this.dynasty = { add_dynasty_prestige = 250 }
+			root.dynasty ?= { add_dynasty_modifier = { modifier = adopted_barbarian_law years = 100 } }
+			#Loose acceptance with Romance cultures in realm
+			every_realm_county = {
+				limit = { this.culture = { is_a_romance_culture_general_trigger = yes } }
+				this.culture = { add_to_temporary_list = romance_cultures_in_realm }
+			}
+			every_in_list = {
+				list = romance_cultures_in_realm
+				change_cultural_acceptance = {
+					target = root.culture
+					value = -10
+					desc = adopted_barbarian_law_culture_effect
+				}
+			}
+			#Shift Non-Roman Rule Law One Down
+			if = {
+				limit = { has_realm_law = non_roman_minority_rule_law_3 }
+				add_realm_law_skip_effects = non_roman_minority_rule_law_2
+				hidden_effect = {
+					every_vassal_or_below = { add_realm_law_skip_effects = non_roman_minority_rule_law_2 }
+				}
+			}
+			else_if = {
+				limit = { has_realm_law = non_roman_minority_rule_law_2 }
+				add_realm_law_skip_effects = non_roman_minority_rule_law_1
+				hidden_effect = {
+					every_vassal_or_below = { add_realm_law_skip_effects = non_roman_minority_rule_law_1 }
+				}
+			}
+			else_if = {
+				limit = { has_realm_law = non_roman_minority_rule_law_1 }
+				add_realm_law_skip_effects = non_roman_minority_rule_law_0
+				hidden_effect = {
+					every_vassal_or_below = { add_realm_law_skip_effects = non_roman_minority_rule_law_0 }
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:reinforce_status_quo = yes }
+			give_nickname = nick_the_lawgiver
+			root.dynasty ?= { add_dynasty_modifier = { modifier = adopted_status_quo_law years = 100 } }
+			add_prestige = 500
+			add_prestige_level = 1
+		}
+		else_if = {
+			limit = { scope:become_more_roman = yes }
+			give_nickname = nick_the_roman
+			root.dynasty ?= { add_dynasty_modifier = { modifier = adopted_roman_law years = 100 } }
+			#Gain acceptance with Romance cultures in realm
+			every_realm_county = {
+				limit = { this.culture = { is_a_romance_culture_general_trigger = yes } }
+				this.culture = { add_to_temporary_list = romance_cultures_in_realm }
+			}
+			every_in_list = {
+				list = romance_cultures_in_realm
+				change_cultural_acceptance = {
+					target = root.culture
+					value = 10
+					desc = adopted_roman_law_culture_effect
+				}
+			}
+			#Shift Non-Roman Rule Law One up
+			if = {
+				limit = { has_realm_law = non_roman_minority_rule_law_1 }
+				add_realm_law_skip_effects = non_roman_minority_rule_law_2
+				hidden_effect = {
+					every_vassal_or_below = { add_realm_law_skip_effects = non_roman_minority_rule_law_2 }
+				}
+			}
+			else_if = {
+				limit = { has_realm_law = non_roman_minority_rule_law_2 }
+				add_realm_law_skip_effects = non_roman_minority_rule_law_3
+				hidden_effect = {
+					every_vassal_or_below = { add_realm_law_skip_effects = non_roman_minority_rule_law_3 }
+				}
+			}
+			else_if = {
+				limit = { has_realm_law = non_roman_minority_rule_law_3 }
+				add_realm_law_skip_effects = non_roman_minority_rule_law_4
+				hidden_effect = {
+					every_vassal_or_below = { add_realm_law_skip_effects = non_roman_minority_rule_law_4 }
+				}
+			}
+		}
+		#Cultural Effects
+		if ={
+			limit = { NOT = { root.culture = { has_innovation = innovation_leges_barbarorum } } }
+			root.culture = { add_innovation = innovation_leges_barbarorum }
+		}
+		else_if ={
+			limit = { NOT = { root.culture = { has_innovation = innovation_mundium } } }
+			root.culture = { add_innovation = innovation_mundium }
+		}
+		else = { root.culture = { add_random_innovation = culture_group_civic } }
+	}
+	
+	ai_potential = {
+		OR = {
+			root.culture = culture:visigothic
+			root.culture = culture:burgundian
+		}
+	}
+	
+	ai_will_do = {
+		base = 100
+	}
+}
+#Establishing Frankia and other such kingdoms
+land_migration_tribal_kingdom = {
+	picture = {
+		trigger = { culture = { has_cultural_pillar = heritage_nordwestblock } }
+		reference = "gfx/interface/illustrations/decisions/pharamond_on_a_shield.dds"
+	}
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_found_kingdom.dds"
+	}
+	decision_group_type = major
+	
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 60
+		empire = 0
+		hegemony = 0
+	}
+	
+	desc = land_migration_tribal_kingdom_desc
+	selection_tooltip = land_migration_tribal_kingdom_tooltip
+	
+	is_shown = {
+		general_situation_regional_parameter_trigger = {
+			CHARACTER = root
+			PARAMETER = custom_kingdom_creation_restrictions
+		}
+		top_liege = this
+		highest_held_title_tier = tier_kingdom
+		primary_title = { is_titular = yes }
+		#On the off-chance we have a de-jure title, we don't get to do this
+		root.number_of_not_titular_kingdoms = 0
+	}
+	
+	is_valid = {
+		root.primary_title = { title_held_years >= 10 }
+		#Must control 66% of your culture's counties
+		custom_description = {
+			text = controls_least_two_thirds_of_counties_with_culture
+			subject = root
+			check_if_control_percentage_of_all_counties_with_condition_trigger = {
+				FEATURE = culture
+				CHARACTER = root
+				PERCENTAGE = 0.66
+			}
+		}
+		custom_description = {
+			text = at_least_five_culture_counties_on_the_map
+			root.culture = { any_culture_county = { count >= 5 } }
+		}
+		custom_tooltip = {
+			text = realm_size_is_over_25
+			realm_size > 25
+		}
+		OR = {
+			AND = {
+				prestige_level >= 4
+				legitimacy_level >= 4
+			}
+			has_trait = legendary_leader
+		}
+		custom_tooltip = {
+			text = has_maxed_out_authority
+			has_realm_law_flag = max_authority_level
+		}
+		custom_tooltip = {
+			text = powerful_vassals_think_highly_of_you
+			NOT = {
+				any_powerful_vassal = {
+					this != root
+					opinion = {
+						target = root
+						value < 35
+					}
+				}
+			}
+		}
+	}
+	
+	is_valid_showing_failures_only = {
+		is_available_at_peace_adult = yes
+		is_imprisoned = no
+		is_adult = yes
+		#Culture must be at least 20 counties
+		custom_description = {
+			text = culture_is_at_least_20_counties
+			root.culture = { any_culture_county = { count >= 20 } }
+		}
+	}
+	
+	cost = {
+		prestige = 500
+	}
+	
+	effect = {
+		#Done as event to prevent RC formation event from firing
+		show_as_tooltip = { land_migration_tribal_kingdom_effect = yes }
+		hidden_effect = {
+			root = { save_scope_as = the_kingdom_former }
+			
+			root = { trigger_event = { id = migration_title_decision_events.0001 } }
+		}
+	}
+	
+	ai_potential = { always = yes }
+	
+	ai_will_do = {
+		base = 100
+	}
+}
+#The Billion Migration Titular Duchies
+found_titular_duchy_decision = {
+	picture = {
+		trigger = { culture = { has_cultural_pillar = heritage_nordwestblock } }
+		reference = "gfx/interface/illustrations/decisions/pharamond_on_a_shield.dds"
+	}
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_found_kingdom.dds"
+	}
+	decision_group_type = major
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 60
+		duchy = 0
+		kingdom = 0
+		empire = 0
+		hegemony = 0
+	}
+
+	cooldown = { years = 10 }
+
+	is_shown = {
+		highest_held_title_tier = tier_county
+		is_landed = yes
+		NOR = {
+			government_has_flag = government_is_nomadic
+			government_is_japanese_trigger = yes
+		}
+		general_situation_regional_parameter_trigger = {
+			CHARACTER = root
+			PARAMETER = different_custom_duchy_decision
+		}
+	}
+
+	is_valid = {
+		is_independent_ruler = yes
+		is_confederation_member = no
+		is_tributary = no
+		realm_size >= 2
+		trigger_if = {
+			limit = {
+				has_legitimacy = yes
+			}
+			prestige_level >= 3
+			legitimacy_level >= 2
+		}
+		trigger_else = {
+			prestige_level >= 3
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+		is_at_war = no
+	}
+
+	cost = {
+		gold = {
+			value = 0
+			if = {
+				limit = {
+					has_treasury = no
+				}
+				add = medium_gold_value
+			}
+		}
+		prestige = 50
+		piety = 50
+	}
+
+	effect = {
+		create_custom_titular_duchy_effect = yes
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	#Only prestigious and non-collectivist cultures will do this
+	ai_will_do = {
+		base = 0
+		modifier = {
+			NOT = { culture = { has_cultural_tradition = tradition_collective_lands } }
+			add = 50
+		}
+		modifier = {
+			prestige_level >= 4
+			add = 25
+		}
+		modifier = {
+			prestige_level >= 5
+			add = 25
+		}
+		modifier = {
+			culture = { has_cultural_tradition = tradition_collective_lands }
+			factor = 0
+		}
+	}
+}
+

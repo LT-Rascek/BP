@@ -17,5 +17,21 @@ bp_dynastic_estates = {
 	texture = "gfx/interface/icons/map_icons/onmap_holding_icon.dds"
 	parent = bp_senate
 }
-
-	
+#Migration Situation
+migration_war = {
+	texture = "gfx/interface/icons/casus_bellis/de_jure_cb.dds"
+	parent = casus_belli
+	alias = { migration_wars }
+}
+major_migration_war = {
+	texture = "gfx/interface/icons/war_status/war_icon.dds"
+	parent = migration_war
+}
+minor_migration_war = {
+	texture = "gfx/interface/icons/war_status/war_icon.dds"
+	parent = migration_war
+}
+#Laws
+bp_cultural_law = {
+	texture = "gfx/interface/icons/message_feed/law.dds"
+}

@@ -247,26 +247,11 @@ c_clermont = { #c_amiens history
 	}
 }
 c_amiens = {
-	#Development
-	#Rulers
-	457.1.1={ 
-		holder=190015 # Aegidius
-	}
-	465.1.1={ 
-		holder=19 #Last Roman
-	}
-	486.1.1={
-		holder = 40
-	}
-	511.1.1={
-		holder = 106522 # Chlothar Meroving 
-	}
-	561.11.29={
-		holder = 30021 # Chilperic Meroving 
-	}
-	584.9.27={
-		holder = 30029 # Chlothar II Meroving 
-	}
+	#Franks
+	448.1.1 = { government = tribal_government }
+	448.1.1 = { holder = merovech_other_son }
+	460.1.1 = { holder = old_frankish_CAmiens_001 }
+	465.1.1 = { liege = 0 }
 }
 c_valois = { #c_amiens history (changed)
 	#Development
@@ -291,7 +276,6 @@ c_valois = { #c_amiens history (changed)
 	}
 }
 
-#County-Level Development
 d_verodunum = { #d_belgica_prima history (changed)
 	450.1.1={ 
 		holder=305 # Romano Gauls
@@ -345,48 +329,6 @@ c_bar = {
 	}
 }
 c_langres = { #c_bar history (elimination)
-	#Development
-	#Rulers
-	450.1.1={ 
-		holder=305 # Romano Gauls
-		liege="k_soissons"
-		government = subroman_administrative_government
-	}
-	486.1.1={
-		holder = 40
-	}
-	511.1.1={
-		holder = 106524 # Theuderic Meroving 
-	}
-	534.1.1={
-		holder = 106525 # Theudebert Meroving  
-	}
-	548.1.1={
-		holder = 106529 # Theudebald Meroving 
-	}
-	555.1.1={
-		holder = 106522 # Chlothar Meroving
-	}
-	561.11.29={
-		holder = 231004 # Sigebert Meroving
-	}
-	575.1.1={
-		holder = 30010 # Childebert II Meroving
-	}
-	595.1.1={
-		holder = 30011 # Theudebert Meroving
-	}
-	612.1.1={
-		holder = 30014 # Theuderic II Meroving 
-	}
-	613.1.1={
-		holder = 30015 # Sigebert Meroving 
-	}
-	614.1.1={
-		holder = 30029 # Chlothar II Meroving 
-	}
-}
-c_briey = {
 	#Development
 	#Rulers
 	450.1.1={ 
@@ -550,59 +492,36 @@ c_neufchateau = { #c_saintois history
 	}
 }
 
-#County-Level Development
-d_belgica_secunda = { #Empty History
-	1.1.1={}
+d_belgica_secunda = {
+	150.1.1={
+		government = tribal_government
+	}
+	422.1.1={
+		holder = 36100 # Chlodio
+	}
+	457.1.1={
+		holder = 39 # Merovech
+	}
+	481.1.1={
+		holder = 40 # Charibert
+	}
+	482.1.1={
+		holder = 0
+	}
 }
 c_boulogne = {
-	#Development
-	#Rulers
-	457.1.1={
-		holder = 39 
-	}
-	481.1.1={
-		holder = 40
-	}
-	511.1.1={
-		holder = 106520 # Childebert Meroving 
-	}
-	558.1.1={
-		holder = 106522 # Chlothar Meroving 
-	}
-	561.11.29={
-		holder = 206851 # Charibert Meroving 
-	}
-	567.1.1={
-		holder = 30021 # Chilperic Meroving 
-	}
-	584.9.27={
-		holder = 30029 # Chlothar II Meroving 
-	}
+	#Franks
+	448.1.1 = { government = tribal_government }
+	448.1.1 = { holder = merovech_other_son }
+	460.1.1 = { holder = old_frankish_CBoulogne_001 }
+	465.1.1 = { liege = 0 }
 }
 c_guines = {
-	#Development
-	#Rulers
-	457.1.1={
-		holder = 39 
-	}
-	481.1.1={
-		holder = 40
-	}
-	511.1.1={
-		holder = 106520 # Childebert Meroving 
-	}
-	558.1.1={
-		holder = 106522 # Chlothar Meroving 
-	}
-	561.11.29={
-		holder = 206851 # Charibert Meroving 
-	}
-	567.1.1={
-		holder = 30021 # Chilperic Meroving 
-	}
-	584.9.27={
-		holder = 30029 # Chlothar II Meroving 
-	}
+	#Franks
+	448.1.1 = { government = tribal_government }
+	448.1.1 = { holder = merovech_other_son }
+	460.1.1 = { holder = old_frankish_CGuines_001 }
+	465.1.1 = { liege = 0 }
 }
 c_yperen = {
 	#Development

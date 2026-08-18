@@ -1,0 +1,26 @@
+﻿l_english:
+ #Bootstrap to Better Government Events
+ migration_situation_war.0100.t: "A New Administration?"
+ migration_situation_war.0100.desc.opening: "Having overrun an advanced government, remnants of their administration remain in these new lands, which we can use to update how we govern this new land. "
+ migration_situation_war.0100.desc.roman: "The Romans, who built an effective system of administration that has continued to the present, even in these trying times, offer a way forward. Alternatively, we could continue with a new, higher form of Tribal administration if we wanted. Or we could simply keep to the old ways..."
+ migration_situation_war.0100.desc.fallback: "We could continue with a new, higher form of Tribal administration if we wanted. Or we could simply keep to the old ways..."
+ migration_situation_war.0100.adopt_advanced_government: "It is time for us to leave the old ways..."
+ migration_situation_war.0100.adopt_subroman_government: "Let us maintain these ancient institutions, with ourselves at the head!"
+ migration_situation_war.0100.keep_current_government: "No! We will not abandon the old ways!"
+ migration_war_picked_subroman: "$cultural_acceptance_gain_event$"
+ may_have_option_to_diverge_culture: "There is a chance we can diverge our culture and adopt [GetCultureTradition('tradition_elite_rulership').GetName] [tradition|E] or a related [tradition|E]"
+ all_vassals_adopt_high_tribal_government: "All vassals who are able adopt [high_tribal_government|E]"
+ all_vassals_become_subroman_or_roman_federate: "All vassals who are able adopt the appropriate Sub-Roman government[SelectLocalization( HasDlcFeature('all_under_heaven'),', and others will adopt Roman Federate government,',' ')]as appropriate"
+ #Bootstrap to a New Culture Event
+ migration_situation_war.0200.t: "A New Culture?"
+ migration_situation_war.0200.desc: "Having moved into a new land and keeping the governmental trappings of the former rulers, we remain a distinct minority. We can embrace this status, functioning as an elite ruling caste, dominating the political and military spheres, or we can settle among the people and integrate. The former will allow us to field a more professional military and help prevent revolts, while the later will enable us to blend more readily with the local population. Which path will we choose?"
+ migration_situation_war.become_migratory_culture: "We are now different than we were before..."
+ migration_situation_war.do_not_become_migratory_culture: "We cannot abandon our heritage!"
+ remove_ruling_cast_tradition: "Lose the [GetCultureTradition('tradition_ruling_caste').GetName] [tradition|E]"
+ adopt_nomadic_rulership_cranial_deformation_tradition: "Replaces the [GetCultureTradition('tradition_cranial_deformation').GetName] [tradition|E] with the [GetCultureTradition('tradition_nomadic_rulership_cranial_deformation').GetName] [tradition|E]"
+ adopt_nomadic_rulership_tradition: "Adopts the [GetCultureTradition('tradition_nomadic_rulership').GetName] [tradition|E]"
+ adopt_migratory_culture_tradition: "Adopts the [GetCultureTradition('tradition_elite_rulership').GetName] [tradition|E]"
+ NEW_CULTURE_SUMMARY_ME: "We will diverge from [CULTURE.GetName] and form a new [divergent_culture|E]. This new culture will adopt a random [ethos|E] and will:"
+ NEW_CULTURE_SUMMARY_THEM: "Our kin will diverge from [CULTURE.GetName] and form a new [divergent_culture|E]. This new culture will adopt a random [ethos|E] and will:"
+ old_culture_adopts_new_traditions: "Our kin will adopt new traditions, sharply deviating from ours, as the cultural elite migrates with us"
+ 

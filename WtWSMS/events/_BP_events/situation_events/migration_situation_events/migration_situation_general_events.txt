@@ -1,0 +1,68 @@
+﻿namespace = migration_general_events
+
+migration_general_events.0001 = { # Fullscreen Intro Event
+	type = character_event
+	window = fullscreen_event
+	theme = realm
+	
+	title = migration_general_events.0001.t
+	desc = migration_general_events.0001.desc
+	
+	trigger = { # we need to prevent this from firing for all players when a new player joins in MP
+		is_ai = no
+		NOT = { has_character_flag = migration_general_events_0001_var }
+		has_game_rule = wtwsms_start_event_migration_period_v0001_enabled
+ 	}
+	override_background = { reference = bp_migration_situation_start }
+	override_sound = { reference = "event:/DLC/FP2/SFX/UI/fp2_struggle_ui_intro_animate" }
+
+	widgets = {
+		widget = {
+			gui = "event_window_widget_situation_info_migration_period"
+			container = "dynamic_content_widget"
+			controller = situation_info
+			setup_scope = { situation:BP_migration_situation = { save_scope_as = situation } }
+		}
+	}
+	immediate = {
+		play_music_cue = mx_Struggle_Opening
+		save_scope_value_as = {
+			name = start
+			value = yes
+		}
+	}
+	option = {
+		name = migration_general_events.0001.a
+		add_character_flag = migration_general_events_0001_var
+		clicksound = "event:/DLC/FP2/SFX/UI/fp2_struggle_start_select"
+	}
+}
+
+migration_general_events.0002 = { # Fullscreen Ending Event
+	type = character_event
+	window = fullscreen_event
+	theme = realm
+	
+	title = migration_general_events.0002.t
+	desc = migration_general_events.0002.desc
+	
+	trigger = { # we need to prevent this from firing for all players when a new player joins in MP
+		is_ai = no
+		NOT = { has_character_flag = migration_general_events_0002_var }
+ 	}
+	override_background = { reference = bp_migration_situation_start }
+	override_sound = { reference = "event:/DLC/FP2/SFX/UI/fp2_struggle_ui_intro_animate" }
+
+	immediate = {
+		play_music_cue = mx_Struggle_ending_compromise
+		save_scope_value_as = {
+			name = start
+			value = yes
+		}
+	}
+	option = {
+		name = migration_general_events.0002.a
+		add_character_flag = migration_general_events_0002_var
+		clicksound = "event:/DLC/FP2/SFX/UI/fp2_struggle_start_select"
+	}
+}

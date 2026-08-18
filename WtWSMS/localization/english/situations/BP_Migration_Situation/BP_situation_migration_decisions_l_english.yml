@@ -1,0 +1,50 @@
+﻿l_english:
+ #Culture Law
+ pass_cultural_law: "Pass [ROOT.Char.Custom('NameForCulturalLawDecision')]"
+ pass_cultural_law_desc: "As a a non-Roman ruler of of a Sub-Roman Realm, we can take inspiration from Roman Law and codify our own ancient practices in a similar way, making it clear how we are to relate to the Romans we rule."
+ pass_cultural_law_tooltip: "Pass a law on how your [culture|E] will relate to the Roman peoples under you."
+ pass_cultural_law_confirm: "Confirm"
+ 
+ reinforce_tribal_identity: "Reinforce Original Identity"
+ reinforce_tribal_identity_tooltip: "Reinforce our Origin, encouraging greater separation between us and Romans"
+ reinforce_status_quo: "Reinforce the Status Quo"
+ reinforce_status_quo_tooltip: "We emphasize the difference between us and Romans, but do not further reinforce the separation"
+ become_more_roman: "Become more like Romans"
+ become_more_roman_tooltip: "We move away from our origins and adopt more Roman mores"
+ 
+ your_dynasty_does_not_have_a_cultural_law_modifier: "Your [dynasty|E] does not have the [GetModifier('adopted_barbarian_law').GetNameWithTooltip], [GetModifier('adopted_status_quo_law').GetNameWithTooltip], or [GetModifier('adopted_roman_law').GetNameWithTooltip] dynasty modifier"
+ 
+ adopted_barbarian_law_culture_effect: "$adopted_roman_law_culture_effect$"
+ adopted_roman_law_culture_effect: "Adopted Legal Code"
+ 
+ NOT_HAS_INNOVATION_LEGES_BARBARORUM: "Does not have the #V $innovation_leges_barbarorum$#! [innovation|E]"
+ NOT_HAS_INNOVATION_MUNDIUM: "Does not have the #V $innovation_mundium$#! [innovation|E]"
+ WE_ALREADY_HAVE_A_BODY_OF_LAWS: "We have a body of laws based on Roman and [CULTURE.GetName] mores"
+ 
+ #Custom Localization for Various possible law names
+ NameForCulturalLawDecision_Anglo: "Lex Anglorum"
+ NameForCulturalLawDecision_Burgundian: "Lex Burgundorum"
+ NameForCulturalLawDecision_OldFrankish: "Lex Francorum"
+ NameForCulturalLawDecision_OldSaxon: "Lex Saxonum"
+ NameForCulturalLawDecision_Ostrogothic: "Lex Ostrogothorum"
+ NameForCulturalLawDecision_Skirian: "Lex Scriorum"
+ NameForCulturalLawDecision_Vandalic: "Lex Vandalorum"
+ NameForCulturalLawDecision_Visigothic: "Lex Visigothorum"
+ NameForCulturalLawDecision_Generic: "a Cultural Law"
+ 
+ #land_migration_tribal_kingdom
+ land_migration_tribal_kingdom: "A Legal Kingdom for the [ROOT.Char.GetCulture.GetCollectiveNounNoTooltip]"
+ land_migration_tribal_kingdom_desc: "For decades, the [ROOT.Char.GetCulture.GetNameNoTooltip] people have been divided into petty tribes and chiefdoms. Now, if we were to declare a united [ROOT.Char.GetCulture.GetNameNoTooltip] realm we could prove the strength of the [ROOT.Char.GetCulture.GetNameNoTooltip] people to the rest of the world!"
+ land_migration_tribal_kingdom_tooltip: "Make [ROOT.Char.GetPrimaryTitle.GetNameNoTooltip] the [de_jure|E] liege title of your capital duchy and all fully controlled duchies"
+ land_migration_tribal_kingdom_confirm: "Confirm"
+ realm_size_is_over_25: "[realm_size] is greater than #V 25#!\n$TAB$$EFFECT_LIST_BULLET$#weak (Currently: [GetPlayer.RealmSize])#!"
+ has_maxed_out_authority: "Has [absolute_tribal_authority|E]"
+ powerful_vassals_think_highly_of_you: "All your [powerful_vassals|E] have at least #P 35#! [opinion|E] of you"
+ 
+ #found_titular_duchy_decision
+ found_titular_duchy_decision: "Form a Tribe"
+ found_titular_duchy_decision_desc: "I have created a realm of some note, and it is time that it be recognized as such, even if it has little legal effect."
+ found_titular_duchy_decision_tooltip: "$found_duchy_decision_tooltip$"
+ found_titular_duchy_decision_confirm: "$found_duchy_decision_confirm$"
+ duchy_will_be_titular: "@warning_icon! The [duchy|E] of [root_scope.GetPrimaryTitle.GetNameNoTierNoTooltip] will be titular"
+ 

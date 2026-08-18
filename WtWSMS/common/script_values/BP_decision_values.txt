@@ -4,6 +4,12 @@ number_of_realm_provinces = {
 	every_sub_realm_county = { every_county_province = { add = 1 } }
 }
 
+one_third_military_strength = {
+	value = 0
+	add = this.max_military_strength
+	divide = 3
+}
+
 ## Autocephaly
 number_of_realm_counties_of_faith_ratio = {
 	value = number_of_faith_counties_controlled_by_player

@@ -1,0 +1,131 @@
+﻿#Participant Group Triggers
+BP_can_be_roman_emperor_participant_trigger = {
+	OR = {
+		this = title:h_western_roman_empire.holder
+		this = title:h_eastern_roman_empire.holder
+		this = title:h_roman_empire.holder
+		this = title:e_wre.holder
+		this = title:e_byzantium.holder
+	}
+}
+BP_can_be_roman_successor_governmental_trigger = {
+	OR = {
+		government_has_flag = government_is_roman_administrative_or_dynastic
+		AND = {
+			government_has_flag = government_is_subroman_administrative_or_dynastic
+			OR = {
+				culture = { has_cultural_parameter = can_restore_roman_empire }
+				culture = { has_cultural_parameter = greco_roman_social_tradition }
+			}
+		}
+	}
+}
+BP_can_be_barbarian_king_trigger = {
+	AND = {
+		government_has_flag = government_is_subroman_administrative_or_dynastic
+		NOR = {
+			culture = { has_cultural_parameter = can_restore_roman_empire }
+			culture = { has_cultural_parameter = greco_roman_social_tradition }
+		}
+	}
+}
+#Migrators and Tribals
+BP_can_be_migrator_cultural_religious_trigger = {
+	OR = {
+		faith.religion = religion:tengrism_religion
+		faith.religion = religion:slavic_religion
+		faith.religion = religion:germanic_religion
+		culture = { has_cultural_parameter = heritage_group_slavic }
+		culture = { has_cultural_parameter = heritage_kulturbund_scythian }
+		culture = { has_cultural_parameter = heritage_group_germanic }
+	}
+}
+BP_can_be_tribals_trigger = {
+	OR = {
+		government_has_flag = government_is_tribal
+		government_has_flag = government_is_nomadic
+	}
+	NOT = { government_has_flag = government_is_high_tribal }
+}
+#General Triggers
+is_historical_non_migrator_culture_trigger = { #Culture Scope
+	NOR = {
+		#Goths
+		this = culture:thracian_gothic
+		this = culture:crimean_gothic
+		this = culture:carpodaci
+		this = culture:gepid
+		#Jutlandic
+		this = culture:reudignian
+		#Nordwestbloc
+		this = culture:chatti
+		this = culture:old_frankish
+		this = culture:cheruscii
+		#Przeworsk
+		this = culture:gustow
+		this = culture:przeworsk
+		this = culture:wielbark
+		this = culture:denziner
+		this = culture:vidivarii
+		#Scandzans
+		this = culture:norse
+		this = culture:swede
+		this = culture:dane
+		this = culture:geatish
+		this = culture:gutnish
+		this = culture:auiones
+		#Suebics
+		this = culture:danubian_suebi
+		this = culture:juthungi
+		this = culture:alamannian
+		this = culture:lebus
+	}
+}
+#CBs
+general_bp_migration_constraints_trigger = {
+	#Pass on targets who have less total development than what we currently have
+	this.total_target_development <= scope:defender.total_realm_development
+	#Pass on targets smaller than our current realm size
+	this.target_size <= scope:attacker.realm_size
+}
+target_title_not_in_great_steppe_trigger = {
+	NOT = {
+		situation:the_great_steppe = {
+			any_situation_county = {
+				count >= 1
+				this.$TIER$ = $TARGET_TITLE$
+			}
+		}
+	}
+}
+#Events
+battle_of_tolbiac_character_trigger = {
+	OR = {
+		general_situation_is_participant_type_trigger = {
+			CHARACTER = $CHAR_1$
+			GROUP_TYPE = migrators
+		}
+		general_situation_is_participant_type_trigger = {
+			CHARACTER = $CHAR_1$
+			GROUP_TYPE = tribals
+		}
+	}
+	$CHAR_1$ = {
+		#Have to have _some_ sort of realm of note
+		is_landed = yes
+		is_independent_ruler = yes
+		primary_title.tier >= tier_duchy
+		this.faith = { has_doctrine_parameter = unreformed }
+		OR = {
+			any_realm_county = { count > 0 NOT = { this.faith = { has_doctrine_parameter = unreformed } } }
+			NOT = { this.capital_county.faith = { has_doctrine_parameter = unreformed } }
+			any_spouse = { count > 0 NOT = { this.faith ?= { has_doctrine_parameter = unreformed } } }
+			any_consort = { count > 0 NOT = { this.faith ?= { has_doctrine_parameter = unreformed } } }
+			any_concubine = { count > 0 NOT = { this.faith ?= { has_doctrine_parameter = unreformed } } }
+		}
+	}
+	$CHAR_1$.religion = $CHAR_2$.religion
+}
+battle_of_tolbiac_side_trigger = {
+	$SIDE_1$.side_army_size < $SIDE_2$.side_army_size
+}

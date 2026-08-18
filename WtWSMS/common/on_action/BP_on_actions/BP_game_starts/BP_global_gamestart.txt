@@ -47,6 +47,10 @@ BP_set_global_variables_by_date = {
 			limit = { current_date >= 485.1.1 }
 			set_global_variable = reestablished_albania
 		}
+		if = { #Battle of Tolbiac happens
+			limit = { current_date >= 497.1.1 }
+			set_global_variable = battle_of_tolbiac_happened
+		}
 		if = { #Justinian Ascends the Throne (enabling reconquests)
 			limit = { current_date >= 527.4.1 }
 			set_global_variable = sole_roman_empire
@@ -61,7 +65,7 @@ BP_update_culture_traditions_by_date = {
 	effect = {
 		#Migratory Cultures use Herder determination
 		every_culture_global = {
-			limit = { has_cultural_tradition = tradition_migratory_culture }
+			limit = { has_cultural_tradition = tradition_elite_rulership }
 			set_culture_pillar = head_determination_herd
 		}
 		#Change the Saami Traditions to make hybridization basically impossible.
@@ -76,7 +80,7 @@ BP_update_culture_traditions_by_date = {
 			limit = { current_date >= 395.1.1 }
 			if = {
 				limit = { has_dlc_feature = hybridize_culture }
-				culture:vandalic = { add_culture_tradition = tradition_migratory_culture }
+				culture:vandalic = { add_culture_tradition = tradition_elite_rulership }
 			}
 			else = { culture:vandalic = { add_culture_tradition = tradition_ruling_caste } }
 		}
@@ -84,8 +88,8 @@ BP_update_culture_traditions_by_date = {
 			limit = { current_date >= 406.1.1 }
 			if = {
 				limit = { has_dlc_feature = hybridize_culture }
-				culture:marcomanni = { add_culture_tradition = tradition_migratory_culture }
-				culture:buri = { add_culture_tradition = tradition_migratory_culture }
+				culture:marcomanni = { add_culture_tradition = tradition_elite_rulership }
+				culture:buri = { add_culture_tradition = tradition_elite_rulership }
 				culture:western_alan  = { remove_culture_tradition = tradition_cranial_deformation }
 				culture:western_alan  = { add_culture_tradition = tradition_nomadic_rulership_cranial_deformation }
 			}
@@ -117,7 +121,7 @@ BP_update_culture_traditions_by_date = {
 			culture:skirian = { add_culture_tradition = tradition_concubines } #Only ruling component left at this point
 			if = {
 				limit = { has_dlc_feature = diverge_culture }
-				culture:skirian = { add_culture_tradition = tradition_migratory_culture }
+				culture:skirian = { add_culture_tradition = tradition_elite_rulership }
 			}
 			else = { culture:skirian = { add_culture_tradition = tradition_ruling_caste } }
 		}

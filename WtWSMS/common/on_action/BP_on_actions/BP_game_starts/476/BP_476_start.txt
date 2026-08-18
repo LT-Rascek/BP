@@ -8,8 +8,12 @@ bp_game_start_after_lobby_476 = {
 		}
 	}
 	on_actions = {
+		# Situations
+		setup_steppe_status_no_nomad_DLC
+		setup_situation_points
 		# Character stuff
 		BP_character_events_476
+		BP_setup_education_476
 		BP_setup_legitimacy_476
 		BP_update_specific_title_courtiers_476
 		#Realm Stuff
@@ -28,14 +32,92 @@ bp_game_start_after_lobby_476 = {
 		BP_reduce_hunnic_herd_476
 		BP_setup_roman_border_troops_476_DLC
 		BP_setup_federate_troops_476_DLC
+		BP_setup_admin_troops_476_DLC
 		#Tributaries and Confederations
 		BP_setup_tributaries_476
 		BP_setup_confederations_476
 		# Culture stuff
 		BP_starting_culture_acceptance_476
+		#Development Effects
+		BP_development_effects_476
 	}
 	effect = {
 		trigger_event = { on_action = BP_update_specific_title_courtiers_476 delayed = yes }
+	}
+}
+
+# Situations
+setup_steppe_status_no_nomad_DLC = {
+	trigger = { BP_has_dlc_necessary_for_great_steppe_situation_trigger = no }
+	effect = {
+		situation:BP_migration_situation ?= {
+			situation_sub_region:migration_region_steppe = {
+				change_phase = { phase = BP_migration_period }
+				add_geographical_region = migration_region_steppe
+			}
+		}
+	}
+}
+
+#Must be after setup_steppe_status_no_nomad_DLC to check existing phase
+setup_situation_points = {
+	effect = {
+		situation:BP_migration_situation = {
+			situation_sub_region:migration_region_wre = {
+				if = {
+					limit = { sub_region_current_phase = BP_migration_period }
+					add_takeover_phase_points = {
+						phase = BP_transition_period
+						points = 81
+					}
+				}
+			}
+			situation_sub_region:migration_region_ere = {
+				if = {
+					limit = { sub_region_current_phase = BP_migration_period }
+					add_takeover_phase_points = {
+						phase = BP_transition_period
+						points = 81
+					}
+				}
+			}
+			situation_sub_region:migration_region_britannia = {
+				if = {
+					limit = { sub_region_current_phase = BP_migration_period }
+					add_takeover_phase_points = {
+						phase = BP_transition_period
+						points = 81
+					}
+				}
+			}
+			situation_sub_region:migration_region_barbaria = {
+				if = {
+					limit = { sub_region_current_phase = BP_migration_period }
+					add_takeover_phase_points = {
+						phase = BP_transition_period
+						points = 81
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						situation_sub_region:migration_region_steppe = {
+							sub_region_current_phase = BP_dormant_phase
+						}
+					}
+				}
+				situation_sub_region:migration_region_steppe = {
+					if = {
+						limit = { sub_region_current_phase = BP_migration_period }
+						add_takeover_phase_points = {
+							phase = BP_transition_period
+							points = 81
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -73,12 +155,12 @@ BP_character_events_476 = {
 		#Arbogast and Soissons should start allied
 		title:k_soissons.holder = {
 			create_alliance = {
-				target = title:d_triveria.holder
+				target = title:d_belgica_prima.holder
 				allied_through_owner = title:k_soissons.holder
-				allied_through_target = title:d_triveria.holder
+				allied_through_target = title:d_belgica_prima.holder
 			}
 		}
-		title:d_triveria.holder = {
+		title:d_belgica_prima.holder = {
 			add_opinion = {
 				modifier = perk_negotiated_alliance_opinion
 				target = title:k_soissons.holder
@@ -95,6 +177,30 @@ BP_character_events_476 = {
 		
 		#Entrench Diarchies and adjust senate approval; done in each to ensure only one application at a time
 		#trigger_event = { id = BP_maintenance_events.1000 }
+	}
+}
+BP_setup_education_476 = {
+	effect = {
+		character:40 = {
+			set_sexuality = heterosexual
+			
+			#There's auto-assigned personality traits; have to clear and set
+			clear_traits = yes
+			add_trait = rowdy
+			add_trait = ambitious
+			add_trait = agile
+			add_trait = legendary_leader
+			
+			#Update the underlying education
+			set_focus = education_intrigue
+			set_variable = { name = education_intrigue_variable value = education_level_2 }
+			set_variable = { name = education_martial_variable value = education_level_2 }
+			remove_variable = diplomacy_previous_education
+			remove_variable = martial_previous_education
+			remove_variable = stewardship_previous_education
+			remove_variable = intrigue_previous_education
+			remove_variable = learning_previous_education
+		}
 	}
 }
 BP_update_specific_title_courtiers_476 = {
@@ -199,7 +305,7 @@ BP_setup_realm_laws_476_DLC = {
 			add_law_if_not_has_it_skip_effects_effect = { LAW = budget_allocation_military_40 }
 			remove_variable = non_roman_minority_rule_law_cooldown
 		}
-		title:d_triveria.holder = {
+		title:d_belgica_prima.holder = {
 			add_law_if_not_has_it_propagate_minority_law_effect = { LAW = non_roman_minority_rule_law_4 }
 			add_law_if_not_has_it_skip_effects_effect = { LAW = budget_allocation_salary_40 }
 			add_law_if_not_has_it_skip_effects_effect = { LAW = budget_allocation_military_40 }
@@ -298,7 +404,7 @@ BP_setup_vassal_contracts_476 = {
 	}
 }
 BP_setup_vassal_contracts_476_nomad_DLC = {
-	trigger = { has_dlc_feature = khans_of_the_steppe }
+	trigger = { BP_has_dlc_necessary_for_great_steppe_situation_trigger = yes }
 	effect = {
 		#The Rouran are squeezing their vassals, as is their wont
 		title:e_rouran.holder = {
@@ -351,12 +457,6 @@ BP_setup_vassal_contracts_476_rome_DLC = {
 			}
 		}
 		title:d_verodunum.holder = {
-			vassal_contract_set_obligation_level = {
-				type = roman_administrative_themes
-				level = roman_admin_theme_limitanei_value
-			}
-		}
-		title:d_noviodunum.holder = {
 			vassal_contract_set_obligation_level = {
 				type = roman_administrative_themes
 				level = roman_admin_theme_limitanei_value
@@ -718,6 +818,49 @@ BP_create_armies_476 = {
 			create_hephthalite_476_army_effect = { LOCATION = 4335 }
 			create_hepthalite_maa_476_effect = yes
 		}
+		#Army for Arbogast
+		title:d_belgica_prima.holder = {
+			every_maa_regiment = { destroy_maa_regiment = yes }
+			create_maa_regiment = {
+				type = roman_light_infantry
+				check_can_recruit = no
+				size = 3
+			}
+			create_maa_regiment = {
+				type = roman_heavy_infantry
+				check_can_recruit = no
+				size = 2
+			}
+			create_maa_regiment = {
+				type = bowmen
+				check_can_recruit = no
+				size = 2
+			}
+			create_maa_regiment = {
+				type = pikemen_unit
+				check_can_recruit = no
+				size = 1
+			}
+		}
+		#Army for Childeric
+		title:d_belgica_secunda.holder = {
+			every_maa_regiment = { destroy_maa_regiment = yes }
+			create_maa_regiment = {
+				type = armored_footmen
+				check_can_recruit = no
+				size = 1
+			}
+			create_maa_regiment = {
+				type = light_footmen
+				check_can_recruit = no
+				size = 2
+			}
+			create_maa_regiment = {
+				type = bowmen
+				check_can_recruit = no
+				size = 2
+			}
+		}
 	}
 }
 BP_reduce_hunnic_herd_476 = {
@@ -838,14 +981,47 @@ BP_setup_federate_troops_476_DLC = {
 				title = title:d_orleans
 			}
 			create_maa_regiment = {
-				type = light_footmen
+				type = sarmatian_lancers
 				check_can_recruit = no
-				size = 2
+				size = 1
 				title = title:d_orleans
 			}
 		}
 	}
 }
+BP_setup_admin_troops_476_DLC = {
+	trigger = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes }
+	effect = {
+		title:k_soissons.holder = {
+			title:k_soissons = { every_title_maa_regiment = { destroy_maa_regiment = yes } }
+			create_maa_regiment = {
+				type = roman_heavy_infantry
+				check_can_recruit = no
+				size = 3
+				title = title:k_soissons
+			}
+			create_maa_regiment = {
+				type = roman_light_infantry
+				check_can_recruit = no
+				size = 3
+				title = title:k_soissons
+			}
+			create_maa_regiment = {
+				type = bowmen
+				check_can_recruit = no
+				size = 3
+				title = title:k_soissons
+			}
+			create_maa_regiment = {
+				type = pikemen_unit
+				check_can_recruit = no
+				size = 3
+				title = title:k_soissons
+			}
+		}
+	}
+}
+
 #Tributaries
 BP_setup_tributaries_476 = {
 	effect = {
@@ -1030,6 +1206,36 @@ BP_starting_culture_acceptance_476 = {
 			set_cultural_acceptance = {
 				target = culture:caucasian_albanian
 				value = 16
+			}
+		}
+	}
+}
+
+BP_development_effects_476 = {
+	effect = {
+		#North Gaul is devastated
+		every_county = {
+			limit = {
+				OR = {
+					this.duchy = title:d_brittany
+					this.duchy = title:d_orleans
+					this.duchy = title:d_celtica
+					this.duchy = title:d_gallia
+					this.duchy = title:d_noviodunum
+					this.duchy = title:d_durocotorum
+					this.duchy = title:d_belgica_prima
+					this.duchy = title:d_mosania
+					this.duchy = title:d_belgica_secunda
+					this.duchy = title:d_germania_inferior
+					this.duchy = title:d_texandria
+					this.duchy = title:d_germania_superior
+					this.duchy = title:d_lugdunensis_tertia
+					this.duchy = title:d_verodunum
+				}
+			}
+			change_development_level = {
+				value = this.development_level
+				multiply = -0.50
 			}
 		}
 	}

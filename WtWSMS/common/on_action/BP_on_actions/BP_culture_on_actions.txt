@@ -5,6 +5,7 @@ on_culture_created = {
 	on_actions = {
 		bp_apply_special_hybrid_cases
 		bp_remove_certain_innovations
+		bp_inherit_certain_variables
 	}
 }
 
@@ -56,6 +57,26 @@ bp_remove_certain_innovations = {
 			}
 			remove_innovation = innovation_legal_codex
 		}
+	}
+}
+
+bp_inherit_certain_variables = {
+	trigger = {
+		is_hybrid_culture = yes
+		any_parent_culture = {
+			has_variable = passed_cultural_law
+			has_same_culture_heritage = prev
+		}
+	}
+	effect = {
+		random_parent_culture = {
+			limit = {
+				has_variable = passed_cultural_law
+				has_same_culture_heritage = prev
+			}
+			save_temporary_scope_as = law_culture
+		}
+		set_variable = { name = passed_cultural_law value = scope:law_culture }
 	}
 }
 
@@ -138,7 +159,7 @@ yearly_culture_pulse = {
 	trigger = {
 		is_a_living_culture_trigger = yes
 		OR = {
-			has_cultural_tradition = tradition_migratory_culture
+			has_cultural_tradition = tradition_elite_rulership
 			has_cultural_tradition = tradition_tribal_hierarchy
 			has_cultural_tradition = tradition_zealous_pagans
 			has_cultural_tradition = tradition_zealous_pagans_non_dlc

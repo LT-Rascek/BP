@@ -4,19 +4,6 @@ bp_major_war = {
 	parent = casus_belli
 	alias = { bp_major_wars bp_major_war_marker }
 }
-migration_war = {
-	texture = "gfx/interface/icons/casus_bellis/de_jure_cb.dds"
-	parent = casus_belli
-	alias = { migration_wars }
-}
-major_migration_war = {
-	texture = "gfx/interface/icons/war_status/war_icon.dds"
-	parent = migration_war
-}
-minor_migration_war = {
-	texture = "gfx/interface/icons/war_status/war_icon.dds"
-	parent = migration_war
-}
 imperial_reconquest_war = {
 	texture = "gfx/interface/icons/war_status/war_icon.dds"
 	parent = casus_belli

@@ -8,16 +8,13 @@ bp_change_tradition_events.0001 = {
 	
 	trigger = {
 		root = { BP_has_migratory_ruling_caste_tradition_trigger = yes }
-		OR = {
-			root = { any_culture_county = { count >= 5 } }
-			root = { any_culture_county = { count >= 3 any_neighboring_county = { this.culture = prev.culture } } }
-		}
+		BP_migratory_ruling_cast_tradition_too_many_counties_trigger = yes
 	}
 	
 	immediate = {
 		if = {
-			limit = { has_cultural_tradition = tradition_migratory_culture }
-			remove_culture_tradition = tradition_migratory_culture
+			limit = { has_cultural_tradition = tradition_elite_rulership }
+			remove_culture_tradition = tradition_elite_rulership
 			add_culture_tradition = tradition_ruling_caste
 		}
 		else_if = {
