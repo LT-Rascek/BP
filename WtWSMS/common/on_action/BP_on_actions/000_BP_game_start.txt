@@ -1591,13 +1591,6 @@ setup_roman_governments_based_on_dlc = {
 					this.domicile ?= { move_domicile = prev.primary_title.title_province }
 				}
 				
-				#Set Up Realm Laws
-				if = {
-					limit = { top_liege = this }
-					add_law_if_not_has_it_skip_effects_effect = { LAW = roman_acclamation_succession_law }
-				}
-				else = { add_law_if_not_has_it_skip_effects_effect = { LAW = roman_appointment_succession_law } }
-				
 				#Setup missing NF titles
 				every_vassal_or_below = {
 					limit = {
@@ -1681,6 +1674,20 @@ setup_roman_governments_based_on_dlc = {
 						this.domicile ?= { move_domicile = scope:the_ruler.primary_title.title_province }
 					}
 				}
+			}
+			every_ruler = {
+				limit = {
+					OR = {
+						government_has_flag = government_is_roman_administrative
+						government_has_flag = government_is_subroman_administrative
+					}
+				}
+				#Set Up Realm Laws
+				if = {
+					limit = { top_liege = this }
+					add_law_if_not_has_it_skip_effects_effect = { LAW = roman_acclamation_succession_law }
+				}
+				else = { add_law_if_not_has_it_skip_effects_effect = { LAW = roman_appointment_succession_law } }
 			}
 		}
 		#Roman Offices need the appropriate flags at start

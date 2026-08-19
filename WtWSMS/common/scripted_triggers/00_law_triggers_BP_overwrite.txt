@@ -16,7 +16,10 @@ can_have_confederate_partition_succession_law_trigger = {
 	OR = {
 		government_has_flag = government_is_feudal
 		government_has_flag = government_is_tribal
-		government_has_flag = government_is_centralized
+		AND = {
+			government_has_flag = government_is_centralized
+			NOT = { government_allows = administrative }
+		}
 		AND = {
 			government_has_flag = government_is_roman_federate
 			vassal_contract_has_flag = succession_is_purely_dynastic
@@ -40,7 +43,10 @@ can_have_partition_succession_law_trigger = {
 				}
 			}
 		}
-		government_has_flag = government_is_centralized
+		AND = {
+			government_has_flag = government_is_centralized
+			NOT = { government_allows = administrative }
+		}
 	}
 }
 
@@ -66,7 +72,10 @@ can_have_high_partition_succession_law_trigger = {
 				}
 			}
 		}
-		government_has_flag = government_is_centralized
+		AND = {
+			government_has_flag = government_is_centralized
+			NOT = { government_allows = administrative }
+		}
 	}
 }
 
@@ -100,7 +109,10 @@ can_have_single_heir_succession_law_trigger = {
 				has_innovation = innovation_primogeniture
 			}
 		}
-		government_has_flag = government_is_centralized
+		AND = {
+			government_has_flag = government_is_centralized
+			NOT = { government_allows = administrative }
+		}
 	}
 	OR = {
 		# Non-tribals only
@@ -136,7 +148,15 @@ can_have_single_heir_succession_law_trigger = {
 				exists = primary_title.var:ceremonial_title
 			}
 		}
-		government_has_flag = government_is_centralized
+		trigger_if = {
+			limit = {
+				AND = {
+					government_has_flag = government_is_centralized
+					NOT = { government_allows = administrative }
+				}
+			}
+			government_has_flag = government_is_centralized
+		}
 	}
 }
 
@@ -174,7 +194,15 @@ can_have_single_heir_youngest_succession_law_trigger = {
 				}
 			}
 		}
-		government_has_flag = government_is_centralized
+		trigger_if = {
+			limit = {
+				AND = {
+					government_has_flag = government_is_centralized
+					NOT = { government_allows = administrative }
+				}
+			}
+			government_has_flag = government_is_centralized
+		}
 	}
 }
 
@@ -216,6 +244,10 @@ can_have_single_heir_dynasty_house_trigger = {
 			government_has_flag = government_is_feudal
 			government_has_flag = government_is_clan
 			government_has_flag = government_is_japan_feudal
+			AND = {
+				government_has_flag = government_is_centralized
+				NOT = { government_allows = administrative }
+			}
 		}
 	}
 	NOT = { government_allows = administrative }
@@ -234,6 +266,20 @@ can_have_acclamation_succession_law_trigger = {
 		government_has_flag = government_is_roman_federate
 		government_has_flag = government_is_subroman_administrative
 	}
+}
+
+can_have_appointment_succession_law_trigger = {
+	has_ep3_dlc_trigger = yes
+	government_allows = administrative
+	NOR = {
+		government_has_flag = government_is_celestial
+		government_has_flag = government_is_japan_administrative
+		government_has_flag = government_is_meritocratic
+		government_has_flag = government_is_roman_administrative
+		government_has_flag = government_is_roman_federate
+		government_has_flag = government_is_subroman_administrative
+	}
+	is_independent_ruler = no
 }
 
 ##### Changed from Vanilla; Made Available for Severinus/Ajax only in addition to theocracies
