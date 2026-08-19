@@ -369,8 +369,8 @@ bp_migration_war_duchy_cb = {
 
 	allowed_for_character = {
 		OR = {
+			this.primary_title.tier = tier_county
 			this.primary_title.tier = tier_duchy
-			this.primary_title.tier = tier_kingdom
 		}
 		#Franks shouldn't migrate
 		trigger_if = {
