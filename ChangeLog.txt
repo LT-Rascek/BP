@@ -390,6 +390,7 @@ Decisions:
 
 Events:
 - Added "A New Administration?" event that fires under certain wars, namely Migrations and "Overrun Duchy/Kingdom" Casus Belli
+   - Grants a small amount of money and treasury to prevent immediate economic collapse
    - If the target of the migration has a Centralized Government, an event will fire allowing the attacker to adopt Hight Tribal Government
       - If adopting the High Tribal government, the ruler receives a modifier increasing monthly control growth and reducing different faith Popular Opinion
       - If declining to upgrade the government, the ruler receives prestige and a Level of Fame
@@ -397,6 +398,7 @@ Events:
          - This inherits the Sub-Roman Transition state from the previous government as well
          - Adopting Roman government gives 5% cultural acceptance with all cultures with a Roman Political or Cultural Tradition
          - Will have a chance to diverge your culture and give either "Migratory Culture" Tradition or "Nomadic Rulership" Tradition (if having "Shaped to Rule" Tradition)
+         - Personal troops are converted to title troops for Administrative government forms
 - Added "A New Culture?" event that fires under certain wars, namely Migrations and "Overrun Duchy/Kingdom" Casus Belli
    - Models "Elite Transfer" sort of migration, wherein the cultural elite move instead of the whole populace
    - You either adopt a new divergent culture or your culture diverges from yours (if you were the culture head)

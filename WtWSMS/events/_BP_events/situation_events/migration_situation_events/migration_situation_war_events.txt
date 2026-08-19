@@ -35,6 +35,35 @@ scripted_effect jumpstart_culture_progress_effect = {
 		}
 	}
 }
+scripted_effect give_cash_effect = {
+	save_temporary_scope_as = the_char
+	if = {
+		limit = { has_treasury = no }
+		add_gold = {
+			value = 100
+			multiply = {
+				value = scope:the_char.primary_title.tier
+				subtract = 1
+			}
+		}
+	}
+	else = {
+		add_gold = {
+			value = 25
+			multiply = {
+				value = scope:the_char.primary_title.tier
+				subtract = 1
+			}
+		}
+		add_treasury = {
+			value = 75
+			multiply = {
+				value = scope:the_char.primary_title.tier
+				subtract = 1
+			}
+		}
+	}
+}
 
 migration_situation_war.0100 = {
 	type = character_event
@@ -116,6 +145,8 @@ migration_situation_war.0100 = {
 		#		TARGET_CULTURE = root.culture
 		#	}
 		#}
+		
+		give_cash_effect = yes
 		
 		ai_chance = {
 			base = 10
@@ -200,6 +231,9 @@ migration_situation_war.0100 = {
 		#		TARGET_CULTURE = root.culture
 		#	}
 		#}
+		
+		give_cash_effect = yes
+		convert_personal_troops_to_title_troops_effect = yes
 		
 		ai_chance = {
 			base = 10
@@ -299,6 +333,8 @@ migration_situation_war.0100 = {
 		hidden_effect = {
 			remove_character_flag_if_has_it_effect = { FLAG = was_culture_head }
 		}
+		
+		give_cash_effect = yes
 		
 		ai_chance = {
 			base = 10
