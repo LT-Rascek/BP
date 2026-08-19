@@ -69,6 +69,7 @@
 			is_character_valid = {
 				NOT = { scope:situation_sub_region = { sub_region_current_phase = senate_disbanded } }
 				scope:situation = { is_manual_participant = root }
+				is_alive = yes
 				OR = {
 					AND = {
 						has_trait = senator_west
@@ -93,6 +94,7 @@
 			is_character_valid = {
 				NOT = { scope:situation_sub_region = { sub_region_current_phase = senate_disbanded } }
 				scope:situation = { is_manual_participant = root }
+				is_alive = yes
 				OR = {
 					AND = {
 						has_trait = senator_west

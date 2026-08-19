@@ -115,7 +115,6 @@ senate_on_25th_birthday = {
 	}
 }
 
-
 # root = the new holder
 # scope:title = the title that changes hands
 # scope:previous_holder = previous holder. Might be dead
@@ -256,6 +255,23 @@ BP_new_top_liege_of_city = {
 				}
 			}
 			trigger_event = { id = BP_roman_senate_events.1020 days = { 14 30 } }
+		}
+	}
+}
+
+# character just about to die in root scope
+# if a killer is known, it's set as scope:killer
+#Triggered by code
+on_death = {
+	on_actions = { BP_remove_senators_upon_death }
+}
+
+#Remove Senators from the Senate upon death
+BP_remove_senators_upon_death = {
+	effect = {
+		if = {
+			limit = { situation:BP_senate ?= { is_manual_participant = root } }
+			situation:BP_senate ?= { remove_manual_participant = root }
 		}
 	}
 }
