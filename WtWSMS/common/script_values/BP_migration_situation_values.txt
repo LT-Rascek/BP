@@ -26,3 +26,28 @@ gold_treasury_cost_from_realm_size = {
 migration_promote_culture_speed_improvement_value = 1.25
 migration_convert_faith_speed_improvement_value = 1.25
 migration_integrate_title_speed_improvement_value = 1.25
+#Event Gold Value:
+migration_gold_gift_without_treasury = {
+	save_temporary_scope_as = the_char
+	value = 100
+	multiply = {
+		value = scope:the_char.primary_title.tier
+		subtract = 1
+	}
+}
+migration_gold_gift_with_treasury = {
+	save_temporary_scope_as = the_char
+	value = 25
+	multiply = {
+		value = scope:the_char.primary_title.tier
+		subtract = 1
+	}
+}
+migration_treasury = {
+	save_temporary_scope_as = the_char
+	value = 75
+	multiply = {
+		value = scope:the_char.primary_title.tier
+		subtract = 1
+	}
+}

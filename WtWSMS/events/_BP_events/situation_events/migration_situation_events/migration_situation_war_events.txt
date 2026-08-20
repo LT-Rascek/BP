@@ -36,32 +36,13 @@ scripted_effect jumpstart_culture_progress_effect = {
 	}
 }
 scripted_effect give_cash_effect = {
-	save_temporary_scope_as = the_char
 	if = {
 		limit = { has_treasury = no }
-		add_gold = {
-			value = 100
-			multiply = {
-				value = scope:the_char.primary_title.tier
-				subtract = 1
-			}
-		}
+		add_gold = migration_gold_gift_without_treasury
 	}
 	else = {
-		add_gold = {
-			value = 25
-			multiply = {
-				value = scope:the_char.primary_title.tier
-				subtract = 1
-			}
-		}
-		add_treasury = {
-			value = 75
-			multiply = {
-				value = scope:the_char.primary_title.tier
-				subtract = 1
-			}
-		}
+		add_gold = migration_gold_gift_with_treasury
+		add_treasury = migration_treasury
 	}
 }
 
@@ -146,7 +127,11 @@ migration_situation_war.0100 = {
 		#	}
 		#}
 		
-		give_cash_effect = yes
+		save_temporary_scope_as = the_char
+		custom_tooltip = {
+			text = recieve_just_cash
+			give_cash_effect = yes
+		}
 		
 		ai_chance = {
 			base = 10
@@ -167,7 +152,12 @@ migration_situation_war.0100 = {
 		}
 	}
 	option = {
-		trigger = { has_character_flag = roman_government_bootstrap_available }
+		trigger = {
+			has_character_flag = roman_government_bootstrap_available
+			this.culture = { has_innovation = innovation_writing }
+			this.culture = { has_innovation = innovation_social_stratification }
+			this.culture = { has_innovation = innovation_leges_barbarorum }
+		}
 		name = migration_situation_war.0100.adopt_subroman_government
 		
 		convert_to_subroman_government_effect = yes
@@ -232,7 +222,11 @@ migration_situation_war.0100 = {
 		#	}
 		#}
 		
-		give_cash_effect = yes
+		save_temporary_scope_as = the_char
+		custom_tooltip = {
+			text = recieve_cash_and_treasury
+			give_cash_effect = yes
+		}
 		convert_personal_troops_to_title_troops_effect = yes
 		
 		ai_chance = {
@@ -334,7 +328,11 @@ migration_situation_war.0100 = {
 			remove_character_flag_if_has_it_effect = { FLAG = was_culture_head }
 		}
 		
-		give_cash_effect = yes
+		save_temporary_scope_as = the_char
+		custom_tooltip = {
+			text = recieve_just_cash
+			give_cash_effect = yes
+		}
 		
 		ai_chance = {
 			base = 10

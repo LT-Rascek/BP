@@ -3,11 +3,15 @@
  # Tribal Era #
  ##############
  #General
- improves_migration_tribal_odds: "Reduces the chance a [castle_holding|E] converts to #V $building_type_tribe_01$#! during a [major_migration_war|E]"
- greatly_improves_migration_tribal_odds: "#EMP Greatly#! reduces the chance a [castle_holding|E] converts to #V $building_type_tribe_01$#! during a [major_migration_war|E]"
- required_to_adopt_organized_government_during_migration: "#V Required#! to be able to adopt [organized_government|E] during migrations"
  increases_chance_subroman_administrative_vassals_increase_aristocracy: "[SelectLocalization( HasDlcFeature( 'landless_playable' ), '#EMP Increases#! the chance that #V $subroman_administrative_government|q$#! vassals achieve more aristocratic inheritance laws', 'BLANK' )]"
  reduces_chance_subroman_administrative_vassals_increase_aristocracy: "[SelectLocalization( HasDlcFeature( 'landless_playable' ), '#EMP Decreases#! the chance that #V $subroman_administrative_government|q$#! vassals achieve more aristocratic inheritance laws', 'BLANK' )]"
+ 
+ #Migration War Tribalization
+ required_to_adopt_roman_government_during_migration: "#V Required#! to be able to adopt a Roman government during migrations"
+ reduces_migration_tribalization_odds_1: "Reduces the chance of creating a [tribal_holding|E] during migration by 0.5%"
+ reduces_migration_tribalization_odds_2: "Reduces the chance of creating a [tribal_holding|E] during migration by 1.0%"
+ reduces_migration_tribalization_odds_3: "Reduces the chance of creating a [tribal_holding|E] during migration by 1.5%"
+ 
  BLANK: ""
  #Military Innovations
  innovation_primitive_leverage: "Primitive Leverage"
