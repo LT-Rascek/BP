@@ -156,9 +156,13 @@ can_have_single_heir_succession_law_trigger = {
 			limit = { government_has_flag = government_is_subroman_administrative }
 			has_realm_law_flag = succession_is_purely_dynastic
 		}
-		trigger_else_if = {
+		trigger_if = {
 			limit = {
 				government_allows = administrative
+				NOR = {
+					government_has_flag = government_is_subroman_administrative
+					government_has_flag = government_is_roman_administrative
+				}
 			}
 			OR = {
 				is_independent_ruler = yes
