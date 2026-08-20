@@ -12,12 +12,22 @@
  #New Features
  BP_maintenance_events.0001.new_features_intro: "#T Here's the major new features in v$wtwsms_mod_version_number$#!:\n\n"
  ## No DLC Features
- BP_maintenance_events.0001.new_features_list_no_dlc: "$EFFECT_LIST_BULLET$$event_new_feature_steppe_culture_overhaul$\n$EFFECT_LIST_BULLET$$event_new_feature_steppe_map_overhaul$\n$EFFECT_LIST_BULLET$$event_new_features_steppe_flavor$"
+ BP_maintenance_events.0001.new_features_list_no_dlc: "$EFFECT_LIST_BULLET$$event_new_feature_steppe_culture_overhaul$\n$EFFECT_LIST_BULLET$$event_new_feature_steppe_map_overhaul$\n$EFFECT_LIST_BULLET$$event_new_features_steppe_flavor$\n$EFFECT_LIST_BULLET$$event_new_feature_map_overhaul$\n$EFFECT_LIST_BULLET$$event_new_feature_cranial_deformation$"
  event_new_feature_steppe_culture_overhaul: "Significant overhaul of Steppe cultures to better reflect notions of ethnic self-identification and heritages in the Late Antique Period."
  event_new_feature_steppe_map_overhaul: "Overhauled the de jure and de facto titles on map, including which polities are tributaries and which are vassals, to better reflect the situation in the Steppe and Central Asia during the Late Vth Century as well as to better integrate with the Vanilla Steppe mechanics."
  event_new_features_steppe_flavor: "Added a number of decisions and features to model the unique traditions of the Steppe, including an Artificial Cranial Deformation mechanic and Bolghar Unification Decision."
- ## DLC Features
- #BP_maintenance_events.0001.new_features_intro_dlc: "If you have #italic Roads to Power#!, then you additionally have:\n\n"
+ event_new_feature_map_overhaul: "Overhauled many of the existing nomadic titular titles to align with PDX's 'Khans of the Steppe' DLC mechanics"
+ event_new_feature_cranial_deformation: "Added a mechanic for modeling the Artificial Cranial Deformation practices of Sarmatian and Hunnic peoples."
+ ## Situation Features
+ BP_maintenance_events.0001.situation_introduction: "#T We've added a major [situation|E] to v$wtwsms_mod_version_number$#! to model the Migration Period:\n\n"
+ BP_maintenance_events.0001.new_features_situation: "We have revamped the migration mechanics into the new $situation_BP_migration_situation$ [situation|E], giving a new framework for implementing the unique mechanics of the Migration Period, including:\n\n$EFFECT_LIST_BULLET$$event_new_features_migration_wars$\n$EFFECT_LIST_BULLET$$event_new_feature_other_wars$\n$EFFECT_LIST_BULLET$$event_new_feature_migration_behavior$\n$EFFECT_LIST_BULLET$$event_new_feature_culture_divergence$\n$EFFECT_LIST_BULLET$$event_new_feature_culture_laws$\n$EFFECT_LIST_BULLET$$event_new_feature_tolbiac$"
+ event_new_features_migration_wars: "Complete overhaul of Migration Wars and related mechanics, including simplifying certain mechanics"
+ event_new_feature_other_wars: "Added Cultural Unification CB to allow certain Migration Situation participants to unite their culture into a single polity"
+ event_new_feature_migration_behavior: "Give players the option to restrain migration behavior for the AI to better model historical migration behavior"
+ event_new_feature_culture_divergence: "New mechanics for modeling the evolution of Stratocratic Elites during the Migration Period, particularly groups like the Visigoths and Vandals"
+ event_new_feature_culture_laws: "New mechanics modeling the passing of certain culture laws like the #italic Lex Visigothorum#! and #italic Lex Burguniorum#!"
+ event_new_feature_tolbiac: "Added a new feature modeling the Battle of Tolbiac for certain participant groups under certain conditions"
+ 
  BP_maintenance_events.0001.new_features_intro_dlc: ""
  BP_maintenance_events.0001.new_features_list_dlc: ""
  BP_maintenance_events.0001.closing: "We hope you enjoy this mod, and let us know of any bugs on the forum or on the Discord!"
