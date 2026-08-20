@@ -166,6 +166,96 @@ unification_cb_title_management_effect = {
 	resolve_title_and_vassal_change = scope:change_titles_taken
 }
 
+### Roman CB effects
+bp_pax_romana_effects = {
+	create_title_and_vassal_change = {
+		type = conquest
+		save_scope_as = change
+		add_claim_on_loss = yes
+	}
+	
+	# go through the dejure hierarchy under target titles, transfer titles with same or worse tolerance holders (their religion equaly or less tolerated than the defender's),
+	# take the holder as vassal otherwise and don't go deeper
+	every_in_list = {
+		list = target_titles
+		custom_tooltip = CONQUEST_CB_TITLE
+		every_in_de_jure_hierarchy = {
+			continue = {
+				OR = {
+					NOT = {
+						exists = holder
+					}
+					NOT = {
+						holder = {
+							target_is_liege_or_above = scope:defender
+						}
+					}
+					AND = {
+						scope:attacker.faith = {
+							faith_hostility_level_comparison = {
+								prev.holder.faith <= scope:defender.faith
+							}
+						}
+						holder = {
+							OR = {
+								this = scope:defender
+								target_is_liege_or_above = scope:defender
+							}
+						}
+					}
+				}
+				tier > tier_county
+			}
+			limit = {
+				holder ?= {
+					OR = {
+						this = scope:defender
+						target_is_liege_or_above = scope:defender
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					OR = {
+						scope:attacker.faith = {
+							faith_hostility_level_comparison = {
+								prev.holder.faith >= scope:defender.faith
+							}
+						}
+						holder.primary_title.tier >= scope:attacker.primary_title.tier
+					}
+				}
+				add_to_temporary_list = titles_taken
+			}
+			else = {
+				holder = {
+					add_to_temporary_list = vassals_taken
+				}
+			}
+		}
+	}
+
+	every_in_list = {
+		list = titles_taken
+		change_title_holder = {
+			holder = scope:attacker
+			change = scope:change
+			take_baronies = yes
+		}
+	}
+
+	every_in_list = {
+		list = vassals_taken
+		change_liege = {
+			liege = scope:attacker
+			change = scope:change
+		}
+	}
+
+	hidden_effect = { resolve_title_and_vassal_change = scope:change }
+}
+
 #Cross-Reference major_migration_county_development_damage_effect in BP_migration_effects.txt
 major_war_county_development_damage_effect = {
 	random_list = {

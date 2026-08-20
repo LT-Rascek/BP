@@ -166,39 +166,21 @@ roman_individual_county_de_jure_cb = {
 		# Legitimacy
 		add_legitimacy_attacker_victory_effect = yes
 
-		#EP2 accolade glory gain for winnning against higher ranked enemy
+		#EP2 accolade glory gain for winning against higher ranked enemy
 		scope:attacker = { accolade_attacker_war_end_glory_gain_low_effect = yes }
 
-		every_in_list = {
-			list = target_titles
-			if = {
-				limit = {
-					exists = de_jure_liege.holder
-				}
-				de_jure_liege.holder = { save_scope_as = temp_de_jure_liege }
-			}
-			add_hook_from_temp_de_jure_liege_to_attacker = yes
-		}
+		bp_pax_romana_effects = yes
 		
-		create_title_and_vassal_change = {
-			type = conquest
-			save_scope_as = change
-			add_claim_on_loss = yes
-		}
-		
+		# Create an 'helper' de jure CB which we won't execute, but can use to determine how much Prestige should be given to war participants.
 		every_in_list = {
 			list = target_titles
 			save_temporary_scope_as = target
 		}
-		
 		setup_de_jure_cb = {
 			attacker = scope:attacker
 			defender = scope:defender
-			change = scope:change
 			title = scope:target
 		}
-		resolve_title_and_vassal_change = scope:change
-		
 		# Attacker gets Prestige Experience, Defender loses Prestige, all other participants gain Prestige based on their war contribution.
 		modify_all_participants_fame_values = {
 			WINNER = scope:attacker
@@ -574,38 +556,23 @@ roman_individual_duchy_de_jure_cb = {
 		#EP2 accolade glory gain for winning against higher ranked enemy
 		scope:attacker = { accolade_attacker_war_end_glory_gain_med_effect = yes }
 
-		every_in_list = {
-			list = target_titles
-			limit = { exists = holder }
-			
-			holder = { save_scope_as = temp_de_jure_liege }
-			add_hook_from_temp_de_jure_liege_to_attacker = yes
-		}
-	
-		create_title_and_vassal_change = {
-			type = conquest
-			save_scope_as = change
-			add_claim_on_loss = yes
-		}
-		
+		bp_pax_romana_effects = yes
+
+		# Create an 'helper' de jure CB which we won't execute, but can use to determine how much Prestige should be given to war participants.
 		every_in_list = {
 			list = target_titles
 			save_temporary_scope_as = target
 		}
-		
 		setup_de_jure_cb = {
 			attacker = scope:attacker
 			defender = scope:defender
-			change = scope:change
 			title = scope:target
 		}
-		resolve_title_and_vassal_change = scope:change
-
 		# Attacker gets Prestige Experience, Defender loses Prestige, all other participants gain Prestige based on their war contribution.
 		modify_all_participants_fame_values = {
 			WINNER = scope:attacker
 			LOSER = scope:defender
-			FAME_BASE = scope:cb_prestige_factor # Set by 'setup_de_jure_cb'
+			FAME_BASE = bp_roman_war_fame_base_duchy
 			IS_RELIGIOUS_WAR = no
 			WINNER_FAME_SCALE = 10
 			LOSER_FAME_SCALE = -10
@@ -977,33 +944,18 @@ roman_individual_kingdom_de_jure_cb = {
 		#EP2 accolade glory gain for winning against higher ranked enemy
 		scope:attacker = { accolade_attacker_war_end_glory_gain_med_effect = yes }
 
-		every_in_list = {
-			list = target_titles
-			limit = { exists = holder }
-			
-			holder = { save_scope_as = temp_de_jure_liege }
-			add_hook_from_temp_de_jure_liege_to_attacker = yes
-		}
-	
-		create_title_and_vassal_change = {
-			type = conquest
-			save_scope_as = change
-			add_claim_on_loss = yes
-		}
-		
+		bp_pax_romana_effects = yes
+
+		# Create an 'helper' de jure CB which we won't execute, but can use to determine how much Prestige should be given to war participants.
 		every_in_list = {
 			list = target_titles
 			save_temporary_scope_as = target
 		}
-		
 		setup_de_jure_cb = {
 			attacker = scope:attacker
 			defender = scope:defender
-			change = scope:change
 			title = scope:target
 		}
-		resolve_title_and_vassal_change = scope:change
-
 		# Attacker gets Prestige Experience, Defender loses Prestige, all other participants gain Prestige based on their war contribution.
 		modify_all_participants_fame_values = {
 			WINNER = scope:attacker
@@ -1343,36 +1295,18 @@ subroman_individual_county_de_jure_cb = {
 		#EP2 accolade glory gain for winnning against higher ranked enemy
 		scope:attacker = { accolade_attacker_war_end_glory_gain_low_effect = yes }
 
-		every_in_list = {
-			list = target_titles
-			if = {
-				limit = {
-					exists = de_jure_liege.holder
-				}
-				de_jure_liege.holder = { save_scope_as = temp_de_jure_liege }
-			}
-			add_hook_from_temp_de_jure_liege_to_attacker = yes
-		}
+		bp_pax_romana_effects = yes
 		
-		create_title_and_vassal_change = {
-			type = conquest
-			save_scope_as = change
-			add_claim_on_loss = yes
-		}
-		
+		# Create an 'helper' de jure CB which we won't execute, but can use to determine how much Prestige should be given to war participants.
 		every_in_list = {
 			list = target_titles
 			save_temporary_scope_as = target
 		}
-		
 		setup_de_jure_cb = {
 			attacker = scope:attacker
 			defender = scope:defender
-			change = scope:change
 			title = scope:target
 		}
-		resolve_title_and_vassal_change = scope:change
-		
 		# Attacker gets Prestige Experience, Defender loses Prestige, all other participants gain Prestige based on their war contribution.
 		modify_all_participants_fame_values = {
 			WINNER = scope:attacker
@@ -1705,36 +1639,18 @@ subroman_individual_duchy_de_jure_cb = {
 		#EP2 accolade glory gain for winnning against higher ranked enemy
 		scope:attacker = { accolade_attacker_war_end_glory_gain_low_effect = yes }
 
-		every_in_list = {
-			list = target_titles
-			if = {
-				limit = {
-					exists = de_jure_liege.holder
-				}
-				de_jure_liege.holder = { save_scope_as = temp_de_jure_liege }
-			}
-			add_hook_from_temp_de_jure_liege_to_attacker = yes
-		}
+		bp_pax_romana_effects = yes
 		
-		create_title_and_vassal_change = {
-			type = conquest
-			save_scope_as = change
-			add_claim_on_loss = yes
-		}
-		
+		# Create an 'helper' de jure CB which we won't execute, but can use to determine how much Prestige should be given to war participants.
 		every_in_list = {
 			list = target_titles
 			save_temporary_scope_as = target
 		}
-		
 		setup_de_jure_cb = {
 			attacker = scope:attacker
 			defender = scope:defender
-			change = scope:change
 			title = scope:target
 		}
-		resolve_title_and_vassal_change = scope:change
-		
 		# Attacker gets Prestige Experience, Defender loses Prestige, all other participants gain Prestige based on their war contribution.
 		modify_all_participants_fame_values = {
 			WINNER = scope:attacker
@@ -2064,36 +1980,18 @@ subroman_individual_kingdom_de_jure_cb = {
 		#EP2 accolade glory gain for winnning against higher ranked enemy
 		scope:attacker = { accolade_attacker_war_end_glory_gain_low_effect = yes }
 
-		every_in_list = {
-			list = target_titles
-			if = {
-				limit = {
-					exists = de_jure_liege.holder
-				}
-				de_jure_liege.holder = { save_scope_as = temp_de_jure_liege }
-			}
-			add_hook_from_temp_de_jure_liege_to_attacker = yes
-		}
+		bp_pax_romana_effects = yes
 		
-		create_title_and_vassal_change = {
-			type = conquest
-			save_scope_as = change
-			add_claim_on_loss = yes
-		}
-		
+		# Create an 'helper' de jure CB which we won't execute, but can use to determine how much Prestige should be given to war participants.
 		every_in_list = {
 			list = target_titles
 			save_temporary_scope_as = target
 		}
-		
 		setup_de_jure_cb = {
 			attacker = scope:attacker
 			defender = scope:defender
-			change = scope:change
 			title = scope:target
 		}
-		resolve_title_and_vassal_change = scope:change
-		
 		# Attacker gets Prestige Experience, Defender loses Prestige, all other participants gain Prestige based on their war contribution.
 		modify_all_participants_fame_values = {
 			WINNER = scope:attacker
