@@ -1,4 +1,4 @@
-﻿##### Changed from Vanilla: Made visible to High Tribal governments
+﻿##### Changed from Vanilla: Made visible to High Tribal governments, tweaked costs for high tribal governments
 feudalize_holding_interaction = {
 	category = interaction_category_uncategorized
 	hidden = yes
@@ -62,6 +62,7 @@ feudalize_holding_interaction = {
 		}
 	}
 
+	##### Changed from Vanilla vvvvv
 	cost = {
 		treasury_or_gold = {
 			scope:actor = {
@@ -124,9 +125,66 @@ feudalize_holding_interaction = {
 						}
 					}
 				}
+				##### Changed from Vanilla vvvvv
+				else_if = {
+					limit = { government_has_flag = government_is_high_tribal }
+					multiply = {
+						value = 0
+						if = {
+							limit = { has_realm_law = high_tribal_organization_0 }
+							add = 0.25
+						}
+						else_if = {
+							limit = { has_realm_law = high_tribal_organization_1 }
+							add = 0.50
+						}
+						else_if = {
+							limit = { has_realm_law = high_tribal_organization_2 }
+							add = 0.75
+						}
+						else_if = {
+							limit = { has_realm_law = high_tribal_organization_3 }
+							add = 1.00
+						}
+						else = { add = 1.00 }
+						desc = high_tribal_law_discount
+					}
+				}
+				##### Changed from Vanilla ^^^^^
 			}
 		}
+		##### Changed from Vanilla vvvvv
+		prestige = {
+			scope:actor = {
+				value = 0
+				if = {
+					limit = { government_has_flag = government_is_high_tribal }
+					if = {
+							if = {
+								limit = { has_realm_law = high_tribal_organization_0 }
+								add = 200
+							}
+							else_if = {
+								limit = { has_realm_law = high_tribal_organization_1 }
+								add = 150
+							}
+							else_if = {
+								limit = { has_realm_law = high_tribal_organization_2 }
+								add = 100
+							}
+							else_if = {
+								limit = { has_realm_law = high_tribal_organization_3 }
+								add = 50
+							}
+							else = { add = 0 }
+							desc = high_tribal_law_price
+					}
+				}
+			}
+		}
+		##### Changed from Vanilla ^^^^^
 	}
+	##### Changed from Vanilla ^^^^^
 
 	on_accept = {
 		scope:actor = {
