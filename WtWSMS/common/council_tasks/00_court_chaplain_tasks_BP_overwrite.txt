@@ -404,6 +404,19 @@ task_conversion = {
 				desc = migration_convert_faith_speed_improvement_desc
 			}
 		}
+		if = {
+			limit = {
+				#Migrated Away From
+				scope:county = { has_county_modifier = recent_migration_away_modifier }
+			}
+			multiply = {
+				value = {
+					value = migration_convert_faith_speed_recent_migration_away_modifier_value
+					add = 1.00
+				}
+				desc = migration_convert_faith_speed_recent_migration_away_modifier_desc
+			}
+		}
 		#### Changed from Vanilla ^^^^^
 		
 		### SEA Minorities stuff vvv
