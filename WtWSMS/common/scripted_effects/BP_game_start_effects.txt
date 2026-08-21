@@ -930,6 +930,32 @@ create_starting_confederation_476_effect = {
 			add_confederation_member = title:c_zeeland.holder
 		}
 	}
+	#Slavs
+	title:c_kiev.holder = {
+		create_confederation = {
+			name = CONFEDERATION_NAME_ANTES_SLAVS
+		}
+		scope:new_confederation = {
+			#Kiev
+			add_confederation_member = title:c_korsun.holder
+			add_confederation_member = title:c_ushytsia.holder
+			#Moldova
+			add_confederation_member = title:c_orhei.holder
+			add_confederation_member = title:c_soroca.holder
+			#Karayedisan
+			add_confederation_member = title:c_cherkassy.holder
+			add_confederation_member = title:c_uman.holder
+			add_confederation_member = title:c_ladyzyn.holder
+			#Pereyaslavl
+			add_confederation_member = title:c_pereyaslavl.holder
+			add_confederation_member = title:c_hradyzk.holder
+			add_confederation_member = title:c_romen.holder
+			add_confederation_member = title:c_voin.holder
+			#Chernigov
+			add_confederation_member = title:c_putyvl.holder
+			add_confederation_member = title:c_kursk.holder
+		}
+	}
 }
 create_starting_confederation_486_effect = {
 	#Nomadic Confederations

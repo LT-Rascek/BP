@@ -38,6 +38,7 @@ bp_game_start = {
 		block_specific_chars_from_having_families
 		#Other Actions
 		update_development_by_terrain_and_circumstances
+		fix_fictional_tribal_dynasty_names
 		#Things that have to be done last
 		setup_roman_governments_based_on_dlc
 		setup_other_governments_based_on_dlc
@@ -1432,6 +1433,16 @@ give_chavez_to_the_buri = {
 				}
 			}
 			resolve_title_and_vassal_change = scope:title_change
+		}
+	}
+}
+
+fix_fictional_tribal_dynasty_names = {
+	effect = {
+		every_ruler = {
+			limit = { has_character_flag = fictional_tribal }
+			remove_character_flag = fictional_tribal
+			this = { pick_a_random_dynasty_name_effect = yes }
 		}
 	}
 }

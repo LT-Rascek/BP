@@ -1,0 +1,136 @@
+﻿set_dynasty_and_house_name_effect = {
+	this.dynasty ?= { set_dynasty_name = $NAME$ }
+	this.house ?= { set_house_name = $NAME$ }
+}
+pick_a_random_dynasty_name_effect = {
+	if = {
+		limit = { this.culture = { has_name_list = name_list_old_slavic } }
+		random_list = {
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Antya-Inda } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Boris } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Domoslavid } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Domovich } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Godogost } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Ognjen } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Ostromir } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Solowhoff } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Stanysl } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Venedi } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Volivch } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Vsegrad } }
+		}
+	}
+	if = {
+		limit = { this.culture = { has_name_list = name_list_tangut } }
+		random_list = {
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Asha } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Bailan } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Bailang } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Cao } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Dangchang } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Dangxiang } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Duola_591A_62C9 } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Jiao } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Li } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Liang_6881 } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Luo } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Meiyi } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Mihou } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Mikemote } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Minyak } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Miyao } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Mjinja } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Momu } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Mozang_6C92_85CF } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Ngwemi_5D6C_540D } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Qitai } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Ren } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Renduo } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Tangwu } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Toompea } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Tuoba } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Wang } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Wumi } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Xibi } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Yangmi } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Yeli_91CE_5229 } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Zhao } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Zhuli } }
+		}
+	if = {
+		limit = { this.culture = { has_name_list = name_list_zhangzhung } }
+		random_list = {
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Zhangzhung } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Gurib } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Mu } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Triwer } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Mra } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Chakpa } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Owo } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_HO_ } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Draktsa } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Dro } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Namthuk } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Pa } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Zhu } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Meu } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Bru } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Dru } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Kong } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Dak } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Nyang } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Tridun } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Shang } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Phacho } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Rawa } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Chuktshang } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Namru } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Se } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Ra } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Rme_u } }
+		}
+	if = {
+		limit = { this.culture = { has_name_list = name_list_tocharian } }
+		random_list = {
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Kausal } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Gank } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Tenare } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Ytarim } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Tripuskar } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Dantapur } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Baransi } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Yurpaska } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Rohini } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Vaideh } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Vaisali } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Iksvaku } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Kausika } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Kausika } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Sakke } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Kasake } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Yarkam } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Cadota } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Lyam } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Kunlyu } }
+		}
+	}
+	if = {
+		limit = { this.culture = { has_name_list = name_list_adyghes } }
+		random_list = {
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Adali } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Adamiy } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Bzhedug } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Chebsin } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Guaye } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Hatuqwai } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Makhosh } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Mamkhlegh } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Natukhai } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Shapsug } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Shegak } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Temirgoy } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Yegerquay } }
+			10 = { set_dynasty_and_house_name_effect = { NAME = dynn_Zhaney } }
+		}
+	}
+}
