@@ -863,6 +863,124 @@
 	}
 }
 
+#Chararc's Dynasty
+#LT-Rascek: I can't find any sources directly linking Chararc and Merovech, so made a separate dynasty
+36107 = {
+	name = "Chararic" # Frankish king
+	#  Chararic Meroving
+	dynasty = old_frankish_dynn_chararic
+	religion = "frankish_pagan"
+	culture = "old_frankish"
+	460.1.1 = { birth = yes }
+	476.1.1 = {
+		trait = education_intrigue_2
+		
+		trait = ambitious
+		trait = deceitful
+		trait = stubborn
+		
+		trait = disloyal
+	}
+	496.12.25 = { religion = nicene }
+	507.1.1 = { trait = devoted } #forced to become a priest
+	508.1.1 = { #Killed by Clovis for plotting against him
+		death = {
+			death_reason = death_execution
+			killer = character:40
+		}
+	}
+}
+
+#Ragnachar's Dynasty
+#LT-Rascek: I can't find any sources directly linking Ragnachar and Merovech, so made a separate dynasty
+36108 = {
+	name = "Theuderic" # Frankish noble
+	#  Theuderic Meroving
+	dynasty = old_frankish_dynn_ragnachar #Not clear of any descent 
+	religion = "frankish_pagan"
+	culture = "old_frankish"
+	434.1.1 = { birth = yes }
+	461.1.1 = { add_spouse = 36641_sister } #Sister of Basina so Clovis and Ragnachar are related through Bassina
+	471.1.1 = { death = yes }
+}
+
+36109 = {
+	name = "Ragnachar" # Frankish king
+	#  Ragnachar Meroving
+	dynasty = old_frankish_dynn_ragnachar
+	religion = "frankish_pagan"
+	culture = "old_frankish"
+	father = 36108
+	mother = 36641_sister
+	#Childhood; gains childhood trait at 6, gain personality traits at 9, 11, 13, 14, 15; Sexuality at 10
+	#Done in order of most to least important in modeling his personality
+	460.1.1 = { birth = yes }
+	469.1.1 = { trait = lustful } #9
+	470.1.1 = { sexuality = bisexual } #10: Farro was a favorite (possible lover), but he also sought women
+	471.1.1 = { trait = greedy } #11
+	472.1.1 = { trait = zealous } #13; pagan holdout
+	476.1.1 = { trait = education_martial_2 }
+	480.1.1 = { set_relation_lover = character:36112 }
+	509.1.1 = {
+		death = {
+			death_reason = death_execution
+			killer = character:40
+		}
+	}
+}
+
+36110 = {
+	name = "Ricchar" # Frankish king
+	#  Ricchar Meroving
+	dynasty = old_frankish_dynn_ragnachar
+	religion = "frankish_pagan"
+	culture = "old_frankish"
+	father = 36108
+	463.1.1 = { birth = yes }
+	509.1.1 = {
+		death = {
+			death_reason = death_execution
+			killer = character:40
+		}
+	}
+}
+
+36111 = {
+	name = "Rignomer" # Frankish king
+	#  Ricchar Meroving
+	dynasty = old_frankish_dynn_ragnachar
+	religion = "frankish_pagan"
+	culture = "old_frankish"
+	father = 36108
+	470.1.1 = { birth = yes }
+	511.1.1 = {
+		death = {
+			death_reason = death_execution
+			killer = character:40
+		}
+	}
+}
+
+36112 = {
+	name = "Farro" # Frankish advisor
+	#  Farro Samosing
+	dynasty = 10424643
+	religion = "frankish_pagan"
+	culture = "old_frankish"
+	diplomacy = 10
+	460.1.1 = { birth = yes }
+	476.1.1 = {
+		trait = education_diplomacy_4
+		employer = 36109
+	}
+	509.1.1 = {
+		death = {
+			death_reason = death_execution
+			killer = character:40
+		}
+	}
+}
+
 10076 = {
 	name = "Chlodomer"
 	# Chlodomer Meroving 

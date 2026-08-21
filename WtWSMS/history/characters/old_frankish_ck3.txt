@@ -16,14 +16,18 @@
 		trait = diligent
 		trait = trusting
 		trait = content
-		trait = loyal #Why he continued to serve Childeric and Clovis
 	}
 	462.1.1 = { trait = education_martial_2 }
 	496.1.1 = { #Battle of Tolbiac
 		give_nickname = nick_the_lame
 		trait = "one_legged" #Maimed tends to kill *very* quickly, so lets go with this instead
 	}
-	509.1.1 = { death = yes }
+	509.1.1 = {
+		death = {
+			death_reason = death_murder
+			killer = character:485320 #Killed by his own son... oof.
+		}
+	}
 }
 
 36106 = {
@@ -86,7 +90,12 @@
 		trait = education_martial_2
 	}
 	509.1.1 = { trait = kinslayer_3 } #Kills his own dad
-	511.1.1 = { death = yes }
+	511.1.1 = {
+		death = {
+			death_reason = death_execution
+			killer = character:40 #Clovis again...
+		}
+	}
 }
 
 1310003 = {
@@ -127,4 +136,21 @@
 		set_employer = title:d_germania_inferior.holder
 	}
 	485.1.1 = { death = yes }
+}
+
+36107_son = {
+	name = "Chararic" # Son of Chararic; forced into Monastic life
+	dynasty = old_frankish_dynn_chararic
+	religion = "frankish_pagan"
+	culture = "old_frankish"
+	father = 36107
+	476.1.1 = { birth = yes }
+	496.12.25 = { religion = nicene }
+	507.1.1 = { trait = devoted } #Forced to become a deacon
+	508.1.1 = { #Killed by Clovis for plotting against him
+		death = {
+			death_reason = death_execution
+			killer = character:40
+		}
+	}
 }

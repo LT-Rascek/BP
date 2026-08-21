@@ -18,7 +18,7 @@
 		religion = nicene
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_IMPOSSIBLE"
 		history_id = 96054
-		position = { 650 650 }
+		position = { 600 600 }
 		
 		animation = prayer
 		
@@ -60,7 +60,7 @@
 		religion = nicene
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_HARD"
 		history_id = 175110
-		position = { 1025 300 }
+		position = { 950 200 }
 		
 		animation = shame
 		character = {
@@ -88,7 +88,7 @@
 		religion = gallican_church
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
 		history_id = 19
-		position = { 400 380 }
+		position = { 350 390 }
 		
 		animation = personality_dishonorable
 	}
@@ -106,7 +106,7 @@
 		religion = coptic
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_IMPOSSIBLE"
 		history_id = 145226
-		position = { 925 800 }
+		position = { 1050 700 }
 		
 		animation = personality_greedy
 		character = {
@@ -133,6 +133,7 @@
 bm_476_western_barbarians = {
 	start_date = 476.2.2
 	is_playable = yes
+	recommended = yes
 	
 	group = bm_group_476
 	
@@ -150,7 +151,7 @@ bm_476_western_barbarians = {
 		religion = arian
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
 		history_id = 30
-		position = { 550 550 }
+		position = { 300 675 }
 		
 		animation = survey
 	}
@@ -169,7 +170,7 @@ bm_476_western_barbarians = {
 		religion = arian
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_HARD"
 		history_id = 1301275
-		position = { 300 600 }
+		position = { 300 150 }
 		
 		animation = personality_zealous
 	}
@@ -187,7 +188,7 @@ bm_476_western_barbarians = {
 		religion = arian
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
 		history_id = 20
-		position = { 950 400 }
+		position = { 850 175 }
 		
 		animation = personality_callous
 	}
@@ -205,7 +206,7 @@ bm_476_western_barbarians = {
 		religion = arian
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_EASY"
 		history_id = 93
-		position = { 1000 825 }
+		position = { 1100 775 }
 
 		animation = dismissal
 
@@ -222,54 +223,6 @@ bm_476_western_barbarians = {
 			animation = rage
 		}
 	}
-	# Childeric, Father of Clovis, (Salian Franks) ID: 39
-	character = {
-		name = "bm_476_western_barbarians_childeric"
-		dynasty = 1042151
-		dynasty_splendor_level = 1
-		type = male
-		birth = 440.1.2
-		title = d_belgica_secunda
-		government = tribal_government
-		culture = old_frankish
-		religion = frankish_pagan
-		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_EASY"
-		history_id = 39
-		position = { 300 150 }
-		
-		animation = menacing
-		
-		# Clovis, the future king of all Franks, ID: 40
-		character = {
-			name = "bm_476_western_barbarians_childeric_alt_clovis"
-			relation = "BOOKMARK_RELATION_SON"
-			dynasty = 1042151
-			type = male
-			birth = 466.1.1
-			culture = old_frankish
-			religion = frankish_pagan
-			history_id = 40
-			animation = personality_forgiving
-		}
-	}
-	# Arbogast
-	character = {
-		name = "bm_476_western_barbarians_arbogast"
-		dynasty = 1042533
-		dynasty_splendor_level = 1
-		type = male
-		birth = 450.1.1
-		title = d_belgica_prima
-		government = subroman_administrative_government
-		fallback_government = subroman_dynastic_government
-		culture = old_frankish
-		religion = nicene
-		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_HARD"
-		history_id = 144671
-		position = { 950 125 }
-
-		animation = personality_honorable
-	}
 	# Masties
 	character = {
 		name = "bm_476_western_barbarians_masties"
@@ -278,13 +231,12 @@ bm_476_western_barbarians = {
 		type = male
 		birth = 429.1.1
 		title = d_auresia
-		government = subroman_administrative_government
-		fallback_government = subroman_dynastic_government
+		government = subroman_dynastic_government
 		culture = mauritanian
 		religion = african_church
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_HARD"
 		history_id = 36141
-		position = { 450 800 }
+		position = { 700 785 }
 
 		animation = waki_gamae
 		character = {
@@ -368,12 +320,29 @@ bm_476_goths = {
 		title = k_gepidia
 		government = tribal_government
 		culture = gothic
-		religion = arian
+		religion = gothic_pagan
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_EASY"
 		history_id = 30366
 		position = { 450 400 }
 		
 		animation = personality_callous
+	}
+	character = { #Ernak (Huns)
+		name = "bm_476_goths_ernak"
+		dynasty_house = dynasty_house_attilid
+		dynasty_splendor_level = 5
+		type = male
+		birth = 436.1.1
+		title = e_caspian-pontic_steppe
+		government = nomad_government
+		fallback_government = tribal_government
+		culture = hunnic
+		religion = tengri_pagan
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_HARD"
+		history_id = 69
+		position = { 800 150 }
+		
+		animation = personality_rational
 	}
 }
 bm_476_adventurers = {
@@ -803,6 +772,117 @@ bm_476_caucuses = {
 			history_id = 145226
 			animation = idle
 		}
+	}
+}
+bm_476_the_franks = {
+	start_date = 476.2.2
+	is_playable = yes
+	recommended = yes
+	
+	group = bm_group_476
+	
+	#Chars: Chararic, Ragnachar, Sigobert
+	
+	# Childeric, Father of Clovis, (Salian Franks) ID: 39
+	character = {
+		name = "bm_476_the_franks_childeric"
+		dynasty = 1042151
+		dynasty_splendor_level = 1
+		type = male
+		birth = 440.1.2
+		title = d_belgica_secunda
+		government = high_tribal_government
+		culture = old_frankish
+		religion = frankish_pagan
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		history_id = 39
+		position = { 600 350 }
+		
+		animation = menacing
+		
+		# Clovis, the future king of all Franks, ID: 40
+		character = {
+			name = "bm_476_the_franks_childeric_alt_clovis"
+			relation = "BOOKMARK_RELATION_SON"
+			dynasty = 1042151
+			type = male
+			birth = 466.1.1
+			culture = old_frankish
+			religion = frankish_pagan
+			history_id = 40
+			animation = personality_forgiving
+		}
+	}
+	# Arbogast
+	character = {
+		name = "bm_476_the_franks_arbogast"
+		dynasty = 1042533
+		dynasty_splendor_level = 1
+		type = male
+		birth = 450.1.1
+		title = d_belgica_prima
+		government = subroman_dynastic_government
+		culture = old_frankish
+		religion = nicene
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_HARD"
+		history_id = 144671
+		position = { 1000 825 }
+
+		animation = personality_honorable
+	}
+	
+	# Chararic
+	character = {
+		name = "bm_476_the_franks_chararic"
+		dynasty = old_frankish_dynn_chararic
+		dynasty_splendor_level = 1
+		type = male
+		birth = 460.1.1
+		title = d_texandria
+		government = high_tribal_government
+		culture = old_frankish
+		religion = frankish_pagan
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		history_id = 36107
+		position = { 850 150 }
+
+		animation = stayback
+	}
+	
+	# Ragnachar
+	character = {
+		name = "bm_476_the_franks_ragnachar"
+		dynasty = old_frankish_dynn_ragnachar
+		dynasty_splendor_level = 1
+		type = male
+		birth = 460.1.1
+		title = d_mosania
+		government = high_tribal_government
+		culture = old_frankish
+		religion = frankish_pagan
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		history_id = 36109
+		position = { 700 650 }
+
+		animation = personality_greedy
+	}
+	
+	# Ragnachar
+	character = {
+		name = "bm_476_the_franks_sigobert"
+		dynasty = old_frankish_dynn_sigobert
+		dynasty_splendor_level = 1
+		type = male
+		birth = 446.1.1
+		title = d_germania_inferior
+		government = high_tribal_government
+		culture = old_frankish
+		religion = frankish_pagan
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		history_id = 20785
+		position = { 1100 150 }
+
+		animation = survey
 	}
 }
 bm_476_shattered_empire = {
