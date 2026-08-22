@@ -12,10 +12,6 @@ scripted_effect change_early_slavic_civic_tradition = {
 		limit = { has_cultural_tradition = tradition_early_slavic_traditions }
 		remove_culture_tradition = tradition_early_slavic_traditions
 	}
-	else = {
-		limit = { has_cultural_tradition = tradition_early_slavic_traditions_non_dlc }
-		remove_culture_tradition = tradition_early_slavic_traditions_non_dlc
-	}
 	
 	#Add new traditions
 	if = {
@@ -335,7 +331,6 @@ bp_slavic_traditions_change.0001 = {
 	trigger = {
 		OR = {
 			root = { has_cultural_tradition = tradition_early_slavic_traditions }
-			root = { has_cultural_tradition = tradition_early_slavic_traditions_non_dlc }
 			root = { has_cultural_tradition = tradition_early_slavic_warfare }
 		}
 		root = { has_cultural_era_or_later = culture_era_classical_antiquity }

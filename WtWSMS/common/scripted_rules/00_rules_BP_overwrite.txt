@@ -123,7 +123,6 @@ can_diverge_culture = {
 	trigger_if = {
 		limit = {
 			NOT = { root.culture = { has_cultural_parameter = can_diverge_if_culture_head } }
-			NOT = { root.culture = { has_cultural_parameter = easier_cheaper_divergence_early_slavs } } #Early Slavs get to ignore this rule
 		}
 		custom_description = {
 			text = head_of_culture_cannot_diverge

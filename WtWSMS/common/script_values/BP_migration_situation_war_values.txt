@@ -7,7 +7,7 @@ migration_war_required_fame_level = {
 		add = 3
 	}
 	if = {
-		limit = { culture = { has_cultural_parameter = easier_migration_cbs } }
+		limit = { culture = { has_cultural_parameter = cb_lower_prestige_level_requirement } }
 		subtract = 1
 	}
 	min = low_prestige_level
