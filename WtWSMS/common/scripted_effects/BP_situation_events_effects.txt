@@ -32,6 +32,7 @@
 		else = { this.primary_title = { set_title_name_dynamic = cn_migration_settled_kingdom_dynamic } }
 		this.primary_title = { save_scope_as = the_title }
 	}
+	this.capital_county.empire = { save_scope_as = the_empire }
 	#Capital County always becomes de jure
 	this.capital_county.duchy = { set_de_jure_liege_title = scope:the_title }
 	#Shift every duchy that's completely controlled
@@ -50,6 +51,8 @@
 		}
 		set_de_jure_liege_title = scope:the_title
 	}
+	#Make the new kingdom part of the de jure hierarchy
+	scope:the_title = { set_de_jure_liege_title = scope:the_empire }
 	#Add Claim to the Empire containing your capital
 	add_pressed_claim = scope:the_empire
 	if = {
