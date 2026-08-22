@@ -176,7 +176,7 @@ innovation_barter = {
 	unlock_building = common_tradeport_00
 	unlock_building = market_villages_02
 
-	custom = reduces_migration_tribalization_odds_2
+	custom = reduces_migration_tribalization_odds_1
 
 	character_modifier = {
 		monthly_income_from_herd_mult = 0.05
@@ -293,18 +293,29 @@ innovation_social_stratification = {
 
 	character_modifier = { vassal_limit = 10 }
 	
-	unlock_building = monastic_schools_00
-	unlock_building = scriptorium_00
-	
 	unlock_law = high_tribal_organization_1
 	
-	custom = unlocks_megaliths
 	custom = required_to_adopt_roman_government_during_migration
 	custom = reduces_migration_tribalization_odds_3
 	
 	custom = can_create_de_jure_kingdoms_if_settled
 	custom = high_titles_shatter_without_this_innovation
 	custom = allows_confederation_to_kingdom
+
+	flag = global_regular
+	flag = tribal_era_regular
+}
+innovation_formalized_rituals = {
+	skill = learning
+	group = culture_group_civic
+	culture_era = culture_era_tribal
+	icon = @tribal_religion
+	
+	unlock_building = monastic_schools_00
+	unlock_building = scriptorium_00
+	custom = unlocks_megaliths
+	
+	custom = reduces_migration_tribalization_odds_1
 
 	flag = global_regular
 	flag = tribal_era_regular

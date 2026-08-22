@@ -60,11 +60,15 @@ migration_innovation_weight = { #Max value: 10; used for determining if counties
 		add = 0.5
 	}
 	if = {
-		limit = { has_innovation = innovation_development_bp_00 }
-		add = 1
+		limit = { has_innovation = innovation_formalized_rituals }
+		add = 0.5
 	}
 	if = {
 		limit = { has_innovation = innovation_barter }
+		add = 0.5
+	}
+	if = {
+		limit = { has_innovation = innovation_development_bp_00 }
 		add = 1
 	}
 	if = {
