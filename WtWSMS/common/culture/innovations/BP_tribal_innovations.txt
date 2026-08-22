@@ -44,6 +44,8 @@
 @roman_civil = "gfx/interface/icons/culture_innovations/roman_civil_innovations.dds"
 @roman_military = "gfx/interface/icons/culture_innovations/roman_military_innovations.dds"
 @tribal_religion = "gfx/interface/icons/culture_innovations/tribal_religion.dds"
+@oppidum = "gfx/interface/icons/culture_innovations/oppidum.dds"
+@gord = "gfx/interface/icons/culture_innovations/gord.dds"
 
 #Military Innovations
 innovation_quilted_armor = { #Aka, Ironworking
@@ -205,8 +207,13 @@ innovation_oppidum = {
 				has_cultural_parameter = heritage_group_romance
 			}
 		}
-		icon = @civil_construction_2
+		icon = @oppidum
 		name = innovation_oppidum_celtic
+	}
+	asset = {
+		trigger = { has_cultural_parameter = heritage_group_slavic }
+		icon = @gord
+		name = innovation_oppidum_slavic
 	}
 
 	character_modifier = {
