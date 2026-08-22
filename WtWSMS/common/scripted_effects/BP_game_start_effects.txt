@@ -931,7 +931,7 @@ create_starting_confederation_476_effect = {
 		}
 	}
 	#Slavs
-	title:c_kiev.holder = {
+	title:c_kiev.holder = { #Antes
 		create_confederation = {
 			name = CONFEDERATION_NAME_ANTES_SLAVS
 		}
@@ -956,149 +956,51 @@ create_starting_confederation_476_effect = {
 			add_confederation_member = title:c_kursk.holder
 		}
 	}
-}
-create_starting_confederation_486_effect = {
-	#Nomadic Confederations
-	title:c_emil.holder = {
+	title:c_peremyshl.holder = { #Sklaveni
 		create_confederation = {
-			name = CONFEDERATION_NAME_WUSUN
+			name = CONFEDERATION_NAME_SKLAVENI_SLAVS
 		}
 		scope:new_confederation = {
-			add_confederation_member = title:c_lepsink.holder
-			add_confederation_member = title:c_karamay.holder
+			#Halych
+			add_confederation_member = title:c_halych.holder
+			add_confederation_member = title:c_lviv.holder
+			add_confederation_member = title:c_terebovl.holder
+			#Bukinovina
+			add_confederation_member = title:c_hotin.holder
+			#Cherven Cities
+			add_confederation_member = title:c_cherven.holder
+			add_confederation_member = title:c_belz.holder
+			add_confederation_member = title:c_lubelska.holder
+			#Volhynia
+			add_confederation_member = title:c_volodymyr.holder
+			add_confederation_member = title:c_peresopnytsia.holder
+			add_confederation_member = title:c_zaslavl.holder
+			#Turov
+			add_confederation_member = title:c_turov.holder
+			add_confederation_member = title:c_korosten.holder
+			add_confederation_member = title:c_dubrovytsia.holder
+			#Kiev
+			add_confederation_member = title:c_zhytomyr.holder
+			add_confederation_member = title:c_zvyahel.holder
+			add_confederation_member = title:c_chornobyl.holder
 		}
 	}
-	title:d_kentarlau.holder= { #Yueban
-		save_temporary_scope_as = confederation_offerer
+	title:c_novgorod_seversky.holder = { #Kolochin
 		create_confederation = {
-			name = CONFEDERATION_NAME_YUEBAN
+			name = CONFEDERATION_NAME_KOLOCHIN_SLAVS
 		}
 		scope:new_confederation = {
-			add_confederation_member = title:d_ili-alatau.holder
-			add_confederation_member = title:d_alakol.holder
-			add_confederation_member = title:d_zhetysu.holder
-		}
-	}
-	title:d_uzboy.holder = {
-		create_confederation = {
-			name = CONFEDERATION_NAME_DAHAE
-		}
-		scope:new_confederation = {
-			add_confederation_member = title:c_uzboy.holder
-			add_confederation_member = title:c_mangyshlak.holder
-			add_confederation_member = title:c_qoshagyl.holder
-		}
-	}
-	title:d_volga_bulgaria.holder = {
-		create_confederation = {
-			name = CONFEDERATION_NAME_MOGYAR
-		}
-		scope:new_confederation = {
-			add_confederation_member = title:d_jalmat.holder
-			add_confederation_member = title:d_bugurslan.holder
-			add_confederation_member = title:d_bashkiria.holder
-			add_confederation_member = title:d_sakmara.holder
-		}
-	}
-	#Known confederations
-	title:d_austorani.holder = {
-		create_confederation = {
-			name = CONFEDERATION_NAME_LAGUANTAN
-		}
-		scope:new_confederation = {
-			add_confederation_member = title:d_arzugis.holder
-			add_confederation_member = title:d_navusi.holder
-			add_confederation_member = title:c_ghadames.holder
-			add_confederation_member = title:c_souf.holder
-		}
-	}
-	title:d_masmuda.holder = {
-		create_confederation = {
-			name = CONFEDERATION_NAME_MASMUDA
-		}
-		scope:new_confederation = {
-			add_confederation_member = title:d_hhaha.holder
-			add_confederation_member = title:d_hintata.holder
-			add_confederation_member = title:d_ghomara.holder
-			add_confederation_member = title:d_regraga.holder
-			add_confederation_member = title:d_baquates.holder
-			add_confederation_member = title:d_ait_ouriaghel.holder
-			add_confederation_member = title:d_agadir.holder
-		}
-	}
-	#Likely Confederations
-	title:d_werle.holder = { #Warni
-		create_confederation = {
-			name = CONFEDERATION_NAME_WARNIC
-		}
-		scope:new_confederation = {
-			add_confederation_member = title:c_ruppin.holder
-			add_confederation_member = title:c_prenzlau.holder
-			add_confederation_member = title:c_brandenburg.holder
-			add_confederation_member = title:c_werle.holder
-		}
-	}
-	title:d_angria.holder = { #Saxons
-		create_confederation = {
-			name = CONFEDERATION_NAME_OLD_SAXON
-		}
-		scope:new_confederation = {
-			add_confederation_member = title:d_teutoburgiensis.holder
-			add_confederation_member = title:d_westfalen.holder
-			add_confederation_member = title:d_ostfalen.holder
-			add_confederation_member = title:d_nordalbingia.holder
-			add_confederation_member = title:d_albis.holder
-		}
-	}
-	title:c_leh.holder = { #Balti
-		create_confederation = {
-			name = CONFEDERATION_NAME_BALTI
-		}
-		scope:new_confederation = {
-			add_confederation_member = title:c_demchok.holder
-			add_confederation_member = title:c_diskit.holder
-			add_confederation_member = title:c_padum.holder
-			add_confederation_member = title:c_darcha.holder
-			add_confederation_member = title:c_purig.holder
-			add_confederation_member = title:c_skardu.holder
-			add_confederation_member = title:c_shigar.holder
-			add_confederation_member = title:c_khaplu.holder
-		}
-	}
-	title:c_waldeck.holder = { #Chatti
-		create_confederation = {
-			name = CONFEDERATION_NAME_CHATTI
-		}
-		scope:new_confederation = {
-			add_confederation_member = title:c_kassel.holder
-			add_confederation_member = title:c_fulda.holder
-			add_confederation_member = title:c_marburg.holder
-		}
-	}
-	title:d_germania_inferior.holder = { #Ripuarian Franks
-		create_confederation = {
-			name = CONFEDERATION_NAME_RIPUARIAN_FRANKS
-		}
-		scope:new_confederation = {
-			add_confederation_member = title:c_aachen.holder
-			add_confederation_member = title:c_guelders.holder
-		}
-	}
-	title:d_texandria.holder = { #Chararic Franks
-		create_confederation = {
-			name = CONFEDERATION_NAME_CHARARIC_FRANKS
-		}
-		scope:new_confederation = {
-			add_confederation_member = title:c_antwerpen.holder
-		}
-	}
-	title:d_mosania.holder = { #Ragnachar Franks
-		create_confederation = {
-			name = CONFEDERATION_NAME_RAGNACHAR_FRANKS
-		}
-		scope:new_confederation = {
-			add_confederation_member = title:c_bouillon.holder
-			add_confederation_member = title:c_luxembourg.holder
+			#Chernigov
+			add_confederation_member = title:c_chernigov.holder
+			add_confederation_member = title:c_gomel.holder
+			add_confederation_member = title:c_starodub.holder
+			#Pinsk
+			add_confederation_member = title:c_babruysk.holder
+			#Karachev
+			add_confederation_member = title:c_karachev.holder
+			add_confederation_member = title:c_sevsk.holder
+			#Smolensk
+			add_confederation_member = title:c_roslavl.holder
 		}
 	}
 }
