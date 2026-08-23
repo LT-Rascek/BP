@@ -1,0 +1,77 @@
+##### Heritage
+
+##### Cultures
+
+duke_male_isaurian = {
+	type = character
+	gender = male
+	special = holder
+	tier = duchy
+	priority = 31
+	name_lists = { name_list_isaurian }
+}
+king_male_isaurian = {
+	type = character
+	gender = male
+	special = holder
+	tier = kingdom
+	priority = 51
+	name_lists = { name_list_isaurian }
+}
+emperor_male_isaurian = {
+	type = character
+	gender = male
+	special = holder
+	tier = empire
+	priority = 106
+	name_lists = { name_list_isaurian }
+}
+
+duke_vassal_male_isaurian = {
+	type = character
+	gender = male
+	special = holder
+	tier = duchy
+	priority = 31
+	name_lists = { name_list_isaurian }
+	only_vassals = yes
+}
+duchy_isaurian = {
+	type = title
+	tier = duchy
+	priority = 31
+	name_lists = { name_list_isaurian }
+	only_vassals = yes
+}
+king_vassal_male_isaurian = {
+	type = character
+	gender = male
+	special = holder
+	tier = kingdom
+	priority = 51
+	name_lists = { name_list_isaurian }
+	only_vassals = yes
+}
+kingdom_isaurian = {
+	type = title
+	tier = kingdom
+	priority = 51
+	name_lists = { name_list_isaurian }
+	only_vassals = yes
+}
+emperor_vassal_male_isaurian = {
+	type = character
+	gender = male
+	special = holder
+	tier = empire
+	priority = 106
+	name_lists = { name_list_isaurian }
+	only_vassals = yes
+}
+empire_vassal_isaurian = {
+	type = title
+	tier = empire
+	priority = 106
+	name_lists = { name_list_isaurian }
+	only_vassals = yes
+}
