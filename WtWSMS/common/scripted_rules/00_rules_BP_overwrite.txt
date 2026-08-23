@@ -61,7 +61,13 @@ faith_creation = {
 	}
 
 	##### Changed from Vanilla vvvvv
-	culture = { has_innovation = innovation_state_religion }
+	trigger_if = {
+		limit = { faith = { has_doctrine_parameter = unreformed } }
+		culture = { has_innovation = innovation_formalized_rituals }
+	}
+	trigger_else = {
+		culture = { has_innovation = innovation_state_religion }
+	}
 	##### Changed from Vanilla ^^^^^
 }
 

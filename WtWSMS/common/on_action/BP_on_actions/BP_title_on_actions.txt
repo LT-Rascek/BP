@@ -200,6 +200,7 @@ on_vassal_change = {
 	on_actions = {
 		BP_degrade_roman_government
 		BP_fall_of_rome
+		BP_cleanup_landless_chars_under_non_admin
 	}
 }
 
@@ -214,6 +215,29 @@ BP_degrade_roman_government = {
 				highest_held_title_tier < tier_kingdom
 			}
 			convert_to_subroman_government_effect = yes
+		}
+	}
+}
+
+BP_cleanup_landless_chars_under_non_admin = {
+	trigger = {
+		root.top_liege != root
+		NOT = { root.top_liege = { government_allows = administrative } }
+		NOT = { any_held_title = { count > 0 is_landless_type_title = no } }
+	}
+	effect = {
+		if = {
+			limit = { is_ai = no }
+			create_landless_adventurer_title_effect = {
+				REASON = flag:deposition
+				FLAVOR_CHAR = this
+			}
+		}
+		else = {
+			every_held_title = {
+				limit = { is_landless_type_title = yes }
+				prev = { destroy_title = prev }
+			}
 		}
 	}
 }

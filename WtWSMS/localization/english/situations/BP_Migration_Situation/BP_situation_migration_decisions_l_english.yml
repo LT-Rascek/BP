@@ -38,7 +38,7 @@
  land_migration_tribal_kingdom_tooltip: "Make [ROOT.Char.GetPrimaryTitle.GetNameNoTooltip] the [de_jure|E] liege title of your capital duchy and all fully controlled duchies"
  land_migration_tribal_kingdom_confirm: "Confirm"
  realm_size_is_over_25: "[realm_size] is greater than #V 25#!\n$TAB$$EFFECT_LIST_BULLET$#weak (Currently: [GetPlayer.RealmSize])#!"
- has_maxed_out_authority: "Has [absolute_tribal_authority|E]"
+ has_maxed_out_authority: "Has maximum Realm Law"
  powerful_vassals_think_highly_of_you: "All your [powerful_vassals|E] have at least #P 35#! [opinion|E] of you"
  
  #found_titular_duchy_decision
@@ -47,4 +47,10 @@
  found_titular_duchy_decision_tooltip: "$found_duchy_decision_tooltip$"
  found_titular_duchy_decision_confirm: "$found_duchy_decision_confirm$"
  duchy_will_be_titular: "@warning_icon! The [duchy|E] of [root_scope.GetPrimaryTitle.GetNameNoTierNoTooltip] will be titular"
+ 
+ #Tribal to Sub-Roman Decision (AKA Frankish Government
+ convert_tribal_to_subroman_government_decision: "Adopt Sub-Roman Government"
+ convert_tribal_to_subroman_government_decision_desc: "Our Kingdom, while tribal in nature, has a large number of former Roman territories that maintain a pretense of Roman governance. If we are willing, we could adopt such customs ourselves, even though we are not descended directly from Roman institutions..."
+ convert_tribal_to_subroman_government_decision_tooltip: "Adopt Sub-Roman government in line with a number of your vassals"
+ convert_tribal_to_subroman_government_decision_confirm: "Confirm"
  

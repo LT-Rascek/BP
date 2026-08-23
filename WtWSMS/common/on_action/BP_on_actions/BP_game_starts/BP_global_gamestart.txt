@@ -31,10 +31,6 @@ BP_set_global_variables_by_date = {
 			limit = { current_date >= 476.9.4 }
 			set_global_variable = fall_of_rome
 		}
-		if = { #Clovis ascends the throne
-			limit = { current_date >= 482.1.1 }
-			set_global_variable = formed_frankish_kingdom
-		}
 		if = { #Treaty of Nvarsak
 			limit = { current_date >= 484.1.1 }
 			set_global_variable = persia_legalizes_caucasian_christianity

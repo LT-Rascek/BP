@@ -40,6 +40,7 @@ BP_convert_sub_roman_admin_to_dynastic = {
 			SOURCE_TYPE = administrative
 			TARGET_TYPE = dynastic
 			ENOBLE_COURTIERS = no
+			TITLE_TROOPS = no
 		}
 		#Eliminate noble family titles
 		every_vassal_or_below = {
@@ -62,6 +63,7 @@ BP_convert_sub_roman_dynastic_to_admin = {
 			SOURCE_TYPE = dynastic
 			TARGET_TYPE = administrative
 			ENOBLE_COURTIERS = yes
+			TITLE_TROOPS = yes
 		}
 	}
 }
@@ -78,6 +80,7 @@ BP_subroman_dynastic_under_subroman_admin = {
 			SOURCE_TYPE = dynastic
 			TARGET_TYPE = administrative
 			ENOBLE_COURTIERS = yes
+			TITLE_TROOPS = yes
 		}
 	}
 }
@@ -373,6 +376,7 @@ BP_roman_admin_govs_under_nonroman_government_checks = {
 				SOURCE_TYPE = administrative
 				TARGET_TYPE = dynastic
 				ENOBLE_COURTIERS = no
+				TITLE_TROOPS = no
 			}
 		}
 		else_if = {
@@ -381,6 +385,7 @@ BP_roman_admin_govs_under_nonroman_government_checks = {
 		}
 	}
 }
+
 
 on_title_lost = {
 	events = {}

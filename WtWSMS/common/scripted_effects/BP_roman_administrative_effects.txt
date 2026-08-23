@@ -483,122 +483,237 @@ establish_premiership_if_necessary_effect = { #Scope is top liege
 convert_personal_troops_to_title_troops_effect = {
 	custom_tooltip = {
 		text = personal_troops_become_title_troops
-		save_scope_as = the_new_federate
+		save_scope_as = the_char_with_troops
 		every_maa_regiment = {
 			save_temporary_scope_as = maa_regiment
 			
 			if = {
 				limit = { scope:maa_regiment.maa_size = 1 }
-				scope:the_new_federate = {
+				scope:the_char_with_troops = {
 					create_maa_regiment = {
 						type_of = scope:maa_regiment
 						check_can_recruit = no
-						title = scope:the_new_federate.primary_title
+						title = scope:the_char_with_troops.primary_title
 						size = 1
 					}
 				}
 			}
 			else_if = {
 				limit = { scope:maa_regiment.maa_size = 2 }
-				scope:the_new_federate = {
+				scope:the_char_with_troops = {
 					create_maa_regiment = {
 						type_of = scope:maa_regiment
 						check_can_recruit = no
-						title = scope:the_new_federate.primary_title
+						title = scope:the_char_with_troops.primary_title
 						size = 2
 					}
 				}
 			}
 			else_if = {
 				limit = { scope:maa_regiment.maa_size = 3 }
-				scope:the_new_federate = {
+				scope:the_char_with_troops = {
 					create_maa_regiment = {
 						type_of = scope:maa_regiment
 						check_can_recruit = no
-						title = scope:the_new_federate.primary_title
+						title = scope:the_char_with_troops.primary_title
 						size = 3
 					}
 				}
 			}
 			else_if = {
 				limit = { scope:maa_regiment.maa_size = 4 }
-				scope:the_new_federate = {
+				scope:the_char_with_troops = {
 					create_maa_regiment = {
 						type_of = scope:maa_regiment
 						check_can_recruit = no
-						title = scope:the_new_federate.primary_title
+						title = scope:the_char_with_troops.primary_title
 						size = 4
 					}
 				}
 			}
 			else_if = {
 				limit = { scope:maa_regiment.maa_size = 5 }
-				scope:the_new_federate = {
+				scope:the_char_with_troops = {
 					create_maa_regiment = {
 						type_of = scope:maa_regiment
 						check_can_recruit = no
-						title = scope:the_new_federate.primary_title
+						title = scope:the_char_with_troops.primary_title
 						size = 5
 					}
 				}
 			}
 			else_if = {
 				limit = { scope:maa_regiment.maa_size = 6 }
-				scope:the_new_federate = {
+				scope:the_char_with_troops = {
 					create_maa_regiment = {
 						type_of = scope:maa_regiment
 						check_can_recruit = no
-						title = scope:the_new_federate.primary_title
+						title = scope:the_char_with_troops.primary_title
 						size = 6
 					}
 				}
 			}
 			else_if = {
 				limit = { scope:maa_regiment.maa_size = 7 }
-				scope:the_new_federate = {
+				scope:the_char_with_troops = {
 					create_maa_regiment = {
 						type_of = scope:maa_regiment
 						check_can_recruit = no
-						title = scope:the_new_federate.primary_title
+						title = scope:the_char_with_troops.primary_title
 						size = 7
 					}
 				}
 			}
 			else_if = {
 				limit = { scope:maa_regiment.maa_size = 8 }
-				scope:the_new_federate = {
+				scope:the_char_with_troops = {
 					create_maa_regiment = {
 						type_of = scope:maa_regiment
 						check_can_recruit = no
-						title = scope:the_new_federate.primary_title
+						title = scope:the_char_with_troops.primary_title
 						size = 8
 					}
 				}
 			}
 			else_if = {
 				limit = { scope:maa_regiment.maa_size = 9 }
-				scope:the_new_federate = {
+				scope:the_char_with_troops = {
 					create_maa_regiment = {
 						type_of = scope:maa_regiment
 						check_can_recruit = no
-						title = scope:the_new_federate.primary_title
+						title = scope:the_char_with_troops.primary_title
 						size = 9
 					}
 				}
 			}
 			else_if = {
 				limit = { scope:maa_regiment.maa_size = 10 }
-				scope:the_new_federate = {
+				scope:the_char_with_troops = {
 					create_maa_regiment = {
 						type_of = scope:maa_regiment
 						check_can_recruit = no
-						title = scope:the_new_federate.primary_title
+						title = scope:the_char_with_troops.primary_title
 						size = 10
 					}
 				}
 			}
 			
 			destroy_maa_regiment = yes
+		}
+	}
+}
+
+convert_title_troops_to_personal_troops_effect = {
+	custom_tooltip = {
+		text = title_troops_to_personal_troops
+		save_scope_as = the_char_with_troops
+		scope:the_char_with_troops.primary_title = {
+			every_title_maa_regiment = {
+				save_temporary_scope_as = maa_regiment
+				
+				if = {
+					limit = { scope:maa_regiment.maa_size = 1 }
+					scope:the_char_with_troops = {
+						create_maa_regiment = {
+							type_of = scope:maa_regiment
+							check_can_recruit = no
+							size = 1
+						}
+					}
+				}
+				else_if = {
+					limit = { scope:maa_regiment.maa_size = 2 }
+					scope:the_char_with_troops = {
+						create_maa_regiment = {
+							type_of = scope:maa_regiment
+							check_can_recruit = no
+							size = 2
+						}
+					}
+				}
+				else_if = {
+					limit = { scope:maa_regiment.maa_size = 3 }
+					scope:the_char_with_troops = {
+						create_maa_regiment = {
+							type_of = scope:maa_regiment
+							check_can_recruit = no
+							size = 3
+						}
+					}
+				}
+				else_if = {
+					limit = { scope:maa_regiment.maa_size = 4 }
+					scope:the_char_with_troops = {
+						create_maa_regiment = {
+							type_of = scope:maa_regiment
+							check_can_recruit = no
+							size = 4
+						}
+					}
+				}
+				else_if = {
+					limit = { scope:maa_regiment.maa_size = 5 }
+					scope:the_char_with_troops = {
+						create_maa_regiment = {
+							type_of = scope:maa_regiment
+							check_can_recruit = no
+							size = 5
+						}
+					}
+				}
+				else_if = {
+					limit = { scope:maa_regiment.maa_size = 6 }
+					scope:the_char_with_troops = {
+						create_maa_regiment = {
+							type_of = scope:maa_regiment
+							check_can_recruit = no
+							size = 6
+						}
+					}
+				}
+				else_if = {
+					limit = { scope:maa_regiment.maa_size = 7 }
+					scope:the_char_with_troops = {
+						create_maa_regiment = {
+							type_of = scope:maa_regiment
+							check_can_recruit = no
+							size = 7
+						}
+					}
+				}
+				else_if = {
+					limit = { scope:maa_regiment.maa_size = 8 }
+					scope:the_char_with_troops = {
+						create_maa_regiment = {
+							type_of = scope:maa_regiment
+							check_can_recruit = no
+							size = 8
+						}
+					}
+				}
+				else_if = {
+					limit = { scope:maa_regiment.maa_size = 9 }
+					scope:the_char_with_troops = {
+						create_maa_regiment = {
+							type_of = scope:maa_regiment
+							check_can_recruit = no
+							size = 9
+						}
+					}
+				}
+				else_if = {
+					limit = { scope:maa_regiment.maa_size = 10 }
+					scope:the_char_with_troops = {
+						create_maa_regiment = {
+							type_of = scope:maa_regiment
+							check_can_recruit = no
+							size = 10
+						}
+					}
+				}
+				
+				destroy_maa_regiment = yes
+			}
 		}
 	}
 }
@@ -642,6 +757,16 @@ change_government_subroman_administrative_effect = {
 			}
 			else = { this.domicile = { move_domicile = prev.top_liege.capital_county.title_province } }
 		}
+		hidden_effect = {
+			add_treasury = {
+				value = 100
+				multiply = {
+					value = the_char.primary_title.tier
+					subtract = 2
+					min = 1
+				}
+			}
+		}
 	}
 }
 change_government_roman_administrative_effect = {
@@ -653,6 +778,16 @@ change_government_roman_administrative_effect = {
 			any_held_title = { count < 1 is_noble_family_title = yes }
 		}
 		create_noble_family_effect = { GOVERNMENT_GIVER = this }
+		hidden_effect = {
+			add_treasury = {
+				value = 100
+				multiply = {
+					value = the_char.primary_title.tier
+					subtract = 2
+					min = 1
+				}
+			}
+		}
 	}
 }
 change_government_subroman_dynastic_effect = {
@@ -927,48 +1062,53 @@ set_sub_roman_type_law_effect = { #Top Liege Root
 }
 #The Actual Hand-off Code
 flip_subroman_government_types_effect = { #Root Char 
-		#Save Law References
-		save_sub_roman_type_law_effect = { SOURCE_TYPE = $SOURCE_TYPE$ }
-		#Convert government and to all vassals
+	#Save Law References
+	save_sub_roman_type_law_effect = { SOURCE_TYPE = $SOURCE_TYPE$ }
+	#Convert government and to all vassals
+	change_government_subroman_$TARGET_TYPE$_effect = yes
+	#Random senators get Noble families if house heads
+	if = {
+		limit = { always = $ENOBLE_COURTIERS$ }
+		every_courtier = {
+			courtiers_become_admins_effect = {
+				TOP_LIEGE = this.court_owner.top_liege
+				TYPE = $TARGET_TYPE$
+			}
+		}
+	}
+	if = {
+		limit = { always = $TITLE_TROOPS$ }
+		convert_personal_troops_to_title_troops_effect = yes
+	}
+	else = { convert_title_troops_to_personal_troops_effect = yes }
+	every_vassal_or_below = {
+		limit = { has_government = subroman_$SOURCE_TYPE$_government }
 		change_government_subroman_$TARGET_TYPE$_effect = yes
-		#Random senators get Noble families if house heads
+		#Random senators get Noble families if house heads (dynastic2admin)
 		if = {
 			limit = { always = $ENOBLE_COURTIERS$ }
 			every_courtier = {
-				courtiers_become_admins_effect = {
-					TOP_LIEGE = this.court_owner.top_liege
-					TYPE = $TARGET_TYPE$
-				}
-			}
-		}
-		every_vassal_or_below = {
-			limit = { has_government = subroman_$SOURCE_TYPE$_government }
-			change_government_subroman_$TARGET_TYPE$_effect = yes
-			#Random senators get Noble families if house heads (dynastic2admin)
-			if = {
-				limit = { always = $ENOBLE_COURTIERS$ }
-				every_courtier = {
-					if = {
-						limit = {
-							OR = {
-								has_trait = senator_west
-								has_trait = senator_east
-							}
+				if = {
+					limit = {
+						OR = {
+							has_trait = senator_west
+							has_trait = senator_east
 						}
-						set_employer = this.court_owner.top_liege
-						courtiers_become_admins_effect = {
-							TOP_LIEGE = this.court_owner.top_liege
-							TYPE = $TARGET_TYPE$
-						}
+					}
+					set_employer = this.court_owner.top_liege
+					courtiers_become_admins_effect = {
+						TOP_LIEGE = this.court_owner.top_liege
+						TYPE = $TARGET_TYPE$
 					}
 				}
 			}
 		}
-		#Set Laws accordingly and clear flags
-		set_sub_roman_type_law_effect = {
-			SOURCE_TYPE = $SOURCE_TYPE$
-			TARGET_TYPE = $TARGET_TYPE$
-		}
+	}
+	#Set Laws accordingly and clear flags
+	set_sub_roman_type_law_effect = {
+		SOURCE_TYPE = $SOURCE_TYPE$
+		TARGET_TYPE = $TARGET_TYPE$
+	}
 }
 courtiers_become_admins_effect = {
 	if = {

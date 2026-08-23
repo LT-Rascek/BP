@@ -30,12 +30,17 @@ Innovations:
 - Added "Formalized Rituals" Innovation
    - Is a Civic Innovation
    - Required to build "Monoastic Schools", "Scriptoria", and "Megaliths" buildings
+   - Required to reform a faith but not create a new one
+
+Decisions:
+- Added a decision for a Migrator or Character who had been a migrator to become a Sub-Roman Government, partly modeling the transition of the Franks from a Tribal to Romanesque polity
 
 History:
 - Slavic super-duchies replaced with confederations
 - Fixed some Alans in Hispania who should be Alauni (Western Alan) instead of Alan
 
 Tweaks:
+- In general, if a character has only a landless title under a government that is not administrative, the title is destroyed (and the character becomes an adventurer if the character is a player)
 - Members are more inclined to leave large confederations (i.e., more than 8 members)
 - AI is inclined to promote culture more in counties with "Recent Emigration" modifier
 - Hunnic herd reduced more at start
@@ -44,6 +49,9 @@ Tweaks:
 
 Localization:
 - Remapped "Mongolia" localization to "Xiongnu" for the Mongolian Empire
+
+Bug Fixes:
+- Fixed changing to Administrative government types having 0 treasury at start
 
 2026-MM-DD v0.3.0
 -----------

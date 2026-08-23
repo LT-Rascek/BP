@@ -238,3 +238,35 @@ BP_government_conversion.0042 = { #cribbed from major_decisions.0002
 		}
 	}
 }
+
+#convert_to_subroman_government_decision (AKA Frankish Roman Government)
+BP_government_conversion.0051 = { #cribbed from major_decisions.0001
+	type = character_event
+	title = BP_government_conversion.0051.t
+	desc = BP_government_conversion.0051.desc
+	theme = stewardship
+	content_source = dlc_WtWSMS
+	
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	
+	option = {
+		name = BP_government_conversion.0051.a
+		convert_tribal_government_to_subroman_effect = yes
+		every_vassal = { trigger_event = { id = BP_government_conversion.0052 days = 3 } }
+	}
+}
+BP_government_conversion.0052 = { #cribbed from major_decisions.0002
+	type = letter_event
+	opening = BP_government_conversion.0052.opening
+	desc = BP_government_conversion.0052.desc
+	sender = {
+		character = scope:actor
+		animation = personality_rational
+	}
+	option = { name = BP_government_conversion.0052.a }
+}
+
+
