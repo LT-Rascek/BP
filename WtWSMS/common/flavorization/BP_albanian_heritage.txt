@@ -1,0 +1,159 @@
+﻿##### Heritage
+
+##### Cultures
+
+### Albanian
+baron_republic_male_albanian = {
+	type = character
+	gender = male
+	special = holder
+	tier = barony
+	priority = 11
+	governments = { republic_government administrative_government }
+	name_lists = { name_list_albanian }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+count_republic_male_albanian = {
+	type = character
+	gender = male
+	special = holder
+	tier = county
+	priority = 21
+	governments = { republic_government administrative_government }
+	name_lists = { name_list_albanian }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+duke_republic_male_albanian = {
+	type = character
+	gender = male
+	special = holder
+	tier = duchy
+	priority = 31
+	governments = { republic_government administrative_government }
+	name_lists = { name_list_albanian }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+duchy_republic_albanian = {
+	type = title
+	tier = duchy
+	priority = 31
+	governments = { republic_government administrative_government }
+	name_lists = { name_list_albanian }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+baron_theocracy_male_albanian = {
+	type = character
+	gender = male
+	special = holder
+	tier = barony
+	priority = 11
+	governments = { theocracy_government }
+	name_lists = { name_list_albanian }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+
+count_male_albanian = {
+	type = character
+	gender = male
+	special = holder
+	tier = county
+	priority = 21
+	name_lists = { name_list_albanian }
+}
+county_albanian = {
+	type = title
+	tier = county
+	priority = 21
+	name_lists = { name_list_albanian }
+}
+duke_male_albanian = {
+	type = character
+	gender = male
+	special = holder
+	tier = duchy
+	priority = 31
+	name_lists = { name_list_albanian }
+}
+duchy_albanian = {
+	type = title
+	tier = duchy
+	priority = 31
+	name_lists = { name_list_albanian }
+}
+king_male_albanian = {
+	type = character
+	gender = male
+	special = holder
+	tier = kingdom
+	priority = 51
+	name_lists = { name_list_albanian }
+}
+kingdom_albanian = {
+	type = title
+	tier = kingdom
+	priority = 51
+	name_lists = { name_list_albanian }
+}
+
+### Thracian/Dacian
+barony_thracian_dacian = {
+	type = title
+	tier = barony
+	priority = 11
+	name_lists = { name_list_thracian name_list_dacian }
+}
+count_male_thracian_dacian = {
+	type = character
+	gender = male
+	special = holder
+	tier = county
+	priority = 21
+	name_lists = { name_list_thracian name_list_dacian }
+}
+county_thracian_dacian = {
+	type = title
+	tier = county
+	priority = 21
+	name_lists = { name_list_thracian name_list_dacian }
+}
+duke_male_thracian_dacian = {
+	type = character
+	gender = male
+	special = holder
+	tier = duchy
+	priority = 31
+	name_lists = { name_list_thracian name_list_dacian }
+}
+duchy_thracian_dacian = {
+	type = title
+	tier = duchy
+	priority = 31
+	name_lists = { name_list_thracian name_list_dacian }
+}
+king_male_thracian_dacian = {
+	type = character
+	gender = male
+	special = holder
+	tier = kingdom
+	priority = 51
+	name_lists = { name_list_thracian name_list_dacian }
+}
+
+barony_republic_thracian_dacian = {
+	type = title
+	tier = barony
+	priority = 9
+	top_liege = no
+	governments = { republic_government administrative_government }
+	name_lists = { name_list_thracian name_list_dacian }
+}
