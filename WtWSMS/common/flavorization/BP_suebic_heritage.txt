@@ -1,13 +1,283 @@
 ﻿##### Heritage
 
+baron_republic_male_heritage_suebic = {
+	type = character
+	gender = male
+	special = holder
+	tier = barony
+	priority = 11
+	governments = { republic_government administrative_government }
+	heritages = { heritage_suebic }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+barony_republic_heritage_suebic = {
+	type = title
+	tier = barony
+	priority = 11
+	governments = { republic_government administrative_government }
+	heritages = { heritage_suebic }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+count_republic_male_heritage_suebic = {
+	type = character
+	gender = male
+	special = holder
+	tier = county
+	priority = 21
+	governments = { republic_government administrative_government }
+	heritages = { heritage_suebic }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+county_republic_heritage_suebic = {
+	type = title
+	tier = county
+	priority = 21
+	governments = { republic_government administrative_government }
+	heritages = { heritage_suebic }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+duke_republic_male_heritage_suebic = {
+	type = character
+	gender = male
+	special = holder
+	tier = duchy
+	priority = 31
+	governments = { republic_government administrative_government }
+	heritages = { heritage_suebic }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+duchy_republic_heritage_suebic = {
+	type = title
+	tier = duchy
+	priority = 31
+	governments = { republic_government administrative_government }
+	heritages = { heritage_suebic }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+king_republic_male_heritage_suebic = {
+	type = character
+	gender = male
+	special = holder
+	tier = duchy
+	priority = 51
+	governments = { republic_government administrative_government }
+	heritages = { heritage_suebic }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+kingdom_republic_heritage_suebic = {
+	type = title
+	tier = duchy
+	priority = 51
+	governments = { republic_government administrative_government }
+	heritages = { heritage_suebic }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+emperor_republic_male_heritage_suebic = {
+	type = character
+	gender = male
+	special = holder
+	tier = duchy
+	priority = 106
+	governments = { republic_government administrative_government }
+	heritages = { heritage_suebic }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+###HERE###
+baron_male_heritage_suebic = {
+	type = character
+	gender = male
+	special = holder
+	tier = barony
+	priority = 10
+	heritages = { heritage_suebic }
+}
+barony_heritage_suebic = {
+	type = title
+	tier = barony
+	priority = 10
+	heritages = { heritage_suebic }
+}
+count_male_heritage_suebic = {
+	type = character
+	gender = male
+	special = holder
+	tier = county
+	priority = 20
+	heritages = { heritage_suebic }
+}
+county_heritage_suebic = {
+	type = title
+	tier = county
+	priority = 20
+	heritages = { heritage_suebic }
+}
+duke_male_heritage_suebic = {
+	type = character
+	gender = male
+	special = holder
+	tier = duchy
+	priority = 30
+	heritages = { heritage_suebic }
+}
+duchy_heritage_suebic = {
+	type = title
+	tier = duchy
+	priority = 30
+	heritages = { heritage_suebic }
+}
+king_male_heritage_suebic = {
+	type = character
+	gender = male
+	special = holder
+	tier = kingdom
+	priority = 50
+	heritages = { heritage_suebic }
+}
+kingdom_heritage_suebic = {
+	type = title
+	tier = kingdom
+	priority = 50
+	heritages = { heritage_suebic }
+}
+emperor_male_heritage_suebic = {
+	type = character
+	gender = male
+	special = holder
+	tier = empire
+	priority = 105
+	heritages = { heritage_suebic }
+}
+empire_heritage_suebic = {
+	type = title
+	tier = empire
+	priority = 105
+	heritages = { heritage_suebic }
+}
+#Heritage Jobs
+chancellor_male_heritage_suebic = {
+	type = character
+	gender = male
+	special = councillor
+	priority = 300
+	council_position = councillor_chancellor
+	heritages = { heritage_suebic }
+}
+steward_male_heritage_suebic = {
+	type = character
+	gender = male
+	special = councillor
+	priority = 300
+	council_position = councillor_steward
+	heritages = { heritage_suebic }
+}
+marshal_male_heritage_suebic = {
+	type = character
+	gender = male
+	special = councillor
+	priority = 300
+	council_position = councillor_marshal
+	heritages = { heritage_suebic }
+}
+spymaster_male_heritage_suebic = {
+	type = character
+	gender = male
+	special = councillor
+	priority = 300
+	council_position = councillor_spymaster
+	heritages = { heritage_suebic }
+}
+court_chaplain_male_heritage_suebic = {
+	type = character
+	gender = male
+	special = councillor
+	priority = 300
+	council_position = councillor_court_chaplain
+	heritages = { heritage_suebic }
+}
+
 ##### Specific Cultures
+
+### Alamannian
+duke_male_alamannian = {
+	type = character
+	gender = male
+	special = holder
+	tier = duchy
+	priority = 31
+	name_lists = { name_list_alamannian }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+duchy_alamannian = {
+	type = title
+	tier = duchy
+	priority = 31
+	name_lists = { name_list_alamannian }
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+
+### Langobard (CK2 Lombard)
+count_male_langobard = {
+	type = character
+	gender = male
+	special = holder
+	tier = county
+	priority = 21
+	name_lists = { name_list_langobardic }
+}
+count_female_langobard = {
+	type = character
+	gender = female
+	special = holder
+	tier = county
+	priority = 21
+	name_lists = { name_list_langobardic }
+}
+county_langobard = {
+	type = title
+	tier = county
+	priority = 21
+	top_liege = no
+	name_lists = { name_list_langobardic }
+}
+duke_male_langobard = {
+	type = character
+	gender = male
+	special = holder
+	tier = duchy
+	priority = 31
+	top_liege = no
+	name_lists = { name_list_langobardic }
+}
+
+### Thuringian
 baron_male_thuringian = {
 	type = character
 	gender = male
 	special = holder
 	tier = barony
-	priority = 7
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government }
+	priority = 12
 	name_lists = { name_list_thuringian }
 	flavourization_rules = {
 		top_liege = no
@@ -16,8 +286,7 @@ baron_male_thuringian = {
 barony_thuringian = {
 	type = title
 	tier = barony
-	priority = 7
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government }
+	priority = 12
 	name_lists = { name_list_thuringian }
 	flavourization_rules = {
 		top_liege = no
@@ -28,7 +297,7 @@ baron_republic_male_thuringian = {
 	gender = male
 	special = holder
 	tier = barony
-	priority = 7
+	priority = 13
 	governments = { republic_government administrative_government }
 	name_lists = { name_list_thuringian }
 	flavourization_rules = {
@@ -38,7 +307,7 @@ baron_republic_male_thuringian = {
 barony_republic_thuringian = {
 	type = title
 	tier = barony
-	priority = 7
+	priority = 13
 	governments = { republic_government administrative_government }
 	name_lists = { name_list_thuringian }
 	flavourization_rules = {
@@ -50,8 +319,7 @@ count_male_thuringian = {
 	gender = male
 	special = holder
 	tier = county
-	priority = 18
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government administrative_government }
+	priority = 21
 	name_lists = { name_list_thuringian }
 	flavourization_rules = {
 		top_liege = no
@@ -60,8 +328,7 @@ count_male_thuringian = {
 county_thuringian = {
 	type = title
 	tier = county
-	priority = 18
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government administrative_government }
+	priority = 21
 	name_lists = { name_list_thuringian }
 	flavourization_rules = {
 		top_liege = no
@@ -72,8 +339,7 @@ duke_male_thuringian = {
 	gender = male
 	special = holder
 	tier = duchy
-	priority = 27
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government administrative_government }
+	priority = 31
 	name_lists = { name_list_thuringian }
 	flavourization_rules = {
 		top_liege = no
@@ -82,8 +348,7 @@ duke_male_thuringian = {
 duchy_thuringian = {
 	type = title
 	tier = duchy
-	priority = 27
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government administrative_government }
+	priorit = 31
 	name_lists = { name_list_thuringian }
 	flavourization_rules = {
 		top_liege = no
@@ -94,8 +359,7 @@ king_male_thuringian = {
 	gender = male
 	special = holder
 	tier = kingdom
-	priority = 102
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government administrative_government }
+	priority = 106
 	name_lists = { name_list_thuringian }
 	flavourization_rules = {
 		top_liege = no
@@ -104,8 +368,7 @@ king_male_thuringian = {
 kingdom_thuringian = {
 	type = title
 	tier = kingdom
-	priority = 102
-	governments = { tribal_government high_tribal_government roman_federate_government prefeudal_government feudal_government clan_government administrative_government }
+	priority = 106
 	name_lists = { name_list_thuringian }
 	flavourization_rules = {
 		top_liege = no
