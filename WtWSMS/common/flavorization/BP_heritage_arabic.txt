@@ -1,0 +1,504 @@
+##### Heritage
+
+##### Cultures
+
+### Adnanite
+count_male_adnanite = {
+	type = character
+	gender = male
+	special = holder
+	tier = duchy
+	priority = 21
+	name_lists = { name_list_adnanite }
+	flavourization_rules = { top_liege = no }
+}
+county_adnanite = {
+	type = title
+	tier = duchy
+	priority = 21
+	name_lists = { name_list_adnanite }
+	flavourization_rules = { top_liege = no }
+}
+duke_male_adnanite = {
+	type = character
+	gender = male
+	special = holder
+	tier = duchy
+	priority = 31
+	name_lists = { name_list_adnanite }
+	flavourization_rules = { top_liege = no }
+}
+duchy_adnanite = {
+	type = title
+	tier = duchy
+	priority = 31
+	name_lists = { name_list_adnanite }
+	flavourization_rules = { top_liege = no }
+}
+king_male_adnanite = {
+	type = character
+	gender = male
+	special = holder
+	tier = kingdom
+	priority = 51
+	name_lists = { name_list_adnanite }
+	flavourization_rules = { top_liege = no }
+}
+kingdom_adnanite = {
+	type = title
+	tier = duchy
+	priority = 51
+	name_lists = { name_list_adnanite }
+	flavourization_rules = { top_liege = no }
+}
+
+### Nabatean
+barony_castle_holding_nabatean = {
+	type = title
+	holding = church_holding
+	tier = barony
+	priority = 11
+	holding = castle_holding
+	name_lists = { name_list_nabatean }
+	flavourization_rules = { top_liege = no }
+}
+barony_city_holding_nabatean = {
+	type = title
+	holding = city_holding
+	tier = barony
+	priority = 11
+	holding = city_holding
+	name_lists = { name_list_nabatean }
+	flavourization_rules = { top_liege = no }
+}
+barony_church_holding_nabatean = {
+	type = title
+	holding = church_holding
+	tier = barony
+	priority = 11
+	holding = church_holding
+	name_lists = { name_list_nabatean }
+	flavourization_rules = { top_liege = no }
+}
+
+baron_male_nabatean = {
+	type = character
+	gender = male
+	special = holder
+	tier = barony
+	priority = 11
+	name_lists = { name_list_nabatean }
+	flavourization_rules = { top_liege = no }
+}
+barony_nabatean = {
+	type = title
+	tier = barony
+	priority = 11
+	name_lists = { name_list_nabatean }
+	flavourization_rules = { top_liege = no }
+}
+count_male_nabatean = {
+	type = character
+	gender = male
+	special = holder
+	tier = county
+	priority = 21
+	name_lists = { name_list_nabatean }
+	flavourization_rules = { top_liege = no }
+}
+county_nabatean = {
+	type = title
+	tier = county
+	priority = 21
+	name_lists = { name_list_nabatean }
+	flavourization_rules = { top_liege = no }
+}
+duke_male_nabatean = {
+	type = character
+	gender = male
+	special = holder
+	tier = duchy
+	priority = 31
+	name_lists = { name_list_nabatean }
+	flavourization_rules = { top_liege = no }
+}
+duchy_nabatean = {
+	type = title
+	tier = duchy
+	priority = 31
+	name_lists = { name_list_nabatean }
+	flavourization_rules = { top_liege = no }
+}
+king_male_nabatean = {
+	type = character
+	gender = male
+	special = holder
+	tier = kingdom
+	priority = 51
+	name_lists = { name_list_nabatean }
+	flavourization_rules = { top_liege = no }
+}
+kingdom_nabatean = {
+	type = title
+	tier = kingdom
+	priority = 51
+	name_lists = { name_list_nabatean }
+	flavourization_rules = { top_liege = no }
+}
+
+baron_republic_male_nabatean = {
+	type = character
+	gender = male
+	special = holder
+	tier = barony
+	priority = 12
+	governments = { republic_government administrative_government }
+	name_lists = { name_list_nabatean }
+	flavourization_rules = { top_liege = no }
+}
+barony_republic_nabatean = {
+	type = title
+	tier = barony
+	priority = 12
+	governments = { republic_government administrative_government }
+	name_lists = { name_list_nabatean }
+	flavourization_rules = { top_liege = no }
+}
+count_republic_male_nabatean = {
+	type = character
+	gender = male
+	special = holder
+	tier = county
+	priority = 22
+	governments = { republic_government administrative_government }
+	name_lists = { name_list_nabatean }
+	flavourization_rules = { top_liege = no }
+}
+county_republic_nabatean = {
+	type = title
+	tier = county
+	priority = 22
+	governments = { republic_government administrative_government }
+	name_lists = { name_list_nabatean }
+	flavourization_rules = { top_liege = no }
+}
+duke_republic_male_nabatean = {
+	type = character
+	gender = male
+	special = holder
+	tier = duchy
+	priority = 32
+	governments = { republic_government administrative_government }
+	name_lists = { name_list_nabatean }
+	flavourization_rules = { top_liege = no }
+}
+duchy_republic_nabatean = {
+	type = title
+	tier = duchy
+	priority = 32
+	governments = { republic_government administrative_government }
+	name_lists = { name_list_nabatean }
+	flavourization_rules = { top_liege = no }
+}
+king_republic_male_nabatean = {
+	type = character
+	gender = male
+	special = holder
+	tier = duchy
+	priority = 52
+	governments = { republic_government administrative_government }
+	name_lists = { name_list_nabatean }
+	flavourization_rules = { top_liege = no }
+}
+kingdom_republic_nabatean = {
+	type = title
+	tier = duchy
+	priority = 52
+	governments = { republic_government administrative_government }
+	name_lists = { name_list_nabatean }
+	flavourization_rules = { top_liege = no }
+}
+
+baron_male_theocracy_nabatean = {
+	type = character
+	gender = male
+	special = holder
+	tier = barony
+	priority = 12
+	governments = { theocracy_government }
+	name_lists = { name_list_nabatean }
+	flavourization_rules = { top_liege = no }
+}
+barony_theocracy_nabatean = {
+	type = title
+	tier = barony
+	priority = 12
+	name_lists = { name_list_nabatean }
+	flavourization_rules = { top_liege = no }
+}
+
+chancellor_male_nabatean = {
+	type = character
+	gender = male
+	special = councillor
+	priority = 300
+	council_position = councillor_chancellor
+	name_lists = { name_list_nabatean }
+}
+steward_male_nabatean = {
+	type = character
+	gender = male
+	special = councillor
+	priority = 300
+	council_position = councillor_steward
+	name_lists = { name_list_nabatean }
+}
+marshal_male_nabatean = {
+	type = character
+	gender = male
+	special = councillor
+	priority = 300
+	council_position = councillor_marshal
+	name_lists = { name_list_nabatean }
+}
+spymaster_male_nabatean = {
+	type = character
+	gender = male
+	special = councillor
+	priority = 300
+	council_position = councillor_spymaster
+	name_lists = { name_list_nabatean }
+}
+court_chaplain_male_nabatean = {
+	type = character
+	gender = male
+	special = councillor
+	priority = 300
+	council_position = councillor_court_chaplain
+	name_lists = { name_list_nabatean }
+}
+
+prince_male_nabatean = {
+	type = character
+	gender = male
+	special = ruler_child
+	tier = kingdom
+	priority = 41
+	name_lists = { name_list_nabatean }
+}
+
+duke_republic_male_yathribi = {
+	type = character
+	gender = male
+	special = holder
+	tier = duchy
+	priority = 21
+	governments = { republic_government administrative_government }
+	name_lists = { name_list_yathribi }
+	flavourization_rules = { top_liege = no }
+}
+duchy_republic_yathribi = {
+	type = title
+	tier = duchy
+	priority = 21
+	governments = { republic_government administrative_government }
+	name_lists = { name_list_yathribi }
+	flavourization_rules = { top_liege = no }
+}
+
+### Himyarite
+king_republic_male_himyarite = {
+	type = character
+	gender = male
+	special = holder
+	tier = duchy
+	priority = 52
+	governments = { republic_government administrative_government }
+	name_lists = { name_list_himyarite }
+	flavourization_rules = { top_liege = no }
+}
+kingdom_republic_himyarite = {
+	type = title
+	tier = duchy
+	priority = 52
+	governments = { republic_government administrative_government }
+	name_lists = { name_list_himyarite }
+	flavourization_rules = { top_liege = no }
+}
+
+### Soqotri
+count_male_soqotri = {
+	type = character
+	gender = male
+	special = holder
+	tier = county
+	priority = 21
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government }
+	heritages = { heritage_soqotri }
+	name_lists = { name_list_soqotri }
+	flavourization_rules = { top_liege = no }
+}
+county_soqotri = {
+	type = title
+	tier = county
+	priority = 21
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government }
+	heritages = { heritage_soqotri }
+	name_lists = { name_list_soqotri }
+	flavourization_rules = { top_liege = no }
+}
+duke_male_soqotri = {
+	type = character
+	gender = male
+	special = holder
+	tier = duchy
+	priority = 31
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government }
+	heritages = { heritage_soqotri }
+	name_lists = { name_list_soqotri }
+	flavourization_rules = { top_liege = no }
+}
+duchy_soqotri = {
+	type = title
+	tier = duchy
+	priority = 31
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government }
+	heritages = { heritage_soqotri }
+	name_lists = { name_list_soqotri }
+	flavourization_rules = { top_liege = no }
+}
+king_male_soqotri = {
+	type = character
+	gender = male
+	special = holder
+	tier = kingdom
+	priority = 51
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government }
+	heritages = { heritage_soqotri }
+	name_lists = { name_list_soqotri }
+	flavourization_rules = { top_liege = no }
+}
+kingdom_soqotri = {
+	type = title
+	tier = kingdom
+	priority = 51
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government }
+	heritages = { heritage_soqotri }
+	name_lists = { name_list_soqotri }
+	flavourization_rules = { top_liege = no }
+}
+
+### khalan
+count_male_khalan = {
+	type = character
+	gender = male
+	special = holder
+	tier = county
+	priority = 21
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government }
+	name_lists = { name_list_khalan }
+	flavourization_rules = { top_liege = no }
+}
+county_khalan = {
+	type = title
+	tier = county
+	priority = 21
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government }
+	name_lists = { name_list_khalan }
+	flavourization_rules = { top_liege = no }
+}
+duke_male_khalan = {
+	type = character
+	gender = male
+	special = holder
+	tier = duchy
+	priority = 31
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government }
+	name_lists = { name_list_khalan }
+	flavourization_rules = { top_liege = no }
+}
+duchy_khalan = {
+	type = title
+	tier = duchy
+	priority = 31
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government }
+	name_lists = { name_list_khalan }
+	flavourization_rules = { top_liege = no }
+}
+king_male_khalan = {
+	type = character
+	gender = male
+	special = holder
+	tier = kingdom
+	priority = 51
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government }
+	name_lists = { name_list_khalan }
+	flavourization_rules = { top_liege = no }
+}
+kingdom_khalan = {
+	type = title
+	tier = kingdom
+	priority = 51
+	governments = { tribal_government high_tribal_government prefeudal_government feudal_government clan_government administrative_government }
+	name_lists = { name_list_khalan }
+	flavourization_rules = { top_liege = no }
+}
+
+#Jobs
+chancellor_male_khalan = {
+	type = character
+	gender = male
+	special = councillor
+	priority = 300
+	council_position = councillor_chancellor
+	name_lists = { name_list_khalan }
+}
+steward_male_khalan = {
+	type = character
+	gender = male
+	special = councillor
+	priority = 300
+	council_position = councillor_steward
+	name_lists = { name_list_khalan }
+}
+marshal_male_khalan = {
+	type = character
+	gender = male
+	special = councillor
+	priority = 300
+	council_position = councillor_marshal
+	name_lists = { name_list_khalan }
+}
+spymaster_male_khalan = {
+	type = character
+	gender = male
+	special = councillor
+	priority = 300
+	council_position = councillor_spymaster
+	name_lists = { name_list_khalan }
+}
+court_chaplain_male_khalan = {
+	type = character
+	gender = male
+	special = councillor
+	priority = 300
+	council_position = councillor_court_chaplain
+	name_lists = { name_list_khalan }
+}
+
+prince_male_khalan = {
+	type = character
+	gender = male
+	special = ruler_child
+	tier = kingdom
+	priority = 41
+	name_lists = { name_list_nabatean }
+}
+prince_female_khalan = {
+	type = character
+	gender = female
+	special = ruler_child
+	tier = kingdom
+	priority = 41
+	name_lists = { name_list_nabatean }
+}

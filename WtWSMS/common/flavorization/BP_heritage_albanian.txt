@@ -11,9 +11,7 @@ baron_republic_male_albanian = {
 	priority = 11
 	governments = { republic_government administrative_government }
 	name_lists = { name_list_albanian }
-	flavourization_rules = {
-		top_liege = no
-	}
+	flavourization_rules = { top_liege = no }
 }
 count_republic_male_albanian = {
 	type = character
@@ -23,9 +21,7 @@ count_republic_male_albanian = {
 	priority = 21
 	governments = { republic_government administrative_government }
 	name_lists = { name_list_albanian }
-	flavourization_rules = {
-		top_liege = no
-	}
+	flavourization_rules = { top_liege = no }
 }
 duke_republic_male_albanian = {
 	type = character
@@ -35,9 +31,7 @@ duke_republic_male_albanian = {
 	priority = 31
 	governments = { republic_government administrative_government }
 	name_lists = { name_list_albanian }
-	flavourization_rules = {
-		top_liege = no
-	}
+	flavourization_rules = { top_liege = no }
 }
 duchy_republic_albanian = {
 	type = title
@@ -45,9 +39,7 @@ duchy_republic_albanian = {
 	priority = 31
 	governments = { republic_government administrative_government }
 	name_lists = { name_list_albanian }
-	flavourization_rules = {
-		top_liege = no
-	}
+	flavourization_rules = { top_liege = no }
 }
 baron_theocracy_male_albanian = {
 	type = character
@@ -57,9 +49,7 @@ baron_theocracy_male_albanian = {
 	priority = 11
 	governments = { theocracy_government }
 	name_lists = { name_list_albanian }
-	flavourization_rules = {
-		top_liege = no
-	}
+	flavourization_rules = { top_liege = no }
 }
 
 count_male_albanian = {
@@ -69,12 +59,14 @@ count_male_albanian = {
 	tier = county
 	priority = 21
 	name_lists = { name_list_albanian }
+	flavourization_rules = { top_liege = no }
 }
 county_albanian = {
 	type = title
 	tier = county
 	priority = 21
 	name_lists = { name_list_albanian }
+	flavourization_rules = { top_liege = no }
 }
 duke_male_albanian = {
 	type = character
@@ -83,12 +75,14 @@ duke_male_albanian = {
 	tier = duchy
 	priority = 31
 	name_lists = { name_list_albanian }
+	flavourization_rules = { top_liege = no }
 }
 duchy_albanian = {
 	type = title
 	tier = duchy
 	priority = 31
 	name_lists = { name_list_albanian }
+	flavourization_rules = { top_liege = no }
 }
 king_male_albanian = {
 	type = character
@@ -97,12 +91,14 @@ king_male_albanian = {
 	tier = kingdom
 	priority = 51
 	name_lists = { name_list_albanian }
+	flavourization_rules = { top_liege = no }
 }
 kingdom_albanian = {
 	type = title
 	tier = kingdom
 	priority = 51
 	name_lists = { name_list_albanian }
+	flavourization_rules = { top_liege = no }
 }
 
 ### Thracian/Dacian
@@ -111,6 +107,7 @@ barony_thracian_dacian = {
 	tier = barony
 	priority = 11
 	name_lists = { name_list_thracian name_list_dacian }
+	flavourization_rules = { top_liege = no }
 }
 count_male_thracian_dacian = {
 	type = character
@@ -119,12 +116,14 @@ count_male_thracian_dacian = {
 	tier = county
 	priority = 21
 	name_lists = { name_list_thracian name_list_dacian }
+	flavourization_rules = { top_liege = no }
 }
 county_thracian_dacian = {
 	type = title
 	tier = county
 	priority = 21
 	name_lists = { name_list_thracian name_list_dacian }
+	flavourization_rules = { top_liege = no }
 }
 duke_male_thracian_dacian = {
 	type = character
@@ -133,12 +132,14 @@ duke_male_thracian_dacian = {
 	tier = duchy
 	priority = 31
 	name_lists = { name_list_thracian name_list_dacian }
+	flavourization_rules = { top_liege = no }
 }
 duchy_thracian_dacian = {
 	type = title
 	tier = duchy
 	priority = 31
 	name_lists = { name_list_thracian name_list_dacian }
+	flavourization_rules = { top_liege = no }
 }
 king_male_thracian_dacian = {
 	type = character
@@ -147,13 +148,14 @@ king_male_thracian_dacian = {
 	tier = kingdom
 	priority = 51
 	name_lists = { name_list_thracian name_list_dacian }
+	flavourization_rules = { top_liege = no }
 }
 
 barony_republic_thracian_dacian = {
 	type = title
 	tier = barony
 	priority = 9
-	top_liege = no
 	governments = { republic_government administrative_government }
 	name_lists = { name_list_thracian name_list_dacian }
+	flavourization_rules = { top_liege = no }
 }
