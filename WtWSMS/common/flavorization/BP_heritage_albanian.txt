@@ -102,6 +102,25 @@ kingdom_albanian = {
 }
 
 ### Thracian/Dacian
+barony_castle_holding_thracian_dacian = {
+	type = title
+	holding = church_holding
+	tier = barony
+	priority = 11
+	holding = castle_holding
+	name_lists = { name_list_thracian name_list_dacian 
+	flavourization_rules = { top_liege = no }
+}
+barony_city_holding_thracian_dacian = {
+	type = title
+	holding = city_holding
+	tier = barony
+	priority = 11
+	holding = city_holding
+	name_lists = { name_list_thracian name_list_dacian 
+	flavourization_rules = { top_liege = no }
+}
+
 barony_thracian_dacian = {
 	type = title
 	tier = barony
