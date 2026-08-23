@@ -1,5 +1,24 @@
 ﻿##### Heritage
 
+barony_castle_holding_heritage_suebic = {
+	type = title
+	holding = church_holding
+	tier = barony
+	priority = 11
+	holding = castle_holding
+	heritages = { heritage_suebic }
+	flavourization_rules = { top_liege = no }
+}
+barony_city_holding_heritage_suebic = {
+	type = title
+	holding = city_holding
+	tier = barony
+	priority = 11
+	holding = city_holding
+	heritages = { heritage_suebic }
+	flavourization_rules = { top_liege = no }
+}
+
 baron_republic_male_heritage_suebic = {
 	type = character
 	gender = male
@@ -163,6 +182,7 @@ empire_heritage_suebic = {
 	heritages = { heritage_suebic }
 	flavourization_rules = { top_liege = no }
 }
+
 #Heritage Jobs
 chancellor_male_heritage_suebic = {
 	type = character
@@ -171,7 +191,6 @@ chancellor_male_heritage_suebic = {
 	priority = 300
 	council_position = councillor_chancellor
 	heritages = { heritage_suebic }
-	flavourization_rules = { top_liege = no }
 }
 steward_male_heritage_suebic = {
 	type = character
@@ -180,7 +199,6 @@ steward_male_heritage_suebic = {
 	priority = 300
 	council_position = councillor_steward
 	heritages = { heritage_suebic }
-	flavourization_rules = { top_liege = no }
 }
 marshal_male_heritage_suebic = {
 	type = character
@@ -189,7 +207,6 @@ marshal_male_heritage_suebic = {
 	priority = 300
 	council_position = councillor_marshal
 	heritages = { heritage_suebic }
-	flavourization_rules = { top_liege = no }
 }
 spymaster_male_heritage_suebic = {
 	type = character
@@ -198,7 +215,6 @@ spymaster_male_heritage_suebic = {
 	priority = 300
 	council_position = councillor_spymaster
 	heritages = { heritage_suebic }
-	flavourization_rules = { top_liege = no }
 }
 court_chaplain_male_heritage_suebic = {
 	type = character
@@ -207,7 +223,6 @@ court_chaplain_male_heritage_suebic = {
 	priority = 300
 	council_position = councillor_court_chaplain
 	heritages = { heritage_suebic }
-	flavourization_rules = { top_liege = no }
 }
 
 ##### Specific Cultures
@@ -267,6 +282,25 @@ duke_male_langobard = {
 }
 
 ### Thuringian
+barony_castle_holding_thuringian = {
+	type = title
+	holding = church_holding
+	tier = barony
+	priority = 12
+	holding = castle_holding
+	name_lists = { name_list_thuringian }
+	flavourization_rules = { top_liege = no }
+}
+barony_city_holding_thuringian = {
+	type = title
+	holding = city_holding
+	tier = barony
+	priority = 12
+	holding = city_holding
+	name_lists = { name_list_thuringian }
+	flavourization_rules = { top_liege = no }
+}
+
 baron_male_thuringian = {
 	type = character
 	gender = male
