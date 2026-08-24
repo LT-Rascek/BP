@@ -17,7 +17,6 @@ h_eastern_roman_empire = {
 		has_title = title:h_western_roman_empire #Can Reform Directly
 	}
 
-	#Includes Thrace to avoid some really clear ugliness with borders; gameplay consideration, not historical consideration
 	e_byzantium = {
 		color= {77 10 77} #{ 143 12 125 } #as of 1.13.0, this color breaks things hsv{ 0.9 1 0.3 }
 		capital = c_byzantion
@@ -1901,22 +1900,6 @@ h_eastern_roman_empire = {
 						color = { 75 100 80 }
 					}
 				}
-			}
-		}
-	}
-
-	e_praetorian_prefecture_east = {
-		color= { 218 165 32 }
-		capital = c_antiocheia
-		
-		#Only for Romans
-		can_create = {
-			create_praetorian_prefectures_trigger = yes
-		}
-		can_create_on_partition = {
-			custom_description = {
-				text = not_available_for_partition
-				always = no
 			}
 		}
 		
@@ -12617,23 +12600,6 @@ h_eastern_roman_empire = {
 				}
 			}
 		}
-	}
-
-	e_praetorian_prefecture_illyria = {
-		color= { 73 0 0 }
-		capital = c_thessalonika
-		
-		#Only for Romans
-		can_create = {
-			create_praetorian_prefectures_trigger = yes
-		}
-		can_create_on_partition = {
-			custom_description = {
-				text = not_available_for_partition
-				always = no
-			}
-		}
-		
 		k_achaia = {
 			color={ 73 0 0 }
 			capital = c_korinthos # Corinthus
@@ -16689,6 +16655,38 @@ h_eastern_roman_empire = {
 						color = { 53 38 51 }
 					}
 				}
+			}
+		}
+	}
+
+	#Praetorian Prefectures
+	e_praetorian_prefecture_illyria = {
+		color= { 73 0 0 }
+		capital = c_thessalonika
+		
+		#Only for Romans
+		can_create = {
+			create_praetorian_prefectures_trigger = yes
+		}
+		can_create_on_partition = {
+			custom_description = {
+				text = not_available_for_partition
+				always = no
+			}
+		}
+	}
+	e_praetorian_prefecture_east = {
+		color= { 218 165 32 }
+		capital = c_antiocheia
+		
+		#Only for Romans
+		can_create = {
+			create_praetorian_prefectures_trigger = yes
+		}
+		can_create_on_partition = {
+			custom_description = {
+				text = not_available_for_partition
+				always = no
 			}
 		}
 	}

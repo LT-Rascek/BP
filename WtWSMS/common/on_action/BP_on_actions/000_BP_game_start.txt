@@ -18,6 +18,7 @@ bp_game_start = {
 		#Needs to be done first to avoid some errors
 		ccu_startup_debug
 		bp_set_global_variables
+		BP_set_de_jure_titles
 		#Legal Stuff
 		setup_realm_and_title_succession_laws
 		setup_realm_and_title_succession_laws_DLC
@@ -127,6 +128,15 @@ bp_set_global_variables = {
 			limit = { has_game_rule = tribal_shatter_mechanic_enabled }
 			set_global_variable = tribal_shatter_mechanic_enabled
 		}
+	}
+}
+
+BP_set_de_jure_titles = {
+	effect = {
+		title:e_gaul = { set_de_jure_liege_title = title:h_western_roman_empire }
+		title:e_spain = { set_de_jure_liege_title = title:h_western_roman_empire }
+		title:e_italy = { set_de_jure_liege_title = title:h_western_roman_empire }
+		title:e_north_africa = { set_de_jure_liege_title = title:h_western_roman_empire }
 	}
 }
 
