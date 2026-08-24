@@ -3,7 +3,11 @@ BP_flip_federate_when_not_below_roman = {
 	trigger = {
 		BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes
 		has_government = roman_federate_government
-		is_independent_ruler = yes
+		OR = {
+			root = this.top_liege
+			NOT = { this.top_liege = { government_has_flag = government_is_roman_administrative } }
+			NOT = { this.top_liege = { government_has_flag = government_is_subroman_administrative } }
+		}
 	}
 	effect = {
 		#If you're a king-level federate, congrats you're now sub-roman ruling over the federates
@@ -386,7 +390,6 @@ BP_roman_admin_govs_under_nonroman_government_checks = {
 	}
 }
 
-
 on_title_lost = {
 	events = {}
 	on_actions = {
@@ -426,5 +429,38 @@ on_rank_up = { # Will not fire during history execution or for dying characters
 on_rank_down = { # Will not fire during history execution or for dying characters
 	on_actions = {
 		BP_convert_sub_roman_admin_to_dynastic
+	}
+}
+
+# root - Character who changed government
+# scope:old_government - Character's old government type
+on_government_change = {
+	on_actions = {
+		BP_check_federate_vassals
+	}
+}
+
+BP_check_federate_vassals = {
+	trigger = {
+		BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes
+		OR = {
+			scope:old_government = government_type:subroman_administrative_government
+			scope:old_government = government_type:roman_administrative_government
+		}
+	}
+	effect = {
+		every_vassal_or_below = {
+			limit = { has_government = roman_federate_government }
+			trigger_event = { on_action = BP_flip_federate_when_not_below_roman }
+		}
+		every_vassal_or_below = {
+			limit = {
+				OR = {
+					has_government = subroman_administrative_government
+					has_government = roman_administrative_government
+				}
+			}
+			trigger_event = { on_action = BP_roman_admin_govs_under_nonroman_government_checks }
+		}
 	}
 }

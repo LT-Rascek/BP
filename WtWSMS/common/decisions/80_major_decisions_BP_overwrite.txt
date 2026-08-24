@@ -148,7 +148,13 @@ found_kingdom_decision = {
 					title_tier = duchy
 				}
 			}
-			sub_realm_size >= 30
+			trigger_if = {
+				limit = { dynasty ?= { has_dynasty_perk = BP_despoilation_legacy_3 } }
+				sub_realm_size >= 20
+			}
+			trigger_else = {
+				sub_realm_size >= 30
+			}
 		}
 		trigger_if = {
 			limit = {
@@ -316,7 +322,13 @@ found_empire_decision = {
 				government_has_flag = government_is_nomadic
 			}
 			OR = {
-				sub_realm_size >= 60
+				##### Changed from Vanilla vvvvv
+				trigger_if = {
+					limit = { dynasty ?= { has_dynasty_perk = BP_despoilation_legacy_3 } }
+					sub_realm_size >= 40
+				}
+				trigger_else = { sub_realm_size >= 60 }
+				##### Changed from Vanilla ^^^^^
 				AND = {
 					custom_description = {
 						text = found_empire_decision_three_kingdoms_held
@@ -325,12 +337,25 @@ found_empire_decision = {
 							title_tier = kingdom
 						}
 					}
-					sub_realm_size >= 40
+					##### Changed from Vanilla vvvvv
+					trigger_if = {
+						limit = { dynasty ?= { has_dynasty_perk = BP_despoilation_legacy_3 } }
+						sub_realm_size >= 27
+					}
+					trigger_else = { sub_realm_size >= 40 }
+					##### Changed from Vanilla ^^^^^
 				}
 			}
 		}
 		trigger_else = {
 			OR = {
+				##### Changed from Vanilla vvvvv
+				trigger_if = {
+					limit = { dynasty ?= { has_dynasty_perk = BP_despoilation_legacy_3 } }
+					sub_realm_size >= 80
+				}
+				trigger_else = { sub_realm_size >= 120 }
+				##### Changed from Vanilla ^^^^^
 				sub_realm_size >= 120
 				AND = {
 					custom_description = {
@@ -340,7 +365,13 @@ found_empire_decision = {
 							title_tier = kingdom
 						}
 					}
-					sub_realm_size >= 80
+					##### Changed from Vanilla vvvvv
+					trigger_if = {
+						limit = { dynasty ?= { has_dynasty_perk = BP_despoilation_legacy_3 } }
+						sub_realm_size >= 54
+					}
+					trigger_else = { sub_realm_size >= 80 }
+					##### Changed from Vanilla ^^^^^
 				}
 			}
 		}

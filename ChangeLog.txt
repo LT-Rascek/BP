@@ -35,6 +35,25 @@ Innovations:
 Decisions:
 - Added a decision for a Migrator or Character who had been a migrator to become a Sub-Roman Government, partly modeling the transition of the Franks from a Tribal to Romanesque polity
 
+Dynasty Legacies:
+- Added a new Dynasty Legacy: "Despoliation", available to dynasts with Tribal, Federate, or Nomadic government, as well as certain dynasties
+   - Level 1: "Barbarian Origins": Raiding permanently unlocked, Raider Trait is easier to acquire, Pillager Commander Trait Experience increased by 25%
+   - Level 2: "Barbarian Army": Allows the dynast to pick a dynasty trait, improving the damage, toughness, and (in some cases) size of one class of Men-At-Arms
+   - Level 3: "Barbarian Kingdom": Makes Cultural Unification Casus Belli and Heritage Unification Casus Belli available, Custom Kingdoms and Empires requires one-third fewer counties to form
+   - Level 4: "Barbarian Settlement": "Promote Culture" Task Speed: +15% (does not apply to Roman Council positions), "Convert County" Task Speed: +15%
+   - Level 5: "Barbarian Future": Greatly loosens the requirements for the Adopt Clan and Adopt Feudalism decisions (including dropping innovation requirements), +1 Martial per Level of Fame, +5% Legitimacy Gain
+   - Because of engine limitations, it *cannot* be made available based on scripted content
+      - Therefore, cannot be tied to situation features
+      - We thus hardcode various Barbarian King dynasty to have it as an option, but it cannot be made available to Barbarian King custom characters
+- Romanitas, Virtue, and Elegance Tracks are mutually exclusive with Despoliation Track
+
+Casus Belli:
+- Added Heritage Unification Casus Belli:
+   - Cheaper, unlimited variant of Tribal Subjugation Casus Belli for the Despoliation Dynasty Legacy Track
+   - Only targets characters of the same heritage
+   - Can only target characters with your title or higher
+   - Your Realm must be a kingdom or smaller and be less than 50 counties in size
+
 History:
 - Slavic super-duchies replaced with confederations
 - Fixed some Alans in Hispania who should be Alauni (Western Alan) instead of Alan

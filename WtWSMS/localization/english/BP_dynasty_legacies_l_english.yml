@@ -1,4 +1,5 @@
 ﻿l_english:
+ #Romanitas
  BP_roman_heritage_legacy_track_name: "#italic Romanitas#!"
  BP_roman_heritage_legacy_track_desc: "Rome's glorious story is our own"
  BP_roman_heritage_legacy_1_name: "Roman Pride"
@@ -9,3 +10,20 @@
  BP_roman_heritage_legacy_5_name: "#italic Roma Est Aeterna#!"
  BP_ROMAN_HERITAGE_LEGACY_5_RESTORATION_EFFECT: "Unlocks the #V $restore_western_roman_empire$#! and #V $restore_eastern_roman_empire$#!, regardless of [culture|E]"
  BP_ROMAN_HERITAGE_LEGACY_5_GOVERNMENT_EFFECT: "Enables adoption of [roman_administrative_government|E]  to other governments besides Sub-Roman\n$TAB$#weak $feudal_government$, $prefeudal_government$, $clan_government$, $rajamandala_government$, $iranian_dynastic_government$, $administrative_government$#!"
+ #Despoilation
+ BP_despoilation_legacy_track_name: "Despoilation"
+ BP_despoilation_legacy_track_desc: "[Glossary('Raþio ist þata þiqo hawi seniþan þau þata þunno!','DESPOLIATION_GLOSS')]"
+ DESPOLIATION_GLOSS: "Gothic for \"The thicker the hay, the easier it is to mow!\" Allegedly said by Alaric I during the siege of Rome in 408 in response to Roman boasting."
+ BP_despoilation_legacy_1_name: "Barbarian Origins"
+ BP_DESPOILATION_LEGACY_1_EFFECT_1: "[raiding|E] is permanently unlocked"
+ BP_DESPOILATION_LEGACY_1_EFFECT_2: "The [GetTrait('viking').GetName( GetNullCharacter )] [trait|E] is easier to acquire"
+ BP_despoilation_legacy_2_name: "Barbarian Army"
+ BP_DESPOILATION_LEGACY_2_EFFECT: "Pick a [dynasty|E] modifier improving a type of [men_at_arms|E] to increase damage and toughness"
+ BP_despoilation_legacy_3_name: "Barbarian Kingdom"
+ BP_DESPOILATION_LEGACY_3_EFFECT_1: "Access to #V $bp_heritage_unification_cb$#! and #V $bp_cultural_unification_cb$#! [casus_bellis|E]"
+ BP_DESPOILATION_LEGACY_3_EFFECT_2: "Creation of custom [kingdoms|E] and [empires|E] requires 1/3 fewer [counties|E] to pass"
+ BP_despoilation_legacy_4_name: "Barbarian Settlement"
+ BP_DESPOILATION_LEGACY_4_EFFECT_1: "#V $task_promote_culture$#! Speed: #P +[EmptyScope.ScriptValue('BP_despoilation_legacy_4_culture_promotion_value')|%]#!\n#V $task_conversion$#! Speed: #P +[EmptyScope.ScriptValue('BP_despoilation_legacy_4_culture_promotion_value')|%]#!"
+ BP_despoilation_legacy_5_name: "#italic Futurum est Barbaricum!#!"
+ BP_DESPOILATION_LEGACY_5_EFFECT_1: "The [decision|E] to adopt Clan or Feudal government only requires sufficient capital county development, maximum authority, an [organized|E] [faith|E], and the \"Exalted Among Men\" Prestige Level (if not Nomadic)"
+ 

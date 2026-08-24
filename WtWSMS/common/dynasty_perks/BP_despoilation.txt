@@ -1,0 +1,122 @@
+﻿BP_despoilation_legacy_1 = { #Barbarian Origins
+	legacy = BP_despoilation_legacy_track
+	
+	can_be_picked = {}
+	effect = {
+		custom_description_no_bullet = { #Raiding is unlocked permanently
+			text = BP_despoilation_legacy_1_effect_1
+		}
+		custom_description_no_bullet = { #Raider Trait is more common
+			text = BP_despoilation_legacy_1_effect_2
+		}
+	}
+	character_modifier = {
+		reaver_xp_gain_mult = 0.25
+	}
+	
+	traits = {}
+	
+	ai_chance = {
+		value = 11
+		if = {
+			limit = { can_start_new_legacy_track_trigger = no }
+			multiply = 0
+		}
+		#AI will tend not to do this with a Roman government in general, except for certain cultures/dynasties
+		if = {
+			limit = {
+				OR = {
+					government_has_flag = is_a_roman_government
+					dynasty = dynasty:1042165 #Amaling
+					dynasty = dynasty:1042151 #Merovingians
+					dynasty = dynasty:1042160 #Thorcilings
+					dynasty = dynasty:1042146 #Burgundians
+					#Karlings
+					dynasty = dynasty:25061
+					dynasty = dynasty:25065
+					dynasty = dynasty:25066
+					#Your ancestors were once civilized...
+					dynasty.dynasty_founder.culture = { has_cultural_parameter = greco_roman_social_tradition }
+					dynasty.dynasty_founder.culture = { has_cultural_parameter = can_restore_roman_empire }
+					dynasty.dynasty_founder.culture = { has_cultural_parameter = baseline_chinese_acceptance_increased }
+					dynasty.dynasty_founder.culture = { has_cultural_tradition = tradition_tgp_inward_perfection }
+				}
+			}
+			multiply = 0
+		}
+		#AI will tend to do this for certain cultures/dynasties
+		if = {
+			limit = {
+				OR = {
+					culture = culture:vandalic
+					dynasty.dynasty_founder.culture = culture:vandalic
+					dynasty = dynasty:1042147 #Baltings
+				}
+			}
+			multiply = 9999
+		}
+	}
+}
+
+BP_despoilation_legacy_2 = { #Barbarian Army
+	legacy = BP_despoilation_legacy_track
+	
+	can_be_picked = {}
+	effect = { #Specific MAA class bonus to increase damage and toughness
+		custom_description_no_bullet = {
+			text = BP_despoilation_legacy_2_effect
+			dynasty.dynast = { trigger_event = { id = BP_dyansty_perks.0001 } }
+		}
+	}
+	character_modifier = {}
+	
+	traits = {}
+}
+
+BP_despoilation_legacy_3 = { #Barbarian Kingdom
+	legacy = BP_despoilation_legacy_track
+	
+	can_be_picked = {}
+	effect = {
+		custom_description_no_bullet = { #Access to CB to vassalize/conquer rulers of your heritage
+			text = BP_despoilation_legacy_3_effect_1
+		}
+		custom_description_no_bullet = { #Easier Custom Empire/Kingdom creation decision
+			text = BP_despoilation_legacy_3_effect_2
+		}
+	}
+	character_modifier = {}
+	
+	traits = {}
+}
+
+BP_despoilation_legacy_4 = { #Barbarian Settlement
+	legacy = BP_despoilation_legacy_track
+	
+	can_be_picked = {}
+	effect = {
+		custom_description_no_bullet = { #+15% Promote Culture Speed, +15% Faith Conversion Speed
+			text = BP_despoilation_legacy_4_effect_1
+		}
+	}
+	character_modifier = {}
+	
+	traits = {}
+}
+
+BP_despoilation_legacy_5 = { #Barbarian Future
+	legacy = BP_despoilation_legacy_track
+	
+	can_be_picked = {}
+	effect = {
+		custom_description_no_bullet = { #Adopt Clan/Feudal/Tribal decision immediately unlocked
+			text = BP_despoilation_legacy_5_effect_1
+		}
+	}
+	character_modifier = {
+		martial_per_prestige_level = 1
+		legitimacy_gain_mult = 0.05
+	}
+	
+	traits = {}
+}

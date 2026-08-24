@@ -761,7 +761,7 @@ change_government_subroman_administrative_effect = {
 			add_treasury = {
 				value = 100
 				multiply = {
-					value = the_char.primary_title.tier
+					value = primary_title.tier
 					subtract = 2
 					min = 1
 				}
@@ -782,7 +782,7 @@ change_government_roman_administrative_effect = {
 			add_treasury = {
 				value = 100
 				multiply = {
-					value = the_char.primary_title.tier
+					value = primary_title.tier
 					subtract = 2
 					min = 1
 				}

@@ -281,6 +281,17 @@ task_promote_culture = {
 				desc = migration_promote_culture_speed_recent_migration_away_modifier_desc
 			}
 		}
+		#Dynasty Modifiers
+		if = {
+			limit = {
+				#Migrated Away From
+				scope:councillor_liege.dynasty ?= { has_dynasty_perk = BP_despoilation_legacy_4 }
+			}
+			multiply = {
+				value = BP_despoilation_legacy_4_culture_promotion_value
+				desc = BP_despoilation_legacy_4_culture_promotion_desc
+			}
+		}
 		#### Changed from Vanilla ^^^^^
 		
 		### Minorities stuff vvv

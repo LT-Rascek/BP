@@ -357,6 +357,10 @@ convert_to_feudalism_decision = {
 	
 	is_shown = {
 		OR = {
+			trigger_if = {
+				limit = { dynasty ?= { has_dynasty_perk = BP_despoilation_legacy_5 } }
+				government_has_flag = government_is_tribal
+			}
 			government_has_flag = government_is_prefeudal
 			government_has_flag = government_is_high_tribal
 			government_has_flag = government_is_subroman_administrative
@@ -369,53 +373,60 @@ convert_to_feudalism_decision = {
 	}
 	
 	is_valid = {
-		trigger_if = {
-			limit = { government_has_flag = government_is_subroman_administrative }
-			top_liege = root
-			OR = {
-				has_realm_law = subroman_administrative_military_centralization_top_liege_law_4
-				has_realm_law = subroman_administrative_military_centralization_top_liege_law_5
-			}
-			OR = {
-				has_realm_law = subroman_administrative_taxation_top_liege_law_3
-				has_realm_law = subroman_administrative_taxation_top_liege_law_4
-			}
-			OR = {
-				has_realm_law = subroman_administrative_aristocracy_law_3
-				has_realm_law = subroman_administrative_aristocracy_law_4
-			}
-		}
-		trigger_else = {
-			OR = {
-				has_realm_law = prefeudal_authority_3
-				has_realm_law = high_tribal_organization_3
-			}
-		}
+		capital_province.county = { development_level >= convert_to_feudalism_development_requirement }
 		custom_description = {
 			text = faith_is_reformed
 			subject = root
 			faith = { NOT = { has_doctrine_parameter = unreformed } }
 		}
-		prestige_level >= 2
-		capital_province.county = { development_level >= convert_to_feudalism_development_requirement }
-		
-		#Tribal Innovations
-		custom_description = {
-			text = text_has_all_tribal_innovations
-			subject = root.culture
-			culture = { has_all_necessary_tribal_inovations_trigger = yes }
+		custom_tooltip = {
+			text = has_maxed_out_authority
+			has_realm_law_flag = max_authority_level
 		}
-		
-		#Classical Antiquity Innovations
-		custom_description = {
-			text = text_has_all_classical_antiquity_innovations
-			subject = root.culture
-			culture = { has_all_necessary_classical_antiquity_innovations_trigger = yes }
+		trigger_if = {
+			limit = { dynasty ?= { has_dynasty_perk = BP_despoilation_legacy_5 } }
+			prestige_level >= 4
 		}
-		
-		culture = {
-			has_innovation = innovation_aristocracy
-			has_innovation = innovation_hereditary_rule
+		trigger_else = {
+			trigger_if = {
+				limit = { government_has_flag = government_is_subroman_administrative }
+				top_liege = root
+				OR = {
+					has_realm_law = subroman_administrative_military_centralization_top_liege_law_4
+					has_realm_law = subroman_administrative_military_centralization_top_liege_law_5
+				}
+				OR = {
+					has_realm_law = subroman_administrative_taxation_top_liege_law_3
+					has_realm_law = subroman_administrative_taxation_top_liege_law_4
+				}
+				OR = {
+					has_realm_law = subroman_administrative_aristocracy_law_3
+					has_realm_law = subroman_administrative_aristocracy_law_4
+				}
+			}
+			prestige_level >= 2
+			#Tribal Innovations
+			custom_description = {
+				text = text_has_all_tribal_innovations
+				subject = root.culture
+				culture = { has_all_necessary_tribal_inovations_trigger = yes }
+			}
+			
+			#Classical Antiquity Innovations
+			custom_description = {
+				text = text_has_all_classical_antiquity_innovations
+				subject = root.culture
+				culture = { has_all_necessary_classical_antiquity_innovations_trigger = yes }
+			}
+			
+			#Implicit for High Tribal Organization
+			trigger_if = {
+				limit = { NOT = { government_has_flag = government_is_high_tribal } }
+				culture = {
+					has_innovation = innovation_aristocracy
+					has_innovation = innovation_hereditary_rule
+				}
+			}
 		}
 	}
 	
@@ -476,6 +487,10 @@ convert_to_clan_decision = {
 	
 	is_shown = {
 		OR = {
+			trigger_if = {
+				limit = { dynasty ?= { has_dynasty_perk = BP_despoilation_legacy_5 } }
+				government_has_flag = government_is_tribal
+			}
 			government_has_flag = government_is_prefeudal
 			government_has_flag = government_is_high_tribal
 			government_has_flag = government_is_subroman_administrative
@@ -487,53 +502,61 @@ convert_to_clan_decision = {
 	}
 	
 	is_valid = {
-		trigger_if = {
-			limit = { government_has_flag = government_is_subroman_administrative }
-			top_liege = root
-			OR = {
-				has_realm_law = subroman_administrative_military_centralization_top_liege_law_4
-				has_realm_law = subroman_administrative_military_centralization_top_liege_law_5
-			}
-			OR = {
-				has_realm_law = subroman_administrative_taxation_top_liege_law_3
-				has_realm_law = subroman_administrative_taxation_top_liege_law_4
-			}
-			OR = {
-				has_realm_law = subroman_administrative_aristocracy_law_3
-				has_realm_law = subroman_administrative_aristocracy_law_4
-			}
-		}
-		trigger_else = {
-			OR = {
-				has_realm_law = prefeudal_authority_3
-				has_realm_law = high_tribal_organization_3
-			}
-		}
+		capital_province.county = { development_level >= convert_to_feudalism_development_requirement }
 		custom_description = {
 			text = faith_is_reformed
 			subject = root
 			faith = { NOT = { has_doctrine_parameter = unreformed } }
 		}
-		prestige_level >= 2
-		capital_province.county = { development_level >= convert_to_feudalism_development_requirement }
-		
-		#Tribal Innovations
-		custom_description = {
-			text = text_has_all_tribal_innovations
-			subject = root.culture
-			culture = { has_all_necessary_tribal_inovations_trigger = yes }
+		custom_tooltip = {
+			text = has_maxed_out_authority
+			has_realm_law_flag = max_authority_level
 		}
-		
-		#Classical Antiquity Innovations
-		custom_description = {
-			text = text_has_all_classical_antiquity_innovations
-			subject = root.culture
-			culture = { has_all_necessary_classical_antiquity_innovations_trigger = yes }
+		trigger_if = {
+			limit = { dynasty ?= { has_dynasty_perk = BP_despoilation_legacy_5 } }
+			prestige_level >= 4
 		}
-		
-		culture = {
-			has_innovation = innovation_aristocracy
-			has_innovation = innovation_hereditary_rule
+		trigger_else = {
+			trigger_if = {
+				limit = { government_has_flag = government_is_subroman_administrative }
+				top_liege = root
+				OR = {
+					has_realm_law = subroman_administrative_military_centralization_top_liege_law_4
+					has_realm_law = subroman_administrative_military_centralization_top_liege_law_5
+				}
+				OR = {
+					has_realm_law = subroman_administrative_taxation_top_liege_law_3
+					has_realm_law = subroman_administrative_taxation_top_liege_law_4
+				}
+				OR = {
+					has_realm_law = subroman_administrative_aristocracy_law_3
+					has_realm_law = subroman_administrative_aristocracy_law_4
+				}
+			}
+			prestige_level >= 2
+			capital_province.county = { development_level >= convert_to_feudalism_development_requirement }
+			
+			#Tribal Innovations
+			custom_description = {
+				text = text_has_all_tribal_innovations
+				subject = root.culture
+				culture = { has_all_necessary_tribal_inovations_trigger = yes }
+			}
+			
+			#Classical Antiquity Innovations
+			custom_description = {
+				text = text_has_all_classical_antiquity_innovations
+				subject = root.culture
+				culture = { has_all_necessary_classical_antiquity_innovations_trigger = yes }
+			}
+			#Implicit for High Tribal Organization
+			trigger_if = {
+				limit = { NOT = { government_has_flag = government_is_high_tribal } }
+				culture = {
+					has_innovation = innovation_aristocracy
+					has_innovation = innovation_hereditary_rule
+				}
+			}
 		}
 	}
 	
