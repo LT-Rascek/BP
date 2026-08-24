@@ -829,6 +829,20 @@ bm_476_the_franks = {
 		position = { 1000 825 }
 
 		animation = personality_honorable
+		
+		character = {
+			name = "bm_wre_476_syagrius"
+			relation = "BOOKMARK_RELATION_ALLY"
+			dynasty_house = house_syagrius
+			type = male
+			birth = 435.1.1
+			title = k_soissons
+			culture = romano_gallic
+			religion = gallican_church
+			history_id = 19
+			
+			animation = personality_dishonorable
+		}
 	}
 	
 	# Chararic
@@ -847,6 +861,19 @@ bm_476_the_franks = {
 		position = { 850 150 }
 
 		animation = stayback
+		
+		# Chararic, the son that'll be forced to be a priest
+		character = {
+			name = "bm_476_the_franks_chararic_alt_chararic"
+			relation = "BOOKMARK_RELATION_SON"
+			dynasty = 1042151
+			type = male
+			birth = 476.1.1
+			culture = old_frankish
+			religion = frankish_pagan
+			history_id = 36107_son
+			animation = idle
+		}
 	}
 	
 	# Ragnachar
@@ -865,9 +892,22 @@ bm_476_the_franks = {
 		position = { 700 650 }
 
 		animation = personality_greedy
+		
+		# Clovis, the future king of all Franks, ID: 40
+		character = {
+			name = "bm_476_the_franks_ragnachar_alt_farro"
+			relation = "BOOKMARK_RELATION_FAVORITE"
+			dynasty = 10424643
+			type = male
+			birth = 460.1.1
+			culture = old_frankish
+			religion = frankish_pagan
+			history_id = 36112
+			animation = personality_greedy
+		}
 	}
 	
-	# Ragnachar
+	# Sigobert
 	character = {
 		name = "bm_476_the_franks_sigobert"
 		dynasty = old_frankish_dynn_sigobert
@@ -883,6 +923,19 @@ bm_476_the_franks = {
 		position = { 1100 150 }
 
 		animation = survey
+		
+		# Chlodoric, the Patricide
+		character = {
+			name = "bm_476_the_franks_sigobert_alt_chlodoric"
+			relation = "BOOKMARK_RELATION_SON"
+			dynasty = old_frankish_dynn_sigobert
+			type = male
+			birth = 466.1.1
+			culture = old_frankish
+			religion = frankish_pagan
+			history_id = 485320
+			animation = thinking
+		}
 	}
 }
 bm_476_shattered_empire = {
