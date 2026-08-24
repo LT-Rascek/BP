@@ -135,7 +135,6 @@ orphaned_events = {
 			1 = middle_europe_decisions.0017
 			1 = middle_europe_decisions.0018
 			1 = mpo_decisions_events.0400
-			1 = raiding.0022
 			1 = roman_restoration.0001
 			1 = roman_restoration.0003
 			1 = roman_restoration.0100
@@ -172,6 +171,17 @@ orphaned_events = {
 			1 = tgp_japan_general.8800
 			1 = tgp_japan_general.9550
 			1 = tgp_silk_road_events.0010
+	}
+}
+
+on_raid_loot_delivered = {
+	on_actions = { orphaned_army_events }
+}
+orphaned_army_events = {
+	trigger = { always = no }
+	random_events = {
+		chance_to_happen = 0
+		1 = raiding.0022
 	}
 }
 
