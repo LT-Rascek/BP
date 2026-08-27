@@ -1,78 +1,3 @@
-2026-MM-DD v0.3.0 (More Work)
------------
-
-Landed Titles:
-- Overhauled Persian Hegemony
-   - Add the Bactrian Empire to Persia and put Bactria, Sogdiana, and Kabulistan in it
-- Moved various titles to be De Jure instead of Titular in line with CK3 DLC mechanics:
-   - Moved the Hunnic history to the Empire of Sarmatia
-   - Moved Rouran history to the Mongolian Empire
-   - Moved Hepthalite history into the Bactrian Empire
-   - Moved Tuyuhun history into Amdo
-
-Traditions:
-- "Early Slavic Warfare" Tradition overhauled
-   - No longer provides a Light Cavalry bonus
-   - No longer has sieges damaging development
-   - No longer provides extra soldiers during migrations
-   - Reduces all war Level of Fame requirements by one
-   - CBs are cheaper in general
-- "Early Slavic Traditions" Tradition overhauled
-   - No longer provides bonus to "Promote Culture" Task and to "Convert County" Tasks
-   - No longer provides easier Culture Divergence and Culture Hybridization requirements
-   - Forming Confederations no longer require a powerful neighbor, the Diplomat, or Family Hierarch traits
-   - Elevating a Confederation costs more prestige and takes a higher level of fame to pass
-   - +20 Offer Confederation Character Acceptance
-   - Titles cost 25% more gold to create
-
-Innovations:
-- Touched up some Tribal Innovation graphics and names
-- Added "Formalized Rituals" Innovation
-   - Is a Civic Innovation
-   - Required to build "Monoastic Schools", "Scriptoria", and "Megaliths" buildings
-   - Required to reform a faith but not create a new one
-
-Decisions:
-- Added a decision for a Migrator or Character who had been a migrator to become a Sub-Roman Government, partly modeling the transition of the Franks from a Tribal to Romanesque polity
-
-Dynasty Legacies:
-- Added a new Dynasty Legacy: "Despoliation", available to dynasts with Tribal, Federate, or Nomadic government, as well as certain dynasties
-   - Level 1: "Barbarian Origins": Raiding permanently unlocked, Raider Trait is easier to acquire, Pillager Commander Trait Experience increased by 25%
-   - Level 2: "Barbarian Army": Allows the dynast to pick a dynasty trait, improving the damage, toughness, and (in some cases) size of one class of Men-At-Arms
-   - Level 3: "Barbarian Kingdom": Makes Cultural Unification Casus Belli and Heritage Unification Casus Belli available, Custom Kingdoms and Empires requires one-third fewer counties to form
-   - Level 4: "Barbarian Settlement": "Promote Culture" Task Speed: +15% (does not apply to Roman Council positions), "Convert County" Task Speed: +15%
-   - Level 5: "Barbarian Future": Greatly loosens the requirements for the Adopt Clan and Adopt Feudalism decisions (including dropping innovation requirements), +1 Martial per Level of Fame, +5% Legitimacy Gain
-   - Because of engine limitations, it *cannot* be made available based on scripted content
-      - Therefore, cannot be tied to situation features
-      - We thus hardcode various Barbarian King dynasty to have it as an option, but it cannot be made available to Barbarian King custom characters
-- Romanitas, Virtue, and Elegance Tracks are mutually exclusive with Despoliation Track
-
-Casus Belli:
-- Added Heritage Unification Casus Belli:
-   - Cheaper, unlimited variant of Tribal Subjugation Casus Belli for the Despoliation Dynasty Legacy Track
-   - Only targets characters of the same heritage
-   - Can only target characters with your title or higher
-   - Your Realm must be a kingdom or smaller and be less than 50 counties in size
-
-History:
-- Slavic super-duchies replaced with confederations
-- Fixed some Alans in Hispania who should be Alauni (Western Alan) instead of Alan
-
-Tweaks:
-- In general, if a character has only a landless title under a government that is not administrative, the title is destroyed (and the character becomes an adventurer if the character is a player)
-- Members are more inclined to leave large confederations (i.e., more than 8 members)
-- AI is inclined to promote culture more in counties with "Recent Emigration" modifier
-- Hunnic herd reduced more at start
-- Burgundians replace "Ruling Caste" with "Stratocratic Elite"
-- Aristocratic government uses dynasty named realms where applicable
-
-Localization:
-- Remapped "Mongolia" localization to "Xiongnu" for the Mongolian Empire
-
-Bug Fixes:
-- Fixed a bug where Federates couldn't use the "Promote Culture" task
-- Fixed changing to Administrative government types having 0 treasury at start
-
 2026-MM-DD v0.3.0
 -----------
 
@@ -142,6 +67,11 @@ Game Rules:
 - Removed "Custom Kingdom Blocked" Rule, as it is superseded by migration mechanics
 
 Casus Bellorum:
+- Added Heritage Unification Casus Belli:
+   - Cheaper, unlimited variant of Tribal Subjugation Casus Belli for the Despoliation Dynasty Legacy Track
+   - Only targets characters of the same heritage
+   - Can only target characters with your title or higher
+   - Your Realm must be a kingdom or smaller and be less than 50 counties in size
 - Overhauled Migration Casus Bellorum:
    - Kingdom Level Migration:
       - Available to Dukes and Kings
@@ -326,9 +256,35 @@ Culture:
    - Xenophobic Tradition no longer encourages the Zealous trait
    - "Sinophilic" Tradition increases baseline cultural acceptance with Chinese heritage cultures by 15
    - "Frankish Traditions" reduce Men-at-Arms maintenance by 25% instead of 50%
+   - "Early Slavic Warfare" Tradition overhauled
+      - No longer provides a Light Cavalry bonus
+      - No longer has sieges damaging development
+      - No longer provides extra soldiers during migrations
+      - Reduces all war Level of Fame requirements by one
+      - CBs are cheaper in general
+   - "Early Slavic Traditions" Tradition overhauled
+      - No longer provides bonus to "Promote Culture" Task and to "Convert County" Tasks
+      - No longer provides easier Culture Divergence and Culture Hybridization requirements
+      - Forming Confederations no longer require a powerful neighbor, the Diplomat, or Family Hierarch traits
+      - Elevating a Confederation costs more prestige and takes a higher level of fame to pass
+      - +20 Offer Confederation Character Acceptance
+      - Titles cost 25% more gold to create
+- Innovations:
+   - Touched up some Tribal Innovation graphics and names
+   - Added "Formalized Rituals" Innovation
+      - Is a Civic Innovation
+      - Required to build "Monastic Schools", "Scriptoria", and "Megaliths" buildings
+      - Required to reform a faith but not create a new one
 - Rebalanced many cultures' ethnicities
 
 Landed Titles:
+- Overhauled Persian Hegemony
+   - Add the Bactrian Empire to Persia and put Bactria, Sogdiana, and Kabulistan in it
+- Moved various titles to be De Jure instead of Titular in line with CK3 DLC mechanics:
+   - Moved the Hunnic history to the Empire of Sarmatia
+   - Moved Rouran history to the Mongolian Empire
+   - Moved Hepthalite history into the Bactrian Empire
+   - Moved Tuyuhun history into Amdo
 - Reorganized some titles in Germania Inferior and Belgica
    - Added Texandria and Mosiana as de jure duchies to Germania Inferior
       - Texandria include Maastricht, Zeeland, Brabant, and Antwerp
@@ -363,6 +319,8 @@ Landed Titles:
    - Jarbaya (Bagram/Kapisa) made the capital of Bamian County, in line with the city's historical importance
 
 History:
+- Slavic super-duchies replaced with confederations
+- Fixed some Alans in Hispania who should be Alauni (Western Alan) instead of Alan
 - At start military modifications:
    - Removed Merovingian Special at start troops and tweaked their starting Men-At-Arms
    - Added Contus Bearer Men-At-Arms to Orleans Alans at start troops
@@ -405,7 +363,20 @@ Traits:
    - Each rank in the trait increases Prestige Gain, Monthly Prestige, Direct Vassal Opinion, and Atraction opinion
    - For cultures that do not value Cranial Deformation, each rank of the trait negatively impacts the Direct Vassal Opinion and Attraction Opinion
 
+Dynasty Legacies:
+- Added a new Dynasty Legacy: "Despoliation", available to dynasts with Tribal, Federate, or Nomadic government, as well as certain dynasties
+   - Level 1: "Barbarian Origins": Raiding permanently unlocked, Raider Trait is easier to acquire, Pillager Commander Trait Experience increased by 25%
+   - Level 2: "Barbarian Army": Allows the dynast to pick a dynasty trait, improving the damage, toughness, and (in some cases) size of one class of Men-At-Arms
+   - Level 3: "Barbarian Kingdom": Makes Cultural Unification Casus Belli and Heritage Unification Casus Belli available, Custom Kingdoms and Empires requires one-third fewer counties to form
+   - Level 4: "Barbarian Settlement": "Promote Culture" Task Speed: +15% (does not apply to Roman Council positions), "Convert County" Task Speed: +15%
+   - Level 5: "Barbarian Future": Greatly loosens the requirements for the Adopt Clan and Adopt Feudalism decisions (including dropping innovation requirements), +1 Martial per Level of Fame, +5% Legitimacy Gain
+   - Because of engine limitations, it *cannot* be made available based on scripted content
+      - Therefore, cannot be tied to situation features
+      - We thus hardcode various Barbarian King dynasty to have it as an option, but it cannot be made available to Barbarian King custom characters
+- Romanitas, Virtue, and Elegance Tracks are mutually exclusive with Despoliation Track
+
 Decisions:
+- Added a decision for a Migrator or Character who had been a migrator to become a Sub-Roman Government, partly modeling the transition of the Franks from a Tribal to Romanesque polity
 - Added "Form a Tribe" Decision for Tribals and Migrators
    - Cheaper form of "Form a Duchy" decision
    - Creates only a titular duchy instead of a de jure Duchy
@@ -492,13 +463,24 @@ Events:
 GFX:
 - Added new COA emblems for the Alchon and Nezak Huns
 
+Tweaks:
+- In general, if a character has only a landless title under a government that is not administrative, the title is destroyed (and the character becomes an adventurer if the character is a player)
+- Members are more inclined to leave large confederations (i.e., more than 8 members)
+- AI is inclined to promote culture more in counties with "Recent Emigration" modifier
+- Hunnic herd reduced more at start
+- Burgundians replace "Ruling Caste" with "Stratocratic Elite"
+- Aristocratic government uses dynasty named realms where applicable
+
 Localization:
+- Remapped "Mongolia" localization to "Xiongnu" for the Mongolian Empire
 - Some cleanup of Turkic-related flavorizations
 - Extensively reviewed and overhauled cultural history descriptions for cultures
 - Renamed "Hunnic" Heritage to "Oghuric" and "Bolghar" culture to "Oghuric"
 - Renamed "Ruanruan" language to "Ninrun"
 
 Bug Fixes:
+- Fixed a bug where Federates couldn't use the "Promote Culture" task
+- Fixed changing to Administrative government types having 0 treasury at start
 - "Move into Conquered Lands" decision will no longer let you sneak into being a feudal ruler early
 - Fixed nomad holdings being tribal holdings in Zhetsyu
 
