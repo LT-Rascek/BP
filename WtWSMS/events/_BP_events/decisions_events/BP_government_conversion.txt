@@ -6,13 +6,15 @@
 #0031-0040: convert_to_feudalism_decision
 #0041-0050: convert_to_clan_decision
 
-#convert_to_high_tribal_as_vassal_decision
+#convert_to_high_tribal_decision
 BP_government_conversion.0001 = { #cribbed from major_decisions.0001
 	type = character_event
 	title = BP_government_conversion.0001.t
 	desc = BP_government_conversion.0001.desc
 	theme = stewardship
 	content_source = dlc_WtWSMS
+	
+	immediate = { save_scope_as = actor }
 	
 	left_portrait = {
 		character = root
@@ -22,10 +24,9 @@ BP_government_conversion.0001 = { #cribbed from major_decisions.0001
 	option = {
 		name = BP_government_conversion.0001.a
 		change_government = high_tribal_government
-		#No need to inform the player about these things
 		hidden_effect = {
 			every_liege_or_above = {
-				limit = { NOT = { is_independent_ruler = yes } }
+				limit = { is_ai = no }
 				send_interface_message = {
 					type = event_stewardship_neutral_with_text
 					title = msg_vassal_high_tribal
@@ -33,7 +34,12 @@ BP_government_conversion.0001 = { #cribbed from major_decisions.0001
 					right_icon = root
 				}
 			}
-			every_vassal = { trigger_event = { id = BP_government_conversion.0002 days = 3 } }
+			every_vassal_or_below = {
+				limit = { has_same_government = root }
+				trigger_event = {
+					id = BP_government_conversion.0002 days = 3
+				}
+			}
 		}
 	}
 }
@@ -60,6 +66,8 @@ BP_government_conversion.0011 = { #cribbed from major_decisions.0001
 	theme = stewardship
 	content_source = dlc_WtWSMS
 	
+	immediate = { save_scope_as = actor }
+	
 	left_portrait = {
 		character = root
 		animation = personality_rational
@@ -67,11 +75,10 @@ BP_government_conversion.0011 = { #cribbed from major_decisions.0001
 	
 	option = {
 		name = BP_government_conversion.0011.a
-		change_government = high_tribal_government
 		#No need to inform the player about these things
 		hidden_effect = {
 			every_liege_or_above = {
-				limit = { NOT = { is_independent_ruler = yes } }
+				limit = { is_ai = no }
 				send_interface_message = {
 					type = event_stewardship_neutral_with_text
 					title = msg_vassal_high_tribal
@@ -79,11 +86,12 @@ BP_government_conversion.0011 = { #cribbed from major_decisions.0001
 					right_icon = root
 				}
 			}
-			every_vassal = {
-				limit = { has_government = tribal_government }
+			every_vassal_or_below = {
+				limit = { has_same_government = root }
 				trigger_event = { id = BP_government_conversion.0012 days = 3 }
 			}
 		}
+		change_government = high_tribal_government
 	}
 }
 BP_government_conversion.0012 = { #cribbed from major_decisions.0002
@@ -109,6 +117,8 @@ BP_government_conversion.0021 = { #cribbed from major_decisions.0001
 	theme = stewardship
 	content_source = dlc_WtWSMS
 	
+	immediate = { save_scope_as = actor }
+	
 	left_portrait = {
 		character = root
 		animation = personality_rational
@@ -116,19 +126,26 @@ BP_government_conversion.0021 = { #cribbed from major_decisions.0001
 	
 	option = {
 		name = BP_government_conversion.0021.a
+		every_vassal_or_below = {
+			limit = { has_same_government = root }
+			trigger_event = { id = BP_government_conversion.0022 days = 3 }
+		}
 		convert_to_roman_government_effect = yes
-		every_vassal = { trigger_event = { id = BP_government_conversion.0022 days = 3 } }
 	}
 }
 BP_government_conversion.0022 = { #cribbed from major_decisions.0002
 	type = letter_event
 	opening = BP_government_conversion.0022.opening
 	desc = BP_government_conversion.0022.desc
+	
 	sender = {
 		character = scope:actor
 		animation = personality_rational
 	}
-	option = { name = BP_government_conversion.0022.a }
+	option = {
+		name = BP_government_conversion.0022.a
+		convert_to_roman_government_effect = yes
+	}
 }
 
 #convert_to_feudalism_decision
@@ -139,6 +156,8 @@ BP_government_conversion.0031 = { #cribbed from major_decisions.0001
 	theme = stewardship
 	content_source = dlc_WtWSMS
 	
+	immediate = { save_scope_as = actor }
+	
 	left_portrait = {
 		character = root
 		animation = personality_rational
@@ -146,15 +165,10 @@ BP_government_conversion.0031 = { #cribbed from major_decisions.0001
 	
 	option = {
 		name = BP_government_conversion.0031.a
-		change_government = feudal_government
-		custom_tooltip = {
-			text = convert_holdings_text
-			convert_holdings_effect = yes
-		}
 		#No need to inform the player about these things
 		hidden_effect = {
 			every_liege_or_above = {
-				limit = { NOT = { is_independent_ruler = yes } }
+				limit = { is_ai = no }
 				send_interface_message = {
 					type = event_stewardship_neutral_with_text
 					title = msg_vassal_feudalised
@@ -162,7 +176,15 @@ BP_government_conversion.0031 = { #cribbed from major_decisions.0001
 					right_icon = root
 				}
 			}
-			every_vassal = { trigger_event = { id = BP_government_conversion.0032 days = 3 } }
+			every_vassal_or_below = {
+				limit = { has_same_government = root }
+				trigger_event = { id = BP_government_conversion.0032 days = 3 }
+			}
+		}
+		change_government = feudal_government
+		custom_tooltip = {
+			text = convert_holdings_text
+			convert_holdings_effect = yes
 		}
 	}
 }
@@ -193,6 +215,8 @@ BP_government_conversion.0041 = { #cribbed from major_decisions.0001
 	theme = stewardship
 	content_source = dlc_WtWSMS
 	
+	immediate = { save_scope_as = actor }
+	
 	left_portrait = {
 		character = root
 		animation = personality_rational
@@ -200,15 +224,10 @@ BP_government_conversion.0041 = { #cribbed from major_decisions.0001
 	
 	option = {
 		name = BP_government_conversion.0041.a
-		change_government = clan_government
-		custom_tooltip = {
-			text = convert_holdings_text
-			convert_holdings_effect = yes
-		}
 		#No need to inform the player about these things
 		hidden_effect = {
 			every_liege_or_above = {
-				limit = { NOT = { is_independent_ruler = yes } }
+				limit = { is_ai = no }
 				send_interface_message = {
 					type = event_stewardship_neutral_with_text
 					title = msg_vassal_clan
@@ -216,7 +235,15 @@ BP_government_conversion.0041 = { #cribbed from major_decisions.0001
 					right_icon = root
 				}
 			}
-			every_vassal = { trigger_event = { id = BP_government_conversion.0042 days = 3 } }
+			every_vassal_or_below = {
+				limit = { has_same_government = root }
+				trigger_event = { id = BP_government_conversion.0042 days = 3 }
+			}
+		}
+		change_government = clan_government
+		custom_tooltip = {
+			text = convert_holdings_text
+			convert_holdings_effect = yes
 		}
 	}
 }
@@ -238,3 +265,43 @@ BP_government_conversion.0042 = { #cribbed from major_decisions.0002
 		}
 	}
 }
+
+#convert_to_subroman_government_decision (AKA Frankish Roman Government)
+BP_government_conversion.0051 = { #cribbed from major_decisions.0001
+	type = character_event
+	title = BP_government_conversion.0051.t
+	desc = BP_government_conversion.0051.desc
+	theme = stewardship
+	content_source = dlc_WtWSMS
+	
+	immediate = { save_scope_as = actor }
+	
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	
+	option = {
+		name = BP_government_conversion.0051.a
+		convert_tribal_government_to_subroman_effect = yes
+		every_vassal_or_below = {
+			limit = { has_same_government = root }
+			trigger_event = { id = BP_government_conversion.0052 days = 3 }
+		}
+	}
+}
+BP_government_conversion.0052 = { #cribbed from major_decisions.0002
+	type = letter_event
+	opening = BP_government_conversion.0052.opening
+	desc = BP_government_conversion.0052.desc
+	sender = {
+		character = scope:actor
+		animation = personality_rational
+	}
+	option = {
+		name = BP_government_conversion.0052.a
+		convert_tribal_government_to_subroman_effect = yes
+	}
+}
+
+

@@ -4,25 +4,6 @@
 
 @cultural_title_score = 500
 
-e_rouran = {
-	color={ 54 125 175 }
-	definite_form = yes
-	capital = c_karakorum
-	ignore_titularity_for_title_weighting = yes
-	ai_primary_priority = {
-		if = {
-			limit = {
-				OR = {
-					culture = culture:xianbei
-					culture = culture:ninrun
-				}
-			}
-			add = @always_primary_score
-		}
-	}
-	
-	can_create = { general_empire_title_creation_trigger = yes }
-}
 e_avar = {
 	color={ 225 0 0 }
 	definite_form = yes
@@ -48,19 +29,6 @@ e_turkestan = {
 	}
 	
 	can_create = { general_empire_title_creation_trigger = yes }
-}
-k_tuyuhun = {
-	color={ 100 230 255 } # Same as c_dunhuang
-	capital = c_fuqi
-	ignore_titularity_for_title_weighting = yes
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:tuyuhun }
-			add = @always_primary_score
-		}
-	}
-	
-	can_create = { general_kingdom_title_creation_trigger = yes }
 }
 d_avars = {
 	color = { 120 123 16 }

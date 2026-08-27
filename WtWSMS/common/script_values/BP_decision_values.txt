@@ -330,3 +330,13 @@ percent_of_oghur_heritage_counties_owned = {
 	value = number_of_owned_oghur_heritage_counties
 	divide = number_of_total_oghur_heritage_counties
 }
+
+#General cost
+general_gold_cost_by_tier_kingdom_or_greater = {
+	value = 100
+	multiply = {
+		value = primary_title.tier
+		subtract = 2
+		min = 1
+	}
+}

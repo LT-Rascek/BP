@@ -94,10 +94,40 @@ scripted_effect battle_of_tolbiac_picked_right_new_god_effect = {
 	}
 	
 	#Duplicate, make more powerful, and fire without rescoping
-	trigger_event = { id = faith_conversion.0001 } # Convert Capital County
-	trigger_event = { id = faith_conversion.0003 } # Convert close family
-	trigger_event = { id = faith_conversion.1002 } # Player-only narrative-notification event
-	trigger_event = { id = faith_conversion.1101 } # Notify vassals of conversion
+	hidden_effect = {
+		trigger_event = { id = faith_conversion.0001 } # Convert Capital County
+		trigger_event = { id = faith_conversion.0003 } # Convert close family
+		trigger_event = { id = faith_conversion.1002 } # Player-only narrative-notification event
+		trigger_event = { id = faith_conversion.1101 } # Notify vassals of conversion
+	}
+	
+	custom_tooltip = {
+		text = 50_percent_chance_every_realm_county_flips
+		every_held_title = {
+			limit = {
+				is_landless_type_title = no
+				tier = tier_county
+				NOT = { this.faith = root.var:the_tolbiac_faith }
+			}
+			random = {
+				chance = 50
+				set_county_faith = root.var:the_tolbiac_faith
+			}
+		}
+	}
+	custom_tooltip = {
+		text = 50_percent_chance_every_nonzealous_vassal_flips
+		every_vassal = {
+			limit = {
+				NOT = { this.faith = root.var:the_tolbiac_faith }
+				NOT = { has_trait = zealous }
+			}
+			random = {
+				chance = 50
+				set_character_faith = root.var:the_tolbiac_faith
+			}
+		}
+	}
 	
 	$NEW_FAITH$ = { change_fervor = {value = 10 desc = battle_of_tolbiac_won } }
 	$OLD_FAITH$ = { change_fervor = {value = -5 desc = battle_of_tolbiac_lost } }

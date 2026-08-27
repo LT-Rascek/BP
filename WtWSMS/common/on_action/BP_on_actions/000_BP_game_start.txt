@@ -18,6 +18,7 @@ bp_game_start = {
 		#Needs to be done first to avoid some errors
 		ccu_startup_debug
 		bp_set_global_variables
+		BP_set_de_jure_titles
 		#Legal Stuff
 		setup_realm_and_title_succession_laws
 		setup_realm_and_title_succession_laws_DLC
@@ -38,6 +39,7 @@ bp_game_start = {
 		block_specific_chars_from_having_families
 		#Other Actions
 		update_development_by_terrain_and_circumstances
+		fix_fictional_tribal_dynasty_names
 		#Things that have to be done last
 		setup_roman_governments_based_on_dlc
 		setup_other_governments_based_on_dlc
@@ -126,6 +128,15 @@ bp_set_global_variables = {
 			limit = { has_game_rule = tribal_shatter_mechanic_enabled }
 			set_global_variable = tribal_shatter_mechanic_enabled
 		}
+	}
+}
+
+BP_set_de_jure_titles = {
+	effect = {
+		title:e_gaul = { set_de_jure_liege_title = title:h_western_roman_empire }
+		title:e_spain = { set_de_jure_liege_title = title:h_western_roman_empire }
+		title:e_italy = { set_de_jure_liege_title = title:h_western_roman_empire }
+		title:e_north_africa = { set_de_jure_liege_title = title:h_western_roman_empire }
 	}
 }
 
@@ -501,7 +512,7 @@ setup_realm_and_title_succession_laws = {
 					has_title = title:k_garamantes
 					has_title = title:k_mauretania
 					#Altaics
-					has_title = title:e_rouran
+					has_title = title:e_mongolia
 					has_title = title:e_turkestan
 				}
 			}
@@ -1432,6 +1443,16 @@ give_chavez_to_the_buri = {
 				}
 			}
 			resolve_title_and_vassal_change = scope:title_change
+		}
+	}
+}
+
+fix_fictional_tribal_dynasty_names = {
+	effect = {
+		every_ruler = {
+			limit = { has_character_flag = fictional_tribal }
+			remove_character_flag = fictional_tribal
+			this = { pick_a_random_dynasty_name_effect = yes }
 		}
 	}
 }

@@ -254,9 +254,13 @@ land_migration_tribal_kingdom = {
 	selection_tooltip = land_migration_tribal_kingdom_tooltip
 	
 	is_shown = {
-		general_situation_regional_parameter_trigger = {
-			CHARACTER = root
-			PARAMETER = custom_kingdom_creation_restrictions
+		OR = {
+			general_situation_regional_parameter_trigger = {
+				CHARACTER = root
+				PARAMETER = custom_kingdom_creation_restrictions
+			}
+			has_character_modifier = migration_situation_previous_migrator
+			has_character_modifier = migration_situation_previous_tribal
 		}
 		top_liege = this
 		highest_held_title_tier = tier_kingdom
@@ -267,14 +271,14 @@ land_migration_tribal_kingdom = {
 	
 	is_valid = {
 		root.primary_title = { title_held_years >= 10 }
-		#Must control 66% of your culture's counties
+		#Must control more than 50% of your culture's counties
 		custom_description = {
-			text = controls_least_two_thirds_of_counties_with_culture
+			text = controls_least_55_percent_of_counties_with_culture
 			subject = root
 			check_if_control_percentage_of_all_counties_with_condition_trigger = {
 				FEATURE = culture
 				CHARACTER = root
-				PERCENTAGE = 0.66
+				PERCENTAGE = 0.55
 			}
 		}
 		custom_description = {
@@ -288,7 +292,10 @@ land_migration_tribal_kingdom = {
 		OR = {
 			AND = {
 				prestige_level >= 4
-				legitimacy_level >= 4
+				trigger_if = {
+					limit = { has_legitimacy = yes }
+					legitimacy_level >= 4
+				}
 			}
 			has_trait = legendary_leader
 		}
@@ -296,14 +303,17 @@ land_migration_tribal_kingdom = {
 			text = has_maxed_out_authority
 			has_realm_law_flag = max_authority_level
 		}
-		custom_tooltip = {
-			text = powerful_vassals_think_highly_of_you
-			NOT = {
-				any_powerful_vassal = {
-					this != root
-					opinion = {
-						target = root
-						value < 35
+		trigger_if = {
+			limit = { NOT = { government_allows = administrative } }
+			custom_tooltip = {
+				text = powerful_vassals_think_highly_of_you
+				NOT = {
+					any_powerful_vassal = {
+						this != root
+						opinion = {
+							target = root
+							value < 35
+						}
 					}
 				}
 			}
@@ -322,7 +332,17 @@ land_migration_tribal_kingdom = {
 	}
 	
 	cost = {
-		prestige = 500
+		prestige = {
+			value = 0
+			every_realm_county = { add = 20 }
+		}
+		gold = {
+			value = general_gold_cost_by_tier_kingdom_or_greater
+			add = {
+				value = 50
+				every_realm_county = { add = 10 }
+			}
+		}
 	}
 	
 	effect = {
@@ -385,7 +405,10 @@ found_titular_duchy_decision = {
 				has_legitimacy = yes
 			}
 			prestige_level >= 3
-			legitimacy_level >= 2
+			trigger_if = {
+				limit = { has_legitimacy = yes }
+				legitimacy_level >= 2
+			}
 		}
 		trigger_else = {
 			prestige_level >= 3
@@ -440,4 +463,82 @@ found_titular_duchy_decision = {
 		}
 	}
 }
-
+#Evolution of Frankish government to Sub-Roman
+convert_tribal_to_subroman_government_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/ep3_cerimonial_decision.dds"
+	}
+	decision_group_type = major
+	desc = convert_tribal_to_subroman_government_decision_desc
+	
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 72
+		duchy = 60
+		kingdom = 48
+		empire = 36
+		hegemony = 36
+	}
+	
+	is_shown = {
+		government_has_flag = government_is_tribal
+		any_vassal = {
+			this.primary_title.tier >= tier_county
+			government_has_flag = is_a_roman_government
+		}
+		top_liege = this #Must be independent
+	}
+	
+	is_valid = {
+		AND = {
+			culture = { has_innovation = innovation_writing }
+			culture = { has_innovation = innovation_social_stratification }
+			culture = { has_innovation = innovation_leges_barbarorum }
+			culture = { has_innovation = innovation_formalized_rituals }
+		}
+		highest_held_title_tier >= tier_kingdom #Must be a kingdom or empire or hegemony
+		prestige_level >= 3
+		trigger_if = {
+			limit = { has_legitimacy = yes }
+			legitimacy_level >= 3
+		}
+		#Can't be an eclectic admixture of governments
+		custom_description = {
+			text = enough_territory_is_subroman
+			any_realm_county = {
+				percent >= 0.5
+				OR = {
+					this.holder = root
+					this.holder = { government_has_flag = is_a_roman_government }
+				}
+			}
+		}
+		NOT = { this.capital_county.title_province = { has_holding_type = tribal_holding } }
+	}
+	
+	cost = {
+		prestige = {
+			value = 0
+			every_realm_county = { add = 20 }
+		}
+		gold = {
+			value = general_gold_cost_by_tier_kingdom_or_greater
+			add = {
+				value = 50
+				every_realm_county = { add = 10 }
+			}
+		}
+	}
+	
+	effect = {
+		save_scope_as = actor
+		show_as_tooltip = { convert_tribal_government_to_subroman_effect = yes }
+		trigger_event = BP_government_conversion.0051
+	}
+	
+	ai_potential = { always = yes }
+	
+	ai_will_do = {
+		base = 100
+	}
+}

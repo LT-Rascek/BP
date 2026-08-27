@@ -35,6 +35,16 @@ scripted_effect jumpstart_culture_progress_effect = {
 		}
 	}
 }
+scripted_effect give_cash_effect = {
+	if = {
+		limit = { has_treasury = no }
+		add_gold = migration_gold_gift_without_treasury
+	}
+	else = {
+		add_gold = migration_gold_gift_with_treasury
+		add_treasury = migration_treasury
+	}
+}
 
 migration_situation_war.0100 = {
 	type = character_event
@@ -117,6 +127,12 @@ migration_situation_war.0100 = {
 		#	}
 		#}
 		
+		save_temporary_scope_as = the_char
+		custom_tooltip = {
+			text = recieve_just_cash
+			give_cash_effect = yes
+		}
+		
 		ai_chance = {
 			base = 10
 			modifier = { #Traditionalist Culture doesn't like it
@@ -136,7 +152,12 @@ migration_situation_war.0100 = {
 		}
 	}
 	option = {
-		trigger = { has_character_flag = roman_government_bootstrap_available }
+		trigger = {
+			has_character_flag = roman_government_bootstrap_available
+			this.culture = { has_innovation = innovation_writing }
+			this.culture = { has_innovation = innovation_social_stratification }
+			this.culture = { has_innovation = innovation_leges_barbarorum }
+		}
 		name = migration_situation_war.0100.adopt_subroman_government
 		
 		convert_to_subroman_government_effect = yes
@@ -200,6 +221,12 @@ migration_situation_war.0100 = {
 		#		TARGET_CULTURE = root.culture
 		#	}
 		#}
+		
+		save_temporary_scope_as = the_char
+		custom_tooltip = {
+			text = recieve_cash_and_treasury
+			give_cash_effect = yes
+		}
 		
 		ai_chance = {
 			base = 10
@@ -298,6 +325,12 @@ migration_situation_war.0100 = {
 		
 		hidden_effect = {
 			remove_character_flag_if_has_it_effect = { FLAG = was_culture_head }
+		}
+		
+		save_temporary_scope_as = the_char
+		custom_tooltip = {
+			text = recieve_just_cash
+			give_cash_effect = yes
 		}
 		
 		ai_chance = {

@@ -174,6 +174,17 @@ orphaned_events = {
 	}
 }
 
+on_raid_loot_delivered = {
+	on_actions = { orphaned_army_events }
+}
+orphaned_army_events = {
+	trigger = { always = no }
+	random_events = {
+		chance_to_happen = 0
+		1 = raiding.0022
+	}
+}
+
 #is used but never set errors
 set_unused_variables = {
 	trigger = { always = no } #These should never fire

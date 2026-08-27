@@ -3,11 +3,15 @@
  # Tribal Era #
  ##############
  #General
- improves_migration_tribal_odds: "Reduces the chance a [castle_holding|E] converts to #V $building_type_tribe_01$#! during a [major_migration_war|E]"
- greatly_improves_migration_tribal_odds: "#EMP Greatly#! reduces the chance a [castle_holding|E] converts to #V $building_type_tribe_01$#! during a [major_migration_war|E]"
- required_to_adopt_organized_government_during_migration: "#V Required#! to be able to adopt [organized_government|E] during migrations"
  increases_chance_subroman_administrative_vassals_increase_aristocracy: "[SelectLocalization( HasDlcFeature( 'landless_playable' ), '#EMP Increases#! the chance that #V $subroman_administrative_government|q$#! vassals achieve more aristocratic inheritance laws', 'BLANK' )]"
  reduces_chance_subroman_administrative_vassals_increase_aristocracy: "[SelectLocalization( HasDlcFeature( 'landless_playable' ), '#EMP Decreases#! the chance that #V $subroman_administrative_government|q$#! vassals achieve more aristocratic inheritance laws', 'BLANK' )]"
+ 
+ #Migration War Tribalization
+ required_to_adopt_roman_government_during_migration: "#V Required#! to be able to adopt a Roman government during migrations"
+ reduces_migration_tribalization_odds_1: "Reduces the chance of creating a [tribal_holding|E] during migration by 0.5%"
+ reduces_migration_tribalization_odds_2: "Reduces the chance of creating a [tribal_holding|E] during migration by 1.0%"
+ reduces_migration_tribalization_odds_3: "Reduces the chance of creating a [tribal_holding|E] during migration by 1.5%"
+ 
  BLANK: ""
  #Military Innovations
  innovation_primitive_leverage: "Primitive Leverage"
@@ -32,13 +36,17 @@
  innovation_oppidum: "Hillforts"
  innovation_oppidum_desc: "Building settlements at well-defended locations allows them to flourish as sites of commerce and politics."
  innovation_oppidum_celtic: "Oppidum"
- innovation_oppidum_celtic_desc: "An Oppidum is an large fortified site, most commonly associated with the urban centers of Celtic culture."
+ innovation_oppidum_celtic_desc: "An #italic Oppidum#! is an large fortified site, most commonly associated with the urban centers of Celtic culture."
+ innovation_oppidum_slavic: "Gord"
+ innovation_oppidum_slavic_desc: "A #italic Gord#! is a fortified settlement, usually built on a strategic sit such as a hill, riverbank, or penninsula, consisting of several wooden houses made of earth and wood and a palisade running along the bulwark."
  innovation_leges_barbarorum: "Oral Law"
  innovation_leges_barbarorum_desc: "Passed down from elder to elder, a vast body of legal custom pertains to any dispute that may arise."
  innovation_leges_germanic: "Leges Barbarorum"
  innovation_leges_germanic_desc: "The pre-feudal 'Laws of the Barbarians' governed much of Europe between the 5th and 9th centuries, with numerous shared features such as common law."
  innovation_writing: "Writing"
  innovation_writing_desc: "Writing allows for the exchange, storage, and standardization of language and laws in both time and space and is a critical step in the development of a society."
+ innovation_formalized_rituals: "Formalized Rituals"
+ innovation_formalized_rituals_desc: "By establishing sites where the learned gather, their knowledge of sacred traditions can be safeguarded."
  unlocks_all_scriptoria: "Required for all Scriptorium Buildings"
  adopt_high_tribal_government_as_a_vassal: "Enables changing [government|E] type to [high_tribal_government|E] if a liege has a more advanced government"
  high_titles_shatter_without_this_innovation: "[SelectLocalization(GetGlobalVariable('tribal_shatter_mechanic_enabled').IsSet, 'Kingdoms and Empires of tribal rulers #EMP no longer#! shatter upon death of the holder', '')]"

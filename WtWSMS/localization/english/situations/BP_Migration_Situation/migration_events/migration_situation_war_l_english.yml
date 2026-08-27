@@ -11,6 +11,8 @@
  may_have_option_to_diverge_culture: "There is a chance we can diverge our culture and adopt [GetCultureTradition('tradition_elite_rulership').GetName] [tradition|E] or a related [tradition|E]"
  all_vassals_adopt_high_tribal_government: "All vassals who are able adopt [high_tribal_government|E]"
  all_vassals_become_subroman_or_roman_federate: "All vassals who are able adopt the appropriate Sub-Roman government[SelectLocalization( HasDlcFeature('all_under_heaven'),', and others will adopt Roman Federate government,',' ')]as appropriate"
+ recieve_just_cash: "Receive [the_char.MakeScope.ScriptValue('migration_gold_gift_without_treasury')] @gold_icon! [gold|E]"
+ recieve_cash_and_treasury: "Receive [the_char.MakeScope.ScriptValue('migration_gold_gift_with_treasury')] @gold_icon! [gold|E] and [the_char.MakeScope.ScriptValue('migration_treasury')] @treasury_icon! [treasury|E]"
  #Bootstrap to a New Culture Event
  migration_situation_war.0200.t: "A New Culture?"
  migration_situation_war.0200.desc: "Having moved into a new land and keeping the governmental trappings of the former rulers, we remain a distinct minority. We can embrace this status, functioning as an elite ruling caste, dominating the political and military spheres, or we can settle among the people and integrate. The former will allow us to field a more professional military and help prevent revolts, while the later will enable us to blend more readily with the local population. Which path will we choose?"

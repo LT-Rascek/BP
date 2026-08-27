@@ -407,7 +407,7 @@ BP_setup_vassal_contracts_476_nomad_DLC = {
 	trigger = { BP_has_dlc_necessary_for_great_steppe_situation_trigger = yes }
 	effect = {
 		#The Rouran are squeezing their vassals, as is their wont
-		title:e_rouran.holder = {
+		title:e_mongolia.holder = {
 			every_vassal = {
 				limit = { government_has_flag = government_is_nomadic }
 				if = { #Gokturks and Fufuluo Tiele especially squeezed
@@ -568,6 +568,9 @@ BP_setup_capitals_476 = {
 	effect = {
 		title:d_werle = {
 			set_capital_county = title:c_mecklenburg
+		}
+		title:d_mosania.holder = {
+			set_realm_capital = title:c_cambray
 		}
 	}
 }
@@ -811,7 +814,7 @@ BP_create_armies_476 = {
 				size = 2
 			}
 		}
-		title:e_xiongnu.holder = {
+		title:e_bactria.holder = {
 			create_hephthalite_476_army_effect = { LOCATION = 4335 }
 			create_hephthalite_476_army_effect = { LOCATION = 4335 }
 			create_hephthalite_476_army_effect = { LOCATION = 4335 }
@@ -866,10 +869,10 @@ BP_create_armies_476 = {
 BP_reduce_hunnic_herd_476 = {
 	effect = {
 		#The Huns are on the downward slope, so cut their herd tremendously
-		title:e_hunnic_empire.holder.domicile ?= {
+		title:e_caspian-pontic_steppe.holder.domicile ?= {
 			change_herd = {
 				value = this.herd
-				multiply = -0.50
+				multiply = -0.75
 			}
 		}
 	}

@@ -44,6 +44,8 @@
 @roman_civil = "gfx/interface/icons/culture_innovations/roman_civil_innovations.dds"
 @roman_military = "gfx/interface/icons/culture_innovations/roman_military_innovations.dds"
 @tribal_religion = "gfx/interface/icons/culture_innovations/tribal_religion.dds"
+@oppidum = "gfx/interface/icons/culture_innovations/oppidum.dds"
+@gord = "gfx/interface/icons/culture_innovations/gord.dds"
 
 #Military Innovations
 innovation_quilted_armor = { #Aka, Ironworking
@@ -53,6 +55,7 @@ innovation_quilted_armor = { #Aka, Ironworking
 	icon = @quilted_armor
 
 	custom = unlock_maa_armored_footmen
+	custom = reduces_migration_tribalization_odds_1
 
 	character_modifier = {
 		nomadic_horde_toughness_mult = 0.02
@@ -68,6 +71,8 @@ innovation_primitive_leverage = {
 	icon = @siege_weapons
 
 	unlock_maa = primitive_catapult
+
+	custom = reduces_migration_tribalization_odds_1
 
 	flag = global_regular
 	flag = tribal_era_regular
@@ -85,6 +90,8 @@ innovation_mustering_grounds = {
 	character_modifier = {
 		herd_capacity_mult = 0.05
 	}
+
+	custom = reduces_migration_tribalization_odds_1
 
 	flag = global_regular
 	flag = tribal_era_regular
@@ -116,7 +123,9 @@ innovation_castrae = {
 	parameters = {
 		nomad_motte_innovation_bonus = yes
 	}
-	
+
+	custom = reduces_migration_tribalization_odds_1
+
 	custom = unlocks_first_level_walls
 	custom = improves_migration_tribal_odds
 
@@ -130,8 +139,8 @@ innovation_tribal_warfare = {
 	icon = @hird
 
 	unlock_building = war_camps_02
-	custom = improves_migration_tribal_odds
-	
+
+	custom = reduces_migration_tribalization_odds_1
 	custom = unlocks_first_level_military_buildings
 	custom = unlocks_raid_wars
 
@@ -147,7 +156,7 @@ innovation_development_bp_00 = { #land_clearing
 
 	custom = reduce_develop_county_penalty_bp_00
 	custom = unlocks_first_level_economic_buildings
-	custom = improves_migration_tribal_odds
+	custom = reduces_migration_tribalization_odds_2
 
 	character_modifier = {
 		county_fertility_growth_mult = 0.05
@@ -166,7 +175,8 @@ innovation_barter = {
 	unlock_building = guild_halls_00
 	unlock_building = common_tradeport_00
 	unlock_building = market_villages_02
-	custom = improves_migration_tribal_odds
+
+	custom = reduces_migration_tribalization_odds_1
 
 	character_modifier = {
 		monthly_income_from_herd_mult = 0.05
@@ -187,8 +197,9 @@ innovation_oppidum = {
 
 	unlock_building = longhouses_02
 	unlock_building = tribe_02
-	custom = improves_migration_tribal_odds
-	
+
+	custom = reduces_migration_tribalization_odds_2
+
 	asset = {
 		trigger = {
 			OR = {
@@ -196,8 +207,13 @@ innovation_oppidum = {
 				has_cultural_parameter = heritage_group_romance
 			}
 		}
-		icon = @civil_construction_2
+		icon = @oppidum
 		name = innovation_oppidum_celtic
+	}
+	asset = {
+		trigger = { has_cultural_parameter = heritage_group_slavic }
+		icon = @gord
+		name = innovation_oppidum_slavic
 	}
 
 	character_modifier = {
@@ -225,9 +241,9 @@ innovation_leges_barbarorum = {
 	unlock_law = confederate_partition_succession_law
 	unlock_law = high_tribal_organization_1
 
-	custom = improves_migration_tribal_odds
-	custom = required_to_adopt_organized_government_during_migration
+	custom = required_to_adopt_roman_government_during_migration
 	custom = allows_confederation_to_kingdom
+	custom = reduces_migration_tribalization_odds_3
 
 	character_modifier = {
 		vassal_herd_contribution_mult = 0.02
@@ -259,8 +275,8 @@ innovation_writing = {
 
 	custom = unlocks_all_scriptoria
 	custom = adopt_high_tribal_government_as_a_vassal
-	custom = greatly_improves_migration_tribal_odds
-	custom = required_to_adopt_organized_government_during_migration
+	custom = required_to_adopt_roman_government_during_migration
+	custom = reduces_migration_tribalization_odds_3
 
 	character_modifier = {
 		monthly_income_from_herd_mult = 0.05
@@ -277,18 +293,29 @@ innovation_social_stratification = {
 
 	character_modifier = { vassal_limit = 10 }
 	
-	unlock_building = monastic_schools_00
-	unlock_building = scriptorium_00
-	
 	unlock_law = high_tribal_organization_1
 	
-	custom = unlocks_megaliths
-	custom = greatly_improves_migration_tribal_odds
-	custom = required_to_adopt_organized_government_during_migration
+	custom = required_to_adopt_roman_government_during_migration
+	custom = reduces_migration_tribalization_odds_3
 	
 	custom = can_create_de_jure_kingdoms_if_settled
 	custom = high_titles_shatter_without_this_innovation
 	custom = allows_confederation_to_kingdom
+
+	flag = global_regular
+	flag = tribal_era_regular
+}
+innovation_formalized_rituals = {
+	skill = learning
+	group = culture_group_civic
+	culture_era = culture_era_tribal
+	icon = @tribal_religion
+	
+	unlock_building = monastic_schools_00
+	unlock_building = scriptorium_00
+	custom = unlocks_megaliths
+	
+	custom = reduces_migration_tribalization_odds_1
 
 	flag = global_regular
 	flag = tribal_era_regular

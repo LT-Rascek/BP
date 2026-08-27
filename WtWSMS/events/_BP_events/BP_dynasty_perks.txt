@@ -1,0 +1,45 @@
+﻿namespace = BP_dyansty_perks
+
+BP_dyansty_perks.0001 = {
+	immediate = { root = { save_scope_as = background_throne_room_scope } }
+	
+	title = BP_dyansty_perks.0001.title
+	desc = BP_dyansty_perks.0001.desc
+	
+	type = character_event
+	theme = dynasty
+	content_source = dlc_WtWSMS
+	
+	override_background = { reference = throne_room_scope }
+	
+	right_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	
+	option = {
+		name = BP_dyansty_perks.0001.skirmishers_improved
+		root.dynasty = { add_dynasty_modifier = skirmishers_improved }
+	}
+	option = {
+		name = BP_dyansty_perks.0001.archers_improved
+		root.dynasty = { add_dynasty_modifier = archers_improved }
+	}
+	option = {
+		name = BP_dyansty_perks.0001.heavy_infantry_improved
+		root.dynasty = { add_dynasty_modifier = heavy_infantry_improved }
+	}
+	option = {
+		name = BP_dyansty_perks.0001.pikemen_improved
+		root.dynasty = { add_dynasty_modifier = pikemen_improved }
+	}
+	option = {
+		name = BP_dyansty_perks.0001.light_cavalry_improved
+		root.dynasty = { add_dynasty_modifier = light_cavalry_improved }
+	}
+	option = {
+		trigger = { culture = { has_innovation = innovation_arched_saddle } }
+		name = BP_dyansty_perks.0001.heavy_cavalry_improved
+		root.dynasty = { add_dynasty_modifier = heavy_cavalry_improved }
+	}
+}

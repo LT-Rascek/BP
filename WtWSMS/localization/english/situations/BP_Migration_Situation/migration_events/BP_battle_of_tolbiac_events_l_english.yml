@@ -33,6 +33,8 @@
  battle_of_tolbiac.0011.desc: "With the odds arrayed against me, I prayed to [ROOT.Char.MakeScope.Var('the_tolbiac_faith').Faith.HighGodNameAlternate] and turned the tide, winning the battle. I am overlooking the battlefield and now remember my promise, to embrace [ROOT.Char.MakeScope.Var('the_tolbiac_faith').Faith.GetName] and become a [ROOT.Char.MakeScope.Var('the_tolbiac_faith').Faith.GetAdherentNameNoTooltip].\n\nBut I still find myself slightly hesitating. Yes, my words were from the heart, but will I follow through with this promise and forsake [ROOT.Char.GetFaith.GetNameNoTooltip]?"
  battle_of_tolbiac.0011.i_will_keep_my_promise: "Yes! This victory is owed to [ROOT.Char.MakeScope.Var('the_tolbiac_faith').Faith.HighGodNameAlternate]!"
  battle_of_tolbiac.0011.it_was_a_moment_of_weakness: "No, no, it was a moment of weakness!"
+ 50_percent_chance_every_realm_county_flips: "There is a 50% chance that every [county|E] in your realm converts to [ROOT.Char.MakeScope.Var('the_tolbiac_faith').Faith.GetName]"
+ 50_percent_chance_every_nonzealous_vassal_flips: "There is a 50% chance that every [vassal|E] of yours, who does not have the [GetTrait('zealous').GetName( GetNullCharacter )], converts to [ROOT.Char.MakeScope.Var('the_tolbiac_faith').Faith.GetName]"
  
  battle_of_tolbiac.0012.t: "Victory at [ROOT.Char.GetCurrentLocation.GetNameNoTooltip]"
  battle_of_tolbiac.0012.desc: "With the odds arrayed against me, I prayed to ROOT.Char.GetFaith.HighGodName] and turned the tide, winning the battle. It is truly a divine miracle and has solidified my faith in ROOT.Char.GetFaith.HighGodName]."

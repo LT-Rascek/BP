@@ -4,24 +4,6 @@
 
 @cultural_title_score = 500
 
-e_xiongnu = {
-	color={ 10 90 10 }
-	capital = c_balkh # Balkh
-	
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:hepthalite }
-			add = @always_primary_score
-		}
-	}
-	
-	cultural_names = {
-		name_list_hunas = cn_hepthalite
-	}
-	
-	can_create = { general_empire_title_creation_trigger = yes }
-}
-
 k_kidarite = {
 	color={ 143 143 103 }
 	capital = c_bamian #Kapisa

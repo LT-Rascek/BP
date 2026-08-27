@@ -320,10 +320,9 @@ d_germania_inferior = {
 	235.1.1={
 		holder = 0
 	}
-	150.1.1={
-		government = tribal_government
-	}
+	#Gap
 	436.1.1={ holder = 36106 } #Unattested father of Sigebert
+	436.1.1 = { government = high_tribal_government }
 	457.1.1={
 		holder = 20785 # Sigebert the Lame
 	}
@@ -400,12 +399,12 @@ c_cologne = { #Ripurian Franks (Sigebert)
 }
 c_guelders = {
 	475.1.1 = { holder = old_frankish_CGuelders_001 }
-	475.1.1 = { government = tribal_government }
+	475.1.1 = { government = high_tribal_government }
 	475.1.1 = { liege = 0 }
 }
 c_aachen = {
 	475.1.1 = { holder = old_frankish_CAachen_001 }
-	475.1.1 = { government = tribal_government }
+	475.1.1 = { government = high_tribal_government }
 	475.1.1 = { liege = 0 }
 }
 c_koblenz = { #c_trier history
@@ -500,7 +499,7 @@ c_trier = {
 }
 c_luxembourg = {
 	475.1.1 = { holder = old_frankish_CLuxembourg_001 }
-	475.1.1 = { government = tribal_government }
+	475.1.1 = { government = high_tribal_government }
 	475.1.1 = { liege = 0 }
 }
 c_metz = {
@@ -582,7 +581,7 @@ c_briey = {
 
 d_texandria = { #Chararic's hold
 	150.1.1={
-		government = tribal_government
+		government = high_tribal_government
 	}
 	460.1.1={
 		holder = 36107 # Chararic
@@ -651,18 +650,18 @@ c_brabant = {
 }
 c_antwerpen = {
 	475.1.1 = { holder = old_frankish_CAntwerpen_001 }
-	475.1.1 = { government = tribal_government }
+	475.1.1 = { government = high_tribal_government }
 	475.1.1 = { liege = 0 }
 }
 c_zeeland = {
 	475.1.1 = { holder = old_frankish_CZeeland_001 }
-	475.1.1 = { government = tribal_government }
+	475.1.1 = { government = high_tribal_government }
 	475.1.1 = { liege = 0 }
 }
 
 d_mosania = {
 	150.1.1={
-		government = tribal_government
+		government = high_tribal_government
 	}
 	460.1.1={
 		holder = 36109 # Ragnachar
@@ -713,7 +712,7 @@ c_liege = { #Ragnachar's Franks
 }
 c_bouillon = { #Ragnachar's Franks
 	475.1.1 = { holder = old_frankish_CBouillon_001 }
-	475.1.1 = { government = tribal_government }
+	475.1.1 = { government = high_tribal_government }
 	475.1.1 = { liege = 0 }
 }
 c_namur = { #Ragnachar's Franks

@@ -1,37 +1,11 @@
 ﻿land_migration_tribal_kingdom_effect = {
-	hidden_effect = {
-		root.capital_county.empire = { save_scope_as = the_empire }
-		if = {
-			limit = {
-				this.culture = culture:old_frankish
-				NOT = { has_global_variable = formed_frankish_kingdom }
-			}
-			set_global_variable = formed_frankish_kingdom
-			
-			root.primary_title = { save_temporary_scope_as = old_title }
-			
-			create_title_and_vassal_change = {
-				type = created
-				save_scope_as = change
-				add_claim_on_loss = no
-			}
-			title:k_franks = {
-				change_title_holder = {
-					holder = root
-					change = scope:change
-				}
-			}
-			resolve_title_and_vassal_change = scope:change
-			title:k_franks = {
-				copy_title_history = scope:old_title
-				set_coa = scope:old_title
-			}
-			set_primary_title_to = title:k_franks
-			destroy_title = scope:old_title
-		}
-		else = { this.primary_title = { set_title_name_dynamic = cn_migration_settled_kingdom_dynamic } }
-		this.primary_title = { save_scope_as = the_title }
-	}
+	#Save Scopes
+	root.capital_county.empire = { save_scope_as = the_empire }
+	root.culture = { save_scope_as = the_culture }
+	this.primary_title = { save_scope_as = the_title }
+	this.capital_county.empire = { save_scope_as = the_empire }
+	#Rename the kingdom
+	this.primary_title = { set_title_name_dynamic = cn_migration_settled_kingdom_dynamic }
 	#Capital County always becomes de jure
 	this.capital_county.duchy = { set_de_jure_liege_title = scope:the_title }
 	#Shift every duchy that's completely controlled
@@ -50,6 +24,8 @@
 		}
 		set_de_jure_liege_title = scope:the_title
 	}
+	#Make the new kingdom part of the de jure hierarchy
+	scope:the_title = { set_de_jure_liege_title = scope:the_empire }
 	#Add Claim to the Empire containing your capital
 	add_pressed_claim = scope:the_empire
 	if = {
@@ -67,4 +43,37 @@
 		}
 	}
 	else = { every_heir = { add_pressed_claim = scope:the_empire } }
+}
+convert_tribal_government_to_subroman_effect = {
+	convert_to_subroman_government_ignore_tier_effect = yes
+	ordered_vassal_or_below = {
+		order_by = primary_title.tier
+		max = 9999
+		check_range_bounds = no
+		if = {
+			limit = { this.primary_title.tier >= tier_county }
+			if = {
+				limit = {
+					OR = {
+						this.culture = root.culture
+						government_has_flag = government_is_subroman_administrative_or_dynastic
+					}
+					NOT = { this.capital_county.title_province = { has_holding_type = tribal_holding } }
+					NOT = { government_has_flag = government_is_theocracy }
+				}
+				convert_to_subroman_government_ignore_tier_effect = yes
+			}
+			else_if = {
+				limit = { bp_can_become_federate_trigger = yes }
+				convert_to_roman_federate_government_effect = yes
+			}
+		}
+		else_if = {
+			limit = {
+				this.primary_title.title_province = { has_holding_type = castle_holding }
+				this.primary_title.county.holder = { government_has_flag = government_is_subroman_administrative_or_dynastic }
+			}
+			convert_to_subroman_government_ignore_tier_effect = yes
+		}
+	}
 }

@@ -119,8 +119,22 @@
 					is_ai = no
 				}
 			}
-			on_join = {}
-			on_leave = {}
+			on_join = {
+				if = {
+					limit = { has_character_modifier = migration_situation_previous_tribal }
+					remove_character_modifier = migration_situation_previous_tribal
+				}
+				if = {
+					limit = { has_character_modifier = migration_situation_previous_migrator }
+					remove_character_modifier = migration_situation_previous_migrator
+				}
+			}
+			on_leave = {
+				if = {
+					limit = { NOT = { has_character_modifier = migration_situation_previous_migrator } }
+					add_character_modifier = migration_situation_previous_migrator
+				}
+			}
 			
 			map_color = hsv{ 0.37 1.00 0.78 }
 		}
@@ -132,8 +146,22 @@
 				is_independent_ruler = yes
 				is_landed = yes
 			}
-			on_join = {}
-			on_leave = {}
+			on_join = {
+				if = {
+					limit = { has_character_modifier = migration_situation_previous_tribal }
+					remove_character_modifier = migration_situation_previous_tribal
+				}
+				if = {
+					limit = { has_character_modifier = migration_situation_previous_migrator }
+					remove_character_modifier = migration_situation_previous_migrator
+				}
+			}
+			on_leave = {
+				if = {
+					limit = { NOT = { has_character_modifier = migration_situation_previous_tribal } }
+					add_character_modifier = migration_situation_previous_tribal
+				}
+			}
 			
 			map_color = hsv{ 0.37 1.00 0.78 }
 		}

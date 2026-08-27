@@ -449,18 +449,7 @@
 	custom_description = {
 		text = all_conquered_counties_may_flip_culture_faith
 		object = scope:the_target_title
-		$ATTACKER$ = {
-			every_realm_county = {
-				limit = {
-					NOT = { this.culture = $ATTACKER$.culture }
-					any_in_list = { list = migrating_attackers this = prev.holder }
-				}
-				migration_flip_culture_faith_effect = {
-					THE_ATTACKER = $ATTACKER$
-					THE_COUNTY = this
-				}
-			}
-		}
+		migration_flip_culture_faith_in_realm_effect = { THE_ATTACKER = $ATTACKER$ }
 	}
 }
 migration_war_fire_government_culture_events_effect = {
@@ -637,47 +626,80 @@ migration_flip_holding_to_tribal_effect = {
 		}
 	}
 }
-migration_flip_culture_faith_effect = {
-	#Development of 30 should stop it.
-	# Each era beyond Tribal reduces odds by 5%
-	$THE_COUNTY$ = { save_temporary_scope_as = the_county }
-	$THE_COUNTY$.culture = { save_temporary_scope_as = the_county_culture }
-	save_temporary_scope_value_as = { name = the_county_development value = $THE_COUNTY$.development_level }
-	
-	random = {
-		chance = migration_chance_of_flip_culture_faith
-		$THE_COUNTY$ = {
-			$THE_COUNTY$.culture = { save_temporary_scope_as = the_culture }
-			$THE_COUNTY$.faith = { save_temporary_scope_as = the_faith }
+migration_flip_culture_faith_in_realm_effect = {
+	#Get the total number of source counties to restrain total number of flips
+	$THE_ATTACKER$ = {
+		set_variable = {
+			name = number_of_migration_source_counties
+			value = 0
+		}
+	}
+	every_in_list = {
+		list = migration_source_counties
+		$THE_ATTACKER$ = {
+			change_variable = {
+				name = number_of_migration_source_counties
+				add = 1
+			}
+		}
+	}
+	#Actually apply the flip counties, with the first flip checks at the least developed counties
+	$THE_ATTACKER$ = {
+		ordered_realm_county = {
+			limit = {
+				NOT = { this.culture = $THE_ATTACKER$.culture }
+				any_in_list = { list = migrating_attackers this = prev.holder }
+			}
+			order_by = {
+				value = this.development_level
+				multiply = -1.00
+			}
+			max = $THE_ATTACKER$.realm_size
 			
-			set_county_culture = $THE_ATTACKER$.culture
-			set_county_faith = $THE_ATTACKER$.faith
-			random_list = {
-				60 = {
-					add_culture_minority_effect = {
-						COUNTY = this
-						CULTURE = scope:the_culture
-						SIZE = large
-					}
-					add_faith_minority_effect = {
-						COUNTY = this
-						FAITH = scope:the_faith
-						SIZE = large
+			save_scope_as = the_county
+			#Development of 30 should stop it.
+			# Each era beyond Tribal reduces odds by 5%
+			scope:the_county = { save_temporary_scope_as = the_county }
+			scope:the_county.culture = { save_temporary_scope_as = the_county_culture }
+			save_temporary_scope_value_as = { name = the_county_development value = scope:the_county.development_level }
+			$THE_ATTACKER$ = { save_temporary_scope_as = the_attacker }
+			
+			random = {
+				chance = migration_chance_of_flip_culture_faith
+				scope:the_county = {
+					scope:the_county.culture = { save_temporary_scope_as = the_culture }
+					scope:the_county.faith = { save_temporary_scope_as = the_faith }
+					
+					set_county_culture = $THE_ATTACKER$.culture
+					set_county_faith = $THE_ATTACKER$.faith
+					random_list = {
+						60 = {
+							add_culture_minority_effect = {
+								COUNTY = this
+								CULTURE = scope:the_culture
+								SIZE = large
+							}
+							add_faith_minority_effect = {
+								COUNTY = this
+								FAITH = scope:the_faith
+								SIZE = large
+							}
+						}
+						30 = {
+							add_culture_minority_effect = {
+								COUNTY = this
+								CULTURE = scope:the_culture
+								SIZE = small
+							}
+							add_faith_minority_effect = {
+								COUNTY = this
+								FAITH = scope:the_faith
+								SIZE = small
+							}
+						}
+						10 = {}
 					}
 				}
-				30 = {
-					add_culture_minority_effect = {
-						COUNTY = this
-						CULTURE = scope:the_culture
-						SIZE = small
-					}
-					add_faith_minority_effect = {
-						COUNTY = this
-						FAITH = scope:the_faith
-						SIZE = small
-					}
-				}
-				10 = {}
 			}
 		}
 	}

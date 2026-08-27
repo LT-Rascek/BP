@@ -18,7 +18,8 @@
 d_moesia_prima = {
 	470.1.1={
 		holder = Camundus # Camundus
-		liege = e_praetorian_prefecture_illyria
+		#liege = e_praetorian_prefecture_illyria
+		liege = h_eastern_roman_empire
 		government = roman_administrative_government
 	}
 	500.1.1 = { holder = 0 }
@@ -142,10 +143,12 @@ c_sumadija = { #c_naissus history
 d_dacia = { #Empty History
 	465.1.1={
 		holder = 215002
-		liege = e_praetorian_prefecture_illyria
+		#liege = e_praetorian_prefecture_illyria
+		liege = h_eastern_roman_empire
 		government = roman_administrative_government
 	}
-	476.1.1 = { liege = e_praetorian_prefecture_illyria }
+	476.1.1 = { #liege = e_praetorian_prefecture_illyria
+		liege = h_eastern_roman_empire }
 	500.1.1={
 		liege = 0
 		holder = 0

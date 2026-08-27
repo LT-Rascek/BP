@@ -1,3 +1,78 @@
+2026-MM-DD v0.3.0 (More Work)
+-----------
+
+Landed Titles:
+- Overhauled Persian Hegemony
+   - Add the Bactrian Empire to Persia and put Bactria, Sogdiana, and Kabulistan in it
+- Moved various titles to be De Jure instead of Titular in line with CK3 DLC mechanics:
+   - Moved the Hunnic history to the Empire of Sarmatia
+   - Moved Rouran history to the Mongolian Empire
+   - Moved Hepthalite history into the Bactrian Empire
+   - Moved Tuyuhun history into Amdo
+
+Traditions:
+- "Early Slavic Warfare" Tradition overhauled
+   - No longer provides a Light Cavalry bonus
+   - No longer has sieges damaging development
+   - No longer provides extra soldiers during migrations
+   - Reduces all war Level of Fame requirements by one
+   - CBs are cheaper in general
+- "Early Slavic Traditions" Tradition overhauled
+   - No longer provides bonus to "Promote Culture" Task and to "Convert County" Tasks
+   - No longer provides easier Culture Divergence and Culture Hybridization requirements
+   - Forming Confederations no longer require a powerful neighbor, the Diplomat, or Family Hierarch traits
+   - Elevating a Confederation costs more prestige and takes a higher level of fame to pass
+   - +20 Offer Confederation Character Acceptance
+   - Titles cost 25% more gold to create
+
+Innovations:
+- Touched up some Tribal Innovation graphics and names
+- Added "Formalized Rituals" Innovation
+   - Is a Civic Innovation
+   - Required to build "Monoastic Schools", "Scriptoria", and "Megaliths" buildings
+   - Required to reform a faith but not create a new one
+
+Decisions:
+- Added a decision for a Migrator or Character who had been a migrator to become a Sub-Roman Government, partly modeling the transition of the Franks from a Tribal to Romanesque polity
+
+Dynasty Legacies:
+- Added a new Dynasty Legacy: "Despoliation", available to dynasts with Tribal, Federate, or Nomadic government, as well as certain dynasties
+   - Level 1: "Barbarian Origins": Raiding permanently unlocked, Raider Trait is easier to acquire, Pillager Commander Trait Experience increased by 25%
+   - Level 2: "Barbarian Army": Allows the dynast to pick a dynasty trait, improving the damage, toughness, and (in some cases) size of one class of Men-At-Arms
+   - Level 3: "Barbarian Kingdom": Makes Cultural Unification Casus Belli and Heritage Unification Casus Belli available, Custom Kingdoms and Empires requires one-third fewer counties to form
+   - Level 4: "Barbarian Settlement": "Promote Culture" Task Speed: +15% (does not apply to Roman Council positions), "Convert County" Task Speed: +15%
+   - Level 5: "Barbarian Future": Greatly loosens the requirements for the Adopt Clan and Adopt Feudalism decisions (including dropping innovation requirements), +1 Martial per Level of Fame, +5% Legitimacy Gain
+   - Because of engine limitations, it *cannot* be made available based on scripted content
+      - Therefore, cannot be tied to situation features
+      - We thus hardcode various Barbarian King dynasty to have it as an option, but it cannot be made available to Barbarian King custom characters
+- Romanitas, Virtue, and Elegance Tracks are mutually exclusive with Despoliation Track
+
+Casus Belli:
+- Added Heritage Unification Casus Belli:
+   - Cheaper, unlimited variant of Tribal Subjugation Casus Belli for the Despoliation Dynasty Legacy Track
+   - Only targets characters of the same heritage
+   - Can only target characters with your title or higher
+   - Your Realm must be a kingdom or smaller and be less than 50 counties in size
+
+History:
+- Slavic super-duchies replaced with confederations
+- Fixed some Alans in Hispania who should be Alauni (Western Alan) instead of Alan
+
+Tweaks:
+- In general, if a character has only a landless title under a government that is not administrative, the title is destroyed (and the character becomes an adventurer if the character is a player)
+- Members are more inclined to leave large confederations (i.e., more than 8 members)
+- AI is inclined to promote culture more in counties with "Recent Emigration" modifier
+- Hunnic herd reduced more at start
+- Burgundians replace "Ruling Caste" with "Stratocratic Elite"
+- Aristocratic government uses dynasty named realms where applicable
+
+Localization:
+- Remapped "Mongolia" localization to "Xiongnu" for the Mongolian Empire
+
+Bug Fixes:
+- Fixed a bug where Federates couldn't use the "Promote Culture" task
+- Fixed changing to Administrative government types having 0 treasury at start
+
 2026-MM-DD v0.3.0
 -----------
 
@@ -8,6 +83,7 @@ Migration Situation: Added a new situation to subsume our disparate migration me
       - Barbarian Polities: Former Migrators that now rule centralized governments
       - Successor States: All other participants
       - Tribals: Groups with tribal governments who aren't Migrators
+      - Others: All other groups
    - Regions:
       - Western Roman Empire, Eastern Roman Empire, Britannia, Germania and Slavia
       - If playing without "Khans of the Steppe", the Steppe will also be its own region
@@ -17,7 +93,7 @@ Migration Situation: Added a new situation to subsume our disparate migration me
          - Everyone is targetable by Migration CBs, in general
          - Migrators:
             - War Effects:
-               - Migration CB is enabled
+               - Migration CB is enabled, if Tribal or Nomad government
                - Cultural Unification CB is enabled
                - Lifetime Subjugation CB is increased by one
                - Adventurer CBs are less expensive
@@ -84,6 +160,8 @@ Casus Bellorum:
             - Odds of flipping culture/faith: Base 30%
                - Reduced 2% for each level of development over 5, and increased 2% by each level of development under 5
                - Odds doubled if the title province holding is a tribal, herder, or nomad holding
+               - Is more likely to occur in the least developed counties
+               - Will never flip more counties than the number of counties of your previous realm that were of your culture and faith
                - Each era, beyond the Tribal Era, for which the county culture has at least one innovation reduces odds by 5%
          - "A New Administration?" and "A New Culture?" events may fire under certain conditions
    - On White Peace:
@@ -215,6 +293,8 @@ Culture:
       - Overhauled Xiongnu culture:
          - Bellicose Ethos, Xiongnu Heritage, Xiongnu Language, Turkic aesthetics
          - Uses "Warrior Culture", "Hit and Run Tacticians", "Devoted Horsemanship"/"Horse Lords" Traditions
+- Other Culture Changes:
+   - Frankish culture uses the "Strong Believers" Tradition
 - Removed some cultures:
    - Dranganian, Barsil cultures removed
 - Languages:
@@ -244,7 +324,8 @@ Culture:
    - "Ruling Caste" Tradition is not selectable if one's Culture has "Migratory Culture" Tradition or "Shaped to Rule" or "Nomadic Rulership" Tradition
    - "Isolationst" Tradition is not selectable if one's Culture has "Migratory Culture" Tradition or "Shaped to Rule" or "Nomadic Rulership" Tradition
    - Xenophobic Tradition no longer encourages the Zealous trait
-   - Sinophilic Tradition increases baseline cultural acceptance with Chinese heritage cultures by 10
+   - "Sinophilic" Tradition increases baseline cultural acceptance with Chinese heritage cultures by 15
+   - "Frankish Traditions" reduce Men-at-Arms maintenance by 25% instead of 50%
 - Rebalanced many cultures' ethnicities
 
 Landed Titles:
@@ -289,17 +370,20 @@ History:
    - Overhauled troops of Triveria
 - Fixed up history of Brittany region
    - Britons now run most of Armorica
-- Fixed up Frankish character history
+- Fixed up Frankish character and culture history
    - Ragnachar, Chararic, Childeric, and Sigobert's polities are in more likely locations
    - Created some confederations centered on Ragnachar/Chararic/Childeric/Sigobert on the Roman side of the Rhine to model the proto-state formation ongoing before the establishment of Francia
    - Broke up the Frankish holdings on the opposite side of the Rhine into individual tribal units
    - Landed the Frankish duchies to better conform with CK3 expectations with respect to duchies
    - Added Evochilde as the mother of Theuderic I of Metz
+   - Sigobert no longer has the Loyal trait
    - Overhauled Clovis' history so he isn't a stack of traits
    - Clovis acquires traits in history more in line with CK3's childhood system
-      - In 476, he starts as a Rowdy, Ambitious, Agile, Legendary Leader
+      - In 476, he starts as a Rowdy, Ambitious, Agile, Legendary Leader, with education tilting towards Intrigue and Martial
       - Clovis education is intrigue-aligned now, becoming (historically) an "Intricate Webweaver"
       - Clovis is Cynical and becomes zealous after the Battle of Tolbiac
+   - Franks on the Gallic side of the Rhine are High Tribals, while those on the German side are Tribal, in line with Frankish history
+   - Frankish culture history overhauled; Franks are in Classical Antiquity Period after 395
 - The Frisians are downgraded to a duchy instead of a kingdom
 - Northern Gaul has reduced development
 - Extensively overhauled Steppe history in 476
@@ -365,6 +449,7 @@ Decisions:
 
 Events:
 - Added "A New Administration?" event that fires under certain wars, namely Migrations and "Overrun Duchy/Kingdom" Casus Belli
+   - Grants a small amount of money and treasury to prevent immediate economic collapse
    - If the target of the migration has a Centralized Government, an event will fire allowing the attacker to adopt Hight Tribal Government
       - If adopting the High Tribal government, the ruler receives a modifier increasing monthly control growth and reducing different faith Popular Opinion
       - If declining to upgrade the government, the ruler receives prestige and a Level of Fame
@@ -372,6 +457,7 @@ Events:
          - This inherits the Sub-Roman Transition state from the previous government as well
          - Adopting Roman government gives 5% cultural acceptance with all cultures with a Roman Political or Cultural Tradition
          - Will have a chance to diverge your culture and give either "Migratory Culture" Tradition or "Nomadic Rulership" Tradition (if having "Shaped to Rule" Tradition)
+         - Personal troops are converted to title troops for Administrative government forms
 - Added "A New Culture?" event that fires under certain wars, namely Migrations and "Overrun Duchy/Kingdom" Casus Belli
    - Models "Elite Transfer" sort of migration, wherein the cultural elite move instead of the whole populace
    - You either adopt a new divergent culture or your culture diverges from yours (if you were the culture head)
