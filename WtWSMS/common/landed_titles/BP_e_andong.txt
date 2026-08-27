@@ -1,0 +1,3100 @@
+﻿@correct_culture_primary_score = 100
+@better_than_the_alternatives_score = 50
+@always_primary_score = 1000
+
+e_andong = {
+	color = { 50 50 50 }
+
+	capital = c_LIAO_linhuang
+
+	cultural_names = {
+        name_list_balhae = cn_yodong
+        name_list_korean = cn_yodong
+    }
+
+    k_balhae = {
+        color = { 95 105 170 }
+    
+        capital = c_BAL_yongcheon
+
+		cultural_names = {
+	        name_list_khitan = cn_dan_gur
+	        name_list_korean = cn_balhae
+	        name_list_balhae = cn_balhae
+	        name_list_jurchen = cn_dazhen
+	    }
+    
+        d_BAL_parhae = {
+        	#this duchy mixes several "provinces" of Balhae for gameplay reasons, and thus doesn't have a proper historical name attached to it
+        	#thus, we're using an alternate name for "Balhae" instead, for flavour and to nod at its "core territory" status
+            color = { 105 95 160 }
+    
+            capital = c_BAL_yongcheon
+
+			cultural_names = {
+		        name_list_khitan = cn_dan_gur
+		        name_list_korean = cn_balhae
+		        name_list_balhae = cn_balhae
+		        name_list_jurchen = cn_dazhen
+		        name_list_han = cn_longquan
+		    }
+    
+            c_BAL_yongcheon = { #Longquan
+                color = { 95 85 150 }
+
+                cultural_names = {
+                    name_list_korean = cn_yongcheon
+                    name_list_balhae = cn_yongcheon
+                }
+    
+                b_Liao_Shangjing = {
+                    province = 11828
+
+                    cultural_names = {
+                        name_list_korean = cn_yongju
+                        name_list_balhae = cn_sanggyeong
+                        name_list_han = cn_longzhou
+                    }
+    
+                    color = { 95 85 150 }
+                }
+                b_Liao_Bozhou = {
+                    province = 11827
+    
+                    color = { 95 85 150 }
+                } 
+                b_FIC_Liao_Daguokuishan = {
+                    province = 11818
+    
+                    color = { 95 85 150 }
+                }
+                b_FIC_Liao_Mudanjiang = {
+                    province = 11825
+    
+                    color = { 95 85 150 }
+                }
+                b_FIC_Liao_Qingquan = {
+                    province = 11853
+    
+                    color = { 95 85 150 }
+                }
+            }
+    
+            c_BAL_west_hyeondeok = { #West half of Xiande
+                color = { 105 75 185 }
+
+                cultural_names = {
+                    name_list_korean = cn_west_hyeondeok
+                    name_list_balhae = cn_west_hyeondeok
+                }
+    
+                b_Liao_Zhongjing = {
+                    province = 11834
+
+                    cultural_names = {
+                        name_list_korean = cn_hyeonju
+                        name_list_balhae = cn_junggyeong
+                        name_list_han = cn_xianzhou
+                    }
+    
+                    color = { 105 75 185 }
+                }
+                b_Liao_Tangzhou2 = {
+                    province = 11824
+    
+                    color = { 105 75 185 }
+                }
+                b_FIC_Liao_Nansuan = {
+                    province = 11822
+    
+                    color = { 105 75 185 }
+                }
+                b_FIC_Liao_Erdaojiang = {
+                    province = 11823
+    
+                    color = { 105 75 185 }
+                }
+            }
+    
+            c_BAL_east_hyeondeok = { #East half of Xiande
+                color = { 135 105 215 }
+
+                cultural_names = {
+                    name_list_korean = cn_east_hyeondeok
+                    name_list_balhae = cn_east_hyeondeok
+                }
+    
+                b_FIC_Liao_Helong = {
+                    province = 11839
+    
+                    color = { 135 105 215 }
+                }
+                b_Liao_Xingzhou = {
+                    province = 11838
+    
+                    color = { 135 105 215 }
+                }
+                b_FIC_Liao_Yanji = {
+                    province = 11832
+    
+                    color = { 135 105 215 }
+                }
+                b_Liao_Luzhou = {
+                    province = 11833
+    
+                    color = { 135 105 215 }
+                }
+            }
+    
+            c_BAL_dongju = {    #Tongzhou
+                color = { 160 150 185 }
+
+                cultural_names = {
+                    name_list_korean = cn_dongju
+                    name_list_balhae = cn_dongju
+                }
+    
+                b_Liao_Tongzhou2 = {
+                    province = 11830
+
+	                cultural_names = {
+	                    name_list_korean = cn_dongju
+	                    name_list_balhae = cn_dongju
+	                }
+    
+                    color = { 160 150 185 }
+                }
+                b_FIC_Liao_Tongan = {
+                    province = 11852
+    
+                    color = { 160 150 185 }
+                }
+                b_Liao_Sushen = {
+                    province = 11829
+    
+                    color = { 160 150 185 }
+                }
+            }
+    
+            c_BAL_yeongju = {   #Yingzhou
+                color = { 65 60 85 }
+
+                cultural_names = {
+                    name_list_korean = cn_yeongju
+                    name_list_balhae = cn_yeongju
+                }
+    
+                b_Liao_Yingzhou = {
+                    province = 11817
+
+	                cultural_names = {
+	                    name_list_korean = cn_yeongju
+	                    name_list_balhae = cn_yeongju
+	                }
+    
+                    color = { 65 60 85 }
+                }
+                b_FIC_Liao_Yingan = {
+                    province = 11826
+    
+                    color = { 65 60 85 }
+                }
+            }
+        }
+    
+        d_BAL_moe_su = {    #Moe & Su/Makhil & Sokju
+            color = { 195 115 205}
+    
+            capital = c_BAL_makhil
+    
+            c_BAL_makhil = {    #Moe
+                color = { 185 105 200 }
+
+                cultural_names = {
+                    name_list_korean = cn_jeongju_2
+                    name_list_balhae = cn_jeongju_2
+                    name_list_han = cn_zhengzhou
+                }
+    
+                b_Liao_Mozhou = {
+                    province = 11813
+    
+                    color = { 185 105 200 }
+                }
+                b_Liao_Gaozhou2 = {
+                    province = 11814
+    
+                    color = { 185 105 200 }
+                }
+                b_FIC_Liao_Nanmoan = {
+                    province = 11929
+    
+                    color = { 185 105 200 }
+                }
+                b_FIC_Liao_Longfengshan = {
+                    province = 11819
+    
+                    color = { 185 105 200 }
+                }
+            }
+    
+            c_BAL_west_makhil = {   #western Moe
+                color = { 225 125 235 }
+
+                cultural_names = {
+                    name_list_korean = cn_jeonghwa
+                    name_list_balhae = cn_jeonghwa
+                    name_list_han = cn_zhengjie
+                }
+    
+                b_Liao_Ningjiang = {
+                    province = 11812
+    
+                    color = { 225 125 235 }
+                }
+                b_FIC_Liao_Moedu = {
+                    province = 11810
+    
+                    color = { 225 125 235 }
+                }
+                b_FIC_Liao_Ximoan = {
+                    province = 11811
+    
+                    color = { 225 125 235 }
+                }
+            }
+    
+            c_BAL_sokju = { #Su
+                color = { 205 80 210 }
+
+                cultural_names = {
+                    name_list_korean = cn_jinju
+                    name_list_balhae = cn_jinju
+                }
+    
+                b_Liao_Suzhou2 = {
+                    province = 11821
+    
+                    color = { 205 80 210 }
+                }
+                b_FIC_Liao_Suping = {
+                    province = 11820
+    
+                    color = { 205 80 210 }
+                }
+                b_Liao_Yongji = {
+                    province = 11747
+    
+                    color = { 205 80 210 }
+                }
+            }
+        }
+    
+        d_BAL_buyeo = { #Fuyu
+            color = { 90 90 240 }
+    
+            capital = c_BAL_changchun
+
+            cultural_names = {
+                name_list_korean = cn_buyeo
+                name_list_balhae = cn_buyeo
+            }
+    
+            c_BAL_changchun = {
+                color = { 65 65 215 }
+
+                cultural_names = {
+                    name_list_korean = cn_buyeo
+                    name_list_balhae = cn_buyeo
+                }
+    
+                b_Liao_Changchun2 = {
+                    province = 11746
+
+	                cultural_names = {
+	                    name_list_korean = cn_buyeo
+	                    name_list_balhae = cn_buyeoseong
+	                }
+    
+                    color = { 65 65 215 }
+                }
+                b_Liao_Weizhou = {
+                    province = 11743
+    
+                    color = { 65 65 215 }
+                }
+                b_Liao_Binzhou = {
+                    province = 11745
+    
+                    color = { 65 65 215 }
+                }
+                b_Liao_Xiangzhou = {
+                    province = 11744
+    
+                    color = { 65 65 215 }
+                }
+            }
+    
+            c_BAL_fuzhou = {
+                color = { 80 80 230 }
+
+                cultural_names = {
+                    name_list_korean = cn_buju
+                    name_list_balhae = cn_buju
+                }
+    
+                b_Liao_Fuzhou2 = {
+                    province = 11779
+
+	                cultural_names = {
+	                    name_list_korean = cn_buju
+	                    name_list_balhae = cn_buju
+	                }
+    
+                    color = { 80 80 230 }
+                }
+                b_Liao_Suzhou = {
+                    province = 11777
+    
+                    color = { 80 80 230 }
+                }
+                b_Liao_Tonghua = {
+                    province = 11778
+    
+                    color = { 80 80 230 }
+                }
+                b_Liao_Xianzhou2 = {
+                    province = 11780
+    
+                    color = { 80 80 230 }
+                }
+            }
+    
+            c_BAL_yizhou = {
+                color = { 50 50 200 }
+    
+                b_Liao_Yizhou = {
+                    province = 11736
+    
+                    color = { 50 50 200 }
+                }
+                b_Liao_Fengzhou3 = {
+                    province = 11741
+    
+                    color = { 50 50 200 }
+                }
+                b_Liao_Jizhou = {
+                    province = 11742
+    
+                    color = { 50 50 200 }
+                }
+            }
+    
+            c_BAL_xinzhou = {
+                color = { 55 30 200 }
+    
+                b_Liao_Xinzhou = {
+                    province = 11752
+    
+                    color = { 55 30 200 }
+                }
+                b_FIC_Liao_Fuyunan = {
+                    province = 11749
+    
+                    color = { 55 30 200 }
+                }
+            }
+        }
+    
+        d_BAL_amnok_jangryeong = {   #Yalu-Changling (mix of Amnok & Jangryeong)
+            color = { 135 35 135 }
+    
+            capital = c_BAL_east_amnok
+
+            cultural_names = {
+                name_list_korean = cn_amnok_jangryeong
+                name_list_balhae = cn_amnok_jangryeong
+            }
+    
+            c_BAL_east_amnok = {    #east part of Amnok/Yalu
+                color = { 125 25 125 }
+
+                cultural_names = {
+                    name_list_korean = cn_east_amnok
+                    name_list_balhae = cn_east_amnok
+                }
+    
+                b_Liao_Xijing = {
+                    province = 11806
+
+                    cultural_names = {
+                        name_list_korean = cn_sinju
+                        name_list_balhae = cn_seogyeong
+                        name_list_han = cn_shenzhou
+                    }
+    
+                    color = { 125 25 125 }
+                }
+                b_Liao_Luzhou2 = {
+                    province = 11840
+    
+                    color = { 125 25 125 }
+                }
+                b_Liao_Fusong = {
+                    province = 11835
+    
+                    color = { 125 25 125 }
+                }
+                b_FIC_Liao_Changbaishan = {
+                    province = 11836
+    
+                    color = { 125 25 125 }
+                }
+                b_FIC_Liao_Tianchi = {
+                    province = 11837
+    
+                    color = { 125 25 125 }
+                }
+            }
+            c_BAL_west_amnok = {    #west part of Amnok/Yalu
+                color = { 235 135 235 }
+
+                cultural_names = {
+                    name_list_korean = cn_west_amnok
+                    name_list_balhae = cn_west_amnok
+                }
+    
+                b_Liao_Zhengzhou = {
+                    province = 11802
+    
+                    color = { 235 135 235 }
+                }
+                b_Liao_Kuandianzi = {
+                    province = 11801
+    
+                    color = { 235 135 235 }
+                }
+                b_Liao_Huanzhou = {
+                    province = 11805
+    
+                    color = { 250 150 250 }
+                }
+                b_FIC_Liao_Yaluan = {
+                    province = 11807
+    
+                    color = { 235 135 235 }
+                }
+            }
+    
+            c_BAL_east_jangryeong = {    #East Jangryeong/Changling
+                color = { 130 65 160 }
+
+                cultural_names = {
+                    name_list_korean = cn_east_jangryeong
+                    name_list_balhae = cn_east_jangryeong
+                }
+    
+                b_Liao_Changling = {
+                    province = 11809
+
+	                cultural_names = {
+	                	name_list_korean = cn_haju
+	                	name_list_balhae = cn_haju
+	                	name_list_han = cn_xiazhou
+	                }
+    
+                    color = { 130 65 160 }
+                }
+                b_FIC_Liao_Quliuan = {
+                    province = 11748
+    
+                    color = { 130 65 160 }
+                }
+                b_FIC_Liao_Beichang = {
+                    province = 11750
+    
+                    color = { 130 65 160 }
+                }
+            }
+    
+            c_BAL_west_jangryeong = {    #West Jangryeong/Changling
+                color = { 110 10 110 }
+
+                cultural_names = {
+                    name_list_korean = cn_west_jangryeong
+                    name_list_balhae = cn_west_jangryeong
+                }
+    
+                b_Liao_Hezhou = {
+                    province = 11808
+    
+                    color = { 110 10 110 }
+                }
+                b_FIC_Liao_Hongfucun = {
+                    province = 11751
+    
+                    color = { 125 25 125 }
+                }
+                b_FIC_Liao_Baichang = {
+                    province = 11804
+    
+                    color = { 110 10 110 }
+                }
+            }
+        }
+    
+        d_BAL_southern_balhae = {
+            color = { 70 90 190 }
+    
+            capital = c_BAL_namhae
+
+            cultural_names = {
+                name_list_korean = cn_okjeo
+                name_list_balhae = cn_okjeo
+            }
+    
+            c_BAL_namhae = {    #Nanhai
+                color = { 60 80 180 }
+
+                cultural_names = {
+                    name_list_korean = cn_namhae
+                    name_list_balhae = cn_namhae
+                }
+    
+                b_Liao_Nanjing = {
+                    province = 11842
+
+                    cultural_names = {
+                        name_list_korean = cn_okju
+                        name_list_balhae = cn_namgyeong
+                    	name_list_han = cn_wozhou
+                    }
+    
+                    color = { 60 80 180 }
+                }
+                b_Liao_Tianqing = {
+                    province = 11841
+    
+                    color = { 60 80 180 }
+                }
+                b_FIC_Liao_Nanhaikou = {
+                    province = 11843
+    
+                    color = { 60 80 180 }
+                }
+            }
+    
+            c_BAL_fengzhou = {
+                color = { 55 105 215 }
+
+                cultural_names = {
+                    name_list_korean = cn_pungju
+                    name_list_balhae = cn_pungju
+                }
+    
+                b_Liao_Fengzhou4 = {
+                    province = 11844
+
+	                cultural_names = {
+	                    name_list_korean = cn_pungju
+	                    name_list_balhae = cn_pungju
+	                }
+    
+                    color = { 55 105 215 }
+                }
+                b_FIC_Liao_Nandongkou = {
+                    province = 11845
+    
+                    color = { 55 105 215 }
+                }
+            }
+    
+            c_BAL_southyongwon = {  #Longyuan
+                color = { 25 45 140 }
+
+                cultural_names = {
+                    name_list_korean = cn_south_yongwon
+                    name_list_balhae = cn_south_yongwon
+                }
+    
+                b_Liao_Dongjing = {
+                    province = 11848
+
+                    cultural_names = {
+                        name_list_korean = cn_gyeongju
+                        name_list_balhae = cn_donggyeong
+                        name_list_han = cn_qingzhou
+                    }
+    
+                    color = { 25 45 140 }
+                }
+                b_Liao_Helan = {
+                    province = 11846
+    
+                    color = { 25 45 140 }
+                }
+                b_Liao_Wanhaifu = {
+                    province = 11847
+    
+                    color = { 25 45 140 }
+                }
+            }
+    
+            c_BAL_northyongwon = {  #Longyuan
+                color = { 65 95 170 }
+
+                cultural_names = {
+                    name_list_korean = cn_north_yongwon
+                    name_list_balhae = cn_north_yongwon
+                }
+    
+                b_Liao_Lungyuanfu = {
+                    province = 11849
+    
+                    color = { 65 95 170 }
+                }
+                b_FIC_Liao_Huanghekou = {
+                    province = 11850
+    
+                    color = { 65 95 170 }
+                }
+                b_FIC_Liao_Tumen = {
+                    province = 11831
+    
+                    color = { 65 95 170 }
+                }
+            }
+        }
+
+		d_LIAO_dongjing = {
+			color = { 5 170 85 }
+
+			cultural_names = {
+				name_list_korean = cn_yodong
+				name_list_balhae = cn_yodong
+				name_list_khitan = cn_dongjing
+			}
+
+			capital = c_LIAO_shenyang
+
+			c_LIAO_shenyang = {
+				color = { 10 175 90 }
+
+				cultural_names = {
+					name_list_korean = cn_simyang
+					name_list_balhae = cn_simyang
+				}
+
+				b_Liao_Shenyang = {
+					province = 11785
+
+					color = { 10 175 90 }
+
+					cultural_names = {
+						name_list_korean = cn_simyang
+						name_list_balhae = cn_simyang
+					}
+				}
+				b_Liao_Tangzhou = {
+					province = 11784
+
+					color = { 10 175 90 }
+				}
+				b_Liao_Liaoyang = {
+					province = 11786
+
+					color = { 10 175 90 }
+				}
+				b_Liao_Haizhou = {
+					province = 11787
+
+					color = { 10 175 90 }
+				}
+				b_Liao_Yaozhou = {
+					province = 11788
+
+					color = { 10 175 90 }
+				}
+			}
+
+			c_LIAO_yinzhou = {
+				color = { 15 90 50 }
+
+				cultural_names = {
+					name_list_korean = cn_eunju
+					name_list_balhae = cn_eunju
+				}
+
+				b_Liao_Yinzhou = {
+					province = 11782
+
+					color = { 15 90 50 }
+
+					cultural_names = {
+						name_list_korean = cn_eunju
+						name_list_balhae = cn_eunju
+					}
+				}
+				b_Liao_Qizhou = {
+					province = 11781
+
+					color = { 15 90 50 }
+				}
+				b_Liao_Guangzhou = {
+					province = 11783
+
+					color = { 15 90 50 }
+				}
+				b_FIC_Liao_Huangcaocun = {
+					province = 11803
+
+					color = { 15 90 50 }
+				}
+			}
+
+			c_LIAO_zhenzhou = {
+				color = { 30 120 100 }
+
+				cultural_names = {
+					name_list_korean = cn_jinju
+					name_list_balhae = cn_jinju
+				}
+
+				b_Liao_Zhenzhou = {
+					province = 11790
+
+					color = { 30 120 100 }
+
+					cultural_names = {
+						name_list_korean = cn_jinju
+						name_list_balhae = cn_jinju
+					}
+				}
+				b_Liao_Fuping = {
+					province = 11791
+
+					color = { 30 120 100 }
+				}
+				b_Liao_Suning = {
+					province = 11792
+
+					color = { 30 120 100 }
+				}
+				b_FIC_Liao_Biliujiang = {
+					province = 11793
+
+					color = { 30 120 100 }
+				}
+			}
+
+			c_LIAO_diezhou = {
+				color = { 45 205 175 }
+
+				cultural_names = {
+					name_list_korean = cn_cheopju
+					name_list_balhae = cn_cheopju
+				}
+
+				b_Liao_Diezhou = {
+					province = 11794
+
+					color = { 45 205 175 }
+
+					cultural_names = {
+						name_list_korean = cn_cheopju
+						name_list_balhae = cn_cheopju
+					}
+				}
+				b_Liao_Tongzhou = {
+					province = 11789
+
+					color = { 45 205 175 }
+				}
+				b_Liao_Kaizhou = {
+					province = 11795
+
+					color = { 45 205 175 }
+				}
+				b_Liao_Dandong = {
+					province = 11796
+
+					color = { 45 205 175 }
+				}
+			}
+
+			c_LIAO_guidezhou = {
+				color = { 35 170 70 }
+
+				cultural_names = {
+					name_list_korean = cn_gwideokju
+					name_list_balhae = cn_gwideokju
+				}
+
+				b_Liao_Guidezhou = {
+					province = 11799
+
+					color = { 35 170 70 }
+
+					cultural_names = {
+						name_list_korean = cn_gwideokju
+						name_list_balhae = cn_gwideokju
+					}
+				}
+				b_Liao_Xiyuan = {
+					province = 11798
+
+					color = { 35 170 70 }
+				}
+				b_Liao_Fengcheng = {
+					province = 11800
+
+					color = { 35 170 70 }
+				}
+				b_FIC_Liao_Shaozijiang = {
+					province = 11797
+
+					color = { 35 170 70 }
+				}
+			}
+		}
+    }
+
+	k_shiwei = {
+		color = { 240 115 155 }
+
+		capital = c_SW_huangtouguo
+
+		d_SW_qingxingan = {
+			color = { 235 120 120 }
+
+			capital = c_SW_huangtouguo
+
+			c_SW_huangtouguo = {
+				color = { 230 125 125 }
+
+				b_FIC_Amur_Jiahuangtou = {
+					province = 11638
+
+					color = { 230 125 125 }
+				}
+				b_FIC_Amur_Caoqiu = {
+					province = 11639
+
+					color = { 230 125 125 }
+				}
+				b_FIC_Amur_Ganheyang = {
+					province = 11637
+
+					color = { 230 125 125 }
+				}
+			}
+
+			c_SW_xinghuangtou = {
+				color = { 225 140 140 }
+
+				b_FIC_Amur_Xinener = {
+					province = 11640
+
+					color = { 225 140 140 }
+				}
+				b_FIC_Amur_Xinganling = {
+					province = 11641
+
+					color = { 225 140 140 }
+				}
+			}
+
+			c_SW_nabeiguo = {
+				color = { 220 155 155 }
+
+				b_FIC_Amur_Zhongnenjiang = {
+					province = 11647
+
+					color = { 220 155 155 }
+				}
+				b_FIC_Amur_Baihetudi = {
+					province = 11646
+
+					color = { 220 155 155 }
+				}
+				b_FIC_Amur_Jindiaotudi = {
+					province = 11645
+
+					color = { 220 155 155 }
+				}
+				b_FIC_Amur_Bailangtudi = {
+					province = 11644
+
+					color = { 220 155 155 }
+				}
+			}
+
+			c_SW_xingnabei = {
+				color = { 215 170 170 }
+
+				b_FIC_Amur_Xianbeishan = {
+					province = 11642
+
+					color = { 215 170 170 }
+				}
+				b_FIC_Amur_Gaocaoer = {
+					province = 11643
+
+					color = { 215 170 170 }
+				}
+			}
+
+			c_SW_luotuoguo = {
+				color = { 210 185 185 }
+
+				b_FIC_Amur_Jialuotuo = {
+					province = 11650
+
+					color = { 210 185 185 }
+				}
+				b_FIC_Amur_Jinshujiang = {
+					province = 11649
+
+					color = { 210 185 185 }
+				}
+				b_FIC_Amur_Yalujiang = {
+					province = 11648
+
+					color = { 210 185 185 }
+				}
+				b_FIC_Amur_Nendadu = {
+					province = 11651
+
+					color = { 210 185 185 }
+				}
+			}
+		}
+		
+		d_SW_lingxiguo = {
+			color = { 255 105 105 }
+
+			capital = c_SW_lingxiguo
+
+			c_SW_lingxiguo = {
+				color = { 245 95 95 }
+
+				b_FIC_Amur_Jialingxi = {
+					province = 11631
+
+					color = { 245 95 95 }
+				}
+				b_FIC_Amur_Yuancao = {
+					province = 11629
+
+					color = { 245 95 95 }
+				}
+				b_FIC_Amur_Hurka = {
+					province = 11630
+
+					color = { 245 95 95 }
+				}
+			}
+
+			c_SW_heiheguo = {
+				color = { 250 95 70 }
+
+				b_FIC_Amur_Beihelin = {
+					province = 11627
+
+					color = { 250 95 70 }
+				}
+				b_FIC_Amur_Humari = {
+					province = 11628
+
+					color = { 250 95 70 }
+				}
+				b_FIC_Mong_Banouhe = {
+					province = 11610
+
+					color = { 250 95 70 }
+				}
+			}
+
+			c_SW_powoguo = {
+				color = { 255 130 115 }
+
+				b_FIC_Amur_Jiapowo = {
+					province = 11632
+
+					color = { 255 130 115 }
+				}
+				b_FIC_Amur_Iskenhe = {
+					province = 11633
+
+					color = { 255 130 115 }
+				}
+				b_FIC_Amur_Ganyijiang = {
+					province = 11634
+
+					color = { 255 130 115 }
+				}
+				b_FIC_Amur_Ganhejiang = {
+					province = 11635
+
+					color = { 255 130 115 }
+				}
+			}
+		}
+
+		d_SW_ruzheguo = {
+			color = { 155 95 85 }
+
+			capital = c_SW_jiqin_hari
+
+			c_SW_jiqin_hari = {
+				color = { 150 90 80 }
+
+				b_Jiqin_Hari = {
+					province = 11657
+
+					color = { 150 90 80 }
+				}
+				b_FIC_Amur_Jiaruzhe = {
+					province = 11658
+
+					color = { 150 90 80 }
+				}
+				b_FIC_Amur_Xuduohubo = {
+					province = 11659
+
+					color = { 150 90 80 }
+				}
+				b_FIC_Amur_Nenshidi = {
+					province = 11667
+
+					color = { 150 50 40 }
+				}
+			}
+
+			c_SW_ruzhejiang = {
+				color = { 150 70 60 }
+
+				b_FIC_Amur_Ruzhejiang = {
+					province = 11661
+
+					color = { 150 70 60 }
+				}
+				b_FIC_Amur_Dalukou = {
+					province = 11660
+
+					color = { 150 70 60 }
+				}
+				b_FIC_Amur_Heyucun = {
+					province = 11662
+
+					color = { 150 70 60 }
+				}
+			}
+
+			c_SW_dongruzhe = {
+				color = { 150 50 40 }
+
+				b_FIC_Amur_Fanlinan = {
+					province = 11665
+
+					color = { 150 50 40 }
+				}
+				b_FIC_Amur_Pilutidu = {
+					province = 11663
+
+					color = { 150 50 40 }
+				}
+				b_FIC_Amur_Nenshuide = {
+					province = 11666
+
+					color = { 150 90 80 }
+				}
+			}
+		}
+
+		d_SW_puyudao = {
+			color = { 255 95 55 }
+
+			capital = c_SW_puyuzhou
+
+			c_SW_puyuzhou = {
+				color = { 245 85 45 }
+
+				b_Amur_Puyu = {
+					province = 11671
+
+					color = { 245 85 45 }
+				}
+				b_FIC_Amur_Xipuyu = {
+					province = 11670
+
+					color = { 245 85 45 }
+				}
+				b_FIC_Amur_Fulunshan = {
+					province = 11672
+
+					color = { 245 85 45 }
+				}
+				b_FIC_Amur_Yemaotudi = {
+					province = 11673
+
+					color = { 245 85 45 }
+				}
+			}
+
+			c_SW_damoguo = {
+				color = { 245 145 70 }
+
+				b_Amur_Mergen = {
+					province = 11680
+
+					color = { 245 145 70 }
+				}
+				b_FIC_Amur_Xijiadamo = {
+					province = 11678
+
+					color = { 245 145 70 }
+				}
+				b_FIC_Amur_Xiaoqiu = {
+					province = 11679
+
+					color = { 245 145 70 }
+				}
+				b_FIC_Amur_Luhean = {
+					province = 11677
+
+					color = { 245 145 70 }
+				}
+			}
+
+			c_SW_shanbeiguo = {
+				color = { 200 125 80 }
+
+				b_FIC_Amur_Jiashanbei = {
+					province = 11682
+
+					color = { 200 125 80 }
+				}
+				b_FIC_Amur_Dongweian = {
+					province = 11681
+
+					color = { 200 125 80 }
+				}
+				b_FIC_Amur_Nemorjiang = {
+					province = 11668
+
+					color = { 200 125 80 }
+				}
+				b_FIC_Amur_Jinshuhe = {
+					province = 11669
+
+					color = { 200 125 80 }
+				}
+			}
+
+			c_SW_heilonghean = {
+				color = { 150 85 10 }
+
+				b_FIC_Amur_Heisenlin = {
+					province = 11674
+
+					color = { 150 85 10 }
+				}
+				b_FIC_Amur_Linyuan = {
+					province = 11675
+
+					color = { 150 85 10 }
+				}
+				b_FIC_Amur_Yuanlin = {
+					province = 11676
+
+					color = { 150 85 10 }
+				}
+			}
+		}
+
+		d_SW_sushenguo = {
+			color = { 255 30 30 }
+
+			capital = c_SW_suihua
+
+			c_SW_suihua = {
+				color = { 245 20 20 }
+
+				b_Amur_Suihua = {
+					province = 11690
+
+					color = { 245 20 20 }
+				}
+				b_FIC_Amur_Lindu = {
+					province = 11689
+
+					color = { 245 20 20 }
+				}
+				b_FIC_Amur_Yingcao = {
+					province = 11698
+
+					color = { 245 20 20 }
+				}
+				b_FIC_Amur_Yingsenlin = {
+					province = 11684
+
+					color = { 245 20 20 }
+				}
+			}
+
+			c_SW_heilonglin = {
+				color = { 240 30 30 }
+
+				b_FIC_Amur_Heilonglin = {
+					province = 11688
+
+					color = { 240 30 30 }
+				}
+				b_FIC_Amur_Longcaoan = {
+					province = 11687
+
+					color = { 240 30 30 }
+				}
+			}
+
+			c_SW_lupingyuan = {
+				color = { 235 40 40 }
+
+				b_FIC_Amur_Lupingyuan = {
+					province = 11683
+
+					color = { 235 40 40 }
+				}
+				b_FIC_Amur_Yemantudi = {
+					province = 11685
+
+					color = { 235 40 40 }
+				}
+				b_FIC_Amur_Yerencao = {
+					province = 11686
+
+					color = { 235 40 40 }
+				}
+			}
+
+			c_SW_fancao = {
+				color = { 230 50 50 }
+
+				b_FIC_Amur_Fancao = {
+					province = 11699
+
+					color = { 230 50 50 }
+				}
+				b_FIC_Amur_Erliuyu = {
+					province = 11700
+
+					color = { 230 50 50 }
+				}
+				b_FIC_Amur_Cangcao = {
+					province = 11701
+
+					color = { 230 50 50 }
+				}
+			}
+
+			c_SW_gonghejiang = {
+				color = { 225 60 60 }
+
+				b_FIC_Amur_Gonghejiang = {
+					province = 11702
+
+					color = { 225 60 60 }
+				}
+				b_FIC_Amur_Dasenlin = {
+					province = 11664
+
+					color = { 225 60 60 }
+				}
+			}
+		}
+		
+		d_SW_heicheziguo = {
+			color = { 210 40 70 }
+
+			capital = c_SW_zhongcheziguo
+
+			c_SW_zhongcheziguo = {
+				color = { 200 30 60 }
+
+				b_FIC_Mong_Zuunbuir = {
+					province = 11570
+
+					color = { 200 30 60 }
+				}
+				b_FIC_Mong_Xisaiyin = {
+					province = 11571
+
+					color = { 200 30 60 }
+				}
+				b_FIC_Mong_Beiheisha = {
+					province = 11577
+
+					color = { 200 30 60 }
+				}
+				b_FIC_Mong_Nanchezi = {
+					province = 11576
+
+					color = { 200 30 60 }
+				}
+			}
+
+			c_SW_dongcheziguo = {
+				color = { 220 40 40 }
+
+				b_FIC_Mong_Jiasaihe = {
+					province = 11572
+
+					color = { 220 40 40 }
+				}
+				b_FIC_Mong_Dongheisha = {
+					province = 11573
+
+					color = { 220 40 40 }
+				}
+				b_FIC_Mong_Chezier = {
+					province = 11574
+
+					color = { 220 40 40 }
+				}
+				b_FIC_Mong_Kharulagai = {
+					province = 11575
+
+					color = { 220 40 40 }
+				}
+			}
+
+			c_SW_hulunbuir = {
+				color = { 160 15 15 }
+
+				b_FIC_Mong_Oyuhulun = {
+					province = 11623
+
+					color = { 160 15 15 }
+				}
+				b_FIC_Mong_Khailangol = {
+					province = 11624
+
+					color = { 160 15 15 }
+				}
+				b_FIC_Mong_Kharbuir = {
+					province = 11625
+
+					color = { 160 15 15 }
+				}
+				b_FIC_Mong_Khalkagol = {
+					province = 11626
+
+					color = { 160 15 15 }
+				}
+			}
+
+			c_SW_hongxingan = {
+				color = { 215 80 80 }
+
+				b_Liao_Wuzhou = {
+					province = 11724
+
+					color = { 215 80 80 }
+				}
+				b_FIC_Liao_Liquan = {
+					province = 11723
+
+					color = { 215 80 80 }
+				}
+				b_FIC_Liao_Wuluan = {
+					province = 11722
+
+					color = { 215 80 80 }
+				}
+				b_FIC_Amur_Shangwulu = {
+					province = 11656
+
+					color = { 215 80 80 }
+				}
+			}
+		}
+
+		d_SW_dashiweiguo = {
+			color = { 170 90 140 }
+
+			capital = c_SW_pibeihe
+
+			c_SW_pibeihe = {
+				color = { 160 80 130 }
+
+				b_Mong_Pibeihe = {
+					province = 11622
+
+					color = { 160 80 130 }
+				}
+				b_FIC_Mong_Genhegol = {
+					province = 11620
+
+					color = { 160 80 130 }
+				}
+				b_FIC_Mong_Olanuur = {
+					province = 11621
+
+					color = { 160 80 130 }
+				}
+			}
+			
+			c_SW_mengwuo = {
+				color = { 120 20 20 }
+
+				b_FIC_Mong_Banukhol = {
+					province = 11609
+
+					color = { 120 20 20 }
+				}
+				b_FIC_Mong_Kamaraekh = {
+					province = 11611
+
+					color = { 120 20 20 }
+				}
+				b_FIC_Mong_Ilkuriuul = {
+					province = 11612
+
+					color = { 120 20 20 }
+				}
+				b_FIC_Mong_Xiailehuli = {
+					province = 11613
+
+					color = { 120 20 20 }
+				}
+			}
+
+			c_SW_heiergun = {
+				color = { 135 20 20 }
+
+				b_FIC_Mong_Huraalin = {
+					province = 11608
+
+					color = { 120 20 20 }
+				}
+				b_FIC_Mong_Oyuulvzar = {
+					province = 11606
+
+					color = { 135 20 20 }
+				}
+				b_FIC_Mong_Emurgol = {
+					province = 11607
+
+					color = { 135 20 20 }
+				}
+			}
+
+			c_SW_ergunia = {
+				color = { 110 65 70 }
+
+				b_FIC_Mong_Telburgol = {
+					province = 11619
+
+					color = { 110 65 70 }
+				}
+				b_FIC_Mong_Gangoluul = {
+					province = 11617
+
+					color = { 110 65 70 }
+				}
+				b_FIC_Mong_Nyurgol = {
+					province = 11618
+
+					color = { 110 65 70 }
+				}
+			}
+
+			c_SW_hailar = {
+				color = { 135 50 80 }
+
+				b_FIC_Mong_Hailargol = {
+					province = 11616
+
+					color = { 135 50 80 }
+				}
+				b_FIC_Mong_Gaoxuanya = {
+					province = 11614
+
+					color = { 135 50 80 }
+				}
+				b_FIC_Mong_Hailarekh = {
+					province = 11615
+
+					color = { 135 50 80 }
+				}
+			}
+		}
+	}
+
+	k_khitan = {
+		color = { 115 135 30 }
+
+		capital = c_LIAO_linhuang
+
+		d_LIAO_linhuang = {
+			color = { 100 120 15 }
+
+			capital = c_LIAO_linhuang
+
+			c_LIAO_linhuang = {
+				color = { 105 125 20 }
+
+				b_Liao_Linhuang = {
+					province = 11709
+
+					color = { 105 125 20 }
+				}
+				b_Liao_Huaizhou = {
+					province = 11708
+
+					color = { 105 125 20 }
+				}
+				b_Liao_Songzhanzhou = {
+					province = 11710
+
+					color = { 105 125 20 }
+				}
+				b_Liao_Zuzhou = {
+					province = 11711
+
+					color = { 105 125 20 }
+				}
+				b_Liao_Yungzhou = {
+					province = 11717
+
+					color = { 105 125 20 }
+				}
+			}
+
+			c_LIAO_raozhou = {
+				color = { 115 150 30 }
+
+				b_Liao_Raozhou = {
+					province = 11712
+
+					color = { 115 150 30 }
+				}
+				b_Liao_Qingzhou = {
+					province = 11707
+
+					color = { 115 150 30 }
+				}
+				b_FIC_Liao_Xilin = {
+					province = 11706
+
+					color = { 115 150 30 }
+				}
+			}
+
+			c_LIAO_ulagaian = {
+				color = { 90 120 10 }
+
+				b_FIC_Liao_Ulanulagai = {
+					province = 11703
+
+					color = { 90 120 10 }
+				}
+				b_FIC_Liao_Ulanuer = {
+					province = 11704
+
+					color = { 90 120 10 }
+				}
+				b_FIC_Liao_Charnoer = {
+					province = 11705
+
+					color = { 90 120 10 }
+				}
+			}
+
+			c_LIAO_longhuazhou = {
+				color = { 70 100 40 }
+
+				b_Liao_Longhuazhou = {
+					province = 11756
+
+					color = { 70 100 40 }
+				}
+				b_Liao_Jiangshengzhou = {
+					province = 11755
+
+					color = { 70 100 40 }
+				}
+				b_FIC_Liao_Huopingan = {
+					province = 11728
+
+					color = { 70 100 40 }
+				}
+			}
+
+			c_LIAO_heicaoan = {
+				color = { 95 85 40 }
+
+				b_FIC_Liao_Matudi = {
+					province = 11725
+
+					color = { 95 85 40 }
+				}
+				b_FIC_Liao_Baicaoer = {
+					province = 11726
+
+					color = { 95 85 40 }
+				}
+				b_FIC_Liao_Caoyuanan = {
+					province = 11727
+
+					color = { 95 85 40 }
+				}
+			}
+
+			c_LIAO_dalian = {
+				color = { 65 85 5 }
+
+				b_FIC_Liao_Dalinuor = {
+					province = 11713
+
+					color = { 65 85 5 }
+				}
+				b_FIC_Liao_Hongdali = {
+					province = 11714
+
+					color = { 65 85 5 }
+				}
+			}
+		}
+		
+		d_LIAO_shangjing = {
+			color = { 90 145 35 }
+
+			cultural_names = {
+				name_list_khitan = cn_shangjing
+			}
+
+			capital = c_LIAO_wuzhou
+
+			c_LIAO_wuzhou = {
+				color = { 95 150 40 }
+
+				b_Liao_Wuzhou2 = {
+					province = 11769
+
+					color = { 95 150 40 }
+				}
+				b_Liao_Weizhou2 = {
+					province = 11767
+
+					color = { 95 150 40 }
+				}
+				b_Liao_Fuzhou = {
+					province = 11768
+
+					color = { 95 150 40 }
+				}
+				b_Liao_Yuanzhou = {
+					province = 11770
+
+					color = { 95 150 40 }
+				}
+				b_Liao_Yizhou2 = {
+					province = 11757
+
+					color = { 95 150 40 }
+				}
+			}
+
+			c_LIAO_taizhou = {
+				color = { 90 165 35 }
+
+				b_Amur_Taizhou = {
+					province = 11654
+
+					color = { 90 165 35 }
+				}
+				b_FIC_Amur_Jianali = {
+					province = 11652
+
+					color = { 90 165 35 }
+				}
+				b_FIC_Amur_Nalidu = {
+					province = 11653
+
+					color = { 90 165 35 }
+				}
+				b_FIC_Amur_Hongan = {
+					province = 11655
+
+					color = { 90 165 35 }
+				}
+			}
+
+			c_LIAO_ningzhou = {
+				color = { 80 150 36 }
+
+				b_Liao_Ningzhou = {
+					province = 11733
+
+					color = { 80 150 36 }
+				}
+				b_Liao_Fengzhou2 = {
+					province = 11732
+
+					color = { 80 150 36 }
+				}
+				b_Liao_Taonan = {
+					province = 11731
+
+					color = { 80 150 36 }
+				}
+				b_Liao_Chunzhou = {
+					province = 11734
+
+					color = { 80 150 36 }
+				}
+			}
+
+			c_LIAO_changchun = {
+				color = { 100 145 55 }
+
+				b_Liao_Changchun = {
+					province = 11735
+
+					color = { 100 145 55 }
+				}
+				b_FIC_Liao_Yumitudi = {
+					province = 11737
+
+					color = { 100 145 55 }
+				}
+				b_FIC_Liao_Heihorqin = {
+					province = 11738
+
+					color = { 100 145 55 }
+				}
+				b_FIC_Liao_Shuangliao = {
+					province = 11740
+
+					color = { 100 145 55 }
+				}
+			}
+
+			c_LIAO_horqinan = {
+				color = { 95 195 95 }
+
+				b_FIC_Liao_Horqin = {
+					province = 11739
+
+					color = { 95 195 95 }
+				}
+				b_FIC_Liao_Bayintailai = {
+					province = 11729
+
+					color = { 95 195 95 }
+				}
+				b_FIC_Liao_Zhanyu = {
+					province = 11730
+
+					color = { 95 195 95 }
+				}
+			}
+		}
+	}
+	
+	k_luzhen = {
+		color = { 180 50 140 }
+
+		capital = c_BAL_dongpyeong_yizhou
+		
+		d_BAL_dongpyeong = {	#Dongping
+			color = { 75 95 225 }
+	
+			capital = c_BAL_dongpyeong_yizhou
+
+			cultural_names = {
+				name_list_korean = cn_dongpyeong
+				name_list_balhae = cn_dongpyeong
+			}
+	
+			c_BAL_dongpyeong_yizhou = {
+				color = { 65 85 215 }
+	
+				b_EMan_Yizhou = {
+					province = 11870
+
+					cultural_names = {
+						name_list_korean = cn_iju
+						name_list_balhae = cn_iju
+					}
+	
+					color = { 65 85 215 }
+				}
+				b_FIC_EMan_Beidongan = {
+					province = 11869
+	
+					color = { 65 85 215 }
+				}
+				b_FIC_EMan_Heihubo = {
+					province = 11862
+	
+					color = { 65 85 215 }
+				}
+			}
+	
+			c_BAL_jixi = {
+				color = { 30 65 250 }
+	
+				b_EMan_Jixi = {
+					province = 11871
+	
+					color = { 30 65 250 }
+				}
+				b_FIC_EMan_Dongxian = {
+					province = 11872
+	
+					color = { 30 65 250 }
+				}
+				b_FIC_EMan_Dongying = {
+					province = 11856
+	
+					color = { 30 65 250 }
+				}
+			}
+		}
+		
+		d_BAL_cheolli = {	#Tieli
+			color = { 170 65 115}
+
+			capital = c_BAL_delizhen
+
+			cultural_names = {
+				name_list_korean = cn_cheolli
+				name_list_balhae = cn_cheolli
+			}
+
+			c_BAL_delizhen = {
+				color = { 160 55 105 }
+
+				cultural_names = {
+					name_list_korean = cn_deongnijin
+					name_list_balhae = cn_deongnijin
+				}
+
+				b_Liao_Delizhen = {
+					province = 11816
+
+					color = { 160 55 105 }
+				}
+				b_FIC_Liao_Xitielian = {
+					province = 11815
+
+					color = { 160 55 105 }
+				}
+				b_FIC_EMan_Zhongtieli = {
+					province = 11855
+
+					color = { 160 55 105 }
+				}
+			}
+
+			c_BAL_huligai = {
+				color = { 170 35 95 }
+
+				b_EMan_Huligai = {
+					province = 11854
+
+					color = { 170 35 95 }
+				}
+				b_FIC_EMan_Hulilusean = {
+					province = 11857
+
+					color = { 170 35 95 }
+				}
+				b_FIC_EMan_Qiligashan = {
+					province = 11861
+
+					color = { 170 35 95 }
+				}
+			}
+
+			c_BAL_west_cheolli = {
+				color = { 185 65 105 }
+
+				cultural_names = {
+					name_list_korean = cn_west_cheolli
+					name_list_balhae = cn_west_cheolli
+				}
+
+				b_FIC_Amur_Dahedu = {
+					province = 11696
+
+					color = { 185 65 105 }
+				}
+				b_FIC_Amur_Henghetieli = {
+					province = 11697
+
+					color = { 185 65 105 }
+				}
+			}
+		}
+
+		d_BAL_hoewon = {	#Huaiyuan
+			color = { 145 25 55 }
+
+			capital = c_BAL_dazhou
+
+			cultural_names = {
+				name_list_korean = cn_hoewon
+				name_list_balhae = cn_hoewon
+			}
+
+			c_BAL_dazhou = {
+				color = { 135 15 45 }
+
+				cultural_names = {
+					name_list_korean = cn_dalju
+					name_list_balhae = cn_dalju
+				}
+
+				b_Amur_Dazhou = {
+					province = 11695
+
+					cultural_names = {
+						name_list_korean = cn_dalju
+						name_list_balhae = cn_dalju
+					}
+
+					color = { 135 15 45 }
+				}
+				b_FIC_Amur_Haixidu = {
+					province = 11692
+
+					color = { 135 15 45 }
+				}
+				b_FIC_Amur_Helincun = {
+					province = 11694
+
+					color = { 135 15 45 }
+				}
+			}
+
+			c_BAL_ilanshan = {
+				color = { 95 40 50 }
+
+				b_FIC_Amur_Ilanshan = {
+					province = 11691
+
+					color = { 95 40 50 }
+				}
+				b_FIC_Amur_Senlincun = {
+					province = 11693
+
+					color = { 95 40 50 }
+				}
+			}
+
+			c_BAL_south_hoewon = {
+				color = { 150 45 125 }
+
+				cultural_names = {
+					name_list_korean = cn_south_hoewon
+					name_list_balhae = cn_south_hoewon
+				}
+
+				b_FIC_EMan_Baihuaicun = {
+					province = 11858
+
+					color = { 150 45 125 }
+				}
+				b_FIC_EMan_Songhuajiang = {
+					province = 11859
+
+					color = { 150 45 125 }
+				}
+				b_FIC_EMan_Huaicao = {
+					province = 11860
+
+					color = { 150 45 125 }
+				}
+			}
+
+			c_BAL_central_hoewon = {
+				color = { 90 45 85 }
+
+				cultural_names = {
+					name_list_korean = cn_central_hoewon
+					name_list_balhae = cn_central_hoewon
+				}
+
+				b_FIC_EMan_Dacun = {
+					province = 11864
+
+					color = { 90 45 85 }
+				}
+				b_FIC_EMan_Huanghuai = {
+					province = 11863
+
+					color = { 90 45 85 }
+				}
+				b_FIC_EMan_Beihuaicun = {
+					province = 11865
+
+					color = { 90 45 85 }
+				}
+			}
+
+			c_BAL_east_hoewon = {
+				color = { 70 50 70 }
+
+				cultural_names = {
+					name_list_korean = cn_east_hoewon
+					name_list_balhae = cn_east_hoewon
+				}
+
+				b_FIC_EMan_Naolijiang = {
+					province = 11868
+
+					color = { 70 50 70 }
+				}
+				b_FIC_EMan_Bixinjiang = {
+					province = 11895
+
+					color = { 70 50 70 }
+				}
+			}
+		}
+		
+		d_BAL_yeojintang = {
+			#this duchy packages a lot of Balhae "provinces" together for gameplay reasons
+			#thus, we give it a name that should somewhat mean "land of the Jurchens", since they are more or less from there
+			color = { 90 140 200 }
+
+			capital = c_BAL_solbin
+
+			cultural_names = {
+				name_list_korean = cn_solbin_anwon
+				name_list_balhae = cn_solbin_anwon
+			}
+
+			c_BAL_solbin = {	#Shuaibin
+				color = { 80 130 190 }
+
+				cultural_names = {
+					name_list_korean = cn_solbin
+					name_list_balhae = cn_solbin
+				}
+
+				b_EMan_Huazhou = {
+					province = 11913
+
+					cultural_names = {
+						name_list_korean = cn_hwaju
+						name_list_balhae = cn_hwaju
+					}
+
+					color = { 80 130 190 }
+				}
+				b_Liao_Jianzhou2 = {
+					province = 11851
+
+					color = { 80 130 190 }
+				}
+				b_FIC_EMan_Shuaibinan = {
+					province = 11914
+
+					color = { 80 130 190 }
+				}
+				b_FIC_EMan_Nanxingkai = {
+					province = 11873
+
+					color = { 80 130 190 }
+				}
+			}
+
+			c_BAL_jeongni = {	#Dingli
+				color = { 100 145 180 }
+
+				cultural_names = {
+					name_list_korean = cn_jeongni
+					name_list_balhae = cn_jeongni
+				}
+
+				b_EMan_Dingzhou = {
+					province = 11911
+
+					cultural_names = {
+						name_list_korean = cn_jeongju
+						name_list_balhae = cn_jeongju
+					}
+
+					color = { 100 145 180 }
+				}
+				b_EMan_Yongmingcheng = {
+					province = 11912
+
+					color = { 100 145 180 }
+				}
+				b_FIC_EMan_Dinglian = {
+					province = 11910
+
+					color = { 100 145 180 }
+				}
+				b_FIC_EMan_Shanganjugu = {
+					province = 11909
+
+					color = { 100 145 180 }
+				}
+			}
+
+			c_BAL_anbyeon = {	#Anbian
+				color = { 45 145 210 }
+
+				cultural_names = {
+					name_list_korean = cn_anbyeon
+					name_list_balhae = cn_anbyeon
+				}
+
+				b_EMan_Anzhou = {
+					province = 11905
+
+					cultural_names = {
+						name_list_korean = cn_anju
+						name_list_balhae = cn_anju
+					}
+
+					color = { 45 145 210 }
+				}
+				b_FIC_EMan_Silata_an = {
+					province = 11906
+
+					color = { 45 145 210 }
+				}
+				b_FIC_EMan_Luseqiu = {
+					province = 11907
+
+					color = { 45 145 210 }
+				}
+			}
+
+			c_BAL_north_anbyeon = {	#Anbian
+				color = { 30 100 160 }
+
+				cultural_names = {
+					name_list_korean = cn_north_anbyeon
+					name_list_balhae = cn_north_anbyeon
+				}
+
+				b_FIC_EMan_Beiqiulin = {
+					province = 11902
+
+					color = { 30 100 160 }
+				}
+				b_FIC_EMan_Zhenzhuhai = {
+					province = 11904
+
+					color = { 30 100 160 }
+				}
+				b_FIC_EMan_Heizhuhai = {
+					province = 11903
+
+					color = { 30 100 160 }
+				}
+			}
+		}
+
+		d_BAL_anwon = {	#Anyuan
+			color = { 155 105 255 }
+
+			capital = c_BAL_ningzhou
+
+			cultural_names = {
+				name_list_korean = cn_anwon
+				name_list_balhae = cn_anwon
+			}
+
+			c_BAL_ningzhou = {	#Ningzhou
+				color = { 150 100 250 }
+
+				cultural_names = {
+					name_list_korean = cn_jeoju
+					name_list_balhae = cn_jeoju
+				}
+
+				b_EMan_Ningzhou = {
+					province = 11899
+
+					cultural_names = {
+						name_list_korean = cn_jeoju
+						name_list_balhae = cn_jeoju
+					}
+
+					color = { 150 100 250 }
+				}
+				b_FIC_EMan_Qingshancun = {
+					province = 11900
+
+					color = { 150 100 250 }
+				}
+				b_FIC_EMan_Huangyuan = {
+					province = 11901
+
+					color = { 150 100 250 }
+				}
+			}
+
+			c_BAL_supin = {	#Supin
+				color = { 135 85 235 }
+				b_EMan_Supin = {
+					province = 11876
+
+					color = { 135 85 235 }
+				}
+				b_FIC_EMan_Xuduohe = {
+					province = 11874
+
+					color = { 135 85 235 }
+				}
+				b_FIC_EMan_Dongxingkai = {
+					province = 11875
+
+					color = { 135 85 235 }
+				}
+				b_FIC_EMan_Sanhean = {
+					province = 11908
+
+					color = { 135 85 235 }
+				}
+			}
+
+			c_BAL_north_anwon = {
+				color = { 120 70 220 }
+
+				cultural_names = {
+					name_list_korean = cn_north_anwon
+					name_list_balhae = cn_north_anwon
+				}
+
+				b_FIC_EMan_Alimenyang = {
+					province = 11896
+
+					color = { 120 70 220 }
+				}
+				b_FIC_EMan_Zhonganyuan = {
+					province = 11897
+
+					color = { 120 70 220 }
+				}
+				b_FIC_EMan_Dongning = {
+					province = 11898
+
+					color = { 120 70 220 }
+				}
+			}
+
+			c_BAL_heuksu_anwon = {
+				color = { 105 55 105 }
+
+				b_FIC_EMan_Yozejiang = {
+					province = 11890
+
+					color = { 105 55 105 }
+				}
+				b_FIC_EMan_Shuilinhai = {
+					province = 11889
+
+					color = { 105 55 105 }
+				}
+			}
+		}
+	}
+	k_raole = {
+		color = { 120 110 100 }
+
+		capital = c_LIAO_dading
+
+		d_LIAO_zhongjing = {
+			color = { 190 230 45 }
+
+			cultural_names = {
+				name_list_khitan = cn_zhongjing
+			}
+
+			capital = c_LIAO_dading
+
+			c_LIAO_dading = {
+				color = { 195 235 50 }
+
+				b_Liao_Dading = {
+					province = 11721
+
+					color = { 195 235 50 }
+				}
+				b_Liao_Enzhou = {
+					province = 11720
+
+					color = { 195 235 50 }
+				}
+				b_Liao_Songshanzhou = {
+					province = 11719
+
+					color = { 195 235 50 }
+				}
+				b_cirlzj_jianting = {
+					province = 12427
+
+					color = { 255 215 90 }
+				}
+			}
+			c_lzj_chengdexi = {
+				color = { 228 223 97 }
+
+				b_cirlzj_liuheting = {
+					province = 12417
+
+					color = { 200 157 74 }
+				}
+				b_cirlzj_beian = {
+					province = 12429
+
+					color = { 197 153 53 }
+				}
+				b_cirlzj_chaolijiang = {
+					province = 12415
+
+					color = { 194 181 46 }
+				}
+				b_cirlzj_xuefang = {
+					province = 12416
+
+					color = { 190 182 96 }
+				}
+			}
+			c_lzj_chengde = {
+				color = { 190 152 150 }
+
+				b_cirlzj_luexiating = {
+					province = 12425
+
+					color = { 222 209 4 }
+				}
+				b_cirlzj_chengde = {
+					province = 12426
+
+					color = { 227 233 109 }
+				}
+				b_cirlzj_xinghua = {
+					province = 12418
+
+					color = { 164 146 39 }
+				}
+				b_cirlzj_qinglonghe = {
+					province = 12420
+
+					color = { 172 255 51 }
+				}
+			}
+			c_lxj_yuyidong = {
+				color = { 175 255 47 }
+
+				b_cirlzj_caodangzhen = {
+					province = 12428
+
+					color = { 212 144 121 }
+				}
+				b_cirlzj_yudaokou = {
+					province = 12430
+
+					color = { 255 156 152 }
+				}
+			}
+			c_woye = {
+				color = { 190 225 40 }
+
+				b_Liao_Wuanzhou = {
+					province = 11754
+
+					color = { 190 225 40 }
+				}
+				b_Liao_Jianzhou = {
+					province = 11753
+
+					color = { 190 225 40 }
+				}
+				b_Liao_Gaozhou = {
+					province = 11718
+
+					color = { 195 235 50 }
+				}
+			}
+			c_liao_fengzhou = {
+				color = { 195 235 50 }
+
+				b_Liao_Fengzhou = {
+					province = 11716
+
+					color = { 195 235 50 }
+				}
+				b_Liao_Yikunzhou = {
+					province = 11715
+
+					color = { 195 235 50 }
+				}
+			}
+		}
+		d_liaoxi = {
+			capital = c_LIAO_chaoyang
+
+			c_LIAO_chaoyang = {
+				color = { 190 225 40 }
+
+				b_Liao_Chaoyang = {
+					province = 11759
+
+					color = { 190 225 40 }
+				}
+				b_Liao_Chuanzhou = {
+					province = 11761
+
+					color = { 200 240 20 }
+				}
+				b_Liao_Qianzhou2 = {
+					province = 11772
+
+					color = { 190 245 60 }
+				}
+				b_Liao_Chengzhou = {
+					province = 11758
+
+					color = { 190 225 40 }
+				}
+			}
+			c_lnj_liaoxi = {
+				color = { 213 155 86 }
+
+				b_cirlzj_qinhuangdao = {
+					province = 12422
+
+					color = { 160 197 86 }
+				}
+				b_pingzhou = {
+					province = 9694
+
+					color = { 196 235 17 }
+				}
+				b_cirlzj_longtan = {
+					province = 12421
+
+					color = { 253 231 116 }
+				}
+			}
+			c_lnj_liaoxibei = {
+				color = { 254 255 123 }
+
+				b_cirlzj_yuhejing = {
+					province = 12424
+
+					color = { 197 151 39 }
+				}
+				b_Liao_Liping = {
+					province = 11760
+
+					color = { 190 225 40 }
+				}
+				b_cirlzj_fusu = {
+					province = 12423
+
+					color = { 167 173 103 }
+				}
+				b_Liao_Andefu = {
+					province = 11775
+
+					color = { 190 245 60 }
+				}
+			}
+			c_LIAO_jinzhou = {
+				color = { 190 245 60 }
+
+				b_Liao_Yizhou3 = {
+					province = 11773
+
+					color = { 190 245 60 }
+				}
+				b_Liao_Xizhou = {
+					province = 11776
+
+					color = { 190 245 60 }
+				}
+				b_Liao_Jinzhou = {
+					province = 11774
+
+					color = { 190 245 60 }
+				}
+			}
+			c_LIAO_liaozhou = {
+				color = { 185 145 20 }
+
+				b_Liao_Liaozhou = {
+					province = 11765
+
+					color = { 185 145 20 }
+				}
+				b_Liao_Suizhou = {
+					province = 11766
+
+					color = { 185 145 20 }
+				}
+				b_Liao_Shuangzhou = {
+					province = 11771
+
+					color = { 185 145 20 }
+				}
+			}
+
+			c_LIAO_xianzhou = {
+				color = { 200 240 20 }
+
+				b_Liao_Xianzhou = {
+					province = 11762
+
+					color = { 200 240 20 }
+				}
+				b_Liao_Haibeizhou = {
+					province = 11763
+
+					color = { 200 240 20 }
+				}
+				b_Liao_Qianzhou = {
+					province = 11764
+
+					color = { 185 145 20 }
+				}
+			}
+		}
+		d_yanyun_yuyi = {
+			color = { 217 211 91 }
+
+			capital = c_lxj_huanzhou
+
+			c_lxj_huanzhou = {
+				color = { 162 203 40 }
+
+				b_cirlxj_huanzhou = {
+					province = 12411
+
+					color = { 255 138 150 }
+				}
+				b_cirlxj_dongting = {
+					province = 12409
+
+					color = { 255 246 120 }
+				}
+				b_cirlxj_nanpo = {
+					province = 12410
+
+					color = { 239 175 159 }
+				}
+			}
+			c_lxj_yangchengzhou = {
+				color = { 255 201 127 }
+
+				b_cirlxj_yangcheng = {
+					province = 12406
+
+					color = { 208 202 92 }
+				}
+				b_cirlxj_yunyudi = {
+					province = 12407
+
+					color = { 236 236 160 }
+				}
+				b_cirlxj_lilingtaiyi = {
+					province = 12408
+
+					color = { 207 196 47 }
+				}
+			}
+		}
+	}
+
+	##### Moved from e_amur to e_andong for simplicity
+	k_amur = {
+		color = { 0 85 65  }
+
+		capital = c_eman_boli
+
+		d_eman_boli = {
+			color = { 10 100 80 }
+
+			capital = c_eman_boli
+
+			c_eman_boli = {
+				color = { 20 110 90 }
+
+				b_eman_boli = {
+					province = 11877
+
+					color = { 20 110 90 }
+				}
+				b_fic_eman_nanshuian = {
+					province = 11866
+
+					color = { 20 110 90 }
+				}
+				b_fic_eman_alimenan = {
+					province = 11867
+
+					color = { 20 110 90 }
+				}
+				b_fic_eman_khorhe = {
+					province = 11894
+
+					color = { 20 110 90 }
+				}
+			}
+
+			c_eman_molihewen = {
+				color = { 10 135 80 }
+
+				b_eman_molihewen = {
+					province = 11881
+
+					color = { 10 135 80 }
+				}
+				b_fic_eman_shangkhor = {
+					province = 11880
+
+					color = { 10 135 80 }
+				}
+				b_fic_eman_heishanan = {
+					province = 11882
+
+					color = { 10 135 80 }
+				}
+				b_fic_eman_bolon = {
+					province = 12479
+
+					color = { 10 135 80 }
+				}
+			}
+
+			c_eman_mohean = {
+				color = { 35 100 80 }
+
+				b_fic_eman_mohean = {
+					province = 11893
+
+					color = { 35 100 80 }
+				}
+				b_fic_eman_wuguijiang = {
+					province = 11878
+
+					color = { 35 100 80 }
+				}
+				b_fic_eman_yemanshui = {
+					province = 11879
+
+					color = { 35 100 80 }
+				}
+			}
+
+			c_eman_choripi = {
+				color = { 20 115 100 }
+
+				b_fic_eman_choripi = {
+					province = 12481
+
+					color = { 20 115 100 }
+				}
+				b_fic_eman_uada_alin = {
+					province = 12480
+
+					color = { 20 115 100 }
+				}
+				b_fic_eman_kuru = {
+					province = 12482
+
+					color = { 20 115 100 }
+				}
+			}
+		}
+
+		d_eman_sikhotebei = {
+		#fictional name based on Sikhote mountains and "bei" for north
+			color = { 35 60 35 }
+
+			capital = c_eman_yerenhe
+
+			c_eman_yerenhe = {
+				color = { 115 140 115 }
+
+				b_fic_eman_yerenhe = {
+					province = 11892
+
+					color = { 115 140 115 }
+				}
+				b_fic_eman_elejiang = {
+					province = 11888
+
+					color = { 115 140 115 }
+				}
+				b_fic_eman_bixinshang = {
+					province = 11891
+
+					color = { 115 140 115 }
+				}
+			}
+
+			c_eman_wuguihai = {
+				color = { 95 145 95 }
+
+				b_fic_eman_wuguihai = {
+					province = 11887
+
+					color = { 95 145 95 }
+				}
+				b_fic_eman_shuishanpu = {
+					province = 11885
+
+					color = { 95 145 95 }
+				}
+				b_fic_eman_xiaoheijiang = {
+					province = 11886
+
+					color = { 95 145 95 }
+				}
+			}
+
+			c_eman_heishuiyang = {
+				color = { 65 90 65 }
+
+				b_fic_eman_heishuiyang = {
+					province = 11884
+
+					color = { 65 90 65 }
+				}
+				b_fic_eman_senkele = {
+					province = 12455
+
+					color = { 65 90 65 }
+				}
+				b_fic_eman_melersuki = {
+					province = 12456
+
+					color = { 65 90 65 }
+				}
+			}
+
+			c_eman_beihean = {
+				color = { 35 60 35 }
+
+				b_fic_eman_beihean = {
+					province = 11883
+
+					color = { 35 60 35 }
+				}
+				b_fic_eman_silbaki = {
+					province = 12457
+
+					color = { 35 60 35 }
+				}
+			}
+		}
+
+		d_eman_samagero = {
+			color = { 80 140 210 }
+
+			capital = c_eman_tudali
+
+			c_eman_tudali = {
+				color = { 100 160 230 }
+
+				b_fic_eman_tudali = {
+					province = 12478
+
+					color = { 100 160 230 }
+				}
+				b_fic_eman_evoron = {
+					province = 12476
+
+					color = { 100 160 230 }
+				}
+				b_fic_eman_bureya = {
+					province = 12477
+
+					color = { 100 160 230 }
+				}
+			}
+
+			c_eman_yam_alin = {
+				color = { 70 110 200 }
+
+				b_fic_eman_yam_alin = {
+					province = 12472
+
+					color = { 70 110 200 }
+				}
+				b_fic_eman_imelen = {
+					province = 12471
+
+					color = { 70 110 200 }
+				}
+				b_fic_eman_dusse_alin = {
+					province = 12473
+
+					color = { 70 110 200 }
+				}
+			}
+
+			c_eman_khadul = {
+				color = { 95 150 215 }
+
+				b_fic_eman_khadul = {
+					province = 12474
+
+					color = { 95 150 215 }
+				}
+				b_fic_eman_chayatin = {
+					province = 12475
+
+					color = { 95 150 215 }
+				}
+				b_fic_eman_henkon = {
+					province = 12464
+
+					color = { 95 150 215 }
+				}
+			}
+
+			c_eman_kerin = {
+				color = { 85 105 215 }
+
+				b_fic_eman_kerin = {
+					province = 12467
+
+					color = { 85 105 215 }
+				}
+				b_fic_eman_pilda = {
+					province = 12466
+
+					color = { 85 105 215 }
+				}
+			}
+		}
+
+		d_eman_nivkhia = {
+			color = { 25 25 25 }
+
+			capital = c_eman_nurgan
+
+			c_eman_nurgan = {
+				color = { 45 45 45 }
+
+				b_eman_nurgan = {
+					province = 12460
+
+					color = { 45 45 45 }
+				}
+				b_fic_eman_kamer = {
+					province = 12458
+
+					color = { 45 45 45 }
+				}
+				b_fic_eman_ekiti = {
+					province = 12459
+
+					color = { 45 45 45 }
+				}
+				b_fic_eman_chagal = {
+					province = 12465
+
+					color = { 45 45 45 }
+				}
+			}
+
+			c_eman_amgun = {
+				color = { 55 60 70 }
+
+				b_fic_eman_amgun = {
+					province = 12463
+
+					color = { 55 60 70 }
+				}
+				b_fic_eman_chlya = {
+					province = 12461
+
+					color = { 55 60 70 }
+				}
+				b_fic_eman_orel = {
+					province = 12462
+
+					color = { 55 60 70 }
+				}
+			}
+
+			c_eman_tugur = {
+				color = { 65 40 70 }
+
+				b_fic_eman_tugur = {
+					province = 12469
+
+					color = { 65 40 70 }
+				}
+				b_fic_eman_usalgin = {
+					province = 12468
+
+					color = { 65 40 70 }
+				}
+				b_fic_eman_ymila = {
+					province = 12470
+
+					color = { 65 40 70 }
+				}
+			}
+		}
+		
+		d_eman_amar = {
+			color = { 0 75 90 }
+
+			capital = c_eman_murkonno
+			
+			c_eman_murkonno = {
+				color = { 10 90 110 }
+				
+				b_fic_eman_bira = {
+					province = 10493
+					
+					color = { 10 90 110 }
+				}
+				b_fic_eman_pichan = {
+					province = 10491
+					
+					color = { 10 90 110 }
+				}
+				b_fic_eman_khimin = {
+					province = 10492
+					
+					color = { 10 90 110 }
+				}
+				b_fic_eman_chulabira = {
+					province = 10494
+					
+					color = { 10 90 110 }
+				}
+			}
+			
+			c_eman_urmi = {
+				color = { 50 140 165 }
+				
+				b_fic_eman_urmi = {
+					province = 10495
+					
+					color = { 50 140 165 }
+				}
+				b_fic_eman_kirga = {
+					province = 10496
+					
+					color = { 50 140 165 }
+				}
+			}
+			
+			c_eman_vanda = {
+				color = { 75 115 135 }
+				
+				b_fic_eman_vandarin = {
+					province = 12439
+					
+					color = { 75 115 135 }
+				}
+				b_fic_eman_konnovanda = {
+					province = 10489
+					
+					color = { 75 115 135 }
+				}
+				b_fic_eman_hulavanda = {
+					province = 10490
+					
+					color = { 75 115 135 }
+				}
+			}
+			
+			c_eman_nimen = {
+				color = { 40 105 115 }
+				
+				b_fic_eman_nimen = {
+					province = 12437
+					
+					color = { 40 105 115 }
+				}
+				b_fic_eman_hara = {
+					province = 12438
+					
+					color = { 40 105 115 }
+				}
+				b_fic_eman_oronmu = {
+					province = 12436
+					
+					color = { 40 105 115 }
+				}
+			}
+		}
+		
+		d_eman_bureya = {
+			color = { 75 80 115 }
+
+			capital = c_eman_turma
+			
+			c_eman_turma = {
+				color = { 85 95 130 }
+				
+				b_fic_eman_turma = {
+					province = 12435
+					
+					color = { 85 95 130 }
+				}
+				b_fic_eman_uroure = {
+					province = 12434
+					
+					color = { 85 95 130 }
+				}
+				b_fic_eman_molamu = {
+					province = 10499
+					
+					color = { 85 95 130 }
+				}
+			}
+			
+			c_eman_birija = {
+				color = { 45 50 85 }
+				
+				b_fic_eman_birija = {
+					province = 12433
+					
+					color = { 45 50 85 }
+				}
+				b_fic_eman_birigugda = {
+					province = 12432
+					
+					color = { 45 50 85 }
+				}
+			}
+			
+			c_eman_urehokto = {
+				color = { 70 65 80 }
+				
+				b_fic_eman_umilimo = {
+					province = 10497
+					
+					color = { 70 65 80 }
+				}
+				b_fic_eman_kulikansiggu = {
+					province = 10500
+					
+					color = { 70 65 80 }
+				}	
+			}
+		}
+	}
+}

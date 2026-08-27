@@ -380,7 +380,10 @@ impassable_mountains = RANGE { 8972 8992 }
 impassable_mountains = RANGE { 9669 9669 }
 impassable_mountains = RANGE { 9673 9676 }
 impassable_mountains = RANGE { 9679 9679 }
-impassable_mountains = RANGE { 9681 9722 }
+#####
+impassable_mountains = RANGE { 9681 9693 }
+impassable_mountains = RANGE { 9695 9722 }
+#####
 impassable_mountains = RANGE { 9724 9798 }
 impassable_mountains = RANGE { 9800 9828 }
 impassable_mountains = RANGE { 9830 9852 }
@@ -398,8 +401,10 @@ impassable_mountains = RANGE { 10455 10455 }
 impassable_mountains = RANGE { 10463 10463 }
 impassable_mountains = RANGE { 10465 10467 }
 impassable_mountains = RANGE { 10473 10473 }
-impassable_mountains = RANGE { 10488 10497 }
-impassable_mountains = RANGE { 10499 10518 }
+#####
+impassable_mountains = LIST { 10488 }
+impassable_mountains = RANGE { 10501 10518 }
+#####
 impassable_mountains = RANGE { 10520 10520 }
 impassable_mountains = RANGE { 10522 10534 }
 impassable_mountains = RANGE { 10536 10536 }
@@ -439,9 +444,8 @@ impassable_mountains = RANGE { 11397 11452 }
 impassable_mountains = RANGE { 11454 11454 }
 impassable_mountains = RANGE { 11459 11468 }
 impassable_mountains = RANGE { 11470 11500 }
-impassable_mountains = RANGE { 11529 11635 }
-impassable_mountains = RANGE { 11637 11914 }
-impassable_mountains = RANGE { 11929 11929 }
+#####
+#####
 impassable_mountains = RANGE { 12170 12170 }
 impassable_mountains = RANGE { 12172 12172 }
 impassable_mountains = RANGE { 12174 12174 }
@@ -453,18 +457,20 @@ impassable_mountains = RANGE { 12351 12368 }
 impassable_mountains = RANGE { 12386 12387 }
 impassable_mountains = RANGE { 12391 12396 }
 impassable_mountains = RANGE { 12398 12398 }
-impassable_mountains = RANGE { 12401 12430 }
-impassable_mountains = RANGE { 12432 12439 }
-impassable_mountains = RANGE { 12454 12482 }
+#####
+impassable_mountains = RANGE { 12401 12405 }
+#12406-12411
+impassable_mountains = RANGE { 12412 12414 }
+#12415-12418
+impassable_mountains = LIST { 12419 }
+#12420-12430
+impassable_mountains = LIST { 12431 }
+#12455-12482
+impassable_mountains = LIST { 12454 }
+#####
 impassable_mountains = RANGE { 12501 12512 }
 impassable_mountains = RANGE { 12526 12526 }
 impassable_mountains = RANGE { 12540 12545 }
-#START HOLE
-#impassable_mountains = RANGE { 12552 12573 }
-#12561-3: c_gobi_gurvan_saikhan, add to Xia
-impassable_mountains = RANGE { 12552 12560 }
-impassable_mountains = RANGE { 12564 12573 }
-#END HOLE
 impassable_mountains = RANGE { 12771 12798 }
 impassable_mountains = RANGE { 12802 12820 }
 impassable_mountains = RANGE { 12823 12826 }
