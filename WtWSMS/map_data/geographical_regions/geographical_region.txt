@@ -868,37 +868,51 @@ world_steppe_tarim = {
 		d_kashgar d_khotan d_karashar d_charkliq d_kucha
 	}
 }
-world_steppe_west = { ##### Changed from Vanilla
-	kingdoms = {
-		k_taurica k_pontic_steppe k_mordvinia k_caucasus k_ciscaucasia k_caspian_steppe k_volga_bulgaria
-		k_bashkiria
+world_steppe_west = {
+	duchies = {
+		#Pontic Steppe
+		d_yedisan d_kizilyedisan d_levedia d_red_levedia d_don_valley d_tana d_khazaria d_ciscaucasia d_itil d_crimea d_alania d_azov d_pecheneg
+		#Volga Bulgaria
+		d_volga_bulgaria d_kazan d_bashkiria d_sakmara d_voronezh d_mordvinia d_saran d_chuvashia d_khopyor d_tambov d_ural d_udmurtia d_martyuba d_uraltau d_aqtobe d_jalmat d_bugurslan d_vogulia d_perm
+		d_astrakhan d_adigey ##### Changed from Vanilla
 	}
 }
-world_steppe_central = { ##### Changed from Vanilla
-	kingdoms = {
-		k_kimek k_oghuz_il k_cuman k_zhetysu k_kipchak k_syr_darya
-	}
+world_steppe_central = {
 	duchies = {
-		#Sibr
-		d_ala_tau d_baraba_steppe d_kulyndy_steppe d_salair
-		#Ob
-		d_lanikaz d_tavan_bogd
+		#Dzungaria
+		d_altay d_akaltay d_kara_khoja d_beshbalik d_gurbantunggut d_naiman_gobi
+		#Turkestan
+		d_transcaspiana d_garabogazkol d_barsuki d_aral_karakum d_zhetysu d_tarbagatai d_jemba d_aral_il d_chah d_syr_darya d_muyunkum d_talas_alatau d_alakol d_ili-alatau
+		#Cumania
+		d_kurgan d_mugodzhar_hills d_atyrau d_manatau d_turgay d_kokturgay d_kush-murun d_tobol-ishim d_saryarka d_qyzylsaryarka d_kazakh d_atbasar d_kentarlau d_karkaraly d_karabas d_tokumbay d_betpa d_semey d_jinghiz d_degelen
+		d_balashagun ##### Changed from Vanilla
 	}
 }
 world_steppe_east = { ##### Changed from Vanilla; overhaul when adding Asia
-	kingdoms = {
-		k_dzungaria k_mongolia k_tuva k_khakassia k_angara k_buryatia k_xia k_hexi
+	duchies = {
+		#Mongolia
+		d_orkhon d_ogrash d_selenga_valley d_ovorkhangai d_arkhangai d_khovsgol d_gobi_altai d_ubsunur_hollow d_zavkhan d_khovd
+		d_togina d_tannu_ola d_western_sayan d_katu_yaryk
+		d_uda_valley
+		#East Mongolia
+		d_EM_onon d_EM_yujuelu d_EM_wajiezi
+		#East Mongolia-Western Shiwei
+		d_SW_heicheziguo d_SW_dashiweiguo
+		d_em_tataria d_em_wuguguo d_gobi_dadaels d_gobi_shatuoguo d_gobi_ongi
+		#Manchuria
+		d_LIAO_linhuang d_LIAO_shangjing
 	}
 }
 world_siberia = { ##### Changed from Vanilla
-	kingdoms = {
-		k_yugra k_permia
-	}
 	duchies = {
-		#Sibr
-		d_vasyugan_mire
-		#Ob
-		d_ishim d_sibir d_tara
+		#Western Siberia
+		d_ostyaki d_konda d_pelym d_kazym d_sibir d_ishim d_tara d_lanikaz
+		d_salair d_aley d_altaishan d_ala_tau d_vasyugan_mire d_baraba_steppe d_kulyndy_steppe
+		#Eastern Siberia
+		d_khakass_hollow d_blue_khakassia d_shoria d_kargassia d_eastern_sayan
+		d_bargujin_tukum d_dauria d_baigaluuls d_tsagaanbaigal
+		d_yenisei_kan d_chuna_valley d_lena d_angara
+		d_tavan_bogd ##### Changed from Vanilla
 	}
 }
 world_tibet = {
@@ -957,9 +971,33 @@ world_burma = {
 
 world_asia = {} # East, Southeast, and Northeast Asia ##### Changed from Vanilla
 world_asia_east = {} ##### Changed from Vanilla
-world_asia_shiwei_steppe = {} ##### Changed from Vanilla
-world_asia_khitan_steppe = {} ##### Changed from Vanilla
-world_asia_north_east = {} ##### Changed from Vanilla
+world_asia_shiwei_steppe = {
+	duchies = {
+		d_SW_heicheziguo d_SW_dashiweiguo
+		d_SW_lingxiguo d_SW_qingxingan d_SW_puyudao d_SW_ruzheguo d_SW_sushenguo
+	}
+}
+world_asia_khitan_steppe = {
+	duchies = {
+		#Khitan/Liao
+		d_LIAO_zhongjing d_LIAO_dongjing d_liaoxi d_yanyun_yuyi
+		
+		d_em_tataria d_em_wuguguo d_gobi_dadaels d_gobi_shatuoguo d_gobi_ongi
+	}
+}
+world_asia_north_east = {
+	duchies = {
+		#Khitan/Liao
+		d_LIAO_zhongjing d_LIAO_dongjing d_liaoxi d_yanyun_yuyi
+		#Balhae
+		d_BAL_parhae d_BAL_moe_su d_BAL_buyeo d_BAL_amnok_jangryeong d_BAL_southern_balhae d_BAL_cheolli
+		d_BAL_hoewon d_BAL_dongpyeong d_BAL_yeojintang d_BAL_anwon
+		#k_amur
+		d_eman_boli d_eman_sikhotebei d_eman_samagero d_eman_nivkhia d_eman_amar d_eman_bureya
+		# Shiwei
+		d_SW_lingxiguo d_SW_qingxingan d_SW_puyudao d_SW_ruzheguo  d_SW_sushenguo
+	}
+}
 world_asia_sakhalin_hokkaido = {} ##### Changed from Vanilla
 world_asia_japan = {} ##### Changed from Vanilla
 world_asia_korea = {} ##### Changed from Vanilla
@@ -973,7 +1011,11 @@ world_asia_philippines = {} ##### Changed from Vanilla
 world_asia_borneo = {} ##### Changed from Vanilla
 world_asia_sulawesi_maluku = {} ##### Changed from Vanilla
 world_asia_indonesia = {} ##### Changed from Vanilla
-world_asia_china = {} ##### Changed from Vanilla
+world_asia_china = { ##### Changed from Vanilla
+	kingdoms = {
+		k_hexi k_xia
+	}
+}
 world_asia_and_india = {} ##### Changed from Vanilla
 custom_panda_region = {} ##### Changed from Vanilla
 custom_tai_migration_origin = {} ##### Changed from Vanilla
