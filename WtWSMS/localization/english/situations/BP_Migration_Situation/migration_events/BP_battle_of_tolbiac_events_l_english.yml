@@ -1,0 +1,52 @@
+﻿l_english:
+ battle_of_tolbiac.0001.t: "The Battle of [ROOT.Char.GetCurrentLocation.GetNameNoTooltip]"
+ battle_of_tolbiac.0001.desc_opening: "The battle seems to be faring poorly; the enemy outnumbers us a great deal, and it seems like all might be lost. Words fail me as my pleas to [ROOT.Char.GetFaith.WarGodName] go unanswered. "
+ battle_of_tolbiac.0001.desc_spouse: "My spouse, [spouse_faith.GetName] follows a different faith, [spouse_faith.GetFaith.GetName], and has frequently beseeched me to embrace [spouse_faith.GetHerHis] faith. "
+ battle_of_tolbiac.0001.desc_concubine: "My concubine, [concubine_faith.GetName] follows a different faith, [concubine_faith.GetFaith.GetName], and has frequently beseeched me to embrace [concubine_faith.GetHerHis] faith. "
+ battle_of_tolbiac.0001.desc_consort: "My consort, [consort_faith.GetName] follows a different faith, [consort_faith.GetFaith.GetName], and has frequently beseeched me to embrace [consort_faith.GetHerHis] faith. "
+ battle_of_tolbiac.0001.desc_capital: "The people of my capital follow a different faith, [capital_faith.GetFaith.GetName], and some of the people have petitioned me to embrace their faith. "
+ battle_of_tolbiac.0001.desc_county: "Some of the people in my realm follow a different faith, [capital_faith.GetFaith.GetName], and some of these people have petitioned me to embrace their faith. "
+ battle_of_tolbiac.0001.desc_closing: "With the odds stacked against me, do I dare make a plea to [ROOT.Char.MakeScope.Var('the_tolbiac_faith').Faith.HighGodNameAlternate] for victory?"
+ 
+ battle_of_tolbiac.0001.accept_the_new_god: "Yes, I pray to [ROOT.Char.MakeScope.Var('the_tolbiac_faith').Faith.HighGodNameAlternate]"
+ battle_of_tolbiac.0001.accept_the_new_god.flavor.clovis: "#weak Jesus Christ, who some assert to be the son of the Living God, who art said to give aid to those in distress and bestow victory to those who hope in Thee, I beseech the glory of Thy aid, with the vow that if Thou wilt grant me victory over these enemies, and I shall know that power which they say that people dedicated in Thy name have had from Thee, I will believe in Thee and be baptized in Thy name. For I have invoked my own gods but, as I find, they have withdrawn from aiding me; and therefore I believe that they possess no power, since they do not help those who obey them. I now call upon Thee, I desire to believe Thee only let me be rescued from my adversaries.#!"
+ battle_of_tolbiac.0001.accept_the_new_god.flavor.cynical: "#weak [ROOT.Char.MakeScope.Var('the_tolbiac_faith').Faith.HighGodNameAlternate|U], if you exist, I pray that Thou does for [ROOT.Char.GetFirstNameNoTooltip] as you would have [ROOT.Char.GetFirstNameNoTooltip] do for you, if [ROOT.Char.GetSheHe] were a god and you were [ROOT.Char.GetFirstNameNoTooltip].#!" #Based on La Hire's prayer
+ battle_of_tolbiac.0001.accept_the_new_god.flavor.christian: "#weak Our Father, who art in the Heavens, hallowed be thy name. Thy Kingdom come, Thy Will be done, on Earth as it is in Heaven. Give us this day our daily bread. Forgive us our trespasses, as we forgive those who trespass against us. And lead us not into temptation, but deliver us from evil. Amen.#!"
+ battle_of_tolbiac.0001.accept_the_new_god.generic: "#weak [ROOT.Char.MakeScope.Var('the_tolbiac_faith').Faith.HighGodNameAlternate], grant me victory against mine enemies!#!"
+ get_random_battle_modifier: "You receive a random modifier for the duration of the battle that will influence it's course..."
+ battle_of_tolbiac.0001.keep_the_old_gods: "I cannot forsake [ROOT.Char.GetFaith.HighGodName]"
+ battle_of_tolbiac.0001.keep_the_old_gods.flavor.cynical: "#weak [ROOT.Char.GetFaith.HighGodName|U], if you exist, I pray that Thou does for [ROOT.Char.GetFirstNameNoTooltip] as you would have [ROOT.Char.GetFirstNameNoTooltip] do for you, if [ROOT.Char.GetSheHe] were a god and you were [ROOT.Char.GetFirstNameNoTooltip].#!"
+ battle_of_tolbiac.0001.keep_the_old_gods.generic: "[ROOT.Char.GetFaith.HighGodNameAlternate|U], grant me victory against mine enemies!"
+ battle_of_tolbiac.0001.rely_on_myself: "Neither; I shall rely on myself and myself alone!"
+ battle_of_tolbiac.0001.rely_on_myself.generic: "[SelectLocalization(ROOT.Char.GetFaith.HasDoctrine(GetFaithDoctrine( 'doctrine_polytheist' )),'$heaven_helps_those_who_help_themselves|q$','$the_gods_help_those_who_help_themselves|q$')]"
+ heaven_helps_those_who_help_themselves: "Heaven helps those who help themselves!"
+ the_gods_help_those_who_help_themselves: "The gods help those who help themselves!"
+ 
+ battle_of_tolbiac.0009.t: "A Battle won by Divine Aid?"
+ battle_of_tolbiac.0009.desc: "[battle_of_tolbiac_winner.GetName] recently won a battle with the aid of a foreign god and has converted to [battle_of_tolbiac_winner.GetFaith.GetName]. This may mark the beginning of a new era..."
+ battle_of_tolbiac.0009.good: "Wonderful!"
+ battle_of_tolbiac.0009.ok: "Good to Know."
+ battle_of_tolbiac.0009.bad: "Fools bickering."
+ battle_of_tolbiac.0009.terrible: "What a disaster!"
+ 
+ battle_of_tolbiac.0011.t: "Victory at [ROOT.Char.GetCurrentLocation.GetNameNoTooltip]"
+ battle_of_tolbiac.0011.desc: "With the odds arrayed against me, I prayed to [ROOT.Char.MakeScope.Var('the_tolbiac_faith').Faith.HighGodNameAlternate] and turned the tide, winning the battle. I am overlooking the battlefield and now remember my promise, to embrace [ROOT.Char.MakeScope.Var('the_tolbiac_faith').Faith.GetName] and become a [ROOT.Char.MakeScope.Var('the_tolbiac_faith').Faith.GetAdherentNameNoTooltip].\n\nBut I still find myself slightly hesitating. Yes, my words were from the heart, but will I follow through with this promise and forsake [ROOT.Char.GetFaith.GetNameNoTooltip]?"
+ battle_of_tolbiac.0011.i_will_keep_my_promise: "Yes! This victory is owed to [ROOT.Char.MakeScope.Var('the_tolbiac_faith').Faith.HighGodNameAlternate]!"
+ battle_of_tolbiac.0011.it_was_a_moment_of_weakness: "No, no, it was a moment of weakness!"
+ 50_percent_chance_every_realm_county_flips: "There is a 50% chance that every [county|E] in your realm converts to [ROOT.Char.MakeScope.Var('the_tolbiac_faith').Faith.GetName]"
+ 50_percent_chance_every_nonzealous_vassal_flips: "There is a 50% chance that every [vassal|E] of yours, who does not have the [GetTrait('zealous').GetName( GetNullCharacter )], converts to [ROOT.Char.MakeScope.Var('the_tolbiac_faith').Faith.GetName]"
+ 
+ battle_of_tolbiac.0012.t: "Victory at [ROOT.Char.GetCurrentLocation.GetNameNoTooltip]"
+ battle_of_tolbiac.0012.desc: "With the odds arrayed against me, I prayed to ROOT.Char.GetFaith.HighGodName] and turned the tide, winning the battle. It is truly a divine miracle and has solidified my faith in ROOT.Char.GetFaith.HighGodName]."
+ battle_of_tolbiac.0012.i_am_ever_faithful: "I am faithful to [ROOT.Char.GetFaith.HighGodName]"
+ 
+ battle_of_tolbiac.0020.t: "Defeat at [ROOT.Char.GetCurrentLocation.GetNameNoTooltip]"
+ battle_of_tolbiac.0020.t_wipe: "Defeat Despite Pleas for Divine Aid!"
+ battle_of_tolbiac.0020.defeated_new_faith: "I prayed to [ROOT.Char.MakeScope.Var('the_tolbiac_faith').Faith.HighGodNameAlternate] "
+ battle_of_tolbiac.0020.defeated_old_faith: "I prayed to [ROOT.Char.GetFaith.HighGodName] "
+ battle_of_tolbiac.0020.desc_closing: "and still lost. My forces scattered, all have heard how my pleas went unanswered. Perhaps if I had chosen differently..."
+ battle_of_tolbiac.0020.i_was_a_fool: "I was a fool!"
+ 
+ battle_of_tolbiac_won: "Co-Religionist won a Battle by Divine Aid"
+ battle_of_tolbiac_lost: "Heathens won a Battle by Divine Aid"
+ 

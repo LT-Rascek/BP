@@ -205,43 +205,10 @@ c_hohenlohe = { #Necker-Subei (sorta)
 d_vindelica_tertia = { #Empty History
 	1.1.1={}
 }
-c_frankfurt = { #Chararic's Franks
-	460.1.1={
-		holder = 36107 # Chararic
-	}
-	507.1.1={
-		holder = 40 # Clovis
-	}
-	511.1.1={
-		holder = 106524 # Theuderic Meroving 
-	}
-	534.1.1={
-		holder = 106525 # Theudebert Meroving  
-	}
-	548.1.1={
-		holder = 106529 # Theudebald Meroving 
-	}
-	555.1.1={
-		holder = 106522 # Chlothar Meroving
-	}
-	561.11.29={
-		holder = 231004 # Sigebert Meroving
-	}
-	575.1.1={
-		holder = 30010 # Childebert II Meroving
-	}
-	595.1.1={
-		holder = 30011 # Theudebert Meroving
-	}
-	612.1.1={
-		holder = 30014 # Theuderic II Meroving 
-	}
-	613.1.1={
-		holder = 30015 # Sigebert Meroving 
-	}
-	614.1.1={
-		holder = 30029 # Chlothar II Meroving 
-	}
+c_frankfurt = {
+	475.1.1 = { holder = old_frankish_CFrankfurt_001 }
+	475.1.1 = { government = tribal_government }
+	475.1.1 = { liege = 0 }
 }
 c_klingenberg = { #Necker Suebi (Sorta)
 	346.1.1 = { holder = holder_d_neckersuebi000 }
@@ -257,328 +224,52 @@ c_klingenberg = { #Necker Suebi (Sorta)
 	539.1.1 = { holder = holder_d_neckersuebi010 }
 	542.1.1 = { holder = holder_d_neckersuebi011 }
 }
-c_kassel = { #Chararic's Franks & Chatti
-	#Chatti
-	450.1.1={ holder = 212057 }
-	460.1.1 = { liege = d_baroia }
-	507.1.1={ liege = k_franks } #Clovis removes Chararic
-	510.1.1={ holder = 212560 }
-	#Franks
-	#Death of Faroin Auting, end of Chatti
-	550.1.1={ holder = 106529 } # Theudebald Meroving 
-	555.1.1={
-		holder = 106522 # Chlothar Meroving
-	}
-	561.11.29={
-		holder = 231004 # Sigebert Meroving
-	}
-	575.1.1={
-		holder = 30010 # Childebert II Meroving
-	}
-	595.1.1={
-		holder = 30011 # Theudebert Meroving
-	}
-	612.1.1={
-		holder = 30014 # Theuderic II Meroving 
-	}
-	613.1.1={
-		holder = 30015 # Sigebert Meroving 
-	}
-	614.1.1={
-		holder = 30029 # Chlothar II Meroving 
-	}
+c_kassel = {
+	475.1.1 = { holder = chatti_CKassel_001 }
+	475.1.1 = { government = tribal_government }
+	475.1.1 = { liege = 0 }
 }
-c_fulda = { #Chararic's Franks & Chatti
-	#Chatti
-	450.1.1={ holder = 212057 }
-	460.1.1 = { liege = d_baroia }
-	507.1.1={ liege = k_franks } #Clovis removes Chararic
-	510.1.1={ holder = 212560 }
-	#Franks
-	#Death of Faroin Auting, end of Chatti
-	550.1.1={ holder = 106529 } # Theudebald Meroving 
-	555.1.1={
-		holder = 106522 # Chlothar Meroving
-	}
-	561.11.29={
-		holder = 231004 # Sigebert Meroving
-	}
-	575.1.1={
-		holder = 30010 # Childebert II Meroving
-	}
-	595.1.1={
-		holder = 30011 # Theudebert Meroving
-	}
-	612.1.1={
-		holder = 30014 # Theuderic II Meroving 
-	}
-	613.1.1={
-		holder = 30015 # Sigebert Meroving 
-	}
-	614.1.1={
-		holder = 30029 # Chlothar II Meroving 
-	}
+c_fulda = {
+	475.1.1 = { holder = chatti_CFulda_001 }
+	475.1.1 = { government = tribal_government }
+	475.1.1 = { liege = 0 }
 }
-c_nassau = { #Chararic's Franks
-	460.1.1={
-		holder = 36107 # Chararic
-	}
-	507.1.1={
-		holder = 40 # Clovis
-	}
-	511.1.1={
-		holder = 106524 # Theuderic Meroving 
-	}
-	534.1.1={
-		holder = 106525 # Theudebert Meroving  
-	}
-	548.1.1={
-		holder = 106529 # Theudebald Meroving 
-	}
-	555.1.1={
-		holder = 106522 # Chlothar Meroving
-	}
-	561.11.29={
-		holder = 231004 # Sigebert Meroving
-	}
-	575.1.1={
-		holder = 30010 # Childebert II Meroving
-	}
-	595.1.1={
-		holder = 30011 # Theudebert Meroving
-	}
-	612.1.1={
-		holder = 30014 # Theuderic II Meroving 
-	}
-	613.1.1={
-		holder = 30015 # Sigebert Meroving 
-	}
-	614.1.1={
-		holder = 30029 # Chlothar II Meroving 
-	}
+c_nassau = {
+	475.1.1 = { holder = old_frankish_CNasau_001 }
+	475.1.1 = { government = tribal_government }
+	475.1.1 = { liege = 0 }
 }
-c_marburg = { #Chararic's Franks & Chatti
-	#Chatti
-	450.1.1={ holder = 212057 }
-	460.1.1 = { liege = d_baroia }
-	507.1.1={ liege = k_franks } #Clovis removes Chararic
-	510.1.1={ holder = 212560 }
-	#Franks
-	#Death of Faroin Auting, end of Chatti
-	550.1.1={ holder = 106529 } # Theudebald Meroving 
-	555.1.1={
-		holder = 106522 # Chlothar Meroving
-	}
-	561.11.29={
-		holder = 231004 # Sigebert Meroving
-	}
-	575.1.1={
-		holder = 30010 # Childebert II Meroving
-	}
-	595.1.1={
-		holder = 30011 # Theudebert Meroving
-	}
-	612.1.1={
-		holder = 30014 # Theuderic II Meroving 
-	}
-	613.1.1={
-		holder = 30015 # Sigebert Meroving 
-	}
-	614.1.1={
-		holder = 30029 # Chlothar II Meroving 
-	}
+c_marburg = {
+	475.1.1 = { holder = chatti_CMarburg_001 }
+	475.1.1 = { government = tribal_government }
+	475.1.1 = { liege = 0 }
 }
 
 d_vindelica_quarta = { #Empty History
 	1.1.1={}
 }
-c_dortmund = { #Ripurian Franks (Sigebert)
-	457.1.1={
-		holder = 20785  
-	}
-	482.1.1={
-		holder = 40
-	}
-	511.1.1={
-		holder = 106524 # Theuderic Meroving 
-	}
-	534.1.1={
-		holder = 106525 # Theudebert Meroving  
-	}
-	548.1.1={
-		holder = 106529 # Theudebald Meroving 
-	}
-	555.1.1={
-		holder = 106522 # Chlothar Meroving
-	}
-	561.11.29={
-		holder = 231004 # Sigebert Meroving
-	}
-	575.1.1={
-		holder = 30010 # Childebert II Meroving
-	}
-	595.1.1={
-		holder = 30011 # Theudebert Meroving
-	}
-	612.1.1={
-		holder = 30014 # Theuderic II Meroving 
-	}
-	613.1.1={
-		holder = 30015 # Sigebert Meroving 
-	}
-	614.1.1={
-		holder = 30029 # Chlothar II Meroving 
-	}
+c_dortmund = {
+	475.1.1 = { holder = old_frankish_CDortmund_001 }
+	475.1.1 = { government = tribal_government }
+	475.1.1 = { liege = 0 }
 }
-c_arnsberg = { #Chararic's Franks
-	460.1.1={
-		holder = 36107 # Chararic
-	}
-	507.1.1={
-		holder = 40 # Clovis
-	}
-	511.1.1={
-		holder = 106524 # Theuderic Meroving 
-	}
-	534.1.1={
-		holder = 106525 # Theudebert Meroving  
-	}
-	548.1.1={
-		holder = 106529 # Theudebald Meroving 
-	}
-	555.1.1={
-		holder = 106522 # Chlothar Meroving
-	}
-	561.11.29={
-		holder = 231004 # Sigebert Meroving
-	}
-	575.1.1={
-		holder = 30010 # Childebert II Meroving
-	}
-	595.1.1={
-		holder = 30011 # Theudebert Meroving
-	}
-	612.1.1={
-		holder = 30014 # Theuderic II Meroving 
-	}
-	613.1.1={
-		holder = 30015 # Sigebert Meroving 
-	}
-	614.1.1={
-		holder = 30029 # Chlothar II Meroving 
-	}
+c_arnsberg = {
+	475.1.1 = { holder = old_frankish_CArnsberg_001 }
+	475.1.1 = { government = tribal_government }
+	475.1.1 = { liege = 0 }
 }
-c_mark = { #Chararic's Franks
-	460.1.1={
-		holder = 36107 # Chararic
-	}
-	507.1.1={
-		holder = 40 # Clovis
-	}
-	511.1.1={
-		holder = 106524 # Theuderic Meroving 
-	}
-	534.1.1={
-		holder = 106525 # Theudebert Meroving  
-	}
-	548.1.1={
-		holder = 106529 # Theudebald Meroving 
-	}
-	555.1.1={
-		holder = 106522 # Chlothar Meroving
-	}
-	561.11.29={
-		holder = 231004 # Sigebert Meroving
-	}
-	575.1.1={
-		holder = 30010 # Childebert II Meroving
-	}
-	595.1.1={
-		holder = 30011 # Theudebert Meroving
-	}
-	612.1.1={
-		holder = 30014 # Theuderic II Meroving 
-	}
-	613.1.1={
-		holder = 30015 # Sigebert Meroving 
-	}
-	614.1.1={
-		holder = 30029 # Chlothar II Meroving 
-	}
+c_mark = {
+	475.1.1 = { holder = old_frankish_CMark_001 }
+	475.1.1 = { government = tribal_government }
+	475.1.1 = { liege = 0 }
 }
-c_bergh = { #Ripurian Franks (Sigebert)
-	457.1.1={
-		holder = 20785  
-	}
-	482.1.1={
-		holder = 40
-	}
-	511.1.1={
-		holder = 106524 # Theuderic Meroving 
-	}
-	534.1.1={
-		holder = 106525 # Theudebert Meroving  
-	}
-	548.1.1={
-		holder = 106529 # Theudebald Meroving 
-	}
-	555.1.1={
-		holder = 106522 # Chlothar Meroving
-	}
-	561.11.29={
-		holder = 231004 # Sigebert Meroving
-	}
-	575.1.1={
-		holder = 30010 # Childebert II Meroving
-	}
-	595.1.1={
-		holder = 30011 # Theudebert Meroving
-	}
-	612.1.1={
-		holder = 30014 # Theuderic II Meroving 
-	}
-	613.1.1={
-		holder = 30015 # Sigebert Meroving 
-	}
-	614.1.1={
-		holder = 30029 # Chlothar II Meroving 
-	}
+c_bergh = {
+	475.1.1 = { holder = old_frankish_CBergh_001 }
+	475.1.1 = { government = tribal_government }
+	475.1.1 = { liege = 0 }
 }
-c_sayn = { #Ripurian Franks
-	460.1.1={
-		holder = 36107 # Chararic
-	}
-	507.1.1={
-		holder = 40 # Clovis
-	}
-	511.1.1={
-		holder = 106524 # Theuderic Meroving 
-	}
-	534.1.1={
-		holder = 106525 # Theudebert Meroving  
-	}
-	548.1.1={
-		holder = 106529 # Theudebald Meroving 
-	}
-	555.1.1={
-		holder = 106522 # Chlothar Meroving
-	}
-	561.11.29={
-		holder = 231004 # Sigebert Meroving
-	}
-	575.1.1={
-		holder = 30010 # Childebert II Meroving
-	}
-	595.1.1={
-		holder = 30011 # Theudebert Meroving
-	}
-	612.1.1={
-		holder = 30014 # Theuderic II Meroving 
-	}
-	613.1.1={
-		holder = 30015 # Sigebert Meroving 
-	}
-	614.1.1={
-		holder = 30029 # Chlothar II Meroving 
-	}
+c_sayn = {
+	475.1.1 = { holder = old_frankish_CSayn_001 }
+	475.1.1 = { government = tribal_government }
+	475.1.1 = { liege = 0 }
 }

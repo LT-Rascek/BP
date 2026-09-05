@@ -3,8 +3,32 @@
 # scope:founder = The founder of the new culture
 on_culture_created = {
 	on_actions = {
+		bp_setup_necessary_divergence_name_tracking
 		bp_apply_special_hybrid_cases
 		bp_remove_certain_innovations
+		bp_inherit_certain_variables
+	}
+}
+
+bp_setup_necessary_divergence_name_tracking = {
+	#Only divergent cultures have roots; hybrids are their own roots when diverging away from
+	trigger = { is_divergent_culture = yes }
+	effect = {
+		#If a root already exists, track it.
+		if = {
+			limit = { any_parent_culture = { has_variable = root_culture } }
+			random_parent_culture = {
+				limit = { has_variable = root_culture }
+				save_scope_as = the_parent_culture
+			}
+			#Track the root culture
+			set_variable = { name = root_culture value = scope:the_parent_culture.var:root_culture }
+		}
+		#Otherwise, our parent is a root culture
+		else = {
+			random_parent_culture = { save_scope_as = the_parent_culture }
+			set_variable = { name = root_culture value = scope:the_parent_culture }
+		}
 	}
 }
 
@@ -59,6 +83,26 @@ bp_remove_certain_innovations = {
 	}
 }
 
+bp_inherit_certain_variables = {
+	trigger = {
+		is_hybrid_culture = yes
+		any_parent_culture = {
+			has_variable = passed_cultural_law
+			has_same_culture_heritage = prev
+		}
+	}
+	effect = {
+		random_parent_culture = {
+			limit = {
+				has_variable = passed_cultural_law
+				has_same_culture_heritage = prev
+			}
+			save_temporary_scope_as = law_culture
+		}
+		set_variable = { name = passed_cultural_law value = scope:law_culture }
+	}
+}
+
 # Happens when a culture gains a tradition
 # Root = culture
 # scope:tradition = flag for the tradition added
@@ -91,18 +135,23 @@ create_list_of_historic_hybrids = {
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:balasakan }
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:carpodaci }
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:denziner }
-		add_to_global_variable_list = { name = hybrid_cultures target = culture:dranganian }
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:elymaean }
+		add_to_global_variable_list = { name = hybrid_cultures target = culture:fereganan }
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:helleno_coptic }
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:helleno_libyan }
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:helleno_thracian }
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:hunas }
+		add_to_global_variable_list = { name = hybrid_cultures target = culture:hunnic }
+		add_to_global_variable_list = { name = hybrid_cultures target = culture:hunno_sakan }
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:indo_scythian }
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:juhuro }
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:khotanese }
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:kochinim }
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:kurykan }
+		add_to_global_variable_list = { name = hybrid_cultures target = culture:kushan }
+		add_to_global_variable_list = { name = hybrid_cultures target = culture:lushuihu }
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:mauritanian }
+		add_to_global_variable_list = { name = hybrid_cultures target = culture:mogyer }
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:ninrun }
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:numidian }
 		add_to_global_variable_list = { name = hybrid_cultures target = culture:radhanite }
@@ -133,12 +182,11 @@ yearly_culture_pulse = {
 	trigger = {
 		is_a_living_culture_trigger = yes
 		OR = {
-			has_cultural_tradition = tradition_migratory_culture
+			has_cultural_tradition = tradition_elite_rulership
 			has_cultural_tradition = tradition_tribal_hierarchy
 			has_cultural_tradition = tradition_zealous_pagans
 			has_cultural_tradition = tradition_zealous_pagans_non_dlc
 			has_cultural_tradition = tradition_early_slavic_traditions
-			has_cultural_tradition = tradition_early_slavic_traditions_non_dlc
 		}
 	}
 	#This event fires because `on_culture_era_changed` gets referenced in history, which leads to
@@ -149,6 +197,15 @@ yearly_culture_pulse = {
 		bp_change_tradition_events.0001 #Remove Migratory Culture Tradition
 		bp_change_tradition_events.0002 #Tribal Hierarchy to Hereditary Hierarchy Tradition
 		bp_change_tradition_events.0003 #Zealous Pagans Tradition Removal
+		
+	}
+}
+
+#Culture name change events
+three_yearly_culture_pulse = {
+	trigger = { this = culture:parthian }
+	events = {
+		bp_change_culture_name_events.0001 #Parthian become Pahlavi
 	}
 }
 

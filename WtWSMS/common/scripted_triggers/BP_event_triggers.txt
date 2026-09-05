@@ -1,0 +1,7 @@
+﻿#Certain culture features should block flipping culture
+general_culture_will_not_flip_culture_trigger = {
+	OR = {
+		has_cultural_parameter = traditionalist_culture_feature
+		has_cultural_parameter = less_likely_to_culture_convert
+	}
+}

@@ -270,15 +270,6 @@
  king_male_bactrian: "Þao"
  kingdom_bactrian: "Þaodom"
  emperor_male_bactrian: "Þaonano-Þao"
- #Hepthalite
- baron_male_hunas: "Bago"
- count_male_hunas: "Oazarko-Bago"
- county_hunas: "Oazagodom"
- duke_male_hunas: "Xoadeo"
- duchy_hunas: "Xoadeodom"
- king_male_hunas: "Þao"
- kingdom_hunas: "Þaodom"
- emperor_male_hunas: "Rajadhiraja"
  #Iazyges
  count_male_iazyges: "Pat"
  county_iazyges: "Pašyam"
@@ -639,18 +630,50 @@
  kingdom_bolghar: "Kraldjik"
  #Jobs
  chancellor_male_bolghar: "Dzara"
- #Barsil
- count_male_barsil: "Chief"
- county_barsil: "Chiefdom"
- duke_male_barsil: "High Chief"
- duchy_barsil: "High Chiefdom"
- king_male_barsil: "Khan"
- kingdom_barsil: "Khanate"
+ #Oghur (Based on Early Bulgar Titles)
+ count_male_oghur: "$count_male_bolghar$"
+ county_oghur: "$county_bolghar$"
+ duke_male_oghur: "$duke_male_bolghar$"
+ duchy_oghur: "$duchy_bolghar$"
+ king_male_oghur: "Kanasybigi"
+ kingdom_oghur: "Kanasybigiate"
+ #Yueban
+ baron_male_yueban: "Bago"
+ baron_female_yueban: "$baron_male_yueban$"
+ barony_yueban: "Bagodom"
+ count_male_yueban: "Oazarko-Bago"
+ count_female_yueban: "$count_male_yueban$"
+ county_yueban: "Oazagodom"
+ duke_male_yueban: "Xoadeo"
+ duke_female_yueban: "$duke_male_yueban$"
+ duchy_yueban: "Xoadeodom"
+ king_male_yueban: "Khaan"
+ king_female_yueban: "$king_male_yueban$"
+ kingdom_yueban: "Khaantuls"
+ emperor_male_yueban: "Ezenkhaan"
+ emperor_female_yueban: "$emperor_male_yueban$"
+ empire_yueban: "Ezenkhaanate"
  #Hunnic
  king_male_hunnic: "Hun"
  kingdom_hunnic: "Horde"
+ emperor_male_hunnic: "Great Hun"
+ empire_hunnic: "Great Horde"
+ #Hunas
+ baron_male_hunas: "Boco"
+ barony_hunas: "Bocodom"
+ count_male_hunas: "Oassarco-Boco"
+ county_hunas: "Oazagodom"
+ duke_male_hunas: "Coado"
+ duchy_hunas: "Coadodom"
+ king_male_hunas: "So"
+ kingdom_hunas: "Sodo"
+ emperor_male_hunas: "Sonono-So"
+ empire_hunas: "Sononodom"
  #Xiongnu
- chanyu_xiongnu_male: "Chanyu"
+ king_male_xiongnu: "Toguran" #See Tuqi Kings
+ kingdom_xiongnu: "Togurate" #See Tuqi Kings
+ emperor_male_xiongnu: "Chan-yu"
+ empire_xiongnu: "Chanyuate"
  
  ### Western Germanic Heritage
  #Old Frankish
@@ -717,22 +740,6 @@
  barony_theocracy_east_celtic: "$barony_church_holding_east_celtic$"
  
  ##### GOVERNMENT SECTION #####
- 
- ### Nomad
- barony_tribal_holding_nomad: "Tribe"
- count_male_nomad: "Chief"
- county_nomad: "Chiefdom"
- duke_male_nomad: "High Chief"
- duchy_nomad: "High Chiefdom"
- king_male_nomad: "Khan"
- kingdom_nomad: "Clan"
- kingdom_nomad_independent: "Khanate"
- emperor_male_nomad: "Khagan"
- empire_nomad: "Khaganate"
- king_male_nomad_oghur: "Toguran" #See Tuqi Kings
- kingdom_nomad_oghur: "Togurate" #See Tuqi Kings
- emperor_male_nomad_oghur: "Chan-yu"
- empire_nomad_oghur: "Chanyuate"
  
  ### roman_government/Bureacratic
  barony_church_holding_roman_government: "Ecclesia"

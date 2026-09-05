@@ -2,17 +2,34 @@
 # Cultural triggers  #
 ######################
 
-##### TODO (Beta): Add WtWSMS historical hybrids
+##### TODO (Beta): Add WtWSMS hybrid restrictions
+##### TODO (Beta): Applied faster_divergence_hybridization_time parameter
 
 ##### Changed from Vanilla: Prevent hybridization between Hellenizers and Colonizers
 
 # Checks if you could Hybridise with the culture without checking for acceptance
 is_valid_for_hybridising_trigger = {
 	$CHARACTER$ = {
-		culture = {
-			NOT = { has_same_culture_heritage = $CULTURE$ }
-			culture_age >= culture_hybrid_cooldown
+		##### Changed from Vanilla vvvvv
+		trigger_if = {
+			limit = {
+				general_situation_regional_parameter_trigger = {
+					CHARACTER = $CHARACTER$
+					PARAMETER = faster_divergence_hybridization_time
+				}
+			}
+			culture = {
+				NOT = { has_same_culture_heritage = $CULTURE$ }
+				culture_age >= BP_culture_hybrid_cooldown_halved
+			}
 		}
+		trigger_else = {
+			culture = {
+				NOT = { has_same_culture_heritage = $CULTURE$ }
+				culture_age >= culture_hybrid_cooldown
+			}
+		}
+		##### Changed from Vanilla ^^^^^
 		trigger_if = {
 			limit = {
 				NAND = {

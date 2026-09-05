@@ -4662,6 +4662,35 @@ language_gushi = {
 	color = gushi
 }
 
+## Tokhari (Yuezhi/Wusun)
+language_tokhari = {
+	type = language
+	is_shown = { language_is_shown_trigger = { LANGUAGE = language_tokhari } }
+	
+	parameters = {
+		language_branch_tokhari = yes
+		language_family_indo_european = yes
+	}
+	
+	ai_will_do = {
+		value = 10
+		if = {
+			limit = { has_cultural_pillar = language_tokhari }
+			multiply = same_language_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_branch_tokhari }
+			multiply = same_language_branch_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_family_indo_european }
+			multiply = same_language_family_choice_factor
+		}
+	}
+	
+	color = wusun
+}
+
 # Afro-Asiatic
 
 ## Berber
@@ -5962,38 +5991,6 @@ language_oghur = {
 	
 	color = khazar
 }
-language_hunnic = {
-	type = language
-	is_shown = { language_is_shown_trigger = { LANGUAGE = language_hunnic } }
-	
-	parameters = {
-		language_branch_oghuric = yes
-		language_family_turkic = yes
-		language_union_steppe_siberian = yes
-	}
-	
-	ai_will_do = {
-		value = 10
-		if = {
-			limit = { has_cultural_pillar = language_hunnic }
-			multiply = same_language_choice_factor
-		}
-		else_if = {
-			limit = { has_cultural_parameter = language_branch_oghuric }
-			multiply = same_language_branch_choice_factor
-		}
-		else_if = {
-			limit = { has_cultural_parameter = language_family_mongolic }
-			multiply = same_language_family_choice_factor
-		}
-		else_if = {
-			limit = { has_cultural_parameter = language_union_steppe_siberian }
-			multiply = same_language_union_choice_factor
-		}
-	}
-	
-	color = hunnic
-}
 ## Shaz Turkic
 language_turkic = {
 	type = language
@@ -6139,9 +6136,9 @@ language_tuoba = {
 	
 	color = xianbei
 }
-language_tuyuhun = {
+language_xianbei = {
 	type = language
-	is_shown = { language_is_shown_trigger = { LANGUAGE = language_tuyuhun } }
+	is_shown = { language_is_shown_trigger = { LANGUAGE = language_tuoba } }
 	
 	parameters = {
 		language_group_paramongolic = yes
@@ -6153,7 +6150,7 @@ language_tuyuhun = {
 	ai_will_do = {
 		value = 10
 		if = {
-			limit = { has_cultural_pillar = language_tuyuhun }
+			limit = { has_cultural_pillar = language_tuoba }
 			multiply = same_language_choice_factor
 		}
 		else_if = {
@@ -6174,11 +6171,11 @@ language_tuyuhun = {
 		}
 	}
 	
-	color = tuyuhun
+	color = xianbei
 }
-language_ruanruan = {
+language_tuyuhun = {
 	type = language
-	is_shown = { language_is_shown_trigger = { LANGUAGE = language_ruanruan } }
+	is_shown = { language_is_shown_trigger = { LANGUAGE = language_tuyuhun } }
 	
 	parameters = {
 		language_group_paramongolic = yes
@@ -6190,7 +6187,7 @@ language_ruanruan = {
 	ai_will_do = {
 		value = 10
 		if = {
-			limit = { has_cultural_pillar = language_ruanruan }
+			limit = { has_cultural_pillar = language_tuyuhun }
 			multiply = same_language_choice_factor
 		}
 		else_if = {
@@ -7205,6 +7202,46 @@ language_hmongic = {
 }
 
 #ISOLATES
+
+language_xiongnu = {
+	type = language
+	is_shown = { language_is_shown_trigger = { LANGUAGE = language_xiongnu } }
+	
+	parameters = {
+		language_branch_isolate = yes
+		language_family_isolate = yes
+	}
+	
+	ai_will_do = {
+		value = 10
+		if = {
+			limit = { has_cultural_pillar = language_xiongnu }
+			multiply = same_language_choice_factor
+		}
+	}
+	
+	color = xiongnu
+}
+
+language_hunnic = {
+	type = language
+	is_shown = { language_is_shown_trigger = { LANGUAGE = language_hunnic } }
+	
+	parameters = {
+		language_branch_isolate = yes
+		language_family_isolate = yes
+	}
+	
+	ai_will_do = {
+		value = 10
+		if = {
+			limit = { has_cultural_pillar = language_hunnic }
+			multiply = same_language_choice_factor
+		}
+	}
+	
+	color = hunnic
+}
 
 language_basque = {
 	type = language

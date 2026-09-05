@@ -629,9 +629,13 @@ BP_minorities_476_gaul = {
 			add_minority_faith_granular_effect = { FAITH = faith:hellenic_pagan }
 			add_minority_culture_granular_effect = { CULTURE = culture:romano_gallic }
 		}
-		every_county = { #Brittany should have a smattering of Christianity
-			limit = { this.kingdom = title:k_brittany }
+		every_county = { #Brittany should have a smattering of Christianity and Britons
+			limit = {
+				this.kingdom = title:k_brittany
+				NOT = { this = title:c_french_leon } #The lone hold-out
+			}
 			add_small_faith_to_county_effect = { FAITH = faith:gallican_church }
+			add_small_culture_to_county_effect = { CULTURE = culture:briton }
 		}
 		#Frankish presence
 		title:c_liege = {

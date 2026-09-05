@@ -1,0 +1,79 @@
+﻿l_english:
+ #Iterate these rules with every version so people know what's in them
+ rule_wtwsms_start_event_migration_period_v0001: "$wtwsms_highlighted$ Migration Information"
+ setting_wtwsms_start_event_migration_period_v0001_enabled: "Enabled"
+ setting_wtwsms_start_event_migration_period_v0001_enabled_desc: "Have the migration information provided in an at-start full screen event"
+ setting_wtwsms_start_event_migration_period_v0001_disabled: "Disabled"
+ setting_wtwsms_start_event_migration_period_v0001_disabled_desc: "Do not have the migration information event at start"
+ 
+ situation_BP_migration_situation: "The Migration Period"
+ 
+ #Groups
+ BP_migration_situation_participant_group_barbarian_kings: "Barbarian Kings"
+ BP_migration_situation_participant_group_barbarian_kings_desc: "Former $BP_migration_situation_participant_group_migrators$ and $BP_migration_situation_participant_group_tribals$, who now rule Centralized Realms in this [situation_sub_region|E]"
+ BP_migration_situation_participant_group_migrators: "Migrators"
+ BP_migration_situation_participant_group_migrators_desc: "Tribal and Nomad rulers in the [situation_sub_region|E] and have a Germanic, Slavic, or Scythian culture or a Germanic, Slavic, or Steppe Faith"
+ BP_migration_situation_participant_group_others: "Others"
+ BP_migration_situation_participant_group_others_desc: "All other rulers in this [situation_sub_region|E]"
+ BP_migration_situation_participant_group_roman_emperors: "Roman Emperors"
+ BP_migration_situation_participant_group_roman_emperors_desc: "The Roman Emperors in this [situation_sub_region|E]"
+ BP_migration_situation_participant_group_roman_successors: "Roman Successors"
+ BP_migration_situation_participant_group_roman_successors_desc: "The various Sub-Roman and Roman States that derive from the Roman Empire and maintain Roman legal or cultural customs in this [situation_sub_region|E]"
+ BP_migration_situation_participant_group_tribals: "Tribals"
+ BP_migration_situation_participant_group_tribals_desc: "Tribal and Nomad rulers who do not meet the requirements to be part of the $BP_migration_situation_participant_group_migrators$ group"
+ 
+ #Phases
+ BP_migration_situation_BP_dormant_phase_situation_phase: "Dormant Phase"
+ BP_migration_situation_BP_dormant_phase_situation_phase_desc: "This region is currently dormant; players should not be seeing this phase"
+ 
+ BP_migration_situation_BP_migration_period_situation_phase: "Migration Phase"
+ BP_migration_situation_BP_migration_period_situation_phase_desc: "During the #V $BP_migration_situation_BP_migration_period_situation_phase$#!, #V $BP_migration_situation_participant_group_migrators$#! are capable of using the #V $bp_migration_war_cb$#! to take land from polities in the Migration Period [situation|E]; it is a tmie of instability."
+ BP_migration_period_war_effects: "War Effects"
+ BP_migration_period_war_effects_concept: "$BP_migration_period_war_effects$"
+ BP_migration_culture_effects: "Culture Effects"
+ BP_migration_culture_effects_concept: "$BP_migration_culture_effects$"
+ BP_migration_faith_effects: "Faith Effects"
+ BP_migration_faith_effects_concept: "$BP_migration_faith_effects$"
+ BP_migration_other_effects: "Other Effects"
+ BP_migration_other_effects_concept: "$BP_migration_other_effects$"
+ 
+ BP_transition_period: "Transition Phase"
+ BP_transition_period_desc: "During the $BP_transition_period$, the $situation_BP_migration_situation$ [situation|E] comes to an end after a few years."
+ 
+ BP_migration_situation_BP_transition_period_situation_phase: "$BP_transition_period$"
+ 
+ #Regions
+ BP_migration_situation_sub_region_migration_region_wre: "Western Roman Empire"
+ BP_migration_situation_sub_region_migration_region_ere: "Eastern Roman Empire"
+ BP_migration_situation_sub_region_migration_region_britannia: "Britannia"
+ BP_migration_situation_sub_region_migration_region_barbaria: "Germania and Slavia"
+ BP_migration_situation_sub_region_migration_region_steppe: "The Great Steppe"
+ 
+ #Parameters (all need to be added in)
+ #TODO: Make situation_parameter_faster_divergence_hybridization_time into Select Localization
+ #situation_parameter_confederation_tribal_authority: "$culture_parameter_confederation_tribal_authority$"
+ situation_parameter_cheaper_adventurer_invasions: "[ep3_laamp_adventurer_invasion_war|E] cost half the prestige"
+ situation_parameter_confederation_tribal_authority: "$culture_parameter_confederation_tribal_authority$"
+ situation_parameter_cultural_unification_cb_enabled: "Can use the #V [GetCasusBelliType('bp_cultural_unification_cb').GetName]#! [casus_belli|E]"
+ situation_parameter_custom_kingdom_creation_restrictions: "Creating custom [kingdoms|E] requires controlling two-thirds of one's culture counties with at least 5 culture counties on the map"
+ situation_parameter_different_custom_duchy_decision: "Utilizes a different custom [duchy|E] creation decision"
+ situation_parameter_faster_culture_promotion_in_tribal_counties: "Faster #V $task_promote_culture$#! council task in [counties|E] with just a [tribal_holding|E]"
+ situation_parameter_faster_divergence_hybridization_time: "Halves time required to create a [divergent_culture|E] or [hybrid_culture|E]"
+ situation_parameter_faster_faith_conversion_in_tribal_counties: "Faster #V $task_conversion$#! council task in [counties|E] with just a [tribal_holding|E]"
+ situation_parameter_faster_integrate_title_task: "Faster #V $task_integrate_title$#! council task"
+ situation_parameter_forming_confederations_is_easier: "$culture_parameter_forming_confederations_is_easier$"
+ situation_parameter_increased_subjugation_limit: "$culture_parameter_increased_subjugation_limit$"
+ situation_parameter_increased_subroman_decay: "Increased chances for [bp_feudalization|E] events"
+ situation_parameter_invite_to_confederation_extra_reasons: "$culture_parameter_invite_to_confederation_extra_reasons$"
+ situation_parameter_lower_acceptance_for_hybridization: "Halves the required [cultural_acceptance|E] needed to create a [hybrid_culture|E]\n$TAB$#weak Does not stack with [GetTrait('nomadic_philosophy').GetName( GetNullCharacter )] or $culture_parameter_easier_to_hybridize$ culture features#!"
+ situation_parameter_migration_cbs_enabled: "Can use the #V [GetCasusBelliType('bp_migration_war_cb').GetName]#! [casus_belli|E]"
+ situation_parameter_targetable_by_migration_cbs_loc: "Can be targeted by #V [GetCasusBelliType('bp_migration_war_cb').GetName]#! [casus_belli|E] (If government is $tribal_government_adjective$ or $nomad_government_adjective$)"
+ situation_parameter_unlocks_passing_culture_law: "Unlocks the decision to #V Pass a [bp_cultural_law|L]#!"
+ 
+ #Catalysts
+ catalyst_situation_passing_of_time_migration: "Yearly Drift [situation_catalyst|E]"
+ catalyst_situation_passing_of_time_migration_desc: "$catalyst_situation_passing_of_time_migration$"
+ 
+ #Others
+ cheaper_adventurer_invasions_tt: "$BP_migration_situation_BP_migration_period_situation_phase$"
+ 

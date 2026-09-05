@@ -23,10 +23,8 @@ c_dorohoi = {
 	466.1.1 = { holder = holder_c_dorohoi001 }
 	479.1.1 = { holder = holder_c_dorohoi002 }
 }
-c_hotin = { #Sklaveni
-	476.1.15={ holder = 64 } # Koloman Sklaveni
-	497.1.1={ holder = 31048 } # Chaslav Sklaveni
-	550.1.1={ holder = 33078 } # Stanislav Sklaveni
+c_hotin = {
+	475.1.1 = { holder = old_slavic_CHotin_001 }
 }
 
 d_moldova = { #Empty History
@@ -39,14 +37,10 @@ c_iasi = {
 	498.1.1 = { holder = holder_c_iasi002 }
 }
 c_orhei = { #Antae
-	460.1.2 = { holder = 82 } # Perey Antae
-	490.1.1 = { holder = 31046 } # Radimir Antae
-	550.1.1 = { holder = 31047 } # Gremislav Antae
+	476.1.1 = { holder = old_slavic_COrhei_001 }
 }
 c_soroca = { #Antae
-	460.1.2 = { holder = 82 } # Perey Antae
-	490.1.1 = { holder = 31046 } # Radimir Antae
-	550.1.1 = { holder = 31047 } # Gremislav Antae
+	475.1.1 = { holder = old_slavic_CSoroca_001 }
 }
 c_barlad = {
 	450.1.1 = { liege = 0 }
@@ -66,33 +60,23 @@ c_stoenesti = {
 	472.1.1 = { holder = holder_c_stoenesti002 }
 }
 
-d_bugeac = { #Empty History
-	1.1.1={}
+d_bugeac = {
+	454.1.1 = { holder = 69 } # Ernak
+	495.1.1 = { holder = 0 }
 }
 c_tigheci = {
-	438.1.1 = { holder = holder_c_tigheci000 }
-	454.1.1 = { liege = e_hunnic_empire }
-	457.1.1 = { holder = holder_c_tigheci001 }
-	496.1.1 = { holder = holder_c_tigheci002 }
-	510.1.1 = { holder = holder_c_tigheci003 }
+	454.1.1 = { holder = 69 } #Ernak
+	#495 - Slavs
 }
 c_cetatea_alba = {
-	432.1.1 = { holder = holder_c_cetatea_alba000 }
-	441.1.1 = { holder = holder_c_cetatea_alba001 }
-	454.1.1 = { liege = e_hunnic_empire }
-	463.1.1 = { holder = holder_c_cetatea_alba002 }
-	479.1.1 = { holder = holder_c_cetatea_alba003 }
+	454.1.1 = { holder = 69 } #Ernak
+	#495 - Slavs
 }
 c_chilia = {
-	430.1.1 = { holder = holder_c_chilia000 }
-	434.1.1 = { holder = holder_c_chilia001 }
-	454.1.1 = { liege = e_hunnic_empire }
-	474.1.1 = { holder = holder_c_chilia002 }
-	497.1.1 = { holder = holder_c_chilia003 }
+	454.1.1 = { holder = 69 } #Ernak
+	#495 - Slavs
 }
 c_lapusna = {
-	454.1.1 = { liege = e_hunnic_empire }
-	454.1.1 = { holder = holder_c_lapusna000 }
-	479.1.1 = { holder = holder_c_lapusna001 }
-	492.1.1 = { holder = holder_c_lapusna002 }
+	454.1.1 = { holder = 69 } #Ernak
+	#495 - Slavs
 }

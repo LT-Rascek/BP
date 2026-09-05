@@ -57,7 +57,7 @@ d_khotan = {
 	451.1.1 = {
 		holder = 166647
 	}
-	#476.1.1={ set_tribute_suzerain = { who = e_xiongnu percentage = 0.50 } } #[1]
+	#476.1.1={ set_tribute_suzerain = { who = e_bactria percentage = 0.50 } } #[1]
 	496.1.1 = {
 		holder = 166648
 	}
@@ -537,7 +537,7 @@ d_kashgar = {
 	470.1.1={ 
 		holder=219006 # Kossas Chenpanid
 	}
-	#476.1.1={ set_tribute_suzerain = { who = e_xiongnu percentage = 0.50 } } #[1]
+	#476.1.1={ set_tribute_suzerain = { who = e_bactria percentage = 0.50 } } #[1]
 	510.1.1={ 
 		holder=219007 # Ourgios Chenpanid
 	}
@@ -674,41 +674,6 @@ c_terek_pass = { #c_kashgar history (examination)
 	}
 	510.1.1={ 
 		holder=219007 # Ourgios Chenpanid
-	}
-}
-c_aksu = {
-	390.1.1={ 
-		holder=219525 # Megabyzus
-	}
-	450.1.1={ 
-		holder=219530 # Po-Yen
-	}
-	510.1.1={ 
-		holder=219531 # Dandakamal
-	}
-	560.1.1={ 
-		holder=219533 # Kereptaññe
-	}
-	595.1.1 = {
-		holder = 166708
-	}
-	624.1.1 = {
-		holder = 166709
-	}
-	646.1.1 = {
-		holder = 166710
-	}
-	689.1.1 = {
-		holder = 166711
-	}
-	719.1.1 = {
-		holder = 166712
-	}
-	760.1.1 = {
-		holder = 166713
-	}
-	792.1.1 = {
-		holder = 166715
 	}
 }
 c_yarkand = {
@@ -867,41 +832,6 @@ c_karashar = {
 		holder=360110 # Yami
 	}
 }
-c_kucha = {
-	390.1.1={ 
-		holder=219525 # Megabyzus
-	}
-	450.1.1={ 
-		holder=219530 # Po-Yen
-	}
-	510.1.1={ 
-		holder=219531 # Dandakamal
-	}
-	560.1.1={ 
-		holder=219533 # Kereptaññe
-	}
-	595.1.1 = {
-		holder = 166708
-	}
-	624.1.1 = {
-		holder = 166709
-	}
-	646.1.1 = {
-		holder = 166710
-	}
-	689.1.1 = {
-		holder = 166711
-	}
-	719.1.1 = {
-		holder = 166712
-	}
-	760.1.1 = {
-		holder = 166713
-	}
-	792.1.1 = {
-		holder = 166715
-	}
-}
 c_luntai = { #c_kucha history (changed from c_luntai)
 	390.1.1={ 
 		holder=219525 # Megabyzus
@@ -1009,19 +939,115 @@ c_dunhuang = { #c_charkliq history (changed from c_dunhuang; misnamed)
 	}
 }
 c_kumtag = {
+	475.1.1 = {
+		holder = tocharian_CKumtag_holder_000
+		government = tribal_government
+	}
+}
+
+d_kucha = {
 	390.1.1={ 
-		holder=219513 # Bilong
+		holder=219525 # Megabyzus
+		government = prefeudal_government
 	}
 	450.1.1={ 
-		holder=219515 # Martiya
+		holder=219530 # Po-Yen
 	}
 	510.1.1={ 
-		holder=219517 # Bilong II 
+		holder=219531 # Dandakamal
 	}
 	560.1.1={ 
-		holder=219518 # Deioces
+		holder=219533 # Kereptaññe
 	}
-	570.1.1={ 
-		holder=219519 # Sanfutuo
+	595.1.1 = {
+		holder = 166708
+	}
+	624.1.1 = {
+		holder = 166709
+	}
+	646.1.1 = {
+		holder = 166710
+	}
+	689.1.1 = {
+		holder = 166711
+	}
+	719.1.1 = {
+		holder = 166712
+	}
+	760.1.1 = {
+		holder = 166713
+	}
+	792.1.1 = {
+		holder = 166715
+	}
+}
+c_kucha = {
+	390.1.1={ 
+		holder=219525 # Megabyzus
+	}
+	450.1.1={ 
+		holder=219530 # Po-Yen
+	}
+	510.1.1={ 
+		holder=219531 # Dandakamal
+	}
+	560.1.1={ 
+		holder=219533 # Kereptaññe
+	}
+	595.1.1 = {
+		holder = 166708
+	}
+	624.1.1 = {
+		holder = 166709
+	}
+	646.1.1 = {
+		holder = 166710
+	}
+	689.1.1 = {
+		holder = 166711
+	}
+	719.1.1 = {
+		holder = 166712
+	}
+	760.1.1 = {
+		holder = 166713
+	}
+	792.1.1 = {
+		holder = 166715
+	}
+}
+c_aksu = {
+	390.1.1={ 
+		holder=219525 # Megabyzus
+	}
+	450.1.1={ 
+		holder=219530 # Po-Yen
+	}
+	510.1.1={ 
+		holder=219531 # Dandakamal
+	}
+	560.1.1={ 
+		holder=219533 # Kereptaññe
+	}
+	595.1.1 = {
+		holder = 166708
+	}
+	624.1.1 = {
+		holder = 166709
+	}
+	646.1.1 = {
+		holder = 166710
+	}
+	689.1.1 = {
+		holder = 166711
+	}
+	719.1.1 = {
+		holder = 166712
+	}
+	760.1.1 = {
+		holder = 166713
+	}
+	792.1.1 = {
+		holder = 166715
 	}
 }

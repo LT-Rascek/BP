@@ -163,15 +163,6 @@
 2385 = {	#CHAMPS
 	holding = none
 }
-###c_briey
-2706 = {	#BRIEY
-	culture = romano_gallic
-	religion = gallican_church
-	holding = castle_holding
-}
-2080 = {	#HAYANGE
-	holding = none
-}
 ###c_vaucouleurs
 2387 = {	#VAUCOULEURS
 	culture = romano_gallic
@@ -212,6 +203,24 @@
 
 ## d_belgica_secunda #######################
 
+###c_hainaut
+2127 = {	#TOURNAI
+	culture = romano_gallic
+	religion = gallican_church
+	holding = castle_holding
+	451.1.1 = {
+		culture = old_frankish
+		religion = frankish_pagan
+		holding = tribal_holding
+	}
+}
+2117 = {	#MONS
+	holding = city_holding
+	451.1.1 = { holding = none }
+}
+2120 = {	#ATH
+	holding = none
+}
 ###c_boulogne
 2132 = {	#BOULOGNE
 	culture = romano_gallic
@@ -272,7 +281,7 @@
 2115 = {	#BRUGES
 	culture = old_frankish
 	religion = frankish_pagan
-	holding = castle_holding
+	holding = tribal_holding
 	508.12.25 = { religion = gallican_church }
 }
 2114 = {	#GENT
@@ -300,8 +309,8 @@
 2134 = {	#AIRE
 	holding = none
 }
-###c_hainaut
-2117 = {	#MONS
+###c_cambray
+2118 = {	#CAMBRAI
 	culture = romano_gallic
 	religion = gallican_church
 	holding = castle_holding
@@ -310,20 +319,6 @@
 		religion = frankish_pagan
 		holding = tribal_holding
 	}
-}
-2127 = {	#TOURNAI
-	holding = city_holding
-	451.1.1 = { holding = none }
-}
-2120 = {	#ATH
-	holding = none
-}
-###c_cambray
-2118 = {	#CAMBRAI
-	culture = romano_gallic
-	religion = gallican_church
-	holding = castle_holding
-	451.1.1 = { holding = tribal_holding }
 }
 2121 = {	# MALBODEN
 	holding = none

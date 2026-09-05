@@ -435,7 +435,12 @@ innovation_chinese_urbanization = {
 	culture_era = culture_era_classical_antiquity
 	icon = @civil_construction_2
 	
-	potential = { has_cultural_pillar = heritage_chinese }
+	potential = {
+		OR = {
+			has_cultural_pillar = heritage_chinese
+			has_cultural_parameter = unlocks_some_chinese_innovations
+		}
+	}
 
 	custom = reduce_develop_county_penalty_special_urbanizations
 	custom = very_early_urbanization_effect

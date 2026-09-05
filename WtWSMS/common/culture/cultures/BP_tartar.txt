@@ -1,0 +1,177 @@
+﻿xianbei = {
+	color = xianbei
+	
+	created = 2.1.1
+	history_loc_override = xianbei_history_loc
+	
+	ethos = ethos_bellicose
+	heritage = heritage_mongolic
+	language = language_xianbei
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_herd
+	traditions = {
+		#Societal Traditions
+		#Regional Traditions
+		#Ritual Traditions
+		#Realm Traditions
+		#Combat Traditions
+		tradition_quarrelsome #Very loose integration
+		tradition_ruling_caste
+	}
+	
+	dlc_tradition = {
+		trait = tradition_devoted_horsemanship
+		requires_dlc_flag = khans_of_the_steppe
+		fallback = tradition_horse_lords
+	}
+	
+	name_order_convention = dynasty_always_first
+	name_list = name_list_xianbei
+	
+	coa_gfx = { mongol_coa_gfx steppe_coa_gfx }
+	building_gfx = { steppe_building_gfx }
+	clothing_gfx = { khitan_clothing_gfx mongol_clothing_gfx }
+	unit_gfx = { mongol_unit_gfx }
+	house_coa_frame = house_frame_16
+	
+	ethnicities = { 100 = asian_mongol }
+}
+tuoba = { #Heavily Sinicized Xianbei, but still distinct
+	color = tuoba
+	
+	parents = { xianbei }
+	created = 386.1.1 #Northern Wei establishment, likely hybridization here
+	history_loc_override = tuoba_history_loc
+	
+	ethos = ethos_courtly
+	heritage = heritage_mongolic
+	language = language_tuoba
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_domain
+	traditions = {
+		#Societal Traditions
+		#Regional Traditions
+		tradition_nomadic_rulership
+		#Ritual Traditions
+		#Realm Traditions
+		#Combat Traditions
+	}
+	
+	dlc_tradition = {
+		trait = tradition_tgp_art_of_war
+		requires_dlc_flag = all_under_heaven
+		fallback = tradition_formation_fighting
+	}
+	
+	dlc_tradition = {
+		trait = tradition_scholar_officials
+		requires_dlc_flag = all_under_heaven
+		fallback = tradition_philosopher_culture
+	}
+	
+	dlc_tradition = {
+		trait = tradition_cultivation
+		requires_dlc_flag = all_under_heaven
+	}
+	
+	dlc_tradition = {
+		trait = tradition_sinophilic
+		requires_dlc_flag = all_under_heaven
+	}
+	
+	name_order_convention = dynasty_always_first
+	name_list = name_list_xianbei
+	
+	coa_gfx = { mongol_coa_gfx steppe_coa_gfx }
+	building_gfx = { steppe_building_gfx }
+	clothing_gfx = { khitan_clothing_gfx mongol_clothing_gfx }
+	unit_gfx = { mongol_unit_gfx }
+	house_coa_frame = house_frame_16
+	
+	ethnicities = {
+		50 = asian_mongol
+		50 = asian_han_chinese
+	}
+}
+ninrun = { #Sir Diesalot suggestion; proto-Buryats? # WIP Rouran culture
+	color = ninrun
+	
+	parents = { xianbei }
+	created = 330.1.1 #Yujiulu Mugulu
+	history_loc_override = ninrun_history_loc
+	
+	ethos = ethos_egalitarian
+	heritage = heritage_mongolic
+	language = language_xianbei
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_herd
+	traditions = {
+		#Societal Traditions
+		#Regional Traditions
+		#Ritual Traditions
+		#Realm Traditions
+		tradition_ruling_caste
+		#Combat Traditions
+	}
+	
+	dlc_tradition = { #Should only really apply after 464...
+		trait = tradition_sinophilic
+		requires_dlc_flag = all_under_heaven
+		fallback = tradition_xenophilic
+	}
+	
+	dlc_tradition = {
+		trait = tradition_devoted_horsemanship
+		requires_dlc_flag = khans_of_the_steppe
+		fallback = tradition_horse_lords
+	}
+	
+	name_order_convention = dynasty_always_first
+	name_list = name_list_ninrun
+	
+	coa_gfx = { mongol_coa_gfx steppe_coa_gfx }
+	building_gfx = { steppe_building_gfx }
+	clothing_gfx = { mongol_clothing_gfx }
+	unit_gfx = { mongol_unit_gfx }
+	house_coa_frame = house_frame_16
+	
+	ethnicities = { 100 = asian_mongol }
+}
+tuyuhun = {
+	color = tuyuhun
+	
+	parents = { xianbei }
+	created = 284.1.1
+	history_loc_override = tuyuhun_history_loc
+	
+	ethos = ethos_stoic
+	heritage = heritage_mongolic
+	language = language_tuyuhun
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_herd
+	traditions = {
+		#Societal Traditions
+		#Regional Traditions
+		#Ritual Traditions
+		#Realm Traditions
+		tradition_pastoralists
+		#Combat Traditions
+		tradition_horse_breeder
+	}
+	
+	dlc_tradition = {
+		trait = tradition_mpo_iron_cavalry
+		requires_dlc_flag = khans_of_the_steppe
+		fallback = tradition_horse_lords
+	}
+	
+	name_list = name_list_tuyuhun
+	
+	coa_gfx = { mongol_coa_gfx steppe_coa_gfx }
+	building_gfx = { steppe_building_gfx }
+	clothing_gfx = { mongol_clothing_gfx }
+	unit_gfx = { mongol_unit_gfx }
+	house_coa_frame = house_frame_14
+	
+	ethnicities = { 100 = asian_mongol }
+}

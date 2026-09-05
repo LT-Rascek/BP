@@ -1,0 +1,91 @@
+﻿##### Changed from Vanilla: Put both MMA unlocks at the top
+tradition_devoted_horsemanship = {
+	category = regional
+
+	layers = {
+		0 = martial
+		1 = steppe
+		4 = horses.dds
+	}
+
+	is_shown = {
+		OR = {
+			has_cultural_pillar = heritage_mongolic
+			has_cultural_pillar = heritage_turkic
+			has_cultural_pillar = heritage_magyar
+			scope:character = {
+				mpo_can_recruit_nomad_maa_trigger = yes
+			}
+		}
+	}
+
+	can_pick = {
+		OR = {
+			has_cultural_pillar = heritage_mongolic
+			has_cultural_pillar = heritage_turkic
+			has_cultural_pillar = heritage_magyar
+			scope:character = {
+				mpo_can_recruit_nomad_maa_trigger = yes
+			}
+			scope:character = {
+				has_trait = nomadic_philosophy
+			}
+		}
+	}
+
+	##### Changed from Vanilla vvvvv
+	parameters = {
+		unlock_maa_horse_archers = yes
+		unlock_maa_tarkhan = yes
+		can_recruit_open_specialist = yes
+		unlock_horse_pastures_building = yes
+		unlock_voluntary_laampdom = yes
+		stewardship_traits_give_out_cav_bonus = yes
+	}
+	##### Changed from Vanilla ^^^^^
+
+	character_modifier = {
+		movement_speed = 0.1
+		character_travel_speed_mult = 0.2
+		movement_speed_land_raiding = 0.2
+	}
+
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				multiply = 2
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_bellicose = { is_in_list = traits }
+						culture_pillar:ethos_communal = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_bellicose_or_communal_desc
+				}
+			}
+
+			if = {
+				limit = {
+					culture_tradition_reduction_trigger = { TRADITION = tradition_devoted_horsemanship }
+				}
+				multiply = {
+					value = 0.5
+					desc = inspired_by_culture_desc
+				}
+			}
+
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+
+	ai_will_do = {
+		value = 400
+	}
+}

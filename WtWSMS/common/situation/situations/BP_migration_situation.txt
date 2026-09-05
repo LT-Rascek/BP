@@ -1,0 +1,601 @@
+﻿BP_migration_situation = {
+	gui_window_name = "BP_window_migration_situation"
+	gui_participation_window_name = "window_situation_participation"
+	illustration = "gfx/interface/illustrations/terrain_types/mpo_season_abudant_grazing.dds"
+	situation_group_type = major
+	map_mode = sub_regions
+
+	icon = "gfx/interface/icons/message_feed/marshal_job.dds"
+
+	is_unique = yes # It can only exist once in the world
+
+	##################################################
+	# Regions
+	##################################################
+	sub_regions = {
+		migration_region_wre = {
+			icon = "gfx/interface/icons/situations/BP_migration_situation/wre_region_icon.dds"
+			map_color = { 220 20 60 }
+			geographical_regions = { migration_region_wre }
+		}
+		migration_region_ere = {
+			map_color = { 150 35 165 }
+			icon = "gfx/interface/icons/situations/BP_migration_situation/ere_region_icon.dds"
+			geographical_regions = { migration_region_ere }
+		}
+		migration_region_britannia = {
+			map_color = { 172 22 22 }
+			icon = "gfx/interface/icons/situations/BP_migration_situation/britannia_region_icon.dds"
+			geographical_regions = { migration_region_britannia }
+		}
+		migration_region_barbaria = {
+			map_color = { 0.35 0.5 0.30 }
+			icon = "gfx/interface/icons/situations/BP_migration_situation/barbaria_region_icon.dds"
+			geographical_regions = { migration_region_barbaria }
+		}
+		migration_region_steppe = {
+			map_color = { 211 177 80 }
+			icon = "gfx/interface/icons/situations/BP_migration_situation/steppe_region_icon.dds"
+			geographical_regions = { migration_region_steppe }
+		}
+	}
+	
+	##################################################
+	# On Actions
+	##################################################
+
+	#Global join of the situation
+	on_join = {
+		if = {
+			limit = {
+				is_ai = no
+				NOT = { has_character_flag = migration_general_events_0001_var }
+				has_game_rule = wtwsms_start_event_migration_period_v0001_enabled
+			}
+			trigger_event = migration_general_events.0001
+		}
+	}
+
+	on_monthly = {}
+	on_yearly = {
+		#Yearly Tick of situation
+		trigger_situation_catalyst = catalyst_situation_passing_of_time_migration
+	}
+
+	##################################################
+	# Groups
+	##################################################
+	participant_groups = {
+		roman_emperors = {
+			icon = "gfx/interface/icons/modifiers/byzantine_crown_mixed.dds"
+			is_character_valid = {
+				BP_can_be_roman_emperor_participant_trigger = yes
+				is_independent_ruler = yes
+				is_landed = yes
+			}
+			on_join = {}
+			on_leave = {}
+			
+			map_color = hsv{ 0.37 1.00 0.78 }
+		}
+		roman_successors = {
+			icon = "gfx/interface/icons/modifiers/byzantine_eagle_mixed.dds"
+			is_character_valid = {
+				BP_can_be_roman_emperor_participant_trigger = no
+				BP_can_be_roman_successor_governmental_trigger = yes
+				is_independent_ruler = yes
+				is_landed = yes
+			}
+			on_join = {}
+			on_leave = {}
+			
+			map_color = hsv{ 0.37 1.00 0.78 }
+		}
+		barbarian_kings = {
+			icon = "gfx/interface/icons/modifiers/prowess_mixed.dds"
+			is_character_valid = {
+				BP_can_be_roman_emperor_participant_trigger = no
+				BP_can_be_roman_successor_governmental_trigger = no
+				BP_can_be_barbarian_king_trigger = yes
+				is_independent_ruler = yes
+				is_landed = yes
+			}
+			on_join = {}
+			on_leave = {}
+			
+			map_color = hsv{ 0.37 1.00 0.78 }
+		}
+		migrators = {
+			icon = "gfx/interface/icons/modifiers/asatru_raven_mixed.dds"
+			is_character_valid = {
+				BP_can_be_migrator_cultural_religious_trigger = yes
+				BP_can_be_tribals_trigger = yes
+				OR = {
+					government_has_flag = landless_adventurer_government
+					AND = {
+						is_independent_ruler = yes
+						is_landed = yes
+					}
+					is_ai = no
+				}
+			}
+			on_join = {
+				if = {
+					limit = { has_character_modifier = migration_situation_previous_tribal }
+					remove_character_modifier = migration_situation_previous_tribal
+				}
+				if = {
+					limit = { has_character_modifier = migration_situation_previous_migrator }
+					remove_character_modifier = migration_situation_previous_migrator
+				}
+			}
+			on_leave = {
+				if = {
+					limit = { NOT = { has_character_modifier = migration_situation_previous_migrator } }
+					add_character_modifier = migration_situation_previous_migrator
+				}
+			}
+			
+			map_color = hsv{ 0.37 1.00 0.78 }
+		}
+		tribals = {
+			icon = "gfx/interface/icons/modifiers/dread_mixed.dds"
+			is_character_valid = {
+				BP_can_be_migrator_cultural_religious_trigger = no
+				BP_can_be_tribals_trigger = yes
+				is_independent_ruler = yes
+				is_landed = yes
+			}
+			on_join = {
+				if = {
+					limit = { has_character_modifier = migration_situation_previous_tribal }
+					remove_character_modifier = migration_situation_previous_tribal
+				}
+				if = {
+					limit = { has_character_modifier = migration_situation_previous_migrator }
+					remove_character_modifier = migration_situation_previous_migrator
+				}
+			}
+			on_leave = {
+				if = {
+					limit = { NOT = { has_character_modifier = migration_situation_previous_tribal } }
+					add_character_modifier = migration_situation_previous_tribal
+				}
+			}
+			
+			map_color = hsv{ 0.37 1.00 0.78 }
+		}
+		others = {
+			icon = "gfx/interface/icons/modifiers/legitimacy_mixed.dds"
+			is_character_valid = {
+				BP_can_be_roman_emperor_participant_trigger = no
+				BP_can_be_roman_successor_governmental_trigger = no
+				BP_can_be_barbarian_king_trigger = no
+				BP_can_be_migrator_cultural_religious_trigger = no
+				BP_can_be_tribals_trigger = no
+				is_independent_ruler = yes
+				is_landed = yes
+			}
+			on_join = {}
+			on_leave = {}
+			
+			map_color = hsv{ 0.37 1.00 0.78 }
+		}
+	}
+	
+	##################################################
+	# Phases
+	##################################################
+	start_phase = BP_migration_period
+
+	phases = {
+		BP_dormant_phase = { #For regions not in use
+			icon = "gfx/interface/icons/situations/debug_situation/plentiful_harvest.dds"
+			on_start = {}
+			on_end = {}
+		}
+		BP_migration_period = {
+			icon = "gfx/interface/icons/message_feed/martial.dds"
+			
+			on_start = {}
+			on_end = {}
+			
+			future_phases = {
+				BP_transition_period = {
+					takeover_type = points
+					takeover_points = 405
+					catalysts = {
+						#Passage of Time
+						catalyst_situation_passing_of_time_migration = BP_migration_catalyst_yearly_tick
+					}
+				}
+			}
+			
+			parameters = {}
+			
+			modifier_sets = {
+				BP_migration_period_war_effects = {
+					icon = "gfx/interface/icons/struggle_effects/war.dds"
+					all = { #Only for display it seems
+						parameters = {
+							targetable_by_migration_cbs_loc = yes
+						}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					roman_emperors = {
+						parameters = { targetable_by_migration_cbs = yes } #Hidden
+						character_modifier = {}
+						county_modifier = {}
+					}
+					roman_successors = {
+						parameters = { targetable_by_migration_cbs = yes } #Hidden
+						character_modifier = {}
+						county_modifier = {}
+					}
+					barbarian_kings = {
+						parameters = { targetable_by_migration_cbs = yes } #Hidden
+						character_modifier = {
+							#AI Weights
+							ai_war_chance = 0.5
+							ai_boldness = 0.25
+						}
+						county_modifier = {}
+					}
+					migrators = {
+						parameters = {
+							targetable_by_migration_cbs = yes #Hidden
+							migration_cbs_enabled = yes
+							increased_subjugation_limit = yes
+							cultural_unification_cb_enabled = yes
+							cheaper_adventurer_invasions = yes
+						}
+						character_modifier = {
+							#AI Weights
+							ai_war_chance = 1.0
+							ai_boldness = 0.50
+						}
+						county_modifier = {}
+					}
+					tribals = {
+						parameters = {
+							targetable_by_migration_cbs = yes #Hidden
+							increased_subjugation_limit = yes
+							cultural_unification_cb_enabled = yes
+						}
+						character_modifier = {
+							#AI Weights
+							ai_war_chance = 0.5
+							ai_boldness = 0.25
+						}
+						county_modifier = {}
+					}
+					others = {
+						parameters = { targetable_by_migration_cbs = yes } #Hidden
+						character_modifier = {}
+						county_modifier = {}
+					}
+				}
+				BP_migration_culture_effects = {
+					icon = "gfx/interface/icons/struggle_effects/culture.dds"
+					all = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					roman_emperors = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					roman_successors = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					barbarian_kings = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					migrators = {
+						parameters = {
+							faster_divergence_hybridization_time = yes
+							lower_acceptance_for_hybridization = yes
+							faster_culture_promotion_in_tribal_counties = yes
+						}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					tribals = {
+						parameters = {
+							faster_divergence_hybridization_time = yes
+							lower_acceptance_for_hybridization = yes
+							faster_culture_promotion_in_tribal_counties = yes
+						}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					others = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+				}
+				BP_migration_faith_effects = {
+					icon = "gfx/interface/icons/struggle_effects/faith.dds"
+					all = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					roman_emperors = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					roman_successors = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					barbarian_kings = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					migrators = {
+						parameters = {
+							faster_faith_conversion_in_tribal_counties = yes
+						}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					tribals = {
+						parameters = {
+							faster_faith_conversion_in_tribal_counties = yes
+						}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					others = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+				}
+				BP_migration_other_effects = {
+					icon = "gfx/interface/icons/struggle_effects/other.dds"
+					all = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					roman_emperors = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					roman_successors = {
+						parameters = {
+							faster_integrate_title_task = yes
+						}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					barbarian_kings = {
+						parameters = {
+							increased_subroman_decay = yes
+							unlocks_passing_culture_law = yes
+							faster_integrate_title_task = yes
+						}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					migrators = {
+						parameters = {
+							forming_confederations_is_easier = yes
+							invite_to_confederation_extra_reasons = yes
+							confederation_tribal_authority = yes
+							custom_kingdom_creation_restrictions = yes
+							different_custom_duchy_decision = yes
+						}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					tribals = {
+						parameters = {
+							forming_confederations_is_easier = yes
+							invite_to_confederation_extra_reasons = yes
+							confederation_tribal_authority = yes
+							custom_kingdom_creation_restrictions = yes
+							different_custom_duchy_decision = yes
+						}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					others = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+				}
+			}
+		}
+		BP_transition_period = {
+			icon = "gfx/interface/icons/message_feed/alliance.dds"
+			
+			max_duration = { months = 1 }
+			
+			on_start = {}
+			on_end = {
+				scope:situation_sub_region = {
+					every_situation_sub_region_participant = {
+						limit = {
+							is_ai = no
+							NOT = { has_character_flag = migration_general_events_0002_var }
+						}
+						trigger_event = migration_general_events.0002
+					}
+				}
+			}
+			
+			parameters = {}
+			
+			modifier_sets = {
+				BP_migration_period_war_effects = {
+					icon = "gfx/interface/icons/struggle_effects/war.dds"
+					all = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					roman_emperors = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					roman_successors = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					barbarian_kings = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					migrators = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					tribals = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					others = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+				}
+				BP_migration_culture_effects = {
+					icon = "gfx/interface/icons/struggle_effects/culture.dds"
+					all = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					roman_emperors = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					roman_successors = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					barbarian_kings = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					migrators = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					tribals = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					others = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+				}
+				BP_migration_faith_effects = {
+					icon = "gfx/interface/icons/struggle_effects/faith.dds"
+					all = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					roman_emperors = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					roman_successors = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					barbarian_kings = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					migrators = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					tribals = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					others = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+				}
+				BP_migration_other_effects = {
+					icon = "gfx/interface/icons/struggle_effects/other.dds"
+					all = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					roman_emperors = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					roman_successors = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					barbarian_kings = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					migrators = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					tribals = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+					others = {
+						parameters = {}
+						character_modifier = {}
+						county_modifier = {}
+					}
+				}
+			}
+		}
+	}
+}

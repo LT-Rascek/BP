@@ -1,0 +1,713 @@
+﻿#Migration CBs
+# Originally written by Zusk, ported and overhauled to CK3 by LT-Rascek
+
+#TODO: Re-enable declaration events
+bp_migration_war_cb = {
+	group = migration
+	icon = invasion
+	
+	allow_hostages = no
+
+	combine_into_one = yes
+	should_show_war_goal_subview = yes
+	mutually_exclusive_titles = { always = yes }
+
+	allowed_for_character = {
+		OR = {
+			this.primary_title.tier = tier_duchy
+			this.primary_title.tier = tier_kingdom
+		}
+		#Franks shouldn't migrate
+		trigger_if = {
+			limit = {
+				has_game_rule = migration_behavior_historical
+				is_ai = yes
+			}
+			this.culture = { is_historical_non_migrator_culture_trigger = yes }
+		}
+	}
+
+	allowed_for_character_display_regardless = {
+		this.prestige_level > this.migration_war_required_fame_level
+		custom_description = {
+			text = has_launched_migration_war_recently
+			NOT = { has_character_flag = launched_migration_war_recently }
+		}
+	}
+	
+	allowed_against_character = {
+		scope:attacker = {
+			ALL_FALSE = {
+				top_liege = scope:defender.top_liege
+				liege = scope:defender
+			}
+		}
+		#Base Requirements
+		is_landed = yes 
+		#No migrations against your own culture; use unification CBs instead
+		NOT = { scope:attacker.culture = scope:defender.culture }
+		#Has the Appropriate Situation Parameter
+		general_situation_regional_parameter_trigger = {
+			CHARACTER = scope:defender
+			PARAMETER = targetable_by_migration_cbs
+		}
+	}
+	
+	target_titles = neighbor_land_or_water
+	target_title_tier = kingdom
+	target_de_jure_regions_above = yes
+	ignore_effect = change_title_holder
+	
+	max_ai_diplo_distance_to_title = 250 #Roughly one Ireland away
+	
+	ai_score_mult = {
+		value = 1
+		# Prefer (strongly) to target non-tribal locations if they are at least non-tribal
+		add = {
+			every_in_list = {
+				list = target_titles
+				if = { limit = { general_bp_migration_constraints_trigger = yes } add = -1000 }
+			}
+		}
+	}
+
+	valid_to_start = {
+		scope:target = {
+			any_in_de_jure_hierarchy = {
+				tier = tier_county
+				neighboring_county_or_viking_conquest_trigger = { CHARACTER = root }
+			}
+		}
+		#Can't multi-migrate
+		NOT = { scope:attacker = { any_character_war = { using_cb = bp_migration_war_cb } } }
+		
+		#Don't touch the steppe with WtWSMS migrations
+		target_title_not_in_great_steppe_trigger = {
+			TARGET_TITLE = scope:target
+			TIER = kingdom
+		}
+		#If the government is centralized, can't be a giant blob of Tribals (need to conquer instead)
+		trigger_if = {
+			limit = { scope:defender = { government_has_flag = government_is_centralized } }
+			scope:target = {
+				any_in_de_jure_hierarchy = {
+					count >= 1
+					is_landless_type_title = no
+					this.tier = tier_county
+					OR = {
+						this.holder = { government_has_flag = government_is_tribal }
+						this.holder = { government_has_flag = government_is_roman_federate }
+					}
+				}
+			}
+		}
+	}
+
+	cost = {
+		prestige = scope:attacker.migration_war_prestige_cost_kingdom
+	}
+
+	on_declaration = {
+		on_declared_war = yes
+		#For localization
+		random_in_list = {
+			list = target_titles
+			limit = { tier = tier_kingdom }
+			save_scope_as = target_title
+		}
+		#Spawn armies
+		custom_description = {
+			text = armies_spawn_from_development
+			scope:attacker = {
+				every_held_title = {
+					limit = {
+						tier = tier_county
+						is_landless_type_title = no
+						AND = {
+							this.culture = scope:attacker.culture
+							this.faith = scope:attacker.faith
+						}
+					}
+					change_development_level = bp_migration_depopulation
+					prev = {
+						spawn_army = {
+							name = event_troop_default_name
+							levies = prev.bp_migration_levies
+							location = prev.title_province
+							uses_supply = no
+							war = scope:war
+							inheritable = no
+						}
+					}
+				}
+			}
+		}
+		hidden_effect = { scope:attacker = { update_number_of_bp_migrations_effect = yes } }
+	}
+	
+	should_invalidate = {
+		NOT = {
+			any_in_list = {
+				list = target_titles
+				any_in_de_jure_hierarchy = {
+					tier = tier_county
+					holder = { target_is_same_character_or_above = scope:defender }
+				}
+			}
+		}
+	}
+	
+	on_invalidated_desc = {}
+	
+	on_invalidated = {
+		hidden_effect = {
+			scope:attacker = {
+				add_character_flag = {
+					flag = launched_migration_war_recently
+					years = migration_war_wait_years
+				}
+			}
+		}
+	}
+	
+	on_victory_desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:attacker = { is_local_player = yes } }
+				desc = migration_war_victory_desc_attacker
+			}
+			desc = migration_war_victory_desc
+		}
+		triggered_desc = {
+			trigger = { scope:attacker = { is_local_player = yes } }
+			desc = migration_war_warning_desc
+		}
+	}
+	
+	on_victory = {
+		scope:attacker = { show_pow_release_message_effect = yes }
+		
+		# Legitimacy
+		add_legitimacy_attacker_victory_effect  = yes
+		
+		migration_cb_title_and_modifier_application_effect = {
+			ATTACKER = scope:attacker
+			DEFENDER = scope:defender
+			TARGET_TITLES = target_titles
+		}
+		
+		# Attacker gets Prestige Experience, Defender loses Prestige, all other participants gain Prestige based on their war contribution.
+		modify_all_participants_fame_values = {
+			WINNER = scope:attacker
+			LOSER = scope:defender
+			FAME_BASE = 200
+			IS_RELIGIOUS_WAR = no
+			WINNER_FAME_SCALE = 1
+			LOSER_FAME_SCALE = -1
+			WINNER_ALLY_FAME_SCALE = 1
+			LOSER_ALLY_FAME_SCALE = 1
+		}
+
+		# Truce
+		add_truce_attacker_victory_effect = yes
+
+		# FP1: note the victory for future memorialization via stele (if applicable).
+		scope:attacker = { fp1_remember_recent_conquest_victory_effect = yes }
+		
+		add_migration_launch_timer_effect = { ATTACKER = scope:attacker }
+		
+		migration_war_fire_government_culture_events_effect = {
+			ATTACKER = scope:attacker
+			CHECK_CULTURE_DIVERGENCE_EVENT = yes
+		}
+	}
+	
+	on_white_peace_desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:defender = { is_local_player = yes } }
+				desc = migration_war_white_peace_desc_defender
+			}
+			desc = migration_war_white_peace_desc
+		}
+		triggered_desc = {
+			trigger = { scope:attacker = { is_local_player = yes } }
+			desc = migration_war_warning_desc
+		}
+	}
+	
+	on_white_peace = {
+		scope:attacker = { show_pow_release_message_effect = yes }
+
+		# Prestige for the attacker's war allies
+		add_from_contribution_attackers = {
+			prestige = major_prestige_value
+			opinion = {
+				modifier = contributed_in_war
+			}
+		}
+
+		# Prestige for the defender's war allies
+		add_from_contribution_defenders = {
+			prestige = major_prestige_value
+			opinion = { modifier = contributed_in_war }
+		}
+
+		# Truce
+		add_truce_white_peace_effect = yes
+
+		scope:attacker = {
+			add_prestige = mongol_invasion_cb_prestige_white_peace
+			stress_impact = {
+				ambitious = medium_stress_impact_gain
+				arrogant = medium_stress_impact_gain
+			}
+		}
+		
+		migration_war_white_peace_attacker_county_effect = { ATTACKER = scope:attacker }
+		
+		scope:defender = { stress_impact = { arrogant = medium_stress_impact_gain } }
+		
+		add_migration_launch_timer_effect = { ATTACKER = scope:attacker }
+	}
+	
+	on_defeat_desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:defender = { is_local_player = yes } }
+				desc = migration_war_defeat_desc_defender
+			}
+			desc = migration_war_defeat_desc
+		}
+		triggered_desc = {
+			trigger = { scope:attacker = { is_local_player = yes } }
+			desc = migration_war_warning_desc
+		}
+	}
+	
+	on_defeat = {
+		scope:attacker = { show_pow_release_message_effect = yes }
+
+		# Legitimacy
+		add_legitimacy_attacker_defeat_effect = yes
+
+		# Prestige loss for the attacker
+		scope:attacker = {
+			pay_short_term_gold = {
+				gold = 3
+				target = scope:defender
+				yearly_income = yes
+			}
+			add_prestige = {
+				value = massive_prestige_value
+				multiply = -1.0
+			}
+		}
+		
+		setup_invasion_cb = {
+			titles = target_titles
+			attacker = scope:attacker
+			defender = scope:defender
+			claimant = scope:claimant
+			victory = no
+		}
+
+		# Attacker loses Prestige, all other war participants gain Prestige (Defender gains full prestige, all allies on both sides gain based on war contribution).
+		modify_all_participants_fame_values = {
+			WINNER = scope:defender
+			LOSER = scope:attacker
+			FAME_BASE = scope:cb_prestige_factor # Set by 'setup_claim_cb'
+			IS_RELIGIOUS_WAR = no
+			WINNER_FAME_SCALE = 10
+			LOSER_FAME_SCALE = -10
+			WINNER_ALLY_FAME_SCALE = 10
+			LOSER_ALLY_FAME_SCALE = 10
+		}
+	
+		add_truce_attacker_defeat_effect = yes
+		
+		scope:attacker = { save_temporary_scope_as = loser }
+		on_lost_aggression_war_discontent_loss = yes
+		
+		migration_war_defeat_attacker_county_effect = { ATTACKER = scope:attacker }
+		
+		scope:attacker = { add_prestige_level = -1 }
+		
+		add_migration_launch_timer_effect = { ATTACKER = scope:attacker }
+	}
+	
+	transfer_behavior = transfer
+	
+	on_primary_attacker_death = inherit
+	on_primary_defender_death = inherit
+	
+	attacker_allies_inherit = no
+	defender_allies_inherit = no
+	
+	war_name = "BP_MIGRATION_WAR_NAME"
+	war_name_base = "BP_MIGRATION_WAR_NAME_BASE"
+	cb_name = "BP_MIGRATION_CB_NAME"
+	
+	interface_priority = 150
+	
+	use_de_jure_wargoal_only = yes
+	
+	attacker_wargoal_percentage = 0.8
+	
+	ai_only_against_neighbors = yes
+}
+
+bp_migration_war_duchy_cb = {
+	group = migration
+	icon = invasion
+	
+	allow_hostages = no
+
+	combine_into_one = yes
+	should_show_war_goal_subview = yes
+	mutually_exclusive_titles = { always = yes }
+
+	allowed_for_character = {
+		OR = {
+			this.primary_title.tier = tier_county
+			this.primary_title.tier = tier_duchy
+		}
+		#Franks shouldn't migrate
+		trigger_if = {
+			limit = {
+				has_game_rule = migration_behavior_historical
+				is_ai = yes
+			}
+			this.culture = { is_historical_non_migrator_culture_trigger = yes }
+		}
+	}
+
+	allowed_for_character_display_regardless = {
+		this.prestige_level > this.minor_migration_war_required_fame_level
+		custom_description = {
+			text = has_launched_migration_war_recently
+			NOT = { has_character_flag = launched_migration_war_recently }
+		}
+	}
+	
+	allowed_against_character = {
+		scope:attacker = {
+			ALL_FALSE = {
+				top_liege = scope:defender.top_liege
+				liege = scope:defender
+			}
+		}
+		#Base Requirements
+		is_landed = yes 
+		#No migrations against your own culture; use unification CBs instead
+		NOT = { scope:attacker.culture = scope:defender.culture }
+		#Has the Appropriate Situation Parameter
+		general_situation_regional_parameter_trigger = {
+			CHARACTER = scope:defender
+			PARAMETER = targetable_by_migration_cbs
+		}
+	}
+	
+	target_titles = neighbor_land_or_water
+	target_title_tier = duchy
+	target_de_jure_regions_above = yes
+	ignore_effect = change_title_holder
+	
+	max_ai_diplo_distance_to_title = 250 #Roughly one Ireland away
+	
+	ai_score_mult = {
+		value = 1
+		# Prefer (strongly) to target non-tribal locations if they are at least non-tribal
+		add = {
+			every_in_list = {
+				list = target_titles
+				if = { limit = { general_bp_migration_constraints_trigger = yes } add = -1000 }
+			}
+		}
+	}
+
+	valid_to_start = {
+		scope:target = {
+			any_in_de_jure_hierarchy = {
+				tier = tier_county
+				neighboring_county_or_viking_conquest_trigger = { CHARACTER = root }
+			}
+		}
+		#Can't multi-migrate
+		NOT = { scope:attacker = { any_character_war = { using_cb = bp_migration_war_cb } } }
+		
+		#Don't touch the steppe with WtWSMS migrations
+		target_title_not_in_great_steppe_trigger = {
+			TARGET_TITLE = scope:target
+			TIER = kingdom
+		}
+		#If the government is centralized, can't be a giant blob of Tribals (need to conquer instead)
+		trigger_if = {
+			limit = { scope:defender = { government_has_flag = government_is_centralized } }
+			scope:target = {
+				any_in_de_jure_hierarchy = {
+					count >= 1
+					is_landless_type_title = no
+					this.tier = tier_county
+					OR = {
+						this.holder = { government_has_flag = government_is_tribal }
+						this.holder = { government_has_flag = government_is_roman_federate }
+					}
+				}
+			}
+		}
+	}
+
+	cost = {
+		prestige = scope:attacker.migration_war_prestige_cost_duchy
+	}
+
+	on_declaration = {
+		on_declared_war = yes
+		#For localization
+		random_in_list = {
+			list = target_titles
+			limit = { tier = tier_kingdom }
+			save_scope_as = target_title
+		}
+		#Spawn armies
+		custom_description = {
+			text = armies_spawn_from_development
+			scope:attacker = {
+				every_held_title = {
+					limit = {
+						tier = tier_county
+						is_landless_type_title = no
+						AND = {
+							this.culture = scope:attacker.culture
+							this.faith = scope:attacker.faith
+						}
+					}
+					change_development_level = bp_migration_depopulation
+					prev = {
+						spawn_army = {
+							name = event_troop_default_name
+							levies = prev.bp_migration_levies
+							location = prev.title_province
+							uses_supply = no
+							war = scope:war
+							inheritable = no
+						}
+					}
+				}
+			}
+		}
+		hidden_effect = { scope:attacker = { update_number_of_bp_migrations_effect = yes } }
+	}
+	
+	should_invalidate = {
+		NOT = {
+			any_in_list = {
+				list = target_titles
+				any_in_de_jure_hierarchy = {
+					tier = tier_county
+					holder = { target_is_same_character_or_above = scope:defender }
+				}
+			}
+		}
+	}
+	
+	on_invalidated_desc = {}
+	
+	on_invalidated = {
+		hidden_effect = {
+			scope:attacker = {
+				add_character_flag = {
+					flag = launched_migration_war_recently
+					years = migration_war_wait_years
+				}
+			}
+		}
+	}
+	
+	on_victory_desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:attacker = { is_local_player = yes } }
+				desc = migration_war_victory_desc_attacker
+			}
+			desc = migration_war_victory_desc
+		}
+		triggered_desc = {
+			trigger = { scope:attacker = { is_local_player = yes } }
+			desc = migration_war_warning_desc
+		}
+	}
+	
+	on_victory = {
+		scope:attacker = { show_pow_release_message_effect = yes }
+		
+		# Legitimacy
+		add_legitimacy_attacker_victory_effect  = yes
+		
+		migration_cb_title_and_modifier_application_effect = {
+			ATTACKER = scope:attacker
+			DEFENDER = scope:defender
+			TARGET_TITLES = target_titles
+		}
+		
+		# Attacker gets Prestige Experience, Defender loses Prestige, all other participants gain Prestige based on their war contribution.
+		modify_all_participants_fame_values = {
+			WINNER = scope:attacker
+			LOSER = scope:defender
+			FAME_BASE = 200
+			IS_RELIGIOUS_WAR = no
+			WINNER_FAME_SCALE = 1
+			LOSER_FAME_SCALE = -1
+			WINNER_ALLY_FAME_SCALE = 1
+			LOSER_ALLY_FAME_SCALE = 1
+		}
+
+		# Truce
+		add_truce_attacker_victory_effect = yes
+
+		# FP1: note the victory for future memorialization via stele (if applicable).
+		scope:attacker = { fp1_remember_recent_conquest_victory_effect = yes }
+		
+		add_migration_launch_timer_effect = { ATTACKER = scope:attacker }
+		
+		migration_war_fire_government_culture_events_effect = {
+			ATTACKER = scope:attacker
+			CHECK_CULTURE_DIVERGENCE_EVENT = no
+		}
+	}
+	
+	on_white_peace_desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:defender = { is_local_player = yes } }
+				desc = migration_war_white_peace_desc_defender
+			}
+			desc = migration_war_white_peace_desc
+		}
+		triggered_desc = {
+			trigger = { scope:attacker = { is_local_player = yes } }
+			desc = migration_war_warning_desc
+		}
+	}
+	
+	on_white_peace = {
+		scope:attacker = { show_pow_release_message_effect = yes }
+
+		# Prestige for the attacker's war allies
+		add_from_contribution_attackers = {
+			prestige = major_prestige_value
+			opinion = {
+				modifier = contributed_in_war
+			}
+		}
+
+		# Prestige for the defender's war allies
+		add_from_contribution_defenders = {
+			prestige = major_prestige_value
+			opinion = { modifier = contributed_in_war }
+		}
+
+		# Truce
+		add_truce_white_peace_effect = yes
+
+		scope:attacker = {
+			add_prestige = mongol_invasion_cb_prestige_white_peace
+			stress_impact = {
+				ambitious = medium_stress_impact_gain
+				arrogant = medium_stress_impact_gain
+			}
+		}
+		
+		migration_war_white_peace_attacker_county_effect = { ATTACKER = scope:attacker }
+		
+		scope:defender = { stress_impact = { arrogant = medium_stress_impact_gain } }
+		
+		add_migration_launch_timer_effect = { ATTACKER = scope:attacker }
+	}
+	
+	on_defeat_desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:defender = { is_local_player = yes } }
+				desc = migration_war_defeat_desc_defender
+			}
+			desc = migration_war_defeat_desc
+		}
+		triggered_desc = {
+			trigger = { scope:attacker = { is_local_player = yes } }
+			desc = migration_war_warning_desc
+		}
+	}
+	
+	on_defeat = {
+		scope:attacker = { show_pow_release_message_effect = yes }
+
+		# Legitimacy
+		add_legitimacy_attacker_defeat_effect = yes
+
+		# Prestige loss for the attacker
+		scope:attacker = {
+			pay_short_term_gold = {
+				gold = 3
+				target = scope:defender
+				yearly_income = yes
+			}
+			add_prestige = {
+				value = massive_prestige_value
+				multiply = -1.0
+			}
+		}
+		
+		setup_invasion_cb = {
+			titles = target_titles
+			attacker = scope:attacker
+			defender = scope:defender
+			claimant = scope:claimant
+			victory = no
+		}
+
+		# Attacker loses Prestige, all other war participants gain Prestige (Defender gains full prestige, all allies on both sides gain based on war contribution).
+		modify_all_participants_fame_values = {
+			WINNER = scope:defender
+			LOSER = scope:attacker
+			FAME_BASE = scope:cb_prestige_factor # Set by 'setup_claim_cb'
+			IS_RELIGIOUS_WAR = no
+			WINNER_FAME_SCALE = 10
+			LOSER_FAME_SCALE = -10
+			WINNER_ALLY_FAME_SCALE = 10
+			LOSER_ALLY_FAME_SCALE = 10
+		}
+	
+		add_truce_attacker_defeat_effect = yes
+		
+		scope:attacker = { save_temporary_scope_as = loser }
+		on_lost_aggression_war_discontent_loss = yes
+		
+		migration_war_defeat_attacker_county_effect = { ATTACKER = scope:attacker }
+		
+		scope:attacker = { add_prestige_level = -1 }
+		
+		add_migration_launch_timer_effect = { ATTACKER = scope:attacker }
+	}
+	
+	transfer_behavior = transfer
+	
+	on_primary_attacker_death = inherit
+	on_primary_defender_death = inherit
+	
+	attacker_allies_inherit = no
+	defender_allies_inherit = no
+	
+	war_name = "BP_MIGRATION_WAR_DUCHY_NAME"
+	war_name_base = "BP_MIGRATION_WAR_NAME_DUCHY_BASE"
+	cb_name = "BP_MIGRATION_CB_DUCHY_NAME"
+	
+	interface_priority = 125
+	
+	use_de_jure_wargoal_only = yes
+	
+	attacker_wargoal_percentage = 0.8
+	
+	ai_only_against_neighbors = yes
+}

@@ -18,6 +18,7 @@ bp_game_start = {
 		#Needs to be done first to avoid some errors
 		ccu_startup_debug
 		bp_set_global_variables
+		BP_set_de_jure_titles
 		#Legal Stuff
 		setup_realm_and_title_succession_laws
 		setup_realm_and_title_succession_laws_DLC
@@ -38,9 +39,11 @@ bp_game_start = {
 		block_specific_chars_from_having_families
 		#Other Actions
 		update_development_by_terrain_and_circumstances
+		fix_fictional_char_dynasty_names
 		#Things that have to be done last
 		setup_roman_governments_based_on_dlc
 		setup_other_governments_based_on_dlc
+		end_situations_that_are_not_valid
 	}
 }
 
@@ -49,6 +52,7 @@ bp_game_start_after_lobby = {
 		create_BP_artifacts
 		give_chavez_to_the_buri
 		alt_history_effects
+		move_domiciles
 		#Other Events
 		trigger_needed_events
 		delay = { days = 1 }
@@ -126,6 +130,15 @@ bp_set_global_variables = {
 			limit = { has_game_rule = tribal_shatter_mechanic_enabled }
 			set_global_variable = tribal_shatter_mechanic_enabled
 		}
+	}
+}
+
+BP_set_de_jure_titles = {
+	effect = {
+		title:e_gaul = { set_de_jure_liege_title = title:h_western_roman_empire }
+		title:e_spain = { set_de_jure_liege_title = title:h_western_roman_empire }
+		title:e_italy = { set_de_jure_liege_title = title:h_western_roman_empire }
+		title:e_north_africa = { set_de_jure_liege_title = title:h_western_roman_empire }
 	}
 }
 
@@ -281,7 +294,10 @@ setup_realm_and_title_succession_laws = {
 		
 		### Governments
 		every_ruler = { #Roman Governments
-			limit = { government_has_flag = is_a_roman_government }
+			limit = {
+				government_has_flag = government_is_roman_dynastic
+				government_has_flag = government_is_subroman_dynastic
+			}
 			if = {
 				limit = { NOT = { has_realm_law = single_heir_succession_law } }
 				add_realm_law_skip_effects = single_heir_succession_law
@@ -412,16 +428,13 @@ setup_realm_and_title_succession_laws = {
 						this = title:d_aileach
 						this = title:d_astures
 						this = title:d_brittany
-						this = title:d_broerec
 						this = title:d_cait
 						this = title:d_ce
 						this = title:d_connacht
 						this = title:d_western_isles #Creones
 						this = title:d_deasmhumhain
-						this = title:d_domnonia
 						this = title:d_fortriu
 						this = title:d_fotla
-						this = title:d_kernev
 						this = title:d_leinster
 						this = title:d_meath
 						this = title:d_munster
@@ -474,7 +487,7 @@ setup_realm_and_title_succession_laws = {
 					has_title = title:d_isauria
 					has_title = title:d_roman_prefect
 					has_title = title:d_tangiers
-					has_title = title:d_triveria
+					has_title = title:d_belgica_prima
 					#Germans
 					has_title = title:k_alamannia
 					has_title = title:h_italy
@@ -504,7 +517,7 @@ setup_realm_and_title_succession_laws = {
 					has_title = title:k_garamantes
 					has_title = title:k_mauretania
 					#Altaics
-					has_title = title:e_rouran
+					has_title = title:e_mongolia
 					has_title = title:e_turkestan
 				}
 			}
@@ -535,7 +548,7 @@ setup_realm_and_title_succession_laws = {
 					has_title = title:d_isauria
 					has_title = title:d_tangiers
 					has_title = title:d_thracian_goths
-					has_title = title:d_triveria
+					has_title = title:d_belgica_prima
 					#Persians
 					has_title = title:h_persia
 					has_title = title:k_persia
@@ -1173,6 +1186,15 @@ block_specific_chars_from_having_families = {
 	}
 }
 
+move_domiciles = {
+	effect = {
+		every_ruler = {
+			limit = { has_domicile = yes }
+			this.domicile = { move_domicile = prev.capital_county.title_province }
+		}
+	}
+}
+
 #Other Events
 trigger_needed_events = {
 	effect = {
@@ -1180,7 +1202,7 @@ trigger_needed_events = {
 		every_player = {
 			limit = {
 				is_ai = no
-				has_game_rule = wtwsms_start_event_v020_enabled
+				has_game_rule = wtwsms_start_event_v030_enabled
 			}
 			trigger_event = { id = BP_maintenance_events.0001 }
 		}
@@ -1253,13 +1275,6 @@ update_development_by_terrain_and_circumstances = {
 					}
 				}
 			}
-####			if = { #Xia should emphasize d_xia
-####				limit = { this.duchy = title:d_xia }
-####				change_development_level = {
-####					value = this.development_level
-####					multiply = 0.33
-####				}
-####			}
 			
 			# Impact of Terrain
 			if = {
@@ -1446,6 +1461,28 @@ give_chavez_to_the_buri = {
 	}
 }
 
+fix_fictional_char_dynasty_names = {
+	effect = {
+		every_ruler = {
+			limit = {
+				OR = {
+					has_character_flag = fictional_tribal
+					has_character_flag = fictional_holder
+				}
+			}
+			if = {
+				limit = { has_character_flag = fictional_tribal }
+				remove_character_flag = fictional_tribal
+			}
+			if = {
+				limit = { has_character_flag = fictional_holder }
+				remove_character_flag = fictional_holder
+			}
+			this = { pick_a_random_dynasty_name_effect = yes }
+		}
+	}
+}
+
 alt_history_effects = {
 	effect = {
 		if = {
@@ -1575,15 +1612,8 @@ setup_roman_governments_based_on_dlc = {
 						scope:new_title = { set_coa = scope:noble_family_head.house }
 					}
 					#Move Estate to actual capital location
-					this.domicile ?= { move_domicile = prev.capital_county.title_province }
+					this.domicile ?= { move_domicile = prev.primary_title.title_province }
 				}
-				
-				#Set Up Realm Laws
-				if = {
-					limit = { top_liege = this }
-					add_law_if_not_has_it_skip_effects_effect = { LAW = roman_acclamation_succession_law }
-				}
-				else = { add_law_if_not_has_it_skip_effects_effect = { LAW = roman_appointment_succession_law } }
 				
 				#Setup missing NF titles
 				every_vassal_or_below = {
@@ -1592,7 +1622,7 @@ setup_roman_governments_based_on_dlc = {
 						is_landed = yes
 						any_held_title = { count < 1 is_noble_family_title = yes }
 					}
-					save_temporary_scope_as = the_ruler
+					save_scope_as = the_ruler
 					if = {
 						limit = { this = this.house.house_head }
 						if = {
@@ -1665,9 +1695,23 @@ setup_roman_governments_based_on_dlc = {
 					}
 					#Move Estate to actual capital location
 					scope:noble_family_head ?= {
-						this.domicile ?= { move_domicile = scope:the_ruler.capital_county.title_province }
+						this.domicile ?= { move_domicile = scope:the_ruler.primary_title.title_province }
 					}
 				}
+			}
+			every_ruler = {
+				limit = {
+					OR = {
+						government_has_flag = government_is_roman_administrative
+						government_has_flag = government_is_subroman_administrative
+					}
+				}
+				#Set Up Realm Laws
+				if = {
+					limit = { top_liege = this }
+					add_law_if_not_has_it_skip_effects_effect = { LAW = roman_acclamation_succession_law }
+				}
+				else = { add_law_if_not_has_it_skip_effects_effect = { LAW = roman_appointment_succession_law } }
 			}
 		}
 		#Roman Offices need the appropriate flags at start
@@ -1708,5 +1752,13 @@ setup_other_governments_based_on_dlc = {
 				save_scope_as = new_title
 			}
 		}
+	}
+}
+
+end_situations_that_are_not_valid = {
+	trigger = { has_dlc_feature = all_under_heaven }
+	effect = {
+		situation:silk_road_situation ?= { end_situation = yes }
+		situation:dynastic_cycle ?= { end_situation = yes }
 	}
 }

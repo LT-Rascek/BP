@@ -37,83 +37,17 @@ c_odessa = { #c_oleshye history
 	453.1.1={
 		holder = 67 # Ellak
 	}
-	454.1.1={
-		holder = 68 # Dengizik
-	}
-	469.1.1={
-		holder = 69 # Ernak
-	}
-	502.1.1={
-		holder = 33082 # Apskhih Batirid
-	}
-	550.1.1={
-		holder = 33083 # Khudbard Batirid
-	}
-	565.1.1={
-		holder = 33083 # Khudbard Batirid
-		liege="e_avar"
-	}
+	#Collapse of Hunnic Empire
+	454.1.1 = { holder = hunnic_COdessa_000 }
 }
-c_ladyzyn = { #c_korsun history (elimination)
-	460.1.2={
-		holder = 82 # Perey Antae
-	}
-	490.1.1={
-		holder = 31046 # Radimir Antae
-	}
-	550.1.1={
-		holder = 31047 # Gremislav Antae
-	}
-	565.1.1={
-		liege="e_avar"
-	}
-	580.1.1={
-		holder=155185
-	}
-	602.1.1={
-		holder=33081 
-	}
+c_ladyzyn = {
+	475.1.1 = { holder = old_slavic_CLadyzyn_001 }
 }
-c_uman = { #c_korsun history
-	460.1.2={
-		holder = 82 # Perey Antae
-	}
-	490.1.1={
-		holder = 31046 # Radimir Antae
-	}
-	550.1.1={
-		holder = 31047 # Gremislav Antae
-	}
-	565.1.1={
-		liege="e_avar"
-	}
-	580.1.1={
-		holder=155185
-	}
-	602.1.1={
-		holder=33081 
-	}
+c_uman = {
+	475.1.1 = { holder = old_slavic_CUman_001 }
 }
 c_cherkassy = {
- #c_korsun history
-	460.1.2={
-		holder = 82 # Perey Antae
-	}
-	490.1.1={
-		holder = 31046 # Radimir Antae
-	}
-	550.1.1={
-		holder = 31047 # Gremislav Antae
-	}
-	565.1.1={
-		liege="e_avar"
-	}
-	580.1.1={
-		holder=155185
-	}
-	602.1.1={
-		holder=33081 
-	}
+	475.1.1 = { holder = old_slavic_CCherkassy_001 }
 }
 c_kherson = { #c_oleshye history (substitution)
 	360.1.1={
@@ -143,22 +77,8 @@ c_kherson = { #c_oleshye history (substitution)
 	453.1.1={
 		holder = 67 # Ellak
 	}
-	454.1.1={
-		holder = 68 # Dengizik
-	}
-	469.1.1={
-		holder = 69 # Ernak
-	}
-	502.1.1={
-		holder = 33082 # Apskhih Batirid
-	}
-	550.1.1={
-		holder = 33083 # Khudbard Batirid
-	}
-	565.1.1={
-		holder = 33083 # Khudbard Batirid
-		liege="e_avar"
-	}
+	#Collapse of Hunnic Empire
+	454.1.1 = { holder = hunnic_CKherson_000 }
 }
 c_dnipro = { #c_oleshye history (elimination)
 	360.1.1={
@@ -188,26 +108,15 @@ c_dnipro = { #c_oleshye history (elimination)
 	453.1.1={
 		holder = 67 # Ellak
 	}
-	454.1.1={
-		holder = 68 # Dengizik
-	}
-	469.1.1={
-		holder = 69 # Ernak
-	}
-	502.1.1={
-		holder = 33082 # Apskhih Batirid
-	}
-	550.1.1={
-		holder = 33083 # Khudbard Batirid
-	}
-	565.1.1={
-		holder = 33083 # Khudbard Batirid
-		liege="e_avar"
-	}
+	#Collapse of Hunnic Empire
+	454.1.1 = { holder = hunnic_CDnipro_000 }
 }
 
-d_levedia = { #Empty History
-	1.1.1={}
+d_levedia = {
+	466.1.1={
+		holder = 114
+		government = nomad_government
+	}
 }
 c_khortytsia = { #c_lower_dnieper history (elimination)
 	470.1.1={
@@ -265,8 +174,20 @@ c_samar = {
 	466.1.1 = { holder=114 } #Saragurs
 }
 
-d_don_valley = { #Empty History
-	1.1.1={}
+d_don_valley = {
+	470.1.1={
+		holder = 108 # Batir 
+		government = nomad_government
+	}
+	500.1.1={
+		holder = 33082 # Apskhih Batirid
+	}
+	550.1.1={
+		holder = 33083 # Khudbard Batirid
+	}
+	565.1.1={
+		liege="e_avar"
+	}
 }
 c_tana = {
 	#Kutrigurs

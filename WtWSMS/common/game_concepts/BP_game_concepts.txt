@@ -4,19 +4,6 @@ bp_major_war = {
 	parent = casus_belli
 	alias = { bp_major_wars bp_major_war_marker }
 }
-migration_war = {
-	texture = "gfx/interface/icons/casus_bellis/de_jure_cb.dds"
-	parent = casus_belli
-	alias = { migration_wars }
-}
-major_migration_war = {
-	texture = "gfx/interface/icons/war_status/war_icon.dds"
-	parent = migration_war
-}
-minor_migration_war = {
-	texture = "gfx/interface/icons/war_status/war_icon.dds"
-	parent = migration_war
-}
 imperial_reconquest_war = {
 	texture = "gfx/interface/icons/war_status/war_icon.dds"
 	parent = casus_belli
@@ -173,6 +160,8 @@ bp_early_germanic_heritages = {
 	texture = "gfx/interface/icons/icon_culture.dds"
 	shown_in_encyclopedia = no
 }
+
+traditions_avoiding_culture_conversion = { shown_in_encyclopedia = no }
 
 bp_forum_location = { shown_in_encyclopedia = no }
 bp_wiki_location = { shown_in_encyclopedia = no }

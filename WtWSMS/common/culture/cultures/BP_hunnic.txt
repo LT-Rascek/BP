@@ -1,0 +1,51 @@
+﻿#The Huns; nature's most obscure predator...
+hunnic = { #The great mysterious people... almost certainly Oghuric, but more mixed than the Bolghars, so probably formed further to the west.
+	color = hunnic
+	
+	created = 350.1.1
+	history_loc_override = hunnic_history_loc
+	
+	ethos = ethos_bellicose
+	heritage = heritage_hunnic
+	language = language_hunnic
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_herd
+	traditions = {
+		#Societal Traditions
+		#Regional Traditions
+		#Ritual Traditions
+		#Realm Traditions
+		tradition_cranial_deformation
+		#Combat Traditions
+		tradition_hit_and_run
+	}
+	
+	dlc_tradition = {
+		trait = tradition_devoted_horsemanship_western_steppe
+		requires_dlc_flag = khans_of_the_steppe
+		fallback = tradition_horse_lords
+	}
+	
+	name_list = name_list_hunnic
+	
+	coa_gfx = { turkic_group_coa_gfx steppe_coa_gfx }
+	building_gfx = { steppe_building_gfx }
+	clothing_gfx = { turkic_clothing_gfx mongol_clothing_gfx }
+	unit_gfx = { mongol_unit_gfx }
+	house_coa_frame = house_frame_14
+	
+	#Huns themselves are 
+	#https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7997506/
+	#https://www.cell.com/current-biology/fulltext/S0960-9822(22)00732-1?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0960982222007321%3Fshowall%3Dtrue
+	#
+	#Made a 30% Alanic, 30% Chionite, 40% Turkic West Admix
+	ethnicities = {
+		54 = turkic_west
+		16 = iranian
+		10 = mediterranean
+		5 = caucasian_blond
+		5 = caucasian_brown_hair
+		5 = caucasian_dark_hair
+		5 = caucasian_ginger
+	}
+}

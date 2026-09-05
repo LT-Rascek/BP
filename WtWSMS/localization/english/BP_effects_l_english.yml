@@ -3,8 +3,6 @@
  CALL_PARTICIPATING_VASSAL_TO_WAR_EFFECT_FIRST: "You join the migration as an Attacker"
  CALL_PARTICIPATING_VASSAL_TO_WAR_EFFECT_THIRD: "[CHARACTER.GetUIName] joins the migration as an Attacker"
  CALLED_PARTICIPATING_VASSAL_TO_WAR_EFFECT_THIRD: "[CHARACTER.GetUIName] joined the migration as an Attacker"
- #EVENT LOCALIZATIONS
- UNLOCKS_ONE_MAJOR_CB_AGAINST_ROMAN_STATE: "Allows for one Major Conquest [casus_belli|E] against an [organized|E] polity of the same rank as your [primary_title|E]"
  #Event Effects
  USES_EAST_CELTIC_NAME_LIST: "[CULTURE.GetName] now uses $name_list_east_celtic$ Naming Practices"
  #De Jure Decision Effects
@@ -14,6 +12,11 @@
  #Ostrogothic culture Decision
  YOUR_COURTIERS_AND_GUESTS_BECOME_OSTROGOTHIC: "Your [courtiers|E] and [guests|E] with [CULTURE.GetName] [culture|E] become [TARGET_CULTURE.GetName]"
  OTHER_RULERS_AND_COURTIERS_BECOME_THRACIAN_GOTHIC: "Other [rulers|E] and [courtiers|E] and [guests|E] with [CULTURE.GetName] [culture|E] become [TARGET_CULTURE.GetName]"
+ YOUR_CULTURE_ADOPTS_THE_BULGHAR_IDENTITY: "[CHARACTER.GetCulture.GetName] culture changes its name to #V $true_bolghar$#! and adopts the #V $true_bolghar$#! name list"
+ ALL_OGHURIC_VASSALS_ADOPT_YOUR_CULTURE: "All your [vassals|E] and [tributaries|E], and their [guests|E] and [courtiers|E], who are of an #V $heritage_oghuric_name$#! [heritage|E] adopt [CHARACTER.GetCulture.GetName] [culture|E], if not already [CHARACTER.GetCulture.GetName]"
+ ALL_OGHURIC_VASSAL_COUNTIES_ADOPT_YOUR_CULTURE: "All your [realm|E] and [tributary|E] [realm|E] [counties|E], which are of an #V $heritage_oghuric_name$#! [heritage|E] adopt [CHARACTER.GetCulture.GetName] [culture|E], if not already [CHARACTER.GetCulture.GetName]"
+ NEARBY_OGHUR_RULERS_ADOPT_YOUR_CULTURE: "Rulers of #V $heritage_oghuric_name$#! [heritage|E] will adopt your [culture|E], unless the culture has a $culture_parameter_traditionalist_culture_feature$ or [traditions_avoiding_culture_conversion|E]\n$TAB$#weak The distance that [rulers|E] are affected depends on your [prestige_level|E]#!"
+ NEARBY_OGHUR_COUNTIES_ADOPT_YOUR_CULTURE: "Counties of #V $heritage_oghuric_name$#! [heritage|E] adopt your [culture|E], unless the culture has a $culture_parameter_traditionalist_culture_feature$ or [traditions_avoiding_culture_conversion|E]#weak The distance that [rulers|E] are affected depends on your [prestige_level|E]#!"
  #Non-Roman Laws
  NULL: ""
  ALL_VASSALS_YOUR_CULTURE_OR_MIGRATORY_APPROVE: "Every [CHARACTER.GetCulture.GetName] or Migratory Culture [vassal|E] and below or [courtier|E] gains $VALUE|+0$ [opinion|E] of [CHARACTER.GetShortUIName] for 30 years #weak ($reduced_roman_priveleges_minority$)#!"
@@ -27,3 +30,7 @@
  start_with_moderate_camp: "Start with a camp with moderate domicile buildings and soldiers"
  #Other
  you_get_a_domicile_in_your_capital: "Your [domicile|E] will be located in your capital"
+ personal_troops_become_title_troops: "Personal $game_concept_men_at_arms$ become $game_concept_title_men_at_arms$"
+ title_troops_to_personal_troops: "$game_concept_title_men_at_arms$ become personal $game_concept_men_at_arms$"
+ high_tribal_law_discount: "$high_tribal_government$"
+ high_tribal_law_price: "$high_tribal_government$"

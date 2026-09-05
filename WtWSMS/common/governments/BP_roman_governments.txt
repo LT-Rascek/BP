@@ -40,6 +40,8 @@ roman_dynastic_government = {
 		government_is_roman_dynastic
 		
 		roman_dynastic_goverment_character_modifier
+		
+		government_is_roman_administrative_or_dynastic
 	}
 	
 	mechanic_type = feudal
@@ -204,6 +206,8 @@ roman_administrative_government = {
 		government_uses_domicile_but_not_adventurer
 		government_uses_domain_limit
 		government_uses_admin_province_obligations
+		
+		government_is_roman_administrative_or_dynastic
 	}
 
 	mechanic_type = administrative
@@ -246,7 +250,7 @@ roman_federate_government = {
 	administrative_title_maa_setup = vassals_and_top_liege
 
 	primary_holding = castle_holding
-	valid_holdings = { tribal_holding city_holding temple_citadel_holding }
+	valid_holdings = { tribal_holding temple_citadel_holding }
 	required_county_holdings = { castle_holding city_holding church_holding }
 
 	compatible_government_type_succession = { roman_federate_government }
@@ -255,7 +259,7 @@ roman_federate_government = {
 
 	can_get_government = {
 		OR = {
-			top_liege = { government_has_flag = is_a_roman_government }
+			liege_or_court_owner.top_liege = { government_has_flag = is_a_roman_government }
 			government_has_flag = government_is_roman_federate
 		}
 		#The LAAMP Construct Holding decision

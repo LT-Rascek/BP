@@ -1,4 +1,287 @@
-﻿##### Changed from Vanilla: Add Lapsi custom localization, added faith modifiers
+﻿##### Changed from Vanilla: Added "learning_education_less_valued" parameter
+
+# LEARNING OUTCOMES
+education_learning_1 = {
+	minimum_age = 16
+	learning = 2
+	category = education
+	monthly_learning_lifestyle_xp_gain_mult = 0.1
+	domain_limit = -1
+	
+	culture_modifier = {
+		parameter = poorly_educated_leaders_distrusted
+		feudal_government_opinion = -10
+	}
+	
+	culture_modifier = {
+		parameter = prowess_from_religious_traits
+		prowess = 1
+	}
+
+	culture_modifier = {
+		parameter = innovation_from_learning_traits
+		cultural_head_fascination_mult = 0.05
+	}
+
+	culture_modifier = {
+		parameter = build_bonuses_on_religious_traits
+		church_holding_build_speed = -0.05
+		church_holding_holding_build_speed = -0.05
+	}
+	
+	##### Changed from Vanilla vvvvv
+	culture_modifier = {
+		parameter = learning_education_less_valued
+		same_culture_opinion = -1
+		attraction_opinion = -4
+	}
+	##### Changed from Vanilla ^^^^^
+	
+	ruler_designer_cost = 0
+	
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_education_learning_1_desc
+			}
+			desc = trait_education_learning_1_character_desc
+		}
+	}
+
+	group = education_learning
+	level = 1
+	flag = level_1_education
+	flag = civilian_province
+}
+education_learning_2 = {
+	minimum_age = 16
+	learning = 4
+	category = education
+	monthly_learning_lifestyle_xp_gain_mult = 0.2
+	
+	culture_modifier = {
+		parameter = prowess_from_religious_traits
+		prowess = 2
+	}
+
+	culture_modifier = {
+		parameter = innovation_from_learning_traits
+		cultural_head_fascination_mult = 0.1
+	}
+
+	culture_modifier = {
+		parameter = build_bonuses_on_religious_traits
+		church_holding_build_speed = -0.1
+		church_holding_holding_build_speed = -0.1
+	}
+	
+	##### Changed from Vanilla vvvvv
+	culture_modifier = {
+		parameter = learning_education_less_valued
+		same_culture_opinion = -2
+		attraction_opinion = -4
+	}
+	##### Changed from Vanilla ^^^^^
+	
+	ruler_designer_cost = 20
+	
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_education_learning_2_desc
+			}
+			desc = trait_education_learning_2_character_desc
+		}
+	}
+
+	group = education_learning
+	level = 2
+	flag = level_2_education
+	flag = civilian_province
+}
+education_learning_3 = {
+	minimum_age = 16
+	learning = 6
+	category = education
+	monthly_learning_lifestyle_xp_gain_mult = 0.3
+	domain_limit = 1
+	
+	culture_modifier = {
+		parameter = prowess_from_religious_traits
+		prowess = 3
+	}
+
+	culture_modifier = {
+		parameter = innovation_from_learning_traits
+		cultural_head_fascination_mult = 0.15
+	}
+
+	culture_modifier = {
+		parameter = build_bonuses_on_religious_traits
+		church_holding_build_speed = -0.15
+		church_holding_holding_build_speed = -0.15
+	}
+
+	##### Changed from Vanilla vvvvv
+	culture_modifier = {
+		parameter = learning_education_less_valued
+		same_culture_opinion = -3
+		attraction_opinion = -8
+	}
+	##### Changed from Vanilla ^^^^^
+
+	ruler_designer_cost = 40
+	
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_education_learning_3_desc
+			}
+			desc = trait_education_learning_3_character_desc
+		}
+	}
+
+	group = education_learning
+	level = 3
+	flag = level_3_education
+	flag = civilian_province
+}
+education_learning_4 = {
+	minimum_age = 16
+	learning = 8
+	category = education
+	monthly_learning_lifestyle_xp_gain_mult = 0.4
+	domain_limit = 2
+	
+	culture_modifier = {
+		parameter = prowess_from_religious_traits
+		prowess = 4
+	}
+
+	culture_modifier = {
+		parameter = innovation_from_learning_traits
+		cultural_head_fascination_mult = 0.2
+	}
+
+	culture_modifier = {
+		parameter = build_bonuses_on_religious_traits
+		church_holding_build_speed = -0.2
+		church_holding_holding_build_speed = -0.2
+		church_holding_build_gold_cost = -0.05
+	}
+	
+	culture_modifier = {
+		parameter = elephant_bonuses_for_rank_4_education
+		world_innovation_elephants_development_growth_factor = 0.3
+		elephant_cavalry_maintenance_mult = -0.2
+		elephant_cavalry_toughness_mult = 0.1
+		elephant_cavalry_screen_add = 20
+		jungle_attrition_mult = -0.35
+	}
+	
+	##### Changed from Vanilla vvvvv
+	culture_modifier = {
+		parameter = learning_education_less_valued
+		same_culture_opinion = -4
+		attraction_opinion = -10
+	}
+	##### Changed from Vanilla ^^^^^
+	
+	ruler_designer_cost = 80
+	
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_education_learning_4_desc
+			}
+			desc = trait_education_learning_4_character_desc
+		}
+	}
+	
+	group = education_learning
+	level = 4
+	flag = level_4_education
+	flag = civilian_province
+}
+education_learning_5 = {
+	minimum_age = 16
+	learning = 10
+	intrigue = 3
+	category = education
+	monthly_learning_lifestyle_xp_gain_mult = 0.5
+	monthly_intrigue_lifestyle_xp_gain_mult = 0.25
+	development_growth = 0.1
+	county_fertility_growth_mult = small_county_fertility_growth_gain
+	domain_limit = 3
+	
+	culture_modifier = {
+		parameter = prowess_from_religious_traits
+		prowess = 4
+	}
+
+	culture_modifier = {
+		parameter = innovation_from_learning_traits
+		cultural_head_fascination_mult = 0.25
+	}
+
+	culture_modifier = {
+		parameter = build_bonuses_on_religious_traits
+		church_holding_build_speed = -0.2
+		church_holding_holding_build_speed = -0.2
+		church_holding_build_gold_cost = -0.05
+	}
+	
+	culture_modifier = {
+		parameter = elephant_bonuses_for_rank_4_education
+		world_innovation_elephants_development_growth_factor = 0.3
+		elephant_cavalry_maintenance_mult = -0.2
+		elephant_cavalry_toughness_mult = 0.1
+		elephant_cavalry_screen_add = 20
+		jungle_attrition_mult = -0.35
+	}
+	
+	##### Changed from Vanilla vvvvv
+	culture_modifier = {
+		parameter = learning_education_less_valued
+		same_culture_opinion = -5
+		attraction_opinion = -10
+	}
+	##### Changed from Vanilla ^^^^^
+	
+	ruler_designer_cost = 150
+	
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_education_learning_5_desc
+			}
+			desc = trait_education_learning_5_character_desc
+		}
+	}
+	
+	random_creation_weight = 0
+	group = education_learning
+	level = 5
+	flag = level_5_education
+	flag = civilian_province
+}
+
+##### Changed from Vanilla: Add Lapsi custom localization, added faith modifiers
 excommunicated = {
 	category = fame
 	monthly_piety_gain_mult = -0.5

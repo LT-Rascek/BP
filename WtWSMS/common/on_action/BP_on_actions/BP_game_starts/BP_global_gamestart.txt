@@ -15,10 +15,12 @@ bp_global_setup = {
 	on_actions = {
 		BP_set_global_variables_by_date
 		BP_update_culture_traditions_by_date
+		BP_set_culture_variables
 		BP_setup_realm_and_title_succession_laws_by_date
 		BP_set_religion_effects_by_date
 		BP_realm_capitals_by_date
 		BP_land_titles_by_date
+		BP_set_dynasty_names_by_date
 		BP_learn_capital_languages
 	}
 }
@@ -29,10 +31,6 @@ BP_set_global_variables_by_date = {
 		if = { #The Fall of Rome
 			limit = { current_date >= 476.9.4 }
 			set_global_variable = fall_of_rome
-		}
-		if = { #Clovis ascends the throne
-			limit = { current_date >= 482.1.1 }
-			set_global_variable = formed_frankish_kingdom
 		}
 		if = { #Treaty of Nvarsak
 			limit = { current_date >= 484.1.1 }
@@ -46,9 +44,17 @@ BP_set_global_variables_by_date = {
 			limit = { current_date >= 485.1.1 }
 			set_global_variable = reestablished_albania
 		}
+		if = { #Battle of Tolbiac happens
+			limit = { current_date >= 497.1.1 }
+			set_global_variable = battle_of_tolbiac_happened
+		}
 		if = { #Justinian Ascends the Throne (enabling reconquests)
 			limit = { current_date >= 527.4.1 }
 			set_global_variable = sole_roman_empire
+		}
+		if = { #Bolghar Culture forms
+			limit = { current_date >= 632.1.1 }
+			set_global_variable = bolghar_idenity_formed
 		}
 	}
 }
@@ -56,7 +62,7 @@ BP_update_culture_traditions_by_date = {
 	effect = {
 		#Migratory Cultures use Herder determination
 		every_culture_global = {
-			limit = { has_cultural_tradition = tradition_migratory_culture }
+			limit = { has_cultural_tradition = tradition_elite_rulership }
 			set_culture_pillar = head_determination_herd
 		}
 		#Change the Saami Traditions to make hybridization basically impossible.
@@ -71,7 +77,7 @@ BP_update_culture_traditions_by_date = {
 			limit = { current_date >= 395.1.1 }
 			if = {
 				limit = { has_dlc_feature = hybridize_culture }
-				culture:vandalic = { add_culture_tradition = tradition_migratory_culture }
+				culture:vandalic = { add_culture_tradition = tradition_elite_rulership }
 			}
 			else = { culture:vandalic = { add_culture_tradition = tradition_ruling_caste } }
 		}
@@ -79,14 +85,14 @@ BP_update_culture_traditions_by_date = {
 			limit = { current_date >= 406.1.1 }
 			if = {
 				limit = { has_dlc_feature = hybridize_culture }
-				culture:marcomanni = { add_culture_tradition = tradition_migratory_culture }
-				culture:buri = { add_culture_tradition = tradition_migratory_culture }
-				culture:western_alan  = { add_culture_tradition = tradition_migratory_culture }
+				culture:marcomanni = { add_culture_tradition = tradition_elite_rulership }
+				culture:buri = { add_culture_tradition = tradition_elite_rulership }
+				culture:western_alan  = { remove_culture_tradition = tradition_cranial_deformation }
+				culture:western_alan  = { add_culture_tradition = tradition_nomadic_rulership_cranial_deformation }
 			}
 			else = {
 				culture:marcomanni = { add_culture_tradition = tradition_ruling_caste }
 				culture:buri = { add_culture_tradition = tradition_ruling_caste }
-				culture:western_alan  = { add_culture_tradition = tradition_ruling_caste }
 			}
 		}
 		if = { #Attaces killed and the largest Western Alans become Arian
@@ -96,6 +102,13 @@ BP_update_culture_traditions_by_date = {
 		if = {
 			limit = { current_date >= 439.1.1 }
 			culture:vandalic = { add_culture_tradition = tradition_practiced_pirates }
+		}
+		if = {
+			limit = { current_date >= 443.1.1 }
+			culture:burgundian = {
+				remove_culture_tradition = tradition_ruling_caste
+				add_culture_tradition = tradition_elite_rulership
+			}
 		}
 		if = { #Gothic becomes mostly Arian
 			limit = { current_date >= 445.1.1 }
@@ -112,12 +125,36 @@ BP_update_culture_traditions_by_date = {
 			culture:skirian = { add_culture_tradition = tradition_concubines } #Only ruling component left at this point
 			if = {
 				limit = { has_dlc_feature = diverge_culture }
-				culture:skirian = { add_culture_tradition = tradition_migratory_culture }
+				culture:skirian = { add_culture_tradition = tradition_elite_rulership }
 			}
 			else = { culture:skirian = { add_culture_tradition = tradition_ruling_caste } }
 		}
+		if = { #Bolghar Culture forms
+			limit = { current_date >= 632.1.1 }
+			culture:bolghar = {
+				set_culture_name = {
+					noun = true_bolghar
+					collective_noun = true_bolghar_collective_noun
+					prefix = true_bolghar_prefix
+				}
+				set_name_list = name_list_bolghar
+			}
+		}
 	}
 }
+BP_set_culture_variables = {
+	effect = {
+		#Goths
+		culture:gothic = { set_variable = migration_culture_region_crimea }
+		culture:crimean_gothic = { set_variable = { name = root_culture value = culture:gothic } }
+		culture:visigothic = { set_variable = { name = root_culture value = culture:gothic } }
+		#Vandals
+		culture:vandalic = { set_variable = { name = root_culture value = culture:przeworsk } }
+		#Western Alans
+		culture:western_alan = { set_variable = { name = root_culture value = culture:alan } }
+	}
+}
+
 BP_setup_realm_and_title_succession_laws_by_date = {
 	effect = {
 		if = { #Visigoths adopt elective
@@ -190,14 +227,14 @@ BP_realm_capitals_by_date = {
 		}
 		title:k_kidarite.holder = {
 			if = { #Kidarite Rump Kingdom in Gandhara
-				limit = { current_date >= 467.1.1 }
-				set_realm_capital = title:c_udabhanda
+				limit = { current_date >= 465.1.1 }
+				set_realm_capital = title:c_lahur
 			}
 		}
-		title:e_hunnic_empire.holder = {
-			if = {
-				limit = { current_date > 469.1.1 }
-				set_realm_capital = title:c_odessa
+		title:k_gepidia.holder = {
+			if = { #Gepids move into Sirmium
+				limit = { current_date >= 473.1.1 }
+				set_realm_capital = title:c_szerem
 			}
 		}
 	}
@@ -212,6 +249,15 @@ BP_land_titles_by_date = {
 			title:c_vendome = { set_de_jure_liege_title = title:d_orleans }
 			title:c_blois = { set_de_jure_liege_title = title:d_orleans }
 			title:c_orleans = { set_de_jure_liege_title = title:d_orleans }
+		}
+	}
+}
+
+BP_set_dynasty_names_by_date = {
+	effect = {
+		if = {
+			limit = { current_date >= 493.1.1 }
+			dynasty:1029300 = { set_dynasty_name = "dynn_Yuan" }
 		}
 	}
 }
@@ -236,6 +282,7 @@ on_game_start_after_lobby = {
 		set_extant_nf_coas
 		BP_set_specific_churches_to_bishops
 		BP_generate_buildings
+		BP_remove_specific_variables
 	}
 }
 
@@ -486,6 +533,15 @@ BP_generate_buildings = {
 				limit = { owner = { government_has_flag = government_is_centralized } }
 				add_random_internal_estate_building = yes
 			}
+		}
+	}
+}
+
+BP_remove_specific_variables = {
+	effect = {
+		every_ruler = {
+			limit = { has_variable = new_confederate }
+			remove_variable = new_confederate
 		}
 	}
 }

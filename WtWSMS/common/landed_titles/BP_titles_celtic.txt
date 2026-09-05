@@ -4,45 +4,6 @@
 
 @cultural_title_score = 500
 
-d_domnonia = {
-	color={ 77 153 77 }
-	capital = c_nantes
-	ignore_titularity_for_title_weighting = yes
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:armorican }
-			add = @cultural_title_score
-		}
-	}
-	
-	can_create = { custom_description = { text = cannot_create_title always = no } }
-}
-d_broerec = {
-	color={ 51 102 51 }
-	capital = c_nantes
-	ignore_titularity_for_title_weighting = yes
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:armorican }
-			add = @cultural_title_score
-		}
-	}
-	
-	can_create = { custom_description = { text = cannot_create_title always = no } }
-}
-d_kernev = {
-	color={ 153 153 77 }
-	capital = c_cornouaille
-	ignore_titularity_for_title_weighting = yes
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:armorican }
-			add = @cultural_title_score
-		}
-	}
-	
-	can_create = { custom_description = { text = cannot_create_title always = no } }
-}
 d_astures = {
 	color={ 30 220 110 }
 	capital = c_astorga # Astorga

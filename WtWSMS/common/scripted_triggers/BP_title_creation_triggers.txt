@@ -499,11 +499,6 @@ creation_trigger_e_seleucid_trigger = {
 	truly_hellenic_faith_plus_mithraism_trigger = yes
 }
 
-#Specific Duchies
-creation_trigger_d_crimea_trigger = {
-	NOT = { has_title = title:d_goths }
-}
-
 #CK3 Dynamic De Jure Titles
 creation_trigger_k_andalusia_trigger = {
 	trigger_if = {
@@ -606,10 +601,6 @@ creation_trigger_k_franks_trigger = {
 creation_trigger_k_thaton_trigger = {
 	prestige >= 1000
 	culture = culture:mon
-}
-creation_trigger_e_hunnic_empire_trigger = {
-	prestige >= 5000
-	culture = culture:hunnic
 }
 creation_trigger_k_cornwall_trigger = {
 	trigger_if = {

@@ -231,3 +231,207 @@ enarei = { # Use of early hormone treatments by enarei plausible but not explici
 		}
 	}
 }
+
+cranial_deformation = { # Shaping of the Skull by various Steppe Nomads
+	cranial_deformation = {
+		traits = { cranial_deformation }
+
+	cranial_deformation = {
+		trigger = { cranial_deformation_activation_0 = yes }
+		traits = { cranial_deformation }
+		dna_modifiers = {
+			human = {
+				morph = {
+					mode = modify
+					gene = gene_forehead_angle
+					template = forehead_angle_pos
+					value = -0.05
+				}
+				morph = {
+					mode = modify
+					gene = gene_forehead_angle
+					template = forehead_angle_neg
+					value = -0.05
+				}
+				morph = {
+					mode = modify
+					gene = gene_forehead_height
+					template = forehead_height_neg
+					value = 0.05
+				}
+				
+				morph = {
+					mode = modify
+					gene = gene_head_top_width
+					template = head_top_width_neg
+					value = -0.05
+				}
+				morph = {
+					mode = modify
+					gene = gene_head_top_width
+					template = head_top_width_neg
+					value = -0.05
+				}
+			}
+		}
+	}
+	cranial_deformation_2 = {
+		trigger = { cranial_deformation_activation_2 = yes }
+		traits = { cranial_deformation }
+		dna_modifiers = {
+			human = {
+				morph = {
+					mode = modify
+					gene = gene_forehead_angle
+					template = forehead_angle_pos
+					value = -0.25
+				}
+				morph = {
+					mode = modify
+					gene = gene_forehead_angle
+					template = forehead_angle_neg
+					value = -0.25
+				}
+				morph = {
+					mode = modify
+					gene = gene_forehead_height
+					template = forehead_height_neg
+					value = 0.25
+				}
+				
+				morph = {
+					mode = modify
+					gene = gene_head_top_width
+					template = head_top_width_neg
+					value = -0.25
+				}
+				morph = {
+					mode = modify
+					gene = gene_head_top_width
+					template = head_top_width_neg
+					value = -0.25
+				}
+			}
+		}
+	}
+	cranial_deformation_3 = {
+		trigger = { cranial_deformation_activation_3 = yes }
+		traits = { cranial_deformation }
+		dna_modifiers = {
+			human = {
+				morph = {
+					mode = modify
+					gene = gene_forehead_angle
+					template = forehead_angle_pos
+					value = -0.50
+				}
+				morph = {
+					mode = modify
+					gene = gene_forehead_angle
+					template = forehead_angle_neg
+					value = -0.50
+				}
+				morph = {
+					mode = modify
+					gene = gene_forehead_height
+					template = forehead_height_neg
+					value = 0.50
+				}
+				
+				morph = {
+					mode = modify
+					gene = gene_head_top_width
+					template = head_top_width_neg
+					value = -0.50
+				}
+				morph = {
+					mode = modify
+					gene = gene_head_top_width
+					template = head_top_width_neg
+					value = -0.50
+				}
+			}
+		}
+	}
+	cranial_deformation_4 = {
+		trigger = { cranial_deformation_activation_4 = yes }
+		traits = { cranial_deformation }
+		dna_modifiers = {
+			human = {
+				morph = {
+					mode = modify
+					gene = gene_forehead_angle
+					template = forehead_angle_pos
+					value = -0.75
+				}
+				morph = {
+					mode = modify
+					gene = gene_forehead_angle
+					template = forehead_angle_neg
+					value = -0.75
+				}
+				morph = {
+					mode = modify
+					gene = gene_forehead_height
+					template = forehead_height_neg
+					value = 0.75
+				}
+				
+				morph = {
+					mode = modify
+					gene = gene_head_top_width
+					template = head_top_width_neg
+					value = -0.75
+				}
+				morph = {
+					mode = modify
+					gene = gene_head_top_width
+					template = head_top_width_neg
+					value = -0.75
+				}
+			}
+		}
+	}
+	cranial_deformation_5 = {
+		trigger = { cranial_deformation_activation_5 = yes }
+		traits = { cranial_deformation }
+		dna_modifiers = {
+			human = {
+				morph = {
+					mode = modify
+					gene = gene_forehead_angle
+					template = forehead_angle_pos
+					value = -1.00
+				}
+				morph = {
+					mode = modify
+					gene = gene_forehead_angle
+					template = forehead_angle_neg
+					value = -1.00
+				}
+				morph = {
+					mode = modify
+					gene = gene_forehead_height
+					template = forehead_height_neg
+					value = 1.00
+				}
+				
+				morph = {
+					mode = modify
+					gene = gene_head_top_width
+					template = head_top_width_neg
+					value = -1.00
+				}
+				morph = {
+					mode = modify
+					gene = gene_head_top_width
+					template = head_top_width_neg
+					value = -1.00
+				}
+			}
+		}
+	}
+	}
+}
+
+

@@ -16,568 +16,13 @@ h_western_roman_empire = {
 		has_title = title:h_eastern_roman_empire #Can Reform Directly
 	}
 	
-	e_wre = {
-		color={ 220 20 60 }
-		capital = c_ravenna
-		definite_form = yes
-		
-		ai_primary_priority = {
-			if = {
-				limit = { culture = { has_cultural_pillar = heritage_byzantine } }
-				add = @correct_culture_primary_score
-			}
-		}
-		
-		#Should only be createable by decision
-		can_create = {
-			custom_description = {
-				text = only_creatable_by_decision
-				always = no
-			}
-		}
-		
-		k_ravenna = {
-			color={ 230 30 50 }
-			capital = c_ravenna
-			
-			ai_primary_priority = {
-				if = {
-					limit = { culture = { has_cultural_pillar = heritage_byzantine } }
-					add = @correct_culture_primary_score
-				}
-			}
-			
-			#Should only be createable by decision
-			can_create = {
-				custom_description = {
-					text = only_creatable_by_decision
-					always = no
-				}
-			}
-			
-			d_flaminia = {
-				color={ 220 20 60 }
-				capital = c_ravenna # Ravenna
-				
-				c_ravenna = {
-					color = { 229 165 115 }
-					can_use_nomadic_naming = no
-					
-					b_ravenna = {
-						province = 2546
-						color = { 229 165 115 }
-					}
-					b_imola = {
-						province = 2549
-						cultural_names = {
-							#Roman
-							name_list_roman = cn_forum_cornelii
-							name_list_romano_gallic = cn_forum_cornelii
-							name_list_romano_hispanic = cn_forum_cornelii
-							name_list_romano_british = cn_forum_cornelii
-							name_list_dalmatian = cn_forum_cornelii
-							name_list_romano_african = cn_forum_cornelii
-							name_list_romano_gothic = cn_forum_cornelii
-							name_list_romano_dacian = cn_forum_cornelii 
-							name_list_romano_aramean = cn_forum_cornelii 
-							name_list_romano_vandalic = cn_forum_cornelii 
-							name_list_romano_thracian = cn_forum_cornelii 
-							name_list_romano_illyrian = cn_forum_cornelii 
-							name_list_romano_raetian = cn_forum_cornelii 
-							name_list_romano_noric = cn_forum_cornelii 
-							name_list_romano_pannonian = cn_forum_cornelii 
-						}
-						color = { 229 165 115 }
-					}
-					b_forli = {
-						province = 2548
-						cultural_names = {
-							#Roman
-							name_list_roman = cn_forum_livii
-							name_list_romano_gallic = cn_forum_livii
-							name_list_romano_hispanic = cn_forum_livii
-							name_list_romano_british = cn_forum_livii
-							name_list_dalmatian = cn_forum_livii
-							name_list_romano_african = cn_forum_livii
-							name_list_romano_gothic = cn_forum_livii
-							name_list_romano_dacian = cn_forum_livii 
-							name_list_romano_aramean = cn_forum_livii 
-							name_list_romano_vandalic = cn_forum_livii 
-							name_list_romano_thracian = cn_forum_livii 
-							name_list_romano_illyrian = cn_forum_livii 
-							name_list_romano_raetian = cn_forum_livii 
-							name_list_romano_noric = cn_forum_livii 
-							name_list_romano_pannonian = cn_forum_livii 
-						}
-						color = { 229 165 115 }
-					}
-					b_rimini = {
-						province = 2547
-						cultural_names = {
-							#Roman
-							name_list_roman = cn_ariminum
-							name_list_romano_gallic = cn_ariminum
-							name_list_romano_hispanic = cn_ariminum
-							name_list_romano_british = cn_ariminum
-							name_list_dalmatian = cn_ariminum
-							name_list_romano_african = cn_ariminum
-							name_list_romano_gothic = cn_ariminum
-							name_list_romano_dacian = cn_ariminum 
-							name_list_romano_aramean = cn_ariminum 
-							name_list_romano_vandalic = cn_ariminum 
-							name_list_romano_thracian = cn_ariminum 
-							name_list_romano_illyrian = cn_ariminum 
-							name_list_romano_raetian = cn_ariminum 
-							name_list_romano_noric = cn_ariminum 
-							name_list_romano_pannonian = cn_ariminum 
-						}
-						color = { 229 165 115 }
-					}
-				}
-				c_bologna = {
-					color = { 209 145 95 }
-					
-					cultural_names = {
-						#Roman
-						name_list_roman = cn_bononia
-						name_list_romano_gallic = cn_bononia
-						name_list_romano_hispanic = cn_bononia
-						name_list_romano_british = cn_bononia
-						name_list_dalmatian = cn_bononia
-						name_list_romano_african = cn_bononia
-						name_list_romano_gothic = cn_bononia
-						name_list_romano_dacian = cn_bononia 
-						name_list_romano_aramean = cn_bononia 
-						name_list_romano_vandalic = cn_bononia 
-						name_list_romano_thracian = cn_bononia 
-						name_list_romano_illyrian = cn_bononia 
-						name_list_romano_raetian = cn_bononia 
-						name_list_romano_noric = cn_bononia 
-						name_list_romano_pannonian = cn_bononia
-						#Byzantine Cultures
-						name_list_greek = cn_bononia
-						name_list_greek_gothic = cn_bononia
-						name_list_greek_persian = cn_bononia
-						name_list_isaurian_persian = cn_bononia
-						name_list_grecco_axumite = cn_bononia
-						name_list_bosporan = cn_bononia
-						name_list_pontic = cn_bononia
-						name_list_tsakonian = cn_bononia
-						name_list_massalian = cn_bononia
-						name_list_helleno_thracian = cn_bononia
-						name_list_helleno_libyan = cn_bononia
-						#Germanic
-						name_list_skirian = cn_bononia
-						name_list_ostrogothic = cn_bononia
-						name_list_thuringian = cn_bononia
-					}
-					
-					b_bologna = {
-						province = 2542
-						cultural_names = {
-							#Roman
-							name_list_roman = cn_bononia
-							name_list_romano_gallic = cn_bononia
-							name_list_romano_hispanic = cn_bononia
-							name_list_romano_british = cn_bononia
-							name_list_dalmatian = cn_bononia
-							name_list_romano_african = cn_bononia
-							name_list_romano_gothic = cn_bononia
-							name_list_romano_dacian = cn_bononia 
-							name_list_romano_aramean = cn_bononia 
-							name_list_romano_vandalic = cn_bononia 
-							name_list_romano_thracian = cn_bononia 
-							name_list_romano_illyrian = cn_bononia 
-							name_list_romano_raetian = cn_bononia 
-							name_list_romano_noric = cn_bononia 
-							name_list_romano_pannonian = cn_bononia 
-							#Byzantine Cultures
-							name_list_greek = cn_bononia
-							name_list_greek_gothic = cn_bononia
-							name_list_greek_persian = cn_bononia
-							name_list_isaurian_persian = cn_bononia
-							name_list_grecco_axumite = cn_bononia
-							name_list_bosporan = cn_bononia
-							name_list_pontic = cn_bononia
-							name_list_tsakonian = cn_bononia
-							name_list_massalian = cn_bononia
-							name_list_helleno_thracian = cn_bononia
-							name_list_helleno_libyan = cn_bononia
-							#Germanic
-							name_list_skirian = cn_bononia
-							name_list_ostrogothic = cn_bononia
-							name_list_thuringian = cn_bononia
-						}
-						color = { 209 145 95 }
-					}
-					b_cona = {
-						province = 2529
-						color = { 209 145 95 }
-					}
-					b_monte_sole = { #No Roman settlement was actually here. Last Etruscan settlement was abandoned on the 3rd Century. If possible, later remove this barony.
-						province = 2550
-						cultural_names = {
-							#Roman
-							name_list_roman = cn_misano
-							name_list_romano_gallic = cn_misano
-							name_list_romano_hispanic = cn_misano
-							name_list_romano_british = cn_misano
-							name_list_dalmatian = cn_misano
-							name_list_romano_african = cn_misano
-							name_list_romano_gothic = cn_misano
-							name_list_romano_dacian = cn_misano 
-							name_list_romano_aramean = cn_misano 
-							name_list_romano_vandalic = cn_misano 
-							name_list_romano_thracian = cn_misano 
-							name_list_romano_illyrian = cn_misano 
-							name_list_romano_raetian = cn_misano 
-							name_list_romano_noric = cn_misano 
-							name_list_romano_pannonian = cn_misano 
-							#Germanic
-							name_list_skirian = cn_misano
-							name_list_ostrogothic = cn_misano
-							name_list_thuringian = cn_misano
-						}
-						color = { 209 145 95 }
-					}
-				}
-				c_ferrara = {
-					color = { 219 125 85 }
-					
-					cultural_names = {
-						#Roman
-						name_list_roman = cn_ferrariae
-						name_list_romano_gallic = cn_ferrariae
-						name_list_romano_hispanic = cn_ferrariae
-						name_list_romano_british = cn_ferrariae
-						name_list_dalmatian = cn_ferrariae
-						name_list_romano_african = cn_ferrariae
-						name_list_romano_gothic = cn_ferrariae
-						name_list_romano_dacian = cn_ferrariae 
-						name_list_romano_aramean = cn_ferrariae 
-						name_list_romano_vandalic = cn_ferrariae 
-						name_list_romano_thracian = cn_ferrariae 
-						name_list_romano_illyrian = cn_ferrariae 
-						name_list_romano_raetian = cn_ferrariae 
-						name_list_romano_noric = cn_ferrariae 
-						name_list_romano_pannonian = cn_ferrariae 
-						#Germanic
-						name_list_skirian = cn_ferrariae
-						name_list_ostrogothic = cn_ferrariae
-						name_list_thuringian = cn_ferrariae
-					}
-					
-					b_ferrara = {
-						province = 2527
-						cultural_names = {
-							#Roman
-							name_list_roman = cn_ferrariae
-							name_list_romano_gallic = cn_ferrariae
-							name_list_romano_hispanic = cn_ferrariae
-							name_list_romano_british = cn_ferrariae
-							name_list_dalmatian = cn_ferrariae
-							name_list_romano_african = cn_ferrariae
-							name_list_romano_gothic = cn_ferrariae
-							name_list_romano_dacian = cn_ferrariae 
-							name_list_romano_aramean = cn_ferrariae 
-							name_list_romano_vandalic = cn_ferrariae 
-							name_list_romano_thracian = cn_ferrariae 
-							name_list_romano_illyrian = cn_ferrariae 
-							name_list_romano_raetian = cn_ferrariae 
-							name_list_romano_noric = cn_ferrariae 
-							name_list_romano_pannonian = cn_ferrariae 
-							#Germanic
-							name_list_skirian = cn_ferrariae
-							name_list_ostrogothic = cn_ferrariae
-							name_list_thuringian = cn_ferrariae
-						}
-						color = { 219 125 85 }
-					}
-					b_pomposa = {
-						province = 2526
-						cultural_names = {
-							#Roman Cultures
-							name_list_roman = cn_pomposia
-							name_list_romano_gallic = cn_pomposia
-							name_list_romano_hispanic = cn_pomposia
-							name_list_romano_british = cn_pomposia
-							name_list_romano_african = cn_pomposia
-							name_list_romano_raetian = cn_pomposia
-							name_list_romano_thracian = cn_pomposia
-							name_list_romano_illyrian = cn_pomposia
-							name_list_romano_pannonian = cn_pomposia
-							name_list_dalmatian = cn_pomposia
-							name_list_romano_noric = cn_pomposia
-							name_list_romano_gothic = cn_pomposia
-							name_list_romano_dacian = cn_pomposia
-							name_list_romano_aramean = cn_pomposia
-							name_list_romano_vandalic = cn_pomposia
-							#Germanic Cultures
-							name_list_skirian = cn_pomposia
-							name_list_thuringian = cn_pomposia
-							name_list_ostrogothic = cn_pomposia
-						}
-						color = { 219 125 85 }
-					}
-					b_comacchio = {
-						province = 2528
-						cultural_names = {
-							#Roman
-							name_list_roman = cn_castrum_cumiacli
-							name_list_romano_gallic = cn_castrum_cumiacli
-							name_list_romano_hispanic = cn_castrum_cumiacli
-							name_list_romano_british = cn_castrum_cumiacli
-							name_list_dalmatian = cn_castrum_cumiacli
-							name_list_romano_african = cn_castrum_cumiacli
-							name_list_romano_gothic = cn_castrum_cumiacli
-							name_list_romano_dacian = cn_castrum_cumiacli 
-							name_list_romano_aramean = cn_castrum_cumiacli 
-							name_list_romano_vandalic = cn_castrum_cumiacli 
-							name_list_romano_thracian = cn_castrum_cumiacli 
-							name_list_romano_illyrian = cn_castrum_cumiacli 
-							name_list_romano_raetian = cn_castrum_cumiacli 
-							name_list_romano_noric = cn_castrum_cumiacli 
-							name_list_romano_pannonian = cn_castrum_cumiacli 
-							#Germanic
-							name_list_skirian = cn_castrum_cumiacli
-							name_list_ostrogothic = cn_castrum_cumiacli
-							name_list_thuringian = cn_castrum_cumiacli
-						}
-						color = { 219 125 85 }
-					}
-				}
-				c_casentino = {
-					color = { 209 125 105 }
-					
-					cultural_names = {
-						#Roman
-						name_list_roman = cn_casenaticum
-						name_list_romano_gallic = cn_casenaticum
-						name_list_romano_hispanic = cn_casenaticum
-						name_list_romano_british = cn_casenaticum
-						name_list_dalmatian = cn_casenaticum
-						name_list_romano_african = cn_casenaticum
-						name_list_romano_gothic = cn_casenaticum
-						name_list_romano_dacian = cn_casenaticum 
-						name_list_romano_aramean = cn_casenaticum 
-						name_list_romano_vandalic = cn_casenaticum 
-						name_list_romano_thracian = cn_casenaticum 
-						name_list_romano_illyrian = cn_casenaticum 
-						name_list_romano_raetian = cn_casenaticum 
-						name_list_romano_noric = cn_casenaticum 
-						name_list_romano_pannonian = cn_casenaticum 
-						#Germanic
-						name_list_skirian = cn_casenaticum
-						name_list_ostrogothic = cn_casenaticum
-						name_list_thuringian = cn_casenaticum
-					}
-					
-					b_casentino = {
-						province = 2553
-						cultural_names = {
-							#Roman
-							name_list_roman = cn_casenaticum
-							name_list_romano_gallic = cn_casenaticum
-							name_list_romano_hispanic = cn_casenaticum
-							name_list_romano_british = cn_casenaticum
-							name_list_dalmatian = cn_casenaticum
-							name_list_romano_african = cn_casenaticum
-							name_list_romano_gothic = cn_casenaticum
-							name_list_romano_dacian = cn_casenaticum 
-							name_list_romano_aramean = cn_casenaticum 
-							name_list_romano_vandalic = cn_casenaticum 
-							name_list_romano_thracian = cn_casenaticum 
-							name_list_romano_illyrian = cn_casenaticum 
-							name_list_romano_raetian = cn_casenaticum 
-							name_list_romano_noric = cn_casenaticum 
-							name_list_romano_pannonian = cn_casenaticum 
-							#Germanic
-							name_list_skirian = cn_casenaticum
-							name_list_ostrogothic = cn_casenaticum
-							name_list_thuringian = cn_casenaticum
-						}
-						color = { 209 125 105 }
-					}
-					b_montefeltro = {
-						province = 2552
-						cultural_names = {
-							#Roman
-							name_list_roman = cn_monteferetra
-							name_list_romano_gallic = cn_monteferetra
-							name_list_romano_hispanic = cn_monteferetra
-							name_list_romano_british = cn_monteferetra
-							name_list_dalmatian = cn_monteferetra
-							name_list_romano_african = cn_monteferetra
-							name_list_romano_gothic = cn_monteferetra
-							name_list_romano_dacian = cn_monteferetra 
-							name_list_romano_aramean = cn_monteferetra 
-							name_list_romano_vandalic = cn_monteferetra 
-							name_list_romano_thracian = cn_monteferetra 
-							name_list_romano_illyrian = cn_monteferetra 
-							name_list_romano_raetian = cn_monteferetra 
-							name_list_romano_noric = cn_monteferetra 
-							name_list_romano_pannonian = cn_monteferetra 
-						}
-						color = { 209 125 105 }
-					}
-					b_camaldoli = {
-						province = 2551
-						color = { 209 125 105 }
-					}
-				}
-				c_urbino = {
-					color = { 240 225 150 }
-					
-					cultural_names = {
-						#Roman
-						name_list_roman = cn_urbinum
-						name_list_romano_gallic = cn_urbinum
-						name_list_romano_hispanic = cn_urbinum
-						name_list_romano_british = cn_urbinum
-						name_list_dalmatian = cn_urbinum
-						name_list_romano_african = cn_urbinum
-						name_list_romano_gothic = cn_urbinum
-						name_list_romano_dacian = cn_urbinum 
-						name_list_romano_aramean = cn_urbinum 
-						name_list_romano_vandalic = cn_urbinum 
-						name_list_romano_thracian = cn_urbinum 
-						name_list_romano_illyrian = cn_urbinum 
-						name_list_romano_raetian = cn_urbinum 
-						name_list_romano_noric = cn_urbinum 
-						name_list_romano_pannonian = cn_urbinum
-						#Byzantine Cultures
-						name_list_greek = cn_ourbinon
-						name_list_greek_gothic = cn_ourbinon
-						name_list_greek_persian = cn_ourbinon
-						name_list_isaurian_persian = cn_ourbinon
-						name_list_grecco_axumite = cn_ourbinon
-						name_list_bosporan = cn_ourbinon
-						name_list_pontic = cn_ourbinon
-						name_list_tsakonian = cn_ourbinon
-						name_list_massalian = cn_ourbinon
-						name_list_helleno_thracian = cn_ourbinon
-						name_list_helleno_libyan = cn_ourbinon
-						#Germanic Cultures
-						name_list_skirian = cn_urbinum
-						name_list_thuringian = cn_urbinum
-						name_list_ostrogothic = cn_urbinum
-					}
-					
-					b_urbino = {
-						province = 2555
-						cultural_names = {
-							#Roman
-							name_list_roman = cn_urbinum
-							name_list_romano_gallic = cn_urbinum
-							name_list_romano_hispanic = cn_urbinum
-							name_list_romano_british = cn_urbinum
-							name_list_dalmatian = cn_urbinum
-							name_list_romano_african = cn_urbinum
-							name_list_romano_gothic = cn_urbinum
-							name_list_romano_dacian = cn_urbinum 
-							name_list_romano_aramean = cn_urbinum 
-							name_list_romano_vandalic = cn_urbinum 
-							name_list_romano_thracian = cn_urbinum 
-							name_list_romano_illyrian = cn_urbinum 
-							name_list_romano_raetian = cn_urbinum 
-							name_list_romano_noric = cn_urbinum 
-							name_list_romano_pannonian = cn_urbinum
-							#Byzantine Cultures
-							name_list_greek = cn_ourbinon
-							name_list_greek_gothic = cn_ourbinon
-							name_list_greek_persian = cn_ourbinon
-							name_list_isaurian_persian = cn_ourbinon
-							name_list_grecco_axumite = cn_ourbinon
-							name_list_bosporan = cn_ourbinon
-							name_list_pontic = cn_ourbinon
-							name_list_tsakonian = cn_ourbinon
-							name_list_massalian = cn_ourbinon
-							name_list_helleno_thracian = cn_ourbinon
-							name_list_helleno_libyan = cn_ourbinon
-							#Germanic Cultures
-							name_list_skirian = cn_urbinum
-							name_list_thuringian = cn_urbinum
-							name_list_ostrogothic = cn_urbinum
-						}
-						color = { 240 225 150 }
-					}
-					b_civitas_castelli = {
-						province = 2584
-						cultural_names = {
-							#Roman
-							name_list_roman = cn_tifernum_tiberinum
-							name_list_romano_gallic = cn_tifernum_tiberinum
-							name_list_romano_hispanic = cn_tifernum_tiberinum
-							name_list_romano_british = cn_tifernum_tiberinum
-							name_list_dalmatian = cn_tifernum_tiberinum
-							name_list_romano_african = cn_tifernum_tiberinum
-							name_list_romano_gothic = cn_tifernum_tiberinum
-							name_list_romano_dacian = cn_tifernum_tiberinum 
-							name_list_romano_aramean = cn_tifernum_tiberinum 
-							name_list_romano_vandalic = cn_tifernum_tiberinum 
-							name_list_romano_thracian = cn_tifernum_tiberinum 
-							name_list_romano_illyrian = cn_tifernum_tiberinum 
-							name_list_romano_raetian = cn_tifernum_tiberinum 
-							name_list_romano_noric = cn_tifernum_tiberinum 
-							name_list_romano_pannonian = cn_tifernum_tiberinum
-							#Germanic Cultures
-							name_list_skirian = cn_tifernum_tiberinum
-							name_list_thuringian = cn_tifernum_tiberinum
-							name_list_ostrogothic = cn_tifernum_tiberinum
-						}
-						color = { 240 225 150 }
-					}
-					b_pesaro = {
-						province = 2556
-						cultural_names = {
-							#Roman
-							name_list_roman = cn_pisaurum
-							name_list_romano_gallic = cn_pisaurum
-							name_list_romano_hispanic = cn_pisaurum
-							name_list_romano_british = cn_pisaurum
-							name_list_dalmatian = cn_pisaurum
-							name_list_romano_african = cn_pisaurum
-							name_list_romano_gothic = cn_pisaurum
-							name_list_romano_dacian = cn_pisaurum 
-							name_list_romano_aramean = cn_pisaurum 
-							name_list_romano_vandalic = cn_pisaurum 
-							name_list_romano_thracian = cn_pisaurum 
-							name_list_romano_illyrian = cn_pisaurum 
-							name_list_romano_raetian = cn_pisaurum 
-							name_list_romano_noric = cn_pisaurum 
-							name_list_romano_pannonian = cn_pisaurum 
-							#Byzantine Cultures
-							name_list_greek = cn_pisauron
-							name_list_greek_gothic = cn_pisauron
-							name_list_greek_persian = cn_pisauron
-							name_list_isaurian_persian = cn_pisauron
-							name_list_grecco_axumite = cn_pisauron
-							name_list_bosporan = cn_pisauron
-							name_list_pontic = cn_pisauron
-							name_list_tsakonian = cn_pisauron
-							name_list_massalian = cn_pisauron
-							name_list_helleno_thracian = cn_pisauron
-							name_list_helleno_libyan = cn_pisauron
-							#Germanic Cultures
-							name_list_skirian = cn_pisaurum
-							name_list_thuringian = cn_pisaurum
-							name_list_ostrogothic = cn_pisaurum
-						}
-						color = { 240 225 150 }
-					}
-				}
-			}
-		}
-	}
-	
-	e_praetorian_prefecture_gaul = {
+	e_gaul = {
 		color={ 0 100 30 }
 		capital = c_venaissin #From 395
 		
-		can_create = {
-			general_empire_title_creation_trigger = yes
-			create_praetorian_prefectures_trigger = yes
-		}
+	can_create = {
+		general_empire_title_creation_trigger = yes
+	}
 		can_create_on_partition = { always = no }
 		
 		k_septem_provincae = {
@@ -10421,53 +9866,6 @@ h_western_roman_empire = {
 						color = { 55 105 225 }
 					}
 				}
-				c_briey = {
-					color = { 53 132 226 }
-					
-					cultural_names = {
-						#Roman Cultures
-						name_list_roman = cn_briceium
-						name_list_romano_gallic = cn_briceium
-						name_list_romano_hispanic = cn_briceium
-						name_list_romano_british = cn_briceium
-						name_list_romano_african = cn_briceium
-						name_list_romano_raetian = cn_briceium
-						name_list_romano_thracian = cn_briceium
-						name_list_romano_illyrian = cn_briceium
-						name_list_romano_pannonian = cn_briceium
-						name_list_dalmatian = cn_briceium
-						name_list_romano_noric = cn_briceium
-						name_list_romano_gothic = cn_briceium
-						name_list_romano_dacian = cn_briceium
-						name_list_romano_aramean = cn_briceium
-					}
-					b_briey = {
-						province = 2706
-						cultural_names = {
-							#Roman Cultures
-							name_list_roman = cn_briceium
-							name_list_romano_gallic = cn_briceium
-							name_list_romano_hispanic = cn_briceium
-							name_list_romano_british = cn_briceium
-							name_list_romano_african = cn_briceium
-							name_list_romano_raetian = cn_briceium
-							name_list_romano_thracian = cn_briceium
-							name_list_romano_illyrian = cn_briceium
-							name_list_romano_pannonian = cn_briceium
-							name_list_dalmatian = cn_briceium
-							name_list_romano_noric = cn_briceium
-							name_list_romano_gothic = cn_briceium
-							name_list_romano_dacian = cn_briceium
-							name_list_romano_aramean = cn_briceium
-						}
-						color = { 53 132 226 }
-					}
-					b_hayange = {
-						province = 2080
-
-						color = { 53 132 226 }
-					}
-				}
 				c_vaucouleurs = {
 					color = { 15 80 220 }
 					
@@ -10706,9 +10104,106 @@ h_western_roman_empire = {
 				}
 			}
 			d_belgica_secunda = { #7
-				color={ 0 30 0 }
-				capital = c_guines
+				color={ 110 95 145 }
+				capital = c_hainaut
 				
+				cultural_names = {
+					name_list_old_frankish = cn_salia
+					name_list_chatti = cn_salia
+				}
+				
+				c_hainaut = {
+					color = { 110 95 145 }
+					
+					cultural_names = {
+						#Roman Cultures
+						name_list_roman = cn_castrilocus
+						name_list_romano_gallic = cn_castrilocus
+						name_list_romano_hispanic = cn_castrilocus
+						name_list_romano_british = cn_castrilocus
+						name_list_romano_african = cn_castrilocus
+						name_list_romano_raetian = cn_castrilocus
+						name_list_romano_thracian = cn_castrilocus
+						name_list_romano_illyrian = cn_castrilocus
+						name_list_romano_pannonian = cn_castrilocus
+						name_list_dalmatian = cn_castrilocus
+						name_list_romano_noric = cn_castrilocus
+						name_list_romano_gothic = cn_castrilocus
+						name_list_romano_dacian = cn_castrilocus
+						name_list_romano_aramean = cn_castrilocus
+						#Germanic Cultures
+						name_list_old_frankish = cn_buargains
+						name_list_old_frisian = cn_henegouwen
+					}
+					
+					b_tournai = {
+						province = 2127
+						cultural_names = {
+							#Roman Cultures
+							name_list_roman = cn_tornacum
+							name_list_romano_gallic = cn_tornacum
+							name_list_romano_hispanic = cn_tornacum
+							name_list_romano_british = cn_tornacum
+							name_list_romano_african = cn_tornacum
+							name_list_romano_raetian = cn_tornacum
+							name_list_romano_thracian = cn_tornacum
+							name_list_romano_illyrian = cn_tornacum
+							name_list_romano_pannonian = cn_tornacum
+							name_list_dalmatian = cn_tornacum
+							name_list_romano_noric = cn_tornacum
+							name_list_romano_gothic = cn_tornacum
+							name_list_romano_dacian = cn_tornacum
+							name_list_romano_aramean = cn_tornacum
+							name_list_romano_vandalic = cn_tornacum
+						}
+						color = { 110 95 145 }
+					}
+					b_mons = {
+						province = 2117
+						cultural_names = {
+							#Roman Cultures
+							name_list_roman = cn_castrilocus
+							name_list_romano_gallic = cn_castrilocus
+							name_list_romano_hispanic = cn_castrilocus
+							name_list_romano_british = cn_castrilocus
+							name_list_romano_african = cn_castrilocus
+							name_list_romano_raetian = cn_castrilocus
+							name_list_romano_thracian = cn_castrilocus
+							name_list_romano_illyrian = cn_castrilocus
+							name_list_romano_pannonian = cn_castrilocus
+							name_list_dalmatian = cn_castrilocus
+							name_list_romano_noric = cn_castrilocus
+							name_list_romano_gothic = cn_castrilocus
+							name_list_romano_dacian = cn_castrilocus
+							name_list_romano_aramean = cn_castrilocus
+							#Germanic Cultures
+							name_list_old_frankish = cn_buargains
+							name_list_old_frisian = cn_henegouwen
+						}
+						color = { 110 95 145 }
+					}
+					b_ath = {
+						province = 2120
+						cultural_names = {
+							#Roman Cultures
+							name_list_roman = cn_athum
+							name_list_romano_gallic = cn_athum
+							name_list_romano_hispanic = cn_athum
+							name_list_romano_british = cn_athum
+							name_list_romano_african = cn_athum
+							name_list_romano_raetian = cn_athum
+							name_list_romano_thracian = cn_athum
+							name_list_romano_illyrian = cn_athum
+							name_list_romano_pannonian = cn_athum
+							name_list_dalmatian = cn_athum
+							name_list_romano_noric = cn_athum
+							name_list_romano_gothic = cn_athum
+							name_list_romano_dacian = cn_athum
+							name_list_romano_aramean = cn_athum
+						}
+						color = { 110 95 145 }
+					}
+				}
 				c_boulogne = {
 					color = { 78 103 165 }
 					
@@ -11138,97 +10633,6 @@ h_western_roman_empire = {
 							name_list_visigothic = cn_area
 						}
 						color = { 75 115 205 }
-					}
-				}
-				c_hainaut = {
-					color = { 110 95 145 }
-					
-					cultural_names = {
-						#Roman Cultures
-						name_list_roman = cn_castrilocus
-						name_list_romano_gallic = cn_castrilocus
-						name_list_romano_hispanic = cn_castrilocus
-						name_list_romano_british = cn_castrilocus
-						name_list_romano_african = cn_castrilocus
-						name_list_romano_raetian = cn_castrilocus
-						name_list_romano_thracian = cn_castrilocus
-						name_list_romano_illyrian = cn_castrilocus
-						name_list_romano_pannonian = cn_castrilocus
-						name_list_dalmatian = cn_castrilocus
-						name_list_romano_noric = cn_castrilocus
-						name_list_romano_gothic = cn_castrilocus
-						name_list_romano_dacian = cn_castrilocus
-						name_list_romano_aramean = cn_castrilocus
-						#Germanic Cultures
-						name_list_old_frankish = cn_buargains
-						name_list_old_frisian = cn_henegouwen
-					}
-					b_mons = {
-						province = 2117
-						cultural_names = {
-							#Roman Cultures
-							name_list_roman = cn_castrilocus
-							name_list_romano_gallic = cn_castrilocus
-							name_list_romano_hispanic = cn_castrilocus
-							name_list_romano_british = cn_castrilocus
-							name_list_romano_african = cn_castrilocus
-							name_list_romano_raetian = cn_castrilocus
-							name_list_romano_thracian = cn_castrilocus
-							name_list_romano_illyrian = cn_castrilocus
-							name_list_romano_pannonian = cn_castrilocus
-							name_list_dalmatian = cn_castrilocus
-							name_list_romano_noric = cn_castrilocus
-							name_list_romano_gothic = cn_castrilocus
-							name_list_romano_dacian = cn_castrilocus
-							name_list_romano_aramean = cn_castrilocus
-							#Germanic Cultures
-							name_list_old_frankish = cn_buargains
-							name_list_old_frisian = cn_henegouwen
-						}
-						color = { 110 95 145 }
-					}
-					b_tournai = {
-						province = 2127
-						cultural_names = {
-							#Roman Cultures
-							name_list_roman = cn_tornacum
-							name_list_romano_gallic = cn_tornacum
-							name_list_romano_hispanic = cn_tornacum
-							name_list_romano_british = cn_tornacum
-							name_list_romano_african = cn_tornacum
-							name_list_romano_raetian = cn_tornacum
-							name_list_romano_thracian = cn_tornacum
-							name_list_romano_illyrian = cn_tornacum
-							name_list_romano_pannonian = cn_tornacum
-							name_list_dalmatian = cn_tornacum
-							name_list_romano_noric = cn_tornacum
-							name_list_romano_gothic = cn_tornacum
-							name_list_romano_dacian = cn_tornacum
-							name_list_romano_aramean = cn_tornacum
-							name_list_romano_vandalic = cn_tornacum
-						}
-						color = { 110 95 145 }
-					}
-					b_ath = {
-						province = 2120
-						cultural_names = {
-							#Roman Cultures
-							name_list_roman = cn_athum
-							name_list_romano_gallic = cn_athum
-							name_list_romano_hispanic = cn_athum
-							name_list_romano_british = cn_athum
-							name_list_romano_african = cn_athum
-							name_list_romano_raetian = cn_athum
-							name_list_romano_thracian = cn_athum
-							name_list_romano_illyrian = cn_athum
-							name_list_romano_pannonian = cn_athum
-							name_list_dalmatian = cn_athum
-							name_list_romano_noric = cn_athum
-							name_list_romano_gothic = cn_athum
-							name_list_romano_dacian = cn_athum
-							name_list_romano_aramean = cn_athum
-						}
-						color = { 110 95 145 }
 					}
 				}
 				c_cambray = {
@@ -11766,9 +11170,14 @@ h_western_roman_empire = {
 				}
 			}
 			d_germania_inferior = { #8
-				color={ 154 205 50 }
+				color={ 150 145 180 }
 				capital = c_cologne
-
+				
+				cultural_names = {
+					name_list_old_frankish = cn_ripuaria
+					name_list_chatti = cn_ripuaria
+				}
+				
 				c_aachen = {
 					color = { 130 125 175 }
 					cultural_names = {
@@ -11872,142 +11281,6 @@ h_western_roman_empire = {
 							name_list_romano_aramean = cn_promea
 						}
 						color = { 130 125 175 }
-					}
-				}
-				c_antwerpen = {
-					color = { 125 85 110 }
-					cultural_names = {
-						#Roman Cultures
-						name_list_roman = cn_antverpia
-						name_list_romano_gallic = cn_antverpia
-						name_list_romano_hispanic = cn_antverpia
-						name_list_romano_british = cn_antverpia
-						name_list_romano_african = cn_antverpia
-						name_list_romano_raetian = cn_antverpia
-						name_list_romano_thracian = cn_antverpia
-						name_list_romano_illyrian = cn_antverpia
-						name_list_romano_pannonian = cn_antverpia
-						name_list_dalmatian = cn_antverpia
-						name_list_romano_noric = cn_antverpia
-						name_list_romano_gothic = cn_antverpia
-						name_list_romano_dacian = cn_antverpia
-						name_list_romano_aramean = cn_antverpia
-					}
-					b_antwerpen = {
-						province = 2106
-						cultural_names = {
-							#Roman Cultures
-							name_list_roman = cn_antverpia
-							name_list_romano_gallic = cn_antverpia
-							name_list_romano_hispanic = cn_antverpia
-							name_list_romano_british = cn_antverpia
-							name_list_romano_african = cn_antverpia
-							name_list_romano_raetian = cn_antverpia
-							name_list_romano_thracian = cn_antverpia
-							name_list_romano_illyrian = cn_antverpia
-							name_list_romano_pannonian = cn_antverpia
-							name_list_dalmatian = cn_antverpia
-							name_list_romano_noric = cn_antverpia
-							name_list_romano_gothic = cn_antverpia
-							name_list_romano_dacian = cn_antverpia
-							name_list_romano_aramean = cn_antverpia
-						}
-						color = { 125 85 110 }
-					}
-
-					b_rosendaal = {
-						province = 2108
-
-						color = { 125 85 110 }
-					}
-
-					b_breda = {
-						province = 2109
-						cultural_names = {
-							#Roman Cultures
-							name_list_roman = cn_bredanus
-							name_list_romano_gallic = cn_bredanus
-							name_list_romano_hispanic = cn_bredanus
-							name_list_romano_british = cn_bredanus
-							name_list_romano_african = cn_bredanus
-							name_list_romano_raetian = cn_bredanus
-							name_list_romano_thracian = cn_bredanus
-							name_list_romano_illyrian = cn_bredanus
-							name_list_romano_pannonian = cn_bredanus
-							name_list_dalmatian = cn_bredanus
-							name_list_romano_noric = cn_bredanus
-							name_list_romano_gothic = cn_bredanus
-							name_list_romano_dacian = cn_bredanus
-							name_list_romano_aramean = cn_bredanus
-						}
-						color = { 125 85 110 }
-					}
-				}
-				c_maastricht = {
-					color = { 145 125 195 }
-					cultural_names = {
-						#Roman Cultures
-						name_list_roman = cn_traiectum_ad_mosam
-						name_list_romano_gallic = cn_traiectum_ad_mosam
-						name_list_romano_hispanic = cn_traiectum_ad_mosam
-						name_list_romano_british = cn_traiectum_ad_mosam
-						name_list_romano_african = cn_traiectum_ad_mosam
-						name_list_romano_raetian = cn_traiectum_ad_mosam
-						name_list_romano_thracian = cn_traiectum_ad_mosam
-						name_list_romano_illyrian = cn_traiectum_ad_mosam
-						name_list_romano_pannonian = cn_traiectum_ad_mosam
-						name_list_dalmatian = cn_traiectum_ad_mosam
-						name_list_romano_noric = cn_traiectum_ad_mosam
-						name_list_romano_gothic = cn_traiectum_ad_mosam
-						name_list_romano_dacian = cn_traiectum_ad_mosam
-						name_list_romano_aramean = cn_traiectum_ad_mosam
-					}
-					b_maastricht = {
-						province = 2099
-						cultural_names = {
-							#Roman Cultures
-							name_list_roman = cn_traiectum_ad_mosam
-							name_list_romano_gallic = cn_traiectum_ad_mosam
-							name_list_romano_hispanic = cn_traiectum_ad_mosam
-							name_list_romano_british = cn_traiectum_ad_mosam
-							name_list_romano_african = cn_traiectum_ad_mosam
-							name_list_romano_raetian = cn_traiectum_ad_mosam
-							name_list_romano_thracian = cn_traiectum_ad_mosam
-							name_list_romano_illyrian = cn_traiectum_ad_mosam
-							name_list_romano_pannonian = cn_traiectum_ad_mosam
-							name_list_dalmatian = cn_traiectum_ad_mosam
-							name_list_romano_noric = cn_traiectum_ad_mosam
-							name_list_romano_gothic = cn_traiectum_ad_mosam
-							name_list_romano_dacian = cn_traiectum_ad_mosam
-							name_list_romano_aramean = cn_traiectum_ad_mosam
-						}
-						color = { 145 125 195 }
-					}
-					b_eindhoven = {
-						province = 2100
-
-						color = { 145 125 195 }
-					}
-					b_tilburg = {
-						province = 2110
-						cultural_names = {
-							#Roman Cultures
-							name_list_roman = cn_tilia
-							name_list_romano_gallic = cn_tilia
-							name_list_romano_hispanic = cn_tilia
-							name_list_romano_british = cn_tilia
-							name_list_romano_african = cn_tilia
-							name_list_romano_raetian = cn_tilia
-							name_list_romano_thracian = cn_tilia
-							name_list_romano_illyrian = cn_tilia
-							name_list_romano_pannonian = cn_tilia
-							name_list_dalmatian = cn_tilia
-							name_list_romano_noric = cn_tilia
-							name_list_romano_gothic = cn_tilia
-							name_list_romano_dacian = cn_tilia
-							name_list_romano_aramean = cn_tilia
-						}
-						color = { 145 125 195 }
 					}
 				}
 				c_cleves = {
@@ -12176,76 +11449,6 @@ h_western_roman_empire = {
 						color = { 150 145 180 }
 					}
 				}
-				c_brabant = {
-					color = { 110 85 125 }
-					cultural_names = {
-						#Roman Cultures
-						name_list_roman = cn_toxandria
-						name_list_romano_gallic = cn_toxandria
-						name_list_romano_hispanic = cn_toxandria
-						name_list_romano_british = cn_toxandria
-						name_list_romano_african = cn_toxandria
-						name_list_romano_raetian = cn_toxandria
-						name_list_romano_thracian = cn_toxandria
-						name_list_romano_illyrian = cn_toxandria
-						name_list_romano_pannonian = cn_toxandria
-						name_list_dalmatian = cn_toxandria
-						name_list_romano_noric = cn_toxandria
-						name_list_romano_gothic = cn_toxandria
-						name_list_romano_dacian = cn_toxandria
-						name_list_romano_aramean = cn_toxandria
-						#Germanic Cultures
-						name_list_old_frisian = cn_braban
-						name_list_old_frankish = cn_blaoburc
-					}
-					b_leuven = {
-						province = 2105
-						cultural_names = {
-							#Roman Cultures
-							name_list_roman = cn_lovanium
-							name_list_romano_gallic = cn_lovanium
-							name_list_romano_hispanic = cn_lovanium
-							name_list_romano_british = cn_lovanium
-							name_list_romano_african = cn_lovanium
-							name_list_romano_raetian = cn_lovanium
-							name_list_romano_thracian = cn_lovanium
-							name_list_romano_illyrian = cn_lovanium
-							name_list_romano_pannonian = cn_lovanium
-							name_list_dalmatian = cn_lovanium
-							name_list_romano_noric = cn_lovanium
-							name_list_romano_gothic = cn_lovanium
-							name_list_romano_dacian = cn_lovanium
-							name_list_romano_aramean = cn_lovanium
-						}
-						color = { 110 85 125 }
-					}
-					b_brussels = {
-						province = 2107
-						cultural_names = {
-							#Roman Cultures
-							name_list_roman = cn_brocsala
-							name_list_romano_gallic = cn_brocsala
-							name_list_romano_hispanic = cn_brocsala
-							name_list_romano_british = cn_brocsala
-							name_list_romano_african = cn_brocsala
-							name_list_romano_raetian = cn_brocsala
-							name_list_romano_thracian = cn_brocsala
-							name_list_romano_illyrian = cn_brocsala
-							name_list_romano_pannonian = cn_brocsala
-							name_list_dalmatian = cn_brocsala
-							name_list_romano_noric = cn_brocsala
-							name_list_romano_gothic = cn_brocsala
-							name_list_romano_dacian = cn_brocsala
-							name_list_romano_aramean = cn_brocsala
-						}
-						color = { 110 85 125 }
-					}
-					b_turnhout = {
-						province = 2111
-
-						color = { 110 85 125 }
-					}
-				}
 				c_guelders = {
 					color = { 200 60 40 }
 					cultural_names = {
@@ -12306,176 +11509,6 @@ h_western_roman_empire = {
 							name_list_romano_aramean = cn_noviomagus
 						}
 						color = { 200 60 40 }
-					}
-				}
-				c_zeeland = {
-					color = { 200 100 30 }
-					cultural_names = {
-						#Roman Cultures
-						name_list_roman = cn_nehalennia
-						name_list_romano_gallic = cn_nehalennia
-						name_list_romano_hispanic = cn_nehalennia
-						name_list_romano_british = cn_nehalennia
-						name_list_romano_african = cn_nehalennia
-						name_list_romano_raetian = cn_nehalennia
-						name_list_romano_thracian = cn_nehalennia
-						name_list_romano_illyrian = cn_nehalennia
-						name_list_romano_pannonian = cn_nehalennia
-						name_list_dalmatian = cn_nehalennia
-						name_list_romano_noric = cn_nehalennia
-						name_list_romano_gothic = cn_nehalennia
-						name_list_romano_dacian = cn_nehalennia
-						name_list_romano_aramean = cn_nehalennia
-						#Germanic Cultures
-						name_list_old_frisian = cn_seelan
-						name_list_old_frankish = cn_nehalennland
-					}
-					b_middelburg = {
-						province = 2112
-						cultural_names = {
-							#Roman Cultures
-							name_list_roman = cn_medioburgum
-							name_list_romano_gallic = cn_medioburgum
-							name_list_romano_hispanic = cn_medioburgum
-							name_list_romano_british = cn_medioburgum
-							name_list_romano_african = cn_medioburgum
-							name_list_romano_raetian = cn_medioburgum
-							name_list_romano_thracian = cn_medioburgum
-							name_list_romano_illyrian = cn_medioburgum
-							name_list_romano_pannonian = cn_medioburgum
-							name_list_dalmatian = cn_medioburgum
-							name_list_romano_noric = cn_medioburgum
-							name_list_romano_gothic = cn_medioburgum
-							name_list_romano_dacian = cn_medioburgum
-							name_list_romano_aramean = cn_medioburgum
-						}
-						color = { 200 100 30 }
-					}
-
-					b_bergen_op_zoom = {
-						province = 2113
-						cultural_names = {
-							#Roman Cultures
-							name_list_roman = cn_montes_ad_marginem
-							name_list_romano_gallic = cn_montes_ad_marginem
-							name_list_romano_hispanic = cn_montes_ad_marginem
-							name_list_romano_british = cn_montes_ad_marginem
-							name_list_romano_african = cn_montes_ad_marginem
-							name_list_romano_raetian = cn_montes_ad_marginem
-							name_list_romano_thracian = cn_montes_ad_marginem
-							name_list_romano_illyrian = cn_montes_ad_marginem
-							name_list_romano_pannonian = cn_montes_ad_marginem
-							name_list_dalmatian = cn_montes_ad_marginem
-							name_list_romano_noric = cn_montes_ad_marginem
-							name_list_romano_gothic = cn_montes_ad_marginem
-							name_list_romano_dacian = cn_montes_ad_marginem
-							name_list_romano_aramean = cn_montes_ad_marginem
-						}
-						color = { 200 100 30 }
-					}
-
-					b_brielle = {
-						province = 2401
-						cultural_names = {
-							#Roman Cultures
-							name_list_roman = cn_brogilo
-							name_list_romano_gallic = cn_brogilo
-							name_list_romano_hispanic = cn_brogilo
-							name_list_romano_british = cn_brogilo
-							name_list_romano_african = cn_brogilo
-							name_list_romano_raetian = cn_brogilo
-							name_list_romano_thracian = cn_brogilo
-							name_list_romano_illyrian = cn_brogilo
-							name_list_romano_pannonian = cn_brogilo
-							name_list_dalmatian = cn_brogilo
-							name_list_romano_noric = cn_brogilo
-							name_list_romano_gothic = cn_brogilo
-							name_list_romano_dacian = cn_brogilo
-							name_list_romano_aramean = cn_brogilo
-						}
-						color = { 200 100 30 }
-					}
-				}
-			}
-			d_belgica_prima = { #7
-				color={ 126 51 51 }
-				capital = c_trier
-				
-				c_trier = {
-					color = { 90 90 125 }
-					cultural_names = {
-						#Roman Cultures
-						name_list_roman = cn_augusta_treverorum
-						name_list_romano_gallic = cn_augusta_treverorum
-						name_list_romano_hispanic = cn_augusta_treverorum
-						name_list_romano_british = cn_augusta_treverorum
-						name_list_romano_african = cn_augusta_treverorum
-						name_list_romano_raetian = cn_augusta_treverorum
-						name_list_romano_thracian = cn_augusta_treverorum
-						name_list_romano_illyrian = cn_augusta_treverorum
-						name_list_romano_pannonian = cn_augusta_treverorum
-						name_list_dalmatian = cn_augusta_treverorum
-						name_list_romano_noric = cn_augusta_treverorum
-						name_list_romano_gothic = cn_augusta_treverorum
-						name_list_romano_dacian = cn_augusta_treverorum
-						name_list_romano_aramean = cn_augusta_treverorum
-						#Germanic Cultures
-						name_list_old_frankish = cn_pataburc
-					}
-					b_trier = {
-						province = 2083
-						cultural_names = {
-							#Roman Cultures
-							name_list_roman = cn_augusta_treverorum
-							name_list_romano_gallic = cn_augusta_treverorum
-							name_list_romano_hispanic = cn_augusta_treverorum
-							name_list_romano_british = cn_augusta_treverorum
-							name_list_romano_african = cn_augusta_treverorum
-							name_list_romano_raetian = cn_augusta_treverorum
-							name_list_romano_thracian = cn_augusta_treverorum
-							name_list_romano_illyrian = cn_augusta_treverorum
-							name_list_romano_pannonian = cn_augusta_treverorum
-							name_list_dalmatian = cn_augusta_treverorum
-							name_list_romano_noric = cn_augusta_treverorum
-							name_list_romano_gothic = cn_augusta_treverorum
-							name_list_romano_dacian = cn_augusta_treverorum
-							name_list_romano_aramean = cn_augusta_treverorum
-							#Germanic Cultures
-							name_list_old_frankish = cn_pataburc
-						}
-						color = { 90 90 125 }
-					}
-					b_beda = {
-						province = 2085
-
-						color = { 90 90 125 }
-					}
-					b_konz = {
-						province = 2700
-						cultural_names = {
-							#Roman Cultures
-							name_list_roman = cn_contionacum
-							name_list_romano_gallic = cn_contionacum
-							name_list_romano_hispanic = cn_contionacum
-							name_list_romano_british = cn_contionacum
-							name_list_romano_african = cn_contionacum
-							name_list_romano_raetian = cn_contionacum
-							name_list_romano_thracian = cn_contionacum
-							name_list_romano_illyrian = cn_contionacum
-							name_list_romano_pannonian = cn_contionacum
-							name_list_dalmatian = cn_contionacum
-							name_list_romano_noric = cn_contionacum
-							name_list_romano_gothic = cn_contionacum
-							name_list_romano_dacian = cn_contionacum
-							name_list_romano_aramean = cn_contionacum
-							name_list_romano_vandalic = cn_contionacum
-						}
-						color = { 90 90 125 }
-					}
-					b_wadern = {
-						province = 2703
-
-						color = { 90 90 125 }
 					}
 				}
 				c_koblenz = {
@@ -12565,6 +11598,93 @@ h_western_roman_empire = {
 							name_list_romano_aramean = cn_mons_campi
 						}
 						color = { 150 140 190 }
+					}
+				}
+			}
+			d_belgica_prima = { #7
+				color={ 126 51 51 }
+				capital = c_trier
+				
+				cultural_names = {
+					name_list_old_frankish = cn_triveria
+					name_list_chatti = cn_triveria
+				}
+				
+				c_trier = {
+					color = { 90 90 125 }
+					cultural_names = {
+						#Roman Cultures
+						name_list_roman = cn_augusta_treverorum
+						name_list_romano_gallic = cn_augusta_treverorum
+						name_list_romano_hispanic = cn_augusta_treverorum
+						name_list_romano_british = cn_augusta_treverorum
+						name_list_romano_african = cn_augusta_treverorum
+						name_list_romano_raetian = cn_augusta_treverorum
+						name_list_romano_thracian = cn_augusta_treverorum
+						name_list_romano_illyrian = cn_augusta_treverorum
+						name_list_romano_pannonian = cn_augusta_treverorum
+						name_list_dalmatian = cn_augusta_treverorum
+						name_list_romano_noric = cn_augusta_treverorum
+						name_list_romano_gothic = cn_augusta_treverorum
+						name_list_romano_dacian = cn_augusta_treverorum
+						name_list_romano_aramean = cn_augusta_treverorum
+						#Germanic Cultures
+						name_list_old_frankish = cn_pataburc
+					}
+					b_trier = {
+						province = 2083
+						cultural_names = {
+							#Roman Cultures
+							name_list_roman = cn_augusta_treverorum
+							name_list_romano_gallic = cn_augusta_treverorum
+							name_list_romano_hispanic = cn_augusta_treverorum
+							name_list_romano_british = cn_augusta_treverorum
+							name_list_romano_african = cn_augusta_treverorum
+							name_list_romano_raetian = cn_augusta_treverorum
+							name_list_romano_thracian = cn_augusta_treverorum
+							name_list_romano_illyrian = cn_augusta_treverorum
+							name_list_romano_pannonian = cn_augusta_treverorum
+							name_list_dalmatian = cn_augusta_treverorum
+							name_list_romano_noric = cn_augusta_treverorum
+							name_list_romano_gothic = cn_augusta_treverorum
+							name_list_romano_dacian = cn_augusta_treverorum
+							name_list_romano_aramean = cn_augusta_treverorum
+							#Germanic Cultures
+							name_list_old_frankish = cn_pataburc
+						}
+						color = { 90 90 125 }
+					}
+					b_beda = {
+						province = 2085
+
+						color = { 90 90 125 }
+					}
+					b_konz = {
+						province = 2700
+						cultural_names = {
+							#Roman Cultures
+							name_list_roman = cn_contionacum
+							name_list_romano_gallic = cn_contionacum
+							name_list_romano_hispanic = cn_contionacum
+							name_list_romano_british = cn_contionacum
+							name_list_romano_african = cn_contionacum
+							name_list_romano_raetian = cn_contionacum
+							name_list_romano_thracian = cn_contionacum
+							name_list_romano_illyrian = cn_contionacum
+							name_list_romano_pannonian = cn_contionacum
+							name_list_dalmatian = cn_contionacum
+							name_list_romano_noric = cn_contionacum
+							name_list_romano_gothic = cn_contionacum
+							name_list_romano_dacian = cn_contionacum
+							name_list_romano_aramean = cn_contionacum
+							name_list_romano_vandalic = cn_contionacum
+						}
+						color = { 90 90 125 }
+					}
+					b_wadern = {
+						province = 2703
+
+						color = { 90 90 125 }
 					}
 				}
 				c_metz = {
@@ -12746,94 +11866,357 @@ h_western_roman_empire = {
 						color = { 110 110 155 }
 					}
 				}
-				c_bouillon = {
-					color = { 100 110 180 }
+				c_briey = {
+					color = { 53 132 226 }
+					
 					cultural_names = {
 						#Roman Cultures
-						name_list_roman = cn_bullionium
-						name_list_romano_gallic = cn_bullionium
-						name_list_romano_hispanic = cn_bullionium
-						name_list_romano_british = cn_bullionium
-						name_list_romano_african = cn_bullionium
-						name_list_romano_raetian = cn_bullionium
-						name_list_romano_thracian = cn_bullionium
-						name_list_romano_illyrian = cn_bullionium
-						name_list_romano_pannonian = cn_bullionium
-						name_list_dalmatian = cn_bullionium
-						name_list_romano_noric = cn_bullionium
-						name_list_romano_gothic = cn_bullionium
-						name_list_romano_dacian = cn_bullionium
-						name_list_romano_aramean = cn_bullionium
+						name_list_roman = cn_briceium
+						name_list_romano_gallic = cn_briceium
+						name_list_romano_hispanic = cn_briceium
+						name_list_romano_british = cn_briceium
+						name_list_romano_african = cn_briceium
+						name_list_romano_raetian = cn_briceium
+						name_list_romano_thracian = cn_briceium
+						name_list_romano_illyrian = cn_briceium
+						name_list_romano_pannonian = cn_briceium
+						name_list_dalmatian = cn_briceium
+						name_list_romano_noric = cn_briceium
+						name_list_romano_gothic = cn_briceium
+						name_list_romano_dacian = cn_briceium
+						name_list_romano_aramean = cn_briceium
 					}
-					b_bouillon = {
-						province = 2091
+					b_briey = {
+						province = 2706
 						cultural_names = {
 							#Roman Cultures
-							name_list_roman = cn_bullionium
-							name_list_romano_gallic = cn_bullionium
-							name_list_romano_hispanic = cn_bullionium
-							name_list_romano_british = cn_bullionium
-							name_list_romano_african = cn_bullionium
-							name_list_romano_raetian = cn_bullionium
-							name_list_romano_thracian = cn_bullionium
-							name_list_romano_illyrian = cn_bullionium
-							name_list_romano_pannonian = cn_bullionium
-							name_list_dalmatian = cn_bullionium
-							name_list_romano_noric = cn_bullionium
-							name_list_romano_gothic = cn_bullionium
-							name_list_romano_dacian = cn_bullionium
-							name_list_romano_aramean = cn_bullionium
+							name_list_roman = cn_briceium
+							name_list_romano_gallic = cn_briceium
+							name_list_romano_hispanic = cn_briceium
+							name_list_romano_british = cn_briceium
+							name_list_romano_african = cn_briceium
+							name_list_romano_raetian = cn_briceium
+							name_list_romano_thracian = cn_briceium
+							name_list_romano_illyrian = cn_briceium
+							name_list_romano_pannonian = cn_briceium
+							name_list_dalmatian = cn_briceium
+							name_list_romano_noric = cn_briceium
+							name_list_romano_gothic = cn_briceium
+							name_list_romano_dacian = cn_briceium
+							name_list_romano_aramean = cn_briceium
 						}
-						color = { 100 110 180 }
+						color = { 53 132 226 }
 					}
-					b_chiny = {
-						province = 2686
+					b_hayange = {
+						province = 2080
 
-						color = { 100 110 180 }
-					}
-					b_saint_hubert = {
-						province = 2687
-						cultural_names = {
-							#Roman Cultures
-							name_list_roman = cn_ambra
-							name_list_romano_gallic = cn_ambra
-							name_list_romano_hispanic = cn_ambra
-							name_list_romano_british = cn_ambra
-							name_list_romano_african = cn_ambra
-							name_list_romano_raetian = cn_ambra
-							name_list_romano_thracian = cn_ambra
-							name_list_romano_illyrian = cn_ambra
-							name_list_romano_pannonian = cn_ambra
-							name_list_dalmatian = cn_ambra
-							name_list_romano_noric = cn_ambra
-							name_list_romano_gothic = cn_ambra
-							name_list_romano_dacian = cn_ambra
-							name_list_romano_aramean = cn_ambra
-						}
-						color = { 100 110 180 }
-					}
-					b_virton = {
-						province = 2095
-						cultural_names = {
-							#Roman Cultures
-							name_list_roman = cn_vertunum
-							name_list_romano_gallic = cn_vertunum
-							name_list_romano_hispanic = cn_vertunum
-							name_list_romano_british = cn_vertunum
-							name_list_romano_african = cn_vertunum
-							name_list_romano_raetian = cn_vertunum
-							name_list_romano_thracian = cn_vertunum
-							name_list_romano_illyrian = cn_vertunum
-							name_list_romano_pannonian = cn_vertunum
-							name_list_dalmatian = cn_vertunum
-							name_list_romano_noric = cn_vertunum
-							name_list_romano_gothic = cn_vertunum
-							name_list_romano_dacian = cn_vertunum
-							name_list_romano_aramean = cn_vertunum
-						}
-						color = { 100 110 180 }
+						color = { 53 132 226 }
 					}
 				}
+			}
+			d_texandria = {
+				color = { 145 125 195 }
+				capital = c_maastricht
+				
+				c_maastricht = {
+					color = { 145 125 195 }
+					cultural_names = {
+						#Roman Cultures
+						name_list_roman = cn_traiectum_ad_mosam
+						name_list_romano_gallic = cn_traiectum_ad_mosam
+						name_list_romano_hispanic = cn_traiectum_ad_mosam
+						name_list_romano_british = cn_traiectum_ad_mosam
+						name_list_romano_african = cn_traiectum_ad_mosam
+						name_list_romano_raetian = cn_traiectum_ad_mosam
+						name_list_romano_thracian = cn_traiectum_ad_mosam
+						name_list_romano_illyrian = cn_traiectum_ad_mosam
+						name_list_romano_pannonian = cn_traiectum_ad_mosam
+						name_list_dalmatian = cn_traiectum_ad_mosam
+						name_list_romano_noric = cn_traiectum_ad_mosam
+						name_list_romano_gothic = cn_traiectum_ad_mosam
+						name_list_romano_dacian = cn_traiectum_ad_mosam
+						name_list_romano_aramean = cn_traiectum_ad_mosam
+					}
+					b_maastricht = {
+						province = 2099
+						cultural_names = {
+							#Roman Cultures
+							name_list_roman = cn_traiectum_ad_mosam
+							name_list_romano_gallic = cn_traiectum_ad_mosam
+							name_list_romano_hispanic = cn_traiectum_ad_mosam
+							name_list_romano_british = cn_traiectum_ad_mosam
+							name_list_romano_african = cn_traiectum_ad_mosam
+							name_list_romano_raetian = cn_traiectum_ad_mosam
+							name_list_romano_thracian = cn_traiectum_ad_mosam
+							name_list_romano_illyrian = cn_traiectum_ad_mosam
+							name_list_romano_pannonian = cn_traiectum_ad_mosam
+							name_list_dalmatian = cn_traiectum_ad_mosam
+							name_list_romano_noric = cn_traiectum_ad_mosam
+							name_list_romano_gothic = cn_traiectum_ad_mosam
+							name_list_romano_dacian = cn_traiectum_ad_mosam
+							name_list_romano_aramean = cn_traiectum_ad_mosam
+						}
+						color = { 145 125 195 }
+					}
+					b_eindhoven = {
+						province = 2100
+
+						color = { 145 125 195 }
+					}
+					b_tilburg = {
+						province = 2110
+						cultural_names = {
+							#Roman Cultures
+							name_list_roman = cn_tilia
+							name_list_romano_gallic = cn_tilia
+							name_list_romano_hispanic = cn_tilia
+							name_list_romano_british = cn_tilia
+							name_list_romano_african = cn_tilia
+							name_list_romano_raetian = cn_tilia
+							name_list_romano_thracian = cn_tilia
+							name_list_romano_illyrian = cn_tilia
+							name_list_romano_pannonian = cn_tilia
+							name_list_dalmatian = cn_tilia
+							name_list_romano_noric = cn_tilia
+							name_list_romano_gothic = cn_tilia
+							name_list_romano_dacian = cn_tilia
+							name_list_romano_aramean = cn_tilia
+						}
+						color = { 145 125 195 }
+					}
+				}
+				c_brabant = {
+					color = { 110 85 125 }
+					cultural_names = {
+						#Roman Cultures
+						name_list_roman = cn_toxandria
+						name_list_romano_gallic = cn_toxandria
+						name_list_romano_hispanic = cn_toxandria
+						name_list_romano_british = cn_toxandria
+						name_list_romano_african = cn_toxandria
+						name_list_romano_raetian = cn_toxandria
+						name_list_romano_thracian = cn_toxandria
+						name_list_romano_illyrian = cn_toxandria
+						name_list_romano_pannonian = cn_toxandria
+						name_list_dalmatian = cn_toxandria
+						name_list_romano_noric = cn_toxandria
+						name_list_romano_gothic = cn_toxandria
+						name_list_romano_dacian = cn_toxandria
+						name_list_romano_aramean = cn_toxandria
+						#Germanic Cultures
+						name_list_old_frisian = cn_braban
+						name_list_old_frankish = cn_blaoburc
+					}
+					b_leuven = {
+						province = 2105
+						cultural_names = {
+							#Roman Cultures
+							name_list_roman = cn_lovanium
+							name_list_romano_gallic = cn_lovanium
+							name_list_romano_hispanic = cn_lovanium
+							name_list_romano_british = cn_lovanium
+							name_list_romano_african = cn_lovanium
+							name_list_romano_raetian = cn_lovanium
+							name_list_romano_thracian = cn_lovanium
+							name_list_romano_illyrian = cn_lovanium
+							name_list_romano_pannonian = cn_lovanium
+							name_list_dalmatian = cn_lovanium
+							name_list_romano_noric = cn_lovanium
+							name_list_romano_gothic = cn_lovanium
+							name_list_romano_dacian = cn_lovanium
+							name_list_romano_aramean = cn_lovanium
+						}
+						color = { 110 85 125 }
+					}
+					b_brussels = {
+						province = 2107
+						cultural_names = {
+							#Roman Cultures
+							name_list_roman = cn_brocsala
+							name_list_romano_gallic = cn_brocsala
+							name_list_romano_hispanic = cn_brocsala
+							name_list_romano_british = cn_brocsala
+							name_list_romano_african = cn_brocsala
+							name_list_romano_raetian = cn_brocsala
+							name_list_romano_thracian = cn_brocsala
+							name_list_romano_illyrian = cn_brocsala
+							name_list_romano_pannonian = cn_brocsala
+							name_list_dalmatian = cn_brocsala
+							name_list_romano_noric = cn_brocsala
+							name_list_romano_gothic = cn_brocsala
+							name_list_romano_dacian = cn_brocsala
+							name_list_romano_aramean = cn_brocsala
+						}
+						color = { 110 85 125 }
+					}
+					b_turnhout = {
+						province = 2111
+
+						color = { 110 85 125 }
+					}
+				}
+				c_antwerpen = {
+					color = { 125 85 110 }
+					cultural_names = {
+						#Roman Cultures
+						name_list_roman = cn_antverpia
+						name_list_romano_gallic = cn_antverpia
+						name_list_romano_hispanic = cn_antverpia
+						name_list_romano_british = cn_antverpia
+						name_list_romano_african = cn_antverpia
+						name_list_romano_raetian = cn_antverpia
+						name_list_romano_thracian = cn_antverpia
+						name_list_romano_illyrian = cn_antverpia
+						name_list_romano_pannonian = cn_antverpia
+						name_list_dalmatian = cn_antverpia
+						name_list_romano_noric = cn_antverpia
+						name_list_romano_gothic = cn_antverpia
+						name_list_romano_dacian = cn_antverpia
+						name_list_romano_aramean = cn_antverpia
+					}
+					b_antwerpen = {
+						province = 2106
+						cultural_names = {
+							#Roman Cultures
+							name_list_roman = cn_antverpia
+							name_list_romano_gallic = cn_antverpia
+							name_list_romano_hispanic = cn_antverpia
+							name_list_romano_british = cn_antverpia
+							name_list_romano_african = cn_antverpia
+							name_list_romano_raetian = cn_antverpia
+							name_list_romano_thracian = cn_antverpia
+							name_list_romano_illyrian = cn_antverpia
+							name_list_romano_pannonian = cn_antverpia
+							name_list_dalmatian = cn_antverpia
+							name_list_romano_noric = cn_antverpia
+							name_list_romano_gothic = cn_antverpia
+							name_list_romano_dacian = cn_antverpia
+							name_list_romano_aramean = cn_antverpia
+						}
+						color = { 125 85 110 }
+					}
+
+					b_rosendaal = {
+						province = 2108
+
+						color = { 125 85 110 }
+					}
+
+					b_breda = {
+						province = 2109
+						cultural_names = {
+							#Roman Cultures
+							name_list_roman = cn_bredanus
+							name_list_romano_gallic = cn_bredanus
+							name_list_romano_hispanic = cn_bredanus
+							name_list_romano_british = cn_bredanus
+							name_list_romano_african = cn_bredanus
+							name_list_romano_raetian = cn_bredanus
+							name_list_romano_thracian = cn_bredanus
+							name_list_romano_illyrian = cn_bredanus
+							name_list_romano_pannonian = cn_bredanus
+							name_list_dalmatian = cn_bredanus
+							name_list_romano_noric = cn_bredanus
+							name_list_romano_gothic = cn_bredanus
+							name_list_romano_dacian = cn_bredanus
+							name_list_romano_aramean = cn_bredanus
+						}
+						color = { 125 85 110 }
+					}
+				}
+				c_zeeland = {
+					color = { 200 100 30 }
+					cultural_names = {
+						#Roman Cultures
+						name_list_roman = cn_nehalennia
+						name_list_romano_gallic = cn_nehalennia
+						name_list_romano_hispanic = cn_nehalennia
+						name_list_romano_british = cn_nehalennia
+						name_list_romano_african = cn_nehalennia
+						name_list_romano_raetian = cn_nehalennia
+						name_list_romano_thracian = cn_nehalennia
+						name_list_romano_illyrian = cn_nehalennia
+						name_list_romano_pannonian = cn_nehalennia
+						name_list_dalmatian = cn_nehalennia
+						name_list_romano_noric = cn_nehalennia
+						name_list_romano_gothic = cn_nehalennia
+						name_list_romano_dacian = cn_nehalennia
+						name_list_romano_aramean = cn_nehalennia
+						#Germanic Cultures
+						name_list_old_frisian = cn_seelan
+						name_list_old_frankish = cn_nehalennland
+					}
+					b_middelburg = {
+						province = 2112
+						cultural_names = {
+							#Roman Cultures
+							name_list_roman = cn_medioburgum
+							name_list_romano_gallic = cn_medioburgum
+							name_list_romano_hispanic = cn_medioburgum
+							name_list_romano_british = cn_medioburgum
+							name_list_romano_african = cn_medioburgum
+							name_list_romano_raetian = cn_medioburgum
+							name_list_romano_thracian = cn_medioburgum
+							name_list_romano_illyrian = cn_medioburgum
+							name_list_romano_pannonian = cn_medioburgum
+							name_list_dalmatian = cn_medioburgum
+							name_list_romano_noric = cn_medioburgum
+							name_list_romano_gothic = cn_medioburgum
+							name_list_romano_dacian = cn_medioburgum
+							name_list_romano_aramean = cn_medioburgum
+						}
+						color = { 200 100 30 }
+					}
+
+					b_bergen_op_zoom = {
+						province = 2113
+						cultural_names = {
+							#Roman Cultures
+							name_list_roman = cn_montes_ad_marginem
+							name_list_romano_gallic = cn_montes_ad_marginem
+							name_list_romano_hispanic = cn_montes_ad_marginem
+							name_list_romano_british = cn_montes_ad_marginem
+							name_list_romano_african = cn_montes_ad_marginem
+							name_list_romano_raetian = cn_montes_ad_marginem
+							name_list_romano_thracian = cn_montes_ad_marginem
+							name_list_romano_illyrian = cn_montes_ad_marginem
+							name_list_romano_pannonian = cn_montes_ad_marginem
+							name_list_dalmatian = cn_montes_ad_marginem
+							name_list_romano_noric = cn_montes_ad_marginem
+							name_list_romano_gothic = cn_montes_ad_marginem
+							name_list_romano_dacian = cn_montes_ad_marginem
+							name_list_romano_aramean = cn_montes_ad_marginem
+						}
+						color = { 200 100 30 }
+					}
+
+					b_brielle = {
+						province = 2401
+						cultural_names = {
+							#Roman Cultures
+							name_list_roman = cn_brogilo
+							name_list_romano_gallic = cn_brogilo
+							name_list_romano_hispanic = cn_brogilo
+							name_list_romano_british = cn_brogilo
+							name_list_romano_african = cn_brogilo
+							name_list_romano_raetian = cn_brogilo
+							name_list_romano_thracian = cn_brogilo
+							name_list_romano_illyrian = cn_brogilo
+							name_list_romano_pannonian = cn_brogilo
+							name_list_dalmatian = cn_brogilo
+							name_list_romano_noric = cn_brogilo
+							name_list_romano_gothic = cn_brogilo
+							name_list_romano_dacian = cn_brogilo
+							name_list_romano_aramean = cn_brogilo
+						}
+						color = { 200 100 30 }
+					}
+				}
+			}
+			d_mosania = {
+				color = { 90 95 135 }
+				capital = c_liege
+				
 				c_liege = {
 					color = { 90 95 135 }
 					cultural_names = {
@@ -12923,6 +12306,94 @@ h_western_roman_empire = {
 						color = { 90 95 135 }
 					}
 				}
+				c_bouillon = {
+					color = { 100 110 180 }
+					cultural_names = {
+						#Roman Cultures
+						name_list_roman = cn_bullionium
+						name_list_romano_gallic = cn_bullionium
+						name_list_romano_hispanic = cn_bullionium
+						name_list_romano_british = cn_bullionium
+						name_list_romano_african = cn_bullionium
+						name_list_romano_raetian = cn_bullionium
+						name_list_romano_thracian = cn_bullionium
+						name_list_romano_illyrian = cn_bullionium
+						name_list_romano_pannonian = cn_bullionium
+						name_list_dalmatian = cn_bullionium
+						name_list_romano_noric = cn_bullionium
+						name_list_romano_gothic = cn_bullionium
+						name_list_romano_dacian = cn_bullionium
+						name_list_romano_aramean = cn_bullionium
+					}
+					b_bouillon = {
+						province = 2091
+						cultural_names = {
+							#Roman Cultures
+							name_list_roman = cn_bullionium
+							name_list_romano_gallic = cn_bullionium
+							name_list_romano_hispanic = cn_bullionium
+							name_list_romano_british = cn_bullionium
+							name_list_romano_african = cn_bullionium
+							name_list_romano_raetian = cn_bullionium
+							name_list_romano_thracian = cn_bullionium
+							name_list_romano_illyrian = cn_bullionium
+							name_list_romano_pannonian = cn_bullionium
+							name_list_dalmatian = cn_bullionium
+							name_list_romano_noric = cn_bullionium
+							name_list_romano_gothic = cn_bullionium
+							name_list_romano_dacian = cn_bullionium
+							name_list_romano_aramean = cn_bullionium
+						}
+						color = { 100 110 180 }
+					}
+					b_chiny = {
+						province = 2686
+
+						color = { 100 110 180 }
+					}
+					b_saint_hubert = {
+						province = 2687
+						cultural_names = {
+							#Roman Cultures
+							name_list_roman = cn_ambra
+							name_list_romano_gallic = cn_ambra
+							name_list_romano_hispanic = cn_ambra
+							name_list_romano_british = cn_ambra
+							name_list_romano_african = cn_ambra
+							name_list_romano_raetian = cn_ambra
+							name_list_romano_thracian = cn_ambra
+							name_list_romano_illyrian = cn_ambra
+							name_list_romano_pannonian = cn_ambra
+							name_list_dalmatian = cn_ambra
+							name_list_romano_noric = cn_ambra
+							name_list_romano_gothic = cn_ambra
+							name_list_romano_dacian = cn_ambra
+							name_list_romano_aramean = cn_ambra
+						}
+						color = { 100 110 180 }
+					}
+					b_virton = {
+						province = 2095
+						cultural_names = {
+							#Roman Cultures
+							name_list_roman = cn_vertunum
+							name_list_romano_gallic = cn_vertunum
+							name_list_romano_hispanic = cn_vertunum
+							name_list_romano_british = cn_vertunum
+							name_list_romano_african = cn_vertunum
+							name_list_romano_raetian = cn_vertunum
+							name_list_romano_thracian = cn_vertunum
+							name_list_romano_illyrian = cn_vertunum
+							name_list_romano_pannonian = cn_vertunum
+							name_list_dalmatian = cn_vertunum
+							name_list_romano_noric = cn_vertunum
+							name_list_romano_gothic = cn_vertunum
+							name_list_romano_dacian = cn_vertunum
+							name_list_romano_aramean = cn_vertunum
+						}
+						color = { 100 110 180 }
+					}
+				}
 				c_namur = {
 					color = { 100 95 150 }
 					cultural_names = {
@@ -13006,8 +12477,24 @@ h_western_roman_empire = {
 						color = { 100 95 150 }
 					}
 				}
+			
 			}
 		}
+	}
+	
+	e_spain = {
+		color = { 233 200 20 }
+		capital = c_toledo # Toledo
+		
+		ai_primary_priority = {
+			if = {
+				limit = { culture = { has_cultural_pillar = heritage_iberian } }
+				add = @correct_culture_primary_score
+			}
+		}
+		
+		can_create = { general_empire_title_creation_trigger = yes }
+		
 		k_lusitania = {
 			color={ 125 155 250 }
 			capital = c_merida # Emerita Augusta
@@ -22251,7 +21738,7 @@ h_western_roman_empire = {
 		}
 	}
 	
-	e_praetorian_prefecture_italy = {
+	e_italy = {
 		color={ 178 34 34 }
 		capital = c_roma
 		
@@ -22265,7 +21752,6 @@ h_western_roman_empire = {
 		
 		can_create = {
 			general_empire_title_creation_trigger = yes
-			create_praetorian_prefectures_trigger = yes
 		}
 		
 		k_annonaria = {
@@ -24902,6 +24388,518 @@ h_western_roman_empire = {
 							name_list_romano_pannonian = cn_iria 
 						}
 						color = { 170 105 195 }
+					}
+				}
+			}
+			d_flaminia = {
+				color={ 220 20 60 }
+				capital = c_ravenna # Ravenna
+				
+				c_ravenna = {
+					color = { 229 165 115 }
+					can_use_nomadic_naming = no
+					
+					b_ravenna = {
+						province = 2546
+						color = { 229 165 115 }
+					}
+					b_imola = {
+						province = 2549
+						cultural_names = {
+							#Roman
+							name_list_roman = cn_forum_cornelii
+							name_list_romano_gallic = cn_forum_cornelii
+							name_list_romano_hispanic = cn_forum_cornelii
+							name_list_romano_british = cn_forum_cornelii
+							name_list_dalmatian = cn_forum_cornelii
+							name_list_romano_african = cn_forum_cornelii
+							name_list_romano_gothic = cn_forum_cornelii
+							name_list_romano_dacian = cn_forum_cornelii 
+							name_list_romano_aramean = cn_forum_cornelii 
+							name_list_romano_vandalic = cn_forum_cornelii 
+							name_list_romano_thracian = cn_forum_cornelii 
+							name_list_romano_illyrian = cn_forum_cornelii 
+							name_list_romano_raetian = cn_forum_cornelii 
+							name_list_romano_noric = cn_forum_cornelii 
+							name_list_romano_pannonian = cn_forum_cornelii 
+						}
+						color = { 229 165 115 }
+					}
+					b_forli = {
+						province = 2548
+						cultural_names = {
+							#Roman
+							name_list_roman = cn_forum_livii
+							name_list_romano_gallic = cn_forum_livii
+							name_list_romano_hispanic = cn_forum_livii
+							name_list_romano_british = cn_forum_livii
+							name_list_dalmatian = cn_forum_livii
+							name_list_romano_african = cn_forum_livii
+							name_list_romano_gothic = cn_forum_livii
+							name_list_romano_dacian = cn_forum_livii 
+							name_list_romano_aramean = cn_forum_livii 
+							name_list_romano_vandalic = cn_forum_livii 
+							name_list_romano_thracian = cn_forum_livii 
+							name_list_romano_illyrian = cn_forum_livii 
+							name_list_romano_raetian = cn_forum_livii 
+							name_list_romano_noric = cn_forum_livii 
+							name_list_romano_pannonian = cn_forum_livii 
+						}
+						color = { 229 165 115 }
+					}
+					b_rimini = {
+						province = 2547
+						cultural_names = {
+							#Roman
+							name_list_roman = cn_ariminum
+							name_list_romano_gallic = cn_ariminum
+							name_list_romano_hispanic = cn_ariminum
+							name_list_romano_british = cn_ariminum
+							name_list_dalmatian = cn_ariminum
+							name_list_romano_african = cn_ariminum
+							name_list_romano_gothic = cn_ariminum
+							name_list_romano_dacian = cn_ariminum 
+							name_list_romano_aramean = cn_ariminum 
+							name_list_romano_vandalic = cn_ariminum 
+							name_list_romano_thracian = cn_ariminum 
+							name_list_romano_illyrian = cn_ariminum 
+							name_list_romano_raetian = cn_ariminum 
+							name_list_romano_noric = cn_ariminum 
+							name_list_romano_pannonian = cn_ariminum 
+						}
+						color = { 229 165 115 }
+					}
+				}
+				c_bologna = {
+					color = { 209 145 95 }
+					
+					cultural_names = {
+						#Roman
+						name_list_roman = cn_bononia
+						name_list_romano_gallic = cn_bononia
+						name_list_romano_hispanic = cn_bononia
+						name_list_romano_british = cn_bononia
+						name_list_dalmatian = cn_bononia
+						name_list_romano_african = cn_bononia
+						name_list_romano_gothic = cn_bononia
+						name_list_romano_dacian = cn_bononia 
+						name_list_romano_aramean = cn_bononia 
+						name_list_romano_vandalic = cn_bononia 
+						name_list_romano_thracian = cn_bononia 
+						name_list_romano_illyrian = cn_bononia 
+						name_list_romano_raetian = cn_bononia 
+						name_list_romano_noric = cn_bononia 
+						name_list_romano_pannonian = cn_bononia
+						#Byzantine Cultures
+						name_list_greek = cn_bononia
+						name_list_greek_gothic = cn_bononia
+						name_list_greek_persian = cn_bononia
+						name_list_isaurian_persian = cn_bononia
+						name_list_grecco_axumite = cn_bononia
+						name_list_bosporan = cn_bononia
+						name_list_pontic = cn_bononia
+						name_list_tsakonian = cn_bononia
+						name_list_massalian = cn_bononia
+						name_list_helleno_thracian = cn_bononia
+						name_list_helleno_libyan = cn_bononia
+						#Germanic
+						name_list_skirian = cn_bononia
+						name_list_ostrogothic = cn_bononia
+						name_list_thuringian = cn_bononia
+					}
+					
+					b_bologna = {
+						province = 2542
+						cultural_names = {
+							#Roman
+							name_list_roman = cn_bononia
+							name_list_romano_gallic = cn_bononia
+							name_list_romano_hispanic = cn_bononia
+							name_list_romano_british = cn_bononia
+							name_list_dalmatian = cn_bononia
+							name_list_romano_african = cn_bononia
+							name_list_romano_gothic = cn_bononia
+							name_list_romano_dacian = cn_bononia 
+							name_list_romano_aramean = cn_bononia 
+							name_list_romano_vandalic = cn_bononia 
+							name_list_romano_thracian = cn_bononia 
+							name_list_romano_illyrian = cn_bononia 
+							name_list_romano_raetian = cn_bononia 
+							name_list_romano_noric = cn_bononia 
+							name_list_romano_pannonian = cn_bononia 
+							#Byzantine Cultures
+							name_list_greek = cn_bononia
+							name_list_greek_gothic = cn_bononia
+							name_list_greek_persian = cn_bononia
+							name_list_isaurian_persian = cn_bononia
+							name_list_grecco_axumite = cn_bononia
+							name_list_bosporan = cn_bononia
+							name_list_pontic = cn_bononia
+							name_list_tsakonian = cn_bononia
+							name_list_massalian = cn_bononia
+							name_list_helleno_thracian = cn_bononia
+							name_list_helleno_libyan = cn_bononia
+							#Germanic
+							name_list_skirian = cn_bononia
+							name_list_ostrogothic = cn_bononia
+							name_list_thuringian = cn_bononia
+						}
+						color = { 209 145 95 }
+					}
+					b_cona = {
+						province = 2529
+						color = { 209 145 95 }
+					}
+					b_monte_sole = { #No Roman settlement was actually here. Last Etruscan settlement was abandoned on the 3rd Century. If possible, later remove this barony.
+						province = 2550
+						cultural_names = {
+							#Roman
+							name_list_roman = cn_misano
+							name_list_romano_gallic = cn_misano
+							name_list_romano_hispanic = cn_misano
+							name_list_romano_british = cn_misano
+							name_list_dalmatian = cn_misano
+							name_list_romano_african = cn_misano
+							name_list_romano_gothic = cn_misano
+							name_list_romano_dacian = cn_misano 
+							name_list_romano_aramean = cn_misano 
+							name_list_romano_vandalic = cn_misano 
+							name_list_romano_thracian = cn_misano 
+							name_list_romano_illyrian = cn_misano 
+							name_list_romano_raetian = cn_misano 
+							name_list_romano_noric = cn_misano 
+							name_list_romano_pannonian = cn_misano 
+							#Germanic
+							name_list_skirian = cn_misano
+							name_list_ostrogothic = cn_misano
+							name_list_thuringian = cn_misano
+						}
+						color = { 209 145 95 }
+					}
+				}
+				c_ferrara = {
+					color = { 219 125 85 }
+					
+					cultural_names = {
+						#Roman
+						name_list_roman = cn_ferrariae
+						name_list_romano_gallic = cn_ferrariae
+						name_list_romano_hispanic = cn_ferrariae
+						name_list_romano_british = cn_ferrariae
+						name_list_dalmatian = cn_ferrariae
+						name_list_romano_african = cn_ferrariae
+						name_list_romano_gothic = cn_ferrariae
+						name_list_romano_dacian = cn_ferrariae 
+						name_list_romano_aramean = cn_ferrariae 
+						name_list_romano_vandalic = cn_ferrariae 
+						name_list_romano_thracian = cn_ferrariae 
+						name_list_romano_illyrian = cn_ferrariae 
+						name_list_romano_raetian = cn_ferrariae 
+						name_list_romano_noric = cn_ferrariae 
+						name_list_romano_pannonian = cn_ferrariae 
+						#Germanic
+						name_list_skirian = cn_ferrariae
+						name_list_ostrogothic = cn_ferrariae
+						name_list_thuringian = cn_ferrariae
+					}
+					
+					b_ferrara = {
+						province = 2527
+						cultural_names = {
+							#Roman
+							name_list_roman = cn_ferrariae
+							name_list_romano_gallic = cn_ferrariae
+							name_list_romano_hispanic = cn_ferrariae
+							name_list_romano_british = cn_ferrariae
+							name_list_dalmatian = cn_ferrariae
+							name_list_romano_african = cn_ferrariae
+							name_list_romano_gothic = cn_ferrariae
+							name_list_romano_dacian = cn_ferrariae 
+							name_list_romano_aramean = cn_ferrariae 
+							name_list_romano_vandalic = cn_ferrariae 
+							name_list_romano_thracian = cn_ferrariae 
+							name_list_romano_illyrian = cn_ferrariae 
+							name_list_romano_raetian = cn_ferrariae 
+							name_list_romano_noric = cn_ferrariae 
+							name_list_romano_pannonian = cn_ferrariae 
+							#Germanic
+							name_list_skirian = cn_ferrariae
+							name_list_ostrogothic = cn_ferrariae
+							name_list_thuringian = cn_ferrariae
+						}
+						color = { 219 125 85 }
+					}
+					b_pomposa = {
+						province = 2526
+						cultural_names = {
+							#Roman Cultures
+							name_list_roman = cn_pomposia
+							name_list_romano_gallic = cn_pomposia
+							name_list_romano_hispanic = cn_pomposia
+							name_list_romano_british = cn_pomposia
+							name_list_romano_african = cn_pomposia
+							name_list_romano_raetian = cn_pomposia
+							name_list_romano_thracian = cn_pomposia
+							name_list_romano_illyrian = cn_pomposia
+							name_list_romano_pannonian = cn_pomposia
+							name_list_dalmatian = cn_pomposia
+							name_list_romano_noric = cn_pomposia
+							name_list_romano_gothic = cn_pomposia
+							name_list_romano_dacian = cn_pomposia
+							name_list_romano_aramean = cn_pomposia
+							name_list_romano_vandalic = cn_pomposia
+							#Germanic Cultures
+							name_list_skirian = cn_pomposia
+							name_list_thuringian = cn_pomposia
+							name_list_ostrogothic = cn_pomposia
+						}
+						color = { 219 125 85 }
+					}
+					b_comacchio = {
+						province = 2528
+						cultural_names = {
+							#Roman
+							name_list_roman = cn_castrum_cumiacli
+							name_list_romano_gallic = cn_castrum_cumiacli
+							name_list_romano_hispanic = cn_castrum_cumiacli
+							name_list_romano_british = cn_castrum_cumiacli
+							name_list_dalmatian = cn_castrum_cumiacli
+							name_list_romano_african = cn_castrum_cumiacli
+							name_list_romano_gothic = cn_castrum_cumiacli
+							name_list_romano_dacian = cn_castrum_cumiacli 
+							name_list_romano_aramean = cn_castrum_cumiacli 
+							name_list_romano_vandalic = cn_castrum_cumiacli 
+							name_list_romano_thracian = cn_castrum_cumiacli 
+							name_list_romano_illyrian = cn_castrum_cumiacli 
+							name_list_romano_raetian = cn_castrum_cumiacli 
+							name_list_romano_noric = cn_castrum_cumiacli 
+							name_list_romano_pannonian = cn_castrum_cumiacli 
+							#Germanic
+							name_list_skirian = cn_castrum_cumiacli
+							name_list_ostrogothic = cn_castrum_cumiacli
+							name_list_thuringian = cn_castrum_cumiacli
+						}
+						color = { 219 125 85 }
+					}
+				}
+				c_casentino = {
+					color = { 209 125 105 }
+					
+					cultural_names = {
+						#Roman
+						name_list_roman = cn_casenaticum
+						name_list_romano_gallic = cn_casenaticum
+						name_list_romano_hispanic = cn_casenaticum
+						name_list_romano_british = cn_casenaticum
+						name_list_dalmatian = cn_casenaticum
+						name_list_romano_african = cn_casenaticum
+						name_list_romano_gothic = cn_casenaticum
+						name_list_romano_dacian = cn_casenaticum 
+						name_list_romano_aramean = cn_casenaticum 
+						name_list_romano_vandalic = cn_casenaticum 
+						name_list_romano_thracian = cn_casenaticum 
+						name_list_romano_illyrian = cn_casenaticum 
+						name_list_romano_raetian = cn_casenaticum 
+						name_list_romano_noric = cn_casenaticum 
+						name_list_romano_pannonian = cn_casenaticum 
+						#Germanic
+						name_list_skirian = cn_casenaticum
+						name_list_ostrogothic = cn_casenaticum
+						name_list_thuringian = cn_casenaticum
+					}
+					
+					b_casentino = {
+						province = 2553
+						cultural_names = {
+							#Roman
+							name_list_roman = cn_casenaticum
+							name_list_romano_gallic = cn_casenaticum
+							name_list_romano_hispanic = cn_casenaticum
+							name_list_romano_british = cn_casenaticum
+							name_list_dalmatian = cn_casenaticum
+							name_list_romano_african = cn_casenaticum
+							name_list_romano_gothic = cn_casenaticum
+							name_list_romano_dacian = cn_casenaticum 
+							name_list_romano_aramean = cn_casenaticum 
+							name_list_romano_vandalic = cn_casenaticum 
+							name_list_romano_thracian = cn_casenaticum 
+							name_list_romano_illyrian = cn_casenaticum 
+							name_list_romano_raetian = cn_casenaticum 
+							name_list_romano_noric = cn_casenaticum 
+							name_list_romano_pannonian = cn_casenaticum 
+							#Germanic
+							name_list_skirian = cn_casenaticum
+							name_list_ostrogothic = cn_casenaticum
+							name_list_thuringian = cn_casenaticum
+						}
+						color = { 209 125 105 }
+					}
+					b_montefeltro = {
+						province = 2552
+						cultural_names = {
+							#Roman
+							name_list_roman = cn_monteferetra
+							name_list_romano_gallic = cn_monteferetra
+							name_list_romano_hispanic = cn_monteferetra
+							name_list_romano_british = cn_monteferetra
+							name_list_dalmatian = cn_monteferetra
+							name_list_romano_african = cn_monteferetra
+							name_list_romano_gothic = cn_monteferetra
+							name_list_romano_dacian = cn_monteferetra 
+							name_list_romano_aramean = cn_monteferetra 
+							name_list_romano_vandalic = cn_monteferetra 
+							name_list_romano_thracian = cn_monteferetra 
+							name_list_romano_illyrian = cn_monteferetra 
+							name_list_romano_raetian = cn_monteferetra 
+							name_list_romano_noric = cn_monteferetra 
+							name_list_romano_pannonian = cn_monteferetra 
+						}
+						color = { 209 125 105 }
+					}
+					b_camaldoli = {
+						province = 2551
+						color = { 209 125 105 }
+					}
+				}
+				c_urbino = {
+					color = { 240 225 150 }
+					
+					cultural_names = {
+						#Roman
+						name_list_roman = cn_urbinum
+						name_list_romano_gallic = cn_urbinum
+						name_list_romano_hispanic = cn_urbinum
+						name_list_romano_british = cn_urbinum
+						name_list_dalmatian = cn_urbinum
+						name_list_romano_african = cn_urbinum
+						name_list_romano_gothic = cn_urbinum
+						name_list_romano_dacian = cn_urbinum 
+						name_list_romano_aramean = cn_urbinum 
+						name_list_romano_vandalic = cn_urbinum 
+						name_list_romano_thracian = cn_urbinum 
+						name_list_romano_illyrian = cn_urbinum 
+						name_list_romano_raetian = cn_urbinum 
+						name_list_romano_noric = cn_urbinum 
+						name_list_romano_pannonian = cn_urbinum
+						#Byzantine Cultures
+						name_list_greek = cn_ourbinon
+						name_list_greek_gothic = cn_ourbinon
+						name_list_greek_persian = cn_ourbinon
+						name_list_isaurian_persian = cn_ourbinon
+						name_list_grecco_axumite = cn_ourbinon
+						name_list_bosporan = cn_ourbinon
+						name_list_pontic = cn_ourbinon
+						name_list_tsakonian = cn_ourbinon
+						name_list_massalian = cn_ourbinon
+						name_list_helleno_thracian = cn_ourbinon
+						name_list_helleno_libyan = cn_ourbinon
+						#Germanic Cultures
+						name_list_skirian = cn_urbinum
+						name_list_thuringian = cn_urbinum
+						name_list_ostrogothic = cn_urbinum
+					}
+					
+					b_urbino = {
+						province = 2555
+						cultural_names = {
+							#Roman
+							name_list_roman = cn_urbinum
+							name_list_romano_gallic = cn_urbinum
+							name_list_romano_hispanic = cn_urbinum
+							name_list_romano_british = cn_urbinum
+							name_list_dalmatian = cn_urbinum
+							name_list_romano_african = cn_urbinum
+							name_list_romano_gothic = cn_urbinum
+							name_list_romano_dacian = cn_urbinum 
+							name_list_romano_aramean = cn_urbinum 
+							name_list_romano_vandalic = cn_urbinum 
+							name_list_romano_thracian = cn_urbinum 
+							name_list_romano_illyrian = cn_urbinum 
+							name_list_romano_raetian = cn_urbinum 
+							name_list_romano_noric = cn_urbinum 
+							name_list_romano_pannonian = cn_urbinum
+							#Byzantine Cultures
+							name_list_greek = cn_ourbinon
+							name_list_greek_gothic = cn_ourbinon
+							name_list_greek_persian = cn_ourbinon
+							name_list_isaurian_persian = cn_ourbinon
+							name_list_grecco_axumite = cn_ourbinon
+							name_list_bosporan = cn_ourbinon
+							name_list_pontic = cn_ourbinon
+							name_list_tsakonian = cn_ourbinon
+							name_list_massalian = cn_ourbinon
+							name_list_helleno_thracian = cn_ourbinon
+							name_list_helleno_libyan = cn_ourbinon
+							#Germanic Cultures
+							name_list_skirian = cn_urbinum
+							name_list_thuringian = cn_urbinum
+							name_list_ostrogothic = cn_urbinum
+						}
+						color = { 240 225 150 }
+					}
+					b_civitas_castelli = {
+						province = 2584
+						cultural_names = {
+							#Roman
+							name_list_roman = cn_tifernum_tiberinum
+							name_list_romano_gallic = cn_tifernum_tiberinum
+							name_list_romano_hispanic = cn_tifernum_tiberinum
+							name_list_romano_british = cn_tifernum_tiberinum
+							name_list_dalmatian = cn_tifernum_tiberinum
+							name_list_romano_african = cn_tifernum_tiberinum
+							name_list_romano_gothic = cn_tifernum_tiberinum
+							name_list_romano_dacian = cn_tifernum_tiberinum 
+							name_list_romano_aramean = cn_tifernum_tiberinum 
+							name_list_romano_vandalic = cn_tifernum_tiberinum 
+							name_list_romano_thracian = cn_tifernum_tiberinum 
+							name_list_romano_illyrian = cn_tifernum_tiberinum 
+							name_list_romano_raetian = cn_tifernum_tiberinum 
+							name_list_romano_noric = cn_tifernum_tiberinum 
+							name_list_romano_pannonian = cn_tifernum_tiberinum
+							#Germanic Cultures
+							name_list_skirian = cn_tifernum_tiberinum
+							name_list_thuringian = cn_tifernum_tiberinum
+							name_list_ostrogothic = cn_tifernum_tiberinum
+						}
+						color = { 240 225 150 }
+					}
+					b_pesaro = {
+						province = 2556
+						cultural_names = {
+							#Roman
+							name_list_roman = cn_pisaurum
+							name_list_romano_gallic = cn_pisaurum
+							name_list_romano_hispanic = cn_pisaurum
+							name_list_romano_british = cn_pisaurum
+							name_list_dalmatian = cn_pisaurum
+							name_list_romano_african = cn_pisaurum
+							name_list_romano_gothic = cn_pisaurum
+							name_list_romano_dacian = cn_pisaurum 
+							name_list_romano_aramean = cn_pisaurum 
+							name_list_romano_vandalic = cn_pisaurum 
+							name_list_romano_thracian = cn_pisaurum 
+							name_list_romano_illyrian = cn_pisaurum 
+							name_list_romano_raetian = cn_pisaurum 
+							name_list_romano_noric = cn_pisaurum 
+							name_list_romano_pannonian = cn_pisaurum 
+							#Byzantine Cultures
+							name_list_greek = cn_pisauron
+							name_list_greek_gothic = cn_pisauron
+							name_list_greek_persian = cn_pisauron
+							name_list_isaurian_persian = cn_pisauron
+							name_list_grecco_axumite = cn_pisauron
+							name_list_bosporan = cn_pisauron
+							name_list_pontic = cn_pisauron
+							name_list_tsakonian = cn_pisauron
+							name_list_massalian = cn_pisauron
+							name_list_helleno_thracian = cn_pisauron
+							name_list_helleno_libyan = cn_pisauron
+							#Germanic Cultures
+							name_list_skirian = cn_pisaurum
+							name_list_thuringian = cn_pisaurum
+							name_list_ostrogothic = cn_pisaurum
+						}
+						color = { 240 225 150 }
 					}
 				}
 			}
@@ -35719,9 +35717,10 @@ h_western_roman_empire = {
 				}
 			}
 		}
+	
 	}
 	
-	e_praetorian_prefecture_africa = {
+	e_north_africa = {
 		color = { 255 255 255 }
 		capital = c_tunis
 		
@@ -35765,10 +35764,7 @@ h_western_roman_empire = {
 			#name_list_manden = cn_zenaga (Previously greater west african cultural group)
 		}
 		
-		can_create = {
-			general_empire_title_creation_trigger = yes
-			create_praetorian_prefectures_trigger = yes
-		}
+		can_create = { general_empire_title_creation_trigger = yes }
 		
 		k_mauretania = {
 			color={ 45 95 120 }
@@ -39663,6 +39659,127 @@ h_western_roman_empire = {
 					}
 				}
 			}
+		}
+	}
+	
+	#Other Titles
+	e_wre = {
+		color={ 220 20 60 }
+		capital = c_ravenna
+		definite_form = yes
+		
+		ai_primary_priority = {
+			if = {
+				limit = { culture = { has_cultural_pillar = heritage_byzantine } }
+				add = @correct_culture_primary_score
+			}
+		}
+		
+		#Should only be createable by decision
+		can_create = {
+			custom_description = {
+				text = only_creatable_by_decision
+				always = no
+			}
+		}
+		
+		k_ravenna = {
+			color={ 230 30 50 }
+			capital = c_ravenna
+			
+			ai_primary_priority = {
+				if = {
+					limit = { culture = { has_cultural_pillar = heritage_byzantine } }
+					add = @correct_culture_primary_score
+				}
+			}
+			
+			#Should only be createable by decision
+			can_create = {
+				custom_description = {
+					text = only_creatable_by_decision
+					always = no
+				}
+			}
+			
+		}
+	}
+	
+	#PP Titles
+	e_praetorian_prefecture_italy = {
+		color={ 178 34 34 }
+		capital = c_roma
+		
+		#Correct title for Italians
+		ai_primary_priority = {
+			if = {
+				limit = { culture = culture:italian }
+				add = @correct_culture_primary_score
+			}
+		}
+		
+		can_create = {
+			general_empire_title_creation_trigger = yes
+			create_praetorian_prefectures_trigger = yes
+		}
+	}
+	e_praetorian_prefecture_gaul = {
+		color={ 0 100 30 }
+		capital = c_venaissin #From 395
+		
+		can_create = {
+			general_empire_title_creation_trigger = yes
+			create_praetorian_prefectures_trigger = yes
+		}
+		can_create_on_partition = { always = no }
+	}
+	e_praetorian_prefecture_africa = {
+		color = { 255 255 255 }
+		capital = c_tunis
+		
+		cultural_names = {
+			#Roman Cultures
+			name_list_roman = cn_carthago
+			name_list_romano_gallic = cn_carthago
+			name_list_romano_hispanic = cn_carthago
+			name_list_romano_british = cn_carthago
+			name_list_romano_african = cn_carthago
+			name_list_romano_raetian = cn_carthago
+			name_list_romano_thracian = cn_carthago
+			name_list_romano_illyrian = cn_carthago
+			name_list_romano_pannonian = cn_carthago
+			name_list_dalmatian = cn_carthago
+			name_list_romano_noric = cn_carthago
+			name_list_romano_gothic = cn_carthago
+			name_list_romano_dacian = cn_carthago
+			name_list_romano_aramean = cn_carthago
+			name_list_romano_vandalic = cn_carthago
+			#Byzantine Cultures
+			name_list_greek = cn_karchedon
+			name_list_greek_gothic = cn_karchedon
+			name_list_greek_persian = cn_karchedon
+			name_list_isaurian_persian = cn_karchedon
+			name_list_grecco_axumite = cn_karchedon
+			name_list_bosporan = cn_karchedon
+			name_list_pontic = cn_karchedon
+			name_list_tsakonian = cn_karchedon
+			name_list_massalian = cn_karchedon
+			name_list_helleno_thracian = cn_karchedon
+			name_list_helleno_libyan = cn_karchedon
+			#NW Semitic Cultures
+			name_list_carthaginian = cn_qart-hadasht
+			#Berber Cultures
+			name_list_northern_berber = cn_amaziga
+			name_list_eastern_berber = cn_amaziga
+			#East Germanic Cultures
+			name_list_vandalic = cn_vandalica
+			#Unknown
+			#name_list_manden = cn_zenaga (Previously greater west african cultural group)
+		}
+		
+		can_create = {
+			general_empire_title_creation_trigger = yes
+			create_praetorian_prefectures_trigger = yes
 		}
 	}
 	

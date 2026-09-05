@@ -301,5 +301,23 @@ culture_acceptance_baseline = {
 				desc = ACCEPTANCE_BASELINE_HERITAGE_TRADITION
 			}
 		}
+		else_if = { #Sinophilic Gets Chinese Approval
+			limit = {
+				OR = {
+					AND = {
+						root = { has_cultural_parameter = baseline_chinese_acceptance_increased }
+						scope:culture = { has_cultural_pillar = heritage_chinese }
+					}
+					AND = {
+						root = { has_cultural_pillar = heritage_chinese }
+						scope:culture = { has_cultural_parameter = baseline_chinese_acceptance_increased }
+					}
+				}
+			}
+			add = {
+				value = sinophilic_tradition_acceptance_value
+				desc = ACCEPTANCE_BASELINE_SINOPHILIC
+			}
+		}
 	}
 }

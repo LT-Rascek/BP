@@ -1,106 +1,4 @@
-﻿### Secular Decisions
-form_frankish_kingdom_effect = {
-	#If you have a titular Frankish Duchy, replace the COA with your kingdom title
-	if = {
-		limit = { primary_title = title:d_salia }
-		title:k_franks = { set_coa = title:d_salia }
-	}
-	else_if = {
-		limit = { primary_title = title:d_mosania }
-		title:k_franks = { set_coa = title:d_mosania }
-	}
-	else_if = {
-		limit = { primary_title = title:d_baroia }
-		title:k_franks = { set_coa = title:d_baroia }
-	}
-	else_if = {
-		limit = { primary_title = title:d_ripuria }
-		title:k_franks = { set_coa = title:d_ripuria }
-	}
-	create_title_and_vassal_change = {
-		type = created
-		save_scope_as = change
-		add_claim_on_loss = no
-	}
-	title:k_franks = {
-		change_title_holder = {
-			holder = root
-			change = scope:change
-		}
-	}
-	#Shift the capital Duchy, always
-	this.capital_county.duchy = { set_de_jure_liege_title = title:k_franks }
-	#Shift every duchy that's completely controlled
-	every_realm_county = { this.duchy = { add_to_list = possible_duchies } }
-	every_in_list = { #If it's completely controlled and neighboring the capital, shift its de jure liege
-		list = possible_duchies
-		limit = {
-			root = { completely_controls = prev.duchy }
-			any_county = {
-				this.duchy = prev
-				any_neighboring_county = { this.duchy = root.capital_county.duchy }
-			}
-		}
-		set_de_jure_liege_title = title:k_franks
-	}
-	resolve_title_and_vassal_change = scope:change
-	
-	#Make the kingdom of the Franks part of some de jure empire
-	hidden_effect = {
-		title:k_franks = { set_de_jure_liege_title = title:e_praetorian_prefecture_gaul } #Whooo-boy!
-	}
-	
-	#Move capital to Aachen if its not held by a human player
-	if = {
-		limit = {
-			any_realm_county = { this = title:c_aachen }
-			title:c_aachen.holder = { is_ai = yes }
-		}
-		create_title_and_vassal_change = {
-			type = returned
-			save_scope_as = change
-			add_claim_on_loss = no
-		}
-		title:c_aachen = {
-			change_title_holder = {
-				holder = root
-				change = scope:change
-			}
-		}
-		resolve_title_and_vassal_change = scope:change
-		set_realm_capital = title:c_aachen
-	}
-	else_if = {
-		limit = { title:c_aachen.holder = root }
-		set_realm_capital = title:c_aachen
-	}
-	
-	#Give the special Soissons subjugation CB
-	custom_description = {
-		text = unlocks_one_major_cb_against_roman_state
-		add_character_flag = available_realm_conquest_cb_against_centralized_state
-	}
-	
-	#Add claims to Gaul
-	add_pressed_claim = title:e_praetorian_prefecture_gaul
-	if = {
-		limit = { culture = { has_cultural_parameter = male_only_inheritance } }
-		every_heir = {
-			limit = { is_female = no }
-			add_pressed_claim = title:e_praetorian_prefecture_gaul
-		}
-	}
-	else_if = {
-		limit = { culture = { has_cultural_parameter = female_only_inheritance } }
-		every_heir = {
-			limit = { is_male = no }
-			add_pressed_claim = title:e_praetorian_prefecture_gaul
-		}
-	}
-	else = { every_heir = { add_pressed_claim = title:e_praetorian_prefecture_gaul } }
-}
-
-### Formation of the Aures Kingdom
+﻿### Formation of the Aures Kingdom
 form_k_aures_effect = {
 	title:k_auresia = {
 		set_coa = title:d_auresia
@@ -292,3 +190,147 @@ establish_warmonger_effect = {
 		}
 	}
 }
+
+### Create Bolghar culture
+create_bolghar_culture_effect = {
+	custom_description = {
+		text = your_culture_adopts_the_bulghar_identity
+		subject = root
+		$THE_CULTURE$ = {
+			set_culture_name = {
+				noun = true_bolghar
+				collective_noun = true_bolghar_collective_noun
+				prefix = true_bolghar_prefix
+			}
+			set_name_list = name_list_bolghar
+		}
+	}
+	
+	#All your Oghuric Vassals adopt your culture, regardless of their own
+	custom_description = {
+		text = all_oghuric_vassals_adopt_your_culture
+		subject = root
+		
+		every_vassal_or_below = {
+			limit = {
+				NOT = { this.culture = $THE_CULTURE$ }
+				culture = { has_cultural_pillar = heritage_oghuric }
+			}
+			set_culture = $THE_CULTURE$
+			every_courtier_or_guest = {
+				limit = {
+					NOT = { this.culture = $THE_CULTURE$ }
+					culture = { has_cultural_pillar = heritage_oghuric }
+				}
+				set_culture = $THE_CULTURE$
+			}
+		}
+		
+		every_tributary = {
+			limit = {
+				NOT = { this.culture = $THE_CULTURE$ }
+				culture = { has_cultural_pillar = heritage_oghuric }
+			}
+			set_culture = $THE_CULTURE$
+			every_courtier_or_guest = {
+				limit = {
+					NOT = { this.culture = $THE_CULTURE$ }
+					culture = { has_cultural_pillar = heritage_oghuric }
+				}
+				set_culture = $THE_CULTURE$
+			}
+			every_vassal_or_below = {
+				limit = {
+					NOT = { this.culture = $THE_CULTURE$ }
+					culture = { has_cultural_pillar = heritage_oghuric }
+				}
+				set_culture = $THE_CULTURE$
+			}
+		}
+	}
+	
+	custom_description = {
+		text = all_oghuric_vassal_counties_adopt_your_culture
+		subject = root
+		
+		every_realm_county = {
+			limit = {
+				NOT = { this.culture = $THE_CULTURE$ }
+				culture = { has_cultural_pillar = heritage_oghuric }
+			}
+			set_county_culture = $THE_CULTURE$
+		}
+		
+		every_tributary = {
+			limit = {
+				NOT = { this.culture = $THE_CULTURE$ }
+				culture = { has_cultural_pillar = heritage_oghuric }
+			}
+			every_realm_county = {
+				limit = {
+					NOT = { this.culture = $THE_CULTURE$ }
+					culture = { has_cultural_pillar = heritage_oghuric }
+				}
+				set_county_culture = $THE_CULTURE$
+			}
+		}
+	}
+	
+	custom_description = {
+		text = nearby_oghur_rulers_adopt_your_culture
+		subject = root
+		
+		every_ruler = {
+			limit = {
+				is_landed = yes
+				NOT = { this.culture = $THE_CULTURE$ }
+				culture = { has_cultural_pillar = heritage_oghuric }
+				NOT = { root = { target_is_vassal_or_below = prev } }
+				NOT = { is_tributary_of = root }
+				culture = { general_culture_will_not_flip_culture_trigger = no }
+				#Distance Calculation; scope issues making script values difficult
+				root = { realm_to_title_distance_squared = { target = prev.primary_title value <= root.prestige_distance_oghuric } }
+			}
+			set_culture = $THE_CULTURE$
+			every_courtier_or_guest = {
+				limit = {
+					NOT = { this.culture = $THE_CULTURE$ }
+					culture = { has_cultural_pillar = heritage_oghuric }
+					culture = { general_culture_will_not_flip_culture_trigger = no }
+				}
+				set_culture = $THE_CULTURE$
+			}
+			every_vassal_or_below = {
+				limit = {
+					NOT = { this.culture = $THE_CULTURE$ }
+					culture = { has_cultural_pillar = heritage_oghuric }
+					culture = { general_culture_will_not_flip_culture_trigger = no }
+				}
+				set_culture = $THE_CULTURE$
+			}
+		}
+	}
+	
+	#Flip Counties
+	custom_description = {
+		text = nearby_oghur_counties_adopt_your_culture
+		subject = root
+		
+		every_county = {
+			limit = {
+				is_landless_type_title = no
+				this.culture = { has_cultural_pillar = heritage_oghuric }
+				NOT = { this.culture = $THE_CULTURE$ }
+				NOT = { root = { target_is_vassal_or_below = prev.holder } }
+				NOT = { this.holder = { is_tributary_of = root } }
+				culture = { general_culture_will_not_flip_culture_trigger = no }
+				#Distance Calculation; scope issues making script values difficult
+				root = { realm_to_title_distance_squared = { target = prev.primary_title value <= root.prestige_distance_oghuric } }
+			}
+			set_county_culture = $THE_CULTURE$
+		}
+	}
+	
+	hidden_effect = { set_global_variable = bolghar_idenity_formed }
+}
+

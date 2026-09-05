@@ -25,7 +25,7 @@
 		scope:attacker = {
 			is_at_war = no #Don't let them try this twice...
 			has_character_flag = available_realm_conquest_cb_against_centralized_state
-			any_neighboring_top_liege_realm_owner = { this = scope:defender }
+			any_neighboring_and_across_water_realm_owner = { this = scope:defender }
 		}
 		scope:defender.primary_title.tier >= scope:attacker.primary_title.tier
 		scope:defender = { is_independent_ruler = yes }
@@ -153,7 +153,7 @@
 		
 		every_in_list = {
 			list = destroy_titular
-			this.holder = { destroy_title = prev }
+			this.holder ?= { destroy_title = prev }
 		}
 		
 		resolve_title_and_vassal_change = scope:change
@@ -338,7 +338,7 @@
 	war_name = "BP_MAJOR_CONQUEST_WAR_NAME"
 	war_name_base = "BP_MAJOR_CONQUEST_WAR_NAME_BASE"
 	cb_name = "BP_MAJOR_CONQUEST_WAR_CB_NAME"
-	interface_priority = 59
+	interface_priority = 200
 	
 	ticking_war_score_targets_entire_realm = yes
 	max_defender_score_from_occupation = 150

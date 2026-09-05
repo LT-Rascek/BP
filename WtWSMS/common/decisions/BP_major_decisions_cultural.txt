@@ -74,3 +74,88 @@
 		base = 100
 	}
 }
+
+adopt_bolghar_identity_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/kubrat_and_his_sons.dds"
+	}
+	decision_group_type = major
+
+	desc = adopt_bolghar_identity_decision_desc
+	selection_tooltip = adopt_bolghar_identity_decision_tooltip
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 60
+		kingdom = 60
+		empire = 60
+		hegemony = 60
+	}
+
+	is_shown = {
+		#Oghuric Culture in some form
+		culture = { has_cultural_pillar = heritage_oghuric }
+		is_landed = yes
+		NOT = { has_global_variable = bolghar_idenity_formed }
+	}
+
+	is_valid = {
+		#Must be at least a duke
+		custom_description = {
+			text = you_must_be_a_duke
+			subject = root
+			primary_title.tier >= tier_duchy
+		}
+		#Be noticeably famous
+		OR = {
+			AND = {
+				prestige_level >= 3
+				legitimacy_level >=3
+			}
+			has_trait = legendary_leader
+		}
+		#Be culture head
+		custom_tooltip = {
+			text = you_are_the_culture_head
+			root = culture.culture_head
+		}
+		#Have Oral Law and Social Stratification
+		culture = { has_innovation = innovation_leges_barbarorum }
+		culture = { has_innovation = innovation_social_stratification }
+		#Control 75% of your culture
+		custom_description = {
+			text = you_control_at_least_75_percent_of_your_culture_counties
+			subject = root
+			object = root.culture
+			root.percent_of_self_culture_counties_owned > 0.75
+		}
+		#Control >50% of all Oghuric cultures
+		custom_description = {
+			text = you_control_at_least_50_percent_of_oghur_culture_counties
+			root.percent_of_oghur_heritage_counties_owned > 0.50
+		}
+	}
+	
+	cost = {
+		prestige = 50 #C'mon, you gotta spend some thing to pull people together...
+	}
+
+	is_valid_showing_failures_only = {
+		is_at_war = no
+		is_available_adult = yes
+	}
+
+	effect = {
+		save_scope_as = culture_former
+		show_as_tooltip = { create_bolghar_culture_effect = { THE_CULTURE = root.culture } }
+		hidden_effect = { trigger_event = BP_major_culture_decisions.0002 }
+	}
+	
+	#AI will always do this if possible
+	ai_potential = { always = yes }
+	
+	ai_will_do = {
+		base = 100
+	}
+}

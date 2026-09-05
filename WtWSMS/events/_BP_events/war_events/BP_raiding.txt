@@ -33,3 +33,50 @@ BP_raiding.0001 = {
 		}
 	}
 }
+
+#Mostly duplicate of raiding.0022; BP_despoilation_legacy_1 doubles odds
+BP_raiding.0022 = {
+	hidden = yes
+	scope = army
+
+	trigger = {
+		army_commander ?= {
+			has_variable = raid_counter
+			var:raid_counter >= 20
+			NOT = { has_trait = viking }
+		}
+	}
+
+	##### Changed from Vanilla vvvvv
+	immediate = {
+		root.army_commander = { save_scope_as = raid_leader }
+		scope:raid_leader = {
+			random = {
+				chance = 20
+				trigger_event = {
+					id = raiding.0023
+					days = { 180 545 }
+				}
+				modifier = {
+					add = 10
+					var:raid_counter >= 30
+				}
+				modifier = {
+					add = 10
+					var:raid_counter >= 40
+				}
+				modifier = {
+					add = 10
+					var:raid_counter >= 50
+				}
+				##### Changed from Vanilla vvvvv
+				modifier = {
+					factor = 2
+					dynasty = { has_dynasty_perk = BP_despoilation_legacy_1 }
+				}
+				##### Changed from Vanilla ^^^^^
+			}
+		}
+	}
+	##### Changed from Vanilla ^^^^^
+}

@@ -1,23 +1,26 @@
-﻿k_dzungaria = { #Empty History
-	1.1.1={}
+﻿k_dzungaria = { #The center of the Fufuluo Gaoche, given their messing with Gaochang
+	475.1.1 = {
+		holder = fufuluo_003
+		government = nomad_government
+		liege = e_mongolia
+	}
+	503.1.1 = { holder = fufuluo_004 }
+	505.1.1 = { holder = fufuluo_005 }
+	516.1.1 = { holder = fufuluo_006 }
+	524.1.1 = { holder = fufuluo_007 }
+	536.1.1 = { holder = fufuluo_008 }
+	540.1.1 = { holder = fufuluo_009 }
+	541.1.1 = { holder = 0 }
 }
 
-d_kara_khoja = { #Empty History
-	1.1.1={}
-}
-c_kara_khoja = {
-	#modded to represent Gaochang (Kara Khoja) by Numahr
-	439.1.1={ 
-		holder=219017 # Juqu Wuhui
-	}
+d_kara_khoja = {
+	#444 - Juqu flee to Gaochang; was Jushi kingdom before then
 	444.1.1={ 
 		holder=219018 # Juqu Anzhou
 	}
 	460.1.1={ 
 		holder=219022 # AKA: Kan Bozhou
-	}
-	476.1.1={
-		#set_tribute_suzerain = { who = e_rouran percentage = 0.50 }
+		government = prefeudal_government
 	}
 	477.1.1={ 
 		holder=219023 # AKA: Kan Yicheng
@@ -56,34 +59,71 @@ c_kara_khoja = {
 		holder=219511 # AKA: Qu Qiangu 
 	}
 }
-c_beshbalik = {
-	420.1.1 = { holder = tieleGaoche000 }
-	450.1.1 = { holder = tieleGaoche001 }
-}
-c_yangjibaliq = {
-	420.1.1 = { holder = tieleGaoche000 }
-	450.1.1 = { holder = tieleGaoche001 }
-}
-c_barkul = {
-	420.1.1 = { holder = tieleGaoche000 }
-	450.1.1 = { holder = tieleGaoche001 }
+c_kara_khoja = {
+	#modded to represent Gaochang (Kara Khoja) by Numahr
+	439.1.1={ 
+		holder=219017 # Juqu Wuhui
+	}
+	444.1.1={ 
+		holder=219018 # Juqu Anzhou
+	}
+	460.1.1={ 
+		holder=219022 # AKA: Kan Bozhou
+	}
+	476.1.1={
+		#set_tribute_suzerain = { who = e_mongolia percentage = 0.50 }
+	}
+	477.1.1={ 
+		holder=219023 # AKA: Kan Yicheng
+	}
+	478.1.1={ 
+		holder=219024 # AKA: Kan Shougui
+	}
+	491.1.1={ 
+		holder=219025 # AKA: Zhang Mengming
+	}
+	496.1.1={ 
+		holder=219500 # AKA: Ma Ru
+	}
+	501.1.1={ 
+		holder=219501 # AKA: Qu Jia
+	}
+	525.1.1={ 
+		holder=219502 # AKA: Qu Guang
+	}
+	530.1.1={ 
+		holder=219503 # AKA: Qu Jian
+	}
+	548.1.1={ 
+		holder=219504 # AKA: Qu Xuanxi
+	}
+	550.1.1={ 
+		holder=219504 # AKA: Qu Xuanxi II 
+	}
+	554.1.1={ 
+		holder=219510 # AKA: Qu Baomao 
+	}
+	560.1.1={ 
+		holder=219511 # AKA: Qu Qiangu 
+	}
+	602.1.1={ 
+		holder=219511 # AKA: Qu Qiangu 
+	}
 }
 c_chamil = {
-	420.1.1 = { holder = tieleGaoche000 }
-	450.1.1 = { holder = tieleGaoche001 }
-	#456 - Conquest by the Northern Wei until collapse of the Rouran Khaganate
-	456.1.1 = { holder = TuobaWei003 }
-	465.1.1 = { holder = TuobaWei004 }
-	471.1.1 = { holder = TuobaWei005 }
-	499.1.1 = { holder = TuobaWei006 }
-	515.1.1 = { holder = TuobaWei007 }
-	528.1.1 = { holder = TuobaWei008 }
-	530.1.1 = { holder = TuobaWei009 }
-	532.1.1 = { holder = TuobaWei010 }
-	535.1.1 = { holder = TuobaWei011 }
-	552.1.1 = { holder = TuobaWei012 }
-	554.1.1 = { holder = TuobaWei013 }
-	557.1.1 = { holder = TuobaWei014 }
+	#Northern Liang: 397-442
+	397.1.1 = { holder = 219008 } #Duan Ye
+	#Juqu Clan
+	401.1.1 = { holder = 219011 } #Juqu Mengxun
+	433.1.1 = { holder = 219016 } #Juqu Mujian
+	439.1.1 = { holder = 219017 } #Juqu Wuhui
+	444.1.1 = { holder = 219018 } #Juqu Anzhou
+	#Northern Wei
+	460.1.1 = { holder = 206613 } #Emperor Wencheng
+	465.5.20 = { holder = 206614 } #Emperor Xianwen
+	471.9.20 = { holder = 1300083 } #Emperor Xiowen
+	499.4.26 = { holder = 1300084 } #Emperor Xuanwu
+	515.2.12 = { holder = 1300085 } #Emperor Xioming
 }
 c_turpan = {
 	#Modded to represent Jiaohe by numahr
@@ -92,8 +132,8 @@ c_turpan = {
 		# of Gaochang, it is plausible that they did not topple the local 
 		# dynasty ruling in Jushi (Turfan)
 		holder=222001
-		liege="k_gaochang"
-		government = meritocratic_government
+		liege="d_kara_khoja"
+		government = prefeudal_government
 	}
 	# Tiele Takeover 
 	487.1.1={ 
@@ -105,7 +145,7 @@ c_turpan = {
 	# Rouran Takeover
 	542.1.1={ 
 		holder=4363 # AKA: Asalup
-		liege="e_rouran"
+		liege="e_mongolia"
 	}
 	551.1.1={
 		holder=36001 # Bumin
@@ -136,69 +176,99 @@ c_turpan = {
 	}
 }
 
-d_altay = {
-	744.1.1 = {
-		liege = k_mongolia
+d_beshbalik = {
+	475.1.1 = {
+		holder = tiele_qibi_000
 		government = nomad_government
+		liege = k_dzungaria
+	}
+}
+c_beshbalik = {
+	475.1.1 = { holder = tiele_qibi_000 }
+}
+c_yangjibaliq = {
+	475.1.1 = { holder = tiele_qibi_000 }
+}
+c_barkul = {
+	475.1.1 = { holder = tiele_qibi_000 }
+}
+
+d_altay = {
+	475.1.1 = {
+		holder = tiele_bigan_000
+		government = nomad_government
+		liege = k_dzungaria
 	}
 }
 c_altay = {
-	420.1.1 = { holder = 36000_father } #Tuwu's father
-	486.1.1 = { holder = 36000 } #Tuwu Ashina
-	530.1.1 = { holder = 36001 } #Bumin Ashina
+	475.1.1 = { holder = tiele_bigan_000 }
 }
 c_qinggil = {
-	420.1.1 = { holder = 36000_father } #Tuwu's father
-	486.1.1 = { holder = 36000 } #Tuwu Ashina
-	530.1.1 = { holder = 36001 } #Bumin Ashina
+	475.1.1 = { holder = tiele_bigan_000 }
 }
 c_agairik = {
-	420.1.1 = { holder = 36000_father } #Tuwu's father
-	486.1.1 = { holder = 36000 } #Tuwu Ashina
-	530.1.1 = { holder = 36001 } #Bumin Ashina
+	475.1.1 = { holder = tiele_bigan_000 }
 }
 c_narym_DZU = {
-	420.1.1 = { holder = 36000_father } #Tuwu's father
-	486.1.1 = { holder = 36000 } #Tuwu Ashina
-	530.1.1 = { holder = 36001 } #Bumin Ashina
+	475.1.1 = { holder = tiele_bigan_000 }
 }
 c_torangy_kul = {
-	420.1.1 = { holder = 36000_father } #Tuwu's father
-	486.1.1 = { holder = 36000 } #Tuwu Ashina
-	530.1.1 = { holder = 36001 } #Bumin Ashina
+	475.1.1 = { holder = tiele_bigan_000 }
 }
 
-#c_altay history for duchy (estimation)
-d_gurbantunggut = { #Empty History
-	1.1.1={}
+d_gurbantunggut = {
+	475.1.1 = {
+		holder = tiele_yedie_000
+		government = nomad_government
+		liege = k_dzungaria
+	}
 }
 c_hoboksar = {
-	420.1.1 = { holder = 36000_father } #Tuwu's father
-	486.1.1 = { holder = 36000 } #Tuwu Ashina
-	530.1.1 = { holder = 36001 } #Bumin Ashina
+	475.1.1 = { holder = tiele_yedie_000 }
 }
 c_ulan_chuzir = {
-	420.1.1 = { holder = 36000_father } #Tuwu's father
-	486.1.1 = { holder = 36000 } #Tuwu Ashina
-	530.1.1 = { holder = 36001 } #Bumin Ashina
+	475.1.1 = { holder = tiele_yedie_000 }
 }
 c_jie_DZU = {
-	420.1.1 = { holder = tieleGaoche000 }
-	450.1.1 = { holder = tieleGaoche001 }
+	475.1.1 = { holder = tiele_yedie_000 }
 }
 
-d_naiman_gobi = { #Empty History
-	1.1.1={}
+d_naiman_gobi = {
+	442.1.1 = {
+		holder = fufuluo_003
+		government = nomad_government
+	}
+	503.1.1 = { holder = fufuluo_004 }
+	505.1.1 = { holder = fufuluo_005 }
+	516.1.1 = { holder = fufuluo_006 }
+	524.1.1 = { holder = fufuluo_007 }
+	536.1.1 = { holder = fufuluo_008 }
+	540.1.1 = { holder = fufuluo_009 }
 }
 c_balgun = {
-	420.1.1 = { holder = tieleGaoche000 }
-	450.1.1 = { holder = tieleGaoche001 }
+	442.1.1 = { holder = fufuluo_003 }
+	503.1.1 = { holder = fufuluo_004 }
+	505.1.1 = { holder = fufuluo_005 }
+	516.1.1 = { holder = fufuluo_006 }
+	524.1.1 = { holder = fufuluo_007 }
+	536.1.1 = { holder = fufuluo_008 }
+	540.1.1 = { holder = fufuluo_009 }
 }
 c_kara_asirgan = {
-	420.1.1 = { holder = tieleGaoche000 }
-	450.1.1 = { holder = tieleGaoche001 }
+	442.1.1 = { holder = fufuluo_003 }
+	503.1.1 = { holder = fufuluo_004 }
+	505.1.1 = { holder = fufuluo_005 }
+	516.1.1 = { holder = fufuluo_006 }
+	524.1.1 = { holder = fufuluo_007 }
+	536.1.1 = { holder = fufuluo_008 }
+	540.1.1 = { holder = fufuluo_009 }
 }
 c_boro_burgasu = {
-	420.1.1 = { holder = tieleGaoche000 }
-	450.1.1 = { holder = tieleGaoche001 }
+	442.1.1 = { holder = fufuluo_003 }
+	503.1.1 = { holder = fufuluo_004 }
+	505.1.1 = { holder = fufuluo_005 }
+	516.1.1 = { holder = fufuluo_006 }
+	524.1.1 = { holder = fufuluo_007 }
+	536.1.1 = { holder = fufuluo_008 }
+	540.1.1 = { holder = fufuluo_009 }
 }

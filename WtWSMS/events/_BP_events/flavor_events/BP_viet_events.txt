@@ -287,7 +287,7 @@ scripted_effect bp_viet.4002.noric_herbalist_gifter = {
 		}
 	}
 	# If still not, make one
-	else_if = {
+	if = {
 		limit = { NOT = { exists = scope:gifter } }
 		
 		root.culture = { save_scope_as = faith }
@@ -305,7 +305,7 @@ scripted_effect bp_viet.4002.noric_herbalist_gifter = {
 			culture = scope:culture
 			dynasty = generate
 			template = pool_repopulate_learning
-			save_scope_as = gifter
+			after_creation = { save_scope_as = gifter }
 		}
 	}
 	add_visiting_courtier = scope:gifter
@@ -2436,10 +2436,17 @@ bp_viet.265 = {
 	trigger = {
 		is_landed = yes
 		capital_province = { geographical_region = ghw_region_ethiopia }
+		#Ensure that scope:county exists, as trigger fires before immediate
+		any_held_title = {
+			tier = tier_county
+			is_landless_type_title = no
+			title_province = { geographical_region = ghw_region_ethiopia }
+			NOT = { has_county_modifier = VIET_destroyed_axum_stele }
+		}
 	}
 
 	weight_multiplier = {
-        base = 0
+		base = 0
 		modifier = {
 			add = {
 				every_held_title = {

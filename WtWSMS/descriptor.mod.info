@@ -1,5 +1,6 @@
 name = "When the World Stopped Making Sense"
 tags={
+	"1.19 'Scribe'"
 	"Bookmarks"
 	"Culture"
 	"Events"
@@ -9,7 +10,7 @@ tags={
 	"Religion"
 	"Total Conversion"
 }
-version = "0.2.1"
+version = "0.3.0"
 supported_version="1.19.*"
 path = "mod/WtWSMS"
 replace_path="history/characters"

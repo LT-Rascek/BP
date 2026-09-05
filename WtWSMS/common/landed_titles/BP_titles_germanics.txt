@@ -348,20 +348,6 @@ d_thracian_goths = {
 		}
 	}
 }
-d_goths = {
-	color = { 123 123 10 }
-	capital = c_kerch
-	ignore_titularity_for_title_weighting = yes
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:crimean_gothic }
-			add = @cultural_title_score
-		}
-	}
-	
-	#title = "DRUHTINAZ"
-	#foa = "DRUHTINAZ_FOA"
-}
 
 #### frankish titles
 k_franks = {
@@ -380,50 +366,6 @@ k_franks = {
 		general_kingdom_title_creation_trigger = yes
 	}
 	can_create_on_partition = { creation_trigger_k_franks_trigger = yes }
-}
-d_salia = {
-	color={ 115 115 165 }
-	capital = c_hainaut #Tournai (birthplace of both Clovis and Childeric I)
-	ignore_titularity_for_title_weighting = yes
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:old_frankish }
-			add = @cultural_title_score
-		}
-	}
-}
-d_mosania = {
-	color={ 120 85 65 }
-	capital = c_cambray # Cambrai
-	ignore_titularity_for_title_weighting = yes
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:old_frankish }
-			add = @cultural_title_score
-		}
-	}
-}
-d_baroia = {
-	color={ 120 120 65 }
-	capital = c_frankfurt
-	ignore_titularity_for_title_weighting = yes
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:old_frankish }
-			add = @cultural_title_score
-		}
-	}
-}
-d_ripuria = {
-	color={ 25 25 112 }
-	capital = c_cologne #Koln
-	ignore_titularity_for_title_weighting = yes
-	ai_primary_priority = {
-		if = {
-			limit = { culture = culture:old_frankish }
-			add = @cultural_title_score
-		}
-	}
 }
 k_austrasia = {
 	color={ 0 100 0 }

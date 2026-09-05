@@ -14,12 +14,6 @@
  setting_vanilla_strong_believers_conversion_resistance: "Vanilla Resistance"
  setting_vanilla_strong_believers_conversion_resistance_desc: "Strong Believers provides #P [EmptyScope.ScriptValue('conversion_culture_harder_to_convert_default_value')|0%]#! conversion resistance"
  
- rule_custom_kingdom_creation_blocked_for_specific_cases: "$wtwsms_highlighted$ Custom Kingdom Blocked"
- setting_custom_kingdom_creation_blocked_for_specific_cases_enabled: "Enabled"
- setting_custom_kingdom_creation_blocked_for_specific_cases_enabled_desc: "Certain cultures are prevented from creating custom [kingdoms|E] and [empires|E] without first creating a corresponding special Kingdom or Empire (e.g., the #V Empire of the Goths#! or the #V Frankish Kingdom#!)"
- setting_custom_kingdom_creation_blocked_for_specific_cases_disabled: "Disabled"
- setting_custom_kingdom_creation_blocked_for_specific_cases_disabled_desc: "There are no additional restrictions on custom [kingdoms|E] and [empires|E] creation"
- 
  rule_creation_of_empires: "$wtwsms_highlighted$ Empire Creation Limitation"
  setting_can_not_freely_create_empires: "Limited"
  setting_can_not_freely_create_empires_desc: "In most cases, a character #N #EMP cannot#!#! create an empire if they already have an empire."
@@ -46,7 +40,13 @@
  setting_paganify_enabled: "Enabled"
  setting_paganify_enabled_desc: "Most characters and counties will instead use a pagan or similar [faith|E] determined by their [culture|E], though minorities and custom characters retain their faith."
  
- #Vanilla Rule Overwrites
+ rule_migration_behavior: "$wtwsms_highlighted$ Migration Behavior"
+ setting_migration_behavior_classic: "Classic"
+ setting_migration_behavior_classic_desc: "CK2 Behavior: All cultures that satisfy the triggers will be capable of migration"
+ setting_migration_behavior_historical: "Historical"
+ setting_migration_behavior_historical_desc: "Cultures that did not migrate historically, like the Franks and Alamannii, will not migrate"
+ 
+ ##### Vanilla Rule Overwrites #####
  setting_bp_default_faith_conversion_speed: "$wtwsms_highlighted$ Historic"
  setting_bp_default_faith_conversion_speed_desc: "The speed is reduced to fall in lines with estimates from the WtWSMS team"
  GAME_RULE_DEFAULT_BP_FAITH_CONVERSION_VALUE: "Game Rule: #N $multiplication_sign$#![SCOPE.ScriptValue('bp_default_faith_conversion_value')|N]"

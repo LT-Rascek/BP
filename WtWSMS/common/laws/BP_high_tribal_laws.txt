@@ -9,8 +9,11 @@ high_tribal_organization = {
 
 	high_tribal_organization_0 = {
 		modifier = {
-			monthly_prestige_gain_mult = 0.2
-			#development_growth_factor = -0.40
+			monthly_prestige_gain_mult = 0.15
+			title_creation_cost_mult = -0.40
+			army_maintenance_mult = -0.40
+			men_at_arms_maintenance = -0.40
+			men_at_arms_recruitment_cost = -0.40
 		}
 		flag = imprisonment_toggle_enable
 
@@ -42,7 +45,10 @@ high_tribal_organization = {
 	high_tribal_organization_1 = {
 		modifier = {
 			monthly_prestige_gain_mult = -0.05
-			#development_growth_factor = 0.10
+			title_creation_cost_mult = 0.10
+			army_maintenance_mult = 0.10
+			men_at_arms_maintenance = 0.10
+			men_at_arms_recruitment_cost = 0.10
 		}
 		flag = imprisonment_toggle_on
 		flag = high_tribal_taxes_1
@@ -76,7 +82,10 @@ high_tribal_organization = {
 	high_tribal_organization_2 = {
 		modifier = {
 			monthly_prestige_gain_mult = -0.05
-			#development_growth_factor = 0.10
+			title_creation_cost_mult = 0.10
+			army_maintenance_mult = 0.10
+			men_at_arms_maintenance = 0.10
+			men_at_arms_recruitment_cost = 0.10
 		}
 		flag = title_revocation_allowed_if_authority_1
 		flag = high_tribal_taxes_2
@@ -110,7 +119,10 @@ high_tribal_organization = {
 	high_tribal_organization_3 = {
 		modifier = {
 			monthly_prestige_gain_mult = -0.05
-			#development_growth_factor = 0.10
+			title_creation_cost_mult = 0.10
+			army_maintenance_mult = 0.10
+			men_at_arms_maintenance = 0.10
+			men_at_arms_recruitment_cost = 0.10
 		}
 		flag = vassal_retraction_allowed_if_authority_1
 		flag = high_tribal_taxes_3

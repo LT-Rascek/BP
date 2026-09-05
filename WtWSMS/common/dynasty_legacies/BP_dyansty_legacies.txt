@@ -14,7 +14,72 @@
 				has_dynasty_perk = BP_roman_heritage_legacy_1
 			}
 		}
+		NOT = { dynasty ?= { has_dynasty_perk = BP_despoilation_legacy_1 } }
 	}
 }
 #Non-Roman Sub-Roman Track: Eventually unlocks Roman Heritage
 #Anti-Roman Sub-Roman Track: Building an anti-Rome, pulling culture together, &c.
+BP_despoilation_legacy_track = {
+	is_shown = {
+		OR = {
+			#Governments
+			AND = {
+				dynasty.dynast = { government_allows = administrative }
+				dynasty.dynast = { government_has_flag = government_is_quasi_feudal }
+			}
+			government_has_flag = government_is_tribal
+			government_has_flag = government_is_nomadic
+			#Work around for being unable to have script-related triggers; if PDX fixes this,
+			#Make available to existing Barbarian Kings
+			dynasty = dynasty:1042147 #Baltings
+			dynasty = dynasty:1042165 #Amaling
+			dynasty = dynasty:1042151 #Merovingians
+			dynasty = dynasty:1042160 #Thorcilings
+			dynasty = dynasty:1042146 #Burgundians
+			dynasty = dynasty:1042353 #Suebians
+			dynasty = dynasty:dynn_hermenegarius #Suebians
+		}
+		#If you have a specific type of government, don't have some sort of cultural philia
+		dynasty.dynast = {
+			#Rome
+			trigger_if = {
+				limit = { government_has_flag = government_is_subroman_administrative_or_dynastic }
+				NOR = {
+					culture = { has_cultural_parameter = greco_roman_social_tradition }
+					culture = { has_cultural_parameter = can_restore_roman_empire }
+				}
+			}
+			#China
+			trigger_if = {
+				limit = {
+					OR = {
+						government_has_flag = government_is_steppe_admin
+						government_has_flag = government_is_meritocratic
+					}
+				}
+				NOT = { culture = { has_cultural_parameter = baseline_chinese_acceptance_increased } }
+			}
+			#Japan
+			trigger_if = {
+				limit = {
+					OR = {
+						government_has_flag = government_is_japan_feudal
+						government_has_flag = government_is_japan_administrative
+					}
+				}
+				NOT = { culture = { has_cultural_tradition = tradition_tgp_inward_perfection } }
+			}
+		}
+		#Haven't started Romanesque Track, the Japanese Track, or the Chinese Track
+		dynasty ?= { NOT = { has_dynasty_perk = BP_roman_heritage_legacy_1 } }
+		dynasty ?= { NOT = { has_dynasty_perk = tgp_japan_legacy_1 } }
+		dynasty ?= { NOT = { has_dynasty_perk = tgp_chinese_legacy_1 } }
+		#Don't have a proper, civilized government
+		NOR = {
+			government_has_flag = government_is_celestial
+			government_has_flag = government_is_roman_dynastic
+			government_has_flag = government_is_roman_administrative
+			government_has_flag = iranian_dynastic_government
+		}
+	}
+}

@@ -1,4 +1,6 @@
-﻿##### Changed from Vanilla: Nerfed State Faith bonus unless having "State Religion" innovation
+﻿##### Changed from Vanilla: Tied factors into dynasty legacies
+##### Changed from Vanilla: Tied factors into migration
+##### Changed from Vanilla: Nerfed State Faith bonus unless having "State Religion" innovation
 ##### Changed from Vanilla: Updated progress with various modifiers for BP
 ##### Changed from Vanilla: Updated targets, added new game rule effects
 ##### Changed from Vanilla: shared_hof_converts_counties_to_hof_religion effect
@@ -386,6 +388,49 @@ task_conversion = {
 				}
 			}
 		}
+		#### Changed from Vanilla vvvvv
+		
+		#Situation Mechanics
+		if = {
+			limit = {
+				general_situation_regional_parameter_trigger = {
+					CHARACTER = scope:councillor_liege
+					PARAMETER = faster_faith_conversion_in_tribal_counties
+				}
+				#Tribal holding and nothing else
+				scope:county = { county_is_simple_tribal_trigger = yes }
+			}
+			multiply = {
+				value = migration_convert_faith_speed_improvement_value
+				desc = migration_convert_faith_speed_improvement_desc
+			}
+		}
+		if = {
+			limit = {
+				#Migrated Away From
+				scope:county = { has_county_modifier = recent_migration_away_modifier }
+			}
+			multiply = {
+				value = {
+					value = migration_convert_faith_speed_recent_migration_away_modifier_value
+					add = 1.00
+				}
+				desc = migration_convert_faith_speed_recent_migration_away_modifier_desc
+			}
+		}
+		#Dynasty Modifiers
+		if = {
+			limit = {
+				#Migrated Away From
+				scope:councillor_liege.dynasty ?= { has_dynasty_perk = BP_despoilation_legacy_4 }
+			}
+			multiply = {
+				value = BP_despoilation_legacy_4_conversion_value
+				desc = BP_despoilation_legacy_4_conversion_desc
+			}
+		}
+		#### Changed from Vanilla ^^^^^
+		
 		### SEA Minorities stuff vvv
 		
 		# Because the task needs to complete 3 times with the minority system

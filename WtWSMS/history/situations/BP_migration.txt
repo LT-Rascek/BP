@@ -1,0 +1,24 @@
+﻿395.1.1 = {
+	effect = {
+		start_situation = { type = BP_migration_situation }
+		situation:BP_migration_situation = {
+			situation_sub_region:migration_region_wre = {
+				change_phase = { phase = BP_migration_period }
+			}
+			situation_sub_region:migration_region_ere = {
+				change_phase = { phase = BP_migration_period }
+			}
+			situation_sub_region:migration_region_britannia = {
+				change_phase = { phase = BP_migration_period }
+			}
+			situation_sub_region:migration_region_barbaria = {
+				change_phase = { phase = BP_migration_period }
+			}
+			#These regions start dormant and are otherwise triggered
+			situation_sub_region:migration_region_steppe = {
+				change_phase = { phase = BP_dormant_phase }
+				remove_geographical_region = migration_region_steppe
+			}
+		}
+	}
+}

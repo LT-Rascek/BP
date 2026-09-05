@@ -1,0 +1,197 @@
+﻿#CB Values
+migration_war_required_fame_level = {
+	value = 3
+	add = { #AKA, county adds 2, duchy adds 1, kingdom adds 0
+		value = primary_title.tier
+		multiply = -1.0
+		add = 3
+	}
+	if = {
+		limit = { culture = { has_cultural_parameter = cb_lower_prestige_level_requirement } }
+		subtract = 1
+	}
+	min = low_prestige_level
+	max = max_prestige_level
+}
+minor_migration_war_required_fame_level = {
+	value = migration_war_required_fame_level
+	subtract = 1
+	min = low_prestige_level
+	max = max_prestige_level
+}
+migration_war_prestige_cost_duchy = 100
+migration_war_prestige_cost_kingdom = 500
+#Creation of Armies Values
+bp_migration_levies = {
+	value = county.development_level
+	multiply = 100
+	#Sensible max-mins.
+	min = 100
+	max = 1000
+	#Give a whole number.
+	floor = yes
+}
+bp_migration_depopulation = {
+	value = county.development_level
+	multiply = -0.33
+	#Give a whole number.
+	floor = yes
+}
+migration_innovation_weight = { #Max value: 10; used for determining if counties flip during migration
+	value = 0
+	if = {
+		limit = { has_innovation = innovation_quilted_armor }
+		add = 0.5
+	}
+	if = {
+		limit = { has_innovation = innovation_primitive_leverage }
+		add = 0.5
+	}
+	if = {
+		limit = { has_innovation = innovation_mustering_grounds }
+		add = 0.5
+	}
+	if = {
+		limit = { has_innovation = innovation_castrae }
+		add = 0.5
+	}
+	if = {
+		limit = { has_innovation = innovation_tribal_warfare }
+		add = 0.5
+	}
+	if = {
+		limit = { has_innovation = innovation_formalized_rituals }
+		add = 0.5
+	}
+	if = {
+		limit = { has_innovation = innovation_barter }
+		add = 0.5
+	}
+	if = {
+		limit = { has_innovation = innovation_development_bp_00 }
+		add = 1
+	}
+	if = {
+		limit = { has_innovation = innovation_oppidum }
+		add = 1
+	}
+	if = {
+		limit = { has_innovation = innovation_leges_barbarorum }
+		add = 1.5
+	}
+	if = {
+		limit = { has_innovation = innovation_social_stratification }
+		add = 1.5
+	}
+	if = {
+		limit = { has_innovation = innovation_writing }
+		add = 1.5
+	}
+}
+migration_chance_of_flip_holding = {
+	value = 20
+	subtract = {
+		value = scope:the_county_development
+		multiply = 2
+	}
+	subtract = {
+		value = scope:the_attacker_culture_weight
+		multiply = 2
+	}
+}
+migration_chance_of_flip_culture_faith = {
+	value = 30
+	subtract = {
+		value = scope:the_county_development
+		subtract = 5
+		multiply = 2
+	}
+	if = {
+		limit = {
+			OR = {
+				scope:the_county.title_province = { has_holding_type = tribal_holding }
+				scope:the_county.title_province = { has_holding_type = nomad_holding }
+				scope:the_county.title_province = { has_holding_type = herder_holding }
+			}
+		}
+		multiply = 2
+	}
+	if = {
+		limit = { scope:the_county_culture = { num_discovered_innovations_in_era = { target = culture_era_classical_antiquity value > 0 } } }
+		subtract = 5
+	}
+	if = {
+		limit = { scope:the_county_culture = { num_discovered_innovations_in_era = { target = culture_era_late_antiquity value > 0 } } }
+		subtract = 5
+	}
+	if = {
+		limit = { scope:the_county_culture = { num_discovered_innovations_in_era = { target = culture_era_early_medieval value > 0 } } }
+		subtract = 5
+	}
+	if = {
+		limit = { scope:the_county_culture = { num_discovered_innovations_in_era = { target = culture_era_high_medieval value > 0 } } }
+		subtract = 5
+	}
+	if = {
+		limit = { scope:the_county_culture = { num_discovered_innovations_in_era = { target = culture_era_late_medieval value > 0 } } }
+		subtract = 5
+	}
+	#And if we hit the limit, no more chances get applied
+	if = {
+		limit = { scope:the_attacker.current_number_of_flip_counties >= scope:the_attacker.max_number_of_flip_counties }
+		multiply = 0
+	}
+}
+max_number_of_flip_counties = {
+	value = 0
+	if = {
+		limit = { has_variable = number_of_migration_source_counties }
+		add = var:number_of_migration_source_counties
+	}
+}
+current_number_of_flip_counties = {
+	value = 0
+	every_realm_county = {
+		limit = {
+			this.culture = prev.culture
+			this.faith = prev.faith
+		}
+		add = 1
+	}
+}
+
+migration_war_wait_years = 10
+duchy_value_as_capital = {
+	value = 0
+	every_county = {
+		limit = { this.duchy = prev }
+		add = {
+			value = this.development_level
+			add = 1 #So duchy size matters
+		}
+	}
+}
+total_target_development = {
+	value = 0
+	every_county = {
+		limit = {
+			OR = {
+				this.duchy = prev
+				this.kingdom = prev
+			}
+		}
+		add = this.development_level
+	}
+}
+target_size = {
+	value = 0
+	every_county = {
+		limit = {
+			OR = {
+				this.duchy = prev
+				this.kingdom = prev
+			}
+		}
+		add = 1
+	}
+}

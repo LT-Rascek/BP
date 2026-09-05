@@ -38,14 +38,14 @@ d_khorezm = { #k_khwarezm history (direct)
 	}
 	490.1.1={
 		##clear_tribute_suzerain = h_persia
-		##set_tribute_suzerain = { who = e_xiongnu percentage = 0.50 }
+		##set_tribute_suzerain = { who = e_bactria percentage = 0.50 }
 	}
 	510.1.1={
 		holder = 331092 # Hamgari
 	}
 	550.1.1={
 		holder = 331102 # Buzgar
-		##clear_tribute_suzerain = e_xiongnu
+		##clear_tribute_suzerain = e_bactria
 		##set_tribute_suzerain = { who = e_turkestan percentage = 0.50 }
 	}
 	590.1.1={
@@ -184,7 +184,7 @@ c_khiva = {
 		holder = 331082 # Shaush
 	}
 	490.1.1={
-		liege = e_xiongnu
+		liege = e_bactria
 	}
 	510.1.1={
 		holder = 331092 # Hamgari
@@ -238,31 +238,64 @@ c_kurdar = { #c_urgench history
 }
 
 d_uzboy = {
-	#Development
-	1.1.1 = {}
-}
-c_sarykamysh = { #c_kara-kum history (elimination)
-	460.1.1={
+	460.1.1 = {
 		holder = 168344 # Kopharnos Pharnakiônos
+		government = nomad_government
 	}
-	510.1.1={
+	510.1.1 = {
 		holder = 168345 # Saraxazos Pharnakiônos
 	}
 }
-c_uzboy = { #c_kara-kum history (elimination)
-	460.1.1={
-		holder = 168344 # Kopharnos Pharnakiônos
+c_sarykamysh = { #Seemed to be notionally a part; there's a Parthian-Era fort in Igdy (Iranica article on Dahae)
+	305.1.1={
+		holder = 331022 # Afrig
+	}
+	340.1.1={
+		holder = 331032 # Bagra
+	}
+	360.1.1={
+		holder = 331042 # Sahhasak
+	}
+	380.1.1={
+		holder = 331052 # Askajamuk I 
+	}
+	435.1.1={
+		holder = 331062 # Azkajwar I 
+	}
+	450.1.1={
+		holder = 331072 # Sahr I 
+	}
+	470.1.1={
+		holder = 331082 # Shaush
+	}
+	490.1.1={
+		liege = e_bactria
 	}
 	510.1.1={
-		holder = 168345 # Saraxazos Pharnakiônos
+		holder = 331092 # Hamgari
+	}
+	550.1.1={
+		holder = 331102 # Buzgar
+		liege = e_turkestan
+	}
+	590.1.1={
+		holder = 331112 # Arsamuh
+		liege = 0 
+	}
+	640.1.1={
+		holder = 331122 # Sahr II
 	}
 }
-c_garabogazkol = { #c_usturt history (elimination)
-	460.1.1={
-		holder = 168344 # Kopharnos Pharnakiônos
+c_uzboy = {
+	475.1.1 = {
+		holder = dahiScythianUzboy000
+		government = nomad_government
 	}
-	510.1.1={
-		holder = 168345 # Saraxazos Pharnakiônos
+}
+c_garabogazkol = {
+	475.1.1 = {
+		holder = dahiScythianGarabogazkol_herder_000
+		government = herder_government
 	}
 }
 c_dihistan = {
@@ -275,13 +308,9 @@ c_dihistan = {
 		holder = 168345 # Saraxazos Pharnakiônos
 	}
 }
-c_farava = { #c_konjikala history
-	#Development
-	#Rulers
-	460.1.1={
-		holder = 168344 # Kopharnos Pharnakiônos
-	}
-	510.1.1={
-		holder = 168345 # Saraxazos Pharnakiônos
+c_farava = {
+	475.1.1 = {
+		holder = dahiScythianFarava_herder_000
+		government = herder_government
 	}
 }

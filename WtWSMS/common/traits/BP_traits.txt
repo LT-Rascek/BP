@@ -160,6 +160,7 @@ has_justinian_plague = {
 tall = {
 	genetic = yes
 	physical = yes
+	good = yes
 	desc = {
 		first_valid = {
 			triggered_desc = {
@@ -191,6 +192,7 @@ tall = {
 agile = {
 	genetic = yes
 	physical = yes
+	good = yes
 	desc = {
 		first_valid = {
 			triggered_desc = {
@@ -288,6 +290,7 @@ deaf = {
 ambidextrous = {
 	genetic = yes
 	physical = yes
+	good = yes
 	desc = {
 		first_valid = {
 			triggered_desc = {
@@ -316,6 +319,7 @@ ambidextrous = {
 lefthanded = {
 	genetic = yes
 	physical = yes
+	good = yes
 	desc = {
 		first_valid = {
 			triggered_desc = {
@@ -359,6 +363,7 @@ lefthanded = {
 melodious_voice = {
 	genetic = yes
 	physical = yes
+	good = yes
 	desc = {
 		first_valid = {
 			triggered_desc = {
@@ -386,6 +391,7 @@ melodious_voice = {
 powerful_voice = {
 	genetic = yes
 	physical = yes
+	good = yes
 	desc = {
 		first_valid = {
 			triggered_desc = {
@@ -886,6 +892,15 @@ roman_nostalgia = {
 			desc = trait_roman_nostalgia_character_desc
 		}
 	}
+	
+	##### Changed from Vanilla vvvvv
+	culture_modifier = {
+		parameter = learning_education_less_valued
+		same_culture_opinion = -2
+		attraction_opinion = -4
+	}
+	##### Changed from Vanilla ^^^^^
+	
 	martial = -2
 	learning = 3
 
@@ -934,6 +949,88 @@ hindu_philosophy_vedanta = { #Generalized Vedanta for the Migration Period
 	
 	ruler_designer_cost = 10
 }
+
+cranial_deformation = {
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { NOT = { exists = this } }
+				desc = trait_cranial_deformation_desc
+			}
+			desc = trait_cranial_deformation_character_desc
+		}
+	}
+	
+	shown_in_ruler_designer = no
+	
+	tracks = {
+		cranial_deformation = {
+			20 = {
+				culture_modifier = {
+					parameter = cranial_deformation_give_bonus
+					monthly_prestige_gain_mult = 0.01
+					monthly_prestige = 0.05
+					direct_vassal_opinion = 2
+					attraction_opinion = 2
+				}
+				#Nerf it for those not in the know
+				attraction_opinion = -1
+				direct_vassal_opinion = -1
+			}
+			40 = {
+				culture_modifier = {
+					parameter = cranial_deformation_give_bonus
+					monthly_prestige_gain_mult = 0.02
+					monthly_prestige = 0.05
+					direct_vassal_opinion = 4
+					attraction_opinion = 4
+				}
+				#Nerf it for those not in the know
+				attraction_opinion = -2
+				direct_vassal_opinion = -2
+			}
+			60 = {
+				culture_modifier = {
+					parameter = cranial_deformation_give_bonus
+					monthly_prestige_gain_mult = 0.03
+					monthly_prestige = 0.05
+					direct_vassal_opinion = 6
+					attraction_opinion = 6
+				}
+				#Nerf it for those not in the know
+				attraction_opinion = -3
+				direct_vassal_opinion = -3
+			}
+			80 = {
+				culture_modifier = {
+					parameter = cranial_deformation_give_bonus
+					monthly_prestige_gain_mult = 0.04
+					monthly_prestige = 0.05
+					direct_vassal_opinion = 8
+					attraction_opinion = 8
+				}
+				#Nerf it for those not in the know
+				attraction_opinion = -4
+				direct_vassal_opinion = -4
+			}
+			100 = {
+				culture_modifier = {
+					parameter = cranial_deformation_give_bonus
+					monthly_prestige_gain_mult = 0.05
+					monthly_prestige = 0.10
+					direct_vassal_opinion = 10
+					attraction_opinion = 10
+				}
+				#Nerf it for those not in the know
+				attraction_opinion = -5
+				direct_vassal_opinion = -5
+			}
+		}
+	}
+}
+
+############### HISTORICAL ##############
+
 #Only for history right now
 adopted = {
 	category = fame

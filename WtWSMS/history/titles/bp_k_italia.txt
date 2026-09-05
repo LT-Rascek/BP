@@ -29,7 +29,8 @@ d_umbria = {
 	}#end in 370 or earlier
 	410.1.1 = {
 		holder = 1300668 # Decius
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	445.1.1 = {
 		holder = 1300705 # Rogatianus
@@ -61,7 +62,8 @@ c_firenze = {
 	}#end in 370 or earlier
 	410.1.1 = {
 		holder = 1300668 # Decius
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	445.1.1 = {
 		holder = 1300705 # Rogatianus
@@ -130,7 +132,8 @@ c_lucca = {
 	}#end in 370 or earlier
 	410.1.1 = {
 		holder = 1300668 # Decius
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	445.1.1 = {
 		holder = 1300705 # Rogatianus
@@ -204,7 +207,8 @@ c_arezzo = { #c_firenze history (elimination)
 	}#end in 370 or earlier
 	410.1.1 = {
 		holder = 1300668 # Decius
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	445.1.1 = {
 		holder = 1300705 # Rogatianus
@@ -273,7 +277,8 @@ c_siena = {
 	}#end in 370 or earlier
 	410.1.1 = {
 		holder = 1300668 # Decius
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	445.1.1 = {
 		holder = 1300705 # Rogatianus
@@ -344,7 +349,8 @@ c_orbetello = {
 	}#end in 370 or earlier
 	410.1.1 = {
 		holder = 1300668 # Decius
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	445.1.1 = {
 		holder = 1300705 # Rogatianus
@@ -415,7 +421,8 @@ c_orvieto = {
 	}#end in 370 or earlier
 	410.1.1 = {
 		holder = 1300668 # Decius
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	445.1.1 = {
 		holder = 1300705 # Rogatianus
@@ -498,7 +505,8 @@ c_pisa = {
 	}#end in 370 or earlier
 	410.1.1 = {
 		holder = 1300668 # Decius
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	445.1.1 = {
 		holder = 1300705 # Rogatianus
@@ -513,7 +521,8 @@ c_pisa = {
 		holder=31127 # Aemilius Menenius
 	}
 	537.1.1={
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	540.1.1={
 		holder=31128  # Domitius Menenius
@@ -2193,7 +2202,8 @@ c_roma = {
 	}
 	#394.9.6 = { holder = 0 }
 	395.1.1 = {
-		liege = "e_praetorian_prefecture_italy"
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 		holder = 1006002 # Hermogenianus Olybrius
 	}
 	395.6.1 = {
@@ -2418,7 +2428,10 @@ c_roma = {
 	472.1.1 = {
 		holder = RufiusAggeriusFestus # Rufius Aggerius Festus # Rules until 478 for lack of non-Emperor consuls
 	}
-	476.9.4 = { government = subroman_administrative_government }
+	476.9.4 = {
+		liege = h_italy
+		government = subroman_administrative_government
+	}
 	478.1.1 = {
 		holder = 41722 # Illus # Rules until 480 for lack of other proper consuls
 	}
@@ -2741,7 +2754,8 @@ c_roma = {
 c_viterbo = { #LT-Rascek: Moved from Oriveto
 	422.1.1={
 		holder = FlaviusAvitusMarinianus1 # Flavius Avitus Marinianus
-		liege = "e_praetorian_prefecture_italy"
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	423.1.1={
 		holder = VenantiusPPOItaliae # Venantius
@@ -2865,7 +2879,8 @@ c_viterbo = { #LT-Rascek: Moved from Oriveto
 c_tivoli = { #b_tivoli history
 	422.1.1={
 		holder = FlaviusAvitusMarinianus1 # Flavius Avitus Marinianus
-		liege = "e_praetorian_prefecture_italy"
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	423.1.1={
 		holder = VenantiusPPOItaliae # Venantius
@@ -2999,7 +3014,8 @@ d_valeria = { #Empty History
 c_spoleto = {
 	422.1.1={
 		holder = FlaviusAvitusMarinianus1 # Flavius Avitus Marinianus
-		liege = "e_praetorian_prefecture_italy"
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	423.1.1={
 		holder = VenantiusPPOItaliae # Venantius
@@ -3103,7 +3119,8 @@ c_spoleto = {
 c_abruzzi = { #c_spoleto history (elimination)
 	422.1.1={
 		holder = FlaviusAvitusMarinianus1 # Flavius Avitus Marinianus
-		liege = "e_praetorian_prefecture_italy"
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	423.1.1={
 		holder = VenantiusPPOItaliae # Venantius
@@ -3216,10 +3233,12 @@ c_abruzzi = { #c_spoleto history (elimination)
 d_picenum_suburbicarium = {
 	443.1.1 = {
 		holder = 1300729 # Anonymus
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 		government = roman_administrative_government
 	}
 	476.9.4 = {
+		liege = h_italy
 		government = subroman_administrative_government
 	}
 	480.1.1 = {
@@ -3236,7 +3255,8 @@ d_picenum_suburbicarium = {
 c_ancona = {
 	422.1.1={
 		holder = FlaviusAvitusMarinianus1 # Flavius Avitus Marinianus
-		liege = "e_praetorian_prefecture_italy"
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	423.1.1={
 		holder = VenantiusPPOItaliae # Venantius
@@ -3343,7 +3363,8 @@ c_ancona = {
 c_fermo = { #c_ancona history
 	422.1.1={
 		holder = FlaviusAvitusMarinianus1 # Flavius Avitus Marinianus
-		liege = "e_praetorian_prefecture_italy"
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	423.1.1={
 		holder = VenantiusPPOItaliae # Venantius
@@ -3452,7 +3473,8 @@ c_teramo = {
 	#Rulers
 	422.1.1={
 		holder = FlaviusAvitusMarinianus1 # Flavius Avitus Marinianus
-		liege = "e_praetorian_prefecture_italy"
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	423.1.1={
 		holder = VenantiusPPOItaliae # Venantius
@@ -3574,7 +3596,8 @@ d_campania = {
 		holder = PaulinusOfNola #Meropius Pontius Paulinus
 	}
 	395.1.17={
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	395.6.1 = {
 		holder = 1300554 #Sibidius
@@ -3607,6 +3630,7 @@ d_campania = {
 		holder = 1300915 #Anonymus
 	}
 	476.9.4 = {
+		liege = h_italy
 		government = subroman_administrative_government
 	}
 	507.1.1={
@@ -3617,7 +3641,8 @@ d_campania = {
 	}
 	580.1.1 = {
 		holder = 1300699 #Anonymus
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	584.1.1 = {
 		liege = k_romagna
@@ -3657,7 +3682,8 @@ c_capua = {
 		holder = PaulinusOfNola #Meropius Pontius Paulinus
 	}
 	395.1.17={
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	395.6.1 = {
 		holder = 1300554 #Sibidius
@@ -3774,7 +3800,8 @@ c_napoli = {
 		holder = PaulinusOfNola #Meropius Pontius Paulinus
 	}
 	395.1.17={
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	395.6.1 = {
 		holder = 1300554 #Sibidius
@@ -3858,7 +3885,8 @@ c_napoli = {
 	}
 	580.1.1 = {
 		holder = 1300699 #Anonymus
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	584.1.1 = {
 		liege = k_romagna
@@ -3878,12 +3906,17 @@ d_samnium = {
 		liege = h_roman_empire
 		government = roman_administrative_government
 	}
-	395.1.17 = { liege = e_praetorian_prefecture_italy }
+	395.1.17 = { ##liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
+		liege = h_western_roman_empire }
 	473.1.1 = {
 	   holder = 1300720 # Maximus
-	   liege = e_praetorian_prefecture_italy
+	   ##liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
+		liege = h_western_roman_empire
 	}
 	476.9.4 = {
+		liege = h_italy
 		government = subroman_administrative_government
 	}
 	507.1.1={
@@ -3892,7 +3925,8 @@ d_samnium = {
 	#536.1.1 = { holder = 0 }
 	553.1.1 = {
 		holder = 1310014 # Sisinnius
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	570.1.1 = {
 		holder = 0
@@ -3903,10 +3937,13 @@ c_benevento = {
 		holder = 1301180 # Quintilianus, governor
 		liege = h_roman_empire
 	}
-	395.1.17 = { liege = e_praetorian_prefecture_italy }
+	395.1.17 = { ##liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
+		liege = h_western_roman_empire }
 	422.1.1={
 		holder = FlaviusAvitusMarinianus1 # Flavius Avitus Marinianus
-		liege = "e_praetorian_prefecture_italy"
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	423.1.1={
 		holder = VenantiusPPOItaliae # Venantius
@@ -3988,7 +4025,8 @@ c_benevento = {
 	}
 	553.1.1={
 		holder = 1310014 # Sisinnius
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	570.1.1={
 		holder = 31120 # Zotto Ratching
@@ -4010,10 +4048,13 @@ c_lanciano = { #c_aprutium history
 		holder = 1301180 # Quintilianus, governor
 		liege = h_roman_empire
 	}
-	395.1.17 = { liege = e_praetorian_prefecture_italy }
+	395.1.17 = { ##liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
+		liege = h_western_roman_empire }
 	422.1.1={
 		holder = FlaviusAvitusMarinianus1 # Flavius Avitus Marinianus
-		liege = "e_praetorian_prefecture_italy"
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	423.1.1={
 		holder = VenantiusPPOItaliae # Venantius
@@ -4094,7 +4135,8 @@ c_lanciano = { #c_aprutium history
 	}
 	553.1.1={
 		holder = 1310014 # Sisinnius
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	570.1.1={
 		holder = 1300174 # Anio
@@ -4116,12 +4158,14 @@ d_apulia = {
 		government = roman_administrative_government
 	}
 	395.1.17 = {
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	450.1.1 = {
 		holder = 1300914 # Cassius Ruferius
 	}
 	476.9.4 = {
+		liege = h_italy
 		government = subroman_administrative_government
 	}
 	494.1.1 = { #Constantius, gov of Apulia
@@ -4132,7 +4176,8 @@ d_apulia = {
 	}
 	553.1.1 = { #Constantinus
 		holder = 1300698
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	570.1.1 = {
 		holder = 0
@@ -4144,7 +4189,8 @@ c_apulia = {
 		liege = h_roman_empire
 	}
 	395.1.17 = {
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	450.1.1 = {
 		holder = 1300914 # Cassius Ruferius
@@ -4195,7 +4241,8 @@ c_apulia = {
 	}
 	553.1.1 = { #Constantinus
 		holder = 1300698
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	570.1.1={
 		holder = 31120 # Zotto Ratching
@@ -4214,7 +4261,8 @@ c_bari = {
 		liege = h_roman_empire
 	}
 	395.1.17 = {
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	450.1.1 = {
 		holder = 1300914 # Cassius Ruferius
@@ -4265,7 +4313,8 @@ c_bari = {
 	}
 	553.1.1 = { #Constantinus
 		holder = 1300698
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	570.1.1 = {
 		holder = 1300168 # Longinus
@@ -4297,7 +4346,8 @@ c_lecce = {
 		liege = h_roman_empire
 	}
 	395.1.17 = {
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	450.1.1 = {
 		holder = 1300914 # Cassius Ruferius
@@ -4327,7 +4377,8 @@ c_lecce = {
 		liege = h_eastern_roman_empire
 	}
 	537.1.1 = {
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	570.1.1 = {
 		holder = 1300168 # Longinus
@@ -4359,7 +4410,8 @@ c_foggia = {
 		liege = h_roman_empire
 	}
 	395.1.17 = {
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	450.1.1 = {
 		holder = 1300914 # Cassius Ruferius
@@ -4410,7 +4462,8 @@ c_foggia = {
 	}
 	553.1.1 = { #Constantinus
 		holder = 1300698
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	570.1.1={
 		holder = 31120 # Zotto Ratching
@@ -4425,7 +4478,12 @@ c_foggia = {
 }
 
 d_lucania = {
-	476.9.4={
+	475.1.1 = {
+		liege = h_western_roman_empire
+		government = roman_administrative_government
+		holder = d_lucania_476_holder
+	}
+	476.9.4 = {
 		liege = h_italy
 		government = subroman_administrative_government
 	}
@@ -4450,70 +4508,7 @@ d_lucania = {
 	}
 }
 c_salerno = {
-	422.1.1={
-		holder = FlaviusAvitusMarinianus1 # Flavius Avitus Marinianus
-		liege = "e_praetorian_prefecture_italy"
-	}
-	423.1.1={
-		holder = VenantiusPPOItaliae # Venantius
-	}
-	426.1.1={
-		holder = 1006016 # Anicius Auchenius Bassus
-	}
-	428.1.1={
-		holder = 1008290 # Rufius Antonius Agrypnius Volusianus
-	}
-	431.1.1={
-		holder = NicomachusFlavianusTheYounger # Nicomachus Flavianus
-	}
-	433.1.1={
-		holder = 74401 # Petronius Maximus
-	}
-	435.1.1={
-		holder = 1006016 # Anicius Auchenius Bassus
-	}
-	437.1.1={
-		holder = 1300555 # Anicius Acilius Glabrio Faustus
-	}
-	439.1.1={
-		holder = 74401 # Petronius Maximus
-	}
-	442.1.1={
-		holder = 1300555 # Anicius Acilius Glabrio Faustus
-	}
-	443.1.1 = {
-		holder = 96053 # Caecina Decius Aginatius Albinus 
-	}
-	454.1.1 = {
-		holder = ManliusBoethius # Manlius Boethius
-	}
-	458.1.1={
-		holder=1008287 # Caecina Decius Basilius
-	}
-	461.1.1={
-		holder=190103 # Caelius Aconius Probianus
-	}
-	463.1.1={
-		holder=1008287 # Caecina Decius Basilius
-	}
-	468.1.1={
-		holder=190114 # Publius Rufinus Valerius
-	}
-	473.1.1={
-		holder=190102 # Feliz Himelco
-	}
-	476.9.4 = {
-		liege = h_italy
-	}
-	480.1.1={
-		holder=20783 # Manlius Boethius
-	}
-	483.1.1={
-		holder=20786 # Caecina Decius Maximus Basilius
-	}
-	488.1.1={
-		holder=154005 # Caecina Mavortius Basilius Decius
-	}
+	475.1.1 = { holder = d_lucania_476_holder }
 	491.1.1 = { #Cassiodorus
 		holder=154006
 	}
@@ -4528,126 +4523,10 @@ c_salerno = {
 	}
 	527.1.1 = { #Severus
 		holder=1200136
-	}
-	536.1.1 = {
-		holder = 31062 # Gallienus Marcellus 
-		liege= "h_eastern_roman_empire"
-	}
-	537.1.1 = {
-		holder = 190097 # Fidelis
-		liege = h_eastern_roman_empire
-	}
-	538.1.1 = {
-		holder = 190098 # Reparatus
-	}
-	539.1.1 = {
-		holder = 90109 # Athanasius of Idriphthon 
-	}
-	542.1.1={
-		holder = 94000 # Maximinus Bassus
-	}
-	543.1.1={
-		holder = 190118 # Totila 
-		liege = 0
-	}
-	552.1.1={
-		holder = 155147 # Thila
-	}
-	553.1.1={
-		holder = 1300167 # Antiochus
-		liege = h_eastern_roman_empire
-	}
-	555.1.1 = {
-		holder = 444402 # Narses
-	}
-	568.1.1 = {
-		holder = 1300168 # Longinus
-	}
-	576.1.1 = {
-		holder = 1300169 # Maurilio
-	}
-	#exarchate of Ravenna
-	584.1.1={
-		holder = 31050 # Decius
-	}
-	585.1.1={
-		holder = 31051 # Smaragdus
-	}
-	589.1.1={
-		holder = 31060 # Romanus
-	}
-	598.1.1={
-		holder = 31061 # Kallinikos
-	}
-	603.1.1={
-		holder = 31051 # Smaragdus 
 	}
 }
-c_camarda = { #c_salerno history (elimination)
-	422.1.1={
-		holder = FlaviusAvitusMarinianus1 # Flavius Avitus Marinianus
-		liege = "e_praetorian_prefecture_italy"
-	}
-	423.1.1={
-		holder = VenantiusPPOItaliae # Venantius
-	}
-	426.1.1={
-		holder = 1006016 # Anicius Auchenius Bassus
-	}
-	428.1.1={
-		holder = 1008290 # Rufius Antonius Agrypnius Volusianus
-	}
-	431.1.1={
-		holder = NicomachusFlavianusTheYounger # Nicomachus Flavianus
-	}
-	433.1.1={
-		holder = 74401 # Petronius Maximus
-	}
-	435.1.1={
-		holder = 1006016 # Anicius Auchenius Bassus
-	}
-	437.1.1={
-		holder = 1300555 # Anicius Acilius Glabrio Faustus
-	}
-	439.1.1={
-		holder = 74401 # Petronius Maximus
-	}
-	442.1.1={
-		holder = 1300555 # Anicius Acilius Glabrio Faustus
-	}
-	443.1.1 = {
-		holder = 96053 # Caecina Decius Aginatius Albinus 
-	}
-	454.1.1 = {
-		holder = ManliusBoethius # Manlius Boethius
-	}
-	458.1.1={
-		holder=1008287 # Caecina Decius Basilius
-	}
-	461.1.1={
-		holder=190103 # Caelius Aconius Probianus
-	}
-	463.1.1={
-		holder=1008287 # Caecina Decius Basilius
-	}
-	468.1.1={
-		holder=190114 # Publius Rufinus Valerius
-	}
-	473.1.1={
-		holder=190102 # Feliz Himelco
-	}
-	476.9.4 = {
-		liege = h_italy
-	}
-	480.1.1={
-		holder=20783 # Manlius Boethius
-	}
-	483.1.1={
-		holder=20786 # Caecina Decius Maximus Basilius
-	}
-	488.1.1={
-		holder=154005 # Caecina Mavortius Basilius Decius
-	}
+c_camarda = {
+	475.1.1 = { holder = d_lucania_476_holder }
 	491.1.1 = { #Cassiodorus
 		holder=154006
 	}
@@ -4662,118 +4541,10 @@ c_camarda = { #c_salerno history (elimination)
 	}
 	527.1.1 = { #Severus
 		holder=1200136
-	}
-	536.1.1 = {
-		holder = 31062 # Gallienus Marcellus 
-		liege= "h_eastern_roman_empire"
-	}
-	537.1.1 = {
-		holder = 190097 # Fidelis
-		liege = h_eastern_roman_empire
-	}
-	538.1.1 = {
-		holder = 190098 # Reparatus
-	}
-	539.1.1 = {
-		holder = 90109 # Athanasius of Idriphthon 
-	}
-	542.1.1={
-		holder = 94000 # Maximinus Bassus
-	}
-	543.1.1={
-		holder = 190118 # Totila 
-		liege = 0
-	}
-	552.1.1={
-		holder = 155147 # Thila
-	}
-	553.1.1={
-		holder = 1300167 # Antiochus
-		liege = h_eastern_roman_empire
-	}
-	555.1.1 = {
-		holder = 444402 # Narses
-	}
-	568.1.1={ 
-		holder = 30221  # King Alboin
-		liege = 0
-	}
-	572.1.1={ 
-		holder = 30363  # King Cleph
-	}
-	574.1.1={ 
-		holder = 31120 # Zotto Ratching
-		liege = 0
-	}
-	591.1.1={
-		holder = 31123 # Arechis Farualding
 	}
 }
 c_reggio_calabria = {
-	422.1.1={
-		holder = FlaviusAvitusMarinianus1 # Flavius Avitus Marinianus
-		liege = "e_praetorian_prefecture_italy"
-	}
-	423.1.1={
-		holder = VenantiusPPOItaliae # Venantius
-	}
-	426.1.1={
-		holder = 1006016 # Anicius Auchenius Bassus
-	}
-	428.1.1={
-		holder = 1008290 # Rufius Antonius Agrypnius Volusianus
-	}
-	431.1.1={
-		holder = NicomachusFlavianusTheYounger # Nicomachus Flavianus
-	}
-	433.1.1={
-		holder = 74401 # Petronius Maximus
-	}
-	435.1.1={
-		holder = 1006016 # Anicius Auchenius Bassus
-	}
-	437.1.1={
-		holder = 1300555 # Anicius Acilius Glabrio Faustus
-	}
-	439.1.1={
-		holder = 74401 # Petronius Maximus
-	}
-	442.1.1={
-		holder = 1300555 # Anicius Acilius Glabrio Faustus
-	}
-	443.1.1 = {
-		holder = 96053 # Caecina Decius Aginatius Albinus 
-	}
-	454.1.1 = {
-		holder = ManliusBoethius # Manlius Boethius
-	}
-	458.1.1={
-		holder=1008287 # Caecina Decius Basilius
-	}
-	461.1.1={
-		holder=190103 # Caelius Aconius Probianus
-	}
-	463.1.1={
-		holder=1008287 # Caecina Decius Basilius
-	}
-	468.1.1={
-		holder=190114 # Publius Rufinus Valerius
-	}
-	473.1.1={
-		holder=190102 # Feliz Himelco
-	}
-	476.9.4 = {
-		liege = h_italy
-	}
-	480.1.1={
-		holder=20783 # Manlius Boethius
-	}
-	483.1.1={
-		holder=20786 # Caecina Decius Maximus Basilius
-	}
-	488.1.1={
-		holder=154005 # Caecina Mavortius Basilius Decius
-	}
+	475.1.1 = { holder = d_lucania_476_holder }
 	491.1.1 = { #Cassiodorus
 		holder=154006
 	}
@@ -4788,120 +4559,10 @@ c_reggio_calabria = {
 	}
 	527.1.1 = { #Severus
 		holder=1200136
-	}
-	536.1.1 = {
-		holder = 31062 # Gallienus Marcellus
-		liege="h_eastern_roman_empire"
-	}
-	537.1.1 = {
-		holder = 190097 # Fidelis
-		liege = h_eastern_roman_empire
-	}
-	538.1.1 = {
-		holder = 190098 # Reparatus
-	}
-	539.1.1 = {
-		holder = 90109 # Athanasius of Idriphthon 
-	}
-	542.1.1={
-		holder = 94000 # Maximinus Bassus
-	}
-	543.1.1 = {
-		holder = 31062 # Gallienus Marcellus
-		liege="h_eastern_roman_empire"
-	}
-	553.1.1={
-		holder = 1300167 # Antiochus
-		liege = h_eastern_roman_empire
-	}
-	555.1.1 = {
-		holder = 444402 # Narses
-	}
-	568.1.1 = {
-		holder = 1300168 # Longinus
-	}
-	576.1.1 = {
-		holder = 1300169 # Maurilio
-	}
-	#exarchate of Ravenna
-	584.1.1={
-		holder = 31050 # Decius
-	}
-	585.1.1={
-		holder = 31051 # Smaragdus
-	}
-	589.1.1={
-		holder = 31060 # Romanus
-	}
-	598.1.1={
-		holder = 31061 # Kallinikos
 	}
 }
 c_cosenza = {
-	422.1.1={
-		holder = FlaviusAvitusMarinianus1 # Flavius Avitus Marinianus
-		liege = "e_praetorian_prefecture_italy"
-	}
-	423.1.1={
-		holder = VenantiusPPOItaliae # Venantius
-	}
-	426.1.1={
-		holder = 1006016 # Anicius Auchenius Bassus
-	}
-	428.1.1={
-		holder = 1008290 # Rufius Antonius Agrypnius Volusianus
-	}
-	431.1.1={
-		holder = NicomachusFlavianusTheYounger # Nicomachus Flavianus
-	}
-	433.1.1={
-		holder = 74401 # Petronius Maximus
-	}
-	435.1.1={
-		holder = 1006016 # Anicius Auchenius Bassus
-	}
-	437.1.1={
-		holder = 1300555 # Anicius Acilius Glabrio Faustus
-	}
-	439.1.1={
-		holder = 74401 # Petronius Maximus
-	}
-	442.1.1={
-		holder = 1300555 # Anicius Acilius Glabrio Faustus
-	}
-	443.1.1 = {
-		holder = 96053 # Caecina Decius Aginatius Albinus 
-	}
-	454.1.1 = {
-		holder = ManliusBoethius # Manlius Boethius
-	}
-	458.1.1={
-		holder=1008287 # Caecina Decius Basilius
-	}
-	461.1.1={
-		holder=190103 # Caelius Aconius Probianus
-	}
-	463.1.1={
-		holder=1008287 # Caecina Decius Basilius
-	}
-	468.1.1={
-		holder=190114 # Publius Rufinus Valerius
-	}
-	473.1.1={
-		holder=190102 # Feliz Himelco
-	}
-	476.9.4 = {
-		liege = h_italy
-	}
-	480.1.1={
-		holder=20783 # Manlius Boethius
-	}
-	483.1.1={
-		holder=20786 # Caecina Decius Maximus Basilius
-	}
-	488.1.1={
-		holder=154005 # Caecina Mavortius Basilius Decius
-	}
+	475.1.1 = { holder = d_lucania_476_holder }
 	491.1.1 = { #Cassiodorus
 		holder=154006
 	}
@@ -4916,123 +4577,10 @@ c_cosenza = {
 	}
 	527.1.1 = { #Severus
 		holder=1200136
-	}
-	536.1.1 = {
-		holder = 31062 # Gallienus Marcellus
-		liege="h_eastern_roman_empire"
-	}
-	537.1.1 = {
-		holder = 190097 # Fidelis
-		liege = h_eastern_roman_empire
-	}
-	538.1.1 = {
-		holder = 190098 # Reparatus
-	}
-	539.1.1 = {
-		holder = 90109 # Athanasius of Idriphthon 
-	}
-	542.1.1={
-		holder = 94000 # Maximinus Bassus
-	}
-	543.1.1 = {
-		holder = 31062 # Gallienus Marcellus
-		liege="h_eastern_roman_empire"
-	}
-	553.1.1={
-		holder = 1300167 # Antiochus
-		liege = h_eastern_roman_empire
-	}
-	555.1.1 = {
-		holder = 444402 # Narses
-	}
-	568.1.1 = {
-		holder = 1300168 # Longinus
-	}
-	576.1.1 = {
-		holder = 1300169 # Maurilio
-	}
-	#exarchate of Ravenna
-	584.1.1={
-		holder = 31050 # Decius
-	}
-	585.1.1={
-		holder = 31051 # Smaragdus
-	}
-	589.1.1={
-		holder = 31060 # Romanus
-	}
-	598.1.1={
-		holder = 31061 # Kallinikos
-	}
-	603.1.1={
-		holder = 31051 # Smaragdus 
 	}
 }
-c_rossano = { #c_cosenza history
-	422.1.1={
-		holder = FlaviusAvitusMarinianus1 # Flavius Avitus Marinianus
-		liege = "e_praetorian_prefecture_italy"
-	}
-	423.1.1={
-		holder = VenantiusPPOItaliae # Venantius
-	}
-	426.1.1={
-		holder = 1006016 # Anicius Auchenius Bassus
-	}
-	428.1.1={
-		holder = 1008290 # Rufius Antonius Agrypnius Volusianus
-	}
-	431.1.1={
-		holder = NicomachusFlavianusTheYounger # Nicomachus Flavianus
-	}
-	433.1.1={
-		holder = 74401 # Petronius Maximus
-	}
-	435.1.1={
-		holder = 1006016 # Anicius Auchenius Bassus
-	}
-	437.1.1={
-		holder = 1300555 # Anicius Acilius Glabrio Faustus
-	}
-	439.1.1={
-		holder = 74401 # Petronius Maximus
-	}
-	442.1.1={
-		holder = 1300555 # Anicius Acilius Glabrio Faustus
-	}
-	443.1.1 = {
-		holder = 96053 # Caecina Decius Aginatius Albinus 
-	}
-	454.1.1 = {
-		holder = ManliusBoethius # Manlius Boethius
-	}
-	458.1.1={
-		holder=1008287 # Caecina Decius Basilius
-	}
-	461.1.1={
-		holder=190103 # Caelius Aconius Probianus
-	}
-	463.1.1={
-		holder=1008287 # Caecina Decius Basilius
-	}
-	468.1.1={
-		holder=190114 # Publius Rufinus Valerius
-	}
-	473.1.1={
-		holder=190102 # Feliz Himelco
-	}
-	476.9.4 = {
-		liege = h_italy
-	}
-	480.1.1={
-		holder=20783 # Manlius Boethius
-	}
-	483.1.1={
-		holder=20786 # Caecina Decius Maximus Basilius
-	}
-	488.1.1={
-		holder=154005 # Caecina Mavortius Basilius Decius
-	}
+c_rossano = {
+	475.1.1 = { holder = d_lucania_476_holder }
 	491.1.1 = { #Cassiodorus
 		holder=154006
 	}
@@ -5047,56 +4595,6 @@ c_rossano = { #c_cosenza history
 	}
 	527.1.1 = { #Severus
 		holder=1200136
-	}
-	536.1.1 = {
-		holder = 31062 # Gallienus Marcellus
-		liege="h_eastern_roman_empire"
-	}
-	537.1.1 = {
-		holder = 190097 # Fidelis
-		liege = h_eastern_roman_empire
-	}
-	538.1.1 = {
-		holder = 190098 # Reparatus
-	}
-	539.1.1 = {
-		holder = 90109 # Athanasius of Idriphthon 
-	}
-	542.1.1={
-		holder = 94000 # Maximinus Bassus
-	}
-	543.1.1 = {
-		holder = 31062 # Gallienus Marcellus
-		liege="h_eastern_roman_empire"
-	}
-	553.1.1={
-		holder = 1300167 # Antiochus
-		liege = h_eastern_roman_empire
-	}
-	555.1.1 = {
-		holder = 444402 # Narses
-	}
-	568.1.1 = {
-		holder = 1300168 # Longinus
-	}
-	576.1.1 = {
-		holder = 1300169 # Maurilio
-	}
-	#exarchate of Ravenna
-	584.1.1={
-		holder = 31050 # Decius
-	}
-	585.1.1={
-		holder = 31051 # Smaragdus
-	}
-	589.1.1={
-		holder = 31060 # Romanus
-	}
-	598.1.1={
-		holder = 31061 # Kallinikos
-	}
-	603.1.1={
-		holder = 31051 # Smaragdus 
 	}
 }
 
@@ -5167,7 +4665,8 @@ d_sicily = {
 		holder = 1300710 # Perpenna Romanus
 	}
 	395.1.17 = {
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	398.1.1 = {
 		holder = 1300711 # Titianus
@@ -5230,7 +4729,8 @@ c_palermo = {
 		holder = 1300710 # Perpenna Romanus
 	}
 	395.1.17 = {
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	398.1.1 = {
 		holder = 1300711 # Titianus
@@ -5240,7 +4740,8 @@ c_palermo = {
 	}
 	422.1.1={
 		holder = FlaviusAvitusMarinianus1 # Flavius Avitus Marinianus
-		liege = "e_praetorian_prefecture_italy"
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	423.1.1={
 		holder = VenantiusPPOItaliae # Venantius
@@ -5354,7 +4855,8 @@ c_messina = {
 		holder = 1300710 # Perpenna Romanus
 	}
 	395.1.17 = {
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	398.1.1 = {
 		holder = 1300711 # Titianus
@@ -5364,7 +4866,8 @@ c_messina = {
 	}
 	422.1.1={
 		holder = FlaviusAvitusMarinianus1 # Flavius Avitus Marinianus
-		liege = "e_praetorian_prefecture_italy"
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	423.1.1={
 		holder = VenantiusPPOItaliae # Venantius
@@ -5478,7 +4981,8 @@ c_siracusa = {
 		holder = 1300710 # Perpenna Romanus
 	}
 	395.1.17 = {
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	398.1.1 = {
 		holder = 1300711 # Titianus
@@ -5488,7 +4992,8 @@ c_siracusa = {
 	}
 	422.1.1={
 		holder = FlaviusAvitusMarinianus1 # Flavius Avitus Marinianus
-		liege = "e_praetorian_prefecture_italy"
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	423.1.1={
 		holder = VenantiusPPOItaliae # Venantius
@@ -5549,7 +5054,8 @@ c_siracusa = {
 	}
 	480.1.1={
 		holder=470056 # Petru of Syracuse
-		liege = "e_praetorian_prefecture_italy"
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	489.1.1={
 		holder=154005 # Caecina Mavortius Basilius Decius
@@ -5609,7 +5115,8 @@ c_agrigento = {
 		holder = 1300710 # Perpenna Romanus
 	}
 	395.1.17 = {
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	398.1.1 = {
 		holder = 1300711 # Titianus
@@ -5619,7 +5126,8 @@ c_agrigento = {
 	}
 	422.1.1={
 		holder = FlaviusAvitusMarinianus1 # Flavius Avitus Marinianus
-		liege = "e_praetorian_prefecture_italy"
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	423.1.1={
 		holder = VenantiusPPOItaliae # Venantius
@@ -5733,7 +5241,8 @@ c_malta = {
 		holder = 1300710 # Perpenna Romanus
 	}
 	395.1.17 = {
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	398.1.1 = {
 		holder = 1300711 # Titianus
@@ -5845,7 +5354,8 @@ d_sardinia = {
 		holder = 1300713 # Turranius Decentius Benignus
 	}
 	395.1.17 = {
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	399.1.1={
 		holder = 0
@@ -5952,11 +5462,13 @@ c_cagliari = {
 		liege = h_roman_empire
 	}
 	395.1.17 = {
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	425.1.1 = {
 		holder = 1300563 # Flaviolus
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	#Vandals
 	455.1.1={
@@ -6044,11 +5556,13 @@ c_arborea = {
 		liege = h_roman_empire
 	}
 	395.1.17 = {
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	425.1.1 = {
 		holder = 1300563 # Flaviolus
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	#Vandals
 	455.1.1={
@@ -6136,11 +5650,13 @@ c_gallura = { #c_arborea history (elimination)
 		liege = h_roman_empire
 	}
 	395.1.17 = {
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	425.1.1 = {
 		holder = 1300563 # Flaviolus
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	#Vandals
 	455.1.1={
@@ -6228,11 +5744,13 @@ c_logudoro = { #c_arborea history (elimination)
 		liege = h_roman_empire
 	}
 	395.1.17 = {
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	425.1.1 = {
 		holder = 1300563 # Flaviolus
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	#Vandals
 	455.1.1={
@@ -6320,11 +5838,13 @@ c_tortoli = { #c_arborea history (elimination)
 		liege = h_roman_empire
 	}
 	395.1.17 = {
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	425.1.1 = {
 		holder = 1300563 # Flaviolus
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	#Vandals
 	455.1.1={
@@ -6655,7 +6175,8 @@ c_vecchio = {
 ### Titular Duchies ###
 d_pisa = {
 	460.1.1={
-		liege="e_praetorian_prefecture_italy"
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 		holder = 31126 # Urbanus Menenius
 		government = republic_government
 	}
@@ -6666,7 +6187,8 @@ d_pisa = {
 		holder=31127 # Aemilius Menenius
 	}
 	537.1.1={
-		liege = e_praetorian_prefecture_italy
+		#liege = e_praetorian_prefecture_italy
+		liege = h_western_roman_empire
 	}
 	540.1.1={
 		holder=31128  # Domitius Menenius

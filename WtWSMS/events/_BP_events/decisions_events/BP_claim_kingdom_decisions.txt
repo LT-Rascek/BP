@@ -1,81 +1,9 @@
 ﻿namespace = BP_claim_kingdom_decisions
 
 #0001-0099: Special one-offs
-#	0001-0009: Not Used (formerly Albania)
-#	0010-0019: Francia
+#	0001-0009: Generic Kingdom Formation Event
+#	0010-0019: Not Used (formerly Francia)
 #	0020-0029: Aures
-
-#Formation of the Frankish Kingdom information decision (0010 & 0011)
-BP_claim_kingdom_decisions.0010 = {
-	type = character_event
-	title = BP_claim_kingdom_decisions.0010.t
-	desc = BP_claim_kingdom_decisions.0010.desc
-	theme = realm
-	override_background = { reference = BP_tour_arrival_norse_welcome }
-	content_source = dlc_WtWSMS
-	
-	left_portrait = {
-		character = scope:the_frankish_former
-		animation = celebrate_sword
-	}
-	
-	immediate = { form_frankish_kingdom_effect = yes }
-	
-	option = {
-		trigger = { this = scope:the_frankish_former }
-		name = BP_claim_kingdom_decisions.0010.the_king
-		
-		every_player = {
-			limit = {
-				is_ai = no
-				NOT = { this = root }
-				this = { in_diplomatic_range = root }
-			}
-			trigger_event = { id = BP_claim_kingdom_decisions.0011 } #Inform the rest
-		}
-	}
-}
-BP_claim_kingdom_decisions.0011 = {
-	type = character_event
-	title = BP_claim_kingdom_decisions.0011.t
-	desc = BP_claim_kingdom_decisions.0011.desc
-	theme = realm
-	override_background = { reference = BP_tour_arrival_norse_welcome }
-	content_source = dlc_WtWSMS
-	
-	left_portrait = {
-		character = scope:the_frankish_former
-		animation = celebrate_sword
-	}
-	
-	option = {
-		trigger = {
-			NOT = { this = scope:the_frankish_former }
-			this = { opinion = { target = scope:the_frankish_former value >= 30 } }
-		}
-		name = BP_claim_kingdom_decisions.0011.good
-	}
-	option = {
-		fallback = yes
-		trigger = {
-			NOT = { this = scope:the_frankish_former }
-			this = {
-				AND = {
-					opinion = { target = scope:the_frankish_former value < 30 }
-					opinion = { target = scope:the_frankish_former value > -30 }
-				}
-			}
-		}
-		name = BP_claim_kingdom_decisions.0011.neutral
-	}
-	option = {
-		trigger = {
-			NOT = { this = scope:the_frankish_former }
-			this = { opinion = { target = scope:the_frankish_former value <= -30 } }
-		}
-		name = BP_claim_kingdom_decisions.0011.bad
-	}
-}
 
 #Formation of Aures Kingdom information decision
 BP_claim_kingdom_decisions.0020 = {

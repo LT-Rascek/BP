@@ -1,4 +1,7 @@
-﻿##### Changed from Vanilla: Added New Rule Effects
+﻿##### Changed from Vanilla: Tied factors into migration
+##### Changed from Vanilla: Added New Rule Effects
+##### Changed from Vanilla: Updated targets, added new game rule effects
+##### Changed from Vanilla: integrated SEA minorities stuff
 task_promote_culture = {
 	position = councillor_steward
 
@@ -248,6 +251,49 @@ task_promote_culture = {
 			}
 		}
 		
+		#### Changed from Vanilla vvvvv
+		
+		#Situation Mechanics
+		if = {
+			limit = {
+				general_situation_regional_parameter_trigger = {
+					CHARACTER = scope:councillor_liege
+					PARAMETER = faster_culture_promotion_in_tribal_counties
+				}
+				#Tribal holding and nothing else
+				scope:county = { county_is_simple_tribal_trigger = yes }
+			}
+			multiply = {
+				value = migration_promote_culture_speed_improvement_value
+				desc = migration_promote_culture_speed_improvement_desc
+			}
+		}
+		if = {
+			limit = {
+				#Migrated Away From
+				scope:county = { has_county_modifier = recent_migration_away_modifier }
+			}
+			multiply = {
+				value = {
+					value = migration_promote_culture_speed_recent_migration_away_modifier_value
+					add = 1.00
+				}
+				desc = migration_promote_culture_speed_recent_migration_away_modifier_desc
+			}
+		}
+		#Dynasty Modifiers
+		if = {
+			limit = {
+				#Migrated Away From
+				scope:councillor_liege.dynasty ?= { has_dynasty_perk = BP_despoilation_legacy_4 }
+			}
+			multiply = {
+				value = BP_despoilation_legacy_4_culture_promotion_value
+				desc = BP_despoilation_legacy_4_culture_promotion_desc
+			}
+		}
+		#### Changed from Vanilla ^^^^^
+		
 		### Minorities stuff vvv
 		
 		# Because the task needs to complete 3 times with the minority system
@@ -261,6 +307,11 @@ task_promote_culture = {
 			}
 		}
 		### Minorities stuff ^^^
+		
+		min = {
+			value = 0.5 #Accounting for minorities....
+			desc = minimum_promote_culture
+		}
 	}
 	#### Changed from Vanilla ^^^^^
 
@@ -294,8 +345,11 @@ task_promote_culture = {
 			##### changed from Vanilla vvvvv
 			custom_tooltip = {
 				text = roman_federates_are_culturally_protected
-				NOT = { this.holder = { government_has_flag = government_is_roman_federate } }
+				trigger_if = {
+					limit = { NOT = { this.holder = scope:councillor_liege } }
+					NOT = { this.holder = { government_has_flag = government_is_roman_federate } }
 				NOT = { this.holder = { any_liege_or_above = { government_has_flag = government_is_roman_federate } } }
+				}
 			}
 			##### changed from Vanilla ^^^^^
 		}
@@ -638,8 +692,15 @@ task_promote_culture = {
 
 	monthly_on_action = task_promote_culture_side_effects
 
+	##### Changed from Vanilla vvvvv
 	ai_will_do = {
 		value = 0
+		##### Changed from Vanilla vvvvv
+		if = {
+			limit = { scope:county ?= { has_county_modifier = recent_migration_away_modifier } }
+			add = 250
+		}
+		##### Changed from Vanilla ^^^^^
 		if = {
 			limit = {
 				scope:councillor = {
@@ -802,4 +863,5 @@ task_promote_culture = {
 			add = 50000
 		}
 	}
+	##### Changed from Vanilla ^^^^^
 }

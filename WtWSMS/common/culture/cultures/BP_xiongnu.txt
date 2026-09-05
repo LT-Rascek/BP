@@ -1,0 +1,50 @@
+﻿### The Xiongnu!!!
+xiongnu = { #The Xiongnu, the hardest to nail down
+	color = xiongnu
+	
+	created = 2.1.1
+	history_loc_override = xiongnu_history_loc
+	
+	ethos = ethos_bellicose
+	heritage = heritage_xiongnu
+	language = language_xiongnu
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_herd
+	traditions = {
+		#Societal Traditions
+		tradition_warrior_culture
+		#Regional Traditions
+		#Ritual Traditions
+		#Realm Traditions
+		#Combat Traditions
+		tradition_hit_and_run
+	}
+	
+	dlc_tradition = {
+		trait = tradition_devoted_horsemanship
+		requires_dlc_flag = khans_of_the_steppe
+		fallback = tradition_horse_lords
+	}
+	
+	name_order_convention = dynasty_always_first
+	name_list = name_list_xiongnu
+	
+	#Graphics
+	coa_gfx = { turkic_group_coa_gfx steppe_coa_gfx }
+	building_gfx = { steppe_building_gfx }
+	clothing_gfx = { khitan_clothing_gfx mongol_clothing_gfx }
+	unit_gfx = { mongol_unit_gfx }
+	house_coa_frame = house_frame_14
+	
+	#About 30% Sakan, 70% East Asian, all told
+	#Source: https://onlinelibrary.wiley.com/doi/10.1002/ajpa.24478
+	ethnicities = {
+		70 = turkic
+		10 = iranian
+		8 = mediterranean
+		3 = caucasian_blond
+		3 = caucasian_brown_hair
+		3 = caucasian_dark_hair
+		3 = caucasian_ginger
+	}
+}

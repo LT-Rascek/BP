@@ -591,13 +591,34 @@ house_arsacid_armenia = {
 		instance={ position={ 0.5 0.5 } scale={ 0.6 0.6 } }
 	}
 }
-1042201 = { #Khingila
+1042201 = { #Hepthalites
 	pattern = "pattern_solid.dds"
 	color1 = white
 		colored_emblem = {
 		texture = "ce_tamgha_hephthalites.dds"
 		color1 = black
 		instance = { position = { 0.5 0.5 } scale = { 0.85 0.85 } }
+	}
+}
+1042345 = { #Alchon Huns
+	pattern = "pattern_solid.dds"
+	color1 = white
+		colored_emblem = {
+		texture = "ce_alchon_tamga.dds"
+		color1 = black
+		instance = { position = { 0.5 0.5 } scale = { 0.85 0.85 } }
+	}
+}
+xionite_dynn_nezak_huns = { #Nezak Huns
+	pattern = "pattern_solid.dds"
+	color1 = white
+		colored_emblem = {
+		texture = "ce_nezak_crown.dds"
+		color1 = brown
+		color2 = { 181 101 29 } #Light Brown
+		color3 = blue
+		instance = { position = { 0.5 0.75 } scale = { 0.65 0.65 } }
+		instance = { position = { 0.5 0.25 } scale = { 0.65 0.65 } }
 	}
 }
 1042231 = { #Gupta
@@ -894,5 +915,86 @@ house_tuoba_wei={
 		color1=white
 		texture="ce_seal_name_wei_9b4f.dds"
 		instance={ position={ 0.65 0.5 } scale = { 0.45 0.6 } }
+	}
+}
+
+#Huns
+dynasty_house_attilid = {
+	pattern="pattern_solid.dds"
+	color1=white
+	color2=white
+	color3=black
+	colored_emblem={
+		color1=black
+		color2=black
+		texture="ce_tamgha_roundel_frame.dds"
+		instance={
+			position={ 0.500000 0.480000 }
+			scale={ 0.750000 0.750000 }
+		}
+	}
+	colored_emblem={
+		color1=white
+		color2=white
+		texture="ce_tamgha_oghuz_yazir.dds"
+		instance={
+			position={ 0.500000 0.480000 }
+			scale={ 0.700000 0.700000 }
+		}
+	}
+}
+
+#Franks
+old_frankish_dynn_chararic = {
+	pattern="pattern_solid.dds"
+	color1=red
+	color2=blue
+	color3=white
+	colored_emblem={
+		color1=white
+		color2=white
+		texture="ce_rune_hagalaz.dds"
+		instance={
+			position={ 0.500000 0.480000 }
+			scale={ -1.000000 1.000000 }
+		}
+	}
+}
+old_frankish_dynn_ragnachar = {
+	pattern="pattern_solid.dds"
+	color1=black
+	color2=black
+	color3=yellow
+	colored_emblem={
+		color1=yellow
+		color2=yellow
+		texture="ce_antler_pale.dds"
+		instance={
+			position={ 0.500000 0.480000 }
+			scale={ 0.700000 0.700000 }
+		}
+	}
+	colored_emblem={
+		color1=yellow
+		color2=black
+		texture="ce_frame_circle_borre_single_knots_02.dds"
+		instance={
+			position={ 0.500000 0.480000 }
+		}
+	}
+}
+old_frankish_dynn_sigobert = {
+	pattern="pattern_vertical_split_01.dds"
+	color1=white
+	color2=yellow
+	color3=blue
+	colored_emblem={
+		color1=blue
+		color2=blue
+		texture="ce_rune_hagalaz.dds"
+		instance={
+			position={ 0.500000 0.480000 }
+			scale={ -1.000000 1.000000 }
+		}
 	}
 }

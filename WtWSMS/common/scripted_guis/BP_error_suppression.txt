@@ -97,6 +97,7 @@ bp_dummy = {
 		if = { limit = { exists = var:dante_alighieri var:dante_alighieri = flag:dante_alighieri } set_variable = { name = dante_alighieri value = flag:dante_alighieri } }
 		if = { limit = { exists = var:daun_penh var:daun_penh = flag:daun_penh } set_variable = { name = daun_penh value = flag:daun_penh } }
 		if = { limit = { exists = var:default_settled_tributary var:default_settled_tributary = flag:default_settled_tributary } set_variable = { name = default_settled_tributary value = flag:default_settled_tributary } }
+		if = { limit = { exists = var:default_tributary_nomadic var:default_tributary_nomadic = flag:default_tributary_nomadic } set_variable = { name = default_tributary_nomadic value = flag:default_tributary_nomadic } }
 		if = { limit = { exists = var:demetrios_kydones var:demetrios_kydones = flag:demetrios_kydones } set_variable = { name = demetrios_kydones value = flag:demetrios_kydones } }
 		if = { limit = { exists = var:descendants_of_brahman_legend var:descendants_of_brahman_legend = flag:descendants_of_brahman_legend } set_variable = { name = descendants_of_brahman_legend value = flag:descendants_of_brahman_legend } }
 		if = { limit = { exists = var:deterministic_conquest_of_england_1066 var:deterministic_conquest_of_england_1066 = flag:deterministic_conquest_of_england_1066 } set_variable = { name = deterministic_conquest_of_england_1066 value = flag:deterministic_conquest_of_england_1066 } }
@@ -119,6 +120,8 @@ bp_dummy = {
 		if = { limit = { exists = var:ezra var:ezra = flag:ezra } set_variable = { name = ezra value = flag:ezra } }
 		if = { limit = { exists = var:fan_zhongyan var:fan_zhongyan = flag:fan_zhongyan } set_variable = { name = fan_zhongyan value = flag:fan_zhongyan } }
 		if = { limit = { exists = var:fibonacci var:fibonacci = flag:fibonacci } set_variable = { name = fibonacci value = flag:fibonacci } }
+		if = { limit = { exists = var:fictional_holder var:fictional_holder = flag:fictional_holder } set_variable = { name = fictional_holder value = flag:fictional_holder } }
+		if = { limit = { exists = var:fictional_tribal var:fictional_tribal = flag:fictional_tribal } set_variable = { name = fictional_tribal value = flag:fictional_tribal } }
 		if = { limit = { exists = var:first_of_the_crusader_kings_achievement_flag var:first_of_the_crusader_kings_achievement_flag = flag:first_of_the_crusader_kings_achievement_flag } set_variable = { name = first_of_the_crusader_kings_achievement_flag value = flag:first_of_the_crusader_kings_achievement_flag } }
 		if = { limit = { exists = var:flag_restored_old_vasconia var:flag_restored_old_vasconia = flag:flag_restored_old_vasconia } set_variable = { name = flag_restored_old_vasconia value = flag:flag_restored_old_vasconia } }
 		if = { limit = { exists = var:flag_united_the_husamguk var:flag_united_the_husamguk = flag:flag_united_the_husamguk } set_variable = { name = flag_united_the_husamguk value = flag:flag_united_the_husamguk } }
@@ -178,11 +181,13 @@ bp_dummy = {
 		if = { limit = { exists = var:karunakara var:karunakara = flag:karunakara } set_variable = { name = karunakara value = flag:karunakara } }
 		if = { limit = { exists = var:kavindrarimathana var:kavindrarimathana = flag:kavindrarimathana } set_variable = { name = kavindrarimathana value = flag:kavindrarimathana } }
 		if = { limit = { exists = var:king_arthur_legend var:king_arthur_legend = flag:king_arthur_legend } set_variable = { name = king_arthur_legend value = flag:king_arthur_legend } }
+		if = { limit = { exists = var:kingdom_former var:zawisza = flag:kingdom_former } set_variable = { name = kingdom_former value = flag:kingdom_former } }
 		if = { limit = { exists = var:kings_of_semien_legend var:kings_of_semien_legend = flag:kings_of_semien_legend } set_variable = { name = kings_of_semien_legend value = flag:kings_of_semien_legend } }
 		if = { limit = { exists = var:kokan_shiren var:kokan_shiren = flag:kokan_shiren } set_variable = { name = kokan_shiren value = flag:kokan_shiren } }
 		if = { limit = { exists = var:kshemendra var:kshemendra = flag:kshemendra } set_variable = { name = kshemendra value = flag:kshemendra } }
 		if = { limit = { exists = var:kuturan var:kuturan = flag:kuturan } set_variable = { name = kuturan value = flag:kuturan } }
 		if = { limit = { exists = var:la_hire var:la_hire = flag:la_hire } set_variable = { name = la_hire value = flag:la_hire } }
+		if = { limit = { exists = var:large_divergence_chance var:large_divergence_chance = flag:large_divergence_chance } set_variable = { name = large_divergence_chance value = flag:large_divergence_chance } }
 		if = { limit = { exists = var:legendary_author var:legendary_author = flag:legendary_author } set_variable = { name = legendary_author value = flag:legendary_author } }
 		if = { limit = { exists = var:legendary_culture var:legendary_culture = flag:legendary_culture } set_variable = { name = legendary_culture value = flag:legendary_culture } }
 		if = { limit = { exists = var:li_qingzhao var:li_qingzhao = flag:li_qingzhao } set_variable = { name = li_qingzhao value = flag:li_qingzhao } }
@@ -274,6 +279,7 @@ bp_dummy = {
 		if = { limit = { exists = var:shinran var:shinran = flag:shinran } set_variable = { name = shinran value = flag:shinran } }
 		if = { limit = { exists = var:shota_rustaveli var:shota_rustaveli = flag:shota_rustaveli } set_variable = { name = shota_rustaveli value = flag:shota_rustaveli } }
 		if = { limit = { exists = var:skull_or_hide var:skull_or_hide = flag:skull_or_hide } set_variable = { name = skull_or_hide value = flag:skull_or_hide } }
+		if = { limit = { exists = var:small_divergence_chance var:small_divergence_chance = flag:small_divergence_chance } set_variable = { name = small_divergence_chance value = flag:small_divergence_chance } }
 		if = { limit = { exists = var:snorri_sturluson var:snorri_sturluson = flag:snorri_sturluson } set_variable = { name = snorri_sturluson value = flag:snorri_sturluson } }
 		if = { limit = { exists = var:sons_of_david_legend var:sons_of_david_legend = flag:sons_of_david_legend } set_variable = { name = sons_of_david_legend value = flag:sons_of_david_legend } }
 		if = { limit = { exists = var:sons_of_rurik_legend var:sons_of_rurik_legend = flag:sons_of_rurik_legend } set_variable = { name = sons_of_rurik_legend value = flag:sons_of_rurik_legend } }
