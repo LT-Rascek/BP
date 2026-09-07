@@ -303,13 +303,37 @@ BP_subroman_to_roman = {
 	}
 }
 
+# A title is lost by a character
+# root = the old holder
+# scope:title = the title that changes hands
+# scope:new_holder = new holder.
 on_title_lost = {
 	on_actions = {
 		BP_fall_of_rome
+		BP_completely_landless_realm
 	}
 }
 
-##### Generic Modifiers
+##### Generic On Actions
+
+BP_completely_landless_realm = {
+	trigger = {
+		is_independent_ruler = yes
+		government_allows = administrative
+		is_landed = no
+		trigger_if = {
+			limit = { any_vassal = { count > 0 } }
+			any_vassal_or_below = { count < 1 is_landed = yes primary_title.tier >= tier_county }
+		}
+	}
+	effect = {
+		if = {
+			limit = { any_vassal = { count > 0 } }
+			every_vassal_or_below = { every_held_title = { prev = { destroy_title = prev } } }
+		}
+		every_held_title = { prev = { destroy_title = prev } }
+	}
+}
 
 #Fires when Rome falls
 BP_fall_of_rome = {
