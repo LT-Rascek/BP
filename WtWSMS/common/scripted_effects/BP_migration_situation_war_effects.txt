@@ -263,10 +263,10 @@
 		}
 		scope:new_char = { becomes_independent = { change = scope:change_attacker_titles_vassals_independent } }
 	}
-	every_in_list = {
+	every_in_list = { #TODO: Generalize when we have multiple attackers
 		list = attacker_titles_to_liege
 		change_title_holder = {
-			holder = this.liege
+			holder = this.holder.liege
 			change = scope:change_attacker_titles_vassals_to_liege
 			take_baronies = yes
 		}
@@ -341,6 +341,18 @@
 	resolve_title_and_vassal_change = scope:change_attacker_titles_vassals_to_liege
 	resolve_title_and_vassal_change = scope:change_attacker_titles_vassals_independent
 	resolve_title_and_vassal_change = scope:change_defender_vassals_tributized
+	
+	#### Become Independent if you aren't already
+	if = {
+		limit = { $ATTACKER$ = { is_independent_ruler = no } }
+		create_title_and_vassal_change = {
+			type = independency
+			save_scope_as = attacker_becomes_independent
+			add_claim_on_loss = no
+		}
+		$ATTACKER$ = { becomes_independent = { change = scope:attacker_becomes_independent } }
+		resolve_title_and_vassal_change = scope:attacker_becomes_independent
+	}
 	
 	#### If you were in a confederation, your old holders join it
 	hidden_effect = {

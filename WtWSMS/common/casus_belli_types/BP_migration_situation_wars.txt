@@ -91,9 +91,10 @@ bp_migration_war_cb = {
 			limit = { scope:defender = { government_has_flag = government_is_centralized } }
 			scope:target = {
 				any_in_de_jure_hierarchy = {
-					count >= 1
+					count < 1
 					is_landless_type_title = no
-					this.tier = tier_county
+					this.tier = tier_duchy
+					NOT = { this.holder ?= { any_neighboring_realm_owner = { this = scope:attacker } } }
 					OR = {
 						this.holder = { government_has_flag = government_is_tribal }
 						this.holder = { government_has_flag = government_is_roman_federate }
@@ -446,9 +447,10 @@ bp_migration_war_duchy_cb = {
 			limit = { scope:defender = { government_has_flag = government_is_centralized } }
 			scope:target = {
 				any_in_de_jure_hierarchy = {
-					count >= 1
+					count < 1
 					is_landless_type_title = no
 					this.tier = tier_county
+					NOT = { this.holder ?= { any_neighboring_realm_owner = { this = scope:attacker } } }
 					OR = {
 						this.holder = { government_has_flag = government_is_tribal }
 						this.holder = { government_has_flag = government_is_roman_federate }
