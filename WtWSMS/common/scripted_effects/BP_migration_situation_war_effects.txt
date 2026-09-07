@@ -1,4 +1,5 @@
-﻿migration_cb_title_and_modifier_application_effect = {
+﻿#TODO: Character creation needs to change location to be IN THE COUNTY, not the leaders location
+migration_cb_title_and_modifier_application_effect = {
 	#Abandon your confederation if you have one, to make things simple
 	if = {
 		limit = { $ATTACKER$ = { is_confederation_member = yes } }
@@ -265,11 +266,38 @@
 	}
 	every_in_list = { #TODO: Generalize when we have multiple attackers
 		list = attacker_titles_to_liege
+		
+		create_character = {
+			location = scope:war_leader.location
+			culture = this.culture
+			faith = this.faith
+			gender_female_chance = {
+				if = {
+					limit = { this.faith = { has_doctrine = doctrine_gender_male_dominated } }
+					value = 0
+				}
+				else_if = {
+					limit = { this.faith = { has_doctrine = doctrine_gender_female_dominated } }
+					value = 100
+				}
+				else = { value = 50 }
+			}
+			trait = peasant_leader
+			save_scope_as = new_char
+			after_creation = {
+				add_trait_xp = {
+					trait = peasant_leader
+					value = { 10 90 }
+				}
+			}
+		}
+		scope:new_char = { add_to_list = new_holders }
 		change_title_holder = {
-			holder = this.holder.liege
+			holder = scope:new_char
 			change = scope:change_attacker_titles_vassals_to_liege
 			take_baronies = yes
 		}
+		scope:new_char = { add_to_list = attacker_handed_off_vassals }
 	}
 	
 	#### Handle attacker vassals
@@ -279,7 +307,7 @@
 	}
 	every_in_list = {
 		list = attacker_handed_off_vassals
-		change_liege = { liege = this.liege.liege change = scope:change_attacker_titles_vassals_to_liege }
+		change_liege = { liege = $ATTACKER$.liege change = scope:change_attacker_titles_vassals_to_liege }
 	}
 	
 	#### Take Defender Titles
