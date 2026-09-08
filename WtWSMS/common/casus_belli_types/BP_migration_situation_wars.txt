@@ -28,7 +28,6 @@ bp_migration_war_cb = {
 	}
 
 	allowed_for_character_display_regardless = {
-		this.prestige_level > this.migration_war_required_fame_level
 		custom_description = {
 			text = has_launched_migration_war_recently
 			NOT = { has_character_flag = launched_migration_war_recently }
@@ -53,7 +52,7 @@ bp_migration_war_cb = {
 		}
 	}
 	
-	target_titles = neighbor_land_or_water
+	target_titles = all
 	target_title_tier = kingdom
 	target_de_jure_regions_above = yes
 	ignore_effect = change_title_holder
@@ -72,12 +71,7 @@ bp_migration_war_cb = {
 	}
 
 	valid_to_start = {
-		scope:target = {
-			any_in_de_jure_hierarchy = {
-				tier = tier_county
-				neighboring_county_or_viking_conquest_trigger = { CHARACTER = root }
-			}
-		}
+		bp_migration_war_distace_tier_logic_trigger = yes
 		#Can't multi-migrate
 		NOT = { scope:attacker = { any_character_war = { using_cb = bp_migration_war_cb } } }
 		
@@ -85,22 +79,6 @@ bp_migration_war_cb = {
 		target_title_not_in_great_steppe_trigger = {
 			TARGET_TITLE = scope:target
 			TIER = kingdom
-		}
-		#If the government is centralized, can't be a giant blob of Tribals (need to conquer instead)
-		trigger_if = {
-			limit = { scope:defender = { government_has_flag = government_is_centralized } }
-			scope:target = {
-				any_in_de_jure_hierarchy = {
-					count < 1
-					is_landless_type_title = no
-					this.tier = tier_duchy
-					NOT = { this.holder ?= { any_neighboring_realm_owner = { this = scope:attacker } } }
-					OR = {
-						this.holder = { government_has_flag = government_is_tribal }
-						this.holder = { government_has_flag = government_is_roman_federate }
-					}
-				}
-			}
 		}
 	}
 
@@ -384,7 +362,6 @@ bp_migration_war_duchy_cb = {
 	}
 
 	allowed_for_character_display_regardless = {
-		this.prestige_level > this.minor_migration_war_required_fame_level
 		custom_description = {
 			text = has_launched_migration_war_recently
 			NOT = { has_character_flag = launched_migration_war_recently }
@@ -441,22 +418,6 @@ bp_migration_war_duchy_cb = {
 		target_title_not_in_great_steppe_trigger = {
 			TARGET_TITLE = scope:target
 			TIER = kingdom
-		}
-		#If the government is centralized, can't be a giant blob of Tribals (need to conquer instead)
-		trigger_if = {
-			limit = { scope:defender = { government_has_flag = government_is_centralized } }
-			scope:target = {
-				any_in_de_jure_hierarchy = {
-					count < 1
-					is_landless_type_title = no
-					this.tier = tier_county
-					NOT = { this.holder ?= { any_neighboring_realm_owner = { this = scope:attacker } } }
-					OR = {
-						this.holder = { government_has_flag = government_is_tribal }
-						this.holder = { government_has_flag = government_is_roman_federate }
-					}
-				}
-			}
 		}
 	}
 
