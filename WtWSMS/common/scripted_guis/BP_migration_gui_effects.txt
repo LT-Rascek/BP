@@ -23,7 +23,17 @@
 		exists = global_var:custom_map_mode
 		global_var:custom_map_mode = flag:migration_in_range_map
 	}
-	is_valid = { NOT = { exists = global_var:custom_map_mode_changing } }
+	is_valid = {
+		NOT = { exists = global_var:custom_map_mode_changing }
+		trigger_if = {
+			limit = { exists = root }
+			root = { save_temporary_scope_as = the_character }
+			general_situation_regional_parameter_trigger = {
+				CHARACTER = scope:the_character
+				PARAMETER = migration_cbs_enabled
+			}
+		}
+	}
 }
 migration_in_range_to_be_migrated_effect = {
 	effect = {

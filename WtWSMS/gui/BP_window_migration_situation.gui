@@ -578,6 +578,8 @@ window = {
 					layoutpolicy_horizontal = expanding
 					layoutpolicy_vertical = expanding
 					
+					datacontext = "[SituationWindow.GetSituation]"
+					
 					text_label_center = {
 						layoutpolicy_horizontal = expanding
 						text = "MIGRATION_MAP_INTERFACE"
@@ -1159,7 +1161,7 @@ types MigrationSituationTypes
 					layoutpolicy_horizontal = expanding
 
 					block "button_text" {
-						text = "BLAH"
+						text = "BLANK"
 					}
 					default_format = "#clickable"
 					align = vcenter|hcenter
@@ -1183,7 +1185,7 @@ types MigrationSituationTypes
 
 			onclick = "[SetMapMode('migration_in_range_map_mode')]"
 			onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
-			enabled = "[GetScriptedGui('migration_in_range_effect').IsValid(GuiScope.End)]"
+			enabled = "[GetScriptedGui('migration_in_range_effect').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 
 			tooltip = "migration_in_range_tooltip"
 			using = tooltip_ws
