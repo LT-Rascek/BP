@@ -591,9 +591,9 @@ become_tributary_interaction = {
 		trigger_if = {
 			limit = {
 				OR = {
-					scope:recipient = { primary_title = h_china }
-					scope:recipient = { primary_title = h_dar_al_islam }
-					scope:recipient = { primary_title = h_india }
+					scope:recipient = { primary_title = title:h_china }
+					scope:recipient = { primary_title = title:h_dar_al_islam }
+					scope:recipient = { primary_title = title:h_india }
 				}
 			}
 			custom_tooltip = {
