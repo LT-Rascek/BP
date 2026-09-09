@@ -94,7 +94,7 @@ bp_migration_war_distace_tier_logic_trigger = {
 		scope:target = {
 			any_in_de_jure_hierarchy = {
 				tier = tier_county
-				any_neighboring_county = {
+				any_title_to_title_neighboring_and_across_water_county = {
 					holder = { target_is_same_character_or_above = root }
 				}
 			}

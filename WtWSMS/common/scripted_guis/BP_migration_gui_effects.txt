@@ -1,0 +1,55 @@
+﻿migration_in_range_effect = {
+	effect = {
+		root = { save_temporary_scope_as = the_character }
+		set_global_variable = { name = custom_map_mode_changing value = 1 }
+		set_global_variable = { name = custom_map_mode value = flag:migration_in_range_map }
+		
+		every_county = {
+			limit = { is_landless_type_title = no }
+			save_temporary_scope_as = target
+			if = {
+				limit = {
+					scope:the_character ?= { bp_migration_war_distace_tier_logic_gui_trigger = yes }
+				}
+				every_county_province = { barony = { set_title_color = { 50 50 249 } } }
+			}
+			else = {
+				every_county_province = { barony = { set_title_color = { 84 78 60 } } }
+			}
+		}
+		remove_global_variable = custom_map_mode_changing
+	}
+	is_shown = {
+		exists = global_var:custom_map_mode
+		global_var:custom_map_mode = flag:migration_in_range_map
+	}
+	is_valid = { NOT = { exists = global_var:custom_map_mode_changing } }
+}
+migration_in_range_to_be_migrated_effect = {
+	effect = {
+		root = { save_temporary_scope_as = the_player }
+		set_global_variable = { name = custom_map_mode_changing value = 1 }
+		set_global_variable = { name = custom_map_mode value = flag:migration_in_range_map }
+		
+		every_county = {
+			limit = { is_landless_type_title = no }
+			this.holder = { save_temporary_scope_as = the_holder }
+			
+			if = {
+				limit = {
+					scope:the_holder ?= { bp_migration_war_can_be_targeted_logic_gui_trigger = yes }
+				}
+				every_county_province = { barony = { set_title_color = { 249 50 50 } } }
+			}
+			else = {
+				every_county_province = { barony = { set_title_color = { 84 78 60 } } }
+			}
+		}
+		remove_global_variable = custom_map_mode_changing
+	}
+	is_shown = {
+		exists = global_var:custom_map_mode
+		global_var:custom_map_mode = flag:migration_in_range_map
+	}
+	is_valid = { NOT = { exists = global_var:custom_map_mode_changing } }
+}
