@@ -1,0 +1,23 @@
+﻿bathouism = {
+	name = bathouism
+	desc = bathouism_desc
+	faith = bathouism
+
+	color = { 38 63 125 }
+
+	tenet_selection_pair = {
+		requires_dlc_flag = all_under_heaven
+		doctrine = tenet_cranial_trophies
+		fallback_tenet = tenet_human_sacrifice #WtWSMS feature
+	}
+
+	tenets = {
+		tenet_ethnic_religion
+		tenet_sanctity_of_nature
+		tenet_inner_journey
+	}
+
+	doctrines = {
+		unreformed_faith_doctrine
+	}
+}

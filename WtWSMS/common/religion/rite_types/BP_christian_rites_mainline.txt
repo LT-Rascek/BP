@@ -1,0 +1,258 @@
+﻿arian = {
+	name = arian
+	desc = arian_desc
+	faith = arian
+
+	color = { 0.65 0.65 0.37 }
+	icon = testeo
+
+	tenet_selection_pair = {
+		requires_dlc_flag = by_god_alone
+		tenet = tenet_acts_of_apostles
+		fallback_tenet = tenet_mendicant_preachers
+	}
+	tenet_selection_pair = {
+		requires_dlc_flag = by_god_alone
+		tenet = tenet_divine_liturgy
+		fallback_tenet = tenet_communion
+	}
+
+	tenets = {
+		tenet_arianism
+	}
+	
+	doctrines = {
+		doctrine_christian_liturgical_rite_latin
+		special_doctrine_arian_ecumenism
+	}
+}
+montanism = {
+	name = montanism
+	desc = montanism_desc
+	faith = montanism
+
+	color = {0.5 0.0 0.1}
+	icon = mfi_peace
+
+	tenets = {
+		tenet_ecstatic_prophecy
+		tenet_asceticism
+		tenet_rigorism
+	}
+	
+	doctrines = {
+		doctrine_gender_equal
+		doctrine_no_head
+		doctrine_theocracy_lay_clergy
+		#Marriage
+		doctrine_divorce_disallowed
+		#Crimes
+		doctrine_homosexuality_crime
+		doctrine_adultery_men_crime
+		#Clergy
+		doctrine_clerical_function_alms_and_pacification
+		doctrine_clerical_gender_either
+		#Monasticism
+		doctrine_monasticism_forbidden
+		#Others
+		doctrine_no_anointment
+	}
+}
+donatism = {
+	name = donatism
+	desc = donatism_desc
+	faith = donatism
+
+	color = { 0.65 0.65 0.37 }
+	icon = chirho
+
+	tenets = {
+		tenet_redeeming_struggle
+		tenet_communal_identity
+		tenet_rigorism
+	}
+	
+	doctrines = {
+		doctrine_pluralism_fundamentalist
+		#Crimes
+		doctrine_homosexuality_crime
+		doctrine_kinslaying_any_dynasty_member_crime
+		doctrine_adultery_men_crime
+		#Clergy
+		doctrine_clerical_function_recruitment
+		#Others
+		doctrine_christian_liturgical_rite_african_rite
+	}
+}
+pneumatomachianism = {
+	name = pneumatomachianism
+	desc = pneumatomachianism_desc
+	faith = pneumatomachianism
+
+	color = {0.1 0.1 0.1}
+	icon = pneumatomachian
+
+	tenet_selection_pair = {
+		requires_dlc_flag = by_god_alone
+		tenet = tenet_celestial_hierarchy
+		fallback_tenet = tenet_pentarchy
+	}
+
+	tenets = {
+		tenet_communion
+		tenet_anomoeanism
+	}
+
+	doctrines = {
+		doctrine_pluralism_fundamentalist
+		doctrine_christian_liturgical_rite_greek
+	}
+}
+melchisdechianism = {
+	name = melchisdechianism
+	desc = melchisdechianism_desc
+	faith = melchisdechianism
+
+	color = {1.0 0.5 0.7}
+	icon = mfi_cross
+
+	tenets = {
+		tenet_gnosticism
+		tenet_pacifism
+		tenet_esotericism
+	}
+
+	doctrines = {
+		doctrine_theocracy_lay_clergy
+		doctrine_temporal_head
+		doctrine_clerical_succession_temporal_fixed_appointment
+		#Crimes
+		doctrine_adultery_men_crime
+		doctrine_witchcraft_accepted
+	}
+}
+marcionism = {
+	name = marcionism
+	desc = marcionism_desc
+	faith = marcionism
+
+	color = { 0.7 0.1 0.4 }
+	icon = fic_alt_christianity_cross
+
+	tenets = {
+		tenet_gnosticism
+		tenet_literalism
+		tenet_rigorism
+	}
+	
+	doctrines = {
+		doctrine_pluralism_fundamentalist
+	}
+}
+priscillianism = {
+	name = priscillianism
+	desc = priscillianism_desc
+	faith = priscillianism
+
+	color = { 0.3 0.6 0.2 }
+	icon = fic_alt_christianity_cross
+
+	tenets = {
+		tenet_gnosticism
+		tenet_astrology
+		tenet_complex_exegesis
+	}
+	
+	doctrines = {
+		doctrine_pluralism_fundamentalist
+		doctrine_clerical_function_recruitment
+		doctrine_ritual_vegetarianism_required
+	}
+}
+audianism = {
+	name = audianism
+	desc = audianism_desc
+	faith = audianism
+
+	color = {0.45 0.85 1.0}
+	icon = mfi_cross
+
+	tenets = {
+		tenet_jewish_syncretism
+		tenet_literalism
+		tenet_pastoral_isolation
+	}
+
+	doctrines = {
+		doctrine_no_head
+		#Crimes (based on Partisan sources, but it gives flavor)
+		doctrine_adultery_men_accepted
+		doctrine_adultery_women_accepted
+		#Clerical Function
+		doctrine_clerical_function_alms_and_pacification
+		#Others
+		doctrine_no_anointment
+	}
+}
+nazerene = {
+	name = nazerene
+	desc = nazerene_desc
+	faith = nazerene
+
+	color = { 0.4 0.5 0.8 }
+	icon = mfi_cross
+
+	tenets = {
+		tenet_jewish_syncretism
+		tenet_communal_identity
+		tenet_pastoral_isolation
+	}
+	
+	doctrines = {
+		doctrine_no_head
+		doctrine_pluralism_pluralistic
+		doctrine_theocracy_lay_clergy
+		#Clerical Function
+		doctrine_clerical_function_alms_and_pacification
+		doctrine_clerical_marriage_allowed
+		doctrine_clerical_succession_temporal_fixed_appointment
+		#Others
+		doctrine_no_anointment
+	}
+}
+pelagianism = {
+	name = pelagianism
+	desc = pelagianism_desc
+	faith = pelagianism
+
+	color = { 0.5 0.9 0.55 }
+	icon = mfi_cross
+
+	tenets = {
+		tenet_pelagianism
+		tenet_religious_legal_pronouncements
+		tenet_vows_of_poverty
+	}
+
+	doctrines = {
+		#Marriage
+		doctrine_divorce_approval
+		#Crimes
+		doctrine_kinslaying_any_dynasty_member_crime
+		#Clerical Function
+		doctrine_clerical_function_alms_and_pacification
+		doctrine_clerical_succession_spiritual_fixed_appointment
+		doctrine_clerical_marriage_allowed
+		#Others
+		doctrine_no_anointment
+	}
+}
+
+
+
+
+
+
+
+
+

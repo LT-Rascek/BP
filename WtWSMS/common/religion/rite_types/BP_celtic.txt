@@ -1,0 +1,23 @@
+﻿celtic_pagan = {
+	name = celtic_pagan
+	desc = celtic_pagan_desc
+	faith = celtic_pagan
+
+	color = briton
+
+	tenet_selection_pair = {
+		requires_dlc_flag = all_under_heaven
+		doctrine = tenet_cranial_trophies
+		fallback_tenet = tenet_human_sacrifice #WtWSMS feature
+	}
+
+	tenets = {
+		tenet_warmonger #Matches WtWSMS war traits
+		tenet_sanctity_of_nature
+	}
+	
+	doctrines = {
+		special_doctrine_runestones
+		unreformed_faith_doctrine
+	}
+}

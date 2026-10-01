@@ -1,0 +1,58 @@
+﻿munda_pagan = {
+	name = munda_pagan
+	desc = munda_pagan_desc
+	faith = munda_pagan
+
+	color = { 0.23 0.5 0.11 }
+
+	tenets = {
+		tenet_ethnic_religion
+		tenet_ancestor_worship
+		tenet_sanctity_of_nature
+	}
+	
+	doctrines = {
+		unreformed_faith_doctrine
+	}
+}
+gondi_pagan = {
+	name = gondi_pagan
+	desc = gondi_pagan_desc
+	faith = gondi_pagan
+
+	color = { 0.20 0.75 0.50 }
+
+	tenets = {
+		tenet_ethnic_religion
+		tenet_pacifism
+		tenet_sanctity_of_nature
+	}
+	
+	doctrines = {
+		unreformed_faith_doctrine
+	}
+}
+dravidian_pagan = {
+	name = dravidian_pagan
+	desc = dravidian_pagan_desc
+	faith = dravidian_pagan
+
+	color = { 0.15 0.40 0.15 }
+
+	tenets = {
+		tenet_adorcism #Spirit possession of women
+		tenet_adaptive #Evolved into Srikula Shaktism
+		tenet_ancestor_worship #Holy Kingship + Hero Worship
+	}
+	
+	doctrines = {
+		unreformed_faith_doctrine
+		
+		doctrine_gender_equal
+		doctrine_right_to_rule_rajadharma
+		special_doctrine_runestones #WtWSMS feature; only finding evidence in the south
+		doctrine_clerical_gender_either
+		doctrine_ritual_vegetarianism_partial
+		#NB: eventually moves into the Shaktism faith category
+	}
+}
