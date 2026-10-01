@@ -1,0 +1,373 @@
+﻿coptic_rite = {
+	name = coptic_rite
+	desc = coptic_rite_desc
+	founder = d_et_alexandria
+	faith = miaphysitism
+
+	color = { 0.20 0.35 0.50 }
+	icon = armenian
+
+	tenet_selection_pair = {
+		requires_dlc_flag = by_god_alone
+		tenet = tenet_miaphysitism
+		fallback_tenet = tenet_asceticism
+	}
+	tenet_selection_pair = {
+		requires_dlc_flag = by_god_alone
+		tenet = tenet_holy_myron
+		fallback_tenet = tenet_ritual_celebrations
+	}
+	tenets = {
+		tenet_communal_identity
+	}
+
+	doctrines = {
+		doctrine_pluralism_pluralistic
+		doctrine_monasticism_encouraged
+		doctrine_christian_liturgical_rite_alexandrian_rite
+	}
+
+	# Utilizes the 'East Christian' Saints, shared by Coptics and Armenians
+	localization = {
+		#HealthGod
+		HealthGodName = east_christian_health_god_name
+		HealthGodNamePossessive = east_christian_health_god_name_possessive
+		HealthGodSheHe = CHARACTER_SHEHE_HE
+		HealthGodHerHis = CHARACTER_HERHIS_HIS
+		HealthGodHerHim = CHARACTER_HERHIM_HIM
+
+		#FertilityGod
+		FertilityGodName = east_christian_fertility_god_name
+		FertilityGodNamePossessive = east_christian_fertility_god_name_possessive
+		FertilityGodSheHe = CHARACTER_SHEHE_SHE
+		FertilityGodHerHis = CHARACTER_HERHIS_HER
+		FertilityGodHerHim = CHARACTER_HERHIM_HER
+
+		#WealthGod
+		WealthGodName = east_christian_wealth_god_name
+		WealthGodNamePossessive = east_christian_wealth_god_name_possessive
+		WealthGodSheHe = CHARACTER_SHEHE_HE
+		WealthGodHerHis = CHARACTER_HERHIS_HIS
+		WealthGodHerHim = CHARACTER_HERHIM_HIM
+
+		#HouseholdGod
+		HouseholdGodName = east_christian_household_god_name
+		HouseholdGodNamePossessive = east_christian_household_god_name_possessive
+		HouseholdGodSheHe = CHARACTER_SHEHE_HE
+		HouseholdGodHerHis = CHARACTER_HERHIS_HIS
+		HouseholdGodHerHim = CHARACTER_HERHIM_HIM
+
+		#KnowledgeGod
+		KnowledgeGodName = east_christian_knowledge_god_name
+		KnowledgeGodNamePossessive = east_christian_knowledge_god_name_possessive
+		KnowledgeGodSheHe = CHARACTER_SHEHE_HE
+		KnowledgeGodHerHis = CHARACTER_HERHIS_HIS
+		KnowledgeGodHerHim = CHARACTER_HERHIM_HIM
+
+		#WarGod
+		WarGodName = east_christian_war_god_name
+		WarGodNamePossessive = east_christian_war_god_name_possessive
+		WarGodSheHe = CHARACTER_SHEHE_HE
+		WarGodHerHis = CHARACTER_HERHIS_HIS
+		WarGodHerHim = CHARACTER_HERHIM_HIM
+
+		#Popes despite lacking rank
+		ReligiousHeadName = coptic_religious_head_title
+		ReligiousHeadNameFemale = coptic_religious_head_title_female
+		ReligiousHeadTitleName = coptic_religious_head_title_name
+	}
+}
+antiochian_rite = {
+	name = antiochian_rite
+	desc = antiochian_rite_desc
+	founder = d_et_antioch
+	faith = miaphysitism
+
+	color = {0.5 0.25 1.00}
+	icon = christianity_maronite_cross_04
+
+	tenet_selection_pair = {
+		requires_dlc_flag = by_god_alone
+		tenet = tenet_miaphysitism
+		fallback_tenet = tenet_asceticism
+	}
+	tenet_selection_pair = {
+		requires_dlc_flag = by_god_alone
+		tenet = tenet_anachoresis
+		fallback_tenet = tenet_communal_identity
+	}
+	tenet_selection_pair = {
+		requires_dlc_flag = by_god_alone
+		#Myron consecration is a distinctive Syriac Orthodox practice
+		tenet = tenet_holy_myron
+		fallback_tenet = tenet_adaptive
+	}
+
+	doctrines = {
+		doctrine_clerical_marriage_allowed
+		doctrine_monasticism_encouraged
+		doctrine_christian_liturgical_rite_west_syriac_rite
+	}
+}
+ethiopian_rite = {
+	name = ethiopian_rite
+	desc = ethiopian_rite_desc
+	founder = d_et_axum
+	faith = miaphysitism
+
+	color = { 0.9 0.2 0.5 }
+	icon = christianity_ansata_cross_05
+
+	tenet_selection_pair = {
+		requires_dlc_flag = by_god_alone
+		tenet = tenet_miaphysitism
+		fallback_tenet = tenet_communal_identity
+	}
+	# The Meron and its consecration by the Abuna are a distinctively Ethiopian tradition.
+	tenet_selection_pair = {
+		requires_dlc_flag = by_god_alone
+		tenet = tenet_holy_myron
+		fallback_tenet = tenet_ritual_celebrations
+	}
+	tenet_selection_pair = {
+		requires_dlc_flag = by_god_alone
+		tenet = tenet_anachoresis
+		fallback_tenet = tenet_asceticism
+	}
+
+	doctrines = {
+		doctrine_pluralism_pluralistic
+		doctrine_monasticism_encouraged
+		doctrine_christian_liturgical_rite_ethiopian_rite
+	}
+}
+armenian_rite = {
+	name = armenian_rite
+	desc = armenian_rite_desc
+	icon = christianity_armenian
+	founder = d_et_armenia
+	faith = miaphysitism
+
+	color = { 0.8 0.4 0.1 }
+
+	tenets = {
+		tenet_communal_identity
+	}
+	tenet_selection_pair = {
+		requires_dlc_flag = by_god_alone
+		tenet = tenet_khachkar
+		fallback_tenet = tenet_communion
+	}
+	tenet_selection_pair = {
+		requires_dlc_flag = by_god_alone
+		tenet = tenet_miaphysitism
+		fallback_tenet = tenet_asceticism
+	}
+
+	doctrines = {
+		doctrine_clerical_marriage_allowed
+		doctrine_christian_liturgical_rite_armenian_rite
+	}
+
+	# Utilizes the 'East Christian' Saints, shared by Coptics and Armenians
+	localization = {
+		#HealthGod
+		HealthGodName = east_christian_health_god_name
+		HealthGodNamePossessive = east_christian_health_god_name_possessive
+		HealthGodSheHe = CHARACTER_SHEHE_HE
+		HealthGodHerHis = CHARACTER_HERHIS_HIS
+		HealthGodHerHim = CHARACTER_HERHIM_HIM
+
+		#FertilityGod
+		FertilityGodName = east_christian_fertility_god_name
+		FertilityGodNamePossessive = east_christian_fertility_god_name_possessive
+		FertilityGodSheHe = CHARACTER_SHEHE_SHE
+		FertilityGodHerHis = CHARACTER_HERHIS_HER
+		FertilityGodHerHim = CHARACTER_HERHIM_HER
+
+		#WealthGod
+		WealthGodName = east_christian_wealth_god_name
+		WealthGodNamePossessive = east_christian_wealth_god_name_possessive
+		WealthGodSheHe = CHARACTER_SHEHE_HE
+		WealthGodHerHis = CHARACTER_HERHIS_HIS
+		WealthGodHerHim = CHARACTER_HERHIM_HIM
+
+		#HouseholdGod
+		HouseholdGodName = east_christian_household_god_name
+		HouseholdGodNamePossessive = east_christian_household_god_name_possessive
+		HouseholdGodSheHe = CHARACTER_SHEHE_HE
+		HouseholdGodHerHis = CHARACTER_HERHIS_HIS
+		HouseholdGodHerHim = CHARACTER_HERHIM_HIM
+
+		#KnowledgeGod
+		KnowledgeGodName = east_christian_knowledge_god_name
+		KnowledgeGodNamePossessive = east_christian_knowledge_god_name_possessive
+		KnowledgeGodSheHe = CHARACTER_SHEHE_HE
+		KnowledgeGodHerHis = CHARACTER_HERHIS_HIS
+		KnowledgeGodHerHim = CHARACTER_HERHIM_HIM
+
+		#WarGod
+		WarGodName = east_christian_war_god_name
+		WarGodNamePossessive = east_christian_war_god_name_possessive
+		WarGodSheHe = CHARACTER_SHEHE_HE
+		WarGodHerHis = CHARACTER_HERHIS_HIS
+		WarGodHerHim = CHARACTER_HERHIM_HIM
+
+		#Catholicoi instead of Popes
+		ReligiousHeadName = apostolic_religious_head_title
+		ReligiousHeadNameFemale = apostolic_religious_head_title
+		ReligiousHeadTitleName = apostolic_religious_head_title_name
+	}
+}
+albanian_apostolic = {
+	name = albanian_apostolic
+	desc = albanian_apostolic_desc
+	icon = christianity_armenian
+	founder = d_et_armenia
+	faith = miaphysitism
+
+	color = { 0.8 0.4 0.1 }
+
+	tenets = {
+		tenet_dyophysitism
+		tenet_mendicant_preachers
+	}
+	tenet_selection_pair = {
+		requires_dlc_flag = by_god_alone
+		tenet = tenet_khachkar
+		fallback_tenet = tenet_communion
+	}
+
+	doctrines = {
+		doctrine_clerical_marriage_allowed
+		doctrine_christian_liturgical_rite_armenian_rite
+	}
+
+	# Utilizes the 'East Christian' Saints, shared by Coptics and Armenians
+	localization = {
+		#HealthGod
+		HealthGodName = east_christian_health_god_name
+		HealthGodNamePossessive = east_christian_health_god_name_possessive
+		HealthGodSheHe = CHARACTER_SHEHE_HE
+		HealthGodHerHis = CHARACTER_HERHIS_HIS
+		HealthGodHerHim = CHARACTER_HERHIM_HIM
+
+		#FertilityGod
+		FertilityGodName = east_christian_fertility_god_name
+		FertilityGodNamePossessive = east_christian_fertility_god_name_possessive
+		FertilityGodSheHe = CHARACTER_SHEHE_SHE
+		FertilityGodHerHis = CHARACTER_HERHIS_HER
+		FertilityGodHerHim = CHARACTER_HERHIM_HER
+
+		#WealthGod
+		WealthGodName = east_christian_wealth_god_name
+		WealthGodNamePossessive = east_christian_wealth_god_name_possessive
+		WealthGodSheHe = CHARACTER_SHEHE_HE
+		WealthGodHerHis = CHARACTER_HERHIS_HIS
+		WealthGodHerHim = CHARACTER_HERHIM_HIM
+
+		#HouseholdGod
+		HouseholdGodName = east_christian_household_god_name
+		HouseholdGodNamePossessive = east_christian_household_god_name_possessive
+		HouseholdGodSheHe = CHARACTER_SHEHE_HE
+		HouseholdGodHerHis = CHARACTER_HERHIS_HIS
+		HouseholdGodHerHim = CHARACTER_HERHIM_HIM
+
+		#KnowledgeGod
+		KnowledgeGodName = east_christian_knowledge_god_name
+		KnowledgeGodNamePossessive = east_christian_knowledge_god_name_possessive
+		KnowledgeGodSheHe = CHARACTER_SHEHE_HE
+		KnowledgeGodHerHis = CHARACTER_HERHIS_HIS
+		KnowledgeGodHerHim = CHARACTER_HERHIM_HIM
+
+		#WarGod
+		WarGodName = east_christian_war_god_name
+		WarGodNamePossessive = east_christian_war_god_name_possessive
+		WarGodSheHe = CHARACTER_SHEHE_HE
+		WarGodHerHis = CHARACTER_HERHIS_HIS
+		WarGodHerHim = CHARACTER_HERHIM_HIM
+
+		#Catholicoi instead of Popes
+		ReligiousHeadName = apostolic_religious_head_title
+		ReligiousHeadNameFemale = apostolic_religious_head_title
+		ReligiousHeadTitleName = apostolic_religious_head_title_name
+	}
+}
+georgian_orthodox = {
+	name = georgian_orthodox
+	desc = georgian_orthodox_desc
+	icon = grapevine_cross
+	founder = d_et_armenia #TODO: FIXME
+	faith = miaphysitism
+
+	color = { 0.8 0.4 0.1 }
+
+	tenets = {
+		tenet_communal_identity
+	}
+	tenet_selection_pair = {
+		requires_dlc_flag = by_god_alone
+		tenet = tenet_khachkar
+		fallback_tenet = tenet_communion
+	}
+	tenet_selection_pair = {
+		requires_dlc_flag = by_god_alone
+		tenet = tenet_miaphysitism
+		fallback_tenet = tenet_asceticism
+	}
+
+	doctrines = {
+		doctrine_clerical_marriage_allowed
+		doctrine_pluralism_pluralistic
+	}
+
+	# Utilizes the 'East Christian' Saints, shared by Coptics and Armenians
+	localization = {
+		#HealthGod
+		HealthGodName = east_christian_health_god_name
+		HealthGodNamePossessive = east_christian_health_god_name_possessive
+		HealthGodSheHe = CHARACTER_SHEHE_HE
+		HealthGodHerHis = CHARACTER_HERHIS_HIS
+		HealthGodHerHim = CHARACTER_HERHIM_HIM
+
+		#FertilityGod
+		FertilityGodName = east_christian_fertility_god_name
+		FertilityGodNamePossessive = east_christian_fertility_god_name_possessive
+		FertilityGodSheHe = CHARACTER_SHEHE_SHE
+		FertilityGodHerHis = CHARACTER_HERHIS_HER
+		FertilityGodHerHim = CHARACTER_HERHIM_HER
+
+		#WealthGod
+		WealthGodName = east_christian_wealth_god_name
+		WealthGodNamePossessive = east_christian_wealth_god_name_possessive
+		WealthGodSheHe = CHARACTER_SHEHE_HE
+		WealthGodHerHis = CHARACTER_HERHIS_HIS
+		WealthGodHerHim = CHARACTER_HERHIM_HIM
+
+		#HouseholdGod
+		HouseholdGodName = east_christian_household_god_name
+		HouseholdGodNamePossessive = east_christian_household_god_name_possessive
+		HouseholdGodSheHe = CHARACTER_SHEHE_HE
+		HouseholdGodHerHis = CHARACTER_HERHIS_HIS
+		HouseholdGodHerHim = CHARACTER_HERHIM_HIM
+
+		#KnowledgeGod
+		KnowledgeGodName = east_christian_knowledge_god_name
+		KnowledgeGodNamePossessive = east_christian_knowledge_god_name_possessive
+		KnowledgeGodSheHe = CHARACTER_SHEHE_HE
+		KnowledgeGodHerHis = CHARACTER_HERHIS_HIS
+		KnowledgeGodHerHim = CHARACTER_HERHIM_HIM
+
+		#WarGod
+		WarGodName = east_christian_war_god_name
+		WarGodNamePossessive = east_christian_war_god_name_possessive
+		WarGodSheHe = CHARACTER_SHEHE_HE
+		WarGodHerHis = CHARACTER_HERHIS_HIS
+		WarGodHerHim = CHARACTER_HERHIM_HIM
+
+		#Catholicoi instead of Popes
+		ReligiousHeadName = apostolic_religious_head_title
+		ReligiousHeadNameFemale = apostolic_religious_head_title
+		ReligiousHeadTitleName = apostolic_religious_head_title_name
+	}
+}

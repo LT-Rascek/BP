@@ -1,0 +1,27 @@
+﻿roman_arian_rite = {
+	name = assyrian_rite
+	desc = assyrian_rite_desc
+	icon = testeo
+	faith = arian_faith
+
+	color = { 0.8 0.4 0.1 }
+
+	tenet_selection_pair = {
+		requires_dlc_flag = by_god_alone
+		tenet = tenet_acts_of_apostles
+		fallback_tenet = tenet_mendicant_preachers
+	}
+	tenet_selection_pair = {
+		requires_dlc_flag = by_god_alone
+		tenet = tenet_divine_liturgy
+		fallback_tenet = tenet_communion
+	}
+
+	tenets = {
+		tenet_arianism
+	}
+
+	doctrines = {
+		doctrine_christian_liturgical_rite_latin
+	}
+}

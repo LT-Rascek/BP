@@ -1,0 +1,397 @@
+﻿greco_roman_faith = {
+	main_rite = hellenic_pagan #TODO: FIXME
+	faith_details = {
+		religion = hellenism_religion
+		color = { 0.5 0.5 1.0 }
+		icon = mfi_chaplet_1
+	}
+
+	eminent_holy_sites = {
+		rome
+		athens
+		mt_olympus
+	}
+
+	holy_sites = {
+		olympia
+		alexandria
+		emessa
+		constantinople
+		carthage
+		vannes
+	}
+
+	doctrines = {
+		doctrine_roman_polytheist
+	}
+
+	# TODO_PAM_DESIGN TIT-72804
+	cultures = { greek roman ancient_egyptian trojan macedonian carthaginian }
+}
+#Philosophical Religions
+pythagoreanism = {
+	main_rite = pythagoreanism
+
+	faith_details = {
+		religion = hellenism_religion
+		color = { 0.6 0.1 0.4 }
+		icon = pythagoras_theorem
+	}
+
+	eminent_holy_sites = {
+		crotona #Death location of Pythagoras and center of Pythagoreanism in Italy
+		mt_olympus
+	}
+
+	holy_sites = {
+		alexandria #Pythagoras (probably) had Egyptian Education, so this stands in for it
+		baghdad #Pythagoras had eastern education in Babylon, so this stands in for it
+		athens
+	}
+
+	tenets = {
+		tenet_isopsephy
+		tenet_pacifism
+		tenet_alexandrian_catechism
+	}
+
+	doctrines = {
+		doctrine_gender_equal
+		doctrine_monist
+		doctrine_ritual_vegetarianism_required
+		special_doctrine_humanistic_philosophy
+	}
+	
+	localization = {
+		PriestMale = platonism_priest_neuter
+		PriestMalePlural = platonism_priest_neuter_plural
+		PriestFemale = platonism_priest_neuter
+		PriestFemalePlural = platonism_priest_neuter_plural
+		PriestNeuter = platonism_priest_neuter
+		PriestNeuterPlural = platonism_priest_neuter_plural
+		BishopMale = platonism_priest_neuter
+		BishopMalePlural = platonism_priest_neuter_plural
+		BishopFemale = platonism_priest_neuter
+		BishopFemalePlural = platonism_priest_neuter_plural
+		BishopNeuter = platonism_priest_neuter
+		BishopNeuterPlural = platonism_priest_neuter_plural
+	}
+}
+platonism = {
+	main_rite = platonism
+
+	faith_details = {
+		religion = hellenism_religion
+		color = { 0.6 0.6 0.6 }
+		icon = mfi_stoics
+		religious_head = d_platonic_academy
+	}
+
+	eminent_holy_sites = {
+		athens
+		olympia
+		mt_olympus
+	}
+
+	holy_sites = {
+		alexandria
+		rome
+	}
+
+	tenets = {
+		tenet_bhakti #Julian definitely had shades of this
+		tenet_alexandrian_catechism
+		tenet_esotericism
+	}
+
+	doctrines = {
+		doctrine_monist
+		doctrine_ritual_vegetarianism_partial
+		special_doctrine_humanistic_philosophy
+	}
+	
+	localization = {
+		#Creator
+		CreatorName = platonism_creator_god_name
+		CreatorNamePossessive = platonism_creator_god_name_possessive
+		CreatorSheHe = CHARACTER_SHEHE_IT
+		CreatorHerHis = CHARACTER_HERHIS_ITS
+		CreatorHerHim = CHARACTER_HERHIM_IT
+		
+		HighGodNameAlternate = platonism_creator_god_name_possessive
+		HighGodNameAlternatePossessive = platonism_creator_god_name_alternate
+		CreatorSheHe = CHARACTER_SHEHE_IT
+		CreatorHerHis = CHARACTER_HERHIS_ITS
+		CreatorHerHim = CHARACTER_HERHIM_IT
+		
+		PriestMale = platonism_priest_neuter
+		PriestMalePlural = platonism_priest_neuter_plural
+		PriestFemale = platonism_priest_neuter
+		PriestFemalePlural = platonism_priest_neuter_plural
+		PriestNeuter = platonism_priest_neuter
+		PriestNeuterPlural = platonism_priest_neuter_plural
+		BishopMale = platonism_priest_neuter
+		BishopMalePlural = platonism_priest_neuter_plural
+		BishopFemale = platonism_priest_neuter
+		BishopFemalePlural = platonism_priest_neuter_plural
+		BishopNeuter = platonism_priest_neuter
+		BishopNeuterPlural = platonism_priest_neuter_plural
+		
+		ReligiousHeadName = platonism_religious_head_title
+		ReligiousHeadTitleName = platonism_religious_head_title_name
+	}
+}
+stoicism = {
+	main_rite = stoicism
+
+	faith_details = {
+		religion = hellenism_religion
+		color = { 0.6 0.6 0.6 }
+		icon = hellenic
+	}
+
+	eminent_holy_sites = {}
+
+	holy_sites = {
+		kition #Birthplace of Stoicism
+		rome
+		athens
+		alexandria
+		carthage
+	}
+
+	tenet_selection_pair = {
+		requires_dlc_flag = all_under_heaven
+		doctrine = tenet_harmonious_society
+		fallback_doctrine = tenet_alexandrian_catechism
+	}
+
+	tenets = {
+		tenet_legalism #Dikaoiosyne
+		tenet_consolamentum
+	}
+
+	doctrines = {
+		doctrine_no_head
+		special_doctrine_humanistic_philosophy
+		doctrine_monist
+	}
+	
+	localization = {
+		#Creator
+		CreatorName = platonism_creator_god_name
+		CreatorNamePossessive = platonism_creator_god_name_possessive
+		CreatorSheHe = CHARACTER_SHEHE_IT
+		CreatorHerHis = CHARACTER_HERHIS_ITS
+		CreatorHerHim = CHARACTER_HERHIM_IT
+		
+		PriestMale = platonism_priest_neuter
+		PriestMalePlural = platonism_priest_neuter_plural
+		PriestFemale = platonism_priest_neuter
+		PriestFemalePlural = platonism_priest_neuter_plural
+		PriestNeuter = platonism_priest_neuter
+		PriestNeuterPlural = platonism_priest_neuter_plural
+		BishopMale = platonism_priest_neuter
+		BishopMalePlural = platonism_priest_neuter_plural
+		BishopFemale = platonism_priest_neuter
+		BishopFemalePlural = platonism_priest_neuter_plural
+		BishopNeuter = platonism_priest_neuter
+		BishopNeuterPlural = platonism_priest_neuter_plural
+	}
+}
+#Mystery Religions
+mithraic_pagan = {
+	main_rite = mithraic_pagan
+
+	faith_details = {
+		religion = hellenism_religion
+		color = { 1.0 1.0 0.0 }
+		icon = mithraic_pagan
+	}
+
+	eminent_holy_sites = {}
+
+	holy_sites = {
+		rome
+		vienna #Earliest known Mithraic site in Carnuntum
+		cilicia #Plutarch notes an early presence in cilicia
+		alexandria #WtWSMS
+		athens #WtWSMS
+	}
+
+	tenets = {
+		tenet_mystery_religion
+		tenet_ritual_celebrations #Ritual Meals were important
+		tenet_unrelenting_faith #Should have a military orientation even if no GHW
+	}
+
+	doctrines = {
+		#Mystery religion
+		doctrine_clerical_succession_spiritual_appointment
+		doctrine_theocracy_temporal
+		
+		#Not really aligned with the Roman pantheon and unpopular with the Roman elite
+		doctrine_pluralism_righteous
+		doctrine_polytheist
+		
+		#Male-dominated religion populari with the military
+		doctrine_clerical_gender_male_only
+		doctrine_clerical_function_recruitment
+		doctrine_clerical_gender_either
+	}
+	
+	localization = {
+		#High God Name
+		HighGodName = mithraism_high_god_name
+		HighGodNamePossessive = mithraism_high_god_name_possessive
+		HighGodNameSheHe = CHARACTER_SHEHE_HE
+		HighGodHerselfHimself = CHARACTER_HIMSELF
+		HighGodHerHis = CHARACTER_HERHIS_HIS
+		HighGodNameAlternate = mithraism_high_god_name_alternate
+		HighGodNameAlternatePossessive = mithraism_high_god_name_alternate_possessive
+		
+		EvilGodNames = { mithraism_evil_god_ahriman mithraism_evil_god_angra_mainyu }
+		
+		HouseOfWorship = mithraism_house_of_worship
+		HouseOfWorshipPlural = mithraism_house_of_worship_plural
+		ReligiousSymbol = mithraism_religious_symbol
+		
+		ReligiousHeadName = mithraism_religious_head_title
+		ReligiousHeadTitleName = mithraism_religious_head_title_name
+		
+		PriestMale = mithraism_priest_male
+		PriestMalePlural = mithraism_priest_male_plural
+		PriestNeuter = mithraism_priest_male
+		PriestNeuterPlural = mithraism_priest_male_plural
+		AltPriestTermPlural = christianity_priest_alternate_plural
+		
+		BishopMale = mithraism_bishop_male
+		BishopMalePlural = mithraism_bishop_male_plural
+		BishopNeuter = mithraism_bishop_male
+		BishopNeuterPlural = mithraism_bishop_male_plural
+		
+		DevoteeMale = mithraism_devotee
+		DevoteeMalePlural = mithraism_devoteeplural
+		DevoteeFemale = mithraism_devotee
+		DevoteeFemalePlural = mithraism_devoteeplural
+		DevoteeNeuter = mithraism_devotee
+		DevoteeNeuterPlural = mithraism_devoteeplural
+	}
+}
+cybelian = {
+	main_rite = cybelian
+
+	faith_details = {
+		religion = hellenism_religion
+		color = { 0.06 0.2 0.65 }
+		icon = cybelianism
+		religious_head = d_cybelian_pagan
+	}
+
+	eminent_holy_sites = {
+		phrygia #Capital of Kingdom of Phrygia; originally a Phrygian deity
+		rome
+	}
+
+	holy_sites = {
+		carthage #Augustine noted their presence during his time
+		satif #Major Cybelian temple in Africa
+		athens #WtWSMS
+	}
+
+	tenets = {
+		tenet_mystery_religion
+		tenet_eunuch_priests
+		tenet_fertility_cult
+	}
+
+	doctrines = {
+		#Mystery religion
+		doctrine_clerical_succession_spiritual_appointment
+		doctrine_theocracy_temporal
+		doctrine_spiritual_head
+		
+		#Main
+		doctrine_gender_equal
+		
+		#Not really aligned with the Roman pantheon and unpopular with the Roman elite
+		doctrine_polytheist
+		
+		#Needed because of interaction with sacred eunuchs
+		doctrine_clerical_gender_male_only
+		doctrine_clerical_marriage_disallowed
+		doctrine_clerical_succession_spiritual_appointment
+	}
+	
+	localization = {
+		HighGodName = cybelian_high_god_name
+		HighGodNamePossessive = cybelian_high_god_name_possessive
+		HighGodNameSheHe = CHARACTER_SHEHE_SHE
+		HighGodHerselfHimself = CHARACTER_HERSELF
+		HighGodHerHis = CHARACTER_HERHIS_HER
+		HighGodNameAlternate = cybelian_high_god_name_alternate
+		HighGodNameAlternatePossessive = cybelian_high_god_name_alternate_possessive
+		
+		PriestMale = cybelian_priest_neuter
+		PriestMalePlural = cybelian_priest_neuter_plural
+		PriestNeuter = cybelian_priest_neuter
+		PriestNeuterPlural = cybelian_priest_neuter_plural
+		BishopMale = cybelian_priest_neuter
+		BishopMalePlural = cybelian_priest_neuter_plural
+		BishopNeuter = cybelian_priest_neuter
+		BishopNeuterPlural = cybelian_priest_neuter_plural
+		
+		ReligiousText = cybelian_religious_text
+		
+		ReligiousHeadName = cybelian_religious_head_title
+		ReligiousHeadTitleName = cybelian_religious_head_title_name
+	}
+}
+orphism = {
+	main_rite = orphism
+
+	faith_details = {
+		religion = hellenism_religion
+		color = { 0.06 0.2 0.65 }
+		icon = lyre
+	}
+
+	eminent_holy_sites = {
+		pimpleia #Purported birthplace and actual shrine to Orpheus
+		pangaion_hills #Purported death site of Orpheus
+	}
+
+	holy_sites = {
+		mt_olympus
+		olympia
+		athens
+	}
+
+	tenets = {
+		tenet_mystery_religion
+		tenet_reincarnation #Similarity to Pythagoreanism
+		tenet_asceticism
+	}
+
+	doctrines = {
+		#Mystery religion
+		doctrine_clerical_succession_spiritual_appointment
+		doctrine_theocracy_temporal
+		
+		#Not really aligned with the Roman pantheon and unpopular with the Roman elite
+		doctrine_polytheist
+	}
+	
+	#Emphasize Dionysus over Zeus
+	localization = {
+		HighGodName = orphism_high_god_name
+		HighGodNamePossessive = orphism_high_god_name_possessive
+		HighGodNameSheHe = CHARACTER_SHEHE_HE
+		HighGodHerselfHimself = CHARACTER_HIMSELF
+		HighGodHerHis = CHARACTER_HERHIS_HIS
+		HighGodNameAlternate = orphism_high_god_name_alternate
+		HighGodNameAlternatePossessive = orphism_high_god_name_alternate_possessive
+		
+		ReligiousText = orphism_religious_text
+	}
+}

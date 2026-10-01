@@ -1,27 +1,89 @@
-﻿##### Changed from Vanilla: Tied into Christian doctrines
-special_doctrine_is_jewish_faith = {
-	parameters = {
-		# Since doctrines cannot modify other faith's views of us, only our view of others, 
-		# all Jewish faiths are given this special doctrine which makes them friendlier to 
-		# Faiths with the Jewish Syncretism tenet.
-		hostility_override_tenet_jewish_syncretism = 2
-		hostility_override_doctrine_christian_judaic_role_judaizers = 2
-		jewish_syncretic_recipient_opinion_active = yes
-		opinion_of_jewish_syncretic_actor_opinion_active = 30
-		liturgical_language_israelite = yes
+﻿##### Christian Ecumenisms
+special_doctrine_ecumenical_christian = {
+	doctrine_group_type = special_tolerance
+	icon = "special_doctrine_ecumenical_christian"
+
+	special_parameters = {
+		hostility_level_override = {
+			special_doctrine_ecumenical_christian = astray
+			special_doctrine_ecumenical_miaphysite = astray
+		}
 	}
 }
-##### Changed from Vanilla: Consider each other astray now, tied into Christian doctrines
-special_doctrine_is_gnostic_faith = {
+special_doctrine_ecumenical_miaphysite = {
+	doctrine_group_type = special_tolerance
+	icon = "special_doctrine_ecumenical_christian"
+
+	special_parameters = {
+		hostility_level_override = {
+			special_doctrine_ecumenical_christian = astray
+			special_doctrine_ecumenical_miaphysite = astray
+		}
+	}
+}
+special_doctrine_ecumenical_nestorian = {
+	icon = special_doctrine_bp_ecumenism
+	
+	special_parameters = {
+		hostility_level_override = {
+			special_doctrine_ecumenical_nestorian = astray
+		}
+	}
+}
+special_doctrine_ecumenical_arian = {
+	icon = special_doctrine_bp_ecumenism
+	special_parameters = {
+		hostility_level_override = {
+			special_doctrine_ecumenical_arian = astray
+		}
+	}
+}
+##### Others
+
+##### Changed from Vanilla: Eastern Pagan Hostility override
+special_doctrine_is_eastern_faith = {
+	doctrine_group_type = is_eastern_faith
+	icon = "special_doctrine_multireligious_interweaving"
+
 	parameters = {
-		hostility_override_tenet_gnosticism = 1
-		hostility_override_special_doctrine_is_gnostic_faith = 1
-		granting_titles_gives_stress = yes
+		eastern_syncretic_recipient
+	}
+
+	special_parameters = {
+		# Since doctrines cannot modify other faith's views of us, only our view of others, all Eastern faiths are given this special doctrine which makes them friendlier to Faiths with the Eastern Syncretism tenet.
+		hostility_level_override = {
+			tenet_eastern_syncretism = astray
+			special_doctrine_is_eastern_pagan_faith = astray
+		}
+		
+		parameter_opinion_override = {
+			eastern_syncretic_actor = 30
+		}
+	}
+}
+##### Changed from Vanilla: Is Astray instead of righteous
+special_doctrine_is_gnostic_faith = {
+	doctrine_group_type = is_gnostic_faith
+	icon = "special_doctrine_default"
+
+	parameters = {
+		granting_titles_gives_stress
+	}
+
+	special_parameters = {
+		hostility_level_override = {
+			tenet_gnosticism = astray
+			special_doctrine_is_gnostic_faith = astray
+		}
 	}
 
 	traits = {
-		virtues = { temperate }
-		sins = { gluttonous }
+		virtues = {
+			temperate = { weight = 20 scale = 1 }
+		}
+		sins = {
+			gluttonous = { weight = 20 scale = 1 }
+		}
 	}
 
 	character_modifier = {
@@ -29,13 +91,24 @@ special_doctrine_is_gnostic_faith = {
 		stewardship = -2
 	}
 }
-##### Changed from Vanilla: Made view Eastern Pagans as astray
-special_doctrine_is_eastern_faith = {
+##### Changed from Vanilla: Israelite Liturgical Language
+special_doctrine_is_jewish_faith = {
+	doctrine_group_type = is_jewish_faith
+	icon = "special_doctrine_teachings_of_moses"
+
 	parameters = {
-		hostility_override_special_doctrine_is_eastern_pagan_faith = 1
-		# Since doctrines cannot modify other faith's views of us, only our view of others, all Eastern faiths are given this special doctrine which makes them friendlier to Faiths with the Eastern Syncretism tenet.
-		hostility_override_tenet_eastern_syncretism = 1
-		eastern_syncretic_recipient_opinion_active = yes
-		opinion_of_eastern_syncretic_actor_opinion_active = 30
+		jewish_syncretic_recipient
+		liturgical_language_israelite = yes
+	}
+
+	special_parameters = {
+		# Since doctrines cannot modify other faith's views of us, only our view of others, all Jewish faiths are given this special doctrine which makes them friendlier to Faiths with the Jewish Syncretism tenet.
+		hostility_level_override = {
+			tenet_jewish_syncretism = astray
+		}
+
+		parameter_opinion_override = {
+			jewish_syncretic_actor = 30
+		}
 	}
 }

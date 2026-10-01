@@ -1,0 +1,40 @@
+﻿celtic_pagan = {
+	main_rite = celtic_pagan
+	name = celtic_pagan
+	desc = celtic_pagan_desc
+
+	faith_details = {
+		religion = celtic_religion
+		color = briton
+		icon = mfi_triskelion
+		reformed_icon = mfi_celtic_pagan_reformed
+	}
+
+	eminent_holy_sites = {
+		vannes
+		lyon
+		armagh #Replaces Dublin for both Celtic Pagan and Insular Celtic
+	}
+
+	holy_sites = {
+		isle_of_man
+		gowrie
+		legio
+	}
+
+	tenet_selection_pair = {
+		requires_dlc_flag = all_under_heaven
+		doctrine = tenet_cranial_trophies
+		fallback_doctrine = tenet_human_sacrifice #WtWSMS feature
+	}
+
+	tenets = {
+		tenet_warmonger #Matches WtWSMS war traits
+		tenet_sanctity_of_nature
+	}
+	
+	doctrines = {
+		special_doctrine_runestones
+		unreformed_faith_doctrine
+	}
+}

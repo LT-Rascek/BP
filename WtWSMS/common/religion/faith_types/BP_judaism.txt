@@ -1,0 +1,312 @@
+﻿haymanot = {
+	main_rite = haymanot
+	faith_details = {
+		religion = judaism_religion
+		color = { 0.1 0.5 0.9 }
+		icon = judaism_03
+		religious_head = d_haymanot
+	}
+
+	eminent_holy_sites = {
+		jerusalem
+		semien
+	}
+
+	holy_sites = {
+		sufed
+		sinai
+		alexandria
+	}
+
+	tenets = {
+		tenet_ethnic_religion
+		tenet_religious_legal_pronouncements
+		tenet_asceticism
+	}
+
+	doctrines = {
+		temple_authority_kohanim_doctrine
+		special_doctrine_prophecy_of_malachi
+		doctrine_polygamy
+		doctrine_spiritual_head
+		doctrine_no_anointment
+		 #Better matches haymanot uniqueness (https://en.wikipedia.org/wiki/Haymanot#Monasticism)
+		doctrine_monasticism_accepted ##### Changed from Vanilla: WtWSMS Feature
+	}
+
+	localization = {
+		ReligiousText = haymanot_religious_text
+		ReligiousText2 = haymanot_religious_text_2
+		ReligiousText3 = haymanot_religious_text_3
+		ReligiousHeadName = haymanot_religious_head_title
+		DevoteeMale = haymanot_devotee
+		DevoteeMalePlural = haymanot_devotee_plural
+		DevoteeFemale = haymanot_devotee
+		DevoteeFemalePlural = haymanot_devotee_plural
+		DevoteeNeuter = haymanot_devotee
+		DevoteeNeuterPlural = haymanot_devotee_plural
+		PriestMale = haymanot_priest
+		PriestMalePlural = haymanot_priest_plural
+		PriestFemale = haymanot_priest
+		PriestFemalePlural = haymanot_priest_plural
+		PriestNeuter = haymanot_priest
+		PriestNeuterPlural = haymanot_priest_plural
+		AltPriestTermPlural = haymanot_priest_plural
+		BishopMale = haymanot_bishop
+		BishopMalePlural = haymanot_bishop_plural
+		BishopFemale = haymanot_bishop
+		BishopFemalePlural = haymanot_bishop_plural
+		BishopNeuter = haymanot_bishop
+		BishopNeuterPlural = haymanot_bishop_plural
+	}
+}
+samaritan = {
+	main_rite = samaritan
+	faith_details = {
+		religion = judaism_religion
+		color = { 0.1 0.8 0.8 }
+		icon = judaism_05
+		religious_head = d_samaritan
+	}
+
+	holy_order_names = {
+		{ name = "holy_order_warriors_of_simeon" } # High Priest Simeon is said to have established many Samaritans as soldiers.
+	}
+
+	reserved_male_names = {
+		Belet Ezra Hanukkah Hezekiah Isaac Levi Manasseh Nisi Simeon Yavdi Zebulun
+		Netaniel Eleazar Akabon
+	}
+
+	eminent_holy_sites = {
+		gerizim
+		sinai
+	}
+
+	holy_sites = {
+		sufed
+		alexandria
+		hamadan
+	}
+
+	tenets = {
+		tenet_ethnic_religion
+		tenet_literalism
+		tenet_ritual_celebrations
+	}
+
+	doctrines = {
+		temple_authority_samaritan_torah_doctrine
+		doctrine_spiritual_head
+		doctrine_pluralism_righteous
+		doctrine_monogamy
+	}
+}
+kabarism = {
+	create = yes ##### Changed from Vanilla
+	main_rite = kabarism
+	faith_details = {
+		religion = judaism_religion
+		color = { 0.1 0.3 0.7 }
+		icon = judaism_06
+		reformed_icon = judaism_06
+		religious_head = d_kabarism
+	}
+
+	eminent_holy_sites = {
+		jerusalem
+		itil #Khazar capital and jewel of the steppe
+		panticapaeum #Major Radhanite settlements on the steppe were built on or near Crimea
+	}
+
+	holy_sites = {
+		samarkand #Large Jewish settlements appeared in Samarkand in the late-medieval era, also represents Khazar dominance on the Steppe
+		sinai
+	}
+
+	tenets = {
+		tenet_religious_legal_pronouncements
+		tenet_legalism
+		tenet_communal_identity
+	}
+
+	doctrines = {
+		unreformed_faith_doctrine
+		temple_authority_rabbinic_doctrine
+		special_doctrine_prophecy_of_malachi
+		doctrine_spiritual_head
+		doctrine_adultery_men_accepted
+		doctrine_no_anointment
+	}
+}
+
+tzadikite = {
+	main_rite = tzadikite
+	faith_details = {
+		religion = judaism_religion
+		color = { 0.1 0.3 0.7 }
+		icon = fic_wood_david_star
+	}
+	
+	eminent_holy_sites = {
+		jerusalem
+		sinai
+	}
+
+	holy_sites = {
+		lori
+		kakheti
+		guria
+	}
+	
+	tenets = {
+		tenet_ethnic_religion
+		tenet_unrelenting_faith
+		tenet_religious_legal_pronouncements
+	}
+	
+	doctrines = {
+		temple_authority_rabbinic_doctrine
+		doctrine_no_head
+		doctrine_no_anointment
+	}
+}
+ebionite = {
+	main_rite = ebionite
+	faith_details = {
+		religion = judaism_religion
+		color = { 0.95 0.95 0.60 }
+		icon = ebionites
+		religious_head = d_ebionites
+	}
+	
+	eminent_holy_sites = {
+		jerusalem
+		antioch
+	}
+
+	holy_sites = {
+		damascus
+		sinai
+		alexandria
+	}
+	
+	tenets = {
+		tenet_communal_identity
+		tenet_vows_of_poverty
+		tenet_religious_legal_pronouncements
+	}
+	
+	doctrines = {
+		doctrine_pluralism_fundamentalist
+		doctrine_spiritual_head
+		temple_authority_messianic_doctrine
+		doctrine_anointment_permitted
+		doctrine_ritual_vegetarianism_required
+	}
+	
+	holy_order_names = {
+		{ name = "holy_order_knights_of_saint_james" }
+	}
+	
+	localization = {
+		GoodGodNames = {
+			judaism_high_god_name
+			judaism_high_god_alternate
+			judaism_good_god_hashem
+			judaism_good_god_el_shaddai
+			ebionite_james_the_just
+			ebionite_jesus
+		}
+		EvilGodNames = {
+			judaism_devil_name
+			judaism_evil_god_the_adversary
+			ebionite_paul_of_tarsos
+		}
+		ReligiousText = ebionite_religious_text
+		
+		# Patriarchs instead of Popes
+		ReligiousHeadName = ebionite_religious_head_title
+		ReligiousHeadTitleName = ebionite_religious_head_title_name
+	}
+}
+elcesaite = {
+	main_rite = elcesaite
+	faith_details = {
+		religion = judaism_religion
+		color = { 0.75 0.70 0.60 }
+		icon = pagan
+	}
+	
+	eminent_holy_sites = {
+		jerusalem
+	}
+
+	holy_sites = {
+		damascus
+		sinai
+		baghdad
+		ninive
+	}
+	
+	tenets = {
+		tenet_esotericism
+		tenet_gnosticism
+		tenet_false_conversion_sanction
+	}
+	
+	doctrines = {
+		doctrine_pluralism_pluralistic
+		doctrine_no_head
+		temple_authority_messianic_doctrine
+		doctrine_no_anointment
+		#Crime Doctrines: Emphasis on frequent rebaptism for sins
+		doctrine_homosexuality_shunned
+		doctrine_adultery_men_shunned
+		doctrine_adultery_women_shunned
+		doctrine_deviancy_shunned
+		doctrine_witchcraft_shunned
+		
+		doctrine_ritual_vegetarianism_required
+	}
+	
+	localization = {
+		#FateGod
+		FateGodName = elcesaite_fate_god_name #NB: they ascribed the Holy Spirit feminine aspects
+		FateGodNamePossessive = elcesaite_fate_god_name_possessive
+		FateGodSheHe = CHARACTER_SHEHE_SHE
+		FateGodHerHis = CHARACTER_HERHIS_HER
+		FateGodHerHim = CHARACTER_HERHIM_HER
+
+		#KnowledgeGod
+		KnowledgeGodName = elcesaite_knowledge_god_name
+		KnowledgeGodNamePossessive = elcesaite_knowledge_god_name_possessive
+		KnowledgeGodSheHe = CHARACTER_SHEHE_HE
+		KnowledgeGodHerHis = CHARACTER_HERHIS_HIS
+		KnowledgeGodHerHim = CHARACTER_HERHIM_HIM
+
+		GoodGodNames = {
+			judaism_high_god_name
+			judaism_high_god_alternate
+			judaism_good_god_hashem
+			judaism_good_god_el_shaddai
+			elcesaite_fate_god_name
+			elcesaite_knowledge_god_name
+		}
+		
+		DevilName = elcesaite_devil_name
+		DevilNamePossessive = elcesaite_devil_name_possessive
+		EvilGodNames = {
+			judaism_devil_name
+			judaism_evil_god_the_adversary
+			elcesaite_devil_name
+		}
+		
+		ReligiousSymbol = elcesaite_religious_symbol
+		ReligiousSymbol2 = elcesaite_religious_symbol_2
+		ReligiousSymbol3 = elcesaite_religious_symbol_3
+		ReligiousText = elcesaite_religious_text
+		ReligiousText2 = elcesaite_religious_text_2
+		ReligiousText3 = elcesaite_religious_text_3
+	}
+}

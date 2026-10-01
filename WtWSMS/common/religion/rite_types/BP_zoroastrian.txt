@@ -1,0 +1,182 @@
+﻿mazdayasna = {
+	name = mazdayasna
+	desc = mazdayasna_desc
+	founder = d_mazdayasna
+	faith = zoroastrian_faith
+
+	color = { 0.8 0.5 0 }
+	icon = zoroastrian
+	
+	
+	tenets = {
+		tenet_divine_marriage
+		tenet_pentarchy #Pre-Islam, was a state church, so fits better than Communal Identity
+		tenet_ritual_celebrations
+	}
+	doctrines = {
+		doctrine_pluralism_righteous
+		doctrine_major_branch_dorustdin
+		doctrine_consanguinity_unrestricted
+	}
+
+	# TODO_PAM_DESIGN TIT-72804
+	cultures = { persian median parthian }
+}
+#WtWSMS differences: **has** HOF
+#
+#LT-Rascek: From what I've read, there's some different strains of Zurvanism that were 
+#ascetic/materialist/or fatialist, but none that were really matching the default tenets, 
+#so Esotericism replaces Sanctity of Nature.
+#
+#It enjoyed royal patronage during Shapur I and I can't see any evidance it was opposed by the Zoroastrian
+#Hierarchy.
+zurvanism = {
+	name = zurvanism
+	desc = zurvanism_desc
+	founder = d_mazdayasna
+	faith = zoroastrian_faith
+
+	color = { 0.6 0.7 0.2 }
+	icon = zurvanism
+	
+	
+	tenets = {
+		tenet_divine_marriage
+		tenet_ritual_celebrations #Can't have pentarchy and be pluralistic, so this will do
+		tenet_esotericism #This covers it being more philosophically minded than Mainline Zoroastrianism
+	}
+	doctrines = {
+		doctrine_pluralism_pluralistic
+		doctrine_major_branch_dorustdin
+		doctrine_consanguinity_unrestricted
+	}
+	
+	holy_order_names = {
+		{ name = "holy_order_zurvans_chosen" }
+	}
+	
+	localization = {
+		HighGodName = zurvanism_high_god_name
+		HighGodNamePossessive = zurvanism_high_god_name_possessive
+		HighGodNameSheHe = zurvanism_high_god_it
+		HighGodHerselfHimself = zurvanism_high_god_itself
+		HighGodNameAlternate = zurvanism_high_god_name_alternate
+		HighGodNameAlternatePossessive = zurvanism_high_god_name_alternate_possessive
+		
+		#Creator
+		CreatorName = zurvanism_creator_god_name
+		CreatorNamePossessive = zurvanism_creator_god_name_possessive
+		CreatorSheHe = CHARACTER_SHEHE_HE
+		CreatorHerHis = CHARACTER_HERHIS_HIS
+		CreatorHerHim = CHARACTER_HERHIM_HIM
+		
+		PantheonTerm = zurvanism_high_god_name
+		GoodGodNames = {
+			zurvanism_high_god_name
+			zoroastrianism_high_god_name
+			zoroastrianism_good_god_asha
+			zoroastrianism_good_god_truth
+		}
+	}
+}
+#WtWSMS differences: No concubines, no Martial nerf, no fertility buff
+#
+#From what I've read, Paradox is _really_ wrong with these tenets and doctrines.
+#Mazdak should be an important event chain, since he had the Shahanshah's ear for a time
+#before being repudiated by the clerical establishment. At start, it should be an approved cult
+#before being rejected around the 520s
+#
+#Mazdak had a strong emphasis on pacficism and acesticism, so that replaces reincarnationism and 
+#esotericism (which seems to match Zurvanism better anyway). His railing against the Zoroastrian clergy
+#also makes the religious head silly, but that should probably be changed by event when Persia cracks down
+#on it.
+mazdakism = {
+	name = mazdakism
+	desc = mazdakism_desc
+	founder = d_mazdayasna
+	faith = zoroastrian_faith
+
+	color = { 0.8 0.7 0.3 }
+	icon = mazdakism
+	
+	
+	tenets = {
+		tenet_asceticism
+		tenet_pacifism
+		tenet_communal_possessions
+	}
+	doctrines = {
+		doctrine_gender_equal
+		doctrine_pluralism_pluralistic
+		doctrine_spiritual_head
+		doctrine_theocracy_lay_clergy
+		doctrine_heretic_branch_zandik
+		doctrine_monogamy
+		doctrine_homosexuality_shunned
+		doctrine_clerical_function_alms_and_pacification
+		#Mazdakism was probably more conservative in many respects than we give it credit for
+		#and I can't find a source saying otherwise for Mazdak having female priests.
+		#Iranica Online states:
+		# https://iranicaonline.org/articles/zoroastrianism-i-historical-review
+		# "It challenged the establishment, preaching social equality, including women, to the
+		# extent that property should be held in common." So I don't think female priests fit
+		# although equal doctrine does.
+		doctrine_ritual_vegetarianism_required #Aspect of even Zardushti's it seems
+	}
+	
+	localization = {
+		ReligiousText = mazdakism_the_great_secret
+	}
+}
+urartuism = { #Arewordik
+	main_rite = urartuism
+	faith_details = {
+		religion = zoroastrianism_religion
+		color = { 1 0.9 0.5 }
+		icon = urartuism
+		religious_head = d_urartuism
+	}
+
+	eminent_holy_sites = {
+		dvin
+		ani
+	}
+
+	holy_sites = {
+		ushi-darena
+		takht-i-sangin
+		takht-e_soleyman
+	}
+
+	tenets = {
+		tenet_communal_identity
+		tenet_divine_marriage #Armenian Emperors occasionally had sibling marriages
+		tenet_hellenic_syncretism
+	}
+
+	doctrines = {
+		doctrine_spiritual_head
+		doctrine_pluralism_pluralistic
+		doctrine_major_branch_behdin
+		doctrine_homosexuality_shunned
+		doctrine_consanguinity_unrestricted
+	}
+
+	localization = {
+		HighGodName = urartuism_high_god_name
+		HighGodName2 = urartuism_high_god_name_2
+		HighGodNamePossessive = urartuism_high_god_name_possessive
+		GoodGodNames = {
+			urartu_good_god_vanatur
+			urartu_good_god_the_sun
+			urartu_good_god_mithra
+			urartu_good_god_zoroaster
+		}
+		PriestMale = urartuism_priest_male
+		PriestMalePlural = urartuism_priest_male_plural
+		PriestFemale = urartuism_priest_male
+		PriestFemalePlural = urartuism_priest_male_plural
+		PriestNeuter = urartuism_priest_male
+		PriestNeuterPlural = urartuism_priest_male_plural
+	}
+}

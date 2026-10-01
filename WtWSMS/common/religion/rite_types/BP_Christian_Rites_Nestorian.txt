@@ -1,0 +1,27 @@
+﻿assyrian_rite = {
+	name = assyrian_rite
+	desc = assyrian_rite_desc
+	icon = christianity_armenian
+	founder = d_patriarchate_in_the_east
+	faith = nestorian
+	icon = nestorian
+
+	color = { 0.8 0.4 0.1 }
+
+	tenet_selection_pair = {
+		requires_dlc_flag = by_god_alone
+		tenet = tenet_divine_liturgy
+		fallback_tenet = tenet_communion
+	}
+
+	tenets = {
+		tenet_communal_identity
+		tenet_adaptive
+	}
+
+	doctrines = {
+		doctrine_clerical_marriage_allowed
+		special_doctrine_legalized_faith_persia
+		doctrine_christian_liturgical_rite_east_syriac_rite
+	}
+}

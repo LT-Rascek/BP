@@ -1,0 +1,82 @@
+zoroastrian_faith = {
+	main_rite = mazdayasna
+	faith_details = {
+		religion = zoroastrianism_religion
+		color = { 0.8 0.5 0 }
+		icon = zoroastrian
+		religious_head = d_mazdayasna #actually The Magi
+	}
+
+	eminent_holy_sites = {
+		adur_farnbag
+		adur_burzen_mihr
+		takht-e_soleyman
+	}
+
+	holy_sites = {
+		takht-i-sangin
+		yazd
+	}
+}
+
+khurmazta = {
+	main_rite = khurmazta
+	name = khurmazta
+	desc = khurmazta_desc
+
+	faith_details = {
+		religion = zoroastrianism_religion
+		color = { 0.8 0.6 0.1 }
+		icon = khurmazta
+	}
+
+	eminent_holy_sites = {
+		adur_farnbag
+		adur_burzen_mihr
+		takht-e_soleyman
+	}
+
+	holy_sites = {
+		mizdahqan
+		samarkand #Shared with Hepthal; major Sogdian center
+	}
+
+	tenets = {
+		tenet_communal_identity #Communal Identity fits with the disorganized nature of the Eastern Zoroastrian practices
+		tenet_bhakti
+		tenet_adaptive
+	}
+	doctrines = {
+		doctrine_no_head
+		doctrine_pluralism_pluralistic
+		doctrine_major_branch_behdin
+	}
+	
+	holy_order_names = {
+		{ name = "holy_order_order_of_waseghn" } # Wēžayn, Sogdian form of Verethragna
+	}
+	
+	localization = {
+		HighGodName = khurmazta_high_god_name
+		HighGodNamePossessive = khurmazta_high_god_name_possessive
+		FertilityGodName = khurmazta_fertility_god_name
+		FertilityGodNamePossessive = khurmazta_fertility_god_name_possessive
+		WarGodName = khurmazta_war_god_name
+		WarGodNamePossessive = khurmazta_war_god_name_possessive
+		FateGodName = khurmazta_fate_god_name
+		FateGodNamePossessive = khurmazta_fate_god_name_possessive
+		DevilName = khurmazta_devil_name
+		DevilNamePossessive = khurmazta_devil_name_possessive
+		
+		GoodGodNames = {
+			zoroastrianism_high_god_name
+			zoroastrianism_good_god_asha
+			zoroastrianism_good_god_truth
+			khurmazta_good_god_zravan
+			khurmazta_good_god_weshparkar
+			khurmazta_good_god_adbad
+			khurmazta_god_good_wishaghn
+			khurmazta_good_god_nanaiya
+		}
+	}
+}

@@ -1,0 +1,35 @@
+﻿##### Changed from Vanilla: Holy Sites, doctrine_gender_equal, tenet_hellenic_syncretism
+basque_pagan = {
+	main_rite = basque_pagan
+	historical = yes
+	faith_details = {
+		religion = basque_religion
+		color = { 0.2 0.3 0.2 }
+		icon = fp2_basque
+		reformed_icon = fp2_basque_reformed
+		graphical_faith = "pagan_gfx"
+	}
+	
+	eminent_holy_sites = {
+		viscaya
+		aneto
+	}
+
+	holy_sites = {
+		navarra
+		beziers
+		asturias_de_santillana
+	}
+	
+	tenets = {
+		tenet_cthonic_redoubts
+		tenet_hellenic_syncretism_pagan_only
+		tenet_communal_identity
+	}
+	
+	doctrines = {
+		doctrine_gender_equal
+		unreformed_faith_doctrine
+		doctrine_roman_polytheist
+	}
+}

@@ -1,0 +1,241 @@
+﻿mesopotanian_faith = {
+	main_rite = mesopotamian_pagan
+	name = mesopotanian_faith
+	desc = mesopotanian_faith_desc
+
+	faith_details = {
+		religion = semitic_religion
+		color = { 0.75 0.25 0.25 }
+		icon = fic_lamassu
+	}
+
+	eminent_holy_sites = {
+		ninive
+		babylon
+		assur
+	}
+
+	holy_sites = {
+		harran
+		sinjar
+		baalbek
+		suenik
+	}
+
+	tenets = {}
+	doctrines = {}
+	
+	holy_order_names = {
+		{ name = "holy_order_champions_of_gilgamesh" }
+		{ name = "holy_order_enkidus_beasts" }
+		{ name = "holy_order_bulls_of_heaven" }
+		{ name = "holy_order_enlils_legion" }
+		{ name = "holy_order_faithful_of_highgod" }
+		{ name = "holy_order_warriors_of_the_symbol" }
+	}
+	
+	localization = {
+		HighGodName = assyrian_high_god_name
+		HighGodName2 = assyrian_high_god_name
+		HighGodNamePossessive = assyrian_high_god_name_possessive
+		HighGodNameSheHe = CHARACTER_SHEHE_HE
+		HighGodHerselfHimself = CHARACTER_HIMSELF
+		HighGodHerHis = CHARACTER_HERHIS_HIS
+		HighGodNameAlternate = assyrian_high_god_name_alternate
+		HighGodNameAlternatePossessive = assyrian_high_god_name_alternate_possessive
+	
+		#Creator
+		CreatorName = assyrian_creator_god_name
+		CreatorNamePossessive = assyrian_creator_god_name_possessive
+		CreatorSheHe = CHARACTER_SHEHE_HE
+		CreatorHerHis = CHARACTER_HERHIM_HIM
+		CreatorHerHim = CHARACTER_HERHIS_HIS
+	
+		#HealthGod
+		HealthGodName = assyrian_health_god_name
+		HealthGodNamePossessive = assyrian_health_god_name_possessive
+		HealthGodSheHe = CHARACTER_SHEHE_HE
+		HealthGodHerHis = CHARACTER_HERHIS_HIS
+		HealthGodHerHim = CHARACTER_HERHIM_HIM
+		
+		#FertilityGod
+		FertilityGodName = assyrian_fertility_god_name
+		FertilityGodNamePossessive = assyrian_fertility_god_name_possessive
+		FertilityGodSheHe = CHARACTER_SHEHE_SHE
+		FertilityGodHerHis = CHARACTER_HERHIS_HER
+		FertilityGodHerHim = CHARACTER_HERHIM_HER
+	
+		#WealthGod
+		WealthGodName = assyrian_wealth_god_name
+		WealthGodNamePossessive = assyrian_wealth_god_name_possessive
+		WealthGodSheHe = CHARACTER_SHEHE_HE
+		WealthGodHerHis = CHARACTER_HERHIS_HIS
+		WealthGodHerHim = CHARACTER_HERHIM_HIM
+	
+		#HouseholdGod
+		HouseholdGodName = assyrian_household_god_name
+		HouseholdGodNamePossessive = assyrian_household_god_name_possessive
+		HouseholdGodSheHe = CHARACTER_SHEHE_HE
+		HouseholdGodHerHis = CHARACTER_HERHIS_HIS
+		HouseholdGodHerHim = CHARACTER_HERHIM_HIM
+	
+		#FateGod
+		FateGodName = assyrian_fate_god_name
+		FateGodNamePossessive = assyrian_fate_god_name_possessive
+		FateGodSheHe = CHARACTER_SHEHE_SHE
+		FateGodHerHis = CHARACTER_HERHIS_HER
+		FateGodHerHim = CHARACTER_HERHIM_HER
+	
+		#KnowledgeGod
+		KnowledgeGodName = assyrian_knowledge_god_name
+		KnowledgeGodNamePossessive = assyrian_knowledge_god_name_possessive
+		KnowledgeGodSheHe = CHARACTER_SHEHE_HE
+		KnowledgeGodHerHis = CHARACTER_HERHIS_HIS
+		KnowledgeGodHerHim = CHARACTER_HERHIM_HIM
+	
+		#WarGod
+		WarGodName = assyrian_war_god_name
+		WarGodNamePossessive = assyrian_war_god_name_possessive
+		WarGodSheHe = CHARACTER_SHEHE_HE
+		WarGodHerHis = CHARACTER_HERHIS_HIS
+		WarGodHerHim = CHARACTER_HERHIM_HIM
+	
+		#TricksterGod
+		TricksterGodName = assyrian_trickster_god_name
+		TricksterGodNamePossessive = assyrian_trickster_god_name_possessive
+		TricksterGodSheHe = CHARACTER_SHEHE_HE
+		TricksterGodHerHis = CHARACTER_HERHIS_HIS
+		TricksterGodHerHim = CHARACTER_HERHIM_HIM
+	
+		#NightGod
+		NightGodName = assyrian_night_god_name
+		NightGodNamePossessive = assyrian_night_god_name_possessive
+		NightGodSheHe = CHARACTER_SHEHE_HE
+		NightGodHerHis = CHARACTER_HERHIS_HIS
+		NightGodHerHim = CHARACTER_HERHIM_HIM
+	
+		#WaterGod
+		WaterGodName = assyrian_water_god_name
+		WaterGodNamePossessive = assyrian_water_god_name_possessive
+		WaterGodSheHe = CHARACTER_SHEHE_HE
+		WaterGodHerHis = CHARACTER_HERHIS_HIS
+		WaterGodHerHim = CHARACTER_HERHIM_HIM
+	
+		# Witch God
+		WitchGodName = witchgodname_assyrian_enki
+		WitchGodHerHis = CHARACTER_HERHIS_HIS
+		WitchGodSheHe = CHARACTER_SHEHE_HE
+		WitchGodHerHim = CHARACTER_HERHIM_HIM
+		WitchGodNamePossessive = assyrian_water_god_name_possessive
+		WitchGodMistressMaster = master
+		WitchGodMotherFather = father
+		
+		# Death God
+		DeathDeityName = assyrian_high_god_name
+		DeathDeityNamePossessive = assyrian_high_god_name_possessive
+		DeathDeitySheHe = CHARACTER_SHEHE_HE
+		DeathDeityHerHis = CHARACTER_HERHIS_HIS
+		DeathDeityHerHim = CHARACTER_HERHIM_HIM
+
+		# Devil God
+		DevilName = assyrian_devil_name
+		DevilNamePossessive = assyrian_devil_name_possessive
+		DevilSheHe = CHARACTER_SHEHE_HE
+		DevilHerHis = CHARACTER_HERHIS_HIS
+		DevilHerselfHimself = CHARACTER_HIMSELF
+
+		EvilGodNames = { assyrian_devil_name }
+
+		PantheonTerm = religion_the_gods
+		PantheonTerm2 = religion_the_gods
+		PantheonTerm3 = religion_the_gods
+		PantheonTermHasHave = pantheon_term_have
+		GoodGodNames = { assyrian_good_god_enlil assyrian_high_god_name assyrian_good_god_enki assyrian_good_god_ishtar assyrian_good_god_suen assyrian_good_god_shamash assyrian_good_god_hadad assyrian_good_god_tammuz assyrian_good_god_ereshkigal assyrian_good_god_nergal assyrian_good_god_marduk assyrian_good_god_ninhursag assyrian_good_god_geshtinanna assyrian_good_god_ninurta }
+		HouseOfWorship = assyrian_house_of_worship
+		HouseOfWorship2 = assyrian_house_of_worship
+		HouseOfWorship3 = assyrian_house_of_worship
+		HouseOfWorshipPlural = assyrian_house_of_worship_plural
+		ReligiousSymbol = assyrian_religious_symbol
+		ReligiousSymbol2 = assyrian_religious_symbol
+		ReligiousSymbol3 = assyrian_religious_symbol
+		ReligiousText = assyrian_religious_text
+		ReligiousText2 = assyrian_religious_text
+		ReligiousText3 = assyrian_religious_text
+		ReligiousHeadName = assyrian_religious_head_title
+		ReligiousHeadTitleName = zunism_religious_head_title_name
+		DevoteeMale = assyrian_devotee
+		DevoteeMalePlural = assyrian_devoteeplural
+		DevoteeFemale = assyrian_devotee
+		DevoteeFemalePlural = assyrian_devoteeplural
+		DevoteeNeuter = assyrian_devotee
+		DevoteeNeuterPlural = assyrian_devoteeplural
+		PriestMale = assyrian_priest_male
+		PriestMalePlural = assyrian_priest_male_plural
+		PriestFemale = assyrian_priest_male
+		PriestFemalePlural = assyrian_priest_male_plural
+		PriestNeuter = assyrian_priest_male
+		PriestNeuterPlural = assyrian_priest_male_plural
+		AltPriestTermPlural = assyrian_priest_alternate_plural
+		BishopMale = assyrian_priest_male
+		BishopMalePlural = assyrian_priest_male_plural
+		BishopFemale = assyrian_priest_male
+		BishopFemalePlural = assyrian_priest_male_plural
+		BishopNeuter = assyrian_priest_male
+		BishopNeuterPlural = assyrian_priest_male_plural
+		DivineRealm = assyrian_divine_realm
+		DivineRealm2 = assyrian_divine_realm
+		DivineRealm3 = assyrian_divine_realm
+		PositiveAfterLife = assyrian_divine_realm
+		PositiveAfterLife2 = assyrian_divine_realm
+		PositiveAfterLife3 = assyrian_divine_realm
+		NegativeAfterLife = assyrian_divine_realm
+		NegativeAfterLife2 = assyrian_divine_realm
+		NegativeAfterLife3 = assyrian_divine_realm
+	
+		GHWName = ghw_great_holy_war
+		GHWNamePlural = ghw_great_holy_wars
+	}
+}
+arabian_pagan = {
+	main_rite = arabian_pagan
+	name = arabian_pagan
+	desc = arabian_pagan_desc
+
+	faith_details = {
+		religion = semitic_religion
+		color = { 0.75 0.25 0.25 }
+		icon = custom_faith_4
+		reformed_icon = custom_faith_4_reformed
+	}
+
+	eminent_holy_sites = {
+		mecca
+	}
+
+	holy_sites = {
+		muscat
+		baghdad
+		kufa #Replaces Tigris
+		sinjar
+	}
+
+	tenets = {
+		tenet_ritual_hospitality
+		tenet_ancestor_worship
+		tenet_warmonger #WtWSMS: Vassals don't mind levies and loose prestige at peace
+	}
+	doctrines = {
+		unreformed_faith_doctrine
+		#Hinting at Islam
+		doctrine_right_to_rule_material
+		doctrine_consanguinity_cousins #More accurate for Arab culture of the time
+		doctrine_funeral_bewailment #Lamentation was considered un-Islamic, so it was a pre-Islamic practice
+		doctrine_oral_storytelling
+	}
+	
+	holy_order_names = {
+		{ name = "holy_order_guardians_of_divinerealm" }
+		{ name = "holy_order_faithful_of_highgod" }
+		{ name = "holy_order_warriors_of_the_symbol" }
+	}
+}

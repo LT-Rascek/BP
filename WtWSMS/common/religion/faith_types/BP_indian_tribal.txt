@@ -1,0 +1,128 @@
+﻿munda_pagan = {
+	main_rite = munda_pagan
+	name = munda_pagan
+	desc = munda_pagan_desc
+
+	faith_details = {
+		religion = indian_tribal_religion
+		color = { 0.23 0.5 0.11 }
+		icon = sarna_dhorom
+		reformed_icon = unreformed_faith_doctrine
+	}
+
+	eminent_holy_sites = {}
+
+	#Holy Sites taken from sites near munda peoples
+	holy_sites = {
+		shikharj
+		sarnath
+		bodh_gaya
+		ellora
+		kanchipuram
+	}
+
+	tenets = {
+		tenet_ethnic_religion
+		tenet_ancestor_worship
+		tenet_sanctity_of_nature
+	}
+	
+	doctrines = {
+		unreformed_faith_doctrine
+	}
+}
+gondi_pagan = {
+	main_rite = gondi_pagan
+	name = gondi_pagan
+	desc = gondi_pagan_desc
+
+	faith_details = {
+		religion = indian_tribal_religion
+		color = { 0.20 0.75 0.50 }
+		icon = mfi_dara_knot
+		reformed_icon = mfi_dara_knot_reformed
+	}
+
+	eminent_holy_sites = {}
+
+	#Holy Sites taken from sites near Gondi People
+	holy_sites = {
+		shikharj
+		sarnath
+		bodh_gaya
+		ellora
+		kanchipuram
+	}
+
+	tenets = {
+		tenet_ethnic_religion
+		tenet_pacifism
+		tenet_sanctity_of_nature
+	}
+	
+	doctrines = {
+		unreformed_faith_doctrine
+	}
+}
+dravidian_pagan = {
+	main_rite = dravidian_pagan
+	name = dravidian_pagan
+	desc = dravidian_pagan_desc
+
+	faith_details = {
+		religion = indian_tribal_religion
+		color = { 0.15 0.40 0.15 }
+		icon = mfi_dara_knot
+		reformed_icon = mfi_dara_knot_reformed
+	}
+
+	#Holy sites picked to be close to Tamil areas
+	eminent_holy_sites = {
+		kerala_dravidian
+	}
+
+	holy_sites = {
+		amaravati
+		atamasthana
+		kanchipuram
+		sittannavasal
+	}
+
+	tenets = {
+		tenet_adorcism #Spirit possession of women
+		tenet_adaptive #Evolved into Srikula Shaktism
+		tenet_ancestor_worship #Holy Kingship + Hero Worship
+	}
+	
+	doctrines = {
+		unreformed_faith_doctrine
+		
+		doctrine_gender_equal
+		doctrine_right_to_rule_rajadharma
+		special_doctrine_runestones #WtWSMS feature; only finding evidence in the south
+		doctrine_clerical_gender_either
+		doctrine_ritual_vegetarianism_partial
+		#NB: eventually moves into the Shaktism faith category
+	}
+	
+	holy_order_names = {
+		{ name = holy_order_blessed_of_ema_pnathoibi }
+	}
+	
+	localization = {
+		HighGodName = shaktism_good_god_sundari
+		HighGodName2 = shaktism_good_god_sundari_2
+		HighGodNamePossessive = shaktism_good_god_sundari_possessive
+		HighGodNameSheHe = CHARACTER_SHEHE_SHE
+		HighGodHerselfHimself = CHARACTER_HERSELF
+		HighGodHerHis = CHARACTER_HERHIS_HER
+		GoodGodNames = {
+			shaktism_good_god_sundari
+			hinduism_high_god_name_alternate
+			shaktism_good_god_devi
+			shaktism_good_god_chandi
+			shaktism_good_god_parvati
+			shaktism_good_god_kali
+		}
+	}
+}

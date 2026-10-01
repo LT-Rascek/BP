@@ -1,0 +1,238 @@
+﻿somali_pagan = {
+	main_rite = somali_pagan
+	faith_details = {
+		religion = waaqism_religion
+		color = { 0.8 0.35 0.4 }
+		icon = custom_faith_6
+		reformed_icon = custom_faith_6_reformed
+	}
+
+	eminent_holy_sites = {
+		kaffa
+		harar
+	}
+
+	holy_sites = {
+		makhir
+		aksum
+		harar
+		napata
+		kaffa
+	}
+
+	tenets = {
+		tenet_ritual_hospitality
+		tenet_ancestor_worship
+		tenet_communal_identity
+	}
+
+	doctrines = {
+		unreformed_faith_doctrine
+	}
+
+	holy_order_names = {
+		{ name = "holy_order_moonlit_fighters" }
+	}
+	
+	localization = {
+		HighGodName = somali_high_god_name
+		HighGodNamePossessive = somali_high_god_name_possessive
+		HighGodNameSheHe = CHARACTER_SHEHE_HE
+		HighGodHerselfHimself = CHARACTER_HIMSELF
+		HighGodHerHis = CHARACTER_HERHIS_HIS
+		HighGodNameAlternate = semitic_high_god_name_alternate
+		HighGodNameAlternatePossessive = semitic_high_god_name_alternate_possessive
+		
+		#Creator
+		CreatorName = semitic_creator_god_name
+		CreatorNamePossessive = semitic_creator_god_name_possessive
+		CreatorSheHe = CHARACTER_SHEHE_HE
+		CreatorHerHis = CHARACTER_HERHIM_HIM
+		CreatorHerHim = CHARACTER_HERHIS_HIS
+		
+		#HealthGod
+		HealthGodName = semitic_health_god_name
+		HealthGodNamePossessive = semitic_health_god_name_possessive
+		HealthGodSheHe = CHARACTER_SHEHE_HE
+		HealthGodHerHis = CHARACTER_HERHIS_HIS
+		HealthGodHerHim = CHARACTER_HERHIM_HIM
+		
+		#FertilityGod
+		FertilityGodName = semitic_fertility_god_name
+		FertilityGodNamePossessive = semitic_fertility_god_name_possessive
+		FertilityGodSheHe = CHARACTER_SHEHE_SHE
+		FertilityGodHerHis = CHARACTER_HERHIS_HER
+		FertilityGodHerHim = CHARACTER_HERHIM_HER
+		
+		#WealthGod
+		WealthGodName = semitic_wealth_god_name
+		WealthGodNamePossessive = semitic_wealth_god_name_possessive
+		WealthGodSheHe = CHARACTER_SHEHE_HE
+		WealthGodHerHis = CHARACTER_HERHIS_HIS
+		WealthGodHerHim = CHARACTER_HERHIM_HIM
+		
+		#HouseholdGod
+		HouseholdGodName = semitic_household_god_name
+		HouseholdGodNamePossessive = semitic_household_god_name_possessive
+		HouseholdGodSheHe = CHARACTER_SHEHE_HE
+		HouseholdGodHerHis = CHARACTER_HERHIS_HIS
+		HouseholdGodHerHim = CHARACTER_HERHIM_HIM
+	
+		#FateGod
+		FateGodName = semitic_fate_god_name
+		FateGodNamePossessive = semitic_fate_god_name_possessive
+		FateGodSheHe = CHARACTER_SHEHE_SHE
+		FateGodHerHis = CHARACTER_HERHIS_HER
+		FateGodHerHim = CHARACTER_HERHIM_HER
+	
+		#KnowledgeGod
+		KnowledgeGodName = somali_sun_god_name
+		KnowledgeGodNamePossessive = somali_sun_god_name_possessive
+		KnowledgeGodSheHe = CHARACTER_SHEHE_HE
+		KnowledgeGodHerHis = CHARACTER_HERHIS_HIS
+		KnowledgeGodHerHim = CHARACTER_HERHIM_HIM
+		
+		#WarGod
+		WarGodName = somali_war_god_name
+		WarGodNamePossessive = somali_war_god_name_possessive
+		WarGodSheHe = CHARACTER_SHEHE_HE
+		WarGodHerHis = CHARACTER_HERHIS_HIS
+		WarGodHerHim = CHARACTER_HERHIM_HIM
+		
+		#TricksterGod
+		TricksterGodName = semitic_trickster_god_name
+		TricksterGodNamePossessive = semitic_trickster_god_name_possessive
+		TricksterGodSheHe = CHARACTER_SHEHE_HE
+		TricksterGodHerHis = CHARACTER_HERHIS_HIS
+		TricksterGodHerHim = CHARACTER_HERHIM_HIM
+	
+		#NightGod
+		NightGodName = somali_moon_god_name
+		NightGodNamePossessive = somali_moon_god_name_possessive
+		NightGodSheHe = CHARACTER_SHEHE_HE
+		NightGodHerHis = CHARACTER_HERHIS_HIS
+		NightGodHerHim = CHARACTER_HERHIM_HIM
+	
+		#WaterGod
+		WaterGodName = somali_water_god_name
+		WaterGodNamePossessive = semitic_water_god_name_possessive
+		WaterGodSheHe = CHARACTER_SHEHE_HE
+		WaterGodHerHis = CHARACTER_HERHIS_HIS
+		WaterGodHerHim = CHARACTER_HERHIM_HIM
+		
+		# Witch God
+		WitchGodName = witchgodname_semitic_hawlat
+		WitchGodHerHis = CHARACTER_HERHIS_HIS
+		WitchGodSheHe = CHARACTER_SHEHE_HE
+		WitchGodHerHim = CHARACTER_HERHIM_HIM
+		WitchGodMistressMaster = master
+		WitchGodMotherFather = father
+		
+		# Death God
+		DeathDeityName = semitic_high_god_name
+		DeathDeityNamePossessive = semitic_high_god_name_possessive
+		DeathDeitySheHe = CHARACTER_SHEHE_HE
+		DeathDeityHerHis = CHARACTER_HERHIS_HIS
+		
+		# Devil God
+		DevilName = semitic_devil_name
+		DevilNamePossessive = semitic_devil_name_possessive
+		DevilSheHe = CHARACTER_SHEHE_HE
+		DevilHerHis = CHARACTER_HERHIS_HIS
+		DevilHerselfHimself = CHARACTER_HIMSELF
+		
+		PantheonTerm = religion_the_gods
+		PantheonTermHasHave = pantheon_term_have
+		GoodGodNames = { semitic_good_god_manat semitic_good_god_allat semitic_good_god_aluzza semitic_good_god_hubal semitic_good_god_shams semitic_good_god_ruda semitic_good_god_wadd semitic_good_god_alquam semitic_good_god_almaqh semitic_good_god_kahl semitic_good_god_anbay }
+		EvilGodNames = { semitic_devil_name semitic_evil_god_ghul semitic_evil_god_shayatin }
+		HouseOfWorship = semitic_house_of_worship
+		HouseOfWorshipPlural = semitic_house_of_worship_plural
+		ReligiousSymbol = semitic_religious_symbol
+		ReligiousText = semitic_religious_text
+		ReligiousHeadName = zunism_religious_head_title
+		ReligiousHeadTitleName = zunism_religious_head_title_name
+		DevoteeMale = semitic_devotee
+		DevoteeMalePlural = semitic_devoteeplural
+		DevoteeFemale = semitic_devotee
+		DevoteeFemalePlural = semitic_devoteeplural
+		DevoteeNeuter = semitic_devotee
+		DevoteeNeuterPlural = semitic_devoteeplural
+		PriestMale = semitic_priest_male
+		PriestMalePlural = semitic_priest_male_plural
+		PriestFemale = semitic_priest_male
+		PriestFemalePlural = semitic_priest_male_plural
+		PriestNeuter = semitic_priest_male
+		PriestNeuterPlural = semitic_priest_male_plural
+		AltPriestTermPlural = semitic_priest_alternate_plural
+		BishopMale = semitic_priest_male
+		BishopMalePlural = semitic_priest_male_plural
+		BishopFemale = semitic_priest_male
+		BishopFemalePlural = semitic_priest_male_plural
+		BishopNeuter = semitic_priest_male
+		BishopNeuterPlural = semitic_priest_male_plural
+		DivineRealm = semitic_divine_realm
+		PositiveAfterLife = semitic_divine_realm
+		NegativeAfterLife = semitic_divine_realm
+	}
+}
+west_african_pagan = {
+	main_rite = west_african_pagan
+	faith_details = {
+		religion = west_african_religion
+		color = { 0.78 0.71 0.49 }
+		icon = mfi_african
+		reformed_icon = mfi_african_reformed
+	}
+
+	eminent_holy_sites = {
+		awkar
+		niani
+	}
+
+	holy_sites = {
+		jenne
+		kukiya
+		kisi
+	}
+
+	tenets = {
+		tenet_ritual_celebrations
+		tenet_ancestor_worship
+		tenet_sanctity_of_nature
+	}
+
+	doctrines = {
+		west_african_unreformed_faith_doctrine
+	}
+}
+
+west_african_orisha_faith = {
+	main_rite = west_african_orisha_pagan
+	faith_details = {
+		religion = west_african_orisha_religion
+		color = { 38 63 125 }
+		icon = yoruba
+		reformed_icon = yoruba_reformed
+	}
+
+	eminent_holy_sites = {
+		ife
+		igbo
+	}
+
+	holy_sites = {
+		kumasi
+		bono
+		kukiya
+	}
+
+	tenets = {
+		tenet_esotericism
+		tenet_reincarnation
+		tenet_ancestor_worship
+	}
+
+	doctrines = {
+		west_african_unreformed_faith_doctrine
+	}
+}

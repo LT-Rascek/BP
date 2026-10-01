@@ -1,0 +1,469 @@
+﻿#Liturgical Rites
+
+### "Western" Rites
+
+#For the period when the Greek and Latin Rites were not under significant deviation
+#(ca. 400s-600s, when the influx of Gallican and other rites influenced the structure
+#of the Western celebration).
+doctrine_christian_liturgical_rite_latin = { #For Catholic
+	doctrine_group = christian_liturgirical_rites_group
+	piety_cost = {
+		if = {
+			limit = { has_western_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_low
+		}
+		else_if = {
+			limit = { has_eastern_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
+			value = christian_doctrine_cost_high
+		}
+		else = { value = christian_doctrine_cost_massive }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_latin }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	is_shown = { always = yes }
+	can_pick = {
+		uses_eucharistic_rite_trigger = yes
+		custom_description = {
+			text = incompatible_tenet_ecstatic_prophecy_trigger
+			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		}
+	}
+	parameters = {
+		liturgical_language_latin = yes
+		allows_brewery = yes # Vanilla Catholic feature
+	}
+	traits = {}
+}
+doctrine_christian_liturgical_rite_greek = { #For Orthodox
+	doctrine_group = christian_liturgirical_rites_group
+	piety_cost = {
+		if = {
+			limit = { has_western_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_low
+		}
+		else_if = {
+			limit = { has_eastern_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
+			value = christian_doctrine_cost_high
+		}
+		else = { value = christian_doctrine_cost_massive }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_greek }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	is_shown = { always = yes }
+	can_pick = {
+		uses_eucharistic_rite_trigger = yes
+		custom_description = {
+			text = incompatible_tenet_ecstatic_prophecy_trigger
+			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		}
+	}
+	parameters = {
+		liturgical_language_greek = yes
+	}
+	traits = {}
+}
+
+#Other Western Rites
+doctrine_christian_liturgical_rite_gallican_rite = {
+	doctrine_group = christian_liturgirical_rites_group
+	piety_cost = {
+		if = {
+			limit = { has_western_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_low
+		}
+		else_if = {
+			limit = { has_eastern_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
+			value = christian_doctrine_cost_high
+		}
+		else = { value = christian_doctrine_cost_massive }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_gallican_rite }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		uses_eucharistic_rite_trigger = yes
+		custom_description = {
+			text = incompatible_tenet_ecstatic_prophecy_trigger
+			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		}
+	}
+	parameters = {
+		liturgical_language_latin = yes
+		latin_rites_are_similar = yes
+	}
+	traits = {}
+}
+doctrine_christian_liturgical_rite_moazarbic_rite = {
+	doctrine_group = christian_liturgirical_rites_group
+	piety_cost = {
+		if = {
+			limit = { has_western_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_low
+		}
+		else_if = {
+			limit = { has_eastern_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
+			value = christian_doctrine_cost_high
+		}
+		else = { value = christian_doctrine_cost_massive }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_moazarbic_rite }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		uses_eucharistic_rite_trigger = yes
+		custom_description = {
+			text = incompatible_tenet_ecstatic_prophecy_trigger
+			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		}
+	}
+	parameters = {
+		liturgical_language_latin = yes
+		latin_rites_are_similar = yes
+	}
+	traits = {}
+}
+doctrine_christian_liturgical_rite_celtic_rite = {
+	doctrine_group = christian_liturgirical_rites_group
+	piety_cost = {
+		if = {
+			limit = { has_western_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_low
+		}
+		else_if = {
+			limit = { has_eastern_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
+			value = christian_doctrine_cost_high
+		}
+		else = { value = christian_doctrine_cost_massive }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_celtic_rite }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		uses_eucharistic_rite_trigger = yes
+		custom_description = {
+			text = incompatible_tenet_ecstatic_prophecy_trigger
+			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		}
+	}
+	parameters = {
+		liturgical_language_latin = yes
+		latin_rites_are_similar = yes
+	}
+	traits = {}
+}
+doctrine_christian_liturgical_rite_african_rite = {
+	doctrine_group = christian_liturgirical_rites_group
+	piety_cost = {
+		if = {
+			limit = { has_western_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_low
+		}
+		else_if = {
+			limit = { has_eastern_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
+			value = christian_doctrine_cost_high
+		}
+		else = { value = christian_doctrine_cost_massive }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_african_rite }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		uses_eucharistic_rite_trigger = yes
+		custom_description = {
+			text = incompatible_tenet_ecstatic_prophecy_trigger
+			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		}
+	}
+	parameters = {
+		liturgical_language_latin = yes
+		latin_rites_are_similar = yes
+	}
+	traits = {}
+}
+
+### Eastern Rites (all use mid because they are noticeably different from one another)
+doctrine_christian_liturgical_rite_west_syriac_rite = { #aka, Antiochene Rite
+	doctrine_group = christian_liturgirical_rites_group
+	piety_cost = {
+		if = {
+			limit = { has_western_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_eastern_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
+			value = christian_doctrine_cost_high
+		}
+		else = { value = christian_doctrine_cost_massive }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_west_syriac_rite }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		uses_eucharistic_rite_trigger = yes
+		custom_description = {
+			text = incompatible_tenet_ecstatic_prophecy_trigger
+			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		}
+	}
+	parameters {
+		liturgical_language_aramaic = yes
+	}
+	traits = {}
+}
+doctrine_christian_liturgical_rite_armenian_rite = {
+	doctrine_group = christian_liturgirical_rites_group
+	piety_cost = {
+		if = {
+			limit = { has_western_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_eastern_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
+			value = christian_doctrine_cost_high
+		}
+		else = { value = christian_doctrine_cost_massive }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_armenian_rite }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		uses_eucharistic_rite_trigger = yes
+		custom_description = {
+			text = incompatible_tenet_ecstatic_prophecy_trigger
+			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		}
+	}
+	parameters = {
+		liturgical_language_armenian = yes
+	}
+	traits = {}
+}
+doctrine_christian_liturgical_rite_alexandrian_rite = {
+	doctrine_group = christian_liturgirical_rites_group
+	piety_cost = {
+		if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_ethiopian_rite }
+			value = christian_doctrine_cost_low
+		}
+		else_if = {
+			limit = { has_western_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_eastern_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
+			value = christian_doctrine_cost_high
+		}
+		else = { value = christian_doctrine_cost_massive }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_alexandrian_rite }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		uses_eucharistic_rite_trigger = yes
+		custom_description = {
+			text = incompatible_tenet_ecstatic_prophecy_trigger
+			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		}
+	}
+	parameters {
+		liturgical_language_coptic = yes
+		alexandrian_rites_are_similar = yes
+	}
+	traits = {}
+}
+doctrine_christian_liturgical_rite_ethiopian_rite = {
+	doctrine_group = christian_liturgirical_rites_group
+	piety_cost = {
+		if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_alexandrian_rite }
+			value = christian_doctrine_cost_low
+		}
+		else_if = {
+			limit = { has_western_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_eastern_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
+			value = christian_doctrine_cost_high
+		}
+		else = { value = christian_doctrine_cost_massive }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_ethiopian_rite }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		uses_eucharistic_rite_trigger = yes
+		custom_description = {
+			text = incompatible_tenet_ecstatic_prophecy_trigger
+			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		}
+	}
+	parameters {
+		liturgical_language_ethiopic = yes
+		alexandrian_rites_are_similar = yes
+	}
+	traits = {}
+}
+doctrine_christian_liturgical_rite_east_syriac_rite = { #aka Chaldean Rite
+	doctrine_group = christian_liturgirical_rites_group
+	piety_cost = {
+		if = {
+			limit = { has_western_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_eastern_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
+			value = christian_doctrine_cost_high
+		}
+		else = { value = christian_doctrine_cost_massive }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_east_syriac_rite }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		uses_eucharistic_rite_trigger = yes
+		custom_description = {
+			text = incompatible_tenet_ecstatic_prophecy_trigger
+			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		}
+	}
+	parameters {
+		liturgical_language_aramaic = yes
+	}
+	traits = {}
+}
+
+### Other cases
+doctrine_christian_liturgical_rite_israelite = { #At least the Nazoreans by the late Vth century
+	doctrine_group = christian_liturgirical_rites_group
+	piety_cost = {
+		value = christian_doctrine_cost_massive
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_israelite }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = {
+		uses_eucharistic_rite_trigger = yes
+	}
+	parameters = {
+		liturgical_language_israelite = yes
+	}
+	traits = {}
+	character_modifier = {}
+}
+doctrine_christian_liturgical_rite_local_rite = { #for various other faiths
+	doctrine_group = christian_liturgirical_rites_group
+	piety_cost = {
+		if = {
+			limit = { has_western_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_eastern_liturgical_rite_trigger = yes }
+			value = christian_doctrine_cost_mid
+		}
+		else_if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
+			value = christian_doctrine_cost_high
+		}
+		else = { value = christian_doctrine_cost_massive }
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_east_syriac_rite }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = { uses_eucharistic_rite_trigger = yes }
+	parameters = {}
+	traits = {}
+	character_modifier = {
+		county_opinion_add = 5
+	}
+}
+doctrine_christian_liturgical_rite_none = { #For faiths that don't practice the Eucharist
+	doctrine_group = christian_liturgirical_rites_group
+	piety_cost = {
+		value = christian_doctrine_cost_massive
+		
+		if = {
+			limit = { has_doctrine = doctrine_christian_liturgical_rite_none }
+			multiply = christian_doctrine_unchanged_cost_mult
+		}
+	}
+	can_pick = { uses_eucharistic_rite_trigger = no }
+	parameters = {}
+	traits = {}
+	character_modifier = {
+		monthly_piety_gain_mult = 0.05
+	}
+}

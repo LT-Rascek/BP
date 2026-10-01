@@ -1,0 +1,261 @@
+﻿#Manicheans
+manichean = {
+	name = manichean
+	desc = manichean_desc
+	faith = manichaean_faith
+
+	color = { 0.06 0.25 0.37 }
+	icon = manichean
+
+	tenets = {
+		tenet_communal_identity
+		tenet_communion
+		tenet_adaptive
+	}
+}
+mingism = {
+	name = mingism
+	desc = mingism_desc
+	faith = manichaean_faith
+
+	color = { 236 213 129 }
+	icon = mingism
+
+	tenets = {
+		tenet_eastern_syncretism
+		tenet_adaptive
+		tenet_esotericism
+	}
+
+	# Theism comes from the religion's doctrine_monotheist; a polytheist Rite diverges 150 on that group alone, past the threshold that splits a Rite into its own Faith.
+	doctrines = {
+		doctrine_pluralism_pluralistic
+		doctrine_monasticism_encouraged
+	}
+}
+#Valentianism
+valentinianism = {
+	name = valentinianism
+	desc = valentinianism_desc
+	founder = d_valentinianism
+	faith = valentinianism_faith
+
+	color = { 0.7 0.7 0.4 }
+	icon = mfi_valentinianism
+	
+	tenets = {
+		tenet_christian_syncretism
+		tenet_wedding_ceremonies
+		tenet_credobaptism
+	}
+
+	doctrines = {
+		#Main
+		doctrine_theocracy_temporal
+		doctrine_gender_equal
+		#Marriage
+		doctrine_divorce_disallowed
+		#Clerical
+		doctrine_clerical_succession_spiritual_fixed_appointment
+		#Crimes
+		doctrine_adultery_men_crime
+		doctrine_adultery_women_crime
+	}
+}
+marcosianism = {
+	name = marcosianism
+	desc = marcosianism_desc
+	founder = d_valentinianism
+	faith = valentinianism_faith
+
+	color = { 0.375 0.625 0.225 }
+	icon = dualism_custom_1
+	
+	tenets = {
+		tenet_christian_syncretism
+		tenet_communion
+		tenet_isopsephy
+	}
+
+	doctrines = {
+		#Main
+		doctrine_theocracy_temporal
+		doctrine_gender_equal
+		doctrine_pluralism_fundamentalist
+		#Clerical
+		doctrine_clerical_succession_spiritual_fixed_appointment
+		doctrine_clerical_gender_female_only
+		#Crimes
+		doctrine_adultery_men_crime
+		doctrine_adultery_women_crime
+	}
+}
+#Mandeanism
+mandeaism = {
+	name = mandeaism
+	desc = mandeaism_desc
+	faith = mandaean_faith
+
+	color = { 0.5 0.75 0.3 }
+	icon = darfash
+
+	tenets = {
+		tenet_astrology
+		tenet_esotericism
+		tenet_ethnic_religion
+	}
+	
+	localization = { # Gods mostly shared with Dualism/Sabianism
+		#HighGodName
+		HighGodName = mandeaism_high_god_name
+		HighGodNamePossessive = mandeaism_high_god_name_possessive
+		HighGodNameSheHe = CHARACTER_SHEHE_IT
+		HighGodHerselfHimself = CHARACTER_ITSELF
+		HighGodHerHis = CHARACTER_HERHIS_ITS
+		HighGodNameAlternate = mandeaism_high_god_alternate
+		HighGodNameAlternatePossessive = mandeaism_high_god_alternate_possessive
+
+		#Creator
+		CreatorName = mandeaism_creator_god_name
+		CreatorNamePossessive = mandeaism_creator_god_name_possessive
+		CreatorSheHe = CHARACTER_SHEHE_HE
+		CreatorHerHis = CHARACTER_HERHIS_HIS
+		CreatorHerHim = CHARACTER_HERHIM_HIM
+
+		#HealthGod
+		HealthGodName = mandeaism_health_god_name
+		HealthGodNamePossessive = mandeaism_health_god_name_possessive
+		HealthGodSheHe = CHARACTER_SHEHE_IT
+		HealthGodHerHis = CHARACTER_HERHIS_ITS
+		HealthGodHerHim = CHARACTER_HERHIM_IT
+		
+		#FertilityGod
+		FertilityGodName = mandeaism_fertility_god_name
+		FertilityGodNamePossessive = mandeaism_fertility_god_name_possessive
+		FertilityGodSheHe = CHARACTER_SHEHE_IT
+		FertilityGodHerHis = CHARACTER_HERHIS_ITS
+		FertilityGodHerHim = CHARACTER_HERHIM_IT
+
+		#WealthGod
+		WealthGodName = mandeaism_wealth_god_name
+		WealthGodNamePossessive = mandeaism_wealth_god_name_possessive
+		WealthGodSheHe = CHARACTER_SHEHE_IT
+		WealthGodHerHis = CHARACTER_HERHIS_ITS
+		WealthGodHerHim = CHARACTER_HERHIM_IT
+
+		#HouseholdGod
+		HouseholdGodName = mandeaism_household_god_name
+		HouseholdGodNamePossessive = mandeaism_household_god_name_possessive
+		HouseholdGodSheHe = CHARACTER_SHEHE_IT
+		HouseholdGodHerHis = CHARACTER_HERHIS_ITS
+		HouseholdGodHerHim = CHARACTER_HERHIM_IT
+
+		#KnowledgeGod
+		KnowledgeGodName = mandeaism_knowledge_god_name
+		KnowledgeGodNamePossessive = mandeaism_knowledge_god_name_possessive
+		KnowledgeGodSheHe = CHARACTER_SHEHE_HE
+		KnowledgeGodHerHis = CHARACTER_HERHIS_HIS
+		KnowledgeGodHerHim = CHARACTER_HERHIM_HIM
+
+		#WarGod
+		WarGodName = mandeaism_war_god_name
+		WarGodNamePossessive = mandeaism_war_god_name_possessive
+		WarGodSheHe = CHARACTER_SHEHE_IT
+		WarGodHerHis = CHARACTER_HERHIS_ITS
+		WarGodHerHim = CHARACTER_HERHIM_IT
+
+		#NightGod
+		NightGodName = mandeaism_night_god_name
+		NightGodNamePossessive = mandeaism_night_god_name_possessive
+		NightGodSheHe = CHARACTER_SHEHE_IT
+		NightGodHerHis = CHARACTER_HERHIS_ITS
+		NightGodHerHim = CHARACTER_HERHIM_IT
+
+		#WaterGod
+		WaterGodName = mandeaism_water_god_name
+		WaterGodNamePossessive = mandeaism_water_god_name_possessive
+		WaterGodSheHe = CHARACTER_SHEHE_IT
+		WaterGodHerHis = CHARACTER_HERHIS_ITS
+		WaterGodHerHim = CHARACTER_HERHIM_IT
+
+
+		GoodGodNames = {
+			mandeaism_good_god_king_of_light
+		}
+		DevilName = mandeaism_devil_name
+		DevilNamePossessive = mandeaism_devil_name_possessive
+		DevilSheHe = CHARACTER_SHEHE_HE
+		DevilHerHis = CHARACTER_HERHIS_HIS
+		DevilHerselfHimself = CHARACTER_HIMSELF
+		EvilGodNames = {
+			mandeanism_devil_name
+			dualism_devil_name
+			dualism_evil_god_archons
+			dualism_evil_god_matter
+			dualism_evil_god_ignorance
+		}
+		WitchGodName = mandeaism_devil_name
+		WitchGodHerHis = CHARACTER_HERHIS_HIS
+		WitchGodSheHe = CHARACTER_SHEHE_HE
+		WitchGodHerHim = CHARACTER_HERHIM_HIM
+		WitchGodMistressMaster = master
+		WitchGodMotherFather = father
+
+	}
+}
+sabianism = {
+	name = sabianism
+	desc = sabianism_desc
+	faith = mandaean_faith
+
+	color = { 0.6 0.6 0.4 }
+	icon = mfi_sabianism
+
+	tenets = {
+		tenet_legalism
+		tenet_astrology
+		tenet_ethnic_religion
+	}
+
+	doctrines = {
+		doctrine_pluralism_pluralistic
+	}
+	
+	localization = { # Gods mostly shared with Dualism/Mandeaism
+		#HighGodName
+		HighGodNameAlternate = mandeaism_high_god_alternate
+		HighGodNameAlternatePossessive = mandeaism_high_god_alternate_possessive
+		
+		#Creator
+		CreatorName = sabianism_creator_god_name
+		CreatorNamePossessive = sabianism_creator_god_name_possessive
+		CreatorSheHe = CHARACTER_SHEHE_HE
+		CreatorHerHis = CHARACTER_HERHIS_HIS
+		CreatorHerHim = CHARACTER_HERHIM_HIM
+		DevilName = mandeaism_devil_name
+		DevilNamePossessive = mandeaism_devil_name_possessive
+		DevilSheHe = CHARACTER_SHEHE_HE
+		DevilHerHis = CHARACTER_HERHIS_HIS
+		DevilHerselfHimself = CHARACTER_HIMSELF
+
+		GoodGodNames = {
+			dualism_high_god_name
+			sabianism_high_god_name_alternate
+			sabianism_good_god_the_angels
+		}
+		ReligiousText = sabianism_religious_text
+		EvilGodNames = {
+			dualism_devil_name
+			dualism_evil_god_archons
+			dualism_evil_god_matter
+			dualism_evil_god_ignorance
+		}
+		WitchGodName = manicheanism_devil_name
+		WitchGodHerHis = CHARACTER_HERHIS_HIS
+		WitchGodSheHe = CHARACTER_SHEHE_HE
+		WitchGodHerHim = CHARACTER_HERHIM_HIM
+		WitchGodMistressMaster = master
+		WitchGodMotherFather = father
+
+	}
+}

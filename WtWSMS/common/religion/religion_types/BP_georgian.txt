@@ -32,6 +32,8 @@
 	doctrine = doctrine_clerical_gender_either
 	doctrine = doctrine_clerical_marriage_allowed
 	doctrine = doctrine_clerical_succession_temporal_appointment
+	doctrine = doctrine_monasticism_absent
+	doctrine = doctrine_sacraments_absent
 	
 	#Ritual Doctrines
 	doctrine = doctrine_pilgrimage_encouraged
@@ -41,9 +43,25 @@
 	#Coronation tradition
 	doctrine = doctrine_no_anointment
 
+	#Preservation
+	doctrine = doctrine_oral_storytelling
+
 	traits = {
 		virtues = { brave just honest }
 		sins = { craven arbitrary deceitful }
+	}
+
+	traits = {
+		virtues = {
+			brave = { weight = 50 scale = 1.5 }
+			just = { weight = 25 scale = 1 }
+			honest = { weight = 10 scale = 1 }
+		}
+		sins = {
+			craven = { weight = 30 scale = 1 }
+			arbitrary = { weight = 20 scale = 1 }
+			deceitful = { weight = 10 scale = 1 }
+		}
 	}
 
 	custom_faith_icons = {
@@ -215,27 +233,5 @@
 		
 		GHWName = ghw_great_holy_war
 		GHWNamePlural = ghw_great_holy_wars
-	}
-
-	faiths = {
-		georgian_pagan = {
-			color = { 0.23 0.0 0.11 }
-			icon = georgian_paganism.dds
-			reformed_icon = georgian_paganism_reformed.dds
-
-			doctrine = unreformed_faith_doctrine
-
-			#WtWSMS: trebizond, abkhazia, kartli, ani, shirvan
-			holy_site = trebizond
-			holy_site = abkhazia
-			holy_site = kartli
-			holy_site = ani
-			holy_site = shirvan
-
-			#Tenets
-			doctrine = tenet_sanctity_of_nature
-			doctrine = tenet_ancestor_worship
-			doctrine = tenet_cthonic_redoubts
-		}
 	}
 }

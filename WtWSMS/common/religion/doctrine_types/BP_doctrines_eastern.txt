@@ -1,30 +1,43 @@
 ﻿special_doctrine_is_hinduism_faith = {
+	doctrine_group_type = special_tolerance
 	parameters = {
-		hostility_override_special_doctrine_is_nastika_faith = 2
-		take_vows_active = yes
 		reincarnation_resistance_to_conversion = yes
 		reincarnation_events_active = yes
 		liturgical_language_sanskrit = yes
 	}
+	special_parameters = {
+		hostility_level_override = {
+			special_doctrine_is_nastika_faith = hostile
+		}
+	}
 }
 special_doctrine_is_jainism_faith = {
+	doctrine_group_type = special_tolerance
 	parameters = {
-		hostility_override_special_doctrine_is_nastika_faith = 1
-		take_vows_active = yes
 		reincarnation_events_active = yes
 		clergy_are_always_monks = yes
 		liturgical_language_sanskrit = yes
 	}
+	special_parameters = {
+		hostility_level_override = {
+			special_doctrine_is_nastika_faith = astray
+		}
+	}
 }
 special_doctrine_is_buddhist_faith = {
+	doctrine_group_type = special_tolerance
 	parameters = {
-		hostility_override_special_doctrine_is_nastika_faith = 1
-		take_vows_active = yes
 		reincarnation_events_active = yes
 		clergy_are_always_monks = yes
 	}
+	special_parameters = {
+		hostility_level_override = {
+			special_doctrine_is_nastika_faith = astray
+		}
+	}
 }
 special_doctrine_is_nastika_faith = {
+	doctrine_group_type = special_tolerance
 	# Aniconism effects
 	character_modifier = {
 		church_holding_build_speed = -0.33
@@ -33,14 +46,28 @@ special_doctrine_is_nastika_faith = {
 		church_holding_holding_build_gold_cost = -0.33
 	}
 	parameters = {
-		hostility_same_religion = 0
-		hostility_same_family = 1
-		hostility_override_special_doctrine_humanistic_philosophy = 1
-		hostility_override_special_doctrine_is_buddhist_faith = 1
-		hostility_override_special_doctrine_is_jainism_faith = 1
-		take_vows_active = yes
 		reforging_artifacts_costs_piety = yes
 		destroying_artifacts_is_pious = yes
 		clergy_are_always_monks = yes
+	}
+	special_parameters = {
+		hostility_levels = {
+			same_religion = righteous
+			same_family = astray
+		}
+		hostility_level_override = {
+			special_doctrine_humanistic_philosophy = astray
+			special_doctrine_is_buddhist_faith = astray
+			special_doctrine_is_jainism_faith = astray
+		}
+	}
+}
+special_doctrine_is_eastern_pagan_faith = {
+	doctrine_group_type = special_tolerance
+	special_parameters = {
+		hostility_level_override = {
+			eastern_hostility_doctrine = astray
+			special_doctrine_is_eastern_pagan_faith = astray
+		}
 	}
 }
