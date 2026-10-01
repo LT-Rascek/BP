@@ -10,7 +10,7 @@
 159807_coemperor = {
 	name = "Victor"
 	dynasty = 1022191
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_hispanic"
 	father = 159807
 	#mother = 188549
@@ -25,7 +25,7 @@
 159808 = { #Antonius, King of South-West Wales (Dyfed)
 	name = "Annwn_Dynod"
 	dynasty_house = 1029129 #Gwent
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	#father = 159807
 	mother = 188549
@@ -35,7 +35,7 @@
 159809 = { #Eugenius, King of South-Central Wales (Glywyssing)
 	name = "Owain"
 	dynasty = 1029130 #Cernyw
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "romano_british"
 	#father = 159807
 	358.1.1 = { birth = yes }
@@ -44,7 +44,7 @@
 159812 = { #Constantinus, King of North Wales (Gwynedd)
 	name = "Constantinus"
 	dynasty = 1029001
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "romano_british"
 	#father = 159807
 	mother = 188549
@@ -54,7 +54,7 @@
 159807_son = {
 	name = "Peblig"
 	dynasty = 1022191 #1029001; he just is a loose thread in this dynasty, instead of Magnus'
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "romano_british"
 	father = 159807
 	mother = 188549
@@ -71,7 +71,7 @@
 	name = "Gratianna"
 	female = yes
 	dynasty = 1029001
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "romano_british"
 	#father = 159807
 	mother = 188549
@@ -83,7 +83,7 @@
 	name = "Severa"
 	female = yes
 	dynasty = 1029001
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "romano_british"
 	#father = 159807
 	mother = 188549
@@ -95,7 +95,7 @@
 159816 = {
 	name = "Ednyfed" #Demetius
 	dynasty_house = 1029129 #Gwent
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "romano_british"
 	father = 159808
 	371.1.1 = { birth = yes }
@@ -105,7 +105,7 @@
 159818 = {
 	name = "Clotri" #Clotrius
 	dynasty_house = house_dyfed_briton
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "romano_british"
 	father = 159816
 	388.1.1 = { birth = yes }
@@ -116,7 +116,7 @@
 	name = "Gwledyr"
 	female = yes
 	dynasty_house = house_dyfed_briton
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 159818
 	405.1.1 = { birth = yes }
@@ -125,7 +125,7 @@
 159819 = {
 	name = "Maelgwn"
 	dynasty_house = house_dyfed_briton
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 159818
 	406.1.1 = { birth = yes }
@@ -135,7 +135,7 @@
 159821 = {
 	name = "Dyfnwal" # Donald
 	dynasty_house = 1029129 #Gwent
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "romano_british"
 	father = 159816
 	388.1.1 = { birth = yes }
@@ -144,7 +144,7 @@
 159822 = {
 	name = "Ynyr" # Honorius
 	dynasty_house = 1029129
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "romano_british"
 	father = 159821
 	430.1.1 = { birth = yes }
@@ -156,7 +156,7 @@
 159813 = {
 	name = "Tudwal"
 	dynasty_house = 1029129 #Gwent
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "romano_british"
 	father = 159808
 	373.1.1 = { birth = yes } #Younger brother gets smaller share of the estate
@@ -165,7 +165,7 @@
 159814 = {
 	name = "Tewdrig"
 	dynasty_house = 1029129
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "romano_british"
 	father = 159813
 	389.1.1 = { birth = yes }
@@ -175,7 +175,7 @@
 	name = "Marchell"
 	female = yes
 	dynasty_house = 1029129
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "romano_british"
 	father = 159814
 	405.1.1 = { birth = yes }
@@ -193,7 +193,7 @@
 	name = "Bhatarka"
 	# Bhatarka Maitraka
 	dynasty = 10424202
-	religion = "shaivism"
+	rite = "shaivism"
 	culture = "gujarati"
 	trait = "education_martial_4"
 	trait = "brave"
@@ -211,7 +211,7 @@
 	dynasty = 10424202
 	culture = "gujarati"
 	father = 509
-	religion = shaivism
+	rite = shaivism
 	463.1.1 = { birth = yes }
 	499.1.1 = { death = yes }
 }
@@ -221,7 +221,7 @@
 	dynasty = 10424202
 	culture = "gujarati"
 	father = 510
-	religion = shaivism
+	rite = shaivism
 	477.1.1 = { birth = yes }
 	520.1.1 = { death = yes }
 }
@@ -232,7 +232,7 @@
 	# Kharak Takka
 	dynasty = 10424189
 	culture = "khas"
-	religion = shaivism
+	rite = shaivism
 	450.1.1 = { birth = yes }
 	510.1.1 = { death = yes }
 }
@@ -242,7 +242,7 @@
 	dynasty = 10424189
 	culture = "khas"
 	father = 221521
-	religion = shaivism
+	rite = shaivism
 	470.1.1 = { birth = yes }
 	550.1.1 = { death = yes }
 }
@@ -254,7 +254,7 @@
 	name = "Miloduh"
 	# Miloduh Stanysl
 	dynasty = 10424166
-	religion = "finnish_pagan"
+	rite = "finnish_pagan"
 	culture = "muroma"
 	trait = "zealous"
 	trait = "ambitious"
@@ -266,7 +266,7 @@
 	name = "Pozvizd"
 	# Pozvizd Stanysl
 	dynasty = 10424166
-	religion = "finnish_pagan"
+	rite = "finnish_pagan"
 	culture = "muroma"
 	father = 212859
 	trait = "zealous"
@@ -280,7 +280,7 @@
 109729 = {
 	name = "Orf"
 	dynasty = 100385
-	religion = "siberian_pagan"
+	rite = "siberian_pagan"
 	culture = "komi"
 	440.1.1 = { birth = yes }
 	510.1.1 = { death = yes }
@@ -288,7 +288,7 @@
 1301006 = {
 	name = "Panay"
 	dynasty = 100385
-	religion = "siberian_pagan"
+	rite = "siberian_pagan"
 	culture = "komi"
 	father = 109729
 	490.1.1 = { birth = yes }
@@ -297,7 +297,7 @@
 1301007 = {
 	name = "Pudak"
 	dynasty = 100385
-	religion = "siberian_pagan"
+	rite = "siberian_pagan"
 	culture = "komi"
 	father = 1301006
 	540.1.1 = { birth = yes }
@@ -311,7 +311,7 @@
 194 = {
 	name = "Rev"
 	dynasty_house = house_arsacid_georgian
-	religion = "urartuism"
+	rite = "urartuism"
 	culture = "parthian"
 	mother = 193
 	father = 159550 #Vologases V
@@ -327,7 +327,7 @@
 	name = "Sephelia"
 	female = yes
 	#dynasty = 0
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "greek"
 	170.1.1 = { birth = yes }
 	220.1.1 = { death = yes }
@@ -335,7 +335,7 @@
 196 = {
 	name = "Vache"
 	dynasty_house = house_arsacid_georgian
-	religion = "urartuism"
+	rite = "urartuism"
 	culture = "parthian"
 	mother = 195
 	father = 194
@@ -345,7 +345,7 @@
 197 = {
 	name = "Pakur"
 	dynasty_house = house_arsacid_georgian
-	religion = "urartuism"
+	rite = "urartuism"
 	culture = "parthian"
 	father = 196
 	210.1.1 = { birth = yes }
@@ -354,7 +354,7 @@
 198 = {
 	name = "Mihrdat"
 	dynasty_house = house_arsacid_georgian
-	religion = "urartuism"
+	rite = "urartuism"
 	culture = "parthian"
 	father = 197
 	230.1.1 = { birth = yes }
@@ -363,7 +363,7 @@
 199 = {
 	name = "Aspacures"
 	dynasty_house = house_arsacid_georgian
-	religion = "urartuism"
+	rite = "urartuism"
 	culture = "parthian"
 	father = 198
 	250.1.1 = { birth = yes }
@@ -375,17 +375,17 @@
 	name = "Peroz"
 	# Peroz Mihran
 	dynasty_house = house_mihranid
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	300.1.1 = { birth = yes }
-	330.1.1 = { religion = armenian_apostolic }
+	330.1.1 = { rite = armenian_apostolic }
 	361.1.1 = { death = yes }
 }
 331143 = {
 	name = "Peroz"
 	# Peroz Mihran
 	dynasty_house = house_mihranid
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "persian"
 	father = 331142
 	340.1.1 = { birth = yes }
@@ -395,7 +395,7 @@
 	name = "Khurs"
 	# Khurs Mihran
 	dynasty_house = house_mihranid
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "persian"
 	father = 331142
 	350.1.1 = { birth = yes }
@@ -405,7 +405,7 @@
 	name = "Bakur"
 	# Bakur Mihran
 	dynasty_house = house_mihranid
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "persian"
 	father = 331143
 	370.1.1 = { birth = yes }
@@ -415,7 +415,7 @@
 	name = "Arshusha"
 	# Arshusha Mihran
 	dynasty_house = house_mihranid
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "persian"
 	father = 331143
 	375.1.1 = { birth = yes }
@@ -425,7 +425,7 @@
 	name = "Bakur"
 	# Bakur Mihran
 	dynasty_house = house_mihranid
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "persian"
 	father = 331146
 	400.1.1 = { birth = yes }
@@ -435,7 +435,7 @@
 	name = "Arshusha"
 	# Arshusha Mihran
 	dynasty_house = house_mihranid
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "persian"
 	father = 331147
 	430.1.1 = { birth = yes }
@@ -446,13 +446,13 @@
 	# Varsken Mihran
 	dna = 331149_varsken
 	dynasty_house = house_mihranid
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "persian"
 	father = 331148
 	450.1.1 = { birth = yes }
 	460.1.1 = { add_spouse = 331149_wife1 }
 	470.1.1 = {
-		religion = mazdayasna
+		rite = mazdayasna
 		trait = zealous
 	}
 	475.1.1 = {
@@ -480,7 +480,7 @@
 	name = "Shoushanig"
 	female = yes
 	dynasty = 23006 # Mamikonian
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159850
 	trait = zealous
@@ -500,7 +500,7 @@
 	name = "Golbahar"
 	female = yes
 	dynasty = 1029100 #Sassanian Princess
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 180624
 	460.1.1 = { birth = yes }
@@ -510,7 +510,7 @@
 	name = "Arshusha"
 	# Arshusha Mihran
 	dynasty_house = house_mihranid
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 331149
 	470.1.1 = { birth = yes }
@@ -520,7 +520,7 @@
 	name = "Arshusha"
 	# Arshusha Mihran
 	dynasty_house = house_mihranid
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 331150
 	540.1.1 = { birth = yes }
@@ -530,7 +530,7 @@
 	name = "Barzabod"
 	# Barzabod Mihran
 	dynasty_house = house_mihranid
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "persian"
 	father = 331144
 	390.1.1 = { birth = yes }
@@ -541,7 +541,7 @@
 	name = "Varaz-Bakur"
 	# Varaz-Bakur Mihran
 	dynasty_house = house_mihranid
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "persian"
 	father = 331152
 	mother = 159592
@@ -553,7 +553,7 @@
 	dna = 331154_mihr
 	# Mihr Mihran
 	dynasty_house = house_mihranid
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "persian"
 	father = 331153
 	440.1.1 = { birth = yes }
@@ -563,7 +563,7 @@
 	name = "Armayel"
 	# Armayel Mihran
 	dynasty_house = house_mihranid
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "persian"
 	father = 331154
 	460.1.1 = { birth = yes }
@@ -573,7 +573,7 @@
 	name = "Vard"
 	# Vard Mihran
 	dynasty_house = house_mihranid
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "persian"
 	father = 331155
 	480.1.1 = { birth = yes }
@@ -583,7 +583,7 @@
 	name = "Vardan"
 	# Vardan Mihran
 	dynasty_house = house_mihranid
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "persian"
 	father = 331156
 	500.1.1 = { birth = yes }
@@ -594,7 +594,7 @@
 	name = "Vard"
 	# Vard Mihran
 	dynasty_house = house_mihranid
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "persian"
 	father = 331157
 	mother = 159616
@@ -604,17 +604,17 @@
 159618 = { #Varaz-Grigor, First True Mihranid King of Albanian
 	name = "Varaz-Grigor"	# I
 	dynasty_house = house_mihranid
-	religion = "urartuism"
+	rite = "urartuism"
 	culture = "persian"
 	father = 331158
 	560.1.1 = { birth = yes }
-	628.1.1 = { religion = albanian_apostolic }
+	628.1.1 = { rite = albanian_apostolic }
 	636.1.1 = { death = yes }
 }
 159619 = {
 	name = "Varaz-Peroz"	# I
 	dynasty_house = house_mihranid
-	religion = "albanian_apostolic"
+	rite = "albanian_apostolic"
 	culture = "persian"
 	father = 159618
 	590.1.1 = { birth = yes }
@@ -623,7 +623,7 @@
 159620 = {
 	name = "Varaz-Tirdad"	# I
 	dynasty_house = house_mihranid
-	religion = "albanian_apostolic"
+	rite = "albanian_apostolic"
 	culture = "persian"
 	father = 160036
 	634.1.1 = { birth = yes }
@@ -632,7 +632,7 @@
 159621 = {
 	name = "Varazman"	# 
 	dynasty_house = house_mihranid
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "persian"
 	father = 331155
 	485.1.1 = { birth = yes }
@@ -641,7 +641,7 @@
 159622 = {
 	name = "Vardan"	# 
 	dynasty_house = house_mihranid
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "persian"
 	father = 159621
 	510.1.1 = { birth = yes }
@@ -650,7 +650,7 @@
 159623 = {
 	name = "Armayel"	# 
 	dynasty_house = house_mihranid
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "persian"
 	father = 159622
 	540.1.1 = { birth = yes }
@@ -659,7 +659,7 @@
 159624 = {
 	name = "Varazman"	# 
 	dynasty_house = house_mihranid
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "persian"
 	father = 159623
 	570.1.1 = { birth = yes }
@@ -669,7 +669,7 @@
 	name = "Spram"	#unhistorical name 
 	female = yes
 	dynasty_house = house_mihranid
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "persian"
 	father = 159624
 	600.1.1 = { birth = yes }
@@ -679,7 +679,7 @@
 159627 = {
 	name = "Vardan"	# II
 	dynasty_house = house_mihranid
-	religion = "albanian_apostolic"
+	rite = "albanian_apostolic"
 	culture = "persian"
 	father = 159620
 	665.1.1 = { birth = yes }
@@ -688,7 +688,7 @@
 159628 = {
 	name = "Gagik"	# I
 	dynasty_house = house_mihranid
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "persian"
 	father = 159620
 	655.1.1 = { birth = yes }
@@ -697,7 +697,7 @@
 159629 = {
 	name = "Narseh"	# I of Aghvank
 	dynasty_house = house_mihranid
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "persian"
 	father = 160037
 	700.1.1 = { birth = yes }
@@ -706,7 +706,7 @@
 159630 = {
 	name = "Stepanos"	# I of Aghvank
 	dynasty_house = house_mihranid
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "persian"
 	father = 159629
 	730.1.1 = { birth = yes }
@@ -715,7 +715,7 @@
 159631 = {
 	name = "Varaz-Tirdad"	# II of Aghvank
 	dynasty_house = house_mihranid
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "persian"
 	father = 159630
 	760.1.1 = { birth = yes }
@@ -724,7 +724,7 @@
 160036 = {
 	name = "Javanshir"	# Juansher
 	dynasty_house = house_mihranid
-	religion = "albanian_apostolic"
+	rite = "albanian_apostolic"
 	culture = "persian"
 	father = 159619
 	616.1.1 = { birth = yes }
@@ -735,7 +735,7 @@
 159885 = {
 	name = "Vache"
 	dynasty = 101736
-	religion = "zurvanism"
+	rite = "zurvanism"
 	culture = "armenian"
 	260.1.1 = { birth = yes }
 	350.1.1 = { death = yes }
@@ -743,17 +743,17 @@
 159886 = {
 	name = "Savasp"
 	dynasty = 101736
-	religion = "zurvanism"
+	rite = "zurvanism"
 	culture = "armenian"
 	father = 159885
 	290.1.1 = { birth = yes }
-	301.1.1 = { religion = armenian_apostolic } #Conversion of Armenia
+	301.1.1 = { rite = armenian_apostolic } #Conversion of Armenia
 	357.1.1 = { death = yes }
 }
 159887 = {
 	name = "Meruzhan"
 	dynasty = 101736
-	religion = "zurvanism"
+	rite = "zurvanism"
 	culture = "armenian"
 	father = 159885
 	trait = zealous
@@ -763,7 +763,7 @@
 159888 = {
 	name = "Vache"
 	dynasty = 101736
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159887
 	360.1.1 = { birth = yes }
@@ -772,7 +772,7 @@
 159889 = {
 	name = "Vassak"
 	dynasty = 101736
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159888
 	380.1.1 = { birth = yes }
@@ -781,7 +781,7 @@
 159890 = {
 	name = "Meruzhan"
 	dynasty = 101736
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159889
 	400.1.1 = { birth = yes }
@@ -790,7 +790,7 @@
 159891 = {
 	name = "Mihrshapur"
 	dynasty = 101736
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159890
 	420.1.1 = { birth = yes }
@@ -801,7 +801,7 @@
 	name = "Vache"	#
 	dna = 159893_vache
 	dynasty = 101736
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159891
 	460.1.1 = { birth = yes }
@@ -810,7 +810,7 @@
 159894 = {
 	name = "Vassak"	#
 	dynasty = 101736
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159893
 	500.1.1 = { birth = yes }
@@ -819,7 +819,7 @@
 159895 = {
 	name = "Vartan"	#
 	dynasty = 101736
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159894
 	525.1.1 = { birth = yes }
@@ -828,7 +828,7 @@
 159896 = {
 	name = "Vassak"	#
 	dynasty = 101736
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159895
 	550.1.1 = { birth = yes }
@@ -841,7 +841,7 @@
 159897 = {
 	name = "Varaz-Shapuh"	#
 	dynasty = 101736
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159895
 	551.1.1 = { birth = yes }
@@ -850,7 +850,7 @@
 159898 = {
 	name = "Vachagan"	#
 	dynasty = 101736
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159896
 	580.1.1 = { birth = yes }
@@ -859,7 +859,7 @@
 159899 = {
 	name = "Vartan"	#
 	dynasty = 101736
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159898
 	620.1.1 = { birth = yes }
@@ -868,7 +868,7 @@
 159900 = {
 	name = "Grigor"	#
 	dynasty = 101736
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159899
 	650.1.1 = { birth = yes }
@@ -877,7 +877,7 @@
 159901 = {
 	name = "Koriun"	#
 	dynasty = 101736
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159899
 	651.1.1 = { birth = yes }
@@ -886,7 +886,7 @@
 159902 = {
 	name = "Vassak"	#
 	dynasty = 101736
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159899
 	652.1.1 = { birth = yes }
@@ -895,7 +895,7 @@
 159903 = {
 	name = "Vahan"	#
 	dynasty = 101736
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159902
 	685.1.1 = { birth = yes }
@@ -904,7 +904,7 @@
 159904 = {
 	name = "Sahak"	#
 	dynasty = 101736
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159903
 	710.1.1 = { birth = yes }
@@ -913,7 +913,7 @@
 159905 = {
 	name = "Hamazasp"	#
 	dynasty = 101736
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159903
 	711.1.1 = { birth = yes }
@@ -922,7 +922,7 @@
 159906 = {
 	name = "Gagik"	#
 	dynasty = 101736
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159903
 	712.1.1 = { birth = yes }
@@ -931,7 +931,7 @@
 159907 = {
 	name = "Hamazasp"	#
 	dynasty = 101736
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159906
 	740.1.1 = { birth = yes }
@@ -943,7 +943,7 @@
 159908 = {
 	name = "Meruzhan"	#
 	dynasty = 101736
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159906
 	745.1.1 = { birth = yes }
@@ -955,7 +955,7 @@
 160014 = {
 	name = "Gagik"	#
 	dynasty = 101736
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159907
 	770.1.1 = { birth = yes }
@@ -965,7 +965,7 @@
 	name = "Dzoyk"	#
 	female = yes
 	dynasty = 101736
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159894
 	514.1.1 = { birth = yes }
@@ -983,7 +983,7 @@
 159987 = {
 	name = "Andovk"
 	dynasty = 101743
-	religion = "urartuism"
+	rite = "urartuism"
 	culture = "armenian"
 	280.1.1 = { birth = yes }
 	330.1.1 = { death = yes }
@@ -991,17 +991,17 @@
 159988 = {
 	name = "Valinak"
 	dynasty = 101743
-	religion = "urartuism"
+	rite = "urartuism"
 	culture = "armenian"
 	father = 159987
 	300.1.1 = { birth = yes }
-	301.1.1 = { religion = armenian_apostolic } #Conversion of Armenia
+	301.1.1 = { rite = armenian_apostolic } #Conversion of Armenia
 	339.1.1 = { death = yes }
 }
 159989 = {
 	name = "Andovk"
 	dynasty = 101743
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159987
 	305.1.1 = { birth = yes }
@@ -1010,7 +1010,7 @@
 159990 = {
 	name = "Babgen"
 	dynasty = 101743
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159989
 	340.1.1 = { birth = yes }
@@ -1019,7 +1019,7 @@
 TiridatesSonofTiran = {
 	name = "Trdat"
 	dynasty_house = house_arsacid_armenia
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 214070
 	325.1.1 = { birth = yes } #Younger than his brother Arsaces II
@@ -1028,7 +1028,7 @@ TiridatesSonofTiran = {
 GnelOfArmenia = {
 	name = "Gnel"
 	dynasty_house = house_arsacid_armenia
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = TiridatesSonofTiran
 	340.1.1 = { birth = yes }
@@ -1045,7 +1045,7 @@ GnelOfArmenia = {
 	# Pharantzem Siak
 	female = yes
 	dynasty = 101743
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159989
 	trait = education_martial_4 #Famed for defense of Artogerassa against Persia
@@ -1061,7 +1061,7 @@ GnelOfArmenia = {
 159991 = {
 	name = "Valinak"
 	dynasty = 101743
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159989
 	345.1.1 = { birth = yes }
@@ -1070,14 +1070,14 @@ GnelOfArmenia = {
 159992 = {
 	name = "Vasak"
 	dynasty = 101743
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159991
 	trait = wrathful
 	trait = sadistic
 	trait = deceitful
 	404.1.1 = { birth = yes }
-	450.1.1 = { religion = urartuism } #Joins the Sassanid's
+	450.1.1 = { rite = urartuism } #Joins the Sassanid's
 	452.1.1 = {
 		death = {
 			death_reason = death_dungeon
@@ -1088,33 +1088,33 @@ GnelOfArmenia = {
 159993 = {
 	name = "Vahan" #(Varaz)vahan
 	dynasty = 101743
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159991
 	408.1.1 = { birth = yes }
-	450.1.1 = { religion = urartuism }
+	450.1.1 = { rite = urartuism }
 	452.1.1 = { add_spouse = 331135 }
 	475.1.1 = { death = yes }
 }
 159994 = {
 	name = "Babgen"
 	dynasty = 101743
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159992
 	424.1.1 = { birth = yes }
-	450.1.1 = { religion = urartuism }
+	450.1.1 = { rite = urartuism }
 	483.1.1 = { death = yes }
 }
 331134 = {
 	name = "Bakur"
 	# Bakur Siak
 	dynasty = 101743
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159992
 	430.1.1 = { birth = yes }
-	450.1.1 = { religion = urartuism }
+	450.1.1 = { rite = urartuism }
 	482.1.1 = { death = yes }
 }
 331135 = {
@@ -1122,18 +1122,18 @@ GnelOfArmenia = {
 	# Erato Siak
 	female = yes
 	dynasty = 101743
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159992
 	435.1.1 = { birth = yes }
-	450.1.1 = { religion = urartuism }
+	450.1.1 = { rite = urartuism }
 	473.1.1 = { death = yes }
 }
 159995 = {
 	name = "Gdihon"
 	dna = 331137_gelehon
 	dynasty = 101743
-	religion = "urartuism"
+	rite = "urartuism"
 	culture = "armenian"
 	father = 159993
 	mother = 331135
@@ -1144,7 +1144,7 @@ GnelOfArmenia = {
 	name = "Hadz"
 	# Hadz Siak
 	dynasty = 101743
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "armenian"
 	father = 159993
 	mother = 331135
@@ -1154,60 +1154,60 @@ GnelOfArmenia = {
 159996 = {
 	name = "Vahram"
 	dynasty = 101743
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159994
 	430.1.1 = { birth = yes }
-	450.1.1 = { religion = urartuism }
-	484.1.1 = { religion = armenian_apostolic } #Treaty of Nvarsak
+	450.1.1 = { rite = urartuism }
+	484.1.1 = { rite = armenian_apostolic } #Treaty of Nvarsak
 	490.1.1 = { death = yes }
 }
 159997 = {
 	name = "Vasak"
 	dynasty = 101743
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159994
 	440.1.1 = { birth = yes }
-	450.1.1 = { religion = urartuism }
-	484.1.1 = { religion = armenian_apostolic } #Treaty of Nvarsak
+	450.1.1 = { rite = urartuism }
+	484.1.1 = { rite = armenian_apostolic } #Treaty of Nvarsak
 	502.1.1 = { death = yes }
 }
 159998 = {
 	name = "Artashir"
 	dynasty = 101743
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 331134
 	448.1.1 = { birth = yes }
-	450.1.1 = { religion = urartuism }
-	484.1.1 = { religion = armenian_apostolic } #Treaty of Nvarsak
+	450.1.1 = { rite = urartuism }
+	484.1.1 = { rite = armenian_apostolic } #Treaty of Nvarsak
 	514.1.1 = { death = yes }
 }
 159999 = {
 	name = "Babgen"
 	dynasty = 101743
-	religion = "urartuism"
+	rite = "urartuism"
 	culture = "armenian"
 	father = 159997
 	464.1.1 = { birth = yes }
-	484.1.1 = { religion = armenian_apostolic } #Treaty of Nvarsak
+	484.1.1 = { rite = armenian_apostolic } #Treaty of Nvarsak
 	535.1.1 = { death = yes }
 }
 160000 = {
 	name = "Hovhannes"
 	dynasty = 101743
-	religion = "urartuism"
+	rite = "urartuism"
 	culture = "armenian"
 	father = 159999
 	480.1.1 = { birth = yes }
-	484.1.1 = { religion = armenian_apostolic }
+	484.1.1 = { rite = armenian_apostolic }
 	553.1.1 = { death = yes }
 }
 160001 = {
 	name = "Valoul"
 	dynasty = 101743
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 160000
 	496.1.1 = { birth = yes }
@@ -1216,7 +1216,7 @@ GnelOfArmenia = {
 160002 = {
 	name = "Grigor"
 	dynasty = 101743
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 160001
 	512.1.1 = { birth = yes }
@@ -1225,7 +1225,7 @@ GnelOfArmenia = {
 160003 = {
 	name = "Artashir"
 	dynasty = 101743
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 160002
 	528.1.1 = { birth = yes }
@@ -1234,7 +1234,7 @@ GnelOfArmenia = {
 160004 = {
 	name = "Piran"
 	dynasty = 101743
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 160003
 	544.1.1 = { birth = yes }
@@ -1243,7 +1243,7 @@ GnelOfArmenia = {
 160005 = {
 	name = "Sargis"
 	dynasty = 101743
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 160004
 	560.1.1 = { birth = yes }
@@ -1252,7 +1252,7 @@ GnelOfArmenia = {
 160006 = {
 	name = "Sahak"
 	dynasty = 101743
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 160005
 	576.1.1 = { birth = yes }
@@ -1261,7 +1261,7 @@ GnelOfArmenia = {
 160007 = {
 	name = "Grigor"
 	dynasty = 101743
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 160006
 	592.1.1 = { birth = yes }
@@ -1270,7 +1270,7 @@ GnelOfArmenia = {
 160008 = {
 	name = "Hrahat"
 	dynasty = 101743
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 160007
 	608.1.1 = { birth = yes }
@@ -1279,7 +1279,7 @@ GnelOfArmenia = {
 160009 = {
 	name = "Hovhannes"
 	dynasty = 101743
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 160008
 	624.1.1 = { birth = yes }
@@ -1288,7 +1288,7 @@ GnelOfArmenia = {
 160010 = {
 	name = "Kourd"
 	dynasty = 101743
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 160009
 	640.1.1 = { birth = yes }
@@ -1297,7 +1297,7 @@ GnelOfArmenia = {
 160011 = {
 	name = "Babgen"
 	dynasty = 101743
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 160010
 	660.1.1 = { birth = yes }
@@ -1306,7 +1306,7 @@ GnelOfArmenia = {
 160012 = {
 	name = "Kourd"
 	dynasty = 101743
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 160011
 	680.1.1 = { birth = yes }
@@ -1315,7 +1315,7 @@ GnelOfArmenia = {
 160013 = {
 	name = "Atrnerseh"
 	dynasty = 101743
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 160012
 	710.1.1 = { birth = yes }
@@ -1324,7 +1324,7 @@ GnelOfArmenia = {
 159243 = {
 	name = "Vasak"
 	dynasty = 101743
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 160013
 	740.1.1 = { birth = yes }
@@ -1333,7 +1333,7 @@ GnelOfArmenia = {
 159244 = {
 	name = "Philipo"
 	dynasty = 101743
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159243
 	770.1.1 = { birth = yes }
@@ -1342,7 +1342,7 @@ GnelOfArmenia = {
 159245 = {
 	name = "Sahak"
 	dynasty = 101743
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159243
 	755.1.1 = { birth = yes }
@@ -1351,7 +1351,7 @@ GnelOfArmenia = {
 159246 = {
 	name = "Grigor-Soupan"
 	dynasty = 101743
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159245
 	780.1.1 = { birth = yes }
@@ -1360,7 +1360,7 @@ GnelOfArmenia = {
 159247 = {
 	name = "Vasak"
 	dynasty = 101743
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = 159246
 	800.1.1 = { birth = yes }
@@ -1373,7 +1373,7 @@ GnelOfArmenia = {
 PharnavazidDyn000 = { #Pharnavaz
 	name = "Pharnavaz"
 	dynasty = 1042228 #Pharnabazid
-	religion = "georgian_pagan"
+	rite = "georgian_pagan"
 	culture = "colchiscan"
 	-326.1.1 = { birth = yes }
 	-300.1.1 = { add_spouse = PharnavazidDyn000_wife }
@@ -1382,7 +1382,7 @@ PharnavazidDyn000 = { #Pharnavaz
 PharnavazidDyn000_wife = {
 	name = "Anahid"
 	female = yes
-	religion = "georgian_pagan"
+	rite = "georgian_pagan"
 	culture = "nakh"
 	-326.1.1 = { birth = yes }
 	-234.1.1 = { death = yes }
@@ -1390,7 +1390,7 @@ PharnavazidDyn000_wife = {
 PharnavazidDyn001 = { #Sauromaces
 	name = "Saurmag"
 	dynasty = 1042228 #Pharnabazid
-	religion = "georgian_pagan"
+	rite = "georgian_pagan"
 	culture = "colchiscan"
 	father = PharnavazidDyn000
 	mother = PharnavazidDyn000_wife
@@ -1400,7 +1400,7 @@ PharnavazidDyn001 = { #Sauromaces
 PharnavazidDyn002 = { #Miran I
 	name = "Miran"
 	dynasty = 1042228 #Pharnabazid
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = PharnavazidDyn001
 	-189.1.1 = { birth = yes }
@@ -1408,14 +1408,14 @@ PharnavazidDyn002 = { #Miran I
 		trait = adopted
 		add_matrilineal_spouse = PharnavazidDyn002_wife
 	}
-	-159.1.1 = { religion = georgian_pagan }
+	-159.1.1 = { rite = georgian_pagan }
 	-109.1.1 = { death = yes }
 }
 PharnavazidDyn002_wife = {
 	name = "Mathiko"
 	female = yes
 	dynasty = 1042228 #Pharnabazid
-	religion = "georgian_pagan"
+	rite = "georgian_pagan"
 	culture = "colchiscan"
 	father = PharnavazidDyn001
 	-189.1.1 = { birth = yes }
@@ -1424,7 +1424,7 @@ PharnavazidDyn002_wife = {
 PharnavazidDyn003 = { #Pharnajom
 	name = "Pharnajom"
 	dynasty = 1042228 #Pharnabazid
-	religion = "georgian_pagan"
+	rite = "georgian_pagan"
 	culture = "colchiscan"
 	father = PharnavazidDyn002
 	mother = PharnavazidDyn002_wife
@@ -1439,13 +1439,13 @@ PharnavazidDyn003 = { #Pharnajom
 ArtaxiadGeorgianDynn000 = { #Artaxias
 	name = "Artaxias"
 	dynasty_house = house_artaxiad_georgian
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = ArtaxiadDynn004
 	-140.1.1 = { birth = yes }
 	-120.1.1 = {
 		add_spouse = PharnavazidDyn004_wife
-		religion = georgian_pagan
+		rite = georgian_pagan
 	}
 	-78.1.1 = { death = yes }
 }
@@ -1453,7 +1453,7 @@ PharnavazidDyn004_wife = { #Pharnajom's sister
 	name = "Eliso"
 	female = yes
 	dynasty = 1042228 #Pharnabazid
-	religion = "georgian_pagan"
+	rite = "georgian_pagan"
 	culture = "colchiscan"
 	father = PharnavazidDyn002
 	mother = PharnavazidDyn002_wife
@@ -1463,7 +1463,7 @@ PharnavazidDyn004_wife = { #Pharnajom's sister
 ArtaxiadGeorgianDynn001 = { #Artoces
 	name = "Artag"
 	dynasty_house = house_artaxiad_georgian
-	religion = "georgian_pagan"
+	rite = "georgian_pagan"
 	culture = "colchiscan"
 	father = ArtaxiadGeorgianDynn000
 	mother = PharnavazidDyn004_wife
@@ -1473,7 +1473,7 @@ ArtaxiadGeorgianDynn001 = { #Artoces
 ArtaxiadGeorgianDynn002 = { #Pharnavaz II
 	name = "Bratman"
 	dynasty_house = house_artaxiad_georgian
-	religion = "georgian_pagan"
+	rite = "georgian_pagan"
 	culture = "colchiscan"
 	father = ArtaxiadGeorgianDynn001
 	-90.1.1 = { birth = yes }
@@ -1482,7 +1482,7 @@ ArtaxiadGeorgianDynn002 = { #Pharnavaz II
 PharnavazidDyn004 = { #Miran II
 	name = "Miran"
 	dynasty = 1042228 #Pharnabazid
-	religion = "georgian_pagan"
+	rite = "georgian_pagan"
 	culture = "colchiscan"
 	father = PharnavazidDyn003
 	-80.1.1 = { birth = yes }
@@ -1491,7 +1491,7 @@ PharnavazidDyn004 = { #Miran II
 PharnavazidDyn005 = { #Artaxias II
 	name = "Arsuk"
 	dynasty = 1042228 #Pharnabazid
-	religion = "georgian_pagan"
+	rite = "georgian_pagan"
 	culture = "colchiscan"
 	father = PharnavazidDyn004
 	-60.1.1 = { birth = yes }
@@ -1500,7 +1500,7 @@ PharnavazidDyn005 = { #Artaxias II
 KartamOfColchis = { #Father of Pharasmanes I and Mithridates
 	name = "Kartam"
 	dynasty = 1042228 #Indirect line, tracing back to Kuji of Colchis and Pharnavaz I of Iberia...
-	religion = "georgian_pagan"
+	rite = "georgian_pagan"
 	culture = "colchiscan"
 	father = ArtaxiadGeorgianDynn002
 	trait = adopted
@@ -1512,7 +1512,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	name = "Rusudan"
 	female = yes
 	dynasty_house = house_artaxiad_georgian
-	religion = "georgian_pagan"
+	rite = "georgian_pagan"
 	culture = "colchiscan"
 	father = ArtaxiadGeorgianDynn002
 	-60.1.1 = { birth = yes }
@@ -1521,7 +1521,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 186 = { #Pharasmanes I the Great
 	name = "Pharasmanes"
 	dynasty = 1042228
-	religion = "georgian_pagan"
+	rite = "georgian_pagan"
 	culture = "colchiscan"
 	father = KartamOfColchis
 	trait = education_martial_4
@@ -1536,7 +1536,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	name = "Meghranoush"
 	female = yes
 	dynasty_house = house_artaxiad
-	religion = "urartuism"
+	rite = "urartuism"
 	culture = "armenian"
 	father = ArtaxiadDynn009
 	mother = ArtaxiadDynn009_wife
@@ -1546,7 +1546,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 187 = { #Mihrdat I of Iberia
 	name = "Mihrdat"
 	dynasty = 1042228
-	religion = "georgian_pagan"
+	rite = "georgian_pagan"
 	culture = "colchiscan"
 	father = 186
 	mother = 186_wife
@@ -1558,7 +1558,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 188 = { #Amazasp I
 	name = "Amazasp"
 	dynasty = 1042228
-	religion = "georgian_pagan"
+	rite = "georgian_pagan"
 	culture = "colchiscan"
 	father = 187
 	60.1.1 = { birth = yes }
@@ -1567,7 +1567,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 189 = { #Pharasmanes II "the Valiant"
 	name = "Pharasmanes"
 	dynasty = 1042228
-	religion = "georgian_pagan"
+	rite = "georgian_pagan"
 	culture = "colchiscan"
 	father = 188
 	90.1.1 = { birth = yes }
@@ -1577,7 +1577,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 190 = { #Ghadam
 	name = "Ghadam"
 	dynasty = 1042228
-	religion = "georgian_pagan"
+	rite = "georgian_pagan"
 	culture = "colchiscan"
 	father = 189
 	110.1.1 = { birth = yes }
@@ -1586,7 +1586,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 220 = { #Pharasmanes III
 	name = "Pharasmanes"
 	dynasty = 1042228
-	religion = "georgian_pagan"
+	rite = "georgian_pagan"
 	culture = "colchiscan"
 	father = 190
 	134.1.1 = { birth = yes }
@@ -1595,7 +1595,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 192 = { #Amazasp II
 	name = "Amazasp"
 	dynasty = 1042228
-	religion = "georgian_pagan"
+	rite = "georgian_pagan"
 	culture = "georgian"
 	father = 220
 	150.1.1 = { birth = yes }
@@ -1608,7 +1608,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	name = "Abeshura"
 	female = yes
 	dynasty_house = house_arsacid_georgian #Daughter of Aspacures
-	religion = "urartuism"
+	rite = "urartuism"
 	culture = "parthian"
 	father = 199
 	266.1.1 = { birth = yes }
@@ -1617,14 +1617,14 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 201 = {
 	name = "Mirian"
 	dynasty_house = house_chosroid
-	religion = mazdayasna
+	rite = mazdayasna
 	culture = parthian
 	264.1.1 = { birth = yes }
 	282.1.1 = { add_spouse = 200 }
 	300.1.1 = { add_spouse = 201_wife2 }
 	326.1.1 = {
 		culture = georgian
-		religion = georgian_orthodox
+		rite = georgian_rite
 	}
 	361.1.1 = { death = yes }
 }
@@ -1632,17 +1632,17 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	name = "Nana"
 	female = yes
 	dynasty = 1300692
-	religion = nicene
+	religion = christian_faith
 	culture = bosporan
 	father = 1310037
 	280.1.1 = { birth = yes }
-	326.1.1 = { religion = georgian_orthodox }
+	326.1.1 = { rite = georgian_rite }
 	363.1.1 = { death = yes }
 }
 202 = {
 	name = "Rev"
 	dynasty_house = house_chosroid
-	religion = "georgian_orthodox"
+	rite = "georgian_rite"
 	culture = "georgian"
 	father = 201
 	mother = 201_wife2
@@ -1653,7 +1653,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 203 = {
 	name = "Varaz-Bakur"
 	dynasty_house = house_chosroid
-	religion = "georgian_orthodox"
+	rite = "georgian_rite"
 	culture = "georgian"
 	father = 201
 	mother = 201_wife2
@@ -1663,7 +1663,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 204 = {
 	name = "Saurmag"
 	dynasty_house = house_chosroid
-	religion = "georgian_orthodox"
+	rite = "georgian_rite"
 	culture = "georgian"
 	father = 202
 	mother = 214069
@@ -1673,7 +1673,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 205 = {
 	name = "Mihrdat"
 	dynasty_house = house_chosroid
-	religion = "georgian_orthodox"
+	rite = "georgian_rite"
 	culture = "georgian"
 	father = 203
 	345.1.1 = {birth = yes }
@@ -1682,7 +1682,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 206 = {
 	name = "Varaz-Bakur"
 	dynasty_house = house_chosroid
-	religion = "georgian_orthodox"
+	rite = "georgian_rite"
 	culture = "georgian"
 	father = 205
 	360.1.1 = { birth = yes }
@@ -1691,7 +1691,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 207 = {
 	name = "Trdat"
 	dynasty_house = house_chosroid
-	religion = "georgian_orthodox"
+	rite = "georgian_rite"
 	culture = "georgian"
 	father = 202
 	mother = 214069
@@ -1701,7 +1701,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 208 = {
 	name = "Pharasmanes"
 	dynasty_house = house_chosroid
-	religion = "georgian_orthodox"
+	rite = "georgian_rite"
 	culture = "georgian"
 	father = 203
 	350.1.1 = { birth = yes }
@@ -1710,7 +1710,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 209 = {
 	name = "Mihrdat"
 	dynasty_house = house_chosroid
-	religion = "georgian_orthodox"
+	rite = "georgian_rite"
 	culture = "georgian"
 	trait = "cynical"
 	trait = "callous"
@@ -1723,7 +1723,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 210 = {
 	name = "Archili"
 	dynasty_house = house_chosroid
-	religion = "georgian_orthodox"
+	rite = "georgian_rite"
 	culture = "georgian"
 	father = 209
 	400.1.1 = { birth = yes }
@@ -1733,7 +1733,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 211 = {
 	name = "Mihrdat"
 	dynasty_house = house_chosroid
-	religion = "georgian_orthodox"
+	rite = "georgian_rite"
 	culture = "georgian"
 	father = 210
 	mother = MariaWifeOfArchil
@@ -1753,17 +1753,17 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	dynasty_house = house_mihranid
 	father = 331152
 	culture = persian
-	religion = armenian_apostolic
+	rite = armenian_apostolic
 	trait = beauty_good_3
 	420.1.1 = { birth = yes }
-	436.1.1 = { religion = georgian_orthodox }
+	436.1.1 = { rite = georgian_rite }
 	500.1.1 = { death = yes }
 }
 213 = {
 	name = "Vakhtang"
 	dna = 213_vakhtang
 	dynasty_house = house_chosroid
-	religion = "georgian_orthodox"
+	rite = "georgian_rite"
 	culture = "georgian"
 	father = 211
 	mother = 213_mother
@@ -1783,7 +1783,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	name = "Mihrandukht"
 	female = yes
 	dynasty_house = house_chosroid
-	religion = "georgian_orthodox"
+	rite = "georgian_rite"
 	culture = "georgian"
 	father = 211
 	mother = 213_mother
@@ -1794,17 +1794,17 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	name = "Balendokht"
 	female = yes
 	dynasty = 1029100 #Sassanian
-	religion = zurvanism
+	rite = zurvanism
 	culture = persian
 	father = 180622 #Hormizd III
 	457.1.1 = { birth = yes }
-	476.1.1 = { religion = georgian_orthodox }
+	476.1.1 = { rite = georgian_rite }
 	484.1.1 = { death = yes } #Died in Childbirth
 }
 36393 = {
 	name = "Dachi"
 	dynasty_house = house_chosroid
-	religion = "georgian_orthodox"
+	rite = "georgian_rite"
 	culture = "georgian"
 	father = 213
 	mother = 213_wife
@@ -1816,7 +1816,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	name = "Vakhtangdukht"
 	female = yes
 	dynasty_house = house_chosroid
-	religion = "georgian_orthodox"
+	rite = "georgian_rite"
 	culture = "georgian"
 	father = 213
 	mother = 213_wife
@@ -1827,7 +1827,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 36395 = {
 	name = "Bakur"
 	dynasty_house = house_chosroid
-	religion = "georgian_orthodox"
+	rite = "georgian_rite"
 	culture = "georgian"
 	father = 36393
 	510.1.1 = { birth = yes }
@@ -1836,7 +1836,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 36396 = {
 	name = "Pharasmanes"
 	dynasty_house = house_chosroid
-	religion = "georgian_orthodox"
+	rite = "georgian_rite"
 	culture = "georgian"
 	father = 36395
 	530.1.1 = { birth = yes }
@@ -1845,7 +1845,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 36397 = {
 	name = "Pharasmanes"
 	dynasty_house = house_chosroid
-	religion = "georgian_orthodox"
+	rite = "georgian_rite"
 	culture = "georgian"
 	father = 36396
 	550.1.1 = { birth = yes }
@@ -1854,7 +1854,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 36398 = {
 	name = "Bacurius"
 	dynasty_house = house_chosroid
-	religion = "georgian_orthodox"
+	rite = "georgian_rite"
 	culture = "georgian"
 	father = 36396
 	555.1.1 = { birth = yes }
@@ -1864,7 +1864,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 159779 = {
 	name = "Stepanoz"	# II
 	dynasty_house = house_chosroid
-	religion = "georgian_orthodox"
+	rite = "georgian_rite"
 	culture = "georgian"
 	father = 36399
 	600.1.1 = { birth = yes }
@@ -1873,7 +1873,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 159780 = {
 	name = "Adarnase"	# II
 	dynasty_house = house_chosroid
-	religion = "georgian_orthodox"
+	rite = "georgian_rite"
 	culture = "georgian"
 	father = 36399
 	620.1.1 = { birth = yes }
@@ -1882,7 +1882,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 36399 = {
 	name = "Adarnase"
 	dynasty_house = house_chosroid
-	religion = "georgian_orthodox"
+	rite = "georgian_rite"
 	culture = "georgian"
 	father = 36398
 	570.1.1 = { birth = yes }
@@ -1891,7 +1891,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 36401 = {
 	name = "Leo"
 	dynasty_house = house_chosroid
-	religion = "georgian_orthodox"
+	rite = "georgian_rite"
 	culture = "georgian"
 	father = 213
 	mother = 36400
@@ -1901,7 +1901,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 36402 = {
 	name = "Levan"
 	dynasty_house = house_chosroid
-	religion = "georgian_orthodox"
+	rite = "georgian_rite"
 	culture = "georgian"
 	father = 213
 	mother = 36400
@@ -1911,7 +1911,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 36403 = {
 	name = "Mihrdat"
 	dynasty_house = house_chosroid
-	religion = "georgian_orthodox"
+	rite = "georgian_rite"
 	culture = "georgian"
 	father = 213
 	mother = 36400
@@ -1922,7 +1922,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 36404 = {
 	name = "Guaram"
 	dynasty_house = house_guaramid	# Guarmid
-	religion = "georgian_orthodox"
+	rite = "georgian_rite"
 	culture = "georgian"
 	father = 36402
 	525.1.1 = { birth = yes }
@@ -1931,7 +1931,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 159777 = {
 	name = "Stepanoz"	# 
 	dynasty_house = house_guaramid
-	religion = "georgian_orthodox"
+	rite = "georgian_rite"
 	culture = "georgian"
 	father = 36404
 	540.1.1 = { birth = yes }
@@ -1940,7 +1940,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 159781 = {
 	name = "Demetre"	# 
 	dynasty_house = house_guaramid
-	religion = "georgian_orthodox"
+	rite = "georgian_rite"
 	culture = "georgian"
 	father = 36404
 	545.1.1 = { birth = yes }
@@ -1949,7 +1949,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 159782 = {
 	name = "Levan"	# name unknown
 	dynasty_house = house_guaramid
-	religion = "georgian_orthodox"
+	rite = "georgian_rite"
 	culture = "georgian"
 	father = 159777
 	570.1.1 = { birth = yes }
@@ -1958,7 +1958,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 159783 = {
 	name = "Guaram"	# II
 	dynasty_house = house_guaramid
-	religion = "georgian_orthodox"
+	rite = "georgian_rite"
 	culture = "georgian"
 	father = 159782
 	600.1.1 = { birth = yes }
@@ -1967,7 +1967,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 159784 = {
 	name = "Stepanoz"	# name unknown
 	dynasty_house = house_guaramid
-	religion = "georgian_orthodox"
+	rite = "georgian_rite"
 	culture = "georgian"
 	father = 159783
 	630.1.1 = { birth = yes }
@@ -1976,7 +1976,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 159785 = {
 	name = "Guaram"	# III
 	dynasty_house = house_guaramid
-	religion = "georgian_orthodox"
+	rite = "georgian_rite"
 	culture = "georgian"
 	father = 159784
 	680.1.1 = { birth = yes }
@@ -1985,7 +1985,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 159786 = {
 	name = "Stepanoz"	# III
 	dynasty_house = house_guaramid
-	religion = "georgian_orthodox"
+	rite = "georgian_rite"
 	culture = "georgian"
 	father = 159785
 	710.1.1 = { birth = yes }
@@ -1997,7 +1997,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	name = "MugulU_"
 	# AKA: Yujiulü Mugulü
 	dynasty = 10424584
-	religion = "tengri_pagan"
+	rite = "tengri_pagan"
 	culture = ninrun
 	300.1.1 = {
 		birth = yes
@@ -2010,7 +2010,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	name = "Chelunhui"
 	# AKA: Yujiulü Chelunhui
 	dynasty = 10424584
-	religion = "tengri_pagan"
+	rite = "tengri_pagan"
 	culture = ninrun
 	father = 4404
 	320.1.1 = {
@@ -2024,7 +2024,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	name = "Tungui"
 	# AKA: Yujiulü Tungui
 	dynasty = 10424584
-	religion = "tengri_pagan"
+	rite = "tengri_pagan"
 	culture = ninrun
 	father = 4404
 	325.1.1 = {
@@ -2038,7 +2038,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	name = "Bati"
 	# AKA: Yujiulü Bati
 	dynasty = 10424584
-	religion = "tengri_pagan"
+	rite = "tengri_pagan"
 	culture = ninrun
 	father = 4404
 	330.1.1 = {
@@ -2052,7 +2052,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	name = "Disuyuan"
 	# AKA: Yujiulü Disuyuan
 	dynasty = 10424584
-	religion = "tengri_pagan"
+	rite = "tengri_pagan"
 	culture = ninrun
 	father = 4409
 	360.1.1 = {
@@ -2066,7 +2066,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	name = "Pihouba"
 	# AKA: Yujiulü Pihouba
 	dynasty = 10424584
-	religion = "tengri_pagan"
+	rite = "tengri_pagan"
 	culture = ninrun
 	father = 4409
 	365.1.1 = {
@@ -2080,7 +2080,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	name = "Venheti"
 	# AKA: Yujiulü Venheti
 	dynasty = 10424584
-	religion = "tengri_pagan"
+	rite = "tengri_pagan"
 	culture = ninrun
 	father = 4410
 	376.1.1 = {
@@ -2094,7 +2094,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	name = "Mangeti"
 	# AKA: Yujiulü Mengeti
 	dynasty = 10424584
-	religion = "tengri_pagan"
+	rite = "tengri_pagan"
 	culture = ninrun
 	father = 4409
 	355.1.1 = {
@@ -2108,7 +2108,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	name = "Heduohan"
 	# AKA: Yujiulü Heduohan
 	dynasty = 10424584
-	religion = "tengri_pagan"
+	rite = "tengri_pagan"
 	culture = ninrun
 	father = 4413
 	360.1.1 = {
@@ -2122,7 +2122,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	name = "Shelun"
 	# AKA: Yujiulü Shelun
 	dynasty = 10424584
-	religion = "tengri_pagan"
+	rite = "tengri_pagan"
 	culture = ninrun
 	father = 4414
 	378.1.1 = {
@@ -2136,7 +2136,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	name = "HulU_"
 	# AKA: Yujiulü Hulü
 	dynasty = 10424584
-	religion = "tengri_pagan"
+	rite = "tengri_pagan"
 	culture = ninrun
 	father = 4414
 	385.1.1 = {
@@ -2150,7 +2150,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	name = "Datan"
 	# AKA: Yujiulü Datan
 	dynasty = 10424584
-	religion = "tengri_pagan"
+	rite = "tengri_pagan"
 	culture = ninrun
 	father = 4431
 	400.1.1 = {
@@ -2164,7 +2164,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	name = "Buluzhen"
 	# AKA: Yujiulü Buluzhen
 	dynasty = 10424584
-	religion = "tengri_pagan"
+	rite = "tengri_pagan"
 	culture = ninrun
 	father = 4425
 	388.1.1 = {
@@ -2178,7 +2178,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	name = "Wuti"
 	# AKA: Yujiulü Wuti
 	dynasty = 10424584
-	religion = "tengri_pagan"
+	rite = "tengri_pagan"
 	culture = ninrun
 	father = 4432
 	417.1.1 = {
@@ -2192,7 +2192,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	name = "Tuhezhen"
 	# AKA: Yujiulü Tuhezhen
 	dynasty = 10424584
-	religion = "tengri_pagan"
+	rite = "tengri_pagan"
 	culture = ninrun
 	father = 4434
 	432.1.1 = {
@@ -2207,7 +2207,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	name = "Yucheng"
 	# AKA: Yujiulü Yucheng
 	dynasty = 10424584
-	religion = "tengri_pagan"
+	rite = "tengri_pagan"
 	culture = ninrun
 	father = 4435
 	450.1.1 = {
@@ -2221,7 +2221,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	name = "Doulun"
 	# AKA: Yujiulü Doulun
 	dynasty = 10424584
-	religion = "tengri_pagan"
+	rite = "tengri_pagan"
 	culture = ninrun
 	father = 4436
 	460.1.1 = {
@@ -2235,7 +2235,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	name = "Nagai"
 	# AKA: Yujiulü Nagai
 	dynasty = 10424584
-	religion = "tengri_pagan"
+	rite = "tengri_pagan"
 	culture = ninrun
 	father = 4435
 	455.1.1 = {
@@ -2250,7 +2250,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	name = "Futu"
 	# AKA: Yujiulü Futu
 	dynasty = 10424584
-	religion = "tengri_pagan"
+	rite = "tengri_pagan"
 	culture = ninrun
 	father = 4438
 	477.1.1 = {
@@ -2264,7 +2264,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	name = "Chounu"
 	# AKA: Yujiulü Chounu
 	dynasty = 10424584
-	religion = "tengri_pagan"
+	rite = "tengri_pagan"
 	culture = ninrun
 	father = 4439
 	499.1.1 = {
@@ -2278,7 +2278,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	name = "Anagui"
 	# AKA: Yujiulü Anagui
 	dynasty = 10424584
-	religion = "tengri_pagan"
+	rite = "tengri_pagan"
 	culture = ninrun
 	father = 4440
 	519.1.1 = {
@@ -3290,7 +3290,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	# Katukaraja Gurjara
 	dynasty = gurjari_dynn_pratihara
 	culture = indo_scythian
-	religion = shaivism
+	rite = shaivism
 	450.1.1 = { birth = yes }
 	510.1.1 = { death = yes }
 }
@@ -3300,7 +3300,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	dynasty = gurjari_dynn_pratihara
 	culture = indo_scythian
 	father = 502
-	religion = shaivism
+	rite = shaivism
 	470.1.1 = { birth = yes }
 	550.1.1 = { death = yes }
 }
@@ -3310,7 +3310,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	dynasty = gurjari_dynn_pratihara
 	culture = indo_scythian
 	father = 504
-	religion = shaivism
+	rite = shaivism
 	530.1.1 = { birth = yes }
 	550.1.1 = { add_spouse = 191606 }
 	580.1.1 = { death = yes }
@@ -3320,7 +3320,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	# Devaraja Pratihara
 	dynasty = gurjari_dynn_pratihara
 	culture = indo_scythian
-	religion = shaivism
+	rite = shaivism
 	father = 36332
 	550.1.1 = { birth = yes }
 	610.1.1 = { death = yes }
@@ -3329,7 +3329,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 36374 = {
 	name = "Drumavardhana"	# Aulikari
 	dynasty_house = house_aulikari_second # Madhya Pradesh Branch
-	religion = "shaivism"
+	rite = "shaivism"
 	culture = "malvi"
 	father = 36369
 	450.1.1 = { birth = yes }
@@ -3338,7 +3338,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 36375 = {
 	name = "Ajitavardhana"	# Aulikari
 	dynasty_house = house_aulikari_second # Madhya Pradesh Branch
-	religion = "shaivism"
+	rite = "shaivism"
 	culture = "malvi"
 	father = 36374
 	480.1.1 = { birth = yes }
@@ -3347,7 +3347,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 36376 = {
 	name = "Vibhishanavardhana"	# Aulikari
 	dynasty_house = house_aulikari_second # Madhya Pradesh Branch
-	religion = "shaivism"
+	rite = "shaivism"
 	culture = "malvi"
 	father = 36375
 	530.1.1 = { birth = yes }
@@ -3356,7 +3356,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 36377 = {
 	name = "Rajyavardhana"	# Aulikari
 	dynasty_house = house_aulikari_second # Madhya Pradesh Branch
-	religion = "shaivism"
+	rite = "shaivism"
 	culture = "malvi"
 	father = 36376
 	550.1.1 = { birth = yes }
@@ -3365,7 +3365,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 36378 = {
 	name = "Prakashadharma"	# Aulikari
 	dynasty_house = house_aulikari_second # Madhya Pradesh Branch
-	religion = "shaivism"
+	rite = "shaivism"
 	culture = "malvi"
 	father = 36377
 	570.1.1 = { birth = yes }
@@ -3378,7 +3378,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	# Madhavrao Vengi
 	dynasty = 10424215
 	culture = telugu
-	religion = shrautism
+	rite = shrautism
 	450.1.1 = { birth = yes }
 	510.1.1 = { death = yes }
 }
@@ -3387,7 +3387,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 	# Indraraja Vengi
 	dynasty = 10424215
 	culture = telugu
-	religion = shrautism
+	rite = shrautism
 	father = 96030
 	470.1.1 = { birth = yes }
 	550.1.1 = { death = yes }
@@ -3400,7 +3400,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 36151 = {
 	name = "Vindhyashakti"	# Vakatakan Emperor
 	dynasty = 1042236	# Vakataka
-	religion = "mahasamghika" #Carried out pilgrimage to Amaravati
+	rite = "mahasamghika" #Carried out pilgrimage to Amaravati
 	culture = "marathi"
 	230.1.1 = { birth = yes }
 	275.1.1 = { death = yes }
@@ -3408,7 +3408,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 36152 = {
 	name = "Pravarasena"	# Vakatakan Emperor
 	dynasty = 1042236	# Vakataka
-	religion = "shrautism" #Carried out Shrautist sacrfices
+	rite = "shrautism" #Carried out Shrautist sacrfices
 	culture = "marathi"
 	father = 36151
 	269.1.1 = { birth = yes }
@@ -3417,7 +3417,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 36153 = {
 	name = "Rudrasena"	# Vakatakan Emperor
 	dynasty = 1042236	# Vakataka (Pravarapura-Nandivardhana)
-	religion = "shaivism" #Devout worshiper of Mahabhairava
+	rite = "shaivism" #Devout worshiper of Mahabhairava
 	culture = "marathi"
 	father = 36152
 	300.1.1 = { birth = yes }
@@ -3426,7 +3426,7 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 36155 = {
 	name = "Prithvisena"	# Vakatakan King
 	dynasty = 1042236	# Vakataka (Pravarapura-Nandivardhana)
-	religion = "shaivism"
+	rite = "shaivism"
 	culture = "marathi"
 	father = 36153
 	340.1.1 = { birth = yes }
@@ -3435,13 +3435,13 @@ ArtaxiadGeorgianDynn002_dauther = { #Daughter of Pharnavaz II
 36156 = {
 	name = "Rudrasena"	# Vakatakan King
 	dynasty = 1042236	# Vakataka (Pravarapura-Nandivardhana)
-	religion = "shaivism"
+	rite = "shaivism"
 	culture = "marathi"
 	father = 36155
 	360.1.1 = { birth = yes }
 	376.1.1 = {
 		add_spouse = VakatakaDynasty000
-		religion = vaishnavism
+		rite = vaishnavism
 	}
 	390.1.1 = { death = yes }
 }
@@ -3449,7 +3449,7 @@ VakatakaDynasty000 = { #Regent to Divakarasena
 	name = "Prabhavatigupta"	# Vakatakan King
 	female = yes
 	dynasty = 1042231	# Gupta Princess
-	religion = "vaishnavism"
+	rite = "vaishnavism"
 	culture = "bihari"
 	father = 96001
 	360.1.1 = { birth = yes }
@@ -3459,7 +3459,7 @@ VakatakaDynasty000 = { #Regent to Divakarasena
 36157 = {
 	name = "Divakarasena"	# Vakatakan King
 	dynasty = 1042236	# Vakataka (Pravarapura-Nandivardhana)
-	religion = "vaishnavism"
+	rite = "vaishnavism"
 	culture = "marathi"
 	father = 36156
 	mother = VakatakaDynasty000
@@ -3470,7 +3470,7 @@ VakatakaDynasty000 = { #Regent to Divakarasena
 36158 = {
 	name = "Damodarasena"	# Vakatakan King
 	dynasty = 1042236	# Vakataka (Pravarapura-Nandivardhana)
-	religion = "vaishnavism"
+	rite = "vaishnavism"
 	culture = "marathi"
 	father = 36156
 	mother = VakatakaDynasty000
@@ -3480,7 +3480,7 @@ VakatakaDynasty000 = { #Regent to Divakarasena
 VakatakaDynasty001 = {
 	name = "Pravarasena"	# Vakatakan King
 	dynasty = 1042236	# Vakataka (Pravarapura-Nandivardhana)
-	religion = "vaishnavism"
+	rite = "vaishnavism"
 	culture = "marathi"
 	father = 36156
 	mother = VakatakaDynasty000
@@ -3490,7 +3490,7 @@ VakatakaDynasty001 = {
 36159 = {
 	name = "Narendrasena"	# Vakatakan King
 	dynasty = 1042236	# Vakataka (Pravarapura-Nandivardhana)
-	religion = "vaishnavism"
+	rite = "vaishnavism"
 	culture = "marathi"
 	father = VakatakaDynasty001
 	420.1.1 = { birth = yes }
@@ -3499,7 +3499,7 @@ VakatakaDynasty001 = {
 36160 = {
 	name = "Prithvisena"	# Vakatakan King
 	dynasty = 1042236	# Vakataka (Pravarapura-Nandivardhana)
-	religion = "vaishnavism"
+	rite = "vaishnavism"
 	culture = "marathi"
 	father = 36159
 	440.1.1 = { birth = yes }
@@ -3509,7 +3509,7 @@ VakatakaDynasty001 = {
 36154 = {
 	name = "Sarvasena"	# Vakatakan King
 	dynasty = 1042236	# Vakataka (Vatsagulma)
-	religion = "shrautism"
+	rite = "shrautism"
 	culture = "marathi"
 	father = 36152
 	310.1.1 = { birth = yes }
@@ -3519,7 +3519,7 @@ VakatakaDynasty001 = {
 36161 = {
 	name = "Vindhyasena"	# Vakatakan King
 	dynasty = 1042236	# Vakataka (Vatsagulma)
-	religion = "shrautism"
+	rite = "shrautism"
 	culture = "marathi"
 	father = 36154
 	350.1.1 = { birth = yes }
@@ -3528,7 +3528,7 @@ VakatakaDynasty001 = {
 36162 = {
 	name = "Pravarasena"	# Vakatakan King
 	dynasty = 1042236	# Vakataka (Vatsagulma)
-	religion = "shrautism"
+	rite = "shrautism"
 	culture = "marathi"
 	father = 36154
 	355.1.1 = { birth = yes }
@@ -3537,7 +3537,7 @@ VakatakaDynasty001 = {
 36163 = {
 	name = "Sarvasena"	# Vakatakan King
 	dynasty = 1042236	# Vakataka (Vatsagulma)
-	religion = "shrautism"
+	rite = "shrautism"
 	culture = "marathi"
 	father = 36162
 	415.1.1 = { birth = yes }
@@ -3546,7 +3546,7 @@ VakatakaDynasty001 = {
 36164 = {
 	name = "Devasena"	# Vakatakan King
 	dynasty = 1042236	# Vakataka (Vatsagulma)
-	religion = "shrautism"
+	rite = "shrautism"
 	culture = "marathi"
 	father = 36163
 	430.1.1 = { birth = yes }
@@ -3555,7 +3555,7 @@ VakatakaDynasty001 = {
 287 = {
 	name = "Harishena"	#  Vakatakan Emperor
 	dynasty = 1042236
-	religion = "shrautism"
+	rite = "shrautism"
 	culture = "marathi"
 	father = 36164
 	450.1.1 = { birth = yes }
@@ -3564,7 +3564,7 @@ VakatakaDynasty001 = {
 36165 = {
 	name = "Vindhyashakti"	#  Vakatakan Emperor
 	dynasty = 1042236
-	religion = "shrautism"
+	rite = "shrautism"
 	culture = "marathi"
 	father = 287
 	500.1.1 = { birth = yes }
@@ -3586,7 +3586,7 @@ VakatakaDynasty001 = {
 	name = "Klyotiska"
 	# AKA: Klyotiska Yanqi
 	dynasty = 10424579
-	religion = sarvastivada
+	rite = sarvastivada
 	culture = "gushi"
 	350.1.1 = {
 		birth = yes
@@ -3599,7 +3599,7 @@ VakatakaDynasty001 = {
 	name = "Tarmaraksite"
 	# AKA: Tarmaraksite Yanqi
 	dynasty = 10424579
-	religion = sarvastivada
+	rite = sarvastivada
 	culture = "gushi"
 	father = 219550
 	400.1.1 = {
@@ -3613,7 +3613,7 @@ VakatakaDynasty001 = {
 	name = "Aniruddhe"
 	# AKA: Aniruddhe Yanqi
 	dynasty = 10424579
-	religion = sarvastivada
+	rite = sarvastivada
 	culture = "gushi"
 	father = 219560
 	440.1.1 = {
@@ -3627,7 +3627,7 @@ VakatakaDynasty001 = {
 	name = "Yanayase"
 	# fictional relative
 	dynasty = 10424579
-	religion = sarvastivada
+	rite = sarvastivada
 	culture = "gushi"
 	father = 219560
 	443.1.1 = {
@@ -3642,7 +3642,7 @@ VakatakaDynasty001 = {
 	# fictional relative
 	dynasty = 10424579
 	female = yes
-	religion = sarvastivada
+	rite = sarvastivada
 	culture = "gushi"
 	458.1.1 = { birth = yes }
 	518.1.1 = { death = yes }
@@ -3651,7 +3651,7 @@ VakatakaDynasty001 = {
 	name = "Yonu"
 	# AKA: Yonu Yanqi
 	dynasty = 10424579
-	religion = sarvastivada
+	rite = sarvastivada
 	culture = "gushi"
 	father = 219560
 	445.1.1 = {
@@ -3665,7 +3665,7 @@ VakatakaDynasty001 = {
 	name = "Upagupte"
 	# AKA: Upagupte Yanqi
 	dynasty = 10424579
-	religion = sarvastivada
+	rite = sarvastivada
 	culture = "gushi"
 	father = 232553
 	510.1.1 = {
@@ -3683,7 +3683,7 @@ VakatakaDynasty001 = {
 	name = "Kalb"
 	# AKA: Banu Kalb
 	dynasty = 1042554
-	religion = "semitic_pagan"
+	rite = "semitic_pagan"
 	culture = "adnanite"
 	250.1.1 = {
 		birth = yes
@@ -3696,7 +3696,7 @@ VakatakaDynasty001 = {
 	name = "Wahab"
 	# AKA: Banu Kalb
 	dynasty = 1042554
-	religion = "semitic_pagan"
+	rite = "semitic_pagan"
 	culture = "adnanite"
 	father = 470038
 	310.1.1 = {
@@ -3710,7 +3710,7 @@ VakatakaDynasty001 = {
 	name = "Hijr"
 	# AKA: Banu Kalb
 	dynasty = 1042554
-	religion = "monophysitism"
+	rite = "monophysitism"
 	culture = "adnanite"
 	father = 470039
 	360.1.1 = {
@@ -3724,7 +3724,7 @@ VakatakaDynasty001 = {
 	name = "al-Aiham"
 	# AKA: Banu Kalb
 	dynasty = 1042554
-	religion = "monophysitism"
+	rite = "monophysitism"
 	culture = "adnanite"
 	father = 470040
 	400.1.1 = {
@@ -3738,7 +3738,7 @@ VakatakaDynasty001 = {
 	name = "Hijr"
 	# AKA: Banu Kalb
 	dynasty = 1042554
-	religion = "monophysitism"
+	rite = "monophysitism"
 	culture = "adnanite"
 	father = 470041
 	450.1.1 = {
@@ -3752,7 +3752,7 @@ VakatakaDynasty001 = {
 	name = "Dihyah"
 	# AKA: Banu Kalb
 	dynasty = 1042554
-	religion = "monophysitism"
+	rite = "monophysitism"
 	culture = "adnanite"
 	father = 470041
 	460.1.1 = {
@@ -3766,7 +3766,7 @@ VakatakaDynasty001 = {
 	name = "Omar"
 	# AKA: Banu Kalb
 	dynasty = 1042554
-	religion = "monophysitism"
+	rite = "monophysitism"
 	culture = "adnanite"
 	father = 470043
 	480.1.1 = {
@@ -3780,7 +3780,7 @@ VakatakaDynasty001 = {
 	name = "Harithath"
 	# AKA: Banu Kalb
 	dynasty = 1042554
-	religion = "monophysitism"
+	rite = "monophysitism"
 	culture = "adnanite"
 	father = 470044
 	540.1.1 = {
@@ -3794,14 +3794,14 @@ VakatakaDynasty001 = {
 	name = "Zayd"
 	# AKA: Zayd ibn Harithath al Kalbi (Servant of Mohammad)
 	dynasty = 1042554
-	religion = "monophysitism"
+	rite = "monophysitism"
 	culture = "adnanite"
 	father = 470045
 	581.1.1 = {
 		birth = yes
 	}
 	610.1.1 = {
-		religion = islamic
+		rite = islamic
 	}
 	629.1.1 = {
 		death = yes
@@ -3813,7 +3813,7 @@ VakatakaDynasty001 = {
 137 = { # Lakhmid
 	name = "Amr"
 	dynasty = 1042194
-	religion = "semitic_pagan"
+	rite = "semitic_pagan"
 	culture = "khalan"
 	father = 137_father
 	mother = tanukhid_5
@@ -3823,7 +3823,7 @@ VakatakaDynasty001 = {
 138 = {
 	name = "Imru_al-Qays"
 	dynasty = 1042194
-	religion = "semitic_pagan"
+	rite = "semitic_pagan"
 	culture = "khalan"
 	father = 137
 	270.1.1 = { birth = yes }
@@ -3832,7 +3832,7 @@ VakatakaDynasty001 = {
 139 = {
 	name = "Amr"
 	dynasty = 1042194
-	religion = "semitic_pagan"
+	rite = "semitic_pagan"
 	culture = "khalan"
 	father = 138
 	320.1.1 = { birth = yes }
@@ -3841,7 +3841,7 @@ VakatakaDynasty001 = {
 140 = { # Non-Dynastic Lakhmid Ruler
 	name = "Aws_ibn_Qallam_ibn_Batina_Jumayhir"
 	dynasty = 1042198
-	religion = "nicene"
+	religion = christian_faith
 	culture = "khalan"
 	300.1.1 = { birth = yes }
 	368.1.1 = { death = yes }
@@ -3849,7 +3849,7 @@ VakatakaDynasty001 = {
 141 = {
 	name = "Imru_al-Qays"
 	dynasty = 1042194
-	religion = "nicene"
+	religion = christian_faith
 	culture = "khalan"
 	father = 139
 	350.1.1 = { birth = yes }
@@ -3858,7 +3858,7 @@ VakatakaDynasty001 = {
 142 = {
 	name = "al-Nu_man"
 	dynasty = 1042194
-	religion = "nicene"
+	religion = christian_faith
 	culture = "khalan"
 	father = 141
 	370.1.1 = { birth = yes }
@@ -3867,39 +3867,39 @@ VakatakaDynasty001 = {
 143 = {
 	name = "al-Mundhir"
 	dynasty = 1042194
-	religion = "nicene"
+	religion = christian_faith
 	culture = "khalan"
 	father = 142
 	390.1.1 = { birth = yes }
-	432.1.1 = { religion = nestorian }
+	432.1.1 = { rite = nestorian }
 	462.1.1 = { death = yes }
 }
 144 = {
 	name = "al-Aswad"
 	dynasty = 1042194
-	religion = "nicene"
+	religion = christian_faith
 	culture = "khalan"
 	father = 143
 	410.1.1 = { birth = yes }
-	432.1.1 = { religion = nestorian }
+	432.1.1 = { rite = nestorian }
 	490.1.1 = { death = yes }
 }
 33076 = {
 	name = "al-Mundhir"
 	# al-Mundhir ibn al-Mundhir Lakhmid
 	dynasty = 1042194
-	religion = "nicene"
+	religion = christian_faith
 	culture = "khalan"
 	father = 143
 	430.1.1 = { birth = yes }
-	432.1.1 = { religion = nestorian }
+	432.1.1 = { rite = nestorian }
 	497.1.1 = { death = yes }
 }
 33077 = {
 	name = "al-Nu_man"
 	# al-Nu'man ibn al-Aswad Lakhmid
 	dynasty = 1042194
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "khalan"
 	father = 33076
 	450.1.1 = { birth = yes }
@@ -3909,7 +3909,7 @@ VakatakaDynasty001 = {
 	name = "al-Mundhir"
 	# al-Mundhir III ibn al-Nu'man banu Lakhm
 	dynasty = 1042194
-	religion = "semitic_pagan"
+	rite = "semitic_pagan"
 	culture = "khalan"
 	father = 33077
 	480.1.1 = { birth = yes }
@@ -3919,7 +3919,7 @@ VakatakaDynasty001 = {
 	name = "Amr"
 	# Amr III ibn al-Mundhir banu Lakhm
 	dynasty = 1042194
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "khalan"
 	father = 33101
 	trait = "callous"
@@ -3930,7 +3930,7 @@ VakatakaDynasty001 = {
 	name = "Qabus"
 	# Qabus ibn al-Mundhir banu Lakhm
 	dynasty = 1042194
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "khalan"
 	father = 33101
 	525.1.1 = { birth = yes }
@@ -3940,7 +3940,7 @@ VakatakaDynasty001 = {
 	name = "al-Mundhir"
 	# al-Mundhir IV ibn al-Mundhir banu Lakhm
 	dynasty = 1042194
-	religion = "semitic_pagan"
+	rite = "semitic_pagan"
 	culture = "khalan"
 	father = 33101
 	535.1.1 = { birth = yes }
@@ -3950,7 +3950,7 @@ VakatakaDynasty001 = {
 	name = "al-Nu_man"
 	# al-Nu'man III ibn al-Mundhir banu Lakhm
 	dynasty = 1042194
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "khalan"
 	father = 33105
 	555.1.1 = { birth = yes }
@@ -3959,7 +3959,7 @@ VakatakaDynasty001 = {
 109732 = {
 	name = "al-Mundhir"
 	dynasty = 1042194
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "khalan"
 	father = 144
 	459.5.4 = { birth = yes }
@@ -3973,7 +3973,7 @@ VakatakaDynasty001 = {
 	name = "Moudir"
 	# Moudir Ghifarid
 	dynasty = 10424446
-	religion = "rabbinism"	#Banu Ghifar was a rabbinism tribe
+	rite = "rabbinism"	#Banu Ghifar was a rabbinism tribe
 	culture = yathribi
 	450.1.1 = {
 		birth = yes
@@ -3986,7 +3986,7 @@ VakatakaDynasty001 = {
 	name = "Napyot"
 	# Napyot ibn Moudir Ghifarid
 	dynasty = 10424446
-	religion = "rabbinism"	#Banu Ghifar was a rabbinism tribe
+	rite = "rabbinism"	#Banu Ghifar was a rabbinism tribe
 	culture = yathribi
 	father = 41718
 	470.1.1 = {
@@ -4000,7 +4000,7 @@ VakatakaDynasty001 = {
 	name = "Lamech"
 	# Lamech ibn Napyot Ghifarid
 	dynasty = 10424446
-	religion = "rabbinism"	#Banu Ghifar was a rabbinism tribe
+	rite = "rabbinism"	#Banu Ghifar was a rabbinism tribe
 	culture = yathribi
 	father = 41719
 	540.1.1 = {
@@ -4016,7 +4016,7 @@ VakatakaDynasty001 = {
 	name = "Qusai"
 	# Qusai ibn Kilab banu Qusai
 	dynasty_house = 1042506
-	religion = "semitic_pagan"
+	rite = "semitic_pagan"
 	culture = yathribi
 	father = 36459
 	400.1.1 = {
@@ -4030,7 +4030,7 @@ VakatakaDynasty001 = {
 	name = "Abd_Manaf"
 	# Abd Manaf ibn Qusai banu Qusai
 	dynasty_house = 1042506
-	religion = "semitic_pagan"
+	rite = "semitic_pagan"
 	culture = yathribi
 	father = 36474
 	443.1.1 = {
@@ -4044,7 +4044,7 @@ VakatakaDynasty001 = {
 	name = "Abd_Shams"
 	# Abd Shams ibn Abd Manaf banu Qusai
 	dynasty_house = 1042506
-	religion = "semitic_pagan"
+	rite = "semitic_pagan"
 	culture = yathribi
 	father = 36481
 	480.1.1 = {
@@ -4058,7 +4058,7 @@ VakatakaDynasty001 = {
 	name = "Umayya"
 	# Umayya ibn Abd Shams banu Qusai
 	dynasty_house = 1042506
-	religion = "semitic_pagan"
+	rite = "semitic_pagan"
 	culture = yathribi
 	father = 36482
 	500.1.1 = {
@@ -4072,7 +4072,7 @@ VakatakaDynasty001 = {
 	name = "Harb"
 	# Harb ibn Umayya banu Qusai
 	dynasty_house = 1042506
-	religion = "semitic_pagan"
+	rite = "semitic_pagan"
 	culture = yathribi
 	father = 36485
 	530.1.1 = {
@@ -4086,7 +4086,7 @@ VakatakaDynasty001 = {
 	name = "Sakhr"
 	# Sakhr ibn Harb banu Qusai
 	dynasty_house = 1042506
-	religion = "semitic_pagan"
+	rite = "semitic_pagan"
 	culture = yathribi
 	father = 36486
 	560.1.1 = {
@@ -4101,7 +4101,7 @@ VakatakaDynasty001 = {
 	# Barra bint Abd Manaf banu Qusai
 	female = yes
 	dynasty_house = 1042506
-	religion = "semitic_pagan"
+	rite = "semitic_pagan"
 	culture = yathribi
 	father = 36481
 	483.1.1 = {
@@ -4117,7 +4117,7 @@ VakatakaDynasty001 = {
 	name = "Mas_ud"
 	# Mas'ud Thaqif
 	dynasty = 10424444
-	religion = "semitic_pagan"
+	rite = "semitic_pagan"
 	culture = yathribi
 	450.1.1 = {
 		birth = yes
@@ -4130,7 +4130,7 @@ VakatakaDynasty001 = {
 	name = "Abd-Ya-Layl"
 	# Abd-Ya-Layl ibn Mas'ud Thaqif
 	dynasty = 10424444
-	religion = "semitic_pagan"
+	rite = "semitic_pagan"
 	culture = yathribi
 	father = 40712
 	470.1.1 = {
@@ -4144,7 +4144,7 @@ VakatakaDynasty001 = {
 	name = "al-Azad"
 	# al-Azad ibn Abd-Ya-Layl Thaqifid
 	dynasty = 10424444
-	religion = "semitic_pagan"
+	rite = "semitic_pagan"
 	culture = yathribi
 	father = 40713
 	540.1.1 = {
@@ -4167,7 +4167,7 @@ VakatakaDynasty001 = {
 	intrigue = 14
 	stewardship = 9
 	learning = 5
-	religion = "semitic_pagan"
+	rite = "semitic_pagan"
 	culture = "adnanite" #No evidance for South Arabian as far north as Yamama
 	trait = "education_learning_4"
 	trait = "lifestyle_mystic"
@@ -4192,7 +4192,7 @@ VakatakaDynasty001 = {
 	name = "Amr"
 	# Amr ibn Akil al-Murar banu Hajr-Amr
 	dynasty = 10424463
-	religion = "rabbinism"
+	rite = "rabbinism"
 	culture = khalan
 	father = 106557
 	450.1.1 = { birth = yes }
@@ -4202,7 +4202,7 @@ VakatakaDynasty001 = {
 	name = "Akil_al-Murar"
 	# Akil al-Murar ibn Amr banu Hajr-Amr
 	dynasty = 10424463
-	religion = "rabbinism"
+	rite = "rabbinism"
 	culture = khalan
 	400.1.1 = { birth = yes }
 	450.1.1 = { death = yes }
@@ -4211,7 +4211,7 @@ VakatakaDynasty001 = {
 	name = "Al-Harith"
 	# Al-Harith ibn Amr banu Hajr-Amr
 	dynasty = 10424463
-	religion = "rabbinism"
+	rite = "rabbinism"
 	culture = khalan
 	father = 158
 	470.1.1 = { birth = yes }
@@ -4221,7 +4221,7 @@ VakatakaDynasty001 = {
 	name = "al-Kindi"
 	# al-Kindi ibn Al-Harith banu Hajr-Amr
 	dynasty = 10424463
-	religion = "rabbinism"
+	rite = "rabbinism"
 	culture = khalan
 	father = 455408
 	515.1.1 = { birth = yes }
@@ -4231,7 +4231,7 @@ VakatakaDynasty001 = {
 	name = "Amr"
 	# Amr II ibn al-Kindi banu Hajr-Amr
 	dynasty = 10424463
-	religion = "rabbinism"
+	rite = "rabbinism"
 	culture = khalan
 	father = 487046
 	540.1.1 = { birth = yes }
@@ -4241,7 +4241,7 @@ VakatakaDynasty001 = {
 	name = "al-Kindi"
 	# al-Kindi ibn Amr banu Hajr-Amr
 	dynasty = 10424463
-	religion = "rabbinism"
+	rite = "rabbinism"
 	culture = khalan
 	father = 487048
 	580.1.1 = { birth = yes }
@@ -4261,7 +4261,7 @@ VakatakaDynasty001 = {
 	diplomacy = 5
 	intrigue = 2
 	stewardship = 8
-	religion = "irimonic_pagan"
+	rite = "irimonic_pagan"
 	culture = "thuringian"
 	trait = "trusting"
 	trait = "compassionate"
@@ -4280,7 +4280,7 @@ VakatakaDynasty001 = {
 36641_father = {
 	name = "Geata" #Fictional father to help link Ragnachar, Clovis, and Basina
 	dynasty = thuringian_dynn_bassina
-	religion = "irimonic_pagan"
+	rite = "irimonic_pagan"
 	culture = "thuringian"
 	415.1.1 = { birth = yes }
 	460.1.1 = { death = yes }
@@ -4289,7 +4289,7 @@ VakatakaDynasty001 = {
 	name = "Bassina" #Basina PLRE Vol 2; Thuringian princess married with Childeric, formerly wife for Bysinus of Thuringia
 	female = yes
 	dynasty = thuringian_dynn_bassina
-	religion = "irimonic_pagan"
+	rite = "irimonic_pagan"
 	culture = "thuringian"
 	father = 36641_father
 	435.1.1 = { birth = yes }
@@ -4299,7 +4299,7 @@ VakatakaDynasty001 = {
 	name = "Rodelinda" #Sister of Basina, to link Ragnachar and Clovis through Bassina (see Gesta Episcoporum Cameracensium)
 	female = yes
 	dynasty = thuringian_dynn_bassina
-	religion = "irimonic_pagan"
+	rite = "irimonic_pagan"
 	culture = "thuringian"
 	father = 36641_father
 	445.1.1 = { birth = yes }
@@ -4315,7 +4315,7 @@ VakatakaDynasty001 = {
 13100164 = {
 	name = "Ceredic"
 	dynasty = 1302040
-	religion = "anglo_pagan"
+	rite = "anglo_pagan"
 	culture = "jute"
 	431.1.1 = { birth = yes }
 	504.1.1 = { death = yes }
@@ -4323,7 +4323,7 @@ VakatakaDynasty001 = {
 13100162 = {
 	name = "Wihtgar"
 	dynasty = 1302040
-	religion = "anglo_pagan"
+	rite = "anglo_pagan"
 	culture = "jute"
 	father = 13100164
 	461.1.1 = { birth = yes }
@@ -4332,7 +4332,7 @@ VakatakaDynasty001 = {
 13100163 = {
 	name = "Stuf"
 	dynasty = 1302040
-	religion = "anglo_pagan"
+	rite = "anglo_pagan"
 	culture = "jute"
 	father = 13100164
 	472.1.1 = { birth = yes }
@@ -4345,7 +4345,7 @@ VakatakaDynasty001 = {
 13100165 = {
 	name = "Cynraed"
 	dynasty = 1302040
-	religion = "anglo_pagan"
+	rite = "anglo_pagan"
 	culture = "jute"
 	father = 13100163
 	503.1.1 = { birth = yes }
@@ -4354,7 +4354,7 @@ VakatakaDynasty001 = {
 JuteWihtware000 = {
 	name = Torgils
 	dynasty = 1302040
-	religion = anglo_pagan
+	rite = anglo_pagan
 	culture = jute
 	father = 13100163
 	535.1.1 = { birth = yes }
@@ -4363,7 +4363,7 @@ JuteWihtware000 = {
 JuteWihtware001 = {
 	name = Thorvald
 	dynasty = 1302040
-	religion = anglo_pagan
+	rite = anglo_pagan
 	culture = jute
 	father = JuteWihtware000
 	564.1.1 = { birth = yes }
@@ -4372,7 +4372,7 @@ JuteWihtware001 = {
 JuteWihtware002 = {
 	name = Oluf
 	dynasty = 1302040
-	religion = anglo_pagan
+	rite = anglo_pagan
 	culture = jute
 	father = JuteWihtware001
 	591.1.1 = { birth = yes }
@@ -4381,7 +4381,7 @@ JuteWihtware002 = {
 JuteWihtware003 = {
 	name = Hemming
 	dynasty = 1302040
-	religion = anglo_pagan
+	rite = anglo_pagan
 	culture = jute
 	father = JuteWihtware002
 	607.1.1 = { birth = yes }
@@ -4391,7 +4391,7 @@ JuteWihtware003 = {
 JuteWihtware003_wife = {
 	name = Christina
 	dynasty = 1302040
-	religion = nicene
+	religion = christian_faith
 	culture = jute
 	father = JuteWihtware002
 	607.1.1 = { birth = yes }
@@ -4400,7 +4400,7 @@ JuteWihtware003_wife = {
 JuteWihtware004 = {
 	name = Arwald
 	dynasty = 1302040
-	religion = nicene
+	religion = christian_faith
 	culture = jute
 	father = JuteWihtware003
 	639.1.1 = { birth = yes }
@@ -4412,7 +4412,7 @@ JuteWihtware004 = {
 JuteWihtware005 = {
 	name = PridbjO_rn
 	dynasty = 1302040
-	religion = anglo_pagan
+	rite = anglo_pagan
 	culture = jute
 	father = JuteWihtware003
 	mother = JuteWihtware003_wife
@@ -4425,7 +4425,7 @@ JuteWihtware005 = {
 JuteWihtware006 = {
 	name = JO_rn
 	dynasty = 1302040
-	religion = anglo_pagan
+	rite = anglo_pagan
 	culture = jute
 	father = JuteWihtware003
 	mother = JuteWihtware003_wife
@@ -4442,7 +4442,7 @@ JuteWihtware006 = {
 159791 = {
 	name = "Ceredig" # ap Cunedda
 	dynasty_house = dynasty_house_ceredigion
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 159010
 	mother = 159039
@@ -4452,7 +4452,7 @@ JuteWihtware006 = {
 159792 = {
 	name = "Usai" # ap Ceredig
 	dynasty_house = dynasty_house_ceredigion
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 159791
 	420.1.1 = { birth = yes }
@@ -4461,7 +4461,7 @@ JuteWihtware006 = {
 159793 = {
 	name = "Serwyl" # ap Usai
 	dynasty_house = dynasty_house_ceredigion
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 159792
 	450.1.1 = { birth = yes }
@@ -4470,7 +4470,7 @@ JuteWihtware006 = {
 159794 = {
 	name = "Boddw" # ap Serwyl
 	dynasty_house = dynasty_house_ceredigion
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 159793
 	480.1.1 = { birth = yes }
@@ -4479,7 +4479,7 @@ JuteWihtware006 = {
 159795 = {
 	name = "Arthfoddw" # ap Bodw
 	dynasty_house = dynasty_house_ceredigion
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 159794
 	520.1.1 = { birth = yes }
@@ -4488,7 +4488,7 @@ JuteWihtware006 = {
 159796 = {
 	name = "Arthlwys" # ap Arthfoddw
 	dynasty_house = dynasty_house_ceredigion
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 159795
 	550.1.1 = { birth = yes }
@@ -4497,7 +4497,7 @@ JuteWihtware006 = {
 159797 = {
 	name = "Clydog"	# ap Arthlwys
 	dynasty_house = dynasty_house_ceredigion
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 159796
 	590.1.1 = { birth = yes }
@@ -4508,7 +4508,7 @@ JuteWihtware006 = {
 160038 = {
 	name = "Owain" # ap Einion
 	dynasty_house = dynasty_house_rhos
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 159011
 	455.1.1 = { birth = yes }
@@ -4517,7 +4517,7 @@ JuteWihtware006 = {
 160039 = {
 	name = "Cynlas" # Goch ("the Red")
 	dynasty_house = dynasty_house_rhos
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 160038
 	480.1.1 = { birth = yes }
@@ -4526,7 +4526,7 @@ JuteWihtware006 = {
 160040 = {
 	name = "Einion" #ap Cynlas
 	dynasty_house = dynasty_house_rhos
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 160039
 	500.1.1 = { birth = yes }
@@ -4539,7 +4539,7 @@ JuteWihtware006 = {
 160041 = {
 	name = "Cadwal"
 	dynasty_house = dynasty_house_rhos
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 160040
 	535.1.1 = { birth = yes }
@@ -4548,7 +4548,7 @@ JuteWihtware006 = {
 160042 = {
 	name = "Lfdyfwn"
 	dynasty_house = dynasty_house_rhos
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 160041
 	570.1.1 = { birth = yes }
@@ -4557,7 +4557,7 @@ JuteWihtware006 = {
 160043 = {
 	name = "Einion"
 	dynasty_house = dynasty_house_rhos
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 160042
 	600.1.1 = { birth = yes }
@@ -4566,7 +4566,7 @@ JuteWihtware006 = {
 160044 = {
 	name = "Rhufon"
 	dynasty_house = dynasty_house_rhos
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "welsh"
 	father = 160043
 	630.1.1 = { birth = yes }
@@ -4575,7 +4575,7 @@ JuteWihtware006 = {
 160045 = {
 	name = "Hywel"
 	dynasty_house = dynasty_house_rhos
-	religion = "nicene"
+	religion = christian_faith
 	culture = "welsh"
 	father = 160044
 	660.1.1 = { birth = yes }
@@ -4584,7 +4584,7 @@ JuteWihtware006 = {
 160046 = {
 	name = "Meirchion"
 	dynasty_house = dynasty_house_rhos
-	religion = "nicene"
+	religion = christian_faith
 	culture = "welsh"
 	father = 160045
 	690.1.1 = { birth = yes }
@@ -4597,7 +4597,7 @@ JuteWihtware006 = {
 159038 = { #Old King Cole
 	name = "Coel"
 	dynasty = 1029002	#Ebrauc
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "romano_british"
 	340.1.1 = { birth = yes }
 	390.1.1 = { add_spouse = 159951 }
@@ -4608,7 +4608,7 @@ JuteWihtware006 = {
 	name = "Gwawl"
 	female = yes
 	dynasty = 1029002	#Ebrauc
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "romano_british"
 	father = 159038	# Coel
 	mother = 159951	#Ystradwel of Dumnonia
@@ -4619,7 +4619,7 @@ JuteWihtware006 = {
 159037 = { #Ceneu ap Coel
 	name = "Ceneu" 
 	dynasty = 1029002	#Ebrauc
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "romano_british"
 	father = 159038	# Coel
 	mother = 159951	#Ystradwel of Dumnonia
@@ -4629,7 +4629,7 @@ JuteWihtware006 = {
 13100166 = { #Mor ap Ceneu
 	name = "Mor"
 	dynasty = 1029002
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 159037	# Ceneu
 	423.1.1 = { birth = yes }
@@ -4640,7 +4640,7 @@ JuteWihtware006 = {
 13100175 = {
 	name = "Germanianus"	#Garbanion
 	dynasty_house = dynasty_house_bernaccia
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "romano_british"
 	father = 159038	# Coel
 	mother = 159951	#Ystradwel of Dumnonia
@@ -4651,7 +4651,7 @@ JuteWihtware006 = {
 13100176 = {
 	name = "Dyfnwal"	#
 	dynasty_house = dynasty_house_bernaccia
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 13100175	# Germanianus
 	427.1.1 = { birth = yes }
@@ -4660,7 +4660,7 @@ JuteWihtware006 = {
 13100177 = {
 	name = "Cyngar"
 	dynasty_house = dynasty_house_bernaccia
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 13100176	# Dyfnwal
 	445.1.1 = { birth = yes }
@@ -4669,7 +4669,7 @@ JuteWihtware006 = {
 13100178 = {
 	name = "Bran"
 	dynasty_house = dynasty_house_bernaccia
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 13100177	# Cyngar
 	469.1.1 = { birth = yes }
@@ -4678,7 +4678,7 @@ JuteWihtware006 = {
 13100179 = {
 	name = "Morgan"	#
 	dynasty_house = dynasty_house_bernaccia
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 13100178	# Bran
 	498.1.1 = { birth = yes }
@@ -4687,7 +4687,7 @@ JuteWihtware006 = {
 13100179_son = {
 	name = "Clydog"	#
 	dynasty_house = dynasty_house_bernaccia
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 13100179 # Morgan
 	518.1.1 = { birth = yes }
@@ -4696,7 +4696,7 @@ JuteWihtware006 = {
 13100179_grandson1 = {
 	name = "Mynyddog"
 	dynasty_house = dynasty_house_bernaccia
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 13100179_son # Clydog
 	540.1.1 = { birth = yes }
@@ -4705,7 +4705,7 @@ JuteWihtware006 = {
 13100179_grandson2 = {
 	name = "Cynan"
 	dynasty_house = dynasty_house_bernaccia
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 13100179_son # Clydog
 	545.1.1 = { birth = yes }
@@ -4716,7 +4716,7 @@ JuteWihtware006 = {
 1100011 = {
 	name = "Gwrwst_Lledlwm"	# Gwrwst Lledlwm
 	dynasty_house = dynasty_house_glynys
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "romano_british"
 	father = 159037	# Ceneu
 	425.1.1 = { birth = yes }
@@ -4730,7 +4730,7 @@ JuteWihtware006 = {
 	diplomacy = 6
 	intrigue = 5
 	stewardship = 5
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	trait = "bossy"
 	trait = "trusting"
@@ -4749,7 +4749,7 @@ JuteWihtware006 = {
 41707 = {
 	name = "Meirchion"	# Meirchion Gul "the Lean" 
 	dynasty_house = dynasty_house_glynys
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 1100011	# Gwrast the Ragged
 	470.1.1 = { birth = yes }
@@ -4758,7 +4758,7 @@ JuteWihtware006 = {
 41709 = {
 	name = "Cynfarch"	# Cynfarch Oer
 	dynasty_house = dynasty_house_glynys
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 41707
 	490.1.1 = { birth = yes }
@@ -4768,7 +4768,7 @@ JuteWihtware006 = {
 41711 = {
 	name = "Urien"
 	dynasty_house = dynasty_house_glynys
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 41709
 	525.1.1 = { birth = yes }
@@ -4777,7 +4777,7 @@ JuteWihtware006 = {
 41713 = {
 	name = "Owain"
 	dynasty_house = dynasty_house_glynys
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 41711
 	565.1.1 = { birth = yes }
@@ -4786,7 +4786,7 @@ JuteWihtware006 = {
 159297 = {
 	name = "Ller_Merini"
 	dynasty_house = dynasty_house_glynys	# Glynys
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 41707
 	505.1.1 = { birth = yes }
@@ -4795,7 +4795,7 @@ JuteWihtware006 = {
 159298 = {
 	name = "Caradoc"	# 
 	dynasty_house = dynasty_house_glynys	# Glynys
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 159297
 	530.1.1 = { birth = yes }
@@ -4804,7 +4804,7 @@ JuteWihtware006 = {
 159299 = {
 	name = "Cawrdaf"	# 
 	dynasty_house = dynasty_house_glynys	# Glynys
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 159298
 	560.1.1 = { birth = yes }
@@ -4813,7 +4813,7 @@ JuteWihtware006 = {
 159300 = {
 	name = "Caw"	# 
 	dynasty_house = dynasty_house_glynys	# Glynys
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 159299
 	590.1.1 = { birth = yes }
@@ -4822,7 +4822,7 @@ JuteWihtware006 = {
 159034 = {
 	name = "Elidyr"	# the Handsome
 	dynasty_house = dynasty_house_glynys	#Glynys
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 41707	# Meirchion Gul
 	500.1.1 = { birth = yes }
@@ -4832,7 +4832,7 @@ JuteWihtware006 = {
 159033 = {
 	name = "Llywarch"	# 
 	dynasty_house = dynasty_house_glynys	#Glynys
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 159034	# Elidyr Llydanwyn
 	525.1.1 = { birth = yes }
@@ -4842,7 +4842,7 @@ JuteWihtware006 = {
 159032 = {
 	name = "Gwyar"	# 
 	dynasty_house = dynasty_house_glynys	#Glynys
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 159033	# 
 	560.1.1 = { birth = yes }
@@ -4851,7 +4851,7 @@ JuteWihtware006 = {
 159954 = {
 	name = "Rhun"
 	dynasty_house = dynasty_house_glynys	#Glynys
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 41711	# Urien
 	570.1.1 = { birth = yes }
@@ -4860,7 +4860,7 @@ JuteWihtware006 = {
 159955 = {
 	name = "Rhoedd"
 	dynasty_house = dynasty_house_glynys	#Glynys
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 159954	# Rhun
 	600.1.1 = { birth = yes }
@@ -4874,7 +4874,7 @@ JuteWihtware006 = {
 	diplomacy = 6
 	intrigue = 5
 	stewardship = 5
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "romano_british"
 	father = 1100011
 	trait = "lustful"
@@ -4894,7 +4894,7 @@ JuteWihtware006 = {
 41714 = {
 	name = "Arthius"	# Arthuis ap Masgwid
 	dynasty_house = dynasty_house_elmet
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 7
 	473.1.1 = { birth = yes }
@@ -4903,7 +4903,7 @@ JuteWihtware006 = {
 41715 = {
 	name = "Llaennog"	# Llaennog ap Masgwid
 	dynasty_house = dynasty_house_elmet
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 7
 	470.1.1 = { birth = yes }
@@ -4912,7 +4912,7 @@ JuteWihtware006 = {
 41716 = {
 	name = "Gwallog"
 	dynasty_house = dynasty_house_elmet
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 41715
 	507.1.1 = { birth = yes }
@@ -4921,7 +4921,7 @@ JuteWihtware006 = {
 41717 = {
 	name = "Ceretic"
 	dynasty_house = dynasty_house_elmet
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 41716
 	557.1.1 = { birth = yes }
@@ -4936,7 +4936,7 @@ JuteWihtware006 = {
 	diplomacy = 6
 	intrigue = 5
 	stewardship = 5
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = briton
 	father = DerbyBriton000
 	450.1.15 = { birth = yes }
@@ -4957,7 +4957,7 @@ JuteWihtware006 = {
 170148 = {
 	name = "Cynwyd"
 	dynasty_house = dynasty_house_cynwidion
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "romano_british"
 	father = 6
 	470.1.1 = { birth = yes }
@@ -4966,7 +4966,7 @@ JuteWihtware006 = {
 170150 = {
 	name = "Cadrawd"
 	dynasty_house = dynasty_house_cynwidion
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "romano_british"
 	father = 170148
 	510.1.1 = { birth = yes }
@@ -4975,7 +4975,7 @@ JuteWihtware006 = {
 186001 = {
 	name = "Cadawg"	#Fictional son of Cadrawd
 	dynasty_house = dynasty_house_cynwidion
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "romano_british"
 	father = 170150
 	532.1.1 = { birth = yes }
@@ -4986,7 +4986,7 @@ JuteWihtware006 = {
 159828 = {
 	name = "Glywys"	# 
 	dynasty = 1029130	#Cernyw
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 159827
 	435.1.1 = { birth = yes }
@@ -4995,7 +4995,7 @@ JuteWihtware006 = {
 13100123 = {
 	name = "Cyngar"	#Cyngar son of Mor, king of Cernyw
 	dynasty = 1029130	#Cernyw
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 159826
 	394.1.1 = { birth = yes }
@@ -5004,7 +5004,7 @@ JuteWihtware006 = {
 13100124 = {
 	name = "Gwynlliw"	#Gwynlliw/Gundleus, son of Glwys, King of Glywyssing/Cernyw 
 	dynasty = 1029130	#Cernyw
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 159828
 	451.1.1 = { birth = yes }
@@ -5013,7 +5013,7 @@ JuteWihtware006 = {
 13100125 = {
 	name = "Pawl"	#Pawl/Porphirius, son of Glwys, King of Penychen (Unrepresented in the map), died heirless
 	dynasty = 1029130	#Cernyw
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 159828
 	451.1.1 = { birth = yes }
@@ -5023,7 +5023,7 @@ JuteWihtware006 = {
 13100126 = {
 	name = "Merchwyn"	#Merchywn/Marcianus, son of Glwys, King of Gorfynedd (Unrepresented in the map)
 	dynasty = 1029130	#Cernyw
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 159828
 	trait = "lunatic_1"	#Reported mad
@@ -5034,7 +5034,7 @@ JuteWihtware006 = {
 13100127 = {
 	name = "Edelig"	#Edelig, son of Glwys, King of Edeligion (Unrepresented in the map)
 	dynasty = 1029130	#Cernyw
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 159828
 	458.1.1 = { birth = yes }
@@ -5044,7 +5044,7 @@ JuteWihtware006 = {
 13100128 = {
 	name = "Cadwg"	#Catocus/Cadwg, son of Gwynlliw, King of Cernyw/Glywyssing
 	dynasty = 1029130	#Cernyw
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 13100124
 	502.1.1 = { birth = yes }
@@ -5054,7 +5054,7 @@ JuteWihtware006 = {
 	name = "Madge"	#Madge, sister of Cadwg
 	female = yes
 	dynasty = 1029130	#Cernyw
-	religion = "insular_celtic"
+	rite = "insular_celtic"
 	culture = "briton"
 	father = 13100124
 	505.1.1 = { birth = yes }

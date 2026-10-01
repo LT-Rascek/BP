@@ -15,7 +15,7 @@
 # Map of Christianity in 325 and 600
 # https://en.wikipedia.org/wiki/History_of_Christianity#/media/File:Spread_of_Christianity_to_AD_600_(1).png
 #
-# d_tyrol was close to a 325 center from the above, so was made nicene
+# d_tyrol was close to a 325 center from the above, so was made christian_faith
 #
 # @Abian36 stated persecution of Sol Invictus around Vindovina in 474; the Sol Invictus counties get flipped to
 # Nicene by 500
@@ -31,7 +31,7 @@
 ###c_innsbruck
 2950 = {	#INNSBRUCK
 	culture = romano_raetian
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
 	special_building_slot = schwaz_mines_01
 }
@@ -45,7 +45,7 @@
 ###c_brixen
 2955 = {	#BRIXEN
 	culture = romano_raetian
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
 }
 2952 = {	#BRUNECK
@@ -54,7 +54,7 @@
 ###c_lienz
 3134 = {	#LIENZ
 	culture = romano_noric #Ambidravi Celts
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
 }
 3137 = {	#OBERVALLACH
@@ -69,9 +69,9 @@
 ###c_graz
 3117 = {	#GRAZ
 	culture = romano_noric
-	religion = sol_invictus
+	rite = sol_invictus
 	holding = castle_holding
-	500.1.1 = { religion = nicene }
+	500.1.1 = { religion = christian_faith }
 }
 3111 = {	#KOFLACH
 	holding = none
@@ -82,12 +82,12 @@
 ###c_pitten
 3092 = {	#PITTEN
 	culture = romano_noric
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding #Really town in DARE
 	450.1.1 = { holding = tribal_holding }
 	469.1.1 = { #Gepid encroachment
 		culture = danubian_suebi
-		religion = irimonic_pagan
+		rite = irimonic_pagan
 	}
 }
 3120 = {	#OBERWART
@@ -102,9 +102,9 @@
 ###c_liebnitz
 3109 = {	#LIEBNITZ
 	culture = romano_noric
-	religion = sol_invictus #Related to Aquae Iasae
+	rite = sol_invictus #Related to Aquae Iasae
 	holding = castle_holding
-	500.1.1 = { religion = nicene }
+	500.1.1 = { religion = christian_faith }
 }
 3103 = {	#MARIBOR
 	holding = none
@@ -115,9 +115,9 @@
 ###c_karnten
 3105 = {	#KLAGENFURT
 	culture = romano_noric
-	religion = sol_invictus
+	rite = sol_invictus
 	holding = castle_holding
-	600.1.1 = { religion = nicene }
+	600.1.1 = { religion = christian_faith }
 }
 3113 = {	#SANKT VEIT
 	holding = city_holding #Roman Noreia is closer (given Virunum takes up Klagenfurt)
@@ -128,7 +128,7 @@
 ###c_kammersberg
 3128 = {	#KAMMERSBERG
 	culture = romano_noric
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	holding = castle_holding #Roman Monate seems fairly close
 }
 3114 = {	#MURAU
@@ -143,7 +143,7 @@
 ###c_knittelfeld
 3118 = {	#KAPFENBERG
 	culture = romano_noric
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	holding = castle_holding #Really a town, but mostly empty province
 	455.1.1 = { holding = tribal_holding }
 }
@@ -162,7 +162,7 @@
 ###c_villach
 3099 = {	#VILLACH
 	culture = romano_noric
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	holding = castle_holding
 }
 3127 = {	#FELDKIRCHEN
@@ -177,7 +177,7 @@
 ###c_salzburg
 2975 = {	#SALZBURG
 	culture = romano_noric
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	holding = castle_holding
 }
 2973 = {	#BRAUNAU
@@ -193,7 +193,7 @@
 ###c_berchtesgaden
 2977 = {	#BERCHTESGADEN
 	culture = romano_noric
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	holding = castle_holding #Late Roman Oppidium, but far enough away to not be part of the loss of the Limes
 }
 2985 = {	#LAUKENTAL
@@ -205,11 +205,11 @@
 ###c_linz
 3131 = {	#LINZ
 	culture = romano_noric
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
 	469.1.1 = {
 		culture = rygir
-		religion = przeworsk_pagan
+		rite = przeworsk_pagan
 		holding = tribal_holding
 	}
 }
@@ -227,11 +227,11 @@
 ###c_schaumberg
 2971 = {	#SCHAUMBERG
 	culture = romano_noric
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding #Limes (mostly) abandoned by 476
 	469.1.1 = {
 		culture = rygir
-		religion = przeworsk_pagan
+		rite = przeworsk_pagan
 		holding = tribal_holding
 	}
 }
@@ -244,11 +244,11 @@
 ###c_amstetten
 3093 = {	#AMSTETTEN
 	culture = romano_noric
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding #Limes (mostly) abandoned by 476
 	469.1.1 = {
 		culture = rygir
-		religion = przeworsk_pagan
+		rite = przeworsk_pagan
 		holding = tribal_holding
 	}
 }
@@ -262,11 +262,11 @@
 ###c_sankt_polten
 3089 = {	#SANKT POLTEN
 	culture = romano_noric
-	religion = nicene
+	religion = christian_faith
 	holding = church_holding #St Severinus Monastery (where he died); closest holding really
 	469.1.1 = {
 		culture = rygir
-		religion = przeworsk_pagan
+		rite = przeworsk_pagan
 		holding = tribal_holding
 	}
 }
@@ -279,12 +279,12 @@
 ###c_rosenheim
 2984 = {	#MARQUARTSTEIN
 	culture = romano_noric
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
 	455.1.1 = { holding = tribal_holding }
 	469.1.1 = {
 		culture = danubian_suebi
-		religion = irimonic_pagan
+		rite = irimonic_pagan
 	}
 }
 2981 = {	#BURGHAUSEN

@@ -4,7 +4,7 @@
 1300690 = { #PLRE vol.2 Flavius Thomas Iulianus Chaereas
 	name = "Chaereas"
 	#praeses of Osrhoene 449 April
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_aramean"
 	400.1.1 = { birth = yes }
 	470.1.1 = { death = yes }
@@ -12,7 +12,7 @@
 1300691 = {
 	name = "Anastasius"	#PLRE vol.2 Anastasius 5
 	#praeses of Osrhoene 496-497
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_aramean"
 	430.1.1 = { birth = yes }
 	500.1.1 = { death = yes }
@@ -20,7 +20,7 @@
 1300694 = {
 	name = "Eulogius"	#PLRE vol.2 Eulogius 7
 	#praeses of Osrhoene 504/505
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_aramean"
 	trait = education_stewardship_2
 	450.1.1 = { birth = yes }
@@ -29,7 +29,7 @@
 1300696 = { #PLRE vol.3 Anatolius 8
 	name = "Anatolius"
 	#praeses of Osrhoene c.579
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_aramean"
 	trait = education_stewardship_3
 	500.1.1 = {
@@ -42,7 +42,7 @@
 1301040 = { #PLRE vol. 1 Caesarius 1
 	name = "Caesarius"
 	#?vicar of Asia, urban prefect of Constantinople a. 365
-	religion = nicene
+	religion = christian_faith
 	culture = romano_aramean #possibly a native of Cilicia
 	father = 1301042
 	trait = ambitious
@@ -52,7 +52,7 @@
 1301041 = { #PLRE vol. 1 Alypius 4
 	name = "Alypius"
 	#comes Britanniarum a. 358
-	religion = nicene
+	religion = christian_faith
 	culture = romano_aramean #possibly a native of Cilicia
 	father = 1301042
 	trait = deceitful
@@ -61,7 +61,7 @@
 }
 1301042 = { #generic character to connect 1301040 and 1301041
 	name = "Lazarus"
-	religion = nicene
+	religion = christian_faith
 	culture = romano_aramean
 	300.1.1 = { birth = yes }
 	316.1.1 = {
@@ -83,7 +83,7 @@
 1301043 = {
 	name = "Hierocles" #PLRE vol. 1 Hierocles 1
 	#son of PLRE vol. 1 Alypius 4
-	religion = nicene
+	religion = christian_faith
 	culture = romano_aramean #possibly a native of Cilicia
 	father = 1301041
 	trait = deceitful
@@ -95,7 +95,7 @@
 	name = "Alexander"
 	# Caesar Marcus Aurelius Severus Alexander Augustus
 	dynasty = romano_aramean_dynasty_gessius
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "romano_aramean"
 	trait = "honest"
 	trait = "humble"
@@ -113,7 +113,7 @@
 	# Marcus Aurelius Antoninus Augustus
 	#dynasty=1022216
 	dynasty = romano_aramean_dynasty_varius
-	religion = "sol_invictus"
+	rite = "sol_invictus"
 	culture = "romano_aramean"
 	sexuality = bisexual
 	trait = "lifestyle_reveler"

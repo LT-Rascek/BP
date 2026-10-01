@@ -6,7 +6,7 @@
 	diplomacy = 6
 	intrigue = 10
 	stewardship = 6
-	religion = "arian"
+	rite = "arian"
 	culture = "burgundian"
 	father = 21
 	mother = 190040_sister
@@ -39,7 +39,7 @@
 	diplomacy = 5
 	intrigue = 6
 	stewardship = 6
-	religion = "irimonic_pagan"
+	rite = "irimonic_pagan"
 	culture = "burgundian"
 	father = 22
 	mother = 22_wife
@@ -57,7 +57,7 @@
 	}
 	440.1.1 = {
 		add_spouse = 190040_sister #Sister of Ricimer
-		religion = arian #Possible conversion; makes it easier to believe his sons become Arians
+		rite = arian #Possible conversion; makes it easier to believe his sons become Arians
 	}
 	473.1.1 = { death = yes }
 }
@@ -69,7 +69,7 @@
 	diplomacy = 5
 	intrigue = 10
 	stewardship = 6
-	religion = "irimonic_pagan"
+	rite = "irimonic_pagan"
 	culture = "burgundian"
 	father = 22
 	415.1.1 = {
@@ -87,7 +87,7 @@
 	diplomacy = 5
 	intrigue = 6
 	stewardship = 6
-	religion = "irimonic_pagan"
+	rite = "irimonic_pagan"
 	culture = "burgundian"
 	father = 27
 	385.1.1 = { birth = yes }
@@ -104,7 +104,7 @@
 	diplomacy = 5
 	intrigue = 2
 	stewardship = 6
-	religion = "arian"
+	rite = "arian"
 	culture = "burgundian"
 	father = 21
 	mother = 190040_sister
@@ -132,7 +132,7 @@
 	diplomacy = 5
 	intrigue = 2
 	stewardship = 6
-	religion = "arian"
+	rite = "arian"
 	culture = "burgundian"
 	father = 21
 	mother = 190040_sister
@@ -148,7 +148,7 @@
 	diplomacy = 5
 	intrigue = 6
 	stewardship = 6
-	religion = "arian"
+	rite = "arian"
 	culture = "burgundian"
 	trait = "education_martial_2"
 	father = 21
@@ -172,7 +172,7 @@
 	diplomacy = 5
 	intrigue = 6
 	stewardship = 6
-	religion = "irimonic_pagan"
+	rite = "irimonic_pagan"
 	culture = "burgundian"
 	father = 27
 	380.1.1 = {
@@ -190,7 +190,7 @@
 	diplomacy = 5
 	intrigue = 6
 	stewardship = 6
-	religion = "irimonic_pagan"
+	rite = "irimonic_pagan"
 	culture = "burgundian"
 	father = 27
 	379.1.1 = {
@@ -205,7 +205,7 @@
 	name = "Sigismund"	# PLRE vol. 2 Sigismund
 	# Sigismund Niflung
 	dynasty = 1042146
-	religion = "arian"
+	rite = "arian"
 	culture = "burgundian"
 	father = 20
 	mother = 20_wife
@@ -217,7 +217,7 @@
 		add_spouse = 63_daughter_2 # daughter of Theodoric
 	}
 	515.1.1 = {
-		religion = "nicene"
+		religion = christian_faith
 	}
 	517.1.1 = {
 		trait = "murderer"
@@ -230,7 +230,7 @@
 106531 = {
 	name = "Sigeric"	#PLRE vol. 2 Sigericus
 	dynasty = 1042146
-	religion = "arian"
+	rite = "arian"
 	culture = "burgundian"
 	father = 106530
 	mother = 63_daughter_2
@@ -249,7 +249,7 @@
 	name = "Suavegotha"	# PLRE vol. 2 Suavegotho
 	female = yes
 	dynasty = 1042146
-	religion = "arian"
+	rite = "arian"
 	culture = "burgundian"
 	father = 106530
 	mother = 63_daughter_2
@@ -265,7 +265,7 @@
 	name = "Ultrogotha" # wife of Childebert I
 	female = yes
 	dynasty = 1042146
-	religion = "arian"
+	rite = "arian"
 	culture = "burgundian" # this culture is assumed based on the onomastic similarity with another contemporary burgundian princess (Suavegotha) and the implausibility of a visigothic origin due to the bellicose attitude of Childebert I against them
 	father = 106530
 	496.1.1 = {
@@ -279,7 +279,7 @@
 106544 = {
 	name = "Gundomar"	#PLRE vol. 2 Godomar 2
 	dynasty = 1042146
-	religion = "arian"
+	rite = "arian"
 	culture = "burgundian"
 	father = 20
 	mother = 20_wife
@@ -288,7 +288,7 @@
 		birth = yes
 	}
 	515.1.1 = {
-		religion = "nicene"
+		religion = christian_faith
 	}
 	534.1.1 = {
 		death = yes

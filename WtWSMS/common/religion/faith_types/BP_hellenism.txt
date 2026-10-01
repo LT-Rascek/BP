@@ -1,5 +1,5 @@
-﻿greco_roman_faith = {
-	main_rite = hellenic_pagan #TODO: FIXME
+﻿hellenic_pagan = {
+	main_rite = hellenic_pagan
 	faith_details = {
 		religion = hellenism_religion
 		color = { 0.5 0.5 1.0 }
@@ -31,6 +31,7 @@
 #Philosophical Religions
 pythagoreanism = {
 	main_rite = pythagoreanism
+	historical = yes
 
 	faith_details = {
 		religion = hellenism_religion
@@ -143,6 +144,7 @@ platonism = {
 }
 stoicism = {
 	main_rite = stoicism
+	historical = yes
 
 	faith_details = {
 		religion = hellenism_religion
@@ -162,8 +164,8 @@ stoicism = {
 
 	tenet_selection_pair = {
 		requires_dlc_flag = all_under_heaven
-		doctrine = tenet_harmonious_society
-		fallback_doctrine = tenet_alexandrian_catechism
+		tenet = tenet_harmonious_society
+		fallback_tenet = tenet_alexandrian_catechism
 	}
 
 	tenets = {
@@ -307,7 +309,6 @@ cybelian = {
 
 	doctrines = {
 		#Mystery religion
-		doctrine_clerical_succession_spiritual_appointment
 		doctrine_theocracy_temporal
 		doctrine_spiritual_head
 		
@@ -349,6 +350,7 @@ cybelian = {
 }
 orphism = {
 	main_rite = orphism
+	historical = yes
 
 	faith_details = {
 		religion = hellenism_religion

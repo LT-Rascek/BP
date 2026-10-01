@@ -30,7 +30,7 @@
 ###c_warwickshire
 1603 = {	#Warwick
 	culture = briton
-	religion = insular_celtic
+	rite = insular_celtic
 	holding = castle_holding
 }
 1604 = {	#Coventry
@@ -43,7 +43,7 @@
 ###c_staffordshire
 1627 = {	#Stafford
 	culture = briton
-	religion = insular_celtic
+	rite = insular_celtic
 	holding = castle_holding
 }
 1628 = {	#Wolverhampton
@@ -56,7 +56,7 @@
 ###c_worcestershire
 1624 = {	#Worcester
 	culture = briton
-	religion = insular_celtic
+	rite = insular_celtic
 	holding = castle_holding
 }
 1625 = {	#Evesham
@@ -70,7 +70,7 @@
 ###c_shropshire
 1646 = {	#Shrewshbury
 	culture = briton
-	religion = insular_celtic
+	rite = insular_celtic
 	holding = castle_holding
 	special_building_slot = offas_dyke_01
 	767.1.1 = { special_building = offas_dyke_01 }
@@ -86,9 +86,9 @@
 ###c_hereford / Ergyng
 1632 = {	#Hereford
 	culture = briton
-	religion = celtic_pagan
+	rite = celtic_pagan
 	holding = castle_holding
-	688.1.1 = { religion = insular_celtic } #Became seat of Putta, Bishop of Hereford by this time
+	688.1.1 = { rite = insular_celtic } #Became seat of Putta, Bishop of Hereford by this time
 }
 1633 = {	#Wigmore
 	holding = church_holding
@@ -102,7 +102,7 @@
 ###c_gloucestershire
 1580 = {	#Gloucester
 	culture = romano_british
-	religion = insular_celtic
+	rite = insular_celtic
 	holding = castle_holding
 	special_building_slot = offas_dyke_01
 	767.1.1 = { special_building = offas_dyke_01 }
@@ -117,7 +117,7 @@
 ###c_wiltshire
 1561 = {	#Salisbury
 	culture = romano_british
-	religion = insular_celtic
+	rite = insular_celtic
 	holding = castle_holding
 	special_building_slot = stonehenge_01
 	special_building = stonehenge_01
@@ -137,7 +137,7 @@
 ###c_oxfordshire
 1558 = {	#Oxford
 	culture = romano_british
-	religion = insular_celtic
+	rite = insular_celtic
 	holding = castle_holding
 	500.1.1 = { culture = old_saxon }
 	620.1.1 = { culture = anglo_saxon }
@@ -151,7 +151,7 @@
 ###c_berkshire
 1556 = {	#Newbury
 	culture = romano_british
-	religion = insular_celtic
+	rite = insular_celtic
 	holding = castle_holding
 	500.1.1 = { culture = old_saxon }
 	620.1.1 = { culture = anglo_saxon }
@@ -169,11 +169,11 @@
 ###c_hampton
 1544 = {	#Winchester
 	culture = romano_british
-	religion = insular_celtic
+	rite = insular_celtic
 	holding = castle_holding
 	550.1.1 = {
 		culture = old_saxon
-		religion = saxon_pagan
+		rite = saxon_pagan
 	}
 	620.1.1 = { culture = anglo_saxon }
 }
@@ -186,7 +186,7 @@
 ###c_southhampton
 1545 = {	#Southampton
 	culture = romano_british
-	religion = insular_celtic
+	rite = insular_celtic
 	holding = tribal_holding
 }
 1548 = {	#Christchurch
@@ -196,13 +196,13 @@
 ###c_isle_of_wight
 1549 = {	#Carisbrooke
 	culture = jute
-	religion = anglo_pagan
+	rite = anglo_pagan
 	holding = tribal_holding
 }
 ###c_dorset
 1565 = {	#Wareham
 	culture = romano_british
-	religion = insular_celtic
+	rite = insular_celtic
 	holding = castle_holding
 }
 1566 = {	#Poole
@@ -218,7 +218,7 @@
 ###c_somerset
 1576 = {	#Bath
 	culture = romano_british
-	religion = insular_celtic
+	rite = insular_celtic
 	holding = castle_holding
 }
 1577 = {	#Winterstoke
@@ -236,9 +236,9 @@
 ###c_devon
 1569 = {	#Exeter
 	culture = briton
-	religion = celtic_pagan
+	rite = celtic_pagan
 	holding = castle_holding
-	564.1.1 = { religion = insular_celtic }
+	564.1.1 = { rite = insular_celtic }
 	610.1.1 = { culture = cornish }
 }
 1570 = {	#Totnes
@@ -253,9 +253,9 @@
 ###c_cornwall
 1574 = {	#Tintagel
 	culture = briton
-	religion = celtic_pagan
+	rite = celtic_pagan
 	holding = castle_holding
-	564.1.1 = { religion = insular_celtic }
+	564.1.1 = { rite = insular_celtic }
 	610.1.1 = { culture = cornish }
 }
 1573 = {	#Launceston
@@ -270,10 +270,10 @@ holding = none
 ###c_cardiganshire / Ceredigion
 1657 = {	#Cardigan / Aberteifi
 	culture = briton
-	religion = celtic_pagan
+	rite = celtic_pagan
 	holding = castle_holding
 	610.1.1 = { culture = welsh }
-	650.1.1 = { religion = insular_celtic }
+	650.1.1 = { rite = insular_celtic }
 }
 1658 = {	#Aberswyth
 	holding = none
@@ -281,7 +281,7 @@ holding = none
 ###c_merioneth / Merionnydd
 1665 = {	#Dolgellau / Harlech
 	culture = briton
-	religion = celtic_pagan
+	rite = celtic_pagan
 	holding = castle_holding
 	610.1.1 = { culture = welsh }
 }
@@ -292,9 +292,9 @@ holding = none
 ###c_caernarfonshire / Eryri
 1667 = {	#Caernarfon
 	culture = briton
-	religion = celtic_pagan
+	rite = celtic_pagan
 	holding = castle_holding
-	550.1.1 = { religion = insular_celtic }
+	550.1.1 = { rite = insular_celtic }
 	610.1.1 = { culture = welsh }
 }
 1668 = {	#Llyn
@@ -306,9 +306,9 @@ holding = none
 ###c_anglesey / Ynys Mon
 1673 = {	#Yns Mons
 	culture = briton
-	religion = celtic_pagan
+	rite = celtic_pagan
 	holding = castle_holding
-	500.1.1 = { religion = insular_celtic }
+	500.1.1 = { rite = insular_celtic }
 	610.1.1 = { culture = welsh }
 }
 1674 = {	#Holyhead / Caer Gybi
@@ -318,10 +318,10 @@ holding = none
 ###c_denbighshire / Perfeddwlad
 1670 = {	#Denbigh / Dinbych
 	culture = briton
-	religion = celtic_pagan
+	rite = celtic_pagan
 	holding = castle_holding
 	610.1.1 = { culture = welsh }
-	600.1.1 = { religion = insular_celtic }
+	600.1.1 = { rite = insular_celtic }
 }
 1671 = {	#Wrexham / Tegeingl
 	holding = none
@@ -334,10 +334,10 @@ holding = none
 1663 = {	#Welshpool / Mathrafal
 	#Technically a different town: Welshpool is Y Trallwng, whereas b_welshpool is currently Mathrafal, historic seat of the Princes of Powys.
 	culture = briton
-	religion = celtic_pagan
+	rite = celtic_pagan
 	holding = castle_holding
 	610.1.1 = { culture = welsh }
-	600.1.1 = { religion = insular_celtic }
+	600.1.1 = { rite = insular_celtic }
 }
 1664 = {	#Newtown / Machynlleth
 	#Technically a different settlement, as Newtown wouldn't be founded till the 1300s, but b_newtown is currently Machynlleth, which was a more important briton site previously.
@@ -347,10 +347,10 @@ holding = none
 ###c_sir_faesyfed
 1661 = {	#Llandrindod
 	culture = briton
-	religion = celtic_pagan
+	rite = celtic_pagan
 	holding = castle_holding
 	610.1.1 = { culture = welsh }
-	600.1.1 = { religion = insular_celtic }
+	600.1.1 = { rite = insular_celtic }
 }
 1662 = {	#Rhayader / Rhaeadr Gwy
 	holding = none
@@ -361,9 +361,9 @@ holding = none
 ###c_carmarthenshire / Sir Gaerfyrddin
 1652 = {	#Carmarthen / Caerfyrddin
 	culture = briton
-	religion = celtic_pagan
+	rite = celtic_pagan
 	holding = castle_holding
-	550.1.1 = { religion = insular_celtic }
+	550.1.1 = { rite = insular_celtic }
 	610.1.1 = { culture = welsh }
 }
 1653 = {	#Llandovery / Llanymddyfri
@@ -372,10 +372,10 @@ holding = none
 ###c_pembrokeshire / Dyfed
 1654 = {	#Pembroke / Penfro
 	culture = briton
-	religion = celtic_pagan
+	rite = celtic_pagan
 	holding = castle_holding
 	610.1.1 = { culture = welsh }
-	650.1.1 = { religion = insular_celtic }
+	650.1.1 = { rite = insular_celtic }
 }
 1655 = {	#Saint Davids / Tyddewi
 	holding = none
@@ -387,9 +387,9 @@ holding = none
 ###c_glamorgan / Morgannwg
 1649 = {	#Cardiff
 	culture = briton
-	religion = celtic_pagan
+	rite = celtic_pagan
 	holding = castle_holding
-	550.1.1 = { religion = insular_celtic }
+	550.1.1 = { rite = insular_celtic }
 	610.1.1 = { culture = welsh }
 }
 1650 = {	#Swansea / Abertawe
@@ -403,7 +403,7 @@ holding = none
 ###c_monmouthshire / Gwent
 1630 = {	#Newport / Caerllion / b_casnewydd
 	culture = briton
-	religion = insular_celtic
+	rite = insular_celtic
 	holding = castle_holding
 	610.1.1 = { culture = welsh }
 }
@@ -414,10 +414,10 @@ holding = none
 ###c_brecknockshire / Brycheiniog
 1659 = {	#Brecon / Aberhonddu
 	culture = briton
-	religion = insular_celtic
+	rite = insular_celtic
 	holding = castle_holding
 	610.1.1 = { culture = welsh }
-	650.1.1 = { religion = insular_celtic }
+	650.1.1 = { rite = insular_celtic }
 }
 1660 = {	#Talgerth
 	holding = none

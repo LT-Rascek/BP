@@ -2,7 +2,7 @@
 hellenic_pagan = {
 	name = hellenic_pagan
 	desc = hellenic_pagan_desc
-	faith = greco_roman_faith
+	faith = hellenic_pagan
 
 	color = { 0.5 0.5 1.0 }
 	icon = mfi_chaplet_1
@@ -16,7 +16,8 @@ hellenic_pagan = {
 roman_pagan = {
 	name = roman_pagan
 	desc = roman_pagan_desc
-	faith = greco_roman_faith
+	faith = hellenic_pagan
+	founder = d_hellenic_pagan #TODO: FIXME
 
 	color = { 1.0 0.5 0.25 }
 	icon = mfi_chaplet_1
@@ -39,7 +40,7 @@ roman_pagan = {
 sol_invictus = {
 	name = sol_invictus
 	desc = sol_invictus_desc
-	faith = greco_roman_faith
+	faith = hellenic_pagan
 
 	color = { 0.90 0.45 0.56 }
 	icon = mfi_custom_faith_5
@@ -65,15 +66,15 @@ sol_invictus = {
 romano_celtic_pagan = {
 	name = romano_celtic_pagan
 	desc = romano_celtic_pagan_desc
-	faith = greco_roman_faith
+	faith = hellenic_pagan
 
 	color = { 0.5 0.5 1.0 }
 	icon = mfi_celtic_pagan
 
 	tenet_selection_pair = {
 		requires_dlc_flag = all_under_heaven
-		doctrine = tenet_cranial_trophies
-		fallback_doctrine = tenet_unrelenting_faith
+		tenet = tenet_cranial_trophies
+		fallback_tenet = tenet_unrelenting_faith
 	}
 
 	tenets = {
@@ -243,5 +244,139 @@ romano_celtic_pagan = {
 
 		GHWName = ghw_great_holy_war
 		GHWNamePlural = ghw_great_holy_wars
+	}
+}
+##### Philosophical Rites
+pythagoreanism = {
+	faith = pythagoreanism
+
+	color = { 0.6 0.1 0.4 }
+
+	tenets = {
+		tenet_isopsephy
+		tenet_pacifism
+		tenet_alexandrian_catechism
+	}
+
+	doctrines = {
+		doctrine_gender_equal
+		doctrine_monist
+		doctrine_ritual_vegetarianism_required
+		special_doctrine_humanistic_philosophy
+	}
+}
+platonism = {
+	faith = platonism
+
+	color = { 0.6 0.6 0.6 }
+
+	tenets = {
+		tenet_bhakti #Julian definitely had shades of this
+		tenet_alexandrian_catechism
+		tenet_esotericism
+	}
+
+	doctrines = {
+		doctrine_monist
+		doctrine_ritual_vegetarianism_partial
+		special_doctrine_humanistic_philosophy
+	}
+}
+stoicism = {
+	faith = stoicism
+
+	color = { 0.6 0.6 0.6 }
+
+	tenet_selection_pair = {
+		requires_dlc_flag = all_under_heaven
+		tenet = tenet_harmonious_society
+		fallback_tenet = tenet_alexandrian_catechism
+	}
+
+	tenets = {
+		tenet_legalism #Dikaoiosyne
+		tenet_consolamentum
+	}
+
+	doctrines = {
+		doctrine_no_head
+		special_doctrine_humanistic_philosophy
+		doctrine_monist
+	}
+}
+##### Mystery Religions
+mithraic_pagan = {
+	faith = mithraic_pagan
+
+	color = { 1.0 1.0 0.0 }
+
+	tenets = {
+		tenet_mystery_religion
+		tenet_ritual_celebrations #Ritual Meals were important
+		tenet_unrelenting_faith #Should have a military orientation even if no GHW
+	}
+
+	doctrines = {
+		#Mystery religion
+		doctrine_clerical_succession_spiritual_appointment
+		doctrine_theocracy_temporal
+		
+		#Not really aligned with the Roman pantheon and unpopular with the Roman elite
+		doctrine_pluralism_righteous
+		doctrine_polytheist
+		
+		#Male-dominated religion populari with the military
+		doctrine_clerical_gender_male_only
+		doctrine_clerical_function_recruitment
+		doctrine_clerical_gender_either
+	}
+}
+cybelian = {
+	faith = cybelian
+
+	color = { 0.06 0.2 0.65 }
+
+	tenets = {
+		tenet_mystery_religion
+		tenet_eunuch_priests
+		tenet_fertility_cult
+	}
+
+	doctrines = {
+		#Mystery religion
+		doctrine_clerical_succession_spiritual_appointment
+		doctrine_theocracy_temporal
+		doctrine_spiritual_head
+		
+		#Main
+		doctrine_gender_equal
+		
+		#Not really aligned with the Roman pantheon and unpopular with the Roman elite
+		doctrine_polytheist
+		
+		#Needed because of interaction with sacred eunuchs
+		doctrine_clerical_gender_male_only
+		doctrine_clerical_marriage_disallowed
+		doctrine_clerical_succession_spiritual_appointment
+	}
+}
+orphism = {
+	faith = orphism
+
+	color = { 0.06 0.2 0.65 }
+
+	tenets = {
+		tenet_mystery_religion
+		tenet_reincarnation #Similarity to Pythagoreanism
+		tenet_asceticism
+	}
+
+	doctrines = {
+		#Mystery religion
+		doctrine_clerical_succession_spiritual_appointment
+		doctrine_theocracy_temporal
+		
+		#Not really aligned with the Roman pantheon and unpopular with the Roman elite
+		doctrine_polytheist
 	}
 }

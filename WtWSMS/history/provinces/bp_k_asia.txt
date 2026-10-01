@@ -43,7 +43,7 @@
 ###c_ionia
 745 = {	# 745 - Smyrna
 	culture = greek
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
 }
 747 = {	# 747 - Halikarnassos
@@ -66,7 +66,7 @@
 ###c_aeolis
 5531 = {	# 5531 - Phocaea
 	culture = greek
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
 }
 5530 = {	# 5530 - Pergamon
@@ -81,7 +81,7 @@
 ###c_lykaonia
 759 = {	# 759 - Ikonion
 	culture = isaurian
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
 }
 5671 = {	# 5671 - Lystra
@@ -96,7 +96,7 @@
 ###c_pisidia
 754 = {	# 754 - Sozopolis
 	culture = greek
-	religion = bosporan_faith #Probably not, but Lykia (while majority Christian) was a center of "orthodox" Hypsistarianism
+	rite = bosporan_faith #Probably not, but Lykia (while majority Christian) was a center of "orthodox" Hypsistarianism
 	holding = castle_holding
 }
 5667 = {	# 5667 - Salda
@@ -111,7 +111,7 @@
 ###c_selge
 5664 = {	# 5664 - Selge
 	culture = isaurian
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
 }
 5663 = {	# 5663 - Adada
@@ -129,7 +129,7 @@
 ###c_philomelion
 5657 = {	# 5657 - Philomelium
 	culture = phrygian
-	religion = montanism
+	rite = montanism
 	holding = castle_holding
 }
 5658 = {	# 5658 - Amorion
@@ -147,7 +147,7 @@
 ###c_lykia
 5642 = {	# 5642 - Cremna
 	culture = greek
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
 }
 755 = {	# 755 - Attaleia
@@ -171,7 +171,7 @@
 ###c_karia
 5647 = {	# 5647 - Telmessos
 	culture = greek
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
 }
 5648 = {	# 5648 - Cibyra
@@ -189,7 +189,7 @@
 ###c_lydia
 5546 = {	# 5546 - Philadelphia
 	culture = greek
-	religion = montanism
+	rite = montanism
 	holding = castle_holding
 	buildings = {
 		hill_farms_02
@@ -214,7 +214,7 @@
 ###c_thyatira
 5539 = {	# 5539 - Thyatira
 	culture = greek
-	religion = montanism
+	rite = montanism
 	holding = castle_holding
 }
 5535 = {	# 5535 - Attalia
@@ -229,7 +229,7 @@
 ###c_chonae
 5548 = {	# 5548 - Chonae
 	culture = greek
-	religion = montanism
+	rite = montanism
 	holding = castle_holding
 }
 748 = {	# 748 - Laodikeia
@@ -247,7 +247,7 @@
 ###c_abydos
 744 = {		#Abydos
 	culture = greek
-	religion = pneumatomachianism
+	rite = pneumatomachianism
 	holding = castle_holding
 	buildings = { #Major city at the time, would have been heavily developed
 		common_tradeport_02
@@ -269,7 +269,7 @@
 ###c_nikaea
 750 = {	# 750 - Nikaea
 	culture = greek
-	religion = melchisdechianism
+	rite = melchisdechianism
 	holding = castle_holding
 	buildings = { #Major city at the time, would have been heavily developed
 		common_tradeport_00
@@ -288,7 +288,7 @@
 ###c_mysia
 5552 = {	# 5552 - Miletopolis
 	culture = greek #Was settlement point for Phrygian Goths, but those Goths were likely subsumed into Phrygian culture by 450s
-	religion = montanism
+	rite = montanism
 	holding = castle_holding
 }
 5551 = {	# 5551 - Poimanenon
@@ -303,7 +303,7 @@
 ###c_prusa
 742 = {	# 742 - Prusa
 	culture = greek
-	religion = melchisdechianism
+	rite = melchisdechianism
 	holding = castle_holding
 }
 5555 = {	# 5555 - Helge
@@ -324,7 +324,7 @@
 ###c_phrygia
 5561 = {	# 5561 - Gordium
 	culture = phrygian
-	religion = montanism
+	rite = montanism
 	holding = castle_holding
 }
 5564 = {	# 5564 - Oka
@@ -346,7 +346,7 @@
 ###c_pacatiana
 5651 = {	# 5651 - Aezani
 	culture = phrygian
-	religion = montanism
+	rite = montanism
 	holding = castle_holding
 }
 5652 = {	# 5652 - Nakoleia
@@ -365,7 +365,7 @@
 ###c_hadrianeia
 5536 = {	# 5536 - Hadrianeia
 	culture = greek
-	religion = montanism
+	rite = montanism
 	holding = castle_holding
 }
 5537 = {	# 5537 - Cybele
@@ -380,7 +380,7 @@
 ###c_lesbos
 487 = {		#Lesbos
 	culture = greek
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
 }
 3752 = {	#Lemnos
@@ -393,7 +393,7 @@
 ###c_chios
 486 = {		#Chios
 	culture = greek
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
 }
 3754 = {	#Samos
@@ -402,7 +402,7 @@
 ###c_rhodos
 483 = {		#Rhodos
 	culture = greek
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	holding = castle_holding
 }
 3740 = {	#Kos

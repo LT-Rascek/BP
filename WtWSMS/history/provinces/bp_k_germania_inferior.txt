@@ -37,11 +37,11 @@
 ###c_kaiserlautern
 2731 = {	#WORMS
 	culture = romano_gallic #Brisgavi integrated (but probably Christianized)
-	religion = gallican_church
+	rite = gallican_church
 	holding = castle_holding
 	455.1.1 = {
 		culture = alamannian
-		religion = irimonic_pagan
+		rite = irimonic_pagan
 		holding = tribal_holding
 	}
 }
@@ -63,7 +63,7 @@
 ###c_strassburg
 2721 = {	#STRASSBURG
 	culture = alamannian
-	religion = irimonic_pagan
+	rite = irimonic_pagan
 	holding = castle_holding #aka Argentoratum
 }
 2722 = {	#HAGUENAU
@@ -75,7 +75,7 @@
 ###c_speyer
 2732 = {	#SPEYER
 	culture = alamannian
-	religion = irimonic_pagan
+	rite = irimonic_pagan
 	holding = tribal_holding #aka Noviomagus/Civitas Nemetum
 }
 2724 = {	#WEISSENBURG
@@ -89,12 +89,12 @@
 ###c_saarbrucken
 2704 = {	#SAARBRUCKEN
 	culture = romano_gallic
-	religion = gallican_church
+	rite = gallican_church
 	holding = castle_holding #aka Saravipons
 	445.1.1 = { holding = tribal_holding }
 	455.1.1 = {
 		culture = alamannian
-		religion = irimonic_pagan
+		rite = irimonic_pagan
 	}
 }
 2726 = {	#ZWEIBRUCKEN
@@ -106,7 +106,7 @@
 ###c_puttlingen
 2710 = {	#PUTTLINGEN
 	culture = romano_gallic
-	religion = gallican_church
+	rite = gallican_church
 	holding = castle_holding
 }
 2712 = {	#FINSTIGEN
@@ -115,10 +115,10 @@
 ###c_aachen
 2092 = {	#AACHEN
 	culture = old_frankish
-	religion = frankish_pagan
+	rite = frankish_pagan
 	holding = castle_holding #Too important not too
 	special_building_slot = palace_of_aachen_01
-	508.12.25 = { religion = gallican_church }
+	508.12.25 = { rite = gallican_church }
 }
 2448 = {	#LIMBOURG
 	holding = none
@@ -140,9 +140,9 @@
 ###c_cleves
 2104 = {	#KLEVE
 	culture = old_frankish
-	religion = frankish_pagan
+	rite = frankish_pagan
 	holding = tribal_holding
-	508.12.25 = { religion = gallican_church }
+	508.12.25 = { rite = gallican_church }
 }
 2102 = {	#GLADBACH
 	holding = none
@@ -154,13 +154,13 @@
 ###c_cologne
 2088 = {	#COLOGNE
 	culture = romano_gallic
-	religion = gallican_church
+	rite = gallican_church
 	holding = castle_holding
 	special_building_slot = holy_site_cologne_cathedral_01
 	450.1.1 = { #Atilla sacks the region
 		holding = tribal_holding
 		culture = old_frankish
-		religion = frankish_pagan
+		rite = frankish_pagan
 	}
 }
 2087 = {	#BONN
@@ -177,9 +177,9 @@
 ###c_guelders
 2450 = {	#GELDERN
 	culture = old_frankish
-	religion = frankish_pagan
+	rite = frankish_pagan
 	holding = tribal_holding
-	508.12.25 = { religion = gallican_church }
+	508.12.25 = { rite = gallican_church }
 	900.1.1 = { holding = castle_holding }
 }
 2103 = {	#NIJMEGEN
@@ -188,12 +188,12 @@
 ###c_koblenz
 2084 = {	#KOBLENZ
 	culture = romano_gallic
-	religion = gallican_church
+	rite = gallican_church
 	holding = castle_holding
 	450.1.1 = { #Atilla sacks the region
 		holding = tribal_holding
 		culture = old_frankish
-		religion = frankish_pagan
+		rite = frankish_pagan
 	}
 }
 2086 = {	#ADENAU
@@ -211,7 +211,7 @@
 ###c_luxembourg
 2082 = {	#LUXEMBOURG
 	culture = old_frankish
-	religion = frankish_pagan
+	rite = frankish_pagan
 	holding = tribal_holding
 }
 2090 = {	#BASTOGNE
@@ -231,7 +231,7 @@
 ###c_trier
 2083 = {	#TRIER
 	culture = romano_gallic
-	religion = gallican_church
+	rite = gallican_church
 	holding = castle_holding #Augusta Treverorum
 }
 2085 = {	#BEDA
@@ -246,15 +246,15 @@
 ###c_mainz
 2694 = {	#MAINZ
 	culture = romano_gallic
-	religion = gallican_church
+	rite = gallican_church
 	holding = castle_holding #aka Mogontiacum
 	415.1.1 = {
 		culture = burgundian
-		religion = arian
+		rite = arian
 	}
 	445.1.1 = {
 		culture = old_frankish
-		religion = frankish_pagan
+		rite = frankish_pagan
 		holding = tribal_holding
 	}
 }
@@ -265,7 +265,7 @@
 ###c_metz
 2708 = {	#METZ
 	culture = romano_gallic
-	religion = gallican_church
+	rite = gallican_church
 	holding = castle_holding #aka Divodurum Mediomatricum
 }
 2698 = {	#SAARBURG
@@ -280,7 +280,7 @@
 ###c_briey
 2706 = {	#BRIEY
 	culture = romano_gallic
-	religion = gallican_church
+	rite = gallican_church
 	holding = castle_holding
 }
 2080 = {	#HAYANGE
@@ -292,9 +292,9 @@
 ###c_maastricht
 2099 = {	#MAASTRICHT
 	culture = old_frankish
-	religion = frankish_pagan
+	rite = frankish_pagan
 	holding = tribal_holding #aka Traiectus (?)
-	508.12.25 = { religion = gallican_church }
+	508.12.25 = { rite = gallican_church }
 }
 2100 = {	#EINDHOVEN
 	holding = none
@@ -305,9 +305,9 @@
 ###c_brabant
 2105 = {	#LEUVEN
 	culture = old_frankish
-	religion = frankish_pagan
+	rite = frankish_pagan
 	holding = tribal_holding
-	508.12.25 = { religion = gallican_church }
+	508.12.25 = { rite = gallican_church }
 }
 2107 = {	#BRUSSELS
 	holding = none
@@ -319,7 +319,7 @@
 ###c_zeeland
 2112 = {	#MIDDELBURG
 	culture = old_frankish
-	religion = frankish_pagan
+	rite = frankish_pagan
 	holding = tribal_holding
 	844.1.1 = { holding = castle_holding } #Year monastery was built
 }
@@ -332,9 +332,9 @@
 ###c_antwerpen
 2106 = {	#ANTWERP
 	culture = old_frankish
-	religion = frankish_pagan
+	rite = frankish_pagan
 	holding = tribal_holding #aka Anderpus
-	508.12.25 = { religion = gallican_church }
+	508.12.25 = { rite = gallican_church }
 }
 2108 = {	#ROSENDAAL
 	holding = none
@@ -348,11 +348,11 @@
 ###c_liege
 2097 = {	#LIEGE
 	culture = romano_gallic
-	religion = gallican_church
+	rite = gallican_church
 	holding = castle_holding
 	451.1.1 = {
 		culture = old_frankish
-		religion = frankish_pagan
+		rite = frankish_pagan
 		holding = tribal_holding
 	}
 	558.1.1 = { holding = castle_holding } #First references to city
@@ -367,7 +367,7 @@
 ###c_bouillon
 2091 = {	#BOUILLON
 	culture = romano_gallic
-	religion = gallican_church
+	rite = gallican_church
 	holding = castle_holding
 }
 2686 = {	#CHINY
@@ -382,11 +382,11 @@
 ###c_namur
 2098 = {	#NAMUR
 	culture = romano_gallic
-	religion = gallican_church
+	rite = gallican_church
 	holding = castle_holding #Roman castrum
 	451.1.1 = {
 		culture = old_frankish
-		religion = frankish_pagan
+		rite = frankish_pagan
 		holding = tribal_holding
 	}
 }

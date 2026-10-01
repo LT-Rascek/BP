@@ -9,7 +9,7 @@
 kashmiri000 = {
 	name = "Ranaditya"
 	dynasty = kasmiri_dynn_000
-	religion = shaivism
+	rite = shaivism
 	culture = kashmiri
 	419.1.1 = { birth = yes }
 	519.1.1 = { death = yes }
@@ -17,7 +17,7 @@ kashmiri000 = {
 kashmiri001 = {
 	name = "Vikramaditya"
 	dynasty = kasmiri_dynn_000
-	religion = shaivism
+	rite = shaivism
 	culture = kashmiri
 	father = kashmiri000
 	450.1.1 = { birth = yes }
@@ -26,7 +26,7 @@ kashmiri001 = {
 kashmiri002 = {
 	name = "Baladitya"
 	dynasty = kasmiri_dynn_000
-	religion = shaivism
+	rite = shaivism
 	culture = kashmiri
 	father = kashmiri001
 	500.1.1 = { birth = yes }
@@ -36,7 +36,7 @@ kashmiri003 = {
 	name = "Anangalekha"
 	female = yes
 	dynasty = kasmiri_dynn_000
-	religion = shaivism
+	rite = shaivism
 	culture = kashmiri
 	father = kashmiri002
 	578.1.1 = { birth = yes }
@@ -46,7 +46,7 @@ kashmiri003 = {
 kashmiri004 = {
 	name = "Durlabhavardhana"
 	dynasty = kasmiri_dynn_001
-	religion = vaishnavism
+	rite = vaishnavism
 	culture = kashmiri
 	578.1.1 = { birth = yes }
 	598.1.1 = {
@@ -58,7 +58,7 @@ kashmiri004 = {
 kashmiri005 = {
 	name = "Chandrapida"
 	dynasty = kasmiri_dynn_001
-	religion = vaishnavism
+	rite = vaishnavism
 	culture = kashmiri
 	father = kashmiri004
 	mother = kashmiri003
@@ -69,7 +69,7 @@ kashmiri005 = {
 kashmiri006 = {
 	name = "Tarapida"
 	dynasty = kasmiri_dynn_001
-	religion = vaishnavism
+	rite = vaishnavism
 	culture = kashmiri
 	father = kashmiri004
 	mother = kashmiri003
@@ -80,7 +80,7 @@ kashmiri006 = {
 kashmiri007 = {
 	name = "Muktapida"
 	dynasty = kasmiri_dynn_001
-	religion = vaishnavism
+	rite = vaishnavism
 	culture = kashmiri
 	father = kashmiri004
 	mother = kashmiri003
@@ -95,7 +95,7 @@ kashmiri007 = {
 kashmiri008 = {
 	name = "Kamaladevi"
 	female = yes
-	religion = vaishnavism
+	rite = vaishnavism
 	culture = kashmiri
 	680.1.1 = { birth = yes }
 	715.1.1 = { death = yes }
@@ -103,7 +103,7 @@ kashmiri008 = {
 kashmiri009 = {
 	name = "Chakramardika"
 	female = yes
-	religion = vaishnavism
+	rite = vaishnavism
 	culture = kashmiri
 	700.1.1 = { birth = yes }
 	739.1.1 = { death = yes }
@@ -111,7 +111,7 @@ kashmiri009 = {
 kashmiri010 = {
 	name = "Kuvalayapida"
 	dynasty = kasmiri_dynn_001
-	religion = vaishnavism
+	rite = vaishnavism
 	culture = kashmiri
 	father = kashmiri007
 	mother = kashmiri008
@@ -123,7 +123,7 @@ kashmiri010 = {
 kashmiri011 = {
 	name = "Vajraditya"
 	dynasty = kasmiri_dynn_001
-	religion = vaishnavism
+	rite = vaishnavism
 	culture = kashmiri
 	trait = ambitious
 	trait = arrogant
@@ -135,7 +135,7 @@ kashmiri011 = {
 	719.1.1 = { birth = yes }
 	739.1.1 = {
 		add_spouse = kashmiri012
-		religion = old_bon
+		rite = old_bon
 	} #Introduced the "evil habits" of the mlechchas (barbarians)...
 	740.1.1 = { add_concubine = kashmiri013 }
 	746.1.1 = { death = yes }
@@ -143,7 +143,7 @@ kashmiri011 = {
 kashmiri012 = {
 	name = "Mangjarika"  #Presumed source of Vajraditya's "bad habits"
 	female = yes
-	religion = old_bon
+	rite = old_bon
 	culture = zhangzhung
 	710.1.1 = { birth = yes }
 	746.1.1 = { death = yes }
@@ -151,7 +151,7 @@ kashmiri012 = {
 kashmiri013 = {
 	name = "Massa"  #Presumed source of Vajraditya's "bad habits"
 	female = yes
-	religion = vaishnavism
+	rite = vaishnavism
 	culture = kashmiri
 	720.1.1 = { birth = yes }
 	770.1.1 = { death = yes }
@@ -159,7 +159,7 @@ kashmiri013 = {
 kashmiri013 = {
 	name = "Prithivyapida"
 	dynasty = kasmiri_dynn_001
-	religion = old_bon
+	rite = old_bon
 	culture = kashmiri
 	father = kashmiri011
 	mother = kashmiri009
@@ -169,7 +169,7 @@ kashmiri013 = {
 kashmiri014 = {
 	name = "Sangramapida"
 	dynasty = kasmiri_dynn_001
-	religion = vaishnavism
+	rite = vaishnavism
 	culture = kashmiri
 	trait = child_of_concubine_female
 	father = kashmiri011
@@ -180,7 +180,7 @@ kashmiri014 = {
 kashmiri015 = {
 	name = "Jayapida"
 	dynasty = kasmiri_dynn_001
-	religion = vaishnavism
+	rite = vaishnavism
 	culture = kashmiri
 	father = kashmiri011
 	745.1.1 = { birth = yes }
@@ -193,7 +193,7 @@ kashmiri015 = {
 kashmiri016 = {
 	name = "Durgi"
 	female = yes
-	religion = vajrayana
+	rite = vajrayana
 	culture = kashmiri
 	745.1.1 = { birth = yes }
 	765.1.1 = { death = yes }
@@ -201,7 +201,7 @@ kashmiri016 = {
 kashmiri017 = {
 	name = "Kalyana"
 	female = yes
-	religion = vajrayana
+	rite = vajrayana
 	culture = kashmiri
 	759.1.1 = { birth = yes }
 	800.1.1 = { death = yes }
@@ -209,7 +209,7 @@ kashmiri017 = {
 kashmiri018 = {
 	name = "Lalitapida"
 	dynasty = kasmiri_dynn_001
-	religion = vaishnavism
+	rite = vaishnavism
 	culture = kashmiri
 	trait = rakish
 	trait = lustful
@@ -236,7 +236,7 @@ kashmiri018 = {
 kashmiri019 = {
 	name = "Sangramapida"
 	dynasty = kasmiri_dynn_001
-	religion = vaishnavism
+	rite = vaishnavism
 	culture = kashmiri
 	father = kashmiri015
 	mother = kashmiri016
@@ -247,7 +247,7 @@ kashmiri020 = {
 	name = "Jayadevi"
 	female = yes
 	dynasty = 1042092
-	religion = vaishnavism
+	rite = vaishnavism
 	culture = kashmiri
 	trait = beauty_good_3
 	765.1.1 = { birth = yes }
@@ -260,7 +260,7 @@ kashmiri021 = {
 	culture = "kashmiri"
 	father = kashmiri018
 	mother = kashmiri020
-	religion = vaishnavism
+	rite = vaishnavism
 	765.1.1 = { birth = yes }
 	817.1.1 = { death = yes }
 }
@@ -269,7 +269,7 @@ kashmiri021 = {
 	name = "Uppa"
 	dynasty = 1042092	# Utpala
 	culture = "kashmiri"
-	religion = vaishnavism
+	rite = vaishnavism
 	720.1.1 = { birth = yes }
 	770.1.1 = { death = yes }
 }
@@ -278,7 +278,7 @@ kashmiri021 = {
 	dynasty = 1042092	# Utpala
 	culture = "kashmiri"
 	father = 188388
-	religion = vaishnavism
+	rite = vaishnavism
 	738.1.1 = { birth = yes }
 	800.1.1 = { death = yes }
 }
@@ -287,7 +287,7 @@ kashmiri021 = {
 	dynasty = 1042092	# Utpala
 	culture = "kashmiri"
 	father = 188389
-	religion = vaishnavism
+	rite = vaishnavism
 	768.1.1 = { birth = yes }
 	820.1.1 = { death = yes }
 }
@@ -297,7 +297,7 @@ kashmiri021 = {
 	dynasty = 1042100	# Karkota
 	culture = "kashmiri"
 	father = 188379
-	religion = vaishnavism
+	rite = vaishnavism
 	740.1.1 = { birth = yes }
 	800.1.1 = { death = yes }
 }
@@ -306,7 +306,7 @@ kashmiri021 = {
 	dynasty = 1042100	# Karkota
 	culture = "kashmiri"
 	father = 188392
-	religion = vaishnavism
+	rite = vaishnavism
 	780.1.1 = { birth = yes }
 	850.1.1 = { death = yes }
 }
@@ -315,7 +315,7 @@ kashmiri021 = {
 	dynasty = 1042100	# Karkota
 	culture = "kashmiri"
 	father = 188384
-	religion = vaishnavism
+	rite = vaishnavism
 	788.1.1 = { birth = yes }
 	870.1.1 = { death = yes }
 }
@@ -324,7 +324,7 @@ kashmiri021 = {
 	dynasty = 1042100	# Karkota
 	culture = "kashmiri"
 	father = 188393
-	religion = vaishnavism
+	rite = vaishnavism
 	800.1.1 = { birth = yes }
 	856.1.1 = { death = yes }
 }

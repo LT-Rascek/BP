@@ -15,7 +15,7 @@
 # Map of Christianity in 325 and 600
 # https://en.wikipedia.org/wiki/History_of_Christianity#/media/File:Spread_of_Christianity_to_AD_600_(1).png
 #
-# d_tyrol was close to a 325 center from the above, so was made nicene
+# d_tyrol was close to a 325 center from the above, so was made christian_faith
 #
 # @Abian36 stated persecution of Sol Invictus around Vindovina in 474; the Sol Invictus counties get flipped to
 # Nicene by 500
@@ -32,7 +32,7 @@
 ###c_grisons
 2055 = {	#CHUR
 	culture = romano_raetian
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
 }
 2052 = {	#LIECHTENSTEIN = b_farduzes
@@ -47,7 +47,7 @@
 ###c_sankt_gallen
 2054 = {	#KONSTANZ
 	culture = romano_raetian
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
 }
 2053 = {	#SANKT GALLEN
@@ -57,7 +57,7 @@
 ###c_ravensburg
 2787 = {	#BREGENZ
 	culture = romano_raetian
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
 }
 2786 = {	#RAVENSBURG
@@ -66,7 +66,7 @@
 ###c_alpsee
 2782 = {	#SCHONGAU
 	culture = romano_raetian
-	religion = nicene
+	religion = christian_faith
 	holding = tribal_holding
 }
 2781 = {	#PEITING
@@ -81,11 +81,11 @@
 ###c_augsburg
 2778 = {	#AUGSBURG
 	culture = romano_noric
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
 	455.1.1 = { #Hunnic sacking
 		culture = alamannian
-		religion = irimonic_pagan
+		rite = irimonic_pagan
 		holding = tribal_holding
 	}
 }
@@ -101,7 +101,7 @@
 ###c_kempten
 2783 = {	#KEMPTEN
 	culture = alamannian
-	religion = irimonic_pagan
+	rite = irimonic_pagan
 	holding = tribal_holding
 }
 2776 = {	#MARSETTEN
@@ -113,7 +113,7 @@
 ###c_burgau
 2777 = {	#BURGAU
 	culture = alamannian
-	religion = irimonic_pagan
+	rite = irimonic_pagan
 	holding = tribal_holding
 }
 2775 = {	#KIRCHBERG
@@ -125,11 +125,11 @@
 ###c_regensburg
 2964 = {	#REGENSBURG
 	culture = romano_noric
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
 	469.1.1 = {
 		culture = danubian_suebi
-		religion = irimonic_pagan
+		rite = irimonic_pagan
 		holding = tribal_holding
 	}
 }
@@ -142,12 +142,12 @@
 ###c_munchen
 2945 = {	#MUNCHEN
 	culture = romano_noric
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
 	455.1.1 = { holding = tribal_holding }
 	469.1.1 = {
 		culture = danubian_suebi
-		religion = irimonic_pagan
+		rite = irimonic_pagan
 	}
 }
 2946 = {	#AHEIM
@@ -165,12 +165,12 @@
 ###c_eschenlohe
 2949 = {	#ESCHENLOHE
 	culture = romano_noric
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	holding = castle_holding
 	455.1.1 = { holding = tribal_holding }
 	469.1.1 = {
 		culture = danubian_suebi
-		religion = irimonic_pagan
+		rite = irimonic_pagan
 	}
 }
 2948 = {	#TOLZ
@@ -179,11 +179,11 @@
 ###c_rothenburg
 2942 = {	#ROTHENBURG
 	culture = romano_noric
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
 	469.1.1 = {
 		culture = danubian_suebi
-		religion = irimonic_pagan
+		rite = irimonic_pagan
 		holding = tribal_holding
 	}
 }
@@ -202,12 +202,12 @@
 ###c_passau
 2960 = {	#PASSAU
 	culture = romano_noric
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
 	450.1.1 = { holding = tribal_holding }
 	469.1.1 = {
 		culture = danubian_suebi
-		religion = irimonic_pagan
+		rite = irimonic_pagan
 	}
 }
 2970 = {	#SCHARDING

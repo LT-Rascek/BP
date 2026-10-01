@@ -26,9 +26,9 @@
 ###c_qasr_ibrim
 6334 = {	#QASR_IBRIM
 	culture = old_nubian
-	religion = egyptian_pagan
+	rite = egyptian_pagan
 	holding = castle_holding
-	543.1.1 = { religion = coptic }
+	543.1.1 = { rite = copitc_rite }
 	550.1.1 = { culture = nubian }
 }
 6332 = {	#KOROSKO
@@ -40,10 +40,10 @@
 ###c_faras
 6336 = {	#FARAS
 	culture = old_nubian
-	religion = egyptian_pagan
+	rite = egyptian_pagan
 	holding = castle_holding
 	550.1.1 = { culture = nubian }
-	602.1.1 = { religion = coptic } #Start of Faras Diocese
+	602.1.1 = { rite = copitc_rite } #Start of Faras Diocese
 }
 6335 = {	#SERRA
 	holding = none
@@ -51,10 +51,10 @@
 ###c_batn_al-hajar
 6337 = {	#SEMNA
 	culture = old_nubian
-	religion = egyptian_pagan
+	rite = egyptian_pagan
 	holding = castle_holding
 	550.1.1 = { culture = nubian }
-	650.1.1 = { religion = coptic } #Probably a long-term pagan holdout
+	650.1.1 = { rite = copitc_rite } #Probably a long-term pagan holdout
 }
 6338 = {	#AKASHA
 	holding = none
@@ -62,7 +62,7 @@
 ###c_qurta
 6329 = {	#QURTA
 	culture = old_nubian
-	religion = coptic
+	rite = copitc_rite
 	holding = castle_holding
 	550.1.1 = { culture = nubian }
 }
@@ -75,7 +75,7 @@
 ###c_kalabsha
 6362 = {	#KALABSHA
 	culture = old_nubian
-	religion = coptic
+	rite = copitc_rite
 	holding = castle_holding
 	550.1.1 = { culture = nubian }
 }
@@ -88,11 +88,11 @@
 ###c_dongola
 6344 = {	#OLD DONGOLA
 	culture = old_nubian
-	religion = egyptian_pagan
+	rite = egyptian_pagan
 	holding = castle_holding
 	500.1.1 = { culture = nubian }
-	525.1.1 = { religion = nicene }
-	650.1.1 = { religion = coptic }
+	525.1.1 = { religion = christian_faith }
+	650.1.1 = { rite = copitc_rite }
 }
 6341 = {	#TUMBUS	#aka Tombos
 	holding = city_holding
@@ -111,11 +111,11 @@
 ###c_sai
 6339 = {	#SAI
 	culture = old_nubian
-	religion = egyptian_pagan
+	rite = egyptian_pagan
 	holding = castle_holding
 	500.1.1 = { culture = nubian }
-	525.1.1 = { religion = nicene }
-	650.1.1 = { religion = coptic }
+	525.1.1 = { religion = christian_faith }
+	650.1.1 = { rite = copitc_rite }
 }
 6340 = {	#DELGO
 	holding = none
@@ -126,11 +126,11 @@
 ###c_meroe
 6346 = {	#GRNETTI
 	culture = old_nubian
-	religion = egyptian_pagan
+	rite = egyptian_pagan
 	holding = castle_holding
 	500.1.1 = { culture = nubian }
-	525.1.1 = { religion = nicene }
-	650.1.1 = { religion = coptic }
+	525.1.1 = { religion = christian_faith }
+	650.1.1 = { rite = copitc_rite }
 }
 6347 = {	#TANKASI
 	holding = none
@@ -149,7 +149,7 @@
 ###c_wadi_el-milk
 6415 = {	#WADI_EL-MILK
 	culture = daju
-	religion = kushitism_pagan
+	rite = kushitism_pagan
 	holding = tribal_holding
 }
 6427 = {	#JEBEL_ABU_NEGILA
@@ -164,11 +164,11 @@
 ###c_abwab
 6363 = {	#AL-ABWAB
 	culture = old_nubian
-	religion = egyptian_pagan
+	rite = egyptian_pagan
 	holding = castle_holding
 	500.1.1 = { culture = nubian }
-	525.1.1 = { religion = nicene }
-	650.1.1 = { religion = coptic }
+	525.1.1 = { religion = christian_faith }
+	650.1.1 = { rite = copitc_rite }
 }
 6364 = {	#SHENDI
 	holding = city_holding
@@ -189,11 +189,11 @@
 ###c_atbara
 6356 = {	#ATBARA
 	culture = old_nubian
-	religion = egyptian_pagan
+	rite = egyptian_pagan
 	holding = castle_holding
 	500.1.1 = { culture = nubian }
-	525.1.1 = { religion = nicene }
-	650.1.1 = { religion = coptic }
+	525.1.1 = { religion = christian_faith }
+	650.1.1 = { rite = copitc_rite }
 }
 6355 = {	#BERBER
 	holding = none
@@ -213,11 +213,11 @@
 ###c_shamir
 6367 = {	#SHEMKHIYA
 	culture = old_nubian
-	religion = egyptian_pagan
+	rite = egyptian_pagan
 	holding = castle_holding
-	525.1.1 = { religion = nicene }
+	525.1.1 = { religion = christian_faith }
 	550.1.1 = { culture = nubian }
-	650.1.1 = { religion = coptic }
+	650.1.1 = { rite = copitc_rite }
 }
 6368 = {	#REDAB
 	holding = none
@@ -228,7 +228,7 @@
 ###c_abu_hammad
 6352 = {	#ABU_HAMMAD
 	culture = beja
-	religion = kushitism_pagan
+	rite = kushitism_pagan
 	holding = tribal_holding
 }
 6354 = {	#KOROSKO_ROAD
@@ -240,11 +240,11 @@
 ###c_kurgus
 6351 = {	#KURGUS
 	culture = old_nubian
-	religion = egyptian_pagan
+	rite = egyptian_pagan
 	holding = castle_holding
-	525.1.1 = { religion = nicene }
+	525.1.1 = { religion = christian_faith }
 	550.1.1 = { culture = nubian }
-	650.1.1 = { religion = coptic }
+	650.1.1 = { rite = copitc_rite }
 }
 6353 = {	#TARFAYA
 	holding = none
@@ -257,10 +257,10 @@
 #LT-Rascek: To make Alodia valid as a pre-feudal, made a few castle_holdings in river valley
 6394 = {	# 6394 - SOBA
 	culture = old_nubian
-	religion = kushitism_pagan
+	rite = kushitism_pagan
 	holding = castle_holding
 	550.1.1 = { culture = nubian }
-	580.1.1 = { religion = coptic }
+	580.1.1 = { rite = copitc_rite }
 }
 6391 = {	#GEILI
 	holding = none
@@ -277,7 +277,7 @@
 ###c_naga
 6407 = {	# 6407 - NAGA
 	culture = old_nubian
-	religion = kushitism_pagan
+	rite = kushitism_pagan
 	holding = tribal_holding
 	550.1.1 = { culture = nubian }
 }
@@ -293,10 +293,10 @@
 ###c_gezira
 6396 = {	# 6396 - GETEINA
 	culture = old_nubian
-	religion = kushitism_pagan
+	rite = kushitism_pagan
 	holding = castle_holding
 	550.1.1 = { culture = nubian }
-	580.1.1 = { religion = coptic }
+	580.1.1 = { rite = copitc_rite }
 }
 6398 = {	#ARBAJI
 	holding = none
@@ -310,7 +310,7 @@
 ###c_eleila
 6405 = {	# 6405 - EL-ELEILA
 	culture = old_nubian
-	religion = kushitism_pagan
+	rite = kushitism_pagan
 	holding = tribal_holding
 	550.1.1 = { culture = nubian }
 }
@@ -323,7 +323,7 @@
 ###c_ushara
 6393 = {	# 6393 - USHARA
 	culture = old_nubian
-	religion = kushitism_pagan
+	rite = kushitism_pagan
 	holding = tribal_holding
 	550.1.1 = { culture = nubian }
 }
@@ -338,9 +338,9 @@
 #LT-Rascek: To make Alodia valid as a pre-feudal, made a few castle_holdings in river valley
 6400 = {	# 6400 - SENNAR
 	culture = old_nubian
-	religion = kushitism_pagan
+	rite = kushitism_pagan
 	holding = castle_holding
-	580.1.1 = { religion = coptic }
+	580.1.1 = { rite = copitc_rite }
 	600.1.1 = { culture = nubian }
 }
 6402 = {	#JEBEL_MOYA
@@ -355,7 +355,7 @@
 ###c_fazughli
 6433 = {	# 6433 - FAZLUGHLI
 	culture = old_nubian
-	religion = kushitism_pagan
+	rite = kushitism_pagan
 	holding = tribal_holding
 	600.1.1 = { culture = nubian }
 }
@@ -368,7 +368,7 @@
 ###c_tagali
 6429 = {	# 6429 - KOSTI
 	culture = old_nubian
-	religion = kushitism_pagan
+	rite = kushitism_pagan
 	holding = tribal_holding
 	600.1.1 = { culture = nubian }
 }
@@ -381,7 +381,7 @@
 ###c_gumuz
 8514 = {	#GUMUZ_NORTH
 	culture = old_nubian
-	religion = kushitism_pagan
+	rite = kushitism_pagan
 	holding = tribal_holding
 	600.1.1 = { culture = nubian }
 }

@@ -4,7 +4,7 @@ kidarite_ruler_1 = {
 	name = "Kirada"
 	dynasty = 10424242
 	culture = "chionite"
-	religion = scythian_pagan
+	rite = scythian_pagan
 	295.1.1 = { birth = yes }
 	360.1.1 = { death = yes }
 }
@@ -12,7 +12,7 @@ kidarite_ruler_2 = {
 	name = "Piroysa"
 	dynasty = 10424242
 	culture = "chionite"
-	religion = scythian_pagan
+	rite = scythian_pagan
 	father = kidarite_ruler_1
 	315.1.1 = { birth = yes }
 	370.1.1 = { death = yes }
@@ -21,12 +21,12 @@ kidarite_ruler_3 = {
 	name = "Kidara"
 	dynasty = 10424242
 	culture = "chionite"
-	religion = scythian_pagan
+	rite = scythian_pagan
 	father = kidarite_ruler_2
 	340.1.1 = { birth = yes }
 	365.1.1 = {
 		culture = kushan
-		religion = mahayana
+		rite = mahayana
 	}
 	400.1.1 = { death = yes }
 }
@@ -34,7 +34,7 @@ kidarite_ruler_4 = {
 	name = "Varhran"
 	dynasty = 10424242
 	culture = "kushan"
-	religion = mahayana
+	rite = mahayana
 	father = kidarite_ruler_3
 	380.1.1 = { birth = yes }
 	440.1.1 = { death = yes }
@@ -43,7 +43,7 @@ kidarite_ruler_5 = {
 	name = "Khunkha"
 	dynasty = 10424242
 	culture = "kushan"
-	religion = mahayana
+	rite = mahayana
 	father = kidarite_ruler_4
 	405.1.1 = { birth = yes }
 	465.1.1 = { death = yes }
@@ -54,7 +54,7 @@ kidarite_ruler_5 = {
 	# Vinayaditya Kidara
 	dynasty = 10424242
 	culture = "kushan"
-	religion = mahayana
+	rite = mahayana
 	father = kidarite_ruler_5
 	440.1.1 = { birth = yes }
 	510.1.1 = { death = yes }
@@ -64,7 +64,7 @@ kidarite_ruler_5 = {
 	# Kandik Kidara
 	dynasty = 10424242
 	culture = "kushan"
-	religion = mahayana
+	rite = mahayana
 	father = 168348
 	465.1.1 = { birth = yes }
 	550.1.1 = { death = yes }
@@ -74,7 +74,7 @@ kidarite_ruler_5 = {
 	name = "Kandik" # Last Kidarite
 	# Kandik Kidara
 	dynasty = 10424242
-	religion = "dharmaguptaka"
+	rite = "dharmaguptaka"
 	culture = "kushan"
 	father = 168349
 	530.1.1 = {

@@ -2,12 +2,12 @@
 190040_brother = {
 	name = "Ricimar" # the famous general and consul in 459
 	dynasty = 1042352
-	religion = "irimonic_pagan"
+	rite = "irimonic_pagan"
 	culture = "suebi"
 	father = 190039
 	mother = 74425_daughter
 	418.1.1 = { birth = yes }
-	450.1.1 = { religion = "arian" }
+	450.1.1 = { rite = "arian" }
 	467.1.1 = { add_spouse = 74407 } # Alypia, daughter of emperor Anthemius
 	472.8.18 = { death = { death_reason = death_ill } } #Died of hemorrhage
 }
@@ -15,19 +15,19 @@
 	name = "Riciberga" # fictional name, sister of Rechair and Ricimer married with king Gundeoc of the burgundians
 	female = yes
 	dynasty = 1042352
-	religion = "irimonic_pagan"
+	rite = "irimonic_pagan"
 	culture = "suebi"
 	father = 190039
 	mother = 74425_daughter
 	417.1.1 = { birth = yes }
-	435.1.1 = { religion = "arian" }
+	435.1.1 = { rite = "arian" }
 	470.1.1 = { death = yes }
 }
 190034_daughter = {
 	name = "Chindasuntha" # daughter of the suebi king Hermeric according to the tradition of the city of Coimbra
 	female = yes
 	dynasty = 1042352
-	religion = "irimonic_pagan"
+	rite = "irimonic_pagan"
 	culture = "suebi"
 	father = 190034
 	trait = beauty_good_3 #According to legend
@@ -38,7 +38,7 @@
 190033 = { #Added a father
 	name = "Sarus"
 	dynasty = 1042350
-	religion = "irimonic_pagan"
+	rite = "irimonic_pagan"
 	culture = suebi
 	father = preBavari000
 	470.1.1 = { birth = yes }
@@ -48,7 +48,7 @@
 PLRE2_Massilia = { #Father of Maldras
 	name = "Massilia"
 	dynasty = 1042350
-	religion = "irimonic_pagan"
+	rite = "irimonic_pagan"
 	culture = suebi
 	385.1.1 = { birth = yes }
 	435.1.1 = { death = yes }
@@ -56,7 +56,7 @@ PLRE2_Massilia = { #Father of Maldras
 PLRE2_Maldras_brother = { #Unnamed brother, murdered
 	name = "Massilia"
 	dynasty = 1042350
-	religion = "irimonic_pagan"
+	rite = "irimonic_pagan"
 	culture = suebi
 	father = PLRE2_Massilia
 	400.1.1 = { birth = yes }
@@ -67,7 +67,7 @@ PLRE2_Maldras_brother = { #Unnamed brother, murdered
 190046_fictional_son = {
 	name = "Abragast"
 	dynasty = 1042352
-	religion = "irimonic_pagan"
+	rite = "irimonic_pagan"
 	culture = suebi
 	father = 190046
 	454.1.1 = { birth = yes }

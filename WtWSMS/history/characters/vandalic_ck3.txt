@@ -2,7 +2,7 @@
 1900077_grandpa = {
 	name = "Visimar" # PLRE vol. 1 Visimar
 	dynasty = 1042171
-	religion = "irimonic_pagan"
+	rite = "irimonic_pagan"
 	culture = "vandalic"
 	285.1.1 = { birth = yes }
 	335.1.1 = { death = { death_reason = death_battle } }
@@ -10,7 +10,7 @@
 1900077_father = {
 	name = "Radagaisus" # Symmachus' suggestion
 	dynasty = 1042171
-	religion = "irimonic_pagan"
+	rite = "irimonic_pagan"
 	culture = "vandalic"
 	father = 1900077_grandpa
 	320.1.1 = { birth = yes }
@@ -19,7 +19,7 @@
 190071_brother_1 = {
 	name = "Amata" # PLRE vol. 3 Ammatas
 	dynasty = 1042171
-	religion = "arian"
+	rite = "arian"
 	culture = "vandalic"
 	father = 1900076
 	482.1.1 = { birth = yes }
@@ -28,7 +28,7 @@
 190071_brother_2 = {
 	name = "Tzazo" # PLRE vol. 3 Tzazon
 	dynasty = 1042171
-	religion = "arian"
+	rite = "arian"
 	culture = "vandalic"
 	father = 1900076
 	485.1.1 = { birth = yes }
@@ -37,7 +37,7 @@
 190071_nephew = {
 	name = "Gibamunds" # PLRE vol. 3 Gebemundus
 	dynasty = 1042171
-	religion = "arian"
+	rite = "arian"
 	culture = "vandalic"
 	father = 190071_brother_1
 	505.1.1 = { birth = yes }
@@ -46,7 +46,7 @@
 95_wife = {
 	name = "BergT_O_ra" # Unnamed wife, killed by Huneric
 	female = yes
-	religion = "arian"
+	rite = "arian"
 	culture = "vandalic"
 	455.1.1 = { birth = yes }
 	477.1.25 = { #Listed killed by Huneric
@@ -59,7 +59,7 @@
 95_son = {
 	name = "Gelimer" # Unnamed son, killed by Huneric
 	dynasty = 1042171
-	religion = "arian"
+	rite = "arian"
 	culture = "vandalic"
 	father = 95
 	mother = 95_wife
@@ -76,7 +76,7 @@ PLRE2_Heldica = {
 	#Was basically the steward under Gaiseric; put to death under Huneric when already elderly
 	name = "Hildika"
 	dynasty = 10424626
-	religion = "arian"
+	rite = "arian"
 	culture = "vandalic"
 	father = 36067
 	trait = education_stewardship_4
@@ -101,7 +101,7 @@ PLRE2_Heldica = {
 PLRE2_Heldica_wife = { #Previously 36069
 	name = "Munifritha"
 	female = yes
-	religion = "arian"
+	rite = "arian"
 	culture = "vandalic"
 	442.1.1 = {
 		birth = yes
@@ -116,7 +116,7 @@ PLRE2_Heldica_wife = { #Previously 36069
 PLRE2_Heldica_other_woman = {
 	name = "Abjareika"
 	female = yes
-	religion = "arian"
+	rite = "arian"
 	culture = "vandalic"
 	452.1.1 = {
 		birth = yes

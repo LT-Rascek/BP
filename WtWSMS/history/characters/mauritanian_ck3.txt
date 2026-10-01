@@ -1,6 +1,6 @@
 ﻿109775 = {
 	name = "Tipaza"
-	religion = "valentinianism"
+	rite = "valentinianism"
 	culture = mauritanian
 	450.1.1 = { birth = yes }
 	520.1.1 = { death = yes }
@@ -12,7 +12,7 @@
 36147 = {
 	name = "Metaxsu"	# Metaxsu Metaxsu
 	dynasty = 10424658
-	religion = "donatism"
+	rite = "donatism"
 	culture = mauritanian
 	400.1.1 = { birth = yes }
 	460.1.1 = { death = yes }
@@ -20,7 +20,7 @@
 hodna010 = {
 	name = "Awgustin"
 	dynasty = 10424658
-	religion = "donatism"
+	rite = "donatism"
 	culture = mauritanian
 	father = 36147
 	430.1.1 = { birth = yes }
@@ -29,7 +29,7 @@ hodna010 = {
 hodna011 = {
 	name = "Meq_wran"
 	dynasty = 10424658
-	religion = "donatism"
+	rite = "donatism"
 	culture = mauritanian
 	father = hodna010
 	460.1.1 = { birth = yes }
@@ -38,7 +38,7 @@ hodna011 = {
 hodna012 = { #PLRE Vol 3 Vart(i)us
 	name = "Vartius"
 	dynasty = 10424658
-	religion = "donatism"
+	rite = "donatism"
 	culture = mauritanian
 	father = hodna011
 	490.1.1 = { birth = yes }
@@ -52,7 +52,7 @@ hodna012 = { #PLRE Vol 3 Vart(i)us
 hodna013 = {
 	name = "Stembanos"
 	dynasty = 10424658
-	religion = "donatism"
+	rite = "donatism"
 	culture = mauritanian
 	father = hodna012
 	520.1.1 = { birth = yes }
@@ -73,7 +73,7 @@ hodna013 = {
 36119 = {
 	name = "Awgustin"
 	dynasty = 10424651
-	religion = "donatism"
+	rite = "donatism"
 	culture = mauritanian
 	father = 36118
 	415.1.1 = { birth = yes }
@@ -82,7 +82,7 @@ hodna013 = {
 36120 = {
 	name = "Ibrahim"
 	dynasty = 10424651
-	religion = "donatism"
+	rite = "donatism"
 	culture = mauritanian
 	father = 36119
 	450.1.1 = { birth = yes }
@@ -91,7 +91,7 @@ hodna013 = {
 36121 = {
 	name = "Misibsen"
 	dynasty = 10424651
-	religion = "donatism"
+	rite = "donatism"
 	culture = mauritanian
 	father = 36119
 	455.1.1 = { birth = yes }
@@ -100,7 +100,7 @@ hodna013 = {
 36122 = {
 	name = "Aghilas"
 	dynasty = 10424651
-	religion = "donatism"
+	rite = "donatism"
 	culture = mauritanian
 	father = 36120
 	471.1.1 = { birth = yes }
@@ -110,7 +110,7 @@ hodna013 = {
 	name = "Meghighda"
 	female = yes
 	dynasty = 10424651
-	religion = "donatism"
+	rite = "donatism"
 	culture = mauritanian
 	father = 36120
 	473.1.1 = { birth = yes }
@@ -119,7 +119,7 @@ hodna013 = {
 36124 = { #PLRE Vol3 Ortaias
 	name = "Ortaias"
 	dynasty = 10424651
-	religion = "donatism"
+	rite = "donatism"
 	culture = mauritanian
 	father = 36122
 	495.1.1 = { birth = yes }
@@ -128,7 +128,7 @@ hodna013 = {
 36124_daughter = { #Not attested, but secures alliance with Iaudas in 537; explains sudden shift from enemies to allies
 	name = "Bashira"
 	dynasty = 10424651
-	religion = "donatism"
+	rite = "donatism"
 	culture = mauritanian
 	father = 36124
 	515.1.1 = { birth = yes }
@@ -137,7 +137,7 @@ hodna013 = {
 36125 = {
 	name = "Ptolemee"
 	dynasty = 10424651
-	religion = "donatism"
+	rite = "donatism"
 	culture = mauritanian
 	father = 36124
 	550.1.1 = { birth = yes }
@@ -154,7 +154,7 @@ hodna013 = {
 	diplomacy = 4
 	intrigue = 4
 	stewardship = 5
-	religion = "nicene"
+	religion = christian_faith
 	culture = mauritanian
 	trait = "education_learning_2"
 	400.1.1 = { birth = yes }
@@ -165,7 +165,7 @@ hodna013 = {
 	name = "Costantinu"
 	dna = 2000000_costantinu
 	dynasty = 1042250
-	religion = "nicene"
+	religion = christian_faith
 	culture = mauritanian
 	father = 20780
 	435.1.1 = { birth = yes }
@@ -179,7 +179,7 @@ hodna013 = {
 	name = "Me_phanias"
 	dna = mauroroman_011_mephanias
 	dynasty = 1042250
-	religion = "nicene"
+	religion = christian_faith
 	culture = mauritanian
 	father = 2000000
 	465.1.1 = { birth = yes }
@@ -195,7 +195,7 @@ hodna013 = {
 mauraoroman012 = { #PLRE Vol 2 Masuna & PLRE Vol 3 Massonas
 	name = "Masuna"
 	dynasty = 1042250
-	religion = "nicene"
+	religion = christian_faith
 	culture = mauritanian
 	father = 2000001
 	485.1.1 = { birth = yes }
@@ -214,7 +214,7 @@ mauraoroman012 = { #PLRE Vol 2 Masuna & PLRE Vol 3 Massonas
 }
 mauraoroman012_marshall = { #PLRE Vol 2 Masgiven
 	name = "Masgiven"
-	religion = "nicene"
+	religion = christian_faith
 	culture = mauritanian
 	martial = 5
 	470.1.1 = {
@@ -234,7 +234,7 @@ mauroroman012_sister = { #Unnamed wife of PLRE Vol 3 Iaudas
 	name = "Cristina"
 	female = yes
 	dynasty = 1042250
-	religion = "nicene"
+	religion = christian_faith
 	culture = mauritanian
 	father = 2000001
 	490.1.1 = { birth = yes }
@@ -246,7 +246,7 @@ mauroroman012_sister = { #Unnamed wife of PLRE Vol 3 Iaudas
 	name = "Mastigas"
 	# Romano-Berber King 
 	dynasty = 1042250
-	religion = "nicene"
+	religion = christian_faith
 	culture = mauritanian
 	father = mauraoroman012
 	495.1.1 = { birth = yes }
@@ -257,7 +257,7 @@ mauroroman012_sister = { #Unnamed wife of PLRE Vol 3 Iaudas
 	name = "Garmul"
 	# Romano-Berber King 
 	dynasty = 1042250
-	religion = "nicene"
+	religion = christian_faith
 	culture = mauritanian
 	father = 470088
 	520.1.1 = { birth = yes }
@@ -267,7 +267,7 @@ mauroroman012_sister = { #Unnamed wife of PLRE Vol 3 Iaudas
 
 109781 = {
 	name = "Taggara"
-	religion = "african_solar"
+	rite = "african_solar"
 	culture = mauritanian
 	450.1.1 = {
 		birth = yes
@@ -284,7 +284,7 @@ mauroroman012_sister = { #Unnamed wife of PLRE Vol 3 Iaudas
 36139 = {
 	name = "CelestI_nu"	# Celestìnu Gitimelu
 	dynasty = 10424656
-	religion = "donatism"
+	rite = "donatism"
 	culture = mauritanian
 	360.1.1 = { birth = yes }
 	410.1.1 = { death = yes }
@@ -292,7 +292,7 @@ mauroroman012_sister = { #Unnamed wife of PLRE Vol 3 Iaudas
 36140 = {
 	name = "Masinissa"	# Masinissa Gitimelu
 	dynasty = 10424656
-	religion = "donatism"
+	rite = "donatism"
 	culture = mauritanian
 	father = 36139
 	400.1.1 = { birth = yes }
@@ -303,7 +303,7 @@ mauroroman012_sister = { #Unnamed wife of PLRE Vol 3 Iaudas
 	name = "Masties" # (formerly Migali Gitimelu)
 	dna = 36142_masties
 	dynasty = 10424656
-	religion = "donatism"
+	rite = "donatism"
 	culture = mauritanian
 	father = 36140
 	#Probably Dux not before 449, Imperator not before 476, and died not before 516
@@ -329,7 +329,7 @@ mauroroman012_sister = { #Unnamed wife of PLRE Vol 3 Iaudas
 	##### so we have some intervening fictional relations
 	name = "CelestI_nu" # Celestìnu Gitimelu
 	dynasty = 10424656
-	religion = "african_church"
+	rite = "african_church"
 	culture = mauritanian
 	father = 36141
 	455.1.1 = { birth = yes }
@@ -346,7 +346,7 @@ mauroroman012_sister = { #Unnamed wife of PLRE Vol 3 Iaudas
 	##### so make him the Great Grandson of Masties
 	name = "Gratzianu"	# Gratzianu Gitimelu
 	dynasty = 10424656
-	religion = "african_church"
+	rite = "african_church"
 	culture = mauritanian
 	father = 36142
 	475.1.1 = { birth = yes }
@@ -358,7 +358,7 @@ mauroroman012_sister = { #Unnamed wife of PLRE Vol 3 Iaudas
 aures010 = { #PLRE Vol 3 Iaudas
 	name = "Iaudas" # Iaudas Gitimelu
 	dynasty = 10424656
-	religion = "african_church"
+	rite = "african_church"
 	culture = mauritanian
 	father = 36143
 	490.1.1 = {
@@ -396,7 +396,7 @@ aures010 = { #PLRE Vol 3 Iaudas
 36144 = {
 	name = "Dali"	# Danel Barumini
 	dynasty = 10424657
-	religion = "donatism"
+	rite = "donatism"
 	culture = mauritanian
 	450.1.1 = { birth = yes }
 	510.1.1 = { death = yes }
@@ -404,7 +404,7 @@ aures010 = { #PLRE Vol 3 Iaudas
 36145 = {
 	name = "Galussa"	# Gasparru Barumini
 	dynasty = 10424657
-	religion = "donatism"
+	rite = "donatism"
 	culture = mauritanian
 	father = 36144
 	480.1.1 = { birth = yes }
@@ -413,7 +413,7 @@ aures010 = { #PLRE Vol 3 Iaudas
 36146 = {
 	name = "Badis"	# Bassu Barumini
 	dynasty = 10424657
-	religion = "donatism"
+	rite = "donatism"
 	culture = mauritanian
 	father = 36145
 	550.1.1 = { birth = yes }
@@ -434,7 +434,7 @@ aures010 = { #PLRE Vol 3 Iaudas
 frexes001 = {
 	name = "Sifal"
 	dynasty = dynn_berber_frexes
-	religion = "donatism"
+	rite = "donatism"
 	culture = mauritanian
 	400.1.1 = { birth = yes }
 	450.1.1 = { death = yes }
@@ -442,7 +442,7 @@ frexes001 = {
 frexes002 = {
 	name = "Amellal"
 	dynasty = dynn_berber_frexes
-	religion = "donatism"
+	rite = "donatism"
 	culture = mauritanian
 	father = frexes001
 	430.1.1 = { birth = yes }
@@ -457,7 +457,7 @@ frexes002 = {
 frexes003 = {
 	name = "Misagenes"
 	dynasty = dynn_berber_frexes
-	religion = "donatism"
+	rite = "donatism"
 	culture = mauritanian
 	father = frexes002
 	450.1.1 = { birth = yes }
@@ -472,7 +472,7 @@ frexes003 = {
 frexes004 = {
 	name = "Guenfan"
 	dynasty = dynn_berber_frexes
-	religion = "donatism"
+	rite = "donatism"
 	culture = mauritanian
 	father = frexes003
 	480.1.1 = { birth = yes }
@@ -487,7 +487,7 @@ frexes004 = {
 frexes005 = {
 	name = "Antalas"
 	dynasty = dynn_berber_frexes
-	religion = "donatism"
+	rite = "donatism"
 	culture = mauritanian
 	father = frexes004
 	500.1.1 = { birth = yes }
@@ -502,7 +502,7 @@ frexes005 = {
 frexes005_brother = {
 	name = "Guarizila"
 	dynasty = dynn_berber_frexes
-	religion = "donatism"
+	rite = "donatism"
 	culture = mauritanian
 	father = frexes004
 	500.1.1 = { birth = yes }
@@ -519,7 +519,7 @@ frexes005_brother = {
 36126 = {
 	name = "Yuba"
 	dynasty = 10424652
-	religion = "african_church"
+	rite = "african_church"
 	culture = mauritanian
 	360.1.1 = { birth = yes }
 	410.1.1 = { death = yes }
@@ -527,17 +527,17 @@ frexes005_brother = {
 36127 = {
 	name = "Pupa" # Pupa Yuba
 	dynasty = 10424652
-	religion = "african_church"
+	rite = "african_church"
 	culture = mauritanian
 	father = 36126
 	410.1.1 = { birth = yes }
-	428.1.1 = { religion = donatism } #Roman Rule collapse; pick up Donatism to hold on
+	428.1.1 = { rite = donatism } #Roman Rule collapse; pick up Donatism to hold on
 	470.1.1 = { death = yes }
 }
 36128 = {
 	name = "Adrinu" # Adrinu Yuba
 	dynasty = 10424652
-	religion = "donatism"
+	rite = "donatism"
 	culture = mauritanian
 	father = 36127
 	460.1.1 = { birth = yes }
@@ -546,7 +546,7 @@ frexes005_brother = {
 36129 = {
 	name = "Yuba"	# Yuba Yuba
 	dynasty = 10424652
-	religion = "donatism"
+	rite = "donatism"
 	culture = mauritanian
 	father = 36127
 	465.1.1 = { birth = yes }
@@ -556,7 +556,7 @@ frexes005_brother = {
 	name = "Petrenella"	# Adrinu Yuba
 	female = yes
 	dynasty = 10424652
-	religion = "donatism"
+	rite = "donatism"
 	culture = mauritanian
 	father = 36127
 	466.1.1 = { birth = yes }
@@ -565,7 +565,7 @@ frexes005_brother = {
 36131 = {
 	name = "Felixs" # Felixs Yuba
 	dynasty = 10424652
-	religion = "donatism"
+	rite = "donatism"
 	culture = mauritanian
 	father = 36128
 	510.1.1 = { birth = yes }
@@ -574,7 +574,7 @@ frexes005_brother = {
 36132 = {
 	name = "Felixs" # Felixs Yuba
 	dynasty = 10424652
-	religion = "donatism"
+	rite = "donatism"
 	culture = mauritanian
 	father = 36131
 	550.1.1 = { birth = yes }
@@ -589,7 +589,7 @@ MasticanaPLREVol3 = { #PLRE Vol 3 Masticana
 	#in L VI - E VII centuries.
 	name = "Masticana"
 	female = yes
-	religion = nicene
+	religion = christian_faith
 	culture = mauritanian
 	555.1.1 = {
 		birth = yes

@@ -2,7 +2,7 @@
 tanukhid_1 = {
 	name = "Fahm"
 	dynasty = arab_dynn_tanukhid
-	religion = "semitic_pagan"
+	rite = "semitic_pagan"
 	culture = "adnanite"
 	150.1.1 = { birth = yes }
 	220.1.1 = { death = yes }
@@ -10,7 +10,7 @@ tanukhid_1 = {
 tanukhid_2 = {
 	name = "Malik"
 	dynasty = arab_dynn_tanukhid
-	religion = "semitic_pagan"
+	rite = "semitic_pagan"
 	culture = "adnanite"
 	father = tanukhid_1
 	170.1.1 = { birth = yes }
@@ -19,7 +19,7 @@ tanukhid_2 = {
 tanukhid_3 = {
 	name = "Amr"
 	dynasty = arab_dynn_tanukhid
-	religion = "semitic_pagan"
+	rite = "semitic_pagan"
 	culture = "adnanite"
 	father = tanukhid_1
 	180.1.1 = { birth = yes }
@@ -28,7 +28,7 @@ tanukhid_3 = {
 tanukhid_4 = {
 	name = "Jadhima"
 	dynasty = arab_dynn_tanukhid
-	religion = "semitic_pagan"
+	rite = "semitic_pagan"
 	culture = "adnanite"
 	father = tanukhid_2
 	trait = lifestyle_poet
@@ -39,7 +39,7 @@ tanukhid_5 = {
 	name = "Riqash" # mother of Amr ibn Adi, first Lakhmid king of al-Hira
 	female = yes
 	dynasty = arab_dynn_tanukhid
-	religion = "semitic_pagan"
+	rite = "semitic_pagan"
 	culture = "adnanite"
 	father = tanukhid_2
 	220.1.1 = { birth = yes }
@@ -48,7 +48,7 @@ tanukhid_5 = {
 tanukhid_6 = {
 	name = "Fahm"
 	dynasty = arab_dynn_tanukhid
-	religion = "semitic_pagan"
+	rite = "semitic_pagan"
 	culture = "adnanite"
 	father = tanukhid_4
 	250.1.1 = { birth = yes }
@@ -57,7 +57,7 @@ tanukhid_6 = {
 tanukhid_7 = {
 	name = "Malik"
 	dynasty = arab_dynn_tanukhid
-	religion = "semitic_pagan"
+	rite = "semitic_pagan"
 	culture = "adnanite"
 	father = tanukhid_6
 	280.1.1 = { birth = yes }
@@ -66,7 +66,7 @@ tanukhid_7 = {
 tanukhid_8 = {
 	name = "al-Hawari"
 	dynasty = arab_dynn_tanukhid
-	religion = "nicene"
+	religion = christian_faith
 	culture = "adnanite"
 	father = tanukhid_7
 	310.1.1 = { birth = yes }
@@ -76,7 +76,7 @@ tanukhid_9 = {
 	name = "Mawiya"
 	female = yes
 	dynasty = arab_dynn_tanukhid
-	religion = "nicene"
+	religion = christian_faith
 	culture = "adnanite"
 	father = tanukhid_8
 	martial = 20
@@ -89,7 +89,7 @@ tanukhid_9 = {
 tanukhid_10 = {
 	name = "Karib"
 	dynasty = arab_dynn_tanukhid
-	religion = "nicene"
+	religion = christian_faith
 	culture = "adnanite"
 	mother = tanukhid_9
 	380.1.1 = { birth = yes }
@@ -99,7 +99,7 @@ tanukhid_11 = {
 	name = "Khasida" # married with Victor
 	female = yes
 	dynasty = arab_dynn_tanukhid
-	religion = "nicene"
+	religion = christian_faith
 	culture = "adnanite"
 	mother = tanukhid_9
 	394.1.1 = { birth = yes }
@@ -108,7 +108,7 @@ tanukhid_11 = {
 tanukhid_12 = {
 	name = "Malik"
 	dynasty = arab_dynn_tanukhid
-	religion = "nicene"
+	religion = christian_faith
 	culture = "adnanite"
 	father = tanukhid_10
 	415.1.1 = { birth = yes }
@@ -117,7 +117,7 @@ tanukhid_12 = {
 tanukhid_13 = {
 	name = "Jadhima"
 	dynasty = arab_dynn_tanukhid
-	religion = "nicene"
+	religion = christian_faith
 	culture = "adnanite"
 	father = tanukhid_12
 	445.1.1 = { birth = yes }
@@ -126,7 +126,7 @@ tanukhid_13 = {
 tanukhid_14 = {
 	name = "Karib"
 	dynasty = arab_dynn_tanukhid
-	religion = "nicene"
+	religion = christian_faith
 	culture = "adnanite"
 	father = tanukhid_13
 	477.1.1 = { birth = yes }
@@ -135,7 +135,7 @@ tanukhid_14 = {
 137_father = {
 	name = "Adi"
 	dynasty = 1042194
-	religion = "semitic_pagan"
+	rite = "semitic_pagan"
 	culture = "khalan"
 	220.1.1 = { birth = yes }
 	249.1.1 = { add_spouse = tanukhid_5 } # Riqash, sister of Jadhima tanukhid
@@ -150,7 +150,7 @@ tanukhid_14 = {
 Salihid000 = { #Dynasty Founder
 	name = "Salih"
 	dynasty = dynn_salihid
-	religion = semitic_pagan
+	rite = semitic_pagan
 	culture = adnanite
 	330.1.1 = { birth = yes }
 	380.1.1 = { death = yes }
@@ -158,7 +158,7 @@ Salihid000 = { #Dynasty Founder
 Salihid001 = {
 	name = "Sa_d"
 	dynasty = dynn_salihid
-	religion = semitic_pagan
+	rite = semitic_pagan
 	culture = adnanite
 	father = Salihid000
 	350.1.1 = { birth = yes }
@@ -167,14 +167,14 @@ Salihid001 = {
 Salihid002 = { #Zokomos/Duj'um; Contemperaneous with Arcadius, so have him rule from the 400s
 	name = "Hamata"
 	dynasty = dynn_salihid
-	religion = semitic_pagan
+	rite = semitic_pagan
 	culture = adnanite
 	father = Salihid001
 	trait = strong
 	trait = ambitious
 	370.1.1 = { birth = yes }
 	400.1.1 = {
-		religion = nicene
+		religion = christian_faith
 		give_nickname = nick_dujum
 	}
 	410.1.1 = { death = yes }
@@ -183,7 +183,7 @@ Salihid002 = { #Zokomos/Duj'um; Contemperaneous with Arcadius, so have him rule 
 SalihidAwfid000 = { #Likely the older brother, who would succeed the father
 	name = "Awf"
 	dynasty = dynn_salihid
-	religion = nicene
+	religion = christian_faith
 	culture = adnanite
 	father = Salihid002
 	386.1.1 = { birth = yes }
@@ -192,7 +192,7 @@ SalihidAwfid000 = { #Likely the older brother, who would succeed the father
 SalihidAwfid001 = {
 	name = "Amr"
 	dynasty = dynn_salihid
-	religion = nicene
+	religion = christian_faith
 	culture = adnanite
 	father = SalihidAwfid000
 	407.1.1 = { birth = yes }
@@ -201,7 +201,7 @@ SalihidAwfid001 = {
 SalihidAwfid002 = {
 	name = "Habala"
 	dynasty = dynn_salihid
-	religion = nicene
+	religion = christian_faith
 	culture = adnanite
 	father = SalihidAwfid001
 	423.1.1 = { birth = yes }
@@ -210,7 +210,7 @@ SalihidAwfid002 = {
 SalihidAwfid003 = {
 	name = "Hawthara"
 	dynasty = dynn_salihid
-	religion = nicene
+	religion = christian_faith
 	culture = adnanite
 	father = SalihidAwfid001
 	425.1.1 = { birth = yes }
@@ -219,7 +219,7 @@ SalihidAwfid003 = {
 SalihidAwfid004 = {
 	name = "Habula"
 	dynasty = dynn_salihid
-	religion = nicene
+	religion = christian_faith
 	culture = adnanite
 	father = SalihidAwfid001
 	427.1.1 = { birth = yes }
@@ -228,7 +228,7 @@ SalihidAwfid004 = {
 SalihidAwfid005 = {
 	name = "Dawud"
 	dynasty = dynn_salihid
-	religion = nicene
+	religion = christian_faith
 	culture = adnanite
 	father = SalihidAwfid002
 	trait = zealous
@@ -242,7 +242,7 @@ SalihidAwfid005 = {
 SalihidAwfid006 = {
 	name = "Mandala"
 	dynasty = dynn_salihid
-	religion = nicene
+	religion = christian_faith
 	culture = adnanite
 	father = SalihidAwfid003
 	441.1.1 = { birth = yes }
@@ -251,7 +251,7 @@ SalihidAwfid006 = {
 SalihidAwfid007 = {
 	name = "Ziyad"
 	dynasty = dynn_salihid
-	religion = nicene
+	religion = christian_faith
 	culture = adnanite
 	father = SalihidAwfid004
 	441.1.1 = { birth = yes }
@@ -260,7 +260,7 @@ SalihidAwfid007 = {
 SalihidAwfid008 = {
 	name = "Harith"
 	dynasty = dynn_salihid
-	religion = nicene
+	religion = christian_faith
 	culture = adnanite
 	father = SalihidAwfid006
 	457.1.1 = { birth = yes }
@@ -270,7 +270,7 @@ SalihidAwfid008 = {
 SalihidAmird000 = {
 	name = "Amr"
 	dynasty = dynn_salihid
-	religion = nicene
+	religion = christian_faith
 	culture = adnanite
 	father = Salihid002
 	401.1.1 = { birth = yes }
@@ -279,7 +279,7 @@ SalihidAmird000 = {
 SalihidAmird001 = {
 	name = "Mundir"
 	dynasty = dynn_salihid
-	religion = nicene
+	religion = christian_faith
 	culture = adnanite
 	father = SalihidAmird000
 	425.1.1 = { birth = yes }
@@ -288,7 +288,7 @@ SalihidAmird001 = {
 SalihidAmird002 = {
 	name = "Sabit"
 	dynasty = dynn_salihid
-	religion = nicene
+	religion = christian_faith
 	culture = adnanite
 	father = SalihidAmird001
 	450.1.1 = { birth = yes }

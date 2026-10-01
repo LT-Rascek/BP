@@ -11,9 +11,9 @@
 ###c_kerch
 562 = {		#Kerch
 	culture = bosporan
-	religion = bosporan_faith
+	rite = bosporan_faith
 	holding = castle_holding
-	335.1.1 = { religion = nicene } #Rheskouporis converts to Christianity
+	335.1.1 = { religion = christian_faith } #Rheskouporis converts to Christianity
 }
 561 = {		#Theodosia	AKA Feodosia
 	holding = city_holding
@@ -21,7 +21,7 @@
 ###c_kalos_limen
 559 = {		#Kalos Limen	AKA Chornomorske
 	culture = gothic
-	religion = gothic_pagan
+	rite = gothic_pagan
 	holding = tribal_holding #Over-ran by the IInd century
 	395.1.1 = { culture = crimean_gothic }
 }
@@ -35,7 +35,7 @@
 5277 = {	#Perekop
 	#Least settled region of Crimea (no known Greek Colonies), so let the Goths settle here
 	culture = gothic
-	religion = gothic_pagan
+	rite = gothic_pagan
 	holding = tribal_holding
 	395.1.1 = { culture = crimean_gothic }
 }
@@ -45,9 +45,9 @@
 ###c_chersonesus
 560 = {		#Chersonesus
 	culture = greek
-	religion = bosporan_faith
+	rite = bosporan_faith
 	holding = castle_holding #Causes big issues for steppe migration otherwise...
-	335.1.1 = { religion = nicene } #Rheskouporis converts to Christianity
+	335.1.1 = { religion = christian_faith } #Rheskouporis converts to Christianity
 }
 
 ## d_azov ###################################
@@ -55,7 +55,7 @@
 ###c_tmutarakan
 598 = {		#Tmutarakan
 	culture = bosporan
-	religion = bosporan_faith
+	rite = bosporan_faith
 	holding = castle_holding #Abaondoned ca. XIVth-XVth century
 }
 5296 = {	#Bata	AKA Novorossiysk
@@ -64,11 +64,11 @@
 ###c_khumar
 599 = {		#Yaseni	#river name
 	culture = alan
-	religion = scythian_pagan
+	rite = scythian_pagan
 	holding = nomad_holding
 	395.1.1 = {
 		culture = hunnic
-		religion = tengri_pagan
+		rite = tengri_pagan
 	}
 	465.1.1 = { culture = bolghar }
 }
@@ -81,11 +81,11 @@
 ###c_azov
 597 = {		#Azov
 	culture = alan
-	religion = scythian_pagan
+	rite = scythian_pagan
 	holding = nomad_holding
 	395.1.1 = {
 		culture = hunnic
-		religion = tengri_pagan
+		rite = tengri_pagan
 	}
 	465.1.1 = { culture = bolghar }
 }
@@ -101,11 +101,11 @@
 ### c_kuban
 5335 = {	#Kuban	#river name
 	culture = alan
-	religion = scythian_pagan
+	rite = scythian_pagan
 	holding = nomad_holding
 	395.1.1 = {
 		culture = hunnic
-		religion = tengri_pagan
+		rite = tengri_pagan
 	}
 	465.1.1 = { culture = bolghar }
 }

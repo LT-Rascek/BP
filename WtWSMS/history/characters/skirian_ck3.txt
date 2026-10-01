@@ -2,7 +2,7 @@
 55_maternal_grandfather = {
 	name = "Tufa"	# fictional 
 	dynasty = skirian_dynn_tufing
-	religion = "arian"
+	rite = "arian"
 	culture = "skirian"
 	385.1.1 = { birth = yes }
 	440.1.1 = { death = yes }
@@ -11,7 +11,7 @@
 	name = "Malgirda" # skirian mother of Odovocar, fictional name
 	female = yes
 	dynasty = skirian_dynn_tufing
-	religion = "arian"
+	rite = "arian"
 	culture = "skirian"
 	father = 55_maternal_grandfather
 	405.1.1 = {
@@ -23,7 +23,7 @@
 55_uncle = {
 	name = "Tuldila" # but hunnic in the sources, leader in Majorian's army
 	dynasty = skirian_dynn_tufing
-	religion = "arian"
+	rite = "arian"
 	culture = "hunnic"
 	father = 55_maternal_grandfather
 	408.1.1 = { birth = yes }
@@ -33,7 +33,7 @@
 55_cousin = {
 	name = "Tufa" # PLRE vol. 2 Tufa
 	dynasty = skirian_dynn_tufing
-	religion = "arian"
+	rite = "arian"
 	culture = "skirian"
 	father = 55_uncle
 	martial = 5
@@ -49,11 +49,11 @@
 	name = "Sunihilda" # PLRE vol. 2 Sunigilda
 	female = yes
 	dynasty = 1042162
-	religion = "gothic_pagan"
+	rite = "gothic_pagan"
 	culture = "heruli"
 	father = rodulf_father
 	440.1.2 = { birth = yes }
-	465.1.1 = { religion = arian }
+	465.1.1 = { rite = arian }
 	493.3.15 = {
 		death = {
 			death_reason = death_execution
@@ -64,7 +64,7 @@
 36647 = {
 	name = "Thela"	# PLRE vol. 2 Thela
 	dynasty = 1042160
-	religion = "arian"
+	rite = "arian"
 	culture = "skirian"
 	father = 55 # Odovacar
 	mother = 36645 # Sunihilda
@@ -85,7 +85,7 @@
 skiriannobleman_1 = {
 	name = "Brachila" # PLRE vol. 2 Brachila
 	dynasty = skirian_dynn_braching
-	religion = "arian"
+	rite = "arian"
 	culture = "skirian"
 	430.1.1 = { birth = yes }
 	#476.2.2 = { employer = 55 }

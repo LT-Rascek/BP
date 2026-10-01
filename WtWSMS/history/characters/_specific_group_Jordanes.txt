@@ -2,7 +2,7 @@
 AlanScythiaMinor000  = {
 	name = "Saros" #Indirect attestion Father of Candac, Grandfather of Gunthigis Baza
 	dynasty = alan_dynn_scytia
-	religion = arian
+	rite = arian
 	culture = alan
 	380.1.1 = { birth = yes }
 	395.1.1 = { culture = western_alan }
@@ -12,7 +12,7 @@ AlanScythiaMinor001 = {
 	name = "Candac" #PLRE vol 2 Candac 1
 	dynasty = alan_dynn_scytia
 	#Employs Jordanes' Grandfather
-	religion = arian
+	rite = arian
 	culture = western_alan
 	father = AlanScythiaMinor000
 	trait = infertile
@@ -24,7 +24,7 @@ AlanScythiaMinor001_sister = {
 	female = yes
 	dynasty = alan_dynn_scytia
 	#Only indirectly attested via the fact that Gunthigis Baza, nephew of Candac, was Jordanes Employer
-	religion = arian
+	rite = arian
 	culture = western_alan
 	father = AlanScythiaMinor000
 	440.1.1 = { birth = yes }
@@ -35,7 +35,7 @@ GothsScythiaMinor000 = {
 	dna = GothsScythiaMinor000_andag
 	dynasty_house = thracian_gothic_dynasty_scythia
 	#Gunthigis Baza's Grandfather
-	religion = arian
+	rite = arian
 	culture = gothic
 	380.1.1 = { birth = yes }
 	440.1.1 = { death = yes }
@@ -44,7 +44,7 @@ GothsScythiaMinor001 = {
 	name = "Andag" #PLRE vol 2 Andela
 	dynasty_house = thracian_gothic_dynasty_scythia
 	#Gunthigis Baza's Father
-	religion = arian
+	rite = arian
 	culture = gothic
 	father = GothsScythiaMinor000
 	425.1.1 = { birth = yes }
@@ -57,7 +57,7 @@ GothsScythiaMinor001 = {
 GothsScythiaMinor002 = {
 	name = "Gunthigis" #PLRE vol 2 Gunthigis "Baza"
 	dynasty_house = thracian_gothic_dynasty_scythia
-	religion = arian
+	rite = arian
 	culture = gothic
 	father = GothsScythiaMinor001
 	mother = AlanScythiaMinor001_sister
@@ -68,7 +68,7 @@ GothsScythiaMinor002 = {
 JordanesFamily000 = {
 	name = "Paria" #PLRE Vol 2 Paria
 	#Jordanes' Grandfather
-	religion = arian
+	rite = arian
 	culture = gothic
 	430.1.1 = { birth = yes }
 	446.1.1 = { trait = education_stewardship_4 }
@@ -79,7 +79,7 @@ JordanesFamily000 = {
 JordanesFamily001 = {
 	name = "Alanoviiamuth" #PLRE Vol 2 Alanoviaamuth
 	#Jordanes' Father
-	religion = arian
+	rite = arian
 	culture = gothic
 	father = JordanesFamily000
 	450.1.1 = { birth = yes }
@@ -89,7 +89,7 @@ JordanesFamily001 = {
 }
 JordanesFamily002 = {
 	name = "Jordanes" #PLRE Vol 3 Iordanes 1
-	religion = arian
+	rite = arian
 	culture = thracian_gothic
 	father = JordanesFamily001
 	490.1.1 = { birth = yes }
@@ -97,6 +97,6 @@ JordanesFamily002 = {
 		trait = education_learning_4
 		employer = GothsScythiaMinor002 #Gunthigis Baza
 	}
-	520.1.1 = { faith = nicene }
+	520.1.1 = { faith = christian_faith }
 	560.1.1 = { death = yes }
 }

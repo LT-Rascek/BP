@@ -20,9 +20,9 @@
 ###c_zetang
 9226 = {	# Taktse
 	culture = bodpa
-	religion = old_bon
+	rite = old_bon
 	holding = castle_holding #Ancient Yarlung Capital before being moved to Lhasa
-	641.1.1 = { religion = lamaism }# Songtsen Gampo promotes Buddhism
+	641.1.1 = { rite = lamaism }# Songtsen Gampo promotes Buddhism
 }
 9230 = {	# Zetang
 	holding = city_holding #Important during Ancient Tibet
@@ -40,9 +40,9 @@
 ###c_nagarze
 9223 = {	# Nagarze
 	culture = bodpa
-	religion = old_bon
+	rite = old_bon
 	holding = castle_holding
-	790.1.1 = { religion = lamaism } # Early spread of Buddhism during Tibetan Empire
+	790.1.1 = { rite = lamaism } # Early spread of Buddhism during Tibetan Empire
 }
 9232 = {	# Gonggar
 	holding = none
@@ -50,9 +50,9 @@
 ###c_comai
 9225 = {	# Comai
 	culture = bodpa
-	religion = old_bon
+	rite = old_bon
 	holding = castle_holding
-	790.1.1 = { religion = lamaism } # Early spread of Buddhism during Tibetan Empire
+	790.1.1 = { rite = lamaism } # Early spread of Buddhism during Tibetan Empire
 }
 9224 = {	# Lhozhag
 	holding = none
@@ -60,9 +60,9 @@
 ###c_gyaca
 9233 = {	# Gyaca
 	culture = bodpa
-	religion = old_bon
+	rite = old_bon
 	holding = castle_holding
-	790.1.1 = { religion = lamaism } # Early spread of Buddhism during Tibetan Empire
+	790.1.1 = { rite = lamaism } # Early spread of Buddhism during Tibetan Empire
 }
 9234 = {	# Daklha Gampo
 	holding = none #1121 monastery founding
@@ -73,9 +73,9 @@
 ###c_nang
 9235 = {	# Nang
 	culture = bodpa #Lhoba
-	religion = old_bon
+	rite = old_bon
 	holding = castle_holding
-	790.1.1 = { religion = lamaism } # Early spread of Buddhism during Tibetan Empire
+	790.1.1 = { rite = lamaism } # Early spread of Buddhism during Tibetan Empire
 }
 9265 = {	# Gedang
 	holding = none
@@ -86,13 +86,13 @@
 ###c_lhasa
 9238 = {	# Potala
 	culture = sumpa
-	religion = old_bon
+	rite = old_bon
 	holding = tribal_holding
 	special_building_slot = potala_palace_01
 	598.1.1 = { culture = bodpa } #The Sumpa are pushed out of the Lhasa region by Namri Songtsen
 	637.1.1 = { holding = castle_holding } #Built by Songtsen Gampo
 	641.1.1 = { special_building = potala_palace_01 }
-	641.1.1 = { religion = lamaism }# Songtsen Gampo promotes Buddhism
+	641.1.1 = { rite = lamaism }# Songtsen Gampo promotes Buddhism
 	1066.1.1 = { special_building = potala_palace_02 }
 }
 9237 = {	# Lhasa
@@ -117,11 +117,11 @@
 ###c_gyama
 9239 = {	# Gyama
 	culture = sumpa
-	religion = old_bon
+	rite = old_bon
 	holding = tribal_holding
 	598.1.1 = { culture = bodpa } #The Sumpa are pushed out of the Lhasa region by Namri Songtsen
 	637.1.1 = { holding = castle_holding } #Songtsen Gampo
-	641.1.1 = { religion = lamaism }# Songtsen Gampo promotes Buddhism
+	641.1.1 = { rite = lamaism }# Songtsen Gampo promotes Buddhism
 }
 9240 = {	# Kunggar
 	holding = none
@@ -138,11 +138,11 @@
 ###c_lhunzhub
 9242 = {	# Lhunzhub
 	culture = sumpa
-	religion = old_bon
+	rite = old_bon
 	holding = tribal_holding
 	598.1.1 = { culture = bodpa } #The Sumpa are pushed out of the Lhasa region by Namri Songtsen
 	637.1.1 = { holding = castle_holding } #Songtsen Gampo
-	641.1.1 = { religion = lamaism }# Songtsen Gampo promotes Buddhism
+	641.1.1 = { rite = lamaism }# Songtsen Gampo promotes Buddhism
 }
 9243 = {	# Ngarnang
 	holding = none
@@ -153,11 +153,11 @@
 ###c_nyemo
 9247 = {	# Nyemo
 	culture = sumpa
-	religion = old_bon
+	rite = old_bon
 	holding = tribal_holding
 	598.1.1 = { culture = bodpa } #The Sumpa are pushed out of the Lhasa region by Namri Songtsen
 	637.1.1 = { holding = castle_holding } #Songtsen Gampo
-	641.1.1 = { religion = lamaism }# Songtsen Gampo promotes Buddhism
+	641.1.1 = { rite = lamaism }# Songtsen Gampo promotes Buddhism
 }
 9251 = {	# Qewa
 	holding = none
@@ -165,11 +165,11 @@
 ###c_damxung
 9248 = {	# Damquka
 	culture = sumpa
-	religion = old_bon
+	rite = old_bon
 	holding = tribal_holding
 	598.1.1 = { culture = bodpa } #The Sumpa are pushed out of the Lhasa region by Namri Songtsen
 	637.1.1 = { holding = castle_holding } #Songtsen Gampo
-	641.1.1 = { religion = lamaism }# Songtsen Gampo promotes Buddhism
+	641.1.1 = { rite = lamaism }# Songtsen Gampo promotes Buddhism
 }
 9249 = {	# Nyinhzhong
 	holding = none
@@ -183,7 +183,7 @@
 ###c_nagchu
 9255 = {	# Nagchu/Nagqu
 	culture = sumpa
-	religion = old_bon
+	rite = old_bon
 	holding = tribal_holding
 }
 9256 = {	# Lhomar
@@ -198,7 +198,7 @@
 ###c_baingoin
 9253 = {	# Pukpa
 	culture = sumpa
-	religion = old_bon
+	rite = old_bon
 	holding = tribal_holding
 }
 9252 = {	# Xenkyer
@@ -210,7 +210,7 @@
 ###c_lhari
 9270 = {	# Lhari
 	culture = sumpa
-	religion = old_bon
+	rite = old_bon
 	holding = tribal_holding
 }
 9268 = {	# Codoi
@@ -225,7 +225,7 @@
 ###c_cozhelhoma
 9261 = {	# Cozhelhoma
 	culture = zhangzhung
-	religion = old_bon
+	rite = old_bon
 	holding = tribal_holding
 }
 9260 = {	# Xibde
@@ -237,7 +237,7 @@
 ###c_garco
 9262 = {	# Garco
 	culture = sumpa
-	religion = old_bon
+	rite = old_bon
 	holding = tribal_holding
 }
 9259 = {	# Parling
@@ -249,7 +249,7 @@
 ###c_garkung
 9219 = {	# Garkung
 	culture = zhangzhung
-	religion = old_bon
+	rite = old_bon
 	holding = tribal_holding
 }
 9220 = {	# Margai
@@ -262,7 +262,7 @@
 9363 = {	# Sewa
 	# Misc
 	culture = sumpa
-	religion = old_bon
+	rite = old_bon
 	holding = tribal_holding
 }
 9365 = {	# Dokecoring

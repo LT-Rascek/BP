@@ -32,7 +32,7 @@
 ###c_reims
 2390 = {	#REIMS
 	culture = romano_gallic
-	religion = gallican_church
+	rite = gallican_church
 	holding = church_holding
 	buildings = { temple_02 } #Major Religious Center
 }
@@ -48,7 +48,7 @@
 ###c_chalons
 2392 = {	#CHALONS
 	culture = romano_gallic
-	religion = gallican_church
+	rite = gallican_church
 	holding = castle_holding
 }
 2389 = {	#SAINT DIZIER
@@ -60,7 +60,7 @@
 ###c_coulommiers = Provins
 2363 = {	#PROVINS
 	culture = romano_gallic
-	religion = gallican_church
+	rite = gallican_church
 	holding = castle_holding
 }
 2364 = {	#COULOMMIERS
@@ -72,7 +72,7 @@
 ###c_rethel
 2391 = {	#RETHEL
 	culture = romano_gallic
-	religion = gallican_church
+	rite = gallican_church
 	holding = castle_holding
 }
 2393 = {	#GRANDPRE
@@ -87,7 +87,7 @@
 ###c_vermandois
 2397 = {	#MARLE
 	culture = romano_gallic
-	religion = gallican_church
+	rite = gallican_church
 	holding = castle_holding
 }
 2400 = {	#ROUCY
@@ -99,9 +99,9 @@
 ###c_clermont
 2189 = {	#CLERMONT
 	culture = romano_gallic
-	religion = romano_celtic_pagan
+	rite = romano_celtic_pagan
 	holding = castle_holding
-	500.1.1 = { religion = gallican_church }
+	500.1.1 = { rite = gallican_church }
 }
 2188 = {	#NOYON
 	holding = church_holding
@@ -112,9 +112,9 @@
 ###c_amiens
 2184 = {	#AMIENS
 	culture = romano_gallic
-	religion = romano_celtic_pagan
+	rite = romano_celtic_pagan
 	holding = castle_holding
-	550.1.1 = { religion = gallican_church }
+	550.1.1 = { rite = gallican_church }
 }
 2185 = {	#CORBIE
 	holding = none
@@ -126,7 +126,7 @@
 ###c_valois
 2358 = {	#SENLIS
 	culture = romano_gallic
-	religion = gallican_church
+	rite = gallican_church
 	holding = castle_holding
 }
 2360 = {	#CREPY
@@ -141,7 +141,7 @@
 ###c_bar
 2388 = {	#BAR
 	culture = romano_gallic
-	religion = gallican_church
+	rite = gallican_church
 	holding = castle_holding
 }
 2395 = {	#VERDUN
@@ -154,7 +154,7 @@
 ###c_langres
 2374 = {	#LANGRES
 	culture = romano_gallic
-	religion = gallican_church
+	rite = gallican_church
 	holding = castle_holding
 }
 2386 = {	#GRAND
@@ -166,7 +166,7 @@
 ###c_vaucouleurs
 2387 = {	#VAUCOULEURS
 	culture = romano_gallic
-	religion = gallican_church
+	rite = gallican_church
 	holding = castle_holding
 }
 2079 = {	#TOUL
@@ -175,7 +175,7 @@
 ###c_nancy
 2709 = {	#NANCY
 	culture = romano_gallic
-	religion = gallican_church
+	rite = gallican_church
 	holding = tribal_holding
 }
 2078 = {	#EPINAL
@@ -190,7 +190,7 @@
 ###c_neufchateau
 2384 = {	#NEUFCHATEAU
 	culture = romano_gallic
-	religion = gallican_church
+	rite = gallican_church
 	holding = castle_holding
 }
 2715 = {	#VAUDEMONT
@@ -206,11 +206,11 @@
 ###c_hainaut
 2127 = {	#TOURNAI
 	culture = romano_gallic
-	religion = gallican_church
+	rite = gallican_church
 	holding = castle_holding
 	451.1.1 = {
 		culture = old_frankish
-		religion = frankish_pagan
+		rite = frankish_pagan
 		holding = tribal_holding
 	}
 }
@@ -224,11 +224,11 @@
 ###c_boulogne
 2132 = {	#BOULOGNE
 	culture = romano_gallic
-	religion = gallican_church
+	rite = gallican_church
 	holding = castle_holding
 	451.1.1 = {
 		culture = old_frankish
-		religion = frankish_pagan
+		rite = frankish_pagan
 		holding = tribal_holding
 	}
 }
@@ -245,11 +245,11 @@
 ###c_guines
 2130 = {	#CALAIS
 	culture = romano_gallic
-	religion = gallican_church
+	rite = gallican_church
 	holding = castle_holding
 	451.1.1 = {
 		culture = old_frankish
-		religion = frankish_pagan
+		rite = frankish_pagan
 		holding = tribal_holding
 	}
 }
@@ -263,11 +263,11 @@
 ###c_yperen
 2125 = {	#YPRES
 	culture = romano_gallic
-	religion = gallican_church
+	rite = gallican_church
 	holding = castle_holding
 	451.1.1 = {
 		culture = old_frankish
-		religion = frankish_pagan
+		rite = frankish_pagan
 		holding = tribal_holding
 	}
 }
@@ -280,9 +280,9 @@
 ###c_brugge
 2115 = {	#BRUGES
 	culture = old_frankish
-	religion = frankish_pagan
+	rite = frankish_pagan
 	holding = tribal_holding
-	508.12.25 = { religion = gallican_church }
+	508.12.25 = { rite = gallican_church }
 }
 2114 = {	#GENT
 	holding = none
@@ -294,11 +294,11 @@
 ###c_lille
 2126 = {	#LILLE
 	culture = romano_gallic
-	religion = gallican_church
+	rite = gallican_church
 	holding = castle_holding
 	451.1.1 = {
 		culture = old_frankish
-		religion = frankish_pagan
+		rite = frankish_pagan
 		holding = tribal_holding
 	}
 	640.1.1 = { holding = castle_holding } #Legendary founding of the city proper
@@ -312,11 +312,11 @@
 ###c_cambray
 2118 = {	#CAMBRAI
 	culture = romano_gallic
-	religion = gallican_church
+	rite = gallican_church
 	holding = castle_holding
 	451.1.1 = {
 		culture = old_frankish
-		religion = frankish_pagan
+		rite = frankish_pagan
 		holding = tribal_holding
 	}
 }

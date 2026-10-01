@@ -4,7 +4,7 @@
 1200142 = { # Fictional
 	name = "Merutse" 
 	dynasty = 105808 #Zhangzhung
-	religion = old_bon
+	rite = old_bon
 	culture = zhangzhung
 	441.1.1 = {
 		birth = yes
@@ -17,7 +17,7 @@
 1200143 = { # Fictional
 	name = "Chimetsukphü" 
 	dynasty = 105808 #Zhangzhung
-	religion = old_bon
+	rite = old_bon
 	culture = zhangzhung
 	father = 1200142
 	479.1.1 = {
@@ -31,7 +31,7 @@
 1200144 = { # Fictional
 	name = "Shenrab" 
 	dynasty = 105808 #Zhangzhung
-	religion = old_bon
+	rite = old_bon
 	culture = zhangzhung
 	father = 1200143
 	516.1.1 = {
@@ -45,7 +45,7 @@
 247000 = {
 	name="Liknyirhya" # Lig myi rhya
 	dynasty=105809 #Lig
-	religion = "old_bon"
+	rite = "old_bon"
 	culture="zhangzhung"
 	548.1.1={
 		birth=yes
@@ -58,7 +58,7 @@
 247001 = {
 	name="Likmikya"
 	dynasty=105809 #Lig
-	religion = "old_bon"
+	rite = "old_bon"
 	culture="zhangzhung"
 	father=247000
 	595.1.1={
@@ -79,7 +79,7 @@
 	name="Tisé"
 	female=yes
 	dynasty=105810 #Ng¸lkhar
-	religion = "old_bon"
+	rite = "old_bon"
 	culture="zhangzhung"
 	599.1.1={
 		birth=yes
@@ -93,7 +93,7 @@
 	name="Dralé"
 	female=yes
 	dynasty=105809 #Lig
-	religion = "old_bon"
+	rite = "old_bon"
 	culture="zhangzhung"
 	father=247000
 	604.1.1={
@@ -110,7 +110,7 @@
 	female = yes
 	
 	culture = zhangzhung
-	religion = old_bon
+	rite = old_bon
 	
 	744.1.1={
 		birth=yes
@@ -126,7 +126,7 @@
 	female = yes
 	
 	culture = zhangzhung
-	religion = old_bon
+	rite = old_bon
 	
 	745.1.1={
 		birth=yes
@@ -141,7 +141,7 @@
 	dynasty=1053202
 	
 	culture = zhangzhung
-	religion = old_bon
+	rite = old_bon
 	
 	753.1.1={
 		birth=yes
@@ -156,7 +156,7 @@
 	name="Magyal Dongkar"
 	female=yes
 	dynasty=105861 #Tsepang
-	religion = "old_bon"
+	rite = "old_bon"
 	culture="zhangzhung"
 	trait=zealous
 	father = 252002
@@ -164,10 +164,10 @@
 	770.1.1={
 		religion="lamaism"
 		remove_trait = zealous
-		#secret_religion = old_bon
+		#secret_rite = old_bon
 	} #forced to convert by her husband the Emperor
 	797.1.1={
-		religion = "old_bon"
+		rite = "old_bon"
 		add_trait = zealous
 	} #openly supports Bon again upon her husband’s death
 	804.1.1={ death=yes }
@@ -177,7 +177,7 @@
 251999 = {
 	name="Likmur"
 	dynasty=105809 #Lig
-	religion = "old_bon"
+	rite = "old_bon"
 	culture="zhangzhung"
 	father=247001
 	mother=247002
@@ -192,7 +192,7 @@
 252000 = {
 	name="Liknyashur"
 	dynasty=105809 #Lig
-	religion = "old_bon"
+	rite = "old_bon"
 	culture="zhangzhung"
 	father=251999
 	660.1.1={
@@ -209,7 +209,7 @@
 252001 = {
 	name="Liknyikya"
 	dynasty=105809 #Lig
-	religion = "old_bon"
+	rite = "old_bon"
 	culture="zhangzhung"
 	father=252000
 	mother=247092
@@ -224,7 +224,7 @@
 252005 = {
 	name="Likmigyal" #Last Zhangzhung King
 	dynasty=105809 #Lig
-	religion = "old_bon"
+	rite = "old_bon"
 	culture="zhangzhung"
 	trait=zealous
 	father=252001
@@ -278,7 +278,7 @@
 252002 = {
 	name="Gyalwa"
 	dynasty=105861 #Tsepang
-	religion = "old_bon"
+	rite = "old_bon"
 	culture="zhangzhung"
 	father=252011
 	704.1.1={
@@ -293,7 +293,7 @@
 	name="Zangza"
 	female=yes
 	dynasty=105861 #Tsepang
-	religion = "old_bon"
+	rite = "old_bon"
 	culture="zhangzhung"
 	father = 252002
 	744.1.1={
@@ -308,7 +308,7 @@
 	name="Tshogyal"
 	female=yes
 	dynasty=105860 #Khyung
-	religion = "old_bon"
+	rite = "old_bon"
 	culture="zhangzhung"
 	trait=zealous
 	737.1.1={
@@ -323,7 +323,7 @@
 	name="Dronglek"
 	female=yes
 	dynasty=105899 #Nang
-	religion = "old_bon"
+	rite = "old_bon"
 	culture="zhangzhung"
 	752.1.1={
 		birth=yes
@@ -336,7 +336,7 @@
 252006 = {
 	name="Nangzher Löpo"
 	dynasty=105900 #Ngam
-	religion = "old_bon"
+	rite = "old_bon"
 	culture="zhangzhung"
 	trait=zealous
 	725.1.1={
@@ -352,7 +352,7 @@
 	name="Driza Tökarma"
 	female=yes
 	dynasty=105861 #Tsepang
-	religion = "old_bon"
+	rite = "old_bon"
 	culture="zhangzhung"
 	father=252007
 	588.1.1={
@@ -365,7 +365,7 @@
 252007 = {
 	name="Damshe"
 	dynasty=105861 #Tsepang
-	religion = "old_bon"
+	rite = "old_bon"
 	culture="zhangzhung"
 	550.1.1={
 		birth=yes
@@ -377,7 +377,7 @@
 252008 = {
 	name="Sehrigyer"
 	dynasty=105861 #Tsepang
-	religion = "old_bon"
+	rite = "old_bon"
 	culture="zhangzhung"
 	father=252007
 	590.1.1={
@@ -390,7 +390,7 @@
 252009 = {
 	name="Merutse"
 	dynasty=105861 #Tsepang
-	religion = "old_bon"
+	rite = "old_bon"
 	culture="zhangzhung"
 	father=252008
 	627.1.1={
@@ -403,7 +403,7 @@
 252010 = {
 	name="Bonchung"
 	dynasty=105861 #Tsepang
-	religion = "old_bon"
+	rite = "old_bon"
 	culture="zhangzhung"
 	father=252009
 	653.1.1={
@@ -416,7 +416,7 @@
 252011 = {
 	name="Tribon"
 	dynasty=105861 #Tsepang
-	religion = "old_bon"
+	rite = "old_bon"
 	culture="zhangzhung"
 	father=252010
 	677.1.1={
@@ -431,7 +431,7 @@
 	name="Kyidagi"
 	female=yes
 	dynasty=105809 #Lig
-	religion = "old_bon"
+	rite = "old_bon"
 	culture="zhangzhung"
 	father=252001
 	738.1.1={

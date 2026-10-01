@@ -2,7 +2,7 @@
 	name = "Suhrab"
 	# Suhrab
 	#dynasty = 0
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	535.1.1 = {
 		birth = yes
@@ -16,7 +16,7 @@
 	name = "Maziar"	# Historical. Died in revolt against the Caliph
 	dynasty_house = house_karen_pahlav
 	martial = 7
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	trait = "education_martial_3"
 	800.1.1 = {
@@ -30,7 +30,7 @@
 109713 = {
 	name = "Jaffar"
 	dynasty = 109702
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	440.1.1 = {
 		birth = yes
@@ -43,7 +43,7 @@
 159599 = {
 	name = "Sasan"	# II
 	dynasty = 1029100
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	130.11.1 = {
 		birth = "130.11.1"
@@ -60,7 +60,7 @@
 159600 = {
 	name = "Babak"	# II
 	dynasty = 1029100
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 159599
 	150.11.1 = {
@@ -74,7 +74,7 @@
 159601 = { #Ardeshir I
 	name = "Ardeshir"
 	dynasty = 1029100
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 159600
 	180.11.1 = {
@@ -89,7 +89,7 @@
 159602 = { #Shapur I
 	name = "Shapur"
 	dynasty = 1029100
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 159601
 	215.11.1 = {
@@ -103,7 +103,7 @@
 163153 = {
 	name = "Asad"
 	dynasty = 810
-	religion = "sunni"
+	rite = "sunni"
 	culture = "persian"
 	756.1.1 = {
 		birth = "756.1.1"
@@ -116,7 +116,7 @@
 163154 = {
 	name = "Ahmad"
 	dynasty = 810
-	religion = "sunni"
+	rite = "sunni"
 	culture = "persian"
 	father = 163153
 	776.1.1 = {
@@ -130,7 +130,7 @@
 163155 = {
 	name = "Ilyas"
 	dynasty = 810
-	religion = "sunni"
+	rite = "sunni"
 	culture = "persian"
 	father = 163153
 	779.1.1 = {
@@ -144,7 +144,7 @@
 163156 = {
 	name = "Ibrahim"
 	dynasty = 810
-	religion = "sunni"
+	rite = "sunni"
 	culture = "persian"
 	father = 163155
 	800.1.1 = {
@@ -158,7 +158,7 @@
 163158 = {
 	name = "Abdallah"
 	dynasty = 811
-	religion = "sunni"
+	rite = "sunni"
 	culture = "persian"
 	798.1.1 = {
 		birth = "798.1.1"
@@ -171,7 +171,7 @@
 180602 = {
 	name = "Shapur"
 	dynasty = 1029100
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 159600
 	177.1.1 = {
@@ -188,7 +188,7 @@
 	name = "Shapur"
 	# Shapur I, Emperor of Persia
 	dynasty = 1029100
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 159601
 	215.1.1 = {
@@ -203,7 +203,7 @@
 	name = "Hormazd"
 	# Hormazd I, Emperor of Persia
 	dynasty = 1029100
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 180605
 	246.1.1 = {
@@ -218,7 +218,7 @@
 	name = "Bahram"
 	# Bahram I, Emperor of Persia
 	dynasty = 1029100
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 180605
 	trait = zealous
@@ -235,7 +235,7 @@
 	name = "Bahram"
 	# Bahram II, Emperor of Persia
 	dynasty = 1029100
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 180607
 	trait = "zealous"
@@ -251,7 +251,7 @@
 	name = "Bahram"
 	# Bahram III, Emperor of Persia
 	dynasty = 1029100
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 180608
 	trait = "weak"
@@ -269,7 +269,7 @@
 	name = "Narseh"
 	# Narseh, Emperor of Persia
 	dynasty = 1029100
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 180605
 	244.1.1 = {
@@ -284,7 +284,7 @@
 	name = "Hormazd"
 	# Hormazd II, Emperor of Persia
 	dynasty = 1029100
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 180610
 	268.1.1 = {
@@ -298,14 +298,14 @@
 180612 = {
 	name = "Hormazd"
 	dynasty = 1029100
-	religion = "nicene"
+	religion = christian_faith
 	culture = "persian"
 	father = 180611
 	299.1.1 = {
 		birth = "299.1.1"
 	}
 	#Imprisoned by Shapur II, he flees to Byzantium and gets asylum
-	323.1.1 = { religion = nicene }
+	323.1.1 = { religion = christian_faith }
 	368.1.1 = {
 		death = "368.1.1"
 	}
@@ -315,7 +315,7 @@
 	name = "Hormisdas"
 	# Byzantine proconsul
 	dynasty = 1029100
-	religion = "nicene"
+	religion = christian_faith
 	culture = "persian"
 	father = 180612
 	325.1.1 = {
@@ -331,7 +331,7 @@
 	name = "Ardeshir"
 	# Ardeshir II, Emperor of Persia
 	dynasty = 1029100
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 180611
 	trait = "zealous"
@@ -352,7 +352,7 @@
 	# wife of Khosrov IV of Armenia
 	female = yes
 	dynasty = 1029100
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 180614
 	330.1.1 = {
@@ -367,7 +367,7 @@
 	name = "Shapur"
 	# Shapur III, Emperor of Persia
 	dynasty = 1029100
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 180614
 	333.1.1 = {
@@ -382,7 +382,7 @@
 	name = "Shapur"
 	# Shapur II, Emperor of Persia
 	dynasty = 1029100
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 180611
 	trait = ambitious
@@ -400,7 +400,7 @@
 	name = "Bahram"
 	# Bahram IV, Emperor of Persia
 	dynasty = 1029100
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 180617
 	trait = weak
@@ -420,7 +420,7 @@
 	name = "Yazdegerd"
 	# Yazdegerd I, Emperor of Persia
 	dynasty = 1029100
-	religion = "zurvanism"
+	rite = "zurvanism"
 	culture = "persian"
 	father = 180616
 	trait = compassionate
@@ -437,7 +437,7 @@
 	name = "Bahram"
 	# Bahram V, Emperor of Persia
 	dynasty = 1029100
-	religion = "zurvanism"
+	rite = "zurvanism"
 	culture = "persian"
 	father = 180619
 	393.1.1 = {
@@ -452,7 +452,7 @@
 	name = "Yazdegerd"
 	# Yazdegerd II, Emperor of Persia
 	dynasty = 1029100
-	religion = "zurvanism"
+	rite = "zurvanism"
 	culture = "persian"
 	father = 180620
 	417.1.1 = {
@@ -467,7 +467,7 @@
 	name = "Hormazd"
 	# Hormazd III, Emperor of Persia
 	dynasty = 1029100
-	religion = "zurvanism"
+	rite = "zurvanism"
 	culture = "persian"
 	father = 180621
 	436.1.1 = {
@@ -485,7 +485,7 @@
 	name = "Balash"
 	# Balash, Emperor of Persia
 	dynasty = 1029100
-	religion = "zurvanism"
+	rite = "zurvanism"
 	culture = "persian"
 	father = 180621
 	trait = generous
@@ -506,7 +506,7 @@
 	# Peroz I, Emperor of Persia
 	dna = 180624_peroz
 	dynasty = 1029100
-	religion = "zurvanism"
+	rite = "zurvanism"
 	culture = "persian"
 	father = 180621
 	#trait = "sympathy_christendom"
@@ -527,7 +527,7 @@
 	name = "Djamasp"
 	# Djamasp, Emperor of Persia
 	dynasty = 1029100
-	religion = "zurvanism"
+	rite = "zurvanism"
 	culture = "persian"
 	father = 180624
 	470.1.1 = {
@@ -541,7 +541,7 @@
 180626 = {
 	name = "Zareh"
 	dynasty = 1029100
-	religion = "zurvanism"
+	rite = "zurvanism"
 	culture = "persian"
 	father = 180624
 	466.1.1 = {
@@ -556,7 +556,7 @@
 	name = "Kavadh"
 	# Kavadh I, Emperor of Persia
 	dynasty = 1029100
-	religion = "zurvanism"
+	rite = "zurvanism"
 	culture = "persian"
 	father = 180624
 	469.1.1 = {
@@ -566,7 +566,7 @@
 		add_spouse = 1500003
 	}
 	522.1.1 = {
-		religion = mazdaki
+		rite = mazdaki
 	}
 	531.9.1 = {
 		death = yes
@@ -577,7 +577,7 @@
 	name = "Khosrau"
 	# Khosrau I, Emperor of Persia
 	dynasty = 1029100
-	religion = "zurvanism"
+	rite = "zurvanism"
 	culture = "persian"
 	father = 180627
 	mother = 1500003
@@ -612,7 +612,7 @@
 	name = "Hormazd"
 	# Hormazd IV, Emperor of Persia
 	dynasty = 1029100
-	religion = "zurvanism"
+	rite = "zurvanism"
 	culture = "persian"
 	father = 180628
 	#trait = sympathy_christendom
@@ -634,7 +634,7 @@
 	name = "Khosrau"
 	# Khosrau II, Emperor of Persia
 	dynasty = 1029100
-	religion = "zurvanism"
+	rite = "zurvanism"
 	culture = "persian"
 	trait = intellect_good_3
 	trait = education_diplomacy_4
@@ -658,7 +658,7 @@
 	name = "Kavadh"
 	# Kavadh II, Emperor of Persia
 	dynasty = 1029100
-	religion = "zurvanism"
+	rite = "zurvanism"
 	culture = "persian"
 	father = 180631
 	mother = 180646
@@ -674,7 +674,7 @@
 	name = "Ardeshir"
 	# Ardeshir III, Emperor of Persia
 	dynasty = 1029100
-	religion = "zurvanism"
+	rite = "zurvanism"
 	culture = "persian"
 	father = 180632
 	621.1.1 = {
@@ -690,7 +690,7 @@
 	# Purandokht, Empress of Persia
 	female = yes
 	dynasty = 1029100
-	religion = "zurvanism"
+	rite = "zurvanism"
 	culture = "persian"
 	father = 180631
 	mother = 180646
@@ -707,7 +707,7 @@
 	# Azarmidokht, Empress of Persia
 	female = yes
 	dynasty = 1029100
-	religion = "zurvanism"
+	rite = "zurvanism"
 	culture = "persian"
 	father = 180631
 	mother = 180646
@@ -722,7 +722,7 @@
 180636 = {
 	name = "Shahryar"
 	dynasty = 1029100
-	religion = "zurvanism"
+	rite = "zurvanism"
 	culture = "persian"
 	father = 180631
 	mother = 180646
@@ -738,7 +738,7 @@
 	name = "Yazdegerd"
 	# Yazdegerd III, Emperor of Persia
 	dynasty = 1029100
-	religion = "zurvanism"
+	rite = "zurvanism"
 	culture = "persian"
 	father = 180636
 	617.1.1 = {
@@ -754,7 +754,7 @@
 	# possible wife of Husayn ibn Ali
 	female = yes
 	dynasty = 1029100
-	religion = "zurvanism"
+	rite = "zurvanism"
 	culture = "persian"
 	father = 180637
 	643.1.1 = {
@@ -770,7 +770,7 @@
 	# wife of Bustanai ben Haninai
 	female = yes
 	dynasty = 1029100
-	religion = "zurvanism"
+	rite = "zurvanism"
 	culture = "persian"
 	father = 180637
 	648.1.1 = {
@@ -785,7 +785,7 @@
 	name = "Peroz"
 	# Peroz II, would-be Emperor of Persia
 	dynasty = 1029100
-	religion = "zurvanism"
+	rite = "zurvanism"
 	culture = "persian"
 	father = 180637
 	645.1.1 = {
@@ -799,7 +799,7 @@
 180641 = {
 	name = "Narseh"
 	dynasty = 1029100
-	religion = "zurvanism"
+	rite = "zurvanism"
 	culture = "persian"
 	father = 180640
 	675.1.1 = {
@@ -814,7 +814,7 @@
 	name = "Bahram"
 	# Bahram VI, Emperor of Persia
 	dynasty = 1042070
-	religion = "zurvanism"
+	rite = "zurvanism"
 	culture = "persian"
 	father = 1500000
 	553.1.1 = {
@@ -830,14 +830,14 @@
 
 166266 = {
 	name = "Aba"
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	trait = "education_learning_3"
 	484.1.1 = {
 		birth = "484.1.1"
 	}
 	520.1.1 = {
-		religion = "nestorian"
+		rite = "nestorian"
 	}
 	552.1.1 = {
 		death = "552.1.1"
@@ -847,7 +847,7 @@
 
 166277 = {
 	name = "Isho_yahb"
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "persian"
 	trait = "education_learning_3"
 	590.1.1 = {
@@ -865,7 +865,7 @@
 	dna = 131726_vistahm
 	# Vistahm of the Golden Throne
 	dynasty_house = 10424547
-	religion = "zurvanism"
+	rite = "zurvanism"
 	culture = "persian"
 	father = sarir_founder
 	mother = bahram5_daughter
@@ -881,7 +881,7 @@
 	name = "Jamshed"
 	# Jamshed of the Golden Throne
 	dynasty_house = 10424547
-	religion = "zurvanism"
+	rite = "zurvanism"
 	culture = "persian"
 	father = 131726
 	500.1.1 = {
@@ -896,7 +896,7 @@
 	name = "Mihradad"
 	# Mihradad of the Golden Throne
 	dynasty_house = 10424547
-	religion = "zurvanism"
+	rite = "zurvanism"
 	culture = "persian"
 	father = 131727
 	540.1.1 = {
@@ -911,7 +911,7 @@
 	name = "Nakigran"
 	# Nakigran
 	dynasty = 10424461
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	555.1.1 = {
 		birth = yes
@@ -925,7 +925,7 @@
 	name = "Azadbeh_Banegan"
 	# Azadbeh-i Banegan Mahan-i Mihr-Bondad
 	dynasty = 10424462
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	580.1.1 = {
 		birth = yes
@@ -939,7 +939,7 @@
 	name = "Mirsah"
 	# Mirsah
 	#dynasty = 0
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	450.1.1 = {
 		birth = yes
@@ -953,7 +953,7 @@
 	name = "Warahran"
 	# Warahran
 	#dynasty = 0
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	500.1.1 = {
 		birth = yes
@@ -967,7 +967,7 @@
 	name = "Warahran"
 	# Warahran
 	#dynasty = 0
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	500.1.1 = {
 		birth = yes
@@ -981,7 +981,7 @@
 	name = "Manushihr"
 	# Manushihr Bahraman
 	dynasty = 10424224
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	trait = content
 	450.1.1 = {
@@ -996,7 +996,7 @@
 	name = "Ayeshah"
 	# Ayeshah Bahraman
 	dynasty = 10424224
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	trait = content
 	father = 96059
@@ -1012,7 +1012,7 @@
 	name = "Shapur"
 	# Shapur Waraz
 	dynasty = 10424226
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	trait = content
 	450.1.1 = {
@@ -1031,7 +1031,7 @@
 	name = "Parviz"
 	# Parviz Waraz
 	dynasty = 10424226
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	trait = content
 	father = 96064
@@ -1047,7 +1047,7 @@
 	name = "Mihran"
 	# Mihran Mihran
 	dynasty = 1042070
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	430.1.1 = {
 		add_prestige = 500
@@ -1066,7 +1066,7 @@
 	name = "Shapur"
 	# Shapur Mihran
 	dynasty = 1042070
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 96069
 	martial = 20
@@ -1083,7 +1083,7 @@
 	name = "Zartosht"
 	# Zartosht Ispahbudhan
 	dynasty = 10424228
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	450.1.1 = {
 		birth = "450.1.1"
@@ -1101,7 +1101,7 @@
 	name = "Bawi"
 	# Uncle of Khosrau I
 	dynasty = 10424228
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 222623
 	470.1.1 = {
@@ -1116,7 +1116,7 @@
 	name = "Goshtasb"
 	# Goshtasb Spandiyadh
 	dynasty = 10424229
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	450.1.1 = {
 		birth = "450.1.1"
@@ -1134,7 +1134,7 @@
 	name = "Maziar"
 	# Maziar Spandiyadh
 	dynasty = 10424229
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 960711
 	470.1.1 = {
@@ -1149,7 +1149,7 @@
 	name = "Khudayar"
 	# Khudayar Zik
 	dynasty = 10424230
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	450.1.1 = {
 		birth = "450.1.1"
@@ -1167,7 +1167,7 @@
 	name = "Mehrab"
 	# Mehrab Zik
 	dynasty = 10424230
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 221551
 	470.1.1 = {
@@ -1182,7 +1182,7 @@
 	name = "Kurush"
 	# Kurush Maka
 	dynasty = 10424234
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	trait = "zealous"
 	450.1.1 = {
@@ -1197,7 +1197,7 @@
 	name = "Nawid"
 	# Nawid Maka
 	dynasty = 10424234
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	trait = "zealous"
 	father = 187005
@@ -1213,7 +1213,7 @@
 	name = "Veh_Mihr"
 	# Veh Mihr
 	dynasty = 1042556	#Shapur
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	390.1.1 = {
 		birth = yes
@@ -1227,7 +1227,7 @@
 	name = "Adhur"
 	# Adhur Hormizd
 	dynasty = 1042558
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	420.1.1 = {
 		birth = yes
@@ -1241,7 +1241,7 @@
 	name = "Adhur"
 	# Adhur Gushnasp
 	dynasty_house = house_gushnaspid
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	440.1.1 = { birth = yes }
 	490.1.1 = { death = yes }
@@ -1255,7 +1255,7 @@
 	name = "Gushnasp"
 	# Gushnasp Bahram
 	dynasty = 1042561
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	530.1.1 = {
 		birth = yes
@@ -1269,7 +1269,7 @@
 	name = "Tan-Shapur"
 	# Tan-Shapur Zik
 	dynasty = 10424230
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	trait = zealous
 	father = 187000
@@ -1285,7 +1285,7 @@
 	name = "Varazdat"
 	# Varazdat
 	#dynasty = 0
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	540.1.1 = {
 		birth = yes
@@ -1299,7 +1299,7 @@
 	name = "Golon"
 	# Golon Mihran
 	dynasty = 1042070
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	trait = zealous
 	trait = deceitful
@@ -1318,7 +1318,7 @@
 	name = "Tamkhosrau"
 	# Tamkhosrau
 	#dynasty = 0
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	trait = zealous
 	trait = ambitious
@@ -1336,7 +1336,7 @@
 	name = "Pahlav"
 	# Pahlav
 	#dynasty = 0
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	560.1.1 = {
 		birth = yes
@@ -1350,9 +1350,9 @@
 	name = "Frahat"
 	# Frahat
 	#dynasty = 0
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
-	religion = mazdayasna
+	rite = mazdayasna
 	560.1.1 = {
 		birth = yes
 	}
@@ -1365,7 +1365,7 @@
 	name = "Fravardin"
 	# Fravardin
 	#dynasty = 0
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	560.1.1 = {
 		birth = yes
@@ -1379,7 +1379,7 @@
 	name = "Vindatakan"
 	# Fravardin
 	#dynasty = 0
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	560.1.1 = {
 		birth = yes
@@ -1393,7 +1393,7 @@
 	name = "Bahram"	# PLRE vol. 3 Bahram 1
 	# Bahram Gushnasp, father of Bahram Chobin
 	dynasty = 1042070
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 331170
 	520.1.1 = {
@@ -1408,7 +1408,7 @@
 	name = "Golbahar"
 	# Unnamed sister of Bawi and wife of Kavadh I
 	dynasty = 10424228
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 222623
 	female = yes
@@ -1424,7 +1424,7 @@
 	name = "Shapur"
 	# Cousin of Khosrau I and grandfather of Khosrau II
 	dynasty = 10424228
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 471525
 	510.1.1 = {
@@ -1439,7 +1439,7 @@
 	name = "Vinduyih"	# PLRE vol. 3 Bindoes
 	# Uncle of Khosrau II 
 	dynasty = 10424228
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 1500004
 	540.1.1 = {
@@ -1454,7 +1454,7 @@
 	name = "Vistahm"	# PLRE vol. 3 Bistam
 	# Uncle of Khosrau II and usurper
 	dynasty = 10424228
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 1500004
 	545.1.1 = {
@@ -1475,7 +1475,7 @@
 	name = "Afsaneh"
 	# Unnamed sister of Vinduyih and Vistahm and mother of Khosrau II
 	dynasty = 10424228
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 1500004
 	female = yes
@@ -1491,7 +1491,7 @@
 	name = "Gordiya"
 	# Wife of Bahram Chobin and Vistahm
 	dynasty = 1042070
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 1500000
 	female = yes
@@ -1507,7 +1507,7 @@
 	name = "Tiruyih"
 	# Son of Vistahm
 	dynasty = 10424228
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 1500006
 	570.1.1 = {
@@ -1522,7 +1522,7 @@
 	name = "Vinduyih"
 	# Son of Vistahm
 	dynasty = 10424228
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 1500006
 	571.1.1 = {
@@ -1537,7 +1537,7 @@
 	name = "Shapur"
 	# Son of Bahram Chobin and Vistahm's supporter
 	dynasty = 1042070
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 180645
 	583.1.1 = {
@@ -1552,7 +1552,7 @@
 	name = "Mihran"
 	# Son of Bahram Chobin
 	dynasty = 1042070
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 180645
 	585.1.1 = {
@@ -1567,7 +1567,7 @@
 	name = "Hormazd"
 	# Farroukh Hormazd, usurper and cousin of Khosrau II 
 	dynasty = 10424228
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 1500005
 	565.1.1 = {
@@ -1582,7 +1582,7 @@
 	name = "Rostam"
 	# Rostam Farrokhzad, son of Farrukh Hormizd
 	dynasty = 10424228
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 1500013
 	595.1.1 = {
@@ -1597,7 +1597,7 @@
 	name = "Farrukhzad"
 	# Son of Farrukh Hormizd and founder of Bavandid dynasty 
 	dynasty = 10424228
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 1500013
 	600.1.1 = {
@@ -1615,7 +1615,7 @@
 	name = "Fereedun"
 	# Fictional placeholder
 	dynasty = 10424224
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 96060
 	535.1.1 = {
@@ -1630,7 +1630,7 @@
 	name = "Jahandar"
 	# Fictional placeholder
 	dynasty = 10424226
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 96065
 	535.1.1 = {
@@ -1645,7 +1645,7 @@
 	name = "Bahman"
 	# Fictional placeholder
 	dynasty = 10424229
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 96113
 	535.1.1 = {
@@ -1660,7 +1660,7 @@
 	name = "Mardansina"
 	# Brother of Bahram Chobin and supporter of Vistahm
 	dynasty = 1042070
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 1500000
 	555.1.1 = {
@@ -1675,7 +1675,7 @@
 	name = "Gorduya"
 	# Sister of Bahram Chobin
 	dynasty = 1042070
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 1500000
 	female = yes
@@ -1690,7 +1690,7 @@
 188634 = {
 	name = "Noshrad"
 	dynasty = 1042070
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 180645
 	590.1.1 = {
@@ -1704,7 +1704,7 @@
 188635 = {
 	name = "Togmath"
 	dynasty = 1042070
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 188634
 	635.1.1 = {
@@ -1718,7 +1718,7 @@
 188636 = {
 	name = "Jotman"
 	dynasty = 1042070
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 188635
 	680.1.1 = {

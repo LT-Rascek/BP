@@ -9,7 +9,7 @@
 	diplomacy = 5
 	intrigue = 6
 	stewardship = 5
-	religion = "frankish_pagan"
+	rite = "frankish_pagan"
 	culture = "old_frankish"
 	father = 36106
 	446.1.1 = { birth = yes }
@@ -35,7 +35,7 @@
 	name = "Chlodoric"	# Frankish noble
 	#  Chlodoric Meroving
 	dynasty = old_frankish_dynn_sigobert
-	religion = frankish_pagan
+	rite = frankish_pagan
 	culture = old_frankish
 	420.1.1 = { birth = yes }
 	471.1.1 = { death = yes }
@@ -45,7 +45,7 @@
 	female = yes
 	name = "Chlodoara" # fictional name, daughter of Richomar and wife of Wallia
 	dynasty = 1042533
-	religion = "frankish_pagan"
+	rite = "frankish_pagan"
 	culture = "old_frankish"
 	father = 36101
 	380.1.1 = { birth = yes }
@@ -57,7 +57,7 @@
 	name = "Arbogastes"
 	dna = 144671_arbogast
 	dynasty = 1042533
-	religion = "nicene"
+	religion = christian_faith
 	culture = "old_frankish"
 	father = 1310004
 	450.1.1 = {
@@ -76,7 +76,7 @@
 	diplomacy = 5
 	intrigue = 6
 	stewardship = 5
-	religion = "frankish_pagan"
+	rite = "frankish_pagan"
 	culture = "old_frankish"
 	father = 20785
 	466.1.1 = { birth = yes }
@@ -103,7 +103,7 @@
 1310003 = {
 	name = "Ingelramnus"	#Fictional
 	dynasty = 1042533
-	religion = "nicene"
+	religion = christian_faith
 	culture = "old_frankish"
 	father = 36104
 	390.1.1 = {
@@ -117,7 +117,7 @@
 1310004 = {
 	name = "Arigius"	# PLRE vol. 2 Arigius 1
 	dynasty = 1042533
-	religion = "nicene"
+	religion = christian_faith
 	culture = "old_frankish"
 	father = 1310003
 	410.1.1 = {
@@ -132,7 +132,7 @@
 	female = yes
 	name = Evochilde
 	culture = old_frankish
-	religion = frankish_pagan
+	rite = frankish_pagan
 	462.1.1 = { #Tie her to Cologne for simplicity
 		birth = yes
 		if = {
@@ -149,11 +149,11 @@
 	name = "Chararic" # Son of Chararic; forced into Monastic life
 	dna = 36107_son_chararic
 	dynasty = old_frankish_dynn_chararic
-	religion = "frankish_pagan"
+	rite = "frankish_pagan"
 	culture = "old_frankish"
 	father = 36107
 	476.1.1 = { birth = yes }
-	496.12.25 = { religion = nicene }
+	496.12.25 = { religion = christian_faith }
 	507.1.1 = { trait = devoted } #Forced to become a deacon
 	508.1.1 = { #Killed by Clovis for plotting against him
 		death = {

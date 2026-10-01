@@ -5,7 +5,7 @@
 	diplomacy = 5
 	intrigue = 6
 	stewardship = 5
-	religion = "gothic_pagan"
+	rite = "gothic_pagan"
 	culture = "gepid"
 	trait = "deceitful"
 	trait = "compassionate"
@@ -29,7 +29,7 @@
 	diplomacy = 5
 	intrigue = 6
 	stewardship = 5
-	religion = "gothic_pagan"
+	rite = "gothic_pagan"
 	culture = "gepid"
 	trait = "trusting"
 	trait = "compassionate"
@@ -48,7 +48,7 @@
 30366 = {
 	name = "Thrapstila"
 	dynasty = 1042170
-	religion = "gothic_pagan"
+	rite = "gothic_pagan"
 	culture = "gepid"
 	father = 10066
 	430.1.1 = {
@@ -65,7 +65,7 @@
 30367 = {
 	name = "Thrasaric"
 	dynasty = 1042170
-	religion = "gothic_pagan"
+	rite = "gothic_pagan"
 	culture = "gepid"
 	father = 30366
 	451.1.1 = {
@@ -79,7 +79,7 @@
 30369 = {
 	name = "Elemund"
 	dynasty = 1042170
-	religion = "gothic_pagan"
+	rite = "gothic_pagan"
 	culture = "gepid"
 	father = 80
 	485.1.1 = {
@@ -93,7 +93,7 @@
 30370 = {
 	name = "Austrigoth"
 	dynasty = 1042170
-	religion = "gothic_pagan"
+	rite = "gothic_pagan"
 	culture = "gepid"
 	father = 30369
 	510.1.1 = {
@@ -111,7 +111,7 @@
 	name = "Austrigotha"
 	female = yes
 	dynasty = 1042170
-	religion = "gothic_pagan"
+	rite = "gothic_pagan"
 	culture = "gepid"
 	father = 30369
 	495.1.1 = {
@@ -125,7 +125,7 @@
 30373 = {
 	name = "Thorisind"
 	dynasty = 1042170
-	religion = "arian"
+	rite = "arian"
 	culture = "gepid"
 	father = 30367
 	491.1.1 = {
@@ -139,7 +139,7 @@
 30374 = {
 	name = "Thorismund"
 	dynasty = 1042170
-	religion = "arian"
+	rite = "arian"
 	culture = "gepid"
 	father = 30373
 	515.1.1 = {
@@ -156,7 +156,7 @@
 30375 = {
 	name = "Cunimund"
 	dynasty = 1042170
-	religion = "arian"
+	rite = "arian"
 	culture = "gepid"
 	father = 30373
 	519.1.1 = {
@@ -173,7 +173,7 @@
 1300594 = {
 	name = "Giesmus" # father of Mundus, PLRE vol. 2 Giesmus
 	dynasty = 1042170
-	religion = "gothic_pagan"
+	rite = "gothic_pagan"
 	culture = "gepid"
 	father = 10066
 	425.1.1 = {
@@ -190,7 +190,7 @@
 1300595 = {
 	name = "Mundus"	# magister militum per Illyricum 532-536, PLRE vol. 2 Mundus
 	dynasty = 1042170
-	religion = "gothic_pagan"
+	rite = "gothic_pagan"
 	culture = "gepid"
 	father = 1300594
 	mother = 1300594_wife
@@ -209,7 +209,7 @@
 	529.1.1 = {
 		employer = 70512		# Justinian
 		trait = content		# extremely loyal
-		religion = "nicene"
+		religion = christian_faith
 		effect = { set_knight_status = force }
 	}
 	536.1.1 = {
@@ -222,7 +222,7 @@
 1300596 = {
 	name = "Mauricius" # son of Mundus, MVM vacans, PLRE vol. 2 Mundus
 	dynasty = 1042170
-	religion = "nicene"
+	religion = christian_faith
 	culture = "gepid"
 	father = 1300595
 	495.1.1 = {
@@ -247,7 +247,7 @@
 1300597 = {
 	name = "Theodomund" # son of Mauricius
 	dynasty = 1042170
-	religion = "nicene"
+	religion = christian_faith
 	culture = "gepid"
 	father = 1300596
 	520.1.1 = {

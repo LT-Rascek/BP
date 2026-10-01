@@ -1,7 +1,7 @@
 ﻿### Manicheans
 ManicheanChurch000 = {
 	name = "Mani"
-	religion = elcesaite
+	rite = elcesaite
 	culture = persian
 	father = ManicheanSpecial000
 	mother = ManicheanSpecial001
@@ -18,7 +18,7 @@ ManicheanChurch000 = {
 	}
 	240.1.1 = {} #Goes to India to study
 	242.1.1 = { #Presents himself to Shapur II with his new religious text
-		religion = manichean
+		rite = manichean
 		trait = vegetarian
 	}
 	270.1.1 = { set_relation_friend = character:ManicheanChurch001 }
@@ -31,7 +31,7 @@ ManicheanChurch000 = {
 }
 ManicheanChurch001 = {
 	name = "Sisin"
-	religion = mazdayasna
+	rite = mazdayasna
 	culture = persian
 	240.1.1 = { birth = yes }
 	256.1.1 = {
@@ -43,14 +43,14 @@ ManicheanChurch001 = {
 	240.1.1 = {} #Goes to India to study
 	260.1.1 = { #Runs into Mani and converts (hypothetical)
 		employer = 180605
-		religion = manichean
+		rite = manichean
 		trait = vegetarian
 	}
 	284.1.1 = { death = { death_reason = death_murder } } #probably dies during Sassanid persecutions
 }
 ManicheanChurch002 = { #BM476 holder (fictional)
 	name = "Cephas"
-	religion = manichean
+	rite = manichean
 	culture = chaldean
 	430.1.1 = { birth = yes }
 	446.1.1 = {
@@ -61,7 +61,7 @@ ManicheanChurch002 = { #BM476 holder (fictional)
 }
 ManicheanSpecial000 = { #Mani's Father
 	name = "Patik"
-	religion = elcesaite
+	rite = elcesaite
 	culture = persian
 	196.1.1 = { birth = yes }
 	215.1.1 = { add_spouse = ManicheanSpecial001 }
@@ -70,7 +70,7 @@ ManicheanSpecial000 = { #Mani's Father
 ManicheanSpecial001 = { #Mani's Mother
 	name = "Mariam"
 	female = yes
-	religion = elcesaite
+	rite = elcesaite
 	culture = parthian
 	dynasty_house = house_kamsarakan
 	196.1.1 = { birth = yes }
@@ -80,7 +80,7 @@ ManicheanSpecial001 = { #Mani's Mother
 ### Other Dualists
 Valentinianism000 = {
 	name = "Valentinos"
-	religion = nicene #Some claimed he was taught by disciples of Paul
+	religion = christian_faith #Some claimed he was taught by disciples of Paul
 	culture = helleno_coptic
 	100.1.1 = { birth = yes }
 	116.1.1 = {
@@ -90,14 +90,14 @@ Valentinianism000 = {
 		trait = patient
 	}
 	136.1.1 = { #Goes to rome to preach
-		religion = valentinianism
+		rite = valentinianism
 		trait = zealous
 	}
 	160.1.1 = { death = yes }
 }
 Priscillianism000 = {
 	name = "Priscillianus"
-	religion = nicene
+	religion = christian_faith
 	culture = romano_hispanic
 	340.1.1 = { birth = yes }
 	356.1.1 = {
@@ -107,7 +107,7 @@ Priscillianism000 = {
 		trait = generous
 	}
 	380.10.4 = { #Condemned at Saragossa
-		religion = priscillianism
+		rite = priscillianism
 	}
 	385.1.1 = { death = { death_reason = death_execution } }
 }

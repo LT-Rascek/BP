@@ -3,7 +3,7 @@
 159580 = { #Vachagan I of Aghvank "the Brave"
 	name = "Vachagan"
 	dynasty_house = house_arsacid_albania
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	#While they were Arsacids, the connection is unclear
 	#Khosrovidukht has no listed children, but fits the timeline close enough
@@ -16,7 +16,7 @@
 159581 = { #Vache I
 	name = "Vache"
 	dynasty_house = house_arsacid_albania
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = 159580
 	280.1.1 = { birth = yes }
@@ -27,7 +27,7 @@
 	name = "Yasaman"
 	female = yes
 	dynasty = 1029100
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 180610 #A Sassanian Princess, most logical father is Narseh
 	280.1.1 = { birth = yes }
@@ -36,11 +36,11 @@
 159582 = { #Urnayr I
 	name = "Urnayr"
 	dynasty_house = house_arsacid_albania
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = 159581
 	297.1.1 = { birth = yes }
-	313.1.1 = { religion = albanian_apostolic }
+	313.1.1 = { rite = albanian_apostolic }
 	350.1.1 = { add_spouse = 159582_wife }
 	375.1.1 = { death = yes }
 }
@@ -48,17 +48,17 @@
 	name = "Banafsheh"
 	female = yes
 	dynasty = 1029100
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	father = 180617 #She was daughter of Shapur II
 	334.1.1 = { birth = yes }
-	350.1.1 = { religion = albanian_apostolic }
+	350.1.1 = { rite = albanian_apostolic }
 	375.1.1 = { death = yes }
 }
 159583 = { #Vachagan II
 	name = "Vachagan"
 	dynasty_house = house_arsacid_albania
-	religion = "albanian_apostolic"
+	rite = "albanian_apostolic"
 	culture = "parthian"
 	father = 159582
 	330.1.1 = { birth = yes }
@@ -67,7 +67,7 @@
 159584 = {
 	name = "Sargavan"
 	dynasty_house = house_arsacid_albania
-	religion = "albanian_apostolic"
+	rite = "albanian_apostolic"
 	culture = "parthian"
 	father = 159583
 	346.1.1 = { birth = yes }
@@ -76,7 +76,7 @@
 159585 = { #Merkhavan
 	name = "Mirhavan"
 	dynasty_house = house_arsacid_albania
-	religion = "albanian_apostolic"
+	rite = "albanian_apostolic"
 	culture = "parthian"
 	father = 159583
 	361.1.1 = { birth = yes }
@@ -85,7 +85,7 @@
 159586 = { #Sato
 	name = "Satoy"
 	dynasty_house = house_arsacid_albania
-	religion = "albanian_apostolic"
+	rite = "albanian_apostolic"
 	culture = "parthian"
 	father = 159583
 	362.1.1 = { birth = yes }
@@ -95,7 +95,7 @@
 	name = "Sargavanoush"
 	female = yes
 	dynasty_house = house_arsacid_albania
-	religion = "albanian_apostolic"
+	rite = "albanian_apostolic"
 	culture = "parthian"
 	father = 159586
 	378.1.1 = { birth = yes }
@@ -104,7 +104,7 @@
 159587 = { #Asay
 	name = "Asay"
 	dynasty_house = house_arsacid_albania
-	religion = "albanian_apostolic"
+	rite = "albanian_apostolic"
 	culture = "parthian"
 	father = 159586
 	380.1.1 = { birth = yes }
@@ -113,7 +113,7 @@
 159588 = { #Aswagen
 	name = "Aswagen"
 	dynasty_house = house_arsacid_albania
-	religion = "albanian_apostolic"
+	rite = "albanian_apostolic"
 	culture = "parthian"
 	father = 159586
 	395.1.1 = { birth = yes }
@@ -124,7 +124,7 @@
 	name = "Yazdegerdokht" #lit: "Daughter of Yazdegerd", in lieu of a real name
 	female = yes
 	dynasty = 1029100
-	religion = zurvanism
+	rite = zurvanism
 	culture = persian
 	father = 180619
 	400.1.1 = { birth = yes }
@@ -135,7 +135,7 @@
 	name = "Vache"
 	dna = 159589_vache
 	dynasty_house = house_arsacid_albania
-	religion = "albanian_apostolic"
+	rite = "albanian_apostolic"
 	culture = "parthian"
 	father = 159588
 	mother = 159588_wife
@@ -145,9 +145,9 @@
 		trait = brave
 		trait = disloyal
 	}
-	440.1.1 = { religion = mazdayasna } #TODO: Tie into crypto-religion effects
+	440.1.1 = { rite = mazdayasna } #TODO: Tie into crypto-religion effects
 	456.1.1 = { add_spouse = 159589_wife }
-	459.1.1 = { religion = albanian_apostolic }
+	459.1.1 = { rite = albanian_apostolic }
 	462.1.1 = { #Returned his wife & mother to Peroz for peace
 		remove_spouse = 159589_wife
 		trait = deposed
@@ -158,7 +158,7 @@
 	name = "Yazdegerdokht" #lit: "Daughter of Yazdegerd", in lieu of a real name
 	female = yes
 	dynasty = 1029100
-	religion = zurvanism
+	rite = zurvanism
 	culture = persian
 	father = 180622
 	440.1.1 = { birth = yes }
@@ -171,14 +171,14 @@
 	name = "Vachedokht" #lit: "Daughter of Vache", in lieu of a real name
 	female = yes
 	dynasty_house = house_arsacid_albania
-	religion = mazdayasna
+	rite = mazdayasna
 	culture = parthian
 	father = 159589
 	mother = 159589_wife
 	457.1.1 = { birth = yes }
-	459.1.1 = { religion = albanian_apostolic }
+	459.1.1 = { rite = albanian_apostolic }
 	462.1.1 = { #Sent back to Peroz for peace
-		religion = mazdayasna
+		rite = mazdayasna
 		effect = { set_employer = character:180624 }
 	}
 	517.1.1 = { death = yes }
@@ -187,7 +187,7 @@
 	name = "Hazkert"
 	dna = 159590_hazkert
 	dynasty_house = house_arsacid_albania
-	religion = "albanian_apostolic"
+	rite = "albanian_apostolic"
 	culture = "parthian"
 	father = 159588
 	mother = 159588_wife
@@ -209,7 +209,7 @@
 	name = "Vachagan"
 	dna = 159591_vachagan
 	dynasty_house = house_arsacid_albania
-	religion = "albanian_apostolic"
+	rite = "albanian_apostolic"
 	culture = "parthian"
 	father = 159590
 	473.1.1 = {
@@ -232,7 +232,7 @@
 	name = "Khanchik"
 	female = yes
 	dynasty_house = house_arsacid_albania
-	religion = "albanian_apostolic"
+	rite = "albanian_apostolic"
 	culture = "parthian"
 	father = 159591
 	490.1.1 = { birth = yes }
@@ -246,7 +246,7 @@
 214064_wife_father = { #Fictional, but makes Khosrov II's wife the brother of Anak and makes Anak the Uncle of Tridates III
 	name = "Vardanes"
 	dynasty = 10424223
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	200.1.1 = { birth = yes }
 	250.1.1 = { death = yes }
@@ -255,7 +255,7 @@
 	name = "Vadhut"
 	female = yes
 	dynasty = 10424223
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = 214064_wife_father
 	220.1.1 = { birth = yes }
@@ -269,7 +269,7 @@
 AnakTheParthian = { #Gregory's father
 	name = "Anak"
 	dynasty = 10424223
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = 214064_wife_father #To be a Suren yet an uncle of Tridates III
 	215.1.1 = { birth = yes }
@@ -289,7 +289,7 @@ AnakTheParthian = { #Gregory's father
 AnakTheParthian_wife = { #Gregory's mother
 	name = "Okhoe"
 	female = yes
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	236.1.1 = { birth = yes }
 	258.1.3 = { death = { death_reason = death_execution } } #By Khrosov II's guards
@@ -297,7 +297,7 @@ AnakTheParthian_wife = { #Gregory's mother
 HripsimeTheNun = { #Murdered by Tridates III, part of the Hagiography
 	name = "Ripsima" #Saint Hripsime
 	female = yes
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	268.1.1 = {
 		birth = yes
@@ -322,7 +322,7 @@ HripsimeTheNun = { #Murdered by Tridates III, part of the Hagiography
 GayaneTheNun = { #Murdered by Tridates III, part of the Hagiography
 	name = "Gayane" #Saint Gayane
 	female = yes
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	258.1.1 = {
 		birth = yes
@@ -349,7 +349,7 @@ GayaneTheNun = { #Murdered by Tridates III, part of the Hagiography
 ArsacidDynn000 = { #Phriapites, father of Arsaces I
 	name = "Friyapat"
 	dynasty = 100685 #Not really accurate, but necessary for dynasty tree not to look wrong
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "dahi_scythian"
 	-300.1.1 = { birth = yes }
 	-250.1.1 = { death = yes }
@@ -357,7 +357,7 @@ ArsacidDynn000 = { #Phriapites, father of Arsaces I
 ArsacidDynn001 = { #Arsaces I
 	name = "Arshak"
 	dynasty = 100685
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = ArsacidDynn000
 	-280.1.1 = { birth = yes }
@@ -366,7 +366,7 @@ ArsacidDynn001 = { #Arsaces I
 ArsacidDynn001_brother = { # Unnamed brother of Arsaces I
 	name = "Cincixri"
 	dynasty = 100685
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = ArsacidDynn000
 	-260.1.1 = { birth = yes }
@@ -375,7 +375,7 @@ ArsacidDynn001_brother = { # Unnamed brother of Arsaces I
 ArsacidDynn002 = { #Arsaces II
 	name = "Arshak"
 	dynasty = 100685
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = ArsacidDynn001
 	-250.1.1 = { birth = yes }
@@ -384,7 +384,7 @@ ArsacidDynn002 = { #Arsaces II
 ArsacidDynn003 = { #Priapatius
 	name = "Friyapat"
 	dynasty = 100685
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = ArsacidDynn001_brother #Nephew of Arsaces I
 	-230.1.1 = { birth = yes }
@@ -393,7 +393,7 @@ ArsacidDynn003 = { #Priapatius
 ArsacidDynn004 = { #Phraates I
 	name = "Frahat"
 	dynasty = 100685
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = ArsacidDynn003
 	-210.1.1 = { birth = yes }
@@ -402,7 +402,7 @@ ArsacidDynn004 = { #Phraates I
 ArsacidDynn005 = { #Mithridates I "the Great"
 	name = "Mihrdat"
 	dynasty = 100685
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = ArsacidDynn003
 	trait = education_martial_prowess_3
@@ -415,7 +415,7 @@ ArsacidDynn005 = { #Mithridates I "the Great"
 ArsacidDynn005_wife = { #Rinnu
 	female = yes
 	name = "Rinnu"
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "median"
 	-230.1.1 = { birth = yes }
 	-132.1.1 = { death = yes }
@@ -424,7 +424,7 @@ ArsacidDynn005_daughter = { #Rhodogune
 	female = yes
 	name = "Rhodogune"
 	dynasty = 100685
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = ArsacidDynn005
 	-154.1.1 = { birth = yes }
@@ -433,7 +433,7 @@ ArsacidDynn005_daughter = { #Rhodogune
 ArsacidDynn006 = { #Phraates II
 	name = "Frahat"
 	dynasty = 100685
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = ArsacidDynn005
 	-147.1.1 = { birth = yes }
@@ -442,7 +442,7 @@ ArsacidDynn006 = { #Phraates II
 ArsacidDynn007 = { #Artabanus I
 	name = "Ardawan"
 	dynasty = 100685
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = ArsacidDynn003
 	-185.1.1 = { birth = yes }
@@ -451,7 +451,7 @@ ArsacidDynn007 = { #Artabanus I
 ArsacidDynn008 = { #Mithridates II
 	name = "Mihrdat"
 	dynasty = 100685
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = ArsacidDynn007
 	-160.1.1 = { birth = yes }
@@ -460,7 +460,7 @@ ArsacidDynn008 = { #Mithridates II
 ArsacidDynn009 = { #Gotarzes I
 	name = "Gotarz"
 	dynasty = 100685
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = ArsacidDynn008
 	-140.1.1 = { birth = yes }
@@ -469,7 +469,7 @@ ArsacidDynn009 = { #Gotarzes I
 ArsacidDynn009_usurper = { #Mithridates III/Usurper?
 	name = "Mithradates"
 	dynasty = 100685
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = ArsacidDynn008
 	-140.1.1 = { birth = yes }
@@ -478,7 +478,7 @@ ArsacidDynn009_usurper = { #Mithridates III/Usurper?
 ArsacidDynn010 = { #Orodes I
 	name = "Werod"
 	dynasty = 100685
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = ArsacidDynn009
 	-120.1.1 = { birth = yes }
@@ -487,7 +487,7 @@ ArsacidDynn010 = { #Orodes I
 ArsacidDynn011 = { #Sinatruces I
 	name = "Sinatruk"
 	dynasty = 100685
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = ArsacidDynn005
 	-158.1.1 = { birth = yes }
@@ -496,7 +496,7 @@ ArsacidDynn011 = { #Sinatruces I
 ArsacidDynn012 = { #Phraates III
 	name = "Frahat"
 	dynasty = 100685
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = ArsacidDynn011
 	-128.1.1 = { birth = yes }
@@ -510,7 +510,7 @@ ArsacidDynn012 = { #Phraates III
 ArsacidDynn013 = { #Mithridates IV
 	name = "Mihrdat"
 	dynasty = 100685
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = ArsacidDynn012
 	-108.1.1 = { birth = yes }
@@ -525,7 +525,7 @@ ArsacidDynn013 = { #Mithridates IV
 ArsacidDynn014 = { #Orodes II
 	name = "Werod"
 	dynasty = 100685
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = ArsacidDynn012
 	-98.1.1 = { birth = yes }
@@ -535,7 +535,7 @@ ArsacidDynn014 = { #Orodes II
 ArsacidDynn014_pacorus = {
 	name = "Pakur"
 	dynasty = 100685
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = ArsacidDynn014
 	-78.1.1 = { birth = yes }
@@ -544,7 +544,7 @@ ArsacidDynn014_pacorus = {
 ArsacidDynn015 = { #Phraates IV
 	name = "Frahat"
 	dynasty = 100685
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = ArsacidDynn014
 	-78.1.1 = { birth = yes }
@@ -556,18 +556,18 @@ ArsacidDynn015 = { #Phraates IV
 ArsacidDynn015_wife = { #Musa of Rome
 	female = yes
 	name = "Musa"
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "roman"
 	trait = beauty_good_3
 	trait = education_intrigue_4
 	-35.1.1 = { birth = yes }
-	-2.1.1 = { religion = mazdayasna }
+	-2.1.1 = { rite = mazdayasna }
 	50.1.1 = { death = yes }
 }
 ArsacidDynn018 = { #Vonones I
 	name = "Vonones"
 	dynasty = 100685
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = ArsacidDynn015
 	-58.1.1 = { birth = yes }
@@ -578,7 +578,7 @@ ArsacidDynn018 = { #Vonones I
 ArsacidDynn015_son1 = { #Vonones I
 	name = "Vonones"
 	dynasty = 100685
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = ArsacidDynn015
 	-48.1.1 = { birth = yes }
@@ -588,7 +588,7 @@ ArsacidDynn015_daughter1 = { #Mother of Artabanus II
 	female = yes
 	name = "Seraspandes" #Unnamed
 	dynasty = 100685
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = ArsacidDynn015
 	-43.1.1 = { birth = yes }
@@ -598,7 +598,7 @@ ArsacidDynn015_daughter2 = { #Mother of Vonones II
 	female = yes
 	name = "Rhodaspes" #Unnamed
 	dynasty = 100685
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = ArsacidDynn015
 	-38.1.1 = { birth = yes }
@@ -607,7 +607,7 @@ ArsacidDynn015_daughter2 = { #Mother of Vonones II
 ArsacidDynn015_son2 = { #Karen, founder of the Karenids
 	name = "Karen"
 	dynasty_house = house_karen_pahlav
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = ArsacidDynn015
 	-33.1.1 = { birth = yes }
@@ -616,7 +616,7 @@ ArsacidDynn015_son2 = { #Karen, founder of the Karenids
 ArsacidDynn016 = { #Phraates V
 	name = "Frahat"
 	dynasty = 100685
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = ArsacidDynn015
 	mother = ArsacidDynn015_wife
@@ -626,7 +626,7 @@ ArsacidDynn016 = { #Phraates V
 ArsacidDynn017 = { #Orodes III
 	name = "Werod"
 	dynasty = 100685 #Unknown Branch, so why not main branch?
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	-19.1.1 = { birth = yes }
 	10.1.1 = { death = { death_reason = death_murder } }
@@ -634,7 +634,7 @@ ArsacidDynn017 = { #Orodes III
 ArsacidDynn019 = { #Artabanus II
 	name = "Ardawan"
 	dynasty = 100685
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	mother = ArsacidDynn015_daughter1
 	-25.1.1 = { birth = yes }
@@ -643,7 +643,7 @@ ArsacidDynn019 = { #Artabanus II
 ArsacidDynn019_son1 = { #Arsaces I (of Armenia)
 	name = "Arshak"
 	dynasty = 100685
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = ArsacidDynn019
 	-5.1.1 = { birth = yes }
@@ -652,7 +652,7 @@ ArsacidDynn019_son1 = { #Arsaces I (of Armenia)
 ArsacidDynn019_son2 = { #Orodes (of Armenia)
 	name = "Werod"
 	dynasty = 100685
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = ArsacidDynn019
 	5.1.1 = { birth = yes }
@@ -661,7 +661,7 @@ ArsacidDynn019_son2 = { #Orodes (of Armenia)
 ArsacidDynn020 = { #Vardanes I
 	name = "Wardan"
 	dynasty = 100685
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = ArsacidDynn019
 	10.1.1 = { birth = yes }
@@ -670,7 +670,7 @@ ArsacidDynn020 = { #Vardanes I
 ArsacidDynn021 = { #Gotarzes II
 	name = "Gotarz"
 	dynasty = 100685
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = ArsacidDynn019
 	15.1.1 = {
@@ -683,7 +683,7 @@ ArsacidDynn021 = { #Gotarzes II
 159547 = { # Vonones II, King of Parthia in 51, King of Atropatene in 11 - 51
 	name = "Vonones"
 	dynasty = 100685
-	religion = mazdayasna
+	rite = mazdayasna
 	culture = parthian
 	mother = ArsacidDynn015_daughter2
 	-5.11.1 = { birth = yes }
@@ -693,7 +693,7 @@ ArsacidDynn021 = { #Gotarzes II
 214055 = { # Vologases I [Ruler]
 	name = "Walagash"
 	dynasty = 100685
-	religion = mazdayasna
+	rite = mazdayasna
 	culture = parthian
 	father = 159547
 	15.1.1 = { birth = yes }
@@ -702,7 +702,7 @@ ArsacidDynn021 = { #Gotarzes II
 214059 = { # Tiridates I of Armenia
 	name = "Tiridat"
 	dynasty = 100685
-	religion = mazdayasna
+	rite = mazdayasna
 	culture = parthian
 	father = 159547
 	32.1.1 = { birth = yes }
@@ -711,7 +711,7 @@ ArsacidDynn021 = { #Gotarzes II
 214058 = { # Osroes I (Contender against Vologases III)
 	name = "Husrow"
 	dynasty = 100685
-	religion = mazdayasna
+	rite = mazdayasna
 	culture = parthian
 	father = 159547 #https://www.livius.org/articles/person/osroes-i/
 	45.1.1 = { birth = yes }
@@ -721,7 +721,7 @@ ArsacidDynn021 = { #Gotarzes II
 214058_son = { #Parthamaspates
 	name = "Parthamaspates"
 	dynasty = 100685
-	religion = mazdayasna
+	rite = mazdayasna
 	culture = parthian
 	father = 214058
 	65.1.1 = { birth = yes }
@@ -730,7 +730,7 @@ ArsacidDynn021 = { #Gotarzes II
 159548 = { # Mithridates V
 	name = "Mihrdat"
 	dynasty = 100685
-	religion = mazdayasna
+	rite = mazdayasna
 	culture = parthian
 	father = 159547
 	50.11.1 = { birth = yes }
@@ -740,7 +740,7 @@ ArsacidDynn021 = { #Gotarzes II
 214056 = { # Vardanes II, son of Vologases I (Contender)
 	name = "Wardan"
 	dynasty = 100685
-	religion = mazdayasna
+	rite = mazdayasna
 	culture = parthian
 	father = 214055
 	35.1.1 = { birth = yes } #Probably oldest, given his reign
@@ -749,7 +749,7 @@ ArsacidDynn021 = { #Gotarzes II
 214051 = { # Pacorus II, son of Vologases I [Ruler]
 	name = "Pakur"
 	dynasty = 100685
-	religion = mazdayasna
+	rite = mazdayasna
 	culture = parthian
 	father = 214055
 	40.1.1 = { birth = yes }
@@ -758,7 +758,7 @@ ArsacidDynn021 = { #Gotarzes II
 214057 = { # Vologases II, son of Vologases I (Contender)
 	name = "Walagash"
 	dynasty = 100685
-	religion = mazdayasna
+	rite = mazdayasna
 	culture = parthian
 	father = 214055
 	60.1.1 = { birth = yes }
@@ -767,7 +767,7 @@ ArsacidDynn021 = { #Gotarzes II
 214055_son3 = { # Artabanus III, Son of Vologases I (Contender)
 	name = "Ardawan"
 	dynasty = 100685
-	religion = mazdayasna
+	rite = mazdayasna
 	culture = parthian
 	father = 214055
 	60.1.1 = { birth = yes }
@@ -777,7 +777,7 @@ ArsacidDynn021 = { #Gotarzes II
 214060 = { # Vologases III [Ruler]
 	name = "Walagash"
 	dynasty = 100685
-	religion = mazdayasna
+	rite = mazdayasna
 	culture = parthian
 	father = 214057
 	80.1.1 = { birth = yes }
@@ -786,7 +786,7 @@ ArsacidDynn021 = { #Gotarzes II
 214052 = { # Axidares of Armenia
 	name = "Ashkhadar"
 	dynasty = 100685
-	religion = mazdayasna
+	rite = mazdayasna
 	culture = parthian
 	father = 214051
 	60.1.1 = { birth = yes }
@@ -795,7 +795,7 @@ ArsacidDynn021 = { #Gotarzes II
 214053 = { # Parthamasiris of Armenia
 	name = "Partamasir"
 	dynasty = 100685
-	religion = mazdayasna
+	rite = mazdayasna
 	culture = parthian
 	father = 214051
 	65.1.1 = { birth = yes }
@@ -804,7 +804,7 @@ ArsacidDynn021 = { #Gotarzes II
 214054 = { # Meredates of Meshan
 	name = "Mihrdat"
 	dynasty = 100685
-	religion = mazdayasna
+	rite = mazdayasna
 	culture = parthian
 	father = 214051
 	70.1.1 = { birth = yes }
@@ -814,7 +814,7 @@ ArsacidDynn021 = { #Gotarzes II
 159549 = { # Vologases IV
 	name = "Walagash"
 	dynasty = 100685
-	religion = mazdayasna
+	rite = mazdayasna
 	culture = parthian
 	father = 159548
 	100.11.1 = { birth = yes }
@@ -824,7 +824,7 @@ ArsacidDynn021 = { #Gotarzes II
 ArmeniaArsacid_Pacorus = { #Pacorus, King of Armenia
 	name = "Pakur"
 	dynasty = 100685
-	religion = mazdayasna
+	rite = mazdayasna
 	culture = parthian
 	father = 159548
 	135.1.1 = { birth = yes }
@@ -834,7 +834,7 @@ ArmeniaArsacid_Pacorus = { #Pacorus, King of Armenia
 159550 = { # Vologases V
 	name = "Walagash"
 	dynasty = 100685
-	religion = mazdayasna
+	rite = mazdayasna
 	culture = parthian
 	father = 159549
 	130.11.1 = { birth = yes }
@@ -844,7 +844,7 @@ ArmeniaArsacid_Pacorus = { #Pacorus, King of Armenia
 159579 = { # Vologases VI
 	name = "Walagash"
 	dynasty = 100685
-	religion = mazdayasna
+	rite = mazdayasna
 	culture = parthian
 	father = 159550
 	180.11.1 = { birth = yes }
@@ -853,7 +853,7 @@ ArmeniaArsacid_Pacorus = { #Pacorus, King of Armenia
 214062 = { # Artabanus IV
 	name = "Ardawan"
 	dynasty = 100685
-	religion = mazdayasna
+	rite = mazdayasna
 	culture = parthian
 	father = 159550
 	175.1.1 = { birth = yes }
@@ -865,7 +865,7 @@ ArmeniaArsacid_Pacorus = { #Pacorus, King of Armenia
 	name = "Sura"
 	female = yes
 	dynasty = 100685
-	religion = mazdayasna
+	rite = mazdayasna
 	culture = parthian
 	father = 214062
 	213.1.1 = { birth = yes }
@@ -878,7 +878,7 @@ ArmeniaArsacid_Pacorus = { #Pacorus, King of Armenia
 KarenidBridges_000 = {
 	name = "Ardavan"
 	dynasty_house = house_karen_pahlav
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = ArsacidDynn015_son2
 	-5.1.1 = { birth = yes }
@@ -887,7 +887,7 @@ KarenidBridges_000 = {
 KarenidBridges_001 = {
 	name = "Vonones"
 	dynasty_house = house_karen_pahlav
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = KarenidBridges_000
 	15.1.1 = { birth = yes }
@@ -896,7 +896,7 @@ KarenidBridges_001 = {
 KarenidBridges_002 = {
 	name = "Karen"
 	dynasty_house = house_karen_pahlav
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "parthian"
 	father = KarenidBridges_001
 	40.1.1 = { birth = yes }

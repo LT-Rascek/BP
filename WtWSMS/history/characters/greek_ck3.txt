@@ -2,7 +2,7 @@
 190022 = { #PLRE Vol 1 Fl. Eutolmius Tatianus 5
 	name = "Tatianos"
 	dynasty = 1042325
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "greek"
 	334.1.1 = { birth = yes }
 	396.1.1 = { death = yes }
@@ -10,7 +10,7 @@
 190023 = { #PLRE Vol 1 Proculus 6
 	name = "Proculus"
 	dynasty = 1042325
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "romano_aramean"
 	father = 190022
 	354.1.1 = { birth = yes }
@@ -19,7 +19,7 @@
 1300548 = { #Unamed daughter of PLRE Vol 1 Fl. Eutolmius Tatianus 5
 	name = "Sophia" #name unknown
 	dynasty = 1042325
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "greek"
 	father = 190022
 	female = yes
@@ -31,7 +31,7 @@
 	# originally fictional holder of d_syria_salutaris, reused as fictional holder of d_galatia
 	name = "Tavish"
 	dynasty = 1042277
-	religion = "nicene"
+	religion = christian_faith
 	culture = "greek"
 	450.1.1 = { birth = "450.1.1" }
 	500.1.1 = { death = "500.1.1" }
@@ -41,7 +41,7 @@
 	name = "Damonikos" #PLRE vol.1 Damonicus
 	dynasty = greek_dynasty_of_chalkis
 	culture = greek
-	religion = "nicene"
+	religion = christian_faith
 	365.1.1 = {
 		birth = yes
 	}
@@ -56,7 +56,7 @@
 1300692 = { #PLRE vol.2 Alexander 14
 	name = "Alexander"
 	#praeses of Osrhoene 497-498
-	religion = "nicene"
+	religion = christian_faith
 	culture = "greek"
 	trait = just
 	430.1.1 = { birth = yes }
@@ -65,7 +65,7 @@
 1300693 = { #PLRE vol.2 Demosthenes 3
 	name = "Demosthenes"
 	#praeses of Osrhoene 498-501
-	religion = "nicene"
+	religion = christian_faith
 	culture = "greek"
 	trait = generous
 	440.1.1 = { birth = yes }
@@ -74,7 +74,7 @@
 1300695 = { #PLRE vol.3 Anonymus 52
 	name = "Petros"
 	#praeses of Osrhoene c.542/543
-	religion = "nicene"
+	religion = christian_faith
 	culture = "greek"
 	490.1.1 = { birth = yes }
 	550.1.1 = { death = yes }
@@ -82,7 +82,7 @@
 1300731 = {
 	name = "Zemarchus"	#PLRE vol.3 Zemarchus 1
 	# comes Orientis 560/561
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	500.1.1 = { birth = yes }
 	570.1.1 = { death = yes }
@@ -92,7 +92,7 @@
 	name = "Stephanus"
 	#proconsul Palaestinae Primae 555
 	#Probably from Syria, but name is Greco-Roman, so a Syrian colonist instead of a local...
-	religion = "nicene"
+	religion = christian_faith
 	culture = "greek"
 	trait = craven
 	500.1.1 = {
@@ -109,7 +109,7 @@
 1300992 = { #unnamed wife of PLRE vol. 3 Stephanus 14
 	name = "Anina"
 	female = yes
-	religion = "nicene"
+	religion = christian_faith
 	culture = "syriac" #To help justify the nickname
 	trait = just
 	500.1.1 = { birth = yes }
@@ -118,7 +118,7 @@
 1301264 = {
 	name = "Iraneus" # PLRE vol. 2 Iraneus 7
 	# ?comes rei militaris or MVM vacans 527/528, dux Palaestinae 530
-	religion = nicene
+	religion = christian_faith
 	culture = greek # native of Antioch
 	trait = callous
 	trait = diligent
@@ -145,7 +145,7 @@
 	diplomacy = 11
 	intrigue = 12
 	stewardship = 6
-	religion = "nicene"
+	religion = christian_faith
 	culture = greek
 	trait = beauty_good_1
 	trait = "intellect_good_2"
@@ -158,7 +158,7 @@
 		trait = "zealous"
 		trait = "arrogant"
 	}
-	520.1.1 = { religion = coptic } #Probably met with Patriarch Timothy III and converted while in North Africa with Hecebolus
+	520.1.1 = { rite = copitc_rite } #Probably met with Patriarch Timothy III and converted while in North Africa with Hecebolus
 	532.1.13 = {
 		trait = "brave"
 	}
@@ -172,7 +172,7 @@
 	diplomacy = 3
 	intrigue = 2
 	stewardship = 3
-	religion = "nicene"
+	religion = christian_faith
 	culture = greek
 	trait = "strong"
 	445.1.1 = { birth = yes }
@@ -184,7 +184,7 @@
 444405_wife = { #Unnamed wife of Akakios; we'll make her syriac to play into the Syrian references
 	name = "Magdala"
 	female = yes
-	religion = nicene
+	religion = christian_faith
 	culture = syriac
 	trait = beauty_good_1
 	470.1.1 = { birth = yes }
@@ -196,7 +196,7 @@
 1004015 = {
 	name = "Balbila"
 	# Daughter of Empress Theodora
-	religion = monophysitism
+	rite = monophysitism
 	culture = greek
 	female = yes
 	mother = 444404
@@ -207,7 +207,7 @@
 1004016 = {
 	name = "Komito"
 	# Sister of Empress Theodora
-	religion = monophysitism
+	rite = monophysitism
 	culture = greek
 	female = yes
 	father = 444405
@@ -218,7 +218,7 @@
 444405_youngest_daughter = { #Younger sister of Theodora
 	name = "Anastasia"
 	female = yes
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	trait = beauty_good_1
 	father = 444405
@@ -228,7 +228,7 @@
 }
 444404_stepfather = { #Theodora's mother remarried after her father died
 	name = "Kosmas"
-	religion = "nicene"
+	religion = christian_faith
 	culture = greek
 	trait = "strong"
 	465.1.1 = { birth = yes }
@@ -243,7 +243,7 @@
 	name = "Nikoteles"
 	# Nikoteles Lebbaeus
 	dynasty = 10424233
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "greek"
 	450.1.1 = { birth = yes }
 	466.1.1 = { trait = zealous }
@@ -253,7 +253,7 @@
 	name = "Kallias"
 	# Kallias Lebbaeus
 	dynasty = 10424233
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "greek"
 	father = 187003
 	470.1.1 = { birth = yes }

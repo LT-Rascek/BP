@@ -46,7 +46,7 @@
 ###c_sinai
 6033 = {	#AT-TUR
 	culture = copt
-	religion = coptic
+	rite = copitc_rite
 	holding = castle_holding
 }
 6032 = {	#SAINT CATHERINE
@@ -69,7 +69,7 @@
 ###c_firaun
 6030 = {	#FIRAUN
 	culture = nabatean
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	holding = castle_holding
 }
 6031 = {	#DAHAB
@@ -78,7 +78,7 @@
 ###c_negev
 5969 = {	# 5969 - Zughar
 	culture = nabatean
-	religion = ebionite
+	rite = ebionite
 	holding = castle_holding
 }
 5971 = {	# 5971 - Baidha-Petra
@@ -94,7 +94,7 @@
 ###c_kerak
 5980 = {	# 5980 - Kerak
 	culture = nabatean
-	religion = ebionite
+	rite = ebionite
 	holding = castle_holding
 }
 5978 = {	# 5978 - Shawbak
@@ -106,7 +106,7 @@
 ###c_farama
 6038 = {	#FARAMA
 	culture = nabatean
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
 }
 6036 = {	#WARRADA
@@ -123,7 +123,7 @@
 	
 	# Misc
 	culture = judean
-	religion = rabbinism #Doubtful, but it prevents the Judeans from being too agreeable
+	rite = rabbinism #Doubtful, but it prevents the Judeans from being too agreeable
 	holding = castle_holding
 }
 5963 = {	# 5963 - Ar-Ramla
@@ -136,7 +136,7 @@
 ###c_jaffa
 5962 = {	# 5962 - Yaffa
 	culture = syriac
-	religion = syrian_orthodox
+	rite = antiochian_rite
 	holding = castle_holding
 }
 5961 = {	# 5961 - Cesarea
@@ -145,9 +145,9 @@
 ###c_ghazza
 5968 = {	# 5968 - Ghazza
 	culture = syriac
-	religion = hellenic_pagan #There were tensions between Christians and Pagans in the late IVth and early Vth, probably resolved to a majority by the end of the Vth
+	rite = hellenic_pagan #There were tensions between Christians and Pagans in the late IVth and early Vth, probably resolved to a majority by the end of the Vth
 	holding = castle_holding
-	480.1.1 = { religion = syrian_orthodox }
+	480.1.1 = { rite = antiochian_rite }
 }
 5967 = {	# 5967 - Ascalon
 	holding = city_holding
@@ -158,7 +158,7 @@
 ###c_tiberias
 5959 = {	# 5959 - Tiberias
 	culture = samaritan_culture
-	religion = samaritan
+	rite = samaritan
 	holding = castle_holding
 }
 5964 = {	# 5964 - Nablus
@@ -167,7 +167,7 @@
 ###c_baniyas
 5922 = {	# 5922 - Baniyas
 	culture = syriac
-	religion = syrian_orthodox
+	rite = antiochian_rite
 	holding = castle_holding
 }
 5937 = {	# 5937 - Anjar
@@ -177,7 +177,7 @@
 ###c_irbid
 5958 = {	# 5958 - Irbid
 	culture = nabatean
-	religion = conversos
+	rite = nazerene
 	holding = castle_holding
 }
 5985 = {	# 5985 - Jarash
@@ -189,7 +189,7 @@
 ###c_hauran
 5955 = {	# 5955 - Busra
 	culture = nabatean
-	religion = conversos
+	rite = nazerene
 	holding = castle_holding
 }
 5956 = {	# 5956 - Sarkhad
@@ -204,14 +204,14 @@
 }
 5987 = {	#AL-AZRAQ
 	culture = nabatean
-	religion = conversos
+	rite = nazerene
 	holding = castle_holding #Important fort in Roman Times
 	#Important oasis hub since ancient times
 }
 ###c_maab
 5984 = {	#AMMAN
 	culture = nabatean
-	religion = ebionite
+	rite = ebionite
 	holding = castle_holding
 }
 5981 = {	#MAAB
@@ -229,7 +229,7 @@
 ###c_acre
 5960 = {	# 5960 - Acre
 	culture = syriac
-	religion = syrian_orthodox
+	rite = antiochian_rite
 	holding = castle_holding
 }
 5921 = {	# 5921 - Tyre
@@ -238,7 +238,7 @@
 ###c_beirut
 5919 = {	# 5919 - Beirut
 	culture = syriac
-	religion = maronite_church
+	rite = maronite_church
 	holding = castle_holding
 }
 5920 = {	# 5920 - Saida AKA Sidon
@@ -247,7 +247,7 @@
 ###c_tripolis
 5918 = {	# 5918 - Tripoli
 	culture = syriac
-	religion = maronite_church
+	rite = maronite_church
 	holding = castle_holding
 }
 5916 = {	# 5916 - Antartus AKA Tartus
@@ -259,7 +259,7 @@
 ###c_homs
 5929 = {	# 5929 - Hims
 	culture = syriac
-	religion = maronite_church
+	rite = maronite_church
 	holding = castle_holding #Avoids some government snafus
 }
 5928 = {	# 5928 - Jusiya
@@ -271,7 +271,7 @@
 ###c_damascus
 5924 = {	# 5924 - Damascus
 	culture = syriac
-	religion = syrian_orthodox
+	rite = antiochian_rite
 	holding = castle_holding
 }
 5953 = {	# 5953 - Darayya
@@ -286,7 +286,7 @@
 ###c_juwair
 5951 = {	# 5951 - Juwair
 	culture = syriac
-	religion = syrian_orthodox
+	rite = antiochian_rite
 	holding = castle_holding
 }
 5927 = {	# 5927 - Al-Qastal
@@ -298,9 +298,9 @@
 ###c_baalbek
 5926 = {	# 5926 - Baalbak
 	culture = syriac
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	holding = castle_holding
-	500.1.1 = { religion = maronite_church }
+	500.1.1 = { rite = maronite_church }
 }
 5925 = {	# 5925 - Az-Zabadani
 	holding = none
@@ -308,7 +308,7 @@
 ###c_qaryatan
 5950 = {	# 5950 - Al-Qaryatan
 	culture = syriac
-	religion = syrian_orthodox
+	rite = antiochian_rite
 	holding = castle_holding
 }
 5949 = {	# 5949 - Judr
@@ -317,7 +317,7 @@
 ###c_palmyra
 5948 = {	# 5948 - Tadmur
 	culture = syriac
-	religion = syrian_orthodox # [1]
+	rite = antiochian_rite # [1]
 	holding = castle_holding
 }
 5947 = {	# 5947 - Arak
@@ -329,7 +329,7 @@
 ###c_antiocheia
 5910 = {	# 5910 - Antioch
 	culture = greek
-	religion = nicene #Stronghold of orthodox strains of Christianity historically
+	religion = christian_faith #Stronghold of orthodox strains of Christianity historically
 	holding = castle_holding
 }
 5909 = {	# 5909 - As-Suwaydiya
@@ -344,7 +344,7 @@
 ###c_shayzar
 5915 = {	# 5915 - Shaizar
 	culture = syriac
-	religion = maronite_church
+	rite = maronite_church
 	holding = castle_holding
 }
 5914 = {	# 5914 - Masyaf
@@ -353,7 +353,7 @@
 ###c_qinnasrin
 5933 = {	# 5933 - Qinnasrin
 	culture = syriac
-	religion = syrian_orthodox
+	rite = antiochian_rite
 	holding = castle_holding
 }
 5935 = {	# 5935 - Artah
@@ -365,7 +365,7 @@
 ###c_aleppo
 5934 = {	# 5934 - Halab
 	culture = syriac
-	religion = syrian_orthodox
+	rite = antiochian_rite
 	holding = castle_holding
 	special_building_slot = citadel_of_aleppo_01
 }
@@ -387,7 +387,7 @@
 ###c_hama
 5930 = {	# 5930 - Hama
 	culture = syriac
-	religion = maronite_church
+	rite = maronite_church
 	holding = castle_holding
 }
 5931 = {	# 5931 - Salamiya
@@ -399,7 +399,7 @@
 ###c_suriya
 5942 = {	# 5942 - Suriya
 	culture = syriac
-	religion = syrian_orthodox
+	rite = antiochian_rite
 	holding = castle_holding
 }
 5941 = {	# 5941 - Khunasira
@@ -408,7 +408,7 @@
 ###c_syrrusafa
 5940 = {	# 5940 - Ar-Rusafa
 	culture = syriac
-	religion = syrian_orthodox
+	rite = antiochian_rite
 	holding = castle_holding
 }
 5939 = {	# 5939 - Siffin
@@ -420,7 +420,7 @@
 ###c_sukhna
 5945 = {	# 5945 - As-Sukhna
 	culture = adnanite
-	religion = nicene
+	religion = christian_faith
 	holding = tribal_holding
 }
 5944 = {	# 5944 - Dair_Ar-Ruman
@@ -435,7 +435,7 @@
 ###c_nicosia
 5681 = {	# 5681 - Nicosia
 	culture = greek
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
 	special_building_slot = saint_lazarus
 	899.1.1 = { special_building = saint_lazarus }
@@ -449,7 +449,7 @@
 ###c_famagusta
 757 = {	# 757 - Famagusta
 	culture = greek
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
 }
 5679 = {	# 5679 - Cerynia
@@ -464,7 +464,7 @@
 ###c_edessa
 4869 = {	# 4869 - Edessa
 	culture = syriac
-	religion = syrian_orthodox
+	rite = antiochian_rite
 	holding = castle_holding
 }
 4872 = {	# 4872 - Al-Bira
@@ -473,7 +473,7 @@
 ###c_raqqa
 4876 = {	# 4876 - Raqqa
 	culture = assyrian
-	religion = bardaisanism
+	rite = bardaisanism
 	holding = castle_holding
 }
 4877 = {	# 4877 - Bajarwan
@@ -482,7 +482,7 @@
 ###c_harran
 4870 = {	# 4870 - Harran
 	culture = assyrian
-	religion = sabianism #Harran Sabians
+	rite = sabianism #Harran Sabians
 	holding = castle_holding
 	special_building = holy_site_other_grand_temple_01 #Temple of Suen, last Assyrian Pagan/Sabian temple
 }
@@ -495,7 +495,7 @@
 ###c_dausar
 4875 = {	# 4875 - Dausar
 	culture = syriac
-	religion = audianism
+	rite = audianism
 	holding = castle_holding
 }
 4873 = {	# 4873 - Tall_Ammar
@@ -504,7 +504,7 @@
 ###c_khabur
 4882 = {	# 4882 - Qarqisiya
 	culture = assyrian
-	religion = mesopotamian_pagan
+	rite = mesopotamian_pagan
 	holding = castle_holding
 }
 4880 = {	# 4880 - Al-Khanuqa
@@ -528,7 +528,7 @@
 ###c_amida
 4867 = {	# 4867 - Amid, Amida
 	culture = assyrian
-	religion = nestorian
+	rite = nestorian
 	holding = castle_holding
 }
 4866 = {	# 4866 - Zermion
@@ -543,7 +543,7 @@
 ###c_tall_basma
 4847 = {	#4847 - Hisn Kaifa/ Hasankeyf / Riskephas/Kepha
 	culture = corduenian
-	religion = armenian_apostolic #[1] Listed in Armenian Ecclesiastical sources, so made it armenian_apostolic
+	rite = armenian_apostolic #[1] Listed in Armenian Ecclesiastical sources, so made it armenian_apostolic
 	holding = castle_holding
 }
 4855 = {	# 4855 - Tall Basma (Tel Beşme) Thilbisine/Thibitha
@@ -552,7 +552,7 @@
 ###c_upper_khabur
 4853 = {	# 4853 - Ras al-ain, Upper Khabur / Raisena/Ressaina/Resain
 	culture = assyrian
-	religion = shamsi_pagan #[3]
+	rite = shamsi_pagan #[3]
 	holding = castle_holding
 }
 4854 = {	# 4854 - Mardin
@@ -574,7 +574,7 @@
 ###c_aintab
 5900 = {	# 5900 - Aintab
 	culture = syriac
-	religion = bardaisanism
+	rite = bardaisanism
 	holding = castle_holding
 }
 5901 = {	#5901 - Tall Bashir AKA Turbessel
@@ -589,7 +589,7 @@
 ###c_samosata
 4894 = {	# 4894 - Samosata
 	culture = armenian
-	religion = marcionism
+	rite = marcionism
 	holding = castle_holding
 }
 4892 = {	# 4892 - Bahasna
@@ -598,7 +598,7 @@
 ###c_marash
 4893 = {	# 4893 - Marash
 	culture = cappadocian
-	religion = marcionism
+	rite = marcionism
 	holding = castle_holding
 }
 4890 = {	# 4890 - Qalat Ar-Rum #aka Rumkale

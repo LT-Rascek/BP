@@ -9,7 +9,7 @@
 	diplomacy = 9
 	intrigue = 9
 	stewardship = 9
-	religion = "rabbinism"
+	rite = "rabbinism"
 	culture = hebrew
 	8.1.1 = { birth = yes }
 	24.1.1 = {
@@ -19,7 +19,7 @@
 		trait = zealous
 	}
 	27.1.1 = {
-		religion = nicene
+		religion = christian_faith
 		give_nickname = nick_the_apostle
 	}
 	65.1.1 = {
@@ -29,14 +29,14 @@
 }
 JerusalemChurchSpecial000 = { #St. Jude
 	name = Yehudah
-	religion = rabbinism
+	rite = rabbinism
 	culture = hebrew
 	trait = zealous
 	trait = diligent
 	trait = honest
 	disallow_random_traits = yes
 	5.1.1 = { birth = yes }
-	27.1.1 = { religion = nicene }
+	27.1.1 = { religion = christian_faith }
 	65.1.1 = {
 		death = {
 			death_reason = death_execution
@@ -49,7 +49,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 145292 = { #St. Peter
 	name = "Simon"
-	religion = "rabbinism"
+	rite = "rabbinism"
 	culture = "hebrew"
 	trait = "diligent"
 	trait = "patient"
@@ -58,7 +58,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 	27.1.1 = {
 		name = "Petrus" # AKA: Simon
 		give_nickname = nick_the_apostle # AKA: Saint Peter the Apostle
-		religion = nicene
+		religion = christian_faith
 		trait = zealous
 	}
 	33.4.6 = { trait = lifestyle_blademaster }
@@ -77,7 +77,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 	diplomacy = 9
 	intrigue = 5
 	stewardship = 5
-	religion = "rabbinism"
+	rite = "rabbinism"
 	culture = "hebrew"
 	trait = "twin"
 	trait = "diligent"
@@ -88,7 +88,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 	27.1.1 = {
 		give_nickname = nick_the_apostle # AKA: Saint Thomas the Apostle
 		trait = "zealous"
-		religion = nicene
+		religion = christian_faith
 	}
 	72.12.21 = {
 		death = { death_reason = death_murder } # Legendary Martyrdom
@@ -102,7 +102,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 	diplomacy = 3
 	intrigue = 6
 	stewardship = 6
-	religion = "rabbinism"
+	rite = "rabbinism"
 	culture = "hebrew"
 	trait = "compassionate"
 	trait = "humble"
@@ -110,7 +110,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 	12.1.1 = { birth = yes }
 	27.1.1 = {
 		give_nickname = nick_the_apostle
-		religion = nicene
+		religion = christian_faith
 		trait = zealous
 	} # AKA: Saint Bartholomew the Apostle
 	70.1.1 = {
@@ -123,7 +123,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 145291 = { #Pope Linus
 	name = "Linus"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -143,7 +143,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 	diplomacy = 7
 	intrigue = 8
 	stewardship = 8
-	religion = "nicene"
+	religion = christian_faith
 	culture = "greek"
 	trait = "diligent"
 	trait = "patient"
@@ -163,7 +163,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 	diplomacy = 7
 	intrigue = 8
 	stewardship = 8
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -184,7 +184,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 	diplomacy = 7
 	intrigue = 8
 	stewardship = 8
-	religion = "nicene"
+	religion = christian_faith
 	culture = "hebrew" #Hellenized Jew
 	trait = "diligent"
 	trait = "patient"
@@ -207,7 +207,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 	diplomacy = 7
 	intrigue = 8
 	stewardship = 8
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -227,7 +227,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 	diplomacy = 7
 	intrigue = 8
 	stewardship = 8
-	religion = "nicene"
+	religion = christian_faith
 	culture = "greek" #Roman citizen of Italia of Greek Descent
 	trait = "diligent"
 	trait = "patient"
@@ -247,7 +247,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 	diplomacy = 7
 	intrigue = 8
 	stewardship = 8
-	religion = "nicene"
+	religion = christian_faith
 	culture = "greek"
 	trait = "diligent"
 	trait = "patient"
@@ -267,7 +267,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 	diplomacy = 7
 	intrigue = 8
 	stewardship = 8
-	religion = "nicene"
+	religion = christian_faith
 	culture = "greek"
 	trait = "diligent"
 	trait = "patient"
@@ -287,7 +287,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 	diplomacy = 7
 	intrigue = 8
 	stewardship = 8
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -307,7 +307,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 	diplomacy = 7
 	intrigue = 8
 	stewardship = 8
-	religion = "nicene"
+	religion = christian_faith
 	culture = "syriac" #Hellenized Syrian
 	trait = "diligent"
 	trait = "patient"
@@ -325,7 +325,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7606 = { #Pope Soter
 	name = "Soter"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	120.1.1 = { birth = yes }
 	167.4.20 = { name = "Soter" }
@@ -337,7 +337,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7605 = { #Pope Eleutherius
 	name = "Eleutherios"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "greek"
 	trait = "diligent"
 	trait = "patient"
@@ -353,7 +353,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7604 = { #Pope Victor I
 	name = "Victor"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_african"
 	trait = "diligent"
 	trait = "patient"
@@ -369,7 +369,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7603 = { #Pope Zephyrinus
 	name = "Zephyrinus"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -385,7 +385,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7602 = { #Pope Callixtus
 	name = "Kallistos"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -401,7 +401,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7601 = { #Pope Urban I
 	name = "Urbanus"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -417,7 +417,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7600 = { #Pope Pontian
 	name = "Pontianus"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -433,7 +433,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7799 = { #Pope Anterus
 	name = "Antheros"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "greek"
 	trait = "diligent"
 	trait = "patient"
@@ -449,7 +449,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7798 = { #Pope Fabian
 	name = "Fabianus"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -465,7 +465,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7797 = { #Pope Cornelius
 	name = "Cornelius"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -481,7 +481,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7796 = { #Pope Lucius I
 	name = "Lucius"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -499,7 +499,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7795 = { #Pope Stephen I
 	name = "Stephanos"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "greek"
 	trait = "diligent"
 	trait = "patient"
@@ -517,7 +517,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7794 = { #Pope Sixtus II
 	name = "Xystos"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "greek"
 	trait = "diligent"
 	trait = "patient"
@@ -535,7 +535,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7793 = { #Pope Dionysius
 	name = "Dionysios"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "greek"
 	trait = "diligent"
 	trait = "patient"
@@ -553,7 +553,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7792 = { #Pope Felix I
 	name = "Felix"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -571,7 +571,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7791 = { #Pope Eutychianus
 	name = "Eutychianus"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -589,7 +589,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7790 = { #Pope Caius
 	name = "Gaius"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_illyrian"
 	trait = "diligent"
 	trait = "patient"
@@ -607,7 +607,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7789 = { #Pope Marcellinus
 	name = "Marcellinus"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -625,7 +625,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7787 = { #Pope Marcellus
 	name = "Marcellus"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -643,7 +643,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7786 = { #Pope Eusebius
 	name = "Eusebios"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "greek"
 	trait = "diligent"
 	trait = "patient"
@@ -661,7 +661,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7785 = { #Pope Miltiades
 	name = "Miltiades"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_african"
 	trait = "diligent"
 	trait = "patient"
@@ -679,7 +679,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7784 = { #Pope Sylvester I
 	name = "Silvester"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -697,7 +697,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7783 = { #Pope Marcus
 	name = "Marcus"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -715,7 +715,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7782 = { #Pope Julius I
 	name = "Iulius"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -733,7 +733,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7781 = { #Pope Liberius
 	name = "Liberius"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -746,7 +746,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7780 = { #Pope Damasus I
 	name = "Damasus"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_hispanic"
 	trait = "diligent"
 	trait = "patient"
@@ -764,7 +764,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7779 = { #Pope Siricius
 	name = "Siricius"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -782,7 +782,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7778 = { #Pope Anastasius I
 	name = "Anastasius"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -800,7 +800,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7777 = { #Pope Innocent I
 	name = "Innocentius"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -819,7 +819,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7776 = { #Pope Zosimus
 	name = "Zosimos"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "greek"
 	trait = "diligent"
 	trait = "patient"
@@ -837,7 +837,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7775 = { #Pope Boniface I
 	name = "Bonifacius"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -855,7 +855,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7774 = { #Pope Celestine I
 	name = "Caelestinus"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -873,7 +873,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7773 = { #Pope Sixtus II
 	name = "Sixtus"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -891,7 +891,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7772 = { #Pope Leo I "the Great"
 	name = "Leo"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	400.1.1 = {
 		birth = yes
@@ -931,7 +931,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7771 = { #Pope Hilarius
 	name = "Hilarius"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -949,7 +949,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7770 = { #Pope Simplicius
 	name = "Simplicius"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -968,7 +968,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 7769 = { #Pope Felix III
 	name = "Felix"
 	dynasty = roman_dynasty_caelius
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -987,7 +987,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7768 = {
 	name = "Gelasius"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_african"
 	trait = "diligent"
 	trait = "patient"
@@ -1005,7 +1005,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7767 = { #Pope Anastasius II
 	name = "Anastasios"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "greek"
 	trait = "diligent"
 	trait = "patient"
@@ -1023,7 +1023,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7766 = { #Pope Symmachus
 	name = "Symmachus"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "sardinian" #Born on Sardinia
 	trait = "diligent"
 	trait = "patient"
@@ -1047,7 +1047,7 @@ JustusOfCampania = { #Hormisdas Father was Roman, according to:
 # p. 242
 	name = "Justus"
 	dynasty = dynn_JustusOfCampania #Needs a dynasty to avoid having Pope Hormisdas being Sassanid
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	425.1.1 = { birth = yes }
 	445.1.1 = { add_spouse = JustusOfCampania_wife }
@@ -1056,7 +1056,7 @@ JustusOfCampania = { #Hormisdas Father was Roman, according to:
 JustusOfCampania_wife_greatgrandfatherfather = { #Grandson of Horzmid the Turncoat
 	name = "Kavadh"
 	dynasty = 1029100
-	religion = "nicene"
+	religion = christian_faith
 	culture = "persian"
 	father = 180613
 	340.1.1 = {
@@ -1068,7 +1068,7 @@ JustusOfCampania_wife_greatgrandfatherfather = { #Grandson of Horzmid the Turnco
 JustusOfCampania_wife_grandfatherfather = { #Great Grandson of Horzmid the Turncoat
 	name = "Eskander"
 	dynasty = 1029100
-	religion = "nicene"
+	religion = christian_faith
 	culture = "persian"
 	father = JustusOfCampania_wife_greatgrandfatherfather
 	365.1.1 = {
@@ -1080,7 +1080,7 @@ JustusOfCampania_wife_grandfatherfather = { #Great Grandson of Horzmid the Turnc
 JustusOfCampania_wife_father = { #Great-Great Grandson of Horzmid the Turncoat
 	name = "Hormisdas"
 	dynasty = 1029100
-	religion = "nicene"
+	religion = christian_faith
 	culture = "persian"
 	father = JustusOfCampania_wife_grandfatherfather
 	390.1.1 = {
@@ -1092,7 +1092,7 @@ JustusOfCampania_wife_father = { #Great-Great Grandson of Horzmid the Turncoat
 JustusOfCampania_wife = { #Great-Great-Great Granddaughter of Hormzid the Turncoat
 	female = yes
 	name = "Roxana"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "persian"
 	father = JustusOfCampania_wife_father
 	430.1.1 = {
@@ -1104,7 +1104,7 @@ JustusOfCampania_wife = { #Great-Great-Great Granddaughter of Hormzid the Turnco
 7765 = { #Pope Hormisdas
 	name = "Hormisdas"
 	dynasty = dynn_JustusOfCampania #Needs a dynasty to avoid having Pope Hormisdas being Sassanid
-	religion = "nicene"
+	religion = christian_faith
 	culture = "persian"
 	father = JustusOfCampania
 	mother = JustusOfCampania_wife
@@ -1139,7 +1139,7 @@ JustusOfCampania_wife = { #Great-Great-Great Granddaughter of Hormzid the Turnco
 
 ArmenianChurch0011_wife_father = {
 	name = David
-	religion = nicene
+	religion = christian_faith
 	culture = cappadocian
 	241.1.1 = { birth = yes }
 	280.1.1 = { death = yes }
@@ -1147,7 +1147,7 @@ ArmenianChurch0011_wife_father = {
 ArmenianChurch0011_wife = {
 	name = Mariam
 	female = yes
-	religion = nicene
+	religion = christian_faith
 	culture = cappadocian
 	father = ArmenianChurch0011_wife_father
 	257.1.1 = { birth = yes }
@@ -1156,7 +1156,7 @@ ArmenianChurch0011_wife = {
 ArmenianChurch0011 = {
 	name = "Gregory"	#I
 	dynasty_house = house_armenian_gregorids
-	religion = "nicene"
+	religion = christian_faith
 	culture = "parthian"
 	father = AnakTheParthian
 	mother = AnakTheParthian_wife
@@ -1173,7 +1173,7 @@ ArmenianChurch0011 = {
 		trait = devoted
 		remove_spouse = ArmenianChurch0011_wife
 	}
-	299.12.31 = { religion = armenian_apostolic }
+	299.12.31 = { rite = armenian_apostolic }
 	325.1.1 = {
 		death = yes
 		give_nickname = nick_the_illuminator
@@ -1185,7 +1185,7 @@ ArmenianChurch0013 = {
 	father = ArmenianChurch0011
 	mother = ArmenianChurch0011_wife
 	dynasty_house = house_armenian_gregorids
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "parthian"
 	disallow_random_traits = yes
 	277.1.1 = { birth = yes }
@@ -1199,7 +1199,7 @@ ArmenianChurch0014 = {
 	father = ArmenianChurch0011
 	mother = ArmenianChurch0011_wife
 	dynasty_house = house_armenian_gregorids
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "parthian"
 	disallow_random_traits = yes
 	276.1.1 = { birth = yes }
@@ -1212,7 +1212,7 @@ ArmenianChurch0015 = {
 	name = "Husik"	#I
 	father = ArmenianChurch0014
 	dynasty_house = house_armenian_gregorids
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "parthian"
 	disallow_random_traits = yes
 	280.1.1 = { birth = yes }
@@ -1228,7 +1228,7 @@ ArmenianChurch0015 = {
 ArmenianChurch0016 = {
 	name = "Daniel"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "assyrian" #Syrian extraction
 	disallow_random_traits = yes
 	268.1.1 = { birth = yes }
@@ -1243,7 +1243,7 @@ ArmenianChurch0016 = {
 ArmenianChurch0017 = {
 	name = "Pharen"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	310.1.1 = { birth = yes }
 	352.1.1 = { death = yes }
@@ -1251,7 +1251,7 @@ ArmenianChurch0017 = {
 ArmenianChurch0018_father = { #At'anagenes, son of Husik I
 	name = "At_anagenes"
 	dynasty_house = house_armenian_gregorids
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "parthian"
 	disallow_random_traits = yes
 	father = ArmenianChurch0015
@@ -1263,7 +1263,7 @@ ArmenianChurch0018_mother = { #Bambish, daughter of Khosrov III "the Small"
 	name = "Bambish"
 	female = yes
 	dynasty_house = house_arsacid_armenia
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	disallow_random_traits = yes
 	father = 214068
@@ -1273,7 +1273,7 @@ ArmenianChurch0018_mother = { #Bambish, daughter of Khosrov III "the Small"
 ArmenianChurch0018 = {
 	name = "Nerses"	#I the Great
 	dynasty_house = house_arsacid_armenia
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	disallow_random_traits = yes
 	father = ArmenianChurch0018_father
@@ -1292,7 +1292,7 @@ ArmenianChurch0018 = {
 ArmenianChurch0019 = {
 	name = "Sahak"	#I
 	dynasty = armenian.albaniosid
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	307.1.1 = { birth = yes }
 	377.1.1 = { death = yes }
@@ -1301,7 +1301,7 @@ ArmenianChurch0020 = {
 	name = "Zaven"	#I
 	father = ArmenianChurch0019
 	dynasty = armenian.albaniosid
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	337.1.1 = { birth = yes }
 	381.1.1 = { death = yes }
@@ -1310,7 +1310,7 @@ ArmenianChurch0021 = {
 	name = "Aspuraces"	#I
 	father = ArmenianChurch0020
 	dynasty = armenian.albaniosid
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	357.1.1 = { birth = yes }
 	386.1.1 = { death = yes }
@@ -1319,7 +1319,7 @@ ArmenianChurch0022 = {
 	name = "Sahak"	#II
 	father = ArmenianChurch0018
 	dynasty_house = house_armenian_gregorids
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	father = ArmenianChurch0018
 	disallow_random_traits = yes
@@ -1333,7 +1333,7 @@ ArmenianChurch0022 = {
 ArmenianChurch0023 = {
 	name = "Brkisho"
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "assyrian"
 	372.1.1 = { birth = yes }
 	432.1.1 = { death = yes }
@@ -1342,7 +1342,7 @@ ArmenianChurch0024 = {
 	name = "Samuel"
 	father = ArmenianChurch0023
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "assyrian"
 	402.1.1 = { birth = yes }
 	437.1.1 = { death = yes }
@@ -1350,7 +1350,7 @@ ArmenianChurch0024 = {
 ArmenianChurch0025 = {
 	name = "Hovsep"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	disallow_random_traits = yes
 	382.1.1 = { birth = yes }
@@ -1362,7 +1362,7 @@ ArmenianChurch0025 = {
 ArmenianChurch0027 = {
 	name = "Melitus"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	386.1.1 = { birth = yes }
 	456.1.1 = { death = yes }
@@ -1370,7 +1370,7 @@ ArmenianChurch0027 = {
 ArmenianChurch0028 = {
 	name = "Moses"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	391.1.1 = { birth = yes }
 	461.1.1 = { death = yes }
@@ -1378,7 +1378,7 @@ ArmenianChurch0028 = {
 ArmenianChurch0029 = {
 	name = "Kyud"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	disallow_random_traits = yes
 	408.1.1 = { birth = yes }
@@ -1390,7 +1390,7 @@ ArmenianChurch0029 = {
 ArmenianChurch0030 = {
 	name = "John"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	disallow_random_traits = yes
 	420.1.1 = { birth = yes }
@@ -1402,7 +1402,7 @@ ArmenianChurch0030 = {
 ArmenianChurch0031 = {
 	name = "Babken"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	446.1.1 = { birth = yes }
 	516.1.1 = { death = yes }
@@ -1410,7 +1410,7 @@ ArmenianChurch0031 = {
 ArmenianChurch0032 = {
 	name = "Samuel"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	456.1.1 = { birth = yes }
 	526.1.1 = { death = yes }
@@ -1418,7 +1418,7 @@ ArmenianChurch0032 = {
 ArmenianChurch0033 = {
 	name = "Mushe"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	464.1.1 = { birth = yes }
 	534.1.1 = { death = yes }
@@ -1426,7 +1426,7 @@ ArmenianChurch0033 = {
 ArmenianChurch0034 = {
 	name = "Sahak"	#II
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	469.1.1 = { birth = yes }
 	539.1.1 = { death = yes }
@@ -1434,7 +1434,7 @@ ArmenianChurch0034 = {
 ArmenianChurch0035 = {
 	name = "Christopher"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	475.1.1 = { birth = yes }
 	545.1.1 = { death = yes }
@@ -1442,7 +1442,7 @@ ArmenianChurch0035 = {
 ArmenianChurch0036 = {
 	name = "Ghevond"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	478.1.1 = { birth = yes }
 	548.1.1 = { death = yes }
@@ -1450,7 +1450,7 @@ ArmenianChurch0036 = {
 ArmenianChurch0037 = {
 	name = "Nerses"	#II
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	478.1.1 = { birth = yes }
 	557.1.1 = { death = yes }
@@ -1458,7 +1458,7 @@ ArmenianChurch0037 = {
 ArmenianChurch0038 = {
 	name = "John"	#II
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	504.1.1 = { birth = yes }
 	604.1.1 = { death = yes }
@@ -1466,7 +1466,7 @@ ArmenianChurch0038 = {
 ArmenianChurch0039 = {
 	name = "Moses"	#II
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	534.1.1 = { birth = yes }
 	604.1.1 = { death = yes }
@@ -1474,7 +1474,7 @@ ArmenianChurch0039 = {
 ArmenianChurch0041 = {
 	name = "Abraham"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	537.1.1 = { birth = yes }
 	615.1.1 = { death = yes }
@@ -1482,7 +1482,7 @@ ArmenianChurch0041 = {
 ArmenianChurch0042 = {
 	name = "Komitas"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	568.1.1 = { birth = yes }
 	628.1.1 = { death = yes }
@@ -1490,7 +1490,7 @@ ArmenianChurch0042 = {
 ArmenianChurch0043 = {
 	name = "Christopher"	#II
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	580.1.1 = { birth = yes }
 	640.1.  = { death = yes }
@@ -1498,7 +1498,7 @@ ArmenianChurch0043 = {
 ArmenianChurch0044 = {
 	name = "Ezra"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	581.1.1 = { birth = yes }
 	641.1.1 = { death = yes }
@@ -1506,7 +1506,7 @@ ArmenianChurch0044 = {
 ArmenianChurch0045 = {
 	name = "Nerses"	#III the Builder
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	601.1.1 = { birth = yes }
 	641.1.1 = { effect = { give_nickname = nick_the_builder } }
@@ -1515,7 +1515,7 @@ ArmenianChurch0045 = {
 ArmenianChurch0046 = {
 	name = "Anastasius"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	607.1.1 = { birth = yes }
 	667.1.1 = { death = yes }
@@ -1523,7 +1523,7 @@ ArmenianChurch0046 = {
 ArmenianChurch0047 = {
 	name = "Israel"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	617.1.1 = { birth = yes }
 	677.1.1 = { death = yes }
@@ -1531,7 +1531,7 @@ ArmenianChurch0047 = {
 ArmenianChurch0048 = {
 	name = "Sahak"	#III
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	643.1.1 = { birth = yes }
 	703.1.1 = { death = yes }
@@ -1539,7 +1539,7 @@ ArmenianChurch0048 = {
 ArmenianChurch0049 = {
 	name = "Elias"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	657.1.1 = { birth = yes }
 	717.1.1 = { death = yes }
@@ -1547,7 +1547,7 @@ ArmenianChurch0049 = {
 ArmenianChurch0050 = {
 	name = "John"	#III the Philosopher
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	668.1.1 = { birth = yes }
 	717.1.1 = { effect = { give_nickname = nick_the_philosopher } }
@@ -1556,7 +1556,7 @@ ArmenianChurch0050 = {
 ArmenianChurch0051 = {
 	name = "David"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	681.1.1 = { birth = yes }
 	741.1.1 = { death = yes }
@@ -1564,7 +1564,7 @@ ArmenianChurch0051 = {
 ArmenianChurch0052 = {
 	name = "Dertad"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	704.1.1 = { birth = yes }
 	764.1.1 = { death = yes }
@@ -1572,7 +1572,7 @@ ArmenianChurch0052 = {
 ArmenianChurch0053 = {
 	name = "Dertad"	#II
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	707.1.1 = { birth = yes }
 	767.1.1 = { death = yes }
@@ -1580,7 +1580,7 @@ ArmenianChurch0053 = {
 ArmenianChurch0054 = {
 	name = "Sion"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	715.1.1 = { birth = yes }
 	775.1.1 = { death = yes }
@@ -1588,7 +1588,7 @@ ArmenianChurch0054 = {
 ArmenianChurch0055 = {
 	name = "Isaiah"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	728.1.1 = { birth = yes }
 	788.1.1 = { death = yes }
@@ -1596,7 +1596,7 @@ ArmenianChurch0055 = {
 ArmenianChurch0056 = {
 	name = "Stephen"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	730.1.1 = { birth = yes }
 	790.1.1 = { death = yes }
@@ -1604,7 +1604,7 @@ ArmenianChurch0056 = {
 ArmenianChurch0057 = {
 	name = "Joab"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	731.1.1 = { birth = yes }
 	791.1.1 = { death = yes }
@@ -1612,7 +1612,7 @@ ArmenianChurch0057 = {
 ArmenianChurch0058 = {
 	name = "Solomon"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	732.1.1 = { birth = yes }
 	792.1.1 = { death = yes }
@@ -1620,7 +1620,7 @@ ArmenianChurch0058 = {
 ArmenianChurch0059 = {
 	name = "George"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	735.1.1 = { birth = yes }
 	795.1.1 = { death = yes }
@@ -1628,7 +1628,7 @@ ArmenianChurch0059 = {
 ArmenianChurch0060 = {
 	name = "Joseph"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	746.1.1 = { birth = yes }
 	806.1.1 = { death = yes }
@@ -1636,7 +1636,7 @@ ArmenianChurch0060 = {
 ArmenianChurch0061 = {
 	name = "David"	#II
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	773.1.1 = { birth = yes }
 	833.1.1 = { death = yes }
@@ -1644,7 +1644,7 @@ ArmenianChurch0061 = {
 ArmenianChurch0062 = {
 	name = "John"	#IV
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	795.1.1 = { birth = yes }
 	855.1.1 = { death = yes }
@@ -1652,7 +1652,7 @@ ArmenianChurch0062 = {
 ArmenianChurch0063 = {
 	name = "Zacharias"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	816.1.1 = { birth = yes }
 	876.1.1 = { death = yes }
@@ -1660,7 +1660,7 @@ ArmenianChurch0063 = {
 ArmenianChurch0064 = {
 	name = "George"	#II
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	837.1.1 = { birth = yes }
 	897.1.1 = { death = yes }
@@ -1668,7 +1668,7 @@ ArmenianChurch0064 = {
 ArmenianChurch0065 = {
 	name = "Mashdotz"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	838.1.1 = { birth = yes }
 	898.1.1 = { death = yes }
@@ -1676,7 +1676,7 @@ ArmenianChurch0065 = {
 ArmenianChurch0067 = {
 	name = "John"	#V the Historian
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	838.1.1 = { birth = yes }
 	898.1.1 = { effect = { give_nickname = nick_the_historian } }
@@ -1685,7 +1685,7 @@ ArmenianChurch0067 = {
 ArmenianChurch0068 = {
 	name = "Stephen"	#II
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	870.1.1 = { birth = yes }
 	930.1.1 = { death = yes }
@@ -1693,7 +1693,7 @@ ArmenianChurch0068 = {
 ArmenianChurch0069 = {
 	name = "Theodore"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	881.1.1 = { birth = yes }
 	941.1.1 = { death = yes }
@@ -1701,7 +1701,7 @@ ArmenianChurch0069 = {
 ArmenianChurch0070 = {
 	name = "Yeghishe"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	886.1.1 = { birth = yes }
 	946.1.1 = { death = yes }
@@ -1709,7 +1709,7 @@ ArmenianChurch0070 = {
 ArmenianChurch0072 = {
 	name = "Ananias"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	908.1.1 = { birth = yes }
 	968.1.1 = { death = yes }
@@ -1717,7 +1717,7 @@ ArmenianChurch0072 = {
 ArmenianChurch0073 = {
 	name = "Vahan"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	909.1.1 = { birth = yes }
 	969.1.1 = { death = yes }
@@ -1725,7 +1725,7 @@ ArmenianChurch0073 = {
 ArmenianChurch0074 = {
 	name = "Stephen"	#III
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	912.1.1 = { birth = yes }
 	972.1.1 = { death = yes }
@@ -1733,7 +1733,7 @@ ArmenianChurch0074 = {
 ArmenianChurch0075 = {
 	name = "Khachig"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	932.1.1 = { birth = yes }
 	992.1.1 = { death = yes }
@@ -1741,7 +1741,7 @@ ArmenianChurch0075 = {
 ArmenianChurch0077 = {
 	name = "Sarkis"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	959.1.1 = { birth = yes }
 	1019.1. = { death = yes }
@@ -1749,7 +1749,7 @@ ArmenianChurch0077 = {
 ArmenianChurch0078 = {
 	name = "Peter"	#I
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	998.1.1 = { birth = yes }
 	1058.1. = { death = yes }
@@ -1757,7 +1757,7 @@ ArmenianChurch0078 = {
 ArmenianChurch0079 = {
 	name = "Khachik"	#II
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	1005.1.1 = { birth = yes }
 	1065.1. = { death = yes }
@@ -1765,7 +1765,7 @@ ArmenianChurch0079 = {
 ArmenianChurch0080 = {
 	name = "Gregory"
 	#dynasty = 0
-	religion = "armenian_apostolic"
+	rite = "armenian_apostolic"
 	culture = "armenian"
 	1030.1.1 = { birth = yes }
 	1065.1.1 = { effect = { give_nickname = nick_the_martyrophile } }
@@ -1773,11 +1773,11 @@ ArmenianChurch0080 = {
 #Antiochean Church
 AntiochChurch001 = {
 	name = "Evodius"
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	culture = romano_aramean
 	disallow_random_traits = yes
 	13.1.1 = { birth = yes } #Hypothetical
-	41.1.1 = { religion = nicene } #Pagan convert
+	41.1.1 = { religion = christian_faith } #Pagan convert
 	66.1.1 = {
 		death = { #Orthodox tradition
 			death_reason = death_execution
@@ -1788,11 +1788,11 @@ AntiochChurch001 = {
 }
 AntiochChurch002 = {
 	name = "Ignatios"
-	religion = rabbinism
+	rite = rabbinism
 	culture = greek
 	disallow_random_traits = yes
 	28.1.1 = { birth = yes } #Hypothetical
-	30.1.1 = { religion = nicene } #A tradition holds he was a one of the Children Christ held and blessed
+	30.1.1 = { religion = christian_faith } #A tradition holds he was a one of the Children Christ held and blessed
 	107.1.1 = {
 		death = { #Tradition holds he was a martyr
 			death_reason = death_execution
@@ -1803,7 +1803,7 @@ AntiochChurch002 = {
 }
 AntiochChurch003 = {
 	name = "Herodion"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	disallow_random_traits = yes
 	70.1.1 = { birth = yes } #Hypothetical
@@ -1814,26 +1814,26 @@ AntiochChurch003 = {
 }
 AntiochChurch004 = {
 	name = "Cornelius"
-	religion = nicene
+	religion = christian_faith
 	culture = roman #Assumed because of name
 	90.1.1 = { birth = yes } #Hypothetical
 	142.1.1 = { death = yes }
 }
 AntiochChurch005 = {
 	name = "Heron"
-	religion = nicene
+	religion = christian_faith
 	culture = roman #Assumed because of name
 	100.1.1 = { birth = yes } #Hypothetical
 	169.1.1 = { death = yes }
 }
 AntiochChurch006 = {
 	name = "Theophilos"
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	culture = greek #Assumed because of name; likely birth in the Tigris/Euphrates region
 	disallow_random_traits = yes
 	120.1.1 = { birth = yes } #Hypothetical
 	136.1.1 = { trait = education_learning_4 }
-	140.1.1 = { religion = nicene } #Converted from Paganism
+	140.1.1 = { religion = christian_faith } #Converted from Paganism
 	188.1.1 = {
 		death = yes
 		trait = saint
@@ -1841,14 +1841,14 @@ AntiochChurch006 = {
 }
 AntiochChurch007 = {
 	name = "Maximus"
-	religion = nicene
+	religion = christian_faith
 	culture = roman #Assumed because of name
 	150.1.1 = { birth = yes } #Hypothetical
 	191.1.1 = { death = yes }
 }
 AntiochChurch008 = {
 	name = "Serapion"
-	religion = nicene
+	religion = christian_faith
 	culture = greek #Assumed because of name
 	disallow_random_traits = yes
 	160.1.1 = { birth = yes } #Hypothetical
@@ -1859,7 +1859,7 @@ AntiochChurch008 = {
 }
 AntiochChurch009 = {
 	name = "Asklepiades"
-	religion = nicene
+	religion = christian_faith
 	culture = greek #Assumed because of name
 	disallow_random_traits = yes
 	170.1.1 = { birth = yes } #Hypothetical
@@ -1873,21 +1873,21 @@ AntiochChurch009 = {
 }
 AntiochChurch010 = {
 	name = "Philetos"
-	religion = nicene
+	religion = christian_faith
 	culture = greek #Assumed because of name
 	180.1.1 = { birth = yes } #Hypothetical
 	231.1.1 = { death = yes }
 }
 AntiochChurch011 = {
 	name = "Zebinnus"
-	religion = nicene
+	religion = christian_faith
 	culture = aramean
 	190.1.1 = { birth = yes } #Hypothetical
 	237.1.1 = { death = yes }
 }
 AntiochChurch012 = {
 	name = "Babylas"
-	religion = nicene
+	religion = christian_faith
 	culture = aramean
 	disallow_random_traits = yes
 	195.1.1 = { birth = yes } #Hypothetical
@@ -1898,63 +1898,63 @@ AntiochChurch012 = {
 }
 AntiochChurch013 = {
 	name = "Fabius"
-	religion = nicene
+	religion = christian_faith
 	culture = roman #Assumed because of name
 	200.1.1 = { birth = yes } #Hypothetical
 	256.1.1 = { death = yes }
 }
 AntiochChurch014 = {
 	name = "Demetrius"
-	religion = nicene
+	religion = christian_faith
 	culture = roman #Assumed because of name
 	210.1.1 = { birth = yes } #Hypothetical
 	261.1.1 = { death = yes }
 }
 AntiochChurch015 = {
 	name = "Pavlos"
-	religion = monarchianism
+	rite = monarchianism
 	culture = greek
 	210.1.1 = { birth = yes } #Hypothetical
 	272.1.1 = { death = yes }
 }
 AntiochChurch016 = {
 	name = "Domnus"
-	religion = nicene
+	religion = christian_faith
 	culture = roman #Assumed because of name
 	220.1.1 = { birth = yes } #Hypothetical
 	273.1.1 = { death = yes }
 }
 AntiochChurch017 = {
 	name = "Timaios"
-	religion = nicene
+	religion = christian_faith
 	culture = greek #Assumed because of name
 	220.1.1 = { birth = yes } #Hypothetical
 	280.1.1 = { death = yes }
 }
 AntiochChurch018 = {
 	name = "Kyrillos"
-	religion = nicene
+	religion = christian_faith
 	culture = greek #Assumed because of name
 	240.1.1 = { birth = yes } #Hypothetical
 	303.1.1 = { death = yes }
 }
 AntiochChurch019 = {
 	name = "Tyrannos"
-	religion = nicene
+	religion = christian_faith
 	culture = greek #Assumed because of name
 	260.1.1 = { birth = yes } #Hypothetical
 	314.1.1 = { death = yes }
 }
 AntiochChurch020 = {
 	name = "Vitalis"
-	religion = nicene
+	religion = christian_faith
 	culture = roman #Assumed because of name
 	265.1.1 = { birth = yes } #Hypothetical
 	320.1.1 = { death = yes }
 }
 AntiochChurch021 = {
 	name = "Philogonios"
-	religion = nicene
+	religion = christian_faith
 	culture = greek #Assumed because of name
 	trait = zealous
 	trait = temperate
@@ -1968,7 +1968,7 @@ AntiochChurch021 = {
 }
 AntiochChurch022 = {
 	name = "Eustathios"
-	religion = nicene
+	religion = christian_faith
 	culture = greek #Assumed because of name
 	trait = zealous
 	trait = temperate
@@ -1982,7 +1982,7 @@ AntiochChurch022 = {
 }
 AntiochChurch023 = {
 	name = "Paulinus"
-	religion = nicene
+	religion = christian_faith
 	culture = roman #Assumed because of name
 	270.1.1 = { birth = yes } #Hypothetical
 	330.1.1 = { name = "Paulinus" }
@@ -1990,7 +1990,7 @@ AntiochChurch023 = {
 }
 AntiochChurch024 = {
 	name = "Eulalius"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	270.1.1 = { birth = yes } #Hypothetical
 	331.1.1 = { name = "Eulalius" }
@@ -1998,21 +1998,21 @@ AntiochChurch024 = {
 }
 AntiochChurch025 = {
 	name = "Euphronius"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	270.1.1 = { birth = yes } #Hypothetical
 	333.1.1 = { death = yes }
 }
 AntiochChurch026 = {
 	name = "Flacillus"
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	280.1.1 = { birth = yes } #Hypothetical
 	342.1.1 = { death = yes }
 }
 AntiochChurch027 = {
 	name = "Stephen"
-	religion = arian
+	rite = arian
 	culture = roman
 	trait = lustful #Deposed on account of a whore in his quarters
 	280.1.1 = { birth = yes } #Hypothetical
@@ -2020,7 +2020,7 @@ AntiochChurch027 = {
 }
 AntiochChurch028 = {
 	name = "Leontios"
-	religion = arian
+	rite = arian
 	culture = greek
 	trait = education_learning_4 #Influential Arian theologian
 	280.1.1 = { birth = yes } #Hypothetical
@@ -2028,21 +2028,21 @@ AntiochChurch028 = {
 }
 AntiochChurch029 = { #Should be part of the Ecumenical Patriarch's history... but he's not.
 	name = "Eudoxios"
-	religion = arian
+	rite = arian
 	culture = greek
 	280.1.1 = { birth = yes } #Hypothetical
 	370.1.1 = { death = yes }
 }
 AntiochChurch030 = {
 	name = "Annanios"
-	religion = arian
+	rite = arian
 	culture = greek
 	300.1.1 = { birth = yes } #Hypothetical
 	360.1.1 = { death = yes }
 }
 AntiochChurch031 = {
 	name = "Meletios"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	trait = zealous
 	trait = temperate
@@ -2056,7 +2056,7 @@ AntiochChurch031 = {
 }
 AntiochChurch032 = { #Flavianus; Patriarch of Antioch 381-404
 	name = "Flavianus"
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	trait = humble
 	disallow_random_traits = yes
@@ -2069,7 +2069,7 @@ AntiochChurch032 = { #Flavianus; Patriarch of Antioch 381-404
 }
 AntiochChurch033 = { # Porphyrus ; Patriarch of Antioch 404-412
 	name = "Porphyrus"
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	350.1.1 = { birth = yes } #Hypothetical
 	366.1.1 = { trait = education_learning_3 }
@@ -2077,7 +2077,7 @@ AntiochChurch033 = { # Porphyrus ; Patriarch of Antioch 404-412
 }
 AntiochChurch034 = { # Alexander ; Patriarch of Antioch 412-417
 	name = "Alexandros"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	trait = humble
 	trait = temperate
@@ -2087,7 +2087,7 @@ AntiochChurch034 = { # Alexander ; Patriarch of Antioch 412-417
 }
 AntiochChurch035 = { # Theodotus ; Patriarch of Antioch 417-428
 	name = "Theodotos"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	trait = temperate
 	trait = compassionate
@@ -2097,7 +2097,7 @@ AntiochChurch035 = { # Theodotus ; Patriarch of Antioch 417-428
 }
 AntiochChurch036 = { # Ioannes ; Patriarch of Antioch 429–442
 	name = "Ioannes"
-	religion = nicene
+	religion = christian_faith
 	culture = assyrian #Syrian, so either aramean or assyrian
 	trait = temperate
 	370.1.1 = { birth = yes } #Hypothetical
@@ -2106,7 +2106,7 @@ AntiochChurch036 = { # Ioannes ; Patriarch of Antioch 429–442
 }
 AntiochChurch037 = { # Domnus ; Patriarch of Antioch 442-449
 	name = "Domnus"
-	religion = nicene #nicene or nestorian, hard to tell
+	religion = christian_faith #christian_faith or nestorian, hard to tell
 	culture = roman
 	trait = craven
 	410.1.1 = { birth = yes } #Hypothetical
@@ -2116,7 +2116,7 @@ AntiochChurch037 = { # Domnus ; Patriarch of Antioch 442-449
 }
 AntiochChurch038 = { # Maximus ; Patriarch of Antioch 449-455
 	name = "Maximus"
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	trait = zealous
 	410.1.1 = { birth = yes } #Hypothetical
@@ -2125,7 +2125,7 @@ AntiochChurch038 = { # Maximus ; Patriarch of Antioch 449-455
 }
 AntiochChurch039 = { # Basileios ; Patriarch of Antioch 456-458
 	name = "Basileios"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	410.1.1 = { birth = yes } #Hypothetical
 	426.1.1 = { trait = education_learning_3 }
@@ -2133,7 +2133,7 @@ AntiochChurch039 = { # Basileios ; Patriarch of Antioch 456-458
 }
 AntiochChurch040 = { # Acacius ; Patriarch of Antioch 458-461
 	name = "Akakios"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	410.1.1 = { birth = yes } #Hypothetical
 	426.1.1 = { trait = education_learning_3 }
@@ -2141,7 +2141,7 @@ AntiochChurch040 = { # Acacius ; Patriarch of Antioch 458-461
 }
 AntiochChurch041 = { # Martyrius ; Patriarch of Antioch 461–469
 	name = "Martyrius"
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	trait = zealous
 	trait = stubborn
@@ -2152,7 +2152,7 @@ AntiochChurch041 = { # Martyrius ; Patriarch of Antioch 461–469
 AntiochChurch042 = { # Petros ; Patriarch of Antioch 469–471, 476, 485–488
 	dynasty = peter_the_fuller_dynasty
 	name = "Petros"
-	religion = nicene #Non-Chalcedon (eventually)
+	religion = christian_faith #Non-Chalcedon (eventually)
 	culture = phrygian #From Bithynia/Chalcedon (at least his initial monastic Akoimetoi)
 	trait = ambitious
 	trait = zealous
@@ -2164,12 +2164,12 @@ AntiochChurch042 = { # Petros ; Patriarch of Antioch 469–471, 476, 485–488
 		trait = devoted
 		give_nickname = nick_the_fuller
 	}
-	451.11.1 = { religion = monophysitism } #Council of Chalcedon; he was firmly opposed to the conclusions of the council
+	451.11.1 = { rite = monophysitism } #Council of Chalcedon; he was firmly opposed to the conclusions of the council
 	488.1.1 = { death = yes }
 }
 AntiochChurch043 = { # Iulianus ; Patriarch of Antioch 471-476
 	name = "Iulianus"
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	trait = craven
 	420.1.1 = { birth = yes } #Hypothetical
@@ -2178,17 +2178,17 @@ AntiochChurch043 = { # Iulianus ; Patriarch of Antioch 471-476
 }
 AntiochChurch044 = { # Ioannes ; Patriarch of Antioch 476-477
 	name = "Ioannes"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	trait = craven
 	420.1.1 = { birth = yes } #Hypothetical
 	436.1.1 = { trait = education_learning_3 }
-	451.1.1 = { religion = monophysitism } #Council of Chalcedon
+	451.1.1 = { rite = monophysitism } #Council of Chalcedon
 	495.1.1 = { death = yes }
 }
 AntiochChurch045 = { # Stephanos ; Patriarch of Antioch 477-479
 	name = "Stephanos"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	#Traits to avoid sinful saints
 	trait = forgiving
@@ -2205,7 +2205,7 @@ AntiochChurch045 = { # Stephanos ; Patriarch of Antioch 477-479
 }
 AntiochChurch046 = { # Calendion ; Patriarch of Antioch 479-485
 	name = "Calendion"
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	trait = zealous
 	420.1.1 = { birth = yes } #Hypothetical
@@ -2214,7 +2214,7 @@ AntiochChurch046 = { # Calendion ; Patriarch of Antioch 479-485
 }
 AntiochChurch047 = { # Palladius ; Patriarch of Antioch 488–498
 	name = "Palladius"
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	430.1.1 = { birth = yes } #Hypothetical
 	446.1.1 = { trait = education_learning_3 }
@@ -2222,7 +2222,7 @@ AntiochChurch047 = { # Palladius ; Patriarch of Antioch 488–498
 }
 AntiochChurch048 = {# Flavianus ; Patriarch of Antioch 498–512
 	name = "Flavianus"
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	trait = zealous
 	disallow_random_traits = yes
@@ -2236,7 +2236,7 @@ AntiochChurch048 = {# Flavianus ; Patriarch of Antioch 498–512
 }
 AntiochChurch049 = { # Paulus ; Patriarch of Antioch 519-521
 	name = "Paulus"
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	trait = zealous
 	trait = callous
@@ -2250,7 +2250,7 @@ AntiochChurch049 = { # Paulus ; Patriarch of Antioch 519-521
 }
 AntiochChurch050 = { # Euphrasius ; Patriarch of Antioch 521-526
 	name = "Euphrasios"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	460.1.1 = { birth = yes } #Hypothetical
 	476.1.1 = { trait = education_learning_3 }
@@ -2258,7 +2258,7 @@ AntiochChurch050 = { # Euphrasius ; Patriarch of Antioch 521-526
 }
 AntiochChurch051 = { # Domnus ; Patriarch of Antioch 546–561
 	name = "Domnus"
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	490.1.1 = { birth = yes } #Hypothetical
 	506.1.1 = { trait = education_learning_3 }
@@ -2266,7 +2266,7 @@ AntiochChurch051 = { # Domnus ; Patriarch of Antioch 546–561
 }
 AntiochChurch052 = { # Anastasius I ; Patriarch of Antioch 561-571 and 593-599
 	name = "Anastasius"
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	530.1.1 = { birth = yes }
 	546.1.1 = { trait = education_learning_3 }
@@ -2278,7 +2278,7 @@ AntiochChurch052 = { # Anastasius I ; Patriarch of Antioch 561-571 and 593-599
 }
 AntiochChurch053 = { # Gregorius ; Patriarch of Antioch 571–594
 	name = "Gregorius"
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	trait = zealous
 	520.1.1 = { birth = yes }
@@ -2291,7 +2291,7 @@ AntiochChurch053 = { # Gregorius ; Patriarch of Antioch 571–594
 }
 AntiochChurch054 = { # Anastasius II ; Patriarch of Antioch 599–610
 	name = "Anastasius"
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	trait = zealous
 	trait = diligent
@@ -2308,7 +2308,7 @@ AntiochChurch054 = { # Anastasius II ; Patriarch of Antioch 599–610
 #Syrian Church
 SyrianChurch000 = { # Severus ; Patriarch of Antioch 512-518
 	name = "Severos"
-	religion = syrian_orthodox
+	rite = antiochian_rite
 	culture = greek
 	disallow_random_traits = yes
 	465.1.1 = { birth = yes }
@@ -2335,7 +2335,7 @@ SyrianChurch000 = { # Severus ; Patriarch of Antioch 512-518
 }
 SyrianChurch001 = {
 	name = "Sergius"
-	religion = syrian_orthodox
+	rite = antiochian_rite
 	culture = romano_aramean
 	disallow_random_traits = yes
 	490.1.1 = { birth = yes } #Hypothetical
@@ -2348,7 +2348,7 @@ SyrianChurch001 = {
 #Patriarchate of Jerusalem (based on "History of the Church" by Eusebius
 JerusalemChurch000 = { #James the just
 	name = Yakov
-	religion = rabbinism
+	rite = rabbinism
 	culture = hebrew
 	trait = education_learning_4
 	trait = zealous
@@ -2356,7 +2356,7 @@ JerusalemChurch000 = { #James the just
 	trait = just
 	disallow_random_traits = yes
 	10.1.1 = { birth = yes } #Early first century
-	27.1.1 = { religion = nicene }
+	27.1.1 = { religion = christian_faith }
 	69.1.1 = {
 		death = { death_reason = death_murder }
 		give_nickname = nick_the_just
@@ -2365,11 +2365,11 @@ JerusalemChurch000 = { #James the just
 }
 JerusalemChurch001 = { #Simeon
 	name = Shimon
-	religion = rabbinism
+	rite = rabbinism
 	culture = hebrew
 	disallow_random_traits = yes
 	15.1.1 = { birth = yes } #Early first century
-	27.1.1 = { religion = nicene }
+	27.1.1 = { religion = christian_faith }
 	107.1.1 = {
 		death = {
 			death_reason = death_execution
@@ -2380,7 +2380,7 @@ JerusalemChurch001 = { #Simeon
 }
 JerusalemChurch002 = { #Justus
 	name = Yehudah
-	religion = nicene
+	religion = christian_faith
 	culture = hebrew
 	father = JerusalemChurch000
 	disallow_random_traits = yes
@@ -2393,7 +2393,7 @@ JerusalemChurch002 = { #Justus
 }
 JerusalemChurch003 = { #Zaccheus
 	name = Zaki
-	religion = nicene
+	religion = christian_faith
 	culture = hebrew
 	disallow_random_traits = yes
 	70.1.1 = { birth = yes }
@@ -2404,11 +2404,11 @@ JerusalemChurch003 = { #Zaccheus
 }
 JerusalemChurch004 = { #Tobais
 	name = Tovias
-	religion = rabbinism
+	rite = rabbinism
 	culture = hebrew
 	disallow_random_traits = yes
 	40.1.1 = { birth = yes }
-	60.1.1 = { religion = nicene } #Parents were Jews
+	60.1.1 = { religion = christian_faith } #Parents were Jews
 	116.1.1 = {
 		death = yes
 		trait = saint
@@ -2416,7 +2416,7 @@ JerusalemChurch004 = { #Tobais
 }
 JerusalemChurch005 = { #Benjamin
 	name = Binyamin
-	religion = nicene
+	religion = christian_faith
 	culture = hebrew
 	disallow_random_traits = yes
 	60.1.1 = { birth = yes }
@@ -2430,14 +2430,14 @@ JerusalemChurch005 = { #Benjamin
 }
 JerusalemChurch006 = { #John
 	name = Yochanan
-	religion = rabbinism
+	rite = rabbinism
 	culture = hebrew
 	trait = stubborn #Argued with Christians until he himself converted
 	trait = just
 	trait = zealous
 	disallow_random_traits = yes
 	60.1.1 = { birth = yes }
-	80.1.1 = { religion = nicene } #Parents were Jews
+	80.1.1 = { religion = christian_faith } #Parents were Jews
 	119.1.1 = {
 		death = yes
 		trait = saint
@@ -2445,7 +2445,7 @@ JerusalemChurch006 = { #John
 }
 JerusalemChurch007 = { #Matthias
 	name = Mattithyahu
-	religion = nicene
+	religion = christian_faith
 	culture = hebrew
 	disallow_random_traits = yes
 	50.1.1 = { birth = yes }
@@ -2456,7 +2456,7 @@ JerusalemChurch007 = { #Matthias
 }
 JerusalemChurch008 = { #Philip
 	name = Philippos
-	religion = nicene
+	religion = christian_faith
 	culture = greek #Because of name
 	disallow_random_traits = yes
 	70.1.1 = { birth = yes }
@@ -2467,7 +2467,7 @@ JerusalemChurch008 = { #Philip
 }
 JerusalemChurch009 = { #Senecas
 	name = Senecas
-	religion = nicene
+	religion = christian_faith
 	culture = hebrew
 	disallow_random_traits = yes
 	70.1.1 = { birth = yes }
@@ -2478,7 +2478,7 @@ JerusalemChurch009 = { #Senecas
 }
 JerusalemChurch010 = { #Justus
 	name = Yehudah
-	religion = nicene
+	religion = christian_faith
 	culture = hebrew
 	disallow_random_traits = yes
 	70.1.1 = { birth = yes }
@@ -2490,7 +2490,7 @@ JerusalemChurch010 = { #Justus
 }
 JerusalemChurch011 = { #Levis
 	name = Levi
-	religion = nicene
+	religion = christian_faith
 	culture = hebrew
 	disallow_random_traits = yes
 	70.1.1 = { birth = yes }
@@ -2501,7 +2501,7 @@ JerusalemChurch011 = { #Levis
 }
 JerusalemChurch012 = { #Ephram
 	name = Efraim
-	religion = nicene
+	religion = christian_faith
 	culture = hebrew
 	disallow_random_traits = yes
 	70.1.1 = { birth = yes }
@@ -2512,7 +2512,7 @@ JerusalemChurch012 = { #Ephram
 }
 JerusalemChurch013 = { #Joeseph
 	name = Yosef
-	religion = nicene
+	religion = christian_faith
 	culture = hebrew
 	disallow_random_traits = yes
 	70.1.1 = { birth = yes }
@@ -2523,7 +2523,7 @@ JerusalemChurch013 = { #Joeseph
 }
 JerusalemChurch014 = { #Judas
 	name = Yehudah
-	religion = nicene
+	religion = christian_faith
 	culture = hebrew
 	father = JerusalemChurchSpecial001
 	disallow_random_traits = yes
@@ -2536,7 +2536,7 @@ JerusalemChurch014 = { #Judas
 }
 JerusalemChurch015 = { #Marcus
 	name = Marcus
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	disallow_random_traits = yes
 	100.1.1 = { birth = yes }
@@ -2547,98 +2547,98 @@ JerusalemChurch015 = { #Marcus
 }
 JerusalemChurch016 = { #Cassianus
 	name = Cassianus
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	100.1.1 = { birth = yes }
 	158.1.1 = { death = yes }
 }
 JerusalemChurch017 = { #Popilus
 	name = Popilus
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	100.1.1 = { birth = yes }
 	160.1.1 = { death = yes }
 }
 JerusalemChurch018 = { #Maximus
 	name = Maximus
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	100.1.1 = { birth = yes }
 	162.1.1 = { death = yes }
 }
 JerusalemChurch019 = { #Julian
 	name = Iulianus
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	100.1.1 = { birth = yes }
 	164.1.1 = { death = yes }
 }
 JerusalemChurch020 = { #Gaius
 	name = Gaius
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	100.1.1 = { birth = yes }
 	166.1.1 = { death = yes }
 }
 JerusalemChurch021 = { #Symmachus
 	name = Symmachus
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	100.1.1 = { birth = yes }
 	168.1.1 = { death = yes }
 }
 JerusalemChurch022 = { #Gaius
 	name = Gaius
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	110.1.1 = { birth = yes }
 	170.1.1 = { death = yes }
 }
 JerusalemChurch023 = { #Julian
 	name = Iulianus
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	110.1.1 = { birth = yes }
 	172.1.1 = { death = yes }
 }
 JerusalemChurch024 = { #Capion
 	name = Capion
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	110.1.1 = { birth = yes }
 	174.1.1 = { death = yes }
 }
 JerusalemChurch025 = { #Maximus
 	name = Maximus
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	110.1.1 = { birth = yes }
 	176.1.1 = { death = yes }
 }
 JerusalemChurch026 = { #Antonius
 	name = Antonius
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	110.1.1 = { birth = yes }
 	178.1.1 = { death = yes }
 }
 JerusalemChurch027 = { #Valens
 	name = Valens
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	110.1.1 = { birth = yes }
 	180.1.1 = { death = yes }
 }
 JerusalemChurch028 = { #Dolichianus
 	name = Dolichianus
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	120.1.1 = { birth = yes }
 	185.1.1 = { death = yes }
 }
 JerusalemChurch029 = { #Narcissus
 	name = Narkissos
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	trait = forgiving
 	trait = zealous
@@ -2653,28 +2653,28 @@ JerusalemChurch029 = { #Narcissus
 }
 JerusalemChurch030 = { #Dius
 	name = Dius
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	130.1.1 = { birth = yes }
 	201.1.1 = { death = yes }
 }
 JerusalemChurch031 = { #Germanion
 	name = Germanion
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	140.1.1 = { birth = yes }
 	205.1.1 = { death = yes }
 }
 JerusalemChurch032 = { #Gordius
 	name = Gordios
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	150.1.1 = { birth = yes }
 	211.1.1 = { death = yes }
 }
 JerusalemChurch033 = { #Alexander
 	name = Alexandros
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	disallow_random_traits = yes
 	170.1.1 = { birth = yes }
@@ -2688,21 +2688,21 @@ JerusalemChurch033 = { #Alexander
 }
 JerusalemChurch034 = { #Mazabanis
 	name = Mazabanis
-	religion = nicene
+	religion = christian_faith
 	culture = nabatean #Presumed because of name not being Latin/Greek/Hebrew
 	200.1.1 = { birth = yes }
 	260.1.1 = { death = yes }
 }
 JerusalemChurch035 = { #Imeneus
 	name = Imeneus
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	222.1.1 = { birth = yes }
 	272.1.1 = { death = yes }
 }
 JerusalemChurch036 = { #Zamudas
 	name = Zamoudas
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	disallow_random_traits = yes
 	237.1.1 = { birth = yes }
@@ -2713,7 +2713,7 @@ JerusalemChurch036 = { #Zamudas
 }
 JerusalemChurch037 = { #Ermon
 	name = Emon
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	disallow_random_traits = yes
 	230.1.1 = { birth = yes }
@@ -2724,7 +2724,7 @@ JerusalemChurch037 = { #Ermon
 }
 JerusalemChurch038 = { #Macarius
 	name = Makarios
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	trait = zealous
 	disallow_random_traits = yes
@@ -2736,7 +2736,7 @@ JerusalemChurch038 = { #Macarius
 }
 JerusalemChurch039 = { #Maximus
 	name = Maximus
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	trait = zealous
 	disallow_random_traits = yes
@@ -2748,7 +2748,7 @@ JerusalemChurch039 = { #Maximus
 }
 JerusalemChurch040 = { #Cyril
 	name = Kyrillos
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	trait = education_learning_4
 	trait = zealous
@@ -2765,7 +2765,7 @@ JerusalemChurch040 = { #Cyril
 }
 1301219 = { #John
 	name = "Ioannes"	# Bishop of Jerusalem 387-417
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	trait = scholar
 	trait = honest
@@ -2781,7 +2781,7 @@ JerusalemChurch040 = { #Cyril
 }
 1301220 = { #Praulius
 	name = "Praulios"	# Bishop of Jerusalem 417-422
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	trait = humble
 	disallow_random_traits = yes
@@ -2794,7 +2794,7 @@ JerusalemChurch040 = { #Cyril
 }
 1301210 = { #Iuvenalis
 	name = "Iuvenalis"	# Patriarch of Jerusalem 451–458
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	trait = zealous
 	disallow_random_traits = yes
@@ -2809,7 +2809,7 @@ JerusalemChurch040 = { #Cyril
 1301206 = { #Anastasius
 	dynasty = anastasius_dynasty
 	name = "Anastasios"	# Patriarch of Jerusalem 458-478
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	410.1.1 = { birth = yes }
 	426.1.1 = { trait = education_learning_2 }
@@ -2817,7 +2817,7 @@ JerusalemChurch040 = { #Cyril
 }
 1301207 = { #Martyrius
 	name = "Martyrios"	# Patriarch of Jerusalem 478-486
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	420.1.1 = { birth = yes } # first half of the V century
 	436.1.1 = { trait = education_learning_3 }
@@ -2825,7 +2825,7 @@ JerusalemChurch040 = { #Cyril
 }
 1301208 = { #Sallustius
 	name = "Sallustius"	# Patriarch of Jerusalem 486–494
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	420.1.1 = { birth = yes }
 	436.1.1 = { trait = education_learning_3 }
@@ -2833,7 +2833,7 @@ JerusalemChurch040 = { #Cyril
 }
 1301209 = { #Elias
 	name = "Elias"	# Patriarch of Jerusalem 494-516
-	religion = nicene
+	religion = christian_faith
 	culture = nabatean	# Arabic, not sure which Arabic culture he should get
 	trait = zealous
 	440.1.1 = {
@@ -2851,7 +2851,7 @@ JerusalemChurch040 = { #Cyril
 }
 1301213 = { #Ioannes
 	name = "Ioannes"	# Patriarch of Jerusalem 516–524
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	father = 1301212
 	trait = zealous
@@ -2861,7 +2861,7 @@ JerusalemChurch040 = { #Cyril
 }
 1301214 = { #Petros
 	name = "Petros"	# Patriarch of Jerusalem 524-544
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	trait = shrewd
 	470.1.1 = { birth = yes }
@@ -2870,7 +2870,7 @@ JerusalemChurch040 = { #Cyril
 }
 1301215 = { #Macarius
 	name = "Makarios"	# Patriarch of Jerusalem 544-552 and from 564-574
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	500.1.1 = { birth = yes }
 	516.1.1 = { trait = education_learning_3 }
@@ -2878,7 +2878,7 @@ JerusalemChurch040 = { #Cyril
 }
 1301216 = { #Eustochius
 	name = "Eustochios"	# Patriarch of Jerusalem 552-564
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	trait = zealous
 	500.1.1 = { birth = yes }
@@ -2887,7 +2887,7 @@ JerusalemChurch040 = { #Cyril
 }
 1301217 = { #Ioannes
 	name = "Ioannes"	# Patriarch of Jerusalem 574-593
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	trait = diligent
 	520.1.1 = {
@@ -2902,7 +2902,7 @@ JerusalemChurch040 = { #Cyril
 }
 1301218 = { #Amos
 	name = "Amos"	# Patriarch of Jerusalem 593-601
-	religion = nicene
+	religion = christian_faith
 	culture = hebrew
 	530.1.1 = {
 		birth = yes
@@ -2917,21 +2917,21 @@ JerusalemChurch040 = { #Cyril
 #Orthodox Patriarchs of Alexandria
 1301147 = { # Patriarch Dioscorus of Alexandria
 	name = "Dioscorus"
-	religion = nicene
+	religion = christian_faith
 	culture = copt
 	trait = zealous
 	390.1.1 = { birth = yes }
 	406.1.1 = { trait = education_learning_3 }
 	451.11.1 = {
 		# The Council of Chalcedon
-		religion = coptic
+		rite = copitc_rite
 		#employer = 1300322		# exiled
 	}
 	454.9.1 = { death = yes }
 }
 1301146 = { #Proterius ; Patriarch from 451-457
 	name = "Proterius"
-	religion = nicene
+	religion = christian_faith
 	culture = copt
 	trait = zealous
 	disallow_random_traits = yes
@@ -2944,7 +2944,7 @@ JerusalemChurch040 = { #Cyril
 }
 1301144 = { # Patriarch Timothy III of Alexandria
 	name = "Timotheos"
-	religion = nicene
+	religion = christian_faith
 	culture = copt
 	trait = zealous
 	410.1.1 = { birth = yes }
@@ -2954,7 +2954,7 @@ JerusalemChurch040 = { #Cyril
 }
 1301142 = { # Greek Orthodox Patriarch John I of Alexandria
 	name = "Ioannes"
-	religion = nicene
+	religion = christian_faith
 	culture = copt
 	trait = zealous
 	430.1.1 = {
@@ -2969,7 +2969,7 @@ JerusalemChurch040 = { #Cyril
 }
 1301155 = { # Patriarch Gainas of Alexandria
 	name = "Gainas"
-	religion = nicene
+	religion = christian_faith
 	culture = copt
 	trait = zealous
 	480.1.1 = {
@@ -2987,7 +2987,7 @@ JerusalemChurch040 = { #Cyril
 }
 1301156 = { # Patriarch Paul of Alexandria
 	name = "Paulus"
-	religion = nicene
+	religion = christian_faith
 	culture = copt
 	trait = zealous
 	480.1.1 = {
@@ -3003,7 +3003,7 @@ JerusalemChurch040 = { #Cyril
 #Miaphysite Patriachs of Alexandria
 161521 = { #Athanasios II, Miaphysite
 	name = "Athanasios"
-	religion = "coptic"
+	rite = copitc_rite
 	culture = copt
 	440.1.1 = {
 		birth = "440.1.1"
@@ -3014,7 +3014,7 @@ JerusalemChurch040 = { #Cyril
 }
 161514 = { #John I, Miaphysite (?)
 	name = "Yohannes"
-	religion = "coptic"
+	rite = copitc_rite
 	culture = copt
 	450.1.1 = {
 		birth = "450.1.1"
@@ -3025,7 +3025,7 @@ JerusalemChurch040 = { #Cyril
 }
 161515 = { #John II, Miaphysite (?)
 	name = "Yohannes"
-	religion = "coptic"
+	rite = copitc_rite
 	culture = copt
 	460.1.1 = {
 		birth = "460.1.1"
@@ -3037,7 +3037,7 @@ JerusalemChurch040 = { #Cyril
 1301145 = { # Miaphysite Patriarch Timothy II of Alexandria
 	dynasty = timothy_2_alexandria_dynasty
 	name = "Timotheos"
-	religion = nicene
+	religion = christian_faith
 	culture = copt
 	trait = zealous
 	410.1.1 = {
@@ -3048,7 +3048,7 @@ JerusalemChurch040 = { #Cyril
 	}
 	451.11.1 = {
 		# The Council of Chalcedon
-		religion = coptic
+		rite = copitc_rite
 	}
 	477.7.31 = {
 		death = yes
@@ -3056,7 +3056,7 @@ JerusalemChurch040 = { #Cyril
 }
 1301143 = { # Miaphysite Patriarch Peter III of Alexandria
 	name = "Petrus"
-	religion = nicene
+	religion = christian_faith
 	culture = copt
 	trait = zealous
 	420.1.1 = {
@@ -3067,7 +3067,7 @@ JerusalemChurch040 = { #Cyril
 	}
 	451.11.1 = {
 		# The Council of Chalcedon
-		religion = coptic
+		rite = copitc_rite
 	}
 	489.11.11 = {
 		death = yes
@@ -3075,7 +3075,7 @@ JerusalemChurch040 = { #Cyril
 }
 1301153 = { # Patriarch Dioscorus II of Alexandria, Miaphysite
 	name = "Dioscorus"
-	religion = coptic
+	rite = copitc_rite
 	culture = copt
 	trait = zealous
 	460.1.1 = {
@@ -3090,7 +3090,7 @@ JerusalemChurch040 = { #Cyril
 }
 1301154 = { # Patriarch Timothy III of Alexandria, Miaphysite
 	name = "Timotheos"
-	religion = coptic
+	rite = copitc_rite
 	culture = copt
 	trait = zealous
 	470.1.1 = {
@@ -3105,7 +3105,7 @@ JerusalemChurch040 = { #Cyril
 }
 161522 = { #Patriarch Theodosios I of Alexandria
 	name = "Theodosios"
-	religion = "coptic"
+	rite = copitc_rite
 	culture = copt
 	500.1.1 = {
 		birth = "500.1.1"
@@ -3116,7 +3116,7 @@ JerusalemChurch040 = { #Cyril
 }
 1301157 = { # Patriarch Zoilus of Alexandria
 	name = "Zoilos"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	trait = zealous
 	480.1.1 = {
@@ -3132,7 +3132,7 @@ JerusalemChurch040 = { #Cyril
 }
 1301158 = { # Patriarch Apollinarius of Alexandria
 	name = "Apollinarios"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	trait = zealous
 	500.1.1 = {
@@ -3147,7 +3147,7 @@ JerusalemChurch040 = { #Cyril
 }
 1301159 = { # Patriarch John IV of Alexandria
 	name = "Ioannes"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	trait = zealous
 	510.1.1 = {
@@ -3162,7 +3162,7 @@ JerusalemChurch040 = { #Cyril
 }
 1301136 = { # Greek patriarch of Alexandria from 580 to 608
 	name = "Eulogius"	#son of PLRE vol. 3 Iulianus 12
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	father = 1301134
 	trait = zealous
@@ -3174,7 +3174,7 @@ JerusalemChurch040 = { #Cyril
 # Source: https://en.wikipedia.org/wiki/List_of_heads_of_the_Georgian_Orthodox_Church
 GeorgianChurch000 = {
 	name = "Ioane"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	276.1.1 = { birth = yes }
 	326.1.1 = { name = "Ionae" }
@@ -3182,7 +3182,7 @@ GeorgianChurch000 = {
 }
 GeorgianChurch001 = {
 	name = "Iakobi"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	313.1.1 = { birth = yes }
 	363.1.1 = { name = "Iakobi" }
@@ -3190,7 +3190,7 @@ GeorgianChurch001 = {
 }
 GeorgianChurch002 = {
 	name = "Iobi"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	325.1.1 = { birth = yes }
 	375.1.1 = { name = "Iobi" }
@@ -3198,7 +3198,7 @@ GeorgianChurch002 = {
 }
 GeorgianChurch003 = {
 	name = "Elia"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	340.1.1 = { birth = yes }
 	390.1.1 = { name = "Elia" }
@@ -3206,7 +3206,7 @@ GeorgianChurch003 = {
 }
 GeorgianChurch004 = {
 	name = "Svimeon"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	350.1.1 = { birth = yes }
 	400.1.1 = { name = "Svimeon" }
@@ -3214,7 +3214,7 @@ GeorgianChurch004 = {
 }
 GeorgianChurch005 = {
 	name = "Mose"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	360.1.1 = { birth = yes }
 	410.1.1 = { name = "Mose" }
@@ -3222,7 +3222,7 @@ GeorgianChurch005 = {
 }
 GeorgianChurch006 = {
 	name = "Iona"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	375.1.1 = { birth = yes }
 	425.1.1 = { name = "Iona" }
@@ -3230,7 +3230,7 @@ GeorgianChurch006 = {
 }
 GeorgianChurch007 = {
 	name = "Ieremia"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	379.1.1 = { birth = yes }
 	429.1.1 = { name = "Ieremia" }
@@ -3238,7 +3238,7 @@ GeorgianChurch007 = {
 }
 GeorgianChurch008 = {
 	name = "Grigol"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	383.1.1 = { birth = yes }
 	433.1.1 = { name = "Grigol" }
@@ -3246,7 +3246,7 @@ GeorgianChurch008 = {
 }
 GeorgianChurch009 = {
 	name = "Vasili"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	384.1.1 = { birth = yes }
 	434.1.1 = { name = "Vasili" }
@@ -3254,7 +3254,7 @@ GeorgianChurch009 = {
 }
 GeorgianChurch010 = {
 	name = "Glonakor"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	386.1.1 = { birth = yes }
 	436.1.1 = { name = "Glonakor" }
@@ -3262,7 +3262,7 @@ GeorgianChurch010 = {
 }
 GeorgianChurch011 = {
 	name = "Iovel"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	398.1.1 = { birth = yes }
 	448.1.1 = { name = "Iovel" }
@@ -3270,7 +3270,7 @@ GeorgianChurch011 = {
 }
 GeorgianChurch012 = {
 	name = "Mikael"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	402.1.1 = { birth = yes }
 	452.1.1 = { name = "Mikael" }
@@ -3278,7 +3278,7 @@ GeorgianChurch012 = {
 }
 GeorgianChurch013 = {
 	name = "Petre"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	417.1.1 = { birth = yes }
 	467.1.1 = { name = "Petre" }
@@ -3286,7 +3286,7 @@ GeorgianChurch013 = {
 }
 GeorgianChurch014 = {
 	name = "Samoel"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	424.1.1 = { birth = yes }
 	474.1.1 = { name = "Samoel" }
@@ -3294,7 +3294,7 @@ GeorgianChurch014 = {
 }
 GeorgianChurch015 = {
 	name = "Gabriel"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	452.1.1 = { birth = yes }
 	502.1.1 = { name = "Gabriel" }
@@ -3302,7 +3302,7 @@ GeorgianChurch015 = {
 }
 GeorgianChurch016 = {
 	name = "Tavfechang"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	460.1.1 = { birth = yes }
 	510.1.1 = { name = "Tavfechang" }
@@ -3310,7 +3310,7 @@ GeorgianChurch016 = {
 }
 GeorgianChurch017 = {
 	name = "Chirmagi-Chigirmane"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	466.1.1 = { birth = yes }
 	516.1.1 = { name = "Chirmagi-Chigirmane" }
@@ -3318,7 +3318,7 @@ GeorgianChurch017 = {
 }
 GeorgianChurch018 = {
 	name = "Saba"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	473.1.1 = { birth = yes }
 	523.1.1 = { name = "Saba" }
@@ -3326,7 +3326,7 @@ GeorgianChurch018 = {
 }
 GeorgianChurch019 = {
 	name = "Evlavi"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	482.1.1 = { birth = yes }
 	532.1.1 = { name = "Evlavi" }
@@ -3334,7 +3334,7 @@ GeorgianChurch019 = {
 }
 GeorgianChurch020 = {
 	name = "Samoel"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	494.1.1 = { birth = yes }
 	544.1.1 = { name = "Samoel" }
@@ -3342,7 +3342,7 @@ GeorgianChurch020 = {
 }
 GeorgianChurch021 = {
 	name = "Makari"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	503.1.1 = { birth = yes }
 	553.1.1 = { name = "Makari" }
@@ -3350,7 +3350,7 @@ GeorgianChurch021 = {
 }
 GeorgianChurch022 = {
 	name = "Svimeon"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	519.1.1 = { birth = yes }
 	569.1.1 = { name = "Svimeon" }
@@ -3358,7 +3358,7 @@ GeorgianChurch022 = {
 }
 GeorgianChurch023 = {
 	name = "Samoel"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	525.1.1 = { birth = yes }
 	575.1.1 = { name = "Samoel" }
@@ -3366,7 +3366,7 @@ GeorgianChurch023 = {
 }
 GeorgianChurch024 = {
 	name = "Samoel"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	532.1.1 = { birth = yes }
 	582.1.1 = { name = "Samoel" }
@@ -3374,7 +3374,7 @@ GeorgianChurch024 = {
 }
 GeorgianChurch025 = {
 	name = "Bartlome"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	541.1.1 = { birth = yes }
 	591.1.1 = { name = "Bartlome" }
@@ -3382,7 +3382,7 @@ GeorgianChurch025 = {
 }
 GeorgianChurch026 = {
 	name = "Kirion"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	545.1.1 = { birth = yes }
 	595.1.1 = { name = "Kirion" }
@@ -3390,7 +3390,7 @@ GeorgianChurch026 = {
 }
 GeorgianChurch027 = {
 	name = "Ioane"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	560.1.1 = { birth = yes }
 	610.1.1 = { name = "Ioane" }
@@ -3398,7 +3398,7 @@ GeorgianChurch027 = {
 }
 GeorgianChurch028 = {
 	name = "Babila"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	569.1.1 = { birth = yes }
 	619.1.1 = { name = "Babila" }
@@ -3406,7 +3406,7 @@ GeorgianChurch028 = {
 }
 GeorgianChurch029 = {
 	name = "Tabor"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	579.1.1 = { birth = yes }
 	629.1.1 = { name = "Tabor" }
@@ -3414,7 +3414,7 @@ GeorgianChurch029 = {
 }
 GeorgianChurch030 = {
 	name = "Samoel" #Samoel V
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	584.1.1 = { birth = yes }
 	634.1.1 = { name = "Samoel" }
@@ -3422,7 +3422,7 @@ GeorgianChurch030 = {
 }
 GeorgianChurch031 = {
 	name = "Evnon"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	590.1.1 = { birth = yes }
 	640.1.1 = { name = "Evnon" }
@@ -3430,7 +3430,7 @@ GeorgianChurch031 = {
 }
 GeorgianChurch032 = {
 	name = "Tavfechag"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	599.1.1 = { birth = yes }
 	649.1.1 = { name = "Tavefechag" }
@@ -3438,7 +3438,7 @@ GeorgianChurch032 = {
 }
 GeorgianChurch033 = {
 	name = "Evlale"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	614.1.1 = { birth = yes }
 	664.1.1 = { name = "Evlale" }
@@ -3446,7 +3446,7 @@ GeorgianChurch033 = {
 }
 GeorgianChurch034 = {
 	name = "Iovel"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	618.1.1 = { birth = yes }
 	668.1.1 = { name = "Iovel" }
@@ -3454,7 +3454,7 @@ GeorgianChurch034 = {
 }
 GeorgianChurch035 = {
 	name = "Samoel"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	620.1.1 = { birth = yes }
 	670.1.1 = { name = "Samoel" }
@@ -3462,7 +3462,7 @@ GeorgianChurch035 = {
 }
 GeorgianChurch036 = {
 	name = "Giorgi"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	627.1.1 = { birth = yes }
 	677.1.1 = { name = "Giorgi" }
@@ -3470,7 +3470,7 @@ GeorgianChurch036 = {
 }
 GeorgianChurch037 = {
 	name = "Kirion"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	628.1.1 = { birth = yes }
 	678.1.1 = { name = "Kirion" }
@@ -3478,7 +3478,7 @@ GeorgianChurch037 = {
 }
 GeorgianChurch038 = {
 	name = "Izid-Bozidi"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	623.1.1 = { birth = yes }
 	683.1.1 = { name = "Izid-Bozidi" }
@@ -3486,7 +3486,7 @@ GeorgianChurch038 = {
 }
 GeorgianChurch039 = {
 	name = "Teodore"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	635.1.1 = { birth = yes }
 	685.1.1 = { name = "Teodore" }
@@ -3494,7 +3494,7 @@ GeorgianChurch039 = {
 }
 GeorgianChurch040 = {
 	name = "Petre"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	639.1.1 = { birth = yes }
 	689.1.1 = { name = "Petre" }
@@ -3502,7 +3502,7 @@ GeorgianChurch040 = {
 }
 GeorgianChurch041 = {
 	name = "Talale"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	670.1.1 = { birth = yes }
 	720.1.1 = { name = "Talale" }
@@ -3510,7 +3510,7 @@ GeorgianChurch041 = {
 }
 GeorgianChurch042 = {
 	name = "Maimai"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	681.1.1 = { birth = yes }
 	731.1.1 = { name = "Maimai" }
@@ -3518,7 +3518,7 @@ GeorgianChurch042 = {
 }
 GeorgianChurch043 = {
 	name = "Ioane"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	694.1.1 = { birth = yes }
 	744.1.1 = { name = "Ioane" }
@@ -3526,7 +3526,7 @@ GeorgianChurch043 = {
 }
 GeorgianChurch044 = {
 	name = "Grigol"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	710.1.1 = { birth = yes }
 	760.1.1 = { name = "Grigol" }
@@ -3534,7 +3534,7 @@ GeorgianChurch044 = {
 }
 GeorgianChurch045 = {
 	name = "Sarmeane"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	717.1.1 = { birth = yes }
 	767.1.1 = { name = "Sarmeane" }
@@ -3542,7 +3542,7 @@ GeorgianChurch045 = {
 }
 GeorgianChurch046 = {
 	name = "Mikael"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	724.1.1 = { birth = yes }
 	774.1.1 = { name = "Mikael" }
@@ -3550,7 +3550,7 @@ GeorgianChurch046 = {
 }
 GeorgianChurch047 = {
 	name = "Samoel"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	730.1.1 = { birth = yes }
 	780.1.1 = { name = "Samoel" }
@@ -3558,7 +3558,7 @@ GeorgianChurch047 = {
 }
 GeorgianChurch048 = {
 	name = "Kirile"
-	religion = georgian_orthodox
+	rite = georgian_rite
 	culture = georgian
 	740.1.1 = { birth = yes }
 	790.1.1 = { name = "Kirile" }
@@ -3567,7 +3567,7 @@ GeorgianChurch048 = {
 #Bishops and Aquileian Patriarchs
 1301259 = {
 	name = "Chromatius"	# bishop of Aquileia 388–407
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	trait = zealous
 	340.1.1 = {
@@ -3582,7 +3582,7 @@ GeorgianChurch048 = {
 }
 1301258 = {
 	name = "Augustinus"	# bishop of Aquileia 407–434
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	370.1.1 = {
 		birth = yes
@@ -3596,7 +3596,7 @@ GeorgianChurch048 = {
 }
 1301257 = {
 	name = "Adelphus"	# bishop of Aquileia 434–442
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	370.1.1 = {
 		birth = yes
@@ -3610,7 +3610,7 @@ GeorgianChurch048 = {
 }
 1301256 = {
 	name = "Maximus"	# bishop of Aquileia 442–444
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	370.1.1 = {
 		birth = yes
@@ -3624,7 +3624,7 @@ GeorgianChurch048 = {
 }
 1301255 = {
 	name = "Ianuarius"	# bishop of Aquileia 444–447
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	380.1.1 = {
 		birth = yes
@@ -3638,7 +3638,7 @@ GeorgianChurch048 = {
 }
 1301254 = {
 	name = "Secundus"	# bishop of Aquileia 451–452
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	390.1.1 = {
 		birth = yes
@@ -3652,7 +3652,7 @@ GeorgianChurch048 = {
 }
 1301253 = {
 	name = "Nicetas"	# bishop of Aquileia 454–485
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	420.1.1 = {
 		birth = yes
@@ -3666,7 +3666,7 @@ GeorgianChurch048 = {
 }
 1301252 = {
 	name = "Marcellianus"	# bishop of Aquileia 485–500
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	430.1.1 = {
 		birth = yes
@@ -3680,7 +3680,7 @@ GeorgianChurch048 = {
 }
 1301251 = {
 	name = "Marcellinus"	# bishop of Aquileia 500–513
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	450.1.1 = {
 		birth = yes
@@ -3694,7 +3694,7 @@ GeorgianChurch048 = {
 }
 1301250 = {
 	name = "Stephanus"	# patriarch of Aquileia 515-?
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	470.1.1 = {
 		birth = yes
@@ -3708,7 +3708,7 @@ GeorgianChurch048 = {
 }
 1301249 = { # Probinus ; patriarch of Aquileia 569–570
 	name = "Probinus"
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	500.1.1 = {
 		birth = yes
@@ -3718,7 +3718,7 @@ GeorgianChurch048 = {
 	}
 	553.6.1 = {
 		# Three Chapters Schism
-		religion = aquileian
+		rite = aquileian
 	}
 	571.1.1 = {
 		death = yes
@@ -3726,7 +3726,7 @@ GeorgianChurch048 = {
 }
 1301248 = { # Paulinus ; patriarch of Aquileia 557–569
 	name = "Paulinus"
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	500.1.1 = {
 		birth = yes
@@ -3736,7 +3736,7 @@ GeorgianChurch048 = {
 	}
 	553.6.1 = {
 		# Three Chapters Schism
-		religion = aquileian
+		rite = aquileian
 	}
 	569.1.1 = {
 		death = yes
@@ -3744,7 +3744,7 @@ GeorgianChurch048 = {
 }
 1301247 = { # Macedonius ; patriarch of Aquileia 539–556
 	name = "Macedonius"
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	490.1.1 = {
 		birth = yes
@@ -3754,7 +3754,7 @@ GeorgianChurch048 = {
 	}
 	553.6.1 = {
 		# Three Chapters Schism
-		religion = aquileian
+		rite = aquileian
 	}
 	556.1.1 = {
 		death = yes
@@ -3762,7 +3762,7 @@ GeorgianChurch048 = {
 }
 1301246 = { # Elias ; patriarch of Aquileia 571-586
 	name = "Elias"
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	trait = zealous
 	520.1.1 = {
@@ -3773,7 +3773,7 @@ GeorgianChurch048 = {
 	}
 	553.6.1 = {
 		# Three Chapters Schism
-		religion = aquileian
+		rite = aquileian
 	}
 	586.1.1 = {
 		death = yes
@@ -3781,7 +3781,7 @@ GeorgianChurch048 = {
 }
 1301245 = { # Severus ; patriarch of Aquileia 586–606
 	name = "Severus"
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	trait = arbitrary
 	trait = craven
@@ -3790,7 +3790,7 @@ GeorgianChurch048 = {
 	}
 	553.6.1 = {
 		# Three Chapters Schism
-		religion = aquileian
+		rite = aquileian
 	}
 	556.1.1 = {
 		trait = education_learning_3
@@ -3803,7 +3803,7 @@ GeorgianChurch048 = {
 # Donatist Source: https://en.wikipedia.org/wiki/Donatism and listed citations
 14001300 = { #St. Cyprian
 	name = "Cyprianus"
-	religion = nicene
+	religion = christian_faith
 	culture = romano_african
 	trait = education_learning_4
 	trait = zealous
@@ -3817,7 +3817,7 @@ GeorgianChurch048 = {
 }
 14001301 = { #Mensurius
 	name = "Mensurius"
-	religion = nicene
+	religion = christian_faith
 	culture = romano_african
 	250.1.1 = { birth = yes } #Hypothetical
 	300.1.1 = { name = "Mensurius" } #Hypothetical
@@ -3825,7 +3825,7 @@ GeorgianChurch048 = {
 }
 14001302 = { #Majorinius
 	name = "Maiorinus"
-	religion = donatism
+	rite = donatism
 	culture = romano_african
 	260.1.1 = { birth = yes } #Hypothetical
 	311.1.1 = { name = "Maiorinus" }
@@ -3833,7 +3833,7 @@ GeorgianChurch048 = {
 }
 14001303 = { #Donatus Magnus
 	name = "Donatus"
-	religion = donatism
+	rite = donatism
 	culture = romano_african
 	trait = zealous
 	disallow_random_traits = yes
@@ -3846,7 +3846,7 @@ GeorgianChurch048 = {
 }
 14001304 = { #Parmenian
 	name = "Parmenianus"
-	religion = donatism
+	rite = donatism
 	culture = roman
 	310.1.1 = { birth = yes } #Hypothetical
 	355.1.1 = { name = "Parmenianus" }
@@ -3854,7 +3854,7 @@ GeorgianChurch048 = {
 }
 14001305 = { #Primian
 	name = "Primianus"
-	religion = donatism
+	rite = donatism
 	culture = roman
 	341.1.1 = { birth = yes } #Hypothetical
 	391.1.1 = { name = "Parmenianus" }
@@ -3862,7 +3862,7 @@ GeorgianChurch048 = {
 }
 14001306 = { #Maximian
 	name = "Maximianus"
-	religion = donatism
+	rite = donatism
 	culture = romano_african
 	343.1.1 = { birth = yes } #Hypothetical
 	393.1.1 = { name = "Maximianus" }
@@ -3871,7 +3871,7 @@ GeorgianChurch048 = {
 #### Other Christian Sect Characters
 14001400 = { #Marcion
 	name = "Markion"
-	religion = marcionism
+	rite = marcionism
 	culture = pontic
 	trait = zealous
 	disallow_random_traits = yes
@@ -3886,7 +3886,7 @@ GeorgianChurch048 = {
 # Source: https://en.wikipedia.org/wiki/Paulicianism
 14001200 = { #Constantine-Silvanus
 	name = "Gosdantin"
-	religion = paulician
+	rite = paulician
 	culture = armenian
 	disallow_random_traits = yes
 	626.1.1 = { birth = yes } #Assume he's 27 when he converts
@@ -3903,7 +3903,7 @@ GeorgianChurch048 = {
 }
 14001201 = { #Titus
 	name = "Symeon"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	disallow_random_traits = yes
 	644.1.1 = { birth = yes } #Assume he's 40 when he converts (court official)
@@ -3915,7 +3915,7 @@ GeorgianChurch048 = {
 	}
 	684.1.1 = {
 		name = "Titos"
-		religion = paulician
+		rite = paulician
 	}
 	690.1.1 = {
 		death = yes
@@ -3924,7 +3924,7 @@ GeorgianChurch048 = {
 }
 14001202 = { #Paul
 	name = "Pavlos"
-	religion = paulician
+	rite = paulician
 	culture = greek
 	644.1.1 = { birth = yes } #Assume he's 40 when he takes over
 	690.1.1 = { name = "Pavlos" }
@@ -3932,7 +3932,7 @@ GeorgianChurch048 = {
 }
 14001203 = { #Gegnaesius
 	name = "Gegnaisios"
-	religion = paulician
+	rite = paulician
 	culture = greek
 	695.1.1 = { birth = yes }
 	715.1.1 = { name = "Gegnaisios" }
@@ -3943,7 +3943,7 @@ GeorgianChurch048 = {
 ##### Cypriot Archbishops
 CypriotChurch000 = { #St. Barnabas
 	name = Yosef
-	religion = rabbinism
+	rite = rabbinism
 	culture = hebrew
 	trait = zealous
 	trait = diligent
@@ -3951,7 +3951,7 @@ CypriotChurch000 = { #St. Barnabas
 	disallow_random_traits = yes
 	5.1.1 = { birth = yes }
 	36.1.1 = {
-		religion = nicene
+		religion = christian_faith
 		name = "Barnabas"
 	}
 	65.6.11 = { #Roughly same time as Paul
@@ -3961,14 +3961,14 @@ CypriotChurch000 = { #St. Barnabas
 }
 CypriotChurch001 = {
 	name = "Gelasios"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	308.1.1 = { birth = yes }
 	368.1.1 = { death = yes }
 }
 CypriotChurch002 = {
 	name = "Epiphanios"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	disallow_random_traits = yes
 	trait = zealous
@@ -3981,42 +3981,42 @@ CypriotChurch002 = {
 }
 CypriotChurch003 = {
 	name = "Stavrinos"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	361.1.1 = { birth = yes }
 	431.1.1 = { death = yes }
 }
 CypriotChurch004 = {
 	name = "Troilos"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	361.1.1 = { birth = yes }
 	431.6.1 = { death = yes }
 }
 CypriotChurch005 = {
 	name = "Reginos"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	379.1.1 = { birth = yes }
 	449.1.1 = { death = yes }
 }
 CypriotChurch006 = {
 	name = "Olympios"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	387.1.1 = { birth = yes }
 	457.1.1 = { death = yes }
 }
 CypriotChurch007 = {
 	name = "Stavrinos"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	387.1.1 = { birth = yes }
 	457.1.1 = { death = yes }
 }
 CypriotChurch008 = {
 	name = "Anthemios"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	425.1.1 = { birth = yes }
 	495.1.1 = { death = yes } #Has to be _at least_ after 488, but no precise dates
@@ -4024,49 +4024,49 @@ CypriotChurch008 = {
 #This is teh period where I can't find dates for reign short of "under Justinian I"
 CypriotChurch009 = {
 	name = "Olympios"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	460.1.1 = { birth = yes }
 	530.1.1 = { death = yes }
 }
 CypriotChurch010 = {
 	name = "Philoxenos"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	467.1.1 = { birth = yes }
 	537.1.1 = { death = yes }
 }
 CypriotChurch011 = {
 	name = "Damianos"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	474.1.1 = { birth = yes }
 	544.1.1 = { death = yes }
 }
 CypriotChurch012 = {
 	name = "Sophronios"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	481.1.1 = { birth = yes }
 	551.1.1 = { death = yes }
 }
 CypriotChurch013 = {
 	name = "Gregorios"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	488.1.1 = { birth = yes }
 	558.1.1 = { death = yes }
 }
 CypriotChurch014 = {
 	name = "Arkadios"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	500.1.1 = { birth = yes }
 	570.1.1 = { death = yes }
 }
 CypriotChurch015 = {
 	name = "Theophanes"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	trait = physique_good_2 #So it makes sense for him to live so long
 	540.1.1 = { birth = yes } #He'd take the Archbishopric in 570, which would be young
@@ -4074,14 +4074,14 @@ CypriotChurch015 = {
 }
 CypriotChurch016 = {
 	name = "Plutarch"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	560.1.1 = { birth = yes }
 	630.1.1 = { death = yes }
 }
 CypriotChurch017 = {
 	name = "Arkadios"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	573.1.1 = { birth = yes }
 	589.1.1 = {
@@ -4092,21 +4092,21 @@ CypriotChurch017 = {
 }
 CypriotChurch018 = {
 	name = "Serghios"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	610.1.1 = { birth = yes }
 	681.1.1 = { death = yes }
 }
 CypriotChurch019 = {
 	name = "Epiphanios"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	610.1.1 = { birth = yes }
 	681.1.1 = { death = yes }
 }
 CypriotChurch020 = {
 	name = "John"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	610.1.1 = { birth = yes }
 	681.1.1 = { death = yes }
@@ -4115,7 +4115,7 @@ CypriotChurch021 = {
 	#My German is terrible, but this seems to come from the Prosography of the Middle Byzantine Empire
 	#https://www.degruyter.com/database/PMBZ/entry/PMBZ11566/html
 	name = "Anthemios"
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	670.1.1 = { birth = yes }
 	750.1.1 = { death = yes }
@@ -4124,7 +4124,7 @@ CypriotChurch021 = {
 ### Others
 JerusalemChurchSpecial001 = { #St. Jude's (hypothetical) son
 	name = Yehudah
-	religion = nicene
+	religion = christian_faith
 	culture = hebrew
 	father = JerusalemChurchSpecial000
 	32.1.1 = { birth = yes }
@@ -4132,7 +4132,7 @@ JerusalemChurchSpecial001 = { #St. Jude's (hypothetical) son
 }
 1301212 = { #Father of Ioannes
 	name = "Marcianus"
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	430.1.1 = {
 		birth = yes
@@ -4146,7 +4146,7 @@ JerusalemChurchSpecial001 = { #St. Jude's (hypothetical) son
 }
 1301211 = { #Anti-Chalcedon patriarch
 	name = "Theodosius"	# briefly Patriarch of Jerusalem
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	trait = zealous
 	390.1.1 = {
@@ -4157,7 +4157,7 @@ JerusalemChurchSpecial001 = { #St. Jude's (hypothetical) son
 	}
 	451.11.1 = {
 		# The Council of Chalcedon
-		religion = monophysitism
+		rite = monophysitism
 	}
 	460.1.1 = {
 		death = yes
@@ -4167,7 +4167,7 @@ JerusalemChurchSpecial001 = { #St. Jude's (hypothetical) son
 ### Arian Churches
 GothicChurch000 = { #Ulfilas/Wulfila
 	name = Ulfilas
-	religion = arian
+	rite = arian
 	culture = cappadocian
 	311.1.1 = { birth = yes }
 	327.1.1 = {
@@ -4192,7 +4192,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 	diplomacy = 6
 	intrigue = 5
 	stewardship = 7
-	religion = "nicene"
+	religion = christian_faith
 	culture = "aramean" #Early enough to still be _actual_ aramean
 	trait = "just"
 	trait = "zealous"
@@ -4207,7 +4207,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 }
 166239 = {
 	name = "Aggai"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "aramean"
 	trait = "education_learning_3"
 	17.1.1 = {
@@ -4221,7 +4221,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 }
 166240 = {
 	name = "Palut"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "aramean" #Still Aramean in Syria at the time
 	trait = "education_learning_3"
 	52.1.1 = { birth = "52.1.1" }
@@ -4234,7 +4234,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 }
 166241 = {
 	name = "Abris"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "hebrew" #Legend was he was of Joseph's house
 	trait = "education_learning_3"
 	66.1.1 = { birth = "66.1.1" }
@@ -4242,7 +4242,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 }
 166242 = {
 	name = "Abraham"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "hebrew" #Legend was family of Jacob the Apostle
 	trait = "education_learning_3"
 	108.1.1 = { birth = "108.1.1" }
@@ -4250,7 +4250,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 }
 166243 = {
 	name = "Ya_qob"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "hebrew" #Legend was he was of Joseph's house
 	trait = "education_learning_3"
 	140.1.1 = { birth = "140.1.1" }
@@ -4259,7 +4259,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166244 = {
 	name = "Ahadabui"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "chaldean" #At this point, the legend is they are _going_ to Antioch, so should be chaldean now
 	trait = "education_learning_3"
 	147.1.1 = {
@@ -4272,7 +4272,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166245 = {
 	name = "Shahlufa"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "chaldean"
 	trait = "education_learning_3"
 	153.1.1 = {
@@ -4285,7 +4285,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166246 = {
 	name = "Papa"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "chaldean"
 	trait = "education_learning_3"
 	243.1.1 = {
@@ -4300,7 +4300,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166247 = {
 	name = "Shem_on"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "chaldean"
 	trait = "education_learning_3"
 	243.1.1 = {
@@ -4318,7 +4318,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166248 = {
 	name = "Shahdost"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "chaldean"
 	trait = "education_learning_3"
 	286.1.1 = {
@@ -4336,7 +4336,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166249 = {
 	name = "Barba_shmin"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "chaldean"
 	trait = "education_learning_3"
 	301.1.1 = {
@@ -4354,7 +4354,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166250 = {
 	name = "Tomarsa"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "chaldean"
 	trait = "education_learning_3"
 	307.1.1 = {
@@ -4369,7 +4369,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166251 = {
 	name = "Qayyoma"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "chaldean"
 	trait = "education_learning_3"
 	323.1.1 = {
@@ -4382,7 +4382,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166252 = {
 	name = "Isaac"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "chaldean"
 	trait = "education_learning_3"
 	350.1.1 = {
@@ -4395,7 +4395,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166253 = {
 	name = "Ahha"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "chaldean"
 	trait = "education_learning_3"
 	360.1.1 = {
@@ -4408,7 +4408,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166254 = {
 	name = "Yahballaha"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "chaldean"
 	trait = "education_learning_3"
 	369.1.1 = {
@@ -4421,7 +4421,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166255 = {
 	name = "Ma_na"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "chaldean"
 	trait = "education_learning_3"
 	382.1.1 = {
@@ -4439,7 +4439,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166256 = {
 	name = "Farbokht"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "chaldean"
 	trait = "greedy"
 	trait = "deceitful"
@@ -4454,13 +4454,13 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166257 = {
 	name = "Dadisho_"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "chaldean"
 	trait = "education_learning_3"
 	388.1.1 = {
 		birth = "388.1.1"
 	}
-	431.1.1 = { religion = nestorian } #Council of Ephesus
+	431.1.1 = { rite = nestorian } #Council of Ephesus
 	456.1.1 = {
 		death = yes
 		give_nickname = nick_the_holy
@@ -4470,7 +4470,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166258 = {
 	name = "Babowai"
-	religion = "mazdayasna"
+	rite = "mazdayasna"
 	culture = "persian"
 	407.1.1 = {
 		birth = "407.1.1"
@@ -4483,7 +4483,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 		trait = roman_nostalgia #Pro-Roman leanings, which cost him his neck
 	}
 	435.1.1 = {
-		religion = "nestorian"
+		rite = "nestorian"
 	}
 	484.1.1 = {
 		death = {
@@ -4497,7 +4497,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166259 = {
 	name = "Barsauma"
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "chaldean"
 	trait = "education_learning_3"
 	418.1.1 = {
@@ -4510,14 +4510,14 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166260 = {
 	name = "Acacius"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "chaldean"
 	trait = "education_learning_3"
 	425.1.1 = {
 		birth = "425.1.1"
 	}
 	485.1.1 = {
-		religion = "nestorian"
+		rite = "nestorian"
 	}
 	496.1.1 = {
 		death = "496.1.1"
@@ -4526,7 +4526,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166261 = {
 	name = "Babai"
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "chaldean"
 	trait = "lustful"	#Was married and abolished clerical celibacy
 	446.1.1 = {
@@ -4539,7 +4539,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166262 = {
 	name = "Shila"
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "chaldean"
 	trait = "lustful"	#Was married with children
 	trait = "arrogant"
@@ -4556,7 +4556,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 166263 = {
 	name = "Elisha_"
 	#son-in-law to the above Shila
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "chaldean"
 	trait = "lustful"	#Was married with children
 	486.1.1 = {
@@ -4569,7 +4569,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166264 = {
 	name = "Narsai"
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "chaldean"
 	trait = "education_learning_3"
 	469.1.1 = {
@@ -4583,7 +4583,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166265 = {
 	name = "Paul"
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "chaldean"
 	trait = "education_learning_3"
 	475.1.1 = {
@@ -4596,7 +4596,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166267 = {
 	name = "Yousef"
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "chaldean"
 	trait = "arrogant"
 	trait = "lustful"
@@ -4610,7 +4610,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166268 = {
 	name = "Ezekiel"
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "chaldean"
 	trait = "education_learning_3"
 	519.1.1 = {
@@ -4622,7 +4622,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166269 = {
 	name = "Isho_yahb"
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "chaldean"
 	trait = "education_learning_3"
 	533.1.1 = {
@@ -4635,7 +4635,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166270 = {
 	name = "Sabrisho_"
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "chaldean"
 	trait = "education_learning_3"
 	trait = "celibate"	#a monastic hermit
@@ -4650,7 +4650,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166271 = {
 	name = "Grwgari"
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "chaldean"
 	trait = "lustful"
 	553.1.1 = {
@@ -4663,7 +4663,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166272 = {
 	name = "Gabriel"
-	religion = "monophysitism"
+	rite = "monophysitism"
 	culture = "chaldean"
 	trait = "education_learning_3"
 	542.1.1 = {
@@ -4676,7 +4676,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166273 = {
 	name = "Babai"
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "chaldean"
 	trait = "education_learning_3"
 	551.1.1 = {
@@ -4691,7 +4691,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166274 = {
 	name = "Aba"
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "chaldean"
 	trait = "education_learning_3"
 	560.1.1 = {
@@ -4706,7 +4706,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166275 = {
 	name = "Isho_yahb"
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "chaldean"
 	trait = "education_learning_3"
 	567.1.1 = {
@@ -4719,7 +4719,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166276 = {
 	name = "Maremmeh"
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "chaldean"
 	trait = "education_learning_3"
 	583.1.1 = {
@@ -4732,7 +4732,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166278 = {
 	name = "Giwargis"
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "chaldean"
 	trait = "education_learning_3"
 	611.1.1 = {
@@ -4745,7 +4745,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166279 = {
 	name = "Yohannan"
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "chaldean"
 	trait = "education_learning_3"
 	620.1.1 = {
@@ -4758,7 +4758,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166280 = {
 	name = "Hnanisho_"
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "chaldean"
 	trait = "education_learning_3"
 	634.1.1 = {
@@ -4773,7 +4773,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166281 = {
 	name = "Yohannan_Garba"
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "chaldean"
 	trait = "education_learning_3"
 	646.1.1 = {
@@ -4787,7 +4787,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166282 = {
 	name = "Sliba-zkha"
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "chaldean"
 	trait = "education_learning_3"
 	663.1.1 = {
@@ -4800,7 +4800,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166283 = {
 	name = "Pethion"
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "chaldean"
 	trait = "education_learning_3"
 	trait = "chaste"
@@ -4816,7 +4816,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166284 = {
 	name = "Aba"
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "chaldean"
 	trait = "education_learning_3"
 	648.1.1 = {
@@ -4829,7 +4829,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166285 = {
 	name = "Surin"
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "chaldean"
 	trait = "education_learning_3"
 	703.1.1 = {
@@ -4842,7 +4842,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166286 = {
 	name = "Ya_qob"
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "chaldean"
 	trait = "education_learning_3"
 	706.1.1 = {
@@ -4855,7 +4855,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166287 = {
 	name = "Hnanisho_"
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "chaldean"
 	trait = "education_learning_3"
 	711.1.1 = {
@@ -4870,7 +4870,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166288 = {
 	name = "Timai"
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "chaldean"
 	trait = "education_learning_3"
 	trait = "greedy"
@@ -4885,7 +4885,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166289 = {
 	name = "Isho_"
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "chaldean"
 	trait = "education_learning_3"
 	753.1.1 = {
@@ -4898,7 +4898,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166290 = {
 	name = "Giwargis"
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "chaldean"
 	trait = "education_learning_3"
 	727.1.1 = {
@@ -4911,7 +4911,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166291 = {
 	name = "Sabrisho_"
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "chaldean"
 	trait = "education_learning_3"
 	766.1.1 = {
@@ -4924,7 +4924,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166292 = {
 	name = "Abraham"
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "chaldean"
 	trait = "chaste"
 	781.1.1 = {
@@ -4937,7 +4937,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166293 = {
 	name = "Theodosius"
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "chaldean"
 	trait = "education_learning_3"
 	784.1.1 = {
@@ -4950,7 +4950,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 
 166294 = {
 	name = "Sargis"
-	religion = "nestorian"
+	rite = "nestorian"
 	culture = "chaldean"
 	trait = "education_learning_3"
 	798.1.1 = {

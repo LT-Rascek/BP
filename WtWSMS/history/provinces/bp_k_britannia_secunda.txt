@@ -28,11 +28,11 @@
 ###c_north_riding
 1595 = {	# York
 	culture = briton
-	religion = insular_celtic
+	rite = insular_celtic
 	holding = tribal_holding
 	559.1.1 = {
 		culture = anglo
-		religion = anglo_pagan
+		rite = anglo_pagan
 	}
 	620.1.1 = { culture = anglo_saxon }
 }
@@ -53,11 +53,11 @@
 ###c_east_riding
 1588 = {	#Pocklington
 	culture = briton
-	religion = insular_celtic
+	rite = insular_celtic
 	holding = tribal_holding
 	420.1.1 = {
 		culture = anglo
-		religion = anglo_pagan
+		rite = anglo_pagan
 	}
 	620.1.1 = { culture = anglo_saxon }
 }
@@ -70,11 +70,11 @@
 ###c_west_riding
 1591 = {	#Leeds
 	culture = briton
-	religion = insular_celtic
+	rite = insular_celtic
 	holding = tribal_holding
 	580.1.1 = {
 		culture = anglo
-		religion = anglo_pagan
+		rite = anglo_pagan
 	}
 	620.1.1 = { culture = anglo_saxon }
 }
@@ -98,11 +98,11 @@
 ###c_lincolnshire
 1583 = {	#Lincoln
 	culture = romano_british
-	religion = insular_celtic
+	rite = insular_celtic
 	holding = tribal_holding
 	559.1.1 = {
 		culture = anglo
-		religion = anglo_pagan
+		rite = anglo_pagan
 	}
 	620.1.1 = { culture = anglo_saxon }
 }
@@ -121,11 +121,11 @@
 ###c_leicestershire
 1615 = {	#Leicester
 	culture = romano_british
-	religion = insular_celtic
+	rite = insular_celtic
 	holding = castle_holding
 	553.1.1 = {
 		culture = old_saxon
-		religion = saxon_pagan
+		rite = saxon_pagan
 	}
 	610.1.1 = { culture = anglo_saxon }
 }
@@ -143,11 +143,11 @@
 ###c_nottinghamshire
 1618 = {	#Nottingham
 	culture = romano_british
-	religion = insular_celtic
+	rite = insular_celtic
 	holding = castle_holding
 	580.1.1 = {
 		culture = anglo
-		religion = anglo_pagan
+		rite = anglo_pagan
 	}
 	620.1.1 = { culture = anglo_saxon }
 }
@@ -163,7 +163,7 @@
 ###c_northumberland
 1609 = {	#Bamburgh
 	culture = briton
-	religion = insular_celtic
+	rite = insular_celtic
 	holding = tribal_holding
 	special_building_slot = hadrians_wall_01
 	122.1.1 = { special_building = hadrians_wall_01 }
@@ -186,7 +186,7 @@
 ###c_durham
 1606 = {	# 1606 - Durham
 	culture = briton
-	religion = insular_celtic
+	rite = insular_celtic
 	holding = tribal_holding
 	610.1.1 = { culture = cumbrian }
 }
@@ -200,7 +200,7 @@
 ###c_cumberland
 1635 = {	#Carlisle
 	culture = briton
-	religion = insular_celtic
+	rite = insular_celtic
 	holding = castle_holding
 	special_building_slot = hadrians_wall_01
 	122.1.1 = { special_building = hadrians_wall_01 }
@@ -223,7 +223,7 @@
 ###c_lancashire
 1639 = {	#Lancaster
 	culture = briton
-	religion = insular_celtic
+	rite = insular_celtic
 	holding = castle_holding
 	610.1.1 = { culture = cumbrian }
 }
@@ -236,7 +236,7 @@
 ###c_westmorland
 1637 = {	#Kendal
 	culture = briton
-	religion = insular_celtic
+	rite = insular_celtic
 	holding = castle_holding
 	610.1.1 = { culture = cumbrian }
 }
@@ -246,7 +246,7 @@
 ###c_cheshire
 1643 = {	#Chester
 	culture = briton
-	religion = insular_celtic
+	rite = insular_celtic
 	holding = castle_holding
 	special_building_slot = offas_dyke_01
 	767.1.1 = { special_building = offas_dyke_01 }
@@ -260,7 +260,7 @@
 ###c_derby
 1621 = {	#Derby
 	culture = briton
-	religion = insular_celtic
+	rite = insular_celtic
 	holding = castle_holding
 }
 1622 = {	#Chesterfield
@@ -275,10 +275,10 @@
 ###c_lothian
 1727 = {	#Edinburgh
 	culture = briton
-	religion = celtic_pagan
+	rite = celtic_pagan
 	holding = tribal_holding
 	610.1.1 = { culture = cumbrian }
-	597.1.1 = { religion = insular_celtic }
+	597.1.1 = { rite = insular_celtic }
 }
 1728 = {	#Haddington
 	holding = none
@@ -292,7 +292,7 @@
 ###c_dunbar
 1676 = {	#Dunbar
 	culture = briton
-	religion = insular_celtic
+	rite = insular_celtic
 	holding = tribal_holding
 	610.1.1 = { culture = cumbrian }
 }
@@ -302,10 +302,10 @@
 ###c_teviotdale
 1677 = {	#Kelso
 	culture = briton
-	religion = celtic_pagan
+	rite = celtic_pagan
 	holding = tribal_holding
 	610.1.1 = { culture = cumbrian }
-	597.1.1 = { religion = insular_celtic }
+	597.1.1 = { rite = insular_celtic }
 }
 1678 = {	#Jedburgh
 	holding = none
@@ -317,10 +317,10 @@
 ###c_linlithgowshire
 1731 = {	#Linlithgow
 	culture = briton
-	religion = celtic_pagan
+	rite = celtic_pagan
 	holding = tribal_holding
 	610.1.1 = { culture = cumbrian }
-	597.1.1 = { religion = insular_celtic }
+	597.1.1 = { rite = insular_celtic }
 }
 1732 = {	#Queensferry
 	holding = none
@@ -334,7 +334,7 @@
 ###c_lennox
 1695 = {	#Dumbarton
 	culture = briton
-	religion = insular_celtic
+	rite = insular_celtic
 	holding = tribal_holding
 	610.1.1 = { culture = cumbrian }
 }
@@ -347,7 +347,7 @@
 ###c_galloway
 1682 = {	#Kilcudbrite
 	culture = briton
-	religion = insular_celtic
+	rite = insular_celtic
 	holding = tribal_holding
 	610.1.1 = { culture = cumbrian }
 }
@@ -360,7 +360,7 @@
 ###c_carrick
 1680 = {	#Maybole
 	culture = briton
-	religion = insular_celtic
+	rite = insular_celtic
 	holding = tribal_holding
 	610.1.1 = { culture = cumbrian }
 }
@@ -370,7 +370,7 @@
 ###c_ayrshire
 1686 = {	#Kyle
 	culture = briton
-	religion = insular_celtic
+	rite = insular_celtic
 	holding = tribal_holding
 	610.1.1 = { culture = cumbrian }
 }
@@ -383,10 +383,10 @@
 ###c_annandale
 1679 = {	#Annan
 	culture = briton
-	religion = celtic_pagan
+	rite = celtic_pagan
 	holding = tribal_holding
 	610.1.1 = { culture = cumbrian }
-	597.1.1 = { religion = insular_celtic }
+	597.1.1 = { rite = insular_celtic }
 }
 1681 = {	#Dumfries
 	holding = city_holding
@@ -394,7 +394,7 @@
 ###c_lanarkshire
 1737 = {	#Lanark
 	culture = briton
-	religion = insular_celtic
+	rite = insular_celtic
 	holding = castle_holding
 	610.1.1 = { culture = cumbrian }
 }

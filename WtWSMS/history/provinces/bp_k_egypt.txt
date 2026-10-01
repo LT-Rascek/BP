@@ -17,7 +17,7 @@
 ###c_barqa
 6104 = {	#BARQA-AL-MARJ
 	culture = helleno_libyan
-	religion = audianism
+	rite = audianism
 	holding = castle_holding
 }
 6102 = {	#WADI MASUS
@@ -32,7 +32,7 @@
 ###c_awjila
 6106 = {	#AWJILA
 	culture = libyan
-	religion = gurzil
+	rite = gurzil
 	holding = tribal_holding
 }
 6107 = {	#JALU
@@ -44,7 +44,7 @@
 ###c_derna
 6099 = {	#DERNA
 	culture = helleno_libyan
-	religion = audianism
+	rite = audianism
 	holding = castle_holding
 }
 6100 = {	#WADI_MAKHIL
@@ -56,7 +56,7 @@
 ###c_tobruk
 6098 = {	#TOBRUK
 	culture = helleno_libyan
-	religion = audianism
+	rite = audianism
 	holding = castle_holding
 }
 
@@ -65,7 +65,7 @@
 ###c_alexandria
 6053 = {	#ALEXANDRIA
 	culture = helleno_coptic
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
 	duchy_capital_building = great_lighthouse
 	buildings = {
@@ -82,7 +82,7 @@
 ###c_al-buhaira
 6052 = {	#RASHID
 	culture = helleno_coptic
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
 }
 6054 = {	#DAMANHUR
@@ -98,7 +98,7 @@
 6095 = {	#QASR_ASH_SHAMMAS (aka Mersa Matruh/Paraetonium/Paraitonion)
 	#Adyrmachidae Libyans of Marmarica; first attested in Periplus of Pseudo-Scylax around 3rd century BC
 	culture = libyan
-	religion = audianism
+	rite = audianism
 	holding = castle_holding
 }
 6097 = {	#SULLUM (aka El Salloum/Catabathmus Major)
@@ -110,9 +110,9 @@
 ###c_siwa
 6093 = {	#SIWA
 	culture = libyan #Siwi is an eastern berber language
-	religion = egyptian_pagan
+	rite = egyptian_pagan
 	holding = castle_holding
-	600.1.1 = { religion = coptic } #Final end of Egyptian Paganism in Egypt proper
+	600.1.1 = { rite = copitc_rite } #Final end of Egyptian Paganism in Egypt proper
 }
 6092 = {	#AIN_AL-GHANBI
 	holding = none
@@ -126,9 +126,9 @@
 ###c_damietta
 6046 = {	#DUMIYAT
 	culture = copt
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
-	452.1.1 = { religion = coptic }
+	452.1.1 = { rite = copitc_rite }
 }
 6043 = {	#DAQAHLA
 	holding = church_holding
@@ -139,9 +139,9 @@
 ###c_al-gharbiya
 6051 = {	#MINUF
 	culture = copt
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
-	452.1.1 = { religion = coptic }
+	452.1.1 = { rite = copitc_rite }
 }
 6047 = {	#SAMANNUD
 	holding = church_holding #Kemetic center
@@ -158,9 +158,9 @@
 ###c_sharkiya
 6040 = {	#BILBAYS
 	culture = copt
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
-	452.1.1 = { religion = coptic }
+	452.1.1 = { rite = copitc_rite }
 }
 6041 = {	#QALYUB
 	holding = city_holding #Name comes from Greek Calliope
@@ -174,10 +174,10 @@
 ###c_cairo
 6042 = {	#CAIRO
 	culture = copt
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
 	special_building_slot = al_azhar_university
-	452.1.1 = { religion = coptic }
+	452.1.1 = { rite = copitc_rite }
 }
 6039 = {	#QUZLUM
 	holding = none
@@ -191,10 +191,10 @@
 ###c_giza
 6057 = {	#GIZA
 	culture = copt
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
 	special_building = the_pyramids_01
-	452.1.1 = { religion = coptic }
+	452.1.1 = { rite = copitc_rite }
 }
 6056 = {	#ABU_GHALIB
 	holding = none
@@ -205,9 +205,9 @@
 ###c_fayyum
 6060 = {	#AL-FAYYUM
 	culture = copt
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
-	452.1.1 = { religion = coptic }
+	452.1.1 = { rite = copitc_rite }
 }
 6059 = {	#TIRSA
 	holding = none
@@ -221,9 +221,9 @@
 ###c_qus
 6077 = {	#QUS
 	culture = copt
-	religion = egyptian_pagan
+	rite = egyptian_pagan
 	holding = castle_holding
-	500.1.1 = { religion = coptic }
+	500.1.1 = { rite = copitc_rite }
 }
 6074 = {	#HUW
 	holding = city_holding #Ancient Hu
@@ -240,9 +240,9 @@
 ###c_bahnasa
 6063 = {	#AL-BAHNASA
 	culture = copt
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
-	452.1.1 = { religion = coptic }
+	452.1.1 = { rite = copitc_rite }
 }
 6062 = {	#AHNAS
 	holding = none
@@ -253,9 +253,9 @@
 ###c_ushmun
 6067 = {	#AL-USHMUNAIN
 	culture = copt
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
-	452.1.1 = { religion = coptic }
+	452.1.1 = { rite = copitc_rite }
 }
 6068 = {	#ANSINA
 	holding = none
@@ -266,9 +266,9 @@
 ###c_asyut
 6070 = {	#ASYUT
 	culture = copt
-	religion = nicene
+	religion = christian_faith
 	holding = castle_holding
-	452.1.1 = { religion = coptic }
+	452.1.1 = { rite = copitc_rite }
 }
 6071 = {	#BAWIT
 	holding = church_holding #Coptic Monastery ca. 390
@@ -282,9 +282,9 @@
 ###c_aswan
 6081 = {	#ASWAN
 	culture = copt
-	religion = egyptian_pagan
+	rite = egyptian_pagan
 	holding = castle_holding
-	553.1.1 = { religion = coptic } #Closing of the temple at Philae
+	553.1.1 = { rite = copitc_rite } #Closing of the temple at Philae
 }
 6079 = {	#UDFU
 	holding = none
@@ -301,7 +301,7 @@
 ###c_bahriya
 6089 = {	#AL-BAHRIYA
 	culture = libyan
-	religion = egyptian_pagan
+	rite = egyptian_pagan
 	holding = castle_holding
 }
 6090 = {	#BAWITI
@@ -313,13 +313,13 @@
 ###c_farafra
 6088 = {	#FARAFRA
 	culture = libyan
-	religion = egyptian_pagan
+	rite = egyptian_pagan
 	holding = castle_holding
 }
 ###c_dakhla
 6085 = {	#MUT
 	culture = libyan
-	religion = egyptian_pagan
+	rite = egyptian_pagan
 	holding = castle_holding #Roman Fort in the region
 }
 6086 = {	#TUNAYDA
@@ -331,7 +331,7 @@
 ###c_kharga
 6083 = {	#KHARGA
 	culture = libyan
-	religion = egyptian_pagan
+	rite = egyptian_pagan
 	holding = castle_holding
 }
 6084 = {	#BARIS
@@ -343,9 +343,9 @@
 ###c_qusayr
 6109 = {	#QUSAYR
 	culture = copt
-	religion = egyptian_pagan
+	rite = egyptian_pagan
 	holding = tribal_holding
-	500.1.1 = { religion = coptic }
+	500.1.1 = { rite = copitc_rite }
 }
 6122 = {	#SAFAGA
 	holding = none
@@ -353,7 +353,7 @@
 ###c_jabal_quzlum
 6118 = {	#NORTH_JBL _QUZLUM
 	culture = beja
-	religion = kushitism_pagan
+	rite = kushitism_pagan
 	holding = tribal_holding
 }
 6119 = {	#CENTRAL_JBL _QUZLUM

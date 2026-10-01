@@ -3,7 +3,7 @@
 1003024 = {
 	name = "Constantina"
 	# Mother of Emperor Anastasius
-	religion = arian
+	rite = arian
 	culture = romano_illyrian
 	female = yes
 	father = 1003023
@@ -19,7 +19,7 @@
 1003025 = {
 	name = "Paulus"	#PLRE vol. 2 Paulus 26
 	# Brother of Emperor Anastasius, consul of 496 and 497
-	religion = coptic
+	rite = copitc_rite
 	culture = romano_illyrian
 	father = 36618	# Pompeius
 	mother = 1003024
@@ -40,7 +40,7 @@
 1003026 = {
 	name = "Paulus"
 	# Nephew of Emperor Anastasius
-	religion = coptic
+	rite = copitc_rite
 	culture = romano_illyrian
 	father = 1003025
 	mother = 1006005
@@ -56,7 +56,7 @@
 1003027 = {
 	name = "Probus"	#PLRE vol. 2 Probus 8
 	# Nephew of Emperor Anastasius
-	religion = coptic
+	rite = copitc_rite
 	culture = romano_illyrian
 	father = 1003025
 	mother = 1006005
@@ -72,7 +72,7 @@
 1003028 = {
 	name = "Eirene"	# PLRE vol. 2 Irene
 	# Niece of Emperor Anastasius
-	religion = coptic
+	rite = copitc_rite
 	culture = romano_illyrian
 	father = 1003025
 	mother = 1006005
@@ -89,7 +89,7 @@
 1003031 = {
 	name = "Probus"
 	# Consul of 525
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	father = AniciusOlybrius1
 	dynasty = 1042312
@@ -107,7 +107,7 @@
 1003032 = {
 	name = "Caesaria"	# PLRE vol. 2 Caesaria 1
 	# Sister of Emperor Anastasius
-	religion = coptic
+	rite = copitc_rite
 	culture = romano_illyrian
 	father = 36618	# Pompeius
 	mother = 1003024
@@ -124,7 +124,7 @@
 1003033 = {
 	name = "Maximilla"
 	# Wife of Maxentius
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	culture = roman
 	female = yes
 	dynasty = 1022198
@@ -140,7 +140,7 @@
 1003034 = {
 	name = "Romulus"
 	# Son of Maxentius
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	culture = romano_pannonian
 	dynasty = 1022233
 	father = 145294
@@ -156,7 +156,7 @@
 1003035 = {
 	name = "Pompeius"	#PLRE vol. 2 Pompeius 2
 	# Nephew of Emperor Anastasius, consul of 501
-	religion = nicene
+	religion = christian_faith
 	culture = romano_illyrian
 	father = 1300186	# Secundinus
 	mother = 1003032
@@ -176,7 +176,7 @@
 1003036 = {
 	name = "Hypatius"	# PLRE vol. 2 Fl. Hypatius 6
 	# Nephew of Emperor Anastasius, consul of 500 and proclaimed Emperor by the Nika mob
-	religion = nicene
+	religion = christian_faith
 	culture = romano_illyrian
 	father = 1300186	# Secundinus
 	mother = 1003032
@@ -200,7 +200,7 @@
 1003039 = {
 	name = "Anastasia"
 	# Wife of Pompeius
-	religion = coptic
+	rite = copitc_rite
 	culture = romano_illyrian
 	female = yes
 	470.1.1 = {
@@ -214,7 +214,7 @@
 1003040 = {
 	name = "Anastasius"
 	# Great nephew of Emperor Anastasius, Consul of 507
-	religion = nicene
+	religion = christian_faith
 	culture = romano_illyrian
 	father = 1003027
 	dynasty = 1022231
@@ -232,7 +232,7 @@
 1003041 = {
 	name = "Magnus"	# PLRE vol. 2 Magnus 5
 	# Great nephew of Emperor Anastasius, Consul of 518
-	religion = nicene
+	religion = christian_faith
 	culture = romano_illyrian
 	father = 1003027
 	dynasty = 1022231
@@ -247,7 +247,7 @@
 1003042 = {
 	name = "Anastasia"
 	# Unnamed sister of Emperor Anastasius
-	religion = coptic
+	rite = copitc_rite
 	culture = romano_illyrian
 	father = 36618	# Pompeius
 	mother = 1003024
@@ -264,7 +264,7 @@
 1003044 = {
 	name = "Galla"
 	# Wife of Vettius Justus II
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	female = yes
 	mother = 1003009
@@ -281,7 +281,7 @@
 1003045 = {
 	name = "Eusebius"
 	# Consul of 489 and 493, somehow related to Emperor Anastasius
-	religion = coptic
+	rite = copitc_rite
 	culture = romano_illyrian
 	dynasty = romano_illyrian_dynasty_clearchus
 	father = 1003046
@@ -296,7 +296,7 @@
 1003046 = {
 	name = "Clearchus"	#PLRE vol. 2 Clearchus 4
 	# Father of Consul of 489 and 493
-	religion = arian
+	rite = arian
 	culture = romano_illyrian
 	dynasty = romano_illyrian_dynasty_clearchus
 	father = 1003023
@@ -312,7 +312,7 @@
 1004000 = {
 	name = "Iustinia"	# sister of PLRE vol. 2 Iustinus 4
 	# Unnamed sister of Justin I, needed for connection
-	religion = nicene
+	religion = christian_faith
 	culture = romano_illyrian
 	dynasty = 1022186
 	father = 70529
@@ -328,7 +328,7 @@
 1004001 = {
 	name = "Praeiecta"	# PLRE vol. 3 Praeiecta 1
 	# Sister of Justin II
-	religion = nicene
+	religion = christian_faith
 	culture = romano_illyrian
 	dynasty = 1022186
 	mother = 70527
@@ -345,7 +345,7 @@
 1004002 = {
 	name = "Marcellus"	# PLRE vol. 3 Marcellus 5
 	# Brother of Justin II
-	religion = monophysitism	#staunch Monophysite
+	rite = monophysitism	#staunch Monophysite
 	culture = romano_illyrian
 	dynasty = 1022186
 	mother = 70527
@@ -365,7 +365,7 @@
 1004003 = {
 	name = "Arabia"	# PLRE vol. 3 Arabia
 	# Daughter of Justin II
-	religion = nicene
+	religion = christian_faith
 	culture = romano_illyrian
 	dynasty = 1022186
 	father = 70511
@@ -382,7 +382,7 @@
 1004004 = {
 	name = "Iustus"	# PLRE vol. 3 Iustus 3
 	# Son of Justin II
-	religion = nicene
+	religion = christian_faith
 	culture = romano_illyrian
 	dynasty = 1022186
 	father = 70511
@@ -398,7 +398,7 @@
 1004005 = {
 	name = "Sophia"	# PLRE vol. 3 Sophia 1
 	# Wife of Justin II, niece of Empress Theodora
-	religion = nicene
+	religion = christian_faith
 	culture = romano_thracian
 	female = yes
 	father = Sittas
@@ -415,7 +415,7 @@
 1004006 = {
 	name = "Germanus"	# PLRE vol. 2 Germanus 4
 	# Nephew of Justin I, husband of Matasuentha, grandaughter of Theoderic
-	religion = nicene
+	religion = christian_faith
 	culture = romano_illyrian
 	dynasty = 1022186
 	father = DorotheusFatherOfGermanus
@@ -444,7 +444,7 @@
 1004007 = {
 	name = "Boraides"	# PLRE vol. 3 Boraides
 	# Nephew of Justin I
-	religion = nicene
+	religion = christian_faith
 	culture = romano_illyrian
 	dynasty = 1022186
 	mother = 1004000
@@ -459,7 +459,7 @@
 1004008 = {
 	name = "Iustinus"	# PLRE vol. 3 Iustinus 4
 	# Consul of 540, son of Germanus
-	religion = nicene
+	religion = christian_faith
 	culture = romano_illyrian
 	dynasty = 1022186
 	father = 1004006
@@ -478,7 +478,7 @@
 1004009 = {
 	name = "Iustinianus"	# PLRE vol. 3 Iustinianus 3
 	# Byzantine General, son of Germanus
-	religion = nicene
+	religion = christian_faith
 	culture = romano_illyrian
 	dynasty = 1022186
 	father = 1004006
@@ -500,7 +500,7 @@
 1004010 = {
 	name = "Germanus"	# PLRE vol. 3 Germanus 5
 	# Caesar of Tiberius II, son of Germanus
-	religion = nicene
+	religion = christian_faith
 	culture = romano_illyrian
 	dynasty = 1022186
 	father = 1004006
@@ -524,7 +524,7 @@
 1004011 = {
 	name = "Lupicina"	# PLRE vol. 2 Lupicina Euphemia 5
 	# Barbarian Wife of Justin I
-	religion = nicene
+	religion = christian_faith
 	culture = illyrian #Right region, makes her a clear barbarian
 	female = yes
 	480.1.1 = {
@@ -538,7 +538,7 @@
 1004013 = {
 	name = "Theodosios"	# PLRE vol. 3 Theodosius 13
 	# Son of Emperor Maurice
-	religion = nicene
+	religion = christian_faith
 	culture = greek	#Cappadocian
 	father = 70510
 	dynasty = 1022184
@@ -557,7 +557,7 @@
 1004012 = {
 	name = "Ino"	# Ino quae et Anastasia 2
 	# Wife of Tiberius II
-	religion = nicene
+	religion = christian_faith
 	culture = phrygian	#Bithynian
 	female = yes
 	522.1.1 = {
@@ -571,7 +571,7 @@
 1004014 = {
 	name = "Konstantine"	# PLRE vol. 3 Augusta quae et Constantina 1
 	# Wife of Emperor Maurice
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	female = yes
 	father = 145073
@@ -592,7 +592,7 @@
 1004017 = {
 	name = "Anastasios"
 	# Son of Balbila
-	religion = nicene
+	religion = christian_faith
 	dynasty = 1022231
 	culture = greek
 	mother = 1004015
@@ -611,7 +611,7 @@
 1004018 = {
 	name = "Ioannes"
 	# Son of Balbila
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	dynasty = 1022231
 	mother = 1004015
@@ -627,7 +627,7 @@
 1004019 = {
 	name = "Athanasios"
 	# Son of Balbila
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	dynasty = 1022231
 	mother = 1004015
@@ -644,7 +644,7 @@
 	name = "Ioannes"	# PLRE vol. 3 Ioannes qui et Mystacon 101
 	# Byzantine General
 	#?MVM in Armenia 579-582, MVM per Orientem a. 582-583, MVM in Thrace a. 587, MVM per Armeniam a. (?589-) 590-591 (-?), patricius a. 589-591 (-?)
-	religion = nicene
+	religion = christian_faith
 	culture = greek
 	father = Artabanes2
 	dynasty_house = house_arsacid_armenia
@@ -680,7 +680,7 @@
 1004022 = {
 	name = "Epiphania"	# PLRE vol. 3 Epiphania 1
 	# Mother of Heraclius
-	religion = nicene
+	religion = christian_faith
 	culture = cappadocian #Seems possible; ties into Heraclius' non-Greek origins
 	female = yes
 	533.1.1 = {
@@ -694,7 +694,7 @@
 1004023 = {
 	name = "Charito"	# PLRE vol. 3 Charito
 	# Daughter of Emperor Tiberius II
-	religion = nicene
+	religion = christian_faith
 	culture = romano_illyrian
 	father = 145073
 	mother = 1004012
@@ -711,7 +711,7 @@
 1004024 = {
 	name = "Iustinia"
 	# Granddaughter of General Germanus
-	religion = nicene
+	religion = christian_faith
 	culture = romano_illyrian
 	father = 1004010
 	mother = 1004023
@@ -728,7 +728,7 @@
 1004025 = {
 	name = "Pavlos"	# PLRE vol. 3 Paulus 22
 	# Father of Emperor Maurice
-	religion = nicene
+	religion = christian_faith
 	culture = greek	#Cappadocian
 	dynasty = 1022184
 	510.1.1 = {
@@ -742,7 +742,7 @@
 1004026 = {
 	name = "Petros"	# PLRE vol. 3 Petrus 55
 	# Brother of Emperor Maurice
-	religion = nicene
+	religion = christian_faith
 	culture = greek	#Cappadocian
 	father = 1004025
 	dynasty = 1022184
@@ -761,7 +761,7 @@
 	name = "Aurelianus"
 	# Caesar Lucius Domitius Aurelianus Augustus
 	dynasty = 1022204
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "romano_illyrian"
 	trait = "intellect_good_2"
 	trait = "diligent"
@@ -781,7 +781,7 @@
 	name = "Claudius"
 	# Caesar Marcus Aurelius Claudius Augustus
 	dynasty = 1022205
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "romano_illyrian"
 	trait = "greens_supporter"
 	trait = "education_martial_3"
@@ -796,7 +796,7 @@
 
 1300362 = {
 	name = "Petrus"	#PLRE vol.2 Petrus 6
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_illyrian"
 	410.1.1 = {
 		birth = yes
@@ -809,7 +809,7 @@
 1300902 = {
 	name = "Simplicius"	#PLRE vol.2 Simplicius 3
 	#praeses Tripolitanae 399 June 12
-	religion = nicene
+	religion = christian_faith
 	culture = romano_illyrian	#from Mursa
 	370.1.1 = {
 		birth = yes
@@ -822,7 +822,7 @@
 1301279 = {
 	name = "Pompeius"	# PLRE vol. 3 Pompeius 1
 	dynasty = 1022231
-	religion = nicene
+	religion = christian_faith
 	culture = romano_illyrian
 	father = 1003036	# Hypatius
 	mother = 1301281	# Maria
@@ -837,7 +837,7 @@
 1301280 = {
 	name = "Ioannes"	# PLRE vol. 3 Ioannes 63
 	dynasty = 1022231
-	religion = nicene
+	religion = christian_faith
 	culture = romano_illyrian
 	father = 1301279	# Pompeius
 	510.1.1 = {
@@ -854,7 +854,7 @@
 1301292 = {
 	name = "Sabbatius"	# PLRE vol. 2 Sabbatius
 	#father of emperor Justinian
-	religion = nicene
+	religion = christian_faith
 	culture = romano_illyrian
 	460.1.1 = {
 		birth = yes

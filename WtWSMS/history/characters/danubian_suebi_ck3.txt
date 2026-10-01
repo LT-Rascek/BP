@@ -1,7 +1,7 @@
 ﻿30376_ancestor_1 = {
 	name = "Agilulf" # eponymous ancestor of the Agilulfings
 	dynasty = 1044033
-	religion = "arian"
+	rite = "arian"
 	culture = danubian_suebi
 	father = Hunimund2
 	444.1.1 = { birth = yes }
@@ -10,7 +10,7 @@
 30376_ancestor_2 = {
 	name = "Agilmund" # fictional
 	dynasty = 1044033
-	religion = "arian"
+	rite = "arian"
 	culture = danubian_suebi
 	father = 30376_ancestor_1
 	465.1.1 = { birth = yes }
@@ -20,7 +20,7 @@
 	name = "Sihilda" # fictional name, agilulfing princess married with Chlodoric the parricide son of Sigobert the Lame
 	female = yes
 	dynasty = 1044033
-	religion = "arian"
+	rite = "arian"
 	culture = danubian_suebi
 	father = 30376_ancestor_1
 	470.1.1 = { birth = yes }
@@ -29,7 +29,7 @@
 30376_ancestor_4 = {
 	name = "Arnulf" # fictional
 	dynasty = 1044033
-	religion = "arian"
+	rite = "arian"
 	culture = danubian_suebi
 	father = 30376_ancestor_2
 	500.1.1 = { birth = yes }
@@ -39,7 +39,7 @@
 	name = "Theodelinda" # daughter of Garibald of Bavaria, wife of two langobards kings of Italy
 	female = yes
 	dynasty = 1044033
-	religion = "nicene"
+	religion = christian_faith
 	culture = danubian_suebi
 	father = 30376 # Garibald
 	mother = 145618_daughter_2 # Waldrada
@@ -49,7 +49,7 @@
 30376_son = {
 	name = "Gundebald" # duke of Asti
 	dynasty = 1044033
-	religion = "nicene"
+	religion = christian_faith
 	culture = danubian_suebi
 	father = 30376 # Garibald
 	mother = 145618_daughter_2 # Waldrada
@@ -60,7 +60,7 @@
 	name = "Romhilda" # wife of Gisulf II of Friuli
 	female = yes
 	dynasty = 1044033
-	religion = "nicene"
+	religion = christian_faith
 	culture = danubian_suebi
 	father = 30376 # Garibald
 	mother = 145618_daughter_2 # Waldrada
@@ -72,7 +72,7 @@
 #after defeat of the Suebi/Sciri north of Aquinicum
 Hunimund2 = {
 	name = "Hunimund" #Hunimunds 2, PLRE Vol 2
-	religion = irimonic_pagan
+	rite = irimonic_pagan
 	culture = marcomanni
 	395.1.1 = { birth = yes }
 	410.1.1 = { culture = danubian_suebi }
@@ -89,7 +89,7 @@ Hunimund2 = {
 }
 Alaric2 = {
 	name = "Alaric" #Alaricus 2, PLRE Vol 2
-	religion = irimonic_pagan
+	rite = irimonic_pagan
 	culture = danubian_suebi
 	father = Hunimund2
 	425.1.1 = { birth = yes }

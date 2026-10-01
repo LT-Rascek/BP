@@ -2,7 +2,7 @@
 	name = "Euric"	# King of the Visigoths
 	dna = 30_euric
 	dynasty = 1042147
-	religion = "arian"
+	rite = "arian"
 	culture = "visigothic"
 	father = 74426	# Theodoric
 	trait = "temperate"
@@ -28,7 +28,7 @@
 91392 = {
 	name = "Ercheswintha"	#Ercheswinda, used as wife of Riculfe, the fantasy brother of Fulrad
 	female = yes
-	religion = "nicene"
+	religion = christian_faith
 	culture = "visigothic"
 	705.1.1 = {
 		birth = yes
@@ -41,7 +41,7 @@
 190066 = {
 	name = "Alaric"	# Alaric II
 	dynasty = 1042147
-	religion = "arian"
+	rite = "arian"
 	culture = "visigothic"
 	father = 30	# Euric
 	mother = 36638	# Ragnahilda
@@ -59,7 +59,7 @@
 190067 = {
 	name = "Gaisalec"
 	dynasty = 1042147
-	religion = "arian"
+	rite = "arian"
 	culture = "visigothic"
 	father = 190066
 	trait = "bastard"
@@ -74,7 +74,7 @@
 190068 = {
 	name = "Amalaric"
 	dynasty = 1042147
-	religion = "arian"
+	rite = "arian"
 	culture = "visigothic"
 	father = 190066
 	mother = 63_daughter_1
@@ -91,7 +91,7 @@
 190069 = {
 	name = "Theodis"
 	dynasty = 1042390
-	religion = "arian"
+	rite = "arian"
 	culture = "ostrogothic"
 	father = 190220
 	490.1.1 = {
@@ -108,7 +108,7 @@
 212861 = {
 	name = "Theodisel"
 	dynasty = 10424171
-	religion = "arian"
+	rite = "arian"
 	culture = "visigothic"
 	504.1.1 = {
 		birth = "504.1.1"
@@ -121,7 +121,7 @@
 212863 = {
 	name = "Agila"
 	dynasty = 10424172
-	religion = "arian"
+	rite = "arian"
 	culture = "visigothic"
 	514.1.1 = {
 		birth = "514.1.1"
@@ -134,7 +134,7 @@
 212864 = {
 	name = "Athanagild"
 	dynasty = 10424173
-	religion = "arian"
+	rite = "arian"
 	culture = "visigothic"
 	514.1.1 = {
 		birth = "514.1.1"
@@ -151,7 +151,7 @@
 	name = "Gosuntha"
 	female = yes
 	dynasty = 10424174
-	religion = "arian"
+	rite = "arian"
 	culture = "visigothic"
 	525.1.1 = {
 		birth = yes
@@ -165,7 +165,7 @@
 	name = "Brunehilda"
 	female = yes
 	dynasty = 10424173
-	religion = "arian"
+	rite = "arian"
 	culture = "visigothic"
 	father = 212864
 	mother = 212865
@@ -183,7 +183,7 @@
 	name = "Galsuntha"
 	female = yes
 	dynasty = 10424173
-	religion = "arian"
+	rite = "arian"
 	culture = "visigothic"
 	father = 212864
 	mother = 212865
@@ -200,7 +200,7 @@
 212869 = {
 	name = "Gaisumunths"
 	dynasty = 10424175
-	religion = "arian"
+	rite = "arian"
 	culture = "visigothic"
 	440.1.1 = {
 		birth = "440.1.1"
@@ -214,7 +214,7 @@
 212870 = {
 	name = "Liuvaric"
 	dynasty = 10424175
-	religion = "arian"
+	rite = "arian"
 	culture = "visigothic"
 	father = 212869
 	500.1.1 = {
@@ -228,7 +228,7 @@
 212871 = {
 	name = "Reccared"
 	dynasty = 10424175
-	religion = "arian"
+	rite = "arian"
 	culture = "visigothic"
 	father = 212869
 	467.1.1 = {
@@ -243,7 +243,7 @@
 212872 = {
 	name = "Liuva"
 	dynasty = 10424175
-	religion = "arian"
+	rite = "arian"
 	culture = "visigothic"
 	father = 212870
 	522.1.1 = {
@@ -258,7 +258,7 @@
 212873 = {
 	name = "Liuvagild"
 	dynasty = 10424175
-	religion = "arian"
+	rite = "arian"
 	culture = "visigothic"
 	father = 212870
 	525.1.1 = {
@@ -282,7 +282,7 @@
 190112 = {
 	name = "Hunimund" # Powerful Amali Ancestor
 	dynasty = 1042165
-	religion = "gothic_pagan"
+	rite = "gothic_pagan"
 	culture = gothic
 	father = 190111
 	320.1.1 = { birth = yes }
@@ -292,7 +292,7 @@
 190113 = {
 	name = "Thorismund" # Powerful Amali Ancestor
 	dynasty = 1042165
-	religion = arian
+	rite = arian
 	culture = gothic
 	father = 190112
 	350.1.1 = { birth = yes }
@@ -302,7 +302,7 @@
 190115 = {
 	name = "Berimund" #PLRE vol 2 Beremund
 	dynasty = 1042165
-	religion = arian
+	rite = arian
 	culture = gothic
 	father = 190113
 	371.1.1 = { birth = yes }
@@ -313,7 +313,7 @@
 190122 = {
 	name = "Witheric"	# Powerful Amali Ancestor
 	dynasty = 1042165
-	religion = "arian"
+	rite = "arian"
 	culture = "visigothic"
 	father = 190115
 	425.1.1 = {
@@ -328,7 +328,7 @@
 	name = "Wildigern"	#PLRE vol.3 Wildigernus
 	#comes at Narbo 589?
 	dynasty = 1300627
-	religion = "arian"
+	rite = "arian"
 	culture = "visigothic"
 	530.1.1 = {
 		birth = yes
@@ -341,7 +341,7 @@
 1301295 = {
 	name = "Salla"	# PLRE vol. 2 Salla
 	#Visigothic dux in Spain, was in Emerita
-	religion = arian
+	rite = arian
 	culture = visigothic
 	440.1.1 = {
 		birth = yes
@@ -360,13 +360,13 @@
 1301296 = {
 	name = "Sisisclus"	# PLRE vol. 3 Sisisclus
 	#?dux of Baetica 619
-	religion = arian
+	rite = arian
 	culture = visigothic
 	560.1.1 = {
 		birth = yes
 	}
 	587.1.1 = {
-		religion = nicene
+		religion = christian_faith
 	}
 	630.1.1 = {
 		death = yes
@@ -377,7 +377,7 @@
 	name = "Athawulfs"
 	dynasty = 1042147
 	father = 200295
-	religion = arian
+	rite = arian
 	culture = gothic
 	335.1.1 = { birth = yes }
 	376.1.1 = { death = { death_reason = death_murder } }
@@ -387,7 +387,7 @@
 	name = "Alatheus"
 	dynasty = 1042147 # source?
 	father = 200295
-	religion = arian
+	rite = arian
 	culture = gothic
 	350.1.1 = { birth = yes }
 	391.1.1 = { death = yes }
@@ -397,7 +397,7 @@
 	name = "Alhareiks"
 	dynasty = 1042147
 	father = 200292
-	religion = arian
+	rite = arian
 	culture = gothic
 	360.1.1 = { birth = yes }
 	388.1.1 = { add_spouse = 200294 }
@@ -407,7 +407,7 @@
 200295 = { #Aoric
 	name = "Aoric"
 	dynasty = 1042147
-	religion = gothic_pagan # Christian persecutor
+	rite = gothic_pagan # Christian persecutor
 	culture = gothic
 	father = 200295_father
 	288.1.1 = { birth = yes }
@@ -419,7 +419,7 @@
 	name = "Athanareiks"
 	dynasty = 1042147
 	father = 200295
-	religion = gothic_pagan # Christian persecutor
+	rite = gothic_pagan # Christian persecutor
 	culture = gothic
 	325.1.1 = { birth = yes }
 	381.1.25 = { death = yes }
@@ -429,7 +429,7 @@
 	name = "Athaulf"
 	dynasty = 1042147
 	father = 200296
-	religion = arian
+	rite = arian
 	culture = gothic
 	365.1.1 = { birth = yes }
 	413.1.1 = {
@@ -449,7 +449,7 @@
 	name = "Sigeric"
 	dynasty = 1042165 #Amali
 	father = 190113_brother
-	religion = arian
+	rite = arian
 	culture = gothic
 	376.1.1 = { birth = yes }
 	413.1.1 = { culture = visigothic }
@@ -465,7 +465,7 @@
 	name = "Walja"
 	dynasty = 1042147
 	father = 200296
-	religion = arian
+	rite = arian
 	culture = gothic
 	368.1.1 = { birth = yes }
 	396.1.1 = { add_spouse = 36101_daughter } # daughter of Richomar
@@ -477,7 +477,7 @@
 	name = "T_iudareiks" #PLRE Vol. 2 Theodoricus 2
 	dynasty = 1042147
 	father = 74422
-	religion = arian
+	rite = arian
 	culture = gothic
 	396.1.1 = { birth = yes }
 	413.1.1 = { culture = visigothic }
@@ -495,7 +495,7 @@
 	name = "Thorismund"
 	dynasty = 1042147
 	father = 74426
-	religion = arian
+	rite = arian
 	culture = visigothic
 	415.1.1 = { birth = yes }
 	453.1.1 = {
@@ -510,7 +510,7 @@
 	name = "T_iudareiks"
 	dynasty = 1042147
 	father = 74426
-	religion = arian
+	rite = arian
 	culture = visigothic
 	417.1.1 = { birth = yes }
 	466.1.1 = {
@@ -526,7 +526,7 @@
 	female = yes
 	dynasty = 1042147
 	father = 200296
-	religion = arian
+	rite = arian
 	culture = gothic
 	362.1.1 = { birth = yes }
 	413.1.1 = { culture = visigothic }
@@ -536,7 +536,7 @@
 1320000 = {
 	name = "Wilesind"
 	dynasty = 1302047
-	religion = arian
+	rite = arian
 	culture = visigothic
 	438.1.1 = {
 		birth = yes

@@ -1,7 +1,7 @@
 ﻿20381 = {
 	name = "Crixus"
 	dynasty = 10424135
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_hispanic"
 	450.1.1 = {
 		birth = "450.1.1"
@@ -14,7 +14,7 @@
 220003 = {
 	name = "Agricolus"
 	dynasty = 10424135
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_hispanic"
 	father = 20381
 	470.1.1 = {
@@ -28,7 +28,7 @@
 470006 = {
 	name = "Magnus"
 	dynasty = 10424136
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_hispanic"
 	450.1.1 = {
 		birth = "450.1.1"
@@ -41,7 +41,7 @@
 8600 = {
 	name = "Aurelius"
 	dynasty = 10424136
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_hispanic"
 	father = 470006
 	470.1.1 = {
@@ -55,7 +55,7 @@
 8601 = {
 	name = "Caecilius"
 	dynasty = 10424137
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_hispanic"
 	450.1.1 = {
 		birth = "450.1.1"
@@ -68,7 +68,7 @@
 8602 = {
 	name = "Quintus"
 	dynasty = 10424137
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_hispanic"
 	father = 8601
 	470.1.1 = {
@@ -82,7 +82,7 @@
 8603 = {
 	name = "Petrus"
 	dynasty = 10424138
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_hispanic"
 	trait = ambitious
 	trait = cynical
@@ -97,7 +97,7 @@
 8604 = {
 	name = "Cassio"
 	dynasty = 10424138
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_hispanic"
 	father = 8603
 	470.1.1 = {
@@ -111,7 +111,7 @@
 8605 = {
 	name = "Burdunellus"
 	dynasty = 10424139
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_hispanic"
 	trait = ambitious
 	trait = cynical
@@ -126,7 +126,7 @@
 8606 = {
 	name = "Severus"
 	dynasty = 10424139
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_hispanic"
 	father = 8605
 	470.1.1 = {
@@ -140,7 +140,7 @@
 8607 = {
 	name = "Cyprianus"
 	dynasty = 10424140
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_hispanic"
 	trait = content	#Without these the vassals will declare independence first year
 	trait = cynical
@@ -155,7 +155,7 @@
 8608 = {
 	name = "Diocletianus"
 	dynasty = 10424140
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_hispanic"
 	father = 8607
 	470.1.1 = {
@@ -169,7 +169,7 @@
 8612 = {
 	name = "Spurius"
 	dynasty = 10424141
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_hispanic"
 	trait = content	#Without these the vassals will declare independence first year
 	trait = cynical
@@ -184,7 +184,7 @@
 8614 = {
 	name = "Tatius"
 	dynasty = 10424141
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_hispanic"
 	father = 8612
 	470.1.1 = {
@@ -198,7 +198,7 @@
 8616 = {
 	name = "Plinius"
 	dynasty = 104241410
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_hispanic"
 	trait = content	#Without these the vassals will declare independence first year
 	trait = cynical
@@ -213,7 +213,7 @@
 8618 = {
 	name = "Iunius"
 	dynasty = 104241410
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_hispanic"
 	father = 8616
 	470.1.1 = {
@@ -227,7 +227,7 @@
 8620 = {
 	name = "Plinius"
 	dynasty = 10424142
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_hispanic"
 	450.1.1 = {
 		birth = "450.1.1"
@@ -240,7 +240,7 @@
 8622 = {
 	name = "Iunius"
 	dynasty = 10424142
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_hispanic"
 	father = 8620
 	470.1.1 = {
@@ -255,7 +255,7 @@
 	name = "Caecilius"
 	# Dux Caecilius Agricolus
 	dynasty = romano_hispanic_dynasty_agricolus
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_hispanic"
 	450.1.1 = {
 		birth = yes
@@ -269,7 +269,7 @@
 1002800 = {
 	name = "Constantius"
 	# Governor of Sala Colonia
-	religion = nicene
+	religion = christian_faith
 	culture = romano_hispanic
 	dynasty = 104246205
 	trait = "education_stewardship_3"
@@ -295,7 +295,7 @@
 1002801 = {
 	name = "Petronia"
 	# Wife of Governor of Sala Colonia
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	culture = romano_hispanic
 	female = yes
 	#dna = "ywnoyughnnk"
@@ -317,7 +317,7 @@
 	name = "Faustina"
 	# Daughter of Marcus Aurelius
 	dynasty = 1022221
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "romano_hispanic"
 	father = 145274
 	mother = 1009021
@@ -334,7 +334,7 @@
 	name = "Proklos"
 	# Grandson of Marcus Aurelius
 	dynasty = pontic_dynasty_klaudios
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "pontic"
 	father = GnaeusClaudiusSeverus
 	mother = 1009000
@@ -353,7 +353,7 @@
 	name = "Phaustina"
 	# Great granddaughter of Marcus Aurelius
 	dynasty = pontic_dynasty_klaudios
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "pontic"
 	father = 1009001
 	mother = 1009017
@@ -370,7 +370,7 @@
 	name = "Bassus"
 	# Consul of 259 & 271
 	dynasty = roman_dynasty_pomponius_1
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "roman"
 	father = PomponiusBassus2
 	225.1.1 = {
@@ -385,7 +385,7 @@
 	name = "Bassa"
 	# Daughter of Consul of 259 & 271
 	dynasty = roman_dynasty_pomponius_1
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "roman"
 	father = 1009003
 	female = yes
@@ -401,7 +401,7 @@
 	name = "Bassus"
 	# Prefect of Rome of 317-319
 	dynasty = 1022218
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "romano_african"
 	mother = 1009004
 	father = 1102007
@@ -417,7 +417,7 @@
 	name = "Septimia"
 	# Daugther of Prefect of Rome of 317-319
 	dynasty = 1022218
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "romano_african"
 	father = 1009005
 	female = yes
@@ -433,7 +433,7 @@
 	name = "Bassus"
 	# Son of Septimia
 	dynasty = roman_dynasty_valerius_1
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "roman"
 	father = ValeriusMaximus1
 	mother = 1009006
@@ -452,7 +452,7 @@
 	name = "Bassus"
 	# Son of Lucius Valerius Septimius Bassus
 	dynasty = roman_dynasty_valerius_1
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	father = 1009007
 	mother = AdelphiaWifeOfLuciusValeriusSeptimiusBassus
@@ -468,7 +468,7 @@
 	name = "Adelphius"
 	# Son of Lucius Valerius Bassus
 	dynasty = roman_dynasty_valerius_1
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	father = 1009008
 	385.1.1 = {
@@ -483,7 +483,7 @@
 	name = "Adelphia"
 	# Mother of Olybrius
 	dynasty = roman_dynasty_valerius_1
-	religion = "nicene"
+	religion = christian_faith
 	culture = "roman"
 	father = 1009009
 	female = yes
@@ -499,7 +499,7 @@
 	name = "Lucilla"
 	# Daughter of Marcus Aurelius
 	dynasty = 1022221
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "romano_hispanic"
 	father = 145274
 	mother = 1009021
@@ -516,7 +516,7 @@
 	name = "Pompeianus"
 	# Grandson of Marcus Aurelius, Consul of 209
 	dynasty = romano_aramean_dynasty_claudius
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "romano_aramean"
 	father = TiberiusClaudiusPompeianus
 	mother = 1009011
@@ -532,7 +532,7 @@
 	name = "Verus"
 	# Father of Marcus Aurelius, needed to connect things
 	dynasty = 1022221
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "romano_hispanic"
 	father = 1009018
 	mother = 1101005
@@ -551,7 +551,7 @@
 	name = "Cornificia"
 	# Sister of Marcus Aurelius
 	dynasty = 1022221
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "romano_hispanic"
 	father = 1009013
 	mother = DomitiaLucillaMinor
@@ -568,7 +568,7 @@
 	name = "Annianus"
 	# Nephew of Marcus Aurelius, consul of 167
 	dynasty = roman_dynasty_ummidius
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "roman"
 	father = GaiusUmmidiusQuadratus2
 	mother = 1009014
@@ -584,7 +584,7 @@
 	name = "Cornificia"
 	# Niece of Marcus Aurelius
 	dynasty = roman_dynasty_ummidius
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "roman"
 	father = GaiusUmmidiusQuadratus2
 	mother = 1009014
@@ -601,7 +601,7 @@
 	name = "Faustina"
 	# Great Niece of Marcus Aurelius
 	dynasty = roman_dynasty_ummidius
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "roman"
 	mother = 1009016
 	female = yes
@@ -617,7 +617,7 @@
 	name = "Ummidia"
 	# Daughter of Annia Aurelia Faustina
 	dynasty = roman_dynasty_pomponius_1
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "roman"
 	father = PomponiusBassus2
 	female = yes
@@ -633,7 +633,7 @@
 	name = "Verus"
 	# Grandfather of Marcus Aurelius, Consul under Domitian, 121 and 126
 	dynasty = 1022221
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "romano_hispanic"
 	65.1.1 = {
 		birth = yes
@@ -650,7 +650,7 @@
 	name = "Faustina"
 	# Wife of Antoninus Pius
 	dynasty = 1022221
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "romano_hispanic"
 	father = 1009018
 	mother = 1101005
@@ -670,7 +670,7 @@
 	name = "Faustina"
 	# Wife of Marcus Aurelius
 	dynasty = 1022223
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "romano_hispanic"
 	mother = 1009020
 	father = 145277
@@ -688,7 +688,7 @@
 	name = "Libo"
 	# Uncle of Marcus Aurelus
 	dynasty = 1022221
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "romano_hispanic"
 	father = 1009018
 	mother = 1101005
@@ -707,7 +707,7 @@
 	name = "Libo"
 	# Legatus in Syria during the Parthian War (162)
 	dynasty = 1022221
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "romano_hispanic"
 	father = 1009022
 	mother = FundaniaWifeOfMarcusAnniusLibo
@@ -723,7 +723,7 @@
 	name = "Faustina"
 	# Cousin of Marcus Aurelius
 	dynasty = 1022221
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "romano_hispanic"
 	father = 1009022
 	mother = FundaniaWifeOfMarcusAnniusLibo
@@ -740,7 +740,7 @@
 	name = "Libo"
 	# Consul of 161 and 204
 	dynasty = 1022221
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "romano_hispanic"
 	father = 1009023
 	145.1.1 = {
@@ -755,7 +755,7 @@
 	name = "Pollio"
 	# Relative
 	dynasty = roman_dynasty_vitrasius
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "roman"
 	father = TitusPomponiusProculusVitrasiusPollio
 	mother = 1009024
@@ -774,7 +774,7 @@
 	name = "Faustina"
 	# Relative
 	dynasty = roman_dynasty_vitrasius
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "roman"
 	father = TitusPomponiusProculusVitrasiusPollio
 	mother = 1009024
@@ -791,7 +791,7 @@
 	name = "Rupilia"
 	# Aunt of Marcus Aurelius
 	dynasty = 1042307
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "roman"
 	father = 1104515
 	mother = 1101002
@@ -804,7 +804,7 @@
 	name = "Fadilla"
 	# Wife of Lucius Plautius Lamia Silvanus
 	dynasty = 1022223
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "romano_gallic"
 	mother = 1009020
 	father = 145277
@@ -821,7 +821,7 @@
 1101000 = {
 	name = "Traianus"
 	# Father of Trajan
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	culture = romano_hispanic
 	dynasty = 1022225
 	father = 1101006
@@ -840,7 +840,7 @@
 1101001 = {
 	name = "Marciana"
 	# Sister of Trajan
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	culture = romano_hispanic
 	dynasty = 1022225
 	father = 1101000
@@ -857,7 +857,7 @@
 1101002 = {
 	name = "Matidia"
 	# Niece of Trajan
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	culture = roman
 	dynasty = 1022225
 	father = GaiusSaloniusMatidiusPatruinus
@@ -874,7 +874,7 @@
 1101003 = {
 	name = "Sabina"
 	# Great Niece of Trajan, wife of Hadrian
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	culture = roman
 	dynasty = roman_dynasty_vibius_1
 	father = LuciusVibiusSabinus1
@@ -891,7 +891,7 @@
 1101004 = {
 	name = "Matidia"
 	# Great Niece of Trajan
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	culture = roman
 	dynasty = roman_dynasty_mindius
 	father = LuciusMindius
@@ -908,7 +908,7 @@
 1101005 = {
 	name = "Faustina"
 	# Grandmother of Marcus Aurelius
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	culture = roman
 	dynasty = 1042307
 	father = 1104515
@@ -925,7 +925,7 @@
 1101006 = {
 	name = "Traianus"
 	# Grandfather of Trajan
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	culture = romano_hispanic
 	dynasty = 1022225
 	5.1.1 = {
@@ -942,7 +942,7 @@
 1101007 = {
 	name = "Plotina"
 	# Grandmother of Hadrian
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	culture = romano_hispanic
 	dynasty = 1022225
 	father = 1101006
@@ -959,7 +959,7 @@
 1101008 = {
 	name = "Afer"
 	# Father of Hadrian
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	culture = romano_hispanic
 	dynasty = 1022224
 	mother = 1101007
@@ -978,7 +978,7 @@
 1101009 = {
 	name = "Paulina"
 	# Sister of Hadrian
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	culture = romano_hispanic
 	dynasty = 1022224
 	father = 1101008
@@ -995,7 +995,7 @@
 1101010 = {
 	name = "Marullinus"
 	# Grandfather of Hadrian
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	culture = romano_hispanic
 	dynasty = 1022224
 	20.1.1 = {
@@ -1012,7 +1012,7 @@
 1101011 = {
 	name = "Iulia"
 	# Niece of Hadrian
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	culture = romano_hispanic
 	dynasty = romano_hispanic_dynasty_iulius
 	father = LuciusJuliusUrsusServianus
@@ -1029,7 +1029,7 @@
 1101012 = {
 	name = "Salinator"
 	# Great Nephew of Hadrian
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	culture = romano_hispanic
 	dynasty = 1022224
 	father = GnaeusPedaniusFuscusSalinator3
@@ -1045,7 +1045,7 @@
 1101015 = {
 	name = "Pia"
 	# Mother of Septimus Severus
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	culture = romano_african
 	dynasty = romano_african_dynasty_fulvius
 	father = FulviusPius2
@@ -1062,7 +1062,7 @@
 1101016 = {
 	name = "Plautianus"
 	# Maternal Uncle of Septimius Severus
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	culture = romano_african
 	dynasty = romano_african_dynasty_fulvius
 	father = FulviusPius2
@@ -1078,7 +1078,7 @@
 1101017 = {
 	name = "Plautianus"
 	# Maternal Cousin of Septimus Severus, Consul of 203
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	culture = romano_african
 	dynasty = romano_african_dynasty_fulvius
 	father = 1101016
@@ -1096,7 +1096,7 @@
 1101018 = {
 	name = "Plautilla"
 	# Wife of Caracalla
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	culture = romano_african
 	dynasty = romano_african_dynasty_fulvius
 	father = 1101017
@@ -1116,7 +1116,7 @@
 1101019 = {
 	name = "Hortensianus"
 	# Brother-in-law of Caracalla
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	culture = romano_african
 	dynasty = romano_african_dynasty_fulvius
 	father = 1101017
@@ -1141,7 +1141,7 @@
 1101020 = {
 	name = "Fulvia"
 	# Niece-in-law of Caracalla
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	culture = romano_african
 	dynasty = romano_african_dynasty_fulvius
 	father = 1101019
@@ -1158,7 +1158,7 @@
 1101021 = {
 	name = "Macer"
 	# Son of Fulvia
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	culture = roman
 	dynasty = roman_dynasty_neratius
 	father = LuciusNeratiusJuniusMacer
@@ -1174,7 +1174,7 @@
 1101022 = {
 	name = "Macer"
 	# Son of Lucius Iunius Aurelius Neratius Gallus Fulvius Macer, Legate of Thrace in 260
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	culture = roman
 	dynasty = roman_dynasty_neratius
 	father = 1101021
@@ -1189,7 +1189,7 @@
 1101023 = {
 	name = "Gallus"
 	# Son of Lucius Iunius Aurelius Neratius Gallus Fulvius Macer
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	culture = roman
 	dynasty = roman_dynasty_neratius
 	father = 1101022
@@ -1204,7 +1204,7 @@
 1101024 = {
 	name = "Flavianus"
 	# Son of Neratius Gallus, prefect of Rome in Oct 311 - Feb 312
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	culture = roman
 	dynasty = roman_dynasty_neratius
 	father = 1101023
@@ -1219,7 +1219,7 @@
 1101025 = {
 	name = "Rufinus"
 	# Son of Neratius Iunius Flavianus, Consul of 347, Prefect of Gaul, Italy AND Africa in 365-368
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	culture = roman
 	dynasty = roman_dynasty_neratius
 	father = 1101024
@@ -1234,7 +1234,7 @@
 1101026 = {
 	name = "Cerealis"
 	# Son of Neratius Iunius Flavianus, Consul of 358, Prefect of Rome on Sept 352 - Dec 353
-	religion = hellenic_pagan
+	rite = hellenic_pagan
 	culture = roman
 	dynasty = roman_dynasty_neratius
 	father = 1101024
@@ -1250,7 +1250,7 @@
 	name = "Marcus"
 	# Emperor Marcus Aurelius, also consul of 140 and 145
 	dynasty = 1022221
-	religion = "stoicism"
+	rite = "stoicism"
 	culture = "romano_hispanic"
 	trait = "scholar"
 	trait = "honest"
@@ -1277,7 +1277,7 @@
 	name = "Commodus"
 	# Caesar Marcus Aurelius Commodus Antoninus Augustus
 	dynasty = 1022221
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "romano_hispanic"
 	trait = "beauty_good_1"
 	trait = "lustful"
@@ -1300,7 +1300,7 @@
 	name = "Hadrianus"
 	# Caesar Publius Aelius Traianus Hadrianus Augustus
 	dynasty = 1022224
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "romano_hispanic"
 	trait = "scholar"
 	trait = "lifestyle_poet"
@@ -1324,7 +1324,7 @@
 	name = "Traianus"
 	# Emperor Trajan, also consul of 91
 	dynasty = 1022225
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "romano_hispanic"
 	trait = "honest"
 	trait = "brave"
@@ -1350,7 +1350,7 @@
 159807 = {
 	name = "Maximus"	# aka Macsen Wledig
 	dynasty = 1022191
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_hispanic"
 	father = 1008314 #Added as a son of Eucherius as was suggested, but it still seems dubious to me
 	345.1.1 = {
@@ -1369,7 +1369,7 @@
 	name = "Pontianus"
 	# Pontianus
 	#dynasty = 0
-	religion = "hellenic_pagan"
+	rite = "hellenic_pagan"
 	culture = "romano_hispanic"
 	450.1.1 = { birth = yes }
 	466.1.1 = {
@@ -1381,7 +1381,7 @@
 
 1300527 = {
 	name = "Lectorius"	# PLRE vol.2 Lectorius
-	religion = "rabbinism"
+	rite = "rabbinism"
 	culture = "romano_hispanic"
 	380.1.1 = {
 		birth = yes
@@ -1393,7 +1393,7 @@
 
 1300590 = {
 	name = "Cantaber"	# PLRE vol. 2 Cantaber
-	religion = nicene
+	religion = christian_faith
 	culture = romano_hispanic
 	410.1.1 = {
 		birth = yes
@@ -1409,7 +1409,7 @@
 1301056 = {
 	name = "Caesarius"	#PLRE vol. 3 Caesarius 2
 	#magister militum per Spanias c. 615
-	religion = nicene
+	religion = christian_faith
 	culture = romano_hispanic
 	trait = education_diplomacy_3	#negotiated peace with the Visigoths
 	565.1.1 = {
@@ -1422,7 +1422,7 @@
 1301057 = {
 	name = "Comitiolus"	#PLRE vol. 3 Comitiolus 2
 	#?magister militum per Spanias L VI/E VII
-	religion = nicene
+	religion = christian_faith
 	culture = romano_hispanic
 	trait = arbitrary
 	545.1.1 = {
@@ -1437,7 +1437,7 @@
 	name = "Basilius"	#PLRE vol. 1 Basilius 3
 	#CSL (West) 382-383, urban prefect of Rome 395
 	dynasty = roman_dynasty_valerius_1
-	religion = nicene
+	religion = christian_faith
 	culture = roman
 	father = 1301181
 	350.1.1 = {
@@ -1454,7 +1454,7 @@
 1301297 = {
 	name = "Claudius"	#PLRE vol. 3 Claudius 2
 	#Hispano-Roman Nicene dux (duke) of Lusitania (or dux Emeretensis civitatis) ?587-589
-	religion = nicene
+	religion = christian_faith
 	culture = romano_hispanic
 	530.1.1 = { birth = yes }
 	566.1.1 = { trait = education_martial_3 }
@@ -1465,7 +1465,7 @@
 1310001 = {
 	name = "Severianus"
 	# Father of Saint Isidore, count of Cartagena somewhere in the 530-560s
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_hispanic"
 	dynasty = 1303077
 	#dna = "fblwldgbssj"
@@ -1479,7 +1479,7 @@
 1320001 = {
 	name = "Cantonius"
 	#Historical bishop of Urci, although of uncertain date pre 589
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_hispanic"
 	dynasty = 1302048
 	trait = content	#Without these the vassals will declare independence first year
@@ -1493,7 +1493,7 @@
 1320002 = {
 	name = "Petrus"
 	#Historical bishop of Urci, around 589
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_hispanic"
 	dynasty = 1302049
 	trait = content	#Without these the vassals will declare independence first year
@@ -1506,7 +1506,7 @@
 }
 1320003 = {
 	name = "Mauricius"
-	religion = "nicene"
+	religion = christian_faith
 	culture = "romano_hispanic"
 	dynasty = 1302050
 	trait = content	#Without these the vassals will declare independence first year
