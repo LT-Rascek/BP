@@ -1,0 +1,1464 @@
+﻿#TODO: Flow of Rites between faiths
+
+christian_faith = {
+	#The Nicene Church Period: 325-381
+	325.1.1 = { #Council of Nicaea
+		main_rite = roman_rite
+		
+		permitted = {
+			#Vanilla
+			tenet_communal_identity
+			tenet_communion
+			tenet_vows_of_poverty
+			tenet_adaptive
+			tenet_asceticism
+			tenet_mendicant_preachers
+			#BGA
+			tenet_transubstantiation
+			tenet_dulia
+			tenet_ora_et_labora
+			tenet_acts_of_apostles
+			tenet_be_fruitful_and_multiply
+			tenet_apostolic_succession
+			tenet_confession
+			tenet_celestial_hierarchy #Origen's work on Angelology
+			tenet_philanthropia
+			tenet_love_thy_neighbour
+			tenet_divine_liturgy
+			tenet_anachoresis
+		}
+		
+		prohibited = {
+			tenet_reincarnation #Pythagoreanism
+			tenet_false_conversion_sanction
+			tenet_ancestor_worship
+			tenet_carnal_exaltation
+			tenet_consolamentum
+			tenet_divine_marriage
+			tenet_astrology #Not quite, but it was thought in only scientific terms; portending the future was problematic
+			tenet_gnosticism
+			tenet_sun_worship
+			tenet_warmonger
+			tenet_household_gods
+			tenet_exaltation_of_pain
+			tenet_natural_primitivism
+			tenet_pursuit_of_power
+			tenet_ritual_cannibalism
+			tenet_sacred_shadows
+			tenet_polyamory
+			tenet_mountain_worship
+			tenet_cranial_trophies
+			tenet_simony
+			#WtWSMS Tenets
+			tenet_ecstatic_prophecy
+			tenet_complex_exegesis
+			tenet_memorialism
+			tenet_repudiation
+			tenet_antinomianism
+			tenet_isopsephy
+			tenet_fertility_cult
+			tenet_ethnic_religion
+			tenet_mystery_religion
+			tenet_hero_cults
+			tenet_wedding_ceremonies
+			#Eunuchs, Lapsi, (strong) Arianism all condemned
+			tenet_eunuch_priests
+			tenet_adoptionism
+			tenet_modalism
+			tenet_doceticism
+			tenet_unitarianism
+		}
+		
+		known = {
+			tenet_aniconism
+			tenet_alexandrian_catechism
+			tenet_pacifism
+			tenet_pentarchy
+			tenet_unrelenting_faith
+			tenet_pastoral_isolation
+			tenet_esotericism
+			tenet_legalism
+			tenet_literalism
+			tenet_religious_legal_pronouncements
+			tenet_ritual_celebrations
+			tenet_sanctity_of_nature
+			tenet_megaliths
+			tenet_hyperdulia
+			#WtWSMS Tenets
+			tenet_credobaptism
+			tenet_arianism
+		}
+		
+		#Unknown:
+		# tenet_monophysitism: Christology was still hung up on Subordinationism vs. Consubstantiality
+		# tenet_miaphysitism: Christology was still hung up on Subordinationism vs. Consubstantiality
+		# tenet_dyophysitism: Christology was still hung up on Subordinationism vs. Consubstantiality
+		# tenet_apollinarism: Christology was still hung up on Subordinationism vs. Consubstantiality
+		# tenet_eutychianism: Christology was still hung up on Subordinationism vs. Consubstantiality
+		# tenet_nestorianism: Christology was still hung up on Subordinationism vs. Consubstantiality
+		#
+		# tenet_holy_myron: More evolved as the East Split
+		# tenet_original_sin: Augustine first formulated it
+		#
+		# tenet_monothelitism: Later compromise position
+		#
+		# tenet_miles_christi: Post-Islam
+		#
+		# tenet_purgatory: Really only developed in the Medieval period
+		# tenet_peace_of_god: Much more Medieval by description
+		# tenet_armed_pilgrimages: Medieval Period
+		# tenet_scholasticism: Medieval Period
+		# tenet_hesychasm: Medieval Period
+		# tenet_mortification_of_the_flesh: Medieval Period
+		# tenet_scholasticism: Medieval Period
+		#
+		# tenet_khachkar: Very much limited to the Armenians
+		
+		popularity = {}
+	}
+	
+	381.1.1 = { #First Council of Constantinople
+		main_rite = roman_rite
+		
+		permitted = {
+			tenet_pentarchy
+		}
+		
+		prohibited = {
+			tenet_arianism
+			tenet_apollinarism
+			tenet_anomoeanism
+		}
+		
+		known = {
+		}
+		
+		popularity = {}
+	}
+	
+	409.1.1 = { #Marcellinus of Carthage condemns Donastism
+		main_rite = roman_rite
+		
+		permitted = {
+		}
+		
+		prohibited = {
+			tenet_redeeming_struggle
+			tenet_rigorism
+		}
+		
+		known = {
+		}
+		
+		popularity = {}
+	}
+	
+	418.1.1 = { #Council of Carthage
+		main_rite = roman_rite
+		
+		permitted = {
+			tenet_original_sin
+		}
+		
+		prohibited = {
+			tenet_credobaptism
+			tenet_pelagianism
+			tenet_total_depravity
+		}
+		
+		known = {
+		}
+		
+		popularity = {}
+	}
+	
+	431.1.1 = { #Council of Ephesus
+		main_rite = roman_rite
+		
+		permitted = {
+		}
+		
+		prohibited = {
+			tenet_nestorianism
+		}
+		
+		known = {
+		}
+		
+		popularity = {}
+	}
+	
+	451.1.1 = { #Council of Chalcedon
+		main_rite = roman_rite
+		
+		permitted = {
+		}
+
+		prohibited = {
+			tenet_eutychianism
+			tenet_miaphysitism
+			tenet_monophysitism
+		}
+
+		known = {
+		}
+		
+		popularity = {}
+	}
+}
+
+miaphysitism = {
+	451.1.1 = { #Council of Chalcedon
+		created = yes
+		main_rite = coptic_rite
+		
+		permitted = {
+			#Vanilla
+			tenet_communal_identity
+			tenet_communion
+			tenet_vows_of_poverty
+			tenet_adaptive
+			tenet_asceticism
+			tenet_mendicant_preachers
+			tenet_pentarchy
+			tenet_original_sin
+			#WtWSMS
+			tenet_miaphysitism
+			#BGA
+			tenet_transubstantiation
+			tenet_dulia
+			tenet_ora_et_labora
+			tenet_acts_of_apostles
+			tenet_be_fruitful_and_multiply
+			tenet_apostolic_succession
+			tenet_confession
+			tenet_celestial_hierarchy #Origen's work on Angelology
+			tenet_philanthropia
+			tenet_love_thy_neighbour
+			tenet_divine_liturgy
+			tenet_anachoresis
+		}
+		
+		prohibited = {
+			tenet_reincarnation #Pythagoreanism
+			tenet_false_conversion_sanction
+			tenet_ancestor_worship
+			tenet_carnal_exaltation
+			tenet_consolamentum
+			tenet_divine_marriage
+			tenet_astrology #Not quite, but it was thought in only scientific terms; portending the future was problematic
+			tenet_gnosticism
+			tenet_sun_worship
+			tenet_warmonger
+			tenet_household_gods
+			tenet_exaltation_of_pain
+			tenet_natural_primitivism
+			tenet_pursuit_of_power
+			tenet_ritual_cannibalism
+			tenet_sacred_shadows
+			tenet_polyamory
+			tenet_mountain_worship
+			tenet_cranial_trophies
+			tenet_simony
+			#WtWSMS Tenets
+			tenet_ecstatic_prophecy
+			tenet_complex_exegesis
+			tenet_memorialism
+			tenet_repudiation
+			tenet_antinomianism
+			tenet_isopsephy
+			tenet_fertility_cult
+			tenet_ethnic_religion
+			tenet_mystery_religion
+			tenet_hero_cults
+			tenet_wedding_ceremonies
+			#Eunuchs, Lapsi, (strong) Arianism all condemned
+			tenet_eunuch_priests
+			tenet_adoptionism
+			tenet_modalism
+			tenet_doceticism
+			tenet_unitarianism
+			#WtWSMS (2)
+			tenet_arianism
+			tenet_apollinarism
+			tenet_anomoeanism
+			tenet_redeeming_struggle
+			tenet_rigorism
+			tenet_credobaptism
+			tenet_pelagianism
+			tenet_total_depravity
+			tenet_nestorianism
+			tenet_eutychianism
+			tenet_dyophysitism
+			tenet_monophysitism
+		}
+		
+		known = {
+			tenet_aniconism
+			tenet_alexandrian_catechism
+			tenet_pacifism
+			tenet_pentarchy
+			tenet_unrelenting_faith
+			tenet_pastoral_isolation
+			tenet_esotericism
+			tenet_legalism
+			tenet_literalism
+			tenet_religious_legal_pronouncements
+			tenet_ritual_celebrations
+			tenet_sanctity_of_nature
+			tenet_megaliths
+			tenet_hyperdulia
+			#WtWSMS Tenets
+			tenet_credobaptism
+			tenet_arianism
+		}
+		
+		popularity = {}
+	}
+}
+
+nestorian = {
+	431.1.1 = { #Council of Ephesus
+		main_rite = nestorian
+		
+		permitted = {
+			#Vanilla
+			tenet_communal_identity
+			tenet_communion
+			tenet_vows_of_poverty
+			tenet_adaptive
+			tenet_asceticism
+			tenet_mendicant_preachers
+			#BGA
+			tenet_transubstantiation
+			tenet_dulia
+			tenet_ora_et_labora
+			tenet_acts_of_apostles
+			tenet_be_fruitful_and_multiply
+			tenet_apostolic_succession
+			tenet_confession
+			tenet_celestial_hierarchy #Origen's work on Angelology
+			tenet_philanthropia
+			tenet_love_thy_neighbour
+			tenet_divine_liturgy
+			tenet_anachoresis
+		}
+		
+		prohibited = {
+			tenet_reincarnation #Pythagoreanism
+			tenet_false_conversion_sanction
+			tenet_ancestor_worship
+			tenet_carnal_exaltation
+			tenet_consolamentum
+			tenet_divine_marriage
+			tenet_astrology #Not quite, but it was thought in only scientific terms; portending the future was problematic
+			tenet_gnosticism
+			tenet_sun_worship
+			tenet_warmonger
+			tenet_household_gods
+			tenet_exaltation_of_pain
+			tenet_natural_primitivism
+			tenet_pursuit_of_power
+			tenet_ritual_cannibalism
+			tenet_sacred_shadows
+			tenet_polyamory
+			tenet_mountain_worship
+			tenet_cranial_trophies
+			tenet_simony
+			#WtWSMS Tenets
+			tenet_ecstatic_prophecy
+			tenet_complex_exegesis
+			tenet_memorialism
+			tenet_repudiation
+			tenet_antinomianism
+			tenet_isopsephy
+			tenet_fertility_cult
+			tenet_ethnic_religion
+			tenet_mystery_religion
+			tenet_hero_cults
+			tenet_wedding_ceremonies
+			#Eunuchs, Lapsi, (strong) Arianism all condemned
+			tenet_eunuch_priests
+			tenet_adoptionism
+			tenet_modalism
+			tenet_doceticism
+			tenet_unitarianism
+		}
+		
+		known = {
+			tenet_aniconism
+			tenet_alexandrian_catechism
+			tenet_pacifism
+			tenet_pentarchy
+			tenet_unrelenting_faith
+			tenet_pastoral_isolation
+			tenet_esotericism
+			tenet_legalism
+			tenet_literalism
+			tenet_religious_legal_pronouncements
+			tenet_ritual_celebrations
+			tenet_sanctity_of_nature
+			tenet_megaliths
+			tenet_hyperdulia
+			#WtWSMS Tenets
+			tenet_credobaptism
+			tenet_arianism
+		}
+		
+		#Unknown:
+		# tenet_monophysitism: Christology was still hung up on Subordinationism vs. Consubstantiality
+		# tenet_miaphysitism: Christology was still hung up on Subordinationism vs. Consubstantiality
+		# tenet_dyophysitism: Christology was still hung up on Subordinationism vs. Consubstantiality
+		# tenet_apollinarism: Christology was still hung up on Subordinationism vs. Consubstantiality
+		# tenet_eutychianism: Christology was still hung up on Subordinationism vs. Consubstantiality
+		# tenet_nestorianism: Christology was still hung up on Subordinationism vs. Consubstantiality
+		#
+		# tenet_holy_myron: More evolved as the East Split
+		# tenet_original_sin: Augustine first formulated it
+		#
+		# tenet_monothelitism: Later compromise position
+		#
+		# tenet_miles_christi: Post-Islam
+		#
+		# tenet_purgatory: Really only developed in the Medieval period
+		# tenet_peace_of_god: Much more Medieval by description
+		# tenet_armed_pilgrimages: Medieval Period
+		# tenet_scholasticism: Medieval Period
+		# tenet_hesychasm: Medieval Period
+		# tenet_mortification_of_the_flesh: Medieval Period
+		#
+		# tenet_khachkar: Very much limited to the Armenians
+		
+		popularity = {}
+	}
+	
+	381.1.1 = { #First Council of Constantinople
+		main_rite = roman_rite
+		
+		permitted = {
+			tenet_pentarchy
+		}
+		
+		prohibited = {
+			tenet_arianism
+			tenet_apollinarism
+			tenet_anomoeanism
+		}
+		
+		known = {
+		}
+		
+		popularity = {}
+	}
+	
+	409.1.1 = { #Marcellinus of Carthage condemns Donastism
+		main_rite = roman_rite
+		
+		permitted = {
+		}
+		
+		prohibited = {
+			tenet_redeeming_struggle
+			tenet_rigorism
+		}
+		
+		known = {
+		}
+		
+		popularity = {}
+	}
+	
+	418.1.1 = { #Council of Carthage
+		main_rite = roman_rite
+		
+		permitted = {
+			tenet_original_sin
+		}
+		
+		prohibited = {
+			tenet_credobaptism
+			tenet_pelagianism
+			tenet_total_depravity
+		}
+		
+		known = {
+		}
+		
+		popularity = {}
+	}
+	
+	431.1.1 = { #Council of Ephesus
+		main_rite = roman_rite
+		
+		permitted = {
+		}
+		
+		prohibited = {
+			tenet_nestorianism
+		}
+		
+		known = {
+		}
+		
+		popularity = {}
+	}
+}
+
+arian = {
+	325.1.1 = { #Council of Nicaea
+		main_rite = arian
+		
+		permitted = {
+			#Vanilla
+			tenet_communal_identity
+			tenet_communion
+			tenet_vows_of_poverty
+			tenet_adaptive
+			tenet_asceticism
+			tenet_mendicant_preachers
+			#BGA
+			tenet_transubstantiation
+			tenet_dulia
+			tenet_ora_et_labora
+			tenet_acts_of_apostles
+			tenet_be_fruitful_and_multiply
+			tenet_apostolic_succession
+			tenet_confession
+			tenet_celestial_hierarchy #Origen's work on Angelology
+			tenet_philanthropia
+			tenet_love_thy_neighbour
+			tenet_divine_liturgy
+			tenet_anachoresis
+		}
+		
+		prohibited = {
+			tenet_reincarnation #Pythagoreanism
+			tenet_false_conversion_sanction
+			tenet_ancestor_worship
+			tenet_carnal_exaltation
+			tenet_consolamentum
+			tenet_divine_marriage
+			tenet_astrology #Not quite, but it was thought in only scientific terms; portending the future was problematic
+			tenet_gnosticism
+			tenet_sun_worship
+			tenet_warmonger
+			tenet_household_gods
+			tenet_exaltation_of_pain
+			tenet_natural_primitivism
+			tenet_pursuit_of_power
+			tenet_ritual_cannibalism
+			tenet_sacred_shadows
+			tenet_polyamory
+			tenet_mountain_worship
+			tenet_cranial_trophies
+			tenet_simony
+			#WtWSMS Tenets
+			tenet_ecstatic_prophecy
+			tenet_complex_exegesis
+			tenet_memorialism
+			tenet_repudiation
+			tenet_antinomianism
+			tenet_isopsephy
+			tenet_fertility_cult
+			tenet_ethnic_religion
+			tenet_mystery_religion
+			tenet_hero_cults
+			tenet_wedding_ceremonies
+			#Eunuchs, Lapsi, (strong) Arianism all condemned
+			tenet_eunuch_priests
+			tenet_adoptionism
+			tenet_modalism
+			tenet_doceticism
+			tenet_unitarianism
+		}
+		
+		known = {
+			tenet_aniconism
+			tenet_alexandrian_catechism
+			tenet_pacifism
+			tenet_pentarchy
+			tenet_unrelenting_faith
+			tenet_pastoral_isolation
+			tenet_esotericism
+			tenet_legalism
+			tenet_literalism
+			tenet_religious_legal_pronouncements
+			tenet_ritual_celebrations
+			tenet_sanctity_of_nature
+			tenet_megaliths
+			tenet_hyperdulia
+			#WtWSMS Tenets
+			tenet_credobaptism
+			tenet_arianism
+		}
+		
+		popularity = {}
+	}
+}
+
+montanism = {
+	200.1.1 = { #Council of Nicaea
+		permitted = {
+			#Vanilla
+			tenet_communal_identity
+			tenet_vows_of_poverty
+			tenet_adaptive
+			tenet_asceticism
+			tenet_mendicant_preachers
+			#WtWSMS
+			tenet_ecstatic_prophecy
+			#BGA
+			tenet_acts_of_apostles
+			tenet_be_fruitful_and_multiply
+			tenet_confession
+			tenet_celestial_hierarchy #Origen's work on Angelology
+			tenet_philanthropia
+			tenet_love_thy_neighbour
+		}
+		
+		prohibited = {
+			tenet_reincarnation #Pythagoreanism
+			tenet_false_conversion_sanction
+			tenet_ancestor_worship
+			tenet_carnal_exaltation
+			tenet_consolamentum
+			tenet_divine_marriage
+			tenet_astrology #Not quite, but it was thought in only scientific terms; portending the future was problematic
+			tenet_gnosticism
+			tenet_sun_worship
+			tenet_warmonger
+			tenet_household_gods
+			tenet_exaltation_of_pain
+			tenet_natural_primitivism
+			tenet_pursuit_of_power
+			tenet_ritual_cannibalism
+			tenet_sacred_shadows
+			tenet_polyamory
+			tenet_mountain_worship
+			tenet_cranial_trophies
+			tenet_simony
+			#WtWSMS Tenets
+			tenet_complex_exegesis
+			tenet_antinomianism
+			tenet_isopsephy
+			tenet_fertility_cult
+			tenet_ethnic_religion
+			tenet_mystery_religion
+			tenet_hero_cults
+			tenet_wedding_ceremonies
+			#Eunuchs, Lapsi, (strong) Arianism all condemned
+			tenet_eunuch_priests
+			tenet_gnosticism
+		}
+		
+		known = {
+			tenet_aniconism
+			tenet_alexandrian_catechism
+			tenet_communion
+			tenet_pacifism
+			tenet_pentarchy
+			tenet_unrelenting_faith
+			tenet_pastoral_isolation
+			tenet_esotericism
+			tenet_legalism
+			tenet_literalism
+			tenet_religious_legal_pronouncements
+			tenet_ritual_celebrations
+			tenet_sanctity_of_nature
+			tenet_megaliths
+			#BGA
+			tenet_hyperdulia
+			tenet_dulia
+			tenet_ora_et_labora
+			tenet_transubstantiation
+			tenet_divine_liturgy
+			tenet_apostolic_succession
+			tenet_anachoresis
+			#WtWSMS Tenets
+			tenet_credobaptism
+			tenet_arianism
+			tenet_unitarianism
+			tenet_modalism
+			tenet_adoptionism
+			tenet_doceticism
+			tenet_memorialism
+			tenet_repudiation
+			tenet_total_depravity
+		}
+		
+		popularity = {}
+	}
+}
+
+donatism = {
+	409.1.1 = {
+		created = yes
+		
+		permitted = {
+			#WtWSMS
+			tenet_redeeming_struggle
+			tenet_rigorism
+			#Vanilla
+			tenet_communal_identity
+			tenet_communion
+			tenet_vows_of_poverty
+			tenet_adaptive
+			tenet_asceticism
+			tenet_mendicant_preachers
+			#BGA
+			tenet_transubstantiation
+			tenet_dulia
+			tenet_ora_et_labora
+			tenet_acts_of_apostles
+			tenet_be_fruitful_and_multiply
+			tenet_apostolic_succession
+			tenet_confession
+			tenet_celestial_hierarchy #Origen's work on Angelology
+			tenet_philanthropia
+			tenet_love_thy_neighbour
+			tenet_divine_liturgy
+			tenet_anachoresis
+		}
+		
+		prohibited = {
+			tenet_reincarnation #Pythagoreanism
+			tenet_false_conversion_sanction
+			tenet_ancestor_worship
+			tenet_carnal_exaltation
+			tenet_consolamentum
+			tenet_divine_marriage
+			tenet_astrology #Not quite, but it was thought in only scientific terms; portending the future was problematic
+			tenet_gnosticism
+			tenet_sun_worship
+			tenet_warmonger
+			tenet_household_gods
+			tenet_exaltation_of_pain
+			tenet_natural_primitivism
+			tenet_pursuit_of_power
+			tenet_ritual_cannibalism
+			tenet_sacred_shadows
+			tenet_polyamory
+			tenet_mountain_worship
+			tenet_cranial_trophies
+			tenet_simony
+			#WtWSMS Tenets
+			tenet_ecstatic_prophecy
+			tenet_complex_exegesis
+			tenet_memorialism
+			tenet_repudiation
+			tenet_antinomianism
+			tenet_isopsephy
+			tenet_fertility_cult
+			tenet_ethnic_religion
+			tenet_mystery_religion
+			tenet_hero_cults
+			tenet_wedding_ceremonies
+			#Eunuchs, Lapsi, (strong) Arianism all condemned
+			tenet_eunuch_priests
+			tenet_adoptionism
+			tenet_modalism
+			tenet_doceticism
+			tenet_unitarianism
+			tenet_arianism
+			tenet_apollinarism
+			tenet_anomoeanism
+		}
+		
+		known = {
+			tenet_aniconism
+			tenet_alexandrian_catechism
+			tenet_pacifism
+			tenet_pentarchy
+			tenet_unrelenting_faith
+			tenet_pastoral_isolation
+			tenet_esotericism
+			tenet_legalism
+			tenet_literalism
+			tenet_religious_legal_pronouncements
+			tenet_ritual_celebrations
+			tenet_sanctity_of_nature
+			tenet_megaliths
+			tenet_hyperdulia
+			tenet_pentarchy
+			tenet_original_sin
+			#WtWSMS Tenets
+			tenet_credobaptism
+			tenet_arianism
+			tenet_pelagianism
+			tenet_total_depravity
+		}
+		
+		popularity = {}
+	}
+}
+
+pneumatomachianism = {
+	325.1.1 = { #Council of Nicaea
+		created = yes
+		
+		permitted = {
+			#Vanilla
+			tenet_communal_identity
+			tenet_communion
+			tenet_vows_of_poverty
+			tenet_adaptive
+			tenet_asceticism
+			tenet_mendicant_preachers
+			#WtWSMS
+			tenet_anomoeanism
+			#BGA
+			tenet_transubstantiation
+			tenet_dulia
+			tenet_ora_et_labora
+			tenet_acts_of_apostles
+			tenet_be_fruitful_and_multiply
+			tenet_apostolic_succession
+			tenet_confession
+			tenet_celestial_hierarchy #Origen's work on Angelology
+			tenet_philanthropia
+			tenet_love_thy_neighbour
+			tenet_divine_liturgy
+			tenet_anachoresis
+		}
+		
+		prohibited = {
+			tenet_reincarnation #Pythagoreanism
+			tenet_false_conversion_sanction
+			tenet_ancestor_worship
+			tenet_carnal_exaltation
+			tenet_consolamentum
+			tenet_divine_marriage
+			tenet_astrology #Not quite, but it was thought in only scientific terms; portending the future was problematic
+			tenet_gnosticism
+			tenet_sun_worship
+			tenet_warmonger
+			tenet_household_gods
+			tenet_exaltation_of_pain
+			tenet_natural_primitivism
+			tenet_pursuit_of_power
+			tenet_ritual_cannibalism
+			tenet_sacred_shadows
+			tenet_polyamory
+			tenet_mountain_worship
+			tenet_cranial_trophies
+			tenet_simony
+			#WtWSMS Tenets
+			tenet_ecstatic_prophecy
+			tenet_complex_exegesis
+			tenet_memorialism
+			tenet_repudiation
+			tenet_antinomianism
+			tenet_isopsephy
+			tenet_fertility_cult
+			tenet_ethnic_religion
+			tenet_mystery_religion
+			tenet_hero_cults
+			tenet_wedding_ceremonies
+			#Eunuchs, Lapsi, (strong) Arianism all condemned
+			tenet_eunuch_priests
+			tenet_adoptionism
+			tenet_modalism
+			tenet_doceticism
+			tenet_unitarianism
+		}
+		
+		known = {
+			tenet_aniconism
+			tenet_alexandrian_catechism
+			tenet_pacifism
+			tenet_pentarchy
+			tenet_unrelenting_faith
+			tenet_pastoral_isolation
+			tenet_esotericism
+			tenet_legalism
+			tenet_literalism
+			tenet_religious_legal_pronouncements
+			tenet_ritual_celebrations
+			tenet_sanctity_of_nature
+			tenet_megaliths
+			tenet_hyperdulia
+			#WtWSMS Tenets
+			tenet_credobaptism
+			tenet_arianism
+		}
+		
+		popularity = {}
+	}
+}
+
+melchisdechianism = {
+	200.1.1 = {
+		main_rite = melchisdechianism
+		
+		permitted = {
+			#Vanilla
+			tenet_communal_identity
+			tenet_communion
+			tenet_vows_of_poverty
+			tenet_adaptive
+			tenet_asceticism
+			tenet_mendicant_preachers
+			tenet_gnosticism
+			tenet_pacifism
+			tenet_esotericism
+			#BGA
+			tenet_acts_of_apostles
+			tenet_be_fruitful_and_multiply
+			tenet_confession
+			tenet_celestial_hierarchy #Origen's work on Angelology
+			tenet_philanthropia
+			tenet_love_thy_neighbour
+		}
+		
+		prohibited = {
+			tenet_reincarnation #Pythagoreanism
+			tenet_false_conversion_sanction
+			tenet_ancestor_worship
+			tenet_carnal_exaltation
+			tenet_consolamentum
+			tenet_divine_marriage
+			tenet_astrology #Not quite, but it was thought in only scientific terms; portending the future was problematic
+			tenet_sun_worship
+			tenet_warmonger
+			tenet_household_gods
+			tenet_exaltation_of_pain
+			tenet_natural_primitivism
+			tenet_pursuit_of_power
+			tenet_ritual_cannibalism
+			tenet_sacred_shadows
+			tenet_polyamory
+			tenet_mountain_worship
+			tenet_cranial_trophies
+			tenet_simony
+			#WtWSMS Tenets
+			tenet_isopsephy
+			tenet_fertility_cult
+			tenet_ethnic_religion
+			tenet_mystery_religion
+			tenet_hero_cults
+			tenet_wedding_ceremonies
+		}
+		
+		known = {
+			tenet_aniconism
+			tenet_unrelenting_faith
+			tenet_pastoral_isolation
+			tenet_legalism
+			tenet_literalism
+			tenet_religious_legal_pronouncements
+			tenet_ritual_celebrations
+			tenet_sanctity_of_nature
+			tenet_megaliths
+			tenet_hyperdulia
+		}
+		
+		popularity = {}
+	}
+}
+
+marcionism = {
+	200.1.1 = {
+		main_rite = arian
+		
+		permitted = {
+			#Vanilla
+			tenet_communal_identity
+			tenet_vows_of_poverty
+			tenet_adaptive
+			tenet_asceticism
+			tenet_mendicant_preachers
+			tenet_gnosticism
+			tenet_literalism
+			#WtWSMS
+			tenet_doceticism
+			tenet_rigorism
+			#BGA
+			tenet_ora_et_labora
+			tenet_acts_of_apostles
+			tenet_be_fruitful_and_multiply
+			tenet_confession
+			tenet_celestial_hierarchy #Origen's work on Angelology
+			tenet_philanthropia
+			tenet_love_thy_neighbour
+			tenet_divine_liturgy
+			tenet_anachoresis
+		}
+		
+		prohibited = {
+			tenet_reincarnation #Pythagoreanism
+			tenet_false_conversion_sanction
+			tenet_ancestor_worship
+			tenet_carnal_exaltation
+			tenet_consolamentum
+			tenet_divine_marriage
+			tenet_astrology #Not quite, but it was thought in only scientific terms; portending the future was problematic
+			tenet_sun_worship
+			tenet_warmonger
+			tenet_household_gods
+			tenet_exaltation_of_pain
+			tenet_natural_primitivism
+			tenet_pursuit_of_power
+			tenet_ritual_cannibalism
+			tenet_sacred_shadows
+			tenet_polyamory
+			tenet_mountain_worship
+			tenet_cranial_trophies
+			tenet_simony
+			tenet_transubstantiation
+			#WtWSMS Tenets
+			tenet_ecstatic_prophecy
+			tenet_repudiation
+			tenet_antinomianism
+			tenet_isopsephy
+			tenet_fertility_cult
+			tenet_ethnic_religion
+			tenet_mystery_religion
+			tenet_hero_cults
+			tenet_wedding_ceremonies
+			#Eunuchs, Lapsi, (strong) Arianism all condemned
+			tenet_eunuch_priests
+			tenet_adoptionism
+			tenet_modalism
+			tenet_unitarianism
+			#In line with Docetism
+			tenet_hyperdulia
+		}
+		
+		known = {
+			tenet_aniconism
+			tenet_communion
+			tenet_alexandrian_catechism
+			tenet_pacifism
+			tenet_pentarchy
+			tenet_unrelenting_faith
+			tenet_pastoral_isolation
+			tenet_esotericism
+			tenet_legalism
+			tenet_religious_legal_pronouncements
+			tenet_ritual_celebrations
+			tenet_sanctity_of_nature
+			tenet_megaliths
+			tenet_dulia
+			tenet_apostolic_succession
+			#WtWSMS Tenets
+			tenet_credobaptism
+			tenet_arianism
+		}
+		
+		popularity = {}
+	}
+}
+
+priscillianism = {
+	200.1.1 = {
+		permitted = {
+			#Vanilla
+			tenet_communal_identity
+			tenet_communion
+			tenet_vows_of_poverty
+			tenet_adaptive
+			tenet_asceticism
+			tenet_mendicant_preachers
+			tenet_gnosticism
+			tenet_literalism
+			tenet_complex_exegesis
+			tenet_astrology
+			#WtWSMS
+			tenet_doceticism
+			tenet_rigorism
+			#BGA
+			tenet_transubstantiation
+			tenet_dulia
+			tenet_ora_et_labora
+			tenet_acts_of_apostles
+			tenet_be_fruitful_and_multiply
+			tenet_apostolic_succession
+			tenet_confession
+			tenet_celestial_hierarchy #Origen's work on Angelology
+			tenet_philanthropia
+			tenet_love_thy_neighbour
+			tenet_divine_liturgy
+			tenet_anachoresis
+		}
+		
+		prohibited = {
+			tenet_reincarnation #Pythagoreanism
+			tenet_false_conversion_sanction
+			tenet_ancestor_worship
+			tenet_carnal_exaltation
+			tenet_consolamentum
+			tenet_divine_marriage
+			tenet_sun_worship
+			tenet_warmonger
+			tenet_household_gods
+			tenet_exaltation_of_pain
+			tenet_natural_primitivism
+			tenet_pursuit_of_power
+			tenet_ritual_cannibalism
+			tenet_sacred_shadows
+			tenet_polyamory
+			tenet_mountain_worship
+			tenet_cranial_trophies
+			tenet_simony
+			#WtWSMS Tenets
+			tenet_ecstatic_prophecy
+			tenet_antinomianism
+			tenet_isopsephy
+			tenet_fertility_cult
+			tenet_ethnic_religion
+			tenet_mystery_religion
+			tenet_hero_cults
+			tenet_wedding_ceremonies
+			#Eunuchs, Lapsi, (strong) Arianism all condemned
+			tenet_eunuch_priests
+			tenet_adoptionism
+			tenet_modalism
+			tenet_unitarianism
+		}
+		
+		known = {
+			tenet_aniconism
+			tenet_alexandrian_catechism
+			tenet_pacifism
+			tenet_pentarchy
+			tenet_unrelenting_faith
+			tenet_pastoral_isolation
+			tenet_esotericism
+			tenet_legalism
+			tenet_religious_legal_pronouncements
+			tenet_ritual_celebrations
+			tenet_sanctity_of_nature
+			tenet_megaliths
+			tenet_hyperdulia
+			#WtWSMS Tenets
+			tenet_credobaptism
+			tenet_arianism
+		}
+		
+		popularity = {}
+	}
+}
+
+audianism = {
+	200.1.1 = {
+		permitted = {
+			#Vanilla
+			tenet_communal_identity
+			tenet_vows_of_poverty
+			tenet_adaptive
+			tenet_asceticism
+			tenet_mendicant_preachers
+			tenet_pastoral_isolation
+			tenet_literalism
+			#BGA
+			tenet_ora_et_labora
+			tenet_acts_of_apostles
+			tenet_be_fruitful_and_multiply
+			tenet_confession
+			tenet_celestial_hierarchy #Origen's work on Angelology
+			tenet_philanthropia
+			tenet_love_thy_neighbour
+			tenet_anachoresis
+		}
+		
+		prohibited = {
+			tenet_reincarnation #Pythagoreanism
+			tenet_false_conversion_sanction
+			tenet_ancestor_worship
+			tenet_carnal_exaltation
+			tenet_consolamentum
+			tenet_divine_marriage
+			tenet_astrology #Not quite, but it was thought in only scientific terms; portending the future was problematic
+			tenet_gnosticism
+			tenet_sun_worship
+			tenet_warmonger
+			tenet_household_gods
+			tenet_exaltation_of_pain
+			tenet_natural_primitivism
+			tenet_pursuit_of_power
+			tenet_ritual_cannibalism
+			tenet_sacred_shadows
+			tenet_polyamory
+			tenet_mountain_worship
+			tenet_cranial_trophies
+			tenet_simony
+			#WtWSMS Tenets
+			tenet_ecstatic_prophecy
+			tenet_complex_exegesis
+			tenet_memorialism
+			tenet_repudiation
+			tenet_antinomianism
+			tenet_isopsephy
+			tenet_fertility_cult
+			tenet_ethnic_religion
+			tenet_mystery_religion
+			tenet_hero_cults
+			tenet_wedding_ceremonies
+			#Eunuchs, Lapsi, (strong) Arianism all condemned
+			tenet_eunuch_priests
+		}
+		
+		known = {
+			tenet_aniconism
+			tenet_communion
+			tenet_alexandrian_catechism
+			tenet_pacifism
+			tenet_pentarchy
+			tenet_unrelenting_faith
+			tenet_esotericism
+			tenet_legalism
+			tenet_religious_legal_pronouncements
+			tenet_ritual_celebrations
+			tenet_sanctity_of_nature
+			tenet_megaliths
+			#BGA
+			tenet_hyperdulia
+			tenet_dulia
+			tenet_transubstantiation
+			tenet_apostolic_succession
+			tenet_divine_liturgy
+			#WtWSMS Tenets
+			tenet_credobaptism
+			tenet_arianism
+			tenet_adoptionism
+			tenet_modalism
+			tenet_doceticism
+			tenet_unitarianism
+		}
+		
+		popularity = {}
+	}
+}
+
+nazerene = {
+	200.1.1 = {
+		permitted = {
+			#Vanilla
+			tenet_communal_identity
+			tenet_vows_of_poverty
+			tenet_adaptive
+			tenet_asceticism
+			tenet_mendicant_preachers
+			tenet_pastoral_isolation
+			tenet_literalism
+			#BGA
+			tenet_ora_et_labora
+			tenet_acts_of_apostles
+			tenet_be_fruitful_and_multiply
+			tenet_confession
+			tenet_celestial_hierarchy #Origen's work on Angelology
+			tenet_philanthropia
+			tenet_love_thy_neighbour
+			tenet_anachoresis
+		}
+		
+		prohibited = {
+			tenet_reincarnation #Pythagoreanism
+			tenet_false_conversion_sanction
+			tenet_ancestor_worship
+			tenet_carnal_exaltation
+			tenet_consolamentum
+			tenet_divine_marriage
+			tenet_astrology #Not quite, but it was thought in only scientific terms; portending the future was problematic
+			tenet_gnosticism
+			tenet_sun_worship
+			tenet_warmonger
+			tenet_household_gods
+			tenet_exaltation_of_pain
+			tenet_natural_primitivism
+			tenet_pursuit_of_power
+			tenet_ritual_cannibalism
+			tenet_sacred_shadows
+			tenet_polyamory
+			tenet_mountain_worship
+			tenet_cranial_trophies
+			tenet_simony
+			#WtWSMS Tenets
+			tenet_ecstatic_prophecy
+			tenet_complex_exegesis
+			tenet_memorialism
+			tenet_repudiation
+			tenet_antinomianism
+			tenet_isopsephy
+			tenet_fertility_cult
+			tenet_ethnic_religion
+			tenet_mystery_religion
+			tenet_hero_cults
+			tenet_wedding_ceremonies
+			#Eunuchs, Lapsi, (strong) Arianism all condemned
+			tenet_eunuch_priests
+		}
+		
+		known = {
+			tenet_aniconism
+			tenet_communion
+			tenet_alexandrian_catechism
+			tenet_pacifism
+			tenet_pentarchy
+			tenet_unrelenting_faith
+			tenet_esotericism
+			tenet_legalism
+			tenet_religious_legal_pronouncements
+			tenet_ritual_celebrations
+			tenet_sanctity_of_nature
+			tenet_megaliths
+			#BGA
+			tenet_hyperdulia
+			tenet_dulia
+			tenet_transubstantiation
+			tenet_apostolic_succession
+			tenet_divine_liturgy
+			#WtWSMS Tenets
+			tenet_credobaptism
+			tenet_arianism
+			tenet_adoptionism
+			tenet_modalism
+			tenet_doceticism
+			tenet_unitarianism
+		}
+		
+		popularity = {}
+	}
+}
+
+pelagianism = {
+	418.1.1 = {
+		created = yes
+		
+		permitted = {
+			#Vanilla
+			tenet_communal_identity
+			tenet_communion
+			tenet_vows_of_poverty
+			tenet_adaptive
+			tenet_asceticism
+			tenet_mendicant_preachers
+			tenet_pentarchy
+			#BGA
+			tenet_transubstantiation
+			tenet_dulia
+			tenet_ora_et_labora
+			tenet_acts_of_apostles
+			tenet_be_fruitful_and_multiply
+			tenet_apostolic_succession
+			tenet_confession
+			tenet_celestial_hierarchy #Origen's work on Angelology
+			tenet_philanthropia
+			tenet_love_thy_neighbour
+			tenet_divine_liturgy
+			tenet_anachoresis
+		}
+		
+		prohibited = {
+			tenet_reincarnation #Pythagoreanism
+			tenet_false_conversion_sanction
+			tenet_ancestor_worship
+			tenet_carnal_exaltation
+			tenet_consolamentum
+			tenet_divine_marriage
+			tenet_astrology #Not quite, but it was thought in only scientific terms; portending the future was problematic
+			tenet_gnosticism
+			tenet_sun_worship
+			tenet_warmonger
+			tenet_household_gods
+			tenet_exaltation_of_pain
+			tenet_natural_primitivism
+			tenet_pursuit_of_power
+			tenet_ritual_cannibalism
+			tenet_sacred_shadows
+			tenet_polyamory
+			tenet_mountain_worship
+			tenet_cranial_trophies
+			tenet_simony
+			#WtWSMS Tenets
+			tenet_ecstatic_prophecy
+			tenet_complex_exegesis
+			tenet_memorialism
+			tenet_repudiation
+			tenet_antinomianism
+			tenet_isopsephy
+			tenet_fertility_cult
+			tenet_ethnic_religion
+			tenet_mystery_religion
+			tenet_hero_cults
+			tenet_wedding_ceremonies
+			#Eunuchs, Lapsi, (strong) Arianism all condemned
+			tenet_eunuch_priests
+			tenet_adoptionism
+			tenet_modalism
+			tenet_doceticism
+			tenet_unitarianism
+			tenet_arianism
+			tenet_apollinarism
+			tenet_anomoeanism
+			tenet_redeeming_struggle
+			tenet_rigorism
+		}
+		
+		known = {
+			tenet_aniconism
+			tenet_alexandrian_catechism
+			tenet_pacifism
+			tenet_pentarchy
+			tenet_unrelenting_faith
+			tenet_pastoral_isolation
+			tenet_esotericism
+			tenet_legalism
+			tenet_literalism
+			tenet_religious_legal_pronouncements
+			tenet_ritual_celebrations
+			tenet_sanctity_of_nature
+			tenet_megaliths
+			tenet_hyperdulia
+			#WtWSMS Tenets
+			tenet_credobaptism
+			tenet_arianism
+		}
+		
+		#Unknown:
+		# tenet_monophysitism: Christology was still hung up on Subordinationism vs. Consubstantiality
+		# tenet_miaphysitism: Christology was still hung up on Subordinationism vs. Consubstantiality
+		# tenet_dyophysitism: Christology was still hung up on Subordinationism vs. Consubstantiality
+		# tenet_apollinarism: Christology was still hung up on Subordinationism vs. Consubstantiality
+		# tenet_eutychianism: Christology was still hung up on Subordinationism vs. Consubstantiality
+		# tenet_nestorianism: Christology was still hung up on Subordinationism vs. Consubstantiality
+		#
+		# tenet_holy_myron: More evolved as the East Split
+		# tenet_original_sin: Augustine first formulated it
+		#
+		# tenet_monothelitism: Later compromise position
+		#
+		# tenet_miles_christi: Post-Islam
+		#
+		# tenet_purgatory: Really only developed in the Medieval period
+		# tenet_peace_of_god: Much more Medieval by description
+		# tenet_armed_pilgrimages: Medieval Period
+		# tenet_scholasticism: Medieval Period
+		# tenet_hesychasm: Medieval Period
+		# tenet_mortification_of_the_flesh: Medieval Period
+		# tenet_scholasticism: Medieval Period
+		#
+		# tenet_khachkar: Very much limited to the Armenians
+		
+		popularity = {}
+	}
+}
+
+messalian = {
+	200.1.1 = {
+		permitted = {
+			tenet_divine_marriage
+			tenet_carnal_exaltation
+			tenet_asceticism
+			tenet_antinomianism
+			tenet_repudiation
+		}
+
+		known = {
+			tenet_legalism
+			tenet_apostolic_succession
+			tenet_simony
+			tenet_confession
+		}
+	}
+}

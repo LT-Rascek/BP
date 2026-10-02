@@ -279,6 +279,65 @@ bosnian_church = {
 		fallback_tenet = tenet_communal_identity
 	}
 }
+messalian = {
+	name = messalian
+	desc = messalian_desc
+	faith = messalian
+
+	color = { 0.6 0.1 0.4 }
+
+	tenets = {
+		tenet_asceticism
+		tenet_antinomianism
+		tenet_repudiation
+	}
+
+	doctrines = {
+		doctrine_no_head
+		doctrine_gender_equal
+		doctrine_theocracy_lay_clergy
+		doctrine_homosexuality_accepted
+		doctrine_adultery_men_accepted
+		doctrine_adultery_women_accepted
+		doctrine_deviancy_accepted
+		doctrine_witchcraft_accepted
+		
+		doctrine_clerical_gender_either
+		doctrine_clerical_marriage_allowed
+	}
+
+	#Unique Localization
+	localization = {
+		#HighGod
+		HighGodName = messalian_high_god_name
+		HighGodNamePossessive = messalian_high_god_name_possessive
+		HighGodNameSheHe = CHARACTER_SHEHE_HE
+		HighGodHerselfHimself = CHARACTER_HIMSELF
+		HighGodHerHis = CHARACTER_HERHIS_HIS
+		HighGodNameAlternate = christianity_high_god_name_alternate
+		HighGodNameAlternatePossessive = christianity_high_god_name_alternate_possessive
+		
+		#Creator
+		CreatorName = messalian_creator_god_name
+		CreatorNamePossessive = messalian_creator_god_name_possessive
+		CreatorSheHe = CHARACTER_SHEHE_HE
+		CreatorHerHis = CHARACTER_HERHIS_HIS
+		CreatorHerHim = CHARACTER_HERHIM_HIM
+		
+		EvilGodNames = {
+			messalian_evil_god_name
+		}
+		
+		ReligiousText = messalian_religious_text
+		
+		PriestMale = messalian_priest
+		PriestMalePlural = messalian_priest_plural
+		PriestFemale = messalian_priest
+		PriestFemalePlural = messalian_priest_plural
+		PriestNeuter = messalian_priest
+		PriestNeuterPlural = messalian_priest_plural
+	}
+}
 
 #### Historical Only
 adamites = {

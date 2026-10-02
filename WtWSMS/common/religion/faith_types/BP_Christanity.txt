@@ -1101,6 +1101,39 @@ pelagianism = {
 	}
 }
 
+##### Past
+messalian = {
+	main_rite = messalian
+	
+	faith_details = {
+		religion = christianity_religion
+		color = { 0.6 0.1 0.4 }
+		icon = christianity_messalian
+		graphical_faith = "orthodox_gfx"
+	}
+
+	eminent_holy_sites = {
+		jerusalem
+		antioch
+	}
+
+	holy_sites = {
+		constantinople
+		baghdad
+		farz
+	}
+
+	#Unique Localization
+	localization = {
+		PriestMale = messalian_priest
+		PriestMalePlural = messalian_priest_plural
+		PriestFemale = messalian_priest
+		PriestFemalePlural = messalian_priest_plural
+		PriestNeuter = messalian_priest
+		PriestNeuterPlural = messalian_priest_plural
+	}
+}
+
 ##### Future
 adoptionist = {
 	# Scripted main Rite: adoptionist_rite (all start dates). Its core tenets and Rite-specific doctrines are defined on the Rite; faith-intrinsic doctrines remain inline.
