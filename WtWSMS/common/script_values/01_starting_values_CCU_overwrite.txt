@@ -34,7 +34,7 @@ culture_acceptance_baseline = {
 				has_same_culture_heritage = scope:culture
 			}
 			add = {
-				value = same_heritage_cultural_acceptance # please update CULTURE_PILLAR_TOOLTIP_HERITAGE_EFFECT if this number changes
+				value = 20 # please update CULTURE_PILLAR_TOOLTIP_HERITAGE_EFFECT if this number changes
 				desc = ACCEPTANCE_BASELINE_HERITAGE
 			}
 		}
@@ -59,8 +59,6 @@ culture_acceptance_baseline = {
 				desc = ACCEPTANCE_BASELINE_HERITAGE_FAMILY
 			}
 		}
-		
-		
 		# Increase base acceptance for sharing same language
 		if = {
 			limit = {
@@ -221,26 +219,26 @@ culture_acceptance_baseline = {
 		}
 		if = { # Pluralistic close faiths
 			limit = {
-				scope:our_faith ?= {
-					has_doctrine = doctrine_pluralism_pluralistic
+				scope:our_faith.main_rite ?= {
+					rite_has_doctrine = doctrine_pluralism_pluralistic
 				}
-				scope:their_faith ?= {
-					has_doctrine = doctrine_pluralism_pluralistic
+				scope:their_faith.main_rite ?= {
+					rite_has_doctrine = doctrine_pluralism_pluralistic
 				}
 				any_culture_county = {
 					percent >= 0.5
 					title_province = {
-						faith = {
-							has_doctrine = doctrine_pluralism_pluralistic
+						rite = {
+							rite_has_doctrine = doctrine_pluralism_pluralistic
 						}
 					}
 				}
-				scope:culture = {
+				scope:culture ?= {
 					any_culture_county = {
 						percent >= 0.5
 						title_province = {
-							faith = {
-								has_doctrine = doctrine_pluralism_pluralistic
+							rite = {
+								rite_has_doctrine = doctrine_pluralism_pluralistic
 							}
 						}
 					}

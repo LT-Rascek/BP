@@ -143,25 +143,25 @@ add_more_wre_courtiers_effect = {
 #Changes the rite of old_fath characters at game start
 change_ruler_and_court_rite_by_county_faith_effect = {
 	every_county = {
-		limit = { this.faith = faith:$NEW_RITE$ }
+		limit = { this.rite = rite:$NEW_RITE$ }
 		if = {
 			limit = { this.holder.faith = faith:$OLD_RITE$ }
 			this.holder = {
-				set_character_faith_history = faith:$NEW_RITE$
+				set_character_rite_history = rite:$NEW_RITE$
 				every_child = {
-					limit = { this.faith = faith:$OLD_RITE$ }
-					set_character_faith_history = faith:$NEW_RITE$
+					limit = { this.faith = rite:$OLD_RITE$ }
+					set_character_rite_history = rite:$NEW_RITE$
 				}
 				every_courtier = {
 					limit = { this.faith = faith:$OLD_RITE$ }
-					set_character_faith_history = faith:$NEW_RITE$
+					set_character_rite_history = rite:$NEW_RITE$
 				}
 				every_vassal = {
 					limit = {
 						NOT = { government_has_flag = government_is_theocracy }
 						primary_title.tier = tier_barony
 					}
-					set_character_faith_history = faith:$NEW_RITE$
+					set_character_rite_history = rite:$NEW_RITE$
 				}
 			}
 		}
@@ -173,21 +173,21 @@ change_ruler_and_court_rite_by_kingdom_effect = {
 		if = {
 			limit = { this.holder.faith = faith:$OLD_RITE$ }
 			this.holder = {
-				set_character_faith_history = faith:$NEW_RITE$
+				set_character_rite_history = rite:$NEW_RITE$
 				every_child = {
 					limit = { this.faith = faith:$OLD_RITE$ }
-					set_character_faith_history = faith:$NEW_RITE$
+					set_character_rite_history = rite:$NEW_RITE$
 				}
 				every_courtier = {
 					limit = { this.faith = faith:$OLD_RITE$ }
-					set_character_faith_history = faith:$NEW_RITE$
+					set_character_rite_history = rite:$NEW_RITE$
 				}
 				every_vassal = {
 					limit = {
 						NOT = { government_has_flag = government_is_theocracy }
 						primary_title.tier = tier_barony
 					}
-					set_character_faith_history = faith:$NEW_RITE$
+					set_character_rite_history = rite:$NEW_RITE$
 				}
 			}
 		}

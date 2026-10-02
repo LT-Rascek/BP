@@ -1,316 +1,317 @@
-﻿#Sources:
-#[1] M. Mueller, HYPSISTOS CULTS IN THE GREEK WORLD DURING THE ROMAN IMPERIUM. Hamilton, Ontario: McMaster University, 2014.
-#[2] Abu Muhammad 'Abd Allah Ruzbih ibn Daduya wrote a number of anti-monotheist, pro-dualist tracts early in Muslim rules (ca 760s); weren't stamped out until the 790s
-#[3] https://en.wikipedia.org/wiki/Aquitanian_language#/media/File:Euskararen_aztarna_geografikoak.svg
-#[4] https://penelope.uchicago.edu/Thayer/E/Roman/Texts/secondary/BURLAT/12*.html
-#[5] H. Niliacus, The Hieroglyphics of Horapollo. Princeton, NJ: Princeton University Press, 2020. (Translated George Boas). Chapter 1
-#[6] Cumont, Franz (1903). McCormack, Thomas J. (trans.) (ed.). The Mysteries of Mithra. Chicago: Open Court. ISBN 0-486-20323-9 & <https://www.sacred-texts.com/cla/mom/mom09.htm>
-#[7] Cohen, Samuel (2016). "Religious Diversity". In Jonathan J. Arnold; M. Shane Bjornlie; Kristina Sessa (eds.). A Companion to Ostrogothic Italy. Leiden, Boston: Brill Publishers. pp. 503–532. ISBN 978-9004-31376-7.
-
-on_game_start = {
-	on_actions = {
-		BP_set_minorities_universal
-	}
-}
-
-#AKA, Minorities that are true for all bookmarks
-BP_set_minorities_universal = {
-	effect = {
-		###### From Rajas of Asia vvvv
-		
-		### Konchinim Malabarism
-		every_county = {
-			limit = {
-				OR = {
-					this = title:c_kerala
-					this = title:c_venadu
-					this = title:c_alupa
-				}
-			}
-			add_small_culture_and_faith_to_county_effect = {
-				FAITH = faith:malabarism
-				CULTURE = culture:kochinim
-			}
-		}
-		#Indian Nestorians
-		every_county = {
-			limit = {
-				OR = {
-					this = title:c_kanara
-					this = title:c_panaji
-				}
-			}
-			add_small_faith_to_county_effect = { FAITH = faith:nestorian }
-		}
-		# Manicheans in Hexi Corridor
-		every_county = {
-			limit = {
-				OR = {
-					this = title:c_shazhou
-					this = title:c_liangzhou
-				}
-			}
-			add_small_faith_to_county_effect = { FAITH = faith:manichean }
-		}
-		# Rabiinism in Hexi Corridor
-		every_county = {
-			limit = {
-				OR = {
-					this = title:c_shazhou
-					this = title:c_liangzhou
-				}
-			}
-			add_small_faith_to_county_effect = { FAITH = faith:rabbinism }
-		}
-		# Parsees
-		title:c_daman = {
-			add_small_culture_and_faith_to_county_effect = {
-				FAITH = faith:mazdayasna
-				CULTURE = culture:persian
-			}
-		}
-		
-		###### From WtWSMS vvvv
-		
-		## Christianity
-		### Nicene
-		every_county = { #The Pentarchy
-			limit = {
-				OR = {
-					this = title:c_alexandria
-					this = title:c_roma
-					this = title:c_antiocheia
-					this = title:c_jerusalem
-					this = title:c_byzantion
-				}
-			}
-			add_large_faith_to_county_effect = { FAITH = faith:nicene }
-		}
-		## Jews
-		### Juhuro Tzadikites (Mountain Jews)
-		every_county = {
-			limit = {
-				OR = {
-					this = title:c_sarir
-					this = title:c_derbent
-					this = title:c_shirvan
-					this = title:c_maskut
-				}
-			}
-			add_small_culture_and_faith_to_county_effect = {
-				CULTURE = culture:juhuro
-				FAITH = faith:tzadikite
-			}
-		}
-		### Rabbinism
-		every_county = {
-			limit = {
-				OR = {
-					#Georgian Jews
-					this = title:c_kakheti
-					this = title:c_tbilisi
-					this = title:c_kartli
-					#Armenian Jews
-					this = title:c_ayrarat
-					#Greece
-					this = title:c_byzantion
-					this = title:c_euboea #Chalkis; oldes presence in Europe (possibly)
-					this = title:c_attica
-					this = title:c_thessalonika
-					#Asia Minor
-					this = title:c_pacatiana #Jewish presence since Seleucid time, likely contributed to Hypsisterians
-					this = title:c_aeolis
-					this = title:c_ionia
-					this = title:c_cilicia #Tarsus
-					#Oriens & Egypt (sans Hebrew territories)
-					this.duchy = title:d_cyprus #Long term Jewish presence in Cyprus, although significantly reduced after the AD 116 revolt and poorly attested AD II-IV century [1]
-					this = title:c_antiocheia
-					this = title:c_alexandria
-					#Western Roman Empire
-					this = title:c_roma
-					this = title:c_reggio_calabria #Mentioned in an edit by Honorius in 398
-					this = title:c_apulia #Jewish Catacombs in Venusia (Encylopedia Britannica)
-					this = title:c_benevento #Vth Century (Jewish Virtual Library)
-					#North Africa
-					this = title:c_tunis #Carthage
-					#Asoristan & it's Talmudic Academies
-					this = title:c_baghdad #Mahuz Academies
-					this = title:c_kufa #Sura Academy
-					this = title:c_anbar #Pumbedita & Pum-Nahara & Firuz Shapur Academies
-					this = title:c_karbala #Nehardea Academy
-					#Not *necessarily* large populations of Jews, but it's where we've parked the Exilarch
-					this = title:c_hulwan
-					this = title:c_kirkuk
-					#Persia
-					this = title:c_isfahan
-					#Central Asia
-					this = title:c_guzgan #Yahudan seems to be a reference to Jews
-				}
-			}
-			add_small_faith_to_county_effect = { FAITH = faith:rabbinism }
-		}
-		#Romaniote Jews
-		every_county = {
-			limit = {
-				OR = {
-					#Greece
-					this = title:c_byzantion
-					this = title:c_euboea #Chalkis; oldes presence in Europe (possibly)
-					this = title:c_attica
-					this = title:c_thessalonika
-					#Asia Minor
-					this = title:c_pacatiana #Jewish presence since Seleucid time, likely contributed to Hypsisterians
-					this = title:c_aeolis
-					this = title:c_ionia
-					this = title:c_cilicia #Tarsus
-					#Oriens & Egypt (sans Hebrew territories)
-					this.duchy = title:d_cyprus #Long term Jewish presence in Cyprus, although significantly reduced after the AD 116 revolt and poorly attested AD II-IV century [1]
-					this = title:c_antiocheia
-					#Italy and Africa; most Jews here were Greek speaking
-					this = title:c_roma
-					this = title:c_reggio_calabria #Mentioned in an edit by Honorius in 398
-					this = title:c_apulia #Jewish Catacombs in Venusia (Encylopedia Britannica)
-					this = title:c_benevento #Vth Century (Jewish Virtual Library)
-					#North Africa
-					this = title:c_tunis #Carthage
-				}
-			}
-			add_small_culture_to_county_effect = { CULTURE = culture:romaniote }
-		}
-		every_county = {
-			limit = {
-				OR = {
-					this = title:c_baghdad #Mahuz Academies
-					this = title:c_kufa #Sura Academy
-					this = title:c_anbar #Pumbedita & Pum-Nahara & Firuz Shapur Academies
-					this = title:c_karbala #Nehardea Academy
-					#Not *necessarily* large populations of Jews, but it's where we've parked the Exilarch
-					this = title:c_hulwan
-					this = title:c_kirkuk
-				}
-			}
-			add_small_culture_to_county_effect = { CULTURE = culture:bavlim }
-		}
-		
-		# Dharmics
-		## Buddhists
-		### Dharmagutakans
-		title:c_merv = { add_large_faith_to_county_effect = { FAITH = faith:dharmaguptaka } } #Major Buddhist center Pre-Islam
-		# Caucasian Avars
-		every_county = {
-			limit = {
-				OR = {
-					this = title:c_sarir
-					this = title:c_samander
-				}
-			}
-			add_small_culture_and_faith_to_county_effect = {
-				FAITH = faith:georgian_pagan
-				CULTURE = culture:awaral
-			}
-		}
-		#Nakh
-		every_county = {
-			limit = {
-				OR = {
-					this = title:c_cabardinia
-					this = title:c_sarir
-				}
-			}
-			add_small_culture_and_faith_to_county_effect = {
-				FAITH = faith:georgian_pagan
-				CULTURE = culture:nakh
-			}
-		}
-		#Adyghes (Circassians)
-		every_county = {
-			limit = {
-				OR = {
-					this = title:c_cabardinia
-					this = title:c_abkhazia
-				}
-			}
-			add_small_culture_and_faith_to_county_effect = {
-				FAITH = faith:georgian_pagan
-				CULTURE = culture:adyghes
-			}
-		}
-		#Abaza
-		every_county = {
-			limit = { this = title:c_zichia }
-			add_small_culture_and_faith_to_county_effect = {
-				FAITH = faith:georgian_pagan
-				CULTURE = culture:abaza
-			}
-		}
-		#Latins
-		## Coriscans
-		every_county = {
-			limit = {
-				OR = {
-					this = title:c_gallura
-					this = title:c_logudoro
-				}
-			}
-			add_large_culture_to_county_effect = { CULTURE = culture:corsican }
-		}
-		# Mazdans
-		## Zoroastrians
-		###Arewordiks
-		every_county = {
-			limit = {
-				OR = {
-					#These are the long term holdouts separated from Armenia proper
-					this = title:c_amida
-					this = title:c_samosata
-					this = title:c_tall_basma
-				}
-			}
-			add_small_culture_and_faith_to_county_effect = {
-				CULTURE = culture:armenian
-				FAITH = faith:urartuism
-			}
-		}
-		### Bodoland
-		every_county = {
-			limit = {
-				OR = {
-					this = title:c_kamatapur
-					this = title:c_kamarupanagara
-					this = title:c_haruppeswara
-					this = title:c_goalpara
-				}
-			}
-			add_large_culture_and_faith_to_county_effect = {
-				FAITH = faith:bathouism
-				CULTURE = culture:kachari
-			}
-		}
-		#Shamsīyah: Long-lasting Pagan Community
-		every_county = {
-			limit = {
-				OR = {
-					#Shamsīyah
-					this = title:c_harran
-					this = title:c_amida
-					this = title:c_raqqa
-					this = title:c_khabur
-					this = title:c_sinjar
-					this = title:c_upper_khabur
-					this = title:c_nasibin
-				}
-			}
-			add_small_faith_to_county_effect = { FAITH = faith:shamsi_pagan }
-		}
-		
-		# Other Specific Counties
-		#========================
-		title:c_baghdad = { add_small_culture_to_county_effect = { CULTURE = culture:assyrian } }
-		#Long Attested Non-Berber language presence by al-Bakri
-		title:c_syrte = { add_small_culture_to_county_effect = { CULTURE = culture:romano_punic } }
-		#Svan-Abkhaz border
-		title:c_odishi = { add_small_culture_to_county_effect = { CULTURE = culture:svan } }
-		#And India's religious diversity
-		add_dharmic_faith_minorities_to_region = { REGION = world_india }
-	}
-}
+﻿####	#Sources:
+####	#[1] M. Mueller, HYPSISTOS CULTS IN THE GREEK WORLD DURING THE ROMAN IMPERIUM. Hamilton, Ontario: McMaster University, 2014.
+####	#[2] Abu Muhammad 'Abd Allah Ruzbih ibn Daduya wrote a number of anti-monotheist, pro-dualist tracts early in Muslim rules (ca 760s); weren't stamped out until the 790s
+####	#[3] https://en.wikipedia.org/wiki/Aquitanian_language#/media/File:Euskararen_aztarna_geografikoak.svg
+####	#[4] https://penelope.uchicago.edu/Thayer/E/Roman/Texts/secondary/BURLAT/12*.html
+####	#[5] H. Niliacus, The Hieroglyphics of Horapollo. Princeton, NJ: Princeton University Press, 2020. (Translated George Boas). Chapter 1
+####	#[6] Cumont, Franz (1903). McCormack, Thomas J. (trans.) (ed.). The Mysteries of Mithra. Chicago: Open Court. ISBN 0-486-20323-9 & <https://www.sacred-texts.com/cla/mom/mom09.htm>
+####	#[7] Cohen, Samuel (2016). "Religious Diversity". In Jonathan J. Arnold; M. Shane Bjornlie; Kristina Sessa (eds.). A Companion to Ostrogothic Italy. Leiden, Boston: Brill Publishers. pp. 503–532. ISBN 978-9004-31376-7.
+####	
+####	on_game_start = {
+####		on_actions = {
+####			BP_set_minorities_universal
+####		}
+####	}
+####	
+####	#AKA, Minorities that are true for all bookmarks
+####	BP_set_minorities_universal = {
+####		effect = {
+####			###### From Rajas of Asia vvvv
+####			
+####			### Konchinim Malabarism
+####			every_county = {
+####				limit = {
+####					OR = {
+####						this = title:c_kerala
+####						this = title:c_venadu
+####						this = title:c_alupa
+####					}
+####				}
+####				add_small_culture_and_faith_to_county_effect = {
+####					FAITH = faith:malabarism
+####					CULTURE = culture:kochinim
+####				}
+####			}
+####			#Indian Nestorians
+####			every_county = {
+####				limit = {
+####					OR = {
+####						this = title:c_kanara
+####						this = title:c_panaji
+####					}
+####				}
+####				add_small_faith_to_county_effect = { FAITH = faith:nestorian }
+####			}
+####			# Manicheans in Hexi Corridor
+####			every_county = {
+####				limit = {
+####					OR = {
+####						this = title:c_shazhou
+####						this = title:c_liangzhou
+####					}
+####				}
+####				add_small_faith_to_county_effect = { FAITH = faith:manichean }
+####			}
+####			# Rabiinism in Hexi Corridor
+####			every_county = {
+####				limit = {
+####					OR = {
+####						this = title:c_shazhou
+####						this = title:c_liangzhou
+####					}
+####				}
+####				add_small_faith_to_county_effect = { FAITH = faith:rabbinism }
+####			}
+####			# Parsees
+####			title:c_daman = {
+####				add_small_culture_and_faith_to_county_effect = {
+####					FAITH = faith:mazdayasna
+####					CULTURE = culture:persian
+####				}
+####			}
+####			
+####			###### From WtWSMS vvvv
+####			
+####			## Christianity
+####			### Nicene
+####			every_county = { #The Pentarchy
+####				limit = {
+####					OR = {
+####						this = title:c_alexandria
+####						this = title:c_roma
+####						this = title:c_antiocheia
+####						this = title:c_jerusalem
+####						this = title:c_byzantion
+####					}
+####				}
+####				add_large_faith_to_county_effect = { FAITH = faith:nicene }
+####			}
+####			## Jews
+####			### Juhuro Tzadikites (Mountain Jews)
+####			every_county = {
+####				limit = {
+####					OR = {
+####						this = title:c_sarir
+####						this = title:c_derbent
+####						this = title:c_shirvan
+####						this = title:c_maskut
+####					}
+####				}
+####				add_small_culture_and_faith_to_county_effect = {
+####					CULTURE = culture:juhuro
+####					FAITH = faith:tzadikite
+####				}
+####			}
+####			### Rabbinism
+####			every_county = {
+####				limit = {
+####					OR = {
+####						#Georgian Jews
+####						this = title:c_kakheti
+####						this = title:c_tbilisi
+####						this = title:c_kartli
+####						#Armenian Jews
+####						this = title:c_ayrarat
+####						#Greece
+####						this = title:c_byzantion
+####						this = title:c_euboea #Chalkis; oldes presence in Europe (possibly)
+####						this = title:c_attica
+####						this = title:c_thessalonika
+####						#Asia Minor
+####						this = title:c_pacatiana #Jewish presence since Seleucid time, likely contributed to Hypsisterians
+####						this = title:c_aeolis
+####						this = title:c_ionia
+####						this = title:c_cilicia #Tarsus
+####						#Oriens & Egypt (sans Hebrew territories)
+####						this.duchy = title:d_cyprus #Long term Jewish presence in Cyprus, although significantly reduced after the AD 116 revolt and poorly attested AD II-IV century [1]
+####						this = title:c_antiocheia
+####						this = title:c_alexandria
+####						#Western Roman Empire
+####						this = title:c_roma
+####						this = title:c_reggio_calabria #Mentioned in an edit by Honorius in 398
+####						this = title:c_apulia #Jewish Catacombs in Venusia (Encylopedia Britannica)
+####						this = title:c_benevento #Vth Century (Jewish Virtual Library)
+####						#North Africa
+####						this = title:c_tunis #Carthage
+####						#Asoristan & it's Talmudic Academies
+####						this = title:c_baghdad #Mahuz Academies
+####						this = title:c_kufa #Sura Academy
+####						this = title:c_anbar #Pumbedita & Pum-Nahara & Firuz Shapur Academies
+####						this = title:c_karbala #Nehardea Academy
+####						#Not *necessarily* large populations of Jews, but it's where we've parked the Exilarch
+####						this = title:c_hulwan
+####						this = title:c_kirkuk
+####						#Persia
+####						this = title:c_isfahan
+####						#Central Asia
+####						this = title:c_guzgan #Yahudan seems to be a reference to Jews
+####					}
+####				}
+####				add_small_faith_to_county_effect = { FAITH = faith:rabbinism }
+####			}
+####			#Romaniote Jews
+####			every_county = {
+####				limit = {
+####					OR = {
+####						#Greece
+####						this = title:c_byzantion
+####						this = title:c_euboea #Chalkis; oldes presence in Europe (possibly)
+####						this = title:c_attica
+####						this = title:c_thessalonika
+####						#Asia Minor
+####						this = title:c_pacatiana #Jewish presence since Seleucid time, likely contributed to Hypsisterians
+####						this = title:c_aeolis
+####						this = title:c_ionia
+####						this = title:c_cilicia #Tarsus
+####						#Oriens & Egypt (sans Hebrew territories)
+####						this.duchy = title:d_cyprus #Long term Jewish presence in Cyprus, although significantly reduced after the AD 116 revolt and poorly attested AD II-IV century [1]
+####						this = title:c_antiocheia
+####						#Italy and Africa; most Jews here were Greek speaking
+####						this = title:c_roma
+####						this = title:c_reggio_calabria #Mentioned in an edit by Honorius in 398
+####						this = title:c_apulia #Jewish Catacombs in Venusia (Encylopedia Britannica)
+####						this = title:c_benevento #Vth Century (Jewish Virtual Library)
+####						#North Africa
+####						this = title:c_tunis #Carthage
+####					}
+####				}
+####				add_small_culture_to_county_effect = { CULTURE = culture:romaniote }
+####			}
+####			every_county = {
+####				limit = {
+####					OR = {
+####						this = title:c_baghdad #Mahuz Academies
+####						this = title:c_kufa #Sura Academy
+####						this = title:c_anbar #Pumbedita & Pum-Nahara & Firuz Shapur Academies
+####						this = title:c_karbala #Nehardea Academy
+####						#Not *necessarily* large populations of Jews, but it's where we've parked the Exilarch
+####						this = title:c_hulwan
+####						this = title:c_kirkuk
+####					}
+####				}
+####				add_small_culture_to_county_effect = { CULTURE = culture:bavlim }
+####			}
+####			
+####			# Dharmics
+####			## Buddhists
+####			### Dharmagutakans
+####			title:c_merv = { add_large_faith_to_county_effect = { FAITH = faith:dharmaguptaka } } #Major Buddhist center Pre-Islam
+####			# Caucasian Avars
+####			every_county = {
+####				limit = {
+####					OR = {
+####						this = title:c_sarir
+####						this = title:c_samander
+####					}
+####				}
+####				add_small_culture_and_faith_to_county_effect = {
+####					FAITH = faith:georgian_pagan
+####					CULTURE = culture:awaral
+####				}
+####			}
+####			#Nakh
+####			every_county = {
+####				limit = {
+####					OR = {
+####						this = title:c_cabardinia
+####						this = title:c_sarir
+####					}
+####				}
+####				add_small_culture_and_faith_to_county_effect = {
+####					FAITH = faith:georgian_pagan
+####					CULTURE = culture:nakh
+####				}
+####			}
+####			#Adyghes (Circassians)
+####			every_county = {
+####				limit = {
+####					OR = {
+####						this = title:c_cabardinia
+####						this = title:c_abkhazia
+####					}
+####				}
+####				add_small_culture_and_faith_to_county_effect = {
+####					FAITH = faith:georgian_pagan
+####					CULTURE = culture:adyghes
+####				}
+####			}
+####			#Abaza
+####			every_county = {
+####				limit = { this = title:c_zichia }
+####				add_small_culture_and_faith_to_county_effect = {
+####					FAITH = faith:georgian_pagan
+####					CULTURE = culture:abaza
+####				}
+####			}
+####			#Latins
+####			## Coriscans
+####			every_county = {
+####				limit = {
+####					OR = {
+####						this = title:c_gallura
+####						this = title:c_logudoro
+####					}
+####				}
+####				add_large_culture_to_county_effect = { CULTURE = culture:corsican }
+####			}
+####			# Mazdans
+####			## Zoroastrians
+####			###Arewordiks
+####			every_county = {
+####				limit = {
+####					OR = {
+####						#These are the long term holdouts separated from Armenia proper
+####						this = title:c_amida
+####						this = title:c_samosata
+####						this = title:c_tall_basma
+####					}
+####				}
+####				add_small_culture_and_faith_to_county_effect = {
+####					CULTURE = culture:armenian
+####					FAITH = faith:urartuism
+####				}
+####			}
+####			### Bodoland
+####			every_county = {
+####				limit = {
+####					OR = {
+####						this = title:c_kamatapur
+####						this = title:c_kamarupanagara
+####						this = title:c_haruppeswara
+####						this = title:c_goalpara
+####					}
+####				}
+####				add_large_culture_and_faith_to_county_effect = {
+####					FAITH = faith:bathouism
+####					CULTURE = culture:kachari
+####				}
+####			}
+####			#Shamsīyah: Long-lasting Pagan Community
+####			every_county = {
+####				limit = {
+####					OR = {
+####						#Shamsīyah
+####						this = title:c_harran
+####						this = title:c_amida
+####						this = title:c_raqqa
+####						this = title:c_khabur
+####						this = title:c_sinjar
+####						this = title:c_upper_khabur
+####						this = title:c_nasibin
+####					}
+####				}
+####				add_small_faith_to_county_effect = { FAITH = faith:shamsi_pagan }
+####			}
+####			
+####			# Other Specific Counties
+####			#========================
+####			title:c_baghdad = { add_small_culture_to_county_effect = { CULTURE = culture:assyrian } }
+####			#Long Attested Non-Berber language presence by al-Bakri
+####			title:c_syrte = { add_small_culture_to_county_effect = { CULTURE = culture:romano_punic } }
+####			#Svan-Abkhaz border
+####			title:c_odishi = { add_small_culture_to_county_effect = { CULTURE = culture:svan } }
+####			#And India's religious diversity
+####			add_dharmic_faith_minorities_to_region = { REGION = world_india }
+####		}
+####	}
+####	
