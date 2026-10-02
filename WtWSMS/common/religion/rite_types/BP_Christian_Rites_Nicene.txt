@@ -225,13 +225,13 @@ ambrosian_rite = { # The rite of the Archdiocese of Milan, in the Augustinian tr
 		doctrine_christian_liturgical_rite_gallican_rite
 	}
 }
-aquelian_rite = { # The rite of the Archdiocese of Milan, in the Augustinian tradition of its founder St. Ambrose
-	name = aquelian_rite
-	desc = aquelian_rite_desc
+aquileianism = { # The rite of the Archdiocese of Milan, in the Augustinian tradition of its founder St. Ambrose
+	name = aquileianism
+	desc = aquileianism_desc
 	founder = d_papal_state
 	faith = christian_faith
 
-	color = { 0.75 0.35 0.3 } #TODO: FIXME
+	color = { 0.7 0.7 1.0 }
 	icon = staurogram
 
 	tenet_selection_pair = {
@@ -384,7 +384,7 @@ beneventan_rite = { # The Lombard rite of southern Italy, suppressed in favor of
 	desc = beneventan_rite_desc
 	founder = d_et_benevento
 	faith = christian_faith
-	create = yes
+	create = no
 
 	color = { 0.85 0.65 0.3 }
 	icon = christianity_rounded_cross_01
@@ -414,7 +414,7 @@ carolingian_christianity = { #Could be also called Merovingian/ Frankish Christi
 	desc = carolingian_christianity_desc
 	founder = d_et_reims
 	faith = christian_faith
-	create = yes
+	create = no
 
 	color = { 0.7 0.7 0.85 }
 	icon = christianity_carolingian_cross_04
@@ -443,7 +443,7 @@ slavic_rite = { # The result of the mission of Saints Cyril and Methodius, creat
 	name = slavic_rite
 	desc = slavic_rite_desc
 	faith = christian_faith
-	create = yes
+	create = no
 
 	color = { 0.45 0.2 0.75 }
 	icon = christianity_orthodox_cross_02
