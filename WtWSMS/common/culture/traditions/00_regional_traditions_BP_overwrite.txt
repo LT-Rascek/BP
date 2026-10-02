@@ -12,15 +12,17 @@ tradition_nubian_warrior_queens = {
 	is_shown = {
 		NOT = { has_game_rule = inversed_gender_equality }
 		OR = {
-			this = culture:old_nubian
-			any_parent_culture_or_above = { this = culture:old_nubian }
+			culture_is_or_has_ancestor_trigger = { CULTURE = culture:old_nubian }
+			culture_is_or_has_ancestor_trigger = { CULTURE = culture:nubian }
+			culture_is_or_has_ancestor_trigger = { CULTURE = culture:daju }
 		}
 	}
 	can_pick = {
 		NOT = { has_game_rule = inversed_gender_equality }
 		OR = {
-			this = culture:old_nubian
-			any_parent_culture_or_above = { this = culture:old_nubian }
+			culture_is_or_has_ancestor_trigger = { CULTURE = culture:old_nubian }
+			culture_is_or_has_ancestor_trigger = { CULTURE = culture:nubian }
+			culture_is_or_has_ancestor_trigger = { CULTURE = culture:daju }
 		}
 	}
 	##### Changed from Vanilla ^^^^^
@@ -82,6 +84,7 @@ tradition_nubian_warrior_queens = {
 					desc = three_gender_rulers_desc
 				}
 			}
+
 			if = {
 				limit = {
 					culture_tradition_reduction_trigger = { TRADITION = tradition_nubian_warrior_queens }
@@ -91,7 +94,7 @@ tradition_nubian_warrior_queens = {
 					desc = inspired_by_culture_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
@@ -118,8 +121,8 @@ tradition_horse_lords = {
 			has_cultural_pillar = heritage_sarmatian
 			has_cultural_pillar = heritage_sakan
 			##### changed from Vanilla ^^^^^
-			NOT = { has_dlc_feature = khans_of_the_steppe }
 		}
+		NOT = { has_dlc_feature = khans_of_the_steppe }
 	}
 	##### changed from Vanilla ^^^^^
 
@@ -156,7 +159,7 @@ tradition_horse_lords = {
 	}
 
 	cost = {
-		prestige = {
+			prestige = {
 			add = {
 				value = tradition_base_cost
 				desc = BASE
@@ -174,6 +177,7 @@ tradition_horse_lords = {
 					desc = not_bellicose_or_communal_desc
 				}
 			}
+
 			if = {
 				limit = {
 					culture_tradition_reduction_trigger = { TRADITION = tradition_horse_lords }
@@ -250,8 +254,8 @@ tradition_steppe_tolerance = {
 	}
 
 	character_modifier = { # easier to self-convert and create or reform faith
-		faith_creation_piety_cost_mult = -0.2
-		faith_conversion_piety_cost_mult = -0.2
+		rite_creation_piety_cost_mult = -0.1
+		faith_conversion_piety_cost_mult = -0.3
 		different_faith_opinion = 10
 		different_faith_county_opinion_mult = -0.25 # reduced penalty for different faiths (note this appears confusing in the UI right now)
 	}
@@ -277,7 +281,7 @@ tradition_steppe_tolerance = {
 				}
 			}
 			# No extra cost here, since we have a fairly restrictive can_pick block.
-			
+
 			if = {
 				limit = {
 					culture_tradition_reduction_trigger = { TRADITION = tradition_steppe_tolerance }
@@ -326,7 +330,14 @@ tradition_desert_nomads = {
 
 	##### Changed from Vanilla vvvvv
 	is_shown = {
-		the_culture_or_parent_or_above_with_heritage_is_trigger = { CULTURE = culture:adnanite }
+		OR = {
+			##### Changed from Vanilla vvvvv
+			culture_is_or_has_ancestor_trigger = { CULTURE = culture:adnanite }
+			##### Changed from Vanilla ^^^^^
+			any_parent_culture = {
+				has_cultural_tradition = tradition_desert_nomads
+			}
+		}
 	}
 	##### Changed from Vanilla ^^^^^
 	can_pick = {
@@ -394,7 +405,7 @@ tradition_desert_nomads = {
 					desc = culture_in_camel_region_percentage_desc
 				}
 			}
-			
+
 			if = {
 				limit = {
 					culture_tradition_reduction_trigger = { TRADITION = tradition_desert_nomads }
@@ -444,18 +455,14 @@ tradition_the_witenagemot = {
 	##### Changed from Vanilla vvvvv
 	is_shown = {
 		OR = {
-			has_cultural_pillar = heritage_jutlandic
 			has_cultural_pillar = heritage_west_germanic
+			has_cultural_pillar = heritage_jutlandic
 		}
-		NOT = { culture_tradition:tradition_things = { is_in_list = traits } }
 	}
-	##### Changed from Vanilla ^^^^^
-	
-	##### Changed from Vanilla vvvvv
-	can_pick_for_hybridization = {
+	can_pick = {
 		OR = {
-			has_cultural_pillar = heritage_jutlandic
 			has_cultural_pillar = heritage_west_germanic
+			has_cultural_pillar = heritage_jutlandic
 		}
 		NOT = { culture_tradition:tradition_things = { is_in_list = traits } }
 	}
@@ -507,7 +514,7 @@ tradition_the_witenagemot = {
 					desc = councillor_with_negative_opinion_desc
 				}
 			}
-			
+
 			if = {
 				limit = {
 					culture_tradition_reduction_trigger = { TRADITION = tradition_the_witenagemot }
@@ -554,11 +561,7 @@ tradition_things = {
 			has_cultural_pillar = heritage_scandzan
 			has_cultural_pillar = heritage_north_germanic
 		}
-		NOT = { culture_tradition:tradition_the_witenagemot = { is_in_list = traits } }
 	}
-	##### Changed from Vanilla ^^^^^
-	
-	##### Changed from Vanilla vvvvv
 	can_pick_for_hybridization = {
 		OR = {
 			has_cultural_pillar = heritage_jutlandic
@@ -608,7 +611,7 @@ tradition_things = {
 					desc = counties_with_low_county_opinion_desc
 				}
 			}
-			
+
 			if = {
 				limit = {
 					culture_tradition_reduction_trigger = { TRADITION = tradition_things }
@@ -647,71 +650,43 @@ tradition_byzantine_succession = {
 		4 = crown.dds
 	}
 
-	##### Changed from Vanilla vvvvv
 	is_shown = {
 		OR = {
 			has_cultural_pillar = heritage_byzantine
 			scope:character = {
-				OR = {
-					has_title = title:e_byzantium
-					has_title = title:h_roman_empire
-					has_title = title:h_eastern_roman_empire
-				}
+				is_roman_emperor_trigger = yes
 			}
 		}
+		#replaced by new Byzantine traditions
+		has_ep3_dlc_trigger = no
+		##### Changed from Vanilla vvvvv
+		traditions_legal_tradition_is_in_list_trigger = { TRADITION = culture_tradition:tradition_byzantine_succession }
+		traditions_body_status_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_byzantine_succession }
+		traditions_eunuch_status_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_byzantine_succession }
+		##### Changed from Vanilla ^^^^^
 	}
-	##### Changed from Vanilla ^^^^^
-	
 	##### Changed from Vanilla vvvvv
 	can_pick = {
-		custom_description = {
-			text = has_heritage_byzantine
-			scope:character.culture = { has_cultural_pillar = heritage_byzantine }
+		has_cultural_pillar = heritage_byzantine
+		scope:character = {
+			is_roman_emperor_trigger = yes
 		}
-		custom_description = {
-			text = has_ere_or_roman_empire
-			subject = title:e_byzantium
-			object = title:h_roman_empire
-			scope:character = {
-				OR = {
-					has_title = title:e_byzantium
-					has_title = title:h_roman_empire
-					has_title = title:h_eastern_roman_empire
-				}
-			}
+		custom_tooltip = {
+			text = cannot_have_tradition_court_eunuchs
+			NOT = { culture_tradition:tradition_court_eunuchs = { is_in_list = traits } }
+		}
+		custom_tooltip = {
+			text = cannot_have_tradition_merciful_blindings
+			NOT = { culture_tradition:tradition_merciful_blindings = { is_in_list = traits } }
 		}
 		##### Changed from Vanilla vvvvv
 		traditions_legal_tradition_is_in_list_trigger = { TRADITION = culture_tradition:tradition_byzantine_succession }
 		traditions_body_status_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_byzantine_succession }
 		traditions_eunuch_status_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_byzantine_succession }
+		##### Changed from Vanilla ^^^^^
 	}
 	##### Changed from Vanilla ^^^^^
-	
-	##### Changed from Vanilla vvvvv
-	can_pick_for_hybridization = {
-		custom_description = {
-			text = has_heritage_byzantine
-			scope:character.culture = { has_cultural_pillar = heritage_byzantine }
-		}
-		custom_description = {
-			text = has_ere_or_roman_empire
-			subject = title:e_byzantium
-			object = title:h_roman_empire
-			scope:character = {
-				OR = {
-					has_title = title:e_byzantium
-					has_title = title:h_roman_empire
-					has_title = title:h_eastern_roman_empire
-				}
-			}
-		}
-		##### Changed from Vanilla vvvvv
-		traditions_legal_tradition_is_in_list_trigger = { TRADITION = culture_tradition:tradition_byzantine_succession }
-		traditions_body_status_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_byzantine_succession }
-		traditions_eunuch_status_type_is_in_list_trigger = { TRADITION = culture_tradition:tradition_byzantine_succession }
-	}
-	##### Changed from Vanilla ^^^^^
-	
+
 	##### Changed from Vanilla vvvvv
 	parameters = {
 		##### Changed from Vanilla vvvvv
@@ -721,16 +696,17 @@ tradition_byzantine_succession = {
 		can_castrate_prisoners = yes
 		eunuch_trait_bonuses = yes
 		can_appoint_chief_eunuch = yes
-		physical_disfigurement_blocks_inheritance = yes #Actually only blocks claimants and reduce score in elective. Also includes infertility for tooltip reasons.
+		physical_disfigurement_blocks_inheritance = yes # Blocks claimant factions, claim wars, and reduce score in elective and acclamation. Also includes infertility for tooltip reasons.
 		children_can_be_born_in_the_purple = yes
 		disloyal_trait_more_common = yes
 		byzantine_faction_differences = yes
-		byzantine_faction_preffered_claimants = yes
 		##### Changed from Vanilla vvvvv
 		can_restore_roman_empire = yes
 		unlock_innovation_roman_civil = yes
 		roman_legal_traits_are_valued = yes
 		##### Changed from Vanilla ^^^^^
+		
+		#byzantine_faction_preffered_claimants = yes
 	}
 	##### Changed from Vanilla ^^^^^
 	character_modifier = {
@@ -773,7 +749,7 @@ tradition_byzantine_succession = {
 					desc = byzantion_desc
 				}
 			}
-			
+
 			if = {
 				limit = {
 					culture_tradition_reduction_trigger = { TRADITION = tradition_byzantine_succession }
@@ -801,17 +777,12 @@ tradition_visigothic_codes = {
 		4 = crown.dds
 	}
 
-	##### Changed from Vanilla vvvvv
-	is_shown = { any_parent_culture_or_above = { this = culture:visigothic } }
-	##### Changed from Vanilla ^^^^^
-	
-	##### Changed from Vanilla vvvvv
+	is_shown = { culture_is_or_has_ancestor_trigger = { CULTURE = culture:visigothic } }
 	can_pick = {
-		any_parent_culture_or_above = { this = culture:visigothic }
-		#The Visigothic code is strongly associated with Christian canon law.
-		scope:character = { has_religion = religion:christianity_religion }
+		scope:character = {
+			has_religion = religion:christianity_religion #The Visigothic code is strongly associated with Christian canon law.
+		}
 	}
-	##### Changed from Vanilla ^^^^^
 
 	parameters = {
 		can_enact_high_partition_succession_law = yes
@@ -868,7 +839,7 @@ tradition_visigothic_codes = {
 					desc = three_gender_rulers_desc
 				}
 			}
-			
+
 			if = {
 				limit = {
 					culture_tradition_reduction_trigger = { TRADITION = tradition_visigothic_codes }

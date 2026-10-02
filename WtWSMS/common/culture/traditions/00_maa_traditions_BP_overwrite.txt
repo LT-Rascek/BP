@@ -10,10 +10,7 @@ tradition_strong_kinship = { #There can be only one!
 
 	##### Changed from Vanilla vvvvv
 	is_shown = {
-		OR = {
-			this = culture:pictish
-			any_parent_culture_or_above = { this = culture:pictish }
-		}
+		culture_is_or_has_ancestor_trigger = { CULTURE = culture:pictish }
 	}
 	##### Changed from Vanilla ^^^^^
 	
@@ -115,11 +112,7 @@ tradition_horn_mountain_skirmishing = {
 
 	##### Changed from Vanilla vvvvv
 	is_shown = { #In the Horn of Africa this replaces the Mountaineers tradition
-		OR ={
-			this = culture:ethiopian
-			has_cultural_pillar = heritage_somalian
-			has_cultural_pillar = heritage_east_african
-		}
+		culture_is_or_has_ancestor_trigger = { CULTURE = culture:ethiopian }
 		NOR = {
 			has_cultural_tradition = tradition_mountaineers
 			has_cultural_tradition = tradition_caucasian_wolves
@@ -365,13 +358,16 @@ tradition_hird = {
 				has_fp1_dlc_trigger = no
 			}
 			has_cultural_pillar = heritage_jutlandic
+			has_cultural_pillar = heritage_saxon
+			culture_is_or_has_ancestor_trigger = { CULTURE = culture:old_saxon }
+			culture_is_or_has_ancestor_trigger = { CULTURE = culture:norse }
+			culture_is_or_has_ancestor_trigger = { CULTURE = culture:swede }
+			culture_is_or_has_ancestor_trigger = { CULTURE = culture:dane }
+			culture_is_or_has_ancestor_trigger = { CULTURE = culture:geatish }
+			culture_is_or_has_ancestor_trigger = { CULTURE = culture:gutnish }
+			culture_is_or_has_ancestor_trigger = { CULTURE = culture:anglo }
+			culture_is_or_has_ancestor_trigger = { CULTURE = culture:jute }
 			##### Changed from Vanilla ^^^^^
-			any_parent_culture_or_above = {
-				OR = {
-					this = culture:old_saxon
-					this = culture:norse #For instance Norman culture
-				}
-			}
 		}
 	}
 	can_pick = {

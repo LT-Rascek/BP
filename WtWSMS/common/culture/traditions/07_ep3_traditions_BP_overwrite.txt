@@ -11,7 +11,10 @@ tradition_ep3_imperial_tagmata = {
 	##### Changed from Vanilla vvvvv
 	is_shown = {
 		has_ep3_dlc_trigger = yes
-		has_cultural_pillar = heritage_latin
+		OR = {
+			has_cultural_pillar = heritage_latin
+			has_cultural_pillar = heritage_byzantine
+		}
 		NOT = { has_cultural_tradition = tradition_roman_legacy }
 	}
 	can_pick = {

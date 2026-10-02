@@ -86,9 +86,9 @@ tradition_zealous_pagans = {
 			}
 			if = {
 				limit = {
-					OR = {
-						has_variable = defensive_traditionalist_discount
-						has_variable = aggressive_traditionalist_discount
+					has_variable = {
+						name = defensive_traditionalist_discount
+						name = aggressive_traditionalist_discount
 					}
 				}
 				add = {
@@ -210,9 +210,9 @@ tradition_zealous_pagans_non_dlc = {
 			}
 			if = {
 				limit = {
-					OR = {
-						has_variable = defensive_traditionalist_discount
-						has_variable = aggressive_traditionalist_discount
+					has_variable = {
+						name = defensive_traditionalist_discount
+						name = aggressive_traditionalist_discount
 					}
 				}
 				add = {

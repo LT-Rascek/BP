@@ -238,8 +238,8 @@ tradition_vegetarianism = {
 		if = {
 			limit = {
 				NOT = {
-					scope:character.faith = {
-						has_doctrine = tenet_dharmic_pacifism
+					scope:character.rite = {
+						rite_has_tenet = tenet_dharmic_pacifism
 					}
 				}
 			}

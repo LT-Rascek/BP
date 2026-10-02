@@ -9,21 +9,13 @@ tradition_republican_legacy = {
 	}
 
 	is_shown = {
-		OR ={
-			this = culture:roman
-			any_parent_culture_or_above = {
-				this = culture:roman
-			}
-		}
+		culture_is_or_has_ancestor_trigger = { CULTURE = culture:roman }
 		NOT = { has_cultural_tradition = tradition_parochialism }
 	}
 	##### Changed from Vanilla vvvvv
 	can_pick = {
 		NOR = { has_cultural_tradition = tradition_western_roman_legacy }
-		OR ={
-			this = culture:roman
-			any_parent_culture_or_above = { this = culture:roman }
-		}
+		culture_is_or_has_ancestor_trigger = { CULTURE = culture:roman }
 		NOT = { has_cultural_tradition = tradition_parochialism }
 	}
 	##### Changed from Vanilla ^^^^^
@@ -504,9 +496,9 @@ tradition_hereditary_hierarchy = {
 			##### Changed from Vanilla ^^^^^
 			if = {
 				limit = {
-					OR = {
-						has_variable = defensive_traditionalist_discount
-						has_variable = aggressive_traditionalist_discount
+					has_variable = {
+						name = defensive_traditionalist_discount
+						name = aggressive_traditionalist_discount
 					}
 				}
 				add = {
@@ -906,9 +898,9 @@ tradition_staunch_traditionalists = {
 			}
 			if = {
 				limit = {
-					OR = {
-						has_variable = defensive_traditionalist_discount
-						has_variable = aggressive_traditionalist_discount
+					has_variable = {
+						name = defensive_traditionalist_discount
+						name = aggressive_traditionalist_discount
 					}
 				}
 				add = {
@@ -1056,9 +1048,9 @@ tradition_isolationist = {
 			}
 			if = {
 				limit = {
-					OR = {
-						has_variable = defensive_traditionalist_discount
-						has_variable = aggressive_traditionalist_discount
+					has_variable = {
+						name = defensive_traditionalist_discount
+						name = aggressive_traditionalist_discount
 					}
 				}
 				add = {
@@ -1100,4 +1092,3 @@ tradition_isolationist = {
 		}
 	}
 }
-

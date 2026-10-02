@@ -248,9 +248,9 @@ tradition_cranial_deformation = {
 				}
 			}
 			if = {
-				limit = {
-					has_variable = aggressive_traditionalist_discount
-				}
+					has_variable = {
+						name = aggressive_traditionalist_discount
+					}
 				add = {
 					value = traditionalist_discount
 					desc = traditionalist_discount_desc
@@ -356,7 +356,9 @@ tradition_nomadic_rulership_cranial_deformation = {
 			}
 			if = {
 				limit = {
-					has_variable = aggressive_traditionalist_discount
+					has_variable = {
+						name = aggressive_traditionalist_discount
+					}
 				}
 				add = {
 					value = traditionalist_discount
@@ -437,7 +439,9 @@ tradition_nomadic_rulership = {
 			}
 			if = {
 				limit = {
-					has_variable = aggressive_traditionalist_discount
+					has_variable = {
+						name = aggressive_traditionalist_discount
+					}
 				}
 				add = {
 					value = traditionalist_discount
