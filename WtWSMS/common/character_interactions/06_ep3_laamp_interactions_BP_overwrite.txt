@@ -48,22 +48,40 @@ negotiate_settlement_interaction = {
 	ai_min_reply_days = 4
 	ai_max_reply_days = 9
 
-	##### Changed from Vanilla vvvvv
-	is_shown = {
+	is_available = {
+		trigger_if = {
+			limit = { is_ai = yes }
+			OR = {
+				has_trait = generous
+				has_trait = craven
+				is_at_war = yes
+			}
+			OR = {
+				top_liege ?= this
+				highest_held_title_tier >= tier_kingdom
+			}
+			NOT = {
+				government_has_flag = government_is_nomadic
+			}
+		}
+		is_landed = yes
 		has_ep3_dlc_trigger = yes
-		scope:actor = { is_landed = yes }
+	}
+
+	is_shown = {
 		scope:recipient = {
 			government_has_flag = government_is_landless_adventurer
 		}
 		scope:recipient != scope:actor
+		##### Changed from Vanilla vvvvv
 		NOR = {
 			scope:recipient = title:d_laamp_odoacer_skirian.holder
 			scope:recipient = title:d_laamp_odoacer_heruli.holder
 			scope:recipient = title:d_laamp_odoacer_rugii.holder
 			scope:recipient = title:d_laamp_odoacer.holder
 		}
+		##### Changed from Vanilla ^^^^^
 	}
-	##### Changed from Vanilla ^^^^^
 
 	can_be_picked_title = {
 		custom_tooltip = {
@@ -90,7 +108,7 @@ negotiate_settlement_interaction = {
 				tier = tier_duchy
 				any_de_jure_county = {
 					ep3_negotiate_settlement_valid_county_trigger = yes
-				}	
+				}
 			}
 		}
 		trigger_if = {
@@ -221,15 +239,10 @@ negotiate_settlement_interaction = {
 				always = no
 			}
 		}
-		trigger_if = {
-			limit = {
-				scope:actor = {
-					any_held_county = { count < 2 }
-				}
-			}
+		scope:actor = {
 			custom_description = {
 				text = negotiate_settlement_minimum_county_tt
-				always = no
+				any_held_county = { count >= 2 }
 			}
 		}
 		scope:recipient = {
@@ -278,22 +291,7 @@ negotiate_settlement_interaction = {
 			list = offered_titles
 			save_scope_as = new_primary_title
 		}
-		save_scope_value_as = {
-			name = negotiate_settlement_legitimacy_cost
-			value = {
-				value = 0
-				every_in_list = {
-					list = offered_titles
-					if = {
-						limit = { tier = tier_county }
-						add = -25
-					}
-					else = { add = -50 }
-				}
-				multiply = scope:actor.highest_held_title_tier
-			}
-		}
-		show_as_tooltip = { negotiate_settlement_interaction_effect = yes }
+		show_as_tooltip = { scope:actor = { negotiate_settlement_interaction_effect = yes } }
 		scope:actor = { trigger_event = ep3_laamps.0300 }
 	}
 
@@ -305,7 +303,6 @@ negotiate_settlement_interaction = {
 
 	ai_targets = {
 		ai_recipients = scripted_relations
-		ai_recipients = spouses
 		max = 5
 	}
 	ai_targets = {
@@ -322,25 +319,10 @@ negotiate_settlement_interaction = {
 	ai_frequency_by_tier = {
 		barony = 0
 		county = 0
-		duchy = 3
+		duchy = 12
 		kingdom = 3
 		empire = 3
 		hegemony = 3
-	}
-
-	ai_potential = {
-		OR = {
-			top_liege = this
-			highest_held_title_tier >= tier_kingdom
-		}
-		OR = {
-			is_at_war = yes
-			has_trait = craven
-			has_trait = generous
-		}
-		NOT = {
-			government_has_flag = government_is_nomadic
-		}
 	}
 
 	ai_accept = {
@@ -783,10 +765,7 @@ negotiate_settlement_interaction = {
 				any_claim = {
 					OR = {
 						holder ?= {
-							OR = {
-								this = scope:actor
-								target_is_liege_or_above = scope:actor
-							}
+							target_is_same_character_or_above = scope:actor
 						}
 						target_is_de_jure_liege_or_above = scope:actor.primary_title
 					}
@@ -803,7 +782,7 @@ negotiate_settlement_interaction = {
 					has_government = landless_adventurer_government
 					NOT = { has_realm_law = camp_purpose_legitimists }
 					# Attacking laamp's troops at least 10% of defender's total troops
-					current_military_strength > war_defender_total_strength_tenth_value
+					current_military_strength > prev.war_defender_total_strength_tenth_value
 				}
 				OR = {
 					attacker_war_score >= 25
@@ -822,7 +801,7 @@ negotiate_settlement_interaction = {
 							has_government = landless_adventurer_government
 							NOT = { has_realm_law = camp_purpose_legitimists }
 							# Attacking laamp's troops at least 10% of defender's total troops
-							current_military_strength > war_defender_total_strength_tenth_value
+							current_military_strength > prev.war_defender_total_strength_tenth_value
 						}
 					}
 					add = {
@@ -852,7 +831,7 @@ negotiate_settlement_interaction = {
 					scope:recipient ?= this
 					has_government = landless_adventurer_government
 					# Defending laamp's troops at least 10% of attacker's total troops
-					current_military_strength > war_attacker_total_strength_tenth_value
+					current_military_strength > prev.war_attacker_total_strength_tenth_value
 				}
 				OR = {
 					defender_war_score >= 25
@@ -870,7 +849,7 @@ negotiate_settlement_interaction = {
 							scope:recipient ?= this
 							has_government = landless_adventurer_government
 							# Defending laamp's troops at least 10% of attacker's total troops
-							current_military_strength > war_attacker_total_strength_tenth_value
+							current_military_strength > prev.war_attacker_total_strength_tenth_value
 						}
 					}
 					add = {

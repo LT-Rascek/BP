@@ -24,8 +24,32 @@ offer_confederation_interaction = {
 
 	cooldown_against_recipient = { years = 3 }
 
-	##### Changed from Vanilla vvvvv
+	is_available = {
+		OR = {
+			government_has_flag = government_is_tribal
+			government_has_flag = government_is_nomadic
+		}
+		trigger_if = {
+			limit = { is_ai = yes }
+			OR = {
+				is_confederation_member = yes
+				AND = {
+					has_character_flag = forming_confederation
+					highest_held_title_tier < tier_kingdom
+					is_independent_ruler = yes
+				}
+			}
+			age >= 6
+		}
+		is_playable_character = yes
+		OR = {
+			is_independent_ruler = yes
+			confederation ?= { is_house_based = no }
+		}
+	}
+
 	is_shown = {
+		##### Changed from Vanilla vvvvv
 		scope:actor = {
 			OR = {
 				government_has_flag = government_is_tribal
@@ -54,8 +78,8 @@ offer_confederation_interaction = {
 				NOT = { has_realm_law_flag = cannot_use_confederation_decision }
 			}
 		}
+		##### Changed from Vanilla ^^^^^
 	}
-	##### Changed from Vanilla ^^^^^
 
 	is_valid_showing_failures_only = {
 		trigger_if = {
@@ -189,9 +213,8 @@ offer_confederation_interaction = {
 				scope:recipient = {
 					NOR = { #Of two different faiths AND the potential vassal's faith is not pluralistic.
 						faith = scope:actor.faith
-						faith = { has_doctrine = doctrine_pluralism_pluralistic }
-						government_has_flag = government_is_nomadic
-						government_has_flag = government_is_herder
+						rite = { rite_has_doctrine = doctrine_pluralism_pluralistic }
+						government_has_flag = government_is_in_steppe
 					}
 				}
 			}
@@ -228,11 +251,10 @@ offer_confederation_interaction = {
 				scope:recipient = {
 					NOR = {
 						faith = scope:actor.faith
-						scope:actor.faith = { has_doctrine = doctrine_pluralism_pluralistic }
-						government_has_flag = government_is_nomadic
-						government_has_flag = government_is_herder
+						scope:actor.rite = { rite_has_doctrine = doctrine_pluralism_pluralistic }
+						government_has_flag = government_is_in_steppe
 					}
-					faith = { has_doctrine = doctrine_pluralism_pluralistic }
+					rite = { rite_has_doctrine = doctrine_pluralism_pluralistic }
 				}
 			}
 			add = {
@@ -268,11 +290,10 @@ offer_confederation_interaction = {
 				scope:recipient = {
 					NOR = {
 						faith = scope:actor.faith
-						government_has_flag = government_is_nomadic
-						government_has_flag = government_is_herder
+						government_has_flag = government_is_in_steppe
 					}
-					scope:actor.faith = { has_doctrine = doctrine_pluralism_pluralistic }
-					faith = { has_doctrine = doctrine_pluralism_pluralistic }
+					scope:actor.rite = { rite_has_doctrine = doctrine_pluralism_pluralistic }
+					rite = { rite_has_doctrine = doctrine_pluralism_pluralistic }
 				}
 			}
 			add = {
@@ -418,7 +439,7 @@ offer_confederation_interaction = {
 						}
 					}
 				}
-				scope:recipient.capital_province = { squared_distance = { target = scope:actor.capital_province value < 100000 } }
+				scope:recipient.capital_province = { squared_distance = { target = scope:actor.capital_province value < 150000 } }
 			}
 			add = -25
 		}
@@ -447,7 +468,16 @@ offer_confederation_interaction = {
 						}
 					}
 				}
-				scope:recipient.capital_province = { squared_distance = { target = scope:actor.capital_province value >= 100000 } }
+				scope:recipient.capital_province = {
+					squared_distance = {
+						target = scope:actor.capital_province
+						value >= 150000
+					}
+					squared_distance = {
+						target = scope:actor.capital_province
+						value < 300000
+					}
+				}
 			}
 			add = -100
 		}
@@ -476,9 +506,9 @@ offer_confederation_interaction = {
 						}
 					}
 				}
-				scope:recipient.capital_province = { squared_distance = { target = scope:actor.capital_province value >= 200000 } }
+				scope:recipient.capital_province = { squared_distance = { target = scope:actor.capital_province value >= 300000 } }
 			}
-			add = -175
+			add = -200
 		}
 		#Relative power
 		modifier = {
@@ -714,7 +744,7 @@ offer_confederation_interaction = {
 						AND = {
 							has_trait = bastard
 							scope:recipient = {
-								faith = { NOT = { has_doctrine = doctrine_bastardry_none } }
+								rite = { NOT = { rite_has_doctrine = doctrine_bastardry_none } }
 							}
 						}
 						has_trait = denounced
@@ -997,32 +1027,18 @@ offer_confederation_interaction = {
 			desc = LEGEND_HOOK_USED
 		}
 
-		##### Changed from Vanilla vvvvv
-
 		#No neighbor scaring them
 		modifier = {
 			add = -30
 			desc = NO_FRIGHTENING_NEIGHBOR_REASON
-			OR = {
-				scope:actor.culture = {
-					NOT = {
-						has_cultural_parameter = forming_confederations_is_easier
-					}
-				}
-				general_situation_regional_parameter_trigger = {
-					CHARACTER = scope:actor
-					PARAMETER = forming_confederations_is_easier
+			scope:actor.culture = {
+				NOT = {
+					has_cultural_parameter = forming_confederations_is_easier
 				}
 			}
-			OR = {
-				scope:recipient.culture = {
-					NOT = {
-						has_cultural_parameter = forming_confederations_is_easier
-					}
-				}
-				general_situation_regional_parameter_trigger = {
-					CHARACTER = scope:recipient
-					PARAMETER = forming_confederations_is_easier
+			scope:recipient.culture = {
+				NOT = {
+					has_cultural_parameter = forming_confederations_is_easier
 				}
 			}
 			NOT = {
@@ -1031,7 +1047,6 @@ offer_confederation_interaction = {
 				}
 			}
 		}
-		##### Changed from Vanilla ^^^^^
 
 		#Neighbor is TERRIFYING them
 		modifier = {
@@ -1087,17 +1102,10 @@ offer_confederation_interaction = {
 		modifier = {
 			add = -100
 			desc = ANOTHER_CULTURE_CONFEDERATION_REASON
-			NOT = {
-				scope:actor.culture = {
-					this = scope:recipient.culture
-				}
-			}
+			scope:actor.culture != scope:recipient.culture
 			any_confederation = {
-				NOT = {
-					this = scope:actor.confederation
-				}
-				has_variable = confederation_culture
-				var:confederation_culture = scope:actor.culture
+				this != scope:actor.confederation
+				var:confederation_culture ?= scope:recipient.culture
 			}
 		}
 
@@ -1276,14 +1284,8 @@ offer_confederation_interaction = {
 		modifier = {
 			desc = "BARANGAY_TRADITION_REASON"
 			trigger = {
-				OR = {
-					scope:recipient.culture = {
-						has_cultural_parameter = invite_to_confederation_extra_reasons
-					}
-					general_situation_regional_parameter_trigger = {
-						CHARACTER = scope:recipient
-						PARAMETER = invite_to_confederation_extra_reasons
-					}
+				scope:recipient.culture = {
+					has_cultural_parameter = invite_to_confederation_extra_reasons
 				}
 			}
 			add = 20
@@ -1638,6 +1640,10 @@ offer_confederation_interaction = {
 					}
 				}
 			}
+			if = {
+				limit = { scope:hook = yes }
+				scope:actor = { use_hook = scope:recipient }
+			}
 		}
 	}
 
@@ -1661,22 +1667,6 @@ offer_confederation_interaction = {
 		scope:actor = {
 			#letter response
 			trigger_event = mpo_interactions_events.0004
-		}
-	}
-
-	ai_potential = {
-		age >= 6
-		OR = {
-			AND = {
-				is_independent_ruler = yes
-				highest_held_title_tier < tier_kingdom
-				has_character_flag = forming_confederation
-			}
-			is_confederation_member = yes
-		}
-		OR = {
-			government_has_flag = government_is_tribal
-			government_has_flag = government_is_nomadic
 		}
 	}
 

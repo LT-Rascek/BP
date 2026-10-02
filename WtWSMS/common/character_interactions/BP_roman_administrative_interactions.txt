@@ -1,8 +1,8 @@
-﻿influence_candidacy_interaction_titulars = { #Because target filter are borked.
+﻿influence_candidacy_interaction_titulars = { #Because target filter are borked. Same as the other
 	icon = support_candidacy
 	category = interaction_category_succession
 	common_interaction = yes
-	interface_priority = 150
+	interface_priority = 100
 
 	desc = {
 		first_valid = {
@@ -27,7 +27,7 @@
 				every_house_member = {
 					limit = {
 						top_liege != this
-						government_allows = administrative
+						government_has_mechanic = administrative
 						top_liege = scope:actor.top_liege
 						any_valid_title_to_grant_trigger = {
 							CANDIDATE = this
@@ -42,7 +42,7 @@
 				every_courtier_or_guest = {
 					limit = {
 						top_liege != this
-						government_allows = administrative
+						government_has_mechanic = administrative
 						top_liege = scope:actor.top_liege
 						any_valid_title_to_grant_trigger = {
 							CANDIDATE = this
@@ -55,7 +55,6 @@
 		}
 	}
 
-	##### Changed from Vanilla vvvvv
 	can_be_picked_title = {
 		trigger_if = {
 			limit = { exists = scope:secondary_recipient }
@@ -69,7 +68,6 @@
 		NOT = { scope:target.holder = { government_has_flag = government_is_quasi_feudal } }
 		##### Changed from Vanilla ^^^^^
 	}
-	##### Changed from Vanilla ^^^^^
 
 	has_valid_target_showing_failures_only = {
 		exists = scope:target
@@ -86,15 +84,13 @@
 				holder = { has_realm_law_flag = appointment_type_succession }
 			}
 		}
-		scope:recipient = { government_allows = administrative }
+		scope:recipient = { government_has_mechanic = administrative }
 	}
 
 	is_available = {
 		is_ai = no
-		AND = {
-			NOT = { government_has_flag = government_has_merit }
-			government_allows = administrative
-		}
+		government_has_mechanic = administrative
+		NOT = { government_has_flag = government_has_merit }
 	}
 
 	##### Changed from Vanilla vvvvv
@@ -106,7 +102,7 @@
 	##### Changed from Vanilla ^^^^^
 
 	is_valid_showing_failures_only = {
-		scope:actor = { government_allows = administrative }
+		scope:actor = { government_has_mechanic = administrative }
 		trigger_if = {
 			limit = {
 				exists = scope:secondary_recipient
@@ -114,7 +110,7 @@
 			}
 			scope:secondary_recipient = {
 				is_independent_ruler = no
-				government_allows = administrative
+				government_has_mechanic = administrative
 				top_liege = scope:actor.top_liege
 			}
 		}
@@ -443,6 +439,18 @@
 	}
 
 	on_accept = {
+		if = {
+			limit = {
+				scope:target = {
+					this != holder.primary_title
+					OR = {
+						has_title_law = acclamation_succession_law
+						holder = { has_realm_law = acclamation_succession_law }
+					}
+				}
+			}
+			custom_tooltip = acclamation_succession_warning_tt
+		}
 		switch = {
 			trigger = yes
 			scope:as_much_as_needed_influence_option = {
@@ -695,7 +703,6 @@
 	}
 }
 
-
 liege_dismiss_primiership_interaction = {
 	category = interaction_category_diarch
 	common_interaction = yes
@@ -713,22 +720,33 @@ liege_dismiss_primiership_interaction = {
 	ai_min_reply_days = 4
 	ai_max_reply_days = 9
 
+	is_available = {
+		# With the extra consideration that we only want this to appear for Entrenched Regencies.
+		OR = {
+			has_diarchy_parameter = dismissal_requires_gift
+			AND = {
+				has_diarchy_parameter = dismissal_requires_no_ministry
+				tgp_has_access_to_ministry_trigger = no
+			}
+		}
+		trigger_if = {
+			limit = { is_ai = yes }
+			# Are we in a diarchy at all?
+			has_active_diarchy = yes
+			# Can we leave it?
+			can_leave_diarchy_trigger = yes
+			# Are we locked into a speed-leave cycle?
+			NOT = { has_character_flag = trying_to_dismiss_regent }
+		}
+	}
+
 	is_shown = {
 		# The obvious.
 		scope:actor != scope:recipient
-		always = no #Done via other mechanisms
 		# Diarchy checks for scope:actor.
 		scope:actor = {
 			# If you're not in a diarchy, we don't care.
 			diarch ?= scope:recipient
-			# With the extra consideration that we only want this to appear for Entrenched Regencies.
-			OR = {
-				has_diarchy_parameter = dismissal_requires_gift
-				AND = {
-					has_diarchy_parameter = dismissal_requires_no_ministry
-					tgp_has_access_to_ministry_trigger = no
-				}
-			}
 		}
 	}
 
@@ -844,8 +862,8 @@ liege_dismiss_primiership_interaction = {
 		current_description = diarchy_ending_gift_herd_desc
 		is_shown = {
 			# Can only pay herd if actor has herd to pay and recipient accepts herd as a currency
-			scope:actor = { government_has_flag = government_is_nomadic } 
-			scope:recipient = { government_has_flag = government_is_nomadic } 
+			scope:actor = { government_has_flag = government_is_nomadic }
+			scope:recipient = { government_has_flag = government_is_nomadic }
 		}
 	}
 
@@ -1225,7 +1243,7 @@ liege_dismiss_primiership_interaction = {
 			scope:diarchy_ending_gift_unnecessary = yes
 		}
 	}
-	
+
 	ai_accept = {
 		# Diarchs don't *want* to agree, by default...
 		base = 0
@@ -1462,14 +1480,6 @@ liege_dismiss_primiership_interaction = {
 		kingdom = 12
 		empire = 12
 		hegemony = 12
-	}
-	ai_potential = {
-		# Are we in a diarchy at all?
-		has_active_diarchy = yes
-		# Can we leave it?
-		can_leave_diarchy_trigger = yes
-		# Are we locked into a speed-leave cycle?
-		NOT = { has_character_flag = trying_to_dismiss_regent }
 	}
 
 	ai_will_do = {
