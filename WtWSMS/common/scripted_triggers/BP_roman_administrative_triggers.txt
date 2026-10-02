@@ -78,17 +78,17 @@ bp_county_has_roman_faith_trigger = {
 	scope:county.culture = { has_cultural_parameter = greco_roman_social_tradition }
 	trigger_if = { #Roman Empire Faith; this is a universal check
 		limit = { exists = title:h_roman_empire.holder }
-		title:h_roman_empire.state_faith ?= scope:county.faith
+		title:h_roman_empire.state_rite.faith ?= scope:county.faith
 	}
 	trigger_else_if = { #Western Roman Empire Faith
 		limit = { exists = title:h_western_roman_empire.holder }
 		scope:county.hegemony = title:h_western_roman_empire
-		title:h_western_roman_empire.state_faith ?= scope:county.faith
+		title:h_western_roman_empire.state_rite.faith ?= scope:county.faith
 	}
 	trigger_else_if = { #Eastern Roman Empire Faith
 		limit = { exists = title:h_eastern_roman_empire.holder }
 		scope:county.hegemony = title:h_eastern_roman_empire
-		title:h_eastern_roman_empire.state_faith ?= scope:county.faith
+		title:h_eastern_roman_empire.state_rite.faith ?= scope:county.faith
 	}
 	trigger_else = { bp_protect_religion_specific_trigger = yes } #Fallback
 }

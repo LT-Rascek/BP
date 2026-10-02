@@ -192,7 +192,7 @@ court_warlike = {
 				}
 				if = {
 					limit = {
-						faith = { has_doctrine = tenet_warmonger }
+						rite = { rite_has_tenet = tenet_warmonger }
 					}
 					add = 25
 				}
@@ -601,7 +601,7 @@ court_tribal = {
 				}
 				if = {
 					limit = {
-						faith = { has_doctrine = tenet_warmonger }
+						rite = { rite_has_tenet = tenet_warmonger }
 					}
 					add = 25
 				}
