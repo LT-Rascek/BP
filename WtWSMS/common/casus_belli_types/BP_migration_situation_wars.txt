@@ -258,7 +258,7 @@ bp_migration_war_cb = {
 
 		scope:attacker = {
 			add_prestige = mongol_invasion_cb_prestige_white_peace
-			stress_impact = {
+			stress_and_fulfillment_impact = {
 				ambitious = medium_stress_impact_gain
 				arrogant = medium_stress_impact_gain
 			}
@@ -266,7 +266,7 @@ bp_migration_war_cb = {
 		
 		migration_war_white_peace_attacker_county_effect = { ATTACKER = scope:attacker }
 		
-		scope:defender = { stress_impact = { arrogant = medium_stress_impact_gain } }
+		scope:defender = { stress_and_fulfillment_impact = { arrogant = medium_stress_impact_gain } }
 		
 		add_migration_launch_timer_effect = { ATTACKER = scope:attacker }
 	}
@@ -603,7 +603,7 @@ bp_migration_war_duchy_cb = {
 
 		scope:attacker = {
 			add_prestige = mongol_invasion_cb_prestige_white_peace
-			stress_impact = {
+			stress_and_fulfillment_impact = {
 				ambitious = medium_stress_impact_gain
 				arrogant = medium_stress_impact_gain
 			}
@@ -611,7 +611,7 @@ bp_migration_war_duchy_cb = {
 		
 		migration_war_white_peace_attacker_county_effect = { ATTACKER = scope:attacker }
 		
-		scope:defender = { stress_impact = { arrogant = medium_stress_impact_gain } }
+		scope:defender = { stress_and_fulfillment_impact = { arrogant = medium_stress_impact_gain } }
 		
 		add_migration_launch_timer_effect = { ATTACKER = scope:attacker }
 	}

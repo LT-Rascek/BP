@@ -4,6 +4,10 @@ minor_religious_war = {
 	group = religious
 
 	defender_faith_can_join = yes
+	same_faith_defenders_allowed_parameter = {
+		government_is_theocracy
+		government_is_holy_order
+	}
 
 	combine_into_one = yes
 	should_show_war_goal_subview = yes
@@ -39,63 +43,69 @@ minor_religious_war = {
 	##### Changed from Vanilla ^^^^^
 
 	allowed_for_character_display_regardless = {
+		#Piety level reqs should be ignored if this is an interaction
 		trigger_if = {
 			limit = {
-				highest_held_title_tier >= tier_kingdom
+				NOT = { has_character_flag = holy_war_incited }
 			}
-			NOT = { piety_level = -1 }
-		}
-		trigger_else = {
 			trigger_if = {
 				limit = {
-					is_alive = yes
-					has_variable_list = humsacd_hofs
-					is_target_in_variable_list = {
-						name = humsacd_hofs
-						target = scope:attacker.faith
-					}
+					highest_held_title_tier >= tier_kingdom
 				}
-				trigger_if = {
-					limit = {
-						OR = {
-							culture = {
-								has_cultural_parameter = cb_lower_piety_level_requirement
-							}
-							# Iberian Struggle Hostility Reward
-							house ?= {
-								OR = {
-									has_house_modifier = fp2_struggle_hostility_house_faith_modifier
-									has_house_modifier = fp2_struggle_hostility_house_combined_modifier
-								}
-							}
-						}
-					}
-					piety_level >= 0
-				}
-				trigger_else = {
-					piety_level >= 0
-				}
+				NOT = { piety_level = -1 }
 			}
 			trigger_else = {
 				trigger_if = {
 					limit = {
-						OR = {
-							culture = {
-								has_cultural_parameter = cb_lower_piety_level_requirement
-							}
-							# Iberian Struggle Hostility Reward
-							house ?= {
-								OR = {
-									has_house_modifier = fp2_struggle_hostility_house_faith_modifier
-									has_house_modifier = fp2_struggle_hostility_house_combined_modifier
+						is_alive = yes
+						has_variable_list = humsacd_hofs
+						is_target_in_variable_list = {
+							name = humsacd_hofs
+							target = scope:attacker.faith
+						}
+					}
+					trigger_if = {
+						limit = {
+							OR = {
+								culture = {
+									has_cultural_parameter = cb_lower_piety_level_requirement
+								}
+								# Iberian Struggle Hostility Reward
+								house ?= {
+									OR = {
+										has_house_modifier = fp2_struggle_hostility_house_faith_modifier
+										has_house_modifier = fp2_struggle_hostility_house_combined_modifier
+									}
 								}
 							}
 						}
+						piety_level >= 0
 					}
-					piety_level >= 0
+					trigger_else = {
+						piety_level >= 0
+					}
 				}
 				trigger_else = {
-					piety_level >= 1
+					trigger_if = {
+						limit = {
+							OR = {
+								culture = {
+									has_cultural_parameter = cb_lower_piety_level_requirement
+								}
+								# Iberian Struggle Hostility Reward
+								house ?= {
+									OR = {
+										has_house_modifier = fp2_struggle_hostility_house_faith_modifier
+										has_house_modifier = fp2_struggle_hostility_house_combined_modifier
+									}
+								}
+							}
+						}
+						piety_level >= 0
+					}
+					trigger_else = {
+						piety_level >= 1
+					}
 				}
 			}
 		}
@@ -104,12 +114,7 @@ minor_religious_war = {
 
 	allowed_against_character = {
 		scope:attacker = {
-			faith = {
-				faith_hostility_level = {
-					target = scope:defender.faith
-					value >= religious_cb_enabled_hostility_level
-				}
-			}
+			is_valid_religious_war_target_trigger = { TARGET = scope:defender }
 			ALL_FALSE = {
 				top_liege = scope:defender.top_liege
 				liege = scope:defender
@@ -206,6 +211,7 @@ minor_religious_war = {
 	}
 
 	on_invalidated = {
+		pam_notify_holy_war_instigator_effect_draw = yes
 	}
 	
 	ai_score_mult = {
@@ -262,6 +268,19 @@ minor_religious_war = {
 			if = {
 				limit = {
 					scope:attacker = {
+						top_participant_group:the_christian_church ?= {
+							has_participant_group_parameter = the_christian_church_cheaper_religious_wars
+						}
+					}
+				}
+				multiply = {
+					value = 0.75
+					desc = pam_the_christian_church_cheaper_religious_wars_desc
+				}
+			}
+			if = {
+				limit = {
+					scope:attacker = {
 						any_active_accolade = {
 							accolade_parameter = acclaimed_knight_piety_from_battle
 						}
@@ -281,6 +300,13 @@ minor_religious_war = {
 				multiply = accolade_piety_reduction_value_high
 				min = 10
 			}
+			#Inciting cleric paid piety cost
+			if = {
+				limit = {
+					scope:attacker = { has_character_flag = holy_war_incited }
+				}
+				multiply = 0
+			}
 		}
 	}
 
@@ -292,8 +318,8 @@ minor_religious_war = {
 		first_valid = {
 			triggered_desc = {
 				trigger = {
-					scope:attacker.faith = {
-						has_doctrine = doctrine_pluralism_pluralistic
+					scope:attacker.rite = {
+						rite_has_doctrine = doctrine_pluralism_pluralistic
 					}
 				}
 				desc = religious_war_victory_desc_doctrine_pluralism
@@ -303,6 +329,8 @@ minor_religious_war = {
 	}
 
 	on_victory = {
+		pam_notify_holy_war_instigator_effect_win = yes
+
 		scope:attacker = { show_pow_release_message_effect = yes }
 		
 		# Legitimacy
@@ -387,13 +415,13 @@ minor_religious_war = {
 
 		scope:attacker.faith = {
 			change_fervor = {
-				value = -1
+				value = trivial_fervor_gain
 				desc = fervor_loss_religious_war
 			}
 		}
 		scope:defender.faith = {
 			change_fervor = {
-				value = 3
+				value = modest_fervor_gain
 				desc = fervor_gain_religious_war
 			}
 		}
@@ -416,6 +444,7 @@ minor_religious_war = {
 	}
 
 	on_white_peace = {
+		pam_notify_holy_war_instigator_effect_draw = yes
 		scope:attacker = { show_pow_release_message_effect = yes }
 
 		# Allies on both sides get full prestige value for helping in the war, based on their war participation.
@@ -432,14 +461,14 @@ minor_religious_war = {
 
 		scope:attacker = {
 			add_piety = religious_cb_piety_white_peace
-			stress_impact = {
+			stress_and_fulfillment_impact = {
 				ambitious = medium_stress_impact_gain
 				arrogant = medium_stress_impact_gain
 			}
 		}
 
 		scope:defender = {
-			stress_impact = {
+			stress_and_fulfillment_impact = {
 				arrogant = medium_stress_impact_gain
 			}
 		}
@@ -453,6 +482,7 @@ minor_religious_war = {
 	}
 
 	on_defeat = {
+		pam_notify_holy_war_instigator_effect_loss = yes
 		scope:attacker = { show_pow_release_message_effect = yes }
 		
 		# Legitimacy
@@ -567,6 +597,10 @@ religious_war = {
 	group = religious
 
 	defender_faith_can_join = yes
+	same_faith_defenders_allowed_parameter = {
+		government_is_theocracy
+		government_is_holy_order
+	}
 
 	combine_into_one = yes
 	should_show_war_goal_subview = yes
@@ -590,17 +624,11 @@ religious_war = {
 			government_has_flag = government_is_nomadic
 			government_has_flag = government_is_celestial
 		}
-		scope:attacker.faith = {
-			NOR = { 
-				has_doctrine_parameter = unreformed
-				has_doctrine_parameter = holy_wars_forbidden
-			}
-		}
 		##### Changed from Vanilla vvvvv
 		OR = {
 			scope:attacker.religion = religion:islam_religion
 			AND = {
-				scope:attacker.culture = { has_innovation = innovation_scriptural_cannon }
+				scope:attacker.culture = { has_innovation = innovation_doctrine_and_dogma }
 				BP_religious_wars_unlocked_trigger = yes
 			}
 		}
@@ -609,63 +637,69 @@ religious_war = {
 	##### Changed from Vanilla ^^^^^
 
 	allowed_for_character_display_regardless = {
+		#Piety level reqs should be ignored if this is an interaction
 		trigger_if = {
 			limit = {
-				highest_held_title_tier >= tier_kingdom
+				NOT = { has_character_flag = holy_war_incited }
 			}
-			NOT = { piety_level = -1 }
-		}
-		trigger_else = {
 			trigger_if = {
 				limit = {
-					is_alive = yes
-					has_variable_list = humsacd_hofs
-					is_target_in_variable_list = {
-						name = humsacd_hofs
-						target = scope:attacker.faith
-					}
+					highest_held_title_tier >= tier_kingdom
 				}
-				trigger_if = {
-					limit = {
-						OR = {
-							culture = {
-								has_cultural_parameter = cb_lower_piety_level_requirement
-							}
-							# Iberian Struggle Hostility Reward
-							house ?= {
-								OR = {
-									has_house_modifier = fp2_struggle_hostility_house_faith_modifier
-									has_house_modifier = fp2_struggle_hostility_house_combined_modifier
-								}
-							}
-						}
-					}
-					piety_level >= 0
-				}
-				trigger_else = {
-					piety_level >= 1
-				}
+				NOT = { piety_level = -1 }
 			}
 			trigger_else = {
 				trigger_if = {
 					limit = {
-						OR = {
-							culture = {
-								has_cultural_parameter = cb_lower_piety_level_requirement
-							}
-							# Iberian Struggle Hostility Reward
-							house ?= {
-								OR = {
-									has_house_modifier = fp2_struggle_hostility_house_faith_modifier
-									has_house_modifier = fp2_struggle_hostility_house_combined_modifier
+						is_alive = yes
+						has_variable_list = humsacd_hofs
+						is_target_in_variable_list = {
+							name = humsacd_hofs
+							target = scope:attacker.faith
+						}
+					}
+					trigger_if = {
+						limit = {
+							OR = {
+								culture = {
+									has_cultural_parameter = cb_lower_piety_level_requirement
+								}
+								# Iberian Struggle Hostility Reward
+								house ?= {
+									OR = {
+										has_house_modifier = fp2_struggle_hostility_house_faith_modifier
+										has_house_modifier = fp2_struggle_hostility_house_combined_modifier
+									}
 								}
 							}
 						}
+						piety_level >= 0
 					}
-					piety_level >= 1
+					trigger_else = {
+						piety_level >= 1
+					}
 				}
 				trigger_else = {
-					piety_level >= 2
+					trigger_if = {
+						limit = {
+							OR = {
+								culture = {
+									has_cultural_parameter = cb_lower_piety_level_requirement
+								}
+								# Iberian Struggle Hostility Reward
+								house ?= {
+									OR = {
+										has_house_modifier = fp2_struggle_hostility_house_faith_modifier
+										has_house_modifier = fp2_struggle_hostility_house_combined_modifier
+									}
+								}
+							}
+						}
+						piety_level >= 1
+					}
+					trigger_else = {
+						piety_level >= 2
+					}
 				}
 			}
 		}
@@ -674,12 +708,7 @@ religious_war = {
 
 	allowed_against_character = {
 		scope:attacker = {
-			faith = {
-				faith_hostility_level = {
-					target = scope:defender.faith
-					value >= religious_cb_enabled_hostility_level
-				}
-			}
+			is_valid_religious_war_target_trigger = { TARGET = scope:defender }
 			ALL_FALSE = {
 				top_liege = scope:defender.top_liege
 				liege = scope:defender
@@ -795,7 +824,7 @@ religious_war = {
 	}
 
 	on_invalidated = {
-		
+		pam_notify_holy_war_instigator_effect_draw = yes
 	}
 
 	cost = {
@@ -806,6 +835,19 @@ religious_war = {
 			}
 			multiply = common_cb_piety_cost_multiplier
 			multiply = holy_war_cb_piety_cost_multiplier
+			if = {
+				limit = {
+					scope:attacker = {
+						top_participant_group:the_christian_church ?= {
+							has_participant_group_parameter = the_christian_church_cheaper_religious_wars
+						}
+					}
+				}
+				multiply = {
+					value = 0.75
+					desc = pam_the_christian_church_cheaper_religious_wars_desc
+				}
+			}
 			# Half price for mean Iberians
 			if = {
 				limit = {
@@ -869,6 +911,13 @@ religious_war = {
 				multiply = accolade_piety_reduction_value_high
 				min = 25
 			}
+			#Inciting cleric paid piety cost
+			if = {
+				limit = {
+					scope:attacker = { has_character_flag = holy_war_incited }
+				}
+				multiply = 0
+			}
 		}
 	}
 
@@ -880,8 +929,8 @@ religious_war = {
 		first_valid = {
 			triggered_desc = {
 				trigger = {
-					scope:attacker.faith = {
-						has_doctrine = doctrine_pluralism_pluralistic
+					scope:attacker.rite = {
+						rite_has_doctrine = doctrine_pluralism_pluralistic
 					}
 				}
 				desc = religious_war_victory_desc_doctrine_pluralism
@@ -891,6 +940,7 @@ religious_war = {
 	}
 
 	on_victory = {
+		pam_notify_holy_war_instigator_effect_win = yes
 		scope:attacker = { show_pow_release_message_effect = yes }
 		
 		# Legitimacy
@@ -976,13 +1026,13 @@ religious_war = {
 
 		scope:attacker.faith = {
 			change_fervor = {
-				value = -2
+				value = small_fervor_gain
 				desc = fervor_loss_religious_war
 			}
 		}
 		scope:defender.faith = {
 			change_fervor = {
-				value = 4
+				value = slight_fervor_gain
 				desc = fervor_gain_religious_war
 			}
 		}
@@ -1005,6 +1055,7 @@ religious_war = {
 	}
 
 	on_white_peace = {
+		pam_notify_holy_war_instigator_effect_draw = yes
 		scope:attacker = { show_pow_release_message_effect = yes }
 
 		#EP2 accolade glory gain for sort of winning
@@ -1024,14 +1075,14 @@ religious_war = {
 
 		scope:attacker = {
 			add_piety = religious_cb_piety_white_peace
-			stress_impact = {
+			stress_and_fulfillment_impact = {
 				ambitious = medium_stress_impact_gain
 				arrogant = medium_stress_impact_gain
 			}
 		}
 
 		scope:defender = {
-			stress_impact = {
+			stress_and_fulfillment_impact = {
 				arrogant = medium_stress_impact_gain
 			}
 		}
@@ -1045,6 +1096,7 @@ religious_war = {
 	}
 
 	on_defeat = {
+		pam_notify_holy_war_instigator_effect_loss = yes
 		scope:attacker = { show_pow_release_message_effect = yes }
 		
 		# Legitimacy
@@ -1202,6 +1254,10 @@ major_religious_war = {
 	group = religious
 
 	defender_faith_can_join = yes
+	same_faith_defenders_allowed_parameter = {
+		government_is_theocracy
+		government_is_holy_order
+	}
 
 	combine_into_one = yes
 	should_show_war_goal_subview = yes
@@ -1222,7 +1278,7 @@ major_religious_war = {
 		OR = {
 			scope:attacker.religion = religion:islam_religion
 			AND = {
-				scope:attacker.culture = { has_innovation = innovation_scriptural_cannon }
+				scope:attacker.culture = { has_innovation = innovation_doctrine_and_dogma }
 				BP_religious_wars_unlocked_trigger = yes
 			}
 		}
@@ -1231,60 +1287,66 @@ major_religious_war = {
 	##### Changed from Vanilla ^^^^^
 
 	allowed_for_character_display_regardless = {
+		#Piety level reqs should be ignored if this is an interaction
 		trigger_if = {
 			limit = {
-				is_alive = yes
-				has_variable_list = humsacd_hofs
-				is_target_in_variable_list = {
-					name = humsacd_hofs
-					target = scope:attacker.faith
-				}
+				NOT = { has_character_flag = holy_war_incited }
 			}
 			trigger_if = {
 				limit = {
-					OR = {
-						culture = {
-							has_cultural_parameter = cb_lower_piety_level_requirement
-						}
-						# Iberian Struggle Hostility Reward
-						AND = {
-							house ?= {
-								OR = {
-									has_house_modifier = fp2_struggle_hostility_house_faith_modifier
-									has_house_modifier = fp2_struggle_hostility_house_combined_modifier
+					is_alive = yes
+					has_variable_list = humsacd_hofs
+					is_target_in_variable_list = {
+						name = humsacd_hofs
+						target = scope:attacker.faith
+					}
+				}
+				trigger_if = {
+					limit = {
+						OR = {
+							culture = {
+								has_cultural_parameter = cb_lower_piety_level_requirement
+							}
+							# Iberian Struggle Hostility Reward
+							AND = {
+								house ?= {
+									OR = {
+										has_house_modifier = fp2_struggle_hostility_house_faith_modifier
+										has_house_modifier = fp2_struggle_hostility_house_combined_modifier
+									}
 								}
 							}
 						}
 					}
+					piety_level >= 1
 				}
-				piety_level >= 1
+				trigger_else = {
+					piety_level >= 2
+				}
 			}
 			trigger_else = {
-				piety_level >= 2
-			}
-		}
-		trigger_else = {
-			trigger_if = {
-				limit = {
-					OR = {
-						culture = {
-							has_cultural_parameter = cb_lower_piety_level_requirement
-						}
-						# Iberian Struggle Hostility Reward
-						AND = {
-							house ?= {
-								OR = {
-									has_house_modifier = fp2_struggle_hostility_house_faith_modifier
-									has_house_modifier = fp2_struggle_hostility_house_combined_modifier
-								}
+				trigger_if = {
+					limit = {
+						OR = {
+							culture = {
+								has_cultural_parameter = cb_lower_piety_level_requirement
 							}
-						} 
+							# Iberian Struggle Hostility Reward
+							AND = {
+								house ?= {
+									OR = {
+										has_house_modifier = fp2_struggle_hostility_house_faith_modifier
+										has_house_modifier = fp2_struggle_hostility_house_combined_modifier
+									}
+								}
+							} 
+						}
 					}
+					piety_level >= 2
 				}
-				piety_level >= 2
-			}
-			trigger_else = {
-				piety_level >= 3
+				trigger_else = {
+					piety_level >= 3
+				}
 			}
 		}
 		trigger_if = {
@@ -1308,12 +1370,7 @@ major_religious_war = {
 
 	allowed_against_character = {
 		scope:attacker = {
-			faith = {
-				faith_hostility_level = {
-					target = scope:defender.faith
-					value >= religious_cb_enabled_hostility_level
-				}
-			}
+			is_valid_religious_war_target_trigger = { TARGET = scope:defender }
 			ALL_FALSE = {
 				top_liege = scope:defender.top_liege
 				liege = scope:defender
@@ -1430,6 +1487,7 @@ major_religious_war = {
 	}
 	
 	on_invalidated = {
+		pam_notify_holy_war_instigator_effect_draw = yes
 		scope:attacker = { remove_character_flag = declared_major_religious_war_flag }
 	}
 
@@ -1441,6 +1499,19 @@ major_religious_war = {
 			}
 			multiply = common_cb_piety_cost_multiplier
 			multiply = holy_war_cb_piety_cost_multiplier
+			if = {
+				limit = {
+					scope:attacker = {
+						top_participant_group:the_christian_church ?= {
+							has_participant_group_parameter = the_christian_church_cheaper_religious_wars
+						}
+					}
+				}
+				multiply = {
+					value = 0.75
+					desc = pam_the_christian_church_cheaper_religious_wars_desc
+				}
+			}
 			if = {
 				limit = {
 					scope:attacker = {
@@ -1462,6 +1533,13 @@ major_religious_war = {
 				}
 				multiply = accolade_piety_reduction_value_high
 				min = 90
+			}
+			#Inciting cleric paid piety cost
+			if = {
+				limit = {
+					scope:attacker = { has_character_flag = holy_war_incited }
+				}
+				multiply = 0
 			}
 		}
 	}
@@ -1485,8 +1563,8 @@ major_religious_war = {
 		first_valid = {
 			triggered_desc = {
 				trigger = {
-					scope:attacker.faith = {
-						has_doctrine = doctrine_pluralism_pluralistic
+					scope:attacker.rite = {
+						rite_has_doctrine = doctrine_pluralism_pluralistic
 					}
 				}
 				desc = religious_war_victory_desc_doctrine_pluralism
@@ -1502,9 +1580,9 @@ major_religious_war = {
 							NOT = { has_character_flag = bonus_major_holy_war }
 							NOT = { has_character_flag = declared_major_religious_war_flag }
 						}
-						AND = {
-							has_character_flag = bonus_major_holy_war
-							has_character_flag = declared_major_religious_war_flag
+						has_all_variables = {
+							name = bonus_major_holy_war
+							name = declared_major_religious_war_flag
 						}
 					}
 				}
@@ -1514,6 +1592,7 @@ major_religious_war = {
 	}
 
 	on_victory = {
+		pam_notify_holy_war_instigator_effect_win = yes
 		scope:attacker = {
 			if = {
 				limit = {
@@ -1606,13 +1685,13 @@ major_religious_war = {
 
 		scope:attacker.faith = {
 			change_fervor = {
-				value = -5
+				value = modest_fervor_gain
 				desc = fervor_loss_religious_war
 			}
 		}
 		scope:defender.faith = {
 			change_fervor = {
-				value = 10
+				value = notable_fervor_gain
 				desc = fervor_gain_religious_war
 			}
 		}
@@ -1635,6 +1714,7 @@ major_religious_war = {
 	}
 
 	on_white_peace = {
+		pam_notify_holy_war_instigator_effect_draw = yes
 		scope:attacker = { show_pow_release_message_effect = yes }
 
 		#EP2 accolade glory gain for doing ok against higher ranked enemy
@@ -1652,14 +1732,14 @@ major_religious_war = {
 
 		scope:attacker = {
 			add_piety = religious_cb_piety_white_peace
-			stress_impact = {
+			stress_and_fulfillment_impact = {
 				ambitious = medium_stress_impact_gain
 				arrogant = medium_stress_impact_gain
 			}
 		}
 
 		scope:defender = {
-			stress_impact = {
+			stress_and_fulfillment_impact = {
 				arrogant = medium_stress_impact_gain
 			}
 		}
@@ -1676,6 +1756,7 @@ major_religious_war = {
 	}
 
 	on_defeat = {
+		pam_notify_holy_war_instigator_effect_loss = yes
 		scope:attacker = { show_pow_release_message_effect = yes }
 		
 		# Legitimacy

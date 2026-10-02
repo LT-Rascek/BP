@@ -26,6 +26,7 @@ mpo_nomad_invasion_cb = {
 				is_landed = no
 				capital_county = {
 					any_county_situation_sub_region = {
+						situation_sub_region_has_county = prev
 						sub_region_current_phase = situation_steppe_havsarsan_zud_season
 					}
 				}
@@ -42,6 +43,7 @@ mpo_nomad_invasion_cb = {
 					NOT = {
 						capital_county = {
 							any_county_situation_sub_region = {
+								situation_sub_region_has_county = prev
 								sub_region_current_phase = situation_steppe_havsarsan_zud_season
 							}
 						}
@@ -83,6 +85,7 @@ mpo_nomad_invasion_cb = {
 						scope:attacker = {
 							capital_county = {
 								any_county_situation_sub_region = {
+									situation_sub_region_has_county = prev
 									sub_region_current_phase = situation_steppe_havsarsan_zud_season
 								}
 							}
@@ -108,6 +111,7 @@ mpo_nomad_invasion_cb = {
 									ai_boldness >= 50
 									capital_county = {
 										any_county_situation_sub_region = {
+											situation_sub_region_has_county = prev
 											OR = {
 												sub_region_current_phase = situation_steppe_white_zud_season
 												sub_region_current_phase = situation_steppe_cold_zud_season
@@ -470,7 +474,6 @@ mpo_nomad_invasion_cb = {
 		}
 	}
 
-	##### Changed from Vanilla vvvvv
 	on_victory = {
 		##### Changed from Vanilla vvvvv
 		if = {
@@ -484,7 +487,7 @@ mpo_nomad_invasion_cb = {
 		}
 		else = { save_scope_value_as = { name = advanced_gov value = no } }
 		##### Changed from Vanilla ^^^^^
-		
+
 		#GoK stops really being GoK
 		scope:attacker = {
 			gok_government_change_story_end_effect = yes
@@ -846,8 +849,6 @@ mpo_nomad_invasion_cb = {
 			}
 		}
 
-		##### Changed from Vanilla vvvvv
-
 		#Change attacker's government
 		scope:attacker = {
 			if = {
@@ -856,6 +857,7 @@ mpo_nomad_invasion_cb = {
 				}
 				nomad_convert_people_to_tribe_effect = yes
 			}
+			##### Changed from Vanilla vvvvv
 			else_if = {
 				limit = {
 					NOR = {
@@ -869,6 +871,7 @@ mpo_nomad_invasion_cb = {
 				}
 				nomad_convert_people_to_prefeudal_effect = yes
 			}
+			##### Changed from Vanilla ^^^^^
 			else_if = {
 				limit = {
 					exists = scope:becoming_clan
@@ -879,7 +882,6 @@ mpo_nomad_invasion_cb = {
 				nomad_convert_people_to_feudal_effect = yes
 			}
 		}
-		##### Changed from Vanilla ^^^^^
 
 		#Change capital to somewhere in new lands
 		scope:target = {
@@ -1210,7 +1212,6 @@ mpo_nomad_invasion_cb = {
 		}
 		##### Changed from Vanilla ^^^^^
 	}
-	##### Changed from Vanilla ^^^^^
 
 	on_white_peace_desc = {
 		first_valid = {
@@ -1252,14 +1253,14 @@ mpo_nomad_invasion_cb = {
 			add_dread = minor_dread_loss
 			add_legitimacy = minor_legitimacy_loss
 			add_prestige = mongol_invasion_cb_prestige_white_peace
-			stress_impact = {
+			stress_and_fulfillment_impact = {
 				ambitious = medium_stress_impact_gain
 				arrogant = medium_stress_impact_gain
 			}
 		}
 
 		scope:defender = {
-			stress_impact = {
+			stress_and_fulfillment_impact = {
 				arrogant = medium_stress_impact_gain
 			}
 		}
@@ -1407,6 +1408,7 @@ mpo_nomad_duchy_invasion_cb = {
 					NOT = {
 						capital_county = {
 							any_county_situation_sub_region = {
+								situation_sub_region_has_county = prev
 								sub_region_current_phase = situation_steppe_havsarsan_zud_season
 							}
 						}
@@ -1444,6 +1446,7 @@ mpo_nomad_duchy_invasion_cb = {
 						scope:attacker = {
 							capital_county = {
 								any_county_situation_sub_region = {
+									situation_sub_region_has_county = prev
 									sub_region_current_phase = situation_steppe_havsarsan_zud_season
 								}
 							}
@@ -1469,6 +1472,7 @@ mpo_nomad_duchy_invasion_cb = {
 									ai_boldness >= 50
 									capital_county = {
 										any_county_situation_sub_region = {
+											situation_sub_region_has_county = prev
 											OR = {
 												sub_region_current_phase = situation_steppe_white_zud_season
 												sub_region_current_phase = situation_steppe_cold_zud_season
@@ -1739,7 +1743,6 @@ mpo_nomad_duchy_invasion_cb = {
 		}
 	}
 
-	##### Changed from Vanilla vvvvv
 	on_victory = {
 		##### Changed from Vanilla vvvvv
 		if = {
@@ -1753,7 +1756,7 @@ mpo_nomad_duchy_invasion_cb = {
 		}
 		else = { save_scope_value_as = { name = advanced_gov value = no } }
 		##### Changed from Vanilla ^^^^^
-		
+
 		#GoK stops really being GoK
 		scope:attacker = {
 			gok_government_change_story_end_effect = yes
@@ -2043,8 +2046,6 @@ mpo_nomad_duchy_invasion_cb = {
 			}
 		}
 
-		##### Changed from Vanilla vvvvv
-
 		#Change attacker's government
 		scope:attacker = {
 			if = {
@@ -2053,6 +2054,7 @@ mpo_nomad_duchy_invasion_cb = {
 				}
 				nomad_convert_people_to_tribe_effect = yes
 			}
+			##### Changed from Vanilla vvvvv
 			else_if = {
 				limit = {
 					NOR = {
@@ -2066,6 +2068,7 @@ mpo_nomad_duchy_invasion_cb = {
 				}
 				nomad_convert_people_to_prefeudal_effect = yes
 			}
+			##### Changed from Vanilla ^^^^^
 			else_if = {
 				limit = {
 					exists = scope:becoming_clan
@@ -2076,7 +2079,6 @@ mpo_nomad_duchy_invasion_cb = {
 				nomad_convert_people_to_feudal_effect = yes
 			}
 		}
-		##### Changed from Vanilla ^^^^^
 
 		#Change capital to somewhere in new lands
 		scope:target = {
@@ -2274,7 +2276,6 @@ mpo_nomad_duchy_invasion_cb = {
 				days = 1
 			}
 		}
-		
 		##### Changed from Vanilla vvvvv
 		if = {
 			limit = { always = scope:advanced_gov }
@@ -2290,7 +2291,6 @@ mpo_nomad_duchy_invasion_cb = {
 		}
 		##### Changed from Vanilla ^^^^^
 	}
-	##### Changed from Vanilla ^^^^^
 
 	on_white_peace_desc = {
 		first_valid = {
@@ -2333,14 +2333,14 @@ mpo_nomad_duchy_invasion_cb = {
 			add_dread = minor_dread_loss
 			add_legitimacy = minor_legitimacy_loss
 			add_prestige = mongol_invasion_cb_prestige_white_peace
-			stress_impact = {
+			stress_and_fulfillment_impact = {
 				ambitious = medium_stress_impact_gain
 				arrogant = medium_stress_impact_gain
 			}
 		}
 
 		scope:defender = {
-			stress_impact = {
+			stress_and_fulfillment_impact = {
 				arrogant = medium_stress_impact_gain
 			}
 		}

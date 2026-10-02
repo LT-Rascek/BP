@@ -1,0 +1,76 @@
+﻿#####################################################################
+# EFFECT LIST
+#####################################################################
+change_authority_effect = {
+	switch = {
+		trigger = has_realm_law_in_group
+		celestial_bureaucracy = {
+			change_realm_law_level = {
+				law_group = celestial_bureaucracy
+				change = $CHANGE$
+			}
+		}
+		imperial_bureaucracy = {
+			change_realm_law_level = {
+				law_group = imperial_bureaucracy
+				change = $CHANGE$
+			}
+		}
+		japanese_bureaucracy = {
+			change_realm_law_level = {
+				law_group = japanese_bureaucracy
+				change = $CHANGE$
+			}
+		}
+		meritocratic_bureaucracy = {
+			change_realm_law_level = {
+				law_group = meritocratic_bureaucracy
+				change = $CHANGE$
+			}
+		}
+		crown_authority = {
+			change_realm_law_level = {
+				law_group = crown_authority
+				change = $CHANGE$
+			}
+		}
+		tribal_authority = {
+			change_realm_law_level = {
+				law_group = tribal_authority
+				change = $CHANGE$
+			}
+		}
+		nomadic_authority = {
+			change_realm_law_level = {
+				law_group = nomadic_authority
+				change = $CHANGE$
+			}
+		}
+		church_authority = {
+			change_realm_law_level = {
+				law_group = church_authority
+				change = $CHANGE$
+			}
+		}
+		##### Changed from Vanilla vvvvv
+		roman_dynastic_authority = {
+			change_realm_law_level = {
+				law_group = roman_dynastic_authority
+				change = -1
+			}
+		}
+		rajamandala_authority = {
+			change_realm_law_level = {
+				law_group = rajamandala_authority
+				change = -1
+			}
+		}
+		iranian_dynastic_authority = {
+			change_realm_law_level = {
+				law_group = iranian_dynastic_authority
+				change = -1
+			}
+		}
+		##### Changed from Vanilla ^^^^^
+	}
+}
