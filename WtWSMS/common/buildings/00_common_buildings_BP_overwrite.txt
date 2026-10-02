@@ -37,6 +37,16 @@ hospices_01 = {
 		monthly_piety = 0.01
 	}
 
+	county_rite_modifier = {
+		parameter = tenet_love_thy_neighbour_hospital_shelter
+		travel_danger = -3
+	}
+
+	province_rite_modifier = {
+		parameter = tenet_love_thy_neighbour_hospital_care
+		epidemic_resistance = 2
+	}
+
 	on_complete = {
 		#Regular Mandala Boon
 		mandala_built_piety_building_effect = yes
@@ -130,6 +140,16 @@ hospices_02 = {
 	character_government_modifier = {
 		parameter = government_is_mandala
 		monthly_piety = 0.01
+	}
+
+	county_rite_modifier = {
+		parameter = tenet_love_thy_neighbour_hospital_shelter
+		travel_danger = -4
+	}
+
+	province_rite_modifier = {
+		parameter = tenet_love_thy_neighbour_hospital_care
+		epidemic_resistance = 3
 	}
 
 	on_complete = {

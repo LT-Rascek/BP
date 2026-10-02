@@ -920,14 +920,14 @@ great_megalith_01 = {
 		}
 		##### Changed from Vanilla ^^^^^
 		building_requirement_castle_city_church = { LEVEL = 01 }
-		scope:holder = { faith = { has_doctrine_parameter = can_build_megaliths } }
+		scope:holder = { rite = { rite_has_parameter = can_build_megaliths } }
 		duchy_building_religion_level_01_trigger = yes
 	}
 	
 	is_enabled = {
 		custom_tooltip = {
 			text = province_is_of_a_megalith_faith_tt
-			county.faith = { has_doctrine_parameter = can_build_megaliths }
+			county.rite = { rite_has_parameter = can_build_megaliths }
 		}
 		county.holder = { has_title = prev.duchy }
 	}

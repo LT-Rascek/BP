@@ -2887,7 +2887,7 @@ house_of_wisdom_01 = {
 		monthly_lifestyle_xp_gain_mult = 0.15
 		different_culture_opinion = 10
 		cultural_head_fascination_mult = 0.10
-		faith_creation_piety_cost_mult = -0.2
+		rite_creation_piety_cost_mult = -0.1
 		monthly_dynasty_prestige_mult = 0.05
 	}
 	county_modifier = {
@@ -4275,7 +4275,7 @@ imam_reza_shrine_01 = {
 	character_modifier = {
 		monthly_piety = 0.2
 		learning_per_piety_level = 1
-		imami_opinion = 10
+		shia_opinion = 10
 		advantage_against_coreligionists = 5
 		monthly_dynasty_prestige_mult = 0.05
 	}
@@ -4450,7 +4450,7 @@ palace_of_ctesiphon_02 = {
 			AND = {
 				OR = {
 					zoroastrian_or_syncretic_with_eastern_trigger = { CHARACTER = scope:holder }
-					faith = faith:manichean
+					faith = faith:manichaean_faith
 					faith = faith:nestorian
 					faith = faith:hellenic_pagan
 				}
@@ -5853,7 +5853,9 @@ meteora_01 = {
 	}
 	
 	is_enabled = {
-		scope:holder.faith = faith:orthodox
+		scope:holder.rite = {
+			rite_has_doctrine = special_doctrine_is_eastern_christian_faith
+		}
 	}
 
 	character_modifier = {
@@ -5912,7 +5914,9 @@ meteora_02 = {
 	}
 	
 	is_enabled = {
-		scope:holder.faith = faith:orthodox
+		scope:holder.rite = {
+			rite_has_doctrine = special_doctrine_is_eastern_christian_faith
+		}
 	}
 
 	character_modifier = {
@@ -5978,8 +5982,7 @@ mount_athos_01 = { ##### Changed from Vanilla: Tied to Christian Monasticism
 	##### Changed from Vanilla vvvvvv
 	is_enabled = {
 		christianity_or_syncretic_with_christianity_trigger = { CHARACTER = scope:holder }
-		scope:holder.faith = { has_doctrine_parameter = take_vows_active } #Supports monasticism
-		scope:holder.faith = { has_doctrine_parameter = enables_formation_of_autocephalous_churches } #Is of pre-Eastern Orthodox Strains
+		scope:holder.rite = { has_doctrine_parameter = take_vows_active } #Supports monasticism
 	}
 	##### Changed from Vanilla ^^^^^
 
@@ -6032,8 +6035,7 @@ mount_athos_02 = { ##### Changed from Vanilla: Tied to Christian Monasticism
 	##### Changed from Vanilla vvvvvv
 	is_enabled = {
 		christianity_or_syncretic_with_christianity_trigger = { CHARACTER = scope:holder }
-		scope:holder.faith = { has_doctrine_parameter = take_vows_active } #Supports monasticism
-		scope:holder.faith = { has_doctrine_parameter = enables_formation_of_autocephalous_churches } #Is of pre-Eastern Orthodox Strains
+		scope:holder.rite = { has_doctrine_parameter = take_vows_active } #Supports monasticism
 	}
 	##### Changed from Vanilla ^^^^^
 
@@ -6098,15 +6100,14 @@ mount_athos_03 = { ##### Changed from Vanilla: Tied to Christian Monasticism
 	##### Changed from Vanilla vvvvvv
 	is_enabled = {
 		christianity_or_syncretic_with_christianity_trigger = { CHARACTER = scope:holder }
-		scope:holder.faith = { has_doctrine_parameter = take_vows_active } #Supports monasticism
-		scope:holder.faith = { has_doctrine_parameter = enables_formation_of_autocephalous_churches } #Is of pre-Eastern Orthodox Strains
+		scope:holder.rite = { has_doctrine_parameter = take_vows_active } #Supports monasticism
 	}
 	##### Changed from Vanilla ^^^^^
 
 	character_modifier = {
 		monthly_piety = 0.4
 		cultural_head_fascination_mult = 0.10
-		faith_creation_piety_cost_mult = -0.2
+		rite_creation_piety_cost_mult = -0.1
 		religious_vassal_opinion = 10
 		zealot_opinion = 10
 		clergy_opinion = 10
@@ -6351,7 +6352,7 @@ etchmiadzin_cathedral = {
 	}
 	
 	is_enabled = {
-		scope:holder.faith = faith:armenian_apostolic
+		scope:holder.rite = rite:armenian_rite
 	}
 
 	character_modifier = {

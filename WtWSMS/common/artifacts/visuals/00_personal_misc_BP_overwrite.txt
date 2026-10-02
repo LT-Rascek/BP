@@ -40,7 +40,7 @@ crown = {
 						has_cultural_pillar = heritage_syriac
 					}
 				}
-				highest_held_title_tier = tier_empire
+				highest_held_title_tier >= tier_empire
 			}
 		}
 		reference = male_headgear_secular_byzantine_imperial_01_artifact_entity
@@ -71,7 +71,7 @@ crown = {
 					culture = { has_cultural_pillar = heritage_turkic }
 					culture = { has_cultural_pillar = heritage_berber }
 				}
-				highest_held_title_tier = tier_empire
+				highest_held_title_tier >= tier_empire
 			}
 		}
 		reference = male_headgear_secular_dde_abbasid_imperial_01_artifact_entity
@@ -103,7 +103,7 @@ crown = {
 					culture = { has_cultural_pillar = heritage_west_germanic }
 					culture = { has_cultural_pillar = heritage_west_slavic }
 				}
-				highest_held_title_tier = tier_empire
+				highest_held_title_tier >= tier_empire
 			}
 		}
 		reference = male_headgear_secular_dde_hre_imperial_01_artifact_entity
@@ -159,7 +159,7 @@ crown = {
 	# Indian
 	asset = {		
 		trigger = {
-			scope:owner = { highest_held_title_tier = tier_empire }
+			scope:owner = { highest_held_title_tier >= tier_empire }
 			artifact_high_rarity_trigger = yes
 			OR = {
 				artifact_use_indian_building_visuals_trigger = yes #this trigger cuts out the maker
@@ -211,7 +211,7 @@ crown = {
 				artifact_use_southeast_asian_building_visuals_trigger = yes #this trigger cuts out the maker
 			}
 			scope:owner = {
-				highest_held_title_tier = tier_empire
+				highest_held_title_tier >= tier_empire
 			}
 		}
 		reference = male_headgear_secular_indian_imperial_01_artifact_entity
@@ -258,7 +258,7 @@ crown = {
 		trigger = {
 			artifact_use_mena_building_visuals_trigger = yes #this trigger cuts out the maker
 			scope:owner = {
-				highest_held_title_tier = tier_empire
+				highest_held_title_tier >= tier_empire
 			}
 		}
 		reference = male_headgear_secular_mena_imperial_01_artifact_entity
@@ -364,7 +364,7 @@ crown = {
 						has_cultural_pillar = heritage_syriac
 					}
 				}
-				highest_held_title_tier = tier_empire
+				highest_held_title_tier >= tier_empire
 			}
 		}
 		reference = male_headgear_secular_western_imperial_01_artifact_entity
@@ -395,7 +395,7 @@ crown = {
 			has_dlc_feature = the_northern_lords
 			artifact_use_northern_unit_visuals_trigger = yes #this trigger cuts out the maker
 			scope:owner = {
-				highest_held_title_tier = tier_empire
+				highest_held_title_tier >= tier_empire
 			}
 		}
 		reference = male_headgear_secular_fp1_imperial_01_artifact_entity
@@ -405,7 +405,7 @@ crown = {
 			has_dlc_feature = the_northern_lords
 			artifact_use_northern_unit_visuals_trigger = yes #this trigger cuts out the maker
 			scope:owner = {
-				highest_held_title_tier = tier_empire
+				highest_held_title_tier >= tier_empire
 			}
 		}
 		reference = female_headgear_secular_fp1_imperial_01_artifact_entity
@@ -421,7 +421,7 @@ crown = {
 	asset = {
 		trigger = {
 			artifact_use_mongol_unit_visuals_trigger = yes #this trigger cuts out the maker
-			scope:owner = { highest_held_title_tier = tier_empire }
+			scope:owner = { highest_held_title_tier >= tier_empire }
 		}
 		reference = male_headgear_secular_steppe_imperial_01_artifact_entity
 	}
@@ -436,14 +436,14 @@ crown = {
 	asset = {
 		trigger = {
 			artifact_use_african_unit_visuals_trigger = yes #this trigger cuts out the maker
-			scope:owner = { highest_held_title_tier = tier_empire }
+			scope:owner = { highest_held_title_tier >= tier_empire }
 		}
 		reference = male_headgear_secular_sub_saharan_imperial_artifact_01_entity
 	}
 	asset = {
 		trigger = {
 			artifact_use_african_unit_visuals_trigger = yes  #this trigger cuts out the maker
-			scope:owner = { highest_held_title_tier = tier_empire }
+			scope:owner = { highest_held_title_tier >= tier_empire }
 		}
 		reference = male_headgear_secular_ep1_sub_saharan_royalty_01_artifact_entity
 	}
