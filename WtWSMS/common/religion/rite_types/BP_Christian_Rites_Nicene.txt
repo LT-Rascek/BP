@@ -226,8 +226,8 @@ ambrosian_rite = { # The rite of the Archdiocese of Milan, in the Augustinian tr
 	}
 }
 aquelian_rite = { # The rite of the Archdiocese of Milan, in the Augustinian tradition of its founder St. Ambrose
-	name = ambrosian_rite
-	desc = ambrosian_rite_desc
+	name = aquelian_rite
+	desc = aquelian_rite_desc
 	founder = d_papal_state
 	faith = christian_faith
 
@@ -376,5 +376,94 @@ byzantine_rite = {
 		special_doctrine_is_eastern_christian_faith
 		doctrine_clerical_marriage_disallowed
 		doctrine_christian_liturgical_rite_greek
+	}
+}
+#Future Rites
+beneventan_rite = { # The Lombard rite of southern Italy, suppressed in favor of the Roman rite from 1058 onwards
+	name = beneventan_rite
+	desc = beneventan_rite_desc
+	founder = d_et_benevento
+	faith = christian_faith
+	create = yes
+
+	color = { 0.85 0.65 0.3 }
+	icon = christianity_rounded_cross_01
+
+	tenets = {
+		tenet_communal_identity
+	}
+	tenet_selection_pair = {
+		requires_dlc_flag = by_god_alone
+		tenet = tenet_divine_liturgy
+		fallback_tenet = tenet_communion
+	}
+	tenet_selection_pair = {
+		requires_dlc_flag = by_god_alone
+		tenet = tenet_ora_et_labora
+		fallback_tenet = tenet_ritual_celebrations
+	}
+
+	doctrines = {
+		special_doctrine_is_western_christian_faith
+		doctrine_clerical_marriage_disallowed
+		doctrine_monasticism_encouraged
+	}
+}
+carolingian_christianity = { #Could be also called Merovingian/ Frankish Christianity
+	name = carolingian_christianity
+	desc = carolingian_christianity_desc
+	founder = d_et_reims
+	faith = christian_faith
+	create = yes
+
+	color = { 0.7 0.7 0.85 }
+	icon = christianity_carolingian_cross_04
+
+	tenets = {
+		tenet_acts_of_apostles
+	}
+	tenet_selection_pair = {
+		requires_dlc_flag = by_god_alone
+		tenet = tenet_dulia
+		fallback_tenet = tenet_communal_identity
+	}
+	tenet_selection_pair = {
+		requires_dlc_flag = by_god_alone
+		tenet = tenet_ora_et_labora
+		fallback_tenet = tenet_unrelenting_faith
+	}
+
+	doctrines = {
+		doctrine_spiritual_head
+		special_doctrine_is_western_christian_faith
+		doctrine_clerical_marriage_disallowed
+	}
+}
+slavic_rite = { # The result of the mission of Saints Cyril and Methodius, created mid-game on 867, should be based on the ecclesiastical title of Kyiv's region
+	name = slavic_rite
+	desc = slavic_rite_desc
+	faith = christian_faith
+	create = yes
+
+	color = { 0.45 0.2 0.75 }
+	icon = christianity_orthodox_cross_02
+
+	tenets = {
+		tenet_adaptive
+	}
+	tenet_selection_pair = {
+		requires_dlc_flag = by_god_alone
+		tenet = tenet_dulia
+		fallback_tenet = tenet_asceticism
+	}
+	tenet_selection_pair = {
+		requires_dlc_flag = by_god_alone
+		tenet = tenet_anachoresis
+		fallback_tenet = tenet_communal_identity
+	}
+
+	doctrines = {
+		special_doctrine_is_eastern_christian_faith
+		doctrine_clerical_marriage_allowed
 	}
 }

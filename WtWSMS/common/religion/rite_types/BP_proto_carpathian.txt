@@ -1,0 +1,50 @@
+﻿dacian_pagan = {
+	faith = dacian_pagan
+
+	color = { 0.3 1.0 0.4 }
+
+	tenets = {
+		tenet_cthonic_redoubts
+		tenet_ancestor_worship
+		tenet_hellenic_syncretism
+	}
+	
+	doctrines = {
+		unreformed_faith_doctrine
+		special_doctrine_chernyakhov_complex
+	}
+}
+illyrian_pagan = {
+	faith = illyrian_pagan
+
+	color = { 0.6 0.4 0.3 }
+
+	tenets = {
+		tenet_sanctity_of_nature
+		tenet_ancestor_worship
+		tenet_ethnic_religion
+	}
+	
+	doctrines = {
+		unreformed_faith_doctrine
+		doctrine_funeral_cremation #Shifted from inhumation to cremation by the Iron Age
+		doctrine_pilgrimage_mandatory #Reverence of sacred spaces central to practice
+	}
+}
+thracian_pagan = {
+	faith = thracian_pagan
+
+	historical = yes
+
+	color = { 0.3 1.0 0.4 }
+
+	tenets = {
+		tenet_warmonger
+		tenet_ethnic_religion
+		tenet_hellenic_syncretism
+	}
+	
+	doctrines = {
+		doctrine_roman_polytheist
+	}
+}

@@ -3,7 +3,7 @@
 	desc = arian_desc
 	faith = arian
 
-	color = { 0.65 0.65 0.37 }
+	color = { 0.2 0.1 0.1 }
 	icon = testeo
 
 	tenet_selection_pair = {
@@ -63,7 +63,7 @@ donatism = {
 	desc = donatism_desc
 	faith = donatism
 
-	color = { 0.65 0.65 0.37 }
+	color = {0.5 0.1 0.8}
 	icon = chirho
 
 	tenets = {
@@ -200,7 +200,6 @@ nazerene = {
 	faith = nazerene
 
 	color = { 0.4 0.5 0.8 }
-	icon = mfi_cross
 
 	tenets = {
 		tenet_jewish_syncretism
@@ -247,12 +246,74 @@ pelagianism = {
 		doctrine_no_anointment
 	}
 }
+#### Future
+bosnian_church = {
+	faith = bosnian_church
+	create = yes
 
+	color = { 153 117 134 }
 
+	tenets = {
+		tenet_mendicant_preachers
+		tenet_pastoral_isolation
+	}
 
+	doctrines = {
+		doctrine_monasticism_accepted
+		special_doctrine_ecumenical_christian
+		doctrine_no_head
+		doctrine_pluralism_pluralistic
+		doctrine_homosexuality_shunned
+		doctrine_adultery_men_shunned
+		doctrine_adultery_women_shunned
+		doctrine_kinslaying_shunned
+		doctrine_deviancy_shunned
+		doctrine_witchcraft_shunned
+		doctrine_clerical_function_alms_and_pacification
+		doctrine_no_anointment
+		special_doctrine_is_western_christian_faith
+	}
 
+	tenet_selection_pair = {
+		requires_dlc_flag = by_god_alone
+		tenet = tenet_anachoresis
+		fallback_tenet = tenet_communal_identity
+	}
+}
 
+#### Historical Only
+adamites = {
+	faith = adamites
 
+	color = { 0.6 0.8 0.6 }
 
+	tenets = {
+		tenet_natural_primitivism
+		tenet_sanctity_of_nature
+		tenet_communal_identity
+	}
 
-
+	doctrines = {
+		doctrine_no_head
+		doctrine_gender_equal
+		doctrine_pluralism_righteous
+		doctrine_theocracy_lay_clergy
+		doctrine_concubines
+		doctrine_divorce_allowed
+		doctrine_bastardry_none
+		doctrine_consanguinity_unrestricted
+		doctrine_homosexuality_accepted
+		doctrine_adultery_men_accepted
+		doctrine_adultery_women_accepted
+		doctrine_kinslaying_accepted
+		doctrine_deviancy_accepted
+		doctrine_witchcraft_accepted
+		doctrine_clerical_function_alms_and_pacification
+		doctrine_clerical_gender_either
+		doctrine_clerical_marriage_disallowed
+		doctrine_clerical_succession_temporal_appointment
+		doctrine_no_anointment
+		doctrine_monasticism_absent
+		special_doctrine_is_western_christian_faith
+	}
+}

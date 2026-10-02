@@ -151,7 +151,7 @@ miaphysitism = {
 	}
 }
 nestorian = {
-	main_rite = assyrian_rite
+	main_rite = nestorian
 	faith_details = {
 		religion = christianity_religion
 		color = { 0.8 0.3 0.5 }
@@ -227,7 +227,7 @@ arian = {
 	main_rite = arian
 	faith_details = {
 		religion = christianity_religion
-		color = { 0.65 0.65 0.37 }
+		color = { 0.2 0.1 0.1 }
 		graphical_faith = "orthodox_gfx"
 		icon = testeo
 	}
@@ -1098,5 +1098,36 @@ pelagianism = {
 		ReligiousHeadName = insular_celtic_religious_head_title
 		ReligiousHeadNameFemale = insular_celtic_religious_head_title_female
 		ReligiousHeadTitleName = insular_celtic_religious_head_title_name
+	}
+}
+
+##### Future
+adoptionist = {
+	# Scripted main Rite: adoptionist_rite (all start dates). Its core tenets and Rite-specific doctrines are defined on the Rite; faith-intrinsic doctrines remain inline.
+	create = yes
+
+	faith_details = {
+		religion = christianity_religion
+		color = { 255 51 51 }
+		icon = fp2_adoptionist
+		graphical_faith = "catholic_gfx"
+	}
+
+	eminent_holy_sites = {
+		toledo_mozarabic
+		santiago
+	}
+
+	holy_sites = {
+		lyon
+		rome
+		carthage_adoptionist
+	}
+
+	localization = {
+		# Since the Elipandic school wouldn't want their own papacy, we restrict Adoptionists to an arch-bishop.
+		ReligiousHeadName = adoptionist_religious_head_title
+		ReligiousHeadNameFemale = adoptionist_religious_head_title_female
+		ReligiousHeadTitleName = adoptionist_religious_head_title_name
 	}
 }

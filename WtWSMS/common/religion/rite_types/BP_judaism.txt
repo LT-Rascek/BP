@@ -1,0 +1,134 @@
+﻿haymanot = {
+	faith = haymanot
+
+	color = { 0.1 0.5 0.9 }
+
+	tenets = {
+		tenet_ethnic_religion
+		tenet_religious_legal_pronouncements
+		tenet_asceticism
+	}
+
+	doctrines = {
+		temple_authority_kohanim_doctrine
+		special_doctrine_prophecy_of_malachi
+		doctrine_polygamy
+		doctrine_spiritual_head
+		doctrine_no_anointment
+		 #Better matches haymanot uniqueness (https://en.wikipedia.org/wiki/Haymanot#Monasticism)
+		doctrine_monasticism_accepted ##### Changed from Vanilla: WtWSMS Feature
+	}
+}
+samaritan = {
+	faith = samaritan
+
+	color = { 0.1 0.8 0.8 }
+
+	tenets = {
+		tenet_ethnic_religion
+		tenet_literalism
+		tenet_ritual_celebrations
+	}
+
+	doctrines = {
+		temple_authority_samaritan_torah_doctrine
+		doctrine_spiritual_head
+		doctrine_pluralism_righteous
+		doctrine_monogamy
+	}
+	
+	cultures = { samaritan_culture }
+}
+kabarism = {
+	faith = kabarism
+	create = yes
+
+	color = { 0.1 0.3 0.7 }
+
+	tenets = {
+		tenet_religious_legal_pronouncements
+		tenet_legalism
+		tenet_communal_identity
+	}
+
+	doctrines = {
+		unreformed_faith_doctrine
+		temple_authority_rabbinic_doctrine
+		special_doctrine_prophecy_of_malachi
+		doctrine_spiritual_head
+		doctrine_adultery_men_accepted
+		doctrine_no_anointment
+	}
+}
+tzadikite = {
+	name = tzadikite
+	desc = tzadikite_desc
+	faith = tzadikite
+
+	color = { 0.1 0.3 0.7 }
+
+	tenets = {
+		tenet_ethnic_religion
+		tenet_unrelenting_faith
+		tenet_religious_legal_pronouncements
+	}
+	
+	doctrines = {
+		temple_authority_rabbinic_doctrine
+		doctrine_no_head
+		doctrine_no_anointment
+	}
+	
+	cultures = { juhuro }
+}
+
+#Christian Jews
+ebionite = {
+	name = ebionite
+	desc = ebionite_desc
+	faith = ebionite
+
+	color = { 0.95 0.95 0.60 }
+
+	tenets = {
+		tenet_communal_identity
+		tenet_vows_of_poverty
+		tenet_religious_legal_pronouncements
+	}
+
+	doctrines = {
+		doctrine_pluralism_fundamentalist
+		doctrine_spiritual_head
+		temple_authority_messianic_doctrine
+		doctrine_anointment_permitted
+		doctrine_ritual_vegetarianism_required
+	}
+}
+elcesaite = {
+	name = elcesaite
+	desc = elcesaite_desc
+	faith = elcesaite
+
+	color = { 0.75 0.70 0.60 }
+
+	tenets = {
+		tenet_communal_identity
+		tenet_vows_of_poverty
+		tenet_religious_legal_pronouncements
+	}
+
+	doctrines = {
+		doctrine_pluralism_pluralistic
+		doctrine_no_head
+		temple_authority_messianic_doctrine
+		doctrine_no_anointment
+		#Crime Doctrines: Emphasis on frequent rebaptism for sins
+		doctrine_homosexuality_shunned
+		doctrine_adultery_men_shunned
+		doctrine_adultery_women_shunned
+		doctrine_deviancy_shunned
+		doctrine_witchcraft_shunned
+		
+		doctrine_ritual_vegetarianism_required
+	}
+}

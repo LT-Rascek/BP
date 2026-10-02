@@ -303,17 +303,13 @@ georgian_rite = {
 	color = { 0.8 0.4 0.1 }
 
 	tenets = {
-		tenet_communal_identity
-	}
-	tenet_selection_pair = {
-		requires_dlc_flag = by_god_alone
-		tenet = tenet_khachkar
-		fallback_tenet = tenet_communion
+		tenet_adaptive
+		tenet_communion
 	}
 	tenet_selection_pair = {
 		requires_dlc_flag = by_god_alone
 		tenet = tenet_miaphysitism
-		fallback_tenet = tenet_asceticism
+		fallback_tenet = tenet_communal_identity
 	}
 
 	doctrines = {

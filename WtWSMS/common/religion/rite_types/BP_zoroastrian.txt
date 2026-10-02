@@ -2,7 +2,7 @@
 	name = mazdayasna
 	desc = mazdayasna_desc
 	founder = d_mazdayasna
-	faith = zoroastrian_faith
+	faith = mazdayasna
 
 	color = { 0.8 0.5 0 }
 	icon = zoroastrian
@@ -34,11 +34,10 @@ zurvanism = {
 	name = zurvanism
 	desc = zurvanism_desc
 	founder = d_mazdayasna
-	faith = zoroastrian_faith
+	faith = mazdayasna
 
 	color = { 0.6 0.7 0.2 }
 	icon = zurvanism
-	
 	
 	tenets = {
 		tenet_divine_marriage
@@ -94,7 +93,7 @@ mazdakism = {
 	name = mazdakism
 	desc = mazdakism_desc
 	founder = d_mazdayasna
-	faith = zoroastrian_faith
+	faith = mazdayasna
 
 	color = { 0.8 0.7 0.3 }
 	icon = mazdakism
@@ -128,26 +127,15 @@ mazdakism = {
 		ReligiousText = mazdakism_the_great_secret
 	}
 }
-urartuism = { #Arewordik
-	main_rite = urartuism
-	faith_details = {
-		religion = zoroastrianism_religion
-		color = { 1 0.9 0.5 }
-		icon = urartuism
-		religious_head = d_urartuism
-	}
+##### Others
+urartuism = {
+	name = urartuism
+	desc = urartuism_desc
+	founder = d_urartuism
+	faith = urartuism
 
-	eminent_holy_sites = {
-		dvin
-		ani
-	}
-
-	holy_sites = {
-		ushi-darena
-		takht-i-sangin
-		takht-e_soleyman
-	}
-
+	color = { 1 0.9 0.5 }
+	
 	tenets = {
 		tenet_communal_identity
 		tenet_divine_marriage #Armenian Emperors occasionally had sibling marriages
@@ -160,23 +148,5 @@ urartuism = { #Arewordik
 		doctrine_major_branch_behdin
 		doctrine_homosexuality_shunned
 		doctrine_consanguinity_unrestricted
-	}
-
-	localization = {
-		HighGodName = urartuism_high_god_name
-		HighGodName2 = urartuism_high_god_name_2
-		HighGodNamePossessive = urartuism_high_god_name_possessive
-		GoodGodNames = {
-			urartu_good_god_vanatur
-			urartu_good_god_the_sun
-			urartu_good_god_mithra
-			urartu_good_god_zoroaster
-		}
-		PriestMale = urartuism_priest_male
-		PriestMalePlural = urartuism_priest_male_plural
-		PriestFemale = urartuism_priest_male
-		PriestFemalePlural = urartuism_priest_male_plural
-		PriestNeuter = urartuism_priest_male
-		PriestNeuterPlural = urartuism_priest_male_plural
 	}
 }
