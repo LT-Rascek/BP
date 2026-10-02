@@ -11,10 +11,19 @@ feudalize_holding_interaction = {
 
 	auto_accept = yes
 
-	##### Changed from Vanilla vvvvv
+	is_available = {
+		NOR = {
+			government_has_flag = government_is_tribal
+			government_has_flag = government_is_in_steppe
+		}
+	}
+
 	is_shown = {
 		scope:actor = {
 			this = scope:recipient
+		}
+		##### Changed from Vanilla vvvvv
+		scope:actor = {
 			NOR = {
 				AND = {
 					government_has_flag = government_is_tribal
@@ -24,8 +33,8 @@ feudalize_holding_interaction = {
 				government_has_flag = government_is_herder
 			}
 		}
+		##### Changed from Vanilla ^^^^^
 	}
-	##### Changed from Vanilla ^^^^^
 
 	can_be_picked_title = {
 		scope:target = {
@@ -62,7 +71,7 @@ feudalize_holding_interaction = {
 		}
 	}
 
-	##### Changed from Vanilla vvvvv
+	cost = {
 	cost = {
 		treasury_or_gold = {
 			scope:actor = {
@@ -184,91 +193,23 @@ feudalize_holding_interaction = {
 		}
 		##### Changed from Vanilla ^^^^^
 	}
-	##### Changed from Vanilla ^^^^^
 
 	on_accept = {
 		scope:actor = {
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = feudalize_holding_interaction_notification
-
 				right_icon = scope:actor
 
-				if = {
-					limit = {
-						scope:target.title_province = {
-							OR = {
-								has_holding_type = nomad_holding
-								has_holding_type = herder_holding
-							}
-						}
-					}
-					if = {
-						limit = {
-							OR = {
-								scope:target.county.culture = scope:actor.culture
-								scope:target.county = { has_variable = was_razed }
-							}
-						}
-					}
-					else_if = {
-						limit = {
-							OR = {
-								government_has_flag = government_is_tribal
-								scope:target.county.culture = { has_same_culture_heritage = scope:actor.culture }
-							}
-						}
-						scope:target.county = {
-							add_county_modifier = {
-								modifier = mpo_feudalize_nomadic_land_modifier
-								years = 5
-							}
-						}
-					}
-					else = {
-						scope:target.county = {
-							add_county_modifier = {
-								modifier = mpo_feudalize_nomadic_land_modifier
-								years = 30
-							}
-						}
-					}
-					# SILK ROAD
-					scope:target = {
-						tgp_silk_road_feudalize_holding_effect = yes
-					}
-				}
-
-				if = {
-					limit = { exists = scope:target.title_province }
-					scope:target.title_province = {
-						set_holding_type = castle_holding
-					}
-				}
-
-				scope:target ?= {
-					if = {
-						limit = {
-							title_province = {
-								geographical_region = geographical_region:mpo_region_permafrost
-							}
-						}
-						if = {
-							limit = { has_county_modifier = mpo_siberian_permafrost_modifier }
-							remove_county_modifier = mpo_siberian_permafrost_modifier
-						}
-						else_if = {
-							limit = { has_county_modifier = mpo_siberian_permafrost_modifier_bad }
-							remove_county_modifier = mpo_siberian_permafrost_modifier_bad
-						}
-					}	
-				}		
+				scope:target.title_province ?= {
+					holding_pre_feudalize_effect = yes
+					set_holding_type = castle_holding
+				}	
 			}
 		}
 	}
 
-	# Interaction frequency determined by code, do not change
-	ai_frequency = 0
+	# Interaction frequency determined by code, do not set frequency
 
 	# Used to determine which holding should be feudalized over another AND how important this AI goal is compared to others, like creating titles and constructing new holdings
 	ai_will_do = {
@@ -289,15 +230,18 @@ tribalize_holding_interaction = {
 
 	auto_accept = yes
 
-	##### Changed from Vanilla vvvvv
+	is_available = {
+		government_has_flag = government_is_tribal
+	}
+
 	is_shown = {
 		scope:actor = {
 			this = scope:recipient
-			government_has_flag = government_is_tribal
-			NOT = { government_has_flag = government_is_high_tribal }
 		}
+		##### Changed from Vanilla vvvvv
+		NOT = { scope:actor = { government_has_flag = government_is_high_tribal } }
+		##### Changed from Vanilla ^^^^^
 	}
-	##### Changed from Vanilla ^^^^^
 
 	can_be_picked_title = {
 		scope:target = {
@@ -401,41 +345,17 @@ tribalize_holding_interaction = {
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = feudalize_holding_interaction_notification
-
 				right_icon = scope:actor
 
-				if = {
-					limit = {
-						OR = {
-							scope:target.county.culture = scope:actor.culture
-							scope:target.county = {
-								has_variable = was_razed
-							}
-						}
-					}
-				}
-				else = {
-					scope:target.county = {
-						add_county_modifier = {
-							modifier = mpo_feudalize_nomadic_land_modifier
-							years = 5
-						}
-					}
-				}
-
-				if = {
-					limit = { exists = scope:target.title_province }
-					scope:target.title_province = {
-						set_holding_type = tribal_holding
-					}
+				scope:target.title_province ?= {
+					holding_pre_tribalize_effect = yes
+					set_holding_type = tribal_holding
 				}		
 			}
 		}
 	}
 
-	# Interaction frequency determined by code, do not change
-	ai_frequency = 0
-
+	# Interaction frequency determined by code, do not set frequency
 	# Used to determine which holding should be feudalized over another AND how important this AI goal is compared to others, like creating titles and constructing new holdings
 	ai_will_do = {
 		base = 1500

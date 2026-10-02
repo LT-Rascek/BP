@@ -11,19 +11,71 @@ cease_paying_tribute_interaction = {
 
 	desc = cease_paying_tribute_interaction_desc
 
+	is_available = {
+		trigger_if = {
+			limit = { is_ai = yes }
+			suzerain ?= {
+				is_migrating = no
+
+				OR = {
+					AND = {
+						NOT = { root = { government_has_flag = government_is_herder } }
+						trigger_if = { # Obedience is a hard blocker, but only if suzerain is landed
+							limit = {
+								is_landed = yes
+							}
+							root = { is_obedient = no }
+						}
+					}
+					NOT = { # disconnected tributaries can always do this, even herders
+						any_land_neighboring_realm_with_tributaries_owner = {
+							this = root
+						}
+					}
+					is_landed = no
+				}
+				trigger_if = {
+					limit = {
+						any_character_situation = {
+							situation_type = dynastic_cycle
+						}
+					}
+					OR = {
+						root.subject_standing <= 0
+						any_character_situation = {
+							situation_type = dynastic_cycle
+							OR = {
+								situation_current_phase = situation_dynastic_cycle_phase_instability
+								situation_current_phase = situation_dynastic_cycle_phase_instability_conquest
+							}
+						}
+					}
+				}
+			}
+			is_at_war = no
+			trigger_if = {
+				limit = {
+					suzerain = {
+						highest_held_title_tier >= tier_hegemony
+					}
+				}
+				subject_standing < 20
+			}
+			is_migrating = no
+		}
+	}
+
 	is_shown = {
-		scope:actor = {
+		scope:puppet_or_actor ?= {
 			this != scope:recipient
-			suzerain = scope:recipient
+			suzerain ?= scope:recipient
 			is_tributary = yes
 		}
 	}
 
 	is_valid_showing_failures_only = {
-		scope:actor = {
-			is_physically_able = yes
-			is_travelling = no
-			NOT = { exists = involved_activity }
+		scope:puppet_or_actor = {
+			is_available_allow_travelling = yes
 			trigger_if = {
 				limit = {
 					OR = {
@@ -42,6 +94,12 @@ cease_paying_tribute_interaction = {
 				subject_can_break_tributary = yes
 			}
 		}
+		trigger_if = {
+			limit = { scope:is_puppet_action ?= yes }
+			scope:puppet_or_actor = {
+				prestige >= cease_paying_tribute_interaction_cost_value
+			}
+		}
 		##### Changed from Vanilla vvvvv
 		#You can't be entangled with the same war in any way
 		custom_description = {
@@ -53,31 +111,35 @@ cease_paying_tribute_interaction = {
 
 	cost = {
 		prestige = {
-			value = 0
+			value = cease_paying_tribute_interaction_cost_value
 			if = {
-				limit = {
-					scope:actor = {
-						OR = {
-							any_land_neighboring_realm_with_tributaries_owner = {
-								this = scope:recipient
-							}
-							scope:recipient = {
-								is_landed = no
-							}
-						}
-					}
-				}
-				add = minor_prestige_value
+				limit = { scope:is_puppet_action ?= yes }
+				multiply = 0
 			}
 		}
 	}
 
 	auto_accept = yes
 	on_accept = {
-		scope:actor = {
+		if = {
+			limit = { scope:is_puppet_action ?= yes }
+			scope:puppet_or_actor = {
+				if = {
+					limit = { cease_paying_tribute_interaction_cost_value > 0 }
+					add_prestige = {
+						value = {
+							add = cease_paying_tribute_interaction_cost_value
+							max = prestige
+							multiply = -1
+						}
+					}
+				}
+			}
+		}
+		scope:puppet_or_actor = {
 			end_tributary = yes
 			if = {
-				limit = { 
+				limit = {
 					scope:recipient = { government_has_flag = government_is_mandala }
 				}
 				add_opinion = {
@@ -86,7 +148,7 @@ cease_paying_tribute_interaction = {
 					opinion = -100
 				}
 			}
-			
+
 		}
 		scope:recipient = {
 			# Losing legitimacy if you are the Chinese Hegemon in the Dynastic Cycle Instability phase
@@ -115,7 +177,7 @@ cease_paying_tribute_interaction = {
 						months = 6
 					}
 				}
-				
+
 			}
 
 			if = {
@@ -131,58 +193,7 @@ cease_paying_tribute_interaction = {
 
 			add_opinion = {
 				modifier = tributary_ceased_payments_opinion
-				target = scope:actor
-			}
-		}
-	}
-
-	ai_potential = {
-		is_at_war = no
-		is_migrating = no
-		trigger_if = {
-			limit = {
-				suzerain = {
-					highest_held_title_tier >= tier_hegemony
-				}
-			}
-			subject_standing < 20
-		}
-		suzerain = {
-			is_migrating = no
-
-			OR = {
-				is_landed = no
-				NOT = { # disconnected tributaries can always do this, even herders
-					any_land_neighboring_realm_with_tributaries_owner = {
-						this = root
-					}
-				}
-				AND = {
-					NOT = { root = { government_has_flag = government_is_herder } }
-					trigger_if = { # Obedience is a hard blocker, but only if suzerain is landed
-						limit = { 
-							is_landed = yes
-						}
-						root = { is_obedient = no }
-					}
-				}
-			}
-			trigger_if = {
-				limit = {
-					any_character_situation = {
-						situation_type = dynastic_cycle
-					}
-				}
-				OR = {
-					root.subject_standing <= 0
-					any_character_situation = {
-						situation_type = dynastic_cycle
-						OR = {
-							situation_current_phase = situation_dynastic_cycle_phase_instability
-							situation_current_phase = situation_dynastic_cycle_phase_instability_conquest
-						}
-					}
-				}
+				target = scope:puppet_or_actor
 			}
 		}
 	}
@@ -215,7 +226,7 @@ cease_paying_tribute_interaction = {
 
 		# if the actor is sufficiently scared of the recipient they're way less likely to do this
 		ai_military_threat_modifier = {
-			SENDER = scope:actor
+			SENDER = scope:puppet_or_actor
 			RECEIVER = scope:recipient
 			MULTIPLIER = -2
 		}
@@ -235,7 +246,7 @@ cease_paying_tribute_interaction = {
 				}
 				desc = obedience_value_reason
 			}
-	
+
 			modifier = {
 				scope:recipient = {
 					has_variable = temp_tributary_protection
@@ -243,16 +254,16 @@ cease_paying_tribute_interaction = {
 				add = -150
 				desc = temp_tributary_protection_reason
 			}
-	
+
 			modifier = {
 				dominance_value > suzerain.dominance_value
 				add = 30
 				desc = cease_tribute_higher_dominance_reason
 			}
-	
+
 			modifier = {
-				suzerain = { 
-					any_memory = { 
+				suzerain = {
+					any_memory = {
 						has_memory_type = nomad_showed_weakness_in_war
 						memory_age_years < 5
 					}
@@ -260,9 +271,9 @@ cease_paying_tribute_interaction = {
 				add = 30
 				desc = cease_tribute_showed_weakness_in_war_reason
 			}
-	
+
 			modifier = {
-				any_memory = { 
+				any_memory = {
 					has_memory_type = suzerain_defended_me_in_war
 					has_memory_participant = root.suzerain
 					memory_age_years < 10
@@ -270,10 +281,10 @@ cease_paying_tribute_interaction = {
 				add = -100
 				desc = cease_tribute_defended_me_in_war_reason
 			}
-	
+
 			modifier = {
-				suzerain = { 
-					any_memory = { 
+				suzerain = {
+					any_memory = {
 						has_memory_type = had_chaotic_kurultai_succession
 						memory_age_years < 5
 					}
@@ -283,11 +294,11 @@ cease_paying_tribute_interaction = {
 			}
 		#General Modifiers
 			#Is the Tributary Connected?
-			modifier = { 
+			modifier = {
 				scope:recipient = {
 					trigger_if = { #Mandalas, China, Wanua, and Meritocratic realms can keep overseas tributaries, if they are coastal.
 						limit = {
-							scope:actor = {
+							scope:puppet_or_actor = {
 								OR = {
 									government_has_flag = government_is_mandala
 									government_has_flag = government_is_celestial
@@ -306,7 +317,7 @@ cease_paying_tribute_interaction = {
 					}
 					NOT = {
 						any_land_neighboring_realm_with_tributaries_owner = {
-							this = scope:actor
+							this = scope:puppet_or_actor
 						}
 					}
 				}
@@ -314,7 +325,7 @@ cease_paying_tribute_interaction = {
 				desc = cease_tribute_disconnected_suzerain
 			}
 			#Is the suzerain landless?
-			modifier = { 
+			modifier = {
 				scope:recipient = {
 					is_landed = no
 					is_migrating = no
@@ -398,7 +409,7 @@ cease_paying_tribute_interaction = {
 			#I am a Tribal!
 			modifier = {
 				scope:recipient = { government_has_flag = government_is_mandala }
-				scope:actor = { government_has_flag = government_is_tribal }
+				scope:puppet_or_actor = { government_has_flag = government_is_tribal }
 				add = -20
 				desc = actor_is_a_tribal_government
 			}
@@ -429,16 +440,16 @@ cease_paying_tribute_interaction = {
 			#Tributary Realm Size
 			subject_realm_size_add_weight_modifier = {
 				DEVARAJA = scope:recipient
-				SUBJECT = scope:actor
+				SUBJECT = scope:puppet_or_actor
 			}
 
 			##Radience of other potential Suzerains is not calculated here since they can directly ask the tributary to switch over to them.
 
 			#Pacing for Mandala Suzerains
 			modifier = {
-				scope:recipient = { 
+				scope:recipient = {
 					government_has_flag = government_is_mandala
-					has_variable = tributary_recently_ceased 
+					has_variable = tributary_recently_ceased
 				}
 				factor = 0.1
 			}
@@ -466,18 +477,18 @@ cease_paying_tribute_interaction = {
 			# I am higher rank than you
 			modifier = {
 				desc = tributary_interaction_aibehavior_actor_tier_tt
-				scope:actor = { highest_held_title_tier > scope:recipient.highest_held_title_tier }
+				scope:puppet_or_actor = { highest_held_title_tier > scope:recipient.highest_held_title_tier }
 				add = {
-					value = scope:actor.highest_held_title_tier
-					subtract = scope:recipient.highest_held_title_tier 
+					value = scope:puppet_or_actor.highest_held_title_tier
+					subtract = scope:recipient.highest_held_title_tier
 					multiply = 50
 				}
 			}
 			# I have a Capital Temple Complex of my own (I am also a God King)
-			modifier = { 
+			modifier = {
 				desc = tributary_interaction_aibehavior_actor_capital_complex
 				scope:recipient = { government_has_flag = government_is_mandala }
-				scope:actor = {
+				scope:puppet_or_actor = {
 					government_has_flag = government_is_mandala
 					capital_province = {
 						has_building_with_flag = mandala_capital_building
@@ -493,11 +504,11 @@ cease_paying_tribute_interaction = {
 				desc = mandala_ai_godking_modifier
 			}
 			# Same Faith and Recipient is a God King
-			modifier = { 
+			modifier = {
 				desc = tributary_interaction_aibehavior_recipient_same_faith
 				scope:recipient = {
 					government_has_flag = government_is_mandala
-					faith = scope:actor.faith
+					faith = scope:puppet_or_actor.faith
 					capital_province = {
 						has_building_with_flag = mandala_capital_building
 						has_ruined_great_building = no
@@ -506,52 +517,38 @@ cease_paying_tribute_interaction = {
 				add = -10
 			}
 			# Different religion Family - We prefer god kings to be vaguely within our own world view
-			modifier = { 
+			modifier = {
 				desc = tributary_interaction_aibehavior_recipient_other_religion_family
-				scope:actor = { 	
-					NOT = { government_has_flag = government_is_wanua }
-				}
-				scope:recipient.faith.religion = {
-					switch = {
-						trigger = is_in_family
-						rf_pagan = {
-							scope:actor.faith.religion = { NOT = { is_in_family = rf_pagan } }
-						}
-						rf_sinitic = {
-							scope:actor.faith.religion = { NOT = { is_in_family = rf_sinitic } }
-						}
-						rf_eastern = {
-							scope:actor.faith.religion = { NOT = { is_in_family = rf_eastern } }
-						}
-						rf_abrahamic = {
-							scope:actor.faith.religion = { NOT = { is_in_family = rf_abrahamic } }
-						}
+				scope:puppet_or_actor = {
+					NOR = {
+						government_has_flag = government_is_wanua
+						faith = { faith_is_in_same_rf = { FAITH = scope:recipient.faith } }
 					}
 				}
 				add = 25
 			}
-		###	
+		###
 		# Rivalry modifier.
 		modifier = {
 			desc = embrace_tributarization_interaction_aibehavior_rival_tt
 			scope:recipient = {
-				has_relation_rival = scope:actor
-				NOT = { has_relation_nemesis = scope:actor }
+				has_relation_rival = scope:puppet_or_actor
+				NOT = { has_relation_nemesis = scope:puppet_or_actor }
 			}
 			add = 30
 		}
 		# Nemesis modifier.
-		modifier = { 
+		modifier = {
 			desc = embrace_tributarization_interaction_aibehavior_nemesis_tt
-			scope:recipient = { has_relation_nemesis = scope:actor }
+			scope:recipient = { has_relation_nemesis = scope:puppet_or_actor }
 			add = 50
 		}
 		# OPINION INFLUENCE
 		opinion_modifier = { # Compare Opinion modifier.
-			who = scope:actor
+			who = scope:puppet_or_actor
 			opinion_target = scope:recipient
 			multiplier = -1
-		}	
+		}
 	}
 }
 
@@ -572,7 +569,7 @@ become_tributary_interaction = {
 			NOR = {
 				this = scope:actor
 				this = scope:actor.suzerain
-				top_suzerain = scope:actor
+				top_suzerain ?= scope:actor
 			}
 			can_have_tributaries_trigger = yes
 		}
@@ -585,24 +582,19 @@ become_tributary_interaction = {
 		}
 	}
 
-	##### Changed from Vanilla vvvvv
 	is_valid_showing_failures_only = {
 		#These triggers need to match the Tribute Mission Decision
 		trigger_if = {
 			limit = {
-				OR = {
-					scope:recipient = { primary_title = title:h_china }
-					scope:recipient = { primary_title = title:h_dar_al_islam }
-					scope:recipient = { primary_title = title:h_india }
-				}
+				scope:recipient = { primary_title.tier = tier_hegemony }
 			}
 			custom_tooltip = {
 				text = become_tributary_interaction_hegemony_not_neighbor_tt
 				scope:actor = {
 					OR = {
 						is_tributary_or_independent_neighbor_of_hegemon_trigger = { HEGEMON = h_china }
-						#is_tributary_or_independent_neighbor_of_hegemon_trigger = { HEGEMON = h_roman_empire }
-						#is_tributary_or_independent_neighbor_of_hegemon_trigger = { HEGEMON = h_eastern_roman_empire }
+						is_tributary_or_independent_neighbor_of_hegemon_trigger = { HEGEMON = h_roman_empire }
+						is_tributary_or_independent_neighbor_of_hegemon_trigger = { HEGEMON = h_eastern_roman_empire }
 						is_tributary_or_independent_neighbor_of_hegemon_trigger = { HEGEMON = h_dar_al_islam }
 						is_tributary_or_independent_neighbor_of_hegemon_trigger = { HEGEMON = h_india }
 					}
@@ -614,7 +606,7 @@ become_tributary_interaction = {
 			limit = {
 				scope:recipient = { government_has_flag = government_is_mandala }
 				scope:actor = {
-					OR = { 
+					OR = {
 						government_has_flag = government_is_tribal
 						government_has_flag = government_is_mandala
 					}
@@ -630,25 +622,23 @@ become_tributary_interaction = {
 			}
 		}
 		scope:actor = {
-			is_physically_able = yes
-			is_travelling = no
-			NOT = { exists = involved_activity }
+			is_available_allow_travelling = yes
 			is_confederation_member = no
 			is_at_war = no
 		}
 	}
-	##### Changed from Vanilla ^^^^^
 
-	##### Changed from Vanilla vvvvv
 	needs_confirmation = {
 		#scope:recipient = { highest_held_title_tier < tier_hegemony } # acknowledging a hegemon requires a tribute mission; open the decision UI instead of confirming acceptance
+		
+		##### Changed from Vanilla vvvvv
 		OR = {
 			scope:recipient.primary_title = title:h_china
 			scope:recipient.primary_title = title:h_dar_al_islam
 			scope:recipient.primary_title = title:h_india
 		}
+		##### Changed from Vanilla ^^^^^
 	}
-	##### Changed from Vanilla ^^^^^
 
 	greeting = positive
 	notification_text = BECOME_TRIBUTARY_INTERACTION_NOTIFICATION
@@ -663,7 +653,7 @@ become_tributary_interaction = {
 	send_option = {
 		flag = normal_obligations
 		localization = normal_tributary_obligations
-		starts_enabled = { always = yes	}
+		starts_enabled = { always = yes }
 	}
 
 	# High starting obligations
@@ -674,102 +664,133 @@ become_tributary_interaction = {
 
 	send_options_exclusive = yes
 
-	##### Changed from Vanilla vvvvv
 	on_send = {
 		if = {
 			limit = { scope:recipient = { highest_held_title_tier >= tier_hegemony } }
-			if = {
-				limit = { scope:recipient.primary_title = title:h_china }
-				open_view_data = {
-					view = decision_detail
-					data = decision:tribute_mission_decision_china
-					player = scope:actor
+			scope:actor = {
+				if = {
+					limit = { scope:recipient.primary_title = title:h_china }
+					open_view_data = {
+						view = decision_detail
+						data = decision:tribute_mission_decision_china
+						player = scope:actor
+					}
 				}
-			}
-			#else_if = {
-			#	limit = { scope:recipient.primary_title = title:h_roman_empire }
-			#	open_view_data = {
-			#		view = decision_detail
-			#		data = decision:tribute_mission_decision_roman_empire
-			#		player = scope:actor
-			#	}
-			#}
-			#else_if = {
-			#	limit = { scope:recipient.primary_title = title:h_eastern_roman_empire }
-			#	open_view_data = {
-			#		view = decision_detail
-			#		data = decision:tribute_mission_decision_eastern_roman_empire
-			#		player = scope:actor
-			#	}
-			#}
-			else_if = {
-				limit = { scope:recipient.primary_title = title:h_dar_al_islam }
-				open_view_data = {
-					view = decision_detail
-					data = decision:tribute_mission_decision_dar_al_islam
-					player = scope:actor
-				}
-			}
-			else_if = {
-				limit = { scope:recipient.primary_title = title:h_india }
-				open_view_data = {
-					view = decision_detail
-					data = decision:tribute_mission_decision_india
-					player = scope:actor
+				#else_if = {
+				#	limit = { scope:recipient.primary_title = title:h_roman_empire }
+				#	open_view_data = {
+				#		view = decision_detail
+				#		data = decision:tribute_mission_decision_roman_empire
+				#		player = scope:actor
+				#	}
+				#}
+				#else_if = {
+				#	limit = { scope:recipient.primary_title = title:h_eastern_roman_empire }
+				#	open_view_data = {
+				#		view = decision_detail
+				#		data = decision:tribute_mission_decision_eastern_roman_empire
+				#		player = scope:actor
+				#	}
+				#}
+				#else_if = {
+				#	limit = { scope:recipient.primary_title = title:h_dar_al_islam }
+				#	open_view_data = {
+				#		view = decision_detail
+				#		data = decision:tribute_mission_decision_dar_al_islam
+				#		player = scope:actor
+				#	}
+				#}
+				else_if = {
+					limit = { scope:recipient.primary_title = title:h_india }
+					open_view_data = {
+						view = decision_detail
+						data = decision:tribute_mission_decision_india
+						player = scope:actor
+					}
 				}
 			}
 		}
 	}
-	##### Changed from Vanilla ^^^^^
 
 	on_accept = {
+		#Non-mandala existing suzerains get really pissed
 		if = {
-			limit = { scope:recipient = { highest_held_title_tier < tier_hegemony } }
-			scope:actor = {
-				if = {
-					limit = { is_tributary = yes }
-					mandala_end_tributary_with_notification_effect = yes
-				}
-			}
-			start_tributary_interaction_effect = {
-				TRIBUTARY = scope:actor
-				SUZERAIN = scope:recipient
-			}
-			scope:actor = {
-				trigger_event = char_interaction.0360
-			}
-			scope:recipient = {
-				if = {
-					limit = { scope:high_obligations = yes }
-					add_opinion = {
-						modifier = tributary_volunteered_opinion
-						target = scope:actor
-						opinion = 20
+			limit = {
+				scope:actor.suzerain ?= {
+					NOR = {
+						government_has_flag = government_is_mandala
+						this = scope:actor
 					}
 				}
-				else_if = {
-					limit = { scope:normal_obligations = yes }
-					add_opinion = {
-						modifier = tributary_volunteered_opinion
-						target = scope:actor
+			}
+			scope:actor.suzerain = {
+				if = {
+					limit = {
+						has_relation_rival = scope:actor
+					}
+					scope:actor = {
+						set_relation_nemesis = {
+							reason = rival_disloyal_tributary
+							target = scope:actor.suzerain
+						}
+					}
+					
+				}
+				else = {
+					scope:actor = {
+						set_relation_rival = {
+							reason = rival_disloyal_tributary
+							target = scope:actor.suzerain
+						}
 					}
 				}
-
-				consume_all_criminal_reasons_effect = {
-					LIEGE = scope:recipient
-					CRIMINAL = scope:actor
+				add_opinion = {
+					modifier = betrayal_opinion
+					target = scope:actor
+					opinion = -75
+				}
+				
+				if = {
+					limit = {
+						NOT = {
+							any_claim = {
+								this = scope:actor.primary_title
+							}
+						}
+					}
+					add_unpressed_claim = scope:actor.primary_title
 				}
 			}
 		}
-		##### Changed from Vanilla vvvvv
+		#Mandala suzerain is a little annoyed
 		else_if = {
 			limit = {
-				NOR = {
+				scope:actor.suzerain ?= {
+					NOT = {
+						this = scope:actor
+					}
+				}
+			}
+			scope:actor.suzerain = {
+				add_opinion = {
+					modifier = betrayal_opinion
+					target = scope:actor
+					opinion = -30
+				}
+			}
+		}
+		if = {
+			#limit = { scope:recipient = { highest_held_title_tier < tier_hegemony } }
+			
+			##### Changed from Vanilla vvvvv
+			limit = {
+				OR = {
 					scope:recipient.primary_title = title:h_china
 					scope:recipient.primary_title = title:h_dar_al_islam
 					scope:recipient.primary_title = title:h_india
 				}
 			}
+			##### Changed from Vanilla ^^^^^
 			scope:actor = {
 				if = {
 					limit = { is_tributary = yes }
@@ -806,7 +827,6 @@ become_tributary_interaction = {
 				}
 			}
 		}
-		##### Changed from Vanilla ^^^^^
 		else = {} # Do nothing if the recipient is hegemony-tier or higher; these require a tribute mission to establish
 	}
 
@@ -817,9 +837,10 @@ become_tributary_interaction = {
 	}
 
 	is_available = {
-		NOT = { government_has_flag = cannot_be_vassal_or_liege }
-		top_liege = this # You have to be independent - This check exists to prevent a lot of edge-cases where you can change liege
+		is_landed = yes # Landless have no realm to render tribute from;
+		top_liege ?= this # You have to be independent - This check exists to prevent a lot of edge-cases where you can change liege
 		is_confederation_member = no
+		NOT = { government_has_flag = cannot_be_vassal_or_liege }
 	}
 
 	ai_targets = {
@@ -879,13 +900,13 @@ become_tributary_interaction = {
 			add = -100
 		}
 		# Different faith, no pluralism
-		modifier = { 
+		modifier = {
 			desc = offer_vassalization_interaction_aibehavior_differentfaith_tt
 			trigger = {
 				scope:actor = {
 					NOR = { # Of two different faiths AND the potential vassal's faith is not pluralistic.
 						faith = scope:recipient.faith
-						faith = { has_doctrine = doctrine_pluralism_pluralistic }
+						rite = { rite_has_doctrine = doctrine_pluralism_pluralistic }
 					}
 				}
 			}
@@ -916,7 +937,7 @@ become_tributary_interaction = {
 			}
 		}
 		# Cultural Acceptance
-		modifier = { 
+		modifier = {
 			scope:actor = {
 				NOT = { # cultural condition below doesn't have to apply if both actor and recipient have nomadic_philosophy
 					has_trait = nomadic_philosophy
@@ -937,7 +958,7 @@ become_tributary_interaction = {
 			desc = cultural_acceptance_interaction_reason
 		}
 		# Same language
-		modifier = { 
+		modifier = {
 			add = 5
 			desc = speaks_same_language_interaction_reason
 			trigger = {
@@ -1029,7 +1050,7 @@ become_tributary_interaction = {
 						any_neighboring_top_liege_realm_owner = {
 							has_unruined_mandala_capital_trigger = yes
 							government_has_flag = government_is_mandala
-							NOR = { 
+							NOR = {
 								this = scope:recipient
 								this = scope:actor
 							}
@@ -1038,14 +1059,14 @@ become_tributary_interaction = {
 						any_neighboring_top_suzerain_realm_owner = {
 							has_unruined_mandala_capital_trigger = yes
 							government_has_flag = government_is_mandala
-							NOR = { 
+							NOR = {
 								this = scope:recipient
 								this = scope:actor
 							}
 							save_temporary_scope_as = suzerain_comparison
 						}
 					}
-				}	
+				}
 				always = yes
 			}
 			trigger_else = { always = no }
@@ -1079,7 +1100,7 @@ become_tributary_interaction = {
 			add = tgp_sea_legacy_tributary_acceptance_value
 		}
 		# I am higher rank than you
-		modifier = { 
+		modifier = {
 			desc = tributary_interaction_aibehavior_recipient_tier_tt
 			trigger = {
 				scope:actor = {
@@ -1088,13 +1109,13 @@ become_tributary_interaction = {
 			}
 			add = {
 				value = scope:actor.highest_held_title_tier
-				subtract = scope:recipient.highest_held_title_tier 
+				subtract = scope:recipient.highest_held_title_tier
 				multiply = 50
 				multiply = -1
 			}
 		}
 		# Same Faith and Actor is a god King
-		modifier = { 
+		modifier = {
 			desc = embrace_as_tributary_interaction_same_faith
 			scope:recipient = {
 				faith = scope:actor.faith
@@ -1105,16 +1126,12 @@ become_tributary_interaction = {
 			}
 		}
 		# Different faith, no pluralism.
-		modifier = { 
+		modifier = {
 			desc = offer_vassalization_interaction_aibehavior_differentfaith_tt
 			trigger = {
-				scope:recipient = {
-					faith = {
-						NOR = { # Of two different faiths AND the potential tributary's faith is not pluralistic
-							this = scope:actor.faith
-							has_doctrine = doctrine_pluralism_pluralistic
-						}
-					}
+				NOR = { # Of two different faiths AND the potential tributary's faith is not pluralistic
+					scope:recipient.faith = scope:actor.faith
+					scope:recipient.rite = { rite_has_doctrine = doctrine_pluralism_pluralistic }
 				}
 			}
 			add = {
@@ -1144,26 +1161,12 @@ become_tributary_interaction = {
 			}
 		}
 		# Different religion Family - We prefer god kings to be vaguely within our own world view
-		modifier = { 
+		modifier = {
 			desc = embrace_as_tributary_interaction_other_religion_family
-			scope:actor = { 	
-				NOT = { government_has_flag = government_is_wanua }
-			}
-			scope:recipient.faith.religion = {
-				switch = {
-					trigger = is_in_family
-					rf_pagan = {
-						scope:actor.faith.religion = { NOT = { is_in_family = rf_pagan } }
-					}
-					rf_sinitic = {
-						scope:actor.faith.religion = { NOT = { is_in_family = rf_sinitic } }
-					}
-					rf_eastern = {
-						scope:actor.faith.religion = { NOT = { is_in_family = rf_eastern } }
-					}
-					rf_abrahamic = {
-						scope:actor.faith.religion = { NOT = { is_in_family = rf_abrahamic } }
-					}
+			scope:actor = {
+				NOR = {
+					government_has_flag = government_is_wanua
+					faith = { faith_is_in_same_rf = { FAITH = scope:recipient.faith } }
 				}
 			}
 			add = -25
@@ -1185,7 +1188,7 @@ become_tributary_interaction = {
 					limit = {
 						scope:recipient = {
 							OR = {
-								government_allows = administrative
+								government_has_mechanic = administrative
 								government_is_japanese_trigger = yes
 								government_has_flag = government_is_nomadic
 							}
@@ -1207,25 +1210,25 @@ become_tributary_interaction = {
 			}
 		}
 		#Far away
-		modifier = { 
+		modifier = {
 			desc = offer_vassalization_interaction_aibehavior_remoterealm_tt
 			trigger = {
+				# Distance leads: every recipient list here is a neighbour list, so most candidates fail it before the border scan below runs
+				trigger_if = { #Islands we can get farther away
+					limit = {
+						scope:actor.capital_county = { is_coastal_county = yes }
+					}
+					scope:actor.capital_province = { squared_distance = { target = scope:recipient.capital_province value >= squared_distance_huge } }
+				}
+				trigger_else = { #Inland is harder
+					scope:actor.capital_province = { squared_distance = { target = scope:recipient.capital_province value >= squared_distance_major } }
+				}
 				scope:recipient = {
 					NOT = {
 						any_land_neighboring_realm_with_tributaries_owner = {
 							this = scope:actor
 						}
 					}
-				}
-				trigger_if = { #Islands we can get farther away
-					limit = {
-						scope:actor.capital_county = { is_coastal_county = yes }
-						any_sub_realm_county = { is_coastal_county = yes }
-					}
-					scope:actor.capital_province = { squared_distance = { target = scope:recipient.capital_province value >= squared_distance_huge } }
-				}
-				trigger_else = { #Inland is harder
-					scope:actor.capital_province = { squared_distance = { target = scope:recipient.capital_province value >= squared_distance_major } }
 				}
 			}
 			add = -250
@@ -1394,7 +1397,7 @@ become_tributary_interaction = {
 		# OPINION INFLUENCE
 		opinion_modifier = { # Compare Opinion modifier.
 			trigger = {
-				NOT = { 
+				NOT = {
 					scope:recipient = { government_has_flag = government_is_mandala }
 				}
 			}
@@ -1417,604 +1420,9 @@ become_tributary_interaction = {
 	}
 }
 
-
 ### Demand Tributary - bilateral
 # actor = offerer / potential suzerain
 # recipient = receiver / potential tributary
-
-##### Changed from Vanilla: Removed some error in Vanilla that is spamming the log. Stupid PDX; fix your own bugs!
-demand_tributary_interaction = {
-	category = interaction_category_diplomacy
-	common_interaction = yes
-	icon = demand_tributary_interaction
-
-	desc = demand_tributary_interaction_desc
-
-	is_shown = {
-		scope:actor = {
-			NOT = {
-				this = scope:recipient
-				top_suzerain = scope:recipient.top_suzerain # ensures the actor and recipient is not already in the same "suzerain bloc"
-			}
-			can_get_tributaries_peacefully_trigger = yes
-
-			highest_held_title_tier < tier_hegemony # hegemonies get tributaries from exacting tribute
-
-			#Mandala Embraces; not Demand
-			trigger_if = {
-				limit = { 
-					scope:actor = { government_has_flag = government_is_mandala }
-				}
-				always = no
-			}
-			trigger_else = { can_get_tributaries_peacefully_trigger = yes }
-			#Should be neighboring to increase growth organically
-			any_land_neighboring_realm_with_tributaries_owner = {
-				this = scope:recipient
-			}
-			trigger_if = {
-				limit = {
-					is_ai = yes
-				}
-				current_military_strength >= scope:recipient.one_and_a_half_times_current_military_strength
-				primary_title.tier >= scope:recipient.primary_title.tier
-			}
-		}
-		scope:recipient = {
-			highest_held_title_tier >= tier_county
-			is_independent_ruler = yes # target cannot be a vassal
-			NOR = {
-				government_has_flag = cannot_be_vassal_or_liege
-				government_has_flag = government_is_mandala
-			}
-		}
-		# Temujin cannot make Jamukha his subject once he leaves him
-		NOT = {
-			scope:actor = {
-				has_variable = had_mpo_temujin_flavor_0010
-				var:had_mpo_temujin_flavor_0010 ?= scope:recipient
-			}
-		}
-	}
-
-	is_valid_showing_failures_only = {
-		scope:actor = {
-			NOT = { has_truce = scope:actor }
-			is_physically_able = yes
-			is_travelling = no
-			NOT = { exists = involved_activity }
-		}
-		scope:recipient = {
-			is_tributary = no
-			is_at_war = no
-			custom_tooltip = {
-				text = demand_tributary_interaction_cooldown_active_tt
-				NOT = {
-					has_opinion_modifier = {
-						modifier = tributary_demanded_opinion
-						target = scope:actor
-					}
-				}
-			}
-			is_confederation_member = no
-		}
-		scope:actor = {
-			custom_tooltip = {
-				text = mpo_interaction_not_neighbouring_tt
-				any_land_neighboring_realm_with_tributaries_owner = { 
-					this = scope:recipient
-				}
-			}
-		}
-	}
-
-	cost = {
-		prestige = minor_prestige_value
-	}
-
-	greeting = positive
-	notification_text = DEMAND_TRIBUTARY_INTERACTION_NOTIFICATION
-
-	on_accept = {
-		start_tributary_interaction_effect = {
-			TRIBUTARY = scope:recipient
-			SUZERAIN = scope:actor
-		}
-		scope:actor = {
-			trigger_event = char_interaction.0362
-		}
-		scope:recipient = {
-			add_opinion = {
-				modifier = tributary_demanded_opinion # this opinion also acts as a built-in cooldown
-				target = scope:actor
-			}
-		}
-		consume_all_criminal_reasons_effect = {
-			LIEGE = scope:actor
-			CRIMINAL = scope:recipient
-		}
-	}
-
-	on_decline = {
-		scope:recipient = {
-			add_opinion = {
-				modifier = tributary_demanded_opinion # this opinion also acts as a built-in cooldown
-				target = scope:actor
-			}
-			custom_tooltip = demand_tributary_interaction_cooldown_tt
-		}
-		scope:actor = {
-			trigger_event = char_interaction.0363
-			if = {
-				limit = { highest_held_title_tier >= tier_hegemony }
-				add_legitimacy = -50
-			}
-		}
-	}
-
-	ai_maybe = yes
-
-	ai_potential = {
-		highest_held_title_tier > 1 # at least a count-level ruler
-		is_independent_ruler = yes
-
-		# Hegemonic Tributary AIs never proactively demand tributaries, they wait for offers instead
-		NOT = { highest_held_title_tier >= tier_hegemony }
-	}
-
-	ai_targets = {
-		ai_recipients = neighboring_rulers_including_tributary_borders
-		max = 5
-	}
-	
-	ai_frequency_by_tier = {
-		barony = 0
-		county = 12
-		duchy = 4
-		kingdom = 4
-		empire = 4
-		hegemony = 4
-	}
-
-	force_notification = yes
-
-	ai_will_do = {	# AI will often do this to valid targets that aren't a military threat to them, especially if they're rich
-		base = 0
-
-		modifier = {
-			add = {
-				add = scope:recipient.gold
-				divide = 10
-				max = 100
-			}
-			desc = accumulated_wealth_reason
-		}
-
-		ai_military_threat_modifier_with_cbs = {
-			SENDER = scope:actor
-			RECEIVER = scope:recipient
-			MULTIPLIER = -1
-		}
-
-		modifier = {
-			scope:recipient = { is_obedient_to = scope:actor }
-			add = 40
-			desc = obedient_interaction_reason
-		}
-
-		modifier = { # Generally don't try to tributarize those of higher rank than you
-			trigger = {
-				"scope:recipient.tier_difference(scope:actor)" > 1
-			}
-			add = -20
-		}
-
-		modifier = { # Generally don't try to tributarize those of higher dominance than you
-			trigger = {
-				scope:recipient.dominance_value > scope:actor.dominance_value
-			}
-			add = -30
-		}
-
-		modifier = { # Remote Realm.
-			trigger = {
-				scope:actor = {
-					NOT = {
-						any_neighboring_top_liege_realm_owner = { this = scope:recipient }
-					}
-				}
-				scope:actor.capital_province = { squared_distance = { target = scope:recipient.capital_province value >= squared_distance_major } }
-			}
-			add = -25
-		}
-
-		modifier = {
-			trigger = {
-				scope:recipient = { government_has_flag = government_is_herder }
-			}
-			add = 1000
-		}
-	}
-
-	ai_min_reply_days = 5
-	ai_max_reply_days = 10
-
-	auto_accept = {
-		custom_tooltip = {
-			text = scheme_agent_aptitude.is_herder
-			scope:recipient = { government_has_flag = government_is_herder }
-		}
-	}
-
-	ai_accept = {
-		base = -60
-
-		modifier = { # Hegemonic Tributaries are gentler and kinder
-			trigger = {
-				scope:actor = { highest_held_title_tier >= tier_hegemony }
-			}
-			add = 100
-			desc = tributary_interaction_aibehavior_actor_hegemon_tier_tt
-		}
-
-		modifier = { # Special case for Confucian-style governments towards China
-			 scope:actor = {
-				primary_title = title:h_china
-			 }
-			government_has_flag = government_is_meritocratic
-			add = 25
-			desc = tributary_interaction_aibehavior_recipient_confucian_government_tt
-		}
-
-		modifier = { # Perk boost
-			desc = offer_vassalization_true_ruler_perk_tt
-			trigger = {
-				scope:actor = { has_perk = true_ruler_perk }
-			}
-			add = true_ruler_value
-		}
-
-		#Yurt bonuses
-		modifier = {
-			desc = tributary_yurt_02_domicile_building
-			trigger = {
-				scope:actor.domicile ?= { has_domicile_parameter = nomad_yurt_increased_tributary_acceptance_lvl_1 }
-			}
-			add = 5
-		}
-
-		modifier = {
-			desc = tributary_yurt_02_domicile_building
-			trigger = {
-				scope:actor.domicile ?= { has_domicile_parameter = nomad_yurt_increased_tributary_acceptance_lvl_2 }
-			}
-			add = 10
-		}
-
-		modifier = {
-			desc = tributary_yurt_02_domicile_building
-			trigger = {
-				scope:actor.domicile ?= { has_domicile_parameter = nomad_yurt_increased_tributary_acceptance_lvl_3 }
-			}
-			add = 15
-		}
-
-		modifier = { # the bolder they are, the less likely they will agree to this and vice versa
-			NOT = { ai_boldness = 0 }
-			add = {
-				value = ai_boldness
-				multiply = -1
-				divide = 2
-			}
-			desc = TRIBUTARY_BOLDNESS_REASON
-		}
-
-		modifier = { # the greedier they are, the less likely they will agree to this
-			ai_greed > 0
-			add = {
-				value = ai_greed
-				multiply = -1
-				divide = 4
-			}
-			desc = TRIBUTARY_GREED_REASON
-		}
-
-		modifier = {
-			is_obedient_to = scope:actor
-			add = 40
-			desc = obedient_interaction_reason
-		}
-
-		modifier = {
-			scope:actor = { is_gurkhan = yes }
-			scope:recipient = { government_has_flag = government_is_nomadic }
-			add = 20
-			desc = gurkhan_interaction_reason
-		}
-
-		# Easier to make Tributaries during the Zud season
-		modifier = {
-			any_character_situation = {
-				any_situation_sub_region = {
-					has_sub_region_phase_parameter = the_great_steppe_easier_tributaries
-					any_situation_sub_region_participant_group = {
-						participant_group_type = nomad_rulers_capital
-						participant_group_has_character = scope:actor
-					}
-				}
-			}
-			scope:recipient = { government_has_flag = government_is_nomadic }
-			add = 25
-			desc = zud_season_reason
-		}
-
-  		# if the actor is a major threat to the recipient they're more likely to accept
-		ai_military_threat_modifier_with_cbs = {
-			SENDER = scope:recipient
-			RECEIVER = scope:actor
-			MULTIPLIER = 1
-		}
-
-		modifier = { # They are a King
-			desc = tributary_interaction_aibehavior_recipient_tier_tt
-			trigger = {
-				scope:recipient = { highest_held_title_tier = tier_kingdom }
-			}
-			add = -100
-		}
-
-		modifier = { # They are an Emperor or greater
-			desc = tributary_interaction_aibehavior_recipient_tier_tt
-			trigger = {
-				scope:recipient = { highest_held_title_tier >= tier_empire }
-			}
-			add = -200
-		}
-
-		modifier = { # Recipient has higher Dominance than the actor
-			desc = demand_tributary_interaction_aibehavior_dominance_tt
-			trigger = {
-				scope:actor = { government_has_flag = government_is_nomadic }
-				scope:recipient = { government_has_flag = government_is_nomadic }
-				scope:recipient.dominance_value > scope:actor.dominance_value
-			}
-			add = -20
-		}
-
-		modifier = { # Actor has higher Dominance than the recipient
-			desc = demand_tributary_interaction_aibehavior_dominance_tt
-			trigger = {
-				scope:actor = { government_has_flag = government_is_nomadic }
-				scope:recipient = { government_has_flag = government_is_nomadic }
-				scope:actor.dominance_value > scope:recipient.dominance_value
-			}
-			add = 20
-		}
-
-		modifier = { # Actor is a Meritocratic Khanate trying to tributarize a Nomad
-			desc = demand_tributary_interaction_steppe_admin
-			trigger = {
-				scope:actor = { government_has_flag = government_is_steppe_admin }
-				scope:recipient = { government_has_flag = government_is_nomadic }
-			}
-			add = 60 # This offsets base reluctance
-		}
-
-		# Non-nomadic
-		modifier = {
-			desc = AI_FILTHY_HORSE_LORD_REASON
-			trigger = {
-				scope:actor = { government_has_flag = government_is_nomadic }
-				scope:recipient = {
-					NOT = { government_has_flag = government_is_nomadic }
-				}
-			}
-			add = {
-				value = -50
-				if = {
-					limit = {
-						scope:recipient = { government_has_flag = government_is_tribal }
-					}
-					multiply = 0.5
-				}
-			}
-		}
-
-		# MINOR
-		modifier = { # Rivalry modifier.
-			desc = offer_vassalization_interaction_aibehavior_rival_tt
-			trigger = {
-				scope:recipient = {
-					has_relation_rival = scope:actor
-					NOT = { has_relation_nemesis = scope:actor }
-				}
-			}
-			add = -100
-		}
-		modifier = { # Nemesis modifier.
-			desc = offer_vassalization_interaction_aibehavior_nemesis_tt
-			trigger = {
-				scope:recipient = {
-					has_relation_nemesis = scope:actor
-				}
-			}
-			add = -200
-		}
-		modifier = { # Same Dynasty modifier.
-			desc = offer_vassalization_interaction_aibehavior_dynasty_tt
-			trigger = {
-				scope:recipient = {
-					dynasty = scope:actor.dynasty
-				}
-			}
-			add = 10
-		}
-		modifier = { # Different faith, no pluralism.
-			desc = offer_vassalization_interaction_aibehavior_differentfaith_tt
-			trigger = {
-				scope:actor = {
-					NOT = { # faith condition below doesn't have to apply if both actor and recipient have nomadic_philosophy
-						has_trait = nomadic_philosophy
-						scope:recipient = { has_trait = nomadic_philosophy }
-					}
-					faith = {
-						NOR = { # Of two different faiths AND the potential vassal's faith is not pluralistic
-							this = scope:recipient.faith
-							has_doctrine = doctrine_pluralism_pluralistic
-						}
-					}
-				}
-			}
-			add = {
-				value = -25
-				if = {
-					limit = {
-						scope:actor.faith = {
-							faith_hostility_level = {
-								target = scope:recipient.faith
-								value >= faith_hostile_level
-							}
-						}
-					}
-					add = -10
-				}
-				if = {
-					limit = {
-						scope:actor.faith = {
-							faith_hostility_level = {
-								target = scope:recipient.faith
-								value >= faith_evil_level
-							}
-						}
-					}
-					add = -25
-				}
-			}
-		}
-
-		#Borked beyond all recognition
-
-		#modifier = { # Encircled
-		#	desc = offer_vassalization_interaction_aibehavior_encircled_tt
-		#	trigger = {
-		#		scope:recipient ?= {
-		#			NOT = {
-		#				any_neighboring_top_suzerain_realm_owner = {
-		#					exists ?= this
-		#					NOT = { this = scope:actor }
-		#				}
-		#			}
-		#			NOT = {
-		#				any_realm_county = { is_coastal_county = yes }
-		#			}
-		#		}
-		#	}
-		#	add = 30
-		#}
-
-		modifier = { # Cultural Acceptance
-			scope:actor = {
-				NOT = { # cultural condition below doesn't have to apply if both actor and recipient have nomadic_philosophy
-					has_trait = nomadic_philosophy
-					scope:recipient = { has_trait = nomadic_philosophy }
-				}
-				NOT = { has_same_culture_as = scope:recipient }
-				culture = {
-					cultural_acceptance = { target = scope:recipient.culture value < 50 }
-				}
-			}
-			add = {
-				add = -10
-				if = {
-					limit = { scope:actor.culture = { has_cultural_pillar = ethos_bellicose } }
-					add = -10
-				}
-			}
-			desc = cultural_acceptance_interaction_reason
-		}
-
-		modifier = { # Same language
-			add = 5
-			desc = speaks_same_language_interaction_reason
-			trigger = {
-				scope:actor = {
-					knows_language_of_culture = scope:recipient.culture
-				}
-			}
-		}
-
-		#Legitimacy
-		modifier = {
-			desc = "LOW_LEGITIMACY_REASON"
-			add = -15
-			scope:actor = {
-				has_legitimacy_flag = slightly_reduced_tributarization_acceptance
-			}
-		}
-		modifier = {
-			desc = "LOW_LEGITIMACY_REASON"
-			add = -25
-			scope:actor = {
-				has_legitimacy_flag = reduced_tributarization_acceptance
-			}
-		}
-		modifier = {
-			desc = "LOW_LEGITIMACY_REASON"
-			add = -50
-			scope:actor = {
-				has_legitimacy_flag = very_reduced_tributarization_acceptance
-			}
-		}
-		modifier = {
-			desc = "LOW_LEGITIMACY_REASON"
-			add = -75
-			scope:actor = {
-				has_legitimacy_flag = massively_reduced_tributarization_acceptance
-			}
-		}
-
-		# HIGH LEGITIMACY
-		modifier = {
-			desc = "HIGH_LEGITIMACY_REASON"
-			add = 25
-			scope:actor = {
-				has_legitimacy_flag = increased_tributarization_acceptance
-			}
-		}
-		modifier = {
-			desc = "HIGH_LEGITIMACY_REASON"
-			add = 50
-			scope:actor = {
-				has_legitimacy_flag = very_increased_tributarization_acceptance
-			}
-		}
-		modifier = {
-			desc = "HIGH_LEGITIMACY_REASON"
-			add = 75
-			scope:actor = {
-				has_legitimacy_flag = extra_increased_tributarization_acceptance
-			}
-		}
-
-		# OPINION INFLUENCE
-		opinion_modifier = { # Compare Opinion modifier.
-			who = scope:recipient
-			opinion_target = scope:actor
-			multiplier = 1
-		}
-
-		#Severed head acceptance
-		modifier = {
-			add = 200
-			scope:actor = {
-				has_variable = severed_head_vassalization
-				var:severed_head_vassalization = {
-					this = scope:recipient
-				}
-			}
-		}
-	}
-}
 
 ##### Changed from Vanilla: Made only applicable to India/China/Islam
 exact_tribute_interaction = {
@@ -2045,15 +1453,17 @@ exact_tribute_interaction = {
 
 	desc = exact_tribute_interaction_desc
 
-	##### Changed from Vanilla vvvvv
 	is_shown = {
 		scope:recipient = { is_ai = yes }
 		scope:actor = {
 			OR = {
 				#highest_held_title_tier >= tier_hegemony
+				
+				##### Changed from Vanilla vvvvv
 				this.primary_title = title:h_china
 				this.primary_title = title:h_dar_al_islam
 				this.primary_title = title:h_india
+				##### Changed from Vanilla ^^^^^
 				AND = {
 					government_has_flag = government_is_mandala
 					scope:recipient = { is_tributary_of = scope:actor }
@@ -2061,7 +1471,6 @@ exact_tribute_interaction = {
 			}
 		}
 	}
-	##### Changed from Vanilla ^^^^^
 
 	is_valid_showing_failures_only = {
 		scope:recipient = {
@@ -2071,6 +1480,31 @@ exact_tribute_interaction = {
 				text = exact_tribute_interaction_recently_tribute_missioned_tt
 				NOT = { var:tribute_mission_grace ?= scope:actor }
 			}
+			trigger_if = {
+				limit = { scope:actor = { government_has_flag = government_is_mandala } }
+				can_execute_decision = tribute_mission_decision_mandala
+			}
+			trigger_else_if = {
+				limit = { scope:actor.primary_title = title:h_china }
+				can_execute_decision = tribute_mission_decision_china
+			}
+			trigger_else_if = {
+				limit = { scope:actor.primary_title = title:h_roman_empire }
+				can_execute_decision = tribute_mission_decision_roman_empire
+			}
+			trigger_else_if = {
+				limit = { scope:actor.primary_title = title:h_eastern_roman_empire }
+				can_execute_decision = tribute_mission_decision_eastern_roman_empire
+			}
+			trigger_else_if = {
+				limit = { scope:actor.primary_title = title:h_dar_al_islam }
+				can_execute_decision = tribute_mission_decision_dar_al_islam
+			}
+			trigger_else_if = {
+				limit = { scope:actor.primary_title = title:h_india }
+				can_execute_decision = tribute_mission_decision_india
+			}
+			trigger_else = { always = no }
 
 			trigger_if = {
 				limit = {
@@ -2110,24 +1544,9 @@ exact_tribute_interaction = {
 				custom_tooltip = {
 					text = exact_tribute_interaction_no_tribute_tt
 					OR = {
-						has_gold_tribute_trigger = yes
-						has_herd_tribute_trigger = yes
-						has_artifact_tribute_trigger = yes
-						AND = {
-							any_courtier_or_guest = {
-								can_become_concubine_of_character_valid_trigger = { CHARACTER = scope:actor }
-							}
-							scope:actor = { 
-								allowed_more_concubines = yes
-								is_adult = yes
-							}
-						}
-						AND = {
-							has_eunuch_tribute_trigger = yes
-							scope:actor = { 
-								culture = { has_cultural_parameter = can_appoint_chief_eunuch }
-							}
-						}
+						tribute_mission_decision_generic_trigger = yes
+						tribute_mission_decision_concubine_trigger = { OVERLORD = scope:actor }
+						tribute_mission_decision_eunuch_trigger = { OVERLORD = scope:actor }
 					}
 				}
 			}
@@ -2139,7 +1558,7 @@ exact_tribute_interaction = {
 			#Is already engaged
 			custom_tooltip = {
 				text = exact_tribute_interaction_already_engaged_tt
-				NOR = { 
+				NOR = {
 					var:requested_tribute_mission ?= scope:actor
 					has_variable = tribute_mission_type
 				}
@@ -2172,16 +1591,16 @@ exact_tribute_interaction = {
 	send_option = {
 		flag = artifact
 		is_valid = {
-			scope:recipient = { 
+			scope:recipient = {
 				custom_tooltip = {
 					text = exact_tribute_interaction_no_suitable_artifact_tt
-					has_artifact_tribute_trigger = yes 
+					has_artifact_tribute_trigger = yes
 				}
 			}
 		}
 		localization = request_artifact_tribute
 	}
-	
+
 	#Request Concubine
 	send_option = {
 		flag = concubine
@@ -2190,7 +1609,7 @@ exact_tribute_interaction = {
 				is_adult = yes
 				can_have_concubines_trigger = { CHAR = scope:actor }
 			}
-			scope:recipient = { 
+			scope:recipient = {
 				custom_tooltip = {
 					text = exact_tribute_interaction_no_suitable_concubine_tt
 					any_courtier_or_guest = {
@@ -2207,22 +1626,22 @@ exact_tribute_interaction = {
 		flag = eunuch
 		is_valid = {
 			trigger_if = {
-				limit = { 
-					scope:actor = { 
+				limit = {
+					scope:actor = {
 						can_employ_court_eunuchs_trigger = { CHAR = scope:actor }
 					}
 				}
-				scope:recipient = { 
+				scope:recipient = {
 					custom_tooltip = {
 						text = exact_tribute_interaction_no_suitable_eunuchs_tt
-						has_eunuch_tribute_trigger = yes 
+						has_eunuch_tribute_trigger = yes
 					}
 				}
 			}
 			trigger_else = {
 				scope:actor = {
 					can_employ_court_eunuchs_trigger = { CHAR = scope:actor }
-				} 
+				}
 			}
 		}
 		localization = request_eunuch_tribute
@@ -2253,7 +1672,7 @@ exact_tribute_interaction = {
 					set_variable = {
 						name = requested_tribute_mission_type_gold
 						years = requested_tribute_mission_deadline_years
-					}	
+					}
 					custom_tooltip = exact_tribute_interaction_gold_tt
 				}
 				scope:herd ?= {
@@ -2269,7 +1688,7 @@ exact_tribute_interaction = {
 						years = requested_tribute_mission_deadline_years
 					}
 					custom_tooltip = exact_tribute_interaction_artifact_tt
-					random_character_artifact = { 
+					random_character_artifact = {
 						limit = { is_suitable_artifact_tribute_trigger = yes }
 						scope:recipient = {
 							set_variable = {
@@ -2349,10 +1768,10 @@ exact_tribute_interaction = {
 					}
 					custom_tooltip = exact_tribute_interaction_eunuch_tt
 					every_courtier = {
-						limit = { 
+						limit = {
 							tribute_mission_is_available_eunuch_trigger = yes
 							NAND = {
-								faith = { has_doctrine = doctrine_theocracy_temporal }
+								rite = { rite_has_doctrine = doctrine_theocracy_temporal }
 								this = scope:actor.cp:councillor_court_chaplain
 							}
 							has_any_disease_trigger = no
@@ -2470,10 +1889,6 @@ exact_tribute_interaction = {
 		}
 	}
 
-	ai_potential = {
-		always = yes
-	}
-
 	ai_will_do = {
 		base = 50
 		modifier = {
@@ -2496,7 +1911,7 @@ exact_tribute_interaction = {
 			}
 			desc = TRIBUTARY_GREED_REASON
 		}
-	
+
 	}
 
 	ai_accept = {
@@ -2514,9 +1929,9 @@ exact_tribute_interaction = {
 			add = {
 				add = 25
 				if = {
-					limit = { 
+					limit = {
 						OR = {
-							NOT = { scope:recipient.primary_title = title:h_china } 
+							NOT = { scope:recipient.primary_title = title:h_china }
 							government_has_flag = government_is_meritocratic
 						}
 					}
@@ -2528,7 +1943,7 @@ exact_tribute_interaction = {
 		# Unstable Phase
 		modifier = {
 			scope:actor = { highest_held_title_tier >= tier_hegemony }
-			situation:dynastic_cycle ?= { 
+			situation:dynastic_cycle ?= {
 				OR = {
 					situation_current_phase = situation_dynastic_cycle_phase_instability
 					situation_current_phase = situation_dynastic_cycle_phase_instability_conquest
@@ -2539,11 +1954,11 @@ exact_tribute_interaction = {
 		}
 		# Stable Phase
 		modifier = {
-			scope:actor = { 
+			scope:actor = {
 				highest_held_title_tier >= tier_hegemony
 				legitimacy_level < dynastic_cycle_legitimacy_expectation
 			}
-			situation:dynastic_cycle ?= { 
+			situation:dynastic_cycle ?= {
 				NOR = {
 					situation_current_phase = situation_dynastic_cycle_phase_instability
 					situation_current_phase = situation_dynastic_cycle_phase_instability_conquest
@@ -2553,11 +1968,11 @@ exact_tribute_interaction = {
 			desc = tributary_interaction_aibehavior_actor_low_legitimacy_tt
 		}
 		modifier = {
-			scope:actor = { 
+			scope:actor = {
 				highest_held_title_tier >= tier_hegemony
 				legitimacy_level > dynastic_cycle_legitimacy_expectation
 			}
-			situation:dynastic_cycle ?= { 
+			situation:dynastic_cycle ?= {
 				NOR = {
 					situation_current_phase = situation_dynastic_cycle_phase_instability
 					situation_current_phase = situation_dynastic_cycle_phase_instability_conquest
@@ -2682,15 +2097,19 @@ exact_tribute_player_interaction = {
 
 	desc = exact_tribute_player_interaction_desc
 
-	##### Changed from Vanilla vvvvv
 	is_shown = {
 		scope:recipient = { is_ai = no }
 		trigger_if = {
 			limit = {
 				#scope:actor = { highest_held_title_tier >= tier_hegemony }
-				scope:actor = { this.primary_title = title:h_china }
-				scope:actor = { this.primary_title = title:h_dar_al_islam }
-				scope:actor = { this.primary_title = title:h_india }
+				
+				##### Changed from Vanilla vvvvv
+				OR = {
+					scope:actor = { this.primary_title = title:h_china }
+					scope:actor = { this.primary_title = title:h_dar_al_islam }
+					scope:actor = { this.primary_title = title:h_india }
+				}
+				##### Changed from Vanilla ^^^^^
 			}
 			scope:recipient = {
 				trigger_if = {
@@ -2709,7 +2128,6 @@ exact_tribute_player_interaction = {
 			scope:recipient = { is_tributary_of = scope:actor }
 		}
 	}
-	##### Changed from Vanilla ^^^^^
 
 	is_valid_showing_failures_only = {
 		scope:recipient = {
@@ -2718,7 +2136,7 @@ exact_tribute_player_interaction = {
 			custom_tooltip = {
 				text = exact_tribute_interaction_recently_tribute_missioned_tt
 				NOT = { var:tribute_mission_grace ?= scope:actor }
-			}	
+			}
 			#Has something to offer as Tribute Mission
 			trigger_if = {
 				limit = {
@@ -2741,7 +2159,7 @@ exact_tribute_player_interaction = {
 						}
 						AND = {
 							has_eunuch_tribute_trigger = yes
-							scope:actor = { 
+							scope:actor = {
 								culture = { has_cultural_parameter = can_appoint_chief_eunuch }
 							}
 						}
@@ -2756,7 +2174,7 @@ exact_tribute_player_interaction = {
 			#Is already engaged
 			custom_tooltip = {
 				text = exact_tribute_interaction_already_engaged_tt
-				NOR = { 
+				NOR = {
 					var:requested_tribute_mission ?= scope:actor
 					has_variable = tribute_mission_type
 				}
@@ -2865,10 +2283,6 @@ exact_tribute_player_interaction = {
 				trigger_event = tribute_mission.9000
 			}
 		}
-	}
-
-	ai_potential = {
-		always = yes
 	}
 
 	ai_will_do = {
