@@ -3,13 +3,13 @@ raise_circumcellions_decision = {
 	picture = {
 		reference = "gfx/interface/illustrations/tournament_contest_illustrations/horse_racing_success.dds"
 	}
-	decision_group_type = major
+	decision_group_type = religious
 
 	desc = raise_circumcellions_decision_desc
 	selection_tooltip = raise_circumcellions_decision_tooltip
 	
 	is_shown = {
-		root.faith = { has_doctrine_parameter = raise_circumcellions_decision }
+		root.rite = { rite_has_parameter = raise_circumcellions_decision }
 		is_ruler = yes
 		NOT = { government_has_flag = government_is_nomadic }
 		trigger_if = { #Available for high tribals, but not tribals
@@ -35,7 +35,7 @@ raise_circumcellions_decision = {
 					any_war_enemy = {
 						scope:the_war_in_question = { is_war_leader = root }
 						save_temporary_scope_as = the_other_leader
-						root.faith = { faith_hostility_level = { target = scope:the_other_leader.faith value > faith_astray_level } }
+						root.rite = { rite_hostility_level = { target = scope:the_other_leader.rite value > faith_astray_level } }
 					}
 				}
 			}
@@ -64,14 +64,14 @@ raise_circumcellions_decision = {
 		every_realm_county = {
 			limit = {
 				this.holder = root
-				this.faith = root.faith
+				this.rite = root.rite
 			}
 			root = {
 				spawn_army = {
-					levies = 300
+					levies = 600
 					men_at_arms = {
 						type = light_footmen
-						stacks = 2
+						stacks = 3
 					}
 					location = scope:the_ruler.capital_province
 					uses_supply = no
@@ -156,19 +156,29 @@ automutiliation_decision = {
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_physician.dds"
 	}
-	decision_group_type = major
+	decision_group_type = religious
 
 	desc = automutiliation_decision_desc_alt
 	selection_tooltip = automutiliation_decision_tooltip
 
 	is_shown = {
 		is_male = yes
-		faith = { has_doctrine = special_doctrine_sacred_eunuchs }
+		#
+		rite_has_parameter = show_automutiliation_decision
 	}
 
 	is_valid = {
 		NOT = { has_trait = eunuch_1 }
-		has_trait = zealous
+		OR = {
+			trigger_if = {
+				limit = { rite_has_parameter = zealous_character_automutilation }
+				has_trait = zealous
+			}
+			trigger_if = {
+				limit = { has_personal_tenet_flag = unlocks_automutiliation_decision }
+				NOT = { has_trait = cynical }
+			}
+		}
 		#You can't hurt yourself without at least an heir
 		trigger_if = {
 			limit = { is_ruler = yes }
@@ -180,13 +190,13 @@ automutiliation_decision = {
 	}
 
 	effect = {
-		save_scope_as = actor
-		hidden_effect = { add_piety_level = 1 }
-		show_as_tooltip = { add_piety_level = 1 }
+		add_piety_level = 1
+		change_spiritual_fulfillment = 20
 		add_trait = devoted
 		add_trait = eunuch_1
 		
 		#Remove spouses and spouse adjacent
+		save_scope_as = actor
 		if = {
 			limit = { is_married = yes }
 			every_spouse = { divorce = scope:actor }
@@ -225,14 +235,14 @@ automutiliation_decision = {
 	#Cribbed from Consolateum
 	ai_will_do = {
 		base = 0
-
-		# 100% chance at 50 zeal
+		
+		# 20% chance at 100 zeal
 		ai_value_modifier = {
-			ai_zeal = 2
+			ai_zeal = 0.2
 		}
-
+		
 		modifier = {
-			add = 40
+			add = 5
 			is_close_family_of = primary_heir
 		}
 	}
@@ -242,12 +252,12 @@ automutiliation_decision = {
 
 #Philosophies
 # Orthodox Schools: Samkhya, Yoga, Vedanta, Vaiśeṣika, Nyaya, Mīmāṃsā
-# Hetrodox Schools: Sramana, Carvaka, Ajivika
 
 select_hindu_philosophy_decision = {
 	picture = {
 		reference = "gfx/interface/illustrations/event_scenes/bp2_study_indian.dds"
 	}
+	decision_group_type = religious
 
 	desc = select_hindu_philosophy_decision_desc
 	selection_tooltip = select_hindu_philosophy_decision_tooltip
@@ -258,7 +268,7 @@ select_hindu_philosophy_decision = {
 	}
 
 	is_valid = {
-		has_trait = scholar
+		has_trait = erudite
 	}
 
 	is_valid_showing_failures_only = {

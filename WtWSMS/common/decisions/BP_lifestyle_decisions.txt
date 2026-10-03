@@ -8,7 +8,7 @@ become_a_vegetarian = {
 	
 	is_shown = {
 		OR = {
-			faith = { has_doctrine_parameter = enables_vegetarianism }
+			rite = { rite_has_parameter = enables_vegetarianism }
 			culture = { has_cultural_parameter = enables_vegetarianism }
 		}
 		NOT = { has_trait = vegetarian }
@@ -77,9 +77,9 @@ become_a_vegetarian = {
 			ai_zeal = 2
 			trigger = {
 				OR = {
-					faith = { has_doctrine = doctrine_ritual_vegetarianism_required }
+					rite = { rite_has_doctrine = doctrine_ritual_vegetarianism_required }
 					AND = {
-						faith = { has_doctrine = doctrine_ritual_vegetarianism_clerics }
+						rite = { rite_has_doctrine = doctrine_ritual_vegetarianism_clerics }
 						is_clergy = yes
 					}
 				}
@@ -90,7 +90,7 @@ become_a_vegetarian = {
 			ai_zeal = 1.5
 			trigger = {
 				AND = {
-					faith = { has_doctrine = doctrine_ritual_vegetarianism_clerics }
+					rite = { rite_has_doctrine = doctrine_ritual_vegetarianism_clerics }
 					is_clergy = no
 				}
 			}
@@ -194,9 +194,9 @@ abandon_vegetarianism = {
 		modifier = {
 			factor = 0
 			OR = {
-				faith = { has_doctrine = doctrine_ritual_vegetarianism_required }
+				rite = { rite_has_doctrine = doctrine_ritual_vegetarianism_required }
 				AND = {
-					faith = { has_doctrine = doctrine_ritual_vegetarianism_clerics }
+					rite = { rite_has_doctrine = doctrine_ritual_vegetarianism_clerics }
 					is_clergy = yes
 				}
 			}

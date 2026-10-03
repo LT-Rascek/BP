@@ -1,0 +1,183 @@
+﻿##### Changed from Vanilla: Added Tenet Castration options
+castrate_interaction = {
+	interface_priority = 30
+	icon = eunuch
+
+	category = interaction_category_prison
+	desc = castrate_interaction_desc
+
+	is_shown = {
+		scope:puppet_or_actor ?= {
+			is_adult = yes
+			OR = {
+				culture ?= { has_cultural_parameter = can_castrate_prisoners }
+				top_liege.primary_title ?= {
+					has_variable = emulating_byz_punishment_var
+				}
+				##### Changed from Vanilla vvvvv
+				trigger_if = {
+					limit = { has_personal_tenet_flag = unlocks_prisoner_castration_if_callous_sadistic }
+					OR = {
+						has_trait = callous
+						has_trait = sadistic
+						has_trait = arbitrary
+					}
+				}
+				##### Changed from Vanilla ^^^^^
+			}
+
+			# If they're our partner emperor, we should use the maiming interaction instead.
+			liege_should_systematically_maim_co_ruler_trigger = no
+		}
+		scope:recipient = {
+			is_imprisoned_by = scope:puppet_or_actor
+			is_eunuch_trigger = no
+			is_male = yes
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:recipient = {
+			custom_description = {
+				text = "currently_being_tortured"
+				NOT = { has_character_flag = is_being_tortured }
+			}
+		}
+		cannot_release_former_regent_whilst_old_regent_holds_power_trigger = {
+			PRISONER = scope:recipient
+			REGENT = scope:recipient.var:imprisoned_by_diarch
+		}
+		custom_tooltip = {
+			text = is_currently_being_purged_tt
+			scope:recipient = {
+				NOT = {
+					has_character_flag = is_currently_being_purged
+				}
+			}
+		}
+	}
+
+	is_highlighted = {
+		OR = {
+			scope:puppet_or_actor = { has_trait = sadistic }
+			scope:puppet_or_actor = { has_relation_rival = scope:recipient }
+			scope:recipient = {
+				any_claim = {
+					holder = scope:puppet_or_actor
+				}
+			}
+		}
+	}
+
+	on_accept = {
+		scope:recipient = {
+			add_character_flag = {
+				flag = is_being_tortured
+				months = 6 # Players in MP can keep the event window open...
+			}
+		}
+
+		blind_castrate_and_disfigure_effect = yes #Stress & dread
+
+		show_as_tooltip = {
+			scope:recipient = {
+				if = {
+					limit = {
+						age < 12
+					}
+					ep3_child_castration_effect = yes
+				}
+				else = {
+					ep3_youth_castration_effect = yes
+				}
+				release_from_prison = yes
+			}
+		}
+
+		torture_blind_castrate_disfigure_opinion_effect = { VERB = castrated }
+
+		scope:puppet_or_actor = {
+			save_scope_as = bg_override_char
+			trigger_event = {
+				id = prison.1025
+				days = 1
+			}
+		}
+
+		# If we're a clan this interaction affects unity
+		add_clan_unity_interaction_effect = {
+			CHARACTER = scope:puppet_or_actor
+			TARGET = scope:recipient
+			VALUE = major_unity_loss
+			DESC = clan_unity_abelarding.desc
+			REVERSE_NON_HOUSE_TARGET = no
+		}
+
+		# House Relation
+		scope:recipient.house ?= {
+			change_house_relation_effect = {
+				HOUSE = scope:puppet_or_actor.house
+				VALUE = house_relation_damage_medium_value
+				REASON = torture
+				CHAR = scope:puppet_or_actor
+				TARGET_CHAR = scope:recipient
+				TITLE = scope:dummy_gender
+			}
+		}
+	}
+
+	auto_accept = yes
+
+	ai_targets = {
+		ai_recipients = prisoners
+	}
+
+	ai_will_do = {
+		base = -20
+
+		modifier = {
+			has_trait = sadistic
+			add = 20
+		}
+		ai_value_modifier = {
+			ai_compassion = tiny_chance_impact_negative_ai_value #Adds +50 for highly uncompassionate characters, -50 for highly compassionate characters
+		}
+		opinion_modifier = {
+			opinion_target = scope:recipient
+			multiplier = -0.25
+		}
+		#Scope:target has caused internal strife in the realm
+		character_hates_scope_due_to_strife_modifier = { TARGET = scope:recipient }
+		modifier = { # Family Feud
+			scope:actor = {
+				house_has_feud_relation_with_trigger = { TARGET = scope:recipient }
+			}
+			add = 30
+		}
+		modifier = {
+			scope:actor = {
+				has_opinion_modifier = {
+					modifier = tried_to_escape_from_prison_opinion
+					target = scope:recipient
+				}
+			}
+			add = 25
+		}
+		#Cruel Latins are really into this
+		modifier = {
+			top_liege.primary_title = {
+				has_variable = emulating_byz_punishment_var
+			}
+			add = 30
+		}
+	}
+
+	ai_frequency_by_tier = {
+		barony = 0
+		county = 144
+		duchy = 48
+		kingdom = 36
+		empire = 12
+		hegemony = 12
+	}
+}

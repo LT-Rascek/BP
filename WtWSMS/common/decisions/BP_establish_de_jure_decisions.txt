@@ -103,7 +103,7 @@
 				any_de_jure_county = {
 					count = all
 					this.culture = root.culture
-					this.faith = root.faith
+					this.rite = root.rite
 				}
 			}
 		}
@@ -112,7 +112,7 @@
 			has_innovation = innovation_writing
 			has_innovation = innovation_social_stratification
 		}
-		NOT = { faith = { has_doctrine = unreformed_faith_doctrine } }
+		NOT = { rite = { rite_has_doctrine = unreformed_faith_doctrine } }
 		#Personal Requirements
 		OR = {
 			has_trait = legendary_leader
@@ -311,7 +311,7 @@ swap_roman_province_decision = {
 				any_de_jure_county = {
 					count = all
 					this.culture = root.culture
-					this.faith = root.faith
+					this.rite = root.rite
 				}
 			}
 		}
@@ -335,7 +335,7 @@ swap_roman_province_decision = {
 			has_innovation = innovation_social_stratification
 			has_innovation = innovation_legal_codex
 		}
-		NOT = { faith = { has_doctrine = unreformed_faith_doctrine } }
+		NOT = { rite = { rite_has_doctrine = unreformed_faith_doctrine } }
 		#Personal Requirements
 		OR = {
 			has_trait = legendary_leader
@@ -574,7 +574,7 @@ establish_de_jure_empire_decision = {
 				any_de_jure_county = {
 					count = all
 					this.culture = root.culture
-					this.faith = root.faith
+					this.rite = root.rite
 				}
 			}
 		}
@@ -583,7 +583,7 @@ establish_de_jure_empire_decision = {
 			has_innovation = innovation_writing
 			has_innovation = innovation_social_stratification
 		}
-		NOT = { faith = { has_doctrine = unreformed_faith_doctrine } }
+		NOT = { rite = { rite_has_doctrine = unreformed_faith_doctrine } }
 		#Personal Requirements
 		OR = {
 			has_trait = legendary_leader
@@ -805,7 +805,7 @@ establish_de_jure_hegemony_decision = {
 				any_de_jure_county = {
 					count = all
 					this.culture = root.culture
-					this.faith = root.faith
+					this.rite = root.rite
 				}
 			}
 		}
@@ -814,7 +814,7 @@ establish_de_jure_hegemony_decision = {
 			has_innovation = innovation_mundium
 			has_innovation = innovation_state_religion
 		}
-		NOT = { faith = { has_doctrine = unreformed_faith_doctrine } }
+		NOT = { rite = { rite_has_doctrine = unreformed_faith_doctrine } }
 		#Personal Requirements
 		OR = {
 			has_trait = legendary_leader

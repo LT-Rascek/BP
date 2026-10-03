@@ -18,11 +18,10 @@ convert_to_mandala_government_decision = {
 	}
 
 	is_shown = {
-		has_tgp_dlc_trigger = yes
 		is_landed = yes
+		highest_held_title_tier > tier_barony
 		has_mandala_culture_trigger = yes
 		NOT = { government_has_flag = government_is_mandala }
-		NOT = { government_has_flag = government_is_centralized }
 		#We have a special decision for Mandala subjects...
 		trigger_if = {
 			limit = { is_tributary = yes }
@@ -30,16 +29,19 @@ convert_to_mandala_government_decision = {
 				overlord = { government_has_flag = government_is_mandala }
 			}
 		}
-		highest_held_title_tier > tier_barony
+		trigger_if = {
+			limit = { government_has_flag = government_is_celestial }
+			NOT = { has_title = title:h_china }
+		}
+		has_tgp_dlc_trigger = yes
 	}
 
-	##### Changed from Vanilla vvvvv
 	is_valid = {
 		trigger_if = {
 			limit = {
 				has_legitimacy = yes
 				dynasty ?= {
-					NOT = { has_dynasty_perk = tgp_sea_legacy_3 } #Bypasses Tribal Authority Requirement
+					NOT = { has_dynasty_perk = tgp_sea_legacy_3 } #Bypasses the Legitimacy requirement
 				}
 			}
 			legitimacy_level >= 4
@@ -68,10 +70,9 @@ convert_to_mandala_government_decision = {
 			}
 		}
 		##### Changed from Vanilla vvvvv
-		culture = { has_cultural_era_or_later = culture_era_late_antiquity }
+		culture = { no_longer_in_tribal_era_trigger = yes }
 		##### Changed from Vanilla ^^^^^
 	}
-	##### Changed from Vanilla ^^^^^
 
 	is_valid_showing_failures_only = {
 		custom_tooltip = {
@@ -123,7 +124,7 @@ convert_to_mandala_government_decision = {
 		if = {
 			limit = {
 				culture = {
-					has_cultural_parameter = mandala_tributaries 
+					has_cultural_parameter = mandala_tributaries
 				}
 				exists = confederation
 			}
@@ -143,15 +144,23 @@ convert_to_mandala_government_decision = {
 	ai_potential = {
 		has_mandala_culture_trigger = yes
 		trigger_if = {
+			limit = {
+				has_legitimacy = yes
+				dynasty ?= {
+					NOT = { has_dynasty_perk = tgp_sea_legacy_3 }
+				}
+			}
+			legitimacy_level >= 4
+		}
+		trigger_if = {
 			limit = { government_has_flag = government_is_tribal }
-			has_realm_law = tribal_authority_3
 			prestige >= convert_to_mandala_government_tribal_value
 		}
 		trigger_else = {
 			prestige >= convert_to_mandala_government_nontribal_value
 		}
 		trigger_if = {
-			limit = { 
+			limit = {
 				OR = {
 					government_has_flag = government_is_feudal
 					government_has_flag = government_is_clan
@@ -160,17 +169,10 @@ convert_to_mandala_government_decision = {
 			primary_title.tier <= tier_duchy
 		}
 		primary_title.tier > tier_barony
-		NOR = {	
-			government_has_flag = government_is_republic
-			government_has_flag = government_is_theocracy
-			government_has_flag = government_is_mercenary
-			government_has_flag = government_is_holy_order
-			government_has_flag = government_is_administrative
-			government_has_flag = government_is_nomadic
-			government_has_flag = government_is_herder
-			government_has_flag = government_is_celestial
-			government_has_flag = government_is_steppe_admin
-			government_has_flag = government_is_meritocratic
+		OR = {
+			government_has_flag = government_is_feudal
+			government_has_flag = government_is_clan
+			government_has_flag = government_is_tribal
 		}
 		NOT = {
 			any_owned_story = {
@@ -219,23 +221,26 @@ assimilate_to_mandala_decision = {
 		duchy = 36
 		kingdom = 36
 		empire = 36
-		hegemony = 36
+		hegemony = 0
 	}
 
-	##### Changed from Vanilla vvvvv
 	is_shown = {
-		has_tgp_dlc_trigger = yes
+		highest_held_title_tier > tier_barony
 		overlord ?= { government_has_flag = government_is_mandala }
-		NAND = { 
+		NAND = {
 			government_has_flag = government_is_mandala
 			faith = overlord.faith
 		}
-		highest_held_title_tier > tier_barony
+		rite = { rite_has_doctrine = doctrine_polytheist }
+		NAND = {
+			has_title = title:h_china
+			government_has_mechanic = administrative
+		}
+		has_tgp_dlc_trigger = yes
 		##### Changed from Vanilla vvvvv
-		culture = { has_cultural_era_or_later = culture_era_late_antiquity }
+		culture = { no_longer_in_tribal_era_trigger = yes }
 		##### Changed from Vanilla ^^^^^
 	}
-	##### Changed from Vanilla ^^^^^
 
 	is_valid_showing_failures_only = {
 		custom_tooltip = {
@@ -312,8 +317,8 @@ assimilate_to_mandala_decision = {
 		mandala_assimilation_effect = yes
 		if = {
 			limit = {
-				NOR = { 
-					faith = overlord.faith 
+				NOR = {
+					faith = overlord.faith
 					faith.religious_head ?= root
 				}
 			}
@@ -321,9 +326,9 @@ assimilate_to_mandala_decision = {
 		}
 		#You got in early? Good for you!
 		if = {
-			limit = { 
-				overlord = { 
-					OR = { 
+			limit = {
+				overlord = {
+					OR = {
 						middling_devaraja_quality_trigger = yes
 						poor_devaraja_quality_trigger = yes
 						terrible_devaraja_quality_trigger = yes
@@ -331,21 +336,21 @@ assimilate_to_mandala_decision = {
 				}
 			}
 			if = {
-				limit = { 
+				limit = {
 					overlord = { middling_devaraja_quality_trigger = yes }
 				}
 				add_character_flag = assimilation_payout_t1
 				custom_tooltip = { text = assimilation_payout_t1_tt }
 			}
 			else_if = {
-				limit = { 
+				limit = {
 					overlord = { poor_devaraja_quality_trigger = yes }
 				}
 				add_character_flag = assimilation_payout_t2
 				custom_tooltip = { text = assimilation_payout_t2_tt }
 			}
 			else_if = {
-				limit = { 
+				limit = {
 					overlord = { terrible_devaraja_quality_trigger = yes }
 				}
 				add_character_flag = assimilation_payout_t3
@@ -388,7 +393,7 @@ assimilate_to_mandala_decision = {
 		primary_title.tier > tier_barony
 		#Keep the tributaries Wanua
 		trigger_if = {
-			limit = { 
+			limit = {
 				government_has_flag = government_is_wanua
 				is_independent_ruler = yes
 			}
@@ -396,7 +401,7 @@ assimilate_to_mandala_decision = {
 		}
 		#... but be more lenient on the Vassals
 		trigger_if = {
-			limit = { 
+			limit = {
 				government_has_flag = government_is_wanua
 				is_independent_ruler = no
 			}
@@ -448,11 +453,20 @@ assimilate_to_mandala_decision = {
 			multiplier = 1
 		}
 		modifier = {
+			add = {
+				value = highest_held_title_tier
+				multiply = -10
+			}
+		}
+		modifier = {
+			government_has_mechanic = administrative
+			factor = 0
+		}
+		modifier = {
 			capital_county.title_province = {
-				NOR = {
-					has_holding_type = temple_citadel_holding
-					has_holding_type = church_holding
-					has_holding_type = castle_holding
+				OR = {
+					has_holding_type = nomad_holding
+					has_holding_type = herder_holding
 				}
 			}
 			factor = 0

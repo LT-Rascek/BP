@@ -1,47 +1,81 @@
 ﻿tenet_redeeming_struggle = {
-	icon = tenet_two_nature
+	icon = tenet_unrelenting_faith
 
-	name = tenet_dyophysitism_name
+	name = tenet_redeeming_struggle_name
 
-	desc = tenet_dyophysitism_desc
+	desc = tenet_redeeming_struggle_desc
 
 	is_shown = {}
 
-	can_pick = {
-		religion = religion:christianity_religion
-		unique_christology_trigger = yes
-	}
+	can_pick = { religion = religion:christianity_religion }
 	can_pick_as_personal_tenet = {
 		unique_christology_personal_trigger = yes
+		
+		custom_description = {
+			text = incompatible_tenet_pacifism_trigger
+			NOT = { doctrine:tenet_pacifism = { is_in_list = selected_doctrines } }
+		}
+		custom_description = {
+			text = incompatible_tenet_dharmic_pacifism_trigger
+			NOT = { doctrine:tenet_dharmic_pacifism = { is_in_list = selected_doctrines } }
+		}
+		custom_description = {
+			text = incompatible_tenet_unrelenting_faith_trigger
+			NOT = { doctrine:tenet_unrelenting_faith = { is_in_list = selected_doctrines } }
+		}
+		custom_description = {
+			text = incompatible_tenet_communal_possessions_trigger
+			NOT = { doctrine:tenet_communal_possessions = { is_in_list = selected_doctrines } }
+		}
+		custom_description = {
+			text = doctrine_inverted_pluralism_fundamentalist_trigger
+			doctrine:doctrine_pluralism_fundamentalist = { is_in_list = selected_doctrines }
+		}
 	}
 
 	piety_cost = {
-		value = faith_tenet_cost_low
+		value = faith_tenet_cost_high
 
 		# Multiplier for keeping same tenet
 		if = {
-			limit = { rite_has_tenet = tenet_anomoeanism }
+			limit = { rite_has_tenet = tenet_redeeming_struggle }
 			multiply = faith_unchanged_doctrine_cost_mult
 		}
 	}
 
-	divergence_multiplier = 1.5
+	divergence_multiplier = 1.25
 
-	character_modifier = {
-		different_faith_opinion = 15
+	special_parameters = {
+		minimum_fervor = 25
 	}
 
-	parameters = {}
+	character_modifier = {
+		monthly_county_control_growth_factor = -0.2
+	}
 
-	personal_tenet_parameters = {}
+	parameters = {
+		tenet_redeeming_struggle_resistance = yes
+		great_holy_wars_active = yes
+		peasant_and_populist_factions_more_common = yes
+	}
+
+	personal_tenet_modifier = {
+		monthly_county_control_growth_factor = -0.1
+		tolerance_advantage_mod = 5
+		county_opinion_add = 10
+	}
+
+	personal_tenet_parameters = {
+		cheaper_holy_wars_active = yes
+		raise_circumcellions_decision = yes
+	}
 
 	traits = {
-		# Doctrinal fidelity to the one-united-nature formula vs. dissimulation under Chalcedonian pressure.
 		virtues = {
-			humble = { weight = 15 scale = 1 }
+			peasant_leader = { weight = 15 scale = 2 }
 		}
 		sins = {
-			arbitrary = { weight = 15 scale = 1 }
+			arrogant = { weight = 10 scale = 1.5 }
 		}
 	}
 }

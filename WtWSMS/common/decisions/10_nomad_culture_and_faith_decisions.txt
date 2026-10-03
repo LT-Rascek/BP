@@ -99,7 +99,7 @@ proselytize_to_your_people_decision = {
 			add = -10000
 			OR = {
 				current_year < 800
-				NOT = { root.faith = { has_doctrine_parameter = unreformed } }
+				NOT = { root.rite = { rite_has_parameter = unreformed } }
 			}
 		}
 		##### Changed from Vanilla ^^^^^

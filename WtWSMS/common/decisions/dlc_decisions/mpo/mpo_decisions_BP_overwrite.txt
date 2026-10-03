@@ -20,20 +20,19 @@ call_for_confederation_decision = {
 	selection_tooltip = call_for_confederation_decision_tooltip
 
 	is_shown = {
-		highest_held_title_tier <= tier_duchy
+		is_independent_ruler = yes
 		OR = {
 			government_has_flag = government_is_tribal
 			government_has_flag = government_is_nomadic
 		}
-		is_playable_character = yes
-		is_independent_ruler = yes
+		highest_held_title_tier <= tier_duchy
 		NOR = {
-			has_character_flag = forming_confederation
 			is_confederation_member = yes
+			has_character_flag = forming_confederation
 		}
+		is_playable_character = yes
 	}
 
-	##### Changed from Vanilla vvvvv
 	is_valid = {
 		is_independent_ruler = yes
 		highest_held_title_tier <= tier_duchy
@@ -65,17 +64,18 @@ call_for_confederation_decision = {
 			has_trait = conqueror
 			has_trait = greatest_of_khans
 		}
-		##### Changed from Vanilla vvvvv
 		trigger_if = {
 			limit = {
-				NOR = {
+				NOT = {
 					culture = {
 						has_cultural_parameter = forming_confederations_is_easier 
 					}
+					##### Changed from Vanilla vvvvv
 					general_situation_regional_parameter_trigger = {
 						CHARACTER = root
 						PARAMETER = forming_confederations_is_easier
 					}
+					##### Changed from Vanilla ^^^^^
 				}
 			} #When adjusting, adjust culture_parameter_forming_confederations_is_easier string
 			OR = {
@@ -84,8 +84,6 @@ call_for_confederation_decision = {
 				confederation_foe_trigger = { CHARACTER = root }
 			}
 		}
-		##### Changed from Vanilla ^^^^^
-		
 		#This is just meant to stop player exploits
 		trigger_if = {
 			limit = {
@@ -97,11 +95,8 @@ call_for_confederation_decision = {
 			}
 		}
 	}
-	##### Changed from Vanilla ^^^^^
-
 	cooldown = { years = 5 }
 
-	##### Changed from Vanilla vvvvv
 	is_valid_showing_failures_only = {
 		age >= 6
 		NOT = { has_trait = infirm }
@@ -122,7 +117,6 @@ call_for_confederation_decision = {
 		}
 		##### Changed from Vanilla ^^^^^
 	}
-	##### Changed from Vanilla ^^^^^
 
 	cost = {
 		prestige = {
@@ -409,9 +403,9 @@ call_for_confederation_decision = {
 			}
 			factor = 0.1
 		}
-		##### Changed from Vanilla vvvvv
 		modifier = {
 			add = 300
+			##### Changed from Vanilla vvvvv
 			OR = {
 				culture = { has_cultural_parameter = forming_confederations_is_easier }
 				general_situation_regional_parameter_trigger = {
@@ -419,8 +413,8 @@ call_for_confederation_decision = {
 					PARAMETER = forming_confederations_is_easier
 				}
 			}
+			##### Changed from Vanilla ^^^^^
 		}
-		##### Changed from Vanilla ^^^^^
 	}
 }
 
@@ -588,7 +582,6 @@ leave_confederation_decision = {
 		}
 	}
 
-	##### Changed from Vanilla vvvvv
 	ai_will_do = {
 		base = 0
 		# PERKS
@@ -626,7 +619,7 @@ leave_confederation_decision = {
 						faith = root.faith
 					}
 				}
-				faith = { has_doctrine = doctrine_pluralism_pluralistic }
+				rite = { rite_has_doctrine = doctrine_pluralism_pluralistic }
 			}
 			confederation = {
 				any_confederation_member = {
@@ -669,7 +662,7 @@ leave_confederation_decision = {
 					}
 				}
 			}
-			faith = { has_doctrine = doctrine_pluralism_pluralistic }
+			rite = { rite_has_doctrine = doctrine_pluralism_pluralistic }
 			confederation = {
 				any_confederation_member = {
 					save_temporary_scope_as = confederate
@@ -722,8 +715,7 @@ leave_confederation_decision = {
 		modifier = { #Is wrong government type
 			NOR = {
 				government_has_flag = government_is_tribal
-				government_has_flag = government_is_nomadic
-				government_has_flag = government_is_herder
+				government_has_flag = government_is_in_steppe
 			}
 			add = 50
 		}
@@ -837,12 +829,12 @@ leave_confederation_decision = {
 							}
 						}
 					}
-					any_confederation_member = {
-						NOT = {
-							this = root
-						}
-						capital_province = {
-							squared_distance = { target = root.capital_province value < 100000 }
+					confederation = {
+						any_confederation_member = {
+							this != root
+							capital_province = {
+								squared_distance = { target = root.capital_province value < 100000 }
+							}
 						}
 					}
 				}
@@ -861,12 +853,12 @@ leave_confederation_decision = {
 							}
 						}
 					}
-					any_confederation_member = {
-						NOT = {
-							this = root
-						}
-						capital_province = {
-							squared_distance = { target = root.capital_province value < 200000 }
+					confederation = {
+						any_confederation_member = {
+							this != root
+							capital_province = {
+								squared_distance = { target = root.capital_province value < 200000 }
+							}
 						}
 					}
 				}
@@ -1044,7 +1036,7 @@ leave_confederation_decision = {
 							AND = {
 								has_trait = bastard
 								root = {
-									faith = { NOT = { has_doctrine = doctrine_bastardry_none } }
+									rite = { NOT = { rite_has_doctrine = doctrine_bastardry_none } }
 								}
 							}
 							has_trait = denounced
@@ -1699,9 +1691,7 @@ leave_confederation_decision = {
 		}
 		##### Changed from Vanilla ^^^^^
 	}
-	##### Changed from Vanilla ^^^^^
 }
-
 
 ##### Changed from Vanilla: Slavic Tradition increased price
 ##### Changed from Vanilla; Added specific hooks for WtWSMS things
@@ -1720,19 +1710,21 @@ confederation_kingdom_decision = {
 	
 	ai_check_interval_by_tier = {
 		barony = 0
-		county = 8
-		duchy = 8
+		county = 12
+		duchy = 12
 		kingdom = 0
 		empire = 0
 		hegemony = 0
 	}
-
+	
 	desc = confederation_kingdom_decision_desc
 
 	is_shown = {
 		is_confederation_member = yes
 		is_landed = yes
+		NOT = { exists = confederation.leading_house }
 		is_playable_character = yes
+		exists = confederation
 	}
 
 	is_valid = {
@@ -1745,8 +1737,9 @@ confederation_kingdom_decision = {
 		}
 		trigger_else = { prestige_level >= 3 }
 		##### Changed from Vanilla ^^^^^
-		top_liege = this
-		custom_description = {
+		prestige_level >= 3
+		is_independent_ruler = yes
+		custom_tooltip = {
 			text = confederation_kingdom_decision_vassal_req
 			confederation = {
 				any_confederation_member = {
@@ -1812,7 +1805,6 @@ confederation_kingdom_decision = {
 		}
 	}
 
-	##### Changed from Vanilla vvvvv
 	cost = {
 		prestige = {
 			value = {
@@ -1840,14 +1832,12 @@ confederation_kingdom_decision = {
 					limit = {
 						government_has_flag = government_is_nomadic
 					}
-					add = medium_herd_value_static
+					add = domicile.medium_herd_value_static
 				}
 			}
 		}
 	}
-	##### Changed from Vanilla ^^^^^
 
-	##### Changed from Vanilla vvvvv
 	effect = {
 		custom_tooltip = confederation_kingdom_creation_tt
 		custom_tooltip = confederation_succession_tt
@@ -1873,7 +1863,6 @@ confederation_kingdom_decision = {
 		##### Changed from Vanilla ^^^^^
 		save_scope_as = new_king_ruler
 		hidden_effect = {
-			##### Changed from Vanilla vvvvv
 			confederation = {
 				every_confederation_member = {
 					##### Changed from Vanilla vvvvv
@@ -1888,7 +1877,6 @@ confederation_kingdom_decision = {
 					}
 				}
 			}
-			##### Changed from Vanilla ^^^^^
 			primary_title = {
 				save_scope_as = old_title
 			}
@@ -1897,7 +1885,7 @@ confederation_kingdom_decision = {
 				tier = kingdom
 				name = CONFEDERATION_CULTURE_NAME
 				adj = CONFEDERATION_CULTURE_NAME_ADJ
-				pre = article_CONFEDERATION_CULTURE_NAME
+				article = article_CONFEDERATION_CULTURE_NAME
 			}
 			scope:new_title = {
 				set_variable = {
@@ -2000,9 +1988,9 @@ confederation_kingdom_decision = {
 			set_primary_title_to = scope:new_title
 			##### Changed from Vanilla vvvvv
 			confederation ?= {
+			##### Changed from Vanilla ^^^^^
 				disband_confederation = yes
 			}
-			##### Changed from Vanilla ^^^^^
 			every_in_list = {
 				list = confederation_vassals
 				limit = {
@@ -2013,7 +2001,6 @@ confederation_kingdom_decision = {
 			trigger_event = mpo_decisions_events.0005
 		}
 	}
-	##### Changed from Vanilla ^^^^^
 
 	ai_potential = {
 		is_confederation_member = yes
@@ -2046,9 +2033,9 @@ settle_the_steppe_decision = {
 	selection_tooltip = settle_the_steppe_decision_tooltip
 
 	is_shown = {
-		has_mpo_dlc_trigger = yes
 		government_has_flag = government_is_nomadic
 		is_playable_character = yes
+		has_mpo_dlc_trigger = yes
 	}
 
 	is_valid = {
@@ -2066,19 +2053,17 @@ settle_the_steppe_decision = {
 				}
 			}
 		}
-		##### Changed from Vanilla vvvvv
 		custom_tooltip = {
 			text = step_away_from_the_steppe_decision_holding_tt
 			any_sub_realm_county = {
 				title_province = {
-					NOR = { 
+					OR = { 
 						has_holding_type = nomad_holding 
 						has_holding_type = herder_holding 
 					}
 				}
 			}
 		}
-		##### Changed from Vanilla ^^^^^
 	}
 
 	is_valid_showing_failures_only = {
@@ -2142,17 +2127,9 @@ settle_the_steppe_decision = {
 				}
 				trigger_if = {
 					limit = {
-						NOR = {
-							faith.religion = religion:islam_religion
-							culture = { has_cultural_pillar = heritage_arabic }
-							culture = { has_cultural_pillar = heritage_iranian }
-							culture = { has_cultural_pillar = heritage_turkic }
-						}
+						ep3_is_clan_inclined_trigger = no
 					}
-					faith.religion = religion:islam_religion
-					culture = { has_cultural_pillar = heritage_arabic }
-					culture = { has_cultural_pillar = heritage_iranian }
-					culture = { has_cultural_pillar = heritage_turkic }
+					ep3_is_clan_inclined_trigger = yes
 				}
 			}
 			ai_chance = {
@@ -2356,6 +2333,7 @@ settle_the_steppe_decision = {
 						}
 					}
 					title_province = {
+						holding_pre_feudalize_effect = yes
 						set_holding_type = castle_holding
 					}
 					add_to_list = holding_conversion
@@ -2624,9 +2602,9 @@ settle_people_decision = {
 	selection_tooltip = settle_people_decision_tooltip
 
 	is_shown = {
-		has_mpo_dlc_trigger = yes
 		government_has_flag = government_is_nomadic
 		is_playable_character = yes
+		has_mpo_dlc_trigger = yes
 	}
 
 	is_valid = {
@@ -2659,7 +2637,6 @@ settle_people_decision = {
 		}
 	}
 
-	##### Changed from Vanilla vvvvv
 	effect = {
 		#GoK stops really being GoK
 		gok_government_change_story_end_effect = yes
@@ -3015,20 +2992,6 @@ settle_people_decision = {
 				}
 			}
 		}
-		else_if = {
-			limit = {
-				ep3_is_clan_inclined_trigger = yes
-			}
-			change_government = clan_government
-			if = {
-				limit = {
-					NOT = { has_realm_law = crown_authority_3 }
-				}
-				hidden_effect = {
-					add_realm_law_skip_effects = crown_authority_3
-				}
-			}
-		}
 		##### Changed from Vanilla vvvvv
 		else_if = {
 			limit = {
@@ -3045,8 +3008,7 @@ settle_people_decision = {
 		}
 		##### Changed from Vanilla ^^^^^
 		else = {
-			change_government = feudal_government
-
+			assign_feudal_governments_effect = yes
 			if = {
 				limit = {
 					NOT = { has_realm_law = crown_authority_3 }
@@ -3107,50 +3069,7 @@ settle_people_decision = {
 							}
 						}
 					}
-					nomad_domicile_refund_effect = yes
-					nomad_convert_herds_to_gold_special_troops_effect = yes
-					if = {
-						limit = {
-							scope:new_capital.title_province = {
-								has_holding_type = tribal_holding
-							}
-						}
-						change_government = tribal_government
-						if = {
-							limit = {
-								NOT = { has_realm_law = tribal_authority_1 }
-							}
-							hidden_effect = {
-								add_realm_law_skip_effects = tribal_authority_1
-							}
-						}
-					}
-					else_if = {
-						limit = {
-							ep3_is_clan_inclined_trigger = yes
-						}
-						change_government = clan_government
-						if = {
-							limit = {
-								NOT = { has_realm_law = crown_authority_1 }
-							}
-							hidden_effect = {
-								add_realm_law_skip_effects = crown_authority_1
-							}
-						}
-					}
-					else = {
-						change_government = feudal_government
-
-						if = {
-							limit = {
-								NOT = { has_realm_law = crown_authority_1 }
-							}
-							hidden_effect = {
-								add_realm_law_skip_effects = crown_authority_1
-							}
-						}
-					}
+					settle_the_people_vassal_effect = yes
 
 					if = {
 						limit = {
@@ -3200,23 +3119,8 @@ settle_people_decision = {
 								}
 							}
 						}
-						else_if = {
-							limit = {
-								ep3_is_clan_inclined_trigger = yes
-							}
-							change_government = clan_government
-							if = {
-								limit = {
-									NOT = { has_realm_law = crown_authority_1 }
-								}
-								hidden_effect = {
-									add_realm_law_skip_effects = crown_authority_1
-								}
-							}
-						}
 						else = {
-							change_government = feudal_government
-
+							assign_feudal_governments_effect = yes
 							if = {
 								limit = {
 									NOT = { has_realm_law = crown_authority_1 }
@@ -3276,23 +3180,8 @@ settle_people_decision = {
 									}
 								}
 							}
-							else_if = {
-								limit = {
-									ep3_is_clan_inclined_trigger = yes
-								}
-								change_government = clan_government
-								if = {
-									limit = {
-										NOT = { has_realm_law = crown_authority_1 }
-									}
-									hidden_effect = {
-										add_realm_law_skip_effects = crown_authority_1
-									}
-								}
-							}
 							else = {
-								change_government = feudal_government
-
+								assign_feudal_governments_effect = yes
 								if = {
 									limit = {
 										NOT = { has_realm_law = crown_authority_1 }
@@ -3536,7 +3425,6 @@ settle_people_decision = {
 			}
 		}
 	}
-	##### Changed from Vanilla ^^^^^
 
 	ai_will_do = {
 		base = 0

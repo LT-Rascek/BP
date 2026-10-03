@@ -93,24 +93,18 @@ tenet_mystery_religion = {
 	}
 }
 tenet_eunuch_priests = {
-	icon = tenet_two_nature
+	icon = tenet_pentarchy
 
-	name = tenet_dyophysitism_name
+	name = tenet_eunuch_priests_name
 
-	desc = tenet_dyophysitism_desc
+	desc = tenet_eunuch_priests_desc
 
 	is_shown = {}
-
-	can_pick = {
-		religion = religion:christianity_religion
-		unique_christology_trigger = yes
-	}
-	can_pick_as_personal_tenet = {
-		unique_christology_personal_trigger = yes
-	}
+	can_pick = { is_in_family = rf_pagan }
+	can_pick_as_personal_tenet = { is_male = yes }
 
 	piety_cost = {
-		value = faith_tenet_cost_low
+		value = faith_tenet_cost_high
 
 		# Multiplier for keeping same tenet
 		if = {
@@ -119,24 +113,29 @@ tenet_eunuch_priests = {
 		}
 	}
 
-	divergence_multiplier = 1.5
-
 	character_modifier = {
-		different_faith_opinion = 15
+		monthly_piety_gain_per_dread_mult = 0.01
 	}
 
-	parameters = {}
+	parameters = {
+		show_automutiliation_decision #Hidden Param
+		clergy_are_always_monks
+		clergy_are_always_eunuchs
+		zealous_character_automutilation
+	}
 
-	personal_tenet_parameters = {}
+	personal_tenet_modifier = {}
+
+	personal_tenet_parameters = {
+		unlocks_automutiliation_decision
+		unlocks_prisoner_castration_if_callous_sadistic_arbitrary
+	}
 
 	traits = {
-		# Doctrinal fidelity to the one-united-nature formula vs. dissimulation under Chalcedonian pressure.
 		virtues = {
-			humble = { weight = 15 scale = 1 }
+			eunuch_1 = { weight = 15 scale = 3 }
 		}
-		sins = {
-			arbitrary = { weight = 15 scale = 1 }
-		}
+		sins = {}
 	}
 }
 tenet_fertility_cult = {

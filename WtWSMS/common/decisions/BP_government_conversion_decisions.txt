@@ -170,7 +170,7 @@
 				culture = { has_cultural_parameter = can_restore_roman_empire }
 			}
 			OR = {
-				root.faith = { has_doctrine_parameter = unreformed }
+				root.rite = { rite_has_parameter = unreformed }
 				culture = {
 					num_discovered_innovations_in_era = {
 						target = culture_era_classical_antiquity
@@ -299,7 +299,7 @@ convert_to_roman_government_decision = {
 		custom_description = {
 			text = faith_is_reformed
 			subject = root
-			faith = { NOT = { has_doctrine_parameter = unreformed } }
+			rite = { NOT = { rite_has_parameter = unreformed } }
 		}
 		top_liege = this #Must be independent
 		highest_held_title_tier >= tier_kingdom #Must be a kingdom or empire or hegemony
@@ -377,7 +377,7 @@ convert_to_feudalism_decision = {
 		custom_description = {
 			text = faith_is_reformed
 			subject = root
-			faith = { NOT = { has_doctrine_parameter = unreformed } }
+			rite = { NOT = { rite_has_parameter = unreformed } }
 		}
 		custom_tooltip = {
 			text = has_maxed_out_authority
@@ -497,7 +497,7 @@ convert_to_clan_decision = {
 		}
 		OR = {
 			culture = { has_cultural_parameter = right_to_rule_clan }
-			faith = { has_doctrine_parameter = right_to_rule_clan }
+			rite = { rite_has_parameter = right_to_rule_clan }
 		}
 	}
 	
@@ -506,7 +506,7 @@ convert_to_clan_decision = {
 		custom_description = {
 			text = faith_is_reformed
 			subject = root
-			faith = { NOT = { has_doctrine_parameter = unreformed } }
+			rite = { NOT = { rite_has_parameter = unreformed } }
 		}
 		custom_tooltip = {
 			text = has_maxed_out_authority

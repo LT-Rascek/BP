@@ -269,7 +269,7 @@ change_state_faith = {
 			if = {
 				limit = {
 					top_liege.primary_title.state_rite = { has_doctrine_parameter = unreformed }
-					NOT = { faith = { has_doctrine_parameter = unreformed } }
+					NOT = { rite = { rite_has_parameter = unreformed } }
 				}
 				multiply = {
 					value = 0.05
@@ -312,7 +312,7 @@ change_state_faith = {
 			if = {
 				limit = {
 					top_liege.primary_title.state_rite = { has_doctrine_parameter = unreformed }
-					NOT = { faith = { has_doctrine_parameter = unreformed } }
+					NOT = { rite = { rite_has_parameter = unreformed } }
 				}
 				multiply = {
 					value = 0.05
