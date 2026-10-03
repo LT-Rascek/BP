@@ -66,3 +66,22 @@ BP_change_faith_dynasty_coa = {
 on_character_faith_change = {
 	events = { bp_faith_conversion.0011 } #Remove BP religion traits
 }
+
+# Code on-action: when a character selects a new personal tenet successfully this onaction is called.
+# Root is character picking the tenet
+# scope:tenet is the tenet they just picked
+on_personal_tenet_gain = {
+	on_actions = { BP_personal_tenet_gain_effects }
+}
+
+BP_personal_tenet_gain_effects = {
+	effect = {
+		if = {
+			limit = {
+				scope:tenet = tenet:tenet_total_depravity
+				has_personal_tenet_flag = gain_level_of_piety_when_adopting_this_tenet
+			}
+			add_piety_level = 1
+		}
+	}
+}

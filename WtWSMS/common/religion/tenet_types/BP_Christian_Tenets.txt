@@ -35,12 +35,9 @@
 
 	divergence_multiplier = 1.25
 
-	special_parameters = {
-		minimum_fervor = 25
-	}
-
 	character_modifier = {
-		monthly_county_control_growth_factor = -0.2
+		monthly_county_control_growth_factor = -0.1
+		county_opinion_add = 5
 	}
 
 	parameters = {
@@ -52,7 +49,7 @@
 	personal_tenet_modifier = {
 		monthly_county_control_growth_factor = -0.1
 		tolerance_advantage_mod = 5
-		county_opinion_add = 10
+		county_opinion_add = 5
 	}
 
 	personal_tenet_parameters = {
@@ -70,24 +67,37 @@
 	}
 }
 tenet_rigorism = {
-	icon = tenet_two_nature
+	icon = core_tenet_speech
 
-	name = tenet_dyophysitism_name
+	name = tenet_rigorism_name
 
-	desc = tenet_dyophysitism_desc
+	desc = tenet_rigorism_desc
 
 	is_shown = {}
 
 	can_pick = {
-		religion = religion:christianity_religion
-		unique_christology_trigger = yes
+		custom_description = {
+			text = incompatible_tenet_legalism_trigger
+			NOT = { doctrine:tenet_legalism = { is_in_list = selected_doctrines } }
+		}
+		custom_description = {
+			text = doctrine_inverted_pluralism_fundamentalist_trigger
+			doctrine:doctrine_pluralism_fundamentalist = { is_in_list = selected_doctrines }
+		}
+		custom_description = {
+			text = doctrine_gnosis_or_total_depravity_trigger
+			OR = {
+				doctrine:doctrine_christian_soteriology_total_depravity = { is_in_list = selected_doctrines }
+				doctrine:doctrine_christian_soteriology_gnosis = { is_in_list = selected_doctrines }
+			}
+		}
 	}
 	can_pick_as_personal_tenet = {
-		unique_christology_personal_trigger = yes
+		NOT = { has_trait = cynical }
 	}
 
 	piety_cost = {
-		value = faith_tenet_cost_low
+		value = faith_tenet_cost_high
 
 		# Multiplier for keeping same tenet
 		if = {
@@ -98,39 +108,47 @@ tenet_rigorism = {
 
 	divergence_multiplier = 1.5
 
-	character_modifier = {
-		different_faith_opinion = 15
+	special_parameters = {
+		minimum_fervor = 25
 	}
 
-	parameters = {}
+	character_modifier = {}
 
-	personal_tenet_parameters = {}
+	parameters = {
+		legalism_reduced_faction_virtues = yes
+		legalism_increased_faction_sins = yes
+		tenet_rigorism_conversion_speed = yes
+	}
+
+	personal_tenet_modifier = {
+		piety_level_impact_mult = 0.2
+	}
+
+	personal_tenet_parameters = {
+		tenet_pure_land_repentance_decision
+	}
 
 	traits = {
-		# Doctrinal fidelity to the one-united-nature formula vs. dissimulation under Chalcedonian pressure.
 		virtues = {
-			humble = { weight = 15 scale = 1 }
+			honest = { weight = 10 scale = 2 }
 		}
 		sins = {
-			arbitrary = { weight = 15 scale = 1 }
+			deceitful = { weight = 10 scale = 2 }
 		}
 	}
 }
 tenet_ecstatic_prophecy = {
-	icon = tenet_two_nature
+	icon = tenet_adorcism
 
-	name = tenet_dyophysitism_name
+	name = tenet_ecstatic_prophecy_name
 
-	desc = tenet_dyophysitism_desc
+	desc = tenet_ecstatic_prophecy_desc
 
 	is_shown = {}
 
-	can_pick = {
-		religion = religion:christianity_religion
-		unique_christology_trigger = yes
-	}
+	can_pick = {}
 	can_pick_as_personal_tenet = {
-		unique_christology_personal_trigger = yes
+		NOT = { has_trait = cynical }
 	}
 
 	piety_cost = {
@@ -143,23 +161,38 @@ tenet_ecstatic_prophecy = {
 		}
 	}
 
-	divergence_multiplier = 1.5
+	divergence_multiplier = 2
 
-	character_modifier = {
-		different_faith_opinion = 15
+	special_parameters = {
+		divergence_protection = 1
+		heresy_threshold = 10
 	}
 
-	parameters = {}
+	character_modifier = {
+		personal_tenet_slot_add = 1
+		character_spiritual_fulfillment_loss_mult = 0.10
+		character_spiritual_fulfillment_gain_mult = 0.10
+	}
 
-	personal_tenet_parameters = {}
+	parameters = {
+		tenet_ecstatic_prophecy_conversion_resistance_active = yes
+		pluralism_fundamentalist_vulnerable_to_heresy = yes
+		possessed_gain_personal_tenet_slot_add = yes
+	}
+
+	personal_tenet_modifier = {
+		stress_loss_per_piety_level = 0.05
+		rite_creation_piety_cost_mult = -0.30
+	}
 
 	traits = {
 		# Doctrinal fidelity to the one-united-nature formula vs. dissimulation under Chalcedonian pressure.
 		virtues = {
-			humble = { weight = 15 scale = 1 }
+			possessed_1 = { weight = 20 scale = 3 }
+			possessed_genetic = { weight = 20 scale = 3 }
 		}
 		sins = {
-			arbitrary = { weight = 15 scale = 1 }
+			cynical = { weight = 15 scale = 2 }
 		}
 	}
 }
@@ -399,7 +432,7 @@ tenet_repudiation = {
 	}
 }
 tenet_total_depravity = {
-	icon = tenet_two_nature
+	icon = tenet_acts_of_apostles
 
 	name = tenet_total_depravity_name
 
@@ -409,10 +442,9 @@ tenet_total_depravity = {
 
 	can_pick = {
 		religion = religion:christianity_religion
-		unique_christology_trigger = yes
 	}
 	can_pick_as_personal_tenet = {
-		unique_christology_personal_trigger = yes
+		#Not Original Sin or the others
 	}
 
 	piety_cost = {
@@ -425,23 +457,39 @@ tenet_total_depravity = {
 		}
 	}
 
-	divergence_multiplier = 1.5
+	divergence_multiplier = 2
 
 	character_modifier = {
-		different_faith_opinion = 15
+		tyranny_gain_mult = 2.00
+		stress_gain_mult = 0.20
+		stress_loss_per_piety_level = 0.05
 	}
 
-	parameters = {}
+	parameters = {
+		tenet_original_sin_county_conversion_bonus
+		tenet_original_sin_county_conversion_resistance
+	}
 
-	personal_tenet_parameters = {}
+	personal_tenet_modifier = {
+		dread_baseline_add = -10
+		stress_gain_mult = 0.10
+		stress_loss_per_piety_level = 0.05
+		character_spiritual_fulfillment_gain_mult = -0.20
+	}
+
+	personal_tenet_parameters = {
+		gain_level_of_piety_when_adopting_this_tenet
+	}
 
 	traits = {
-		# Doctrinal fidelity to the one-united-nature formula vs. dissimulation under Chalcedonian pressure.
 		virtues = {
-			humble = { weight = 15 scale = 1 }
+			humble = { weight = 20 scale = 2 }
+			zealous = { weight = 20 scale = 1 }
 		}
+		
 		sins = {
-			arbitrary = { weight = 15 scale = 1 }
+			arrogant = { weight = 20 scale = 2 }
+			cynical = { weight = 20 scale = 1 }
 		}
 	}
 }
