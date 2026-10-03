@@ -15,21 +15,20 @@ found_duchy_decision = {
 
 	cooldown = { years = 10 }
 
-	##### Changed from Vanilla vvvvv
 	is_shown = {
 		highest_held_title_tier = tier_county
 		is_landed = yes
+		NOR = {
+			government_has_mechanic = administrative
+			government_has_flag = government_is_nomadic
+			government_is_japanese_trigger = yes
+		}
 		OR = {
+			has_game_rule = on_custom_duchies
 			AND = {
 				is_ai = no
 				has_game_rule = on_custom_duchies_player
 			}
-			has_game_rule = on_custom_duchies
-		}
-		NOR = {
-			government_allows = administrative
-			government_has_flag = government_is_nomadic
-			government_is_japanese_trigger = yes
 		}
 		##### Changed from Vanilla vvvvv
 		NOT = {
@@ -40,7 +39,6 @@ found_duchy_decision = {
 		}
 		##### Changed from Vanilla ^^^^^
 	}
-	##### Changed from Vanilla ^^^^^
 
 	is_valid = {
 		is_independent_ruler = yes
@@ -126,17 +124,56 @@ found_kingdom_decision = {
 		hegemony = 0
 	}
 	desc = found_kingdom_decision_desc
+	sort_order = 75
 
-	##### Changed from Vanilla vvvvv
 	is_shown = {
 		highest_held_title_tier = tier_duchy
-		NOT = { has_game_rule = off_custom_kingdoms }
 		is_landed_or_landless_administrative = yes
 		is_confederation_member = no
+		NOT = {
+			has_game_rule = off_custom_kingdoms
+		}
 	}
-	##### Changed from Vanilla ^^^^^
 
-	##### Changed from Vanilla vvvvv
+    #Titles outside your realm that you can choose to add
+    widget = {
+		gui = "decision_view_widget_option_list_generic"
+		controller = decision_option_list_controller
+		decision_to_second_step_button = "CHOOSE_ADDITIONAL_DUCHIES_DECISION_NEXT_STEP_BUTTON"
+
+		item = { # Newly-exclaved duchies
+			value = newly_exclaved_duchies
+			is_valid = {
+            	custom_tooltip = {
+					text = consecrate_kingdom_exclave_duchies_available_tt
+            		any_sub_realm_county = {
+        				kingdom = {
+        					any_direct_de_jure_vassal_title = {
+                	   			pam_custom_kingdom_can_claim_duchy_exclave_trigger = { NEW_KING = root }
+                	   		}
+        				}
+                	}
+                }
+			}
+			current_description = newly_exclaved_duchies_decision
+			localization = newly_exclaved_duchies_decision
+			ai_chance = {
+				value = 100
+			}
+		} 
+		item = { # Only Sub-Realm Duchies
+			value = only_sub_realm_duchies
+			is_valid = {
+				always = yes
+			}
+			current_description = only_sub_realm_duchies_decision
+			localization = only_sub_realm_duchies_decision
+			ai_chance = {
+				value = 0
+			}
+		}
+	}
+
 	is_valid = {
 		prestige_level >= 3
 		top_liege = this
@@ -148,6 +185,7 @@ found_kingdom_decision = {
 					title_tier = duchy
 				}
 			}
+			##### Changed from Vanilla vvvvv
 			trigger_if = {
 				limit = { dynasty ?= { has_dynasty_perk = BP_despoilation_legacy_3 } }
 				sub_realm_size >= 20
@@ -155,6 +193,7 @@ found_kingdom_decision = {
 			trigger_else = {
 				sub_realm_size >= 30
 			}
+			##### Changed from Vanilla ^^^^^
 		}
 		trigger_if = {
 			limit = {
@@ -166,6 +205,23 @@ found_kingdom_decision = {
 				has_realm_law = nomadic_authority_3
 			}
 		}
+        trigger_if = {
+    		limit = {
+    			any_held_title = {
+    				tier = tier_duchy
+    				is_landless_type_title = yes
+    			}
+    		}
+    		custom_tooltip = {
+    			text = any_landed_duchy_title_tt
+    			any_held_title = {
+    				tier = tier_duchy
+    				is_landless_type_title = no
+    			}
+    		}
+    	}
+		##### Changed from Vanilla vvvvv
+		
 		#Migration Situation has its own mechanics
 		trigger_if = {
 			limit = {
@@ -189,8 +245,8 @@ found_kingdom_decision = {
 				root.culture = { any_culture_county = { count >= 5 } }
 			}
 		}
+		##### Changed from Vanilla ^^^^^
 	}
-	##### Changed from Vanilla ^^^^^
 
 	is_valid_showing_failures_only = {
 		is_available_adult = yes
@@ -219,7 +275,7 @@ found_kingdom_decision = {
 				multiply = 0
 			}
 		}
-		prestige = 500
+		prestige = 750
 		piety = {
 			value = 200
 			if = {
@@ -288,22 +344,63 @@ found_empire_decision = {
 		hegemony = 0
 	}
 	desc = found_empire_decision_desc
+	sort_order = 75
+
+    #Titles outside your realm that you can choose to add
+    widget = {
+		gui = "decision_view_widget_option_list_generic"
+		controller = decision_option_list_controller
+		decision_to_second_step_button = "CHOOSE_ADDITIONAL_KINGDOMS_DECISION_NEXT_STEP_BUTTON"
+
+		item = { # Newly-exclaved kingdoms
+			value = newly_exclaved_kingdoms
+			is_valid = {
+            	custom_tooltip = {
+					text = consecrate_kingdom_exclave_kingdoms_available_tt
+            		any_sub_realm_county = {
+        				empire = {
+        					any_direct_de_jure_vassal_title = {
+                	   			pam_custom_empire_can_claim_kingdom_exclave_trigger = { NEW_EMPEROR = root }
+                	   		}
+        				}
+                	}
+                }
+			}
+			current_description = newly_exclaved_kingdoms_decision
+			localization = newly_exclaved_kingdoms_decision
+			ai_chance = {
+				value = 100
+			}
+		} 
+		item = { # Only Sub-Realm Kingdoms
+			value = only_sub_realm_kingdoms
+			is_valid = {
+				always = yes
+			}
+			current_description = only_sub_realm_kingdoms_decision
+			localization = only_sub_realm_kingdoms_decision
+			ai_chance = {
+				value = 0
+			}
+		}
+	}
 
 	is_shown = {
 		highest_held_title_tier = tier_kingdom
 		OR = {
-			top_liege = this
+			top_liege ?= this
 			any_held_title = {
 				count >= 3
 				title_tier = kingdom
 			}
 		}
-		NOT = { has_game_rule = off_custom_kingdoms }
+		NOT = {
+			has_game_rule = off_custom_kingdoms
+		}
 		is_landed_or_landless_administrative = yes
 		is_confederation_member = no
 	}
 
-	##### Changed from Vanilla vvvvv
 	is_valid = {
 		##### Changed from Vanilla vvvvv
 		custom_description = {
@@ -411,16 +508,29 @@ found_empire_decision = {
 			}
 		}
 
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+        trigger_if = {
+    		limit = {
+    			any_held_title = {
+    				tier = tier_kingdom
+    				is_landless_type_title = yes
+    			}
+    		}
+    		custom_tooltip = {
+    			text = any_landed_duchy_title_tt
+    			any_held_title = {
+    				tier = tier_kingdom
+    				is_landless_type_title = no
+    			}
+    		}
+    	}
 		##### Changed from Vanilla vvvvv
 		custom_tooltip = {
 			text = your_primary_title_is_not_titular
 			primary_title = { is_titular = no }
 		}
 		##### Changed from Vanilla ^^^^^
-
-		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
 	}
-	##### Changed from Vanilla ^^^^^
 
 	is_valid_showing_failures_only = {
 		top_liege = this
@@ -450,7 +560,7 @@ found_empire_decision = {
 				multiply = 0
 			}
 		}
-		prestige = 2000
+		prestige = 2500
 		piety = {
 			value = 600
 			if = {
@@ -533,7 +643,7 @@ expand_duchy_decision = {
 
 	widget = {
 		controller = create_holy_order
-		barony_valid = {
+		title_valid = {
 			scope:ruler = {
 				trigger_if = {
 					limit = {
@@ -574,17 +684,8 @@ expand_duchy_decision = {
 		}
 	}
 
-	##### Changed from Vanilla vvvvv
 	is_shown = {
-		save_temporary_scope_as = root_scope_temporary
 		highest_held_title_tier >= tier_duchy
-		OR = {
-			AND = {
-				is_ai = no
-				has_game_rule = on_custom_duchies_player
-			}
-			has_game_rule = on_custom_duchies
-		}
 		is_landed_or_landless_administrative = yes
 		trigger_if = {
 			limit = {
@@ -604,20 +705,27 @@ expand_duchy_decision = {
 				save_temporary_scope_as = duchy_title
 			}
 		}
-		##### Changed from Vanilla vvvvv
-		scope:duchy_title = {
-			is_titular = no
+		OR = {
+			has_game_rule = on_custom_duchies
+			AND = {
+				is_ai = no
+				has_game_rule = on_custom_duchies_player
+			}
+		}
+		save_temporary_scope_as = root_scope_temporary
+		scope:duchy_title ?= {
 			any_de_jure_county = {
 				count < expand_duchy_max_size_value
 			}
 		}
+		##### Changed from Vanilla vvvvv
+		scope:duchy_title = { is_titular = no }
 		##### Changed from Vanilla ^^^^^
 	}
-	##### Changed from Vanilla ^^^^^
 
 	is_valid = {
 		save_temporary_scope_as = root_scope_temporary
-		top_liege = this
+		is_independent_ruler = yes
 		trigger_if = {
 			limit = {
 				highest_held_title_tier = tier_duchy
@@ -681,7 +789,6 @@ expand_duchy_decision = {
 			}
 		}
 	}
-	##### Changed from Vanilla ^^^^^
 
 	is_valid_showing_failures_only = {
 		is_available_adult = yes
@@ -781,7 +888,7 @@ set_de_jure_capital_decision = {
 	}
 	picture = {
 		trigger = {
-			government_is_japanese_trigger = yes 
+			government_is_japanese_trigger = yes
 		}
 		reference = "gfx/interface/illustrations/holding_types/tgp_city_japan.dds"
 	}
@@ -820,7 +927,7 @@ set_de_jure_capital_decision = {
 			is_valid = {
 
 			}
-			current_description = hire_physician_decision_desc
+			current_description = set_de_jure_capital_decision
 			localization = set_de_jure_capital_duchy
 			icon = "gfx/interface/icons/duchy_crown.dds"
 			ai_chance = { value = 100 }
@@ -833,7 +940,7 @@ set_de_jure_capital_decision = {
 					highest_held_title_tier >= tier_kingdom
 				}
 			}
-			current_description = hire_physician_decision_desc
+			current_description = set_de_jure_capital_decision
 			localization = set_de_jure_capital_kingdom
 			icon = "gfx/interface/icons/kingdom_crown.dds"
 			ai_chance = { value = 100 }
@@ -846,20 +953,31 @@ set_de_jure_capital_decision = {
 					highest_held_title_tier >= tier_empire
 				}
 			}
-			current_description = hire_physician_decision_desc
+			current_description = set_de_jure_capital_decision
 			localization = set_de_jure_capital_empire
 			icon = "gfx/interface/icons/empire_crown.dds"
 			ai_chance = { value = 100 }
 		}
+
+		item = { # Hegemony
+			value = set_hegemony_capital
+			is_shown = {
+				root = {
+					highest_held_title_tier >= tier_hegemony
+				}
+			}
+			current_description = set_de_jure_capital_decision
+			localization = set_de_jure_capital_hegemony
+			icon = "gfx/interface/icons/hegemony_crown.dds"
+			ai_chance = { value = 100 }
+		}
 	}
 
-	##### Changed from Vanilla vvvvv
 	is_shown = {
 		##### Changed from Vanilla vvvvv
 		this.primary_title = { is_titular = no }
 		##### Changed from Vanilla ^^^^^
 		highest_held_title_tier >= tier_duchy
-		highest_held_title_tier < tier_hegemony
 		any_held_title = {
 			tier >= tier_duchy
 			NOR = {
@@ -880,9 +998,12 @@ set_de_jure_capital_decision = {
 				highest_held_title_tier >= tier_empire
 				NOT = { root.capital_county = root.capital_county.empire.title_capital_county }
 			}
+			AND = {
+				highest_held_title_tier >= tier_hegemony
+				NOT = { root.capital_county = root.capital_county.hegemony.title_capital_county }
+			}
 		}
 	}
-	##### Changed from Vanilla ^^^^^
 
 	is_valid = {
 		root.capital_county = {
@@ -903,6 +1024,10 @@ set_de_jure_capital_decision = {
 						highest_held_title_tier = tier_empire
 						scope:set_empire_capital = yes
 					}
+					AND = {
+						highest_held_title_tier = tier_hegemony
+						scope:set_hegemony_capital = yes
+					}
 				}
 			}
 			root.primary_title = {
@@ -920,6 +1045,9 @@ set_de_jure_capital_decision = {
 				}
 				scope:set_empire_capital = {
 					root.capital_county.empire = { save_temporary_scope_as = current_de_jure }
+				}
+				scope:set_hegemony_capital = {
+					root.capital_county.hegemony = { save_temporary_scope_as = current_de_jure }
 				}
 			}
 		}
@@ -963,6 +1091,7 @@ set_de_jure_capital_decision = {
 					scope:set_duchy_capital = { value = 500 }
 					scope:set_kingdom_capital = { value = 750 }
 					scope:set_empire_capital = { value = 1000 }
+					scope:set_hegemony_capital = { value = 1500 }
 				}
 			}
 			else = {
@@ -990,6 +1119,10 @@ set_de_jure_capital_decision = {
 						highest_held_title_tier = tier_empire
 						scope:set_empire_capital = yes
 					}
+					AND = {
+						highest_held_title_tier = tier_hegemony
+						scope:set_hegemony_capital = yes
+					}
 				}
 			}
 			root.primary_title = {
@@ -1014,6 +1147,12 @@ set_de_jure_capital_decision = {
 				}
 				scope:set_empire_capital = {
 					root.capital_county.empire = {
+						title_capital_county = { save_scope_as = old_capital }
+						save_scope_as = current_de_jure_scope
+					}
+				}
+				scope:set_hegemony_capital = {
+					root.capital_county.hegemony = {
 						title_capital_county = { save_scope_as = old_capital }
 						save_scope_as = current_de_jure_scope
 					}
@@ -1044,12 +1183,7 @@ set_de_jure_capital_decision = {
 			}
 			scope:old_capital ?= {
 				duchy = { save_scope_as = current_duchy }
-				random_duchy = {
-					limit = {
-						NOT = { this = scope:current_duchy }
-						is_noble_family_title = no
-						is_mercenary_company = no
-					}
+				title:d_zun_warriors = {
 					save_scope_as = placeholder_duchy
 				}
 				scope:current_duchy = {
@@ -1098,15 +1232,17 @@ restore_carthage_decision = {
 	selection_tooltip = restore_carthage_decision_tooltip
 
 	is_shown = {
-		is_ruler = yes
-		is_playable_character = yes
-
-		OR = {
-			culture = { has_cultural_pillar = heritage_syriac }
-			culture = { has_cultural_pillar = heritage_phoenician }
-			culture = culture:romano_punic
-			culture = culture:romano_african
+		culture ?= {
+			OR = {
+				##### Changed from Vanilla vvvvv
+				culture = { has_cultural_pillar = heritage_syriac }
+				culture = { has_cultural_pillar = heritage_phoenician }
+				culture = culture:romano_punic
+				culture = culture:romano_african
+				##### Changed from Vanilla ^^^^^
+			}
 		}
+		is_playable_character = yes
 
 		# Not repeatable.
 		NOT = {
@@ -1115,9 +1251,11 @@ restore_carthage_decision = {
 				target = flag:flag_restored_carthage
 			}
 		}
+
+		is_ruler = yes
 	}
 
-	is_valid = { 
+	is_valid = {
 		is_independent_ruler = yes
 		highest_held_title_tier < tier_empire
 
@@ -1127,7 +1265,8 @@ restore_carthage_decision = {
 		completely_controls_region = custom_tripolitania
 		completely_controls_region = custom_mauretania
 		completely_controls_region = custom_carthago_nova
-		
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+
 	}
 
 	is_valid_showing_failures_only = {

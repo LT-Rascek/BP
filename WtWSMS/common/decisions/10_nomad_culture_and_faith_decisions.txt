@@ -8,12 +8,12 @@ proselytize_to_your_people_decision = {
 	selection_tooltip = proselytize_to_your_people_decision_tooltip
 
 	is_shown = {
-		is_playable_character = yes
 		government_has_flag = government_is_nomadic
 		exists = domicile.domicile_faith
 		NOT = {
 			faith = domicile.domicile_faith
 		}
+		is_playable_character = yes
 	}
 
 	is_valid_showing_failures_only = {
@@ -45,7 +45,7 @@ proselytize_to_your_people_decision = {
 		domicile = {
 			set_domicile_faith = root.faith
 		}
-		stress_impact = {
+		stress_and_fulfillment_impact = {
 			cynical = medium_stress_impact_gain
 		}
 		every_held_title = {
@@ -54,7 +54,7 @@ proselytize_to_your_people_decision = {
 				is_landless_type_title = no
 				culture = scope:domicile_culture
 			}
-			set_county_faith = root.faith
+			set_county_rite = root.rite
 		}
 		# Spouses convert
 		every_spouse = {
@@ -74,7 +74,7 @@ proselytize_to_your_people_decision = {
 		}
 		every_in_list = {
 			list = spouses_and_family_to_convert
-			set_character_faith = root.faith
+			set_character_rite = root.rite
 		}
 	}
 	
@@ -92,9 +92,9 @@ proselytize_to_your_people_decision = {
 		ai_zeal > 0
 	}
 
-	##### Changed from Vanilla vvvvv
 	ai_will_do = {
 		base = 100
+		##### Changed from Vanilla vvvvv
 		modifier = {
 			add = -10000
 			OR = {
@@ -102,6 +102,6 @@ proselytize_to_your_people_decision = {
 				NOT = { root.faith = { has_doctrine_parameter = unreformed } }
 			}
 		}
+		##### Changed from Vanilla ^^^^^
 	}
-	##### Changed from Vanilla ^^^^^
 }

@@ -1,4 +1,6 @@
 ﻿##### Changed from Vanilla: Blocked prior to early medieval era
+
+### Found Military Order ###
 create_holy_order_decision = {
 	picture = {
 		trigger = {
@@ -13,71 +15,66 @@ create_holy_order_decision = {
 		reference = "gfx/interface/illustrations/holding_types/tgp_castle_se_asia.dds"
 	}
 	picture = {
+		trigger = {
+			religion = religion:christianity_religion
+		}
+		reference = "gfx/interface/illustrations/event_story/pam_the_christian_church_crusade.dds"
+	}
+	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
 	}
 	decision_group_type = major
 
 	ai_goal = yes
 
-	##### Changed from Vanilla vvvvv
 	is_shown = {
 		is_landed = yes
-		NOR = {
-			faith = {
-				has_doctrine = special_doctrine_immaterial_harmony
-			}
-			faith = {
-				any_faith_holy_order = {
-					holy_order_patron = root
-					save_temporary_scope_as = order
-				}
-			}
-		}
-		# Jomsvikings should use their special decision if appropriate.
-		trigger_if = {
-			limit = { has_fp1_dlc_trigger = yes }
-			faith = {
-				NOT = { fp1_valid_norse_faith_for_jomsvikings_trigger = yes }
-			}
-		}
-		trigger_if = {
-			limit = {
-				any_character_struggle = {
-					involvement = involved
-					has_struggle_phase_parameter = holy_order_can_be_created_by_dukes
-				}
-				highest_held_title_tier >= tier_duchy
-			}
-			NOT = {
-				any_sub_realm_barony = {
-					is_under_holy_order_lease = yes
-				}
-			}
-		}
 		OR = {
-			AND = {
-				any_character_struggle = {
-					involvement = involved
-					has_struggle_phase_parameter = holy_order_can_be_created_by_dukes
-				}
-				highest_held_title_tier >= tier_duchy
-			}
 			highest_held_title_tier >= tier_kingdom
 			any_held_county = {
 				any_in_de_jure_hierarchy = {
 					barony_is_valid_for_holy_order_lease_trigger = { CHARACTER = root }
 				}
 			}
+			AND = {
+				highest_held_title_tier >= tier_duchy
+				any_character_struggle = {
+					involvement = involved
+					has_struggle_phase_parameter = holy_order_can_be_created_by_dukes
+				}
+			}
 		}
+		any_patroned_holy_order = {
+			count = 0
+			leader ?= {
+				government_has_flag = government_is_military_holy_order
+			}
+		}
+
+		character_can_create_holy_order_basic_trigger = yes
+
+		# Jomsvikings should use their special decision if appropriate.
+		trigger_if = {
+			limit = { has_fp1_dlc_trigger = yes }
+			faith = {
+				fp1_valid_norse_faith_for_jomsvikings_trigger = no
+			}
+		}
+		
 		##### Changed from Vanilla vvvvv
-		culture = { has_innovation = innovation_scriptural_cannon }
+		OR = {
+			trigger_if = {
+				limit = { has_fp1_dlc_trigger = yes }
+				faith = { fp1_valid_norse_faith_for_jomsvikings_trigger = no }
+			}
+			culture = { has_innovation = innovation_scriptural_cannon }
+		}
 		##### Changed from Vanilla ^^^^^
 	}
-	##### Changed from Vanilla ^^^^^
 
 	widget = {
 		controller = create_holy_order
-		barony_valid = {
+		title_valid = {
 			trigger_if = {
 				limit = { exists = this }
 				barony_is_valid_for_holy_order_lease_trigger = { CHARACTER = scope:ruler }
@@ -135,6 +132,24 @@ create_holy_order_decision = {
 							limit = { is_ai = no }
 					 		add = high_positive_opinion
 						}
+					}
+				}
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_pam_dlc_trigger = yes
+			}
+			OR = {
+				custom_tooltip = {
+					text = government_is_theocracy
+					government_has_flag = government_is_theocracy
+				}
+				custom_tooltip = {
+					text = has_clerical_puppet_tt
+					OR = {
+						exists = root.puppet:theological_agent_puppet
+						exists = root.puppet:external_theological_agent_puppet
 					}
 				}
 			}
@@ -204,15 +219,32 @@ create_holy_order_decision = {
 				location = scope:barony.title_province
 				save_scope_as = leader
 			}
+			hidden_effect = {
+				scope:leader = { set_character_rite ?= root.rite }
+			}
 
 			create_holy_order_neutral_effect = {
 				LEADER = scope:leader
 				CAPITAL = scope:barony
 				NEW_HO_SCOPE = new_holy_order
 				FOUNDER = root
+				ORDER_TYPE = military
+			}
+			# PAM - Catalysts
+			if = {
+				limit = {
+					has_pam_dlc_trigger = yes
+					religion = religion:christianity_religion
+					situation:the_christian_church ?= {
+						situation_top_has_catalyst = catalyst_the_christian_church_founded_military_order
+					}
+				}
+				situation:the_christian_church = {
+					trigger_situation_catalyst = catalyst_the_christian_church_founded_military_order
+				}
 			}
 		}
-		create_holy_order_effect = yes
+		create_holy_order_accompanying_effect = yes
 	}
 	
 	ai_potential = {
@@ -237,7 +269,7 @@ create_holy_order_decision = {
 		modifier = {
 			add = {
 				faith = {
-					# Don't create more than 5 holy orders for a faith
+					# Don't create more than 5 Military Orders for a faith
 					every_faith_holy_order = {
 						subtract = 40
 					}

@@ -10,28 +10,26 @@ create_israel_kingdom_decision = {
 	ai_check_interval_by_tier = {
 		barony = 0
 		county = 0
-		duchy = 0
+		duchy = 120
 		kingdom = 120
 		empire = 120
 		hegemony = 120
 	}
 
 	is_shown = {
-		is_ruler = yes
+		faith.religion ?= faith:rabbinic_faith.religion
 		is_playable_character = yes
-		faith.religion = faith:rabbinism.religion
-		NOT = {
+		NOR = {
 			exists = title:k_israel.holder
-		}
-		NOT = {  #Can only do it once.
+			#Can only do it once.
 			is_target_in_global_variable_list = {
 				name = unavailable_unique_decisions
 				target = flag:create_israel_kingdom
 			}
 		}
+		is_ruler = yes
 	}
 
-	##### Changed from Vanilla vvvvv
 	is_valid = {
 		prestige_level >= high_prestige_level
 		piety_level >= high_piety_level
@@ -45,7 +43,6 @@ create_israel_kingdom_decision = {
 			title:c_jerusalem.faith = root.faith
 		}
 	}
-	##### Changed from Vanilla ^^^^^
 
 	is_valid_showing_failures_only = {
 		is_landed = yes
@@ -64,7 +61,9 @@ create_israel_kingdom_decision = {
 		trigger_event = {
 			id = middle_east_decisions.0005
 		}
+		##### Changed from Vanilla vvvvv
 		faith = { add_doctrine = doctrine_right_to_rule_divine } # WtWSMS change
+		##### Changed from Vanilla ^^^^^
 		hidden_effect = {
 			add_to_global_variable_list = {
 				name = unavailable_unique_decisions

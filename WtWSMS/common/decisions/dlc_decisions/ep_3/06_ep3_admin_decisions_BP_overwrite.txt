@@ -54,12 +54,9 @@ convert_to_administrative_decision = {
 		hegemony = 0
 	}
 
-	##### Changed from Vanilla vvvvv
+	cooldown = { years = 20 }
+
 	is_shown = {
-		OR = {
-			has_ep3_dlc_trigger = yes
-			has_tgp_dlc_trigger = yes
-		}
 		OR = {
 			government_has_flag = government_is_feudal
 			government_has_flag = government_is_clan
@@ -67,24 +64,22 @@ convert_to_administrative_decision = {
 		}
 		trigger_if = {
 			limit = { top_liege != this }
-			liege = { government_allows = administrative }
+			liege = { government_has_mechanic = administrative }
+		}
+		OR = {
+			has_tgp_dlc_trigger = yes
+			has_ep3_dlc_trigger = yes
 		}
 		##### Changed from Vanilla vvvvv
 		NOT = { government_has_flag = government_is_centralized }
 		NOT = { government_has_flag = government_is_quasi_feudal }
 		##### Changed from Vanilla ^^^^^
 	}
-	##### Changed from Vanilla ^^^^^
 
-	##### Changed from Vanilla vvvvv
 	is_valid = {
-		OR = {
-			government_has_flag = government_is_feudal
-			government_has_flag = government_is_clan
-		}
 		trigger_if = {
 			limit = { top_liege != this }
-			liege = { government_allows = administrative }
+			liege = { government_has_mechanic = administrative }
 		}
 		trigger_else = {
 			OR = {
@@ -152,17 +147,15 @@ convert_to_administrative_decision = {
 				culture = { has_cultural_pillar = ethos_courtly }
 				culture = { has_cultural_pillar = ethos_egalitarian }
 				culture = { has_cultural_tradition = tradition_legalistic }
-				culture = { has_cultural_tradition = tradition_hereditary_hierarchy }
 				has_realm_law = crown_authority_3
 				capital_county = { development_level > medium_development_level }
-				faith = { has_doctrine = tenet_legalism }
+				rite = { rite_has_tenet = tenet_legalism }
 				dynasty = { has_dynasty_perk = erudition_legacy_5 }
 				dynasty = { has_dynasty_perk = law_legacy_5 }
 			}
 		}
 	}
-	##### Changed from Vanilla ^^^^^
-	
+
 	is_valid_showing_failures_only = {
 		OR = {
 			has_ep3_dlc_trigger = yes
@@ -258,7 +251,7 @@ convert_to_administrative_decision = {
 				}
 
 				max = 3000
-				
+
 				if = { # Much cheaper for vassals wanting to adopt their admin liege's government
 					limit = {
 						is_independent_ruler = no
@@ -339,7 +332,7 @@ convert_to_administrative_decision = {
 				}
 
 				max = 3000
-				
+
 				if = { # Much cheaper for vassals wanting to adopt their admin liege's government
 					limit = {
 						top_liege != this
@@ -349,7 +342,7 @@ convert_to_administrative_decision = {
 			}
 		}
 	}
-	
+
 	widget = {
 		gui = "decision_view_widget_generic_multichoice_with_effects"
 		controller = decision_option_list_controller
@@ -363,10 +356,9 @@ convert_to_administrative_decision = {
 			}
 			is_valid = {
 				top_liege = {
-					NOR = {
-						has_government = celestial_government
-						has_government = meritocratic_government
-						has_government = japan_administrative_government
+					trigger_if = {
+						limit = { government_has_mechanic = administrative }
+						government_has_flag = government_is_administrative
 					}
 				}
 			}
@@ -384,10 +376,9 @@ convert_to_administrative_decision = {
 			}
 			is_valid = {
 				top_liege = {
-					NOR = {
-						has_government = administrative_government
-						has_government = meritocratic_government
-						has_government = japan_administrative_government
+					trigger_if = {
+						limit = { government_has_mechanic = administrative }
+						government_has_flag = government_is_celestial
 					}
 				}
 				custom_tooltip = {
@@ -409,10 +400,9 @@ convert_to_administrative_decision = {
 			}
 			is_valid = {
 				top_liege = {
-					NOR = {
-						has_government = administrative_government
-						has_government = celestial_government
-						has_government = japan_administrative_government
+					trigger_if = {
+						limit = { government_has_mechanic = administrative }
+						government_has_flag = government_is_meritocratic
 					}
 				}
 				custom_tooltip = {
@@ -434,10 +424,9 @@ convert_to_administrative_decision = {
 			}
 			is_valid = {
 				top_liege = {
-					NOR = {
-						has_government = administrative_government
-						has_government = celestial_government
-						has_government = meritocratic_government
+					trigger_if = {
+						limit = { government_has_mechanic = administrative }
+						government_has_flag = government_is_japan_administrative
 					}
 				}
 				custom_tooltip = {
@@ -532,9 +521,9 @@ convert_to_administrative_decision = {
 		modifier = {
 			culture = {
 				OR = {
-					has_cultural_pillar = ethos_bureaucratic 
-					has_cultural_pillar = ethos_courtly 
-					has_cultural_pillar = ethos_egalitarian 
+					has_cultural_pillar = ethos_bureaucratic
+					has_cultural_pillar = ethos_courtly
+					has_cultural_pillar = ethos_egalitarian
 				}
 			}
 			add = 50
@@ -548,8 +537,8 @@ convert_to_administrative_decision = {
 		modifier = {
 			culture = {
 				OR = {
-					has_cultural_tradition = tradition_fp3_enlightened_magnates 
-					has_cultural_tradition = tradition_loyal_soldiers 
+					has_cultural_tradition = tradition_fp3_enlightened_magnates
+					has_cultural_tradition = tradition_loyal_soldiers
 				}
 			}
 			add = 20
@@ -584,20 +573,15 @@ convert_to_administrative_decision = {
 			culture = {
 				OR = {
 					has_cultural_pillar = ethos_stoic
-					has_cultural_pillar = ethos_bellicose 
-					has_cultural_pillar = ethos_communal 
+					has_cultural_pillar = ethos_bellicose
+					has_cultural_pillar = ethos_communal
 				}
 			}
 			add = -50
 		}
 		modifier = {
 			culture = {
-				any_parent_culture_or_above = {
-					OR = {
-						this = culture:han
-						this = culture:greek
-					}
-				}
+				culture_is_historically_admin_trigger = yes
 			}
 			add = 100
 		}
@@ -630,16 +614,26 @@ renounce_governorship_decision = {
 		empire = 120
 		hegemony = 0
 	}
-
+	title = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					tgp_is_any_minister = yes
+				}
+				desc = renounce_ministership_decision
+			}
+			desc = renounce_governorship_decision
+		}
+	}
 	desc = {
 		first_valid = {
-			triggered_desc = {	
+			triggered_desc = {
 				trigger = {
 					government_allows = merit
 				}
 				desc = renounce_governorship_decision_desc_merit
 			}
-			triggered_desc = {	
+			triggered_desc = {
 				trigger = {
 					government_is_japanese_trigger = yes
 				}
@@ -648,10 +642,19 @@ renounce_governorship_decision = {
 			desc = renounce_governorship_decision_desc
 		}
 	}
-	selection_tooltip = renounce_governorship_decision_tooltip
+	selection_tooltip = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					tgp_is_any_minister = yes
+				}
+				desc = renounce_ministership_decision_tooltip
+			}
+			desc = renounce_governorship_decision_tooltip
+		}
+	}
 	decision_group_type = admin
 
-	##### Changed from Vanilla vvvvv
 	is_shown = {
 		is_playable_character = yes
 		OR = {
@@ -662,7 +665,6 @@ renounce_governorship_decision = {
 		NOT = { government_has_flag = government_is_quasi_feudal }
 		##### Changed from Vanilla ^^^^^
 	}
-	##### Changed from Vanilla ^^^^^
 
 	is_valid_showing_failures_only = {
 		is_available_adult = yes
@@ -676,12 +678,20 @@ renounce_governorship_decision = {
 	}
 
 	effect = {
-		custom_tooltip = renounce_governorship_decision_effect_tt
+		if = {
+			limit = {
+				tgp_is_any_minister = yes
+			}
+			custom_tooltip = renounce_ministership_decision_effect_tt
+		}
+		else = {
+			custom_tooltip = renounce_governorship_decision_effect_tt
+		}
 		show_as_tooltip = {
 			tgp_step_down_title_recipient_tooltip_effect = yes
 			if = {
 				limit = {
-					government_allows = merit 
+					government_allows = merit
 				}
 				add_character_modifier = {
 					modifier = ep3_renounced_governorship_merit
@@ -703,7 +713,7 @@ renounce_governorship_decision = {
 					years = 15
 				}
 			}
-			else = { 
+			else = {
 				add_gold = massive_gold_value
 				add_character_modifier = {
 					modifier = ep3_renounced_governorship
@@ -724,7 +734,7 @@ renounce_governorship_decision = {
 			player = root
 		}
 	}
-	
+
 	cost = {
 		influence = minor_influence_value
 	}
@@ -823,24 +833,22 @@ convert_to_feudalism_from_administrative_decision = {
 	decision_group_type = major
 	desc = convert_to_feudalism_from_administrative_decision_desc
 
-	##### Changed from Vanilla vvvvv
 	is_shown = {
+		government_has_mechanic = administrative
+		# Ritsuryo gov has its own decisions
+		NOT = { government_has_flag = government_is_japan_administrative }
+		tgp_is_any_minister = no
 		trigger_if = {
 			limit = { has_title = title:h_china }
 			NOT = { government_has_flag = government_is_celestial }
 		}
-		government_allows = administrative
-		tgp_is_ceremonial_liege_trigger = no
 		tgp_is_ceremonial_regent_trigger = no
-		tgp_is_any_minister = no
-		# Ritsuryo gov has its own decisions
-		NOT = { government_has_flag = government_is_japan_administrative }
+		tgp_is_ceremonial_liege_trigger = no
 		##### Changed from Vanilla vvvvv
 		NOT = { government_has_flag = government_is_roman_federate }
 		NOT = { government_has_flag = government_is_centralized }
 		##### Changed from Vanilla ^^^^^
 	}
-	##### Changed from Vanilla ^^^^^
 
 	is_valid = {
 		is_landed = yes
@@ -849,30 +857,7 @@ convert_to_feudalism_from_administrative_decision = {
 				is_independent_ruler = no
 			}
 			top_liege ?= {
-				trigger_if = {
-					limit = {
-						has_realm_law_in_group = imperial_bureaucracy
-					}
-					has_realm_law = imperial_bureaucracy_0 
-				}
-				trigger_if = {
-					limit = {
-						has_realm_law_in_group = celestial_bureaucracy
-					}
-					has_realm_law = celestial_bureaucracy_0 
-				}
-				trigger_if = {
-					limit = {
-						has_realm_law_in_group = meritocratic_bureaucracy
-					}
-					has_realm_law = meritocratic_bureaucracy_0 
-				}
-				trigger_if = {
-					limit = {
-						has_realm_law_in_group = japanese_bureaucracy
-					}
-					has_realm_law = japanese_bureaucracy_0 
-				}
+				realm_law_authority_level_0 = yes
 			}
 			custom_tooltip = {
 				text = governorship_is_on_the_border_tt
@@ -898,30 +883,6 @@ convert_to_feudalism_from_administrative_decision = {
 					}
 					add = 1
 				}
-			}
-			trigger_if = {
-				limit = {
-					has_realm_law_in_group = imperial_bureaucracy
-				}
-				has_realm_law = imperial_bureaucracy_3
-			}
-			trigger_if = {
-				limit = {
-					has_realm_law_in_group = celestial_bureaucracy
-				}
-				has_realm_law = celestial_bureaucracy_3
-			}
-			trigger_if = {
-				limit = {
-					has_realm_law_in_group = meritocratic_bureaucracy
-				}
-				has_realm_law = meritocratic_bureaucracy_3 
-			}
-			trigger_if = {
-				limit = {
-					has_realm_law_in_group = japanese_bureaucracy
-				}
-				has_realm_law = japanese_bureaucracy_3
 			}
 		}
 	}
@@ -995,7 +956,7 @@ convert_to_feudalism_from_administrative_decision = {
 					limit = { root.monthly_character_income >= 20 }
 					multiply = 1.1
 				}
-				
+
 				# Vassals has a slightly reduced cost
 				if = {
 					limit = {
@@ -1072,7 +1033,7 @@ convert_to_feudalism_from_administrative_decision = {
 					limit = { root.monthly_character_income >= 20 }
 					multiply = 1.1
 				}
-				
+
 				# Vassals has a slightly reduced cost
 				if = {
 					limit = {

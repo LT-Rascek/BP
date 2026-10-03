@@ -18,19 +18,25 @@ reclaim_britannia_decision = {
 
 	desc = reclaim_britannia_decision_desc
 
-	##### Changed from Vanilla vvvvv
 	is_shown = {
 		OR = {
-			culture = { has_cultural_pillar = heritage_goidelic }
-			culture = { has_cultural_pillar = heritage_brythonic }
+			culture ?= { has_cultural_pillar = heritage_goidelic }
+			culture ?= { has_cultural_pillar = heritage_brythonic }
+			##### Changed from Vanilla vvvvv
+			culture ?= { has_cultural_pillar = heritage_celtic }
+			##### Changed from Vanilla ^^^^^
 		}
 
 		is_landed_or_landless_administrative = yes
 		any_sub_realm_county = {
-			title_province = {  geographical_region = world_europe_west_britannia }
-					##### Changed from Vanilla vvvvv
-					NOT = { culture = { has_cultural_pillar = heritage_celtic } }
-					##### Changed from Vanilla ^^^^^
+			NOR = {
+				culture ?= { has_cultural_pillar = heritage_goidelic }
+				culture ?= { has_cultural_pillar = heritage_brythonic }
+				##### Changed from Vanilla vvvvv
+				culture ?= { has_cultural_pillar = heritage_celtic }
+				##### Changed from Vanilla ^^^^^
+			}
+			title_province ?= {  geographical_region = world_europe_west_britannia }
 		}
 		NOT = {
 			is_target_in_global_variable_list = {
@@ -39,16 +45,14 @@ reclaim_britannia_decision = {
 			}
 		}
 	}
-	##### Changed from Vanilla ^^^^^
 
-	##### Changed from Vanilla vvvvv
 	is_valid = {
 		completely_controls_region  = world_europe_west_britannia
 
 		# You can have no more than 1 powerful vassal with the "wrong" culture
 		custom_description = {
 			text = reclaim_britannia_custom_decision
-			
+
 			trigger_if = {
 				limit = {
 					any_vassal = {
@@ -62,14 +66,17 @@ reclaim_britannia_decision = {
 				any_vassal = {
 					count <= 1
 					is_powerful_vassal = yes
-					##### Changed from Vanilla vvvvv
-					NOT = { culture = { has_cultural_pillar = heritage_celtic } }
-					##### Changed from Vanilla ^^^^^
+					NOR = {
+						culture = { has_cultural_pillar = heritage_goidelic }
+						culture = { has_cultural_pillar = heritage_brythonic }
+						##### Changed from Vanilla vvvvv
+						culture = { has_cultural_pillar = heritage_celtic }
+						##### Changed from Vanilla ^^^^^
+					}
 				}
 			}
 		}
 	}
-	##### Changed from Vanilla ^^^^^
 
 	is_valid_showing_failures_only = {
 		is_imprisoned = no
@@ -101,7 +108,7 @@ reclaim_britannia_decision = {
 			trigger_event = british_isles.0002
 		}
 	}
-	
+
 	ai_potential = {
 		always = yes
 	}
