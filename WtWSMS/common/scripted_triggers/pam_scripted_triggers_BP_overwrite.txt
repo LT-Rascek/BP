@@ -1,4 +1,25 @@
-﻿pam_latin_as_liturgical_language_trigger = {
+﻿# The liturgical language triggers below only evaluate in a rite scope; call them through
+# main_rite from a faith and through rite from a character.
+# Pre-scripted rites skip the Head of Rite culture fallback. Slavic, Georgian, Antiochian,
+# heresies, and custom divergences keep that fallback.
+rite_has_pre_scripted_liturgical_language_trigger = {
+	OR = {
+		faith = faith:catholic
+		this = rite:roman_rite
+		this = rite:ambrosian_rite
+		#this = rite:beneventan_rite
+		this = rite:mozarabic_church
+		#this = rite:carolingian_christianity
+		faith = faith:orthodox
+		this = rite:byzantine_rite
+		this = rite:insular_celtic
+		this = rite:ethiopian_rite
+		this = rite:armenian_rite
+		this = rite:coptic_rite
+	}
+}
+
+pam_latin_as_liturgical_language_trigger = {
 	OR = {
 		faith = faith:catholic
 		this = rite:roman_rite

@@ -394,3 +394,216 @@ doctrine_major_branch_behdin = { ##### WtWSMS new
 		}
 	}
 }
+
+##### Changed from Vanilla: Icons
+doctrine_funeral_stoic = { # Abrahamic funerals, stand around and try not to cry too much before the body is humbly buried
+	doctrine_group_type = doctrine_funeral
+	index = 0
+	divergence = 1.5
+
+	icon = "doctrine_funeral_stoic"
+	piety_cost = {
+		value = faith_doctrine_cost_mid
+		if = {
+			limit = { rite_has_doctrine = doctrine_funeral_stoic }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	parameters = {
+		burial_funeral
+		stoic_funeral
+	}
+}
+doctrine_funeral_bewailment = { # West African funerals, strongly encouraged to show emotion before the body is humbly buried
+	doctrine_group_type = doctrine_funeral
+	index = 1
+	divergence = 1.5
+
+	icon = "doctrine_funeral_bewailment"
+	piety_cost = {
+		value = faith_doctrine_cost_mid
+		if = {
+			limit = { rite_has_doctrine = doctrine_funeral_bewailment }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	parameters = {
+		burial_funeral
+		bewailment_funeral
+	}
+}
+doctrine_funeral_cremation = { # Catch-all cremations, burn or otherwise dissolve the body
+	doctrine_group_type = doctrine_funeral
+	index = 2
+	divergence = 2.5
+
+	icon = "doctrine_funeral_cremation"
+	piety_cost = {
+		value = faith_doctrine_cost_mid
+		if = {
+			limit = { rite_has_doctrine = doctrine_funeral_cremation }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	parameters = {
+		cremation_funeral
+	}
+}
+doctrine_funeral_sky_burial = { # Have the body fed to scavenging animals and birds
+	doctrine_group_type = doctrine_funeral
+	index = 3
+	divergence = 5
+
+	icon = "doctrine_funeral_sky_burial"
+	piety_cost = {
+		value = faith_doctrine_cost_mid
+		if = {
+			limit = { rite_has_doctrine = doctrine_funeral_sky_burial }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	parameters = {
+		sky_burials_active
+		sky_burials_charnel_grounds
+		can_build_towers_of_silence_active
+	}
+
+	character_modifier = {
+		negate_health_penalty_add = 0.25
+	}
+}
+doctrine_funeral_mummification = { # Fanatically preserve the body, very expensive
+	doctrine_group_type = doctrine_funeral
+	index = 4
+	divergence = 15
+
+	icon = "doctrine_funeral_mummification"
+	piety_cost = {
+		value = faith_doctrine_cost_high
+		if = {
+			limit = { rite_has_doctrine = doctrine_funeral_mummification }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	parameters = {
+		mummification_funeral
+	}
+
+	can_pick = {
+		custom_description = {
+			text = incompatible_tenet_aniconism_trigger
+			NOT = { tenet:tenet_aniconism = { is_in_list = selected_doctrines } }
+		}
+	}
+}
+doctrine_family_rites = { # Solemn veneration
+	doctrine_group_type = doctrine_funeral
+	index = 5
+	divergence = 2.5
+	
+	icon = "doctrine_family_rites"
+	piety_cost = {
+		value = faith_doctrine_cost_high
+		if = {
+			limit = { rite_has_doctrine = doctrine_family_rites }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+		if = {
+			limit = { rite_has_tenet = tenet_filial_piety }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	parameters = {
+		burial_funeral
+		family_rites
+	}
+
+	can_pick = {
+		trigger_if = {
+			limit = { scope:actor ?= { is_ai = yes } }
+			scope:actor = { government_has_flag = government_uses_meritocratic_bureaucracy }
+		}
+	}
+}
+
+##### Changed from Vanilla: Icons
+doctrine_no_anointment = {
+	doctrine_group_type = doctrine_coronation
+	index = 0
+	
+	icon = "doctrine_no_anointment"
+	piety_cost = {
+		value = faith_doctrine_cost_mid
+	}
+
+	parameters = {
+		no_anointment = yes
+		coronation_artifact = yes
+	}
+
+	is_shown = {
+		has_ach_dlc_trigger = yes
+	}
+}
+doctrine_anointment_permitted = {
+	doctrine_group_type = doctrine_coronation
+	index = 1
+	
+	icon = "doctrine_anointment_permitted"
+	piety_cost = {
+		value = faith_doctrine_cost_mid
+	}
+
+	parameters = {
+		theocratic_coronation = yes
+		coronation_artifact = yes
+	}
+
+	can_pick = {
+		custom_description = {
+			text = doctrine_requires_theocratic_head_of_faith_trigger
+			NOR = {
+				doctrine:doctrine_no_head = { is_in_list = selected_doctrines }
+				doctrine:doctrine_temporal_head = { is_in_list = selected_doctrines }
+			}
+		}
+	}
+
+	is_shown = {
+		has_ach_dlc_trigger = yes
+	}
+}
+doctrine_imperial_anointment = {
+	doctrine_group_type = doctrine_coronation
+	index = 2
+	
+	icon = "doctrine_imperial_anointment"
+	piety_cost = {
+		value = faith_doctrine_cost_mid
+	}
+
+	parameters = {
+		imperial_anointment = yes
+		coronation_artifact = yes
+	}
+
+	can_pick = {
+		custom_description = {
+			text = doctrine_requires_theocratic_head_of_faith_trigger
+			NOR = {
+				doctrine:doctrine_no_head = { is_in_list = selected_doctrines }
+				doctrine:doctrine_temporal_head = { is_in_list = selected_doctrines }
+			}
+		}
+	}
+
+	is_shown = {
+		has_ach_dlc_trigger = yes
+	}
+}

@@ -1,42 +1,44 @@
 ﻿#Covers the strictest cases like Jains, Priscillianism
 doctrine_ritual_vegetarianism_required = {
-	doctrine_group = special_tolerance
+	doctrine_group_type = vegetarianism_group
+	index = 3
+	
 	icon = "doctrine_ritual_vegetarianism_required"
 	piety_cost = {
 		if = {
-			limit = { has_doctrine = doctrine_ritual_vegetarianism_clerics }
+			limit = { rite_has_doctrine = doctrine_ritual_vegetarianism_clerics }
 			value = flavor_doctrine_cost_mid
 		}
 		else_if = {
-			limit = { has_doctrine = doctrine_ritual_vegetarianism_partial }
+			limit = { rite_has_doctrine = doctrine_ritual_vegetarianism_partial }
 			value = flavor_doctrine_cost_high
 		}
 		else_if = {
-			limit = { has_doctrine = doctrine_ritual_vegetarianism_no_statement }
+			limit = { rite_has_doctrine = doctrine_ritual_vegetarianism_no_statement }
 			value = flavor_doctrine_cost_massive
 		}
 		
 		if = {
-			limit = { has_doctrine = doctrine_ritual_vegetarianism_required }
+			limit = { rite_has_doctrine = doctrine_ritual_vegetarianism_required }
 			multiply = flavor_doctrine_unchanged_cost_mult
 		}
 	}
 	can_pick = {
 		custom_description = {
 			text = incompatible_tenet_human_sacrifice_trigger
-			NOT = { doctrine:tenet_human_sacrifice = { is_in_list = selected_doctrines } }
+			NOT = { tenet:tenet_human_sacrifice = { is_in_list = selected_doctrines } }
 		}
 		custom_description = {
 			text = incompatible_tenet_gruesome_festivals_trigger
-			NOT = { doctrine:tenet_gruesome_festivals = { is_in_list = selected_doctrines } }
+			NOT = { tenet:tenet_gruesome_festivals = { is_in_list = selected_doctrines } }
 		}
 		custom_description = {
 			text = incompatible_tenet_exaltation_of_pain_trigger
-			NOT = { doctrine:tenet_exaltation_of_pain = { is_in_list = selected_doctrines } }
+			NOT = { tenet:tenet_exaltation_of_pain = { is_in_list = selected_doctrines } }
 		}
 		custom_description = {
 			text = incompatible_tenet_ritual_cannibalism_trigger
-			NOT = { doctrine:tenet_ritual_cannibalism = { is_in_list = selected_doctrines } }
+			NOT = { tenet:tenet_ritual_cannibalism = { is_in_list = selected_doctrines } }
 		}
 	}
 	parameters = {
@@ -44,47 +46,55 @@ doctrine_ritual_vegetarianism_required = {
 		clerics_are_vegetarians = yes
 		cannot_hunt = yes
 	}
-	traits = { virtues = { vegetarian = 1 } }
+	
+	traits = {
+		virtues = {
+			vegetarian = { weight = 15 scale = 1 }
+		}
+		sins = {}
+	}
 }
 #Covers midway cases like some Buddhist sects, where it's only monks and nuns that abstain
 doctrine_ritual_vegetarianism_clerics = {
-	doctrine_group = special_tolerance
+	doctrine_group_type = vegetarianism_group
+	index = 2
+	
 	icon = "doctrine_ritual_vegetarianism_clerics"
 	piety_cost = {
 		if = {
-			limit = { has_doctrine = doctrine_ritual_vegetarianism_required }
+			limit = { rite_has_doctrine = doctrine_ritual_vegetarianism_required }
 			value = flavor_doctrine_cost_mid
 		}
 		else_if = {
-			limit = { has_doctrine = doctrine_ritual_vegetarianism_partial }
+			limit = { rite_has_doctrine = doctrine_ritual_vegetarianism_partial }
 			value = flavor_doctrine_cost_mid
 		}
 		else_if = {
-			limit = { has_doctrine = doctrine_ritual_vegetarianism_no_statement }
+			limit = { rite_has_doctrine = doctrine_ritual_vegetarianism_no_statement }
 			value = flavor_doctrine_cost_high
 		}
 		
 		if = {
-			limit = { has_doctrine = doctrine_ritual_vegetarianism_clerics }
+			limit = { rite_has_doctrine = doctrine_ritual_vegetarianism_clerics }
 			multiply = flavor_doctrine_unchanged_cost_mult
 		}
 	}
 	can_pick = {
 		custom_description = {
 			text = incompatible_tenet_human_sacrifice_trigger
-			NOT = { doctrine:tenet_human_sacrifice = { is_in_list = selected_doctrines } }
+			NOT = { tenet:tenet_human_sacrifice = { is_in_list = selected_doctrines } }
 		}
 		custom_description = {
 			text = incompatible_tenet_gruesome_festivals_trigger
-			NOT = { doctrine:tenet_gruesome_festivals = { is_in_list = selected_doctrines } }
+			NOT = { tenet:tenet_gruesome_festivals = { is_in_list = selected_doctrines } }
 		}
 		custom_description = {
 			text = incompatible_tenet_exaltation_of_pain_trigger
-			NOT = { doctrine:tenet_exaltation_of_pain = { is_in_list = selected_doctrines } }
+			NOT = { tenet:tenet_exaltation_of_pain = { is_in_list = selected_doctrines } }
 		}
 		custom_description = {
 			text = incompatible_tenet_ritual_cannibalism_trigger
-			NOT = { doctrine:tenet_ritual_cannibalism = { is_in_list = selected_doctrines } }
+			NOT = { tenet:tenet_ritual_cannibalism = { is_in_list = selected_doctrines } }
 		}
 	}
 	parameters = {
@@ -92,53 +102,70 @@ doctrine_ritual_vegetarianism_clerics = {
 		clerics_are_vegetarians = yes
 	}
 	traits = { virtues = { vegetarian = 0.5 } }
+	
+	traits = {
+		virtues = {
+			vegetarian = { weight = 10 scale = 0.5 }
+		}
+		sins = {}
+	}
 }
 #Covers Coptic Christianity, or other faiths that suggest it part of the time
 doctrine_ritual_vegetarianism_partial = {
-	doctrine_group = special_tolerance
+	doctrine_group_type = vegetarianism_group
+	index = 1
+	
 	icon = "doctrine_ritual_vegetarianism_partial"
 	piety_cost = {
 		if = {
-			limit = { has_doctrine = doctrine_ritual_vegetarianism_required }
+			limit = { rite_has_doctrine = doctrine_ritual_vegetarianism_required }
 			value = flavor_doctrine_cost_high
 		}
 		else_if = {
-			limit = { has_doctrine = doctrine_ritual_vegetarianism_clerics }
+			limit = { rite_has_doctrine = doctrine_ritual_vegetarianism_clerics }
 			value = flavor_doctrine_cost_mid
 		}
 		else_if = {
-			limit = { has_doctrine = doctrine_ritual_vegetarianism_no_statement }
+			limit = { rite_has_doctrine = doctrine_ritual_vegetarianism_no_statement }
 			value = flavor_doctrine_cost_mid
 		}
 		
 		if = {
-			limit = { has_doctrine = doctrine_ritual_vegetarianism_partial }
+			limit = { rite_has_doctrine = doctrine_ritual_vegetarianism_partial }
 			multiply = flavor_doctrine_unchanged_cost_mult
 		}
 	}
 	can_pick = {}
 	parameters = { enables_vegetarianism = yes }
-	traits = { virtues = { vegetarian = 0.2 } }
+	
+	traits = {
+		virtues = {
+			vegetarian = { weight = 5 scale = 0.2 }
+		}
+		sins = {}
+	}
 }
 doctrine_ritual_vegetarianism_no_statement = {
-	doctrine_group = special_tolerance
+	doctrine_group_type = vegetarianism_group
+	index = 0
+	
 	icon = "doctrine_ritual_vegetarianism_no_statement"
 	piety_cost = {
 		if = {
-			limit = { has_doctrine = doctrine_ritual_vegetarianism_required }
+			limit = { rite_has_doctrine = doctrine_ritual_vegetarianism_required }
 			value = flavor_doctrine_cost_massive
 		}
 		else_if = {
-			limit = { has_doctrine = doctrine_ritual_vegetarianism_clerics }
+			limit = { rite_has_doctrine = doctrine_ritual_vegetarianism_clerics }
 			value = flavor_doctrine_cost_high
 		}
 		else_if = {
-			limit = { has_doctrine = doctrine_ritual_vegetarianism_partial }
+			limit = { rite_has_doctrine = doctrine_ritual_vegetarianism_partial }
 			value = flavor_doctrine_cost_mid
 		}
 		
 		if = {
-			limit = { has_doctrine = doctrine_ritual_vegetarianism_no_statement }
+			limit = { rite_has_doctrine = doctrine_ritual_vegetarianism_no_statement }
 			multiply = flavor_doctrine_unchanged_cost_mult
 		}
 	}

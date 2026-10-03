@@ -6,7 +6,11 @@
 #(ca. 400s-600s, when the influx of Gallican and other rites influenced the structure
 #of the Western celebration).
 doctrine_christian_liturgical_rite_latin = { #For Catholic
-	doctrine_group = christian_liturgirical_rites_group
+	doctrine_group_type = christian_liturgirical_rites_group
+	index = 0
+	
+	divergence = 0
+	
 	piety_cost = {
 		if = {
 			limit = { has_western_liturgical_rite_trigger = yes }
@@ -32,7 +36,7 @@ doctrine_christian_liturgical_rite_latin = { #For Catholic
 		uses_eucharistic_rite_trigger = yes
 		custom_description = {
 			text = incompatible_tenet_ecstatic_prophecy_trigger
-			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+			NOT = { tenet:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
 		}
 	}
 	parameters = {
@@ -42,7 +46,11 @@ doctrine_christian_liturgical_rite_latin = { #For Catholic
 	traits = {}
 }
 doctrine_christian_liturgical_rite_greek = { #For Orthodox
-	doctrine_group = christian_liturgirical_rites_group
+	doctrine_group_type = christian_liturgirical_rites_group
+	index = 1
+	
+	divergence = 0
+	
 	piety_cost = {
 		if = {
 			limit = { has_western_liturgical_rite_trigger = yes }
@@ -68,7 +76,7 @@ doctrine_christian_liturgical_rite_greek = { #For Orthodox
 		uses_eucharistic_rite_trigger = yes
 		custom_description = {
 			text = incompatible_tenet_ecstatic_prophecy_trigger
-			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+			NOT = { tenet:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
 		}
 	}
 	parameters = {
@@ -79,7 +87,11 @@ doctrine_christian_liturgical_rite_greek = { #For Orthodox
 
 #Other Western Rites
 doctrine_christian_liturgical_rite_gallican_rite = {
-	doctrine_group = christian_liturgirical_rites_group
+	doctrine_group_type = christian_liturgirical_rites_group
+	index = 2
+	
+	divergence = 0
+
 	piety_cost = {
 		if = {
 			limit = { has_western_liturgical_rite_trigger = yes }
@@ -104,7 +116,7 @@ doctrine_christian_liturgical_rite_gallican_rite = {
 		uses_eucharistic_rite_trigger = yes
 		custom_description = {
 			text = incompatible_tenet_ecstatic_prophecy_trigger
-			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+			NOT = { tenet:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
 		}
 	}
 	parameters = {
@@ -114,7 +126,11 @@ doctrine_christian_liturgical_rite_gallican_rite = {
 	traits = {}
 }
 doctrine_christian_liturgical_rite_moazarbic_rite = {
-	doctrine_group = christian_liturgirical_rites_group
+	doctrine_group_type = christian_liturgirical_rites_group
+	index = 3
+	
+	divergence = 0
+
 	piety_cost = {
 		if = {
 			limit = { has_western_liturgical_rite_trigger = yes }
@@ -139,7 +155,7 @@ doctrine_christian_liturgical_rite_moazarbic_rite = {
 		uses_eucharistic_rite_trigger = yes
 		custom_description = {
 			text = incompatible_tenet_ecstatic_prophecy_trigger
-			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+			NOT = { tenet:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
 		}
 	}
 	parameters = {
@@ -149,7 +165,11 @@ doctrine_christian_liturgical_rite_moazarbic_rite = {
 	traits = {}
 }
 doctrine_christian_liturgical_rite_celtic_rite = {
-	doctrine_group = christian_liturgirical_rites_group
+	doctrine_group_type = christian_liturgirical_rites_group
+	index = 4
+	
+	divergence = 0
+
 	piety_cost = {
 		if = {
 			limit = { has_western_liturgical_rite_trigger = yes }
@@ -174,7 +194,7 @@ doctrine_christian_liturgical_rite_celtic_rite = {
 		uses_eucharistic_rite_trigger = yes
 		custom_description = {
 			text = incompatible_tenet_ecstatic_prophecy_trigger
-			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+			NOT = { tenet:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
 		}
 	}
 	parameters = {
@@ -184,7 +204,11 @@ doctrine_christian_liturgical_rite_celtic_rite = {
 	traits = {}
 }
 doctrine_christian_liturgical_rite_african_rite = {
-	doctrine_group = christian_liturgirical_rites_group
+	doctrine_group_type = christian_liturgirical_rites_group
+	index = 5
+	
+	divergence = 0
+
 	piety_cost = {
 		if = {
 			limit = { has_western_liturgical_rite_trigger = yes }
@@ -209,7 +233,7 @@ doctrine_christian_liturgical_rite_african_rite = {
 		uses_eucharistic_rite_trigger = yes
 		custom_description = {
 			text = incompatible_tenet_ecstatic_prophecy_trigger
-			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+			NOT = { tenet:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
 		}
 	}
 	parameters = {
@@ -221,7 +245,11 @@ doctrine_christian_liturgical_rite_african_rite = {
 
 ### Eastern Rites (all use mid because they are noticeably different from one another)
 doctrine_christian_liturgical_rite_west_syriac_rite = { #aka, Antiochene Rite
-	doctrine_group = christian_liturgirical_rites_group
+	doctrine_group_type = christian_liturgirical_rites_group
+	index = 6
+	
+	divergence = 0
+
 	piety_cost = {
 		if = {
 			limit = { has_western_liturgical_rite_trigger = yes }
@@ -246,16 +274,20 @@ doctrine_christian_liturgical_rite_west_syriac_rite = { #aka, Antiochene Rite
 		uses_eucharistic_rite_trigger = yes
 		custom_description = {
 			text = incompatible_tenet_ecstatic_prophecy_trigger
-			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+			NOT = { tenet:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
 		}
 	}
-	parameters {
+	parameters = {
 		liturgical_language_aramaic = yes
 	}
 	traits = {}
 }
 doctrine_christian_liturgical_rite_armenian_rite = {
-	doctrine_group = christian_liturgirical_rites_group
+	doctrine_group_type = christian_liturgirical_rites_group
+	index = 7
+	
+	divergence = 0
+	
 	piety_cost = {
 		if = {
 			limit = { has_western_liturgical_rite_trigger = yes }
@@ -280,7 +312,7 @@ doctrine_christian_liturgical_rite_armenian_rite = {
 		uses_eucharistic_rite_trigger = yes
 		custom_description = {
 			text = incompatible_tenet_ecstatic_prophecy_trigger
-			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+			NOT = { tenet:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
 		}
 	}
 	parameters = {
@@ -289,7 +321,11 @@ doctrine_christian_liturgical_rite_armenian_rite = {
 	traits = {}
 }
 doctrine_christian_liturgical_rite_alexandrian_rite = {
-	doctrine_group = christian_liturgirical_rites_group
+	doctrine_group_type = christian_liturgirical_rites_group
+	index = 8
+	
+	divergence = 0
+	
 	piety_cost = {
 		if = {
 			limit = { has_doctrine = doctrine_christian_liturgical_rite_ethiopian_rite }
@@ -318,17 +354,21 @@ doctrine_christian_liturgical_rite_alexandrian_rite = {
 		uses_eucharistic_rite_trigger = yes
 		custom_description = {
 			text = incompatible_tenet_ecstatic_prophecy_trigger
-			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+			NOT = { tenet:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
 		}
 	}
-	parameters {
+	parameters = {
 		liturgical_language_coptic = yes
 		alexandrian_rites_are_similar = yes
 	}
 	traits = {}
 }
 doctrine_christian_liturgical_rite_ethiopian_rite = {
-	doctrine_group = christian_liturgirical_rites_group
+	doctrine_group_type = christian_liturgirical_rites_group
+	index = 9
+	
+	divergence = 0
+	
 	piety_cost = {
 		if = {
 			limit = { has_doctrine = doctrine_christian_liturgical_rite_alexandrian_rite }
@@ -357,17 +397,21 @@ doctrine_christian_liturgical_rite_ethiopian_rite = {
 		uses_eucharistic_rite_trigger = yes
 		custom_description = {
 			text = incompatible_tenet_ecstatic_prophecy_trigger
-			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+			NOT = { tenet:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
 		}
 	}
-	parameters {
+	parameters = {
 		liturgical_language_ethiopic = yes
 		alexandrian_rites_are_similar = yes
 	}
 	traits = {}
 }
 doctrine_christian_liturgical_rite_east_syriac_rite = { #aka Chaldean Rite
-	doctrine_group = christian_liturgirical_rites_group
+	doctrine_group_type = christian_liturgirical_rites_group
+	index = 10
+	
+	divergence = 0
+
 	piety_cost = {
 		if = {
 			limit = { has_western_liturgical_rite_trigger = yes }
@@ -392,10 +436,10 @@ doctrine_christian_liturgical_rite_east_syriac_rite = { #aka Chaldean Rite
 		uses_eucharistic_rite_trigger = yes
 		custom_description = {
 			text = incompatible_tenet_ecstatic_prophecy_trigger
-			NOT = { doctrine:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+			NOT = { tenet:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
 		}
 	}
-	parameters {
+	parameters = {
 		liturgical_language_aramaic = yes
 	}
 	traits = {}
@@ -403,7 +447,11 @@ doctrine_christian_liturgical_rite_east_syriac_rite = { #aka Chaldean Rite
 
 ### Other cases
 doctrine_christian_liturgical_rite_israelite = { #At least the Nazoreans by the late Vth century
-	doctrine_group = christian_liturgirical_rites_group
+	doctrine_group_type = christian_liturgirical_rites_group
+	index = 11
+	
+	divergence = 0
+	
 	piety_cost = {
 		value = christian_doctrine_cost_massive
 		
@@ -422,7 +470,11 @@ doctrine_christian_liturgical_rite_israelite = { #At least the Nazoreans by the 
 	character_modifier = {}
 }
 doctrine_christian_liturgical_rite_local_rite = { #for various other faiths
-	doctrine_group = christian_liturgirical_rites_group
+	doctrine_group_type = christian_liturgirical_rites_group
+	index = 12
+	
+	divergence = 0
+	
 	piety_cost = {
 		if = {
 			limit = { has_western_liturgical_rite_trigger = yes }
@@ -451,7 +503,11 @@ doctrine_christian_liturgical_rite_local_rite = { #for various other faiths
 	}
 }
 doctrine_christian_liturgical_rite_none = { #For faiths that don't practice the Eucharist
-	doctrine_group = christian_liturgirical_rites_group
+	doctrine_group_type = christian_liturgirical_rites_group
+	index = 13
+	
+	divergence = 100 #Insta-Heresy
+	
 	piety_cost = {
 		value = christian_doctrine_cost_massive
 		

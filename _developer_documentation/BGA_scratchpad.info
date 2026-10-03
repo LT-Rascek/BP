@@ -15,14 +15,17 @@ stopped at 02_administrative_laws_BP_overwrite.txt (haven't touched yet)
 - Ask PDX about Christology stuff; they make them all DLC dependent
 
 - Revise Mainline Rites as Appropriate (size &c.)
-- Erudite trait has been added to Vanilla
 
 Christian Borks:
 - Duplicated Rites:
    - Marcionism, Nestorianism
 
+- No anointment for Christians or anyone else at this point
+
 - Add some Messalian provinces
 - Clerical Regions flip to admin from on-actions...
+
+- Fill out all faiths to be lay clergy, &c. for completeness instead of on action that borks out
 
 Law issues:
 - Admin Laws not showing up correctly for Roman Admin Governments
@@ -31,7 +34,10 @@ Law issues:
 
 -----------------------
 - All new files must be properly encoded
-- Update Religion GUI
+
+GUI:
+- Update Religion GUI with minorities
+- Update doctrine_type_tooltip to support new categories
 
 - Remove Mehrism and associated RICE on actions
 
@@ -82,6 +88,7 @@ Replace Items:
 =======================
 Activities:
 - Rework Dharma `buddhist_retreat_decision` into an activity
+- Mass Activity for rites with some sort of liturgical rite
 
 Triggers:
 - Overhaul buildings and triggers as they are borked
@@ -111,6 +118,7 @@ Localizations:
 Religions:
 - Review the weights and scales for all virtues and sins
 - Remove old, outdated localizations
+- Doctrine for "Truly Hellenic" faiths for the truly_hellenic_faith_trigger
 
 GFX:
 - Overwrite DLC music/start illustration object

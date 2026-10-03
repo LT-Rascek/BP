@@ -11,3 +11,20 @@
 
 	doctrine_lock = faith
 }
+
+#Ritual Doctrines
+doctrine_pilgrimage = {
+	category = ritual
+	divergence = sequence
+}
+doctrine_funeral = {
+	category = ritual
+}
+
+doctrine_coronation = {
+	category = ritual
+
+	is_available_on_create = {
+		has_ach_dlc_trigger = yes
+	}
+}

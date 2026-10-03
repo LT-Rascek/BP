@@ -1,10 +1,11 @@
-﻿christian_liturgirical_rites_group = {
-	category = main_group
-	divergence = sequence
-	#doctrine_lock = religion
-}
-#Rituals (eventually)
+﻿#Rituals
 vegetarianism_group = {
-	category = main_group
+	category = ritual
 	divergence = sequence
+}
+#Christian-Specific
+christian_liturgirical_rites_group = {
+	category = specific_to_religion
+	#divergence = category
+	doctrine_lock = religion
 }

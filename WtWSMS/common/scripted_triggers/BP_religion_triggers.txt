@@ -12,10 +12,8 @@ truly_hellenic_faith_trigger = {
 		OR = {
 			faith = faith:hellenic_pagan
 			faith = faith:platonism
-			faith = faith:orphism
 			faith = faith:pythagoreanism
 			faith = faith:stoicism
-			faith = faith:cybelian
 		}
 	}
 }
@@ -59,67 +57,67 @@ uses_eucharistic_rite_trigger = {
 }
 has_western_liturgical_rite_trigger = {
 	OR = {
-		has_doctrine = doctrine_christian_liturgical_rite_imperial_rite
-		has_doctrine = doctrine_christian_liturgical_rite_gallican_rite
-		has_doctrine = doctrine_christian_liturgical_rite_moazarbic_rite
-		has_doctrine = doctrine_christian_liturgical_rite_celtic_rite
-		has_doctrine = doctrine_christian_liturgical_rite_african_rite
+		rite_has_doctrine = doctrine_christian_liturgical_rite_imperial_rite
+		rite_has_doctrine = doctrine_christian_liturgical_rite_gallican_rite
+		rite_has_doctrine = doctrine_christian_liturgical_rite_moazarbic_rite
+		rite_has_doctrine = doctrine_christian_liturgical_rite_celtic_rite
+		rite_has_doctrine = doctrine_christian_liturgical_rite_african_rite
 	}
 }
 has_eastern_liturgical_rite_trigger = {
 	OR = {
-		has_doctrine = doctrine_christian_liturgical_rite_west_syriac_rite
-		has_doctrine = doctrine_christian_liturgical_rite_armenian_rite
-		has_doctrine = doctrine_christian_liturgical_rite_alexandrian_rite
-		has_doctrine = doctrine_christian_liturgical_rite_ethiopian_rite
-		has_doctrine = doctrine_christian_liturgical_rite_east_syriac_rite
+		rite_has_doctrine = doctrine_christian_liturgical_rite_west_syriac_rite
+		rite_has_doctrine = doctrine_christian_liturgical_rite_armenian_rite
+		rite_has_doctrine = doctrine_christian_liturgical_rite_alexandrian_rite
+		rite_has_doctrine = doctrine_christian_liturgical_rite_ethiopian_rite
+		rite_has_doctrine = doctrine_christian_liturgical_rite_east_syriac_rite
 	}
 }
 has_same_liturgical_rite_trigger = {
 	OR = {
 		AND = {
-			$FAITH_1$ = { has_doctrine = doctrine_christian_liturgical_rite_imperial_rite }
-			$FAITH_2$ = { has_doctrine = doctrine_christian_liturgical_rite_imperial_rite }
+			$FAITH_1$ = { rite_has_doctrine = doctrine_christian_liturgical_rite_imperial_rite }
+			$FAITH_2$ = { rite_has_doctrine = doctrine_christian_liturgical_rite_imperial_rite }
 		}
 		AND = {
-			$FAITH_1$ = { has_doctrine = doctrine_christian_liturgical_rite_gallican_rite }
-			$FAITH_2$ = { has_doctrine = doctrine_christian_liturgical_rite_gallican_rite }
+			$FAITH_1$ = { rite_has_doctrine = doctrine_christian_liturgical_rite_gallican_rite }
+			$FAITH_2$ = { rite_has_doctrine = doctrine_christian_liturgical_rite_gallican_rite }
 		}
 		AND = {
-			$FAITH_1$ = { has_doctrine = doctrine_christian_liturgical_rite_moazarbic_rite }
-			$FAITH_2$ = { has_doctrine = doctrine_christian_liturgical_rite_moazarbic_rite }
+			$FAITH_1$ = { rite_has_doctrine = doctrine_christian_liturgical_rite_moazarbic_rite }
+			$FAITH_2$ = { rite_has_doctrine = doctrine_christian_liturgical_rite_moazarbic_rite }
 		}
 		AND = {
-			$FAITH_1$ = {has_doctrine =  doctrine_christian_liturgical_rite_celtic_rite }
-			$FAITH_2$ = {has_doctrine =  doctrine_christian_liturgical_rite_celtic_rite }
+			$FAITH_1$ = {rite_has_doctrine =  doctrine_christian_liturgical_rite_celtic_rite }
+			$FAITH_2$ = {rite_has_doctrine =  doctrine_christian_liturgical_rite_celtic_rite }
 		}
 		AND = {
-			$FAITH_1$ = { has_doctrine = doctrine_christian_liturgical_rite_african_rite }
-			$FAITH_2$ = { has_doctrine = doctrine_christian_liturgical_rite_african_rite }
+			$FAITH_1$ = { rite_has_doctrine = doctrine_christian_liturgical_rite_african_rite }
+			$FAITH_2$ = { rite_has_doctrine = doctrine_christian_liturgical_rite_african_rite }
 		}
 		AND = {
-			$FAITH_1$ = { has_doctrine = doctrine_christian_liturgical_rite_west_syriac_rite }
-			$FAITH_2$ = { has_doctrine = doctrine_christian_liturgical_rite_west_syriac_rite }
+			$FAITH_1$ = { rite_has_doctrine = doctrine_christian_liturgical_rite_west_syriac_rite }
+			$FAITH_2$ = { rite_has_doctrine = doctrine_christian_liturgical_rite_west_syriac_rite }
 		}
 		AND = {
-			$FAITH_1$ = { has_doctrine = doctrine_christian_liturgical_rite_armenian_rite }
-			$FAITH_2$ = { has_doctrine = doctrine_christian_liturgical_rite_armenian_rite }
+			$FAITH_1$ = { rite_has_doctrine = doctrine_christian_liturgical_rite_armenian_rite }
+			$FAITH_2$ = { rite_has_doctrine = doctrine_christian_liturgical_rite_armenian_rite }
 		}
 		AND = {
-			$FAITH_1$ = { has_doctrine = doctrine_christian_liturgical_rite_alexandrian_rite }
-			$FAITH_2$ = { has_doctrine = doctrine_christian_liturgical_rite_alexandrian_rite }
+			$FAITH_1$ = { rite_has_doctrine = doctrine_christian_liturgical_rite_alexandrian_rite }
+			$FAITH_2$ = { rite_has_doctrine = doctrine_christian_liturgical_rite_alexandrian_rite }
 		}
 		AND = {
-			$FAITH_1$ = { has_doctrine = doctrine_christian_liturgical_rite_ethiopian_rite }
-			$FAITH_2$ = { has_doctrine = doctrine_christian_liturgical_rite_ethiopian_rite }
+			$FAITH_1$ = { rite_has_doctrine = doctrine_christian_liturgical_rite_ethiopian_rite }
+			$FAITH_2$ = { rite_has_doctrine = doctrine_christian_liturgical_rite_ethiopian_rite }
 		}
 		AND = {
-			$FAITH_1$ = { has_doctrine = doctrine_christian_liturgical_rite_east_syriac_rite }
-			$FAITH_2$ = { has_doctrine = doctrine_christian_liturgical_rite_east_syriac_rite }
+			$FAITH_1$ = { rite_has_doctrine = doctrine_christian_liturgical_rite_east_syriac_rite }
+			$FAITH_2$ = { rite_has_doctrine = doctrine_christian_liturgical_rite_east_syriac_rite }
 		}
 		AND = {
-			$FAITH_1$ = { has_doctrine = doctrine_christian_liturgical_rite_israelite }
-			$FAITH_2$ = { has_doctrine = doctrine_christian_liturgical_rite_israelite }
+			$FAITH_1$ = { rite_has_doctrine = doctrine_christian_liturgical_rite_israelite }
+			$FAITH_2$ = { rite_has_doctrine = doctrine_christian_liturgical_rite_israelite }
 		}
 	}
 }
@@ -130,18 +128,18 @@ has_related_liturgical_rite_trigger = {
 	OR = {
 		#Imperial Rite
 		AND = {
-			$FAITH_CONVERTER$ = { has_doctrine = doctrine_christian_liturgical_rite_imperial_rite }
-			$FAITH_CONVERTEE$ = { has_doctrine_parameter = latin_rites_are_similar }
+			$FAITH_CONVERTER$ = { rite_has_parameter = latin_rites_are_similar }
+			$FAITH_CONVERTEE$ = { rite_has_parameter = latin_rites_are_similar }
 		}
 		#Gallican, Hispanic, and Celtic Rites
 		AND = {
-			$FAITH_CONVERTER$ = { has_doctrine_parameter = latin_rites_are_similar }
-			$FAITH_CONVERTEE$ = { has_doctrine_parameter = latin_rites_are_similar }
+			$FAITH_CONVERTER$ = { rite_has_parameter = latin_rites_are_similar }
+			$FAITH_CONVERTEE$ = { rite_has_parameter = latin_rites_are_similar }
 		}
 		#Alexandrian rites
 		AND = {
-			$FAITH_CONVERTER$ = { has_doctrine_parameter = alexandrian_rites_are_similar }
-			$FAITH_CONVERTEE$ = { has_doctrine_parameter = alexandrian_rites_are_similar }
+			$FAITH_CONVERTER$ = { rite_has_parameter = alexandrian_rites_are_similar }
+			$FAITH_CONVERTEE$ = { rite_has_parameter = alexandrian_rites_are_similar }
 		}
 	}
 }
