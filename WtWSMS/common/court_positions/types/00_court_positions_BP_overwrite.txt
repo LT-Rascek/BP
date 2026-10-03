@@ -28,7 +28,6 @@ court_tutor_court_position = {
 	# How good is this character in this position? root scope is the holder of the court position
 	aptitude = {
 		value = 25
-		add = court_position_aptitude_boon_voyager_trait
 		add = {
 			value = learning
 			multiply = 2.5
@@ -50,11 +49,11 @@ court_tutor_court_position = {
 		}
 		if = {
 			limit = {
-				has_trait = scholar
+				has_trait = erudite
 			}
 			add = {
 				value = 15
-				desc = court_position_scholar_trait
+				desc = court_position_erudite_trait
 			}
 		}
 		if = {
@@ -122,13 +121,6 @@ court_tutor_court_position = {
 		}
 		##### Changed from Vanilla vvvvv
 		else_if = {
-			limit = { has_trait = erudite }
-			add = {
-				value = 10
-				desc = court_position_erudite_trait
-			}
-		}
-		else_if = {
 			limit = { has_trait = perceptive }
 			add = {
 				value = 5
@@ -152,7 +144,6 @@ court_tutor_court_position = {
 				desc = court_position_reclusive_trait
 			}
 		}
-		add = court_position_aptitude_traveling_friends_value
 		if = {
 			limit = {
 				has_character_flag = court_0107_tutor
@@ -164,105 +155,6 @@ court_tutor_court_position = {
 		}
 		if = {
 			limit = {
-				liege ?= {
-					domicile ?= { has_domicile_parameter = estate_increased_tutor_aptitude }
-				}
-			}
-			add = {
-				value = estate_increased_tutor_aptitude_6_value
-				desc = estate_increased_tutor_aptitude_desc
-			}
-		}
-		if = {
-			limit = {
-				liege ?= {
-					domicile ?= { has_domicile_parameter = estate_increased_tutor_aptitude_4 }
-				}
-			}
-			add = {
-				value = estate_increased_tutor_aptitude_4_value
-				desc = estate_increased_tutor_aptitude_desc
-			}
-		}
-		else_if = {
-			limit = {
-				liege ?= {
-					domicile ?= { has_domicile_parameter = estate_increased_tutor_aptitude_3 }
-				}
-			}
-			add = {
-				value = estate_increased_tutor_aptitude_3_value
-				desc = estate_increased_tutor_aptitude_desc
-			}
-		}
-		else_if = {
-			limit = {
-				liege ?= {
-					domicile ?= { has_domicile_parameter = estate_increased_tutor_aptitude_2 }
-				}
-			}
-			add = {
-				value = estate_increased_tutor_aptitude_2_value
-				desc = estate_increased_tutor_aptitude_desc
-			}
-		}
-		else_if = {
-			limit = {
-				liege ?= {
-					domicile ?= { has_domicile_parameter = estate_increased_tutor_aptitude_1 }
-				}
-			}
-			add = {
-				value = estate_increased_tutor_aptitude_1_value
-				desc = estate_increased_tutor_aptitude_desc
-			}
-		}
-		if = {
-			limit = {
-				liege ?= {
-					domicile ?= { has_domicile_building_or_higher = east_asian_estate_history_school_04 }
-				}
-			}
-			add = {
-				value = estate_increased_tutor_aptitude_4_value
-				desc = estate_increased_tutor_aptitude_desc
-			}
-		}
-		else_if = {
-			limit = {
-				liege ?= {
-					domicile ?= { has_domicile_building_or_higher = east_asian_estate_history_school_03 }
-				}
-			}
-			add = {
-				value = estate_increased_tutor_aptitude_3_value
-				desc = estate_increased_tutor_aptitude_desc
-			}
-		}
-		else_if = {
-			limit = {
-				liege ?= {
-					domicile ?= { has_domicile_building_or_higher = east_asian_estate_history_school_02 }
-				}
-			}
-			add = {
-				value = estate_increased_tutor_aptitude_2_value
-				desc = estate_increased_tutor_aptitude_desc
-			}
-		}
-		else_if = {
-			limit = {
-				liege ?= {
-					domicile ?= { has_domicile_building_or_higher = east_asian_estate_history_school_01 }
-				}
-			}
-			add = {
-				value = estate_increased_tutor_aptitude_1_value
-				desc = estate_increased_tutor_aptitude_desc
-			}
-		}
-		if = {
-			limit = {
 				has_character_flag = court_language_teacher
 			}
 			add = {
@@ -270,9 +162,66 @@ court_tutor_court_position = {
 				desc = court_language_teacher_desc
 			}
 		}
-		add = court_position_aptitude_eunuch_tradition_value
-		add = court_position_aptitude_family_business_value
-		add = court_position_aptitude_low_penalty_value
+
+		if = {
+			limit = { exists = liege.domicile }
+			if = {
+				limit = {
+					liege.domicile ?= { has_domicile_parameter = estate_increased_tutor_aptitude_6 }
+				}
+				add = {
+					value = estate_increased_tutor_aptitude_6_value
+					desc = estate_increased_tutor_aptitude_desc
+				}
+			}
+			# not else if intendly
+			if = {
+				limit = {
+					liege.domicile ?= { has_domicile_parameter = estate_increased_tutor_aptitude_5 }
+				}
+				add = {
+					value = estate_increased_tutor_aptitude_5_value
+					desc = estate_increased_tutor_aptitude_desc
+				}
+			}
+			if = {
+				limit = {
+					liege.domicile ?= { has_domicile_parameter = estate_increased_tutor_aptitude_4 }
+				}
+				add = {
+					value = estate_increased_tutor_aptitude_4_value
+					desc = estate_increased_tutor_aptitude_desc
+				}
+			}
+			if = {
+				limit = {
+					liege.domicile ?= { has_domicile_parameter = estate_increased_tutor_aptitude_3 }
+				}
+				add = {
+					value = estate_increased_tutor_aptitude_3_value
+					desc = estate_increased_tutor_aptitude_desc
+				}
+			}
+			if = {
+				limit = {
+					liege.domicile ?= { has_domicile_parameter = estate_increased_tutor_aptitude_2 }
+				}
+				add = {
+					value = estate_increased_tutor_aptitude_2_value
+					desc = estate_increased_tutor_aptitude_desc
+				}
+			}
+			if = {
+				limit = {
+					liege.domicile ?= { has_domicile_parameter = estate_increased_tutor_aptitude_1 }
+				}
+				add = {
+					value = estate_increased_tutor_aptitude_1_value
+					desc = estate_increased_tutor_aptitude_desc
+				}
+			}
+		}
+
 		# Bonus from court.8311
 		if = {
 			limit = { var:bonus_aptitude_role ?= flag:court_tutor }
@@ -281,114 +230,14 @@ court_tutor_court_position = {
 				desc = cp_bonus_aptitude
 			}
 		}
-		# Seneschal
-		if = {
-			limit = {
-				liege.court_position:seneschal_court_position ?= {
-					has_variable = performing_improve_court
-				}
-			}
-			add = {
-				value = liege.court_position:seneschal_court_position.seneschal_improve_court_value
-				desc = seneschal_improve_court_aptitude_desc
-			}
-		}
-		# Yeke Jarquchi
-		if = {
-			limit = {
-				liege.court_position:yeke_jarquchi_court_position ?= {
-					has_variable = performing_improve_court
-				}
-			}
-			add = {
-				value = liege.court_position:yeke_jarquchi_court_position.yeke_jarquchi_improve_court_value
-				desc = yeke_jarquchi_improve_court_aptitude_desc
-			}
-		}
-		# Nomad Yurt
-		if = {
-			limit = {
-				employer.domicile ?= {
-					has_domicile_building_or_higher = wet_nurse_yurt_01
-				}
-			}
-			add = {
-				value = 0
-				if = {
-					limit = {
-						employer.domicile ?= {
-							has_domicile_parameter = nomad_yurt_court_tutor_aptitude_lvl_4
-						}
-					}
-					add = 32
-				}
-				else_if = {
-					limit = {
-						employer.domicile ?= {
-							has_domicile_parameter = nomad_yurt_court_tutor_aptitude_lvl_3
-						}
-					}
-					add = 16
-				}
-				else_if = {
-					limit = {
-						employer.domicile ?= {
-							has_domicile_parameter = nomad_yurt_court_tutor_aptitude_lvl_2
-						}
-					}
-					add = 8
-				}
-				else_if = {
-					limit = {
-						employer.domicile ?= {
-							has_domicile_parameter = nomad_yurt_court_tutor_aptitude_lvl_1
-						}
-					}
-					add = 4
-				}
-				desc = wet_nurse_yurt_01_domicile_building
-			}
-		}
-		if = {
-			limit = {
-				employer.domicile ?= {
-					OR = {
-						has_domicile_building_or_higher = japanese_schoolhouse_01
-						has_domicile_building_or_higher = east_asian_estate_library_01
-					}
-				}
-			}
-			add = {
-				value = 0
-				if = {
-					limit = { employer.domicile ?= { has_domicile_parameter = increased_tutor_aptitude_6 } }
-					add = estate_increase_gardener_aptitude_value_6
-				}
-				else_if = {
-					limit = { employer.domicile ?= { has_domicile_parameter = increased_tutor_aptitude_5 } }
-					add = estate_increase_gardener_aptitude_value_5
-				}
-				else_if = {
-					limit = { employer.domicile ?= { has_domicile_parameter = increased_tutor_aptitude_4 } }
-					add = estate_increase_gardener_aptitude_value_4
-				}
-				else_if = {
-					limit = { employer.domicile ?= { has_domicile_parameter = increased_tutor_aptitude_3 } }
-					add = estate_increase_gardener_aptitude_value_3
-				}
-				else_if = {
-					limit = { employer.domicile ?= { has_domicile_parameter = increased_tutor_aptitude_2 } }
-					add = estate_increase_gardener_aptitude_value_2
-				}
-				else = { add = estate_increase_gardener_aptitude_value_1 }
-				desc = estate_tutor_building
-			}
-		}
+
+		add = court_position_aptitude_low_penalty_value
+		add = general_aptitude_bonus
 	}
 
 	is_shown = {
 		OR = {
-			is_landed_or_landless_administrative = yes
+			is_landed_or_landless_administrative_or_theocratic = yes
 			domicile ?= {
 				has_domicile_parameter = nomad_unlock_court_tutor
 			}
@@ -409,12 +258,15 @@ court_tutor_court_position = {
 			limit = {
 				government_has_flag = government_is_nomadic
 			}
-			domicile ?= {
-				has_domicile_parameter = nomad_unlock_court_tutor
+			custom_tooltip = {
+				text = has_court_tutor_domicile_building
+				domicile ?= {
+					has_domicile_parameter = nomad_unlock_court_tutor
+				}
 			}
 		}
 		trigger_else = {
-			is_landed_or_landless_administrative = yes
+			is_landed_or_landless_administrative_or_theocratic = yes
 		}
 	}
 
@@ -433,30 +285,8 @@ court_tutor_court_position = {
 	revoke_cost = { # root is the liege, no other scopes are passed here!
 		prestige =  {
 			value = major_court_position_prestige_revoke_cost
-			# Set to 0 via obligation hook
 			if = {
-				limit = {
-					court_position_obligation_hook_salary_trigger = {
-						POS = court_tutor
-						LIEGE = root
-					}
-				}
-				multiply = 0
-			}
-			# Avoid AI prestige issues
-			if = {
-				limit = {
-					exists = this
-					is_ai = yes
-				}
-				multiply = 0
-			}
-			# Special case for events
-			if = {
-				limit = {
-					exists = this
-					has_character_flag = free_revoke_cost
-				}
+				limit = { free_court_position_revoke_trigger = { POS = court_tutor } }
 				multiply = 0
 			}
 			#Lowering for LAAMPS, to match Camp Officer revoke cost

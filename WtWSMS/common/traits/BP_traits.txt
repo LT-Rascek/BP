@@ -10,27 +10,6 @@
 ### 00_traits stops at 350
 
 ############# PERSONALITY ############
-erudite = {
-	physical = yes
-	desc = {
-		first_valid = {
-			triggered_desc = {
-				trigger = { NOT = { exists = this } }
-				desc = trait_erudite_desc
-			}
-			desc = trait_erudite_character_desc
-		}
-	}
-	
-	learning = 2
-	prowess = -2
-	
-	clergy_opinion = 5
-	shown_in_ruler_designer = yes
-	ruler_designer_cost = 5
-	
-	birth = 0.5
-}
 imposing = {
 	physical = yes
 	desc = {
