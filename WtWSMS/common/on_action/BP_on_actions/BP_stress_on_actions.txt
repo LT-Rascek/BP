@@ -1,0 +1,125 @@
+﻿#Going to a new stress level will fire this.
+on_stress_level_1 = {
+	on_actions = {
+		bp_complex_exegesis_stress_sin_removal_1
+		bp_complex_exegesis_stress_learning_xp_1
+	}
+}
+on_stress_level_2 = {
+	on_actions = {
+		bp_complex_exegesis_stress_sin_removal_2
+		bp_complex_exegesis_stress_learning_xp_2
+	}
+}
+on_stress_level_3 = {
+	on_actions = {
+		bp_complex_exegesis_stress_sin_removal_3
+		bp_complex_exegesis_stress_learning_xp_3
+	}
+}
+on_stress_level_4 = {
+	on_actions = {
+		bp_complex_exegesis_stress_sin_removal_4
+		bp_complex_exegesis_stress_learning_xp_4
+	}
+}
+
+bp_complex_exegesis_stress_sin_removal_1 = {
+	trigger = {
+		# Prevents multiple mental breaks from occurring on the same day (causes errors and creates an unbreakable stress loop).
+		NOT = { has_character_flag = recently_hit_stress_threshold }
+		has_personal_tenet_flag = tenet_wtwsms_stress_breaks_remove_sins
+	}
+	effect = {
+		random = {
+			chance = 15
+			if = {
+				limit = { any_character_trait = { root.rite = { trait_is_sin_rite = prev } } }
+				flip_sinful_trait_effect = yes
+			}
+		}
+	}
+}
+bp_complex_exegesis_stress_learning_xp_1 = {
+	trigger = {
+		# Prevents multiple mental breaks from occurring on the same day (causes errors and creates an unbreakable stress loop).
+		NOT = { has_character_flag = recently_hit_stress_threshold }
+		has_personal_tenet_flag = stress_breaks_grant_learning_xp
+	}
+	effect = { add_learning_lifestyle_xp = minor_lifestyle_xp }
+}
+
+bp_complex_exegesis_stress_sin_removal_2 = {
+	trigger = {
+		# Prevents multiple mental breaks from occurring on the same day (causes errors and creates an unbreakable stress loop).
+		NOT = { has_character_flag = recently_hit_stress_threshold }
+		has_personal_tenet_flag = tenet_wtwsms_stress_breaks_remove_sins
+	}
+	effect = {
+		play_music_cue = "mx_cue_stress"
+		random = {
+			chance = 25
+			if = {
+				limit = { any_character_trait = { root.rite = { trait_is_sin_rite = prev } } }
+				flip_sinful_trait_effect = yes
+			}
+		}
+	}
+}
+bp_complex_exegesis_stress_learning_xp_2 = {
+	trigger = {
+		# Prevents multiple mental breaks from occurring on the same day (causes errors and creates an unbreakable stress loop).
+		NOT = { has_character_flag = recently_hit_stress_threshold }
+		has_personal_tenet_flag = stress_breaks_grant_learning_xp
+	}
+	effect = { add_learning_lifestyle_xp = medium_lifestyle_xp }
+}
+
+bp_complex_exegesis_stress_sin_removal_3 = {
+	trigger = {
+		# Prevents multiple mental breaks from occurring on the same day (causes errors and creates an unbreakable stress loop).
+		NOT = { has_character_flag = recently_hit_stress_threshold }
+		has_personal_tenet_flag = tenet_wtwsms_stress_breaks_remove_sins
+	}
+	effect = {
+		play_music_cue = "mx_cue_stress"
+		random = {
+			chance = 50
+			if = {
+				limit = { any_character_trait = { root.rite = { trait_is_sin_rite = prev } } }
+				flip_sinful_trait_effect = yes
+			}
+		}
+	}
+}
+bp_complex_exegesis_stress_learning_xp_3 = {
+	trigger = {
+		# Prevents multiple mental breaks from occurring on the same day (causes errors and creates an unbreakable stress loop).
+		NOT = { has_character_flag = recently_hit_stress_threshold }
+		has_personal_tenet_flag = stress_breaks_grant_learning_xp
+	}
+	effect = { add_learning_lifestyle_xp = major_lifestyle_xp }
+}
+
+bp_complex_exegesis_stress_sin_removal_4 = {
+	trigger = {
+		# Prevents multiple mental breaks from occurring on the same day (causes errors and creates an unbreakable stress loop).
+		NOT = { has_character_flag = recently_hit_stress_threshold }
+		has_personal_tenet_flag = tenet_wtwsms_stress_breaks_remove_sins
+	}
+	effect = {
+		play_music_cue = "mx_cue_stress"
+		if = {
+			limit = { any_character_trait = { root.rite = { trait_is_sin_rite = prev } } }
+			flip_sinful_trait_effect = yes
+		}
+	}
+}
+bp_complex_exegesis_stress_learning_xp_4 = {
+	trigger = {
+		# Prevents multiple mental breaks from occurring on the same day (causes errors and creates an unbreakable stress loop).
+		NOT = { has_character_flag = recently_hit_stress_threshold }
+		has_personal_tenet_flag = stress_breaks_grant_learning_xp
+	}
+	effect = { add_learning_lifestyle_xp = massive_lifestyle_xp }
+}

@@ -1,0 +1,15 @@
+﻿##### Changed from Vanilla: Added WtWSMS Tenet Effects
+pam_know_doctrine = {
+	scope = character
+	saved_scopes = { doctrine }
+
+	is_valid = {
+		OR = {
+			knows_doctrine = scope:doctrine
+			has_perk = prophet_perk
+			##### Changed from Vanilla vvvvv
+			rite ?= { rite_parameter = unlock_prophet_perk_effect }
+			##### Changed from Vanilla ^^^^^
+		}
+	}
+}

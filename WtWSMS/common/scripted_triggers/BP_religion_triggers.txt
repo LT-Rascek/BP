@@ -692,3 +692,92 @@ actor_is_faith_culture_or_child_culture_for_cultural_religions_DIRECT_trigger = 
 		}
 	}
 }
+
+#### Christian TRIGGERS
+unique_soteriology_trigger = {
+	custom_tooltip = {
+		text = INCOMPATIBLE_TENET_OTHER_SOTERIOLOGY_TRIGGER
+		NOR = {
+			tenet:tenet_pelagianism = { is_in_list = selected_doctrines }
+			tenet:tenet_total_depravity = { is_in_list = selected_doctrines }
+			tenet:tenet_original_sin = { is_in_list = selected_doctrines }
+			tenet:tenet_gnosticism = { is_in_list = selected_doctrines }
+		}
+	}
+}
+#Changed from Vanilla: Extended to all WtWSMS Christologies
+unique_soteriology_personal_trigger = {
+	trigger_if = {
+		limit = { has_global_variable = game_has_started }
+		custom_tooltip = {
+			text = INCOMPATIBLE_TENET_OTHER_SOTERIOLOGY_TRIGGER
+			NOR = {
+				has_personal_tenet = tenet_pelagianism
+				has_personal_tenet = tenet_total_depravity
+				has_personal_tenet = tenet_original_sin
+				has_personal_tenet = tenet_gnosticism
+			}
+		}
+	}
+	trigger_else = {
+		# prevent startup assert error
+		custom_tooltip = {
+			text = INCOMPATIBLE_TENET_OTHER_SOTERIOLOGY_TRIGGER
+			calc_true_if = {
+				amount <= 1
+				has_personal_tenet = tenet_pelagianism
+				has_personal_tenet = tenet_total_depravity
+				has_personal_tenet = tenet_original_sin
+				has_personal_tenet = tenet_gnosticism
+			}
+		}
+	}
+}
+#Eucharistic Tenets
+unique_eucharsitic_tenet_personal_trigger = {
+	custom_tooltip = {
+		text = INCOMPATIBLE_TENET_OTHER_COMMUNION_TRIGGER
+		NOR = {
+			tenet:tenet_memorialism = { is_in_list = selected_doctrines }
+			tenet:tenet_repudiation = { is_in_list = selected_doctrines }
+			#Handle having both Divine Office and Communion
+			AND = {
+				tenet:tenet_divine_liturgy = { is_in_list = selected_doctrines }
+				tenet:tenet_communion = { is_in_list = selected_doctrines }
+			}
+		}
+	}
+}
+#Changed from Vanilla: Extended to all WtWSMS Christologies
+unique_eucharsitic_tenet_personal_trigger = {
+	trigger_if = {
+		limit = { has_global_variable = game_has_started }
+		custom_tooltip = {
+			text = INCOMPATIBLE_TENET_OTHER_COMMUNION_TRIGGER
+			NOR = {
+				has_personal_tenet = tenet_memorialism
+				has_personal_tenet = tenet_repudiation
+				#Handle having both Divine Office and Communion
+				AND = {
+					has_personal_tenet = tenet_divine_liturgy
+					has_personal_tenet = tenet_communion
+				}
+			}
+		}
+	}
+	trigger_else = {
+		# prevent startup assert error
+		custom_tooltip = {
+			text = INCOMPATIBLE_TENET_OTHER_CHRISTOLOGY_TRIGGER
+			NOR = {
+				has_personal_tenet = tenet_memorialism
+				has_personal_tenet = tenet_repudiation
+				#Handle having both Divine Office and Communion
+				AND = {
+					has_personal_tenet = tenet_divine_liturgy
+					has_personal_tenet = tenet_communion
+				}
+			}
+		}
+	}
+}

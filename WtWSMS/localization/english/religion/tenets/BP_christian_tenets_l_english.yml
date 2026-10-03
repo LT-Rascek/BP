@@ -1,4 +1,6 @@
 ﻿l_english:
+ tenet_complex_exegesis_desc: "[ROOT.Faith.ReligiousText] is full of allegory, with many personal interpretations. This opens up avenues for discovery of the divine, but may impede the unenlightened who follow a scholarly path."
+ tenet_complex_exegesis_name: "Complex Exegesis"
  tenet_ecstatic_prophecy_desc: "Our most pious followers are possessed by [ROOT.Faith.HighGodName] and are able to deliver dramatic prophecies to help guide the faithful."
  tenet_ecstatic_prophecy_name: "Ecstatic Prophecy"
  tenet_redeeming_struggle_desc: "Christ came to liberate the poor, and martyrdom is our highest goal. Let us lift up our \"Israelites\" and bring about a New Jerusalem!"
@@ -11,7 +13,10 @@
  doctrine_parameter_gain_level_of_piety_when_adopting_this_tenet: "Gain a [piety_level|E] when adopting this tenet"
  doctrine_parameter_possessed_gain_personal_tenet_slot_add: "[GetTrait('possessed_1').GetName( GetNullCharacter )] gives an additional Personal Tenet Slot"
  doctrine_parameter_raise_circumcellions_decision: "Enables #V $raise_circumcellions_decision$ Decision#!"
+ doctrine_parameter_stress_breaks_grant_learning_xp: "[stress|E] breaks grant Learning [lifestyle|E] Experience Gain"
  doctrine_parameter_tenet_ecstatic_prophecy_conversion_resistance_active: "Conversion Resistance: #P +[EmptyScope.ScriptValue('conversion_resistance_ecstatic_prophecy_value')]% #!"
  doctrine_parameter_tenet_redeeming_struggle_resistance: "Conversion Resistance: #P +[EmptyScope.ScriptValue('tenet_redeeming_struggle_resistance_value')|0%]#!
  doctrine_parameter_tenet_rigorism_conversion_speed: "Conversion Speed: #N -[EmptyScope.ScriptValue('conversion_rigorism_conversion_speed_value')]%#!\n\t\t$EFFECT_LIST_BULLET$#italic Applies only to [faiths|E] without #V $tenet_rigorism_name$#!#!"
+ doctrine_parameter_tenet_wtwsms_stress_breaks_remove_sins: "$doctrine_parameter_tenet_purgatory_stress_breaks_remove_sins$"
+ doctrine_parameter_unlock_prophet_perk_effect: "Unlocks all tenets and doctrines for creating new rites"
  

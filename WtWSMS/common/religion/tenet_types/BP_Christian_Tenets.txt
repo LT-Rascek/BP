@@ -184,6 +184,10 @@ tenet_ecstatic_prophecy = {
 		stress_loss_per_piety_level = 0.05
 		rite_creation_piety_cost_mult = -0.30
 	}
+	
+	personal_tenet_parameters = {
+		unlock_prophet_perk_effect
+	}
 
 	traits = {
 		# Doctrinal fidelity to the one-united-nature formula vs. dissimulation under Chalcedonian pressure.
@@ -197,24 +201,27 @@ tenet_ecstatic_prophecy = {
 	}
 }
 tenet_complex_exegesis = {
-	icon = tenet_two_nature
+	icon = tenet_literalism
 
-	name = tenet_dyophysitism_name
+	name = tenet_complex_exegesis_name
 
-	desc = tenet_dyophysitism_desc
+	desc = tenet_complex_exegesis_desc
 
 	is_shown = {}
 
 	can_pick = {
-		religion = religion:christianity_religion
-		unique_christology_trigger = yes
+		custom_description = {
+			text = requires_scriptural_basis_trigger
+			doctrine:doctrine_scriptural = { is_in_list = selected_doctrines }
+		}
 	}
 	can_pick_as_personal_tenet = {
-		unique_christology_personal_trigger = yes
+		culture = { has_innovation = innovation_writing }
+		NOT = { has_personal_tenet = tenet_literalism }
 	}
 
 	piety_cost = {
-		value = faith_tenet_cost_low
+		value = faith_tenet_cost_mid
 
 		# Multiplier for keeping same tenet
 		if = {
@@ -223,24 +230,29 @@ tenet_complex_exegesis = {
 		}
 	}
 
-	divergence_multiplier = 1.5
+	divergence_multiplier = 2.0
 
 	character_modifier = {
-		different_faith_opinion = 15
+		monthly_learning_lifestyle_xp_gain_mult = -0.1
 	}
 
-	parameters = {}
+	parameters = {
+		literalist_debate_enabled
+		tenet_esotericism_mystic_education
+	}
 
-	personal_tenet_parameters = {}
+	personal_tenet_parameters = {
+		tenet_wtwsms_stress_breaks_remove_sins
+		stress_breaks_grant_learning_xp
+	}
 
 	traits = {
 		# Doctrinal fidelity to the one-united-nature formula vs. dissimulation under Chalcedonian pressure.
 		virtues = {
-			humble = { weight = 15 scale = 1 }
+			lifestyle_scholar = { weight = 15 scale = 1 }
+			lifestyle_mystic = { weight = 15 scale = 1 }
 		}
-		sins = {
-			arbitrary = { weight = 15 scale = 1 }
-		}
+		sins = {}
 	}
 }
 tenet_pelagianism = {
