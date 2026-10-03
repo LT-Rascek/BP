@@ -1235,10 +1235,10 @@ restore_carthage_decision = {
 		culture ?= {
 			OR = {
 				##### Changed from Vanilla vvvvv
-				culture = { has_cultural_pillar = heritage_syriac }
-				culture = { has_cultural_pillar = heritage_phoenician }
-				culture = culture:romano_punic
-				culture = culture:romano_african
+				this = { has_cultural_pillar = heritage_syriac }
+				this = { has_cultural_pillar = heritage_phoenician }
+				this = culture:romano_punic
+				this = culture:romano_african
 				##### Changed from Vanilla ^^^^^
 			}
 		}

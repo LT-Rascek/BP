@@ -7,29 +7,19 @@
 
 	is_shown = {}
 
-	can_pick = { religion = religion:christianity_religion }
-	can_pick_as_personal_tenet = {
-		unique_christology_personal_trigger = yes
-		
-		custom_description = {
-			text = incompatible_tenet_pacifism_trigger
-			NOT = { doctrine:tenet_pacifism = { is_in_list = selected_doctrines } }
-		}
-		custom_description = {
-			text = incompatible_tenet_dharmic_pacifism_trigger
-			NOT = { doctrine:tenet_dharmic_pacifism = { is_in_list = selected_doctrines } }
-		}
-		custom_description = {
-			text = incompatible_tenet_unrelenting_faith_trigger
-			NOT = { doctrine:tenet_unrelenting_faith = { is_in_list = selected_doctrines } }
-		}
-		custom_description = {
-			text = incompatible_tenet_communal_possessions_trigger
-			NOT = { doctrine:tenet_communal_possessions = { is_in_list = selected_doctrines } }
-		}
+	can_pick = {
+		religion = religion:christianity_religion
 		custom_description = {
 			text = doctrine_inverted_pluralism_fundamentalist_trigger
 			doctrine:doctrine_pluralism_fundamentalist = { is_in_list = selected_doctrines }
+		}
+	}
+	can_pick_as_personal_tenet = {
+		NOR = {
+			has_personal_tenet = tenet_pacifism
+			has_personal_tenet = tenet_dharmic_pacifism
+			has_personal_tenet = tenet_communal_possessions
+			has_personal_tenet = tenet_unrelenting_faith
 		}
 	}
 

@@ -177,8 +177,8 @@ portrait_religious_orthodox_trigger = {
 				has_western_liturgical_rite_trigger = no
 				religion = religion:christianity_religion
 			}
-			portrait_religious_faith_or_foundational_trigger = { FAITH = faith:valentinianism }
-			portrait_religious_faith_or_foundational_trigger = { FAITH = faith:marcosianism }
+			portrait_religious_faith_or_foundational_trigger = { FAITH = rite:valentinianism.faith }
+			portrait_religious_faith_or_foundational_trigger = { FAITH = rite:marcosianism.faith }
 		}
 	}
 }
@@ -198,7 +198,7 @@ portrait_religious_steppe_trigger = {
 		religion = religion:tani_religion
 		##### Changed from Vanilla: magyar_religion
 		faith = {
-			portrait_religious_faith_or_foundational_trigger = { FAITH = faith:old_bon }
+			portrait_religious_faith_or_foundational_trigger = { FAITH = rite:old_bon.faith }
 		}
 		##### New
 		religion = religion:peristani_religion
@@ -228,7 +228,7 @@ portrait_religious_zoroastrian_trigger = {
 		religion = religion:yazidi_religion
 		religion = religion:zunism_religion
 		faith = {
-			portrait_religious_faith_or_foundational_trigger = { FAITH = faith:mandeaism }
+			portrait_religious_faith_or_foundational_trigger = { FAITH = rite:mandeaism.faith }
 		}
 		religion = religion:dualism_religion
 		religion = religion:basque_religion
