@@ -55,8 +55,8 @@ demand_land_for_family_west = {
 							limit = { this = { has_holding_type = church_holding } }
 							AND = {
 								this = { has_holding_type = church_holding }
-								this.barony.holder.faith = { has_doctrine = doctrine_theocracy_lay_clergy }
-								root.faith = { has_doctrine = doctrine_theocracy_lay_clergy }
+								this.barony.holder.rite = { has_doctrine = doctrine_theocracy_lay_clergy }
+								root.rite = { has_doctrine = doctrine_theocracy_lay_clergy }
 							}
 						}
 						has_holding_type = castle_holding
@@ -169,8 +169,8 @@ demand_land_for_family_east = {
 							limit = { this = { has_holding_type = church_holding } }
 							AND = {
 								this = { has_holding_type = church_holding }
-								this.barony.holder.faith = { has_doctrine = doctrine_theocracy_lay_clergy }
-								root.faith = { has_doctrine = doctrine_theocracy_lay_clergy }
+								this.barony.holder.rite = { has_doctrine = doctrine_theocracy_lay_clergy }
+								root.rite = { has_doctrine = doctrine_theocracy_lay_clergy }
 							}
 						}
 						has_holding_type = castle_holding

@@ -21,37 +21,37 @@
 		}
 		NOT = { government_has_flag = is_a_roman_government } #Roman governments are special
 		OR = {
-			faith = { has_doctrine_parameter = right_to_rule_feudal }
+			rite = { rite_has_parameter = right_to_rule_feudal }
 			culture = { has_cultural_parameter = right_to_rule_feudal }
-			faith = { has_doctrine_parameter = right_to_rule_clan }
+			rite = { rite_has_parameter = right_to_rule_clan }
 			culture = { has_cultural_parameter = right_to_rule_clan }
-			faith = { has_doctrine_parameter = right_to_rule_mandala }
-			faith = { has_doctrine_parameter = right_to_rule_sassanid }
+			rite = { rite_has_parameter = right_to_rule_mandala }
+			rite = { rite_has_parameter = right_to_rule_sassanid }
 			culture = { has_cultural_parameter = right_to_rule_sassanid }
 		}
 		OR = {
 			AND = {
 				government_has_flag = government_is_feudal
 				AND = {
-					faith = { NOT = { has_doctrine_parameter = right_to_rule_feudal } }
+					rite = { NOT = { rite_has_parameter = right_to_rule_feudal } }
 					culture = { NOT = { has_cultural_parameter = right_to_rule_feudal } }
 				}
 			}
 			AND = {
 				government_has_flag = government_is_clan
 				AND = {
-					faith = { NOT = { has_doctrine_parameter = right_to_rule_clan } }
+					rite = { NOT = { rite_has_parameter = right_to_rule_clan } }
 					culture = { NOT = { has_cultural_parameter = right_to_rule_clan } }
 				}
 			}
 			AND = {
 				government_has_flag = government_is_rajamandala
-				faith = { NOT = { has_doctrine_parameter = right_to_rule_mandala } }
+				rite = { NOT = { rite_has_parameter = right_to_rule_mandala } }
 			}
 			AND = {
 				government_has_flag = government_is_iranian_dynastic
 				AND = {
-					faith = { NOT = { has_doctrine_parameter = right_to_rule_sassanid } }
+					rite = { NOT = { rite_has_parameter = right_to_rule_sassanid } }
 					culture = { NOT = { has_cultural_parameter = right_to_rule_sassanid } }
 				}
 			}
@@ -64,7 +64,7 @@
 		culture = { has_innovation = innovation_hereditary_rule }
 		#Mandala requires slightly more details
 		trigger_if = {
-			limit = { faith = { has_doctrine_parameter = right_to_rule_mandala } }
+			limit = { rite = { rite_has_parameter = right_to_rule_mandala } }
 			OR = {
 				culture = { has_cultural_pillar = heritage_indo_aryan }
 				culture = { has_cultural_pillar = heritage_dravidian }
@@ -76,7 +76,7 @@
 		custom_tooltip = reform_government_decision_help_text
 
 		save_scope_as = liege
-		faith = { save_scope_as = liege_faith }
+		rite = { save_scope_as = liege_faith }
 		culture = { save_scope_as = liege_culture }
 		add_to_temporary_list = characters_to_convert
 
@@ -102,30 +102,30 @@
 				}
 				OR = {
 					AND = {
-						faith = { has_doctrine_parameter = right_to_rule_feudal }
-						scope:liege_faith = { has_doctrine_parameter = right_to_rule_feudal }
+						rite = { rite_has_parameter = right_to_rule_feudal }
+						scope:liege_rite = { rite_has_parameter = right_to_rule_feudal }
 					}
 					AND = {
 						OR = {
-							faith = { has_doctrine_parameter = right_to_rule_clan }
+							rite = { rite_has_parameter = right_to_rule_clan }
 							culture = { has_cultural_parameter = right_to_rule_clan }
 						}
 						OR = {
-							scope:liege_faith = { has_doctrine_parameter = right_to_rule_clan }
+							scope:liege_rite = { rite_has_parameter = right_to_rule_clan }
 							scope:liege_culture = { has_cultural_parameter = right_to_rule_clan }
 						}
 					}
 					AND = {
-						faith = { has_doctrine_parameter = right_to_rule_mandala }
-						scope:liege_faith = { has_doctrine_parameter = right_to_rule_mandala }
+						rite = { rite_has_parameter = right_to_rule_mandala }
+						scope:liege_rite = { rite_has_parameter = right_to_rule_mandala }
 					}
 					AND = {
 						OR = {
-							faith = { has_doctrine_parameter = right_to_rule_sassanid }
+							rite = { rite_has_parameter = right_to_rule_sassanid }
 							culture = { has_cultural_parameter = right_to_rule_sassanid }
 						}
 						OR = {
-							scope:liege_faith = { has_doctrine_parameter = right_to_rule_sassanid }
+							scope:liege_rite = { rite_has_parameter = right_to_rule_sassanid }
 							scope:liege_culture = { has_cultural_parameter = right_to_rule_sassanid }
 						}
 					}
@@ -135,28 +135,28 @@
 		}
 
 		if = {
-			limit = { faith = { has_doctrine_parameter = right_to_rule_feudal } }
+			limit = { rite = { rite_has_parameter = right_to_rule_feudal } }
 			every_in_list = {
 				list = characters_to_convert
 				change_government = feudal_government
 			}
 		}
 		else_if = {
-			limit = { faith = { has_doctrine_parameter = right_to_rule_clan } }
+			limit = { rite = { rite_has_parameter = right_to_rule_clan } }
 			every_in_list = {
 				list = characters_to_convert
 				change_government = clan_government
 			}
 		}
 		else_if = {
-			limit = { faith = { has_doctrine_parameter = right_to_rule_mandala } }
+			limit = { rite = { rite_has_parameter = right_to_rule_mandala } }
 			every_in_list = {
 				list = characters_to_convert
 				change_government = rajamandala_government
 			}
 		}
 		else_if = {
-			limit = { faith = { has_doctrine_parameter = right_to_rule_sassanid } }
+			limit = { rite = { rite_has_parameter = right_to_rule_sassanid } }
 			every_in_list = {
 				list = characters_to_convert
 				change_government = iranian_dynastic_government

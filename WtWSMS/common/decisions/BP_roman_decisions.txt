@@ -27,12 +27,7 @@ ask_for_hre = {
 		NOT = { exists = title:e_wre.holder }
 		NOT = { exists = title:e_hre.holder }
 		#Have to be in communion with the Pope to do this
-		faith = {
-			OR = {
-				this = faith:nicene
-				this.religious_head = faith:nicene.religious_head
-			}
-		}
+		faith = faith:christian_faith
 		age >= 16
 		primary_title.tier = tier_empire
 		#Only Non-Romans would dare broach this subject this way
@@ -101,7 +96,7 @@ ask_for_hre = {
 		}
 		custom_tooltip = {
 			text = you_ask_the_pope_for_the_empire
-			faith:nicene.religious_head = { trigger_event = { id = BP_roman_decisions.0001 days = { 5 17 } } }
+			faith:christian_faith.religious_head = { trigger_event = { id = BP_roman_decisions.0001 days = { 5 17 } } }
 		}
 	}
 	

@@ -1,0 +1,125 @@
+﻿##### Changed from Vanilla: Extended to Jains in custom localization
+initiate_consolamentum_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+	}
+	decision_group_type = religious
+	title = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					religion = religion:christianity_religion
+				}
+				desc = initiate_consolamentum_decision
+			}
+			triggered_desc = {
+				trigger = {
+					religion = religion:jainism_religion
+				}
+				desc = initiate_consolamentum_decision_sallekhana
+			}
+			desc = initiate_consolamentum_decision_alternate
+		}
+	}
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					religion = religion:christianity_religion
+				}
+				desc = initiate_consolamentum_decision_desc
+			}
+			triggered_desc = {
+				trigger = {
+					religion = religion:jainism_religion
+				}
+				desc = initiate_consolamentum_decision_desc_sallekhana
+			}
+			desc = initiate_consolamentum_decision_desc_alternate
+		}
+	}
+
+	selection_tooltip = initiate_consolamentum_decision_tooltip
+
+	is_shown = {
+		OR = {
+			rite = {
+				rite_has_parameter = consolamentum_active
+			}
+			has_personal_tenet_flag = consolamentum_active
+		}
+	}
+
+	is_valid = {
+		OR = {
+			age >= ritual_suicide_age
+			custom_description = {
+				text = decision_consolamentum_health
+				health <= 1
+			}
+			has_trait = incapable
+		}
+	}
+
+	effect = {
+		hidden_effect = {
+			add_piety_level = 1
+		}
+		if = {
+			limit = {
+				rite ?= { rite_has_parameter = tenet_sacrificial_ceremonies_blessed_passing }
+				exists = primary_heir
+			}
+			primary_heir = {
+				add_piety = medium_piety_gain
+			}
+		}
+		if = {
+			limit = {
+				has_personal_tenet_flag = tenet_sacrificial_ceremonies_blessed_passing_personal
+				exists = primary_heir
+			}
+			primary_heir = {
+				add_piety = monumental_piety_gain
+				add_character_modifier = {
+					modifier = pam_blessed_passing_modifier
+					years = 10
+				}
+			}
+		}
+		death = { death_reason = death_ritual_suicide }
+		show_as_tooltip = {
+			add_piety_level = 1
+		}
+	}
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 60
+		duchy = 60
+		kingdom = 60
+		empire = 60
+		hegemony = 60
+	}
+
+	ai_potential = {
+		primary_heir ?= {
+			dynasty = root.dynasty
+		}
+		is_at_war = no
+	}
+
+	ai_will_do = {
+		base = 0
+
+		# 100% chance at 50 zeal
+		ai_value_modifier = {
+			ai_zeal = 2
+		}
+
+		modifier = {
+			add = 40
+			is_close_family_of = primary_heir
+		}
+	}
+}
