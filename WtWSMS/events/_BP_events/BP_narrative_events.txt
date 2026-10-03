@@ -44,7 +44,7 @@ bp_narrative_events.0001 = { #WTWSMS id: zusk_event.30
 			NOT = { this = character:175110 }
 			NAND = {
 				religion = religion:christianity_religion
-				this.faith = { considers_astray_trigger = { TARGET_FAITH = faith:nicene } }
+				this.faith = { considers_astray_trigger = { TARGET_FAITH = faith:christian_faith } }
 			}
 		}
 	}
@@ -79,7 +79,7 @@ bp_narrative_events.0001 = { #WTWSMS id: zusk_event.30
 			NOT = { this = character:175110 }
 			AND = {
 				religion = religion:christianity_religion
-				this.faith = { considers_astray_trigger = { TARGET_FAITH = faith:nicene } }
+				this.faith = { considers_astray_trigger = { TARGET_FAITH = faith:christian_faith } }
 			}
 		}
 		add_piety = -100

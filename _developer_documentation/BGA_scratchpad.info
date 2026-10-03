@@ -1,0 +1,122 @@
+﻿1). Get faiths and rites and holy sites and such implemented from 0.3.1 to 0.4.0 (ongoing)
+2). Go through the rest of common/, events/, localization/ and update code to 1.20.* standard
+3). Implement missing tenets and doctrines &c. in the faith system
+4). Add in new Rites and faiths from design document
+5). Add in saints within the various saint systems, and start balancing things like divergence
+6). Update faith histories so some faiths won't immediately splinter away from the mainline branch (byproduct of a lack of history I think)
+6). Update character histories to reflect rites properly.
+8). Work on other things like Clerical regions and such to integrate into the mod
+
+-----------------------
+stopped at 02_administrative_laws_BP_overwrite.txt (haven't touched yet)
+-----------------------
+
+- Let loc modders know about Trenkyanism
+- Ask PDX about Christology stuff; they make them all DLC dependent
+
+- Revise Mainline Rites as Appropriate (size &c.)
+- Erudite trait has been added to Vanilla
+
+Christian Borks:
+- Duplicated Rites:
+   - Marcionism, Nestorianism
+
+- Add some Messalian provinces
+- Clerical Regions flip to admin from on-actions...
+
+Law issues:
+- Admin Laws not showing up correctly for Roman Admin Governments
+- Other budgets not showing up for Roman Admin Budgets
+- Make sure laws are properly visible
+
+-----------------------
+- All new files must be properly encoded
+- Update Religion GUI
+
+- Remove Mehrism and associated RICE on actions
+
+- clergy_are_always_monks parameter - linked with monasticism doctrine
+
+Minorities:
+- sea_minority_decisions.txt
+
+Faiths:
+- Add necessary liturgical rites to christian Faiths
+- Remove otherwise non-existant Christian faiths in a way that's conformal with vanilla
+
+Patron Deity Decisions:
+- Unify into a singular decision with option widgets based on deity types, with various faiths getting extra
+- Then dispatch depending with generic modifiers else
+   - BP_patron_gods_decisions.txt - Review if needed
+   - select_personal_deity_tibet_decision - Review if needed
+   - select_personal_nat_decision - Review if needed
+
+Doctrines:
+- Get Doctrines et al sorted, including Rite to Rule
+- Move Vegetarianism from Special group
+- Remove RICE buddhism doctrines
+- Add in Power Doctrine (main for now)
+- Add in Eastern Pagan,  Faith Doctrine (special)
+- Add Nastika Faith Doctrine, Naked Priests, Roman Polytheism
+- Persian Legalization
+
+- Fill in tenets and doctrines
+- Augustinian Canons exist
+
+- "Overhaul pam_latin_as_liturgical_language_trigger and has_pam_dlc_trigger (and related)
+   for localization purposes"
+
+- Add necessary founder clerical regions
+- unique_christology_trigger needs overwrite
+
+=======================
+#TODO:
+- Add in Sub-Roman Transition check for claim wars...
+- declare_war_interaction might be borked for Federates
+- Federate interactions need review
+- Overhaul how "Roman Church" stuff interacts (with and without DLC)
+
+Replace Items:
+- realm_law_use_clerical_influence_trigger with a realm law flag check
+- coa_jewish_trigger needs to integrate with Marcionism being anti-Jewish
+=======================
+Activities:
+- Rework Dharma `buddhist_retreat_decision` into an activity
+
+Triggers:
+- Overhaul buildings and triggers as they are borked
+
+Vanilla Conformity:
+- Replace all instances of nicene with "christian_faith" for vanilla compat, and other rite equivalents
+- culture_is_or_has_ancestor_trigger replaces one of our homebrews and bring other in-line
+	- the_culture_or_parent_or_above_with_heritage_is_trigger
+- Make WtWSMS rites conformal name-wise with CK3 (use `_rite` instead of `_church`)
+
+Custom Localization:
+- GetRiteEcumenismFullOrEmpty
+- GetGovernmentAuthority
+- GetFaithSacredLanguage
+- GetFaithSacredLanguageCharacter
+
+Database:
+- WtWSMS holy sites need to be pruned or fixed up.
+
+Game Concepts:
+- Remove bp_autocephalous_church
+
+Localizations:
+- Jewish faiths use Tzadik instead of Saint
+- Insular Celtic using St. Patrick? If so, fix.
+
+Religions:
+- Review the weights and scales for all virtues and sins
+- Remove old, outdated localizations
+
+GFX:
+- Overwrite DLC music/start illustration object
+
+General Review:
+- "Might want to rework existing religions (Peristani et al) since it's no longer strictly required
+   to have everything in it's own file"
+- Split Berber Religion from North African as they are really distinct traditions
+- Remove the 00_*_Overwrite Religions where applicable and replace with at start doctrine modifications

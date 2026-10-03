@@ -800,7 +800,7 @@ BP_roman_decisions.0050 = { #WTWSMS id: imperial_legacy.11
 		animation = acknowledging
 	}
 	
-	lower_left_portrait = faith:nicene.religious_head
+	lower_left_portrait = faith:christian_faith.religious_head
 	
 	lower_right_portrait = scope:other_emperor
 	
@@ -1001,7 +1001,7 @@ BP_roman_decisions.0052 = { #CK2 ID: imperial_legacy.13
 		add_prestige = 100
 		
 		if = { #Inform the Nicene Pope
-			limit = { title:h_western_roman_empire.holder.faith = faith:nicene }
+			limit = { title:h_western_roman_empire.holder.faith = faith:christian_faith }
 			title:d_papal_state.holder = { trigger_event = { id = BP_roman_decisions.0060 } }
 		}
 	}
@@ -1039,7 +1039,7 @@ BP_roman_decisions.0053 = { #CK2 ID: imperial_legacy.14
 		if = { #Inform the Nicene Pope if this is about Italy
 			limit = {
 				scope:requested_title = title:h_western_roman_empire
-				title:h_western_roman_empire.holder.faith = faith:nicene
+				title:h_western_roman_empire.holder.faith = faith:christian_faith
 			}
 			title:d_papal_state.holder = { trigger_event = { id = BP_roman_decisions.0060 } }
 		}

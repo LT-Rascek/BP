@@ -1,0 +1,80 @@
+﻿pam_latin_as_liturgical_language_trigger = {
+	OR = {
+		faith = faith:catholic
+		this = rite:roman_rite
+		this = rite:ambrosian_rite
+		#this = rite:beneventan_rite
+		this = rite:mozarabic_church
+		#this = rite:carolingian_christianity
+		AND = {
+			rite_has_pre_scripted_liturgical_language_trigger = no
+			head_of_rite.culture ?= {
+				OR = {
+					this = culture:italian
+					has_same_culture_language = culture:italian
+				}
+			}
+		}
+	}
+}
+
+pam_greek_as_liturgical_language_trigger = {
+	OR = {
+		#faith = faith:orthodox
+		this = rite:byzantine_rite
+		AND = {
+			rite_has_pre_scripted_liturgical_language_trigger = no
+			head_of_rite.culture ?= {
+				OR = {
+					this = culture:greek
+					has_same_culture_language = culture:greek
+				}
+			}
+		}
+	}
+}
+
+pam_irish_as_liturgical_language_trigger = {
+	OR = {
+		this = rite:insular_celtic
+		AND = {
+			rite_has_pre_scripted_liturgical_language_trigger = no
+			head_of_rite.culture ?= {
+				OR = {
+					this = culture:irish
+					has_same_culture_language = culture:irish
+				}
+			}
+		}
+	}
+}
+
+pam_ethiopic_as_liturgical_language_trigger = {
+	OR = {
+		this = rite:ethiopian_rite
+		AND = {
+			rite_has_pre_scripted_liturgical_language_trigger = no
+			head_of_rite.culture ?= {
+				OR = {
+					this = culture:ethiopian
+					has_same_culture_language = culture:ethiopian
+				}
+			}
+		}
+	}
+}
+
+pam_armenian_as_liturgical_language_trigger = {
+	OR = {
+		this = rite:armenian_rite
+		AND = {
+			rite_has_pre_scripted_liturgical_language_trigger = no
+			head_of_rite.culture ?= {
+				OR = {
+					this = culture:armenian
+					has_same_culture_language = culture:armenian
+				}
+			}
+		}
+	}
+}

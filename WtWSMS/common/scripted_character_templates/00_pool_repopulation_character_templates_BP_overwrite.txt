@@ -292,7 +292,7 @@ pool_repopulate_local_flavor = {
 			add_character_flag = ai_will_not_convert
 			random_list = {
 				10 = {
-					set_character_faith = faith:rabbinism
+					set_character_rite = rite:rabbinism
 				}
 				####2 = {
 				####	trigger = {
@@ -309,20 +309,20 @@ pool_repopulate_local_flavor = {
 					trigger = {
 						has_trait = lifestyle_mystic
 					}
-					set_character_faith = faith:merkabah
+					set_character_rite = rite:merkabah
 				}
 				### vvv WtWSMS: Changed to match culture 
 				90 = {
 					trigger = {
 						culture = culture:samaritan_culture
 					}
-					set_character_faith = faith:samaritan
+					set_character_rite = rite:samaritan
 				}
 				90 = {
 					trigger = {
 						culture = culture:juhuro
 					}
-					set_character_faith = faith:tzadikite
+					set_character_rite = rite:tzadikite
 				}
 				### ^^^
 				### vvv WtWSMS: Added era trigger
@@ -336,7 +336,7 @@ pool_repopulate_local_flavor = {
 								}
 							}
 						}
-					set_character_faith = faith:karaism
+					set_character_rite = rite:karaism
 				}
 				### ^^^
 				90 = {
@@ -345,7 +345,7 @@ pool_repopulate_local_flavor = {
 							geographical_region = world_india
 						}
 					}
-					set_character_faith = faith:malabarism
+					set_character_rite = rite:malabarism
 				}
 			}
 			if = {
@@ -389,19 +389,19 @@ pool_repopulate_local_flavor = {
 			}
 			random_list = {
 				10 = {
-					set_character_faith = faith:digambara
+					set_character_rite = rite:digambara
 				}
 				10 = {
-					set_character_faith = faith:svetambara
+					set_character_rite = rite:svetambara
 				}
 				20 = {
-					set_character_faith = faith:yapaniya
+					set_character_rite = rite:yapaniya
 				}
 				35 = {
 					trigger = {
 						culture = culture:gujarati
 					}
-					set_character_faith = faith:zurvanism
+					set_character_rite = rite:zurvanism
 				}
 				####100 = {
 				####	trigger = {
@@ -410,7 +410,7 @@ pool_repopulate_local_flavor = {
 				####	set_character_faith = faith:ari
 				####}
 				5 = {
-					set_character_faith = faith:nestorian
+					set_character_rite = rite:nestorian
 				}
 				25 = {
 					trigger = {
@@ -420,7 +420,7 @@ pool_repopulate_local_flavor = {
 							culture = culture:tamil
 						}
 					}
-					set_character_faith = faith:malabarism
+					set_character_rite = rite:malabarism
 				}
 			}
 		}
@@ -473,7 +473,7 @@ pool_repopulate_local_flavor = {
 			limit = {
 				culture = culture:assyrian
 			}
-			set_character_faith = faith:nestorian
+			set_character_rite = rite:nestorian
 		}
 		####else_if = {
 		####	limit = {
@@ -497,7 +497,7 @@ pool_repopulate_local_flavor = {
 			}
 			random_list = {
 				50 = {
-					set_character_faith = faith:shangqing
+					set_character_rite = rite:shangqing
 					random_list = {
 						50 = {}
 						50 = {
@@ -506,10 +506,10 @@ pool_repopulate_local_flavor = {
 					}
 				}
 				15 = {
-					set_character_faith = faith:mahayana
+					set_character_rite = rite:mahayana
 				}
 				5 = {
-					set_character_faith = faith:zhengyi
+					set_character_rite = rite:zhengyi
 				}
 			}
 		}

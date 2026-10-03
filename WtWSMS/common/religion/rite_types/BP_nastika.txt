@@ -1,0 +1,80 @@
+﻿ajivika = {
+	name = ajivika
+	desc = ajivika_desc
+
+	tenets = {
+		tenet_consolamentum
+		tenet_dharmic_pacifism
+		tenet_astrology
+	}
+	
+	doctrines = {
+		doctrine_pilgrimage_local_rites
+		doctrine_clerical_succession_spiritual_fixed_appointment
+		doctrine_right_to_rule_rajadharma
+		doctrine_ritual_vegetarianism_clerics
+		nudity_doctrine_naked_priests
+	}
+
+	localization = {
+		ReligiousText = ajivika_holy_text
+		ReligiousText2 = ajivika_holy_text
+		ReligiousText3 = ajivika_holy_text
+	}
+}
+carvaka = {
+	name = carvaka
+	desc = carvaka_desc
+
+	tenet_selection_pair = {
+		requires_dlc_flag = all_under_heaven
+		doctrine = tenet_pursuit_of_knowledge
+		fallback_tenet = tenet_literalism
+	}
+
+	tenets = {
+		tenet_adaptive
+		tenet_hedonistic
+	}
+
+	doctrines = {
+		doctrine_clerical_gender_male_only
+		doctrine_deviancy_accepted
+	}
+
+	localization = {
+		ReligiousText = carvaka_holy_text
+		ReligiousText2 = carvaka_holy_text
+		ReligiousText3 = carvaka_holy_text
+		# No afterlife
+		PositiveAfterLife = carvaka_afterlife_positive
+		PositiveAfterLife2 = carvaka_afterlife_positive
+		PositiveAfterLife3 = carvaka_afterlife_positive
+		NegativeAfterLife = carvaka_afterlife_negative
+		NegativeAfterLife2 = carvaka_afterlife_negative_2
+		NegativeAfterLife3 = carvaka_afterlife_negative_3
+	}
+}
+ajnana = {
+	name = ajnana
+	desc = ajnana_desc
+
+	tenet_selection_pair = {
+		requires_dlc_flag = all_under_heaven
+		doctrine = tenet_pursuit_of_knowledge
+		fallback_tenet = tenet_literalism
+	}
+
+	tenets = {
+		tenet_adaptive
+		tenet_sacred_shadows # Accused of "eel-wriggling"; rejected claims to revealed truths as impossible, thus can dismiss honesty as naive
+		tenet_no_mind # Considered knowledge to be burdensome, compare Ajivika doctrine of colorless mind
+	}
+
+	doctrines = {
+		doctrine_adultery_men_accepted
+		doctrine_adultery_women_accepted
+		doctrine_kinslaying_accepted
+		doctrine_deviancy_accepted
+	}
+}
