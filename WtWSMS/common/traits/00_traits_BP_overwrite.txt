@@ -1263,3 +1263,105 @@ possessed_genetic = { # Highly event driven, Temporal lobe epilepsy
 	ai_boldness = 25
 	ai_vengefulness = 25
 }
+
+##### Changed from Vanilla: Pelagians loose stress more readily
+diligent = {
+	category = personality
+	opposites = {
+		lazy
+	}
+	diplomacy = 2
+	stewardship = 3
+	learning = 3
+
+	parochial_opinion = 5
+
+	stress_loss_mult = -0.5
+
+	culture_modifier = {
+		parameter = hard_working_traits_more_valued
+		farmlands_tax_mult = 0.2
+		floodplains_tax_mult = 0.2
+	}
+
+	culture_modifier = {
+		parameter = pragmatic_traits_county_opinion_modifiers
+		county_opinion_add = 10
+	}
+
+	culture_modifier = {
+		parameter = honorable_trait_bonuses
+		same_culture_opinion = 10
+		monthly_prestige_gain_mult = 0.05
+	}
+
+	same_opinion = 10
+	opposite_opinion = -10
+
+	flag = can_improve_capital_decision
+
+	culture_modifier = {
+		parameter = trait_county_opinion_modifiers
+		county_opinion_add = 5
+	}
+
+	culture_modifier = {
+		parameter = winter_trait_bonuses
+		winter_movement_speed = 0.1
+	}
+
+	culture_modifier = {
+		parameter = dry_trait_bonuses
+		drylands_min_combat_roll = 2
+		desert_min_combat_roll = 2
+	}
+
+	culture_modifier = {
+		parameter = build_bonuses_on_religious_traits
+		church_holding_build_speed = -0.2
+		church_holding_holding_build_speed = -0.2
+	}
+
+	##### Changed from Vanilla vvvvv
+	rite_modifier = {
+		parameter = diligent_losses_more_stress
+		stress_loss_mult = 0.25
+	}
+	##### Changed from Vanilla ^^^^^
+
+	ruler_designer_cost = 40
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_diligent_desc
+			}
+			desc = trait_diligent_character_desc
+		}
+	}
+
+	ai_vengefulness = very_low_positive_ai_value
+	ai_rationality = low_positive_ai_value
+	ai_energy = very_high_positive_ai_value
+	ai_boldness = medium_positive_ai_value
+	ai_amenity_target_baseline = 0.1
+	ai_amenity_spending = 0.1
+
+	compatibility = {
+		diligent = @pos_compat_medium
+		ambitious = @pos_compat_low
+		patient = @pos_compat_low
+		whole_of_body = @pos_compat_low
+		erudite = @pos_compat_low
+		theologian = @pos_compat_low
+		pensive = @pos_compat_low
+		architect = @pos_compat_low
+		administrator = @pos_compat_low
+		avaricious = @pos_compat_low
+		lazy = @neg_compat_medium
+		content = @neg_compat_low
+	}
+}

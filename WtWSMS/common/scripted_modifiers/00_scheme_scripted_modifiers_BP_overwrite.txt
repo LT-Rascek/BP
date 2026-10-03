@@ -319,7 +319,7 @@ hostile_scheme_base_chance_modifier = {
 }
 
 # Base modifier against titles
-#  - scope:target is expected to refer to a title (but could refer to other things whe used elsewhere)
+#  - scope:target is expected to refer to a title (but could refer to other things when used elsewhere)
 #  - scope:target_title refers to the same title (or nothing at all if used with a scheme targeting something else)
 hostile_scheme_title_base_chance_modifier = {
 	modifier = {
@@ -545,6 +545,372 @@ hostile_scheme_title_base_chance_modifier = {
 	modifier = {
 		add = 25
 		scope:target.holder ?= { has_character_modifier = spies_behind_every_corner_modifier }
+		desc = scheme.target.holder.spies_behind_every_corner_modifier.value_desc
+	}
+}
+
+#ai agents join chance against titles
+ai_agent_join_chance_hostile_title_modifier = {
+	# Difficulty
+	## Easy
+	modifier = {
+		add = -10
+		is_ai = yes
+		scope:target.holder = { is_ai = no }
+		has_game_rule = easy_difficulty
+		desc = "easy_difficulty"
+	}
+	## Very Easy
+	modifier = {
+		add = -20
+		is_ai = yes
+		scope:target.holder = { is_ai = no }
+		has_game_rule = very_easy_difficulty
+		desc = "very_easy_difficulty"
+	}
+	# Countermeasure Resistance
+	## Honest
+	modifier = {
+		add = countermeasure_disliked_by_trait_agenthood_acceptance_value
+		countermeasure_parameter_applies_against_char_trigger = {
+			SCHEME_TARGET = scope:target.holder
+			SCHEME_OWNER = scope:owner
+			PARAMETER = characters_more_likely_to_accept_agenthood_against_if_honest
+		}
+	}
+	## Just
+	modifier = {
+		add = countermeasure_disliked_by_trait_agenthood_acceptance_value
+		countermeasure_parameter_applies_against_char_trigger = {
+			SCHEME_TARGET = scope:target.holder
+			SCHEME_OWNER = scope:owner
+			PARAMETER = characters_more_likely_to_accept_agenthood_against_if_just
+		}
+	}
+	## Deceitful
+	modifier = {
+		add = countermeasure_disliked_by_trait_agenthood_acceptance_value
+		countermeasure_parameter_applies_against_char_trigger = {
+			SCHEME_TARGET = scope:target.holder
+			SCHEME_OWNER = scope:owner
+			PARAMETER = characters_more_likely_to_accept_agenthood_against_if_deceitful
+		}
+	}
+	## Gregarious
+	modifier = {
+		add = countermeasure_disliked_by_trait_agenthood_acceptance_value
+		countermeasure_parameter_applies_against_char_trigger = {
+			SCHEME_TARGET = scope:target.holder
+			SCHEME_OWNER = scope:owner
+			PARAMETER = characters_more_likely_to_accept_agenthood_against_if_gregarious
+		}
+	}
+	## Arrogant
+	modifier = {
+		add = countermeasure_disliked_by_trait_agenthood_acceptance_value
+		countermeasure_parameter_applies_against_char_trigger = {
+			SCHEME_TARGET = scope:target.holder
+			SCHEME_OWNER = scope:owner
+			PARAMETER = characters_more_likely_to_accept_agenthood_against_if_arrogant
+		}
+	}
+	# Dread
+	## For scope:target
+	### Intimidated
+	modifier = {
+		trigger = {
+			has_dread_level_towards = {
+				target = scope:target.holder
+				level = 1
+			}
+		}
+		add = -100
+		desc = SCHEME_I_AM_INTIMIDATED
+	}
+	### Cowed
+	modifier = {
+		trigger = {
+			has_dread_level_towards = {
+				target = scope:target.holder
+				level = 2
+			}
+		}
+		add = -1000
+		desc = SCHEME_I_AM_COWED
+	}
+	## For scope:owner
+	### Intimidated
+	modifier = {
+		add = intimidated_scheme_reason_value
+		target_is_liege_or_above = scope:owner
+		has_dread_level_towards = {
+			target = scope:owner
+			level = 1
+		}
+		desc = INTIMIDATED_REASON
+	}
+	modifier = {
+		add = intimidated_scheme_external_reason_value
+		NOT = { target_is_liege_or_above = scope:owner }
+		has_dread_level_towards = {
+			target = scope:owner
+			level = 1
+		}
+		desc = INTIMIDATED_REASON
+	}
+	### Cowed
+	modifier = {
+		add = cowed_scheme_reason_value
+		target_is_liege_or_above = scope:owner
+		has_dread_level_towards = {
+			target = scope:owner
+			level = 2
+		}
+		desc = COWED_REASON
+	}
+	modifier = {
+		add = cowed_scheme_external_reason_value
+		NOT = { target_is_liege_or_above = scope:owner }
+		has_dread_level_towards = {
+			target = scope:owner
+			level = 2
+		}
+		desc = COWED_REASON
+	}
+	# Relations
+	## Rivals with scope:target
+	modifier = {
+		add = 10
+		has_relation_rival = scope:target.holder
+		NOT = { has_relation_nemesis = scope:target.holder }
+		desc = "SCHEME_AGAINST_RIVAL"
+	}
+	## Nemeses should be even more inclined
+	modifier = {
+		add = 1000
+		has_relation_nemesis = scope:target.holder
+		desc = SCHEME_AGAINST_NEMESIS
+	}
+	## Friends with scope:target
+	modifier = {
+		add = -20
+		has_relation_friend = scope:target.holder
+		NOT = { has_relation_best_friend = scope:target.holder }
+		desc = "SCHEME_AGAINST_FRIEND"
+	}
+	## Best friends should be even less inclined
+	modifier = {
+		add = -1000
+		has_relation_best_friend = scope:target.holder
+		desc = SCHEME_AGAINST_BEST_FRIEND
+	}
+	## As should soulmates
+	modifier = {
+		add = -1000
+		has_relation_soulmate = scope:target.holder
+		desc = SCHEME_AGAINST_SOULMATE
+	}
+	## Loving (or at least non-hostile) spouse of scope:target
+	modifier = {
+		add = -10
+		is_consort_of = scope:target.holder
+		opinion = {
+			target = scope:target.holder
+			value > 0
+		}
+		desc = "SCHEME_AGAINST_SPOUSE"
+	}
+	# Faith
+	## Sacred Lies tenet
+	modifier = {
+		add = 20
+		rite = { rite_has_parameter = adherents_more_likely_to_join_schemes }
+		desc = "SCHEME_IS_SACRED"
+	}
+	##### Changed from Vanilla vvvvv
+	
+	## Sacred Lies tenet
+	modifier = {
+		add = 50
+		rite = { rite_has_parameter = tenet_mystery_religion_same_rite_agent_acceptance }
+		desc = "SCHEME_IS_SACRED"
+	}
+	##### Changed from Vanilla ^^^^^
+	
+	## Don't mess with your HoF.
+	modifier = {
+		trigger = {
+			exists = faith.religious_head
+			scope:target.holder = faith.religious_head
+		}
+		add = {
+			value = -25
+			if = {
+				limit = { has_trait = zealous }
+				multiply = 2
+			}
+			else_if = {
+				limit = { has_trait = arbitrary }
+				multiply = 0
+			}
+		}
+		desc = SCHEME_HEAD_OF_FAITH_REASON
+	}
+	# Culture
+	## Esteemed Hospitality
+	modifier = {
+		add = -25
+		scope:target.holder = {
+			culture = { has_cultural_parameter = courtiers_and_guests_less_likely_to_join_schemes }
+		}
+		OR = {
+			is_courtier_of = scope:target.holder
+			is_pool_guest_of = scope:target.holder
+			is_foreign_court_guest_of = scope:target.holder
+		}
+		desc = RESPECTED_HOST
+	}
+	# Traits
+	## Disloyal
+	modifier = {
+		add = 20
+		has_trait = disloyal
+		desc = "HAS_DISLOYAL_TRAIT"
+	}
+	## Loyal
+	modifier = {
+		add = -10
+		has_trait = loyal
+		desc = "HAS_LOYAL_TRAIT"
+	}
+	## Conniving Puppetmaster
+	modifier = {
+		add = 25
+		scope:owner = { has_trait_with_flag = agent_acceptance_25 }
+		desc = INTRIGUE_EDUCATION_5_BONUS
+	}
+	# Royal Courts
+	## CGV
+	### Intrigue above CGV level 7.
+	modifier = {
+		add = 20
+		scope:owner = {
+			has_royal_court = yes
+			has_dlc_feature = royal_court
+			has_court_type = court_intrigue
+			court_grandeur_current_level >= 7
+		}
+		desc = INTRIGUE_COURT_AGENT_ACCEPTANCE_REASON
+	}
+	## Amenities
+	### Lodgings
+	modifier = {
+		add = 5
+		is_pool_guest_of = scope:owner
+		scope:owner = {
+			has_royal_court = yes
+			has_dlc_feature = royal_court
+			court_owner = {
+				amenity_level = { target = court_lodging_standards value = medium_amenity_level }
+			}
+		}
+		desc = BONUS_TO_AGENT_RECRUITMENT_FROM_AMENITIES
+	}
+	modifier = {
+		add = 10
+		is_pool_guest_of = scope:owner
+		scope:owner = {
+			has_royal_court = yes
+			has_dlc_feature = royal_court
+			court_owner = {
+				amenity_level = { target = court_lodging_standards value = high_amenity_level }
+			}
+		}
+		desc = BONUS_TO_AGENT_RECRUITMENT_FROM_AMENITIES
+	}
+	modifier = {
+		add = 15
+		is_pool_guest_of = scope:owner
+		scope:owner = {
+			has_royal_court = yes
+			has_dlc_feature = royal_court
+			court_owner = {
+				amenity_level = { target = court_lodging_standards value = very_high_amenity_level }
+			}
+		}
+		desc = BONUS_TO_AGENT_RECRUITMENT_FROM_AMENITIES
+	}
+	modifier = {
+		add = 20
+		is_pool_guest_of = scope:owner
+		scope:owner = {
+			has_royal_court = yes
+			has_dlc_feature = royal_court
+			court_owner = {
+				amenity_level = { target = court_lodging_standards value = max_amenity_level }
+			}
+		}
+		desc = BONUS_TO_AGENT_RECRUITMENT_FROM_AMENITIES
+	}
+	# Lifestyles
+	## Skulduggery Focus
+	modifier = {
+		scope:owner = { has_focus = intrigue_skulduggery_focus }
+		add = 10
+		desc = SCHEME_SKULDUGGERY_FOCUS
+	}
+	## Duty Focus
+	modifier = {
+		scope:target.holder = { has_focus = stewardship_duty_focus }
+		add = -10
+		desc = SCHEME_DUTY_FOCUS
+	}
+	# Dynasty Legacies
+	## FP3 legacy track bonus
+	modifier = {
+		add = 10
+		scope:target.holder = {
+			is_lowborn = no
+			dynasty = root.dynasty
+			dynasty = { has_dynasty_perk = fp3_khvarenah_legacy_2 }
+		}
+		desc = "KHVARENAH_LEGACY_DESC"
+	}
+	# Event Content
+	## Generic bonus modifier.
+	modifier = {
+		add = 20
+		scope:owner = { has_character_modifier = event_bonus_to_agent_invite }
+		desc = BONUS_TO_AGENT_RECRUITMENT
+	}
+	## Family stressed duty to family.
+	modifier = {
+		add = 20
+		OR = {
+			is_close_family_of = scope:owner
+			is_spouse_of = scope:owner
+		}
+		scope:owner = { has_character_modifier = united_family_modifier }
+		desc = SCHEME_DUTIOUS_FAMILY
+	}
+	## Hostage learnt behaviour due to being rewarded for acting as an agent for their family.
+	modifier = {
+		add = 50
+		# Sometimes characters will die before they reply, so we have to check for this.
+		is_alive = yes
+		# Then the variable.
+		var:family_schemer ?= scope:owner
+		desc = SCHEME_TAUGHT_TO_SCHEME
+	}
+	## court_events.3060
+	modifier = {
+		add = 25
+		scope:owner = { has_character_modifier = spies_behind_every_corner_modifier }
+		desc = scheme.owner.spies_behind_every_corner_modifier.value_desc
+	}
+	modifier = {
+		add = 25
+		scope:target.holder = { has_character_modifier = spies_behind_every_corner_modifier }
 		desc = scheme.target.holder.spies_behind_every_corner_modifier.value_desc
 	}
 }

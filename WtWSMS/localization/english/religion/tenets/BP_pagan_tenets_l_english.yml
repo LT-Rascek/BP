@@ -1,9 +1,15 @@
 ﻿l_english:
  tenet_eunuch_priests: "Eunuch Priesthood"
- tenet_eunuch_priests_name: "Sacred Eunuchs"
  tenet_eunuch_priests_desc: "Transforming themselves to be more like the consort of the Great Mother, eunuchs hold a special place in this faith."
+ tenet_eunuch_priests_name: "Sacred Eunuchs"
+ tenet_mystery_religion_desc: "This faith restricts participation in its rituals to those who have become initiates. This creates a sense of prestige and community that is otherwise rare in pagan faiths."
+ tenet_mystery_religion_name: "Mystery Religion"
+ #Doctrine Parameters
  doctrine_parameter_show_automutiliation_decision: "" #Hidden Param
- doctrine_parameter_zealous_character_automutilation: "[GetTrait('zealous').GetName( GetNullCharacter )] characters use the #V $automutiliation_decision$#! [decision|E]"
+ doctrine_parameter_tenet_mystery_religion_lifestyle_mystic_pilgrimage: "Characters gain the [GetTrait('lifestyle_mystic').GetName( GetNullCharacter )] trait upon arriving at a [pilgrimage|E], or gain experience for it"
+ doctrine_parameter_tenet_mystery_religion_resistance: "Conversion Resistance: #P +[EmptyScope.ScriptValue('tenet_mystery_religion_resistance_value')|0%]#!
+ doctrine_parameter_tenet_mystery_religion_same_rite_agent_acceptance: "Adherents are #EMP much#! more willing to become Agents in the [schemes|E] of other characters"
  doctrine_parameter_unlocks_automutiliation_decision: "Unlocks the #V $automutiliation_decision$#! [decision|E], if not [GetTrait('cynical').GetName( GetNullCharacter )]"
  doctrine_parameter_unlocks_prisoner_castration_if_callous_sadistic_arbitrary: "Unlocks the option to castrate prisoners, if you are [GetTrait('callous').GetName( GetNullCharacter )], [GetTrait('sadistic').GetName( GetNullCharacter )], or [GetTrait('arbitrary').GetName( GetNullCharacter )]"
+ doctrine_parameter_zealous_character_automutilation: "[GetTrait('zealous').GetName( GetNullCharacter )] characters can use the #V $automutiliation_decision$#! [decision|E]"
  

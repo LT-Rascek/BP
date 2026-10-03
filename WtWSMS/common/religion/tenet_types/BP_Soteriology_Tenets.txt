@@ -1,0 +1,170 @@
+﻿##### Christian Soteriology
+tenet_pelagianism = {
+	icon = tenet_ora_et_labora
+
+	name = tenet_pelagianism_name
+
+	desc = tenet_pelagianism_desc
+
+	is_shown = {}
+
+	can_pick = {
+		religion = religion:christianity_religion
+		unique_soteriology_trigger = yes
+	}
+	can_pick_as_personal_tenet = {
+		unique_soteriology_personal_trigger = yes
+	}
+
+	piety_cost = {
+		value = faith_tenet_cost_low
+
+		# Multiplier for keeping same tenet
+		if = {
+			limit = { rite_has_tenet = tenet_pelagianism }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	divergence_multiplier = 1.5
+
+	character_modifier = {
+		stewardship_per_stress_level = 1
+	}
+
+	parameters = {
+		is_a_soteriology_tenet #for loc
+		diligent_losses_more_stress
+	}
+
+	personal_tenet_parameters = {
+		tenet_wtwsms_stress_breaks_remove_sins
+		tenet_wtsms_stress_breaks_wont_change_faith
+	}
+	
+	personal_tenet_modifier = {
+		stewardship_per_stress_level = 1
+	}
+
+	traits = {
+		virtues = {
+			diligent = { weight = 15 scale = 1 }
+		}
+		sins = {
+			lazy = { weight = 15 scale = 1 }
+		}
+	}
+}
+tenet_total_depravity = {
+	icon = tenet_acts_of_apostles
+
+	name = tenet_total_depravity_name
+
+	desc = tenet_total_depravity_desc
+
+	is_shown = {}
+
+	can_pick = {
+		religion = religion:christianity_religion
+		unique_soteriology_trigger = yes
+	}
+	can_pick_as_personal_tenet = {
+		unique_soteriology_personal_trigger = yes
+	}
+
+	piety_cost = {
+		value = faith_tenet_cost_low
+
+		# Multiplier for keeping same tenet
+		if = {
+			limit = { rite_has_tenet = tenet_total_depravity }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	divergence_multiplier = 2
+
+	character_modifier = {
+		tyranny_gain_mult = 2.00
+		stress_gain_mult = 0.20
+		stress_loss_per_piety_level = 0.05
+	}
+
+	parameters = {
+		is_a_soteriology_tenet #for loc
+		tenet_original_sin_county_conversion_bonus
+		tenet_original_sin_county_conversion_resistance
+	}
+
+	personal_tenet_modifier = {
+		dread_baseline_add = -10
+		stress_gain_mult = 0.10
+		stress_loss_per_piety_level = 0.05
+		character_spiritual_fulfillment_gain_mult = -0.20
+	}
+
+	personal_tenet_parameters = {
+		gain_level_of_piety_when_adopting_this_tenet
+	}
+
+	traits = {
+		virtues = {
+			humble = { weight = 20 scale = 2 }
+			zealous = { weight = 20 scale = 1 }
+		}
+		
+		sins = {
+			arrogant = { weight = 20 scale = 2 }
+			cynical = { weight = 20 scale = 1 }
+		}
+	}
+}
+tenet_antinomianism = {
+	icon = tenet_two_nature
+
+	name = tenet_antinomianism_name
+
+	desc = tenet_antinomianism_desc
+
+	is_shown = {}
+
+	can_pick = {
+		religion = religion:christianity_religion
+		unique_soteriology_trigger = yes
+	}
+	can_pick_as_personal_tenet = {
+		unique_soteriology_personal_trigger = yes
+	}
+
+	piety_cost = {
+		value = faith_tenet_cost_low
+
+		# Multiplier for keeping same tenet
+		if = {
+			limit = { rite_has_tenet = tenet_antinomianism }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	divergence_multiplier = 1.5
+
+	character_modifier = {
+		different_faith_opinion = 15
+	}
+
+	parameters = {
+		is_a_soteriology_tenet #for loc
+	}
+
+	personal_tenet_parameters = {}
+
+	traits = {
+		# Doctrinal fidelity to the one-united-nature formula vs. dissimulation under Chalcedonian pressure.
+		virtues = {
+			humble = { weight = 15 scale = 1 }
+		}
+		sins = {
+			arbitrary = { weight = 15 scale = 1 }
+		}
+	}
+}

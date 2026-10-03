@@ -9,14 +9,18 @@
  tenet_rigorism_name: "Rigorism"
  tenet_total_depravity_desc: "Because of Adam's sin, all of humanity is enslaved by sin, and apart from the grace of God, is unable to choose by themselves to refrain from evil or accept salvation."
  tenet_total_depravity_name: "Total Depravity"
+ tenet_pelagianism_name: "Pelagianism"
+ tenet_pelagianism_desc: "Adam's original sin did not taint human nature, but provided a bad example from which humans must work to free themselves."
  #Parameters
+ doctrine_parameter_diligent_losses_more_stress: "[GetTrait('diligent').GetName( GetNullCharacter )] characters loose stress more easily"
  doctrine_parameter_gain_level_of_piety_when_adopting_this_tenet: "Gain a [piety_level|E] when adopting this tenet"
- doctrine_parameter_possessed_gain_personal_tenet_slot_add: "[GetTrait('possessed_1').GetName( GetNullCharacter )] gives an additional Personal Tenet Slot"
+ doctrine_parameter_possessed_gain_personal_tenet_slot_add: "[GetTrait('possessed_1').GetName( GetNullCharacter )] [personal_tenets|E]: #P +1#!"
  doctrine_parameter_raise_circumcellions_decision: "Enables #V $raise_circumcellions_decision$ Decision#!"
  doctrine_parameter_stress_breaks_grant_learning_xp: "[stress|E] breaks grant Learning [lifestyle|E] Experience Gain"
  doctrine_parameter_tenet_ecstatic_prophecy_conversion_resistance_active: "Conversion Resistance: #P +[EmptyScope.ScriptValue('conversion_resistance_ecstatic_prophecy_value')]% #!"
  doctrine_parameter_tenet_redeeming_struggle_resistance: "Conversion Resistance: #P +[EmptyScope.ScriptValue('tenet_redeeming_struggle_resistance_value')|0%]#!
  doctrine_parameter_tenet_rigorism_conversion_speed: "Conversion Speed: #N -[EmptyScope.ScriptValue('conversion_rigorism_conversion_speed_value')]%#!\n\t\t$EFFECT_LIST_BULLET$#italic Applies only to [faiths|E] without #V $tenet_rigorism_name$#!#!"
+ doctrine_parameter_tenet_wtsms_stress_breaks_wont_change_faith: "[stress|E] breaks will not trigger [rite|E] conversion options"
  doctrine_parameter_tenet_wtwsms_stress_breaks_remove_sins: "$doctrine_parameter_tenet_purgatory_stress_breaks_remove_sins$"
  doctrine_parameter_unlock_prophet_perk_effect: "Unlocks all tenets and doctrines for creating new rites"
  

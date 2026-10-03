@@ -1,0 +1,23 @@
+﻿pilgrimage_arrival_events = {
+	on_actions = {
+		bp_give_pilgrim_arrival_traits_on_actions
+	}
+}
+
+bp_give_pilgrim_arrival_traits_on_actions = {
+	effect = {
+		if = {
+			limit = { has_personal_tenet_flag = tenet_mystery_religion_lifestyle_mystic_pilgrimage }
+			if = {
+				limit = { NOT = { has_trait = lifestyle_mystic } }
+				add_trait = lifestyle_mystic
+			}
+			else = {
+				add_trait_xp = {
+					trait = lifestyle_mystic
+					value = { 10 25 } #This gets multiplied by the Tenet itself, fyi
+				}
+			}
+		}
+	}
+}

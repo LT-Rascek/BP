@@ -1,0 +1,1101 @@
+﻿namespace = stress_threshold
+
+#############################
+# Desires of the Flesh		#
+# by Sean Hughes			#
+# 1011						#
+#############################
+stress_threshold.1011 = {
+	##### Changed from Vanilla vvvvv
+	id_override_priority = 1
+	##### Changed from Vanilla ^^^^^
+
+	type = character_event
+	title = stress_threshold.1011.t
+	desc = stress_threshold.1011.desc
+	
+	theme = mental_break
+	override_background = {
+		trigger = { is_travelling = yes }
+		reference = terrain
+	}
+	left_portrait = {
+		character = root
+		triggered_animation = {
+			trigger = {
+				stress_level >= 3
+			}
+			animation = mental_anguish
+		}
+		triggered_animation = {
+			trigger = {
+				has_character_flag = stress_threshold_option_conversion
+				scope:sex_positive_rite = flag:no
+			}
+			animation = disgust
+		}
+		triggered_animation = {
+			trigger = {
+				has_character_flag = stress_threshold_option_conversion
+				scope:sex_positive_rite = flag:yes
+			}
+			animation = shame
+		}
+		animation = scheme
+	}
+	
+	trigger = {
+		# Character must meet the criteria for at least two event options to qualify for this event (don't want to fire the event if the player has no choices!).
+		calc_true_if = {
+			amount >= 2
+
+			can_be_rakish = yes
+			has_trait = rakish
+			can_be_reclusive = yes
+			has_trait = reclusive
+			can_do_lustful_stress_conversion = yes
+			can_be_athletic = yes
+			has_trait = athletic
+		}
+		is_adult = yes
+		NOR = {
+			has_trait = chaste
+			has_trait = celibate
+		}
+	}
+
+	weight_multiplier = {
+		base = 1
+
+		modifier = { # Much more likely if the character is Lustful
+			has_trait = lustful
+			add = 10
+		}
+		modifier = {
+			can_be_rakish = yes
+			add = 10
+		}
+		modifier = { # Somewhat more likely to occur if the character can become Reclusive.
+			can_be_reclusive = yes
+			add = 10
+		}
+		modifier = { # Somewhat more likely to occur if the character can convert to a new religion.
+			can_do_lustful_stress_conversion = yes
+			add = 10
+		}
+		modifier = {
+			can_be_athletic = yes
+			add = 5
+		}
+		#One of your parents/guardian has issues
+		modifier = {
+			OR = {
+				has_witnessed_stress_coping_trait = { TRAIT = reclusive }
+				has_witnessed_stress_coping_trait = { TRAIT = athletic }
+			}
+			add = 5
+		}
+	}
+
+	widget = {
+		gui = "event_window_widget_stress"
+		container = "custom_widgets_container"
+	}
+	immediate = {
+		root = { save_scope_as = stress_character } # For stress widget
+
+		# Event option set-up to determine which event options we want to offer to the player.
+		if = { # Rakish ( Prone to extremely wonton behavior, with the associated consequences.)
+			limit = {
+				has_two_stress_threshold_options = no
+				OR = {
+					can_be_rakish = yes
+					has_trait = rakish
+				}
+			}
+			add_character_flag = stress_threshold_option_rakish
+		}
+		if = { # Reclusive ( Frequently withdrawn, risking damage to relationships.)
+			limit = {
+				has_two_stress_threshold_options = no
+				OR = {
+					can_be_reclusive = yes
+					has_trait = reclusive
+				}
+			}
+
+			add_character_flag = stress_threshold_option_reclusive
+			# Taking this option will also likely damage a relationship that the character has with someone.
+			reclusive_get_relationships_effect = yes
+
+		}
+		if = { # Rite Conversion ( No long-term consequences other than the conversion itself; that will probably be a severe enough penalty, though.)
+			limit = {
+				has_two_stress_threshold_options = no
+				can_do_lustful_stress_conversion = yes
+				##### Changed from Vanilla vvvvv
+				NOT = { has_personal_tenet_flag = tenet_wtsms_stress_breaks_wont_change_faith }
+				##### Changed from Vanilla ^^^^^
+			}
+			hidden_effect = {
+				random_list = {
+					#Pick a faith that CONDEMNS THE LOVIN
+					1 = {
+						trigger = {
+							any_available_rite = {
+								this != root.rite
+								rite_forbids_the_secular_flesh_trigger = { CHARACTER = root }
+							}
+						}
+						modifier = {
+							any_available_rite = {
+								this != root.rite
+								rite_forbids_the_secular_flesh_trigger = { CHARACTER = root }
+								save_temporary_scope_as = rite_temp
+								root = {
+									rite_fulfillment_score = {
+										target = scope:rite_temp
+										value > 75
+									}
+								}
+							}
+							add = 10
+						}
+						modifier = {
+							any_available_rite = {
+								this != root.rite
+								rite_forbids_the_secular_flesh_trigger = { CHARACTER = root }
+								save_temporary_scope_as = rite_temp
+								root = {
+									rite_fulfillment_score = {
+										target = scope:rite_temp
+										value > 50
+									}
+								}
+							}
+							add = 5
+						}
+						modifier = {
+							any_available_rite = {
+								this != root.rite
+								rite_forbids_the_secular_flesh_trigger = { CHARACTER = root }
+								save_temporary_scope_as = rite_temp
+								root = {
+									rite_fulfillment_score = {
+										target = scope:rite_temp
+										value > 25
+									}
+								}
+							}
+							add = 1
+						}
+						random_available_rite = {
+							limit = {
+								this != root.rite
+								rite_forbids_the_secular_flesh_trigger = { CHARACTER = root }
+								save_temporary_scope_as = rite_temp
+								root = {
+									rite_fulfillment_score = {
+										target = scope:rite_temp
+										value > 75
+									}
+								}
+							}
+							alternative_limit = {
+								this != root.rite
+								rite_forbids_the_secular_flesh_trigger = { CHARACTER = root }
+								save_temporary_scope_as = rite_temp
+								root = {
+									rite_fulfillment_score = {
+										target = scope:rite_temp
+										value > 50
+									}
+								}
+							}
+							alternative_limit = {
+								this != root.rite
+								rite_forbids_the_secular_flesh_trigger = { CHARACTER = root }
+								save_temporary_scope_as = rite_temp
+								root = {
+									rite_fulfillment_score = {
+										target = scope:rite_temp
+										value > 25
+									}
+								}
+							}
+							alternative_limit = {
+								this != root.rite
+								rite_forbids_the_secular_flesh_trigger = { CHARACTER = root }
+							}
+							save_scope_as = new_faith
+							save_scope_value_as = {
+								name = sex_positive_rite
+								value = flag:no
+							}
+						}
+						add_character_flag = stress_threshold_option_conversion
+					}
+					#Pick a faith that LOVES YOU THE FILTHY WAY YOU ARE
+					1 = {
+						trigger = {
+							any_available_rite = {
+								this != root.rite
+								rite_embraces_the_secular_flesh_trigger = { CHARACTER = root }
+							}
+						}
+						modifier = {
+							any_available_rite = {
+								this != root.rite
+								rite_embraces_the_secular_flesh_trigger = { CHARACTER = root }
+								save_temporary_scope_as = rite_temp
+								root = {
+									rite_fulfillment_score = {
+										target = scope:rite_temp
+										value > 75
+									}
+								}
+							}
+							add = 10
+						}
+						modifier = {
+							any_available_rite = {
+								this != root.rite
+								rite_embraces_the_secular_flesh_trigger = { CHARACTER = root }
+								save_temporary_scope_as = rite_temp
+								root = {
+									rite_fulfillment_score = {
+										target = scope:rite_temp
+										value > 50
+									}
+								}
+							}
+							add = 5
+						}
+						modifier = {
+							any_available_rite = {
+								this != root.rite
+								rite_embraces_the_secular_flesh_trigger = { CHARACTER = root }
+								save_temporary_scope_as = rite_temp
+								root = {
+									rite_fulfillment_score = {
+										target = scope:rite_temp
+										value > 25
+									}
+								}
+							}
+							add = 1
+						}
+						random_available_rite = {
+							limit = {
+								this != root.rite
+								rite_embraces_the_secular_flesh_trigger = { CHARACTER = root }
+								save_temporary_scope_as = rite_temp
+								root = {
+									rite_fulfillment_score = {
+										target = scope:rite_temp
+										value > 75
+									}
+								}
+							}
+							alternative_limit = {
+								this != root.rite
+								rite_embraces_the_secular_flesh_trigger = { CHARACTER = root }
+								save_temporary_scope_as = rite_temp
+								root = {
+									rite_fulfillment_score = {
+										target = scope:rite_temp
+										value > 50
+									}
+								}
+							}
+							alternative_limit = {
+								this != root.rite
+								rite_embraces_the_secular_flesh_trigger = { CHARACTER = root }
+								save_temporary_scope_as = rite_temp
+								root = {
+									rite_fulfillment_score = {
+										target = scope:rite_temp
+										value > 25
+									}
+								}
+							}
+							alternative_limit = {
+								this != root.rite
+								rite_embraces_the_secular_flesh_trigger = { CHARACTER = root }
+							}
+							save_scope_as = new_faith
+							save_scope_value_as = {
+								name = sex_positive_rite
+								value = flag:yes
+							}
+						}
+						add_character_flag = stress_threshold_option_conversion
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_two_stress_threshold_options = no
+				OR = {
+					can_be_athletic = yes
+					has_trait = athletic
+				}
+			}
+			add_character_flag = stress_threshold_option_athletic
+		}
+		stress_threshold_event_post_immediate = yes
+	}
+
+	# Option A: Take a trip to the brothel, major stress loss.
+	option = {
+		trigger = {
+			has_character_flag = stress_threshold_option_rakish
+		}
+		name = {
+			trigger = { can_be_rakish = yes }
+			text = stress_threshold.1011.rakish.gain
+		}
+		name = {
+			trigger = { has_trait = rakish }
+			text = stress_threshold.1011.rakish.effect
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				add = -5
+				has_trait = shy 
+			}
+			modifier = {
+				add = -5
+				has_trait = chaste 
+			}
+			modifier = {
+				add = -15
+				has_trait = celibate 
+			}
+			modifier = {
+				add = 15
+				has_trait = lustful
+			}
+		}
+
+		trait = rakish
+		add_trait = rakish
+
+		rakish_brothel_night_effect = yes # Stress reduction is included in this effect.
+	}
+
+	option = { # Option B: Sequester yourself away and damage relationships, major stress loss.
+		trigger = {
+			has_character_flag = stress_threshold_option_reclusive
+		}
+		name = {
+			trigger = { can_be_reclusive = yes }
+			text = stress_threshold.1011.reclusive.gain
+		}
+		name = {
+			trigger = { has_trait = reclusive }
+			text = stress_threshold.1011.reclusive.effect
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				add = 15
+				has_trait = shy 
+			}
+			modifier = {
+				add = 5
+				has_trait = callous
+			}
+			modifier = {
+				add = -15
+				has_trait = gregarious 
+			}
+			modifier = {
+				add = -15
+				has_trait = trusting
+			}
+		}
+
+		trait = reclusive
+		add_trait = reclusive
+		reclusive_damage_relationships_effect = yes # Stress reduction is included in this effect.
+	}
+
+	option = { # Option C-1: Convert to another rite that embraces the ways of the flesh
+		trigger = {
+			is_ai = no
+			has_character_flag = stress_threshold_option_conversion
+			scope:sex_positive_rite = flag:yes
+		}
+		name = stress_threshold.1011.conversion.embracing
+		# Converting to a different Faith of your religion is less penalizing but also reduces less stress.
+		set_character_rite = scope:new_faith
+
+		if = {
+			limit = {
+				OR = {
+					has_sexuality = homosexual
+					has_sexuality = bisexual
+				}
+				rite = { NOT = { rite_has_parameter = homosexuality_accepted } }
+				scope:new_faith = {
+					OR = {
+						rite_has_parameter = homosexuality_accepted
+						AND = {
+							rite_has_parameter = homosexuality_shunned
+							root.rite = { rite_has_parameter = homosexuality_illegal }
+						}
+					}
+				}
+			}
+			custom_tooltip = stress_1011_homosexuality_embrace_tt
+		}
+		else_if = {
+			limit = {
+				OR = {
+					#female adultery
+					AND = {
+						is_female = yes
+						rite = { NOT = { rite_has_parameter = adultery_female_accepted } }
+						scope:new_faith = {
+							OR = {
+								rite_has_parameter = adultery_female_accepted
+								AND = {
+									rite_has_parameter = adultery_female_shunned
+									root.rite = { rite_has_parameter = adultery_female_crime }
+								}
+							}
+						}
+					}
+					#male adultery
+					AND = {
+						is_male = yes
+						rite = { NOT = { rite_has_parameter = adultery_male_accepted } }
+						scope:new_faith = {
+							OR = {
+								rite_has_parameter = adultery_male_accepted
+								AND = {
+									rite_has_parameter = adultery_male_shunned
+									root.rite = { rite_has_parameter = adultery_male_crime }
+								}
+							}
+						}
+					}
+				}
+			}
+			custom_tooltip = stress_1011_adultery_embrace_tt
+		}
+		else = {
+			custom_tooltip = stress_1011_lust_embrace_tt
+		}
+		if = {
+			limit = { 
+				has_character_flag = stress_threshold_option_conversion
+			}
+			custom_description_no_bullet = { text = mandala_monotheist_warning_tt }
+		}
+		add_piety = major_piety_loss
+		add_stress = medium_stress_impact_loss
+		change_spiritual_fulfillment = major_spiritual_fulfillment_value
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				OR = {
+					spiritual_fulfillment > spiritual_fulfillment_minus_2
+					ai_zeal > 0
+					ai_honor > 0
+					is_ruler = no
+				}
+				factor = 0
+			}
+		}
+	}
+
+	option = { # Option C-2: Convert to another rite that forbids the flesh harder! It will set you straight!
+		trigger = {
+			is_ai = no
+			has_character_flag = stress_threshold_option_conversion
+			scope:sex_positive_rite = flag:no
+		}
+		name = {
+			text = {
+				first_valid = {
+					triggered_desc = {
+						trigger = {
+							OR = {
+								has_sexuality = homosexual
+								has_sexuality = bisexual
+							}
+							rite = { NOT = { rite_has_parameter = homosexuality_illegal } }
+							scope:new_faith = {
+								OR = {
+									rite_has_parameter = homosexuality_illegal
+									AND = {
+										rite_has_parameter = homosexuality_shunned
+										root.rite = { rite_has_parameter = homosexuality_accepted }
+									}
+								}
+							}
+						}
+						desc = stress_threshold.1011.conversion.forbidding_sodomy
+					}
+					desc = stress_threshold.1011.conversion.forbidding
+				}
+			}
+		}
+
+		# Converting to a different Religion altogether is much more penalizing but also reduces stress by a lot more.
+		set_character_rite = scope:new_faith
+
+		if = {
+			limit = {
+				OR = {
+					has_sexuality = homosexual
+					has_sexuality = bisexual
+				}
+				rite = { NOT = { rite_has_parameter = homosexuality_illegal } }
+				scope:new_faith = {
+					OR = {
+						rite_has_parameter = homosexuality_illegal
+						AND = {
+							rite_has_parameter = homosexuality_shunned
+							root.rite = { rite_has_parameter = homosexuality_accepted }
+						}
+					}
+				}
+			}
+			custom_tooltip = stress_1011_homosexuality_condemn_tt
+		}
+		else_if = {
+			limit = {
+				OR = {
+					#female adultery
+					AND = {
+						is_female = yes
+						rite = { NOT = { rite_has_parameter = adultery_female_crime } }
+						scope:new_faith = {
+							OR = {
+								rite_has_parameter = adultery_female_crime
+								AND = {
+									rite_has_parameter = adultery_female_shunned
+									root.rite = { rite_has_parameter = adultery_female_accepted }
+								}
+							}
+						}
+					}
+					#male adultery
+					AND = {
+						is_male = yes
+						rite = { NOT = { rite_has_parameter = adultery_male_crime } }
+						scope:new_faith = {
+							OR = {
+								rite_has_parameter = adultery_male_crime
+								AND = {
+									rite_has_parameter = adultery_male_shunned
+									root.rite = { rite_has_parameter = adultery_male_accepted }
+								}
+							}
+						}
+					}
+				}
+			}
+			custom_tooltip = stress_1011_adultery_condemn_tt
+		}
+		else = {
+			custom_tooltip = stress_1011_lust_condemn_tt
+		}
+
+		if = {
+			limit = { 
+				scope:new_faith = { rite_has_doctrine = doctrine_monotheist }
+			}
+			custom_description_no_bullet = { text = mandala_monotheist_warning_tt }
+		}
+		add_piety = major_piety_gain
+		add_stress = major_stress_impact_loss
+		change_spiritual_fulfillment = major_spiritual_fulfillment_loss
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				OR = {
+					ai_rationality > 0
+					stress_level < 3
+					ai_zeal < 0
+					ai_honor < 0
+					is_ruler = no
+				}
+				factor = 0
+			}
+		}
+	}
+
+	option = { # Option D: Exercise to burn off the desire, medium stress loss.
+		trigger = {
+			has_character_flag = stress_threshold_option_athletic
+		}
+		name = {
+			trigger = { can_be_athletic = yes }
+			text = stress_threshold.1011.exercise.gain
+		}
+		name = {
+			trigger = { has_trait = athletic }
+			text = stress_threshold.1001.exercise.effect
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				add = 5
+				has_trait = whole_of_body  
+			}
+			modifier = {
+				add = 15
+				has_trait = diligent
+			}
+			modifier = {
+				add = -15
+				has_trait = lazy 
+			}
+			modifier = {
+				add = -5
+				current_weight > overweight_value
+			}
+		}
+
+		trait = athletic
+		add_trait = athletic
+		add_stress = medium_stress_impact_loss
+	}
+
+	option = { # Option E: Endure, major stress gain.
+		name = stress_threshold.1011.endure
+		add_stress = mental_break_opt_out_stress_gain
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				add = 5
+				has_trait = stubborn  
+			}
+		}
+	}
+
+	after = {
+		stress_threshold_event_aftereffects = yes # Perform stress threshold event clean-up and preparation for future stress threshold events.
+	}
+}
+
+#############################
+# Nothing Matters			#
+# by Flavio Verna			#
+# 1501						#
+#############################
+#Base event
+stress_threshold.1501 = {
+	##### Changed from Vanilla vvvvv
+	id_override_priority = 1
+	##### Changed from Vanilla ^^^^^
+
+	type = character_event
+	title = stress_threshold.1501.t
+	desc = {
+		desc = stress_threshold.1501.intro.desc
+		first_valid = {
+			#Concerned helper.
+			triggered_desc = {
+				desc = stress_threshold.1501.helper.desc
+				trigger = { exists = scope:scoped_helper }
+			}
+			desc = stress_threshold.1501.nohelper.desc
+		}
+		first_valid = { #Outro.
+			#Religious concerns.
+			triggered_desc = {
+				desc = stress_threshold.1501.faith.desc
+				trigger = {
+					exists = scope:new_faith
+					is_landless_adventurer = no
+				}
+			}
+			desc = stress_threshold.1501.fallback.desc
+		}
+	}
+	theme = mental_break
+	override_background = {
+		trigger = { is_travelling = yes }
+		reference = ep3_relaxing_tent
+	}
+	override_background = {
+		trigger = { is_travelling = no }
+		reference = bedchamber
+	}
+	left_portrait = {
+		character = scope:scoped_ruler
+		triggered_animation = {
+			trigger = {
+				has_character_flag = stress_threshold_option_conversion
+				exists = scope:new_faith
+				faith.religion = religion:islam_religion
+			}
+			animation = prayer_muslim
+		}
+		triggered_animation = {
+			trigger = {
+				has_character_flag = stress_threshold_option_conversion
+				exists = scope:new_faith
+			}
+			animation = prayer_standing
+		}
+		animation = boredom
+		outfit_tags = { nightgown }
+	}
+	lower_right_portrait = scope:scoped_helper
+	
+
+	trigger = {
+		# Character must meet the criteria for at least two event options to qualify for this event.
+		calc_true_if = {
+			amount >= 2
+			can_be_reclusive = yes
+			can_be_inappetetic = yes
+			has_trait = reclusive
+			has_trait = inappetetic
+			stress_rite_conversion_trigger = yes
+		}
+	}
+
+	weight_multiplier = {
+		base = 1
+		modifier = {
+			add = 10
+			has_trait = gregarious
+		}
+		modifier = {
+			add = 10
+			has_trait = zealous
+		}
+		modifier = {
+			add = -10
+			has_trait = shy
+		}
+		modifier = {
+			add = -10
+			has_trait = temperate
+		}
+		modifier = {
+			add = -5
+			has_trait = cynical
+		}
+		#One of your parents/guardian has issues
+		modifier = {
+			OR = {
+				has_witnessed_stress_coping_trait = { TRAIT = reclusive }
+				has_witnessed_stress_coping_trait = { TRAIT = inappetetic }
+			}
+			add = 5
+		}
+	}
+
+	widget = {
+		gui = "event_window_widget_stress"
+		container = "custom_widgets_container"
+	}
+	immediate = {		
+		add_character_flag = {
+			flag = use_sickness_clothes
+			days = 60
+		}
+		root = { save_scope_as = stress_character } # For stress widget
+
+		save_scope_as = scoped_ruler
+		faith = {
+			save_scope_as = scoped_faith
+		}
+		# Event option set-up to determine which event options we want to offer to the player.
+		if = { #
+			limit = {
+				has_two_stress_threshold_options = no
+				can_be_reclusive = yes
+			}
+			add_character_flag = stress_threshold_option_reclusive
+		}
+		if = { #
+			limit = {
+				has_two_stress_threshold_options = no
+				can_be_inappetetic = yes
+			}
+			add_character_flag = stress_threshold_option_inappetetic
+		}
+		if = { #
+			limit = {
+				stress_rite_conversion_trigger = yes
+				##### Changed from Vanilla vvvvv
+				NOT = { has_personal_tenet_flag = tenet_wtsms_stress_breaks_wont_change_faith }
+				##### Changed from Vanilla ^^^^^
+			}
+			add_character_flag = stress_threshold_option_conversion
+		}
+
+		if = { #Pick random friend/lover/spouse/courtier.
+			limit = {
+				any_relation = { type = lover always = yes }
+			}
+			random_relation = { type = lover
+				save_scope_as = scoped_helper
+			}
+		}
+		else_if = { #Pick random friend/lover/spouse/courtier.
+			limit = {
+				any_relation = { type = friend always = yes }
+			}
+			random_relation = { type = friend
+				save_scope_as = scoped_helper
+			}
+		}
+		else_if = { #Pick random friend/lover/spouse/courtier.
+			limit = {
+				is_married = yes
+			}
+			random_spouse = {
+				save_scope_as = scoped_helper
+			}
+		}
+		else = {
+			random_courtier = {
+				limit = {
+					is_child_of = root
+					is_available_ai_adult = yes
+				}
+				alternative_limit = {
+					dynasty ?= root.dynasty
+					is_available_ai_adult = yes
+				}
+				alternative_limit = {
+					is_available_ai_adult = yes
+				}
+				save_scope_as = scoped_helper
+			}
+		}
+		if = { #Pick the rite to convert to, best fit first.
+			limit = {
+				stress_rite_conversion_trigger = yes
+			}
+			# The last tier still needs some fit on purpose
+			# An unfiltered fallback could be worse than the abandoned rite
+			random_available_rite = {
+				limit = {
+					this != root.rite
+					pam_rite_is_regional_trigger = no
+					save_temporary_scope_as = rite_temp
+					root = {
+						rite_fulfillment_score = {
+							target = scope:rite_temp
+							value > 75
+						}
+					}
+				}
+				alternative_limit = {
+					this != root.rite
+					pam_rite_is_regional_trigger = no
+					save_temporary_scope_as = rite_temp
+					root = {
+						rite_fulfillment_score = {
+							target = scope:rite_temp
+							value > 50
+						}
+					}
+				}
+				alternative_limit = {
+					this != root.rite
+					pam_rite_is_regional_trigger = no
+					save_temporary_scope_as = rite_temp
+					root = {
+						rite_fulfillment_score = {
+							target = scope:rite_temp
+							value > 25
+						}
+					}
+				}
+				alternative_limit = {
+					this != root.rite
+					pam_rite_is_regional_trigger = no
+					save_temporary_scope_as = rite_temp
+					root = {
+						rite_fulfillment_score = {
+							target = scope:rite_temp
+							value > 0
+						}
+					}
+				}
+				save_scope_as = new_faith
+			}
+		}
+		stress_threshold_event_post_immediate = yes
+	}
+
+	#Option A: Effect from coping trait
+	#Option B: Gain Reclusive // Inappetetic
+	#Option C: Take stress
+	#Option D (Cynical/Faith Fervor low): Convert to other Faith.
+
+	option = { #Has Reclusive
+		name = stress_threshold.1501.a
+		trigger = { has_trait = reclusive }
+		trait = reclusive
+		if = {
+			limit = {
+				exists = scope:scoped_helper
+				scope:scoped_helper = { is_alive = yes }
+			}
+			scope:scoped_helper = {
+				add_opinion = {
+					modifier = ignored_concerns
+					target = root
+				}
+			}
+		}
+		add_stress = minor_stress_loss
+		ai_chance = {
+			base = 20
+			modifier = {
+				add = 15
+				has_trait = shy
+			}
+			modifier = {
+				add = 15
+				has_trait = lazy
+			}
+			modifier = {
+				add = 15
+				has_trait = paranoid
+			}
+			modifier = {
+				add = 15
+				has_trait = just
+			}
+			modifier = {
+				add = 15
+				has_trait = craven
+			}
+		}
+	}
+	option = { #Has Inappetetic
+		name = stress_threshold.1501.b
+		trigger = { has_trait = inappetetic }
+		trait = inappetetic
+		add_stress = minor_stress_loss
+		ai_chance = {
+			base = 20
+			modifier = {
+				add = 15
+				has_trait = temperate
+			}
+			modifier = {
+				add = 15
+				has_trait = arbitrary
+			}
+			modifier = {
+				add = 15
+				has_trait = content
+			}
+		}
+	}
+	option = { #Gains Reclusive
+		name = stress_threshold.1501.c
+		trigger = {
+			NOT = { has_trait = reclusive }
+			has_character_flag = stress_threshold_option_reclusive
+		}
+		add_trait = reclusive
+		add_stress = medium_stress_loss
+		ai_chance = {
+			base = 20
+			modifier = {
+				add = 15
+				has_trait = shy
+			}
+			modifier = {
+				add = 15
+				has_trait = lazy
+			}
+			modifier = {
+				add = 15
+				has_trait = paranoid
+			}
+			modifier = {
+				add = 15
+				has_trait = just
+			}
+			modifier = {
+				add = 15
+				has_trait = craven
+			}
+		}
+	}
+	option = { #Gains Inappetetic
+		name = stress_threshold.1501.d
+		trigger = {
+			NOT = { has_trait = inappetetic }
+			has_character_flag = stress_threshold_option_inappetetic
+		}
+		add_trait = inappetetic
+		add_stress = medium_stress_loss
+		ai_chance = {
+			base = 20
+			modifier = {
+				add = 15
+				has_trait = temperate
+			}
+			modifier = {
+				add = 15
+				has_trait = arbitrary
+			}
+			modifier = {
+				add = 15
+				has_trait = content
+			}
+		}
+	}
+	option = { #Special option: change to different rite
+		name = stress_threshold.1501.f
+		flavor = stress_threshold.1501.f.flavor
+		trigger = {
+			has_character_flag = stress_threshold_option_conversion
+			exists = scope:new_faith
+		}
+		trait = cynical
+		trait = eccentric
+		trait = fickle
+
+		add_piety = major_piety_loss
+		set_character_rite = scope:new_faith
+		if = {
+			limit = { 
+				scope:new_faith = { rite_has_doctrine = doctrine_monotheist }
+			}
+			custom_description_no_bullet = { text = mandala_monotheist_warning_tt }
+		}
+		change_spiritual_fulfillment = major_spiritual_fulfillment_value
+		ai_chance = {
+			base = 5
+			ai_value_modifier = {
+				ai_zeal = 0.2
+			}
+		}
+	}
+	option = { #Endure: Take Stress
+		name = stress_threshold.1501.e
+		 add_stress = major_stress_gain
+		ai_chance = {
+			base = 10
+		}
+	}
+
+	after = {
+		remove_character_flag = use_sickness_clothes
+		stress_threshold_event_aftereffects = yes # Perform stress threshold event clean-up and preparation for future stress threshold events.
+	}
+}
