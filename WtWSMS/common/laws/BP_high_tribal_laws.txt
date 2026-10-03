@@ -2,157 +2,163 @@
 #of the realm, so even if tribal authority gets taken down during liberty revolts for high tribals
 #they end up retaining certain features
 
-high_tribal_organization = {
-	default = high_tribal_organization_0
-	cumulative = yes
-	flag = high_tribal_organization
+high_tribal_organization_0 = {
+	law_group_type = high_tribal_organization
+	index = 0
 
-	high_tribal_organization_0 = {
-		modifier = {
-			monthly_prestige_gain_mult = 0.15
-			title_creation_cost_mult = -0.40
-			army_maintenance_mult = -0.40
-			men_at_arms_maintenance = -0.40
-			men_at_arms_recruitment_cost = -0.40
+	modifier = {
+		monthly_prestige_gain_mult = 0.15
+		title_creation_cost_mult = -0.40
+		army_maintenance_mult = -0.40
+		men_at_arms_maintenance = -0.40
+		men_at_arms_recruitment_cost = -0.40
+	}
+	flag = imprisonment_toggle_enable
+
+	can_keep = {
+		realm_law_use_high_tribal_organization_trigger = yes
+		#To force the law to rise with time
+		custom_tooltip = {
+			text = mechanically_driven_law
+			realm_law_can_keep_high_tribal_organization_1_trigger = no
+			realm_law_can_keep_high_tribal_organization_2_trigger = no
+			realm_law_can_keep_high_tribal_organization_3_trigger = no
 		}
-		flag = imprisonment_toggle_enable
-
-		can_keep = {
-			realm_law_use_high_tribal_organization_trigger = yes
-			#To force the law to rise with time
-			custom_tooltip = {
-				text = mechanically_driven_law
-				realm_law_can_keep_high_tribal_organization_1_trigger = no
-				realm_law_can_keep_high_tribal_organization_2_trigger = no
-				realm_law_can_keep_high_tribal_organization_3_trigger = no
-			}
+	}
+	
+	can_pass = {
+		custom_tooltip = {
+			text = mechanically_driven_law
+			always = no
 		}
-		
-		can_pass = {
-			custom_tooltip = {
-				text = mechanically_driven_law
-				always = no
-			}
-		}
-
-		pass_cost = {}
-
-		on_pass = {}
-
-		ai_will_do = {}
 	}
 
-	high_tribal_organization_1 = {
-		modifier = {
-			monthly_prestige_gain_mult = -0.05
-			title_creation_cost_mult = 0.10
-			army_maintenance_mult = 0.10
-			men_at_arms_maintenance = 0.10
-			men_at_arms_recruitment_cost = 0.10
+	pass_cost = {}
+
+	on_pass = {}
+
+	ai_will_do = {}
+}
+
+high_tribal_organization_1 = {
+	law_group_type = high_tribal_organization
+	index = 1
+
+	modifier = {
+		monthly_prestige_gain_mult = -0.05
+		title_creation_cost_mult = 0.10
+		army_maintenance_mult = 0.10
+		men_at_arms_maintenance = 0.10
+		men_at_arms_recruitment_cost = 0.10
+	}
+	flag = imprisonment_toggle_on
+	flag = high_tribal_taxes_1
+	flag = development_nerf_30_percent
+
+	can_keep = {
+		realm_law_use_high_tribal_organization_trigger = yes
+		#To force the law to rise with time
+		custom_tooltip = {
+			text = mechanically_driven_law
+			realm_law_can_keep_high_tribal_organization_1_trigger = yes
+			realm_law_can_keep_high_tribal_organization_2_trigger = no
+			realm_law_can_keep_high_tribal_organization_3_trigger = no
 		}
-		flag = imprisonment_toggle_on
-		flag = high_tribal_taxes_1
-		flag = development_nerf_30_percent
-
-		can_keep = {
-			realm_law_use_high_tribal_organization_trigger = yes
-			#To force the law to rise with time
-			custom_tooltip = {
-				text = mechanically_driven_law
-				realm_law_can_keep_high_tribal_organization_1_trigger = yes
-				realm_law_can_keep_high_tribal_organization_2_trigger = no
-				realm_law_can_keep_high_tribal_organization_3_trigger = no
-			}
-		}
-
-		can_pass = {
-			custom_tooltip = {
-				text = mechanically_driven_law
-				always = no
-			}
-		}
-
-		pass_cost = {}
-
-		on_pass = {}
-
-		ai_will_do = {}
 	}
 
-	high_tribal_organization_2 = {
-		modifier = {
-			monthly_prestige_gain_mult = -0.05
-			title_creation_cost_mult = 0.10
-			army_maintenance_mult = 0.10
-			men_at_arms_maintenance = 0.10
-			men_at_arms_recruitment_cost = 0.10
+	can_pass = {
+		custom_tooltip = {
+			text = mechanically_driven_law
+			always = no
 		}
-		flag = title_revocation_allowed_if_authority_1
-		flag = high_tribal_taxes_2
-		flag = development_nerf_20_percent
-		flag = cannot_use_confederation_decision
-		flag = cannot_use_raid_law_effect
-
-		can_keep = {
-			realm_law_use_high_tribal_organization_trigger = yes
-			#To force the law to rise with time
-			custom_tooltip = {
-				text = mechanically_driven_law
-				realm_law_can_keep_high_tribal_organization_1_trigger = yes
-				realm_law_can_keep_high_tribal_organization_2_trigger = yes
-				realm_law_can_keep_high_tribal_organization_3_trigger = no
-			}
-		}
-
-		can_pass = {
-			custom_tooltip = {
-				text = mechanically_driven_law
-				always = no
-			}
-		}
-
-		pass_cost = {}
-
-		on_pass = {}
-
-		ai_will_do = {}
 	}
 
-	high_tribal_organization_3 = {
-		modifier = {
-			monthly_prestige_gain_mult = -0.05
-			title_creation_cost_mult = 0.10
-			army_maintenance_mult = 0.10
-			men_at_arms_maintenance = 0.10
-			men_at_arms_recruitment_cost = 0.10
-		}
-		flag = vassal_retraction_allowed_if_authority_1
-		flag = high_tribal_taxes_3
-		flag = development_nerf_10_percent
-		flag = cannot_use_raid_law_effect
+	pass_cost = {}
 
-		can_keep = {
-			realm_law_use_high_tribal_organization_trigger = yes
-			#To force the law to rise with time
-			custom_tooltip = {
-				text = mechanically_driven_law
-				realm_law_can_keep_high_tribal_organization_1_trigger = yes
-				realm_law_can_keep_high_tribal_organization_2_trigger = yes
-				realm_law_can_keep_high_tribal_organization_3_trigger = yes
-			}
-		}
+	on_pass = {}
 
-		can_pass = {
-			custom_tooltip = {
-				text = mechanically_driven_law
-				always = no
-			}
-		}
+	ai_will_do = {}
+}
 
-		pass_cost = {}
+high_tribal_organization_2 = {
+	law_group_type = high_tribal_organization
+	index = 2
 
-		on_pass = {}
-
-		ai_will_do = {}
+	modifier = {
+		monthly_prestige_gain_mult = -0.05
+		title_creation_cost_mult = 0.10
+		army_maintenance_mult = 0.10
+		men_at_arms_maintenance = 0.10
+		men_at_arms_recruitment_cost = 0.10
 	}
+	flag = title_revocation_allowed_if_authority_1
+	flag = high_tribal_taxes_2
+	flag = development_nerf_20_percent
+	flag = cannot_use_confederation_decision
+	flag = cannot_use_raid_law_effect
+
+	can_keep = {
+		realm_law_use_high_tribal_organization_trigger = yes
+		#To force the law to rise with time
+		custom_tooltip = {
+			text = mechanically_driven_law
+			realm_law_can_keep_high_tribal_organization_1_trigger = yes
+			realm_law_can_keep_high_tribal_organization_2_trigger = yes
+			realm_law_can_keep_high_tribal_organization_3_trigger = no
+		}
+	}
+
+	can_pass = {
+		custom_tooltip = {
+			text = mechanically_driven_law
+			always = no
+		}
+	}
+
+	pass_cost = {}
+
+	on_pass = {}
+
+	ai_will_do = {}
+}
+
+high_tribal_organization_3 = {
+	law_group_type = high_tribal_organization
+	index = 3
+
+	modifier = {
+		monthly_prestige_gain_mult = -0.05
+		title_creation_cost_mult = 0.10
+		army_maintenance_mult = 0.10
+		men_at_arms_maintenance = 0.10
+		men_at_arms_recruitment_cost = 0.10
+	}
+	flag = vassal_retraction_allowed_if_authority_1
+	flag = high_tribal_taxes_3
+	flag = development_nerf_10_percent
+	flag = cannot_use_raid_law_effect
+
+	can_keep = {
+		realm_law_use_high_tribal_organization_trigger = yes
+		#To force the law to rise with time
+		custom_tooltip = {
+			text = mechanically_driven_law
+			realm_law_can_keep_high_tribal_organization_1_trigger = yes
+			realm_law_can_keep_high_tribal_organization_2_trigger = yes
+			realm_law_can_keep_high_tribal_organization_3_trigger = yes
+		}
+	}
+
+	can_pass = {
+		custom_tooltip = {
+			text = mechanically_driven_law
+			always = no
+		}
+	}
+
+	pass_cost = {}
+
+	on_pass = {}
+
+	ai_will_do = {}
 }

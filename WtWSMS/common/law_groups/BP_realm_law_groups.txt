@@ -1,0 +1,30 @@
+﻿iranian_dynastic_authority = {
+	required_government_flag = { government_is_iranian_dynastic }
+	default = iranian_dynastic_authority_1
+	cumulative = no
+	flag = realm_law
+}
+
+prefeudal_authority = {
+	required_government_flag = { government_is_prefeudal }
+	default = prefeudal_authority_0
+	cumulative = yes
+	flag = realm_law
+}
+
+rajamandala_authority = {
+	required_government_flag = { government_is_rajamandala }
+	default = rajamandala_authority_0
+	cumulative = yes
+	flag = realm_law
+}
+
+roman_dynastic_authority = {
+	required_government_flag = {
+		government_is_roman_dynastic
+		government_is_subroman_dynastic
+	}
+	default = roman_dynastic_authority_0
+	cumulative = no
+	flag = realm_law
+}

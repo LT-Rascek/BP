@@ -1,0 +1,161 @@
+﻿roman_administrative_ministry_appointment_succession_law = {
+	law_group_type = title_succession_laws
+	index = 12
+
+	can_have = {
+		OR = {
+			government_has_flag = government_is_roman_administrative
+			government_has_flag = subroman_administrative_government
+		}
+	}
+	can_pass = {
+	}
+	can_title_have = {
+		NOT = { has_variable = is_supreme_roman_military_title }
+		is_noble_family_title = no
+	}
+	can_realm_have = {
+		always = no
+	}
+	can_remove_from_title = {
+		custom_tooltip = {
+			text = celestial_ministry_appointment_cannot_remove_desc
+			always = no
+		}
+	}
+	succession = {
+		order_of_succession = appointment
+		appointment_type = roman_admin_minister
+	}
+	modifier = {}
+	flag = appointment_type_succession
+}
+roman_administrative_magister_military_appointment_succession_law = {
+	law_group_type = title_succession_laws
+	index = 13
+
+	can_have = {
+		OR = {
+			government_has_flag = government_is_roman_administrative
+			government_has_flag = subroman_administrative_government
+		}
+	}
+	can_pass = {
+	}
+	can_title_have = {
+		has_variable = is_supreme_roman_military_title
+		is_noble_family_title = no
+	}
+	can_realm_have = {
+		always = no
+	}
+	can_remove_from_title = {
+		custom_tooltip = {
+			text = celestial_ministry_appointment_cannot_remove_desc
+			always = no
+		}
+	}
+	succession = {
+		order_of_succession = appointment
+		appointment_type = roman_admin_military
+	}
+	modifier = {}
+	
+	flag = appointment_type_succession
+}
+#Roman/Byzantine Laws
+imperial_elective_succession_law = { #Applied via script
+	law_group_type = title_succession_laws
+	index = 14
+
+	can_have = { can_have_imperial_elective_succession_realm_law_trigger = yes }
+	can_title_have = {
+		can_title_have_law_general_trigger = yes
+		tier >= tier_hegemony
+	}
+	should_show_for_title = { always = no }
+	can_remove_from_title = { always = no }
+	succession = {
+		order_of_succession = election
+		election_type = imperial_elective
+	}
+	flag = elective_succession_law
+}
+#Sassanid Laws
+mahestan_elective_succession_law = { #Applied via script
+	law_group_type = title_succession_laws
+	index = 15
+
+	can_have = { can_have_mahestan_elective_succession_realm_law_trigger = yes }
+	can_title_have = {
+		can_title_have_law_general_trigger = yes
+		tier >= tier_empire
+	}
+	should_show_for_title = { always = no }
+	can_remove_from_title = { always = no }
+	modifier = {
+		vassal_limit = 10
+	}
+	succession = {
+		order_of_succession = election
+		election_type = mahestan_elective
+	}
+	flag = elective_succession_law
+	title_allegiance_opinion = 5
+}
+#Kurutlai Elective
+kurultai_elective_succession_law = {
+	law_group_type = title_succession_laws
+	index = 16
+
+	can_have = {
+		highest_held_title_tier >= tier_kingdom
+		culture = {
+			OR = {
+				has_cultural_pillar = heritage_mongolic
+				has_cultural_pillar = heritage_turkic
+			}
+		}
+	}
+	can_pass = {
+		can_change_title_law_trigger = yes
+	}
+	can_title_have = { can_title_have_law_general_trigger = yes }
+	succession = {
+		order_of_succession = election
+		election_type = kurultai_elective
+	}
+	flag = elective_succession_law
+	title_allegiance_opinion = 5
+	revoke_cost = { prestige = change_title_succession_law_prestige_cost }
+	pass_cost = { prestige = change_title_succession_law_prestige_cost }
+}
+#Eldership Election
+eldership_elective_succession_law = {
+	law_group_type = title_succession_laws
+	index = 17
+
+	can_have = {
+		OR = {
+			government_has_flag = government_is_feudal
+			government_has_flag = government_is_clan
+			government_has_flag = government_is_tribal
+		}
+		highest_held_title_tier >= tier_duchy
+		faith = { has_doctrine = tenet_ancestor_worship }
+	}
+	can_pass = {
+		can_change_title_law_trigger = yes
+		faith = { has_doctrine = tenet_ancestor_worship }
+	}
+	can_title_have = { can_title_have_law_general_trigger = yes }
+	succession = {
+		order_of_succession = election
+		election_type = eldership_elective
+	}
+	flag = elective_succession_law
+	title_allegiance_opinion = 5
+	revoke_cost = { prestige = change_title_succession_law_prestige_cost }
+	pass_cost = { prestige = change_title_succession_law_prestige_cost }
+}
+

@@ -1,0 +1,24 @@
+﻿high_tribal_organization = {
+	required_government_flag = { government_is_high_tribal }
+	default = high_tribal_organization_0
+	cumulative = yes
+	flag = high_tribal_organization
+}
+clerical_influence = {
+	required_government_flag = { government_is_iranian_dynastic }
+	default = clerical_influence_0
+	cumulative = no
+	flag = clerical_influence
+	flag = other_law
+}
+roman_diarchy_law = {
+	required_government_flag = { is_a_roman_government }
+	default = free_diarchy_law
+	cumulative = no
+	flag = imperial_policy
+}
+non_roman_minority_rule_law = {
+	default = non_roman_minority_rule_law_2
+	cumulative = no
+	flag = other_law
+}

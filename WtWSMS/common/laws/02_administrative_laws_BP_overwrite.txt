@@ -1,1307 +1,652 @@
-﻿##### Changed from Vanilla: Added "other" law flag
+﻿##### Changed from Vanilla: Extended to Roman Ministries
+budget_allocation_ministry_0 = {
+	law_group_type = budget_allocation_ministry_law
+	index = 0
 
-#####################
-# ADMINISTRATIVE LAWS
-#####################
-@admin_law_cooldown_value = 5
+	shown_in_encyclopedia = no
 
-province_war_law = {
-	default = province_war_law_0
-	cumulative = yes
-	flag = admin_law
-	flag = succession_gender_laws #For UI positioning
-	
-	province_war_law_0 = {
-		modifier = {
-		}
-		flag = uses_imperial_bureaucracy
+	flag = ministry_budget_law_major_negative_impact
 
-		can_keep = {
-			realm_law_use_imperial_bureaucracy = yes
-			trigger_if = {
-				limit = {
-					top_liege != this
-				}
-				liege = { has_realm_law = province_war_law_0 }
-			}
-		}
-		
-		can_pass = {
-			trigger_if = {
-				limit = {
-					top_liege != this
-					liege = { has_realm_law = province_war_law_0 }
-				}
-				custom_tooltip = {
-					text = imperial_bureaucracy_pending_law_change
-					always = no
-				}
-			}
-		}
-
-		on_pass = {
-			## Set cooldown
-			set_variable = {
-				name = admin_law_cooldown
-				years = @admin_law_cooldown_value
-			}
+	can_keep = {
+		OR = {
+			tgp_has_access_to_ministry_trigger = yes
+			bp_uses_ministry_budget_trigger = yes
 		}
 	}
-	
-	province_war_law_1 = {
-		modifier = {
-		}
-		flag = uses_imperial_bureaucracy
-		flag = admin_vassal_wars_restricted
 
-		can_keep = {
-			realm_law_use_imperial_bureaucracy = yes
-			trigger_if = {
-				limit = {
-					top_liege = this
-				}
-				custom_tooltip = {
-					text = have_bureaucracy_1_or_higher
-					OR = {
-						has_realm_law = imperial_bureaucracy_1
-						has_realm_law = imperial_bureaucracy_2
-						has_realm_law = imperial_bureaucracy_3
-					}
-				}
-			}
-			trigger_if = {
-				limit = {
-					top_liege != this
-				}
-				liege = { has_realm_law = province_war_law_1 }
-			}
-		}
+	modifier = {
+		treasury_ministry_budget_allocation = 0
 
-		can_pass = {
-			trigger_if = {
-				limit = {
-					top_liege = this
-				}
-				custom_tooltip = {
-					text = admin_law_cooldown_desc
-					NOT = { has_variable = admin_law_cooldown }
-				}
-			}
-			trigger_if = {
-				limit = {
-					top_liege != this
-					liege = { has_realm_law = province_war_law_1 }
-				}
-				custom_tooltip = {
-					text = imperial_bureaucracy_pending_law_change
-					always = no
-				}
-			}
-		}
-		
-		pass_cost = {
-			prestige = {
-				add = admin_law_prestige_cost
-			}
-		}
-		
-		on_pass = {
-			## Set cooldown
-			set_variable = {
-				name = admin_law_cooldown
-				years = @admin_law_cooldown_value
-			}
-		}
+		vassal_tax_mult = -0.2
+		monthly_legitimacy_add = -20
+		courtly_opinion = -30
+	}
 
-		ai_will_do = {
-			if = {
-				limit = {
-					ai_has_warlike_personality = yes
-				}
-				value = 1
-			}
-			if = {
-				limit = {
-					has_realm_law = province_war_law_0
-					ai_has_economical_boom_personality = yes
-				}
-				value = 1
-			}
+	pass_cost = {
+		prestige = {
+			add = change_admin_budget_law_prestige_cost
 		}
 	}
-	
-	province_war_law_2 = {
-		modifier = {
-		}
-		flag = uses_imperial_bureaucracy
-		flag = admin_vassal_wars_permission_only
-		
-		can_keep = {
-			realm_law_use_imperial_bureaucracy = yes
-			trigger_if = {
-				limit = {
-					top_liege = this
-				}
-				custom_tooltip = {
-					text = have_bureaucracy_2_or_higher
-					OR = {
-						has_realm_law = imperial_bureaucracy_2
-						has_realm_law = imperial_bureaucracy_3
-					}
-				}
-			}
-			trigger_if = {
-				limit = {
-					top_liege != this
-				}
-				liege = { has_realm_law = province_war_law_2 }
-			}
-		}
 
-		can_pass = {
-			trigger_if = {
-				limit = {
-					top_liege = this
-				}
-				custom_tooltip = {
-					text = admin_law_cooldown_desc
-					NOT = { has_variable = admin_law_cooldown }
-				}
-			}
-			trigger_if = {
-				limit = {
-					top_liege != this
-					liege = { has_realm_law = province_war_law_2 }
-				}
-				custom_tooltip = {
-					text = imperial_bureaucracy_pending_law_change
-					always = no
-				}
-			}
-		}
-
-		pass_cost = {
-			prestige = {
-				add = admin_law_prestige_cost
-			}
-		}
-		
-		on_pass = {
-			## Set cooldown
-			set_variable = {
-				name = admin_law_cooldown
-				years = @admin_law_cooldown_value
-			}
-		}
-
-		ai_will_do = {
-			if = {
-				limit = {
-					has_realm_law = province_war_law_1
-					ai_has_builder_or_pious_builder_personality = yes
-				}
-				value = 1
-			}
+	on_pass = {
+		add_legitimacy = {
+			value = treasury_budget_law_change_legitimacy_loss_base
+			multiply = 4
 		}
 	}
-	
-	province_war_law_3 = {
-		modifier = {
-		}
-		flag = uses_imperial_bureaucracy
-		flag = admin_vassal_wars_banned
-		
-		can_keep = {
-			realm_law_use_imperial_bureaucracy = yes
-			trigger_if = {
-				limit = {
-					top_liege = this
-				}
-				custom_tooltip = {
-					text = have_bureaucracy_3
-					has_realm_law = imperial_bureaucracy_3
-				}
-			}
-			trigger_if = {
-				limit = {
-					top_liege != this
-				}
-				liege = { has_realm_law = province_war_law_3 }
-			}
-		}
 
-		can_pass = {
-			trigger_if = {
-				limit = {
-					top_liege = this
-				}
-				custom_tooltip = {
-					text = admin_law_cooldown_desc
-					NOT = { has_variable = admin_law_cooldown }
-				}
-			}
-			trigger_if = {
-				limit = {
-					top_liege != this
-					liege = { has_realm_law = province_war_law_3 }
-				}
-				custom_tooltip = {
-					text = imperial_bureaucracy_pending_law_change
-					always = no
-				}
-			}
-		}
-
-		pass_cost = {
-			prestige = {
-				add = admin_law_prestige_cost
-			}
-		}
-		
-		on_pass = {
-			## Set cooldown
-			set_variable = {
-				name = admin_law_cooldown
-				years = @admin_law_cooldown_value
-			}
-		}
-
-		ai_will_do = {
-			if = {
-				limit = {
-					has_realm_law = province_war_law_2
-					ai_has_pious_builder_personality = yes
-				}
-				value = 1
-			}
-		}
+	ai_will_do = {
+		value = 0
 	}
 }
 
-province_border_law = {
-	default = province_border_law_0
-	cumulative = no
-	flag = admin_law
-	flag = succession_gender_laws #For UI positioning
-	
-	province_border_law_0 = {
-		modifier = {
-		}
-		flag = uses_imperial_bureaucracy
+budget_allocation_ministry_5 = {
+	law_group_type = budget_allocation_ministry_law
+	index = 1
 
-		can_keep = {
-			realm_law_use_imperial_bureaucracy = yes
-			trigger_if = {
-				limit = {
-					top_liege != this
-				}
-				liege = { has_realm_law = province_border_law_0 }
-			}
-		}
-		
-		can_pass = {
-			trigger_if = {
-				limit = {
-					top_liege != this
-					liege = { has_realm_law = province_border_law_0 }
-				}
-				custom_tooltip = {
-					text = imperial_bureaucracy_pending_law_change
-					always = no
-				}
-			}
-		}
+	shown_in_encyclopedia = no
 
-		on_pass = {
-			## Set cooldown
-			set_variable = {
-				name = admin_law_cooldown
-				years = @admin_law_cooldown_value
-			}
-		}
+	flag = ministry_budget_law_major_negative_impact
 
-		ai_will_do = {
-			value = 1
+	can_keep = {
+		OR = {
+			tgp_has_access_to_ministry_trigger = yes
+			bp_uses_ministry_budget_trigger = yes
 		}
 	}
-	
-	province_border_law_1 = {
-		modifier = {
-			administrative_government_vassal_opinion = -5
-		}
-		flag = uses_imperial_bureaucracy
-		flag = admin_vassal_border_restricted
 
-		can_keep = {
-			realm_law_use_imperial_bureaucracy = yes
-			trigger_if = {
-				limit = {
-					top_liege = this
-					realm_law_use_imperial_bureaucracy = yes
-				}
-				custom_tooltip = {
-					text = have_bureaucracy_2_or_higher
-					OR = {
-						has_realm_law = imperial_bureaucracy_2
-						has_realm_law = imperial_bureaucracy_3
-					}
-				}
-			}
-			trigger_if = {
-				limit = {
-					top_liege = this
-					realm_law_use_celestial_bureaucracy = yes
-				}
-				custom_tooltip = {
-					text = have_celestial_bureaucracy_2_or_higher
-					OR = {
-						has_realm_law = celestial_bureaucracy_2
-						has_realm_law = celestial_bureaucracy_3
-					}
-				}
-			}
-			trigger_if = {
-				limit = {
-					top_liege != this
-				}
-				liege = { has_realm_law = province_border_law_1 }
-			}
-		}
+	modifier = {
+		treasury_ministry_budget_allocation = 0.05
 
-		can_pass = {
-			trigger_if = {
-				limit = {
-					top_liege = this
-				}
-				custom_tooltip = {
-					text = admin_law_cooldown_desc
-					NOT = { has_variable = admin_law_cooldown }
-				}
-			}
-			trigger_if = {
-				limit = {
-					top_liege != this
-					liege = { has_realm_law = province_border_law_1 }
-				}
-				custom_tooltip = {
-					text = imperial_bureaucracy_pending_law_change
-					always = no
-				}
-			}
-		}
-		
-		pass_cost = {
-			prestige = {
-				add = admin_law_prestige_cost
-			}
-		}
-		
-		on_pass = {
-			## Set cooldown
-			set_variable = {
-				name = admin_law_cooldown
-				years = @admin_law_cooldown_value
-			}
-		}
+		vassal_tax_mult = -0.15
+		monthly_legitimacy_add = -15
+		courtly_opinion = -25
+	}
 
-		ai_will_do = {
-			value = 0
-			if = {
-				limit = {
-					OR = {
-						ai_has_cautious_personality = yes
-						ai_has_economical_boom_personality = yes
-					}
-				}
-				add = 2
-			}
+	pass_cost = {
+		prestige = {
+			add = change_admin_budget_law_prestige_cost
 		}
 	}
-	
-	province_border_law_2 = {
-		modifier = {
-			administrative_government_vassal_opinion = -10
-		}
-		flag = uses_imperial_bureaucracy
-		flag = admin_vassal_border_limit
 
-		can_keep = {
-			realm_law_use_imperial_bureaucracy = yes
-			trigger_if = {
-				limit = {
-					top_liege = this
-					realm_law_use_imperial_bureaucracy = yes
-				}
-				custom_tooltip = {
-					text = have_bureaucracy_3
-					has_realm_law = imperial_bureaucracy_3
-				}
-			}
-			trigger_if = {
-				limit = {
-					top_liege = this
-					realm_law_use_celestial_bureaucracy = yes
-				}
-				custom_tooltip = {
-					text = have_celestial_bureaucracy_3
-					has_realm_law = celestial_bureaucracy_3
-				}
-			}
-			trigger_if = {
-				limit = {
-					top_liege != this
-				}
-				liege = { has_realm_law = province_border_law_2 }
-			}
+	on_pass = {
+		add_legitimacy = {
+			value = treasury_budget_law_change_legitimacy_loss_base
+			multiply = 4
 		}
+	}
 
-		can_pass = {
-			trigger_if = {
-				limit = {
-					top_liege = this
-				}
-				custom_tooltip = {
-					text = admin_law_cooldown_desc
-					NOT = { has_variable = admin_law_cooldown }
-				}
-			}
-			trigger_if = {
-				limit = {
-					top_liege != this
-					liege = { has_realm_law = province_border_law_2 }
-				}
-				custom_tooltip = {
-					text = imperial_bureaucracy_pending_law_change
-					always = no
-				}
-			}
-		}
-		
-		pass_cost = {
-			prestige = {
-				add = admin_law_prestige_cost
-			}
-		}
-		
-		on_pass = {
-			## Set cooldown
-			set_variable = {
-				name = admin_law_cooldown
-				years = @admin_law_cooldown_value
-			}
-		}
-
-		ai_will_do = {
-			value = 0
-		}
+	ai_will_do = {
+		value = 0
 	}
 }
 
-budget_allocation_ministry_law = {
-	is_treasury_budget_group = yes
+budget_allocation_ministry_10 = {
+	law_group_type = budget_allocation_ministry_law
+	index = 2
 
-	flag = treasury_budget_law
-	flag = treasury_budget_ministry
+	shown_in_encyclopedia = no
 
-	default = budget_allocation_ministry_25
+	flag = ministry_budget_law_major_negative_impact
 
-	budget_allocation_ministry_0 = {
-		shown_in_encyclopedia = no
-
-		flag = ministry_budget_law_major_negative_impact
-
-		can_keep = {
-			OR = {
-				realm_law_use_celestial_bureaucracy = yes
-				government_has_flag = government_is_roman_administrative
-				government_has_flag = government_is_subroman_administrative
-			}
-			trigger_if = {
-				limit = {
-					OR = {
-						government_has_flag = government_is_roman_administrative
-						government_has_flag = government_is_subroman_administrative
-					}
-				}
-				primary_title.tier >= tier_hegemony
-			}
-		}
-
-		modifier = {
-			treasury_ministry_budget_allocation = 0
-
-			vassal_tax_mult = -0.2
-			monthly_legitimacy_add = -20
-			courtly_opinion = -30
-		}
-
-		pass_cost = {
-			prestige = {
-				add = change_admin_budget_law_prestige_cost
-			}
-		}
-
-		on_pass = {
-			add_legitimacy = {
-				value = treasury_budget_law_change_legitimacy_loss_base
-				multiply = 4
-			}
-		}
-
-		ai_will_do = {
-			value = 0
+	can_keep = {
+		OR = {
+			tgp_has_access_to_ministry_trigger = yes
+			bp_uses_ministry_budget_trigger = yes
 		}
 	}
 
-	budget_allocation_ministry_5 = {
-		shown_in_encyclopedia = no
+	modifier = {
+		treasury_ministry_budget_allocation = 0.10
 
-		flag = ministry_budget_law_major_negative_impact
+		vassal_tax_mult = -0.1
+		monthly_legitimacy_add = -10
+		courtly_opinion = -20
+	}
 
-		can_keep = {
-			OR = {
-				realm_law_use_celestial_bureaucracy = yes
-				government_has_flag = government_is_roman_administrative
-				government_has_flag = government_is_subroman_administrative
-			}
-			trigger_if = {
-				limit = {
-					OR = {
-						government_has_flag = government_is_roman_administrative
-						government_has_flag = government_is_subroman_administrative
-					}
-				}
-				primary_title.tier >= tier_hegemony
-			}
-		}
-
-		modifier = {
-			treasury_ministry_budget_allocation = 0.05
-
-			vassal_tax_mult = -0.15
-			monthly_legitimacy_add = -15
-			courtly_opinion = -25
-		}
-
-		pass_cost = {
-			prestige = {
-				add = change_admin_budget_law_prestige_cost
-			}
-		}
-
-		on_pass = {
-			add_legitimacy = {
-				value = treasury_budget_law_change_legitimacy_loss_base
-				multiply = 4
-			}
-		}
-
-		ai_will_do = {
-			value = 0
+	on_pass = {
+		add_legitimacy = {
+			value = treasury_budget_law_change_legitimacy_loss_base
+			multiply = 3
 		}
 	}
 
-	budget_allocation_ministry_10 = {
-		shown_in_encyclopedia = no
-
-		flag = ministry_budget_law_major_negative_impact
-
-		can_keep = {
-			OR = {
-				realm_law_use_celestial_bureaucracy = yes
-				government_has_flag = government_is_roman_administrative
-				government_has_flag = government_is_subroman_administrative
-			}
-			trigger_if = {
-				limit = {
-					OR = {
-						government_has_flag = government_is_roman_administrative
-						government_has_flag = government_is_subroman_administrative
-					}
-				}
-				primary_title.tier >= tier_hegemony
-			}
-		}
-
-		modifier = {
-			treasury_ministry_budget_allocation = 0.10
-
-			vassal_tax_mult = -0.1
-			monthly_legitimacy_add = -10
-			courtly_opinion = -20
-		}
-
-		on_pass = {
-			add_legitimacy = {
-				value = treasury_budget_law_change_legitimacy_loss_base
-				multiply = 3
-			}
-		}
-
-		pass_cost = {
-			prestige = {
-				add = change_admin_budget_law_prestige_cost
-			}
-		}
-
-		ai_will_do = {
-			value = 0
+	pass_cost = {
+		prestige = {
+			add = change_admin_budget_law_prestige_cost
 		}
 	}
 
+	ai_will_do = {
+		value = 0
+	}
+}
 
-	budget_allocation_ministry_15 = {
-		shown_in_encyclopedia = no
+budget_allocation_ministry_15 = {
+	law_group_type = budget_allocation_ministry_law
+	index = 3
 
-		flag = ministry_budget_law_major_negative_impact
+	shown_in_encyclopedia = no
 
-		can_keep = {
-			OR = {
-				realm_law_use_celestial_bureaucracy = yes
-				government_has_flag = government_is_roman_administrative
-				government_has_flag = government_is_subroman_administrative
-			}
-			trigger_if = {
-				limit = {
-					OR = {
-						government_has_flag = government_is_roman_administrative
-						government_has_flag = government_is_subroman_administrative
-					}
-				}
-				primary_title.tier >= tier_hegemony
-			}
-		}
+	flag = ministry_budget_law_major_negative_impact
 
-		modifier = {
-			treasury_ministry_budget_allocation = 0.15
-
-			vassal_tax_mult = -0.05
-			monthly_legitimacy_add = -5
-			courtly_opinion = -15
-		}
-
-		pass_cost = {
-			prestige = {
-				add = change_admin_budget_law_prestige_cost
-			}
-		}
-
-		on_pass = {
-			add_legitimacy = {
-				value = treasury_budget_law_change_legitimacy_loss_base
-				multiply = 1
-			}
-		}
-
-		ai_will_do = {
-			value = 0
+	can_keep = {
+		OR = {
+			tgp_has_access_to_ministry_trigger = yes
+			bp_uses_ministry_budget_trigger = yes
 		}
 	}
 
-	budget_allocation_ministry_20 = {
-		shown_in_encyclopedia = no
+	modifier = {
+		treasury_ministry_budget_allocation = 0.15
 
-		flag = ministry_budget_law_minor_negative_impact
+		vassal_tax_mult = -0.05
+		monthly_legitimacy_add = -5
+		courtly_opinion = -15
+	}
 
-		can_keep = {
-			OR = {
-				realm_law_use_celestial_bureaucracy = yes
-				government_has_flag = government_is_roman_administrative
-				government_has_flag = government_is_subroman_administrative
-			}
-			trigger_if = {
-				limit = {
-					OR = {
-						government_has_flag = government_is_roman_administrative
-						government_has_flag = government_is_subroman_administrative
-					}
-				}
-				primary_title.tier >= tier_hegemony
-			}
-		}
-
-		modifier = {
-			treasury_ministry_budget_allocation = 0.20
-
-			courtly_opinion = -10
-		}
-
-		pass_cost = {
-			prestige = {
-				add = change_admin_budget_law_prestige_cost
-			}
-		}
-
-		ai_will_do = {
-			value = 0
+	pass_cost = {
+		prestige = {
+			add = change_admin_budget_law_prestige_cost
 		}
 	}
 
-	budget_allocation_ministry_25 = {
-		shown_in_encyclopedia = no
-
-		can_keep = {
-			OR = {
-				realm_law_use_celestial_bureaucracy = yes
-				government_has_flag = government_is_roman_administrative
-				government_has_flag = government_is_subroman_administrative
-			}
-			trigger_if = {
-				limit = {
-					OR = {
-						government_has_flag = government_is_roman_administrative
-						government_has_flag = government_is_subroman_administrative
-					}
-				}
-				primary_title.tier >= tier_hegemony
-			}
-		}
-
-		modifier = {
-			treasury_ministry_budget_allocation = 0.25
-		}
-
-		pass_cost = {
-			prestige = {
-				add = change_admin_budget_law_prestige_cost
-			}
-		}
-
-		ai_will_do = {
-			value = 0
+	on_pass = {
+		add_legitimacy = {
+			value = treasury_budget_law_change_legitimacy_loss_base
+			multiply = 1
 		}
 	}
 
-	budget_allocation_ministry_30 = {
-		shown_in_encyclopedia = no
+	ai_will_do = {
+		value = 0
+	}
+}
 
-		can_keep = {
-			OR = {
-				realm_law_use_celestial_bureaucracy = yes
-				government_has_flag = government_is_roman_administrative
-				government_has_flag = government_is_subroman_administrative
-			}
-			trigger_if = {
-				limit = {
-					OR = {
-						government_has_flag = government_is_roman_administrative
-						government_has_flag = government_is_subroman_administrative
-					}
-				}
-				primary_title.tier >= tier_hegemony
-			}
-		}
+budget_allocation_ministry_20 = {
+	law_group_type = budget_allocation_ministry_law
+	index = 4
 
-		ai_will_do = {
-			value = 0
-		}
+	shown_in_encyclopedia = no
 
-		should_start_with = {
-			always = yes
-		}
+	flag = ministry_budget_law_minor_negative_impact
 
-		modifier = {
-			treasury_ministry_budget_allocation = 0.30
-		}
-
-		pass_cost = {
-			prestige = {
-				add = change_admin_budget_law_prestige_cost
-			}
-		}
-
-		ai_will_do = {
-			value = 0
+	can_keep = {
+		OR = {
+			tgp_has_access_to_ministry_trigger = yes
+			bp_uses_ministry_budget_trigger = yes
 		}
 	}
 
-	budget_allocation_ministry_35 = {
-		shown_in_encyclopedia = no
+	modifier = {
+		treasury_ministry_budget_allocation = 0.20
 
-		can_keep = {
-			OR = {
-				realm_law_use_celestial_bureaucracy = yes
-				government_has_flag = government_is_roman_administrative
-				government_has_flag = government_is_subroman_administrative
-			}
-			trigger_if = {
-				limit = {
-					OR = {
-						government_has_flag = government_is_roman_administrative
-						government_has_flag = government_is_subroman_administrative
-					}
-				}
-				primary_title.tier >= tier_hegemony
-			}
-		}
+		courtly_opinion = -10
+	}
 
-		modifier = {
-			treasury_ministry_budget_allocation = 0.35
-		}
-
-		pass_cost = {
-			prestige = {
-				add = change_admin_budget_law_prestige_cost
-			}
-		}
-
-		ai_will_do = {
-			value = 0
+	pass_cost = {
+		prestige = {
+			add = change_admin_budget_law_prestige_cost
 		}
 	}
 
-	budget_allocation_ministry_40 = {
-		shown_in_encyclopedia = no
+	ai_will_do = {
+		value = 0
+	}
+}
 
-		can_keep = {
-			OR = {
-				realm_law_use_celestial_bureaucracy = yes
-				government_has_flag = government_is_roman_administrative
-				government_has_flag = government_is_subroman_administrative
-			}
-			trigger_if = {
-				limit = {
-					OR = {
-						government_has_flag = government_is_roman_administrative
-						government_has_flag = government_is_subroman_administrative
-					}
-				}
-				primary_title.tier >= tier_hegemony
-			}
-		}
+budget_allocation_ministry_25 = {
+	law_group_type = budget_allocation_ministry_law
+	index = 5
 
-		modifier = {
-			treasury_ministry_budget_allocation = 0.40
-		}
+	shown_in_encyclopedia = no
 
-		pass_cost = {
-			prestige = {
-				add = change_admin_budget_law_prestige_cost
-			}
-		}
-
-		ai_will_do = {
-			value = 0
+	can_keep = {
+		OR = {
+			tgp_has_access_to_ministry_trigger = yes
+			bp_uses_ministry_budget_trigger = yes
 		}
 	}
 
-	budget_allocation_ministry_45 = {
-		shown_in_encyclopedia = no
+	modifier = {
+		treasury_ministry_budget_allocation = 0.25
+	}
 
-		can_keep = {
-			OR = {
-				realm_law_use_celestial_bureaucracy = yes
-				government_has_flag = government_is_roman_administrative
-				government_has_flag = government_is_subroman_administrative
-			}
-			trigger_if = {
-				limit = {
-					OR = {
-						government_has_flag = government_is_roman_administrative
-						government_has_flag = government_is_subroman_administrative
-					}
-				}
-				primary_title.tier >= tier_hegemony
-			}
-		}
-
-		modifier = {
-			treasury_ministry_budget_allocation = 0.45
-		}
-
-		pass_cost = {
-			prestige = {
-				add = change_admin_budget_law_prestige_cost
-			}
-		}
-
-		ai_will_do = {
-			value = 0
+	pass_cost = {
+		prestige = {
+			add = change_admin_budget_law_prestige_cost
 		}
 	}
 
-	budget_allocation_ministry_50 = {
-		shown_in_encyclopedia = no
+	ai_will_do = {
+		value = 0
+	}
+}
 
-		can_keep = {
-			OR = {
-				realm_law_use_celestial_bureaucracy = yes
-				government_has_flag = government_is_roman_administrative
-				government_has_flag = government_is_subroman_administrative
-			}
-			trigger_if = {
-				limit = {
-					OR = {
-						government_has_flag = government_is_roman_administrative
-						government_has_flag = government_is_subroman_administrative
-					}
-				}
-				primary_title.tier >= tier_hegemony
-			}
-		}
+budget_allocation_ministry_30 = {
+	law_group_type = budget_allocation_ministry_law
+	index = 6
 
-		modifier = {
-			treasury_ministry_budget_allocation = 0.50
-		}
+	shown_in_encyclopedia = no
 
-		pass_cost = {
-			prestige = {
-				add = change_admin_budget_law_prestige_cost
-			}
-		}
-
-		ai_will_do = {
-			value = 0
+	can_keep = {
+		OR = {
+			tgp_has_access_to_ministry_trigger = yes
+			bp_uses_ministry_budget_trigger = yes
 		}
 	}
 
-	budget_allocation_ministry_55 = {
-		shown_in_encyclopedia = no
+	ai_will_do = {
+		value = 0
+	}
 
-		can_keep = {
-			OR = {
-				realm_law_use_celestial_bureaucracy = yes
-				government_has_flag = government_is_roman_administrative
-				government_has_flag = government_is_subroman_administrative
-			}
-			trigger_if = {
-				limit = {
-					OR = {
-						government_has_flag = government_is_roman_administrative
-						government_has_flag = government_is_subroman_administrative
-					}
-				}
-				primary_title.tier >= tier_hegemony
-			}
-		}
+	should_start_with = {
+		always = yes
+	}
 
-		modifier = {
-			treasury_ministry_budget_allocation = 0.55
-		}
+	modifier = {
+		treasury_ministry_budget_allocation = 0.30
+	}
 
-		pass_cost = {
-			prestige = {
-				add = change_admin_budget_law_prestige_cost
-			}
-		}
-
-		ai_will_do = {
-			value = 0
+	pass_cost = {
+		prestige = {
+			add = change_admin_budget_law_prestige_cost
 		}
 	}
 
-	budget_allocation_ministry_60 = {
-		shown_in_encyclopedia = no
+	ai_will_do = {
+		value = 0
+	}
+}
 
-		can_keep = {
-			OR = {
-				realm_law_use_celestial_bureaucracy = yes
-				government_has_flag = government_is_roman_administrative
-				government_has_flag = government_is_subroman_administrative
-			}
-			trigger_if = {
-				limit = {
-					OR = {
-						government_has_flag = government_is_roman_administrative
-						government_has_flag = government_is_subroman_administrative
-					}
-				}
-				primary_title.tier >= tier_hegemony
-			}
-		}
+budget_allocation_ministry_35 = {
+	law_group_type = budget_allocation_ministry_law
+	index = 7
 
-		modifier = {
-			treasury_ministry_budget_allocation = 0.60
-		}
+	shown_in_encyclopedia = no
 
-		pass_cost = {
-			prestige = {
-				add = change_admin_budget_law_prestige_cost
-			}
-		}
-
-		ai_will_do = {
-			value = 0
+	can_keep = {
+		OR = {
+			tgp_has_access_to_ministry_trigger = yes
+			bp_uses_ministry_budget_trigger = yes
 		}
 	}
 
-	budget_allocation_ministry_65 = {
-		shown_in_encyclopedia = no
+	modifier = {
+		treasury_ministry_budget_allocation = 0.35
+	}
 
-		can_keep = {
-			OR = {
-				realm_law_use_celestial_bureaucracy = yes
-				government_has_flag = government_is_roman_administrative
-				government_has_flag = government_is_subroman_administrative
-			}
-			trigger_if = {
-				limit = {
-					OR = {
-						government_has_flag = government_is_roman_administrative
-						government_has_flag = government_is_subroman_administrative
-					}
-				}
-				primary_title.tier >= tier_hegemony
-			}
-		}
-
-		modifier = {
-			treasury_ministry_budget_allocation = 0.65
-		}
-
-		pass_cost = {
-			prestige = {
-				add = change_admin_budget_law_prestige_cost
-			}
-		}
-
-		ai_will_do = {
-			value = 0
+	pass_cost = {
+		prestige = {
+			add = change_admin_budget_law_prestige_cost
 		}
 	}
 
-	budget_allocation_ministry_70 = {
-		shown_in_encyclopedia = no
+	ai_will_do = {
+		value = 0
+	}
+}
 
-		can_keep = {
-			OR = {
-				realm_law_use_celestial_bureaucracy = yes
-				government_has_flag = government_is_roman_administrative
-				government_has_flag = government_is_subroman_administrative
-			}
-			trigger_if = {
-				limit = {
-					OR = {
-						government_has_flag = government_is_roman_administrative
-						government_has_flag = government_is_subroman_administrative
-					}
-				}
-				primary_title.tier >= tier_hegemony
-			}
-		}
+budget_allocation_ministry_40 = {
+	law_group_type = budget_allocation_ministry_law
+	index = 8
 
-		modifier = {
-			treasury_ministry_budget_allocation = 0.70
-		}
+	shown_in_encyclopedia = no
 
-		pass_cost = {
-			prestige = {
-				add = change_admin_budget_law_prestige_cost
-			}
-		}
-
-		ai_will_do = {
-			value = 0
+	can_keep = {
+		OR = {
+			tgp_has_access_to_ministry_trigger = yes
+			bp_uses_ministry_budget_trigger = yes
 		}
 	}
 
-	budget_allocation_ministry_75 = {
-		shown_in_encyclopedia = no
+	modifier = {
+		treasury_ministry_budget_allocation = 0.40
+	}
 
-		can_keep = {
-			OR = {
-				realm_law_use_celestial_bureaucracy = yes
-				government_has_flag = government_is_roman_administrative
-				government_has_flag = government_is_subroman_administrative
-			}
-			trigger_if = {
-				limit = {
-					OR = {
-						government_has_flag = government_is_roman_administrative
-						government_has_flag = government_is_subroman_administrative
-					}
-				}
-				primary_title.tier >= tier_hegemony
-			}
-		}
-
-		modifier = {
-			treasury_ministry_budget_allocation = 0.75
-		}
-
-		pass_cost = {
-			prestige = {
-				add = change_admin_budget_law_prestige_cost
-			}
-		}
-
-		ai_will_do = {
-			value = 0
+	pass_cost = {
+		prestige = {
+			add = change_admin_budget_law_prestige_cost
 		}
 	}
 
-	budget_allocation_ministry_80 = {
-		shown_in_encyclopedia = no
+	ai_will_do = {
+		value = 0
+	}
+}
 
-		can_keep = {
-			OR = {
-				realm_law_use_celestial_bureaucracy = yes
-				government_has_flag = government_is_roman_administrative
-				government_has_flag = government_is_subroman_administrative
-			}
-			trigger_if = {
-				limit = {
-					OR = {
-						government_has_flag = government_is_roman_administrative
-						government_has_flag = government_is_subroman_administrative
-					}
-				}
-				primary_title.tier >= tier_hegemony
-			}
-		}
+budget_allocation_ministry_45 = {
+	law_group_type = budget_allocation_ministry_law
+	index = 9
 
-		modifier = {
-			treasury_ministry_budget_allocation = 0.80
-		}
+	shown_in_encyclopedia = no
 
-		pass_cost = {
-			prestige = {
-				add = change_admin_budget_law_prestige_cost
-			}
-		}
-
-		ai_will_do = {
-			value = 0
+	can_keep = {
+		OR = {
+			tgp_has_access_to_ministry_trigger = yes
+			bp_uses_ministry_budget_trigger = yes
 		}
 	}
 
-	budget_allocation_ministry_85 = {
-		shown_in_encyclopedia = no
+	modifier = {
+		treasury_ministry_budget_allocation = 0.45
+	}
 
-		can_keep = {
-			OR = {
-				realm_law_use_celestial_bureaucracy = yes
-				government_has_flag = government_is_roman_administrative
-				government_has_flag = government_is_subroman_administrative
-			}
-			trigger_if = {
-				limit = {
-					OR = {
-						government_has_flag = government_is_roman_administrative
-						government_has_flag = government_is_subroman_administrative
-					}
-				}
-				primary_title.tier >= tier_hegemony
-			}
-		}
-
-		modifier = {
-			treasury_ministry_budget_allocation = 0.85
-		}
-
-		pass_cost = {
-			prestige = {
-				add = change_admin_budget_law_prestige_cost
-			}
-		}
-
-		ai_will_do = {
-			value = 0
+	pass_cost = {
+		prestige = {
+			add = change_admin_budget_law_prestige_cost
 		}
 	}
 
-	budget_allocation_ministry_90 = {
-		shown_in_encyclopedia = no
+	ai_will_do = {
+		value = 0
+	}
+}
 
-		can_keep = {
-			OR = {
-				realm_law_use_celestial_bureaucracy = yes
-				government_has_flag = government_is_roman_administrative
-				government_has_flag = government_is_subroman_administrative
-			}
-			trigger_if = {
-				limit = {
-					OR = {
-						government_has_flag = government_is_roman_administrative
-						government_has_flag = government_is_subroman_administrative
-					}
-				}
-				primary_title.tier >= tier_hegemony
-			}
-		}
+budget_allocation_ministry_50 = {
+	law_group_type = budget_allocation_ministry_law
+	index = 10
 
-		modifier = {
-			treasury_ministry_budget_allocation = 0.9
-		}
+	shown_in_encyclopedia = no
 
-		pass_cost = {
-			prestige = {
-				add = change_admin_budget_law_prestige_cost
-			}
-		}
-
-		ai_will_do = {
-			value = 0
+	can_keep = {
+		OR = {
+			tgp_has_access_to_ministry_trigger = yes
+			bp_uses_ministry_budget_trigger = yes
 		}
 	}
 
-	budget_allocation_ministry_95 = {
-		shown_in_encyclopedia = no
+	modifier = {
+		treasury_ministry_budget_allocation = 0.50
+	}
 
-		can_keep = {
-			OR = {
-				realm_law_use_celestial_bureaucracy = yes
-				government_has_flag = government_is_roman_administrative
-				government_has_flag = government_is_subroman_administrative
-			}
-			trigger_if = {
-				limit = {
-					OR = {
-						government_has_flag = government_is_roman_administrative
-						government_has_flag = government_is_subroman_administrative
-					}
-				}
-				primary_title.tier >= tier_hegemony
-			}
-		}
-
-		modifier = {
-			treasury_ministry_budget_allocation = 0.95
-		}
-
-		pass_cost = {
-			prestige = {
-				add = change_admin_budget_law_prestige_cost
-			}
-		}
-
-		ai_will_do = {
-			value = 0
+	pass_cost = {
+		prestige = {
+			add = change_admin_budget_law_prestige_cost
 		}
 	}
 
-	budget_allocation_ministry_100 = {
-		shown_in_encyclopedia = no
+	ai_will_do = {
+		value = 0
+	}
+}
 
-		can_keep = {
-			OR = {
-				realm_law_use_celestial_bureaucracy = yes
-				government_has_flag = government_is_roman_administrative
-				government_has_flag = government_is_subroman_administrative
-			}
-			trigger_if = {
-				limit = {
-					OR = {
-						government_has_flag = government_is_roman_administrative
-						government_has_flag = government_is_subroman_administrative
-					}
-				}
-				primary_title.tier >= tier_hegemony
-			}
-		}
+budget_allocation_ministry_55 = {
+	law_group_type = budget_allocation_ministry_law
+	index = 11
 
-		modifier = {
-			treasury_ministry_budget_allocation = 1.0
-		}
+	shown_in_encyclopedia = no
 
-		pass_cost = {
-			prestige = {
-				add = change_admin_budget_law_prestige_cost
-			}
+	can_keep = {
+		OR = {
+			tgp_has_access_to_ministry_trigger = yes
+			bp_uses_ministry_budget_trigger = yes
 		}
+	}
 
-		ai_will_do = {
-			value = 0
+	modifier = {
+		treasury_ministry_budget_allocation = 0.55
+	}
+
+	pass_cost = {
+		prestige = {
+			add = change_admin_budget_law_prestige_cost
 		}
+	}
+
+	ai_will_do = {
+		value = 0
+	}
+}
+
+budget_allocation_ministry_60 = {
+	law_group_type = budget_allocation_ministry_law
+	index = 12
+
+	shown_in_encyclopedia = no
+
+	can_keep = {
+		OR = {
+			tgp_has_access_to_ministry_trigger = yes
+			bp_uses_ministry_budget_trigger = yes
+		}
+	}
+
+	modifier = {
+		treasury_ministry_budget_allocation = 0.60
+	}
+
+	pass_cost = {
+		prestige = {
+			add = change_admin_budget_law_prestige_cost
+		}
+	}
+
+	ai_will_do = {
+		value = 0
+	}
+}
+
+budget_allocation_ministry_65 = {
+	law_group_type = budget_allocation_ministry_law
+	index = 13
+
+	shown_in_encyclopedia = no
+
+	can_keep = {
+		OR = {
+			tgp_has_access_to_ministry_trigger = yes
+			bp_uses_ministry_budget_trigger = yes
+		}
+	}
+
+	modifier = {
+		treasury_ministry_budget_allocation = 0.65
+	}
+
+	pass_cost = {
+		prestige = {
+			add = change_admin_budget_law_prestige_cost
+		}
+	}
+
+	ai_will_do = {
+		value = 0
+	}
+}
+
+budget_allocation_ministry_70 = {
+	law_group_type = budget_allocation_ministry_law
+	index = 14
+
+	shown_in_encyclopedia = no
+
+	can_keep = {
+		OR = {
+			tgp_has_access_to_ministry_trigger = yes
+			bp_uses_ministry_budget_trigger = yes
+		}
+	}
+
+	modifier = {
+		treasury_ministry_budget_allocation = 0.70
+	}
+
+	pass_cost = {
+		prestige = {
+			add = change_admin_budget_law_prestige_cost
+		}
+	}
+
+	ai_will_do = {
+		value = 0
+	}
+}
+
+budget_allocation_ministry_75 = {
+	law_group_type = budget_allocation_ministry_law
+	index = 15
+
+	shown_in_encyclopedia = no
+
+	can_keep = {
+		OR = {
+			tgp_has_access_to_ministry_trigger = yes
+			bp_uses_ministry_budget_trigger = yes
+		}
+	}
+
+	modifier = {
+		treasury_ministry_budget_allocation = 0.75
+	}
+
+	pass_cost = {
+		prestige = {
+			add = change_admin_budget_law_prestige_cost
+		}
+	}
+
+	ai_will_do = {
+		value = 0
+	}
+}
+
+budget_allocation_ministry_80 = {
+	law_group_type = budget_allocation_ministry_law
+	index = 16
+
+	shown_in_encyclopedia = no
+
+	can_keep = {
+		OR = {
+			tgp_has_access_to_ministry_trigger = yes
+			bp_uses_ministry_budget_trigger = yes
+		}
+	}
+
+	modifier = {
+		treasury_ministry_budget_allocation = 0.80
+	}
+
+	pass_cost = {
+		prestige = {
+			add = change_admin_budget_law_prestige_cost
+		}
+	}
+
+	ai_will_do = {
+		value = 0
+	}
+}
+
+budget_allocation_ministry_85 = {
+	law_group_type = budget_allocation_ministry_law
+	index = 17
+
+	shown_in_encyclopedia = no
+
+	can_keep = {
+		OR = {
+			tgp_has_access_to_ministry_trigger = yes
+			bp_uses_ministry_budget_trigger = yes
+		}
+	}
+
+	modifier = {
+		treasury_ministry_budget_allocation = 0.85
+	}
+
+	pass_cost = {
+		prestige = {
+			add = change_admin_budget_law_prestige_cost
+		}
+	}
+
+	ai_will_do = {
+		value = 0
+	}
+}
+
+budget_allocation_ministry_90 = {
+	law_group_type = budget_allocation_ministry_law
+	index = 18
+
+	shown_in_encyclopedia = no
+
+	can_keep = {
+		OR = {
+			tgp_has_access_to_ministry_trigger = yes
+			bp_uses_ministry_budget_trigger = yes
+		}
+	}
+
+	modifier = {
+		treasury_ministry_budget_allocation = 0.9
+	}
+
+	pass_cost = {
+		prestige = {
+			add = change_admin_budget_law_prestige_cost
+		}
+	}
+
+	ai_will_do = {
+		value = 0
+	}
+}
+
+budget_allocation_ministry_95 = {
+	law_group_type = budget_allocation_ministry_law
+	index = 19
+
+	shown_in_encyclopedia = no
+
+	can_keep = {
+		OR = {
+			tgp_has_access_to_ministry_trigger = yes
+			bp_uses_ministry_budget_trigger = yes
+		}
+	}
+
+	modifier = {
+		treasury_ministry_budget_allocation = 0.95
+	}
+
+	pass_cost = {
+		prestige = {
+			add = change_admin_budget_law_prestige_cost
+		}
+	}
+
+	ai_will_do = {
+		value = 0
+	}
+}
+
+budget_allocation_ministry_100 = {
+	law_group_type = budget_allocation_ministry_law
+	index = 20
+
+	shown_in_encyclopedia = no
+
+	can_keep = {
+		OR = {
+			tgp_has_access_to_ministry_trigger = yes
+			bp_uses_ministry_budget_trigger = yes
+		}
+	}
+
+	modifier = {
+		treasury_ministry_budget_allocation = 1.0
+	}
+
+	pass_cost = {
+		prestige = {
+			add = change_admin_budget_law_prestige_cost
+		}
+	}
+
+	ai_will_do = {
+		value = 0
 	}
 }

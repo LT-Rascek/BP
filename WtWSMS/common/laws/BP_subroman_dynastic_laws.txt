@@ -1,1019 +1,1040 @@
-﻿#The overall military landing mechanic; focused on centralization
-#  We don't have many examples of Non-Roman Sub-Roman states, so this is a little odd
-subroman_dynastic_military_centralization_top_liege_law = {
-	default = subroman_dynastic_military_centralization_top_liege_law_0
-	cumulative = no
-	
-	flag = subroman_administrative_military_centralization_law
-	
-	subroman_dynastic_military_centralization_top_liege_law_0 = {
-		modifier = {
-			#Imperial Troops
-			men_at_arms_limit = 0
-			men_at_arms_cap = 8 # - 3 = 5, Roman dynastic value
-			knight_limit = 0
-			
-			levy_size = 0.0
-			men_at_arms_maintenance = 0.0
-			mercenary_hire_cost_mult = 0.0
-		}
+﻿subroman_dynastic_military_centralization_top_liege_law_0 = {
+	law_group_type = subroman_dynastic_military_centralization_top_liege_law
+	index = 0
+
+	modifier = {
+		#Imperial Troops
+		men_at_arms_limit = 0
+		men_at_arms_cap = 8 # - 3 = 5, Roman dynastic value
+		knight_limit = 0
 		
-		can_keep = {
-			bp_realm_law_use_subroman_dynastic_military_centralization_top_liege_law_trigger = yes
-		}
-		
-		can_pass = {
-			custom_tooltip = {
-				text = mechanically_driven_law
-				always = no
-			}
-		}
-		
-		on_pass = {
-			every_vassal_or_below = {
-				limit = { bp_realm_law_use_subroman_dynastic_military_centralization_vassal_trigger = yes }
-				add_realm_law_skip_effects = subroman_dynastic_military_centralization_vassal_law_0
-			}
-		}
-		
-		ai_will_do = {}
+		levy_size = 0.0
+		men_at_arms_maintenance = 0.0
+		mercenary_hire_cost_mult = 0.0
 	}
 	
-	subroman_dynastic_military_centralization_top_liege_law_1 = {
-		modifier = {
-			#Imperial Troops
-			men_at_arms_limit = 1
-			men_at_arms_cap = 7
-			knight_limit = 1
-			
-			levy_size = 0.1
-			men_at_arms_maintenance = -0.10
-			mercenary_hire_cost_mult = -0.4
-		}
-		
-		can_keep = {
-			bp_realm_law_use_subroman_dynastic_military_centralization_top_liege_law_trigger = yes
-		}
-		
-		can_pass = {
-			custom_tooltip = {
-				text = mechanically_driven_law
-				always = no
-			}
-		}
-		
-		on_pass = {
-			every_vassal_or_below = {
-				limit = { bp_realm_law_use_subroman_dynastic_military_centralization_vassal_trigger = yes }
-				add_realm_law_skip_effects = subroman_dynastic_military_centralization_vassal_law_1
-			}
-		}
-		
-		ai_will_do = {}
+	can_keep = {
+		bp_realm_law_use_subroman_dynastic_military_centralization_top_liege_law_trigger = yes
 	}
 	
-	subroman_dynastic_military_centralization_top_liege_law_2 = {
-		modifier = {
-			#Imperial Troops
-			men_at_arms_limit = 1
-			men_at_arms_cap = 6
-			knight_limit = 2
-			
-			levy_size = 0.2
-			
-			men_at_arms_maintenance = -0.20
-			mercenary_hire_cost_mult = -0.8
+	can_pass = {
+		custom_tooltip = {
+			text = mechanically_driven_law
+			always = no
 		}
-		
-		can_keep = {
-			bp_realm_law_use_subroman_dynastic_military_centralization_top_liege_law_trigger = yes
-		}
-		
-		can_pass = {
-			custom_tooltip = {
-				text = mechanically_driven_law
-				always = no
-			}
-		}
-		
-		on_pass = {
-			every_vassal_or_below = {
-				limit = { bp_realm_law_use_subroman_dynastic_military_centralization_vassal_trigger = yes }
-				add_realm_law_skip_effects = subroman_dynastic_military_centralization_vassal_law_2
-			}
-		}
-		
-		ai_will_do = {}
 	}
 	
-	subroman_dynastic_military_centralization_top_liege_law_3 = {
-		modifier = {
-			#Imperial Troops
-			men_at_arms_limit = 2
-			men_at_arms_cap = 5
-			knight_limit = 3
-			
-			levy_size = 0.3
-			
-			men_at_arms_maintenance = -0.30
-			mercenary_hire_cost_mult = -1.2
+	on_pass = {
+		every_vassal_or_below = {
+			limit = { bp_realm_law_use_subroman_dynastic_military_centralization_vassal_trigger = yes }
+			add_realm_law_skip_effects = subroman_dynastic_military_centralization_vassal_law_0
 		}
-		
-		can_keep = {
-			bp_realm_law_use_subroman_dynastic_military_centralization_top_liege_law_trigger = yes
-		}
-		
-		can_pass = {
-			custom_tooltip = {
-				text = mechanically_driven_law
-				always = no
-			}
-		}
-		
-		on_pass = {
-			every_vassal_or_below = {
-				limit = { bp_realm_law_use_subroman_dynastic_military_centralization_vassal_trigger = yes }
-				add_realm_law_skip_effects = subroman_dynastic_military_centralization_vassal_law_3
-			}
-		}
-		
-		ai_will_do = {}
 	}
 	
-	subroman_dynastic_military_centralization_top_liege_law_4 = {
-		modifier = {
-			#Imperial Troops
-			men_at_arms_limit = 2
-			men_at_arms_cap = 4
-			knight_limit = 4
-			
-			levy_size = 0.4
-			
-			men_at_arms_maintenance = -0.40
-			mercenary_hire_cost_mult = -1.6
-		}
+	ai_will_do = {}
+}
+subroman_dynastic_military_centralization_top_liege_law_1 = {
+	law_group_type = subroman_dynastic_military_centralization_top_liege_law
+	index = 1
+
+	modifier = {
+		#Imperial Troops
+		men_at_arms_limit = 1
+		men_at_arms_cap = 7
+		knight_limit = 1
 		
-		can_keep = {
-			bp_realm_law_use_subroman_dynastic_military_centralization_top_liege_law_trigger = yes
-		}
-		
-		can_pass = {
-			custom_tooltip = {
-				text = mechanically_driven_law
-				always = no
-			}
-		}
-		
-		on_pass = {
-			every_vassal_or_below = {
-				limit = { bp_realm_law_use_subroman_dynastic_military_centralization_vassal_trigger = yes }
-				add_realm_law_skip_effects = subroman_dynastic_military_centralization_vassal_law_4
-			}
-		}
-		
-		ai_will_do = {}
+		levy_size = 0.1
+		men_at_arms_maintenance = -0.10
+		mercenary_hire_cost_mult = -0.4
 	}
 	
-	subroman_dynastic_military_centralization_top_liege_law_5 = {
-		modifier = {
-			#Imperial Troops
-			men_at_arms_limit = 3
-			men_at_arms_cap = 3
-			knight_limit = 5
-			accolades = 1
-			
-			levy_size = 0.5
-			
-			men_at_arms_maintenance = -0.50
-			mercenary_hire_cost_mult = -2.0
-		}
-		flag = subroman_final_military_phase
-		
-		can_keep = {
-			bp_realm_law_use_subroman_dynastic_military_centralization_top_liege_law_trigger = yes
-		}
-		
-		can_pass = {
-			custom_tooltip = {
-				text = mechanically_driven_law
-				always = no
-			}
-		}
-		
-		on_pass = {
-			every_vassal_or_below = {
-				limit = { bp_realm_law_use_subroman_dynastic_military_centralization_vassal_trigger = yes }
-				add_realm_law_skip_effects = subroman_dynastic_military_centralization_vassal_law_5
-			}
-		}
-		
-		ai_will_do = {}
+	can_keep = {
+		bp_realm_law_use_subroman_dynastic_military_centralization_top_liege_law_trigger = yes
 	}
+	
+	can_pass = {
+		custom_tooltip = {
+			text = mechanically_driven_law
+			always = no
+		}
+	}
+	
+	on_pass = {
+		every_vassal_or_below = {
+			limit = { bp_realm_law_use_subroman_dynastic_military_centralization_vassal_trigger = yes }
+			add_realm_law_skip_effects = subroman_dynastic_military_centralization_vassal_law_1
+		}
+	}
+	
+	ai_will_do = {}
+}
+subroman_dynastic_military_centralization_top_liege_law_2 = {
+	law_group_type = subroman_dynastic_military_centralization_top_liege_law
+	index = 2
+
+	modifier = {
+		#Imperial Troops
+		men_at_arms_limit = 1
+		men_at_arms_cap = 6
+		knight_limit = 2
+		
+		levy_size = 0.2
+		
+		men_at_arms_maintenance = -0.20
+		mercenary_hire_cost_mult = -0.8
+	}
+	
+	can_keep = {
+		bp_realm_law_use_subroman_dynastic_military_centralization_top_liege_law_trigger = yes
+	}
+	
+	can_pass = {
+		custom_tooltip = {
+			text = mechanically_driven_law
+			always = no
+		}
+	}
+	
+	on_pass = {
+		every_vassal_or_below = {
+			limit = { bp_realm_law_use_subroman_dynastic_military_centralization_vassal_trigger = yes }
+			add_realm_law_skip_effects = subroman_dynastic_military_centralization_vassal_law_2
+		}
+	}
+	
+	ai_will_do = {}
+}
+subroman_dynastic_military_centralization_top_liege_law_3 = {
+	law_group_type = subroman_dynastic_military_centralization_top_liege_law
+	index = 3
+
+	modifier = {
+		#Imperial Troops
+		men_at_arms_limit = 2
+		men_at_arms_cap = 5
+		knight_limit = 3
+		
+		levy_size = 0.3
+		
+		men_at_arms_maintenance = -0.30
+		mercenary_hire_cost_mult = -1.2
+	}
+	
+	can_keep = {
+		bp_realm_law_use_subroman_dynastic_military_centralization_top_liege_law_trigger = yes
+	}
+	
+	can_pass = {
+		custom_tooltip = {
+			text = mechanically_driven_law
+			always = no
+		}
+	}
+	
+	on_pass = {
+		every_vassal_or_below = {
+			limit = { bp_realm_law_use_subroman_dynastic_military_centralization_vassal_trigger = yes }
+			add_realm_law_skip_effects = subroman_dynastic_military_centralization_vassal_law_3
+		}
+	}
+	
+	ai_will_do = {}
+}
+subroman_dynastic_military_centralization_top_liege_law_4 = {
+	law_group_type = subroman_dynastic_military_centralization_top_liege_law
+	index = 4
+
+	modifier = {
+		#Imperial Troops
+		men_at_arms_limit = 2
+		men_at_arms_cap = 4
+		knight_limit = 4
+		
+		levy_size = 0.4
+		
+		men_at_arms_maintenance = -0.40
+		mercenary_hire_cost_mult = -1.6
+	}
+	
+	can_keep = {
+		bp_realm_law_use_subroman_dynastic_military_centralization_top_liege_law_trigger = yes
+	}
+	
+	can_pass = {
+		custom_tooltip = {
+			text = mechanically_driven_law
+			always = no
+		}
+	}
+	
+	on_pass = {
+		every_vassal_or_below = {
+			limit = { bp_realm_law_use_subroman_dynastic_military_centralization_vassal_trigger = yes }
+			add_realm_law_skip_effects = subroman_dynastic_military_centralization_vassal_law_4
+		}
+	}
+	
+	ai_will_do = {}
+}
+subroman_dynastic_military_centralization_top_liege_law_5 = {
+	law_group_type = subroman_dynastic_military_centralization_top_liege_law
+	index = 5
+
+	modifier = {
+		#Imperial Troops
+		men_at_arms_limit = 3
+		men_at_arms_cap = 3
+		knight_limit = 5
+		accolades = 1
+		
+		levy_size = 0.5
+		
+		men_at_arms_maintenance = -0.50
+		mercenary_hire_cost_mult = -2.0
+	}
+	flag = subroman_final_military_phase
+	
+	can_keep = {
+		bp_realm_law_use_subroman_dynastic_military_centralization_top_liege_law_trigger = yes
+	}
+	
+	can_pass = {
+		custom_tooltip = {
+			text = mechanically_driven_law
+			always = no
+		}
+	}
+	
+	on_pass = {
+		every_vassal_or_below = {
+			limit = { bp_realm_law_use_subroman_dynastic_military_centralization_vassal_trigger = yes }
+			add_realm_law_skip_effects = subroman_dynastic_military_centralization_vassal_law_5
+		}
+	}
+	
+	ai_will_do = {}
 }
 
-subroman_dynastic_military_centralization_vassal_law = {
-	default = subroman_dynastic_military_centralization_vassal_law_0
-	cumulative = no
-	
-	flag = subroman_administrative_military_centralization_law
-	
-	subroman_dynastic_military_centralization_vassal_law_0 = {
-		modifier = {
-			#Personal Troops
-			men_at_arms_limit = 0
-			men_at_arms_cap = 0
-			
-			levy_size = 0.0
-			men_at_arms_maintenance = 0.00
-			mercenary_hire_cost_mult = 0.0
-		}
+subroman_dynastic_military_centralization_vassal_law_0 = {
+	law_group_type = subroman_dynastic_military_centralization_vassal_law
+	index = 0
+
+	modifier = {
+		#Personal Troops
+		men_at_arms_limit = 0
+		men_at_arms_cap = 0
 		
-		can_keep = {
-			bp_realm_law_use_subroman_dynastic_military_centralization_vassal_trigger = yes
-		}
-		
-		can_pass = {
-			custom_tooltip = {
-				text = mechanically_driven_law
-				always = no
-			}
-		}
-		
-		on_pass = {}
-		
-		ai_will_do = {}
+		levy_size = 0.0
+		men_at_arms_maintenance = 0.00
+		mercenary_hire_cost_mult = 0.0
 	}
 	
-	subroman_dynastic_military_centralization_vassal_law_1 = {
-		modifier = {
-			#Personal Troops
-			men_at_arms_limit = 1
-			men_at_arms_cap = 0
-			knight_limit = 1
-			
-			levy_size = 0.1
-			men_at_arms_maintenance = -0.10
-			mercenary_hire_cost_mult = -0.4
-		}
-		
-		can_keep = {
-			bp_realm_law_use_subroman_dynastic_military_centralization_vassal_trigger = yes
-		}
-		
-		can_pass = {
-			custom_tooltip = {
-				text = mechanically_driven_law
-				always = no
-			}
-		}
-		
-		on_pass = {}
-		
-		ai_will_do = {}
+	can_keep = {
+		bp_realm_law_use_subroman_dynastic_military_centralization_vassal_trigger = yes
 	}
 	
-	subroman_dynastic_military_centralization_vassal_law_2 = {
-		modifier = {
-			#Personal Troops
-			men_at_arms_limit = 1
-			men_at_arms_cap = 1
-			knight_limit = 2
-			
-			levy_size = 0.2
-			
-			men_at_arms_maintenance = -0.20
-			mercenary_hire_cost_mult = -0.8
+	can_pass = {
+		custom_tooltip = {
+			text = mechanically_driven_law
+			always = no
 		}
-		
-		can_keep = {
-			bp_realm_law_use_subroman_dynastic_military_centralization_vassal_trigger = yes
-		}
-		
-		can_pass = {
-			custom_tooltip = {
-				text = mechanically_driven_law
-				always = no
-			}
-		}
-		
-		on_pass = {}
-		
-		ai_will_do = {}
 	}
 	
-	subroman_dynastic_military_centralization_vassal_law_3 = {
-		modifier = {
-			#Personal Troops
-			men_at_arms_limit = 2
-			men_at_arms_cap = 1
-			knight_limit = 3
-			
-			levy_size = 0.3
-			
-			men_at_arms_maintenance = -0.30
-			mercenary_hire_cost_mult = -1.2
-		}
+	on_pass = {}
+	
+	ai_will_do = {}
+}
+subroman_dynastic_military_centralization_vassal_law_1 = {
+	law_group_type = subroman_dynastic_military_centralization_vassal_law
+	index = 1
+
+	modifier = {
+		#Personal Troops
+		men_at_arms_limit = 1
+		men_at_arms_cap = 0
+		knight_limit = 1
 		
-		can_keep = {
-			bp_realm_law_use_subroman_dynastic_military_centralization_vassal_trigger = yes
-		}
-		
-		can_pass = {
-			custom_tooltip = {
-				text = mechanically_driven_law
-				always = no
-			}
-		}
-		
-		on_pass = {}
-		
-		ai_will_do = {}
+		levy_size = 0.1
+		men_at_arms_maintenance = -0.10
+		mercenary_hire_cost_mult = -0.4
 	}
 	
-	subroman_dynastic_military_centralization_vassal_law_4 = {
-		modifier = {
-			#Personal Troops
-			men_at_arms_limit = 2
-			men_at_arms_cap = 2
-			knight_limit = 4
-			accolades = 1 #Available one step earlier for vassals
-			
-			levy_size = 0.4
-			
-			men_at_arms_maintenance = -0.40
-			mercenary_hire_cost_mult = -1.6
-		}
-		
-		can_keep = {
-			bp_realm_law_use_subroman_dynastic_military_centralization_vassal_trigger = yes
-		}
-		
-		can_pass = {
-			custom_tooltip = {
-				text = mechanically_driven_law
-				always = no
-			}
-		}
-		
-		on_pass = {}
-		
-		ai_will_do = {}
+	can_keep = {
+		bp_realm_law_use_subroman_dynastic_military_centralization_vassal_trigger = yes
 	}
 	
-	subroman_dynastic_military_centralization_vassal_law_5 = {
-		modifier = {
-			#Personal Troops
-			men_at_arms_limit = 3
-			men_at_arms_cap = 3
-			knight_limit = 5
-			accolades = 1
-			
-			levy_size = 0.5
-			
-			men_at_arms_maintenance = -0.50
-			mercenary_hire_cost_mult = -2.0
+	can_pass = {
+		custom_tooltip = {
+			text = mechanically_driven_law
+			always = no
 		}
-		flag = subroman_final_military_phase
-		
-		can_keep = {
-			bp_realm_law_use_subroman_dynastic_military_centralization_vassal_trigger = yes
-		}
-		
-		can_pass = {
-			custom_tooltip = {
-				text = mechanically_driven_law
-				always = no
-			}
-		}
-		
-		on_pass = {}
-		
-		ai_will_do = {}
 	}
+	
+	on_pass = {}
+	
+	ai_will_do = {}
+}
+subroman_dynastic_military_centralization_vassal_law_2 = {
+	law_group_type = subroman_dynastic_military_centralization_vassal_law
+	index = 2
+
+	modifier = {
+		#Personal Troops
+		men_at_arms_limit = 1
+		men_at_arms_cap = 1
+		knight_limit = 2
+		
+		levy_size = 0.2
+		
+		men_at_arms_maintenance = -0.20
+		mercenary_hire_cost_mult = -0.8
+	}
+	
+	can_keep = {
+		bp_realm_law_use_subroman_dynastic_military_centralization_vassal_trigger = yes
+	}
+	
+	can_pass = {
+		custom_tooltip = {
+			text = mechanically_driven_law
+			always = no
+		}
+	}
+	
+	on_pass = {}
+	
+	ai_will_do = {}
+}
+subroman_dynastic_military_centralization_vassal_law_3 = {
+	law_group_type = subroman_dynastic_military_centralization_vassal_law
+	index = 3
+
+	modifier = {
+		#Personal Troops
+		men_at_arms_limit = 2
+		men_at_arms_cap = 1
+		knight_limit = 3
+		
+		levy_size = 0.3
+		
+		men_at_arms_maintenance = -0.30
+		mercenary_hire_cost_mult = -1.2
+	}
+	
+	can_keep = {
+		bp_realm_law_use_subroman_dynastic_military_centralization_vassal_trigger = yes
+	}
+	
+	can_pass = {
+		custom_tooltip = {
+			text = mechanically_driven_law
+			always = no
+		}
+	}
+	
+	on_pass = {}
+	
+	ai_will_do = {}
+}
+subroman_dynastic_military_centralization_vassal_law_4 = {
+	law_group_type = subroman_dynastic_military_centralization_vassal_law
+	index = 4
+
+	modifier = {
+		#Personal Troops
+		men_at_arms_limit = 2
+		men_at_arms_cap = 2
+		knight_limit = 4
+		accolades = 1 #Available one step earlier for vassals
+		
+		levy_size = 0.4
+		
+		men_at_arms_maintenance = -0.40
+		mercenary_hire_cost_mult = -1.6
+	}
+	
+	can_keep = {
+		bp_realm_law_use_subroman_dynastic_military_centralization_vassal_trigger = yes
+	}
+	
+	can_pass = {
+		custom_tooltip = {
+			text = mechanically_driven_law
+			always = no
+		}
+	}
+	
+	on_pass = {}
+	
+	ai_will_do = {}
+}
+subroman_dynastic_military_centralization_vassal_law_5 = {
+	law_group_type = subroman_dynastic_military_centralization_vassal_law
+	index = 5
+
+	modifier = {
+		#Personal Troops
+		men_at_arms_limit = 3
+		men_at_arms_cap = 3
+		knight_limit = 5
+		accolades = 1
+		
+		levy_size = 0.5
+		
+		men_at_arms_maintenance = -0.50
+		mercenary_hire_cost_mult = -2.0
+	}
+	flag = subroman_final_military_phase
+	
+	can_keep = {
+		bp_realm_law_use_subroman_dynastic_military_centralization_vassal_trigger = yes
+	}
+	
+	can_pass = {
+		custom_tooltip = {
+			text = mechanically_driven_law
+			always = no
+		}
+	}
+	
+	on_pass = {}
+	
+	ai_will_do = {}
 }
 
-subroman_dynastic_taxation_top_liege_law = {
-	default = subroman_dynastic_taxation_top_liege_law_0
-	cumulative = no
-	
-	flag = subroman_administrative_taxation_law
-	
-	subroman_dynastic_taxation_top_liege_law_0 = {
-		modifier = {
-			domain_limit = 4
-			domain_tax_mult = 0.20
-			#domicile_monthly_gold_mult = 0.0
-			
-			#monthly_treasury_from_vassals = 0.85
-		}
+subroman_dynastic_taxation_top_liege_law_0 = {
+	law_group_type = subroman_dynastic_taxation_top_liege_law
+	index = 0
+
+	modifier = {
+		domain_limit = 4
+		domain_tax_mult = 0.20
+		#domicile_monthly_gold_mult = 0.0
 		
-		can_keep = {
-			bp_realm_law_use_subroman_dynastic_taxation_top_liege_trigger = yes
-		}
-		
-		can_pass = {
-			custom_tooltip = {
-				text = mechanically_driven_law
-				always = no
-			}
-		}
-		
-		on_pass = {
-			every_vassal_or_below = {
-				limit = { bp_realm_law_use_subroman_dynastic_taxation_vassal_trigger = yes }
-				add_realm_law_skip_effects = subroman_dynastic_taxation_vassal_law_0
-			}
-		}
-		
-		ai_will_do = {}
+		#monthly_treasury_from_vassals = 0.85
 	}
 	
-	subroman_dynastic_taxation_top_liege_law_1 = {
-		modifier = {
-			domain_limit = 3
-			domain_tax_mult = 0.15
-			#domicile_monthly_gold_mult = -0.20
-			
-			#monthly_treasury_from_vassals = 0.70
-		}
-		
-		can_keep = {
-			bp_realm_law_use_subroman_dynastic_taxation_top_liege_trigger = yes
-		}
-		
-		can_pass = {
-			custom_tooltip = {
-				text = mechanically_driven_law
-				always = no
-			}
-		}
-		
-		on_pass = {
-			every_vassal_or_below = {
-				limit = { bp_realm_law_use_subroman_dynastic_taxation_vassal_trigger = yes }
-				add_realm_law_skip_effects = subroman_dynastic_taxation_vassal_law_1
-			}
-		}
-		
-		ai_will_do = {}
+	can_keep = {
+		bp_realm_law_use_subroman_dynastic_taxation_top_liege_trigger = yes
 	}
 	
-	subroman_dynastic_taxation_top_liege_law_2 = {
-		modifier = {
-			domain_limit = 2
-			domain_tax_mult = 0.10
-			#domicile_monthly_gold_mult = -0.40
-			
-			#monthly_treasury_from_vassals = 0.55
+	can_pass = {
+		custom_tooltip = {
+			text = mechanically_driven_law
+			always = no
 		}
-		
-		can_keep = {
-			bp_realm_law_use_subroman_dynastic_taxation_top_liege_trigger = yes
-		}
-		
-		can_pass = {
-			custom_tooltip = {
-				text = mechanically_driven_law
-				always = no
-			}
-		}
-		
-		on_pass = {
-			every_vassal_or_below = {
-				limit = { bp_realm_law_use_subroman_dynastic_taxation_vassal_trigger = yes }
-				add_realm_law_skip_effects = subroman_dynastic_taxation_vassal_law_2
-			}
-		}
-		
-		ai_will_do = {}
 	}
 	
-	subroman_dynastic_taxation_top_liege_law_3 = {
-		modifier = {
-			domain_limit = 1
-			domain_tax_mult = 0.05
-			#domicile_monthly_gold_mult = -0.60
-			
-			#monthly_treasury_from_vassals = 0.40
+	on_pass = {
+		every_vassal_or_below = {
+			limit = { bp_realm_law_use_subroman_dynastic_taxation_vassal_trigger = yes }
+			add_realm_law_skip_effects = subroman_dynastic_taxation_vassal_law_0
 		}
-		
-		can_keep = {
-			bp_realm_law_use_subroman_dynastic_taxation_top_liege_trigger = yes
-		}
-		
-		can_pass = {
-			custom_tooltip = {
-				text = mechanically_driven_law
-				always = no
-			}
-		}
-		
-		on_pass = {
-			every_vassal_or_below = {
-				limit = { bp_realm_law_use_subroman_dynastic_taxation_vassal_trigger = yes }
-				add_realm_law_skip_effects = subroman_dynastic_taxation_vassal_law_3
-			}
-		}
-		
-		ai_will_do = {}
 	}
 	
-	subroman_dynastic_taxation_top_liege_law_4 = {
-		modifier = {
-			#domicile_monthly_gold_mult = -0.80
-			
-			#monthly_treasury_from_vassals = 0.25
-		}
-		flag = subroman_final_taxation_phase
+	ai_will_do = {}
+}
+subroman_dynastic_taxation_top_liege_law_1 = {
+	law_group_type = subroman_dynastic_taxation_top_liege_law
+	index = 1
+
+	modifier = {
+		domain_limit = 3
+		domain_tax_mult = 0.15
+		#domicile_monthly_gold_mult = -0.20
 		
-		can_keep = {
-			bp_realm_law_use_subroman_dynastic_taxation_top_liege_trigger = yes
-		}
-		
-		can_pass = {
-			custom_tooltip = {
-				text = mechanically_driven_law
-				always = no
-			}
-		}
-		
-		on_pass = {
-			every_vassal_or_below = {
-				limit = { bp_realm_law_use_subroman_dynastic_taxation_vassal_trigger = yes }
-				add_realm_law_skip_effects = subroman_dynastic_taxation_vassal_law_4
-			}
-		}
-		
-		ai_will_do = {}
+		#monthly_treasury_from_vassals = 0.70
 	}
+	
+	can_keep = {
+		bp_realm_law_use_subroman_dynastic_taxation_top_liege_trigger = yes
+	}
+	
+	can_pass = {
+		custom_tooltip = {
+			text = mechanically_driven_law
+			always = no
+		}
+	}
+	
+	on_pass = {
+		every_vassal_or_below = {
+			limit = { bp_realm_law_use_subroman_dynastic_taxation_vassal_trigger = yes }
+			add_realm_law_skip_effects = subroman_dynastic_taxation_vassal_law_1
+		}
+	}
+	
+	ai_will_do = {}
+}
+subroman_dynastic_taxation_top_liege_law_2 = {
+	law_group_type = subroman_dynastic_taxation_top_liege_law
+	index = 2
+
+	modifier = {
+		domain_limit = 2
+		domain_tax_mult = 0.10
+		#domicile_monthly_gold_mult = -0.40
+		
+		#monthly_treasury_from_vassals = 0.55
+	}
+	
+	can_keep = {
+		bp_realm_law_use_subroman_dynastic_taxation_top_liege_trigger = yes
+	}
+	
+	can_pass = {
+		custom_tooltip = {
+			text = mechanically_driven_law
+			always = no
+		}
+	}
+	
+	on_pass = {
+		every_vassal_or_below = {
+			limit = { bp_realm_law_use_subroman_dynastic_taxation_vassal_trigger = yes }
+			add_realm_law_skip_effects = subroman_dynastic_taxation_vassal_law_2
+		}
+	}
+	
+	ai_will_do = {}
+}
+subroman_dynastic_taxation_top_liege_law_3 = {
+	law_group_type = subroman_dynastic_taxation_top_liege_law
+	index = 3
+
+	modifier = {
+		domain_limit = 1
+		domain_tax_mult = 0.05
+		#domicile_monthly_gold_mult = -0.60
+		
+		#monthly_treasury_from_vassals = 0.40
+	}
+	
+	can_keep = {
+		bp_realm_law_use_subroman_dynastic_taxation_top_liege_trigger = yes
+	}
+	
+	can_pass = {
+		custom_tooltip = {
+			text = mechanically_driven_law
+			always = no
+		}
+	}
+	
+	on_pass = {
+		every_vassal_or_below = {
+			limit = { bp_realm_law_use_subroman_dynastic_taxation_vassal_trigger = yes }
+			add_realm_law_skip_effects = subroman_dynastic_taxation_vassal_law_3
+		}
+	}
+	
+	ai_will_do = {}
+}
+subroman_dynastic_taxation_top_liege_law_4 = {
+	law_group_type = subroman_dynastic_taxation_top_liege_law
+	index = 4
+
+	modifier = {
+		#domicile_monthly_gold_mult = -0.80
+		
+		#monthly_treasury_from_vassals = 0.25
+	}
+	flag = subroman_final_taxation_phase
+	
+	can_keep = {
+		bp_realm_law_use_subroman_dynastic_taxation_top_liege_trigger = yes
+	}
+	
+	can_pass = {
+		custom_tooltip = {
+			text = mechanically_driven_law
+			always = no
+		}
+	}
+	
+	on_pass = {
+		every_vassal_or_below = {
+			limit = { bp_realm_law_use_subroman_dynastic_taxation_vassal_trigger = yes }
+			add_realm_law_skip_effects = subroman_dynastic_taxation_vassal_law_4
+		}
+	}
+	
+	ai_will_do = {}
 }
 
-subroman_dynastic_taxation_vassal_law = {
-	default = subroman_dynastic_taxation_vassal_law_0
-	cumulative = no
-	
-	flag = subroman_administrative_taxation_law
-	
-	subroman_dynastic_taxation_vassal_law_0 = {
-		modifier = {
-			domain_limit = 4
-			domain_tax_mult = 0.20
-			#domicile_monthly_gold_mult = 0.0
-			
-			#monthly_treasury_from_salary_budget_mult = -0.1
-			#monthly_treasury_from_ministry_budget_mult = -0.1
-			#monthly_treasury_from_military_budget_mult = -0.1
-		}
+subroman_dynastic_taxation_vassal_law_0 = {
+	law_group_type = subroman_dynastic_taxation_vassal_law
+	index = 0
+
+	modifier = {
+		domain_limit = 4
+		domain_tax_mult = 0.20
+		#domicile_monthly_gold_mult = 0.0
 		
-		can_keep = {
-			bp_realm_law_use_subroman_dynastic_taxation_vassal_trigger = yes
-			OR = {
-				liege = { has_realm_law = subroman_dynastic_taxation_vassal_law_0 }
-				liege = { has_realm_law = subroman_dynastic_taxation_top_liege_law_0 }
-			}
-		}
-		
-		can_pass = {
-			custom_tooltip = {
-				text = mechanically_driven_law
-				always = no
-			}
-		}
-		
-		on_pass = {}
-		
-		ai_will_do = {}
+		#monthly_treasury_from_salary_budget_mult = -0.1
+		#monthly_treasury_from_ministry_budget_mult = -0.1
+		#monthly_treasury_from_military_budget_mult = -0.1
 	}
 	
-	subroman_dynastic_taxation_vassal_law_1 = {
-		modifier = {
-			domain_limit = 3
-			domain_tax_mult = 0.15
-			#domicile_monthly_gold_mult = -0.20
-			
-			#monthly_treasury_from_salary_budget_mult = -0.3
-			#monthly_treasury_from_ministry_budget_mult = -0.3
-			#monthly_treasury_from_military_budget_mult = -0.3
+	can_keep = {
+		bp_realm_law_use_subroman_dynastic_taxation_vassal_trigger = yes
+		OR = {
+			liege = { has_realm_law = subroman_dynastic_taxation_vassal_law_0 }
+			liege = { has_realm_law = subroman_dynastic_taxation_top_liege_law_0 }
 		}
-		
-		can_keep = {
-			bp_realm_law_use_subroman_dynastic_taxation_vassal_trigger = yes
-			OR = {
-				liege = { has_realm_law = subroman_dynastic_taxation_vassal_law_1 }
-				liege = { has_realm_law = subroman_dynastic_taxation_top_liege_law_1 }
-			}
-		}
-		
-		can_pass = {
-			custom_tooltip = {
-				text = mechanically_driven_law
-				always = no
-			}
-		}
-		
-		on_pass = {}
-		
-		ai_will_do = {}
 	}
 	
-	subroman_dynastic_taxation_vassal_law_2 = {
-		modifier = {
-			domain_limit = 2
-			domain_tax_mult = 0.10
-			#domicile_monthly_gold_mult = -0.40
-			
-			#monthly_treasury_from_salary_budget_mult = -0.5
-			#monthly_treasury_from_ministry_budget_mult = -0.5
-			#monthly_treasury_from_military_budget_mult = -0.5
+	can_pass = {
+		custom_tooltip = {
+			text = mechanically_driven_law
+			always = no
 		}
-		
-		can_keep = {
-			bp_realm_law_use_subroman_dynastic_taxation_vassal_trigger = yes
-			OR = {
-				liege = { has_realm_law = subroman_dynastic_taxation_vassal_law_2 }
-				liege = { has_realm_law = subroman_dynastic_taxation_top_liege_law_2 }
-			}
-		}
-		
-		can_pass = {
-			custom_tooltip = {
-				text = mechanically_driven_law
-				always = no
-			}
-		}
-		
-		on_pass = {}
-		
-		ai_will_do = {}
 	}
 	
-	subroman_dynastic_taxation_vassal_law_3 = {
-		modifier = {
-			domain_limit = 1
-			domain_tax_mult = 0.05
-			#domicile_monthly_gold_mult = -0.60
-			
-			#monthly_treasury_from_salary_budget_mult = -0.7
-			#monthly_treasury_from_ministry_budget_mult = -0.7
-			#monthly_treasury_from_military_budget_mult = -0.7
-		}
+	on_pass = {}
+	
+	ai_will_do = {}
+}
+subroman_dynastic_taxation_vassal_law_1 = {
+	law_group_type = subroman_dynastic_taxation_vassal_law
+	index = 1
+
+	modifier = {
+		domain_limit = 3
+		domain_tax_mult = 0.15
+		#domicile_monthly_gold_mult = -0.20
 		
-		can_keep = {
-			bp_realm_law_use_subroman_dynastic_taxation_vassal_trigger = yes
-			OR = {
-				liege = { has_realm_law = subroman_dynastic_taxation_vassal_law_3 }
-				liege = { has_realm_law = subroman_dynastic_taxation_top_liege_law_3 }
-			}
-		}
-		
-		can_pass = {
-			custom_tooltip = {
-				text = mechanically_driven_law
-				always = no
-			}
-		}
-		
-		on_pass = {}
-		
-		ai_will_do = {}
+		#monthly_treasury_from_salary_budget_mult = -0.3
+		#monthly_treasury_from_ministry_budget_mult = -0.3
+		#monthly_treasury_from_military_budget_mult = -0.3
 	}
 	
-	subroman_dynastic_taxation_vassal_law_4 = {
-		modifier = {
-			#domicile_monthly_gold_mult = -0.80
-			
-			#monthly_treasury_from_salary_budget_base = -0.9
-			#monthly_treasury_from_ministry_budget_base = -0.9
-			#monthly_treasury_from_military_budget_base = -0.9
+	can_keep = {
+		bp_realm_law_use_subroman_dynastic_taxation_vassal_trigger = yes
+		OR = {
+			liege = { has_realm_law = subroman_dynastic_taxation_vassal_law_1 }
+			liege = { has_realm_law = subroman_dynastic_taxation_top_liege_law_1 }
 		}
-		flag = subroman_final_taxation_phase
-		
-		can_keep = {
-			bp_realm_law_use_subroman_dynastic_taxation_vassal_trigger = yes
-			OR = {
-				liege = { has_realm_law = subroman_dynastic_taxation_vassal_law_4 }
-				liege = { has_realm_law = subroman_dynastic_taxation_top_liege_law_4 }
-			}
-		}
-		
-		can_pass = {
-			custom_tooltip = {
-				text = mechanically_driven_law
-				always = no
-			}
-		}
-		
-		on_pass = {}
-		
-		ai_will_do = {}
 	}
+	
+	can_pass = {
+		custom_tooltip = {
+			text = mechanically_driven_law
+			always = no
+		}
+	}
+	
+	on_pass = {}
+	
+	ai_will_do = {}
+}
+subroman_dynastic_taxation_vassal_law_2 = {
+	law_group_type = subroman_dynastic_taxation_vassal_law
+	index = 2
+
+	modifier = {
+		domain_limit = 2
+		domain_tax_mult = 0.10
+		#domicile_monthly_gold_mult = -0.40
+		
+		#monthly_treasury_from_salary_budget_mult = -0.5
+		#monthly_treasury_from_ministry_budget_mult = -0.5
+		#monthly_treasury_from_military_budget_mult = -0.5
+	}
+	
+	can_keep = {
+		bp_realm_law_use_subroman_dynastic_taxation_vassal_trigger = yes
+		OR = {
+			liege = { has_realm_law = subroman_dynastic_taxation_vassal_law_2 }
+			liege = { has_realm_law = subroman_dynastic_taxation_top_liege_law_2 }
+		}
+	}
+	
+	can_pass = {
+		custom_tooltip = {
+			text = mechanically_driven_law
+			always = no
+		}
+	}
+	
+	on_pass = {}
+	
+	ai_will_do = {}
+}
+subroman_dynastic_taxation_vassal_law_3 = {
+	law_group_type = subroman_dynastic_taxation_vassal_law
+	index = 3
+
+	modifier = {
+		domain_limit = 1
+		domain_tax_mult = 0.05
+		#domicile_monthly_gold_mult = -0.60
+		
+		#monthly_treasury_from_salary_budget_mult = -0.7
+		#monthly_treasury_from_ministry_budget_mult = -0.7
+		#monthly_treasury_from_military_budget_mult = -0.7
+	}
+	
+	can_keep = {
+		bp_realm_law_use_subroman_dynastic_taxation_vassal_trigger = yes
+		OR = {
+			liege = { has_realm_law = subroman_dynastic_taxation_vassal_law_3 }
+			liege = { has_realm_law = subroman_dynastic_taxation_top_liege_law_3 }
+		}
+	}
+	
+	can_pass = {
+		custom_tooltip = {
+			text = mechanically_driven_law
+			always = no
+		}
+	}
+	
+	on_pass = {}
+	
+	ai_will_do = {}
+}
+subroman_dynastic_taxation_vassal_law_4 = {
+	law_group_type = subroman_dynastic_taxation_vassal_law
+	index = 4
+
+	modifier = {
+		#domicile_monthly_gold_mult = -0.80
+		
+		#monthly_treasury_from_salary_budget_base = -0.9
+		#monthly_treasury_from_ministry_budget_base = -0.9
+		#monthly_treasury_from_military_budget_base = -0.9
+	}
+	flag = subroman_final_taxation_phase
+	
+	can_keep = {
+		bp_realm_law_use_subroman_dynastic_taxation_vassal_trigger = yes
+		OR = {
+			liege = { has_realm_law = subroman_dynastic_taxation_vassal_law_4 }
+			liege = { has_realm_law = subroman_dynastic_taxation_top_liege_law_4 }
+		}
+	}
+	
+	can_pass = {
+		custom_tooltip = {
+			text = mechanically_driven_law
+			always = no
+		}
+	}
+	
+	on_pass = {}
+	
+	ai_will_do = {}
 }
 
-#Somewhat unique:  you can't have better than your liege, but it's not locked to the liege's
-subroman_dynastic_aristocracy_law = {
-	default = subroman_dynastic_aristocracy_law_0
-	cumulative = no
+subroman_dynastic_aristocracy_law_0 = {
+	law_group_type = subroman_dynastic_aristocracy_law
+	index = 0
+
+	modifier = {
+		#monthly_influence_mult = 0.0
+		title_creation_cost_mult = 0.0
+		monthly_prestige_gain_mult = 0.0
+	}
+	flag = succession_weight_dynastic_1
+	flag = governor_efficency_weight_1
+	flag = subroman_administrative_aristocracy_law_0
 	
-	flag = subroman_administrative_aristocracy_law
+	can_keep = {
+		bp_realm_law_use_subroman_dynastic_aristocracy_trigger = yes
+	}
 	
-	subroman_dynastic_aristocracy_law_0 = {
-		modifier = {
-			#monthly_influence_mult = 0.0
-			title_creation_cost_mult = 0.0
-			monthly_prestige_gain_mult = 0.0
-		}
-		flag = succession_weight_dynastic_1
-		flag = governor_efficency_weight_1
-		flag = subroman_administrative_aristocracy_law_0
-		
-		can_keep = {
-			bp_realm_law_use_subroman_dynastic_aristocracy_trigger = yes
-		}
-		
-		can_pass = {
-			subroman_TYPE_aristocracy_law_can_pass_trigger = {
-				TYPE = dynastic
-				LESS_ARISTOCRATIC_LEVEL = 0
-				CURRENT_ARISTOCRATIC_LEVEL = 0
-				MORE_ARISTOCRATIC_LEVEL = 1
-				USES_INFLUENCE = no
-			}
-		}
-		
-		on_pass = {
-			subroman_TYPE_aristocracy_law_can_pass_effect = {
-				TYPE = dynastic
-				LESS_ARISTOCRATIC_LEVEL = 0
-				CURRENT_ARISTOCRATIC_LEVEL = 0
-				MORE_ARISTOCRATIC_LEVEL = 1
-				LEAST_ARISTOCRATIC_LEVEL = 0
-				MOST_ARISTOCRATIC_LEVEL = 4
-				USES_INFLUENCE = no
-			}
-		}
-		
-		ai_will_do = {
-			#AI will improve to this law if they're running short on prestige or influence
-			if = {
-				limit = { has_realm_law = subroman_dynastic_aristocracy_law_1 }
-				if = {
-					limit = { this.prestige < 0 }
-					value = 100
-				}
-				#else_if = {
-				#	limit = { this.influence < 50 }
-				#	value = 50
-				#}
-				else = { value = 0 }
-			}
+	can_pass = {
+		subroman_TYPE_aristocracy_law_can_pass_trigger = {
+			TYPE = dynastic
+			LESS_ARISTOCRATIC_LEVEL = 0
+			CURRENT_ARISTOCRATIC_LEVEL = 0
+			MORE_ARISTOCRATIC_LEVEL = 1
+			USES_INFLUENCE = no
 		}
 	}
 	
-	subroman_dynastic_aristocracy_law_1 = {
-		modifier = {
-			#monthly_influence_mult = 0.10
-			title_creation_cost_mult = 0.10
-			monthly_prestige_gain_mult = 0.10
-		}
-		flag = revoke_depose_governors_costs_more_influence_1
-		flag = succession_weight_dynastic_2
-		flag = governor_efficency_weight_2
-		flag = subroman_administrative_aristocracy_law_1
-		
-		can_keep = {
-			bp_realm_law_use_subroman_dynastic_aristocracy_trigger = yes
-		}
-		
-		can_pass = {
-			subroman_TYPE_aristocracy_law_can_pass_trigger = {
-				TYPE = dynastic
-				LESS_ARISTOCRATIC_LEVEL = 0
-				CURRENT_ARISTOCRATIC_LEVEL = 1
-				MORE_ARISTOCRATIC_LEVEL = 2
-				USES_INFLUENCE = no
-			}
-		}
-		
-		on_pass = {
-			subroman_TYPE_aristocracy_law_can_pass_effect = {
-				TYPE = dynastic
-				LESS_ARISTOCRATIC_LEVEL = 0
-				CURRENT_ARISTOCRATIC_LEVEL = 1
-				MORE_ARISTOCRATIC_LEVEL = 2
-				LEAST_ARISTOCRATIC_LEVEL = 0
-				MOST_ARISTOCRATIC_LEVEL = 4
-				USES_INFLUENCE = no
-			}
-		}
-		
-		#AI tries to improve to this law when it's influence is too low
-		ai_will_do = {
-			#AI will improve to this law if they're running short on prestige or influence
-			if = {
-				limit = { has_realm_law = subroman_dynastic_aristocracy_law_2 }
-				if = {
-					limit = { this.prestige < -100 }
-					value = 50
-				}
-				#else_if = {
-				#	limit = { this.influence < -50 }
-				#	value = 25
-				#}
-				else = { value = 0 }
-			}
-			#AI will decline to this the law when their children are not in succession
-			if = {
-				limit = { has_realm_law = subroman_dynastic_aristocracy_law_0 }
-				if = {
-					limit = { NOT = { any_child = { is_primary_heir_of = root } } }
-					value = 50
-				}
-				else = { value = 0 }
-			}
+	on_pass = {
+		subroman_TYPE_aristocracy_law_can_pass_effect = {
+			TYPE = dynastic
+			LESS_ARISTOCRATIC_LEVEL = 0
+			CURRENT_ARISTOCRATIC_LEVEL = 0
+			MORE_ARISTOCRATIC_LEVEL = 1
+			LEAST_ARISTOCRATIC_LEVEL = 0
+			MOST_ARISTOCRATIC_LEVEL = 4
+			USES_INFLUENCE = no
 		}
 	}
 	
-	subroman_dynastic_aristocracy_law_2 = {
-		modifier = {
-			#monthly_influence_mult = 0.20
-			title_creation_cost_mult = 0.20
-			monthly_prestige_gain_mult = 0.20
-		}
-		flag = revoke_depose_governors_costs_more_influence_2
-		flag = succession_weight_dynastic_3
-		flag = governor_efficency_weight_3
-		flag = subroman_can_establish_de_jure_kingdom
-		flag = subroman_administrative_aristocracy_law_2
-		
-		can_keep = {
-			bp_realm_law_use_subroman_dynastic_aristocracy_trigger = yes
-		}
-		
-		can_pass = {
-			subroman_TYPE_aristocracy_law_can_pass_trigger = {
-				TYPE = dynastic
-				LESS_ARISTOCRATIC_LEVEL = 1
-				CURRENT_ARISTOCRATIC_LEVEL = 2
-				MORE_ARISTOCRATIC_LEVEL = 3
-				USES_INFLUENCE = no
-			}
-		}
-		
-		on_pass = {
-			subroman_TYPE_aristocracy_law_can_pass_effect = {
-				TYPE = dynastic
-				LESS_ARISTOCRATIC_LEVEL = 1
-				CURRENT_ARISTOCRATIC_LEVEL = 2
-				MORE_ARISTOCRATIC_LEVEL = 3
-				LEAST_ARISTOCRATIC_LEVEL = 0
-				MOST_ARISTOCRATIC_LEVEL = 4
-				USES_INFLUENCE = no
-			}
-		}
-		
-		#AI tries to improve to this law when it's influence is too low
-		ai_will_do = {
-			#AI will improve to this law if they're running short on prestige or influence
+	ai_will_do = {
+		#AI will improve to this law if they're running short on prestige or influence
+		if = {
+			limit = { has_realm_law = subroman_dynastic_aristocracy_law_1 }
 			if = {
-				limit = { has_realm_law = subroman_dynastic_aristocracy_law_3 }
-				if = {
-					limit = { this.prestige < -100 }
-					value = 50
-				}
-				#else_if = {
-				#	limit = { this.influence < -50 }
-				#	value = 25
-				#}
-				else = { value = 0 }
+				limit = { this.prestige < 0 }
+				value = 100
 			}
-			#AI will decline to this the law when their children are not in succession
-			if = {
-				limit = { has_realm_law = subroman_dynastic_aristocracy_law_1 }
-				if = {
-					limit = { NOT = { any_child = { is_primary_heir_of = root } } }
-					value = 50
-				}
-				else = { value = 0 }
-			}
+			#else_if = {
+			#	limit = { this.influence < 50 }
+			#	value = 50
+			#}
+			else = { value = 0 }
+		}
+	}
+}
+subroman_dynastic_aristocracy_law_1 = {
+	law_group_type = subroman_dynastic_aristocracy_law
+	index = 1
+
+	modifier = {
+		#monthly_influence_mult = 0.10
+		title_creation_cost_mult = 0.10
+		monthly_prestige_gain_mult = 0.10
+	}
+	flag = revoke_depose_governors_costs_more_influence_1
+	flag = succession_weight_dynastic_2
+	flag = governor_efficency_weight_2
+	flag = subroman_administrative_aristocracy_law_1
+	
+	can_keep = {
+		bp_realm_law_use_subroman_dynastic_aristocracy_trigger = yes
+	}
+	
+	can_pass = {
+		subroman_TYPE_aristocracy_law_can_pass_trigger = {
+			TYPE = dynastic
+			LESS_ARISTOCRATIC_LEVEL = 0
+			CURRENT_ARISTOCRATIC_LEVEL = 1
+			MORE_ARISTOCRATIC_LEVEL = 2
+			USES_INFLUENCE = no
 		}
 	}
 	
-	subroman_dynastic_aristocracy_law_3 = {
-		modifier = {
-			#monthly_influence_mult = 0.30
-			title_creation_cost_mult = 0.30
-			monthly_prestige_gain_mult = 0.30
-		}
-		flag = revoke_depose_governors_costs_more_influence_3
-		flag = succession_weight_dynastic_4
-		flag = governor_efficency_weight_4
-		flag = subroman_can_establish_de_jure_kingdom
-		flag = subroman_can_establish_de_jure_empire
-		flag = cannot_depose_holders
-		flag = subroman_administrative_aristocracy_law_3
-		
-		can_keep = {
-			bp_realm_law_use_subroman_dynastic_aristocracy_trigger = yes
-		}
-		
-		can_pass = {
-			subroman_TYPE_aristocracy_law_can_pass_trigger = {
-				TYPE = dynastic
-				LESS_ARISTOCRATIC_LEVEL = 2
-				CURRENT_ARISTOCRATIC_LEVEL = 3
-				MORE_ARISTOCRATIC_LEVEL = 4
-				USES_INFLUENCE = no
-			}
-		}
-		
-		on_pass = {
-			subroman_TYPE_aristocracy_law_can_pass_effect = {
-				TYPE = dynastic
-				LESS_ARISTOCRATIC_LEVEL = 2
-				CURRENT_ARISTOCRATIC_LEVEL = 3
-				MORE_ARISTOCRATIC_LEVEL = 4
-				LEAST_ARISTOCRATIC_LEVEL = 0
-				MOST_ARISTOCRATIC_LEVEL = 4
-				USES_INFLUENCE = no
-			}
-		}
-		
-		ai_will_do = {
-			#AI will improve to this law if they're running short on prestige or influence
-			if = {
-				limit = { has_realm_law = subroman_dynastic_aristocracy_law_4 }
-				if = {
-					limit = { this.prestige < -100 }
-					value = 50
-				}
-				#else_if = {
-				#	limit = { this.influence < -50 }
-				#	value = 25
-				#}
-				else = { value = 0 }
-			}
-			#AI will decline to this the law when their children are not in succession
-			if = {
-				limit = { has_realm_law = subroman_dynastic_aristocracy_law_2 }
-				if = {
-					limit = { NOT = { any_child = { is_primary_heir_of = root } } }
-					value = 50
-				}
-				else = { value = 0 }
-			}
+	on_pass = {
+		subroman_TYPE_aristocracy_law_can_pass_effect = {
+			TYPE = dynastic
+			LESS_ARISTOCRATIC_LEVEL = 0
+			CURRENT_ARISTOCRATIC_LEVEL = 1
+			MORE_ARISTOCRATIC_LEVEL = 2
+			LEAST_ARISTOCRATIC_LEVEL = 0
+			MOST_ARISTOCRATIC_LEVEL = 4
+			USES_INFLUENCE = no
 		}
 	}
 	
-	subroman_dynastic_aristocracy_law_4 = {
-		modifier = {
-			#monthly_influence_mult = 0.40
-			title_creation_cost_mult = 0.40
-			monthly_prestige_gain_mult = 0.40
-		}
-		flag = governorship_cannot_be_revoked_freely
-		flag = succession_is_purely_dynastic
-		flag = subroman_administrative_aristocracy_law_4
-		flag = subroman_can_establish_de_jure_kingdom
-		flag = subroman_can_establish_de_jure_empire
-		flag = cannot_depose_holders
-		flag = subroman_administrative_aristocracy_law_4
-		
-		can_keep = {
-			bp_realm_law_use_subroman_dynastic_aristocracy_trigger = yes
-		}
-		
-		can_pass = {
-			subroman_TYPE_aristocracy_law_can_pass_trigger = {
-				TYPE = dynastic
-				LESS_ARISTOCRATIC_LEVEL = 3
-				CURRENT_ARISTOCRATIC_LEVEL = 4
-				MORE_ARISTOCRATIC_LEVEL = 4
-				USES_INFLUENCE = no
-			}
-		}
-		
-		on_pass = {
-			subroman_TYPE_aristocracy_law_can_pass_effect = {
-				TYPE = dynastic
-				LESS_ARISTOCRATIC_LEVEL = 3
-				CURRENT_ARISTOCRATIC_LEVEL = 4
-				MORE_ARISTOCRATIC_LEVEL = 4
-				LEAST_ARISTOCRATIC_LEVEL = 0
-				MOST_ARISTOCRATIC_LEVEL = 4
-				USES_INFLUENCE = no
-			}
-		}
-		
-		ai_will_do = {
-			#AI will decline to this the law when their children are not in succession
+	#AI tries to improve to this law when it's influence is too low
+	ai_will_do = {
+		#AI will improve to this law if they're running short on prestige or influence
+		if = {
+			limit = { has_realm_law = subroman_dynastic_aristocracy_law_2 }
 			if = {
-				limit = { has_realm_law = subroman_dynastic_aristocracy_law_3 }
-				if = {
-					limit = { NOT = { any_child = { is_primary_heir_of = root } } }
-					value = 50
-				}
-				else = { value = 0 }
+				limit = { this.prestige < -100 }
+				value = 50
 			}
+			#else_if = {
+			#	limit = { this.influence < -50 }
+			#	value = 25
+			#}
+			else = { value = 0 }
+		}
+		#AI will decline to this the law when their children are not in succession
+		if = {
+			limit = { has_realm_law = subroman_dynastic_aristocracy_law_0 }
+			if = {
+				limit = { NOT = { any_child = { is_primary_heir_of = root } } }
+				value = 50
+			}
+			else = { value = 0 }
+		}
+	}
+}
+subroman_dynastic_aristocracy_law_2 = {
+	law_group_type = subroman_dynastic_aristocracy_law
+	index = 2
+
+	modifier = {
+		#monthly_influence_mult = 0.20
+		title_creation_cost_mult = 0.20
+		monthly_prestige_gain_mult = 0.20
+	}
+	flag = revoke_depose_governors_costs_more_influence_2
+	flag = succession_weight_dynastic_3
+	flag = governor_efficency_weight_3
+	flag = subroman_can_establish_de_jure_kingdom
+	flag = subroman_administrative_aristocracy_law_2
+	
+	can_keep = {
+		bp_realm_law_use_subroman_dynastic_aristocracy_trigger = yes
+	}
+	
+	can_pass = {
+		subroman_TYPE_aristocracy_law_can_pass_trigger = {
+			TYPE = dynastic
+			LESS_ARISTOCRATIC_LEVEL = 1
+			CURRENT_ARISTOCRATIC_LEVEL = 2
+			MORE_ARISTOCRATIC_LEVEL = 3
+			USES_INFLUENCE = no
+		}
+	}
+	
+	on_pass = {
+		subroman_TYPE_aristocracy_law_can_pass_effect = {
+			TYPE = dynastic
+			LESS_ARISTOCRATIC_LEVEL = 1
+			CURRENT_ARISTOCRATIC_LEVEL = 2
+			MORE_ARISTOCRATIC_LEVEL = 3
+			LEAST_ARISTOCRATIC_LEVEL = 0
+			MOST_ARISTOCRATIC_LEVEL = 4
+			USES_INFLUENCE = no
+		}
+	}
+	
+	#AI tries to improve to this law when it's influence is too low
+	ai_will_do = {
+		#AI will improve to this law if they're running short on prestige or influence
+		if = {
+			limit = { has_realm_law = subroman_dynastic_aristocracy_law_3 }
+			if = {
+				limit = { this.prestige < -100 }
+				value = 50
+			}
+			#else_if = {
+			#	limit = { this.influence < -50 }
+			#	value = 25
+			#}
+			else = { value = 0 }
+		}
+		#AI will decline to this the law when their children are not in succession
+		if = {
+			limit = { has_realm_law = subroman_dynastic_aristocracy_law_1 }
+			if = {
+				limit = { NOT = { any_child = { is_primary_heir_of = root } } }
+				value = 50
+			}
+			else = { value = 0 }
+		}
+	}
+}
+subroman_dynastic_aristocracy_law_3 = {
+	law_group_type = subroman_dynastic_aristocracy_law
+	index = 3
+
+	modifier = {
+		#monthly_influence_mult = 0.30
+		title_creation_cost_mult = 0.30
+		monthly_prestige_gain_mult = 0.30
+	}
+	flag = revoke_depose_governors_costs_more_influence_3
+	flag = succession_weight_dynastic_4
+	flag = governor_efficency_weight_4
+	flag = subroman_can_establish_de_jure_kingdom
+	flag = subroman_can_establish_de_jure_empire
+	flag = cannot_depose_holders
+	flag = subroman_administrative_aristocracy_law_3
+	
+	can_keep = {
+		bp_realm_law_use_subroman_dynastic_aristocracy_trigger = yes
+	}
+	
+	can_pass = {
+		subroman_TYPE_aristocracy_law_can_pass_trigger = {
+			TYPE = dynastic
+			LESS_ARISTOCRATIC_LEVEL = 2
+			CURRENT_ARISTOCRATIC_LEVEL = 3
+			MORE_ARISTOCRATIC_LEVEL = 4
+			USES_INFLUENCE = no
+		}
+	}
+	
+	on_pass = {
+		subroman_TYPE_aristocracy_law_can_pass_effect = {
+			TYPE = dynastic
+			LESS_ARISTOCRATIC_LEVEL = 2
+			CURRENT_ARISTOCRATIC_LEVEL = 3
+			MORE_ARISTOCRATIC_LEVEL = 4
+			LEAST_ARISTOCRATIC_LEVEL = 0
+			MOST_ARISTOCRATIC_LEVEL = 4
+			USES_INFLUENCE = no
+		}
+	}
+	
+	ai_will_do = {
+		#AI will improve to this law if they're running short on prestige or influence
+		if = {
+			limit = { has_realm_law = subroman_dynastic_aristocracy_law_4 }
+			if = {
+				limit = { this.prestige < -100 }
+				value = 50
+			}
+			#else_if = {
+			#	limit = { this.influence < -50 }
+			#	value = 25
+			#}
+			else = { value = 0 }
+		}
+		#AI will decline to this the law when their children are not in succession
+		if = {
+			limit = { has_realm_law = subroman_dynastic_aristocracy_law_2 }
+			if = {
+				limit = { NOT = { any_child = { is_primary_heir_of = root } } }
+				value = 50
+			}
+			else = { value = 0 }
+		}
+	}
+}
+subroman_dynastic_aristocracy_law_4 = {
+	law_group_type = subroman_dynastic_aristocracy_law
+	index = 4
+
+	modifier = {
+		#monthly_influence_mult = 0.40
+		title_creation_cost_mult = 0.40
+		monthly_prestige_gain_mult = 0.40
+	}
+	flag = governorship_cannot_be_revoked_freely
+	flag = succession_is_purely_dynastic
+	flag = subroman_administrative_aristocracy_law_4
+	flag = subroman_can_establish_de_jure_kingdom
+	flag = subroman_can_establish_de_jure_empire
+	flag = cannot_depose_holders
+	flag = subroman_administrative_aristocracy_law_4
+	
+	can_keep = {
+		bp_realm_law_use_subroman_dynastic_aristocracy_trigger = yes
+	}
+	
+	can_pass = {
+		subroman_TYPE_aristocracy_law_can_pass_trigger = {
+			TYPE = dynastic
+			LESS_ARISTOCRATIC_LEVEL = 3
+			CURRENT_ARISTOCRATIC_LEVEL = 4
+			MORE_ARISTOCRATIC_LEVEL = 4
+			USES_INFLUENCE = no
+		}
+	}
+	
+	on_pass = {
+		subroman_TYPE_aristocracy_law_can_pass_effect = {
+			TYPE = dynastic
+			LESS_ARISTOCRATIC_LEVEL = 3
+			CURRENT_ARISTOCRATIC_LEVEL = 4
+			MORE_ARISTOCRATIC_LEVEL = 4
+			LEAST_ARISTOCRATIC_LEVEL = 0
+			MOST_ARISTOCRATIC_LEVEL = 4
+			USES_INFLUENCE = no
+		}
+	}
+	
+	ai_will_do = {
+		#AI will decline to this the law when their children are not in succession
+		if = {
+			limit = { has_realm_law = subroman_dynastic_aristocracy_law_3 }
+			if = {
+				limit = { NOT = { any_child = { is_primary_heir_of = root } } }
+				value = 50
+			}
+			else = { value = 0 }
 		}
 	}
 }

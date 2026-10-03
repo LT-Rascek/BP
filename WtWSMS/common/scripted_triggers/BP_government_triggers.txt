@@ -36,3 +36,9 @@ has_subroman_government_trigger = {
 valid_for_federate_to_be_high_tribal_trigger = { #Char scope
 	culture = { no_longer_in_tribal_era_trigger = yes }
 }
+bp_uses_ministry_budget_trigger = {
+	OR = {
+		government_has_flag = government_is_roman_administrative
+		government_has_flag = government_is_subroman_administrative
+	}
+}

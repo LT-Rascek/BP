@@ -1,284 +1,1388 @@
 ﻿@admin_law_cooldown_value = 5
 
-title_succession_laws = {
-	# Celestial Ministry Succession
-	roman_administrative_ministry_appointment_succession_law = {
-		can_have = {
-			OR = {
-				government_has_flag = government_is_roman_administrative
-				government_has_flag = subroman_administrative_government
-			}
-		}
-		can_pass = {
-		}
-		can_title_have = {
-			NOT = { has_variable = is_supreme_roman_military_title }
-			is_noble_family_title = no
-		}
-		can_realm_have = {
-			always = no
-		}
-		can_remove_from_title = {
-			custom_tooltip = {
-				text = celestial_ministry_appointment_cannot_remove_desc
-				always = no
-			}
-		}
-		succession = {
-			order_of_succession = appointment
-			appointment_type = roman_admin_minister
-		}
-		modifier = {}
-		flag = appointment_type_succession
-	}
+#Diarch Laws
+free_diarchy_law = {
+	law_group_type = roman_diarchy_law
+	index = 0
+
+	flag = free_diarchy_law
 	
-	# Celestial Grand Marshal Succession
-	roman_administrative_magister_military_appointment_succession_law = {
-		can_have = {
-			OR = {
-				government_has_flag = government_is_roman_administrative
-				government_has_flag = subroman_administrative_government
-			}
+	can_have = {
+		bp_has_access_to_roman_ministry_trigger = yes
+		has_tgp_dlc_trigger = yes # Needs ministry titles to exist
+	}
+
+	can_pass = {
+		custom_tooltip = {
+			text = admin_law_cooldown_desc
+			NOT = { has_variable = admin_law_cooldown }
 		}
-		can_pass = {
-		}
-		can_title_have = {
-			has_variable = is_supreme_roman_military_title
-			is_noble_family_title = no
-		}
-		can_realm_have = {
-			always = no
-		}
-		can_remove_from_title = {
+		#Other Diarchy Requirements
+		trigger_if = {
+			limit = { has_realm_law = roman_chancellor_law }
 			custom_tooltip = {
-				text = celestial_ministry_appointment_cannot_remove_desc
-				always = no
+				text = current_diarch_must_be_weak_or_loyal
+				any_vassal = {
+					any_held_title = { has_variable = is_supreme_roman_ministry_title }
+					save_temporary_scope_as = the_diarch
+				}
+				NOT = { scope:the_diarch ?= { has_hook = root } }
+				OR = {
+					root.diarch ?= { diarch_loyalty >= 75 }
+					root = { diarchy_swing < 5 }
+				}
 			}
 		}
-		succession = {
-			order_of_succession = appointment
-			appointment_type = roman_admin_military
+		trigger_if = {
+			limit = { has_realm_law = roman_marshal_law }
+			custom_tooltip = {
+				text = current_diarch_must_be_weak_or_loyal
+				any_vassal = {
+					any_held_title = { has_variable = is_supreme_roman_military_title }
+					save_temporary_scope_as = the_diarch
+				}
+				NOT = { scope:the_diarch ?= { has_hook = root } }
+				OR = {
+					root.diarch ?= { diarch_loyalty >= 75 }
+					root = { diarchy_swing < 5 }
+				}
+			}
 		}
-		modifier = {}
-		
-		flag = appointment_type_succession
+	}
+
+	on_pass = {
+		## Set cooldown
+		diarch = { depose_diarch = yes }
+		set_variable = {
+			name = admin_law_cooldown
+			years = @admin_law_cooldown_value
+		}
+	}
+
+	#Roman Bureaucracy does not like a free type of diarchy
+	modifier = {
+		roman_administrative_government_vassal_opinion = -10
+		roman_administrative_government_tax_contribution_mult = -0.25
+		roman_administrative_government_levy_contribution_mult = -0.25
+		enemy_hostile_scheme_success_chance_max_add = 5
+		monthly_influence_mult = -0.1
+		close_relative_opinion = 10
+	}
+
+	ai_will_do = {
+		value = 1
 	}
 }
+roman_chancellor_law = {
+	law_group_type = roman_diarchy_law
+	index = 1
 
-roman_diarchy_law = {
-	default = free_diarchy_law
-	cumulative = no
-	flag = imperial_policy
-
-	free_diarchy_law = {
-		flag = free_diarchy_law
-		
-		can_have = {
-			bp_has_access_to_roman_ministry_trigger = yes
-			has_tgp_dlc_trigger = yes # Needs ministry titles to exist
-		}
-
-		can_pass = {
-			custom_tooltip = {
-				text = admin_law_cooldown_desc
-				NOT = { has_variable = admin_law_cooldown }
-			}
-			#Other Diarchy Requirements
-			trigger_if = {
-				limit = { has_realm_law = roman_chancellor_law }
-				custom_tooltip = {
-					text = current_diarch_must_be_weak_or_loyal
-					any_vassal = {
-						any_held_title = { has_variable = is_supreme_roman_ministry_title }
-						save_temporary_scope_as = the_diarch
-					}
-					NOT = { scope:the_diarch ?= { has_hook = root } }
-					OR = {
-						root.diarch ?= { diarch_loyalty >= 75 }
-						root = { diarchy_swing < 5 }
-					}
-				}
-			}
-			trigger_if = {
-				limit = { has_realm_law = roman_marshal_law }
-				custom_tooltip = {
-					text = current_diarch_must_be_weak_or_loyal
-					any_vassal = {
-						any_held_title = { has_variable = is_supreme_roman_military_title }
-						save_temporary_scope_as = the_diarch
-					}
-					NOT = { scope:the_diarch ?= { has_hook = root } }
-					OR = {
-						root.diarch ?= { diarch_loyalty >= 75 }
-						root = { diarchy_swing < 5 }
-					}
-				}
-			}
-		}
-
-		on_pass = {
-			## Set cooldown
-			diarch = { depose_diarch = yes }
-			set_variable = {
-				name = admin_law_cooldown
-				years = @admin_law_cooldown_value
-			}
-		}
-
-		#Roman Bureaucracy does not like a free type of diarchy
-		modifier = {
-			roman_administrative_government_vassal_opinion = -10
-			roman_administrative_government_tax_contribution_mult = -0.25
-			roman_administrative_government_levy_contribution_mult = -0.25
-			enemy_hostile_scheme_success_chance_max_add = 5
-			monthly_influence_mult = -0.1
-			close_relative_opinion = 10
-		}
-
-		ai_will_do = {
-			value = 1
-		}
+	flag = roman_chancellor_law
+	can_have = {
+		bp_has_access_to_roman_ministry_trigger = yes
+		has_tgp_dlc_trigger = yes # Needs ministry titles to exist
+		any_vassal = { any_held_title = { has_variable = is_supreme_roman_ministry_title } }
 	}
-
-	roman_chancellor_law = {
-		flag = roman_chancellor_law
-		can_have = {
-			bp_has_access_to_roman_ministry_trigger = yes
-			has_tgp_dlc_trigger = yes # Needs ministry titles to exist
+	can_pass = {
+		custom_tooltip = {
+			text = has_a_magister_officiorum
 			any_vassal = { any_held_title = { has_variable = is_supreme_roman_ministry_title } }
 		}
-		can_pass = {
+		custom_tooltip = {
+			text = admin_law_cooldown_desc
+			NOT = { has_variable = admin_law_cooldown }
+		}
+		#Other Diarchy Requirements
+		trigger_if = {
+			limit = { has_realm_law = roman_chancellor_law }
 			custom_tooltip = {
-				text = has_a_magister_officiorum
-				any_vassal = { any_held_title = { has_variable = is_supreme_roman_ministry_title } }
-			}
-			custom_tooltip = {
-				text = admin_law_cooldown_desc
-				NOT = { has_variable = admin_law_cooldown }
-			}
-			#Other Diarchy Requirements
-			trigger_if = {
-				limit = { has_realm_law = roman_chancellor_law }
-				custom_tooltip = {
-					text = current_diarch_must_be_weak_or_loyal
-					any_vassal = {
-						any_held_title = { has_variable = is_supreme_roman_ministry_title }
-						save_temporary_scope_as = the_diarch
-					}
-					NOT = { scope:the_diarch ?= { has_hook = root } }
-					OR = {
-						root.diarch ?= { diarch_loyalty >= 75 }
-						root = { diarchy_swing < 5 }
-					}
+				text = current_diarch_must_be_weak_or_loyal
+				any_vassal = {
+					any_held_title = { has_variable = is_supreme_roman_ministry_title }
+					save_temporary_scope_as = the_diarch
 				}
-			}
-			trigger_if = {
-				limit = { has_realm_law = roman_marshal_law }
-				custom_tooltip = {
-					text = current_diarch_must_be_weak_or_loyal
-					any_vassal = {
-						any_held_title = { has_variable = is_supreme_roman_military_title }
-						save_temporary_scope_as = the_diarch
-					}
-					NOT = { scope:the_diarch ?= { has_hook = root } }
-					OR = {
-						root.diarch ?= { diarch_loyalty >= 75 }
-						root = { diarchy_swing < 5 }
-					}
+				NOT = { scope:the_diarch ?= { has_hook = root } }
+				OR = {
+					root.diarch ?= { diarch_loyalty >= 75 }
+					root = { diarchy_swing < 5 }
 				}
 			}
 		}
-
-		on_pass = {
-			hidden_effect = {
-				random_vassal = {
-					limit = { any_held_title = { has_variable = is_supreme_roman_ministry_title } }
-					root = { designate_diarch = prev }
+		trigger_if = {
+			limit = { has_realm_law = roman_marshal_law }
+			custom_tooltip = {
+				text = current_diarch_must_be_weak_or_loyal
+				any_vassal = {
+					any_held_title = { has_variable = is_supreme_roman_military_title }
+					save_temporary_scope_as = the_diarch
 				}
-				diarch ?= { depose_diarch = yes }
-				try_start_diarchy = roman_admin_premier
+				NOT = { scope:the_diarch ?= { has_hook = root } }
+				OR = {
+					root.diarch ?= { diarch_loyalty >= 75 }
+					root = { diarchy_swing < 5 }
+				}
 			}
-			## Set cooldown
-			set_variable = {
-				name = admin_law_cooldown
-				years = @admin_law_cooldown_value
-			}
-		}
-
-		ai_will_do = {
-			value = 1
 		}
 	}
 
-	roman_marshal_law = {
-		flag = roman_marshal_law
-		can_have = {
-			bp_has_access_to_roman_ministry_trigger = yes
-			has_tgp_dlc_trigger = yes # Needs ministry titles to exist
+	on_pass = {
+		hidden_effect = {
+			random_vassal = {
+				limit = { any_held_title = { has_variable = is_supreme_roman_ministry_title } }
+				root = { designate_diarch = prev }
+			}
+			diarch ?= { depose_diarch = yes }
+			try_start_diarchy = roman_admin_premier
+		}
+		## Set cooldown
+		set_variable = {
+			name = admin_law_cooldown
+			years = @admin_law_cooldown_value
+		}
+	}
+
+	ai_will_do = {
+		value = 1
+	}
+}
+roman_marshal_law = {
+	law_group_type = roman_diarchy_law
+	index = 2
+
+	flag = roman_marshal_law
+	can_have = {
+		bp_has_access_to_roman_ministry_trigger = yes
+		has_tgp_dlc_trigger = yes # Needs ministry titles to exist
+		any_vassal = { any_held_title = { has_variable = is_supreme_roman_military_title } }
+	}
+
+	can_pass = {
+		custom_tooltip = {
+			text = has_a_magister_militum
 			any_vassal = { any_held_title = { has_variable = is_supreme_roman_military_title } }
 		}
-
-		can_pass = {
+		custom_tooltip = {
+			text = admin_law_cooldown_desc
+			NOT = { has_variable = admin_law_cooldown }
+		}
+		#Other Diarchy Requirements
+		trigger_if = {
+			limit = { has_realm_law = roman_chancellor_law }
 			custom_tooltip = {
-				text = has_a_magister_militum
-				any_vassal = { any_held_title = { has_variable = is_supreme_roman_military_title } }
-			}
-			custom_tooltip = {
-				text = admin_law_cooldown_desc
-				NOT = { has_variable = admin_law_cooldown }
-			}
-			#Other Diarchy Requirements
-			trigger_if = {
-				limit = { has_realm_law = roman_chancellor_law }
-				custom_tooltip = {
-					text = current_diarch_must_be_weak_or_loyal
-					any_vassal = {
-						any_held_title = { has_variable = is_supreme_roman_ministry_title }
-						save_temporary_scope_as = the_diarch
-					}
-					NOT = { scope:the_diarch ?= { has_hook = root } }
-					OR = {
-						root.diarch ?= { diarch_loyalty >= 75 }
-						root = { diarchy_swing < 5 }
-					}
+				text = current_diarch_must_be_weak_or_loyal
+				any_vassal = {
+					any_held_title = { has_variable = is_supreme_roman_ministry_title }
+					save_temporary_scope_as = the_diarch
 				}
-			}
-			trigger_if = {
-				limit = { has_realm_law = roman_marshal_law }
-				custom_tooltip = {
-					text = current_diarch_must_be_weak_or_loyal
-					any_vassal = {
-						any_held_title = { has_variable = is_supreme_roman_military_title }
-						save_temporary_scope_as = the_diarch
-					}
-					NOT = { scope:the_diarch ?= { has_hook = root } }
-					OR = {
-						root.diarch ?= { diarch_loyalty >= 75 }
-						root = { diarchy_swing < 5 }
-					}
+				NOT = { scope:the_diarch ?= { has_hook = root } }
+				OR = {
+					root.diarch ?= { diarch_loyalty >= 75 }
+					root = { diarchy_swing < 5 }
 				}
 			}
 		}
-
-		on_pass = {
-			hidden_effect = {
-				random_vassal = {
-					limit = { any_held_title = { has_variable = is_supreme_roman_military_title } }
-					root = { designate_diarch = prev }
+		trigger_if = {
+			limit = { has_realm_law = roman_marshal_law }
+			custom_tooltip = {
+				text = current_diarch_must_be_weak_or_loyal
+				any_vassal = {
+					any_held_title = { has_variable = is_supreme_roman_military_title }
+					save_temporary_scope_as = the_diarch
 				}
-				diarch ?= { depose_diarch = yes }
-				try_start_diarchy = roman_admin_premier
+				NOT = { scope:the_diarch ?= { has_hook = root } }
+				OR = {
+					root.diarch ?= { diarch_loyalty >= 75 }
+					root = { diarchy_swing < 5 }
+				}
 			}
-			## Set cooldown
-			set_variable = {
-				name = admin_law_cooldown
-				years = @admin_law_cooldown_value
-			}
-		}
-
-		ai_will_do = {
-			value = 1
 		}
 	}
 
+	on_pass = {
+		hidden_effect = {
+			random_vassal = {
+				limit = { any_held_title = { has_variable = is_supreme_roman_military_title } }
+				root = { designate_diarch = prev }
+			}
+			diarch ?= { depose_diarch = yes }
+			try_start_diarchy = roman_admin_premier
+		}
+		## Set cooldown
+		set_variable = {
+			name = admin_law_cooldown
+			years = @admin_law_cooldown_value
+		}
+	}
+
+	ai_will_do = {
+		value = 1
+	}
 }
+
+#Non-Roman Rule Laws
+non_roman_minority_rule_law_0 = { #Oppression; see Vandals
+	law_group_type = non_roman_minority_rule_law
+	index = 0
+
+	can_keep = {
+		bp_can_have_roman_minority_law_trigger = yes
+		#Lock into top liege's law
+		trigger_if = {
+			limit = { top_liege != this }
+			liege = { has_realm_law = non_roman_minority_rule_law_0 }
+		}
+	}
+	
+	modifier = {
+		cultural_head_acceptance_gain_mult = -0.50
+		same_culture_opinion = 20
+		different_culture_opinion = -20
+	}
+	flag = close_family_gets_appointment_exception
+	flag = only_same_culture_acclamation_succession
+	flag = only_same_culture_appointment_succession
+	flag = will_not_convert_to_local_culture
+	flag = roman_characters_can_be_minorities
+	
+	can_pass = {
+		#Only Top liege
+		top_liege = this
+		#Only adjacent
+		has_realm_law = non_roman_minority_rule_law_1
+		#Not on cooldown
+		custom_description = {
+			subject = root
+			text = "has_non_roman_minority_rule_law_cooldown"
+			NOT = { has_variable = non_roman_minority_rule_law_cooldown }
+		}
+	}
+	
+	#Shifting laws should please Romans/anger minorities unless fickle/eccentric (opposite of stubborn)
+	pass_cost = {
+		prestige = {
+			if = { #Only the top liege pays for this
+				limit = { top_liege = this }
+				add = change_non_roman_minority_rule_law_basic_cost
+			}
+		}
+		influence = {
+			if = { #Only the top liege pays for this
+				limit = {
+					top_liege = this
+					government_has_flag = government_has_influence
+				}
+				add = change_non_roman_minority_rule_law_basic_cost
+			}
+		}
+	}
+	on_pass = {
+		set_variable = {
+			name = non_roman_minority_rule_law_cooldown
+			years = @non_roman_minority_rule_law_cooldown
+		}
+		#Apply opinions kingdom-wide when the ruler applies a new law
+		if = {
+			limit = {
+				top_liege = this
+				has_realm_law = non_roman_minority_rule_law_1
+			}
+			custom_description = {
+				text = all_roman_vassal_disapprove
+				subject = root
+				value = change_non_roman_minority_rule_law_opinion_value_negative
+				every_vassal_or_below = {
+					limit = { culture = { has_cultural_parameter = greco_roman_social_tradition } }
+					add_opinion = {
+						modifier = reduced_roman_priveleges_roman
+						target = root
+					}
+				}
+				every_courtier = {
+					limit = { culture = { has_cultural_parameter = greco_roman_social_tradition } }
+					add_opinion = {
+						modifier = reduced_roman_priveleges_roman
+						target = root
+					}
+				}
+			}
+			custom_description = {
+				text = all_vassals_your_culture_or_migratory_approve
+				subject = root
+				value = change_non_roman_minority_rule_law_opinion_value
+				every_vassal_or_below = {
+					limit = {
+						OR = {
+							culture = root.culture
+							culture = { has_cultural_tradition = tradition_elite_rulership }
+						}
+					}
+					add_opinion = {
+						modifier = reduced_roman_priveleges_minority
+						target = root
+					}
+				}
+				every_courtier = {
+					limit = {
+						OR = {
+							culture = root.culture
+							culture = { has_cultural_tradition = tradition_elite_rulership }
+						}
+					}
+					add_opinion = {
+						modifier = reduced_roman_priveleges_minority
+						target = root
+					}
+				}
+			}
+		}
+		#Keep the laws united
+		hidden_effect = {
+			every_vassal_or_below = { add_realm_law_skip_effects = non_roman_minority_rule_law_0 }
+		}
+	}
+	ai_will_do = {
+		if = { #Vandals *want* to oppress Romans
+			limit = { culture = culture:vandalic }
+			value = 1000
+		}
+		#Ethos
+		if = { #Communal Ethos like themselves
+			limit = { culture = { has_cultural_pillar = ethos_communal } }
+			add = 50
+		}
+		if = { #Egalitarians are disinclined to oppress
+			limit = { culture = { has_cultural_pillar = ethos_egalitarian } }
+			add = -50
+		}
+		#Bonuses
+		if = { #WtWSMS: For the Love of the Game
+			limit = {
+				culture = { has_cultural_tradition = tradition_punic_traditions }
+				culture = { has_cultural_tradition = tradition_persian_traditions }
+				culture = { has_cultural_tradition = tradition_persian_traditions_non_dlc }
+			}
+			value = 200
+		}
+		if = { #WtWSMS Traditionalists/Anti-Romans
+			limit = {
+				culture = { has_cultural_tradition = tradition_marauders }
+				culture = { has_cultural_tradition = tradition_marauders_non_dlc }
+				culture = { has_cultural_tradition = tradition_xenophobic }
+				culture = { has_cultural_tradition = tradition_xenophobic_non_dlc }
+				culture = { has_cultural_tradition = tradition_autochthon_identity }
+				culture = { has_cultural_tradition = tradition_armenian_traditions }
+				culture = { has_cultural_tradition = tradition_armenian_traditions_non_dlc }
+				culture = { has_cultural_tradition = tradition_hebrew_traditions }
+				culture = { has_cultural_tradition = tradition_hebrew_traditions_non_dlc }
+				culture = { has_cultural_tradition = tradition_egyptian_traditions }
+				culture = { has_cultural_tradition = tradition_egyptian_traditions_non_dlc }
+				culture = { has_cultural_tradition = tradition_caucasian_mountain_homes }
+				culture = { has_cultural_tradition = tradition_caucasian_mountain_homes_non_dlc }
+				culture = { has_cultural_tradition = tradition_early_slavic_traditions }
+			}
+			value = 75
+		}
+		if = { #Staunch Traditionalists don't like Romans
+			limit = { culture = { has_cultural_parameter = harder_to_hybridize } }
+			value = 75
+		}
+		if = { #Strong believers keep to themselves (can't use the calc_faith trigger?)
+			limit = { culture = { has_cultural_parameter = harder_to_convert_character_faith } }
+			value = 75
+		}
+		if = { #Isolationists want nothing to do with Romans
+			limit = { culture = { has_cultural_parameter = ai_doesnt_marry_outside_culture } }
+			value = 50
+		}
+		if = { #Jew's don't care to be Roman
+			limit = { culture = { has_cultural_tradition = tradition_diasporic } }
+			value = 50
+		}
+		if = { #Tribal Unity makes us want to avoid the Romans
+			limit = { culture = { has_cultural_parameter = landing_house_members_give_prestige } }
+			value = 50
+		}
+		#Maluses
+		if = { #Culture Blending sort of stuff
+			limit = { culture = { has_cultural_parameter = cheaper_to_hybridize } }
+			value = -50
+		}
+		if = { #Religion Blending sort of stuff
+			limit = { culture = { has_cultural_parameter = more_easily_converted } }
+			value = -25
+		}
+	}
+}
+non_roman_minority_rule_law_1 = { #Minor Oppression
+	law_group_type = non_roman_minority_rule_law
+	index = 1
+
+	can_keep = {
+		bp_can_have_roman_minority_law_trigger = yes
+		#Lock into top liege's law
+		trigger_if = {
+			limit = { top_liege != this }
+			liege = { has_realm_law = non_roman_minority_rule_law_1 }
+		}
+	}
+	
+	modifier = {
+		cultural_head_acceptance_gain_mult = -0.375
+		same_culture_opinion = 15
+		different_culture_opinion = -15
+	}
+	flag = close_family_gets_appointment_exception
+	flag = only_same_culture_acclamation_succession
+	flag = only_same_culture_appointment_succession
+	flag = will_not_convert_to_local_culture
+	flag = roman_characters_can_be_minorities
+	
+	can_pass = {
+		#Only Top liege
+		top_liege = this
+		#Only adjacent
+		OR = {
+			has_realm_law = non_roman_minority_rule_law_0
+			has_realm_law = non_roman_minority_rule_law_2
+		}
+		#Not on cooldown
+		custom_description = {
+			subject = root
+			text = "has_non_roman_minority_rule_law_cooldown"
+			NOT = { has_variable = non_roman_minority_rule_law_cooldown }
+		}
+	}
+	
+	#Shifting laws should please Romans/anger minorities unless fickle/eccentric (opposite of stubborn)
+	pass_cost = {
+		prestige = {
+			if = { #Only the top liege pays for this
+				limit = { top_liege = this }
+				add = change_non_roman_minority_rule_law_basic_cost
+			}
+		}
+		influence = {
+			if = { #Only the top liege pays for this
+				limit = {
+					top_liege = this
+					government_has_flag = government_has_influence
+				}
+				add = change_non_roman_minority_rule_law_basic_cost
+			}
+		}
+	}
+	on_pass = {
+		set_variable = {
+			name = non_roman_minority_rule_law_cooldown
+			years = @non_roman_minority_rule_law_cooldown
+		}
+		#Apply opinions kingdom-wide when the ruler applies a new law
+		if = {
+			limit = {
+				top_liege = this
+				has_realm_law = non_roman_minority_rule_law_2
+			}
+			custom_description = {
+				text = all_roman_vassal_disapprove
+				subject = root
+				value = change_non_roman_minority_rule_law_opinion_value_negative
+				every_vassal_or_below = {
+					limit = { culture = { has_cultural_parameter = greco_roman_social_tradition } }
+					add_opinion = {
+						modifier = reduced_roman_priveleges_roman
+						target = root
+					}
+				}
+				every_courtier = {
+					limit = { culture = { has_cultural_parameter = greco_roman_social_tradition } }
+					add_opinion = {
+						modifier = reduced_roman_priveleges_roman
+						target = root
+					}
+				}
+			}
+			custom_description = {
+				text = all_vassals_your_culture_or_migratory_approve
+				subject = root
+				value = change_non_roman_minority_rule_law_opinion_value
+				every_vassal_or_below = {
+					limit = {
+						OR = {
+							culture = root.culture
+							culture = { has_cultural_tradition = tradition_elite_rulership }
+						}
+					}
+					add_opinion = {
+						modifier = reduced_roman_priveleges_minority
+						target = root
+					}
+				}
+				every_courtier = {
+					limit = {
+						OR = {
+							culture = root.culture
+							culture = { has_cultural_tradition = tradition_elite_rulership }
+						}
+					}
+					add_opinion = {
+						modifier = reduced_roman_priveleges_minority
+						target = root
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				top_liege = this
+				has_realm_law = non_roman_minority_rule_law_0
+			}
+			custom_description = {
+				text = all_roman_vassal_approve
+				subject = root
+				value = change_non_roman_minority_rule_law_opinion_value
+				every_vassal_or_below = {
+					limit = { culture = { has_cultural_parameter = greco_roman_social_tradition } }
+					add_opinion = {
+						modifier = improved_roman_priveleges_roman
+						target = root
+					}
+				}
+				every_courtier = {
+					limit = { culture = { has_cultural_parameter = greco_roman_social_tradition } }
+					add_opinion = {
+						modifier = improved_roman_priveleges_roman
+						target = root
+					}
+				}
+			}
+			custom_description = {
+				text = all_vassals_your_culture_or_migratory_disapprove
+				subject = root
+				value = change_non_roman_minority_rule_law_opinion_value_negative
+				every_vassal_or_below = {
+					limit = {
+						OR = {
+							culture = root.culture
+							culture = { has_cultural_tradition = tradition_elite_rulership }
+						}
+					}
+					add_opinion = {
+						modifier = improved_roman_priveleges_minority
+						target = root
+					}
+				}
+				every_courtier = {
+					limit = {
+						OR = {
+							culture = root.culture
+							culture = { has_cultural_tradition = tradition_elite_rulership }
+						}
+					}
+					add_opinion = {
+						modifier = improved_roman_priveleges_minority
+						target = root
+					}
+				}
+			}
+		}
+	
+		#Keep the laws united
+		hidden_effect = {
+			every_vassal_or_below = { add_realm_law_skip_effects = non_roman_minority_rule_law_1 }
+		}
+	}
+	ai_will_do = {
+		value = 1
+		#Ethos
+		if = { #Communal Ethos like themselves
+			limit = { culture = { has_cultural_pillar = ethos_communal } }
+			add = 50
+		}
+		if = { #Egalitarians are disinclined to oppress
+			limit = { culture = { has_cultural_pillar = ethos_egalitarian } }
+			add = -50
+		}
+		if = { #Stoic avoid extremes
+			limit = { culture = { has_cultural_pillar = ethos_communal } }
+			add = 25
+		}
+		if = { #Bureaucratic avoid extremes
+			limit = { culture = { has_cultural_pillar = ethos_bureaucratic } }
+			add = 25
+		}
+		#Bonuses
+		if = { #WtWSMS: For the Love of the Game
+			limit = {
+				culture = { has_cultural_tradition = tradition_punic_traditions }
+				culture = { has_cultural_tradition = tradition_persian_traditions }
+				culture = { has_cultural_tradition = tradition_persian_traditions_non_dlc }
+			}
+			value = 100
+		}
+		if = { #WtWSMS Traditionalists/Anti-Romans
+			limit = {
+				culture = { has_cultural_tradition = tradition_marauders }
+				culture = { has_cultural_tradition = tradition_marauders_non_dlc }
+				culture = { has_cultural_tradition = tradition_xenophobic }
+				culture = { has_cultural_tradition = tradition_xenophobic_non_dlc }
+				culture = { has_cultural_tradition = tradition_autochthon_identity }
+				culture = { has_cultural_tradition = tradition_armenian_traditions }
+				culture = { has_cultural_tradition = tradition_armenian_traditions_non_dlc }
+				culture = { has_cultural_tradition = tradition_hebrew_traditions }
+				culture = { has_cultural_tradition = tradition_hebrew_traditions_non_dlc }
+				culture = { has_cultural_tradition = tradition_egyptian_traditions }
+				culture = { has_cultural_tradition = tradition_egyptian_traditions_non_dlc }
+				culture = { has_cultural_tradition = tradition_caucasian_mountain_homes }
+				culture = { has_cultural_tradition = tradition_caucasian_mountain_homes_non_dlc }
+				culture = { has_cultural_tradition = tradition_early_slavic_traditions }
+			}
+			value = 50
+		}
+		if = { #Isolationists want nothing to do with Romans
+			limit = { culture = { has_cultural_parameter = ai_doesnt_marry_outside_culture } }
+			add = 50
+		}
+		if = { #Jew's don't care to be Roman
+			limit = { culture = { has_cultural_tradition = tradition_diasporic } }
+			value = 50
+		}
+		if = { #Tribal Unity makes us want to avoid the Romans
+			limit = { culture = { has_cultural_parameter = landing_house_members_give_prestige } }
+			value = 50
+		}
+		if = { #Staunch Traditionalists don't like Romans
+			limit = { culture = { has_cultural_parameter = harder_to_hybridize } }
+			value = 50
+		}
+		if = { #Strong believers keep to themselves (can't use the calc_faith trigger?)
+			limit = { culture = { has_cultural_parameter = harder_to_convert_character_faith } }
+			value = 50
+		}
+		#Maluses
+		if = { #Culture Blending sort of stuff
+			limit = { culture = { has_cultural_parameter = cheaper_to_hybridize } }
+			value = -25
+		}
+		if = { #Religion Blending sort of stuff
+			limit = { culture = { has_cultural_parameter = more_easily_converted } }
+			value = -25
+		}
+	}
+}
+non_roman_minority_rule_law_2 = { #Moderate; Ostrogoths, &c. Romans have certain protections
+	law_group_type = non_roman_minority_rule_law
+	index = 2
+
+	can_keep = {
+		bp_can_have_roman_minority_law_trigger = yes
+		#Lock into top liege's law
+		trigger_if = {
+			limit = { top_liege != this }
+			liege = { has_realm_law = non_roman_minority_rule_law_2 }
+		}
+	}
+	
+	modifier = {
+		cultural_head_acceptance_gain_mult = -0.25
+		same_culture_opinion = 10
+		different_culture_opinion = -10
+	}
+	flag = cannot_demand_romans_change_religion
+	flag = close_family_gets_appointment_exception
+	flag = only_same_culture_acclamation_succession
+	flag = only_same_culture_appointment_succession
+	flag = imperial_church_defended
+	flag = unlikely_to_convert_to_local_culture
+	
+	can_pass = {
+		#Only Top liege
+		top_liege = this
+		#Only adjacent
+		OR = {
+			has_realm_law = non_roman_minority_rule_law_1
+			has_realm_law = non_roman_minority_rule_law_3
+		}
+		#Not on cooldown
+		custom_description = {
+			subject = root
+			text = "has_non_roman_minority_rule_law_cooldown"
+			NOT = { has_variable = non_roman_minority_rule_law_cooldown }
+		}
+	}
+	
+	#Shifting laws should please Romans/anger minorities unless fickle/eccentric (opposite of stubborn)
+	pass_cost = {
+		prestige = {
+			if = { #Only the top liege pays for this
+				limit = { top_liege = this }
+				add = change_non_roman_minority_rule_law_basic_cost
+			}
+		}
+		influence = {
+			if = { #Only the top liege pays for this
+				limit = {
+					top_liege = this
+					government_has_flag = government_has_influence
+				}
+				add = change_non_roman_minority_rule_law_basic_cost
+			}
+		}
+	}
+	on_pass = {
+		set_variable = {
+			name = non_roman_minority_rule_law_cooldown
+			years = @non_roman_minority_rule_law_cooldown
+		}
+		#Apply opinions kingdom-wide when the ruler applies a new law
+		if = {
+			limit = {
+				top_liege = this
+				has_realm_law = non_roman_minority_rule_law_3
+			}
+			custom_description = {
+				text = all_roman_vassal_disapprove
+				subject = root
+				value = change_non_roman_minority_rule_law_opinion_value_negative
+				every_vassal_or_below = {
+					limit = { culture = { has_cultural_parameter = greco_roman_social_tradition } }
+					add_opinion = {
+						modifier = reduced_roman_priveleges_roman
+						target = root
+					}
+				}
+				every_courtier = {
+					limit = { culture = { has_cultural_parameter = greco_roman_social_tradition } }
+					add_opinion = {
+						modifier = reduced_roman_priveleges_roman
+						target = root
+					}
+				}
+			}
+			custom_description = {
+				text = all_vassals_your_culture_or_migratory_approve
+				subject = root
+				value = change_non_roman_minority_rule_law_opinion_value
+				every_vassal_or_below = {
+					limit = {
+						OR = {
+							culture = root.culture
+							culture = { has_cultural_tradition = tradition_elite_rulership }
+						}
+					}
+					add_opinion = {
+						modifier = reduced_roman_priveleges_minority
+						target = root
+					}
+				}
+				every_courtier = {
+					limit = {
+						OR = {
+							culture = root.culture
+							culture = { has_cultural_tradition = tradition_elite_rulership }
+						}
+					}
+					add_opinion = {
+						modifier = reduced_roman_priveleges_minority
+						target = root
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				top_liege = this
+				has_realm_law = non_roman_minority_rule_law_1
+			}
+			custom_description = {
+				text = all_roman_vassal_approve
+				subject = root
+				value = change_non_roman_minority_rule_law_opinion_value
+				every_vassal_or_below = {
+					limit = {
+						culture = { has_cultural_parameter = greco_roman_social_tradition }
+					}
+					add_opinion = {
+						modifier = reduced_roman_priveleges_roman
+						target = root
+					}
+				}
+				every_courtier = {
+					limit = { culture = { has_cultural_parameter = greco_roman_social_tradition } }
+					add_opinion = {
+						modifier = reduced_roman_priveleges_roman
+						target = root
+					}
+				}
+			}
+			custom_description = {
+				text = all_vassals_your_culture_or_migratory_disapprove
+				subject = root
+				value = change_non_roman_minority_rule_law_opinion_value_negative
+				every_vassal_or_below = {
+					limit = {
+						OR = {
+							culture = root.culture
+							culture = { has_cultural_tradition = tradition_elite_rulership }
+						}
+					}
+					add_opinion = {
+						modifier = improved_roman_priveleges_minority
+						target = root
+					}
+				}
+				every_courtier = {
+					limit = {
+						OR = {
+							culture = root.culture
+							culture = { has_cultural_tradition = tradition_elite_rulership }
+						}
+					}
+					add_opinion = {
+						modifier = improved_roman_priveleges_minority
+						target = root
+					}
+				}
+			}
+		}
+	
+		#Keep the laws united
+		hidden_effect = {
+			every_vassal_or_below = { add_realm_law_skip_effects = non_roman_minority_rule_law_2 }
+		}
+	}
+	#Shifting laws should please Romans/anger minorities unless fickle/eccentric (opposite of stubborn)
+	ai_will_do = {
+		value = 2 #Default
+		#Ethos
+		if = { #Communal Ethos like themselves
+			limit = { culture = { has_cultural_pillar = ethos_communal } }
+			add = 25
+		}
+		if = { #Stoic avoid extremes
+			limit = { culture = { has_cultural_pillar = ethos_communal } }
+			add = 25
+		}
+		if = { #Bureaucratic avoid extremes
+			limit = { culture = { has_cultural_pillar = ethos_bureaucratic } }
+			add = 25
+		}
+		#Bonuses/Maluses kinda meet here in case of very weird cosmopolitan/isolationist cultures
+		if = { #Franks are totes Romans, honest!
+			limit = { culture = { has_cultural_tradition = tradition_frankish_traditions } }
+			add = 25
+		}
+		if = { #Isolationists want nothing to do with Romans
+			limit = { culture = { has_cultural_parameter = ai_doesnt_marry_outside_culture } }
+			value = 25
+		}
+		if = { #Culture Blending sort of stuff
+			limit = { culture = { has_cultural_parameter = cheaper_to_hybridize } }
+			value = 25
+		}
+		if = { #Religion Blending sort of stuff
+			limit = { culture = { has_cultural_parameter = more_easily_converted } }
+			value = 25
+		}
+		if = { #Staunch Traditionalists don't like Romans
+			limit = { culture = { has_cultural_parameter = harder_to_hybridize } }
+			value = 25
+		}
+		if = { #Strong believers keep to themselves (can't use the calc_faith trigger?)
+			limit = { culture = { has_cultural_parameter = harder_to_convert_character_faith } }
+			value = 25
+		}
+		if = { #Staunch Traditionalists don't like Romans
+			limit = { culture = { has_cultural_parameter = harder_to_hybridize } }
+			value = 25
+		}
+	}
+}
+non_roman_minority_rule_law_3 = { #Semi-Alignment; see Skirians
+	law_group_type = non_roman_minority_rule_law
+	index = 3
+
+	can_keep = {
+		bp_can_have_roman_minority_law_trigger = yes
+		#Lock into top liege's law
+		trigger_if = {
+			limit = { top_liege != this }
+			liege = { has_realm_law = non_roman_minority_rule_law_3 }
+		}
+	}
+	
+	modifier = {
+		cultural_head_acceptance_gain_mult = -0.125
+		same_culture_opinion = 5
+		different_culture_opinion = -5
+	}
+	flag = cannot_demand_romans_change_religion
+	flag = close_family_gets_appointment_exception
+	flag = only_same_culture_acclamation_succession
+	flag = imperial_church_defended
+	flag = unlikely_to_convert_to_local_culture
+	
+	can_pass = {
+		#Only Top liege
+		top_liege = this
+		#Only adjacent
+		OR = {
+			has_realm_law = non_roman_minority_rule_law_2
+			has_realm_law = non_roman_minority_rule_law_4
+		}
+		#Not on cooldown
+		custom_description = {
+			subject = root
+			text = "has_non_roman_minority_rule_law_cooldown"
+			NOT = { has_variable = non_roman_minority_rule_law_cooldown }
+		}
+	}
+	
+	#Shifting laws should please Romans/anger minorities unless fickle/eccentric (opposite of stubborn)
+	pass_cost = {
+		prestige = {
+			if = { #Only the top liege pays for this
+				limit = { top_liege = this }
+				add = change_non_roman_minority_rule_law_basic_cost
+			}
+		}
+		influence = {
+			if = { #Only the top liege pays for this
+				limit = {
+					top_liege = this
+					government_has_flag = government_has_influence
+				}
+				add = change_non_roman_minority_rule_law_basic_cost
+			}
+		}
+	}
+	on_pass = {
+		set_variable = {
+			name = non_roman_minority_rule_law_cooldown
+			years = @non_roman_minority_rule_law_cooldown
+		}
+		#Apply opinions kingdom-wide when the ruler applies a new law
+		if = {
+			limit = {
+				top_liege = this
+				has_realm_law = non_roman_minority_rule_law_4
+			}
+			custom_description = {
+				text = all_roman_vassal_disapprove
+				subject = root
+				value = change_non_roman_minority_rule_law_opinion_value_negative
+				every_vassal_or_below = {
+					limit = { culture = { has_cultural_parameter = greco_roman_social_tradition } }
+					add_opinion = {
+						modifier = reduced_roman_priveleges_roman
+						target = root
+					}
+				}
+				every_courtier = {
+					limit = { culture = { has_cultural_parameter = greco_roman_social_tradition } }
+					add_opinion = {
+						modifier = reduced_roman_priveleges_roman
+						target = root
+					}
+				}
+			}
+			custom_description = {
+				text = all_vassals_your_culture_or_migratory_approve
+				subject = root
+				value = change_non_roman_minority_rule_law_opinion_value
+				every_vassal_or_below = {
+					limit = {
+						OR = {
+							culture = root.culture
+							culture = { has_cultural_tradition = tradition_elite_rulership }
+						}
+					}
+					add_opinion = {
+						modifier = reduced_roman_priveleges_minority
+						target = root
+					}
+				}
+				every_courtier = {
+					limit = {
+						OR = {
+							culture = root.culture
+							culture = { has_cultural_tradition = tradition_elite_rulership }
+						}
+					}
+					add_opinion = {
+						modifier = reduced_roman_priveleges_minority
+						target = root
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				top_liege = this
+				has_realm_law = non_roman_minority_rule_law_2
+			}
+			custom_description = {
+				text = all_roman_vassal_approve
+				subject = root
+				value = change_non_roman_minority_rule_law_opinion_value
+				every_vassal_or_below = {
+					limit = { culture = { has_cultural_parameter = greco_roman_social_tradition } }
+					add_opinion = {
+						modifier = improved_roman_priveleges_roman
+						target = root
+					}
+				}
+				every_courtier = {
+					limit = { culture = { has_cultural_parameter = greco_roman_social_tradition } }
+					add_opinion = {
+						modifier = improved_roman_priveleges_roman
+						target = root
+					}
+				}
+			}
+			custom_description = {
+				text = all_vassals_your_culture_or_migratory_disapprove
+				subject = root
+				value = change_non_roman_minority_rule_law_opinion_value_negative
+				every_vassal_or_below = {
+					limit = {
+						OR = {
+							culture = root.culture
+							culture = { has_cultural_tradition = tradition_elite_rulership }
+						}
+					}
+					add_opinion = {
+						modifier = improved_roman_priveleges_minority
+						target = root
+					}
+				}
+				every_courtier = {
+					limit = {
+						OR = {
+							culture = root.culture
+							culture = { has_cultural_tradition = tradition_elite_rulership }
+						}
+					}
+					add_opinion = {
+						modifier = improved_roman_priveleges_minority
+						target = root
+					}
+				}
+			}
+		}
+	
+		#Keep the laws united
+		hidden_effect = {
+			every_vassal_or_below = { add_realm_law_skip_effects = non_roman_minority_rule_law_3 }
+		}
+	}
+	ai_will_do = {
+		value = 1
+		#Ethos
+		if = { #Stoic avoid extremes
+			limit = { culture = { has_cultural_pillar = ethos_communal } }
+			add = 25
+		}
+		if = { #Bureaucratic avoid extremes
+			limit = { culture = { has_cultural_pillar = ethos_bureaucratic } }
+			add = 25
+		}
+		if = { #Sharing an Ethos with a Roman culture in your capital really makes things more likely
+			limit = {
+				
+				root.capital_county.culture = { has_cultural_parameter = greco_roman_social_tradition }
+				culture != root.capital_county.culture
+				culture = { has_same_culture_ethos = root.capital_county.culture }
+			}
+			add = 50
+		}
+		#Bonuses
+		if = { #Visigoths tend to be conciliatory towards Romans
+			limit = { culture = { has_cultural_tradition = tradition_visigothic_codes } }
+			add = 100
+		}
+		if = { #Franks are totes Romans, honest!
+			limit = { culture = { has_cultural_tradition = tradition_frankish_traditions } }
+			add = 50
+		}
+		if = { #Loyal Soldiers tend to want to get along
+			limit = { culture = { has_cultural_parameter = doesnt_care_about_culture_faith_in_factions } }
+			add = 50
+		}
+		if = { #Xenophiles will align with wherever they are
+			limit = { culture = { has_cultural_tradition = tradition_xenophilic } }
+			add = 25
+		}
+		if = { #Religion Blending sort of stuff
+			limit = { culture = { has_cultural_parameter = more_easily_converted } }
+			value = 25
+		}
+		if = { #Culture Blending sort of stuff
+			limit = { culture = { has_cultural_parameter = cheaper_to_hybridize } }
+			value = 25
+		}
+		#Maluses
+		if = { #WtWSMS: For the Love of the Game
+			limit = {
+				culture = { has_cultural_tradition = tradition_punic_traditions }
+				culture = { has_cultural_tradition = tradition_persian_traditions }
+				culture = { has_cultural_tradition = tradition_persian_traditions_non_dlc }
+			}
+			value = -100
+		}
+		if = { #Isolationists want nothing to do with Romans
+			limit = { culture = { has_cultural_parameter = ai_doesnt_marry_outside_culture } }
+			add = -50
+		}
+		if = { #Jew's don't care to be Roman
+			limit = { culture = { has_cultural_tradition = tradition_diasporic } }
+			value = -50
+		}
+		if = { #Staunch Traditionalists don't like Romans
+			limit = { culture = { has_cultural_parameter = harder_to_hybridize } }
+			value = -50
+		}
+		if = { #WtWSMS Traditionalists/Anti-Romans
+			limit = {
+				culture = { has_cultural_tradition = tradition_marauders }
+				culture = { has_cultural_tradition = tradition_marauders_non_dlc }
+				culture = { has_cultural_tradition = tradition_xenophobic }
+				culture = { has_cultural_tradition = tradition_xenophobic_non_dlc }
+				culture = { has_cultural_tradition = tradition_autochthon_identity }
+				culture = { has_cultural_tradition = tradition_armenian_traditions }
+				culture = { has_cultural_tradition = tradition_armenian_traditions_non_dlc }
+				culture = { has_cultural_tradition = tradition_hebrew_traditions }
+				culture = { has_cultural_tradition = tradition_hebrew_traditions_non_dlc }
+				culture = { has_cultural_tradition = tradition_egyptian_traditions }
+				culture = { has_cultural_tradition = tradition_egyptian_traditions_non_dlc }
+				culture = { has_cultural_tradition = tradition_caucasian_mountain_homes }
+				culture = { has_cultural_tradition = tradition_caucasian_mountain_homes_non_dlc }
+				culture = { has_cultural_tradition = tradition_early_slavic_traditions }
+			}
+			value = -50
+		}
+		if = { #Strong believers keep to themselves (can't use the calc_faith trigger?)
+			limit = { culture = { has_cultural_parameter = harder_to_convert_character_faith } }
+			value = -50
+		}
+		if = { #Tribal Unity makes us want to avoid the Romans
+			limit = { culture = { has_cultural_parameter = landing_house_members_give_prestige } }
+			value = -25
+		}
+		if = { #Ruling caste is disinclined to get along
+			limit = { culture = { has_cultural_tradition = tradition_ruling_caste } }
+			value = -25
+		}
+		if = { #Tribal hierarchy is disinclined to get along
+			limit = { culture = { has_cultural_tradition = tradition_tribal_hierarchy } }
+			value = -25
+		}
+	}
+}
+non_roman_minority_rule_law_4 = { #Alignment; see late Visigoths (eventually)
+	law_group_type = non_roman_minority_rule_law
+	index = 4
+
+	can_keep = {
+		bp_can_have_roman_minority_law_trigger = yes
+		#Lock into top liege's law
+		trigger_if = {
+			limit = { top_liege != this }
+			liege = { has_realm_law = non_roman_minority_rule_law_4 }
+		}
+	}
+	
+	can_pass = {
+		#Only Top liege
+		top_liege = this
+		#Only adjacent
+		has_realm_law = non_roman_minority_rule_law_3
+		#Not on cooldown
+		custom_description = {
+			subject = root
+			text = "has_non_roman_minority_rule_law_cooldown"
+			NOT = { has_variable = non_roman_minority_rule_law_cooldown }
+		}
+	}
+	
+	modifier = {}
+	flag = cannot_demand_romans_change_religion
+	flag = close_family_gets_appointment_exception
+	flag = imperial_church_protected
+	flag = reduced_chance_to_convert_to_local_culture
+	
+	#Shifting laws should please Romans/anger minorities unless fickle/eccentric (opposite of stubborn)
+	pass_cost = {
+		prestige = {
+			if = { #Only the top liege pays for this
+				limit = { top_liege = this }
+				add = change_non_roman_minority_rule_law_basic_cost
+			}
+		}
+		influence = {
+			if = { #Only the top liege pays for this
+				limit = {
+					top_liege = this
+					government_has_flag = government_has_influence
+				}
+				add = change_non_roman_minority_rule_law_basic_cost
+			}
+		}
+	}
+	on_pass = {
+		set_variable = {
+			name = non_roman_minority_rule_law_cooldown
+			years = @non_roman_minority_rule_law_cooldown
+		}
+		#Apply opinions kingdom-wide when the ruler applies a new law
+		if = {
+			limit = {
+				top_liege = this
+				has_realm_law = non_roman_minority_rule_law_3
+			}
+			custom_description = {
+				text = all_roman_vassal_approve
+				subject = root
+				value = change_non_roman_minority_rule_law_opinion_value
+				every_vassal_or_below = {
+					limit = { culture = { has_cultural_parameter = greco_roman_social_tradition } }
+					add_opinion = {
+						modifier = improved_roman_priveleges_roman
+						target = root
+					}
+				}
+				every_courtier = {
+					limit = { culture = { has_cultural_parameter = greco_roman_social_tradition } }
+					add_opinion = {
+						modifier = improved_roman_priveleges_roman
+						target = root
+					}
+				}
+			}
+			custom_description = {
+				text = all_vassals_your_culture_or_migratory_disapprove
+				subject = root
+				value = change_non_roman_minority_rule_law_opinion_value_negative
+				every_vassal_or_below = {
+					limit = {
+						OR = {
+							culture = root.culture
+							culture = { has_cultural_tradition = tradition_elite_rulership }
+						}
+					}
+					add_opinion = {
+						modifier = improved_roman_priveleges_minority
+						target = root
+					}
+				}
+				every_courtier = {
+					limit = {
+						OR = {
+							culture = root.culture
+							culture = { has_cultural_tradition = tradition_elite_rulership }
+						}
+					}
+					add_opinion = {
+						modifier = improved_roman_priveleges_minority
+						target = root
+					}
+				}
+			}
+		}
+	
+		#Keep the laws united
+		hidden_effect = {
+			every_vassal_or_below = { add_realm_law_skip_effects = non_roman_minority_rule_law_4 }
+		}
+	}
+	ai_will_do = {
+		value = 0
+		#Sharing an Ethos with a Roman culture in your capital really makes things more likely
+		if = {
+			limit = {
+				
+				root.capital_county.culture = { has_cultural_parameter = greco_roman_social_tradition }
+				culture != root.capital_county.culture
+				culture = { has_same_culture_ethos = root.capital_county.culture }
+			}
+			add = 50
+		}
+		#Bonuses
+		if = { #Franks are totes Romans, honest!
+			limit = { culture = { has_cultural_tradition = tradition_frankish_traditions } }
+			add = 75
+		}
+		if = { #Xenophiles will align with wherever they are
+			limit = { culture = { has_cultural_tradition = tradition_xenophilic } }
+			add = 50
+		}
+		if = { #Religion Blending sort of stuff
+			limit = { culture = { has_cultural_parameter = more_easily_converted } }
+			value = 50
+		}
+		if = { #Culture Blending sort of stuff
+			limit = { culture = { has_cultural_parameter = cheaper_to_hybridize } }
+			value = 50
+		}
+		if = { #Loyal Soldiers tend to want to get along
+			limit = { culture = { has_cultural_parameter = doesnt_care_about_culture_faith_in_factions } }
+			add = 25
+		}
+		#Maluses
+		if = { #WtWSMS: For the Love of the Game
+			limit = {
+				culture = { has_cultural_tradition = tradition_punic_traditions }
+				culture = { has_cultural_tradition = tradition_persian_traditions }
+				culture = { has_cultural_tradition = tradition_persian_traditions_non_dlc }
+			}
+			value = -200
+		}
+		if = { #Isolationists want nothing to do with Romans
+			limit = { culture = { has_cultural_parameter = ai_doesnt_marry_outside_culture } }
+			add = -75
+		}
+		if = { #Jew's don't care to be Roman
+			limit = { culture = { has_cultural_tradition = tradition_diasporic } }
+			value = -75
+		}
+		if = { #Staunch Traditionalists don't like Romans
+			limit = { culture = { has_cultural_parameter = harder_to_hybridize } }
+			value = -75
+		}
+		if = { #Strong believers keep to themselves (can't use the calc_faith trigger?)
+			limit = { culture = { has_cultural_parameter = harder_to_convert_character_faith } }
+			value = -75
+		}
+		if = { #WtWSMS Traditionalists/Anti-Romans
+			limit = {
+				culture = { has_cultural_tradition = tradition_marauders }
+				culture = { has_cultural_tradition = tradition_marauders_non_dlc }
+				culture = { has_cultural_tradition = tradition_xenophobic }
+				culture = { has_cultural_tradition = tradition_xenophobic_non_dlc }
+				culture = { has_cultural_tradition = tradition_autochthon_identity }
+				culture = { has_cultural_tradition = tradition_armenian_traditions }
+				culture = { has_cultural_tradition = tradition_armenian_traditions_non_dlc }
+				culture = { has_cultural_tradition = tradition_hebrew_traditions }
+				culture = { has_cultural_tradition = tradition_hebrew_traditions_non_dlc }
+				culture = { has_cultural_tradition = tradition_egyptian_traditions }
+				culture = { has_cultural_tradition = tradition_egyptian_traditions_non_dlc }
+				culture = { has_cultural_tradition = tradition_caucasian_mountain_homes }
+				culture = { has_cultural_tradition = tradition_caucasian_mountain_homes_non_dlc }
+				culture = { has_cultural_tradition = tradition_early_slavic_traditions }
+			}
+			value = -75
+		}
+		if = { #Tribal Unity makes us want to avoid the Romans
+			limit = { culture = { has_cultural_parameter = landing_house_members_give_prestige } }
+			value = -50
+		}
+		if = { #Ruling caste is disinclined to get along
+			limit = { culture = { has_cultural_tradition = tradition_ruling_caste } }
+			value = -50
+		}
+		if = { #Tribal hierarchy is disinclined to get along
+			limit = { culture = { has_cultural_tradition = tradition_tribal_hierarchy } }
+			value = -50
+		}
+	}
+}
+

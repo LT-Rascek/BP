@@ -9,174 +9,99 @@
 # flag = unlock_expel_religious_minorities
 # flag = unlock_expel_cultural_minorities
 
-religious_minority_status_law = {
-	default = religious_minority_status_2
-	flag = religion_culture_law
-	flag = religion_law
-	flag = other_law #aka, not a true "Realm Law"; not manipulable like one
+religious_minority_status_1 = {
+	law_group_type = religious_minority_status_law
+	index = 0
 
-	# Laws only apply to astray and lower faiths
+	modifier = {
+		zealot_opinion = -10
+		minority_opinion = 10
+		clergy_opinion = -5
+	}
 
-	religious_minority_status_1 = {
+	flag = religious_minorities_may_grow
+	flag = religious_minorities_may_migrate
 
-		modifier = {
-			zealot_opinion = -10
-			minority_opinion = 10
-			clergy_opinion = -5
-		}
+	can_have = { other_law_have_minority_law_trigger = yes }
 
-		flag = religious_minorities_may_grow
-		flag = religious_minorities_may_migrate
-
-		can_have = { other_law_have_minority_law_trigger = yes }
-
-		can_pass = {
-			has_realm_law = religious_minority_status_2
-			custom_description = {
-				subject = root
-				text = "has_minority_law_cooldown"
-				NOT = { has_variable = minority_law_cooldown }
-			}
-		}
-
-		pass_cost = {
-			prestige = medium_prestige_value
-		}
-
-		on_pass = {
-			set_variable = {
-				name = minority_law_cooldown
-				years = @minority_law_cooldown_years
-			}
-		}
-
-		ai_will_do = {
-			value = 0
-			# Factor for personality
-			add = ai_honor
-			add = ai_compassion
-
-			add = {
-				value = ai_zeal
-				multiply = -1
-			}
-			add = {
-				value = ai_vengefulness
-				multiply = -1
-			}
+	can_pass = {
+		has_realm_law = religious_minority_status_2
+		custom_description = {
+			subject = root
+			text = "has_minority_law_cooldown"
+			NOT = { has_variable = minority_law_cooldown }
 		}
 	}
 
-	religious_minority_status_2 = {
+	pass_cost = {
+		prestige = medium_prestige_value
+	}
 
-		modifier = {}
-
-		flag = may_convert_faith
-		flag = religious_minorities_may_migrate
-
-		should_start_with = { always = yes }
-		
-		can_have = { other_law_have_minority_law_trigger = yes }
-
-		can_pass = {
-			OR = {
-				has_realm_law = religious_minority_status_1
-				has_realm_law = religious_minority_status_3
-			}
-			custom_description = {
-				subject = root
-				text = "has_minority_law_cooldown"
-				NOT = { has_variable = minority_law_cooldown }
-			}
-		}
-
-		pass_cost = {
-			prestige = medium_prestige_value
-		}
-
-		on_pass = {
-			set_variable = {
-				name = minority_law_cooldown
-				years = @minority_law_cooldown_years
-			}
-		}
-
-		ai_will_do = {
-			value = 0
-
-			if = {
-				# Chance to be intolerant
-				limit = { has_realm_law = religious_minority_status_1 }
-
-				# Factor for personality
-				add = ai_zeal
-				add = ai_vengefulness
-
-				add = {
-					value = ai_honor
-					multiply = -1
-				}
-				add = {
-					value = ai_compassion
-					multiply = -1
-				}
-			}
-			else_if = {
-				# Chance to be tolerant
-				limit = { has_realm_law = religious_minority_status_3 }
-
-				# Factor for personality
-				add = ai_honor
-				add = ai_compassion
-
-				add = {
-					value = ai_zeal
-					multiply = -1
-				}
-				add = {
-					value = ai_vengefulness
-					multiply = -1
-				}
-			}
+	on_pass = {
+		set_variable = {
+			name = minority_law_cooldown
+			years = @minority_law_cooldown_years
 		}
 	}
 
-	religious_minority_status_3 = {
+	ai_will_do = {
+		value = 0
+		# Factor for personality
+		add = ai_honor
+		add = ai_compassion
 
-		modifier = {
-			zealot_opinion = 10
-			minority_opinion = -10
-			courtly_opinion = 5
+		add = {
+			value = ai_zeal
+			multiply = -1
 		}
-
-		flag = may_convert_faith
-		flag = unlock_expel_religious_minorities
-		# Minorities should not spread to this realm
-		
-		can_have = { other_law_have_minority_law_trigger = yes }
-
-		can_pass = {
-			has_realm_law = religious_minority_status_2
-			custom_description = {
-				subject = root
-				text = "has_minority_law_cooldown"
-				NOT = { has_variable = minority_law_cooldown }
-			}
+		add = {
+			value = ai_vengefulness
+			multiply = -1
 		}
+	}
+}
+religious_minority_status_2 = {
+	law_group_type = religious_minority_status_law
+	index = 1
 
-		pass_cost = {
-			prestige = medium_prestige_value
+	modifier = {}
+
+	flag = may_convert_faith
+	flag = religious_minorities_may_migrate
+
+	should_start_with = { always = yes }
+	
+	can_have = { other_law_have_minority_law_trigger = yes }
+
+	can_pass = {
+		OR = {
+			has_realm_law = religious_minority_status_1
+			has_realm_law = religious_minority_status_3
 		}
-
-		on_pass = {
-			set_variable = {
-				name = minority_law_cooldown
-				years = @minority_law_cooldown_years
-			}
+		custom_description = {
+			subject = root
+			text = "has_minority_law_cooldown"
+			NOT = { has_variable = minority_law_cooldown }
 		}
+	}
 
-		ai_will_do = {
-			value = 0
+	pass_cost = {
+		prestige = medium_prestige_value
+	}
+
+	on_pass = {
+		set_variable = {
+			name = minority_law_cooldown
+			years = @minority_law_cooldown_years
+		}
+	}
+
+	ai_will_do = {
+		value = 0
+
+		if = {
+			# Chance to be intolerant
+			limit = { has_realm_law = religious_minority_status_1 }
 
 			# Factor for personality
 			add = ai_zeal
@@ -188,54 +113,192 @@ religious_minority_status_law = {
 			}
 			add = {
 				value = ai_compassion
+				multiply = -1
+			}
+		}
+		else_if = {
+			# Chance to be tolerant
+			limit = { has_realm_law = religious_minority_status_3 }
+
+			# Factor for personality
+			add = ai_honor
+			add = ai_compassion
+
+			add = {
+				value = ai_zeal
+				multiply = -1
+			}
+			add = {
+				value = ai_vengefulness
 				multiply = -1
 			}
 		}
 	}
 }
+religious_minority_status_3 = {
+	law_group_type = religious_minority_status_law
+	index = 3
 
-cultural_minority_status_law = {
-	default = cultural_minority_status_2
-	flag = religion_culture_law
-	flag = culture_law
-	flag = other_law #aka, not a true "Realm Law"; not manipulable like one
+	modifier = {
+		zealot_opinion = 10
+		minority_opinion = -10
+		courtly_opinion = 5
+	}
 
-	# Laws only apply to other heritage cultures
+	flag = may_convert_faith
+	flag = unlock_expel_religious_minorities
+	# Minorities should not spread to this realm
+	
+	can_have = { other_law_have_minority_law_trigger = yes }
 
-	cultural_minority_status_1 = {
-
-		modifier = {
-			courtly_opinion = -10
-			minority_opinion = 10
+	can_pass = {
+		has_realm_law = religious_minority_status_2
+		custom_description = {
+			subject = root
+			text = "has_minority_law_cooldown"
+			NOT = { has_variable = minority_law_cooldown }
 		}
+	}
 
-		flag = cultural_minorities_may_grow
-		flag = cultural_minorities_may_migrate
-		
-		can_have = { other_law_have_minority_law_trigger = yes }
+	pass_cost = {
+		prestige = medium_prestige_value
+	}
 
-		can_pass = {
-			has_realm_law = cultural_minority_status_2
-			custom_description = {
-				subject = root
-				text = "has_minority_law_cooldown"
-				NOT = { has_variable = minority_law_cooldown }
+	on_pass = {
+		set_variable = {
+			name = minority_law_cooldown
+			years = @minority_law_cooldown_years
+		}
+	}
+
+	ai_will_do = {
+		value = 0
+
+		# Factor for personality
+		add = ai_zeal
+		add = ai_vengefulness
+
+		add = {
+			value = ai_honor
+			multiply = -1
+		}
+		add = {
+			value = ai_compassion
+			multiply = -1
+		}
+	}
+}
+
+cultural_minority_status_1 = {
+	law_group_type = cultural_minority_status_law
+	index = 0
+
+	modifier = {
+		courtly_opinion = -10
+		minority_opinion = 10
+	}
+
+	flag = cultural_minorities_may_grow
+	flag = cultural_minorities_may_migrate
+	
+	can_have = { other_law_have_minority_law_trigger = yes }
+
+	can_pass = {
+		has_realm_law = cultural_minority_status_2
+		custom_description = {
+			subject = root
+			text = "has_minority_law_cooldown"
+			NOT = { has_variable = minority_law_cooldown }
+		}
+	}
+
+	pass_cost = {
+		prestige = medium_prestige_value
+	}
+
+	on_pass = {
+		set_variable = {
+			name = minority_law_cooldown
+			years = @minority_law_cooldown_years
+		}
+	}
+
+	ai_will_do = {
+		value = 0
+		# Factor for personality
+		add = ai_honor
+		add = ai_compassion
+
+		add = {
+			value = ai_zeal
+			multiply = -1
+		}
+		add = {
+			value = ai_vengefulness
+			multiply = -1
+		}
+	}
+}
+cultural_minority_status_2 = {
+	law_group_type = cultural_minority_status_law
+	index = 1
+
+	modifier = {}
+
+	flag = may_convert_culture
+	flag = cultural_minorities_may_migrate
+
+	can_have = { other_law_have_minority_law_trigger = yes }
+
+	should_start_with = { always = yes }
+
+	can_pass = {
+		OR = {
+			has_realm_law = cultural_minority_status_1
+			has_realm_law = cultural_minority_status_3
+		}
+		custom_description = {
+			subject = root
+			text = "has_minority_law_cooldown"
+			NOT = { has_variable = minority_law_cooldown }
+		}
+	}
+
+	pass_cost = {
+		prestige = medium_prestige_value
+	}
+
+	on_pass = {
+		set_variable = {
+			name = minority_law_cooldown
+			years = @minority_law_cooldown_years
+		}
+	}
+
+	ai_will_do = {
+		value = 0
+
+		if = {
+			# Chance to be intolerant
+			limit = { has_realm_law = cultural_minority_status_1 }
+
+			# Factor for personality
+			add = ai_zeal
+			add = ai_vengefulness
+
+			add = {
+				value = ai_honor
+				multiply = -1
+			}
+			add = {
+				value = ai_compassion
+				multiply = -1
 			}
 		}
+		else_if = {
+			# Chance to be tolerant
+			limit = { has_realm_law = cultural_minority_status_3 }
 
-		pass_cost = {
-			prestige = medium_prestige_value
-		}
-
-		on_pass = {
-			set_variable = {
-				name = minority_law_cooldown
-				years = @minority_law_cooldown_years
-			}
-		}
-
-		ai_will_do = {
-			value = 0
 			# Factor for personality
 			add = ai_honor
 			add = ai_compassion
@@ -250,127 +313,54 @@ cultural_minority_status_law = {
 			}
 		}
 	}
+}
+cultural_minority_status_3 = {
+	law_group_type = cultural_minority_status_law
+	index = 3
 
-	cultural_minority_status_2 = {
+	modifier = {
+		courtly_opinion = 10
+		minority_opinion = -10
+	}
 
-		modifier = {}
+	flag = may_convert_culture
+	flag = unlock_expel_cultural_minorities
 
-		flag = may_convert_culture
-		flag = cultural_minorities_may_migrate
+	can_have = { other_law_have_minority_law_trigger = yes }
 
-		can_have = { other_law_have_minority_law_trigger = yes }
-
-		should_start_with = { always = yes }
-
-		can_pass = {
-			OR = {
-				has_realm_law = cultural_minority_status_1
-				has_realm_law = cultural_minority_status_3
-			}
-			custom_description = {
-				subject = root
-				text = "has_minority_law_cooldown"
-				NOT = { has_variable = minority_law_cooldown }
-			}
-		}
-
-		pass_cost = {
-			prestige = medium_prestige_value
-		}
-
-		on_pass = {
-			set_variable = {
-				name = minority_law_cooldown
-				years = @minority_law_cooldown_years
-			}
-		}
-
-		ai_will_do = {
-			value = 0
-
-			if = {
-				# Chance to be intolerant
-				limit = { has_realm_law = cultural_minority_status_1 }
-
-				# Factor for personality
-				add = ai_zeal
-				add = ai_vengefulness
-
-				add = {
-					value = ai_honor
-					multiply = -1
-				}
-				add = {
-					value = ai_compassion
-					multiply = -1
-				}
-			}
-			else_if = {
-				# Chance to be tolerant
-				limit = { has_realm_law = cultural_minority_status_3 }
-
-				# Factor for personality
-				add = ai_honor
-				add = ai_compassion
-
-				add = {
-					value = ai_zeal
-					multiply = -1
-				}
-				add = {
-					value = ai_vengefulness
-					multiply = -1
-				}
-			}
+	can_pass = {
+		has_realm_law = cultural_minority_status_2
+		custom_description = {
+			subject = root
+			text = "has_minority_law_cooldown"
+			NOT = { has_variable = minority_law_cooldown }
 		}
 	}
 
-	cultural_minority_status_3 = {
+	pass_cost = {
+		prestige = medium_prestige_value
+	}
 
-		modifier = {
-			courtly_opinion = 10
-			minority_opinion = -10
+	on_pass = {
+		set_variable = {
+			name = minority_law_cooldown
+			years = @minority_law_cooldown_years
 		}
+	}
 
-		flag = may_convert_culture
-		flag = unlock_expel_cultural_minorities
+	ai_will_do = {
+		value = 0
+		# Factor for personality
+		add = ai_zeal
+		add = ai_vengefulness
 
-		can_have = { other_law_have_minority_law_trigger = yes }
-
-		can_pass = {
-			has_realm_law = cultural_minority_status_2
-			custom_description = {
-				subject = root
-				text = "has_minority_law_cooldown"
-				NOT = { has_variable = minority_law_cooldown }
-			}
+		add = {
+			value = ai_honor
+			multiply = -1
 		}
-
-		pass_cost = {
-			prestige = medium_prestige_value
-		}
-
-		on_pass = {
-			set_variable = {
-				name = minority_law_cooldown
-				years = @minority_law_cooldown_years
-			}
-		}
-
-		ai_will_do = {
-			value = 0
-			# Factor for personality
-			add = ai_zeal
-			add = ai_vengefulness
-
-			add = {
-				value = ai_honor
-				multiply = -1
-			}
-			add = {
-				value = ai_compassion
-				multiply = -1
-			}
+		add = {
+			value = ai_compassion
+			multiply = -1
 		}
 	}
 }

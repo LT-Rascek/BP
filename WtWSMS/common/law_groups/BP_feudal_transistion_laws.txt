@@ -1,0 +1,62 @@
+﻿#Administrative Variants
+subroman_administrative_military_centralization_top_liege_law = {
+	required_government_flag = { government_is_subroman_administrative }
+	default = subroman_administrative_military_centralization_top_liege_law_0
+	cumulative = no
+	flag = subroman_administrative_military_centralization_law
+}
+subroman_administrative_military_centralization_vassal_law = {
+	required_government_flag = { government_is_subroman_administrative }
+	default = subroman_administrative_military_centralization_vassal_law_0
+	cumulative = no
+	flag = subroman_administrative_military_centralization_law
+}
+subroman_administrative_taxation_top_liege_law = {
+	required_government_flag = { government_is_subroman_administrative }
+	default = subroman_administrative_taxation_top_liege_law_0
+	cumulative = no
+	flag = subroman_administrative_taxation_law
+}
+subroman_administrative_taxation_vassal_law = {
+	required_government_flag = { government_is_subroman_administrative }
+	default = subroman_administrative_taxation_vassal_law_0
+	cumulative = no
+	flag = subroman_administrative_taxation_law
+}
+subroman_administrative_aristocracy_law = {
+	required_government_flag = { government_is_subroman_administrative }
+	default = subroman_administrative_aristocracy_law_0
+	cumulative = no
+	flag = subroman_administrative_aristocracy_law
+}
+#Dynastic Variants
+subroman_dynastic_military_centralization_top_liege_law = {
+	required_government_flag = { government_is_subroman_dynastic }
+	default = subroman_dynastic_military_centralization_top_liege_law_0
+	cumulative = no
+	flag = subroman_administrative_military_centralization_law
+}
+subroman_dynastic_military_centralization_vassal_law = {
+	required_government_flag = { government_is_subroman_dynastic }
+	default = subroman_dynastic_military_centralization_vassal_law_0
+	cumulative = no
+	flag = subroman_administrative_military_centralization_law
+}
+subroman_dynastic_taxation_top_liege_law = {
+	required_government_flag = { government_is_subroman_dynastic }
+	default = subroman_dynastic_taxation_top_liege_law_0
+	cumulative = no
+	flag = subroman_administrative_taxation_law
+}
+subroman_dynastic_taxation_vassal_law = {
+	required_government_flag = { government_is_subroman_dynastic }
+	default = subroman_dynastic_taxation_vassal_law_0
+	cumulative = no
+	flag = subroman_administrative_taxation_law
+}
+subroman_dynastic_aristocracy_law = {
+	required_government_flag = { government_is_subroman_dynastic }
+	default = subroman_dynastic_aristocracy_law_0
+	cumulative = no
+	flag = subroman_administrative_aristocracy_law
+}

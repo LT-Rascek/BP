@@ -1,0 +1,10 @@
+﻿##### Changed from Vanilla: Added locks if lacking innovation_formalized_rituals
+crowned_laws = {
+	default = uncrowned
+	cumulative = no
+	flag = realm_law
+	flag = realm_law_no_number
+	flag = realm_no_pass
+	
+	can_have_group = { culture = { has_innovation = innovation_formalized_rituals } }
+}
