@@ -481,7 +481,6 @@ bp_clergy_clothes = {
 				add = 360
 				OR = {
 					religion = religion:semitic_religion
-					religion = religion:assyrian_religion
 				}
 				portrait_wear_no_armor_trigger = yes
 				portrait_religious_head_trigger = yes
@@ -633,7 +632,7 @@ bp_clergy_headgear = {
 			base = 0
 			modifier = {
 				add = 120
-				portrait_religious_head_caliph_trigger = { RELIGION_INPUT = semitic_religion }
+				portrait_religious_head_caliph_trigger = { RELIGION_INPUT = semitic }
 				has_ep1_dlc_trigger = yes
 			}
 		}
