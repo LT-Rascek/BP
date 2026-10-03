@@ -1,0 +1,75 @@
+﻿armenian_apostolic = {
+	# Scripted main Rite: armenian_rite (all start dates). Its core tenets and Rite-specific doctrines are defined on the Rite; faith-intrinsic doctrines remain inline.
+
+	faith_details = {
+		religion = christianity_religion
+		color = { 0.8 0.4 0.1 }
+		icon = christianity_armenian
+		graphical_faith = "orthodox_gfx"
+		religious_head = d_apostolic_church
+	}
+
+	eminent_holy_sites = {
+		dvin
+		jerusalem
+	}
+
+	holy_sites = {
+		antioch
+		ani
+	}
+
+	doctrines = {
+		special_doctrine_ecumenical_miaphysite
+		special_doctrine_is_eastern_christian_faith
+	}
+
+	localization = { # Utilizes the 'East Christian' Saints, shared by Coptics and Armenians
+		#HealthGod
+		HealthGodName = east_christian_health_god_name
+		HealthGodNamePossessive = east_christian_health_god_name_possessive
+		HealthGodSheHe = CHARACTER_SHEHE_HE
+		HealthGodHerHis = CHARACTER_HERHIS_HIS
+		HealthGodHerHim = CHARACTER_HERHIM_HIM
+
+		#FertilityGod
+		FertilityGodName = east_christian_fertility_god_name
+		FertilityGodNamePossessive = east_christian_fertility_god_name_possessive
+		FertilityGodSheHe = CHARACTER_SHEHE_SHE
+		FertilityGodHerHis = CHARACTER_HERHIS_HER
+		FertilityGodHerHim = CHARACTER_HERHIM_HER
+
+		#WealthGod
+		WealthGodName = east_christian_wealth_god_name
+		WealthGodNamePossessive = east_christian_wealth_god_name_possessive
+		WealthGodSheHe = CHARACTER_SHEHE_HE
+		WealthGodHerHis = CHARACTER_HERHIS_HIS
+		WealthGodHerHim = CHARACTER_HERHIM_HIM
+
+		#HouseholdGod
+		HouseholdGodName = east_christian_household_god_name
+		HouseholdGodNamePossessive = east_christian_household_god_name_possessive
+		HouseholdGodSheHe = CHARACTER_SHEHE_HE
+		HouseholdGodHerHis = CHARACTER_HERHIS_HIS
+		HouseholdGodHerHim = CHARACTER_HERHIM_HIM
+
+		#KnowledgeGod
+		KnowledgeGodName = east_christian_knowledge_god_name
+		KnowledgeGodNamePossessive = east_christian_knowledge_god_name_possessive
+		KnowledgeGodSheHe = CHARACTER_SHEHE_HE
+		KnowledgeGodHerHis = CHARACTER_HERHIS_HIS
+		KnowledgeGodHerHim = CHARACTER_HERHIM_HIM
+
+		#WarGod
+		WarGodName = east_christian_war_god_name
+		WarGodNamePossessive = east_christian_war_god_name_possessive
+		WarGodSheHe = CHARACTER_SHEHE_HE
+		WarGodHerHis = CHARACTER_HERHIS_HIS
+		WarGodHerHim = CHARACTER_HERHIM_HIM
+
+		#Catholicoi instead of Popes
+		ReligiousHeadName = apostolic_religious_head_title
+		ReligiousHeadNameFemale = apostolic_religious_head_title
+		ReligiousHeadTitleName = apostolic_religious_head_title_name
+	}
+}
