@@ -195,20 +195,12 @@ culture_acceptance_baseline = {
 
 				any_culture_county = {
 					percent >= 0.5
-					title_province = {
-						religion = {
-							is_in_family = rf_eastern
-						}
-					}
+					this.religion ?= { is_in_family = rf_eastern }
 				}
 				scope:culture = {
 					any_culture_county = {
 						percent >= 0.5
-						title_province = {
-							religion = {
-								is_in_family = rf_eastern
-							}
-						}
+						this.religion ?= { is_in_family = rf_eastern }
 					}
 				}
 			}
@@ -227,20 +219,12 @@ culture_acceptance_baseline = {
 				}
 				any_culture_county = {
 					percent >= 0.5
-					title_province = {
-						rite = {
-							rite_has_doctrine = doctrine_pluralism_pluralistic
-						}
-					}
+					this.rite ?= { rite_has_doctrine = doctrine_pluralism_pluralistic }
 				}
 				scope:culture ?= {
 					any_culture_county = {
 						percent >= 0.5
-						title_province = {
-							rite = {
-								rite_has_doctrine = doctrine_pluralism_pluralistic
-							}
-						}
+						this.rite ?= { rite_has_doctrine = doctrine_pluralism_pluralistic }
 					}
 				}
 				OR = {
