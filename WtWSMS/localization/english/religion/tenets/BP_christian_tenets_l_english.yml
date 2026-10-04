@@ -1,8 +1,25 @@
 ﻿l_english:
+ tenet_arianism_default_desc: "$tenet_arianism_desc$"
+ tenet_arianism_default_name: "$tenet_arianism_name$"
  tenet_arianism_desc: "An exonym for a variety of somewhat compatible positions, including Homoianism and Eunomianism, all of which assert that Christ, as he was begotten by the Father, had a time where he did not exist."
+ tenet_arianism_gothic_desc: "We believe in one God the Father, the only unbegotten and invisible, and in his only-begotten son, our Lord and God, the designer and maker of all creation, having none other like him, so that one alone among all beings is God the Father, who is also the God of our God; and in one Holy Ghost, the illuminating and sanctifying power, as Christ said after his resurrection to his apostles: \"And behold, I send the promise of my Father upon you; but tarry ye in the city of Jerusalem, until ye be clothed with power from on high\" (Luke 24:49) and again \"But ye shall receive power, when the Holy Ghost is come upon you" (Acts 1:8); being neither God (the Father) nor our God (Christ), but the minister of Christ... subject and obedient in all things to the Son; and the Son, subject and obedient in all things to God who is his Father... (whom) he ordained in the Holy Ghost through his Christ\"." #Wiki about Ulfilas
+ tenet_arianism_gothic_name: "Wulfilasism"
+ tenet_arianism_greek_desc: "If the Father begat the Son, he that was begotten had a beginning of existence: hence it is that there was when the Son was not. It follows then of necessity that he had his existence from the non-existence" #Arius' Syllogism
+ tenet_arianism_greek_name: "Areianismós"
+ tenet_arianism_latin_desc: "But since many persons are disturbed by questions concerning what is called in Latin substantia, but in Greek ousia, that is, to make it understood more exactly, as to 'coessential,' or what is called, 'like-in-essence,' there ought to be no mention of any of these at all, nor exposition of them in the Church, for this reason and for this consideration, that in divine Scripture nothing is written about them, and that they are above men's knowledge and above men's understanding" #Wiki about the Councils of Sirmium
+ tenet_arianism_latin_name: "Arianismus"
  tenet_arianism_name: "Arianism"
  tenet_complex_exegesis_desc: "[ROOT.Faith.ReligiousText] is full of allegory, with many personal interpretations. This opens up avenues for discovery of the divine, but may impede the unenlightened who follow a scholarly path."
  tenet_complex_exegesis_name: "Complex Exegesis"
+ tenet_dyophysitism_aramaic_desc: "We profess that the Lord Jesus Christ has Two Natures (Trēn Kyānē), two concrete instances and realities (Trēn Qnōmē), of the two natures, in one person (Ḥdā Parṣōpā)."
+ tenet_dyophysitism_aramaic_name: "Trēn Kyānē"
+ tenet_dyophysitism_default_desc: "Two natures, divine and human, exist in the person of Jesus Christ."
+ tenet_dyophysitism_default_name: "Dyophysitism"
+ tenet_dyophysitism_greek_desc: "$tenet_dyophysitism_latin_desc$"
+ tenet_dyophysitism_greek_name: "Dyophysitismós"
+ tenet_dyophysitism_latin_desc: "We confess that one and the same Christ, Lord, and only-begotten Son, is to be acknowledged in two natures without confusion, change, division or separation. the distinction between the natures was never abolished by their union, but rather the character proper to each of the two natures was preserved as they came together in one person (prosopon) and one hypostasis."
+ tenet_dyophysitism_latin_name: "Dyophysitismus"
+ tenet_dyophysitism_name: "$tenet_dyophysitism_default_name$"
  tenet_ecstatic_prophecy_desc: "Our most pious followers are possessed by [ROOT.Faith.HighGodName] and are able to deliver dramatic prophecies to help guide the faithful."
  tenet_ecstatic_prophecy_name: "Ecstatic Prophecy"
  tenet_pelagianism_desc: "Adam's original sin did not taint human nature, but provided a bad example from which humans must work to free themselves."
@@ -14,7 +31,7 @@
  tenet_total_depravity_desc: "Because of Adam's sin, all of humanity is enslaved by sin, and apart from the grace of God, is unable to choose by themselves to refrain from evil or accept salvation."
  tenet_total_depravity_name: "Total Depravity"
  #Parameters
- doctrine_parameter_coutly_vassals_more_common: "[vassals|E] are more likely to have the [GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'zealot' ).GetName] [vassal_stance|E]"
+ doctrine_parameter_courtly_vassals_more_common: "[vassals|E] are more likely to have the [GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName] [vassal_stance|E]"
  doctrine_parameter_diligent_losses_more_stress: "[GetTrait('diligent').GetName( GetNullCharacter )] characters loose stress more easily"
  doctrine_parameter_gain_level_of_piety_when_adopting_this_tenet: "Gain a [piety_level|E] when adopting this tenet"
  doctrine_parameter_possessed_gain_personal_tenet_slot_add: "[GetTrait('possessed_1').GetName( GetNullCharacter )] [personal_tenets|E]: #P +1#!"

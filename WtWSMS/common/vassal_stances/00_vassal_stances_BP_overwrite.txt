@@ -85,7 +85,7 @@ courtly = {
 		##### Changed from Vanilla vvvvv
 		if = {
 			limit = {
-				rite = { rite_has_parameter = coutly_vassals_more_common }
+				rite = { rite_has_parameter = courtly_vassals_more_common }
 			}
 			multiply = 1.33
 		}
@@ -315,10 +315,12 @@ zealot = {
 		}
 		##### Changed from Vanilla vvvvv
 		if = {
-			limit = {
-				rite = { rite_has_parameter = zealot_vassals_less_common }
-			}
+			limit = { rite = { rite_has_parameter = zealot_vassals_less_common } }
 			multiply = 0.75
+		}
+		if = {
+			limit = { rite = { rite_has_parameter = zealot_vassals_more_common } }
+			multiply = 1.33
 		}
 		##### Changed from Vanilla ^^^^^
 		if = {

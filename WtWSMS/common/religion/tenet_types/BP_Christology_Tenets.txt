@@ -1,9 +1,41 @@
 ﻿tenet_dyophysitism = {
-	icon = tenet_two_nature
+	icon = tenet_dyophysite
 
-	name = tenet_dyophysitism_name
+	name = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { pam_latin_as_liturgical_language_trigger = yes }
+				desc = tenet_dyophysitism_latin_name
+			}
+			triggered_desc = {
+				trigger = { pam_greek_as_liturgical_language_trigger = yes }
+				desc = tenet_dyophysitism_greek_name
+			}
+			triggered_desc = {
+				trigger = { rite_has_parameter = liturgical_language_aramaic }
+				desc = tenet_dyophysitism_aramaic_name
+			}
+			desc = tenet_dyophysitism_default_name
+		}
+	}
 
-	desc = tenet_dyophysitism_desc
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { pam_latin_as_liturgical_language_trigger = yes }
+				desc = tenet_dyophysitism_latin_desc
+			}
+			triggered_desc = {
+				trigger = { pam_greek_as_liturgical_language_trigger = yes }
+				desc = tenet_dyophysitism_greek_desc
+			}
+			triggered_desc = {
+				trigger = { rite_has_parameter = liturgical_language_aramaic }
+				desc = tenet_dyophysitism_aramaic_desc
+			}
+			desc = tenet_dyophysitism_default_desc
+		}
+	}
 
 	is_shown = {}
 
@@ -28,12 +60,19 @@
 	divergence_multiplier = 1.5
 
 	character_modifier = {
-		different_faith_opinion = 15
+		max_sway_schemes_add = 1
+		same_faith_opinion = 10
+		monthly_piety_gain_per_happy_powerful_vassal_mult = 0.05
 	}
 
-	parameters = {}
+	parameters = {
+		zealot_vassals_more_common
+	}
 
-	personal_tenet_parameters = {}
+	personal_tenet_modifier = {
+		monthly_prestige_gain_mult = 0.10
+		character_spiritual_fulfillment_gain_mult = 0.1
+	}
 
 	traits = {
 		# Doctrinal fidelity to the one-united-nature formula vs. dissimulation under Chalcedonian pressure.
@@ -48,9 +87,47 @@
 tenet_arianism = {
 	icon = tenet_arianism
 
-	name = tenet_arianism_name
+	name = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					head_of_rite.culture ?= { has_cultural_parameter = language_group_east_germanic }
+				}
+				desc = tenet_arianism_gothic_name
+			}
+			triggered_desc = {
+				trigger = {
+					trigger = { rite_has_parameter = liturgical_language_latin }
+				}
+				desc = tenet_arianism_latin_name
+			}
+			triggered_desc = {
+				trigger = { rite_has_parameter = liturgical_language_greek }
+				desc = tenet_arianism_greek_name
+			}
+			desc = tenet_arianism_default_name
+		}
+	}
 
-	desc = tenet_arianism_desc
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					head_of_rite.culture ?= { has_cultural_parameter = language_group_east_germanic }
+				}
+				desc = tenet_arianism_gothic_desc
+			}
+			triggered_desc = {
+				trigger = { rite_has_parameter = liturgical_language_latin }
+				desc = tenet_arianism_latin_desc
+			}
+			triggered_desc = {
+				trigger = { rite_has_parameter = liturgical_language_greek }
+				desc = tenet_arianism_greek_desc
+			}
+			desc = tenet_arianism_default_desc
+		}
+	}
 
 	is_shown = {}
 
@@ -72,7 +149,7 @@ tenet_arianism = {
 		}
 	}
 
-	divergence_multiplier = 2.0
+	divergence_multiplier = 1.5
 
 	character_modifier = {
 		max_sway_schemes_add = 1
@@ -82,7 +159,7 @@ tenet_arianism = {
 
 	parameters = {
 		zealot_vassals_less_common
-		coutly_vassals_more_common
+		courtly_vassals_more_common
 	}
 
 	personal_tenet_modifier = {
@@ -91,17 +168,12 @@ tenet_arianism = {
 	}
 
 	personal_tenet_parameters = {}
-	
-	special_parameters = { #Hostile is default and the Arians stick in the middle ground in many ways
-		hostility_level_override = {}
-	}
 }
 tenet_anomoeanism = {
-	icon = tenet_two_nature
+	icon = tenet_anomoeanism
 
-	name = tenet_dyophysitism_name
-
-	desc = tenet_dyophysitism_desc
+	name = tenet_anomoeanism_name
+	desc = tenet_anomoeanism_desc
 
 	is_shown = {}
 
@@ -144,10 +216,8 @@ tenet_anomoeanism = {
 	}
 }
 tenet_apollinarism = {
-	icon = tenet_two_nature
-
+	icon = tenet_apollinarism
 	name = tenet_apollinarism_name
-
 	desc = tenet_apollinarism_desc
 
 	is_shown = {}
@@ -191,10 +261,8 @@ tenet_apollinarism = {
 	}
 }
 tenet_eutychianism = {
-	icon = tenet_two_nature
-
+	icon = tenet_eutychianism
 	name = tenet_eutychianism_name
-
 	desc = tenet_eutychianism_desc
 
 	is_shown = {}
@@ -238,10 +306,8 @@ tenet_eutychianism = {
 	}
 }
 tenet_nestorianism = {
-	icon = tenet_two_nature
-
+	icon = tenet_nestorianism
 	name = tenet_nestorianism_name
-
 	desc = tenet_nestorianism_desc
 
 	is_shown = {}
@@ -285,10 +351,8 @@ tenet_nestorianism = {
 	}
 }
 tenet_unitarianism = {
-	icon = tenet_two_nature
-
+	icon = tenet_unitarianism
 	name = tenet_unitarianism_name
-
 	desc = tenet_unitarianism_desc
 
 	is_shown = {}
@@ -332,10 +396,8 @@ tenet_unitarianism = {
 	}
 }
 tenet_modalism = {
-	icon = tenet_two_nature
-
+	icon = tenet_modalism
 	name = tenet_modalism_name
-
 	desc = tenet_modalism_desc
 
 	is_shown = {}
@@ -379,10 +441,8 @@ tenet_modalism = {
 	}
 }
 tenet_doceticism = {
-	icon = tenet_two_nature
-
+	icon = tenet_doceticism
 	name = tenet_doceticism_name
-
 	desc = tenet_doceticism_desc
 
 	is_shown = {}
@@ -426,13 +486,11 @@ tenet_doceticism = {
 	}
 }
 tenet_monothelitism = {
-	icon = tenet_two_nature
-
+	icon = tenet_monothelitism
 	name = tenet_monothelitism_name
-
 	desc = tenet_monothelitism_desc
 
-	is_shown = {}
+	is_shown = { always = no } #Availability to be triggered by event
 
 	can_pick = {
 		religion = religion:christianity_religion
