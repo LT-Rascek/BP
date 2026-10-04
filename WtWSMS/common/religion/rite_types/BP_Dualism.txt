@@ -12,6 +12,11 @@ manichean = {
 		tenet_communion
 		tenet_adaptive
 	}
+	
+	doctrines = {
+		doctrine_ritual_vegetarianism_clerics
+		doctrine_sacraments_central
+	}
 }
 mingism = {
 	name = mingism
@@ -31,6 +36,27 @@ mingism = {
 	doctrines = {
 		doctrine_pluralism_pluralistic
 		doctrine_monasticism_encouraged
+		doctrine_sacraments_central
+	}
+}
+western_manichean = {
+	name = western_manichean
+	desc = western_manichean_desc
+	faith = manichaean_faith
+
+	color = { 0.25 0.37 0.06 }
+	icon = manichean
+
+	tenets = {
+		tenet_christian_syncretism
+		tenet_astrology #Faustus of Mileve made it a major component
+		tenet_adaptive
+	}
+	
+	doctrines = {
+		doctrine_ritual_vegetarianism_clerics
+		doctrine_pluralism_righteous
+		doctrine_sacraments_central
 	}
 }
 #Valentianism
