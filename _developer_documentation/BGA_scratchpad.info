@@ -8,47 +8,53 @@
 8). Work on other things like Clerical regions and such to integrate into the mod
 
 -----------------------
-stopped at 02_administrative_laws_BP_overwrite.txt (haven't touched yet)
+stopped and completed on_actions
 -----------------------
 
 - Let loc modders know about Trenkyanism
 - Ask PDX about Christology stuff; they make them all DLC dependent
 
+- Move BP decisions into their own folder for simplicity
+
+Religion:
+- Fixup existing localizations and resort
 - Revise Mainline Rites as Appropriate (size &c.)
+- Polytheistic Syncretism should have increased heresy/divergence effects
+   - Gives option for head of rites of polytheistic faiths to become hellenic (aka like Gallic)
+- Fundamentalism for the Celtiberians as they held out against Romanization
+- Rigorism should hate Adaptability, outlining the Africa-Dontaist Split
+- Additional Monasticism category for Clerics always being Monastics
+   - Applies for Christians as well as Cybelians
+   - clergy_are_always_monks parameter - linked with monasticism doctrine
 
 Christian Borks:
 - Duplicated Rites:
    - Marcionism, Nestorianism
+- Remove otherwise non-existant Christian faiths in a way that's conformal with vanilla
 
-- No anointment for Christians or anyone else at this point
+General Mechanics:
+- Theocratic Faiths should not have non-theocrats as head of rite
 
+- Court Chaplain Values need overhaul
+
+History:
 - Add some Messalian provinces
-- Clerical Regions flip to admin from on-actions...
+- Remove Mehrism and associated RICE on actions
+- Clerical Regions need overhaul
+- Rework in the doctrine at start on actions
 
-- Fill out all faiths to be lay clergy, &c. for completeness instead of on action that borks out
-
-Law issues:
+GUI:
 - Admin Laws not showing up correctly for Roman Admin Governments
 - Other budgets not showing up for Roman Admin Budgets
 - Make sure laws are properly visible
-
------------------------
-- All new files must be properly encoded
-
-GUI:
+- Creating a Rite is not showing the other doctrine options correctly
 - Update Religion GUI with minorities
 - Update doctrine_type_tooltip to support new categories
 
-- Remove Mehrism and associated RICE on actions
-
-- clergy_are_always_monks parameter - linked with monasticism doctrine
+-----------------------
 
 Minorities:
 - sea_minority_decisions.txt
-
-Faiths:
-- Add necessary liturgical rites to christian Faiths
-- Remove otherwise non-existant Christian faiths in a way that's conformal with vanilla
 
 Patron Deity Decisions:
 - Unify into a singular decision with option widgets based on deity types, with various faiths getting extra
@@ -58,6 +64,7 @@ Patron Deity Decisions:
    - select_personal_nat_decision - Review if needed
 
 Doctrines:
+- Henotheism needed for Bhakti and Khuramazta
 - Get Doctrines et al sorted, including Rite to Rule
 - Move Vegetarianism from Special group
 - Remove RICE buddhism doctrines
@@ -110,12 +117,21 @@ Database:
 
 Game Concepts:
 - Remove bp_autocephalous_church
+- General Game Concept Cleanup
+
+Governments:
+- Tie Populist Revolt blockers to be instead linked to Non-Roman Law
+- Update government `possible_grant_vassal_governments` to tamp down on tribalistic madness
 
 Localizations:
+- Literalist Debate needs customized localization for various things (Philosophy, Complex Exegesis, &c.)
 - Jewish faiths use Tzadik instead of Saint
 - Insular Celtic using St. Patrick? If so, fix.
 
 Religions:
+- Add some special type of flag (possibly a straight GUI tenet lookup) to highlight different types of Tenets (Eucharistic, Soteriology, Christology) for easy user identification
+- Tweak Preservation doctrines so they are visible and selectable, with appropriate requirements
+- Total Depravity should get more benefits for positive fulfilment and more maluses for negative fulfilment
 - Review the weights and scales for all virtues and sins
 - Remove old, outdated localizations
 - Doctrine for "Truly Hellenic" faiths for the truly_hellenic_faith_trigger

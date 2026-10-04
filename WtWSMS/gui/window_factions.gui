@@ -1,4 +1,6 @@
-﻿######################################################
+﻿##### Changed from Vanilla: Fixed issue with titular primary titles
+
+######################################################
 ##################### FACTIONS #######################
 ######################################################
 
@@ -276,7 +278,7 @@ window = {
 					scrollbox = {
 						name = "against_liege"
 						##### Changed from Vanilla vvvvv
-						visible = "[Or( GetVariableSystem.Exists( 'my_factions' ), And(FactionsWindow.IsPrimaryTitleTitular,Not(GetPlayer.IsIndependentRuler)) )]"
+						visible = "[Or3( GetVariableSystem.Exists( 'my_factions' ), And(FactionsWindow.IsPrimaryTitleTitular,Not(GetPlayer.IsIndependentRuler)), Not( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_ecclesiastical' ) )]"
 						##### Changed from Vanilla ^^^^^
 						layoutpolicy_horizontal = expanding
 						layoutpolicy_vertical = expanding

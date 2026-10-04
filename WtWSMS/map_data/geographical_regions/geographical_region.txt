@@ -4635,6 +4635,8 @@ dlc_mpo_steppe_north_china_expansion = {} ##### Changed from Vanilla
 
 dlc_mpo_steppe_central_china_expansion = {} ##### Changed from Vanilla
 
+dlc_mpo_steppe_north_east_asia_expansion = {} ##### Changed from Vanilla
+
 heritage_area_pontic_steppe = {
 	duchies = {
 		#Pontic Steppe
@@ -4704,7 +4706,6 @@ tgp_silk_road_region = {
 }
 
 dlc_tgp_silk_road_route_china = {
-	should_remember_counties_order = yes
 	counties = {
 	# Bejing to Weizhou, via Kaifeng and Chang'an
 		 # Beijing
@@ -4784,7 +4785,6 @@ tgp_silk_road_china_region = { # Omitting k_xia and  from the standard world_asi
 }
 
 dlc_tgp_silk_road_route_tibet = {
-	should_remember_counties_order = yes
 	counties = {
 	# Dawu to Dhankar (connecting to Lahur via Kangra)
 		c_dawu
@@ -4840,7 +4840,6 @@ tgp_silk_road_tibet_region = {
 }
 
 dlc_tgp_silk_road_route_india = {
-	should_remember_counties_order = yes
 	counties = {
 	# Kathmandu to Pataliputra
 		# c_nyalam
@@ -4911,7 +4910,6 @@ tgp_silk_road_india_region = {
 }
 
 dlc_tgp_silk_road_route_central_asia = {
-	should_remember_counties_order = yes
 	counties = {
 
 	# Merv to Kashgar
@@ -4981,7 +4979,6 @@ tgp_silk_road_central_asia_region = {
 }
 
 dlc_tgp_silk_road_route_transcaspia = {
-	should_remember_counties_order = yes
 	counties = {
 		#
 	# Chah (connected to Khojand) to Aralkizil
@@ -5041,7 +5038,6 @@ tgp_silk_road_transcaspia_region = {
 }
 
 dlc_tgp_silk_road_route_occident = {
-	should_remember_counties_order = yes
 	counties = {
 	# Constantinople to Dvin
 		c_byzantion
@@ -5451,7 +5447,7 @@ hunt_animal_deer_region = {
 		# Africa
 		world_africa_north_west
 		# Asia
-		world_middle_east_jerusalem world_middle_east_persia world_asia_minor world_steppe_east world_steppe_central world_siberia world_steppe_west world_india world_burma world_asia
+		world_middle_east_jerusalem world_middle_east_persia world_asia_minor world_steppe_east world_steppe_central world_siberia world_steppe_west world_india world_asia
 	}
 }
 
@@ -5461,7 +5457,7 @@ hunt_animal_antelope_region = {
 		# Africa
 		world_africa
 		# Asia
-		world_middle_east world_steppe world_tibet world_india world_asia_china world_asia_southeast_mainland world_burma
+		world_middle_east world_steppe world_tibet world_india world_asia_china world_asia_southeast_mainland
 	}
 }
 
@@ -5484,7 +5480,7 @@ hunt_animal_boar_region = {
 		# Africa
 		world_africa_north_west
 		# Asia
-		world_asia_minor world_steppe_west world_steppe_central world_steppe_east world_siberia world_middle_east_jerusalem world_middle_east_persia world_india world_burma world_asia
+		world_asia_minor world_steppe_west world_steppe_central world_steppe_east world_siberia world_middle_east_jerusalem world_middle_east_persia world_india world_asia
 	}
 	duchies = {
 		# Southern Scandinavia
@@ -5517,7 +5513,7 @@ hunt_animal_big_cat_region = {
 		world_africa # Leopard/Lion
 		# Asia
 		world_middle_east # Leopard/Lion
-		world_india world_burma # Leopard/Lion/Tiger
+		world_india # Leopard/Lion/Tiger
 		world_steppe_east world_tibet # Snow Leopard
 		world_asia_korea
 		world_asia_china
@@ -5700,7 +5696,7 @@ greek_backwater_modifier_region = {
 
 custom_ep3_restore_rome_eastern_empire = {
 	regions = {
-		world_asia_minor world_middle_east world_africa_east world_india world_steppe world_tibet world_burma world_europe_south_east world_europe_east world_asia world_siberia
+		world_asia_minor world_middle_east world_africa_east world_india world_steppe world_tibet world_europe_south_east world_europe_east world_asia world_siberia
 	}
 
 	duchies = {
@@ -5805,14 +5801,10 @@ sami_nomad_area = {
 	duchies = {
 		#Sweden
 		d_norrland
-		#Finland
-		d_karelia d_pohjanmaa d_savo
 		#Sapmi
 		d_aarjetje d_duortnoseatnu d_giemajohka d_guoldat d_vuovdisamieana
 		# Norway
 		d_halogaland d_jamtland
-		#Bjarmaland
-		d_biarmia
 	}
 }
 
@@ -5913,8 +5905,6 @@ nubia_nomad_area = {
 		d_aksum d_dahlaks d_lasta d_gondar d_gojjam d_showa
 		#Damot
 		d_damot d_kaffa d_sharka
-		#Eastern Darfur
-		d_kordofan
 		#k_nubia
 		d_nobatia d_makuria d_shamir d_alwa d_sennar
 		#k_blemmyia

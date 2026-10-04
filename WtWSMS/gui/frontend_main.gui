@@ -1,6 +1,7 @@
 ##### Changed from Vanilla: Removed challenge characters
 ##### Changed from Vanilla: Added WtWSMS Version text box
 
+
 widget = {
 	name = "mainmenu_panel_bottom"
 	parentanchor = center
@@ -71,6 +72,7 @@ widget = {
 			position = "['(CVector2f)0,0']"
 			#position = "[Select_CVector2f( FrontEndMainView.ShouldShowChallengeCharacter, '(CVector2f)-250,0', '(CVector2f)0,0' )]"
 			##### Changed From Vanilla ^^^^^
+			position = "[Select_CVector2f( FrontEndMainView.ShouldShowChallengeCharacter, '(CVector2f)-250,0', '(CVector2f)0,0' )]"
 
 			icon = {
 				name = "shadow_left"
@@ -740,6 +742,7 @@ widget = {
 
 									widget = {
 										size = { 64 64 }
+										visible = "[SaveGameItem.HasCoatOfArms]"
 
 										coa_realm_shadow = {
 											texture = "[SaveGameItem.GetPlayerGovernment.GetRealmFrameShadow('(int32)62')]"

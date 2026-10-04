@@ -163,15 +163,14 @@ automutiliation_decision = {
 
 	is_shown = {
 		is_male = yes
-		#
-		rite_has_parameter = show_automutiliation_decision
+		rite = { rite_has_parameter = show_automutiliation_decision }
 	}
 
 	is_valid = {
 		NOT = { has_trait = eunuch_1 }
 		OR = {
 			trigger_if = {
-				limit = { rite_has_parameter = zealous_character_automutilation }
+				limit = { rite = { rite_has_parameter = zealous_character_automutilation } }
 				has_trait = zealous
 			}
 			trigger_if = {
