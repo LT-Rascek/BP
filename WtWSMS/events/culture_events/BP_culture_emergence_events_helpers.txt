@@ -1,0 +1,45 @@
+﻿namespace = culture_emergence_events_bp_helpers
+
+#Standard Version of hybrid event: we adopt their mannerisms
+culture_emergence_events_bp_helpers.0001 = { #root is founder
+	scope = none
+	hidden = yes
+	content_source = dlc_WtWSMS
+	
+	immediate = {
+		create_hybrid_culture = scope:hybdridization_offer_culture
+		#Let's hide some notifications...
+		scope:new_culture = { set_variable = suppress_tradition_change_warnings }
+		#Clean up traditions and pillars
+		scope:new_culture = {
+			set_ethos_from = scope:ruler_culture
+			set_heritage_from = scope:hybdridization_offer_culture
+			set_language_from = scope:hybdridization_offer_culture
+			set_martial_custom_from = scope:hybdridization_offer_culture
+		}
+		#Garbage Collection
+		scope:new_culture = { remove_variable = suppress_tradition_change_warnings }
+	}
+}
+
+#Conqueror Version of hybrid event: they will adopt _our_ mannerisms...
+culture_emergence_events_bp_helpers.0002 = { #root is founder
+	scope = none
+	hidden = yes
+	content_source = dlc_WtWSMS
+	
+	immediate = {
+		create_hybrid_culture = scope:hybdridization_offer_culture
+		#Let's hide some notifications...
+		scope:new_culture = { set_variable = suppress_tradition_change_warnings }
+		#Clean up traditions and pillars
+		scope:new_culture = {
+			set_ethos_from = scope:hybdridization_offer_culture
+			set_heritage_from = scope:ruler_culture
+			set_language_from = scope:ruler_culture
+			set_martial_custom_from = scope:ruler_culture
+		}
+		#Garbage Collection
+		scope:new_culture = { remove_variable = suppress_tradition_change_warnings }
+	}
+}

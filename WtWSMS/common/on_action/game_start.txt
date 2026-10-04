@@ -6,21 +6,13 @@ on_game_start = {
 		fp1_scandinavian_adventurers.0021	# FP1 - Mark game-start prioritised adventurers.
 		#Guaranteed historical artifacts fixed spawning
 		debug_portraits.1 					# Debug portraits for animation testing
-		#easteregg_event.0001				# Charna and Jakub duel.
+		easteregg_event.0001				# Charna and Jakub duel.
 	}
 
 	effect = {
 		set_global_variable = { name = is_game_start_date days = 1 }
-		# Chinese Song-fashion
-		if = {
-			limit = {
-				current_date >= 960.1.1
-			}
-			set_global_variable = {
-				name = chinese_fashion_change
-				value = 1
-			}
-		}
+		# Set up bookmark-aware Permitted/Prohibited tenet statuses for faiths whose main rite intends spiritual or temporal head of faith.
+		setup_rite_tenet_permissions_effect = yes
 		#Epidemics 10 years grace
 		set_global_variable = {
 			name = start_epidemic_grace
@@ -45,7 +37,10 @@ on_game_start = {
 ####			religion:judaism_religion = {
 ####				every_faith = {
 ####					limit = {
-####						has_doctrine = temple_authority_rabbinic_doctrine
+####						main_rite = {
+####							rite_has_doctrine = temple_authority_rabbinic_doctrine
+####							rite_has_doctrine = doctrine_polygamy
+####						}
 ####					}
 ####					remove_doctrine = doctrine_polygamy
 ####					add_doctrine = doctrine_monogamy
@@ -108,6 +103,19 @@ on_game_start = {
 ####				trigger_event = {
 ####					id = bookmark.0101
 ####					days = { 21 35 }
+####				}
+####			}
+####		}
+####
+####		character:bookmark_huang_chao = {
+####			if = {
+####				limit = {
+####					is_alive = yes
+####					is_playable_character = yes
+####				}
+####				trigger_event = {
+####					id = bookmark.0500
+####					days = 1
 ####				}
 ####			}
 ####		}
@@ -219,14 +227,26 @@ on_game_start = {
 ####			hre_elector_list_save_effect = yes
 ####			hre_margraves_effect = yes
 ####		}
-####
+
+		# Empire Faith Gate: seed global list of empire holders for perf (yearly pulse uses this list).
+		if = {
+			limit = { empire_faith_gate_enabled_trigger = yes }
+			every_independent_ruler = {
+				limit = { highest_held_title_tier >= tier_empire }
+				add_to_global_variable_list = {
+					name = efg_empire_holders
+					target = this
+				}
+			}
+		}
+
 ####		### ARMENIAN SETUP ###
 ####		title:e_byzantium.holder ?= {
 ####			every_vassal = {
 ####				limit = {
 ####					government_has_flag = government_is_feudal
 ####					vassal_contract_has_modifiable_obligations = yes
-####					faith = faith:armenian_apostolic
+####					rite = rite:armenian_rite
 ####				}
 ####				vassal_contract_set_obligation_level = { type = religious_rights level = 1 }
 ####				set_subject_contract_modification_blocked = no
@@ -237,7 +257,7 @@ on_game_start = {
 ####				limit = {
 ####					government_has_flag = government_is_feudal
 ####					vassal_contract_has_modifiable_obligations = yes
-####					faith = faith:armenian_apostolic
+####					rite = rite:armenian_rite
 ####				}
 ####				vassal_contract_set_obligation_level = { type = feudal_government_taxes level = 3 }
 ####				vassal_contract_set_obligation_level = { type = feudal_government_levies level = 2 }
@@ -245,196 +265,196 @@ on_game_start = {
 ####				set_subject_contract_modification_blocked = no
 ####			}
 ####		}
-
-		### CORONATION LOCATION SETUP ###
-		if = {
-			limit = {
-				current_date >= 1066.1.1
-				has_dlc_feature = coronations
-			}
-			# London (England)
-			province:1527 = { 
-				add_province_modifier = coronation_tradition_modifier 
-				set_variable = {
-					name = coronation_tradition_location
-					value = 5
-				}
-			}
-			# Aachen (Germany)
-			province:2092 = { 
-				add_province_modifier = coronation_tradition_modifier 
-				set_variable = {
-					name = coronation_tradition_location
-					value = 5
-				}
-			}
-			# Reims (France)
-			province:2390 = { 
-				add_province_modifier = coronation_tradition_modifier 
-				set_variable = {
-					name = coronation_tradition_location
-					value = 5
-				}
-			}
-			# Rome (Italy)
-			province:2575 = { 
-				add_province_modifier = coronation_tradition_modifier 
-				set_variable = {
-					name = coronation_tradition_location
-					value = 5
-				}
-			}
-			# Milan (Italy)
-			province:2482 = { 
-				add_province_modifier = coronation_tradition_modifier 
-				set_variable = {
-					name = coronation_tradition_location
-					value = 5
-				}
-			}
-			# Gniezno (Poland)
-			province:4905 = { 
-				add_province_modifier = coronation_tradition_modifier 
-				set_variable = {
-					name = coronation_tradition_location
-					value = 5
-				}
-			}
-			# Szekesfehervar (Hungary)
-			province:3805 = { 
-				add_province_modifier = coronation_tradition_modifier 
-				set_variable = {
-					name = coronation_tradition_location
-					value = 5
-				}
-			}
-			# Scone Abbey, Gowrie (Scotland)
-			province:1741 = { 
-				add_province_modifier = coronation_tradition_modifier 
-				set_variable = {
-					name = coronation_tradition_location
-					value = 5
-				}
-			}
-			# Byzantium (Byzantines)
-			province:496 = { 
-				add_province_modifier = coronation_long_tradition_modifier 
-				set_variable = {
-					name = coronation_tradition_location
-					value = 10
-				}
-			}
-			# Mahdiya (Africa)
-			province:4578 = { 
-				add_province_modifier = coronation_tradition_modifier 
-				set_variable = {
-					name = coronation_tradition_location
-					value = 5
-				}
-			}
-			# Cairo (Egypt)
-			province:6042 = { 
-				add_province_modifier = coronation_tradition_modifier 
-				set_variable = {
-					name = coronation_tradition_location
-					value = 5
-				}
-			}
-			# Damascus (Syria)
-			province:5924 = { 
-				add_province_modifier = coronation_tradition_modifier 
-				set_variable = {
-					name = coronation_tradition_location
-					value = 5
-				}
-			}
-			# Baghdad (Mesopotamia)
-			province:4828 = { 
-				add_province_modifier = coronation_long_tradition_modifier 
-				set_variable = {
-					name = coronation_tradition_location
-					value = 10
-				}
-			}
-			# Rayy (Persia)
-			province:4319 = { 
-				add_province_modifier = coronation_tradition_modifier 
-				set_variable = {
-					name = coronation_tradition_location
-					value = 5
-				}
-			}
-			# Ghazna (Kabulistan)
-			province:4500 = { 
-				add_province_modifier = coronation_tradition_modifier 
-				set_variable = {
-					name = coronation_tradition_location
-					value = 5
-				}
-			}
-			# Lahur (Punjab)
-			province:1362 = { 
-				add_province_modifier = coronation_tradition_modifier 
-				set_variable = {
-					name = coronation_tradition_location
-					value = 5
-				}
-			}
-			# Samarkand (Transoxiana)
-			province:4404 = { 
-				add_province_modifier = coronation_tradition_modifier 
-				set_variable = {
-					name = coronation_tradition_location
-					value = 5
-				}
-			}
-			# Bukhara (Transoxiana)
-			province:4394 = { 
-				add_province_modifier = coronation_tradition_modifier 
-				set_variable = {
-					name = coronation_tradition_location
-					value = 5
-				}
-			}
-			# Medina (Arabia)
-			province:6212 = { 
-				add_province_modifier = coronation_tradition_modifier 
-				set_variable = {
-					name = coronation_tradition_location
-					value = 5
-				}
-			}
-			# Kutaisi (Georgia)
-			province:601 = { 
-				add_province_modifier = coronation_tradition_modifier 
-				set_variable = {
-					name = coronation_tradition_location
-					value = 5
-				}
-			}
-		}
-		if = {
-			limit = {
-				current_date >= 1178.1.1
-				has_dlc_feature = coronations
-			}
-			# Marrakesh (Maghreb)
-			province:4718 = { 
-				add_province_modifier = coronation_tradition_modifier 
-				set_variable = {
-					name = coronation_tradition_location
-					value = 5
-				}
-			}
-			# Karakorum (Mongolia)
-			province:1457 = { 
-				add_province_modifier = coronation_tradition_modifier 
-				set_variable = {
-					name = coronation_tradition_location
-					value = 5
-				}
-			}
-		}
+####
+####		### CORONATION LOCATION SETUP ###
+####		if = {
+####			limit = {
+####				current_date >= 1066.1.1
+####				has_dlc_feature = coronations
+####			}
+####			# London (England)
+####			province:1527 = {
+####				add_province_modifier = coronation_tradition_modifier
+####				set_variable = {
+####					name = coronation_tradition_location
+####					value = 5
+####				}
+####			}
+####			# Aachen (Germany)
+####			province:2092 = {
+####				add_province_modifier = coronation_tradition_modifier
+####				set_variable = {
+####					name = coronation_tradition_location
+####					value = 5
+####				}
+####			}
+####			# Reims (France)
+####			province:2390 = {
+####				add_province_modifier = coronation_tradition_modifier
+####				set_variable = {
+####					name = coronation_tradition_location
+####					value = 5
+####				}
+####			}
+####			# Rome (Italy)
+####			province:2575 = {
+####				add_province_modifier = coronation_tradition_modifier
+####				set_variable = {
+####					name = coronation_tradition_location
+####					value = 5
+####				}
+####			}
+####			# Milan (Italy)
+####			province:2482 = {
+####				add_province_modifier = coronation_tradition_modifier
+####				set_variable = {
+####					name = coronation_tradition_location
+####					value = 5
+####				}
+####			}
+####			# Gniezno (Poland)
+####			province:4905 = {
+####				add_province_modifier = coronation_tradition_modifier
+####				set_variable = {
+####					name = coronation_tradition_location
+####					value = 5
+####				}
+####			}
+####			# Szekesfehervar (Hungary)
+####			province:3805 = {
+####				add_province_modifier = coronation_tradition_modifier
+####				set_variable = {
+####					name = coronation_tradition_location
+####					value = 5
+####				}
+####			}
+####			# Scone Abbey, Gowrie (Scotland)
+####			province:1741 = {
+####				add_province_modifier = coronation_tradition_modifier
+####				set_variable = {
+####					name = coronation_tradition_location
+####					value = 5
+####				}
+####			}
+####			# Byzantium (Byzantines)
+####			province:496 = {
+####				add_province_modifier = coronation_long_tradition_modifier
+####				set_variable = {
+####					name = coronation_tradition_location
+####					value = 10
+####				}
+####			}
+####			# Mahdiya (Africa)
+####			province:4578 = {
+####				add_province_modifier = coronation_tradition_modifier
+####				set_variable = {
+####					name = coronation_tradition_location
+####					value = 5
+####				}
+####			}
+####			# Cairo (Egypt)
+####			province:6042 = {
+####				add_province_modifier = coronation_tradition_modifier
+####				set_variable = {
+####					name = coronation_tradition_location
+####					value = 5
+####				}
+####			}
+####			# Damascus (Syria)
+####			province:5924 = {
+####				add_province_modifier = coronation_tradition_modifier
+####				set_variable = {
+####					name = coronation_tradition_location
+####					value = 5
+####				}
+####			}
+####			# Baghdad (Mesopotamia)
+####			province:4828 = {
+####				add_province_modifier = coronation_long_tradition_modifier
+####				set_variable = {
+####					name = coronation_tradition_location
+####					value = 10
+####				}
+####			}
+####			# Rayy (Persia)
+####			province:4319 = {
+####				add_province_modifier = coronation_tradition_modifier
+####				set_variable = {
+####					name = coronation_tradition_location
+####					value = 5
+####				}
+####			}
+####			# Ghazna (Kabulistan)
+####			province:4500 = {
+####				add_province_modifier = coronation_tradition_modifier
+####				set_variable = {
+####					name = coronation_tradition_location
+####					value = 5
+####				}
+####			}
+####			# Lahur (Punjab)
+####			province:1362 = {
+####				add_province_modifier = coronation_tradition_modifier
+####				set_variable = {
+####					name = coronation_tradition_location
+####					value = 5
+####				}
+####			}
+####			# Samarkand (Transoxiana)
+####			province:4404 = {
+####				add_province_modifier = coronation_tradition_modifier
+####				set_variable = {
+####					name = coronation_tradition_location
+####					value = 5
+####				}
+####			}
+####			# Bukhara (Transoxiana)
+####			province:4394 = {
+####				add_province_modifier = coronation_tradition_modifier
+####				set_variable = {
+####					name = coronation_tradition_location
+####					value = 5
+####				}
+####			}
+####			# Medina (Arabia)
+####			province:6212 = {
+####				add_province_modifier = coronation_tradition_modifier
+####				set_variable = {
+####					name = coronation_tradition_location
+####					value = 5
+####				}
+####			}
+####			# Kutaisi (Georgia)
+####			province:601 = {
+####				add_province_modifier = coronation_tradition_modifier
+####				set_variable = {
+####					name = coronation_tradition_location
+####					value = 5
+####				}
+####			}
+####		}
+####		if = {
+####			limit = {
+####				current_date >= 1178.1.1
+####				has_dlc_feature = coronations
+####			}
+####			# Marrakesh (Maghreb)
+####			province:4718 = {
+####				add_province_modifier = coronation_tradition_modifier
+####				set_variable = {
+####					name = coronation_tradition_location
+####					value = 5
+####				}
+####			}
+####			# Karakorum (Mongolia)
+####			province:1457 = {
+####				add_province_modifier = coronation_tradition_modifier
+####				set_variable = {
+####					name = coronation_tradition_location
+####					value = 5
+####				}
+####			}
+####		}
 
 		### Every nomad and herder in the Steppe Region becomes tribal if DLC not enabled, pre-lobby history setup ###
 		if = {
@@ -458,7 +478,7 @@ on_game_start = {
 						if = {
 							limit = {
 								NOT = {
-									has_government = tribal_government
+									government_has_flag = government_is_tribal
 								}
 							}
 							change_government = tribal_government
@@ -468,7 +488,7 @@ on_game_start = {
 			}
 		}
 
-		
+
 
 		# To prevent the Season Changes event from triggering on game start
 		situation:the_great_steppe ?= {
@@ -487,66 +507,64 @@ on_game_start = {
 ####			limit = {
 ####				has_cp3_dlc_trigger = yes
 ####			}
-####	        title:b_barcelona.title_province = { add_special_building_slot = drassanes_01 } #1892
-####	        title:b_merv.title_province = { add_special_building = kyz_kala_01 } #4238
-####	        if = { limit = { game_start_date >= 1178.10.1 } title:b_cluny.title_province = { add_special_building = cluny_abbey_02 } } #2304
-####	        else_if = { limit = { game_start_date >= 1066.9.15 } title:b_cluny.title_province = { add_special_building = cluny_abbey_01 } }
-####	        else = { title:b_cluny.title_province = { add_special_building_slot = cluny_abbey_01 } }
-####	        title:b_york.title_province = { add_special_building = york_walls_01 } #1595
-####	        title:b_damascus.title_province = { add_special_building = damascus_mosque_01 } #5924
-####	        title:b_lhasa.title_province = { add_special_building = jokhang_01 } #9237
-####	        if = { limit = { game_start_date >= 1178.10.1 } title:b_schmalkalden.title_province = { add_special_building = wartburg_01 } } #3010
-####	        else = { title:b_schmalkalden.title_province = { add_special_building_slot = wartburg_01 } }
-####	        title:b_lalibela.title_province = { add_special_building_slot = beta_giyorgis_01 } #8301
-####	        if = { limit = { game_start_date >= 1066.9.15 } title:b_novgorod.title_province = { add_special_building = holy_wisdom_01 } } #5137
-####	        else = { title:b_novgorod.title_province = { add_special_building_slot = holy_wisdom_01 } }
-####	        title:b_kano.title_province = { add_special_building_slot = kano_walls_01 } #6519
-####	        title:b_somapur.title_province = { add_special_building = somapura_university_01 } #848
-####	        if = { limit = { game_start_date >= 1178.10.1 } title:b_firenze.title_province = { add_special_building = duomo_florence_02 } } #2543
-####	        else = { title:b_firenze.title_province = { add_special_building = duomo_florence_01 } }
-####	        title:b_konarak.title_province = { add_special_building_slot = konark_temple_01 } #928
-####	        title:b_fes.title_province = { add_special_building = al_qarawiyyin_university_01 } #4694
-####	        title:b_kairouan.title_province = { add_special_building = kairouan_basins_01 } #4594
-####	        title:b_al-ghaba.title_province = { add_special_building = ghana_palace_01 } #6628 #NOTE: likely existed since the 8th, but earliest (only) source on palace is from 1068
-####	        title:b_visegrad_hun.title_province = { add_special_building_slot = visegrad_castle_01 } #3803
-####	        if = { limit = { game_start_date >= 1161.9.15 } title:b_leczyca.title_province = { add_special_building = wawel_cathedral_01 } } #4924 #Date of consecreation of Archcollegiate Church of St. Mary and St. Alexius in Tum
-####	        else = { title:b_leczyca.title_province = { add_special_building_slot = wawel_cathedral_01 } }
-####	        title:b_vatapi.title_province = { add_special_building = vatapi_caves_01 } #1198
-####	        if = { limit = { game_start_date >= 1178.10.1 } title:b_jaisalmer.title_province = { add_special_building = jaisalmer_fort_01 } } #3387
-####	        else = { title:b_jaisalmer.title_province = { add_special_building_slot = jaisalmer_fort_01 } } #3387
+####			title:b_barcelona.title_province = { add_special_building_slot = drassanes_01 } #1892
+####			title:b_merv.title_province = { add_special_building = kyz_kala_01 } #4238
+####			if = { limit = { game_start_date >= 1178.10.1 } title:b_cluny.title_province = { add_special_building = cluny_abbey_02 } } #2304
+####			else_if = { limit = { game_start_date >= 1066.9.15 } title:b_cluny.title_province = { add_special_building = cluny_abbey_01 } }
+####			else = { title:b_cluny.title_province = { add_special_building_slot = cluny_abbey_01 } }
+####			title:b_york.title_province = { add_special_building = york_walls_01 } #1595
+####			title:b_damascus.title_province = { add_special_building = damascus_mosque_01 } #5924
+####			title:b_lhasa.title_province = { add_special_building = jokhang_01 } #9237
+####			if = { limit = { game_start_date >= 1178.10.1 } title:b_schmalkalden.title_province = { add_special_building = wartburg_01 } } #3010
+####			else = { title:b_schmalkalden.title_province = { add_special_building_slot = wartburg_01 } }
+####			title:b_lalibela.title_province = { add_special_building_slot = beta_giyorgis_01 } #8301
+####			if = { limit = { game_start_date >= 1066.9.15 } title:b_novgorod.title_province = { add_special_building = holy_wisdom_01 } } #5137
+####			else = { title:b_novgorod.title_province = { add_special_building_slot = holy_wisdom_01 } }
+####			title:b_kano.title_province = { add_special_building_slot = kano_walls_01 } #6519
+####			title:b_somapur.title_province = { add_special_building = somapura_university_01 } #848
+####			if = { limit = { game_start_date >= 1178.10.1 } title:b_firenze.title_province = { add_special_building = duomo_florence_02 } } #2543
+####			else = { title:b_firenze.title_province = { add_special_building = duomo_florence_01 } }
+####			title:b_konarak.title_province = { add_special_building_slot = konark_temple_01 } #928
+####			title:b_fes.title_province = { add_special_building = al_qarawiyyin_university_01 } #4694
+####			title:b_kairouan.title_province = { add_special_building = kairouan_basins_01 } #4594
+####			title:b_al-ghaba.title_province = { add_special_building = ghana_palace_01 } #6628 #NOTE: likely existed since the 8th, but earliest (only) source on palace is from 1068
+####			title:b_visegrad_hun.title_province = { add_special_building_slot = visegrad_castle_01 } #3803
+####			if = { limit = { game_start_date >= 1161.9.15 } title:b_leczyca.title_province = { add_special_building = wawel_cathedral_01 } } #4924 #Date of consecreation of Archcollegiate Church of St. Mary and St. Alexius in Tum
+####			else = { title:b_leczyca.title_province = { add_special_building_slot = wawel_cathedral_01 } }
+####			title:b_vatapi.title_province = { add_special_building = vatapi_caves_01 } #1198
+####			if = { limit = { game_start_date >= 1178.10.1 } title:b_jaisalmer.title_province = { add_special_building = jaisalmer_fort_01 } } #3387
+####			else = { title:b_jaisalmer.title_province = { add_special_building_slot = jaisalmer_fort_01 } } #3387
 ####		}
-
-		#CP6 Special Buildings - Goes Before Holy Sites
-		if = {
-			limit = {
-				has_cp6_dlc_trigger = yes
-			}
-			#remove
-	        #title:b_vaticano.title_province = { remove_building = holy_site_cathedral_01 } #2577
-			title:b_indraprastha.title_province = { remove_building = iron_pillar_of_delhi_01 } #1365
-			
-			#always exists
-	        title:b_vaticano.title_province = { add_special_building = holy_site_st_peters_basilica_01 } #2577
-	        title:b_kathmandu.title_province = { add_special_building = boudhanath_01 } #9116
-	        title:b_indraprastha.title_province = { add_special_building = qutb_minar_01 } #1365
-	        #title:b_sanchi.title_province = { add_special_building = sanchi_stupa_01 } #3323
-			
-			#only buildable
-	        title:b_yazd.title_province = { add_special_building_slot = yazd_mosque_01 } #4053
-			
-			#different by start date
-	        if = { 
-				limit = {
-					game_start_date >= 1066.9.15
-				} 
-				title:b_avranches.title_province = { add_special_building = mont_st_michel_02 } 
-			} #2167
-	        else = { 
-				title:b_avranches.title_province = { add_special_building = mont_st_michel_01 } 
-			}
-			
-		}
-
+####
+####		#CP6 Special Buildings - Goes Before Holy Sites
+####		if = {
+####			limit = {
+####				has_cp6_dlc_trigger = yes
+####			}
+####			#remove
+####			title:b_indraprastha.title_province = { remove_building = iron_pillar_of_delhi_01 } #1365
+####
+####			#always exists
+####			title:b_kathmandu.title_province = { add_special_building = boudhanath_01 } #9116
+####			title:b_indraprastha.title_province = { add_special_building = qutb_minar_01 } #1365
+####			title:b_sanchi.title_province = { add_special_building = sanchi_stupa_01 } #3323
+####
+####			#only buildable
+####			title:b_yazd.title_province = { add_special_building_slot = yazd_mosque_01 } #4053
+####
+####			#different by start date
+####			if = {
+####				limit = {
+####					game_start_date >= 1066.9.15
+####				}
+####				title:b_avranches.title_province = { add_special_building = mont_st_michel_02 }
+####			} #2167
+####			else = {
+####				title:b_avranches.title_province = { add_special_building = mont_st_michel_01 }
+####			}
+####
+####		}
+####
 ####		#CP8 Special Buildings  - Goes Before Holy Sites
 ####		if = {
 ####			limit = { has_cp8_dlc_trigger = yes }
@@ -571,7 +589,7 @@ on_game_start = {
 ####			if = { limit = { game_start_date >= 1066.9.15 } title:b_changsha.title_province = { add_special_building = yuelu_academy_01 } }
 ####			else = { title:b_changsha.title_province = { add_special_building_slot = yuelu_academy_01 } }
 ####			#Imperial Citadel of Lin'an - from the 1130s-1150s
-####			if = { limit = { game_start_date >= 1066.9.15 } title:b_qiantang.title_province = { add_special_building = citadel_linan_01 } } #2
+####			if = { limit = { game_start_date >= 1038.1.1 } title:b_qiantang.title_province = { add_special_building = citadel_linan_01 } } #2
 ####			else = { title:b_qiantang.title_province = { add_special_building_slot = citadel_linan_01 } } #2
 ####			#Fanfang of Guangzhou
 ####			title:b_nanhai.title_province = { add_special_building = fanfang_guangzhou_01 }
@@ -611,185 +629,17 @@ on_game_start = {
 
 		### RELIGIOUS THINGS ###
 		# Set up Holy Site Buildings to be buildable in Holy Sites
-		religion:islam_religion = {
-			every_faith = {
-				every_holy_site = {
-					limit = {
-						title_province = {
-							has_special_building_slot = no
-						}
-					}
-					title_province = {
-						add_special_building_slot = holy_site_mosque_01
-					}
-				}
-			}
-		}
-		religion:christianity_religion = {
-			every_faith = {
-				every_holy_site = {
-					limit = {
-						title_province = {
-							has_special_building_slot = no
-						}
-					}
-					title_province = {
-						add_special_building_slot = holy_site_cathedral_01
-					}
-				}
-			}
-		}
-		religion:zoroastrianism_religion = {
-			every_faith = {
-				every_holy_site = {
-					limit = {
-						title_province = {
-							has_special_building_slot = no
-						}
-					}
-					title_province = {
-						add_special_building_slot = holy_site_fire_temple_01
-					}
-				}
-			}
-		}
-		religion:buddhism_religion = {
-			every_faith = {
-				every_holy_site = {
-					limit = {
-						title_province = {
-							has_special_building_slot = no
-						}
-					}
-					##### Changed from Vanilla vvvvv
-					if = {
-						limit = { this.title_province = { has_special_building_slot = no } }
-						title_province = {
-							add_special_building_slot = holy_site_buddhist_grand_temple_01
-						}
-					}
-					##### Changed from Vanilla ^^^^^
-				}
-			}
-		}
-		religion:shintoism_religion = {
-			every_faith = {
-				every_holy_site = {
-					limit = {
-						title_province = {
-							has_special_building_slot = no
-						}
-					}
-					title_province = {
-						add_special_building_slot = holy_site_japanese_temple_01
-					}
-				}
-			}
-		}
-		religion:taoism_religion = {
-			every_faith = {
-				every_holy_site = {
-					limit = {
-						title_province = {
-							has_special_building_slot = no
-						}
-					}
-					title_province = {
-						add_special_building_slot = holy_site_chinese_temple_01
-					}
-				}
-			}
-		}
-		religion:confucianism_religion = {
-			every_faith = {
-				every_holy_site = {
-					limit = {
-						title_province = {
-							has_special_building_slot = no
-						}
-					}
-					title_province = {
-						add_special_building_slot = holy_site_chinese_temple_01
-					}
-				}
-			}
-		}
-		every_religion_global = {
-			limit = {
-				OR = {
-					this = religion:hinduism_religion
-					this = religion:jainism_religion
-					this = religion:tani_religion
-					this = religion:bon_religion
-				}
-			}
-			every_faith = {
-				every_holy_site = {
-					limit = {
-						title_province = {
-							has_special_building_slot = no
-						}
-					}
-					title_province = {
-						add_special_building_slot = holy_site_indian_grand_temple_01
-					}
-				}
-			}
-		}
-		every_religion_global = {
-			limit = {
-				OR = {
-					this = religion:satsana_phi_religion
-					this = religion:dayawism_religion
-					this = religion:hantuism_religion
-					this = religion:satsana_phi_religion
-					this = religion:kaharingan_religion
-					this = religion:tolotang_religion
-					this = religion:aluk_religion
-					this = religion:dab_qhuas_religion
-					this = religion:biliku_religion
-				}
-			}
-			every_faith = {
-				every_holy_site = {
-					limit = {
-						title_province = {
-							has_special_building_slot = no
-						}
-					}
-					title_province = {
-						add_special_building_slot = holy_site_se_asia_pagan_temple_01
-					}
-				}
-			}
-		}
-		every_religion_global = {
-			limit = {
-				is_in_family = rf_pagan
-			}
-			every_faith = {
-				every_holy_site = {
-					limit = {
-						title_province = {
-							has_special_building_slot = no
-						}
-					}
-					title_province = {
-						add_special_building_slot = holy_site_pagan_grand_temple_01
-					}
-				}
-			}
-		}
 		every_religion_global = {
 			every_faith = {
-				every_holy_site = {
+				save_scope_as = holy_site_faith
+				every_holy_site_barony = {
 					limit = {
 						title_province = {
 							has_special_building_slot = no
 						}
 					}
 					title_province = {
-						add_special_building_slot = holy_site_other_grand_temple_01
+						add_holy_site_fallback_special_building_slot_effect = { FAITH = scope:holy_site_faith }
 					}
 				}
 			}
@@ -799,7 +649,7 @@ on_game_start = {
 		title:b_makka.county.holder = {
 			if = {
 				limit = {
-					faith = { has_doctrine_parameter = mandatory_hajj }
+					rite = { rite_has_parameter = mandatory_hajj }
 					NOT = { has_trait = hajjaj }
 				}
 				# Have some Hajjaj
@@ -809,7 +659,7 @@ on_game_start = {
 
 ####		# Pagans that start pre-reformed
 ####		## Bon has already been reformed into new bon.
-####		faith:old_bon = {
+####		faith:bon_faith = {
 ####			set_variable = { name = has_been_reformed }
 ####		}
 ####
@@ -824,74 +674,86 @@ on_game_start = {
 ####		faith:kabarism = {
 ####			set_variable = { name = block_reformation_var }
 ####		}
-####
-####		### GAME RULE: EXTRA ADMINS
-####		apply_historic_administrative_game_rule_effect = yes
-####
-####		### 1178 CRUSADE SETUP ###
-####		if = {
-####			limit = {
-####				game_start_date >= 1178.10.1
-####			}
-####			religion:islam_religion = {
-####				set_variable = {
-####					name = variable_ghw_unlocked
-####					value = yes
-####				}
-####			}
-####			religion:christianity_religion = {
-####				set_variable = {
-####					name = variable_ghw_unlocked
-####					value = yes
-####				}
-####			}
-####			set_global_variable = {
-####				name = had_first_catholic_crusade
-####				value = yes
-####			}
-####		}
-####		if = {
-####			limit = {
-####				game_start_date >= 1178.10.1
-####			}
-####			character:st_amand_1 = {
-####				save_scope_as = leader
-####			}
-####			character:223523 = {
-####				save_scope_as = founder
-####			}
-####			title:b_saida = {
-####				save_scope_as = barony
-####			}
-####			create_holy_order_neutral_effect = {
-####				LEADER = scope:leader
-####				CAPITAL = scope:barony
-####				NEW_HO_SCOPE = new_holy_order
-####				FOUNDER = scope:founder
-####			}
-####		}
-####		if = {
-####			limit = {
-####				game_start_date >= 1178.10.1
-####			}
-####			character:231000 = {
-####				save_scope_as = leader_1
-####			}
-####			character:223523 = {
-####				save_scope_as = founder_1
-####			}
-####			title:b_hebron = {
-####				save_scope_as = barony_1
-####			}
-####			create_holy_order_neutral_effect = {
-####				LEADER = scope:leader_1
-####				CAPITAL = scope:barony_1
-####				NEW_HO_SCOPE = new_holy_order
-####				FOUNDER = scope:founder_1
-####			}
-####		}
-####
-####		### UNIVERSITIES ###
+
+		# Heresy system (PAM): block conversion to historical Christian heresies until they're declared in-game.
+		# Grouped by which available start date (867 / 1066 / 1178) blocks each heresy.
+
+		# Declared after every current start date (Lateran III 1184, Eternal Evangel 1255, Earthquake Council 1382, Hus 1419):
+		faith:waldensian = {
+			set_variable = {
+				name = block_conversion_till_decision_taken
+			}
+		}
+		faith:lollard = {
+			set_variable = {
+				name = block_conversion_till_decision_taken
+			}
+		}
+		faith:hussite = {
+			set_variable = {
+				name = block_conversion_till_decision_taken
+			}
+		}
+		faith:joachimite = {
+			set_variable = {
+				name = block_conversion_till_decision_taken
+			}
+		}
+
+		# Cathar: declared at the Council of Tours (1163) - block at 867 and 1066, leave 1178 convertible.
+		if = {
+			limit = { game_start_date <= 1066.9.15 }
+			faith:cathar = {
+				set_variable = {
+					name = block_conversion_till_decision_taken
+				}
+			}
+		}
+
+		# Bogomilist: condemned by the Synod of Constantinople (~1029) - block at 867 only.
+		if = {
+			limit = { game_start_date <= 867.1.1 }
+			faith:bogomilist = {
+				set_variable = {
+					name = block_conversion_till_decision_taken
+				}
+			}
+		}
+
+		### 1178 CRUSADE SETUP ###
+		if = {
+			limit = {
+				game_start_date >= 1178.10.1
+			}
+			religion:islam_religion = {
+				set_variable = {
+					name = variable_ghw_unlocked
+					value = yes
+				}
+			}
+			religion:christianity_religion = {
+				set_variable = {
+					name = variable_ghw_unlocked
+					value = yes
+				}
+			}
+			set_global_variable = {
+				name = had_first_catholic_crusade
+				value = yes
+			}
+			set_global_variable = {
+				name = num_catholic_crusades
+				value = 1
+			}
+		}
+		else = {
+			set_global_variable = {
+				name = num_catholic_crusades
+				value = 0
+			}
+		}
+
+		### UNIVERSITIES ###
 ####		title:b_fes.title_province = {
 ####			if = {
 ####				limit = {
@@ -1104,7 +966,13 @@ on_game_start = {
 			limit = {
 				game_start_date >= 1067.12.25
 			}
-			title:k_england = { set_coa = k_england_norman}
+			title:k_england = { set_coa = k_england_norman }
+		}
+		if = {
+			limit = {
+				game_start_date >= 938.1.1
+			}
+			title:k_viet = { set_coa = k_dai_viet }
 		}
 
 		### GRANDEUR ###
@@ -1149,7 +1017,7 @@ on_game_start = {
 ####				}
 ####			}
 ####		}
-
+####
 ####		### REGENCIES ###
 ####		# Pre-defined historic regencies setup.
 ####		## NOTE: we do these first to avoid feed messages getting weird due to regents being replaced immediately after getting their position.
@@ -1394,7 +1262,7 @@ on_game_start = {
 					change_government = tribal_government
 				}
 			}
-			
+
 			# Set Coronation laws for everyone
 			if = {
 				limit = {
@@ -1410,6 +1278,10 @@ on_game_start = {
 				else_if = {
 					limit = {
 						highest_held_title_tier > tier_kingdom
+						trigger_if = { # Heinich IV crowned April 1st 1084 by Pope Clement III
+							limit = { has_title = title:e_hre }
+							NOT = { game_start_date = 1066.9.15 }
+						}
 					}
 					add_realm_law_skip_effects = crowned_emperor
 					set_variable = crowned_emperor_var
@@ -1421,10 +1293,6 @@ on_game_start = {
 				limit = {
 					is_governor = yes
 					NOT = { has_trait = governor }
-					OR = {
-						government_allows = administrative
-						government_is_japanese_trigger = yes
-					}
 				}
 				add_trait = governor
 				add_trait_xp = {
@@ -1445,24 +1313,29 @@ on_game_start = {
 					}
 				}
 			}
+			if = {
+				limit = {
+					exists = clerical_elector_title
+					NOT = { has_character_flag = cardinal_flag }
+				}
+				add_character_flag = cardinal_flag
+			}
 			# Clean up TGP governments is the Expansion is not enabled
 			if = {
 				limit = { has_tgp_dlc_trigger = no }
 				# TGP: Clean up maritime tribal govs and revert them to non-dlc tribals
 				if = {
 					limit = {
-						government_has_flag = government_is_wanua
+						has_government = wanua_government
 					}
-					empty_treasury_when_abandoning_landed_life_effect = yes
 					change_government = tribal_government
 				}
 				# TGP: Clean up mandala govs and revert them to non-dlc feudals
 				else_if = {
 					limit = {
-						government_has_flag = government_is_mandala
+						has_government = mandala_government
 					}
-					empty_treasury_when_abandoning_landed_life_effect = yes
-					change_government = prefeudal_government ##### Changed from Vanilla
+					change_government = feudal_government
 				}
 				### Every Celestial/Meritocratic/Japanese Government becomes feudal if DLC not enabled, pre-lobby history setup ###
 				else_if = {
@@ -1477,7 +1350,6 @@ on_game_start = {
 					}
 					empty_treasury_when_abandoning_landed_life_effect = yes
 					change_government = feudal_government
-
 				}
 				if = {
 					limit = {
@@ -1547,9 +1419,9 @@ on_game_start = {
 					limit = {
 						tgp_is_any_minister = yes
 					}
-					random_held_title = {
+					every_held_title = {
 						limit = {
-							tier = tier_empire
+							tgp_is_minister_title = yes
 						}
 						set_capital_county = prev.top_liege.capital_county
 					}
@@ -1587,8 +1459,8 @@ on_game_start = {
 ####				tgp_set_wuking_element_effect = { ELEMENT = fire } # Song
 ####			}
 ####		}
-		setup_tributaries_effect = yes # defined in 00_tributary_setup_effect.txt
-		# Sort custom regencies.
+####		setup_tributaries_effect = yes # defined in 00_tributary_setup_effect.txt
+####		# Sort custom regencies.
 ####		## Fatimid Caliphate - basically stuck in the back-end of an entrenched regencies from game start.
 ####		if = {
 ####			limit = { exists = character:3096 }
@@ -1643,24 +1515,24 @@ on_game_start = {
 ####			title:c_dyrrachion = { add_county_modifier = backwater_county_modifier }
 ####			title:c_avlonas = { add_county_modifier = backwater_county_modifier }
 ####		}
-####
-####		### Pandidakterion IN CONSTANTINOPLE ###
-####		if = {
-####			limit = {
-####				has_ep3_dlc_trigger = yes
-####				current_date >= 1046.1.1
-####			}
-####			title:c_byzantion = { add_county_modifier = pandidakterion_university_modifier }
-####		}
-####
-####		### Varangian Guard ###
-####		if = {
-####			limit = {
-####				has_ep3_dlc_trigger = yes
-####				current_date >= 988.1.1
-####			}
-####			title:e_byzantium = { set_variable = founded_varangian_guard }
-####		}
+
+		### Pandidakterion IN CONSTANTINOPLE ###
+		if = {
+			limit = {
+				has_ep3_dlc_trigger = yes
+				current_date >= 1046.1.1
+			}
+			title:c_byzantion = { add_county_modifier = pandidakterion_university_modifier }
+		}
+
+		### Varangian Guard ###
+		if = {
+			limit = {
+				has_ep3_dlc_trigger = yes
+				current_date >= 988.1.1
+			}
+			title:e_byzantium = { set_variable = founded_varangian_guard }
+		}
 
 		if = {
 			limit = {
@@ -2355,45 +2227,45 @@ on_game_start = {
 			}
 		}
 
-####		# Byzantine name game rule
-####		title:e_byzantium = {
-####			if = {
-####				limit = {
-####					has_game_rule = eastern_rome_name_of_byzantium
-####				}
-####				set_title_name = e_eastern_roman_empire
-####			}
-####			else_if = {
-####				limit = {
-####					has_game_rule = roman_empire_name_of_byzantium
-####				}
-####				set_title_name = h_roman_empire
-####			}
-####			else_if = {
-####				limit = {
-####					has_game_rule = romania_name_of_byzantium
-####				}
-####				set_title_name = e_romania_empire
-####			}
-####			else_if = {
-####				limit = {
-####					has_game_rule = empire_of_the_greeks_name_of_byzantium
-####				}
-####				set_title_name = e_empire_of_the_greeks
-####			}
-####			else_if = {
-####				limit = {
-####					has_game_rule = rhomaion_name_of_byzantium
-####				}
-####				set_title_name = e_rhomaion
-####			}
-####			else_if = {
-####				limit = {
-####					has_game_rule = unholy_roman_empire_name_of_byzantium
-####				}
-####				set_title_name = e_unholy_roman_empire
-####			}
-####		}
+		# Byzantine name game rule
+		title:e_byzantium = {
+			if = {
+				limit = {
+					has_game_rule = eastern_rome_name_of_byzantium
+				}
+				set_title_name = e_eastern_roman_empire
+			}
+			else_if = {
+				limit = {
+					has_game_rule = roman_empire_name_of_byzantium
+				}
+				set_title_name = h_roman_empire
+			}
+			else_if = {
+				limit = {
+					has_game_rule = romania_name_of_byzantium
+				}
+				set_title_name = e_romania_empire
+			}
+			else_if = {
+				limit = {
+					has_game_rule = empire_of_the_greeks_name_of_byzantium
+				}
+				set_title_name = e_empire_of_the_greeks
+			}
+			else_if = {
+				limit = {
+					has_game_rule = rhomaion_name_of_byzantium
+				}
+				set_title_name = e_rhomaion
+			}
+			else_if = {
+				limit = {
+					has_game_rule = unholy_roman_empire_name_of_byzantium
+				}
+				set_title_name = e_unholy_roman_empire
+			}
+		}
 
 		# Remove Coronation Doctrine if you don't have the DLC
 		if = {
@@ -2428,12 +2300,12 @@ on_game_start = {
 					limit = {
 						highest_held_title_tier > tier_kingdom
 						NOT = {
-							has_any_shunned_or_criminal_trait_in_faith_trigger = {
+							has_any_shunned_or_criminal_trait_in_rite_trigger = {
 								CHARACTER = scope:ruler
-								FAITH = scope:ruler.faith
+								RITE = scope:ruler.rite
 							}
-							faith = { has_doctrine = doctrine_no_anointment }
-						}	
+							rite = { rite_has_doctrine = doctrine_no_anointment }
+						}
 					}
 					if = {
 						limit = {
@@ -2461,32 +2333,32 @@ on_game_start = {
 			}
 		}
 
-####		# TGP: extra legitimacy for the Hegemon, so you don't fold over immediately
-####		if = {
-####			limit = { has_tgp_dlc_trigger = yes }
-####			title:h_china.holder = {
-####				# and even more for the Song, as they were in a pretty good shape on our start dates
-####				if = {
-####					limit = {
-####						situation:dynastic_cycle ?= {
-####							OR = {
-####								situation_current_phase = situation_dynastic_cycle_phase_stability_expansion
-####								situation_current_phase = situation_dynastic_cycle_phase_stability_advancement
-####							}
-####						}
-####					}
-####					add_legitimacy = 4500
-####				}
-####				else = {
-####					add_legitimacy = 3000
-####				}
-####			}
-####		}
-####		### TGP SILK ROAD INNOVATIONS
-####		tgp_silk_road_innovation_setup_effect = yes
-####
-####	### FP1 culture innovations (Varangian / All Things — DLC-gated; see culture history comments)
-####	fp1_culture_innovation_setup_effect = yes
+		# TGP: extra legitimacy for the Hegemon, so you don't fold over immediately
+		if = {
+			limit = { has_tgp_dlc_trigger = yes }
+			title:h_china.holder = {
+				# and even more for the Song, as they were in a pretty good shape on our start dates
+				if = {
+					limit = {
+						situation:dynastic_cycle ?= {
+							OR = {
+								situation_current_phase = situation_dynastic_cycle_phase_stability_expansion
+								situation_current_phase = situation_dynastic_cycle_phase_stability_advancement
+							}
+						}
+					}
+					add_legitimacy = 4500
+				}
+				else = {
+					add_legitimacy = 3000
+				}
+			}
+		}
+		### TGP SILK ROAD INNOVATIONS
+		tgp_silk_road_innovation_setup_effect = yes
+
+		### FP1 culture innovations (Varangian / All Things — DLC-gated; see culture history comments)
+		fp1_culture_innovation_setup_effect = yes
 
 		set_global_variable = {
 			name = natural_disaster_initial_grace_period
@@ -2551,38 +2423,91 @@ on_game_start = {
 		add_to_global_variable_list = { name = flood_region_list target = geographical_region:volga_river_region }
 		add_to_global_variable_list = { name = flood_region_list target = geographical_region:yangtze_river_region }
 		add_to_global_variable_list = { name = flood_region_list target = geographical_region:yellow_river_region }
-####		##### HISTORICAL HOUSE RELATIONS - deliberately placed above blocs
-####		tgp_setup_historical_house_relation_effect = yes
-####		#####  TGP JAPAN #####
-####		if = {
-####			limit = { has_tgp_dlc_trigger = yes }
-####			### DYNASTIES
-####			tgp_dynasty_house_name_setup_effect = yes
-####			### BLOCS — AuH defers to after noble_family_title_realm_setup (see TGP SETUP); else house heads lack NF titles and create_confederation asserts.
-####			if = {
-####				limit = {
-####					NOT = { has_dlc_feature = all_under_heaven }
-####				}
-####				tgp_setup_historical_house_bloc_effect = yes
-####			}
-####		}
-####		#
-####		if = {
-####			limit = {
-####				title:k_magyar = {
-####					exists = holder
-####				}
-####			}
-####			title:k_magyar = {
-####				add_title_law = confederation_elective_succession_law
-####			}
-####		}
+		##### HISTORICAL HOUSE RELATIONS - deliberately placed above blocs
+		tgp_setup_historical_house_relation_effect = yes
+		#####  TGP JAPAN #####
+		if = {
+			limit = { has_tgp_dlc_trigger = yes }
+			### DYNASTIES
+			tgp_dynasty_house_name_setup_effect = yes
+			
+			### BLOCS
+			tgp_setup_historical_house_bloc_effect = yes
+		}
+		#
+		if = {
+			limit = {
+				title:k_magyar = {
+					exists = holder
+				}
+			}
+			title:k_magyar = {
+				add_title_law = confederation_elective_succession_law
+			}
+		}
+		if = {
+			limit = {
+				has_pam_dlc_trigger = yes
+			}
+			set_up_historical_monastic_orders_effect = yes
+		}
+		set_up_historical_military_orders_effect = yes
+
+		## PAM ##
+		
+		# We put Christian faiths on conditional appointment in 1066 so the Investiture Crisis can happen
+		# 867 is too early for it and by 1178 it is over
+		if = {
+			limit = {
+				has_pam_dlc_trigger = yes
+				current_date >= 1066.1.1
+				NOT = { current_date >= 1178.1.1 }
+			}
+			religion:christianity_religion = {
+				every_faith = {
+					limit = { has_doctrine_parameter = has_clerical_regions }
+					change_doctrine = doctrine_clerical_succession_conditional
+					# Faith-level doctrine changes only hit the main rite
+					every_faith_rite = {
+						limit = { NOT = { rite_has_doctrine = doctrine_clerical_succession_conditional } }
+						change_rite_doctrine = doctrine_clerical_succession_conditional
+					}
+				}
+			}
+		}
+		# PAM tenet popularity: seed Christian faiths' starting tenet popularity from tenet statuses
+		# TODO_PAM_JF TIT-72446 replace with faith history
+		pam_tenet_popularity_on_game_start_effect = yes
+		# Schism already happened
+		if = {
+			limit = { game_start_date >= 1054.7.16 }
+			set_global_variable = pam_great_schism_decision_taken
+		}
+
+		### PAM Cardinalates
+		setup_cardinalate_list_effect = yes
+		# Post-schism starts: top the College up if history left it under the vacancy floor
+		if = {
+			limit = { has_global_variable = pam_great_schism_decision_taken }
+			faith:christian_faith = { remove_doctrine = special_doctrine_has_clerical_electors }
+			faith:catholic = { pam_seed_cardinals_effect = yes }
+		}
+		else_if = {
+			limit = {
+				has_pam_dlc_trigger = yes
+				exists = title:k_papal_state.holder
+			}
+			title:k_papal_state.holder = { add_realm_law_skip_effects = theocratic_elective_succession_law }
+			pam_seed_867_college_effect = yes
+		}
 	}
 }
 
 # Like on_game_start, except it is called once the host (or player, in single player) exits the lobby. Good for anything where you need to know who the players are, or what the game rules are
 on_game_start_after_lobby = {
 	effect = {
+		disable_succession_calculation = yes
+
 		# To prevent the Season Changes event from triggering on game start
 		situation:the_great_steppe ?= {
 			every_participant_group = {
@@ -2596,9 +2521,75 @@ on_game_start_after_lobby = {
 		}
 
 		# Extra Nomad Regions
+		if = {
+			limit = {
+				has_mpo_dlc_trigger = yes
+				has_game_rule = northeast_asia_nomad_region_on
+			}
+			situation:the_great_steppe ?= {
+				expanding_steppe_add_region_effect = {
+					SUB_REGION = east
+					REGION = dlc_mpo_steppe_north_east_asia_expansion
+				}
+			}
+			title:e_andong = {
+				every_de_jure_county = {
+					limit = {
+						holder = {
+							government_has_flag = government_is_tribal
+						}
+						OR = {
+							kingdom = title:k_balhae
+							kingdom = title:k_khitan
+							kingdom = title:k_raole # a duchy moved here in 1066 bookmark
+						}
+					}
+					holder = {
+						set_variable = {
+							name = steppe_game_start_var
+							years = 1
+						}
+						every_held_title = {
+							if = {
+								limit = {
+									title_province = {
+										has_holding_type = tribal_holding
+									}
+								}
+								title_province = {
+									set_holding_type = nomad_holding
+								}
+							}
+						}
+						change_government = nomad_government
+						if = {
+							limit = {
+								OR = {
+									domicile.domicile_culture != capital_county.culture
+									domicile.domicile_faith != capital_county.faith
+								}
+							}
+							domicile = {
+								set_domicile_culture = prev.capital_county.culture
+								set_domicile_faith = prev.capital_county.faith
+							}
+						}
+						if = {
+							limit = {
+								exists = suzerain
+								suzerain != this
+							}
+							end_tributary = yes
+							suzerain = { save_scope_as = suzerain }
+							start_tributary_interaction_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+						}
+					}
+				}
+			}
+		}
 		#Tibet
 		if = {
-		    limit = {
+			limit = {
 				has_mpo_dlc_trigger = yes
 				has_game_rule = tibet_nomad_region_on
 			}
@@ -2650,7 +2641,7 @@ on_game_start_after_lobby = {
 		}
 		#Sami
 		if = {
-		    limit = {
+			limit = {
 				has_mpo_dlc_trigger = yes
 				has_game_rule = sami_nomad_region_on
 			}
@@ -2663,6 +2654,7 @@ on_game_start_after_lobby = {
 				every_situation_county = {
 					limit = {
 						holder = {
+							government_has_flag = government_is_tribal
 							OR = {
 								culture = culture:sami
 								culture = culture:karelian
@@ -2695,7 +2687,7 @@ on_game_start_after_lobby = {
 		}
 		#Arabia
 		if = {
-		    limit = {
+			limit = {
 				has_mpo_dlc_trigger = yes
 				has_game_rule = arabia_nomad_region_on
 			}
@@ -2747,11 +2739,11 @@ on_game_start_after_lobby = {
 		}
 		#Sahel
 		if = {
-		    limit = {
+			limit = {
 				has_mpo_dlc_trigger = yes
 				has_game_rule = sahel_nomad_region_on
 			}
-		    start_situation = {
+			start_situation = {
 				type = game_rule_extra_nomads_sahel
 				start_phase = situation_steppe_severe_drought_season
 				save_scope_as = my_situation
@@ -2816,11 +2808,11 @@ on_game_start_after_lobby = {
 		}
 		#Horn of Africa
 		if = {
-		    limit = {
+			limit = {
 				has_mpo_dlc_trigger = yes
 				has_game_rule = horn_of_africa_nomad_region_on
 			}
-		    start_situation = {
+			start_situation = {
 				type = game_rule_extra_nomads_horn
 				start_phase = situation_steppe_severe_drought_season
 				save_scope_as = my_situation
@@ -2875,13 +2867,42 @@ on_game_start_after_lobby = {
 				exists = title:h_china.holder
 				has_tgp_dlc_trigger = yes
 			}
+			if = {
+				limit = {
+					game_start_date = 867.1.1
+				}
+				title:k_hebei = { tgp_make_military_celestial_provinces_effect = yes }
+				title:k_youji = { tgp_make_military_celestial_provinces_effect = yes }
+				title:k_daibei = { tgp_make_military_celestial_provinces_effect = yes }
+				title:k_guannei = { tgp_make_military_celestial_provinces_effect = yes }
+				title:k_viet = { tgp_make_military_celestial_provinces_effect = yes }
+				title:k_lingxi = { tgp_make_military_celestial_provinces_effect = yes }
+			}
+			else_if = {
+				limit = {
+					game_start_date = 1066.9.15
+				}
+				title:k_hebei = { tgp_make_military_celestial_provinces_effect = yes }
+				title:k_hebei = { tgp_make_military_celestial_provinces_effect = yes }
+				title:k_guannei = { tgp_make_military_celestial_provinces_effect = yes }
+				title:k_lingxi = { tgp_make_military_celestial_provinces_effect = yes }
+			}
+			else_if = {
+				limit = {
+					game_start_date = 1178.10.1
+				}
+				title:k_huainan = { tgp_make_military_celestial_provinces_effect = yes }
+				title:k_shannan = { tgp_make_military_celestial_provinces_effect = yes }
+				title:k_xingyuan = { tgp_make_military_celestial_provinces_effect = yes }
+				title:k_lingxi = { tgp_make_military_celestial_provinces_effect = yes }
+				title:k_xichuan = { tgp_make_military_celestial_provinces_effect = yes }
+			}
 			title:h_china.holder ?= {
 				enact_treasury_budgets_init = yes
 			}
 		}
-		
-		
-		
+
+
 		every_ruler = { # PUT EVERY_RULER TYPE STUFF HERE FOR PERFORMANCE REASONS
 			### Every nomad in the Steppe Region gets their yurt domicile goodies ###
 			if = {
@@ -3252,50 +3273,18 @@ on_game_start_after_lobby = {
 				limit = {
 					highest_held_title_tier >= tier_duchy
 				}
+				### PAM: give bishops and abbots a monastic familia instead of a generic secular court ###
+				pam_seed_monk_courtiers_effect = yes
+				pam_seed_nun_courtier_effect = yes
 				if = {
 					limit = {
 						exists = cp:councillor_court_chaplain
 						cp:councillor_court_chaplain = {
 							is_ruler = no
 						}
-						faith = { has_doctrine = doctrine_clerical_succession_spiritual_fixed_appointment }
-						any_vassal = {
-							is_physically_able_adult = yes
-							is_councillor = no
-							government_has_flag = government_is_theocracy
-							can_be_court_chaplain_trigger = { COURT_OWNER = liege }
-							faith = liege.faith
-						}
+						rite = { rite_has_parameter = has_clerical_regions } # Gates on landed clergy existing, not on a Clerical Appointment doctrine: that doctrine gets swapped at runtime
 					}
-					random_vassal = {
-						limit = {
-							is_physically_able_adult = yes
-							is_councillor = no
-							government_has_flag = government_is_theocracy
-							can_be_court_chaplain_trigger = { COURT_OWNER = liege }
-							faith = liege.faith
-						}
-						weight = {
-							base = 1
-							modifier = {
-								add = 1000
-								faith.religious_head ?= this
-							}
-							modifier = {
-								add = learning
-							}
-							modifier = {
-								add = primary_title.tier
-							}
-						}
-						liege = {
-							assign_councillor_type = {
-								type = councillor_court_chaplain
-								remove_existing_councillor = yes
-								target = prev
-							}
-						}
-					}
+					assign_landed_realm_priest_effect = yes
 				}
 				if = {
 					limit = {
@@ -3303,6 +3292,13 @@ on_game_start_after_lobby = {
 					}
 					if = { limit = { has_realm_law = crown_authority_0 } remove_realm_law = crown_authority_0 }
 				}
+			}
+			else_if = { # Same for county-tier bishops. Barons fall out of the chain without being checked
+				limit = {
+					highest_held_title_tier = tier_county
+				}
+				pam_seed_monk_courtiers_effect = yes
+				pam_seed_nun_courtier_effect = yes
 			}
 			#Autopopulate families.
 			if = {
@@ -3386,7 +3382,7 @@ on_game_start_after_lobby = {
 						}
 					}
 					#Give the initial Creator modifier
-			    	if = {
+					if = {
 						limit = { has_house_head_parameter = creator_10_year_modifier }
 						house_head = {
 							set_variable = {
@@ -3432,7 +3428,7 @@ on_game_start_after_lobby = {
 ####							any_parent = {
 ####								OR = {
 ####									has_trait = ambitious
-####									has_trait = scholar
+####									has_trait = erudite
 ####									has_trait = diligent
 ####									has_trait = confucian_education
 ####								}
@@ -3465,831 +3461,6 @@ on_game_start_after_lobby = {
 ####							is_governor_or_admin_count = yes
 ####						}
 ####						spawn_celestial_governance_contract_effect = yes
-####					}
-####					if = {
-####						limit = {
-####							game_start_date = 867.1.1
-####						}
-####						title:k_hebei.holder = {
-####							hidden_effect = {
-####								vassal_contract_set_obligation_level = {
-####									type = celestial_provinces
-####									level = 3 # Military
-####								}
-####								if = {
-####									limit = {
-####										NOT = {
-####											has_realm_law = celestial_military_appointment_succession_law
-####										}
-####									}
-####									add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####								}
-####							}
-####							every_vassal = {
-####								limit = {
-####									primary_title.tier >= tier_county
-####								}
-####								hidden_effect = {
-####									vassal_contract_set_obligation_level = {
-####										type = celestial_provinces
-####										level = 3 # Military
-####									}
-####									if = {
-####										limit = {
-####											NOT = {
-####												has_realm_law = celestial_military_appointment_succession_law
-####											}
-####										}
-####										add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####									}
-####								}
-####								every_vassal = {
-####									limit = {
-####										primary_title.tier >= tier_county
-####									}
-####									hidden_effect = {
-####										vassal_contract_set_obligation_level = {
-####											type = celestial_provinces
-####											level = 3 # Military
-####										}
-####										if = {
-####											limit = {
-####												NOT = {
-####													has_realm_law = celestial_military_appointment_succession_law
-####												}
-####											}
-####											add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####										}
-####									}
-####								}
-####							}
-####						}
-####						title:k_youji.holder = {
-####							hidden_effect = {
-####								vassal_contract_set_obligation_level = {
-####									type = celestial_provinces
-####									level = 3 # Military
-####								}
-####								if = {
-####									limit = {
-####										NOT = {
-####											has_realm_law = celestial_military_appointment_succession_law
-####										}
-####									}
-####									add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####								}
-####							}
-####							every_vassal = {
-####								limit = {
-####									primary_title.tier >= tier_county
-####								}
-####								hidden_effect = {
-####									vassal_contract_set_obligation_level = {
-####										type = celestial_provinces
-####										level = 3 # Military
-####									}
-####									if = {
-####										limit = {
-####											NOT = {
-####												has_realm_law = celestial_military_appointment_succession_law
-####											}
-####										}
-####										add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####									}
-####								}
-####								every_vassal = {
-####									limit = {
-####										primary_title.tier >= tier_county
-####									}
-####									hidden_effect = {
-####										vassal_contract_set_obligation_level = {
-####											type = celestial_provinces
-####											level = 3 # Military
-####										}
-####										if = {
-####											limit = {
-####												NOT = {
-####													has_realm_law = celestial_military_appointment_succession_law
-####												}
-####											}
-####											add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####										}
-####									}
-####								}
-####							}
-####						}
-####						title:k_daibei.holder = {
-####							hidden_effect = {
-####								vassal_contract_set_obligation_level = {
-####									type = celestial_provinces
-####									level = 3 # Military
-####								}
-####								if = {
-####									limit = {
-####										NOT = {
-####											has_realm_law = celestial_military_appointment_succession_law
-####										}
-####									}
-####									add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####								}
-####							}
-####							every_vassal = {
-####								limit = {
-####									primary_title.tier >= tier_county
-####								}
-####								hidden_effect = {
-####									vassal_contract_set_obligation_level = {
-####										type = celestial_provinces
-####										level = 3 # Military
-####									}
-####									if = {
-####										limit = {
-####											NOT = {
-####												has_realm_law = celestial_military_appointment_succession_law
-####											}
-####										}
-####										add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####									}
-####								}
-####								every_vassal = {
-####									limit = {
-####										primary_title.tier >= tier_county
-####									}
-####									hidden_effect = {
-####										vassal_contract_set_obligation_level = {
-####											type = celestial_provinces
-####											level = 3 # Military
-####										}
-####										if = {
-####											limit = {
-####												NOT = {
-####													has_realm_law = celestial_military_appointment_succession_law
-####												}
-####											}
-####											add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####										}
-####									}
-####								}
-####							}
-####						}
-####						title:k_guannei.holder = {
-####							hidden_effect = {
-####								vassal_contract_set_obligation_level = {
-####									type = celestial_provinces
-####									level = 3 # Military
-####								}
-####								if = {
-####									limit = {
-####										NOT = {
-####											has_realm_law = celestial_military_appointment_succession_law
-####										}
-####									}
-####									add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####								}
-####							}
-####							every_vassal = {
-####								limit = {
-####									primary_title.tier >= tier_county
-####								}
-####								hidden_effect = {
-####									vassal_contract_set_obligation_level = {
-####										type = celestial_provinces
-####										level = 3 # Military
-####									}
-####									if = {
-####										limit = {
-####											NOT = {
-####												has_realm_law = celestial_military_appointment_succession_law
-####											}
-####										}
-####										add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####									}
-####								}
-####								every_vassal = {
-####									limit = {
-####										primary_title.tier >= tier_county
-####									}
-####									hidden_effect = {
-####										vassal_contract_set_obligation_level = {
-####											type = celestial_provinces
-####											level = 3 # Military
-####										}
-####										if = {
-####											limit = {
-####												NOT = {
-####													has_realm_law = celestial_military_appointment_succession_law
-####												}
-####											}
-####											add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####										}
-####									}
-####								}
-####							}
-####						}
-####						title:k_viet.holder = {
-####							hidden_effect = {
-####								vassal_contract_set_obligation_level = {
-####									type = celestial_provinces
-####									level = 3 # Military
-####								}
-####								if = {
-####									limit = {
-####										NOT = {
-####											has_realm_law = celestial_military_appointment_succession_law
-####										}
-####									}
-####									add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####								}
-####							}
-####							every_vassal = {
-####								limit = {
-####									primary_title.tier >= tier_county
-####								}
-####								hidden_effect = {
-####									vassal_contract_set_obligation_level = {
-####										type = celestial_provinces
-####										level = 3 # Military
-####									}
-####									if = {
-####										limit = {
-####											NOT = {
-####												has_realm_law = celestial_military_appointment_succession_law
-####											}
-####										}
-####										add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####									}
-####								}
-####								every_vassal = {
-####									limit = {
-####										primary_title.tier >= tier_county
-####									}
-####									hidden_effect = {
-####										vassal_contract_set_obligation_level = {
-####											type = celestial_provinces
-####											level = 3 # Military
-####										}
-####										if = {
-####											limit = {
-####												NOT = {
-####													has_realm_law = celestial_military_appointment_succession_law
-####												}
-####											}
-####											add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####										}
-####									}
-####								}
-####							}
-####						}
-####						title:k_lingxi.holder = {
-####							hidden_effect = {
-####								vassal_contract_set_obligation_level = {
-####									type = celestial_provinces
-####									level = 3 # Military
-####								}
-####								if = {
-####									limit = {
-####										NOT = {
-####											has_realm_law = celestial_military_appointment_succession_law
-####										}
-####									}
-####									add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####								}
-####							}
-####							every_vassal = {
-####								limit = {
-####									primary_title.tier >= tier_county
-####								}
-####								hidden_effect = {
-####									vassal_contract_set_obligation_level = {
-####										type = celestial_provinces
-####										level = 3 # Military
-####									}
-####									if = {
-####										limit = {
-####											NOT = {
-####												has_realm_law = celestial_military_appointment_succession_law
-####											}
-####										}
-####										add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####									}
-####								}
-####								every_vassal = {
-####									limit = {
-####										primary_title.tier >= tier_county
-####									}
-####									hidden_effect = {
-####										vassal_contract_set_obligation_level = {
-####											type = celestial_provinces
-####											level = 3 # Military
-####										}
-####										if = {
-####											limit = {
-####												NOT = {
-####													has_realm_law = celestial_military_appointment_succession_law
-####												}
-####											}
-####											add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####										}
-####									}
-####								}
-####							}
-####						}
-####					}
-####					else_if = {
-####						limit = {
-####							game_start_date = 1066.9.15
-####						}
-####						title:k_hebei.holder = {
-####							hidden_effect = {
-####								vassal_contract_set_obligation_level = {
-####									type = celestial_provinces
-####									level = 3 # Military
-####								}
-####								if = {
-####									limit = {
-####										NOT = {
-####											has_realm_law = celestial_military_appointment_succession_law
-####										}
-####									}
-####									add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####								}
-####							}
-####							every_vassal = {
-####								limit = {
-####									primary_title.tier >= tier_county
-####								}
-####								hidden_effect = {
-####									vassal_contract_set_obligation_level = {
-####										type = celestial_provinces
-####										level = 3 # Military
-####									}
-####									if = {
-####										limit = {
-####											NOT = {
-####												has_realm_law = celestial_military_appointment_succession_law
-####											}
-####										}
-####										add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####									}
-####								}
-####								every_vassal = {
-####									limit = {
-####										primary_title.tier >= tier_county
-####									}
-####									hidden_effect = {
-####										vassal_contract_set_obligation_level = {
-####											type = celestial_provinces
-####											level = 3 # Military
-####										}
-####										if = {
-####											limit = {
-####												NOT = {
-####													has_realm_law = celestial_military_appointment_succession_law
-####												}
-####											}
-####											add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####										}
-####									}
-####								}
-####							}
-####						}
-####						title:k_hedong.holder = {
-####							hidden_effect = {
-####								vassal_contract_set_obligation_level = {
-####									type = celestial_provinces
-####									level = 3 # Military
-####								}
-####								if = {
-####									limit = {
-####										NOT = {
-####											has_realm_law = celestial_military_appointment_succession_law
-####										}
-####									}
-####									add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####								}
-####							}
-####							every_vassal = {
-####								limit = {
-####									primary_title.tier >= tier_county
-####								}
-####								hidden_effect = {
-####									vassal_contract_set_obligation_level = {
-####										type = celestial_provinces
-####										level = 3 # Military
-####									}
-####									if = {
-####										limit = {
-####											NOT = {
-####												has_realm_law = celestial_military_appointment_succession_law
-####											}
-####										}
-####										add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####									}
-####								}
-####								every_vassal = {
-####									limit = {
-####										primary_title.tier >= tier_county
-####									}
-####									hidden_effect = {
-####										vassal_contract_set_obligation_level = {
-####											type = celestial_provinces
-####											level = 3 # Military
-####										}
-####										if = {
-####											limit = {
-####												NOT = {
-####													has_realm_law = celestial_military_appointment_succession_law
-####												}
-####											}
-####											add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####										}
-####									}
-####								}
-####							}
-####						}
-####						title:k_guannei.holder = {
-####							hidden_effect = {
-####								vassal_contract_set_obligation_level = {
-####									type = celestial_provinces
-####									level = 3 # Military
-####								}
-####								if = {
-####									limit = {
-####										NOT = {
-####											has_realm_law = celestial_military_appointment_succession_law
-####										}
-####									}
-####									add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####								}
-####							}
-####							every_vassal = {
-####								limit = {
-####									primary_title.tier >= tier_county
-####								}
-####								hidden_effect = {
-####									vassal_contract_set_obligation_level = {
-####										type = celestial_provinces
-####										level = 3 # Military
-####									}
-####									if = {
-####										limit = {
-####											NOT = {
-####												has_realm_law = celestial_military_appointment_succession_law
-####											}
-####										}
-####										add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####									}
-####								}
-####								every_vassal = {
-####									limit = {
-####										primary_title.tier >= tier_county
-####									}
-####									hidden_effect = {
-####										vassal_contract_set_obligation_level = {
-####											type = celestial_provinces
-####											level = 3 # Military
-####										}
-####										if = {
-####											limit = {
-####												NOT = {
-####													has_realm_law = celestial_military_appointment_succession_law
-####												}
-####											}
-####											add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####										}
-####									}
-####								}
-####							}
-####						}
-####						title:k_lingxi.holder = {
-####							hidden_effect = {
-####								vassal_contract_set_obligation_level = {
-####									type = celestial_provinces
-####									level = 3 # Military
-####								}
-####								if = {
-####									limit = {
-####										NOT = {
-####											has_realm_law = celestial_military_appointment_succession_law
-####										}
-####									}
-####									add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####								}
-####							}
-####							every_vassal = {
-####								limit = {
-####									primary_title.tier >= tier_county
-####								}
-####								hidden_effect = {
-####									vassal_contract_set_obligation_level = {
-####										type = celestial_provinces
-####										level = 3 # Military
-####									}
-####									if = {
-####										limit = {
-####											NOT = {
-####												has_realm_law = celestial_military_appointment_succession_law
-####											}
-####										}
-####										add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####									}
-####								}
-####								every_vassal = {
-####									limit = {
-####										primary_title.tier >= tier_county
-####									}
-####									hidden_effect = {
-####										vassal_contract_set_obligation_level = {
-####											type = celestial_provinces
-####											level = 3 # Military
-####										}
-####										if = {
-####											limit = {
-####												NOT = {
-####													has_realm_law = celestial_military_appointment_succession_law
-####												}
-####											}
-####											add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####										}
-####									}
-####								}
-####							}
-####						}
-####					}
-####					else_if = {
-####						limit = {
-####							game_start_date = 1178.10.1
-####						}
-####						title:k_huainan.holder = {
-####							hidden_effect = {
-####								vassal_contract_set_obligation_level = {
-####									type = celestial_provinces
-####									level = 3 # Military
-####								}
-####								if = {
-####									limit = {
-####										NOT = {
-####											has_realm_law = celestial_military_appointment_succession_law
-####										}
-####									}
-####									add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####								}
-####							}
-####							every_vassal = {
-####								limit = {
-####									primary_title.tier >= tier_county
-####								}
-####								hidden_effect = {
-####									vassal_contract_set_obligation_level = {
-####										type = celestial_provinces
-####										level = 3 # Military
-####									}
-####									if = {
-####										limit = {
-####											NOT = {
-####												has_realm_law = celestial_military_appointment_succession_law
-####											}
-####										}
-####										add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####									}
-####								}
-####								every_vassal = {
-####									limit = {
-####										primary_title.tier >= tier_county
-####									}
-####									hidden_effect = {
-####										vassal_contract_set_obligation_level = {
-####											type = celestial_provinces
-####											level = 3 # Military
-####										}
-####										if = {
-####											limit = {
-####												NOT = {
-####													has_realm_law = celestial_military_appointment_succession_law
-####												}
-####											}
-####											add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####										}
-####									}
-####								}
-####							}
-####						}
-####						title:k_shannan.holder = {
-####							hidden_effect = {
-####								vassal_contract_set_obligation_level = {
-####									type = celestial_provinces
-####									level = 3 # Military
-####								}
-####								if = {
-####									limit = {
-####										NOT = {
-####											has_realm_law = celestial_military_appointment_succession_law
-####										}
-####									}
-####									add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####								}
-####							}
-####							every_vassal = {
-####								limit = {
-####									primary_title.tier >= tier_county
-####								}
-####								hidden_effect = {
-####									vassal_contract_set_obligation_level = {
-####										type = celestial_provinces
-####										level = 3 # Military
-####									}
-####									if = {
-####										limit = {
-####											NOT = {
-####												has_realm_law = celestial_military_appointment_succession_law
-####											}
-####										}
-####										add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####									}
-####								}
-####								every_vassal = {
-####									limit = {
-####										primary_title.tier >= tier_county
-####									}
-####									hidden_effect = {
-####										vassal_contract_set_obligation_level = {
-####											type = celestial_provinces
-####											level = 3 # Military
-####										}
-####										if = {
-####											limit = {
-####												NOT = {
-####													has_realm_law = celestial_military_appointment_succession_law
-####												}
-####											}
-####											add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####										}
-####									}
-####								}
-####							}
-####						}
-####						title:k_xingyuan.holder = {
-####							hidden_effect = {
-####								vassal_contract_set_obligation_level = {
-####									type = celestial_provinces
-####									level = 3 # Military
-####								}
-####								if = {
-####									limit = {
-####										NOT = {
-####											has_realm_law = celestial_military_appointment_succession_law
-####										}
-####									}
-####									add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####								}
-####							}
-####							every_vassal = {
-####								limit = {
-####									primary_title.tier >= tier_county
-####								}
-####								hidden_effect = {
-####									vassal_contract_set_obligation_level = {
-####										type = celestial_provinces
-####										level = 3 # Military
-####									}
-####									if = {
-####										limit = {
-####											NOT = {
-####												has_realm_law = celestial_military_appointment_succession_law
-####											}
-####										}
-####										add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####									}
-####								}
-####								every_vassal = {
-####									limit = {
-####										primary_title.tier >= tier_county
-####									}
-####									hidden_effect = {
-####										vassal_contract_set_obligation_level = {
-####											type = celestial_provinces
-####											level = 3 # Military
-####										}
-####										if = {
-####											limit = {
-####												NOT = {
-####													has_realm_law = celestial_military_appointment_succession_law
-####												}
-####											}
-####											add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####										}
-####									}
-####								}
-####							}
-####						}
-####						title:k_lingxi.holder = {
-####							hidden_effect = {
-####								vassal_contract_set_obligation_level = {
-####									type = celestial_provinces
-####									level = 3 # Military
-####								}
-####								if = {
-####									limit = {
-####										NOT = {
-####											has_realm_law = celestial_military_appointment_succession_law
-####										}
-####									}
-####									add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####								}
-####							}
-####							every_vassal = {
-####								limit = {
-####									primary_title.tier >= tier_county
-####								}
-####								hidden_effect = {
-####									vassal_contract_set_obligation_level = {
-####										type = celestial_provinces
-####										level = 3 # Military
-####									}
-####									if = {
-####										limit = {
-####											NOT = {
-####												has_realm_law = celestial_military_appointment_succession_law
-####											}
-####										}
-####										add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####									}
-####								}
-####								every_vassal = {
-####									limit = {
-####										primary_title.tier >= tier_county
-####									}
-####									hidden_effect = {
-####										vassal_contract_set_obligation_level = {
-####											type = celestial_provinces
-####											level = 3 # Military
-####										}
-####										if = {
-####											limit = {
-####												NOT = {
-####													has_realm_law = celestial_military_appointment_succession_law
-####												}
-####											}
-####											add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####										}
-####									}
-####								}
-####							}
-####						}
-####						title:k_xichuan.holder = {
-####							hidden_effect = {
-####								vassal_contract_set_obligation_level = {
-####									type = celestial_provinces
-####									level = 3 # Military
-####								}
-####								if = {
-####									limit = {
-####										NOT = {
-####											has_realm_law = celestial_military_appointment_succession_law
-####										}
-####									}
-####									add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####								}
-####							}
-####							every_vassal = {
-####								limit = {
-####									primary_title.tier >= tier_county
-####								}
-####								hidden_effect = {
-####									vassal_contract_set_obligation_level = {
-####										type = celestial_provinces
-####										level = 3 # Military
-####									}
-####									if = {
-####										limit = {
-####											NOT = {
-####												has_realm_law = celestial_military_appointment_succession_law
-####											}
-####										}
-####										add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####									}
-####								}
-####								every_vassal = {
-####									limit = {
-####										primary_title.tier >= tier_county
-####									}
-####									hidden_effect = {
-####										vassal_contract_set_obligation_level = {
-####											type = celestial_provinces
-####											level = 3 # Military
-####										}
-####										if = {
-####											limit = {
-####												NOT = {
-####													has_realm_law = celestial_military_appointment_succession_law
-####												}
-####											}
-####											add_realm_law_skip_effects = celestial_military_appointment_succession_law
-####										}
-####									}
-####								}
-####							}
-####						}
 ####					}
 ####				}
 ####				### Examination pass status and initial wave of governor candidates done after game start, in order to include generated families ###
@@ -4351,7 +3522,7 @@ on_game_start_after_lobby = {
 ####					}
 ####				}
 ####			}
-
+####
 ####			#elder/disciple setup
 ####			if = {
 ####				limit = {
@@ -4375,7 +3546,7 @@ on_game_start_after_lobby = {
 ####					add_to_list = disciple
 ####				}
 ####			}
-
+####
 			# Sexualities if game rules are default
 			if = {
 				limit = { has_game_rule = sexuality_distribution_default }
@@ -4398,8 +3569,8 @@ on_game_start_after_lobby = {
 				}
 			}
 		}
-		
-		
+
+
 
 		if = {
 			limit = { has_game_rule = sexuality_distribution_default }
@@ -4542,19 +3713,19 @@ on_game_start_after_lobby = {
 			game_rule_sexuality_distribution_effect = yes
 		}
 
-####		### GAME RULE: SITUATION TOGGLES
-####		struggle:iberian_struggle ?= {
-####			if = {
-####				limit = { has_game_rule = struggle_iberia_toggle_off }
-####				end_struggle = yes
-####			}
-####		}
-####		struggle:persian_struggle ?= {
-####			if = {
-####				limit = { has_game_rule = struggle_persia_toggle_off }
-####				end_struggle = yes
-####			}
-####		}
+		### GAME RULE: SITUATION TOGGLES
+		struggle:iberian_struggle ?= {
+			if = {
+				limit = { has_game_rule = struggle_iberia_toggle_off }
+				end_struggle = yes
+			}
+		}
+		struggle:persian_struggle ?= {
+			if = {
+				limit = { has_game_rule = struggle_persia_toggle_off }
+				end_struggle = yes
+			}
+		}
 		situation:the_great_steppe ?= {
 			if = {
 				limit = { has_game_rule = situation_the_great_steppe_toggle_off }
@@ -4581,13 +3752,9 @@ on_game_start_after_lobby = {
 ####					}
 ####				}
 ####				pay_short_term_gold = {
-####					target = character:83355
+####					target = character:906
 ####					gold = gold
 ####				}
-####			}
-####			random_player = {
-####				limit = { this = character:83355 }
-####				set_player_character = character:906
 ####			}
 ####			resolve_title_and_vassal_change = scope:title_change
 ####			# Since Murchad is back to his historical self, he gets to suck.
@@ -4617,8 +3784,18 @@ on_game_start_after_lobby = {
 ####					allied_through_target = character:922
 ####				}
 ####			}
+####			character:906 = {
+####				every_held_title = {
+####					title_tier = county
+####					change_county_control = 100
+####				}
+####			}
+####			random_player = {
+####				limit = { this = character:83355 }
+####				set_player_character = character:906
+####			}
 ####		}
-
+####
 ####		### GAME RULE: DETERMINISTIC CONQUEST
 ####		if = {
 ####			limit = {
@@ -4638,52 +3815,52 @@ on_game_start_after_lobby = {
 ####				trigger_on_next_date = 1066.10.14
 ####			}
 ####		}
-
+####
 ####		### 867 - MISC ###
 ####		# Basileios has just murdered Michael III.
 ####		character:1700 ?= { trigger_event = bookmark.0211 }
 
-####		### GAME RULE: EXTRA ADMINS
-####		## We'll be doing some excessive triggers below in a bid to lightly future-proof + error-spam mods less, don't worry about it.
-####		### We handle players after the lobby.
-####		# Historic chars.
-####		apply_historic_administrative_game_rule_effect = yes
-####		# Players.
-####		if = {
-####			limit = { has_dlc_feature = roads_to_power }
-####			if = {
-####				limit = {
-####					NOT = { has_game_rule = historicity_extra_admin_player_wherever_gameplay_not_administrative }
-####				}
-####				if = {
-####					limit = { has_game_rule = historicity_extra_admin_player_wherever_alt_historic_always }
-####					every_player = {
-####						limit = {
-####							highest_held_title_tier >= tier_kingdom
-####							NOR = {
-####								government_allows = administrative
-####								is_landed = no
-####							}
-####						}
-####						convert_to_administrative_from_feudalism_game_start_effect = yes
-####					}
-####				}
-####				else_if = {
-####					limit = { has_game_rule = historicity_extra_admin_player_wherever_alt_historic_with_august_trait }
-####					every_player = {
-####						limit = {
-####							highest_held_title_tier >= tier_kingdom
-####							NOR = {
-####								government_allows = administrative
-####								is_landed = no
-####							}
-####							has_trait = august
-####						}
-####						convert_to_administrative_from_feudalism_game_start_effect = yes
-####					}
-####				}
-####			}
-####		}
+		### GAME RULE: EXTRA ADMINS
+		## We'll be doing some excessive triggers below in a bid to lightly future-proof + error-spam mods less, don't worry about it.
+		### We handle players after the lobby.
+		# Historic chars.
+		apply_historic_administrative_game_rule_effect = yes
+		# Players.
+		if = {
+			limit = { has_dlc_feature = roads_to_power }
+			if = {
+				limit = {
+					NOT = { has_game_rule = historicity_extra_admin_player_wherever_gameplay_not_administrative }
+				}
+				if = {
+					limit = { has_game_rule = historicity_extra_admin_player_wherever_alt_historic_always }
+					every_player = {
+						limit = {
+							highest_held_title_tier >= tier_kingdom
+							NOR = {
+								government_has_mechanic = administrative
+								is_landed = no
+							}
+						}
+						convert_to_administrative_from_feudalism_game_start_effect = yes
+					}
+				}
+				else_if = {
+					limit = { has_game_rule = historicity_extra_admin_player_wherever_alt_historic_with_august_trait }
+					every_player = {
+						limit = {
+							highest_held_title_tier >= tier_kingdom
+							NOR = {
+								government_has_mechanic = administrative
+								is_landed = no
+							}
+							has_trait = august
+						}
+						convert_to_administrative_from_feudalism_game_start_effect = yes
+					}
+				}
+			}
+		}
 
 		# Give Ruler Designer characters regencies.
 		every_in_global_list = {
@@ -5350,6 +4527,34 @@ on_game_start_after_lobby = {
 ####					VARIABLE = started_the_iron_and_golden_king_achievement
 ####					VALUE = yes
 ####				}
+####				# CE3 achievement: Servus Servorum Dei
+####				if = {
+####					limit = {
+####						OR = {
+####							AND = {
+####								is_clergy = no
+####								is_ruler = yes
+####								highest_held_title_tier <= tier_duchy
+####							}
+####							AND = {
+####								is_clergy = yes
+####								highest_held_title_tier = tier_county
+####							}
+####						}
+####					}
+####					add_achievement_flag_effect = { FLAG = ce3_11_servus_servorum_dei_achievement_start }
+####				}
+####				# CE3 achievement: Cardinal Sin
+####				if = {
+####					limit = {
+####						is_clergy = no
+####						is_ruler = yes
+####					}
+####					add_achievement_global_variable_effect = {
+####						VARIABLE = started_ce3_15_cardinal_sin_achievement
+####						VALUE = yes
+####					}
+####				}
 ####
 ####				### RULER DESIGNER ACHIEVEMENT BLOCKS ###
 ####				if = {
@@ -5445,7 +4650,7 @@ on_game_start_after_lobby = {
 ####				VALUE = yes
 ####			}
 ####		}
-
+####
 ####		#Set starting cultural acceptance
 ####		culture:vlach = {
 ####			change_cultural_acceptance = {
@@ -6071,7 +5276,7 @@ on_game_start_after_lobby = {
 ####			}
 ####		}
 ####		#set up cultural acceptance between China and East Asian Empires to aid in the learning of Chinese effect for on_birthday_adulthood
-
+####
 ####		if = {
 ####			limit = { game_start_date = 867.1.1 }
 ####			culture:japanese = {
@@ -6144,7 +5349,7 @@ on_game_start_after_lobby = {
 ####				}
 ####			}
 ####		}
-
+####
 ####		# Specific innovation unlock
 ####		if = {
 ####			limit = {
@@ -6161,20 +5366,19 @@ on_game_start_after_lobby = {
 ####			}
 ####		}
 ####		# Custom ruler under the HRE should have lowered feudal obligations
-####		if = {
-####			limit = { exists = title:e_hre.holder }
-####			title:e_hre.holder ?= {
-####				every_vassal = {
-####					limit = {
-####						vassal_contract_has_modifiable_obligations = yes
-####					}
-####					vassal_contract_decrease_obligation_level = feudal_government_taxes
-####					vassal_contract_decrease_obligation_level = feudal_government_levies
-####					set_subject_contract_modification_blocked = no
+####		title:e_hre.holder ?= {
+####			every_vassal = {
+####				limit = {
+####					vassal_contract_has_modifiable_obligations = yes
+####					vassal_contract_obligation_level_can_be_decreased = feudal_government_taxes
+####					vassal_contract_obligation_level_can_be_decreased = feudal_government_levies
 ####				}
+####				vassal_contract_decrease_obligation_level = feudal_government_taxes
+####				vassal_contract_decrease_obligation_level = feudal_government_levies
+####				set_subject_contract_modification_blocked = no
 ####			}
 ####		}
-
+####
 ####		if = { # Special historical events for Matilda!
 ####			limit = {
 ####				character:7757 ?= { is_alive = yes }
@@ -6187,7 +5391,7 @@ on_game_start_after_lobby = {
 ####				}
 ####			}
 ####		}
-
+####
 ####		if = { # Special historical events for Vratislav!
 ####			limit = {
 ####				character:522 ?= { is_alive = yes }
@@ -6203,7 +5407,7 @@ on_game_start_after_lobby = {
 ####				}
 ####			}
 ####		}
-
+####
 ####		if = { # Special historical events for Robert the Fox!
 ####			limit = {
 ####				character:1128 ?= { is_alive = yes }
@@ -6219,7 +5423,7 @@ on_game_start_after_lobby = {
 ####				}
 ####			}
 ####		}
-
+####
 ####		if = { # Special historical events for Emir Yahya!
 ####			limit = {
 ####				character:3924 ?= { is_alive = yes }
@@ -6439,6 +5643,10 @@ on_game_start_after_lobby = {
 ####						has_government = landless_adventurer_government
 ####					}
 ####					add_realm_law_skip_effects = camp_purpose_mercenaries
+####					create_maa_regiment = {
+####						type = horse_archers
+####						size = 2
+####					}
 ####				}
 ####			}
 ####			## Prince Takaoka (Shinnyo)
@@ -6623,6 +5831,118 @@ on_game_start_after_lobby = {
 ####						has_government = landless_adventurer_government
 ####					}
 ####					add_realm_law_skip_effects = camp_purpose_scholars
+####					save_scope_as = chongyang_camp_holder
+####					# Quanzhen Seven Masters (minus Wang Chuyi himself)
+####					create_character = { # Ma Yu / Danyangzi
+####						age = 55
+####						name = "Ma Yu"
+####						gender_female_chance = 0
+####						random_traits = no
+####						faith = faith:shangqing_faith
+####						culture = culture:han
+####						trait = education_learning_3
+####						trait = lifestyle_mystic
+####						trait = theologian
+####						trait = zealous
+####						trait = temperate
+####						employer = character:wang_chuyi_1
+####						save_scope_as = quanzhen_disciple
+####					}
+####					scope:quanzhen_disciple ?= {
+####						set_character_rite = rite:quanzhen
+####					}
+####					create_character = { # Tan Chuduan / Changzhenzi
+####						age = 55
+####						name = "Tan Chuduan"
+####						gender_female_chance = 0
+####						random_traits = no
+####						faith = faith:shangqing_faith
+####						culture = culture:han
+####						trait = education_learning_3
+####						trait = lifestyle_mystic
+####						trait = theologian
+####						trait = zealous
+####						trait = patient
+####						employer = character:wang_chuyi_1
+####						save_scope_as = quanzhen_disciple
+####					}
+####					scope:quanzhen_disciple ?= {
+####						set_character_rite = rite:quanzhen
+####					}
+####					create_character = { # Liu Chuxuan / Changshengzi
+####						age = 31
+####						name = "Liu Chuxuan"
+####						gender_female_chance = 0
+####						random_traits = no
+####						faith = faith:shangqing_faith
+####						culture = culture:han
+####						trait = education_learning_3
+####						trait = lifestyle_mystic
+####						trait = theologian
+####						trait = zealous
+####						trait = diligent
+####						employer = character:wang_chuyi_1
+####						save_scope_as = quanzhen_disciple
+####					}
+####					scope:quanzhen_disciple ?= {
+####						set_character_rite = rite:quanzhen
+####					}
+####					create_character = { # Qiu Chuji / Changchunzi
+####						age = 30
+####						name = "Qiu Chuji"
+####						gender_female_chance = 0
+####						random_traits = no
+####						faith = faith:shangqing_faith
+####						culture = culture:han
+####						trait = education_learning_4
+####						trait = lifestyle_mystic
+####						trait = theologian
+####						trait = zealous
+####						trait = temperate
+####						employer = character:wang_chuyi_1
+####						save_scope_as = quanzhen_disciple
+####					}
+####					scope:quanzhen_disciple ?= {
+####						set_character_rite = rite:quanzhen
+####						add_trait = herald
+####						set_variable = qiu_chuji
+####					}
+####					create_character = { # Hao Datong / Guangningzi
+####						age = 38
+####						name = "Hao Datong"
+####						gender_female_chance = 0
+####						random_traits = no
+####						faith = faith:shangqing_faith
+####						culture = culture:han
+####						trait = education_learning_3
+####						trait = lifestyle_mystic
+####						trait = theologian
+####						trait = zealous
+####						trait = calm
+####						employer = character:wang_chuyi_1
+####						save_scope_as = quanzhen_disciple
+####					}
+####					scope:quanzhen_disciple ?= {
+####						set_character_rite = rite:quanzhen
+####					}
+####					create_character = { # Sun Buer / Qingjingzi
+####						age = 59
+####						name = "Sun Buer"
+####						gender_female_chance = 100
+####						random_traits = no
+####						faith = faith:shangqing_faith
+####						culture = culture:han
+####						trait = education_learning_3
+####						trait = lifestyle_mystic
+####						trait = theologian
+####						trait = zealous
+####						trait = humble
+####						employer = character:wang_chuyi_1
+####						save_scope_as = quanzhen_disciple
+####					}
+####					scope:quanzhen_disciple ?= {
+####						set_character_rite = rite:quanzhen
+####					}
 ####				}
 ####			}
 ####			character:jiang_kui_1 ?= {
@@ -6704,120 +6024,91 @@ on_game_start_after_lobby = {
 ####					add_courtier = character:japanese_ise_2_1 # Yoshimori
 ####				}
 ####			}
-####			every_independent_ruler = {
-####				if = {
-####					limit = { is_landless_adventurer = yes }
-####					# C... food.
-####					domicile = { change_provisions = starting_provisions_value }
-####					# Contracts
-####					if = {
-####						limit = { is_ai = no }
-####						# Set up additional firing contracts.
-####						player_adventurer_contract_generation_on_wait_in_place_effect = yes
-####						#generate contracts if you are far away from your previous location
-####						player_adventurer_contract_generation_on_domicile_moved_effect = yes
-####					}
-####					else = {
-####						create_story = { type = story_adventurer_ai }
-####						trigger_event = {
-####							on_action = on_adventurer_ai_new_employer_arrival
-####							days = { 10 30 }
-####						}
-####					}
-####					# Sort our starting flavourisation.
-####					if = {
-####						limit = { has_realm_law = camp_purpose_mercenaries }
-####						set_variable = flavourise_camp_purpose_mercenaries
-####					}
-####					else_if = {
-####						limit = { has_realm_law = camp_purpose_wanderers }
-####						set_variable = flavourise_camp_purpose_wanderers
-####					}
-####					else_if = {
-####						limit = { has_realm_law = camp_purpose_scholars }
-####						set_variable = flavourise_camp_purpose_scholars
-####					}
-####					else_if = {
-####						limit = { has_realm_law = camp_purpose_explorers }
-####						set_variable = flavourise_camp_purpose_explorers
-####					}
-####					else_if = {
-####						limit = { has_realm_law = camp_purpose_brigands }
-####						set_variable = flavourise_camp_purpose_brigands
-####					}
-####					else_if = {
-####						limit = { has_realm_law = camp_purpose_legitimists }
-####						set_variable = flavourise_camp_purpose_legitimists
-####					}
-####					# And tally our numbers for performance purposes.
-####					add_to_global_variable_list = {
-####						name = laamps_tally
-####						target = this.primary_title
-####					}
-####				}
-####				### EP3 ADMIN SETUP ###
-####				if = {
-####					limit = { government_allows = administrative }
-####					save_scope_as = top_liege
-####					### EP3 NOBLE FAMILIES & DOMICILE SETUP ###
-####					random_held_title = { # May be removed once every_noble_family includes liege (TIT-51212)
-####						limit = { is_noble_family_title = yes }
-####						set_coa = scope:top_liege.house
-####					}
-####					every_noble_family = {
-####						# Ensure Noble Family CoA match House
-####						set_coa = holder.house
-####						# Ensure holders of historical noble family titles are the default house heads
-####						holder ?= {
-####							save_scope_as = nf_holder
-####							if = {
-####								limit = { is_landed = yes }
-####								capital_province = { save_scope_as = domicile_location }
-####							}
-####							house ?= {
-####								if = {
-####									limit = { house_head != scope:nf_holder }
-####									set_house_head = scope:nf_holder
-####								}
-####							}
-####						}
-####					}
-####				}
-####			}
+			every_independent_ruler = {
+				if = {
+					limit = { is_landless_adventurer = yes }
+					# C... food.
+					domicile = { change_provisions = starting_provisions_value }
+					# Contracts
+					if = {
+						limit = { is_ai = no }
+						# Set up additional firing contracts.
+						player_adventurer_contract_generation_on_wait_in_place_effect = yes
+						#generate contracts if you are far away from your previous location
+						player_adventurer_contract_generation_on_domicile_moved_effect = yes
+					}
+					else = {
+						create_story = { type = story_adventurer_ai }
+						trigger_event = {
+							on_action = on_adventurer_ai_new_employer_arrival
+							days = { 10 30 }
+						}
+					}
+					# Sort our starting flavourisation.
+					if = {
+						limit = { has_realm_law = camp_purpose_mercenaries }
+						set_variable = flavourise_camp_purpose_mercenaries
+					}
+					else_if = {
+						limit = { has_realm_law = camp_purpose_wanderers }
+						set_variable = flavourise_camp_purpose_wanderers
+					}
+					else_if = {
+						limit = { has_realm_law = camp_purpose_scholars }
+						set_variable = flavourise_camp_purpose_scholars
+					}
+					else_if = {
+						limit = { has_realm_law = camp_purpose_explorers }
+						set_variable = flavourise_camp_purpose_explorers
+					}
+					else_if = {
+						limit = { has_realm_law = camp_purpose_brigands }
+						set_variable = flavourise_camp_purpose_brigands
+					}
+					else_if = {
+						limit = { has_realm_law = camp_purpose_legitimists }
+						set_variable = flavourise_camp_purpose_legitimists
+					}
+					# And tally our numbers for performance purposes.
+					add_to_global_variable_list = {
+						name = laamps_tally
+						target = this.primary_title
+					}
+				}
+				### EP3 ADMIN SETUP ###
+				if = {
+					limit = { government_has_mechanic = administrative }
+					save_scope_as = top_liege
+					### EP3 NOBLE FAMILIES & DOMICILE SETUP ###
+					random_held_title = { # May be removed once every_noble_family includes liege (TIT-51212)
+						limit = { is_noble_family_title = yes }
+						set_coa = scope:top_liege.house
+					}
+					every_noble_family = {
+						# Ensure Noble Family CoA match House
+						set_coa = holder.house
+						# Ensure holders of historical noble family titles are the default house heads
+						holder ?= {
+							save_scope_as = nf_holder
+							if = {
+								limit = { is_landed = yes }
+								capital_province = { save_scope_as = domicile_location }
+							}
+							house ?= {
+								if = {
+									limit = { house_head != scope:nf_holder }
+									set_house_head = scope:nf_holder
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 		### TGP SETUP ###
 		if = {
 			limit = { has_tgp_dlc_trigger = yes }
 			### JAPAN
-
-####			# History defaults e_japan to feudal + single heir so partial DLC / no AuH bookmarks load cleanly.
-####			# Restore Ritsuryō Kampaku when All Under Heaven is active (must run before noble-family / bureaucracy setup).
-####			if = {
-####				limit = { has_dlc_feature = all_under_heaven }
-####				title:e_japan.holder ?= {
-####					# can_get_government for japan_administrative checks top_liege for japanese government OR this flag; independent Kampaku is neither until flagged.
-####					if = {
-####						limit = {
-####							NOT = { government_has_flag = government_is_japan_administrative }
-####							OR = {
-####								has_government = feudal_government
-####								has_government = japan_feudal_government
-####							}
-####						}
-####						add_character_flag = tgp_japan_restore_japanese_government_flag
-####						change_government = japan_administrative_government
-####						remove_character_flag = tgp_japan_restore_japanese_government_flag
-####					}
-####					# Separate if (not else_if): first block can flip government same pass; law must still run for that case and for history Ritsuryō holders missing the law.
-####					if = {
-####						limit = {
-####							government_has_flag = government_is_japan_administrative
-####							NOT = { has_realm_law = japanese_regency_succession_law }
-####						}
-####						add_realm_law_skip_effects = japanese_regency_succession_law
-####					}
-####				}
-####			}
 
 ####			# Special variable that UI uses to display correct title
 ####			title:e_japan = {
@@ -6900,15 +6191,6 @@ on_game_start_after_lobby = {
 ####					domicile ?= { move_domicile = title:e_japan.holder.capital_province }
 ####				}
 ####			}
-####
-####			if = {
-####				limit = {
-####					has_dlc_feature = all_under_heaven
-####					exists = title:e_japan.holder
-####				}
-####				tgp_setup_historical_house_bloc_effect = yes
-####			}
-####
 ####
 ####			### MANDALA
 ####
@@ -7042,7 +6324,14 @@ on_game_start_after_lobby = {
 ####					create_story = story_mandala
 ####				}
 ####			}
-####			#Tai Migrations
+####
+####			# Spawn the Slavic Rite story cycle
+####			title:k_moravia.holder ?= {
+####				# Fire the story cycle for Rostislav
+####				create_story = story_slavic_rite
+####			}
+####
+####			# Tai Migrations
 ####			every_county_in_region = { # save all migration counties to variable list
 ####				region = custom_tai_migration_target
 ####				add_to_global_variable_list = {
@@ -7073,7 +6362,7 @@ on_game_start_after_lobby = {
 ####					}
 ####				}
 ####			}
-		}
+####		}
 ####		### TGP MERIT AND TREASURY HANDOUT ON GAME START ###
 ####		if = {
 ####			limit = {
@@ -7126,7 +6415,10 @@ on_game_start_after_lobby = {
 ####			every_in_list = {
 ####				list = goryeo_military_provinces
 ####				limit = {
-####					holder ?= { is_governor = yes }
+####					holder ?= {
+####						has_subject_contract_group = meritocratic_vassal
+####						is_governor = yes
+####					}
 ####				}
 ####				holder = {
 ####					vassal_contract_set_obligation_level = {
@@ -7150,7 +6442,10 @@ on_game_start_after_lobby = {
 ####			every_in_list = {
 ####				list = silla_military_provinces
 ####				limit = {
-####					holder ?= { is_governor = yes }
+####					holder ?= {
+####						has_subject_contract_group = meritocratic_vassal
+####						is_governor = yes
+####					}
 ####				}
 ####				holder = {
 ####					vassal_contract_set_obligation_level = {
@@ -7170,7 +6465,10 @@ on_game_start_after_lobby = {
 ####			title:c_chikuzen ?= { # Dazaifu
 ####				if = {
 ####					limit = {
-####						holder ?= { is_governor = yes }
+####						holder ?= {
+####							has_subject_contract_group = japan_administrative_vassal
+####							is_governor = yes
+####						}
 ####					}
 ####					holder = {
 ####						vassal_contract_set_obligation_level = {
@@ -7185,7 +6483,10 @@ on_game_start_after_lobby = {
 ####			every_in_list = {
 ####				list = japan_military_provinces
 ####				limit = {
-####					holder ?= { is_governor = yes }
+####					holder ?= {
+####						has_subject_contract_group = japan_administrative_vassal
+####						is_governor = yes
+####					}
 ####				}
 ####				holder = {
 ####					vassal_contract_set_obligation_level = {
@@ -7215,6 +6516,21 @@ on_game_start_after_lobby = {
 ####		title:e_goryeo.holder ?= {
 ####			add_to_list = holder_to_learn_chinese
 ####		}
+####		title:k_xia.holder ?= {
+####			add_to_list = holder_to_learn_chinese
+####		}
+####		title:e_great_liao.holder ?= {
+####			add_to_list = holder_to_learn_chinese
+####		}
+####		title:e_jin.holder ?= {
+####			add_to_list = holder_to_learn_chinese
+####		}
+####		title:k_balhae.holder ?= {
+####			add_to_list = holder_to_learn_chinese
+####		}
+####		title:k_dali.holder ?= {
+####			add_to_list = holder_to_learn_chinese
+####		}
 ####		title:h_china.holder ?= {
 ####			every_tributary = {
 ####				add_to_list = holder_to_learn_chinese
@@ -7223,12 +6539,15 @@ on_game_start_after_lobby = {
 ####		every_in_list = {
 ####			list = holder_to_learn_chinese
 ####			tgp_learn_chinese_effect_game_start = yes
-####			every_noble_family = {
-####				holder ?= {
-####					tgp_learn_chinese_effect_game_start = yes
-####					house = {
-####						every_house_member = {
-####							tgp_learn_chinese_effect_game_start = yes
+####			if = {
+####				limit = { is_independent_ruler = yes  }
+####				every_noble_family = {
+####					holder ?= {
+####						tgp_learn_chinese_effect_game_start = yes
+####						house = {
+####							every_house_member = {
+####								tgp_learn_chinese_effect_game_start = yes
+####							}
 ####						}
 ####					}
 ####				}
@@ -7328,6 +6647,9 @@ on_game_start_after_lobby = {
 							add_random_internal_east_asian_estate_building = yes
 						}
 						fill_external_east_asian_estate_building_effect = yes
+					}
+					ecclesiastical_domicile = {
+						fill_ecclesiastical_domicile_building_effect = yes
 					}
 				}
 			}
@@ -7594,6 +6916,9 @@ on_game_start_after_lobby = {
 							}
 							fill_external_east_asian_estate_building_effect = yes
 						}
+						ecclesiastical_domicile = {
+							fill_ecclesiastical_domicile_building_effect = yes
+						}
 					}
 				}
 			}
@@ -7704,6 +7029,9 @@ on_game_start_after_lobby = {
 					tier_county = {
 						change_county_fertility = { 2 8 }
 					}
+					tier_hegemony = {
+						change_county_fertility = { 32 48 }
+					}
 				}
 			}
 			else_if = {
@@ -7776,6 +7104,7 @@ on_game_start_after_lobby = {
 							gender_female_chance = scope:player_scope.marriage_gender_adjusted_female_chance
 							culture = scope:player_scope.culture
 							faith = scope:player_scope.faith
+							rite = scope:player_scope.rite
 							after_creation = {
 								random_list = {
 									200 = {
@@ -7808,6 +7137,7 @@ on_game_start_after_lobby = {
 							gender_female_chance = 15
 							culture = scope:player_scope.culture
 							faith = scope:player_scope.faith
+							rite = scope:player_scope.rite
 							after_creation = {
 								random_list = {
 									200 = {
@@ -7836,15 +7166,6 @@ on_game_start_after_lobby = {
 			}
 		}
 
-		# Sanity check the setup if in debug mode
-		if = {
-        	limit = {
-        		debug_only = yes
-        	}
-	        run_setup_tests_effect = yes
-    	}
-		set_global_variable = game_has_started
-
 		every_independent_ruler = {
 			# Treasury setup for any government using treasury
 			tgp_treasury_setup_effect = yes
@@ -7852,129 +7173,150 @@ on_game_start_after_lobby = {
 
 		# TGP China education track switch
 
-		if = {
-			limit = {
-				exists = title:h_china.holder
-			}
-			title:h_china.holder = {
-				add_to_list = realm_potential_education_flip_list
-			}
-		}
-		if = {
-			limit = {
-				exists = title:e_goryeo.holder
-			}
-			title:e_goryeo.holder = {
-				add_to_list = realm_potential_education_flip_list
-			}
-		}
-		if = {
-			limit = {
-				exists = title:k_dali.holder
-			}
-			title:k_dali.holder = {
-				add_to_list = realm_potential_education_flip_list
-			}
-		}
-		if = {
-			limit = {
-				exists = title:k_viet.holder
-			}
-			title:k_viet.holder = {
-				add_to_list = realm_potential_education_flip_list
-			}
-		}
-		if = {
-			limit = {
-				exists = title:k_xia.holder
-			}
-			title:k_xia.holder = {
-				add_to_list = realm_potential_education_flip_list
-			}
-		}
-		if = {
-			limit = {
-				exists = title:e_andong.holder
-			}
-			title:e_andong.holder = {
-				add_to_list = realm_potential_education_flip_list
+####		if = {
+####			limit = {
+####				exists = title:h_china.holder
+####			}
+####			title:h_china.holder = {
+####				add_to_list = realm_potential_education_flip_list
+####			}
+####		}
+####		if = {
+####			limit = {
+####				exists = title:e_goryeo.holder
+####			}
+####			title:e_goryeo.holder = {
+####				add_to_list = realm_potential_education_flip_list
+####			}
+####		}
+####		if = {
+####			limit = {
+####				exists = title:k_dali.holder
+####			}
+####			title:k_dali.holder = {
+####				add_to_list = realm_potential_education_flip_list
+####			}
+####		}
+####		if = {
+####			limit = {
+####				exists = title:k_viet.holder
+####			}
+####			title:k_viet.holder = {
+####				add_to_list = realm_potential_education_flip_list
+####			}
+####		}
+####		if = {
+####			limit = {
+####				exists = title:k_xia.holder
+####			}
+####			title:k_xia.holder = {
+####				add_to_list = realm_potential_education_flip_list
+####			}
+####		}
+####		if = {
+####			limit = {
+####				exists = title:e_andong.holder
+####			}
+####			title:e_andong.holder = {
+####				add_to_list = realm_potential_education_flip_list
+####			}
+####		}
+####
+####		every_in_list = {
+####			list = realm_potential_education_flip_list
+####			every_vassal_or_below = {
+####				limit = {
+####					is_ai = yes
+####					OR = {
+####						is_governor = yes
+####						tgp_is_any_minister = yes
+####					}
+####					trigger_if = {
+####						limit = { has_trait_with_flag = civilian_province }
+####						OR = {
+####							vassal_contract_has_flag = celestial_military_appointment
+####							vassal_contract_has_flag = meritocratic_military_appointment
+####						}
+####					}
+####					trigger_else = {
+####						OR = {
+####							vassal_contract_has_flag = celestial_civil_appointment
+####							vassal_contract_has_flag = meritocratic_civil_appointment
+####						}
+####					}
+####				}
+####				if = {
+####					limit = { has_trait_with_flag = civilian_province }
+####					set_variable = {
+####						name = appointment_trait_override
+####						value = trait:education_martial_1
+####					}
+####				}
+####				else = {
+####					set_variable = {
+####						name = appointment_trait_override
+####						value = trait:education_stewardship_1
+####					}
+####				}
+####			}
+####		}
+####		if = {
+####			limit = {
+####				has_game_rule = no_easteregg_characters
+####			}
+####			# needed for error suppression as all characters are added to the list in the history
+####			if = {
+####				limit = {
+####					always = no
+####				}
+####				add_to_global_variable_list = {
+####					name = easteregg_characters_list
+####					target = this
+####				}
+####			}
+####			every_in_global_list = {
+####				variable = easteregg_characters_list
+####				limit = {
+####					is_ai = yes
+####				}
+####				death = {
+####					death_reason = death_vanished
+####				}
+####			}
+####			clear_global_variable_list = easteregg_characters_list
+####		}
+####
+####		title:k_papal_state.holder ?= {
+####			enforce_papal_latin_court_language_effect = yes
+####		}
+####
+		# A faith's organization members are exactly its clergy, so this never touches the laity.
+		religion:christianity_religion = {
+			every_faith = {
+				organization ?= {
+					every_organization_member = {
+						christian_clergy_learn_liturgical_language_effect = yes
+					}
+				}
 			}
 		}
 
-		every_in_list = {
-			list = realm_potential_education_flip_list
-			every_vassal_or_below = {
-				limit = {
-					is_ai = yes
-					OR = {
-						is_governor = yes
-						tgp_is_any_minister = yes
-					}
-					trigger_if = {
-						limit = { has_trait_with_flag = civilian_province }
-						OR = {
-							vassal_contract_has_flag = celestial_military_appointment
-							vassal_contract_has_flag = meritocratic_military_appointment
-						}
-					}
-					trigger_else = {
-						OR = {
-							vassal_contract_has_flag = celestial_civil_appointment
-							vassal_contract_has_flag = meritocratic_civil_appointment
-						}
-					}
-				}
-				if = {
-					limit = { has_trait_with_flag = civilian_province }
-					set_variable = {
-						name = appointment_trait_override
-						value = trait:education_martial_1
-					}
-				}
-				else = {
-					set_variable = {
-						name = appointment_trait_override
-						value = trait:education_stewardship_1
-					}
-				}
-			}
-		}
+		# Sanity check the setup if in debug mode
 		if = {
 			limit = {
-				has_game_rule = no_easteregg_characters
+				debug_only = yes
 			}
-			# needed for error suppression as all characters are added to the list in the history
-			if = {
-				limit = {
-					always = no
-				}
-				add_to_global_variable_list = {
-					name = easteregg_characters_list
-					target = this
-				}
-			}
-			every_in_global_list = {
-				variable = easteregg_characters_list
-				limit = {
-					is_ai = yes
-				}
-				death = {
-					death_reason = death_vanished
-				}
-			}
-			clear_global_variable_list = easteregg_characters_list
+			run_setup_tests_effect = yes
 		}
-		
+		set_global_variable = game_has_started
+
 		enable_and_run_succession_calculation = yes
 	}
 
 	events = {
-		#####game_rule.1011	#Hungarian Migration management.
-		#####historical_artifacts.0023
-		bp_historical_artifacts.0023 # Historical Artifacts Generator
+		#game_rule.1011	#Hungarian Migration management.
+		#historical_artifacts.0050			# Starting Holy Site Relics
+		bp_historical_artifacts.0023			# Historical Artifacts Generator
 		coronation_events.0302 # ACH crown giveaway
 	}
 }
-
-
-##### Removed a number of inapplicable events and such

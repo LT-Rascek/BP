@@ -1,0 +1,191 @@
+﻿namespace = culture_notification
+
+#########################################################################################
+# Tradition Removed from Culture 														#
+# by Sean Hughes																		#
+# culture_notification.0010																#
+#########################################################################################
+
+##### Changed from Vanilla: Added check for flag that suppresses notifications (during WtWSMS custom divergence)
+culture_notification.0010 = {
+	##### Changed from Vanilla vvvvv
+	id_override_priority = 1
+	##### Changed from Vanilla ^^^^^
+	hidden = yes
+
+	##### Changed from Vanilla vvvvv
+	trigger = { NOT = { has_variable = suppress_tradition_change_warnings } }
+	##### Changed from Vanilla ^^^^^
+
+	immediate = {
+		save_scope_as = this_player
+		send_interface_toast = {
+			type = msg_culture_tradition_change
+			title = culture_notification.0010.t
+			custom_tooltip = culture_notification.0010.desc
+		}
+	}
+}
+
+#########################################################################################
+# Tradition Added to Culture 	 														#
+# by Sean Hughes																		#
+# culture_notification.0011																#
+#########################################################################################
+
+##### Changed from Vanilla: Added check for flag that suppresses notifications (during WtWSMS custom divergence)
+culture_notification.0011 = {
+	##### Changed from Vanilla vvvvv
+	id_override_priority = 1
+	##### Changed from Vanilla ^^^^^
+	hidden = yes
+
+	##### Changed from Vanilla vvvvv
+	trigger = { NOT = { has_variable = suppress_tradition_change_warnings } }
+	##### Changed from Vanilla ^^^^^
+
+	immediate = {
+		save_scope_as = this_player
+		send_interface_toast = {
+			type = msg_culture_tradition_change
+			title = culture_notification.0011.t
+			custom_tooltip = culture_notification.0011.desc
+		}
+	}
+}
+
+##### Changed from Vanilla: Made more extensive in its documentation
+culture_notification.1011 = {
+	##### Changed from Vanilla vvvvv
+	id_override_priority = 1
+	##### Changed from Vanilla ^^^^^
+
+	type = character_event
+	title = culture_notification.1011.t
+	##### Changed from Vanilla vvvvv
+	desc = {
+		desc = culture_notification.1011.intro
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:dominant_culture = flag:parent_1 }
+				desc = culture_notification.1011.hybrid_primary_1
+			}
+			triggered_desc = {
+				trigger = { scope:dominant_culture = flag:parent_2 }
+				desc = culture_notification.1011.hybrid_primary_2
+			}
+			desc = culture_notification.1011.hybrid_no_primary
+		}
+		first_valid = {
+			triggered_desc = {
+				trigger = { this = scope:founder }
+				desc = culture_notification.1011.outro.founder
+			}
+			desc = culture_notification.1011.outro.other
+		}
+	}
+	##### Changed from Vanilla ^^^^^
+	theme = culture_change
+	override_background = market
+	window = big_event_window
+	widget = { gui = event_window_widget_vfx_godray container = foreground_shader_vfx_container }
+	major = yes
+	left_portrait = {
+		character = scope:founder
+		triggered_animation = {
+			trigger = { scope:new_culture = { has_cultural_pillar = ethos_bellicose } }
+			animation = celebrate_sword
+		}
+		triggered_animation = {
+			trigger = { scope:new_culture = { has_cultural_pillar = ethos_stoic } }
+			animation = survey
+		}
+		triggered_animation = {
+			trigger = { scope:new_culture = { has_cultural_pillar = ethos_bureaucratic } }
+			animation = steward
+		}
+		triggered_animation = {
+			trigger = { scope:new_culture = { has_cultural_pillar = ethos_spiritual } }
+			animation = prayer
+		}
+		triggered_animation = {
+			trigger = { scope:new_culture = { has_cultural_pillar = ethos_courtly } }
+			animation = chancellor
+		}
+		triggered_animation = {
+			trigger = { scope:new_culture = { has_cultural_pillar = ethos_communal } }
+			animation = toast_goblet
+		}
+		triggered_animation = {
+			trigger = { scope:new_culture = { has_cultural_pillar = ethos_egalitarian } }
+			animation = acknowledging
+		}
+		animation = war_over_win
+	}
+
+	trigger = {
+		NOT = { has_character_flag = hide_hybridization_event }
+	}
+
+	##### Changed from Vanilla vvvvv
+	immediate = {
+		scope:new_culture = {
+			if = { #WtWSMS event check
+				limit = { scope:founder = { has_variable = dominant_culture } }
+				if = {
+					limit = { scope:parent_1 = scope:founder.var:dominant_culture }
+					save_scope_value_as = { name = dominant_culture value = flag:parent_1 }
+				}
+				else = { save_scope_value_as = { name = dominant_culture value = flag:parent_2 } }
+			}
+			else = { #Vanilla (and GUI) check
+				if = {
+					limit = {
+						calc_true_if = {
+							amount >= 3
+							has_same_culture_ethos = scope:parent_1
+							has_same_culture_heritage = scope:parent_1
+							has_same_culture_language = scope:parent_1
+							has_same_culture_martial_tradition = scope:parent_1
+						}
+					}
+					save_scope_value_as = { name = dominant_culture value = flag:parent_1 }
+				}
+				else_if = {
+					limit = {
+						calc_true_if = {
+							amount >= 3
+							has_same_culture_ethos = scope:parent_2
+							has_same_culture_heritage = scope:parent_2
+							has_same_culture_language = scope:parent_2 
+							has_same_culture_martial_tradition = scope:parent_2
+						}
+					}
+					save_scope_value_as = { name = dominant_culture value = flag:parent_2 }
+				}
+				else = {
+					save_scope_value_as = { name = dominant_culture value = flag:none }
+				}
+			}
+		}
+	}
+	after = {
+		if = {
+			limit = { scope:founder = { has_variable = dominant_culture } }
+			scope:founder = { remove_variable = dominant_culture }
+		}
+	}
+	##### Changed from Vanilla ^^^^^
+
+	option = {
+		trigger = { this = scope:founder }
+		name = culture_notification.1011.a.founder
+		custom_tooltip = culture_notification_hybrid_tooltip
+	}
+
+	option = {
+		trigger = { this != scope:founder }
+		name = culture_notification.1011.a.other
+		custom_tooltip = culture_notification_hybrid_tooltip
+	}
+}

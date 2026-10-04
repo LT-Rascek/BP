@@ -1,0 +1,246 @@
+﻿namespace = raiding
+
+##### Changed from Vanilla: Tied in WtWSMS Dynasty Perk
+
+# Chance to fire viking/raider trait acquisition event
+raiding.0022 = {
+	##### Changed from Vanilla vvvvv
+	id_override_priority = 1
+	##### Changed from Vanilla ^^^^^
+
+	hidden = yes
+	scope = army
+
+	trigger = {
+		army_commander ?= {
+			has_variable = raid_counter
+			var:raid_counter >= 20
+			NOT = { has_trait = viking }
+		}
+	}
+
+	immediate = {
+		root.army_commander = { save_scope_as = raid_leader }
+		scope:raid_leader = {
+			random = {
+				chance = 20
+				trigger_event = {
+					id = raiding.0023
+					days = { 180 545 }
+				}
+				modifier = {
+					add = 10
+					var:raid_counter >= 30
+				}
+				modifier = {
+					add = 10
+					var:raid_counter >= 40
+				}
+				modifier = {
+					add = 10
+					var:raid_counter >= 50
+				}
+				##### Changed from Vanilla vvvvv
+				modifier = {
+					factor = 2
+					dynasty = { has_dynasty_perk = BP_despoilation_legacy_1 }
+				}
+				##### Changed from Vanilla ^^^^^
+			}
+		}
+	}
+}
+
+##### Changed from Vanilla: Changed innovation reference to match WtWSMS
+
+# Raid Intent Effects
+raiding.0040 = {
+	##### Changed from Vanilla vvvvv
+	id_override_priority = 1
+	##### Changed from Vanilla ^^^^^
+
+	hidden = yes
+	scope = army
+
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					raid_intent = destruction_intent
+					raid_intent = raze_intent
+				}
+				has_raid_intent_immunity = no
+			}
+			scope:barony.title_province ?= {
+				random_list = {
+					10 = {
+						modifier = {
+							has_raid_intent_protection = yes
+							add = 10
+						}
+					} # Nothing happens
+					5 = {
+						modifier = {
+							##### Changed from Vanilla vvvvv
+							scope:raider.culture ?= { has_innovation = innovation_castrae }
+							##### Changed from Vanilla ^^^^^
+							add = 2
+						}
+						scope:raider = {
+							send_interface_message = {
+								type = event_raid_good
+								title = raze_intent_message
+
+								left_icon = scope:barony.holder
+								right_icon = root.army_commander
+								show_as_tooltip = {
+									scope:barony.title_province = {
+										add_province_modifier = {
+											modifier = shattered_defenses_modifier
+											years = 5
+										}
+									}
+								}
+							}
+						}
+						scope:barony.holder = {
+							send_interface_message = {
+								type = event_raid_bad
+								title = raze_intent_message
+
+								left_icon = scope:barony.holder
+								right_icon = root.army_commander
+								scope:barony.title_province = {
+									add_province_modifier = {
+										modifier = shattered_defenses_modifier
+										years = 5
+									}
+								}
+							}
+						}
+					}
+					5 = {
+						trigger = {
+							county = { development_level > 0 }
+						}
+						modifier = {
+							scope:raider.culture ?= { has_innovation = innovation_motte }
+							add = 2
+						}
+						scope:raider = {
+							send_interface_message = {
+								type = event_raid_good
+								title = raze_intent_message
+
+								left_icon = scope:barony.holder
+								right_icon = root.army_commander
+								show_as_tooltip = {
+									scope:county = { change_development_level = -1 }
+								}
+							}
+						}
+						scope:barony.holder = {
+							send_interface_message = {
+								type = event_raid_bad
+								title = raze_intent_message
+
+								left_icon = scope:barony.holder
+								right_icon = root.army_commander
+								scope:county = { change_development_level = -1 }
+							}
+						}
+					}
+					5 = {
+						trigger = {
+							num_buildings > 1
+						}
+						modifier = {
+							scope:raider.culture ?= { has_innovation = innovation_motte }
+							add = 2
+						}
+						destroy_random_building_variable_effect = yes
+						scope:raider = {
+							send_interface_message = {
+								type = event_raid_good
+								title = raze_intent_message
+
+								left_icon = scope:barony.holder
+								right_icon = root.army_commander
+								show_as_tooltip = {
+									scope:barony.title_province = {
+										destroy_random_building_effect = yes
+									}
+								}
+							}
+						}
+						scope:barony.holder = {
+							send_interface_message = {
+								type = event_raid_bad
+								title = raze_intent_message
+
+								left_icon = scope:barony.holder
+								right_icon = root.army_commander
+								scope:barony.title_province = {
+									destroy_random_building_effect = yes
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				raid_intent = plunder_intent_nomadic
+				scope:raider.culture = { can_get_innovation_from = scope:county.culture }
+				has_raid_intent_immunity = no
+			}
+			random = {
+				chance = {
+					value = 2
+					if = {
+						limit = {
+							has_raid_intent_protection = yes
+						}
+						divide = 2
+					}
+					if = {
+						limit = {
+							scope:raider.culture ?= { has_innovation = innovation_motte }
+						}
+						add = 1
+					}
+				}
+				scope:raider = {
+					send_interface_message = {
+						type = event_raid_good
+						title = raze_intent_message
+
+						left_icon = scope:barony.holder
+						right_icon = root.army_commander
+						scope:raider.culture = {
+							get_random_innovation_from = scope:county.culture
+						}
+					}
+				}	
+			}
+		}
+		scope:barony.holder ?= {
+			if = {
+				limit = {
+					government_has_flag = government_is_nomadic
+				}
+				send_interface_message = {
+					type = event_raid_bad
+					title = raid_herd_message
+
+					left_icon = scope:barony.holder
+					right_icon = root.army_commander
+					scope:barony.holder.domicile ?= {
+						change_herd = -100
+					}
+				}
+			}
+		}
+	}
+}
