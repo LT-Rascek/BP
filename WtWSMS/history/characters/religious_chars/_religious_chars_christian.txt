@@ -4171,20 +4171,34 @@ JerusalemChurchSpecial001 = { #St. Jude's (hypothetical) son
 ### Arian Churches
 GothicChurch000 = { #Ulfilas/Wulfila
 	name = Ulfilas
-	rite = arian
+	rite = gothic_rite
 	culture = cappadocian
 	311.1.1 = { birth = yes }
 	327.1.1 = {
-		culture = gothic
+		culture = gothic #Cappadocian descent
 		trait = diligent
 		trait = patient
 		trait = zealous
 		trait = education_learning_4
+		trait = edrudite
 	}
 	341.1.1 = { name = "Ulfilas" }
 	383.1.1 = {
-		trait = saint
 		death = yes
+		effect_even_if_dead = {
+			pam_canonize_saint_effect = {
+				CANONIZER = root
+				CANDIDATE = root
+				CONSECRATION_PROVINCE = province:508 #Durostorum, close enough
+				PRESET = yes
+			}
+			faith:arian = {
+				if = {
+					limit = { NOT = { has_saint_character = root } }
+					add_saint = { character = root }
+				}
+			}
+		}
 	}
 }
 

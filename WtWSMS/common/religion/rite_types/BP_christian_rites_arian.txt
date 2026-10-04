@@ -1,0 +1,66 @@
+﻿arian = {
+	name = arian
+	desc = arian_desc
+	faith = arian
+
+	color = { 0.2 0.1 0.1 }
+	icon = testeo
+
+	tenet_selection_pair = {
+		requires_dlc_flag = by_god_alone
+		tenet = tenet_acts_of_apostles
+		fallback_tenet = tenet_mendicant_preachers
+	}
+	tenet_selection_pair = {
+		requires_dlc_flag = by_god_alone
+		tenet = tenet_divine_liturgy
+		fallback_tenet = tenet_communion
+	}
+
+	tenets = {
+		tenet_arianism
+	}
+	
+	doctrines = {
+		doctrine_christian_liturgical_rite_latin
+		special_doctrine_arian_ecumenism
+	}
+}
+gothic_rite = {
+	name = gothic_rite
+	desc = gothic_rite_desc
+	faith = arian
+
+	color = visigothic
+
+	tenets = {
+		tenet_communal_identity
+		tenet_communion
+		tenet_arianism
+	}
+	
+	doctrines = {
+		#Main
+		doctrine_no_head
+		doctrine_pluralism_pluralistic
+		
+		#Crime: Mostly from Germanic Law (Communal Faith)
+		doctrine_homosexuality_shunned #Gothic Pagan influence
+		doctrine_adultery_men_crime
+		doctrine_adultery_women_crime
+		doctrine_kinslaying_close_kin_crime
+		doctrine_deviancy_crime
+		doctrine_witchcraft_crime
+		
+		#Clerical Function
+		doctrine_clerical_function_taxation
+		doctrine_monasticism_accepted
+		doctrine_sacraments_central
+		
+		#Ritual
+		
+		#Christian Doctrines
+		doctrine_christian_liturgical_rite_local_rite
+		special_doctrine_arian_ecumenism
+	}
+}

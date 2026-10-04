@@ -1,4 +1,184 @@
-﻿##### Changed from Vanilla: Extended to Zealous Pagans
+﻿##### Changed from Vanilla: Tied into Rite Parameters
+courtly = {
+	score = {
+		value = ai_sociability
+		add = {
+			value = ai_sociability
+			divide = 2
+		}
+		add = {
+			value = ai_greed
+			multiply = -1
+		}
+		add = {
+			value = ai_compassion
+			divide = 2
+		}
+		if = {
+			limit = {
+				has_trait = gregarious
+			}
+			add = 50
+		}
+		if = {
+			limit = {
+				has_trait = fickle
+			}
+			add = 50
+		}
+		if = {
+			limit = {
+				has_trait = honest
+			}
+			add = 50
+		}
+		if = {
+			limit = {
+				culture = { has_cultural_pillar = ethos_courtly }
+			}
+			add = 50
+		}
+		if = {
+			limit = {
+				scope:liege = { has_royal_court = yes has_court_type = court_diplomatic }
+			}
+			add = 30
+		}
+		if = {
+			limit = {
+				scope:liege = { has_royal_court = yes has_court_type = court_intrigue }
+			}
+			add = 15
+		}
+		if = {
+			limit = {
+				top_participant_group:dynastic_cycle ?= {
+					participant_group_type = pro_hegemon_movement
+				}
+			}
+			add = 250
+		}
+		if = {
+			limit = {
+				culture = {
+					has_innovation = innovation_royal_prerogative
+				}
+			}
+			multiply = 1.2
+		}
+		if = {
+			limit = {
+				culture = {
+					has_innovation = innovation_heraldry
+				}
+			}
+			multiply = 1.2
+		}
+		if = {
+			limit = {
+				culture = {
+					has_innovation = innovation_court_officials
+				}
+			}
+			multiply = 1.2
+		}
+		##### Changed from Vanilla vvvvv
+		if = {
+			limit = {
+				rite = { rite_has_parameter = coutly_vassals_more_common }
+			}
+			multiply = 1.33
+		}
+		##### Changed from Vanilla ^^^^^
+	}
+	heir_score = {
+		value = diplomacy
+		multiply = 30
+		add = ai_sociability
+		add = ai_compassion
+		add = {
+			value = ai_greed
+			multiply = -1
+		}
+		if = {
+			limit = {
+				has_trait = gregarious
+			}
+			add = 50
+		}
+		if = {
+			limit = {
+				has_trait = generous
+			}
+			add = 50
+		}
+		if = {
+			limit = {
+				has_trait = greedy
+			}
+			add = -50
+		}
+		if = {
+			limit = {
+				has_trait = shy
+			}
+			add = -50
+		}
+		if = {
+			limit = {
+				is_male = yes
+				scope:liege = {
+					has_realm_law = female_preference_law
+				}
+			}
+			multiply = 0.01
+		}
+		if = {
+			limit = {
+				is_female = yes
+				scope:liege = {
+					has_realm_law = male_preference_law
+				}
+			}
+			multiply = 0.01
+		}
+		if = {
+			limit = {
+				is_adult = no
+			}
+			multiply = 0.01
+			add = -100
+		}
+		if = {
+			limit = {
+				is_male = yes
+				scope:liege = {
+					has_realm_law = female_only_law
+				}
+			}
+			multiply = 0
+			add = -100
+		}
+		if = {
+			limit = {
+				is_female = yes
+				scope:liege = {
+					has_realm_law = male_only_law
+				}
+			}
+			multiply = 0
+			add = -100
+		}
+	}	
+	is_valid = {
+		is_lowborn = no
+		scope:liege = {
+			is_landed = yes
+		}
+	}
+}
+
+##### Changed from Vanilla: Extended to Zealous Pagans
 zealot = {
 	score = {
 		value = ai_zeal
@@ -70,18 +250,18 @@ zealot = {
 				multiply = num_virtuous_traits
 			}
 		}
-		##### Changed from Vanilla vvvvv
 		if = {
 			limit = {
+				##### Changed from Vanilla vvvvv
 				OR = {
 					culture = { has_cultural_tradition = tradition_zealous_people }
 					culture = { has_cultural_tradition = tradition_zealous_pagans }
 					culture = { has_cultural_tradition = tradition_zealous_pagans_non_dlc }
 				}
+				##### Changed from Vanilla ^^^^^
 			}
 			add = 50
 		}
-		##### Changed from Vanilla ^^^^^
 		if = {
 			limit = {
 				culture = { has_cultural_pillar = ethos_spiritual }
@@ -97,9 +277,9 @@ zealot = {
 		if = {
 			limit = {
 				num_sinful_traits <= 0
-				faith = { has_doctrine_parameter = more_often_zealots }
+				rite = { rite_has_parameter = more_often_zealots }
 			}
-			add = 400
+			add = 150
 		}
 		if = {
 			limit = {
@@ -133,6 +313,14 @@ zealot = {
 			}
 			multiply = 1.2
 		}
+		##### Changed from Vanilla vvvvv
+		if = {
+			limit = {
+				rite = { rite_has_parameter = zealot_vassals_less_common }
+			}
+			multiply = 0.75
+		}
+		##### Changed from Vanilla ^^^^^
 		if = {
 			limit = {
 				ai_zeal >= 0
@@ -264,7 +452,7 @@ zealot = {
 		scope:liege = {
 			is_landed = yes
 		}
-	}	
+	}
 }
 
 ##### Changed from Vanilla: Greco-Roman Social Traditions won't be minority stances with each other
@@ -285,34 +473,7 @@ minority = {
 								value > faith_astray_level
 							}
 						}
-						NOR = {
-							AND = {
-								scope:liege.faith.religion = religion:islam_religion
-								faith = {
-									has_doctrine = tenet_islamic_syncretism
-								}
-							}
-							AND = {
-								scope:liege.faith.religion = religion:judaism_religion
-								faith = {
-									has_doctrine = tenet_jewish_syncretism
-								}
-							}
-							AND = {
-								scope:liege.faith.religion = religion:christianity_religion
-								faith = {
-									has_doctrine = tenet_christian_syncretism
-								}
-							}
-							AND = {
-								scope:liege.faith = {
-									has_doctrine_parameter = unreformed
-								}
-								faith = {
-									has_doctrine = tenet_unreformed_syncretism
-								}
-							}
-						}
+						NOT = { rite = { rite_is_syncretic_with = { RITE = scope:liege.rite } } }
 					}
 					AND = {
 						culture != scope:liege.culture
@@ -393,41 +554,13 @@ minority = {
 		OR = {
 			AND = {
 				faith != scope:liege.faith
-				faith != scope:liege.faith
 				faith = {
 					faith_hostility_level = {
 						target = scope:liege.faith
 						value > faith_astray_level
 					}
 				}
-				NOR = {
-					AND = {
-						scope:liege.faith.religion = religion:islam_religion
-						faith = {
-							has_doctrine = tenet_islamic_syncretism
-						}
-					}
-					AND = {
-						scope:liege.faith.religion = religion:judaism_religion
-						faith = {
-							has_doctrine = tenet_jewish_syncretism
-						}
-					}
-					AND = {
-						scope:liege.faith.religion = religion:christianity_religion
-						faith = {
-							has_doctrine = tenet_christian_syncretism
-						}
-					}
-					AND = {
-						scope:liege.faith = {
-							has_doctrine_parameter = unreformed
-						}
-						faith = {
-							has_doctrine = tenet_unreformed_syncretism
-						}
-					}
-				}
+				NOT = { rite = { rite_is_syncretic_with = { RITE = scope:liege.rite } } }
 			}
 			AND = {
 				scope:liege = {

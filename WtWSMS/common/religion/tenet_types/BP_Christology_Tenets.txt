@@ -46,7 +46,7 @@
 	}
 }
 tenet_arianism = {
-	icon = tenet_two_nature
+	icon = tenet_arianism
 
 	name = tenet_arianism_name
 
@@ -72,15 +72,29 @@ tenet_arianism = {
 		}
 	}
 
-	divergence_multiplier = 1.5
+	divergence_multiplier = 2.0
 
 	character_modifier = {
-		different_faith_opinion = 15
+		max_sway_schemes_add = 1
+		powerful_vassal_opinion = 5
+		owned_political_scheme_success_chance_add = 5
 	}
 
-	parameters = {}
+	parameters = {
+		zealot_vassals_less_common
+		coutly_vassals_more_common
+	}
+
+	personal_tenet_modifier = {
+		legitimacy_gain_mult = 0.10
+		max_political_schemes_add = 1
+	}
 
 	personal_tenet_parameters = {}
+	
+	special_parameters = { #Hostile is default and the Arians stick in the middle ground in many ways
+		hostility_level_override = {}
+	}
 }
 tenet_anomoeanism = {
 	icon = tenet_two_nature
