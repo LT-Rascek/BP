@@ -200,6 +200,9 @@ accolade_maa_lancers = {
 				level >= 2
 			}
 		}
+		NOT = {
+			culture = { has_cultural_parameter = strength_in_numbers_heavy_maa_ban }
+		}
 		NOT = { exists = scope:title }
 	}
 

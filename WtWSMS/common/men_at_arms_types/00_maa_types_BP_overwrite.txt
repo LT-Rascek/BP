@@ -41,10 +41,7 @@ light_footmen = {
 	}
 
 	can_recruit = {
-		NOR = {
-			government_has_flag = government_is_nomadic
-			government_has_flag = government_is_herder
-		}
+		NOT = { government_has_flag = government_is_in_steppe }
 	}
 
 	should_show_when_unavailable = {
@@ -96,10 +93,7 @@ pikemen_unit = {
 	}
 
 	can_recruit = {
-		NOR = {
-			government_has_flag = government_is_nomadic
-			government_has_flag = government_is_herder
-		}
+		NOT = { government_has_flag = government_is_in_steppe }
 	}
 
 	should_show_when_unavailable = {
@@ -153,10 +147,7 @@ armored_footmen = {
 		NOT = {
 			culture = { has_cultural_parameter = strength_in_numbers_heavy_maa_ban }
 		}
-		NOR = {
-			government_has_flag = government_is_nomadic
-			government_has_flag = government_is_herder
-		}
+		NOT = { government_has_flag = government_is_in_steppe }
 	}
 
 	should_show_when_unavailable = {
@@ -216,10 +207,7 @@ armored_horsemen = {
 		culture = {
 			has_innovation = innovation_arched_saddle
 		}
-		NOR = {
-			government_has_flag = government_is_nomadic
-			government_has_flag = government_is_herder
-		}
+		NOT = { government_has_flag = government_is_in_steppe }
 		NOT = {
 			culture = { has_cultural_parameter = strength_in_numbers_heavy_maa_ban }
 		}

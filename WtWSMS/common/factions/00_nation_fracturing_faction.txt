@@ -128,12 +128,12 @@ nation_fracturing_faction = {
 		# Faction is not allowed against administrative rulers
 		trigger_if = {
 			limit = {
-				scope:target = { government_allows = administrative }
+				scope:target = { government_has_mechanic = administrative }
 			}
 			scope:target = { save_temporary_scope_as = recipient }
 			custom_tooltip = {
 				text = has_admin_gov
-				NOT = { scope:target = { government_allows = administrative } }
+				NOT = { scope:target = { government_has_mechanic = administrative } }
 			}
 		}
 		
@@ -200,12 +200,12 @@ nation_fracturing_faction = {
 		# Faction is not allowed against administrative rulers
 		trigger_if = {
 			limit = {
-				scope:target = { government_allows = administrative }
+				scope:target = { government_has_mechanic = administrative }
 			}
 			scope:target = { save_temporary_scope_as = recipient }
 			custom_tooltip = {
 				text = has_admin_gov
-				NOT = { scope:target = { government_allows = administrative } }
+				NOT = { scope:target = { government_has_mechanic = administrative } }
 			}
 		}
 		
@@ -293,12 +293,12 @@ nation_fracturing_faction = {
 		# Faction is not allowed against administrative rulers
 		trigger_if = {
 			limit = {
-				scope:faction.faction_target = { government_allows = administrative }
+				scope:faction.faction_target = { government_has_mechanic = administrative }
 			}
 			scope:faction.faction_target = { save_temporary_scope_as = recipient }
 			custom_tooltip = {
 				text = has_admin_gov
-				NOT = { scope:faction.faction_target = { government_allows = administrative } }
+				NOT = { scope:faction.faction_target = { government_has_mechanic = administrative } }
 			}
 		}
 		
