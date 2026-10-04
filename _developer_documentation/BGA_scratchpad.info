@@ -17,6 +17,10 @@ stopped and completed on_actions
 - Move BP decisions into their own folder for simplicity
 
 Religion:
+- Manicheans and Western Manicheans consider Christianity too good (astray/righteous)
+- Right to Rule Doctrines
+- Messianic Jews should view Apostolic Christianity as Righteous
+- Mystery naming hookup for Mystery Religion Tenet
 - Fixup existing localizations and resort
 - Revise Mainline Rites as Appropriate (size &c.)
 - Polytheistic Syncretism should have increased heresy/divergence effects
@@ -28,30 +32,40 @@ Religion:
    - clergy_are_always_monks parameter - linked with monasticism doctrine
 
 Christian Borks:
+- pam_latin_as_liturgical_language_trigger and pam_greek_as_liturgical_language_trigger &c. need complete overhaul
+	- Christology Tenet name/desc triggers need fixup
+- Add rule blocks for Apostolic and Ante-Nicene Christianity
+- `uses_eucharistic_rite_trigger` unused
+- Ecumenism tenets are borked
 - Duplicated Rites:
    - Marcionism, Nestorianism
 - Remove otherwise non-existant Christian faiths in a way that's conformal with vanilla
+- 
 
 General Mechanics:
 - Theocratic Faiths should not have non-theocrats as head of rite
 
-- Court Chaplain Values need overhaul
+- Replace `_early_christian` with `_debated` to be more properly general in doctrine type
+- Add in 2nd Temple and 1st Temple Judaism for full Jewish history
 
 History:
+- Get Rid of Gothic Patriarchate
+- Ephesus should be a Miaphysite center
 - Add some Messalian provinces
 - Remove Mehrism and associated RICE on actions
 - Clerical Regions need overhaul
 - Rework in the doctrine at start on actions
 
 GUI:
-- Admin Laws not showing up correctly for Roman Admin Governments
 - Other budgets not showing up for Roman Admin Budgets
-- Make sure laws are properly visible
-- Creating a Rite is not showing the other doctrine options correctly
 - Update Religion GUI with minorities
 - Update doctrine_type_tooltip to support new categories
 
 -----------------------
+
+Script Values:
+- `great_holy_war_target_kingdom_weight` for new religions
+- Court Chaplain Values need overhaul
 
 Minorities:
 - sea_minority_decisions.txt
@@ -64,6 +78,8 @@ Patron Deity Decisions:
    - select_personal_nat_decision - Review if needed
 
 Doctrines:
+- Figure out how we're going to handle church structure doctrines; in the west it should be tending towards Papal Primacy and Collegiality in the East
+- Roman Polytheism should have some sort of Divergence/Heresy tolerance mechanic
 - Henotheism needed for Bhakti and Khuramazta
 - Get Doctrines et al sorted, including Rite to Rule
 - Move Vegetarianism from Special group
@@ -72,6 +88,9 @@ Doctrines:
 - Add in Eastern Pagan,  Faith Doctrine (special)
 - Add Nastika Faith Doctrine, Naked Priests, Roman Polytheism
 - Persian Legalization
+
+History:
+- Add Wereka, Batwin, and Arius as Arian Saints
 
 - Fill in tenets and doctrines
 - Augustinian Canons exist
@@ -93,6 +112,9 @@ Replace Items:
 - realm_law_use_clerical_influence_trigger with a realm law flag check
 - coa_jewish_trigger needs to integrate with Marcionism being anti-Jewish
 =======================
+Situations:
+- Remove at start Christian Situation
+
 Activities:
 - Rework Dharma `buddhist_retreat_decision` into an activity
 - Mass Activity for rites with some sort of liturgical rite
@@ -111,6 +133,9 @@ Custom Localization:
 - GetGovernmentAuthority
 - GetFaithSacredLanguage
 - GetFaithSacredLanguageCharacter
+
+History:
+- Basiliscus should start with Miaphysite Tenet
 
 Database:
 - WtWSMS holy sites need to be pruned or fixed up.

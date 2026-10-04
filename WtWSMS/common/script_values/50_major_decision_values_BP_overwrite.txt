@@ -6,6 +6,7 @@ convert_to_feudalism_development_requirement = {
 		limit = {
 			holder = {
 				any_neighboring_top_liege_realm_owner = {
+					count = all
 					NOT = { government_has_flag = government_is_tribal }
 				}
 			}

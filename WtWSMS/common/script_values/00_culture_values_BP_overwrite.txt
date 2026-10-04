@@ -84,7 +84,6 @@ hybridization_threshold_value = {
 			divide = 100
 		}
 	}
-	
 	##### Changed from Vanilla vvvvv
 	if = {
 		limit = { root.culture = { has_cultural_parameter = lower_hybridization_acceptance } }
@@ -156,32 +155,31 @@ culture_divergence_cooldown = {
 }
 
 ##### Changed from Vanilla: Added new game rule
-culture_hybrid_cooldown = {
-	value = 50
+culture_divergence_cooldown = {
+	value = 100
 	# Game Rules
 	if = {
 		limit = {
 			has_game_rule = slower_hybrid_and_divergence_cooldowns
 		}
-		add = 50
+		add = 100
 	}
 	else_if = {
 		limit = {
 			has_game_rule = faster_hybrid_and_divergence_cooldowns
 		}
-		add = -25
+		add = -50
 	}
 	##### Changed from Vanilla vvvvv
 	else_if = { #All are mutually exclusive, but always good to put addition before multiplication
 		limit = { has_game_rule = bp_default_hybrid_and_divergence_cooldowns }
 		add = 50
 	}
-	##### Changed from Vanilla ^^^^^
 	else_if = {
 		limit = {
 			has_game_rule = no_hybrid_and_divergence_cooldowns
 		}
-		multiply = 0
+		add = -10000 # You can have a "negative age" culture by picking a culture that hasn't been formed yet in the ruler designer. Such a culture would get blocked by a cooldown of 0 years, so the no cooldown rule needs a negative value.
 	}
 }
 
@@ -211,7 +209,7 @@ grant_title_cultural_acceptance_impact = {
 			value = culture_number_of_counties
 			min = 1
 		}
-		multiply = general_grant_multiplier ##### Changed from Vanilla #If you are giving all counties with this culture self rule then you will increase acceptance by 15% - If this is changed also change revoke_title_culture_acceptance_impact
+		multiply = general_grant_multiplier ##### Changed from Vanilla
 
 		min = 0.5
 		max = general_grant_multiplier ##### Changed from Vanilla
@@ -282,10 +280,10 @@ revoke_title_culture_acceptance_impact = {
 				value = scope:landed_title.culture.culture_number_of_counties
 				min = 1
 			}
-			multiply = general_grant_multiplier #Same as used in grant above ##### Changed from Vanilla
+			multiply = general_grant_multiplier ##### Changed from Vanilla
 
 			min = 0.5
-			max = 15
+			max = general_grant_multiplier ##### Changed from Vanilla
 		}
 	}
 	else = {
@@ -306,10 +304,10 @@ auto_grant_county_cultural_acceptance_impact = {
 			value = scope:landed_title.culture.culture_number_of_counties
 			min = 1
 		}
-		multiply = general_grant_multiplier #Same as used in grant above ##### Changed from Vanilla
+		multiply = general_grant_multiplier ##### Changed from Vanilla
 
 		min = 0.5
-		max = general_grant_multiplier #Same as used in grant above ##### Changed from Vanilla
+		max = 15
 	}
 }
 
@@ -321,9 +319,9 @@ culture_conversion_acceptance_impact = { #The smaller a culture is, the more ups
 			value = scope:county.culture.culture_number_of_counties
 			min = 1
 		}
-		multiply = general_grant_multiplier #Same as used in grant above ##### Changed from Vanilla
+		multiply = general_grant_multiplier ##### Changed from Vanilla
 
-		# Due to minority system
+		# SEA Minorities: Due to minority system
 		divide = 3
 		min = 0.1
 		max = general_grant_multiplier #Same as used in grant above ##### Changed from Vanilla

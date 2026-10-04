@@ -195,12 +195,20 @@ culture_acceptance_baseline = {
 
 				any_culture_county = {
 					percent >= 0.5
-					this.religion ?= { is_in_family = rf_eastern }
+					title_province = {
+						religion = {
+							is_in_family = rf_eastern
+						}
+					}
 				}
-				scope:culture = {
+				scope:culture ?= {
 					any_culture_county = {
 						percent >= 0.5
-						this.religion ?= { is_in_family = rf_eastern }
+						title_province = {
+							religion = {
+								is_in_family = rf_eastern
+							}
+						}
 					}
 				}
 			}

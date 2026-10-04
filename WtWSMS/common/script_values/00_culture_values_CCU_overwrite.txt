@@ -116,7 +116,6 @@
 		else = { #Everyone else just cares about the Grandeur directly
 			add = scope:target.court_grandeur_current
 		}
-
 		if = { # Only care about checking rulers who speak the language that their court speaks
 			limit = {
 				scope:target = {
@@ -187,10 +186,6 @@
 					AND = {
 						capital_province = { geographical_region = world_india_deccan }
 						NOT = { scope:target.capital_province = { geographical_region = world_india_deccan } }
-					}
-					AND = {
-						capital_province = { geographical_region = world_burma }
-						NOT = { scope:target.capital_province = { geographical_region = world_burma } }
 					}
 					AND = {
 						capital_province = { geographical_region = world_himalaya }
@@ -269,7 +264,6 @@
 		multiply = 1.5
 	}
 	
-	
 	# CCU: Prefer not to switch from native language to very different languages
 	if = {
 		limit = {
@@ -313,6 +307,5 @@
 		}
 		multiply = 4.0 #Reverts not in same family/group effect
 	}
-	
 	min = 1
 }

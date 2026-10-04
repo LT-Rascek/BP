@@ -3,30 +3,14 @@ hostile_scheme_base_odds_prediction_guts_value = {
 	if = {
 		limit = {
 			exists = scope:temp_target.primary_title
-			scope:temp_target.primary_title.tier = tier_empire
+			scope:temp_target.primary_title.tier >= tier_duchy
 		}
 		add = {
-			value = -40
-			desc = scheme_odds.target.tier
-		}
-	}
-	else_if = {
-		limit = {
-			exists = scope:temp_target.primary_title
-			scope:temp_target.primary_title.tier = tier_kingdom
-		}
-		add = {
-			value = -30
-			desc = scheme_odds.target.tier
-		}
-	}
-	else_if = {
-		limit = {
-			exists = scope:temp_target.primary_title
-			scope:temp_target.primary_title.tier = tier_duchy
-		}
-		add = {
-			value = -20
+			value = {
+				value = scope:temp_target.primary_title.tier
+				subtract = 1
+				multiply = -10
+			}
 			desc = scheme_odds.target.tier
 		}
 	}
@@ -92,7 +76,7 @@ hostile_scheme_base_odds_prediction_guts_value = {
 	if = {
 		limit = {
 			scope:temp_target = {
-				is_landed_or_landless_administrative = no
+				is_landed_or_landless_administrative_or_theocratic = no
 			}
 			scope:owner = {
 				exists = scope:temp_target.liege.cp:councillor_spymaster
@@ -107,7 +91,7 @@ hostile_scheme_base_odds_prediction_guts_value = {
 	if = {
 		limit = {
 			scope:temp_target = {
-				is_landed_or_landless_administrative = no
+				is_landed_or_landless_administrative_or_theocratic = no
 			}
 			scope:owner = {
 				exists = scope:temp_target.host.cp:councillor_spymaster
@@ -268,7 +252,7 @@ hostile_scheme_base_odds_prediction_guts_value = {
 					faith = { has_doctrine_parameter = hostile_scheme_success_chance_vs_spouse_penalty }
 				}
 				##### Changed from Vanilla ^^^^^
-				is_spouse_of = scope:temp_target	
+				is_spouse_of = scope:temp_target
 			}
 		}
 		add = {

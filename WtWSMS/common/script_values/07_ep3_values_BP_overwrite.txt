@@ -226,7 +226,6 @@ admin_title_troop_command_cost_value = {
 		multiply = 100000
 	}
 }
-
 ##### Changed from Vanilla: Linked in Roman Federate contract effects
 
 # Governor efficiency used in code
@@ -837,8 +836,6 @@ governor_efficiency = {
 			}
 		}
 
-		##### Changed from Vanilla vvvvv
-
 		# Non-de jure governors get a penalty
 		if = {
 			limit = {
@@ -869,7 +866,6 @@ governor_efficiency = {
 				divide = 100
 			}
 		}
-		##### Changed from Vanilla ^^^^^
 
 		# TGP DYNASTIC CYCLE
 		if = {
@@ -912,7 +908,7 @@ governor_efficiency = {
 		if = { # The Great Barracks duchy building bonus (great project)
 			limit = {
 				OR = {
-					vassal_contract_has_flag = celestial_military_appointment # Only for celestial military governors
+					vassal_contract_has_flag = province_military # Only for military governors
 					government_has_flag = government_is_administrative # All regular admin types are eligible
 					is_independent_ruler = yes # The top liege can always use it
 				}
@@ -928,7 +924,7 @@ governor_efficiency = {
 				divide = 100
 			}
 		}
-		
+
 		# TGP TREASURY BUDGET
 		if = {
 			limit = {
@@ -1086,19 +1082,15 @@ house_power_score = {
 					house_head = { government_is_japanese_trigger = yes }
 				}
 				add = {
-					every_house_member = {
-						limit = { top_liege = scope:target_house.house_head.top_liege }
-						add = 1.5
-					}
+					add = list_size:house_member
+					multiply = 1.5
 					desc = members_in_realm_desc
 				}
 			}
 			else = {
 				add = {
-					every_house_member = {
-						limit = { top_liege = scope:target_house.house_head.top_liege }
-						add = 3
-					}
+					add = list_size:house_member
+					multiply = 3
 					desc = members_in_realm_desc
 				}
 			}
@@ -1194,19 +1186,14 @@ house_power_score = {
 				}
 			}
 
-			##### Changed from Vanilla vvvvv
-			
-			# Malus for not practicing the state faith (or a righteous faith)
+			# Malus for not practicing the state rite
 			if = {
 				limit = {
 					house_head.top_liege ?= { government_allows = state_faith }
 					#NOT = { house_head.top_liege.primary_title.state_faith ?= scope:target_house.house_head.faith }
 					##### Changed from Vanilla vvvvv
 					house_head.top_liege.primary_title.state_faith ?= {
-						faith_hostility_level = {
-							target = scope:target_house.house_head.faith
-							value > 0
-						}
+						rite_hostility_level = { target = scope:target_house.house_head.state_rite value > 0 }
 					}
 					##### Changed from Vanilla ^^^^^
 				}
@@ -1215,7 +1202,6 @@ house_power_score = {
 					desc = house_head_different_faith_powerful_family_rating
 				}
 			}
-			##### Changed from Vanilla ^^^^^
 
 			# Estate building bonuses
 			if = { # Market
@@ -1290,7 +1276,7 @@ house_power_score = {
 					house_head = {
 						exists = top_liege.capital_province
 						domicile ?= {
-							is_domicile_type = estate
+							domicile_is_estate_trigger = yes
 							domicile_location = prev.top_liege.capital_province
 						}
 					}
@@ -1357,7 +1343,10 @@ house_power_score = {
 				add = {
 					value = 0
 					house_head.confederation = {
-						every_confederation_member_house = { add = 10 }
+						add = {
+							value = list_size:confederation_member_house
+							multiply = 10
+						}
 					}
 					desc = led_bloc_size_desc
 				}
@@ -1370,7 +1359,7 @@ house_power_score = {
 					limit = {
 						# Using the triggers of is_governor directly to save performance
 						is_landed = yes
-						government_allows = administrative
+						government_has_mechanic = administrative
 						top_liege != this
 						highest_held_title_tier >= main_administrative_tier
 						house.house_head.top_liege ?= top_liege
@@ -1392,20 +1381,14 @@ house_power_score = {
 			# Bonus for being the imperial house (we deliberately but this at the end, behind the governorship multiplier, as an added bonus on top of everything else)
 			if = {
 				limit = {
-					any_house_member = {
-						top_liege = this
-						#primary_title.tier >= tier_empire (this is commented out because the house in power should always get this big boost)
-						house.house_head.top_liege ?= top_liege
-					}
+					this = house_head.top_liege.house
 				}
 				add = {
 					value = 100
 					if = {
 						limit = {
-							any_house_member = {
-								top_liege = this
+							house_head.top_liege = {
 								primary_title.tier < tier_empire
-								house.house_head.top_liege ?= top_liege
 							}
 						}
 						subtract = 50 #For Kings and below the bonus is not quite as high - they are not a far ahead of everyone else as an emperor
@@ -1429,6 +1412,7 @@ house_power_score = {
 								add = 1
 							}
 						}
+						min = -0.8
 					}
 					desc = challenge_status_powerful_family_rating_modifier
 				}
@@ -1499,7 +1483,7 @@ ep3_laamp_invasion_cb_cost = {
 			desc = "lust_for_land_modifier_tt"
 		}
 	}
-
+	
 	##### Changed from Vanilla vvvvv
 	
 	#Situation Parameter

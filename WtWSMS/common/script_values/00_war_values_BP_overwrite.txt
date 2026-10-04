@@ -2,6 +2,7 @@
 vassalization_size_limit = {
 	value = vassalize_default_size
 	scope:attacker = {
+		##### Changed from Vanilla vvvvv
 		if = {
 			limit = { government_has_flag = government_is_centralized }
 			add = vassalize_growth_per_innovation
@@ -10,6 +11,7 @@ vassalization_size_limit = {
 			add = vassalize_growth_per_innovation
 		}
 		else = {
+			##### Changed from Vanilla ^^^^^
 			if = {
 				limit = {
 					culture = {

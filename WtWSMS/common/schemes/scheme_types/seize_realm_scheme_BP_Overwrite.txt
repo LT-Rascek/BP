@@ -41,7 +41,7 @@ seize_realm = {
 		NOT = { is_at_war_with = scope:target }
 		scope:target = {
 			is_landed = yes
-			top_liege = this
+			is_independent_ruler = yes
 			highest_held_title_tier >= tier_county
 			custom_tooltip = {
 				text = seize_realm_valid_government_tt
@@ -49,12 +49,13 @@ seize_realm = {
 					government_has_flag = government_is_feudal
 					government_has_flag = government_is_clan
 					government_has_flag = government_is_tribal
+					government_has_flag = government_is_mandala
+					government_has_flag = government_is_japan_feudal
 				}
 			}
 		}
 		in_diplomatic_range = scope:target
 	}
-	##### Changed from Vanilla vvvvv
 	valid = {
 		trigger_if = {
 			limit = {
@@ -73,10 +74,10 @@ seize_realm = {
 		}
 		government_has_flag = government_is_landless_adventurer
 		scope:target = {
-			is_landed = yes
 			##### Changed from Vanilla vvvvv
 			highest_held_title_tier = tier_county
 			##### Changed from Vanilla ^^^^^
+			is_landed = yes
 			top_liege = this
 			highest_held_title_tier >= tier_county
 			custom_tooltip = {
@@ -85,6 +86,8 @@ seize_realm = {
 					government_has_flag = government_is_feudal
 					government_has_flag = government_is_clan
 					government_has_flag = government_is_tribal
+					government_has_flag = government_is_mandala
+					government_has_flag = government_is_japan_feudal
 				}
 			}
 		}
@@ -121,7 +124,6 @@ seize_realm = {
 			}
 		}
 	}
-	##### Changed from Vanilla ^^^^^
 
 	# Agents
 	agent_leave_threshold = -25
@@ -153,6 +155,8 @@ seize_realm = {
 
 		hostile_scheme_base_chance_modifier = yes
 
+		# Countermeasures.
+		apply_calculated_scheme_success_chance_adjustments_modifier = yes
 		# Skill
 		compare_modifier = {
 			desc = "SCHEME_MY_INTRIGUE"
@@ -170,22 +174,7 @@ seize_realm = {
 			}
 			desc = HAS_ATTEMPTED_TO_SEIZE_TARGETS_REALM_BEFORE
 		}
-		# Spiritual Head of Faith
-		modifier = {
-			add = -50
-			desc = "SCHEME_VS_SPIRITUAL_HOF"
-			scope:target.faith = {
-				this = scope:owner.faith
-				has_doctrine = doctrine_spiritual_head
-				religious_head ?= scope:target
-			}
-		}
-		# Sponsored Inspiration
-		modifier = {
-			add = -25
-			desc = target_has_sponsored_inspiration
-			scope:target.inspiration ?= { exists = inspiration_sponsor }
-		}
+		dangerous_hostile_scheme_base_chance_modifier = yes
 		# Family Feud
 		house_feud_hostile_scheme_success_modifier = yes
 		# At War
@@ -214,17 +203,6 @@ seize_realm = {
 		}
 		# Diarchs are better at schemes within their liege's realm
 		diarch_scheming_within_realm_bonus_modifier = yes
-		# Tailor
-		modifier = {
-			add = 10
-			scope:owner = {
-				has_character_modifier = tournament_tailor_mixup_scheme_modifier
-				exists = var:tailor_mixup_house
-				exists = scope:target.holder.house
-				var:tailor_mixup_house = scope:target.holder.house
-			}
-			desc = "tournament_tailor_mixup_scheme_modifier_value"
-		}
 		# Feast
 		modifier = {
 			add = 10
