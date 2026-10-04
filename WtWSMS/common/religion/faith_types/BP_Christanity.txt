@@ -1,12 +1,95 @@
-﻿christian_faith = { #Nicene Christianity
+﻿apostolic_christianity = {
+	main_rite = apostolic_christianity
+	faith_details = {
+		religion = christianity_religion
+		color = { 1.0 1.0 1.0 }
+		graphical_faith = "orthodox_gfx"
+		icon = mfi_cross
+	}
+	historical = yes
+	
+	eminent_holy_sites = {
+		jerusalem
+		rome
+		constantinople
+	}
+
+	holy_sites = {
+		alexandria
+		antioch
+	}
+	
+	doctrines = {
+		#Main
+		doctrine_theocracy_early_christian
+		doctrine_head_early_christian
+		doctrine_pluralism_righteous
+		
+		#Marriage
+		doctrine_divorce_disallowed #Mark 10:2-12
+		doctrine_bastardry_early_christianity
+		doctrine_consanguinity_restricted
+		
+		#Crimes
+		doctrine_homosexuality_early_christianity
+		doctrine_adultery_men_early_christianity
+		doctrine_adultery_women_early_christianity
+		doctrine_deviancy_early_christianity
+		doctrine_kinslaying_early_christianity
+		doctrine_witchcraft_crime #Simon the Magician
+		
+		#Clerical Function
+		doctrine_clerical_function_alms_and_pacification
+		doctrine_clerical_gender_early_christian
+		doctrine_clerical_marriage_early_christianity
+		doctrine_clerical_succession_early_christianity
+		doctrine_monasticism_absent #Came later
+		doctrine_sacraments_early_christianity
+		
+		#Ritual
+		doctrine_pilgrimage_early_christianity
+		doctrine_sacraments_early_christianity
+		
+		#Special Hidden Doctrines
+		doctrine_is_early_christianity
+	}
+}
+antenicene_christianity = {
+	main_rite = antenicene_christianity
+	faith_details = {
+		religion = christianity_religion
+		color = { 1.0 1.0 1.0 }
+		graphical_faith = "orthodox_gfx"
+		icon = mfi_cross
+	}
+	historical = yes
+	
+	eminent_holy_sites = {
+		jerusalem
+		rome
+		constantinople
+	}
+
+	holy_sites = {
+		alexandria
+		antioch
+	}
+	
+	doctrines = {
+		#Special Hidden Doctrines
+		doctrine_is_ante_nicene_christianity
+	}
+}
+
+christian_faith = { #Nicene Christianity
 	main_rite = roman_rite
 	faith_details = {
 		religion = christianity_religion
 		color = { 1 0.6 0.0 }
 		graphical_faith = "orthodox_gfx"
 		icon = nicene
-		head_of_right = d_papal_state
 	}
+	origin = antenicene_christianity
 	
 	eminent_holy_sites = {
 		jerusalem
@@ -81,6 +164,7 @@ miaphysitism = {
 		icon = miaphysite
 		graphical_faith = "orthodox_gfx"
 	}
+	origin = antenicene_christianity
 
 	eminent_holy_sites = {
 		alexandria
@@ -158,6 +242,7 @@ nestorian = {
 		graphical_faith = "orthodox_gfx"
 		religious_head = d_patriarchate_in_the_east
 	}
+	origin = antenicene_christianity
 
 	eminent_holy_sites = {
 		jerusalem
@@ -231,6 +316,7 @@ arian = {
 		graphical_faith = "orthodox_gfx"
 		icon = testeo
 	}
+	origin = antenicene_christianity
 	
 	eminent_holy_sites = {
 		jerusalem
@@ -320,6 +406,7 @@ montanism = {
 		graphical_faith = "orthodox_gfx"
 		icon = mfi_peace
 	}
+	origin = apostolic_christianity
 	
 	eminent_holy_sites = {
 		pepuza
@@ -393,6 +480,7 @@ donatism = {
 		icon = chirho
 		religious_head = d_donatism
 	}
+	origin = christian_faith
 	
 	eminent_holy_sites = {
 		jerusalem
@@ -483,6 +571,7 @@ pneumatomachianism = {
 		graphical_faith = "orthodox_gfx"
 		icon = pneumatomachian
 	}
+	origin = christian_faith
 	
 	eminent_holy_sites = {
 		jerusalem
@@ -574,6 +663,7 @@ melchisdechianism = {
 		icon = mfi_cross
 		religious_head = k_melchisedechianism
 	}
+	origin = apostolic_christianity
 	
 	eminent_holy_sites = {
 		jerusalem
@@ -644,6 +734,7 @@ marcionism = {
 		icon = fic_alt_christianity_cross
 		religious_head = d_marcionism
 	}
+	origin = apostolic_christianity
 	
 	eminent_holy_sites = {
 		jerusalem
@@ -711,6 +802,7 @@ priscillianism = {
 		icon = mfi_priscillianism
 		religious_head = d_priscillianism
 	}
+	origin = antenicene_christianity
 	
 	eminent_holy_sites = {
 		jerusalem
@@ -862,6 +954,7 @@ audianism = {
 		graphical_faith = "orthodox_gfx"
 		icon = mfi_cross
 	}
+	origin = apostolic_christianity
 	
 	eminent_holy_sites = {
 		alexandria
@@ -947,6 +1040,7 @@ nazerene = {
 		graphical_faith = "orthodox_gfx"
 		icon = nazareans
 	}
+	origin = apostolic_christianity
 	
 	eminent_holy_sites = {
 		jerusalem
@@ -986,6 +1080,7 @@ pelagianism = {
 		graphical_faith = "orthodox_gfx"
 		icon = mfi_cross
 	}
+	origin = christian_faith
 	
 	eminent_holy_sites = {
 		jerusalem
@@ -1111,6 +1206,7 @@ messalian = {
 		icon = christianity_messalian
 		graphical_faith = "orthodox_gfx"
 	}
+	origin = apostolic_christianity
 
 	eminent_holy_sites = {
 		jerusalem

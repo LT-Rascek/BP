@@ -10,7 +10,7 @@
 	intrigue = 9
 	stewardship = 9
 	rite = "rabbinism"
-	culture = hebrew
+	culture = judean
 	8.1.1 = { birth = yes }
 	24.1.1 = {
 		trait = education_learning_4
@@ -19,7 +19,7 @@
 		trait = zealous
 	}
 	27.1.1 = {
-		religion = christian_faith
+		rite = apostolic_christianity
 		give_nickname = nick_the_apostle
 	}
 	65.1.1 = {
@@ -30,13 +30,13 @@
 JerusalemChurchSpecial000 = { #St. Jude
 	name = Yehudah
 	rite = rabbinism
-	culture = hebrew
+	culture = judean
 	trait = zealous
 	trait = diligent
 	trait = honest
 	disallow_random_traits = yes
 	5.1.1 = { birth = yes }
-	27.1.1 = { religion = christian_faith }
+	27.1.1 = { rite = apostolic_christianity }
 	65.1.1 = {
 		death = {
 			death_reason = death_execution
@@ -50,7 +50,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 145292 = { #St. Peter
 	name = "Simon"
 	rite = "rabbinism"
-	culture = "hebrew"
+	culture = "judean"
 	trait = "diligent"
 	trait = "patient"
 	trait = "education_learning_4"
@@ -58,7 +58,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 	27.1.1 = {
 		name = "Petrus" # AKA: Simon
 		give_nickname = nick_the_apostle # AKA: Saint Peter the Apostle
-		religion = christian_faith
+		rite = apostolic_christianity
 		trait = zealous
 	}
 	33.4.6 = { trait = lifestyle_blademaster }
@@ -78,7 +78,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 	intrigue = 5
 	stewardship = 5
 	rite = "rabbinism"
-	culture = "hebrew"
+	culture = "judean"
 	trait = "twin"
 	trait = "diligent"
 	trait = "honest"
@@ -88,7 +88,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 	27.1.1 = {
 		give_nickname = nick_the_apostle # AKA: Saint Thomas the Apostle
 		trait = "zealous"
-		religion = christian_faith
+		rite = apostolic_christianity
 	}
 	72.12.21 = {
 		death = { death_reason = death_murder } # Legendary Martyrdom
@@ -103,14 +103,14 @@ JerusalemChurchSpecial000 = { #St. Jude
 	intrigue = 6
 	stewardship = 6
 	rite = "rabbinism"
-	culture = "hebrew"
+	culture = "judean"
 	trait = "compassionate"
 	trait = "humble"
 	trait = "education_learning_4"
 	12.1.1 = { birth = yes }
 	27.1.1 = {
 		give_nickname = nick_the_apostle
-		religion = christian_faith
+		rite = apostolic_christianity
 		trait = zealous
 	} # AKA: Saint Bartholomew the Apostle
 	70.1.1 = {
@@ -123,7 +123,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 145291 = { #Pope Linus
 	name = "Linus"
-	religion = christian_faith
+	rite = apostolic_christianity
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -143,7 +143,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 	diplomacy = 7
 	intrigue = 8
 	stewardship = 8
-	religion = christian_faith
+	rite = apostolic_christianity
 	culture = "greek"
 	trait = "diligent"
 	trait = "patient"
@@ -163,7 +163,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 	diplomacy = 7
 	intrigue = 8
 	stewardship = 8
-	religion = christian_faith
+	rite = apostolic_christianity
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -184,8 +184,8 @@ JerusalemChurchSpecial000 = { #St. Jude
 	diplomacy = 7
 	intrigue = 8
 	stewardship = 8
-	religion = christian_faith
-	culture = "hebrew" #Hellenized Jew
+	rite = apostolic_christianity
+	culture = "judean" #Hellenized Jew
 	trait = "diligent"
 	trait = "patient"
 	trait = "zealous"
@@ -207,7 +207,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 	diplomacy = 7
 	intrigue = 8
 	stewardship = 8
-	religion = christian_faith
+	rite = apostolic_christianity
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -227,7 +227,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 	diplomacy = 7
 	intrigue = 8
 	stewardship = 8
-	religion = christian_faith
+	rite = apostolic_christianity
 	culture = "greek" #Roman citizen of Italia of Greek Descent
 	trait = "diligent"
 	trait = "patient"
@@ -247,7 +247,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 	diplomacy = 7
 	intrigue = 8
 	stewardship = 8
-	religion = christian_faith
+	rite = apostolic_christianity
 	culture = "greek"
 	trait = "diligent"
 	trait = "patient"
@@ -267,7 +267,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 	diplomacy = 7
 	intrigue = 8
 	stewardship = 8
-	religion = christian_faith
+	rite = apostolic_christianity
 	culture = "greek"
 	trait = "diligent"
 	trait = "patient"
@@ -287,7 +287,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 	diplomacy = 7
 	intrigue = 8
 	stewardship = 8
-	religion = christian_faith
+	rite = antenicene_christianity
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -307,7 +307,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 	diplomacy = 7
 	intrigue = 8
 	stewardship = 8
-	religion = christian_faith
+	rite = antenicene_christianity
 	culture = "syriac" #Hellenized Syrian
 	trait = "diligent"
 	trait = "patient"
@@ -325,7 +325,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7606 = { #Pope Soter
 	name = "Soter"
-	religion = christian_faith
+	rite = antenicene_christianity
 	culture = "roman"
 	120.1.1 = { birth = yes }
 	167.4.20 = { name = "Soter" }
@@ -337,7 +337,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7605 = { #Pope Eleutherius
 	name = "Eleutherios"
-	religion = christian_faith
+	rite = antenicene_christianity
 	culture = "greek"
 	trait = "diligent"
 	trait = "patient"
@@ -353,7 +353,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7604 = { #Pope Victor I
 	name = "Victor"
-	religion = christian_faith
+	rite = antenicene_christianity
 	culture = "romano_african"
 	trait = "diligent"
 	trait = "patient"
@@ -369,7 +369,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7603 = { #Pope Zephyrinus
 	name = "Zephyrinus"
-	religion = christian_faith
+	rite = antenicene_christianity
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -385,7 +385,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7602 = { #Pope Callixtus
 	name = "Kallistos"
-	religion = christian_faith
+	rite = antenicene_christianity
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -401,7 +401,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7601 = { #Pope Urban I
 	name = "Urbanus"
-	religion = christian_faith
+	rite = antenicene_christianity
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -417,7 +417,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7600 = { #Pope Pontian
 	name = "Pontianus"
-	religion = christian_faith
+	rite = antenicene_christianity
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -433,7 +433,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7799 = { #Pope Anterus
 	name = "Antheros"
-	religion = christian_faith
+	rite = antenicene_christianity
 	culture = "greek"
 	trait = "diligent"
 	trait = "patient"
@@ -449,7 +449,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7798 = { #Pope Fabian
 	name = "Fabianus"
-	religion = christian_faith
+	rite = antenicene_christianity
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -465,7 +465,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7797 = { #Pope Cornelius
 	name = "Cornelius"
-	religion = christian_faith
+	rite = antenicene_christianity
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -481,7 +481,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7796 = { #Pope Lucius I
 	name = "Lucius"
-	religion = christian_faith
+	rite = antenicene_christianity
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -499,7 +499,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7795 = { #Pope Stephen I
 	name = "Stephanos"
-	religion = christian_faith
+	rite = antenicene_christianity
 	culture = "greek"
 	trait = "diligent"
 	trait = "patient"
@@ -517,7 +517,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7794 = { #Pope Sixtus II
 	name = "Xystos"
-	religion = christian_faith
+	rite = antenicene_christianity
 	culture = "greek"
 	trait = "diligent"
 	trait = "patient"
@@ -535,7 +535,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7793 = { #Pope Dionysius
 	name = "Dionysios"
-	religion = christian_faith
+	rite = antenicene_christianity
 	culture = "greek"
 	trait = "diligent"
 	trait = "patient"
@@ -553,7 +553,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7792 = { #Pope Felix I
 	name = "Felix"
-	religion = christian_faith
+	rite = antenicene_christianity
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -571,7 +571,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7791 = { #Pope Eutychianus
 	name = "Eutychianus"
-	religion = christian_faith
+	rite = antenicene_christianity
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -589,7 +589,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7790 = { #Pope Caius
 	name = "Gaius"
-	religion = christian_faith
+	rite = antenicene_christianity
 	culture = "romano_illyrian"
 	trait = "diligent"
 	trait = "patient"
@@ -607,7 +607,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7789 = { #Pope Marcellinus
 	name = "Marcellinus"
-	religion = christian_faith
+	rite = antenicene_christianity
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -625,7 +625,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7787 = { #Pope Marcellus
 	name = "Marcellus"
-	religion = christian_faith
+	rite = antenicene_christianity
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -643,7 +643,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7786 = { #Pope Eusebius
 	name = "Eusebios"
-	religion = christian_faith
+	rite = antenicene_christianity
 	culture = "greek"
 	trait = "diligent"
 	trait = "patient"
@@ -661,7 +661,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7785 = { #Pope Miltiades
 	name = "Miltiades"
-	religion = christian_faith
+	rite = antenicene_christianity
 	culture = "romano_african"
 	trait = "diligent"
 	trait = "patient"
@@ -679,7 +679,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7784 = { #Pope Sylvester I
 	name = "Silvester"
-	religion = christian_faith
+	rite = antenicene_christianity
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -689,6 +689,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 		birth = "270.1.1"
 	}
 	314.1.10 = { name = " Silvester" }
+	325.9.1 = { rite = roman_rite }
 	335.12.31 = {
 		death = "335.12.31"
 		trait = saint
@@ -697,7 +698,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7783 = { #Pope Marcus
 	name = "Marcus"
-	religion = christian_faith
+	rite = antenicene_christianity
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -706,6 +707,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 	280.1.1 = {
 		birth = "280.1.1"
 	}
+	325.9.1 = { rite = roman_rite }
 	335.12.31 = { name = "Marcus" }
 	336.10.7 = {
 		death = "336.10.7"
@@ -715,7 +717,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7782 = { #Pope Julius I
 	name = "Iulius"
-	religion = christian_faith
+	rite = antenicene_christianity
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -724,6 +726,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 	280.1.1 = {
 		birth = "280.1.1"
 	}
+	325.9.1 = { rite = roman_rite }
 	336.10.7 = { name = "Iulius" }
 	352.4.12 = {
 		death = "352.4.12"
@@ -733,20 +736,21 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7781 = { #Pope Liberius
 	name = "Liberius"
-	religion = christian_faith
+	rite = antenicene_christianity
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
 	trait = "zealous"
 	trait = "education_diplomacy_3"
 	305.1.1 = { birth = yes }
+	325.9.1 = { rite = roman_rite }
 	352.4.12 = { name = "Liberius" }
 	366.9.24 = { death = yes }
 }
 
 7780 = { #Pope Damasus I
 	name = "Damasus"
-	religion = christian_faith
+	rite = antenicene_christianity
 	culture = "romano_hispanic"
 	trait = "diligent"
 	trait = "patient"
@@ -755,6 +759,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 	305.1.1 = {
 		birth = "305.1.1"
 	}
+	325.9.1 = { rite = roman_rite }
 	366.9.24 = { name = "Damasus" }
 	384.12.11 = {
 		death = "384.12.11"
@@ -764,7 +769,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7779 = { #Pope Siricius
 	name = "Siricius"
-	religion = christian_faith
+	rite = roman_rite
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -782,7 +787,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7778 = { #Pope Anastasius I
 	name = "Anastasius"
-	religion = christian_faith
+	rite = roman_rite
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -800,7 +805,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7777 = { #Pope Innocent I
 	name = "Innocentius"
-	religion = christian_faith
+	rite = roman_rite
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -819,7 +824,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7776 = { #Pope Zosimus
 	name = "Zosimos"
-	religion = christian_faith
+	rite = roman_rite
 	culture = "greek"
 	trait = "diligent"
 	trait = "patient"
@@ -837,7 +842,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7775 = { #Pope Boniface I
 	name = "Bonifacius"
-	religion = christian_faith
+	rite = roman_rite
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -855,7 +860,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7774 = { #Pope Celestine I
 	name = "Caelestinus"
-	religion = christian_faith
+	rite = roman_rite
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -873,7 +878,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7773 = { #Pope Sixtus II
 	name = "Sixtus"
-	religion = christian_faith
+	rite = roman_rite
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -891,7 +896,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7772 = { #Pope Leo I "the Great"
 	name = "Leo"
-	religion = christian_faith
+	rite = roman_rite
 	culture = "roman"
 	400.1.1 = {
 		birth = yes
@@ -930,7 +935,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7771 = { #Pope Hilarius
 	name = "Hilarius"
-	religion = christian_faith
+	rite = roman_rite
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -948,7 +953,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7770 = { #Pope Simplicius
 	name = "Simplicius"
-	religion = christian_faith
+	rite = roman_rite
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -967,7 +972,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 7769 = { #Pope Felix III
 	name = "Felix"
 	dynasty = roman_dynasty_caelius
-	religion = christian_faith
+	rite = roman_rite
 	culture = "roman"
 	trait = "diligent"
 	trait = "patient"
@@ -986,7 +991,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7768 = {
 	name = "Gelasius"
-	religion = christian_faith
+	rite = roman_rite
 	culture = "romano_african"
 	trait = "diligent"
 	trait = "patient"
@@ -1004,7 +1009,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7767 = { #Pope Anastasius II
 	name = "Anastasios"
-	religion = christian_faith
+	rite = roman_rite
 	culture = "greek"
 	trait = "diligent"
 	trait = "patient"
@@ -1022,7 +1027,7 @@ JerusalemChurchSpecial000 = { #St. Jude
 
 7766 = { #Pope Symmachus
 	name = "Symmachus"
-	religion = christian_faith
+	rite = roman_rite
 	culture = "sardinian" #Born on Sardinia
 	trait = "diligent"
 	trait = "patient"
@@ -1046,7 +1051,7 @@ JustusOfCampania = { #Hormisdas Father was Roman, according to:
 # p. 242
 	name = "Justus"
 	dynasty = dynn_JustusOfCampania #Needs a dynasty to avoid having Pope Hormisdas being Sassanid
-	religion = christian_faith
+	rite = roman_rite
 	culture = "roman"
 	425.1.1 = { birth = yes }
 	445.1.1 = { add_spouse = JustusOfCampania_wife }
@@ -1055,7 +1060,7 @@ JustusOfCampania = { #Hormisdas Father was Roman, according to:
 JustusOfCampania_wife_greatgrandfatherfather = { #Grandson of Horzmid the Turncoat
 	name = "Kavadh"
 	dynasty = 1029100
-	religion = christian_faith
+	rite = roman_rite
 	culture = "persian"
 	father = 180613
 	340.1.1 = {
@@ -1067,7 +1072,7 @@ JustusOfCampania_wife_greatgrandfatherfather = { #Grandson of Horzmid the Turnco
 JustusOfCampania_wife_grandfatherfather = { #Great Grandson of Horzmid the Turncoat
 	name = "Eskander"
 	dynasty = 1029100
-	religion = christian_faith
+	rite = roman_rite
 	culture = "persian"
 	father = JustusOfCampania_wife_greatgrandfatherfather
 	365.1.1 = {
@@ -1079,7 +1084,7 @@ JustusOfCampania_wife_grandfatherfather = { #Great Grandson of Horzmid the Turnc
 JustusOfCampania_wife_father = { #Great-Great Grandson of Horzmid the Turncoat
 	name = "Hormisdas"
 	dynasty = 1029100
-	religion = christian_faith
+	rite = roman_rite
 	culture = "persian"
 	father = JustusOfCampania_wife_grandfatherfather
 	390.1.1 = {
@@ -1091,7 +1096,7 @@ JustusOfCampania_wife_father = { #Great-Great Grandson of Horzmid the Turncoat
 JustusOfCampania_wife = { #Great-Great-Great Granddaughter of Hormzid the Turncoat
 	female = yes
 	name = "Roxana"
-	religion = christian_faith
+	rite = roman_rite
 	culture = "persian"
 	father = JustusOfCampania_wife_father
 	430.1.1 = {
@@ -1103,7 +1108,7 @@ JustusOfCampania_wife = { #Great-Great-Great Granddaughter of Hormzid the Turnco
 7765 = { #Pope Hormisdas
 	name = "Hormisdas"
 	dynasty = dynn_JustusOfCampania #Needs a dynasty to avoid having Pope Hormisdas being Sassanid
-	religion = christian_faith
+	rite = roman_rite
 	culture = "persian"
 	father = JustusOfCampania
 	mother = JustusOfCampania_wife
@@ -1135,6 +1140,7 @@ JustusOfCampania_wife = { #Great-Great-Great Granddaughter of Hormzid the Turnco
 
 #Taken from Paradox's list. Most birth dates ficitionalized
 
+########## Stopped here ##########
 
 ArmenianChurch0011_wife_father = {
 	name = David
@@ -2348,7 +2354,7 @@ SyrianChurch001 = {
 JerusalemChurch000 = { #James the just
 	name = Yakov
 	rite = rabbinism
-	culture = hebrew
+	culture = judean
 	trait = education_learning_4
 	trait = zealous
 	trait = temperate
@@ -2365,7 +2371,7 @@ JerusalemChurch000 = { #James the just
 JerusalemChurch001 = { #Simeon
 	name = Shimon
 	rite = rabbinism
-	culture = hebrew
+	culture = judean
 	disallow_random_traits = yes
 	15.1.1 = { birth = yes } #Early first century
 	27.1.1 = { religion = christian_faith }
@@ -2380,7 +2386,7 @@ JerusalemChurch001 = { #Simeon
 JerusalemChurch002 = { #Justus
 	name = Yehudah
 	religion = christian_faith
-	culture = hebrew
+	culture = judean
 	father = JerusalemChurch000
 	disallow_random_traits = yes
 	50.1.1 = { birth = yes }
@@ -2393,7 +2399,7 @@ JerusalemChurch002 = { #Justus
 JerusalemChurch003 = { #Zaccheus
 	name = Zaki
 	religion = christian_faith
-	culture = hebrew
+	culture = judean
 	disallow_random_traits = yes
 	70.1.1 = { birth = yes }
 	116.1.1 = {
@@ -2404,7 +2410,7 @@ JerusalemChurch003 = { #Zaccheus
 JerusalemChurch004 = { #Tobais
 	name = Tovias
 	rite = rabbinism
-	culture = hebrew
+	culture = judean
 	disallow_random_traits = yes
 	40.1.1 = { birth = yes }
 	60.1.1 = { religion = christian_faith } #Parents were Jews
@@ -2416,7 +2422,7 @@ JerusalemChurch004 = { #Tobais
 JerusalemChurch005 = { #Benjamin
 	name = Binyamin
 	religion = christian_faith
-	culture = hebrew
+	culture = judean
 	disallow_random_traits = yes
 	60.1.1 = { birth = yes }
 	118.1.1 = {
@@ -2430,7 +2436,7 @@ JerusalemChurch005 = { #Benjamin
 JerusalemChurch006 = { #John
 	name = Yochanan
 	rite = rabbinism
-	culture = hebrew
+	culture = judean
 	trait = stubborn #Argued with Christians until he himself converted
 	trait = just
 	trait = zealous
@@ -2445,7 +2451,7 @@ JerusalemChurch006 = { #John
 JerusalemChurch007 = { #Matthias
 	name = Mattithyahu
 	religion = christian_faith
-	culture = hebrew
+	culture = judean
 	disallow_random_traits = yes
 	50.1.1 = { birth = yes }
 	120.1.1 = {
@@ -2467,7 +2473,7 @@ JerusalemChurch008 = { #Philip
 JerusalemChurch009 = { #Senecas
 	name = Senecas
 	religion = christian_faith
-	culture = hebrew
+	culture = judean
 	disallow_random_traits = yes
 	70.1.1 = { birth = yes }
 	126.1.1 = {
@@ -2478,7 +2484,7 @@ JerusalemChurch009 = { #Senecas
 JerusalemChurch010 = { #Justus
 	name = Yehudah
 	religion = christian_faith
-	culture = hebrew
+	culture = judean
 	disallow_random_traits = yes
 	70.1.1 = { birth = yes }
 	128.1.1 = {
@@ -2490,7 +2496,7 @@ JerusalemChurch010 = { #Justus
 JerusalemChurch011 = { #Levis
 	name = Levi
 	religion = christian_faith
-	culture = hebrew
+	culture = judean
 	disallow_random_traits = yes
 	70.1.1 = { birth = yes }
 	130.1.1 = {
@@ -2501,7 +2507,7 @@ JerusalemChurch011 = { #Levis
 JerusalemChurch012 = { #Ephram
 	name = Efraim
 	religion = christian_faith
-	culture = hebrew
+	culture = judean
 	disallow_random_traits = yes
 	70.1.1 = { birth = yes }
 	132.1.1 = {
@@ -2512,7 +2518,7 @@ JerusalemChurch012 = { #Ephram
 JerusalemChurch013 = { #Joeseph
 	name = Yosef
 	religion = christian_faith
-	culture = hebrew
+	culture = judean
 	disallow_random_traits = yes
 	70.1.1 = { birth = yes }
 	133.1.1 = {
@@ -2523,7 +2529,7 @@ JerusalemChurch013 = { #Joeseph
 JerusalemChurch014 = { #Judas
 	name = Yehudah
 	religion = christian_faith
-	culture = hebrew
+	culture = judean
 	father = JerusalemChurchSpecial001
 	disallow_random_traits = yes
 	70.1.1 = { birth = yes }
@@ -2688,7 +2694,7 @@ JerusalemChurch033 = { #Alexander
 JerusalemChurch034 = { #Mazabanis
 	name = Mazabanis
 	religion = christian_faith
-	culture = nabatean #Presumed because of name not being Latin/Greek/Hebrew
+	culture = nabatean #Presumed because of name not being Latin/Greek/judean
 	200.1.1 = { birth = yes }
 	260.1.1 = { death = yes }
 }
@@ -2901,7 +2907,7 @@ JerusalemChurch040 = { #Cyril
 1301218 = { #Amos
 	name = "Amos"	# Patriarch of Jerusalem 593-601
 	religion = christian_faith
-	culture = hebrew
+	culture = judean
 	530.1.1 = {
 		birth = yes
 	}
@@ -3942,7 +3948,7 @@ GeorgianChurch048 = {
 CypriotChurch000 = { #St. Barnabas
 	name = Yosef
 	rite = rabbinism
-	culture = hebrew
+	culture = judean
 	trait = zealous
 	trait = diligent
 	trait = honest
@@ -4123,7 +4129,7 @@ CypriotChurch021 = {
 JerusalemChurchSpecial001 = { #St. Jude's (hypothetical) son
 	name = Yehudah
 	religion = christian_faith
-	culture = hebrew
+	culture = judean
 	father = JerusalemChurchSpecial000
 	32.1.1 = { birth = yes }
 	90.1.1 = { death = yes }
@@ -4233,7 +4239,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 166241 = {
 	name = "Abris"
 	religion = christian_faith
-	culture = "hebrew" #Legend was he was of Joseph's house
+	culture = "judean" #Legend was he was of Joseph's house
 	trait = "education_learning_3"
 	66.1.1 = { birth = "66.1.1" }
 	137.1.1 = { death = "137.1.1" }
@@ -4241,7 +4247,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 166242 = {
 	name = "Abraham"
 	religion = christian_faith
-	culture = "hebrew" #Legend was family of Jacob the Apostle
+	culture = "judean" #Legend was family of Jacob the Apostle
 	trait = "education_learning_3"
 	108.1.1 = { birth = "108.1.1" }
 	171.1.1 = { death = "171.1.1" }
@@ -4249,7 +4255,7 @@ GothicChurch000 = { #Ulfilas/Wulfila
 166243 = {
 	name = "Ya_qob"
 	religion = christian_faith
-	culture = "hebrew" #Legend was he was of Joseph's house
+	culture = "judean" #Legend was he was of Joseph's house
 	trait = "education_learning_3"
 	140.1.1 = { birth = "140.1.1" }
 	204.1.1 = { death = "204.1.1" }

@@ -1,0 +1,79 @@
+﻿apostolic_christianity = {
+	name = apostolic_christianity
+	desc = apostolic_christianity_desc
+	faith = apostolic_christianity
+
+	color = { 1.0 1.0 1.0 }
+
+	tenet_selection_pair = {
+		requires_dlc_flag = by_god_alone
+		tenet = tenet_acts_of_apostles
+		fallback_tenet = tenet_mendicant_preachers
+	}
+
+	tenets = {
+		tenet_pacifism
+		tenet_communal_possessions
+	}
+	
+	doctrines = {
+		#Main
+		doctrine_theocracy_early_christian
+		doctrine_head_early_christian
+		doctrine_pluralism_righteous
+		
+		#Marriage
+		doctrine_divorce_disallowed #Mark 10:2-12
+		doctrine_bastardry_early_christianity
+		doctrine_consanguinity_restricted
+		
+		#Crimes
+		doctrine_homosexuality_early_christianity
+		doctrine_adultery_men_early_christianity
+		doctrine_adultery_women_early_christianity
+		doctrine_deviancy_early_christianity
+		doctrine_kinslaying_early_christianity
+		doctrine_witchcraft_crime #Simon the Magician
+		
+		#Clerical Function
+		doctrine_clerical_function_alms_and_pacification
+		doctrine_clerical_gender_early_christian
+		doctrine_clerical_marriage_early_christianity
+		doctrine_clerical_succession_early_christianity
+		doctrine_monasticism_absent #Came later
+		doctrine_sacraments_early_christianity
+		
+		#Ritual
+		doctrine_pilgrimage_early_christianity
+		doctrine_sacraments_early_christianity
+		
+		#Special Hidden Doctrines
+		doctrine_is_early_christianity
+	}
+}
+antenicene_christianity = {
+	name = antenicene_christianity
+	desc = antenicene_christianity_desc
+	faith = antenicene_christianity
+
+	color = { 1.0 1.0 1.0 }
+
+	tenet_selection_pair = {
+		requires_dlc_flag = by_god_alone
+		tenet = tenet_acts_of_apostles
+		fallback_tenet = tenet_mendicant_preachers
+	}
+	tenet_selection_pair = {
+		requires_dlc_flag = by_god_alone
+		tenet = tenet_philanthropia
+		fallback_tenet = tenet_vows_of_poverty
+	}
+
+	tenets = {
+		tenet_communal_identity
+	}
+	
+	doctrines = {
+		doctrine_is_ante_nicene_christianity
+	}
+}
