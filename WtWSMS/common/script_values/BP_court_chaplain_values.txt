@@ -222,7 +222,7 @@ conversion_tenet_autocephaly_different_heritage_conversion_resistance = {
 	value = 0
 	if = {
 		limit = {
-			scope:county.rite = { has_rite_parameter = tenet_autocephaly_conversion_resistance_active }
+			scope:county.rite = { rite_has_parameter = tenet_autocephaly_conversion_resistance_active }
 			exists = scope:county
 			#Make sure culture and faith align
 			actor_is_faith_culture_or_child_culture_for_cultural_religions_trigger = {
@@ -244,7 +244,7 @@ conversion_redeeming_struggle = {
 	if = {
 		limit = {
 			exists = scope:county
-			scope:county.faith = { has_rite_parameter = tenet_redeeming_struggle_resistance }
+			scope:county.faith = { rite_has_parameter = tenet_redeeming_struggle_resistance }
 		}
 		subtract = court_chaplain_conversion_base_total
 		multiply = tenet_redeeming_struggle_resistance_value
@@ -258,7 +258,7 @@ conversion_mystery_religion = {
 	if = {
 		limit = {
 			exists = scope:county
-			scope:county.rite = { has_rite_parameter = tenet_mystery_religion_resistance }
+			scope:county.rite = { rite_has_parameter = tenet_mystery_religion_resistance }
 		}
 		subtract = court_chaplain_conversion_base_total
 		multiply = tenet_mystery_religion_resistance_value
@@ -271,9 +271,9 @@ conversion_rigorism_conversion_speed = {
 	value = 0
 	if = {
 		limit = {
-			scope:councillor.liege.rite = { has_rite_parameter = tenet_rigorism_conversion_speed }
+			scope:councillor.liege.rite = { rite_has_parameter = tenet_rigorism_conversion_speed }
 			exists = scope:county
-			NOT = { scope:county.rite = { has_rite_parameter = tenet_rigorism_conversion_speed } }
+			NOT = { scope:county.rite = { rite_has_parameter = tenet_rigorism_conversion_speed } }
 		}
 		subtract = court_chaplain_conversion_base_total
 		multiply = conversion_rigorism_conversion_speed_value
@@ -287,7 +287,7 @@ conversion_resistance_ecstatic_prophecy = {
 	if = {
 		limit = {
 			exists = scope:county
-			scope:county.rite = { has_rite_parameter = tenet_ecstatic_prophecy_conversion_resistance_active }
+			scope:county.rite = { rite_has_parameter = tenet_ecstatic_prophecy_conversion_resistance_active }
 		}
 		add = court_chaplain_conversion_base_total
 		multiply = conversion_resistance_ecstatic_prophecy_value
@@ -302,7 +302,7 @@ conversion_doctrine_legalized_faith_malus = {
 		limit = {
 			scope:councillor_liege.rite = { has_doctrine = doctrine_major_branch_dorustdin }
 			exists = scope:county
-			scope:county.rite = { has_rite_parameter = general_religious_protection_from_zoroastrian_cults }
+			scope:county.rite = { rite_has_parameter = general_religious_protection_from_zoroastrian_cults }
 		}
 		add = court_chaplain_conversion_base_total
 		multiply = 0.50

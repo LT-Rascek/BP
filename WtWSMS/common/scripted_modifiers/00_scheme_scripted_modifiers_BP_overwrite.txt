@@ -2,6 +2,12 @@
 hostile_scheme_base_chance_modifier = {
 	first_valid = {
 		modifier = {
+			add = -40
+			exists = scope:target.primary_title
+			scope:target.primary_title.tier = tier_hegemony
+			desc = "SCHEME_TARGET_IS_A_HEGEMONY"
+		}
+		modifier = {
 			add = -30
 			exists = scope:target.primary_title
 			scope:target.primary_title.tier = tier_empire
@@ -80,10 +86,10 @@ hostile_scheme_base_chance_modifier = {
 		modifier = {
 			add = 75
 			scope:target = {
-				is_landed_or_landless_administrative = no
+				is_landed_or_landless_administrative_or_theocratic = no
 			}
 			scope:owner = {
-				exists = scope:target.liege.cp:councillor_spymaster
+				exists = scope:target.holder.liege.cp:councillor_spymaster
 				scope:target.liege.cp:councillor_spymaster = this
 			}
 			desc = "SCHEME_I_AM_SPYMASTER_OF_LIEGE"
@@ -91,7 +97,7 @@ hostile_scheme_base_chance_modifier = {
 		modifier = {
 			add = 75
 			scope:target = {
-				is_landed_or_landless_administrative = no
+				is_landed_or_landless_administrative_or_theocratic = no
 			}
 			scope:owner = {
 				exists = scope:target.host.cp:councillor_spymaster
@@ -205,7 +211,7 @@ hostile_scheme_base_chance_modifier = {
 			##### Changed from Vanilla vvvvv
 			OR = {
 				culture = { has_cultural_parameter = hostile_scheme_success_chance_vs_spouse_penalty }
-				faith = { has_doctrine_parameter = hostile_scheme_success_chance_vs_spouse_penalty }
+				rite = { rite_has_parameter = hostile_scheme_success_chance_vs_spouse_penalty }
 			}
 			##### Changed from Vanilla ^^^^^
 			is_spouse_of = scope:target
@@ -308,13 +314,19 @@ hostile_scheme_base_chance_modifier = {
 	}
 	modifier = {
 		add = 15
-		scope:owner = {
-			has_variable = spouse_hostile_scheme_bonus
-			var:spouse_hostile_scheme_bonus = {
-				this = scope:target
-			}
-		}
+		scope:owner.var:spouse_hostile_scheme_bonus ?= scope:target
 		desc = coronation_spouse_despised_modifier
+	}
+	# Tailor
+	modifier = {
+		add = 10
+		scope:owner = {
+			has_character_modifier = tournament_tailor_mixup_scheme_modifier
+			exists = var:tailor_mixup_house
+			exists = scope:target.house
+			var:tailor_mixup_house = scope:target.house
+		}
+		desc = "tournament_tailor_mixup_scheme_modifier_value"
 	}
 }
 
@@ -383,7 +395,7 @@ hostile_scheme_title_base_chance_modifier = {
 		modifier = {
 			add = 75
 			scope:target.holder ?= {
-				is_landed_or_landless_administrative = no
+				is_landed_or_landless_administrative_or_theocratic = no
 			}
 			scope:owner = {
 				exists = scope:target.liege.cp:councillor_spymaster
@@ -483,7 +495,7 @@ hostile_scheme_title_base_chance_modifier = {
 			##### Changed from Vanilla vvvvv
 			OR = {
 				culture = { has_cultural_parameter = hostile_scheme_success_chance_vs_spouse_penalty }
-				faith = { has_doctrine_parameter = hostile_scheme_success_chance_vs_spouse_penalty }
+				rite = { rite_has_parameter = hostile_scheme_success_chance_vs_spouse_penalty }
 			}
 			##### Changed from Vanilla ^^^^^
 			is_spouse_of = scope:target.holder
@@ -727,6 +739,7 @@ ai_agent_join_chance_hostile_title_modifier = {
 		rite = { rite_has_parameter = adherents_more_likely_to_join_schemes }
 		desc = "SCHEME_IS_SACRED"
 	}
+	
 	##### Changed from Vanilla vvvvv
 	
 	## Sacred Lies tenet

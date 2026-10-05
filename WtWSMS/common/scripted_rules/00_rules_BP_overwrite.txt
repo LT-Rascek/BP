@@ -1,83 +1,25 @@
-﻿# Determines if a faith can be created, on top of the piety requirement, and the doctrine requirements
-# Also handles reforming a faith, check for the unreformed doctrine to enable those additional checks
-# Root is the faith creator
-faith_creation = {
-	trigger_if = {
-		limit = {
-			highest_held_title_tier = tier_county
-			is_independent_ruler = no
-		}
-		custom_description = {
-			text = "faith_creation_duchy_or_higher"
-			highest_held_title_tier >= tier_duchy
-		}
-	}
-
-	is_adult = yes
-	is_at_war = no
-	custom_description = {
-		text = "character_is_not_real_head"
-		NOT = { faith.religious_head = root }
-	}
-
-	custom_description = {
-		text = "character_can_only_create_one_faith"
-		NOT = { exists = var:has_created_a_faith }
-	}
-
-	trigger_if = {
-		limit = {
-			faith = { has_doctrine_parameter = unreformed }
-		}
-		
-		NOT = {
-			custom_description = {
-				text = faith_has_been_reformed
-				object = faith
-				exists = faith.var:has_been_reformed
-			}
-		}
-
-		trigger_if = {
-			limit = {
-				NOT = {
-					has_character_flag = ignore_3_holy_site_rule
-				}
-			}
-			faith = {
-				num_realm_holy_sites_faithful_holders = {
-					CHARACTER = root
-					COUNT = 3
-				}
-			}
-		}
-
-		custom_tooltip = {
-			text = faith_reformation_via_decision
-			faith = {
-				NOT = { has_variable = block_reformation_var }
-			}
-		}
-	}
-
-	##### Changed from Vanilla vvvvv
-	trigger_if = {
-		limit = { faith = { has_doctrine_parameter = unreformed } }
-		culture = { has_innovation = innovation_formalized_rituals }
-	}
-	trigger_else = {
-		culture = { has_innovation = innovation_state_religion }
-	}
-	##### Changed from Vanilla ^^^^^
+﻿# Determines if a rite can be created, on top of the piety requirement, and the doctrine requirements
+# Also handles reforming a rite, check for the unreformed doctrine to enable those additional checks
+# Root is the rite creator
+can_create_rite = {
+	can_create_rite_trigger = yes
 }
-
 # Determines if a character can convert faith via the convert faith UI, on top of the piety requirement
 # Root is the faith creator
 # scope:new_faith is the faith they want to convert to
 faith_conversion = {
 	is_adult = yes
-	NOT = { faith.religious_head = root }
+	faith.religious_head != root
+	custom_tooltip = {
+		text = is_antipope_tt
+		pam_is_antipope_trigger = no
+	}
 	is_in_ongoing_great_holy_war = no
+	scope:new_faith.main_rite= {
+		is_rite_enabled = yes
+		can_convert_to_rite = yes
+	}
+
 	# Can't (or shouldn't) convert to faiths that are meant to be resurrected via decision, event, etc.
 	custom_tooltip = {
 		text = faith_conversion_cost_conversion_blocked_till_decision_taken
@@ -91,7 +33,32 @@ faith_conversion = {
 			scope:new_faith = { has_variable = block_conversion_till_nebulous_circumstances }
 		}
 	}
-	
+
+	# The realm teaches its own State Rite: converting to its faith skips the recency and knowledge gates
+	trigger_if = {
+		limit = {
+			exists = top_liege.primary_title.state_rite
+			scope:new_faith = top_liege.primary_title.state_rite.faith
+		}
+		always = yes
+	}
+	trigger_else = {
+		custom_tooltip = {
+			text = faith_conversion_recently_converted
+			NOT = {
+				has_character_flag = faith_conversion_recently_converted
+			}
+		}
+
+		OR = {
+			AND = {
+				faith.religion = scope:new_faith.religion
+				"knows_rite_level(scope:new_faith.main_rite)" > pam_same_religion_rite_knowledge_requirement
+			}
+			"knows_rite_level(scope:new_faith.main_rite)" > pam_other_religion_rite_knowledge_requirement
+		}
+	}
+
 	##### Changed from Vanilla vvvvv
 	is_gamerule_blocked_faith_trigger = yes
 	##### Changed from Vanilla ^^^^^
@@ -169,6 +136,8 @@ can_build_in_same_realm = {
 	OR = {
 		has_title = title:e_minister_of_works
 		has_title = title:e_minister_of_war
+		##### Changed from Vanilla vvvvv
 		bp_has_roman_ministry_title_trigger = yes
+		##### Changed from Vanilla ^^^^^
 	}
 }

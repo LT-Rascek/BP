@@ -246,11 +246,11 @@ migration_cb_title_and_modifier_application_effect = {
 			rite = this.rite
 			gender_female_chance = {
 				if = {
-					limit = { this.rite = { has_doctrine = doctrine_gender_male_dominated } }
+					limit = { this.rite = { rite_has_doctrine = doctrine_gender_male_dominated } }
 					value = 0
 				}
 				else_if = {
-					limit = { this.rite = { has_doctrine = doctrine_gender_female_dominated } }
+					limit = { this.rite = { rite_has_doctrine = doctrine_gender_female_dominated } }
 					value = 100
 				}
 				else = { value = 50 }
@@ -281,11 +281,11 @@ migration_cb_title_and_modifier_application_effect = {
 			rite = this.rite
 			gender_female_chance = {
 				if = {
-					limit = { this.rite = { has_doctrine = doctrine_gender_male_dominated } }
+					limit = { this.rite = { rite_has_doctrine = doctrine_gender_male_dominated } }
 					value = 0
 				}
 				else_if = {
-					limit = { this.rite = { has_doctrine = doctrine_gender_female_dominated } }
+					limit = { this.rite = { rite_has_doctrine = doctrine_gender_female_dominated } }
 					value = 100
 				}
 				else = { value = 50 }
