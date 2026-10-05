@@ -17,13 +17,13 @@ roman_pagan = {
 	name = roman_pagan
 	desc = roman_pagan_desc
 	faith = hellenic_pagan
-	founder = d_hellenic_pagan #TODO: FIXME
+	founder = d_hellenic_pagan
 
 	color = roman
 	icon = mfi_chaplet_1
 
 	tenets = {
-		tenet_legalism
+		tenet_pursuit_of_power
 		tenet_ritual_celebrations
 		tenet_adaptive
 	}
@@ -41,14 +41,15 @@ sol_invictus = {
 	name = sol_invictus
 	desc = sol_invictus_desc
 	faith = hellenic_pagan
+	founder = d_hellenic_pagan
 
 	color = { 0.90 0.45 0.56 }
 	icon = mfi_custom_faith_5
 
 	tenets = {
-		tenet_warmonger #Not WtWSMS, but adds some interesting flavor as an imperial cult
 		tenet_sun_worship
-		tenet_pursuit_of_power #Not WtWSMS, but the Imperial Cult seemed to try to solidify imperial power
+		tenet_mountain_worship
+		tenet_pursuit_of_power
 	}
 	
 	doctrines = {

@@ -369,6 +369,85 @@ tenet_household_gods = {
 	}
 }
 
+tenet_pursuit_of_power = {
+	icon = tenet_pursuit_of_power
+
+	name = tenet_pursuit_of_power_name
+	desc = tenet_pursuit_of_power_desc
+
+	piety_cost = {
+		if = {
+			limit = {
+				OR = {
+					rite_has_doctrine = pagan_hostility_doctrine
+					rite_religion_tag = hinduism_religion
+					rite_religion_tag = islam_religion
+				}
+			}
+			value = faith_tenet_cost_mid
+		}
+		else_if = {
+			limit = {
+				rite_religion_tag = judaism_religion
+
+			}
+			value = faith_tenet_cost_high
+		}
+		else = {
+			value = faith_tenet_cost_massive
+		}
+
+		# Multiplier for keeping same tenet
+		if = {
+			limit = { rite_has_tenet = tenet_pursuit_of_power }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	is_shown = {
+		NOR = {
+			has_dlc_feature = all_under_heaven
+			has_dlc_feature = roads_to_power
+		}
+	}
+
+	can_pick_as_personal_tenet = {
+		NOT = { has_trait = content }
+	}
+
+	parameters = {
+		sanctify_artifacts_regal
+		disloyal_trait_general_pursuit_of_power
+	}
+
+	divergence_multiplier = 2.5
+
+	character_modifier = {
+		monthly_prestige_gain_mult = 0.2
+		enemy_hostile_scheme_success_chance_add = 5
+	}
+
+	personal_tenet_modifier = {
+		tyranny_gain_mult = -0.25
+		direct_vassal_opinion = -10
+		title_creation_cost_mult = -0.5
+		owned_hostile_scheme_success_chance_add = 10
+	}
+
+	personal_tenet_parameters = {
+		ambitious_trait_personal_pursuit_of_power
+	}
+
+	traits = {
+		virtues = { 
+			ambitious = { weight = 20 scale = 1 }
+		}
+		sins = { 
+			content = { weight = 20 scale = 1 }
+		}
+	}
+}
+
 ##### Changed from Vanilla: Gave dynamic name and description
 
 # Sacred Lies

@@ -10,6 +10,7 @@ bp_game_start_religion = {
 	on_actions = {
 		#Religious Stuff
 		convert_christian_chars_to_rites
+		swap_tenets_based_on_dlc
 		#set_ethnic_religion_flags
 	}
 }
@@ -104,5 +105,21 @@ convert_christian_chars_to_rites = {
 		}
 		#Handle edge cases:
 		title:d_raetia_curiensis.holder ?= { set_character_faith_history = faith:christian_faith }
+	}
+}
+
+swap_tenets_based_on_dlc = {
+	trigger = {
+		OR = {
+			has_dlc_feature = all_under_heaven
+			has_dlc_feature = roads_to_power
+		}
+	}
+	effect = {
+		every_rite_type = {
+			limit = { rite_has_tenet = tenet_pursuit_of_power }
+			remove_rite_tenet = tenet_pursuit_of_power
+			add_rite_tenet = tenet_pursuit_of_power_dlc
+		}
 	}
 }
