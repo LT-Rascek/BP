@@ -12,6 +12,9 @@ hellenic_pagan = {
 		tenet_hero_cults
 		tenet_adaptive
 	}
+	doctrines = {
+		doctrine_hellenic_pagan_liturgical_language_greek
+	}
 }
 roman_pagan = {
 	name = roman_pagan
@@ -24,12 +27,13 @@ roman_pagan = {
 
 	tenets = {
 		tenet_pursuit_of_power
-		tenet_ritual_celebrations
+		tenet_hero_cults
 		tenet_adaptive
 	}
 	
 	doctrines = {
 		doctrine_temporal_head
+		doctrine_hellenic_pagan_liturgical_language_latin
 	}
 	
 	localization = {
@@ -54,6 +58,7 @@ sol_invictus = {
 	
 	doctrines = {
 		doctrine_temporal_head
+		doctrine_hellenic_pagan_liturgical_language_latin
 	}
 	
 	localization = {
@@ -76,6 +81,10 @@ romano_celtic_pagan = {
 		tenet_adaptive
 		tenet_sanctity_of_nature
 		tenet_celtic_syncretism
+	}
+	
+	doctrines = {
+		doctrine_hellenic_pagan_liturgical_language_latin
 	}
 	
 	localization = {
@@ -260,6 +269,10 @@ pythagoreanism = {
 		doctrine_monist
 		doctrine_ritual_vegetarianism_required
 	}
+	
+	doctrines = {
+		doctrine_hellenic_pagan_liturgical_language_greek
+	}
 }
 platonism = {
 	faith = hellenic_pagan
@@ -278,6 +291,10 @@ platonism = {
 		doctrine_monist
 		doctrine_ritual_vegetarianism_partial
 	}
+	
+	doctrines = {
+		doctrine_hellenic_pagan_liturgical_language_greek
+	}
 }
 stoicism = {
 	faith = hellenic_pagan
@@ -294,6 +311,10 @@ stoicism = {
 	doctrines = {
 		doctrine_no_head
 		doctrine_monist
+	}
+	
+	doctrines = {
+		doctrine_hellenic_pagan_liturgical_language_greek
 	}
 }
 ##### Mystery Religions
@@ -321,6 +342,46 @@ mithraic_pagan = {
 		doctrine_clerical_gender_male_only
 		doctrine_clerical_function_recruitment
 		doctrine_clerical_gender_either
+		
+		doctrine_hellenic_pagan_liturgical_language_latin
+	}
+	
+	localization = {
+		#High God Name
+		HighGodName = mithraism_high_god_name
+		HighGodNamePossessive = mithraism_high_god_name_possessive
+		HighGodNameSheHe = CHARACTER_SHEHE_HE
+		HighGodHerselfHimself = CHARACTER_HIMSELF
+		HighGodHerHis = CHARACTER_HERHIS_HIS
+		HighGodNameAlternate = mithraism_high_god_name_alternate
+		HighGodNameAlternatePossessive = mithraism_high_god_name_alternate_possessive
+		
+		EvilGodNames = { mithraism_evil_god_ahriman mithraism_evil_god_angra_mainyu }
+		
+		HouseOfWorship = mithraism_house_of_worship
+		HouseOfWorshipPlural = mithraism_house_of_worship_plural
+		ReligiousSymbol = mithraism_religious_symbol
+		
+		ReligiousHeadName = mithraism_religious_head_title
+		ReligiousHeadTitleName = mithraism_religious_head_title_name
+		
+		PriestMale = mithraism_priest_male
+		PriestMalePlural = mithraism_priest_male_plural
+		PriestNeuter = mithraism_priest_male
+		PriestNeuterPlural = mithraism_priest_male_plural
+		AltPriestTermPlural = christianity_priest_alternate_plural
+		
+		BishopMale = mithraism_bishop_male
+		BishopMalePlural = mithraism_bishop_male_plural
+		BishopNeuter = mithraism_bishop_male
+		BishopNeuterPlural = mithraism_bishop_male_plural
+		
+		DevoteeMale = mithraism_devotee
+		DevoteeMalePlural = mithraism_devoteeplural
+		DevoteeFemale = mithraism_devotee
+		DevoteeFemalePlural = mithraism_devoteeplural
+		DevoteeNeuter = mithraism_devotee
+		DevoteeNeuterPlural = mithraism_devoteeplural
 	}
 }
 cybelian = {
@@ -350,6 +411,8 @@ cybelian = {
 		doctrine_clerical_gender_male_only
 		doctrine_clerical_marriage_disallowed
 		doctrine_clerical_succession_spiritual_appointment
+		
+		doctrine_hellenic_pagan_liturgical_language_greek
 	}
 }
 orphism = {
@@ -370,5 +433,20 @@ orphism = {
 		
 		#Not really aligned with the Roman pantheon and unpopular with the Roman elite
 		doctrine_polytheist
+		
+		doctrine_hellenic_pagan_liturgical_language_greek
+	}
+	
+	#Emphasize Dionysus over Zeus
+	localization = {
+		HighGodName = orphism_high_god_name
+		HighGodNamePossessive = orphism_high_god_name_possessive
+		HighGodNameSheHe = CHARACTER_SHEHE_HE
+		HighGodHerselfHimself = CHARACTER_HIMSELF
+		HighGodHerHis = CHARACTER_HERHIS_HIS
+		HighGodNameAlternate = orphism_high_god_name_alternate
+		HighGodNameAlternatePossessive = orphism_high_god_name_alternate_possessive
+		
+		ReligiousText = orphism_religious_text
 	}
 }

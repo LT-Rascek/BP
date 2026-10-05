@@ -1,0 +1,100 @@
+﻿@commission_epic_cooldown_time = 3650
+
+##### Changed from Vanilla: Unlocked by Hero Cults
+
+### Commission Epic
+# by Petter Vilberg
+# Unlocked by: Making History
+### Commission Epic ###
+commission_epic_decision = {
+	picture = {
+		trigger = {
+			culture = { has_graphical_mediterranean_culture_group_trigger = yes }
+		}
+		reference = "gfx/interface/illustrations/event_scenes/ep3_medi_study.dds"
+	}
+	picture = {
+		trigger = {
+			culture = { has_building_gfx = japanese_building_gfx } #Just Japan
+		}
+		reference = "gfx/interface/illustrations/event_scenes/tgp_study_japan.dds"
+	}
+	picture = {
+		trigger = {
+			culture = { has_graphical_east_asia_culture_group_trigger = yes } #Rest of East Asia
+		}
+		reference = "gfx/interface/illustrations/event_scenes/tgp_study_asia.dds"
+	}
+	picture = {
+		trigger = {
+			culture = { has_graphical_india_culture_group_trigger = yes }
+		}
+		reference = "gfx/interface/illustrations/event_scenes/bp2_study_indian.dds"
+	}
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	}
+	desc = commission_epic_decision_desc
+
+	selection_tooltip = commission_epic_decision_tooltip
+
+	cooldown = { days = @commission_epic_cooldown_time }
+
+	is_shown = {
+		is_landed = yes
+		OR = {
+			has_perk = writing_history_perk
+			AND = {
+				any_character_struggle = {
+					involvement = involved
+					has_struggle_phase_parameter = unlocks_epic_commission_for_independent_rulers
+	 			}	
+				top_liege ?= this
+			}
+			##### Changed from Vanilla vvvvv
+			rite = { rite_has_parameter = unlocks_epic_commission_for_independent_rulers }
+			##### Changed from Vanilla ^^^^^
+		}
+		exists = house
+		is_landless_adventurer = no
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+
+	cost = {
+		gold = medium_gold_value
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = "commission_epic_once_complete_effect"
+		}
+		show_as_tooltip = {
+			add_prestige = medium_prestige_gain
+			custom_tooltip = commission_epic_artifact_tt
+		}
+		custom_description_no_bullet = {
+			text = "commission_epic_potential_cost_effect"
+		}
+		trigger_event = commission_epic.0001
+	}
+	
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 120
+		kingdom = 120
+		empire = 120
+		hegemony = 120
+	}
+	
+	ai_potential = {
+		short_term_gold >= major_gold_value
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}

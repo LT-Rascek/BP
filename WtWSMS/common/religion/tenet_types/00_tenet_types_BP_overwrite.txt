@@ -8,8 +8,18 @@ tenet_consolamentum = {
 		first_valid = {
 			##### Changed from Vanilla vvvvv
 			triggered_desc = {
-				trigger = { this.religion = religion:hellenism_religion }
-				desc = tenet_consolamentum_hellenic_name
+				trigger = {
+					NOT = { rite_religion_tag = christianity_religion }
+					rite_has_parameter = liturgical_language_greek }
+				}
+				desc = tenet_consolamentum_nonchristian_greek_name
+			}
+			triggered_desc = {
+				trigger = {
+					NOT = { rite_religion_tag = christianity_religion }
+					rite_has_parameter = liturgical_language_latin }
+				}
+				desc = tenet_consolamentum_nonchristian_latin_name
 			}
 			##### Changed from Vanilla ^^^^^
 			triggered_desc = {
@@ -49,8 +59,14 @@ tenet_consolamentum = {
 		first_valid = {
 			##### Changed from Vanilla vvvvv
 			triggered_desc = {
-				trigger = { this.religion = religion:hellenism_religion }
-				desc = tenet_consolamentum_hellenic_desc
+				trigger = {
+					NOT = { rite_religion_tag = christianity_religion }
+					OR = {
+						rite_has_parameter = liturgical_language_latin }
+						rite_has_parameter = liturgical_language_greek }
+					}
+				}
+				desc = tenet_consolamentum_nonchristian_latin_name
 			}
 			##### Changed from Vanilla ^^^^^
 			triggered_desc = {

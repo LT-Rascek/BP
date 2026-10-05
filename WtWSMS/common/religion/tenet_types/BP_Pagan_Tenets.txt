@@ -1,16 +1,39 @@
 ﻿tenet_hero_cults = {
-	icon = tenet_hero_cults
-	name = tenet_hero_cults_name
-	desc = tenet_hero_cults_desc
+	icon = tenet_household_gods
+
+	name = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { rite_has_parameter = liturgical_language_greek }
+				desc = tenet_hero_cults_greek_name
+			}
+			triggered_desc = {
+				trigger = { rite_has_parameter = liturgical_language_latin }
+				desc = tenet_hero_cults_latin_name
+			}
+			desc = tenet_hero_cults_name
+		}
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { rite_has_parameter = liturgical_language_greek }
+				desc = tenet_hero_cults_greek_desc
+			}
+			triggered_desc = {
+				trigger = { rite_has_parameter = liturgical_language_latin }
+				desc = tenet_hero_cults_latin_desc
+			}
+			desc = tenet_hero_cults_desc
+		}
+	}
 
 	is_shown = {}
 
-	can_pick = {
-		religion = religion:christianity_religion
-		unique_christology_trigger = yes
-	}
+	can_pick = { is_in_family = rf_pagan }
 	can_pick_as_personal_tenet = {
-		unique_christology_personal_trigger = yes
+		
 	}
 
 	piety_cost = {
@@ -23,32 +46,65 @@
 		}
 	}
 
-	divergence_multiplier = 1.5
+	divergence_multiplier = 1.0
 
-	character_modifier = {
-		different_faith_opinion = 15
+	character_modifier = {}
+
+	parameters = {
+		piety_from_festivals_active
+		tenet_ritual_celebrations_praise_the_gods
 	}
 
-	parameters = {}
+	personal_tenet_modifier = {
+		glory_hound_opinion = 5
+	}
 
-	personal_tenet_parameters = {}
+	personal_tenet_parameters = {
+		piety_from_feasts_active
+		unlocks_epic_commission_for_independent_rulers
+	}
 
 	traits = {
-		# Doctrinal fidelity to the one-united-nature formula vs. dissimulation under Chalcedonian pressure.
 		virtues = {
-			humble = { weight = 15 scale = 1 }
+			gregarious = { weight = 20 scale = 1 }
+			lifestyle_poet = { weight = 10 scale = 2 }
+			violet_poet = { weight = 5 scale = 2 }
 		}
 		sins = {
-			arbitrary = { weight = 15 scale = 1 }
+			greedy = { weight = 15 scale = 1 }
 		}
 	}
 }
 tenet_mystery_religion = {
 	icon = tenet_sacred_shadows
 
-	name = tenet_mystery_religion_name
+	name = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { rite_has_parameter = liturgical_language_greek }
+				desc = tenet_hero_cults_greek_name
+			}
+			triggered_desc = {
+				trigger = { rite_has_parameter = liturgical_language_latin }
+				desc = tenet_mystery_religion_latin_name
+			}
+			desc = tenet_mystery_religion_name
+		}
+	}
 
-	desc = tenet_mystery_religion_desc
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { rite_has_parameter = liturgical_language_greek }
+				desc = tenet_mystery_religion_greek_desc
+			}
+			triggered_desc = {
+				trigger = { rite_has_parameter = liturgical_language_latin }
+				desc = tenet_mystery_religion_latin_desc
+			}
+			desc = tenet_mystery_religion_desc
+		}
+	}
 
 	is_shown = {}
 
@@ -299,16 +355,12 @@ tenet_philsophical_movement = {
 	name = {
 		first_valid = {
 			triggered_desc = {
-				trigger = { this = rite:hellenic_pagan }
+				trigger = { rite_has_parameter = liturgical_language_greek }
 				desc = tenet_philsophical_movement_greek_name
 			}
 			triggered_desc = {
-				trigger = { this = rite:roman_pagan }
+				trigger = { rite_has_parameter = liturgical_language_latin }
 				desc = tenet_philsophical_movement_latin_name
-			}
-			triggered_desc = {
-				trigger = { religion = religion:hellenism_religion }
-				desc = tenet_philsophical_movement_greek_name
 			}
 			desc = tenet_philsophical_movement_name
 		}
@@ -317,16 +369,12 @@ tenet_philsophical_movement = {
 	desc = {
 		first_valid = {
 			triggered_desc = {
-				trigger = { this = rite:hellenic_pagan }
+				trigger = { rite_has_parameter = liturgical_language_greek }
 				desc = tenet_philsophical_movement_greek_desc
 			}
 			triggered_desc = {
-				trigger = { this = rite:roman_pagan }
+				trigger = { rite_has_parameter = liturgical_language_latin }
 				desc = tenet_philsophical_movement_latin_desc
-			}
-			triggered_desc = {
-				trigger = { religion = religion:hellenism_religion }
-				desc = tenet_philsophical_movement_greek_desc
 			}
 			desc = tenet_philsophical_movement_desc
 		}
