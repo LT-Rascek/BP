@@ -293,3 +293,69 @@ tenet_unrelenting_warfare = {
 		}
 	}
 }
+tenet_philsophical_movement = {
+	icon = tenet_pure_land
+	name = tenet_philsophical_movement_name
+	desc = tenet_philsophical_movement_desc
+
+	is_shown = {}
+
+	can_pick = {
+		custom_tooltip = { #Monotheism really can't work with this
+			text = incompatible_doctrine_monotheist
+			NOT = { doctrine:doctrine_monotheist = { is_in_list = selected_doctrines } }
+		}
+		custom_tooltip = { #Henotheism really can't work with this
+			text = doctrine_henotheist
+			NOT = { doctrine:doctrine_henotheist = { is_in_list = selected_doctrines } }
+		}
+		custom_description = {
+			text = incompatible_tenet_literalism_trigger
+			NOT = { doctrine:tenet_literalism = { is_in_list = selected_doctrines } }
+		}
+	}
+	can_pick_as_personal_tenet = {
+		NOT = { has_personal_tenet = tenet_literalism }
+	}
+
+	piety_cost = {
+		value = faith_tenet_cost_low
+
+		# Multiplier for keeping same tenet
+		if = {
+			limit = { rite_has_tenet = tenet_philsophical_movement }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	divergence_multiplier = 0.5
+
+	special_parameters = { hostility_level_override = { doctrine_agnostic = astray } }
+
+	character_modifier = {
+		monthly_learning_lifestyle_xp_gain_mult = 0.15
+	}
+
+	parameters = {
+		holy_wars_forbidden
+		literalist_debate_enabled
+		sway_scheme_better
+	}
+
+	personal_tenet_parameters = {
+		inspections_unlocked_and_costs_piety
+		better_study_scheme
+	}
+
+	traits = {
+		# Doctrinal fidelity to the one-united-nature formula vs. dissimulation under Chalcedonian pressure.
+		virtues = {
+			just = { weight = 30 scale = 1 }
+		}
+		sins = {
+			arbitrary = { weight = 15 scale = 1 }
+		}
+	}
+}
+
+

@@ -1,0 +1,11 @@
+﻿l_english:
+ doctrine_agnostic_desc: "The existence or non-existence of the divine is irrelevant to the life of humanity."
+ doctrine_agnostic_name: "Agnostic"
+ doctrine_henotheist_desc: "While there may or may not be many gods, only one is worthy of worship."
+ doctrine_henotheist_name: "Henotheist"
+ doctrine_monist_desc: "All of reality is derived from a single, unifying, universal principle which is ontologically antecedent to observed reality."
+ doctrine_monist_name: "Monist"
+ #Doctrine Parameters
+ doctrine_parameter_hostility_override_doctrine_polytheist: "Considers [faiths|E] with the #V $doctrine_polytheist_name$#! Theism [doctrine|E] to be [GetHostilityLevelName( TOKEN_PARAMETER.GetIntValue )|V]"
+ doctrine_parameter_hostility_override_doctrine_monist: "Considers [faiths|E] with the #V $doctrine_monist_name$#! Theism [doctrine|E] to be [GetHostilityLevelName( TOKEN_PARAMETER.GetIntValue )|V]"
+ doctrine_parameter_hostility_override_doctrine_henotheist: "Considers [faiths|E] with the #V $doctrine_henotheist_name$#! Theism [doctrine|E] to be [GetHostilityLevelName( TOKEN_PARAMETER.GetIntValue )|V]"

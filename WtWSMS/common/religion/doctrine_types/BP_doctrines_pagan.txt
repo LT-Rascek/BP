@@ -1,0 +1,55 @@
+﻿special_doctrine_is_egyptian_faith = {
+	doctrine_group_type = special_tolerance
+	
+	special_parameters = {
+		# Since doctrines cannot modify other faith's views of us, only our view of others, all Christian faiths are given this special doctrine which makes them friendlier to Faiths with the Christian Syncretism tenet.
+		hostility_level_override = {
+ 			tenet_egyptian_syncretism = astray
+		}
+		parameter_opinion_override = {
+			egyptian_syncretic_actor = 30
+		}
+	}
+}
+special_doctrine_is_hellenic_faith = {
+	doctrine_group_type = hellenic_specific_group
+	
+	##### Changed from Vanilla vvvvv
+	name = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { this.main_rite = rite:roman_pagan }
+				desc = special_doctrine_is_hellenic_faith_name_roman
+			}
+			triggered_desc = {
+				trigger = { this.main_rite = rite:hellenic_pagan }
+				desc = special_doctrine_is_hellenic_faith_name_hellenic
+			}
+			desc = special_doctrine_is_hellenic_faith_name
+		}
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { this.main_rite = rite:roman_pagan }
+				desc = special_doctrine_is_hellenic_faith_desc_roman
+			}
+			triggered_desc = {
+				trigger = { this.main_rite = rite:hellenic_pagan }
+				desc = special_doctrine_is_hellenic_faith_desc_hellenic
+			}
+			desc = special_doctrine_is_hellenic_faith_desc
+		}
+	}
+	##### Changed from Vanilla ^^^^^
+	
+	special_parameters = {
+		bonus_heresy_protection = 1
+		divergence_protection = 1
+		heresy_threshold = 15
+		hostility_level_override = {
+			pagan_hostility_doctrine = astray
+		}
+	}
+}

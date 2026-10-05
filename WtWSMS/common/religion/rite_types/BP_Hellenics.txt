@@ -71,13 +71,8 @@ romano_celtic_pagan = {
 	color = gallic
 	icon = mfi_celtic_pagan
 
-	tenet_selection_pair = {
-		requires_dlc_flag = all_under_heaven
-		tenet = tenet_cranial_trophies
-		fallback_tenet = tenet_unrelenting_faith
-	}
-
 	tenets = {
+		tenet_adaptive
 		tenet_sanctity_of_nature
 		tenet_celtic_syncretism
 	}
@@ -248,31 +243,32 @@ romano_celtic_pagan = {
 }
 ##### Philosophical Rites
 pythagoreanism = {
-	faith = pythagoreanism
+	faith = hellenic_pagan
+	icon = pythagoras_theorem
 
 	color = { 0.6 0.1 0.4 }
 
 	tenets = {
 		tenet_isopsephy
 		tenet_pacifism
-		tenet_alexandrian_catechism
+		tenet_philsophical_movement
 	}
 
 	doctrines = {
 		doctrine_gender_equal
 		doctrine_monist
 		doctrine_ritual_vegetarianism_required
-		special_doctrine_humanistic_philosophy
 	}
 }
 platonism = {
-	faith = platonism
+	faith = hellenic_pagan
+	icon = mfi_stoics
 
 	color = { 0.6 0.6 0.6 }
 
 	tenets = {
 		tenet_bhakti #Julian definitely had shades of this
-		tenet_alexandrian_catechism
+		tenet_philsophical_movement
 		tenet_esotericism
 	}
 
@@ -280,28 +276,22 @@ platonism = {
 		doctrine_spiritual_head
 		doctrine_monist
 		doctrine_ritual_vegetarianism_partial
-		special_doctrine_humanistic_philosophy
 	}
 }
 stoicism = {
-	faith = stoicism
+	faith = hellenic_pagan
+	icon = hellenic
 
 	color = { 0.6 0.6 0.6 }
 
-	tenet_selection_pair = {
-		requires_dlc_flag = all_under_heaven
-		tenet = tenet_harmonious_society
-		fallback_tenet = tenet_alexandrian_catechism
-	}
-
 	tenets = {
+		tenet_philsophical_movement
 		tenet_legalism #Dikaoiosyne
 		tenet_consolamentum
 	}
 
 	doctrines = {
 		doctrine_no_head
-		special_doctrine_humanistic_philosophy
 		doctrine_monist
 	}
 }

@@ -2,27 +2,87 @@
 doctrine_monotheist = {
 	doctrine_group_type = doctrine_theism
 	index = 0
-	divergence = 75
+	divergence = 0
 	
 	icon = "doctrine_monotheist"
 	
-	is_shown = { NOT = { religion_tag = nastika_religion } }
 	piety_cost = {
 		value = faith_doctrine_cost_high
 		if = {
 			limit = {
 				OR = {
-					has_doctrine = abrahamic_hostility_doctrine
+					rite_has_doctrine = abrahamic_hostility_doctrine
 					has_doctrine = mazdan_hostility_doctrine
-					has_doctrine = doctrine_monotheist
+					rite_has_doctrine = doctrine_monotheist
 				}
 			}
 			multiply = faith_unchanged_doctrine_cost_mult
 		}
-		else = { multiply = faith_changed_doctrine_cost_mult_four_step }
+		else_if = {
+			limit = { rite_has_doctrine = doctrine_henotheist }
+			multiply = faith_changed_doctrine_cost_mult_two_step
+		}
+		else_if = {
+			limit = { rite_has_doctrine = doctrine_polytheist }
+			multiply = faith_changed_doctrine_cost_mult_three_step
+		}
+		else_if = {
+			limit = { rite_has_doctrine = doctrine_monist }
+			multiply = faith_changed_doctrine_cost_mult_two_step
+		}
+		else_if = {
+			limit = { rite_has_doctrine = doctrine_agnostic }
+			multiply = faith_changed_doctrine_cost_mult_three_step
+		}
 	}
+	
 	special_parameters = {
 		hostility_levels = {
+			unrelated = evil
+		}
+	}
+}
+doctrine_henotheist = { ##### WtWSMS New
+	doctrine_group_type = doctrine_theism
+	index = 1
+	divergence = 75
+	
+	icon = "doctrine_polytheist" #TODO: FIXME
+	
+	piety_cost = {
+		value = faith_doctrine_cost_high
+		if = {
+			limit = {
+				OR = {
+					rite_has_doctrine = abrahamic_hostility_doctrine
+					has_doctrine = mazdan_hostility_doctrine
+					rite_has_doctrine = doctrine_monotheist
+				}
+			}
+			multiply = faith_changed_doctrine_cost_mult_two_step
+		}
+		else_if = {
+			limit = { rite_has_doctrine = doctrine_henotheist }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+		else_if = {
+			limit = { rite_has_doctrine = doctrine_polytheist }
+			multiply = faith_changed_doctrine_cost_mult_two_step
+		}
+		else_if = {
+			limit = { rite_has_doctrine = doctrine_monist }
+			multiply = faith_changed_doctrine_cost_mult_two_step
+		}
+		else_if = {
+			limit = { rite_has_doctrine = doctrine_agnostic }
+			multiply = faith_changed_doctrine_cost_mult_three_step
+		}
+	}
+	
+	special_parameters = { #Bascially Paganism in general
+		hostility_levels = {
+			same_religion = astray
+			same_family = hostile
 			unrelated = evil
 		}
 	}
@@ -31,93 +91,56 @@ doctrine_monotheist = {
 doctrine_polytheist = {
 	doctrine_group_type = doctrine_theism
 	index = 1
-	divergence = 75
+	divergence = 125
 	
 	icon = "doctrine_polytheist"
-	is_shown = { NOT = { religion_tag = nastika_religion } }
+	
 	piety_cost = {
 		value = faith_doctrine_cost_high
 		if = {
-			limit = { has_doctrine = abrahamic_hostility_doctrine }
-			multiply = faith_changed_doctrine_cost_mult_four_step
-		}
-		else_if = {
-			limit = { has_doctrine = doctrine_agnostic }
+			limit = {
+				OR = {
+					rite_has_doctrine = abrahamic_hostility_doctrine
+					has_doctrine = mazdan_hostility_doctrine
+					rite_has_doctrine = doctrine_monotheist
+				}
+			}
 			multiply = faith_changed_doctrine_cost_mult_three_step
 		}
 		else_if = {
-			limit = { has_doctrine = doctrine_roman_polytheist }
+			limit = { rite_has_doctrine = doctrine_henotheist }
 			multiply = faith_changed_doctrine_cost_mult_two_step
 		}
 		else_if = {
-			limit = { has_doctrine = doctrine_polytheist }
+			limit = { rite_has_doctrine = doctrine_polytheist }
 			multiply = faith_unchanged_doctrine_cost_mult
 		}
+		else_if = {
+			limit = { rite_has_doctrine = doctrine_monist }
+			multiply = faith_changed_doctrine_cost_mult_two_step
+		}
+		else_if = {
+			limit = { rite_has_doctrine = doctrine_agnostic }
+			multiply = faith_changed_doctrine_cost_mult_three_step
+		}
 	}
+	
+	#All Polytheists get Patron Gods Mechanic
+	parameters = { select_personal_god_active }
+	
 	special_parameters = {
 		hostility_levels = {
 			unrelated = hostile
-		}
-		hostility_level_override = {
-			doctrine_roman_polytheist = astray
-		}
-	}
-}
-doctrine_roman_polytheist = { ##### WtWSMS New
-	doctrine_group_type = doctrine_theism
-	index = 2
-	divergence = 75
-	
-	icon = "doctrine_roman_polytheist"
-	is_shown = { religion_tag = hellenism_religion }
-	piety_cost = {
-		value = faith_doctrine_cost_high
-		if = {
-			limit = { has_doctrine = abrahamic_hostility_doctrine }
-			multiply = faith_changed_doctrine_cost_mult_four_step
-		}
-		else_if = {
-			limit = { has_doctrine = doctrine_agnostic }
-			multiply = faith_changed_doctrine_cost_mult_three_step
-		}
-		else_if = {
-			limit = { has_doctrine = doctrine_polytheist }
-			multiply = faith_changed_doctrine_cost_mult_two_step
-		}
-		else_if = {
-			limit = { has_doctrine = doctrine_roman_polytheist }
-			multiply = faith_unchanged_doctrine_cost_mult
-		}
-	}
-	can_pick = { #For safety
-		custom_description = {
-			text = doctrine_inverted_pluralism_pluralistic_trigger
-			NOR = {
-				doctrine:doctrine_pluralism_fundamentalist = { is_in_list = selected_doctrines }
-				doctrine:doctrine_pluralism_righteous = { is_in_list = selected_doctrines }
-			}
-		}
-	}
-	special_parameters = { #Really just override of specific views
-		hostility_level_override = {
-			doctrine_roman_polytheist = astray
-			doctrine_polytheist = astray
 		}
 	}
 }
 doctrine_monist = { ##### WtWSMS New
 	doctrine_group_type = doctrine_theism
 	index = 3
-	divergence = 75
+	divergence = 150
 	
 	icon = "doctrine_monist"
-	is_shown = { #Not available to the principal Monotheist faiths
-		NOR = {
-			has_doctrine = abrahamic_hostility_doctrine
-			has_doctrine = mazdan_hostility_doctrine
-			religion_tag = nastika_religion
-		}
-	}
+	
 	can_pick = { #For safety
 		custom_description = {
 			text = doctrine_inverted_pluralism_pluralistic_trigger
@@ -131,24 +154,32 @@ doctrine_monist = { ##### WtWSMS New
 		value = faith_doctrine_cost_high
 		if = {
 			limit = {
-				has_doctrine = doctrine_monotheist
-				has_doctrine = doctrine_polytheist
-				has_doctrine = doctrine_roman_polytheist
+				OR = {
+					rite_has_doctrine = abrahamic_hostility_doctrine
+					has_doctrine = mazdan_hostility_doctrine
+					rite_has_doctrine = doctrine_monotheist
+				}
 			}
-			multiply = faith_changed_doctrine_cost_mult_three_step
-		}
-		else_if = {
-			limit = { has_doctrine = doctrine_agnostic }
 			multiply = faith_changed_doctrine_cost_mult_two_step
 		}
 		else_if = {
-			limit = { has_doctrine = doctrine_monist }
+			limit = { rite_has_doctrine = doctrine_henotheist }
+			multiply = faith_changed_doctrine_cost_mult_two_step
+		}
+		else_if = {
+			limit = { rite_has_doctrine = doctrine_polytheist }
+			multiply = faith_changed_doctrine_cost_mult_two_step
+		}
+		else_if = {
+			limit = { rite_has_doctrine = doctrine_monist }
 			multiply = faith_unchanged_doctrine_cost_mult
 		}
+		else_if = {
+			limit = { rite_has_doctrine = doctrine_agnostic }
+			multiply = faith_changed_doctrine_cost_mult_two_step
+		}
 	}
-	parameters = {
-		holy_wars_forbidden = yes
-	}
+	parameters = {}
 	special_parameters = {
 		hostility_levels = {
 			same_religion = astray
@@ -160,12 +191,10 @@ doctrine_monist = { ##### WtWSMS New
 doctrine_agnostic = { ##### WtWSMS New
 	doctrine_group_type = doctrine_theism
 	index = 4
-	divergence = 75
+	divergence = 175
 	
 	icon = "doctrine_agnostic"
-	is_shown = { #Only for the Nastika right now; really only applicable there and we want to avoid too much weirdness atm
-		religion_tag = nastika_religion
-	}
+	
 	can_pick = { #For safety
 		custom_description = {
 			text = doctrine_inverted_pluralism_pluralistic_trigger
@@ -179,18 +208,28 @@ doctrine_agnostic = { ##### WtWSMS New
 		value = faith_doctrine_cost_high
 		if = {
 			limit = {
-				has_doctrine = doctrine_monotheist
-				has_doctrine = doctrine_polytheist
-				has_doctrine = doctrine_roman_polytheist
+				OR = {
+					rite_has_doctrine = abrahamic_hostility_doctrine
+					has_doctrine = mazdan_hostility_doctrine
+					rite_has_doctrine = doctrine_monotheist
+				}
 			}
-			multiply = faith_changed_doctrine_cost_mult_three_step
-		}
-		else_if = {
-			limit = { has_doctrine = doctrine_monist }
 			multiply = faith_changed_doctrine_cost_mult_two_step
 		}
 		else_if = {
-			limit = { has_doctrine = doctrine_agnostic }
+			limit = { rite_has_doctrine = doctrine_henotheist }
+			multiply = faith_changed_doctrine_cost_mult_two_step
+		}
+		else_if = {
+			limit = { rite_has_doctrine = doctrine_polytheist }
+			multiply = faith_changed_doctrine_cost_mult_two_step
+		}
+		else_if = {
+			limit = { rite_has_doctrine = doctrine_monist }
+			multiply = faith_changed_doctrine_cost_mult_two_step
+		}
+		else_if = {
+			limit = { rite_has_doctrine = doctrine_agnostic }
 			multiply = faith_unchanged_doctrine_cost_mult
 		}
 	}
@@ -199,10 +238,11 @@ doctrine_agnostic = { ##### WtWSMS New
 	}
 	
 	special_parameters = {
+		hostility_level_override = { tenet_philsophical_movement = astray }
 		hostility_levels = {
 			same_religion = astray
 			same_family = astray
-			unrelated = hostile
+			unrelated = astray
 		}
 	}
 }

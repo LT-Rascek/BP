@@ -1,4 +1,244 @@
-﻿##### Changed from Vanilla: unavailable without doctrine_scriptural, not usable with Complex Exegesis
+﻿##### Changed from Vanilla: Gave dynamic name and description
+
+# Endura / Ritual Suicide / Consolamentum / Paráklēsis
+tenet_consolamentum = {
+	icon = tenet_consolamentum
+
+	name = {
+		first_valid = {
+			##### Changed from Vanilla vvvvv
+			triggered_desc = {
+				trigger = { religion = { religion_tag = hellenism_religion } }
+				desc = tenet_consolamentum_hellenic_name
+			}
+			##### Changed from Vanilla ^^^^^
+			triggered_desc = {
+				trigger = {
+					has_pam_dlc_trigger = yes
+					pam_latin_as_liturgical_language_trigger = yes
+				}
+				desc = tenet_consolamentum_latin_name
+			}
+			triggered_desc = {
+				trigger = {
+					has_pam_dlc_trigger = yes
+					pam_greek_as_liturgical_language_trigger = yes
+				}
+				desc = tenet_consolamentum_greek_name
+			}
+			triggered_desc = {
+				trigger = {
+					has_pam_dlc_trigger = yes
+					pam_greek_as_liturgical_language_trigger = no
+					pam_latin_as_liturgical_language_trigger = no
+				}
+				desc = tenet_consolamentum_default_name
+			}
+			triggered_desc = {
+				trigger = {
+					has_pam_dlc_trigger = no
+					rite_religion_tag = christianity_religion
+				}
+				desc = tenet_consolamentum_name
+			}
+			desc = tenet_consolamentum_name_alternate
+		}
+	}
+
+	desc = {
+		first_valid = {
+			##### Changed from Vanilla vvvvv
+			triggered_desc = {
+				trigger = { religion = { religion_tag = hellenism_religion } }
+				desc = tenet_consolamentum_hellenic_desc
+			}
+			##### Changed from Vanilla ^^^^^
+			triggered_desc = {
+				trigger = {
+					has_pam_dlc_trigger = yes
+					pam_latin_as_liturgical_language_trigger = yes
+				}
+				desc = tenet_consolamentum_latin_desc
+			}
+			triggered_desc = {
+				trigger = {
+					has_pam_dlc_trigger = yes
+					pam_greek_as_liturgical_language_trigger = yes
+				}
+				desc = tenet_consolamentum_greek_desc
+			}
+			triggered_desc = {
+				trigger = {
+					has_pam_dlc_trigger = yes
+					pam_greek_as_liturgical_language_trigger = no
+					pam_latin_as_liturgical_language_trigger = no
+				}
+				desc = tenet_consolamentum_default_desc
+			}
+			desc = tenet_consolamentum_desc
+		}
+	}
+
+	piety_cost = {
+		if = {
+			limit = {
+				rite_has_tenet = tenet_sacrificial_ceremonies
+			}
+			value = faith_tenet_cost_low
+		}
+		else_if = {
+			limit = {
+				OR = {
+					rite_religion_tag = dualism_religion
+					rite_religion_tag = hinduism_religion
+					rite_religion_tag = jainism_religion
+				}
+			}
+			value = faith_tenet_cost_high
+		}
+		else = {
+			value = faith_tenet_cost_mid
+		}
+
+		# Multiplier for keeping same tenet
+		if = {
+			limit = { rite_has_tenet = tenet_consolamentum }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	can_pick = {
+		NOR = {
+			religion = religion:islam_religion
+			religion = religion:judaism_religion
+			religion = religion:zoroastrianism_religion
+			AND = {
+				has_doctrine = pagan_hostility_doctrine
+				NOT = { religion = religion:kushitism_religion }
+			}
+		}
+		custom_description = {
+			text = incompatible_tenet_sacrificial_ceremonies_trigger
+			NOT = { tenet:tenet_sacrificial_ceremonies = { is_in_list = selected_doctrines } }
+		}
+	}
+
+	parameters = {
+		consolamentum_active
+	}
+
+	divergence_multiplier = 2
+
+	character_modifier = {
+		short_reign_duration_mult = -0.5
+	}
+
+	personal_tenet_parameters = {
+		consolamentum_grief_immunity
+	}
+
+	traits = {
+		virtues = {
+			chaste = { weight = 15 scale = 1 }
+		}
+		sins = {
+			lustful = { weight = 15 scale = 1 }
+		}
+	}
+}
+
+##### Changed from Vanilla: Gave dynamic name and description
+tenet_legalism = {
+	icon = tenet_legalism
+
+	##### Changed from Vanilla vvvvv
+	name = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { religion = religion:kushitism_religion }
+				desc = tenet_legalism_maat_name
+			}
+			triggered_desc = {
+				trigger = { religion = religion:hellenism_religion }
+				desc = tenet_legalism_dikaiosyne_name
+			}
+			desc = tenet_legalism_name
+		}
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { religion = religion:kushitism_religion }
+				desc = tenet_legalism_maat_desc
+			}
+			triggered_desc = {
+				trigger = { religion = religion:hellenism_religion }
+				desc = tenet_legalism_dikaiosyne_desc
+			}
+			desc = tenet_legalism_desc
+		}
+	}
+	##### Changed from Vanilla ^^^^^
+
+	piety_cost = {
+		if = {
+			limit = {
+				OR = {
+					rite_religion_tag = buddhism_religion
+					rite_religion_tag = jainism_religion
+					rite_has_doctrine = pagan_hostility_doctrine
+				}
+			}
+			value = faith_tenet_cost_high
+		}
+		else_if = {
+			limit = {
+				OR = {
+					rite_religion_tag = islam_religion
+					rite_religion_tag = judaism_religion
+					rite_religion_tag = zoroastrianism_religion
+				}
+			}
+			value = faith_tenet_cost_low
+		}
+		else = {
+			value = faith_tenet_cost_mid
+		}
+
+		# Multiplier for keeping same tenet
+		if = {
+			limit = { rite_has_tenet = tenet_legalism }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	traits = {
+		virtues = {
+			just = { weight = 20 scale = 1 }
+		}
+		sins = {
+			arbitrary = { weight = 20 scale = 1 }
+		}
+	}
+	
+	personal_tenet_modifier = {
+		lifestyle_scholar_xp_gain_mult = 0.20
+	}
+
+	parameters = {
+		legalism_reduced_faction_virtues
+		legalism_increased_faction_sins
+		tenet_legalism_sinful_revocation
+		tenet_legalism_title_integration
+	}
+
+	personal_tenet_parameters = {
+		tenet_legalism_lawful_authority
+	}
+}
+
+##### Changed from Vanilla: unavailable without doctrine_scriptural, not usable with Complex Exegesis
 tenet_literalism = {
 	icon = tenet_literalism
 
@@ -71,5 +311,155 @@ tenet_literalism = {
 		tenet_literalism_debate_experience
 		tenet_literalism_scholar_conversion
 		tenet_literalism_scholar_trait
+	}
+}
+
+##### Changed from Vanilla: simply unavailable
+tenet_household_gods = {
+	icon = tenet_household_gods
+
+	name = tenet_household_gods_name
+
+	desc = tenet_household_gods_desc
+
+	piety_cost = faith_tenet_cost_mid
+
+	is_shown = { always = no }
+
+	can_pick = {
+		religion = religion:hellenism_religion
+		custom_description = {
+			text = rome_must_be_faithfully_restored_trigger
+			has_global_variable = household_gods_tenet_unlocked
+		}
+		custom_tooltip = {
+			text = incompatible_doctrine_monotheist
+			NOT = { doctrine:doctrine_monotheist = { is_in_list = selected_doctrines } }
+		}
+	}
+
+	can_pick_as_personal_tenet = {
+		NOT = { rite = { rite_has_doctrine = doctrine_monotheist } }
+	}
+
+	parameters = {
+		same_culture_conversion_bonus_active
+		same_faith_promote_culture_bonus_active
+	}
+
+	character_modifier = {
+		monthly_influence = 0.5
+		ignore_opinion_of_different_faith = yes
+		different_faith_county_opinion_mult = -0.1
+		levy_reinforcement_rate_same_faith = 0.25
+		faith_conversion_piety_cost_mult = -0.15
+	}
+
+	personal_tenet_modifier = {
+		monthly_prestige_gain_mult = 0.2
+	}
+
+	traits = {
+		# Roman lar/penates lineage piety - tied to imperial-lineage continuity; both achievement traits are vanishingly rare. https://en.wikipedia.org/wiki/Lares
+		virtues = { 
+			augustus = { weight = 15 scale = 3 }
+			born_in_the_purple = { weight = 15 scale = 3 }
+			loyal = { weight = 15 scale = 1 }
+		}
+	}
+}
+
+##### Changed from Vanilla: Gave dynamic name and description
+
+# Sacred Lies
+tenet_sacred_shadows = {
+	icon = tenet_sacred_shadows
+
+	##### Changed from Vanilla vvvvv
+	name = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { religion_tag = nastika_religion }
+				desc = tenet_sacred_shadows_nastika_name
+			}
+			desc = tenet_sacred_shadows_name
+		}
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { religion_tag = nastika_religion }
+				desc = tenet_sacred_shadows_nastika_desc
+			}
+			desc = tenet_sacred_shadows_desc
+		}
+	}
+	##### Changed from Vanilla ^^^^^
+
+	piety_cost = {
+		if = {
+			limit = {
+				rite_has_doctrine = pagan_hostility_doctrine
+
+			}
+			value = faith_tenet_cost_mid
+		}
+		else_if = {
+			limit = {
+				OR = {
+					rite_religion_tag = islam_religion
+					rite_religion_tag = judaism_religion
+				}
+			}
+			value = faith_tenet_cost_high
+		}
+		else = {
+			value = faith_tenet_cost_massive
+		}
+
+		# Multiplier for keeping same tenet
+		if = {
+			limit = { rite_has_tenet = tenet_sacred_shadows }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+	
+	can_pick = {
+		custom_description = {
+			text = incompatible_tenet_communion_trigger
+			NOT = {
+				tenet:tenet_communion = { is_in_list = selected_doctrines }
+			}
+		}
+	}
+
+	parameters = {
+		piety_gain_from_successful_intrigue_schemes
+		adherents_more_likely_to_join_schemes
+		tenet_unlocks_t4_bounties_for_whispers
+	}
+
+	divergence_multiplier = 5
+
+	personal_tenet_modifier = {
+		owned_scheme_secrecy_add = 10
+		monthly_intrigue_lifestyle_xp_gain_mult = 0.2
+		monthly_diplomacy_lifestyle_xp_gain_mult = 0.2
+	}
+
+	personal_tenet_parameters = {
+		tenet_sacred_shadows_fabricate_hook
+		tenet_sacred_shadows_intrigue_scheme_fulfillment
+	}
+
+	traits = {
+		virtues = { 
+			deceitful = { weight = 30 scale = 1 }
+			paranoid = { weight = 10 scale = 1 }
+		}
+		sins = { 
+			honest = { weight = 20 scale = 1 }
+		}
 	}
 }

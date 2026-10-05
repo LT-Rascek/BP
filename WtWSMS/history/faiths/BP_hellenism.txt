@@ -1,0 +1,278 @@
+﻿#Pretty close duplicates of each other for simplicity
+hellenic_pagan = {
+	395.1.1 = {
+		main_rite = roman_pagan
+		
+		permitted = {
+			#Vanilla Tenets
+			tenet_bhakti
+			tenet_hero_cults
+			tenet_adaptive
+			tenet_ritual_celebrations
+			tenet_warmonger
+			tenet_sun_worship
+			tenet_pursuit_of_power
+			tenet_sanctity_of_nature
+			tenet_communal_identity
+			tenet_pacifism
+			#As a bonus, they get the philosophical tenets as well
+			tenet_legalism
+			tenet_consolamentum
+			tenet_esotericism
+			tenet_astrology
+			#WtWSMS Tenets
+			tenet_philsophical_movement
+			tenet_isopsephy
+			tenet_celtic_syncretism
+			tenet_egptian_syncretism
+		}
+		
+		prohibited = {
+			#Vanilla Tenets
+			tenet_carnal_exaltation #Boo! Orgies, boo!
+			tenet_hedonistic #Boo! Orgies, boo!
+			tenet_polyamory #Boo! Orgies, boo!
+			tenet_divine_marriage #Incest! Romans and Greeks hated incest!
+			#Romans hated human sacrifice quite a bit, just don't ask what happened during the kingdom period
+			tenet_human_sacrifice
+			tenet_ritual_cannibalism
+			#Don't like Monotheists
+			tenet_jewish_syncretism
+			tenet_christian_syncretism
+			tenet_zoroastrian_syncretism
+			#Don't care for Christian Activities
+			tenet_divine_liturgy
+			tenet_communion
+			tenet_confession
+			
+			#WtWSMS Tenets
+			
+			#The Roman Pagans knew of some Christians practices and mocked them; at least the 
+			#sacramental/functional tenets (as opposed to belief tenets) are prohibited.
+			tenet_credobaptism
+		}
+		
+		known = {
+			#Vanilla
+			tenet_pentarchy #Egypt
+			tenet_reincarnation #Pythagoreans
+			tenet_religious_legal_pronouncements #Jews
+			tenet_cthonic_redoubts #Georgian Pagans
+			tenet_megaliths #Berbers
+			tenet_cranial_trophies #Celts; special edge case; was still present in Gaul in the late period
+			tenet_mountain_worship #Syrians
+			#Edge Case: Cybelians
+			tenet_eunuch_priests
+			tenet_exaltation_of_pain
+			#WtWSMS Tenets
+			tenet_mystery_religion
+		}
+	}
+}
+#Mystery Religions
+mithraic_pagan = {
+	395.1.1 = {
+		main_rite = roman_pagan
+	
+		permitted = {
+			#Vanilla Tenets
+			tenet_bhakti
+			tenet_hero_cults
+			tenet_adaptive
+			tenet_ritual_celebrations
+			tenet_warmonger
+			tenet_sun_worship
+			tenet_pursuit_of_power
+			tenet_sanctity_of_nature
+			tenet_communal_identity
+			#As a bonus, they get the philosophical tenets as well
+			tenet_legalism
+			tenet_consolamentum
+			tenet_esotericism
+			tenet_astrology
+			#WtWSMS Tenets
+			tenet_mystery_religion
+			tenet_celtic_syncretism
+			tenet_egptian_syncretism
+		}
+		
+		prohibited = {
+			#Vanilla Tenets
+			tenet_carnal_exaltation #Boo! Orgies, boo!
+			tenet_hedonistic #Boo! Orgies, boo!
+			tenet_polyamory #Boo! Orgies, boo!
+			tenet_divine_marriage #Incest! Romans and Greeks hated incest!
+			#Romans hated human sacrifice quite a bit, just don't ask what happened during the kingdom period
+			tenet_human_sacrifice
+			tenet_ritual_cannibalism
+			#Don't like Monotheists
+			tenet_jewish_syncretism
+			tenet_christian_syncretism
+			tenet_zoroastrian_syncretism
+			#Don't care for Christian Activities
+			tenet_divine_liturgy
+			tenet_communion
+			tenet_confession
+			
+			#WtWSMS Tenets
+			
+			#The Roman Pagans knew of some Christians practices and mocked them; at least the 
+			#sacramental/functional tenets (as opposed to belief tenets) are prohibted.
+			tenet_credobaptism
+		}
+		
+		known = {
+			#Vanilla
+			tenet_pentarchy #Egypt
+			tenet_reincarnation #Pythagoreans
+			tenet_religious_legal_pronouncements #Jews
+			tenet_cthonic_redoubts #Georgian Pagans
+			tenet_megaliths #Berbers
+			tenet_cranial_trophies #Celts; special edge case; was still present in Gaul in the late period
+			tenet_mountain_worship #Syrians
+			tenet_ancestor_worship #Pagans in general
+			#Edge Case: Cybelians
+			tenet_eunuch_priests
+			tenet_exaltation_of_pain
+			#WtWSMS Tenets
+			tenet_isopsephy
+		}
+	}
+}
+cybelian = {
+	395.1.1 = {
+		main_rite = roman_pagan
+	
+		permitted = {
+			#Vanilla Tenets
+			tenet_bhakti
+			tenet_hero_cults
+			tenet_adaptive
+			tenet_ritual_celebrations
+			tenet_warmonger
+			tenet_sun_worship
+			tenet_pursuit_of_power
+			tenet_sanctity_of_nature
+			tenet_communal_identity
+			#As a bonus, they get the philosophical tenets as well
+			tenet_legalism
+			tenet_consolamentum
+			tenet_esotericism
+			tenet_astrology
+			tenet_mystery_religion
+			tenet_eunuch_priests
+			tenet_exaltation_of_pain
+			#WtWSMS Tenets
+			tenet_celtic_syncretism
+			tenet_egptian_syncretism
+		}
+		
+		prohibited = {
+			#Vanilla Tenets
+			tenet_carnal_exaltation #Boo! Orgies, boo!
+			tenet_hedonistic #Boo! Orgies, boo!
+			tenet_polyamory #Boo! Orgies, boo!
+			tenet_divine_marriage #Incest! Romans and Greeks hated incest!
+			#Romans hated human sacrifice quite a bit, just don't ask what happened during the kingdom period
+			tenet_human_sacrifice
+			tenet_ritual_cannibalism
+			#Don't like Monotheists
+			tenet_jewish_syncretism
+			tenet_christian_syncretism
+			tenet_zoroastrian_syncretism
+			#Don't care for Christian Activities
+			tenet_divine_liturgy
+			tenet_communion
+			tenet_confession
+			
+			#WtWSMS Tenets
+			
+			#The Roman Pagans knew of some Christians practices and mocked them; at least the 
+			#sacramental/functional tenets (as opposed to belief tenets) are prohibted.
+			tenet_credobaptism
+		}
+		
+		known = {
+			#Vanilla
+			tenet_pentarchy #Egypt
+			tenet_reincarnation #Pythagoreans
+			tenet_religious_legal_pronouncements #Jews
+			tenet_cthonic_redoubts #Georgian Pagans
+			tenet_megaliths #Berbers
+			tenet_cranial_trophies #Celts; special edge case; was still present in Gaul in the late period
+			tenet_mountain_worship #Syrians
+			tenet_ancestor_worship #Pagans in general
+			#WtWSMS Tenets
+			tenet_isopsephy
+		}
+	}
+}
+orphism = {
+	395.1.1 = {
+		main_rite = roman_pagan
+	
+		permitted = {
+			#Vanilla Tenets
+			tenet_bhakti
+			tenet_hero_cults
+			tenet_adaptive
+			tenet_ritual_celebrations
+			tenet_warmonger
+			tenet_sun_worship
+			tenet_pursuit_of_power
+			tenet_sanctity_of_nature
+			tenet_communal_identity
+			#As a bonus, they get the philosophical tenets as well
+			tenet_legalism
+			tenet_consolamentum
+			tenet_esotericism
+			tenet_astrology
+			tenet_mystery_religion
+			#WtWSMS Tenets
+			tenet_celtic_syncretism
+			tenet_egptian_syncretism
+		}
+		
+		prohibited = {
+			#Vanilla Tenets
+			tenet_carnal_exaltation #Boo! Orgies, boo!
+			tenet_hedonistic #Boo! Orgies, boo!
+			tenet_polyamory #Boo! Orgies, boo!
+			tenet_divine_marriage #Incest! Romans and Greeks hated incest!
+			#Romans hated human sacrifice quite a bit, just don't ask what happened during the kingdom period
+			tenet_human_sacrifice
+			tenet_ritual_cannibalism
+			#Don't like Monotheists
+			tenet_jewish_syncretism
+			tenet_christian_syncretism
+			tenet_zoroastrian_syncretism
+			#Don't care for Christian Activities
+			tenet_divine_liturgy
+			tenet_communion
+			tenet_confession
+			
+			#WtWSMS Tenets
+			
+			#The Roman Pagans knew of some Christians practices and mocked them; at least the 
+			#sacramental/functional tenets (as opposed to belief tenets) are prohibted.
+			tenet_credobaptism
+		}
+		
+		known = {
+			#Vanilla
+			tenet_pentarchy #Egypt
+			tenet_reincarnation #Pythagoreans
+			tenet_religious_legal_pronouncements #Jews
+			tenet_cthonic_redoubts #Georgian Pagans
+			tenet_megaliths #Berbers
+			tenet_cranial_trophies #Celts; special edge case; was still present in Gaul in the late period
+			tenet_mountain_worship #Syrians
+			tenet_ancestor_worship #Pagans in general
+			#Edge Case: Cybelians
+			tenet_eunuch_priests
+			tenet_exaltation_of_pain
+			#WtWSMS Tenets
+			tenet_isopsephy
+		}
+	}
+}
