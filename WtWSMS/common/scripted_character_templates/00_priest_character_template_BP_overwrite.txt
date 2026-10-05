@@ -1,15 +1,26 @@
-﻿priest_character_template = {
+﻿##### Changed from Vanilla: Added WtWSMS bp_setup_priest_traits_effect after creation
+priest_character_template = {
 	age = { 30 60 }
 	dynasty = none
 	random_traits_list = {
 		count = 1
-		education_learning_2 = {}
-		education_learning_3 = {}
-		education_learning_4 = {}
+		education_learning_2 = { weight = { base = 35 } }
+		education_learning_3 = { weight = { base = 35 } }
+		education_learning_4 = { weight = { base = 30 } }
+		education_diplomacy_2 = { weight = { base = 9 } }
+		education_diplomacy_3 = { weight = { base = 8 } }
+		education_diplomacy_4 = { weight = { base = 4 } }
+		education_stewardship_2 = { weight = { base = 9 } }
+		education_stewardship_3 = { weight = { base = 8 } }
+		education_stewardship_4 = { weight = { base = 4 } }
+		education_intrigue_2 = { weight = { base = 9 } }
+		education_intrigue_3 = { weight = { base = 8 } }
+		education_intrigue_4 = { weight = { base = 4 } }
 	}
 	random_traits = yes
 	
 	faith = root.faith
+	rite = root.rite
 	culture = root.culture
 	gender_female_chance = root_faith_clergy_gender_female_chance
 	learning = {
@@ -25,14 +36,24 @@
 	}
 }
 
+##### Changed from Vanilla: Added WtWSMS bp_setup_priest_traits_effect after creation
 simple_priest_character_template = {
 	age = { 30 60 }
 	dynasty = none
 	random_traits_list = {
 		count = 1
-		education_learning_2 = {}
-		education_learning_3 = {}
-		education_learning_4 = {}
+		education_learning_2 = { weight = { base = 35 } }
+		education_learning_3 = { weight = { base = 35 } }
+		education_learning_4 = { weight = { base = 30 } }
+		education_diplomacy_2 = { weight = { base = 9 } }
+		education_diplomacy_3 = { weight = { base = 8 } }
+		education_diplomacy_4 = { weight = { base = 4 } }
+		education_stewardship_2 = { weight = { base = 9 } }
+		education_stewardship_3 = { weight = { base = 8 } }
+		education_stewardship_4 = { weight = { base = 4 } }
+		education_intrigue_2 = { weight = { base = 9 } }
+		education_intrigue_3 = { weight = { base = 8 } }
+		education_intrigue_4 = { weight = { base = 4 } }
 	}
 	random_traits = yes
 	learning = {
@@ -48,13 +69,20 @@ simple_priest_character_template = {
 	}
 }
 
+##### Changed from Vanilla: Added WtWSMS bp_setup_priest_traits_effect after creation
 virtuous_priest_character_template = {
 	age = { 30 60 }
 	dynasty = none
 	random_traits_list = {
 		count = 1
-		education_learning_3 = {}
-		education_learning_4 = {}
+		education_learning_3 = { weight = { base = 55 } }
+		education_learning_4 = { weight = { base = 45 } }
+		education_diplomacy_3 = { weight = { base = 13 } }
+		education_diplomacy_4 = { weight = { base = 8 } }
+		education_stewardship_3 = { weight = { base = 13 } }
+		education_stewardship_4 = { weight = { base = 8 } }
+		education_intrigue_3 = { weight = { base = 13 } }
+		education_intrigue_4 = { weight = { base = 8 } }
 	}
 	#Virtue Personality
 	#Give them traits which are considered virtuous in their faith. Traits which would be the opposite of a neutral personality are omitted.
@@ -62,152 +90,188 @@ virtuous_priest_character_template = {
 		count = 3
 		lustful = {
 			trigger = {
-				root.faith = { trait_is_virtue = lustful }
+				root.rite = { trait_is_virtue_rite = lustful }
 			}
 		}
 		chaste = {
 			trigger = {
-				root.faith = { trait_is_virtue = chaste }
+				root.rite = { trait_is_virtue_rite = chaste }
 			}
 		}
 		gluttonous = {
 			trigger = {
-				root.faith = { trait_is_virtue = gluttonous }
+				root.rite = { trait_is_virtue_rite = gluttonous }
 			}
 		}
 		temperate = {
 			trigger = {
-				root.faith = { trait_is_virtue = temperate }
+				root.rite = { trait_is_virtue_rite = temperate }
 			}
 		}
 		greedy = {
 			trigger = {
-				root.faith = { trait_is_virtue = greedy }
+				root.rite = { trait_is_virtue_rite = greedy }
 			}
 		}
 		generous = {
 			trigger = {
-				root.faith = { trait_is_virtue = generous }
+				root.rite = { trait_is_virtue_rite = generous }
 			}
 		}
 		wrathful = {
 			trigger = {
-				root.faith = { trait_is_virtue = wrathful }
+				root.rite = { trait_is_virtue_rite = wrathful }
 			}
 		}
 		calm = {
 			trigger = {
-				root.faith = { trait_is_virtue = calm }
+				root.rite = { trait_is_virtue_rite = calm }
 			}
 		}
 		patient = {
 			trigger = {
-				root.faith = { trait_is_virtue = patient }
+				root.rite = { trait_is_virtue_rite = patient }
 			}
 		}
 		impatient = {
 			trigger = {
-				root.faith = { trait_is_virtue = impatient }
+				root.rite = { trait_is_virtue_rite = impatient }
 			}
 		}
 		arrogant = {
 			trigger = {
-				root.faith = { trait_is_virtue = arrogant }
+				root.rite = { trait_is_virtue_rite = arrogant }
 			}
 		}
 		humble = {
 			trigger = {
-				root.faith = { trait_is_virtue = humble }
+				root.rite = { trait_is_virtue_rite = humble }
 			}
 		}
 		deceitful = {
 			trigger = {
-				root.faith = { trait_is_virtue = deceitful }
+				root.rite = { trait_is_virtue_rite = deceitful }
 			}
 		}
 		honest = {
 			trigger = {
-				root.faith = { trait_is_virtue = honest }
+				root.rite = { trait_is_virtue_rite = honest }
 			}
 		}
 		craven = {
 			trigger = {
-				root.faith = { trait_is_virtue = craven }
+				root.rite = { trait_is_virtue_rite = craven }
 			}
 		}
 		brave = {
 			trigger = {
-				root.faith = { trait_is_virtue = brave }
+				root.rite = { trait_is_virtue_rite = brave }
 			}
 		}
 		ambitious = {
 			trigger = {
-				root.faith = { trait_is_virtue = ambitious }
+				root.rite = { trait_is_virtue_rite = ambitious }
 			}
 		}
 		content = {
 			trigger = {
-				root.faith = { trait_is_virtue = content }
+				root.rite = { trait_is_virtue_rite = content }
 			}
 		}
 		arbitrary = {
 			trigger = {
-				root.faith = { trait_is_virtue = arbitrary }
+				root.rite = { trait_is_virtue_rite = arbitrary }
 			}
 		}
 		just = {
 			trigger = {
-				root.faith = { trait_is_virtue = just }
+				root.rite = { trait_is_virtue_rite = just }
 			}
 		}
 		paranoid = {
 			trigger = {
-				root.faith = { trait_is_virtue = paranoid }
+				root.rite = { trait_is_virtue_rite = paranoid }
 			}
 		}
 		trusting = {
 			trigger = {
-				root.faith = { trait_is_virtue = trusting }
+				root.rite = { trait_is_virtue_rite = trusting }
 			}
 		}
 		compassionate = {
 			trigger = {
-				root.faith = { trait_is_virtue = compassionate }
+				root.rite = { trait_is_virtue_rite = compassionate }
 			}
 		}
 		callous = {
 			trigger = {
-				root.faith = { trait_is_virtue = callous }
+				root.rite = { trait_is_virtue_rite = callous }
 			}
 		}
 		sadistic = {
 			trigger = {
-				root.faith = { trait_is_virtue = sadistic }
+				root.rite = { trait_is_virtue_rite = sadistic }
 			}
 		}
 		stubborn = {
 			trigger = {
-				root.faith = { trait_is_virtue = stubborn }
+				root.rite = { trait_is_virtue_rite = stubborn }
 			}
 		}
 		fickle = {
 			trigger = {
-				root.faith = { trait_is_virtue = fickle }
+				root.rite = { trait_is_virtue_rite = fickle }
 			}
 		}
 		vengeful = {
 			trigger = {
-				root.faith = { trait_is_virtue = vengeful }
+				root.rite = { trait_is_virtue_rite = vengeful }
 			}
 		}
 		forgiving = {
 			trigger = {
-				root.faith = { trait_is_virtue = forgiving }
+				root.rite = { trait_is_virtue_rite = forgiving }
+			}
+		}
+		diligent = {
+			trigger = {
+				root.rite = { trait_is_virtue_rite = diligent }
+			}
+		}
+		lazy = {
+			trigger = {
+				root.rite = { trait_is_virtue_rite = lazy }
+			}
+		}
+		zealous = {
+			trigger = {
+				root.rite = { trait_is_virtue_rite = zealous }
+			}
+		}
+		cynical = {
+			trigger = {
+				root.rite = { trait_is_virtue_rite = cynical }
+			}
+		}
+		gregarious = {
+			trigger = {
+				root.rite = { trait_is_virtue_rite = gregarious }
+			}
+		}
+		shy = {
+			trigger = {
+				root.rite = { trait_is_virtue_rite = shy }
+			}
+		}
+		eccentric = {
+			trigger = {
+				root.rite = { trait_is_virtue_rite = eccentric }
 			}
 		}
 	}
 	
 	faith = root.faith
+	rite = root.rite
 	culture = root.culture
 	gender_female_chance = root_faith_clergy_gender_female_chance
 	learning = {
@@ -223,18 +287,29 @@ virtuous_priest_character_template = {
 	}
 }
 
+##### Changed from Vanilla: Added WtWSMS bp_setup_priest_traits_effect after creation
 monk_character_template = {
 	age = { 25 60 }
 	dynasty = none
 	random_traits_list = {
 		count = 1
-		education_learning_2 = {}
-		education_learning_3 = {}
-		education_learning_4 = {}
+		education_learning_2 = { weight = { base = 35 } }
+		education_learning_3 = { weight = { base = 35 } }
+		education_learning_4 = { weight = { base = 30 } }
+		education_diplomacy_2 = { weight = { base = 9 } }
+		education_diplomacy_3 = { weight = { base = 8 } }
+		education_diplomacy_4 = { weight = { base = 4 } }
+		education_stewardship_2 = { weight = { base = 9 } }
+		education_stewardship_3 = { weight = { base = 8 } }
+		education_stewardship_4 = { weight = { base = 4 } }
+		education_intrigue_2 = { weight = { base = 9 } }
+		education_intrigue_3 = { weight = { base = 8 } }
+		education_intrigue_4 = { weight = { base = 4 } }
 	}
 	trait = devoted
 	random_traits = yes
 	faith = root.faith
+	rite = root.rite
 	culture = root.culture
 	gender_female_chance = root_faith_clergy_gender_female_chance
 	learning = {
@@ -247,18 +322,29 @@ monk_character_template = {
 	}
 }
 
+##### Changed from Vanilla: Added WtWSMS bp_setup_priest_traits_effect after creation
 tournament_priest_character_template = {
 	age = { 30 60 }
 	dynasty = none
 	random_traits_list = {
 		count = 1
-		education_learning_2 = {}
-		education_learning_3 = {}
-		education_learning_4 = {}
+		education_learning_2 = { weight = { base = 35 } }
+		education_learning_3 = { weight = { base = 35 } }
+		education_learning_4 = { weight = { base = 30 } }
+		education_diplomacy_2 = { weight = { base = 9 } }
+		education_diplomacy_3 = { weight = { base = 8 } }
+		education_diplomacy_4 = { weight = { base = 4 } }
+		education_stewardship_2 = { weight = { base = 9 } }
+		education_stewardship_3 = { weight = { base = 8 } }
+		education_stewardship_4 = { weight = { base = 4 } }
+		education_intrigue_2 = { weight = { base = 9 } }
+		education_intrigue_3 = { weight = { base = 8 } }
+		education_intrigue_4 = { weight = { base = 4 } }
 	}
 	random_traits = yes
 	
 	faith = scope:activity.activity_host.faith
+	rite = scope:activity.activity_host.rite
 	culture =  scope:activity.activity_location.culture
 	gender_female_chance = activity_host_clergy_gender_female_chance
 	learning = {
@@ -274,14 +360,24 @@ tournament_priest_character_template = {
 	}
 }
 
+##### Changed from Vanilla: Added WtWSMS bp_setup_priest_traits_effect after creation
 monk_brewer_template = {
 	age = { 18 28 }
 	dynasty = none
 	random_traits_list = {
 		count = 1
-		education_learning_2 = {}
-		education_learning_3 = {}
-		education_learning_4 = {}
+		education_learning_2 = { weight = { base = 35 } }
+		education_learning_3 = { weight = { base = 35 } }
+		education_learning_4 = { weight = { base = 30 } }
+		education_diplomacy_2 = { weight = { base = 9 } }
+		education_diplomacy_3 = { weight = { base = 8 } }
+		education_diplomacy_4 = { weight = { base = 4 } }
+		education_stewardship_2 = { weight = { base = 9 } }
+		education_stewardship_3 = { weight = { base = 8 } }
+		education_stewardship_4 = { weight = { base = 4 } }
+		education_intrigue_2 = { weight = { base = 9 } }
+		education_intrigue_3 = { weight = { base = 8 } }
+		education_intrigue_4 = { weight = { base = 4 } }
 	}
 
 	random_traits_list = {
@@ -311,6 +407,7 @@ monk_brewer_template = {
 	trait = devoted
 	
 	faith = root.faith
+	rite = root.rite
 	culture = root.culture
 	gender_female_chance = root_faith_clergy_gender_female_chance
 	learning = {
