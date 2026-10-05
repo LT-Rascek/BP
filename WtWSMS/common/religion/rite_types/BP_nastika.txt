@@ -1,6 +1,7 @@
 ﻿ajivika = {
 	name = ajivika
 	desc = ajivika_desc
+	faith = ajivika
 
 	tenets = {
 		tenet_consolamentum
@@ -11,9 +12,9 @@
 	doctrines = {
 		doctrine_pilgrimage_local_rites
 		doctrine_clerical_succession_spiritual_fixed_appointment
-		doctrine_right_to_rule_rajadharma
+		#doctrine_right_to_rule_rajadharma
 		doctrine_ritual_vegetarianism_clerics
-		nudity_doctrine_naked_priests
+		#nudity_doctrine_naked_priests
 	}
 
 	localization = {
@@ -25,10 +26,11 @@
 carvaka = {
 	name = carvaka
 	desc = carvaka_desc
+	faith = carvaka
 
 	tenet_selection_pair = {
 		requires_dlc_flag = all_under_heaven
-		doctrine = tenet_pursuit_of_knowledge
+		tenet = tenet_pursuit_of_knowledge
 		fallback_tenet = tenet_literalism
 	}
 
@@ -58,12 +60,7 @@ carvaka = {
 ajnana = {
 	name = ajnana
 	desc = ajnana_desc
-
-	tenet_selection_pair = {
-		requires_dlc_flag = all_under_heaven
-		doctrine = tenet_pursuit_of_knowledge
-		fallback_tenet = tenet_literalism
-	}
+	faith = ajnana
 
 	tenets = {
 		tenet_adaptive

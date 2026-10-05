@@ -8,7 +8,7 @@ tenet_consolamentum = {
 		first_valid = {
 			##### Changed from Vanilla vvvvv
 			triggered_desc = {
-				trigger = { religion = { religion_tag = hellenism_religion } }
+				trigger = { this.religion = religion:hellenism_religion }
 				desc = tenet_consolamentum_hellenic_name
 			}
 			##### Changed from Vanilla ^^^^^
@@ -49,7 +49,7 @@ tenet_consolamentum = {
 		first_valid = {
 			##### Changed from Vanilla vvvvv
 			triggered_desc = {
-				trigger = { religion = { religion_tag = hellenism_religion } }
+				trigger = { this.religion = religion:hellenism_religion }
 				desc = tenet_consolamentum_hellenic_desc
 			}
 			##### Changed from Vanilla ^^^^^
@@ -379,7 +379,7 @@ tenet_sacred_shadows = {
 	name = {
 		first_valid = {
 			triggered_desc = {
-				trigger = { religion_tag = nastika_religion }
+				trigger = { rite_religion_tag = nastika_religion }
 				desc = tenet_sacred_shadows_nastika_name
 			}
 			desc = tenet_sacred_shadows_name
@@ -389,7 +389,7 @@ tenet_sacred_shadows = {
 	desc = {
 		first_valid = {
 			triggered_desc = {
-				trigger = { religion_tag = nastika_religion }
+				trigger = { rite_religion_tag = nastika_religion }
 				desc = tenet_sacred_shadows_nastika_desc
 			}
 			desc = tenet_sacred_shadows_desc

@@ -295,8 +295,42 @@ tenet_unrelenting_warfare = {
 }
 tenet_philsophical_movement = {
 	icon = tenet_pure_land
-	name = tenet_philsophical_movement_name
-	desc = tenet_philsophical_movement_desc
+
+	name = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { this = rite:hellenic_pagan }
+				desc = tenet_philsophical_movement_greek_name
+			}
+			triggered_desc = {
+				trigger = { this = rite:roman_pagan }
+				desc = tenet_philsophical_movement_latin_name
+			}
+			triggered_desc = {
+				trigger = { religion = religion:hellenism_religion }
+				desc = tenet_philsophical_movement_greek_name
+			}
+			desc = tenet_philsophical_movement_name
+		}
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { this = rite:hellenic_pagan }
+				desc = tenet_philsophical_movement_greek_desc
+			}
+			triggered_desc = {
+				trigger = { this = rite:roman_pagan }
+				desc = tenet_philsophical_movement_latin_desc
+			}
+			triggered_desc = {
+				trigger = { religion = religion:hellenism_religion }
+				desc = tenet_philsophical_movement_greek_desc
+			}
+			desc = tenet_philsophical_movement_desc
+		}
+	}
 
 	is_shown = {}
 
@@ -306,7 +340,7 @@ tenet_philsophical_movement = {
 			NOT = { doctrine:doctrine_monotheist = { is_in_list = selected_doctrines } }
 		}
 		custom_tooltip = { #Henotheism really can't work with this
-			text = doctrine_henotheist
+			text = incompatible_doctrine_monotheist
 			NOT = { doctrine:doctrine_henotheist = { is_in_list = selected_doctrines } }
 		}
 		custom_description = {

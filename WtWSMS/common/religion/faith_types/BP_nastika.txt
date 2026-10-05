@@ -1,7 +1,5 @@
 ﻿ajivika = {
 	main_rite = ajivika
-	name = ajivika
-	desc = ajivika_desc
 
 	faith_details = {
 		religion = nastika_religion
@@ -20,20 +18,6 @@
 		somapur #Major university
 	}
 
-	tenets = {
-		tenet_consolamentum
-		tenet_dharmic_pacifism
-		tenet_astrology
-	}
-	
-	doctrines = {
-		doctrine_pilgrimage_local_rites
-		doctrine_clerical_succession_spiritual_fixed_appointment
-		doctrine_right_to_rule_rajadharma
-		doctrine_ritual_vegetarianism_clerics
-		nudity_doctrine_naked_priests
-	}
-
 	localization = {
 		ReligiousText = ajivika_holy_text
 		ReligiousText2 = ajivika_holy_text
@@ -42,8 +26,6 @@
 }
 carvaka = {
 	main_rite = carvaka
-	name = carvaka
-	desc = carvaka_desc
 
 	faith_details = {
 		religion = nastika_religion
@@ -62,22 +44,6 @@ carvaka = {
 		somapur #Major university
 	}
 
-	tenet_selection_pair = {
-		requires_dlc_flag = all_under_heaven
-		doctrine = tenet_pursuit_of_knowledge
-		fallback_tenet = tenet_literalism
-	}
-
-	tenets = {
-		tenet_adaptive
-		tenet_hedonistic
-	}
-
-	doctrines = {
-		doctrine_clerical_gender_male_only
-		doctrine_deviancy_accepted
-	}
-
 	localization = {
 		ReligiousText = carvaka_holy_text
 		ReligiousText2 = carvaka_holy_text
@@ -93,11 +59,9 @@ carvaka = {
 }
 ajnana = {
 	main_rite = ajnana
-	name = ajnana
-	desc = ajnana_desc
 
 	faith_details = {
-		religion = nastika_ajnana
+		religion = nastika_religion
 		color = { 0.9 0.1 0.4 }
 		icon = nastika_ajivika
 	}
@@ -111,24 +75,5 @@ ajnana = {
 		bodh_gaya #Belatthiputra of Magadhan origin, shared w/ Buddhism
 		ellora #Interfaith site, shared w/ Jainism
 		somapur #Major university
-	}
-
-	tenet_selection_pair = {
-		requires_dlc_flag = all_under_heaven
-		doctrine = tenet_pursuit_of_knowledge
-		fallback_tenet = tenet_literalism
-	}
-
-	tenets = {
-		tenet_adaptive
-		tenet_sacred_shadows # Accused of "eel-wriggling"; rejected claims to revealed truths as impossible, thus can dismiss honesty as naive
-		tenet_no_mind # Considered knowledge to be burdensome, compare Ajivika doctrine of colorless mind
-	}
-
-	doctrines = {
-		doctrine_adultery_men_accepted
-		doctrine_adultery_women_accepted
-		doctrine_kinslaying_accepted
-		doctrine_deviancy_accepted
 	}
 }
