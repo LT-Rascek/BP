@@ -178,7 +178,7 @@ change_non_roman_minority_rule_law_basic_cost = {
 
 	# Tenet Modifiers
 	if = {
-		limit = { faith = { has_doctrine_parameter = legalism_modified_law_costs } }
+		limit = { rite = { rite_has_parameter = legalism_modified_law_costs } }
 		add = {
 			desc = "rite_legalism_law_cost_tooltip"
 			value = {
@@ -189,14 +189,14 @@ change_non_roman_minority_rule_law_basic_cost = {
 		}
 	}
 	if = {
-		limit = { faith = { has_doctrine_parameter = natural_primitivism_law_cost_increase } }
+		limit = { rite = { rite_has_parameter = natural_primitivism_law_cost_increase } }
 		multiply = {
 			desc = "rite_primitivism_law_cost_tooltip"
 			value = natural_primitivism_modifier
 		}
 	}
 	if = {
-		limit = { faith = { has_doctrine_parameter = religious_legal_pronouncements_law_cost_reduction } }
+		limit = { rite = { rite_has_parameter = religious_legal_pronouncements_law_cost_reduction } }
 		multiply = {
 			desc = "rite_pronouncements_law_cost_tooltip"
 			value = 0.9 # religious_legal_pronouncements_modifier = -0.1

@@ -50,7 +50,7 @@ bp_migration_depopulation = {
 		add = bp_migration_depopulation_culture
 	}
 	if = {
-		limit = { scope:the_attacker.faith ?= county.faith }
+		limit = { scope:the_attacker.rite ?= county.rite }
 		add = bp_migration_depopulation_faith
 	}
 	#Give a whole number.
@@ -173,7 +173,7 @@ current_number_of_flip_counties = {
 	every_realm_county = {
 		limit = {
 			this.culture = prev.culture
-			this.faith = prev.faith
+			this.rite = prev.rite
 		}
 		add = 1
 	}

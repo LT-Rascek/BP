@@ -70,7 +70,7 @@ unification_war_fame_base = major_prestige_value
 total_available_subjugations = {
 	value = 1
 	if = { #One more if your religion is the right type
-		limit = { this.faith = { has_doctrine_parameter = increased_subjugation_limit } }
+		limit = { this.rite = { rite_has_parameter = increased_subjugation_limit } }
 		add = 1
 	}
 	if = { #One more if you are in a migration
@@ -83,7 +83,7 @@ total_available_subjugations = {
 		add = 1
 	}
 	if = { #One less if your religion is the wrong type
-		limit = { this.faith = { has_doctrine_parameter = decreased_subjugation_limit } }
+		limit = { this.rite = { rite_has_parameter = decreased_subjugation_limit } }
 		subtract = 1
 	}
 	if = { #One more if your culture is the right type
