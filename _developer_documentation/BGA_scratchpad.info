@@ -8,15 +8,17 @@
 8). Work on other things like Clerical regions and such to integrate into the mod
 
 -----------------------
-stopped and completed on_actions
+stopped and completed scripted_triggers
 -----------------------
 
 - Let loc modders know about Trenkyanism
 - Ask PDX about Christology stuff; they make them all DLC dependent
 
-- Move BP decisions into their own folder for simplicity
-
+=======================
+First Order (AKA first sweep and impelmentation of plan):
+-----------------------
 Religion:
+- unique_christology_trigger needs overwrite
 - Manicheans and Western Manicheans consider Christianity too good (astray/righteous)
 - Right to Rule Doctrines
 - Messianic Jews should view Apostolic Christianity as Righteous
@@ -32,6 +34,8 @@ Religion:
    - clergy_are_always_monks parameter - linked with monasticism doctrine
 
 Christian Borks:
+- Aquelianism is using the wrong localization for Dyophysitism
+- Revamp pam liturgical language stuff
 - pam_latin_as_liturgical_language_trigger and pam_greek_as_liturgical_language_trigger &c. need complete overhaul
 	- Christology Tenet name/desc triggers need fixup
 - Add rule blocks for Apostolic and Ante-Nicene Christianity
@@ -40,7 +44,6 @@ Christian Borks:
 - Duplicated Rites:
    - Marcionism, Nestorianism
 - Remove otherwise non-existant Christian faiths in a way that's conformal with vanilla
-- 
 
 General Mechanics:
 - Theocratic Faiths should not have non-theocrats as head of rite
@@ -61,16 +64,78 @@ GUI:
 - Update Religion GUI with minorities
 - Update doctrine_type_tooltip to support new categories
 
+GFX:
+- Overwrite DLC music/start illustration object
+- Only B8G8R8A8_UNORM support so far. Texture file : gfx/interface/icons/faith/mfi_triskelion.dds 
+
+=======================
+Second Order Sweep (AKA after putting in all the chrome):
 -----------------------
+Checks:
+- Make Sure landing tribals doesn't bork for Roman Governments
+- declare_war_interaction might be borked for Federates
+- Federate interactions need review
+
+CBs:
+- Add in Sub-Roman Transition check for claim wars...
+
+Situations:
+- Remove at start Christian Situation
+
+Decisions:
+- Legalize Caucasian Christianity decision - Revampe and Rework
+- Reread all BP Decisions to fixup appropriately on faiths
+
+Laws:
+- Clerical Authority Overhaul including in BP_law_effects.txt, BP_law_values.txt
+	- realm_law_use_clerical_influence_trigger with a realm law flag check
+- Review Succession law triggers in toto as they need cleanup (00_law_triggers and 00_legal_triggers)
+
+Game Start:
+- Remove `change_faith_if_alive_effect` via history cleanups
+
+Mechanics:
+- Overhaul land grants for Roman governments in light of new government hooks
+- Non-Roman Rule:
+	- Overhaul how "Roman Church" stuff interacts (with and without DLC)
+- Roman Religion vs. Non-Roman Rule
+	- bp_county_has_roman_faith_trigger
+	- bp_protect_religion_specific_trigger
+- Interaction of Migration and faith vs. rite
+- Demand Conversion: Probably should be only fully blocked without Formalized Rituals and fully unblocked with State Religion
 
 Script Values:
+- Make these decision values rites?:
+   - number_of_realm_counties_of_faith_ratio
+   - number_of_faith_counties_in_game
+   - number_of_faith_counties_controlled_by_player
+   - number_of_faith_counties_controlled_ratio
 - `great_holy_war_target_kingdom_weight` for new religions
 - Court Chaplain Values need overhaul
 
 Minorities:
+- window_county_view.gui (fervor box and faith linking)
+- BP_easter_egg_effects.txt
+- apply_minority_faith_promotion_effect
+- sea_bp_minority_triggers.txt
+- sea_minority_triggers.txt
 - sea_minority_decisions.txt
+- sea_minority_religion_values.txt
+
+Heritage drift:
+- Review BP_culture_drift_effects.txt in light of religion changes
+
+Scripted Triggers:
+- BP_title_creation_triggers and every trigger linked within
+- coa_jewish_trigger needs to integrate with Marcionism being anti-Jewish
+
+Clothes:
+- 00_clothing_triggers.txt
+- BP_clothing_triggers.txt
+- dharma_clothing_triggers.txt (might be extraneous now)
 
 Patron Deity Decisions:
+- `set_bhakti_effect` needs generalization
 - Unify into a singular decision with option widgets based on deity types, with various faiths getting extra
 - Then dispatch depending with generic modifiers else
    - BP_patron_gods_decisions.txt - Review if needed
@@ -91,29 +156,20 @@ Doctrines:
 
 History:
 - Add Wereka, Batwin, and Arius as Arian Saints
+- Add necessary founder clerical regions
 
+Other: 
 - Fill in tenets and doctrines
-- Augustinian Canons exist
-
+- Augustinian Canons exist as a monastic order
 - "Overhaul pam_latin_as_liturgical_language_trigger and has_pam_dlc_trigger (and related)
    for localization purposes"
 
-- Add necessary founder clerical regions
-- unique_christology_trigger needs overwrite
+GFX:
+- GetGovernmentTypeIcon for 00_government_custom_loc.txt
 
 =======================
-#TODO:
-- Add in Sub-Roman Transition check for claim wars...
-- declare_war_interaction might be borked for Federates
-- Federate interactions need review
-- Overhaul how "Roman Church" stuff interacts (with and without DLC)
-
-Replace Items:
-- realm_law_use_clerical_influence_trigger with a realm law flag check
-- coa_jewish_trigger needs to integrate with Marcionism being anti-Jewish
-=======================
-Situations:
-- Remove at start Christian Situation
+Third Order Sweep (AKA additional chrome):
+-----------------------
 
 Activities:
 - Rework Dharma `buddhist_retreat_decision` into an activity
@@ -160,9 +216,6 @@ Religions:
 - Review the weights and scales for all virtues and sins
 - Remove old, outdated localizations
 - Doctrine for "Truly Hellenic" faiths for the truly_hellenic_faith_trigger
-
-GFX:
-- Overwrite DLC music/start illustration object
 
 General Review:
 - "Might want to rework existing religions (Peristani et al) since it's no longer strictly required
