@@ -1,111 +1,4 @@
-﻿##### Changed from Vanilla: Overhauled with new faiths
-is_preferred_heresy = {
-	is_valid_heresy = {
-		ORIGIN_FAITH = $ORIGIN_FAITH$
-		HERETICAL_FAITH = $HERETICAL_FAITH$
-	}
-
-	OR = {
-		#If we're Chistian, pick a heretical faiths which is in the same regional group as our origin faith (i.e., Lollards for Catholics, Iconoclasts for Orthodox, etc.)
-		AND = {
-			religion_tag = christianity_religion
-			OR = {
-				faiths_are_in_western_christianity_group = {FAITH_1 = $ORIGIN_FAITH$ FAITH_2 = $HERETICAL_FAITH$ }
-				faiths_are_in_orthodox_christianity_group = {FAITH_1 = $ORIGIN_FAITH$ FAITH_2 = $HERETICAL_FAITH$ }
-				faiths_are_in_eastern_christianity_group = {FAITH_1 = $ORIGIN_FAITH$ FAITH_2 = $HERETICAL_FAITH$ }
-			}
-		}
-
-		#If we're Muslim, we want to stay within our 'branch' of Islam:
-		AND = {
-			religion_tag = islam_religion
-			OR = {
-				faiths_are_in_sunni_islam_group = {FAITH_1 = $ORIGIN_FAITH$ FAITH_2 = $HERETICAL_FAITH$}
-				faiths_are_in_shia_islam_group = {FAITH_1 = $ORIGIN_FAITH$ FAITH_2 = $HERETICAL_FAITH$}
-				faiths_are_in_muhakkima_islam_group = {FAITH_1 = $ORIGIN_FAITH$ FAITH_2 = $HERETICAL_FAITH$}
-			}
-		}
-		#If we're Zoroastrian, we don't want Sogdian faith in Armenia and vice versa 
-		AND = {
-			religion_tag = zoroastrianism_religion
-			OR = {
-				faiths_are_eastern_zoroastrian = {FAITH_1 = $ORIGIN_FAITH$ FAITH_2 = $HERETICAL_FAITH$}
-				faiths_are_western_zoroastrian = {FAITH_1 = $ORIGIN_FAITH$ FAITH_2 = $HERETICAL_FAITH$}
-			}
-		}
-
-		#Otherwise, we don't have any special preferences.
-		AND = {
-			NOT = {
-				religion_tag = islam_religion
-				religion_tag = christianity_religion
-				religion_tag = zoroastrianism_religion
-			}
-		}
-	}
-}
-
-##### Changed from Vanilla: Overhauled with new faiths
-is_valid_heresy = {
-	NOT = { $ORIGIN_FAITH$ = $HERETICAL_FAITH$ }
-	# A heretical faith can't be currently locked off via variable.
-	$HERETICAL_FAITH$ = {
-		NOR = {
-			has_variable = block_conversion_till_decision_taken
-			has_variable = block_conversion_till_nebulous_circumstances
-		}
-	}
-	
-	#Be very careful selecting ethnic religion types
-	valid_heretic_culture_cultural_religion_pair_trigger = {
-		HERESIARCH = scope:heretic_ruler
-		FAITH = $ORIGIN_FAITH$
-	}
-	
-	#Don't pick rites for Heresies, please
-	NOT = { $HERETICAL_FAITH$ = { has_doctrine = tenet_rite } }
-	
-	#Depending on the origin faith's religion/religion group, there may have additional requirements for a heresy to be considered valid.
-	OR = {
-		#For Christian Faiths, the origin and heretical faiths must not both be Ecumenical (excepting the faiths which aren't technically ecumenical).
-		AND = {
-			religion_tag = christianity_religion
-			NOT = {
-				have_compatible_christian_creeds_trigger = {
-					FAITH_1 = $ORIGIN_FAITH$
-					FAITH_2 = $HERETICAL_FAITH$
-				}
-			}
-		}
-		AND = { #FP3: for Zoroastrianism, Bedhin faiths are never heresies of each other 
-			religion_tag = zoroastrianism_religion
-			NAND = {
-				$ORIGIN_FAITH$ = {
-					has_doctrine = doctrine_major_branch_behdin
-				}
-				$HERETICAL_FAITH$ = {
-					has_doctrine = doctrine_major_branch_behdin
-				}
-			}
-		}
-		#No special requirements for Muslims, Jews, or Yazidis
-		religion_tag = islam_religion
-		religion_tag = judaism_religion
-		#Eastern Faiths can shift and spread amongst each other.
-		AND = {
-			OR = {
-				religion_tag = buddhism_religion
-				religion_tag = hinduism_religion
-				religion_tag = jainism_religion
-				religion_tag = dualism_religion
-			}
-		}
-		#No special requirements for Pagan religions.
-		has_doctrine = pagan_hostility_doctrine
-	}
-}
-
-#Christian Heresy Groups
+﻿#Christian Heresy Groups
 
 ##### Changed from Vanilla: Overhauled with new faiths
 faiths_are_in_western_christianity_group = {
@@ -189,27 +82,30 @@ faiths_are_in_eastern_christianity_group = {
 valid_demand_conversion_conditions_trigger = {
 	scope:recipient = {
 		NOR = {
-			has_strong_hook = scope:actor
+			has_strong_hook = scope:puppet_or_actor
 			has_trait = devoted
 			has_trait = order_member
-			is_imprisoned_by = scope:actor
-			is_at_war_with = scope:actor
+			is_imprisoned_by = scope:puppet_or_actor
+			is_at_war_with = scope:puppet_or_actor
 		}
 	}
-	scope:actor = {
+	scope:puppet_or_actor = {
 		trigger_if = {
 			limit = {
 				government_has_flag = government_is_landless_adventurer
-				scope:recipient = { is_courtier_of = scope:actor }
+				scope:recipient = { is_courtier_of = scope:puppet_or_actor }
 			}
 			custom_tooltip = {
 				text = valid_demand_conversion_conditions_trigger.tt.domicile_requires_shrine
 				domicile = { has_domicile_parameter = camp_enable_conversion }
 			}
 		}
-		NAND = {
-			has_trait = nomadic_philosophy
-			has_trait = zealous
+		custom_tooltip = {
+			text = demand_conversion_nomadic_zealous_tt
+			NAND = {
+				has_trait = nomadic_philosophy
+				has_trait = zealous
+			}
 		}
 	}
 
@@ -224,7 +120,7 @@ valid_demand_conversion_conditions_trigger = {
 		# Vassal Contract forbids meddling by liege
 		NAND = {
 			exists = scope:recipient.liege
-			scope:recipient.liege = scope:actor
+			scope:recipient.liege = scope:puppet_or_actor
 			scope:recipient = {
 				is_ruler = yes
 				vassal_contract_has_flag = religiously_protected
@@ -236,7 +132,7 @@ valid_demand_conversion_conditions_trigger = {
 			scope:recipient = {
 				AND = {
 					has_variable = cannot_be_converted_by_value
-					var:cannot_be_converted_by_value = scope:actor
+					var:cannot_be_converted_by_value = scope:puppet_or_actor
 				}
 			}
 		}
@@ -245,65 +141,18 @@ valid_demand_conversion_conditions_trigger = {
 			scope:recipient = {
 				NOR = {
 					has_variable = cannot_be_converted_by_value
-					var:cannot_be_converted_by_value = scope:actor
+					var:cannot_be_converted_by_value = scope:puppet_or_actor
 				}
 			}
 		}
 	}
 	custom_tooltip = {
 		text = cannot_take_overt_hostile_actions_against_diarch.tt
-		NOT = { scope:recipient ?= scope:actor.diarch }
+		NOT = { scope:recipient ?= scope:puppet_or_actor.diarch }
 	}
 	##### Changed from Vanilla vvvvv
 	BP_demand_conversion_trigger = yes
 	##### Changed from Vanilla ^^^^^
-}
-
-##### Changed from Vanilla: Removed Gayomarthanism
-faiths_are_eastern_zoroastrian = { #FP3 update - so that Armenian faith (Arewordik) don't appear as a heresy in Sogdia
-	OR = {
-		$FAITH_1$ = faith:mazdayasna
-		$FAITH_1$ = faith:khurmazta
-		$FAITH_2$ = faith:zurvanism
-		$FAITH_2$ = faith:mazdakism
-		$FAITH_2$ = faith:khurramism
-	}
-	OR = {
-		$FAITH_1$ = faith:mazdayasna
-		$FAITH_1$ = faith:khurmazta
-		$FAITH_2$ = faith:zurvanism
-		$FAITH_2$ = faith:mazdakism
-		$FAITH_2$ = faith:khurramism
-	}
-}
-##### Changed from Vanilla: Removed Gayomarthanism
-faiths_are_western_zoroastrian = { #FP3 update - so that Sogdian faith (Khurmazta) don't appear as a heresy in Armenia 
-	OR = {
-		$FAITH_1$ = faith:mazdayasna
-		$FAITH_2$ = faith:zurvanism
-		$FAITH_2$ = faith:mazdakism
-		$FAITH_2$ = faith:khurramism
-		$FAITH_2$ = faith:urartuism
-	}
-	OR = {
-		$FAITH_1$ = faith:mazdayasna
-		$FAITH_2$ = faith:zurvanism
-		$FAITH_2$ = faith:mazdakism
-		$FAITH_2$ = faith:khurramism
-		$FAITH_2$ = faith:urartuism
-	}
-}
-
-##### Changed from Vanilla: Removed conversos reference
-invalid_for_heresy_events = {
-	OR = {
-		##### Changed from Vanilla: Removed conversos reference
-		this = faith:insular_celtic
-		this = faith:bosnian_church
-		this = faith:mozarabic_church
-		this = faith:adamites
-		this = faith:kabarism
-	}
 }
 
 ##### Changed from Vanilla: Modify _this_ if we want to have minorities have an effect on religion spawning
@@ -330,8 +179,7 @@ does_religion_exist_in_world_region_trigger = { # The most efficient way I could
 		}
 	}
 	trigger_else_if = {
-		limit = {
-			location = { geographical_region = world_india } }
+		limit = { location = { geographical_region = world_india } }
 		any_county_in_region = {
 			region = world_india
 			faith.religion = $RELIGION$
@@ -358,30 +206,22 @@ does_religion_exist_in_world_region_trigger = { # The most efficient way I could
 			faith.religion = $RELIGION$
 		}
 	}
-
-	trigger_else_if = { # We group two smaller world regions into one
-		limit = {
-			location = {
-				OR = {
-					geographical_region = world_tibet
-					geographical_region = world_burma
-				}
-			}
+	trigger_else_if = {
+		limit = { location = { geographical_region = world_asia_southeast } }
+		any_county_in_region = {
+			region = world_asia_southeast
+			faith.religion = $RELIGION$
 		}
-		OR = {
-			any_county_in_region = {
-				region = world_tibet
-				faith.religion = $RELIGION$
-			}
-			any_county_in_region = {
-				region = world_burma
-				faith.religion = $RELIGION$
-			}
+	}
+	trigger_else_if = {
+		limit = { location = { geographical_region = world_tibet } }
+		any_county_in_region = {
+			region = world_tibet
+			faith.religion = $RELIGION$
 		}
 	}
 	trigger_else = { always = no } # This should always go at the end of this scripted trigger
 }
-
 #Changed from Vanilla: Extended to all WtWSMS Christologies
 unique_christology_trigger = {
 	custom_tooltip = {
@@ -578,4 +418,3 @@ can_create_rite_trigger = {
 		##### Changed from Vanilla ^^^^^
 	}
 }
-

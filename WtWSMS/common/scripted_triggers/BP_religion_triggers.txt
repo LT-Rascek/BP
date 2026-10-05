@@ -1,6 +1,6 @@
 ﻿considers_astray_trigger = {
-	faith_hostility_level = {
-		target = $TARGET_FAITH$
+	$RITE_OR_FAITH$_hostility_level = {
+		target = $TARGET$
 		value <= 1
 	}
 }
@@ -52,7 +52,7 @@ uses_eucharistic_rite_trigger = {
 			doctrine:doctrine_christian_communion_transubstantiation = { is_in_list = selected_doctrines }
 			doctrine:doctrine_christian_communion_memorialism = { is_in_list = selected_doctrines }
 		}
-		NOT = {	doctrine:doctrine_christian_communion_repudiation = { is_in_list = selected_doctrines } }
+		NOT = { doctrine:doctrine_christian_communion_repudiation = { is_in_list = selected_doctrines } }
 	}
 }
 has_western_liturgical_rite_trigger = {
@@ -145,53 +145,6 @@ has_related_liturgical_rite_trigger = {
 }
 
 ##### HERESY TRIGGERS
-
-#Prevent selection of heretic cultures unless the heresiarch is of a faith culture or faith child culture
-valid_heretic_culture_cultural_religion_pair_trigger = {
-	trigger_if = {
-		limit = { $FAITH$ = { has_doctrine = tenet_ethnic_religion } }
-		actor_is_faith_culture_or_child_culture_for_cultural_religions_DIRECT_trigger = {
-			ACTOR = $HERESIARCH$
-			TARGET_FAITH = $FAITH$
-			VARIABLE = ethnic_religion_culture
-		}
-	}
-	trigger_else_if = {
-		limit = { $FAITH$ = { has_doctrine = tenet_autocephaly } }
-		actor_is_faith_culture_or_child_culture_for_cultural_religions_DIRECT_trigger = {
-			ACTOR = $HERESIARCH$
-			TARGET_FAITH = $FAITH$
-			VARIABLE = church_culture
-		}
-	}
-	trigger_else = { always = yes }
-}
-
-#Ecumenisms that are compatible shouldn't be called
-have_compatible_christian_creeds_trigger = {
-	OR = {
-		#Orthodox Creeds
-		AND = {
-			OR = {
-				$FAITH_1$ = { has_doctrine = special_doctrine_nicene_ecumenism }
-				$FAITH_1$ = { has_doctrine = special_doctrine_alexandria_ecumenism }
-			}
-			OR = {
-				$FAITH_2$ = { has_doctrine = special_doctrine_nicene_ecumenism }
-				$FAITH_2$ = { has_doctrine = special_doctrine_alexandria_ecumenism }
-			}
-		}
-		#Heterodox Creeds
-		AND = {
-			$FAITH_1$ = { has_doctrine = special_doctrine_nestorian_ecumenism }
-			$FAITH_2$ = { has_doctrine = special_doctrine_nestorian_ecumenism }
-		}
-		AND = {
-			$FAITH_1$ = { has_doctrine = special_doctrine_arian_ecumenism }
-			$FAITH_2$ = { has_doctrine = special_doctrine_arian_ecumenism }
-		}
-	}
-}
 
 # Uncommon Faiths : Steadily declined after Vth century
 is_uncommon_faith_trigger = {

@@ -2,13 +2,14 @@
 fp1_can_raise_stele_trigger = {
 	OR = {
 		culture = { has_cultural_parameter = has_access_to_runestones }
-		faith = { has_doctrine_parameter = has_access_to_runestones }
+		rite = { rite_has_parameter = has_access_to_runestones }
 		has_character_modifier = embraced_local_traditions_modifier
 	}
 	culture = {
 		NOT = { has_cultural_era_or_later = culture_era_high_medieval }
 	}
 }
+
 
 ##### Changed from Vanilla: Compares native language instead of checking for North Germanic to determine stele effectiveness
 fp1_can_raise_stele_title_scope_trigger = {
@@ -17,6 +18,7 @@ fp1_can_raise_stele_title_scope_trigger = {
 		NOT = { has_cultural_era_or_later = culture_era_high_medieval }
 	}
 }
+
 
 ##### Changed from Vanilla: Added early heritage
 fp1_eligible_for_yearly_events_trigger = {
@@ -31,6 +33,7 @@ fp1_eligible_for_yearly_events_trigger = {
 		religion = religion:germanic_religion
 	}
 }
+
 fp1_is_norse = {
 	OR = {
 		culture = {
@@ -42,6 +45,7 @@ fp1_is_norse = {
 		culture = culture:norman
 	}
 }
+
 
 fp1_achievement_culture_norse_trigger = {
 	fp1_is_norse = yes

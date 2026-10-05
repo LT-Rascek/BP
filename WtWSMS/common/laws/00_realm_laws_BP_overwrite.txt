@@ -17,6 +17,7 @@ imperial_bureaucracy_0 = {
 		parochial_opinion = 10
 		courtly_opinion = 5
 	}
+	flag = authority_level_0
 	flag = uses_imperial_bureaucracy
 	flag = can_have_tributaries
 	flag = titles_cannot_leave_realm_on_succession # Hardcoded flag
@@ -66,6 +67,7 @@ imperial_bureaucracy_1 = {
 		minority_opinion = -10
 		vassal_limit = 100
 	}
+	flag = authority_level_1
 	flag = can_have_tributaries
 	flag = title_revocation_allowed
 	flag = vassal_retraction_allowed
@@ -166,6 +168,7 @@ imperial_bureaucracy_2 = {
 		republic_government_tax_contribution_add = 0.05
 		vassal_limit = 100
 	}
+	flag = authority_level_2
 	flag = vassal_refusal_is_treason
 	flag = can_change_succession_laws
 	flag = vassal_all_wars_banned
@@ -263,6 +266,7 @@ imperial_bureaucracy_3 = {
 		republic_government_tax_contribution_add = 0.05
 		vassal_limit = 200
 	}
+	flag = authority_level_3
 	flag = vassal_all_wars_banned_permanent
 	flag = max_authority_level
 	flag = admin_title_troop_cost_reduction_high
@@ -349,6 +353,7 @@ tribal_authority_2 = {
 		minority_opinion = -10
 		belligerent_opinion = 15
 	}
+	flag = authority_level_2
 	flag = title_revocation_allowed
 	flag = vassal_retraction_allowed
 	flag = diarchs_want_to_subsidise_without_this_flag
@@ -437,6 +442,7 @@ tribal_authority_3 = {
 		minority_opinion = -30
 		belligerent_opinion = 20
 	}
+	flag = authority_level_3
 	flag = max_authority_level
 	#Settling is disabled unless you have this law. Script is in the decisions, currently in 80_major_decisions.
 	#Reforming pagan religions (but not creating other faiths) is disabled unless you have this law. Script is in the reformation prereqs, currently in 00_rules.
@@ -521,6 +527,7 @@ nomadic_authority_3 = {
 		vassal_limit_min = 8
 		vassal_limit_max = 12 # 15
 	}
+	flag = authority_level_2
 	flag = vassal_retraction_allowed
 	flag = diarchs_want_to_subsidise_without_this_flag
 	flag = migration_to_kingdoms
@@ -620,6 +627,7 @@ nomadic_authority_4 = {
 		vassal_limit_max = 15
 	}
 	flag = migration_to_empires
+	flag = authority_level_3
 	#Settling is disabled unless you have this law. Script is in the decisions, currently in 80_major_decisions.
 	#Reforming pagan religions (but not creating other faiths) is disabled unless you have this law. Script is in the reformation prereqs, currently in 00_rules.
 	
@@ -718,6 +726,7 @@ nomadic_authority_5 = {
 		vassal_limit_max = 970
 	}
 	flag = max_authority_level
+	flag = authority_level_4
 	#Settling is disabled unless you have this law. Script is in the decisions, currently in 80_major_decisions.
 	#Reforming pagan religions (but not creating other faiths) is disabled unless you have this law. Script is in the reformation prereqs, currently in 00_rules.
 	

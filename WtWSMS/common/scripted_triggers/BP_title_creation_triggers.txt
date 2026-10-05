@@ -316,19 +316,19 @@ creation_trigger_e_wendish_empire_trigger = {
 creation_trigger_k_italy_trigger = {
 	trigger_if = {
 		limit = { is_ai = yes }
-		faith = { religion_tag = christianity_religion }
+		religion = religion:christianity_religion
 	}
 }
 creation_trigger_k_romagna_trigger = {
 	trigger_if = {
 		limit = { is_ai = yes }
-		faith = { religion_tag = christianity_religion }
+		religion = religion:christianity_religion
 	}
 }
 creation_trigger_k_soissons_trigger = {
 	prestige_level > medium_prestige_level
 	culture = culture:romano_gallic
-	faith = faith:nicene
+	faith = faith:christian_faith
 }
 #ErikW Titles
 creation_trigger_k_athens_trigger = {

@@ -126,13 +126,13 @@ battle_of_tolbiac_character_trigger = {
 		is_landed = yes
 		is_independent_ruler = yes
 		primary_title.tier >= tier_duchy
-		this.faith = { has_doctrine_parameter = unreformed }
+		this.rite = { rite_has_parameter = unreformed }
 		OR = {
-			any_realm_county = { count > 0 NOT = { this.faith = { has_doctrine_parameter = unreformed } } }
-			NOT = { this.capital_county.faith = { has_doctrine_parameter = unreformed } }
-			any_spouse = { count > 0 NOT = { this.faith ?= { has_doctrine_parameter = unreformed } } }
-			any_consort = { count > 0 NOT = { this.faith ?= { has_doctrine_parameter = unreformed } } }
-			any_concubine = { count > 0 NOT = { this.faith ?= { has_doctrine_parameter = unreformed } } }
+			any_realm_county = { count > 0 NOT = { this.rite = { rite_has_parameter = unreformed } } }
+			NOT = { this.capital_county.rite = { rite_has_parameter = unreformed } }
+			any_spouse = { count > 0 NOT = { this.rite ?= { rite_has_parameter = unreformed } } }
+			any_consort = { count > 0 NOT = { this.rite ?= { rite_has_parameter = unreformed } } }
+			any_concubine = { count > 0 NOT = { this.rite ?= { rite_has_parameter = unreformed } } }
 		}
 	}
 	$CHAR_1$.religion = $CHAR_2$.religion

@@ -1,7 +1,7 @@
 ﻿#Additional BP conversion demand trigger
 BP_demand_conversion_trigger = {
 	trigger_if = { #Ethnic Religion has additional restrictions
-		limit = { scope:actor.faith = { has_doctrine_parameter = can_only_demand_conversion_of_same_culture } }
+		limit = { scope:actor.rite = { rite_has_parameter = can_only_demand_conversion_of_same_culture } }
 		#Correct Actor+Recipient Culture
 		custom_description = {
 			text = actor_culture_is_aligned_with_ethnic_religion
@@ -32,25 +32,25 @@ BP_demand_conversion_trigger = {
 			OR = {
 				AND = {
 					scope:actor.culture = { has_innovation = innovation_state_religion }
-					NOT = { scope:recipient.faith = { has_doctrine_parameter = unreformed } }
+					NOT = { scope:recipient.rite = { rite_has_parameter = unreformed } }
 					scope:recipient = { settled_government_trigger = yes }
 				}
 				OR = {
-					scope:recipient.faith = { has_doctrine_parameter = unreformed }
+					scope:recipient.rite = { rite_has_parameter = unreformed }
 					scope:recipient = { settled_government_trigger = no }
 				}
 			}
 		}
 	}
 	trigger_if = { #Iranian_Dynastic Faith protection
-		limit = { scope:recipient.faith = { has_doctrine_parameter = general_religious_protection_from_zoroastrian_cults } }
+		limit = { scope:recipient.rite = { rite_has_parameter = general_religious_protection_from_zoroastrian_cults } }
 		custom_description = {
 			text = actor_cannot_demand_conversion_of_protected_faiths
 			subject = scope:actor
 			object = scope:recipient
 			NOR = {
-				scope:actor.faith = { has_doctrine = doctrine_major_branch_behdin }
-				scope:actor = { any_liege_or_above = { this.faith = { has_doctrine = doctrine_major_branch_behdin } } }
+				scope:actor.rite = { has_doctrine = doctrine_major_branch_behdin }
+				scope:actor = { any_liege_or_above = { this.rite = { has_doctrine = doctrine_major_branch_behdin } } }
 			}
 		}
 	}

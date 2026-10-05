@@ -118,7 +118,12 @@ imperial_elective_potential_landed_candidate_trigger = {
 mahestan_elective_shared_faith_trigger = {
 	AND = {
 		religion = $TARGET_CHAR$.religion
-		faith = { considers_astray_trigger = { TARGET_FAITH = $TARGET_CHAR$.faith } }
+		rite = {
+			considers_astray_trigger = {
+				RITE_OR_FAITH = rite
+				TARGET = $TARGET_CHAR$.rite
+			}
+		}
 	}
 }
 

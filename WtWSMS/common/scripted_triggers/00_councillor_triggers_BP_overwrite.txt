@@ -6,7 +6,7 @@ can_be_chancellor_trigger = {
 	}
 	NAND = {
 		has_council_position = councillor_court_chaplain
-		faith = { has_doctrine_parameter = clerical_appointment_fixed }
+		rite = { rite_has_parameter = clerical_appointment_fixed }
 	}
 	NOR = {
 		has_council_position = councillor_spouse
@@ -35,7 +35,7 @@ can_be_steward_trigger = {
 	}
 	NAND = {
 		has_council_position = councillor_court_chaplain
-		faith = { has_doctrine_parameter = clerical_appointment_fixed }
+		rite = { rite_has_parameter = clerical_appointment_fixed }
 	}
 	NOR = {
 		has_council_position = councillor_spouse
@@ -55,7 +55,6 @@ can_be_steward_trigger = {
 	}
 	##### Changed from Vanilla ^^^^^
 }
-
 ##### Changed from Vanilla: Vassals civil service countries cannot be councilors, Iranian_Dynastic Wuzurgans
 can_be_marshal_trigger = {
 	can_be_councillor_basics_trigger = yes
@@ -65,7 +64,7 @@ can_be_marshal_trigger = {
 	is_hostage = no
 	NAND = {
 		has_council_position = councillor_court_chaplain
-		faith = { has_doctrine_parameter = clerical_appointment_fixed }
+		rite = { rite_has_parameter = clerical_appointment_fixed }
 	}
 	NOR = {
 		has_council_position = councillor_spouse
@@ -91,13 +90,12 @@ can_be_marshal_trigger = {
 	}
 	##### Changed from Vanilla ^^^^^
 }
-
 ##### Changed from Vanilla: Vassals civil service countries cannot be councilors, Iranian_Dynastic Wuzurgans
 can_be_spymaster_trigger = {
 	can_be_councillor_basics_trigger = yes
 	NAND = {
 		has_council_position = councillor_court_chaplain
-		faith = { has_doctrine_parameter = clerical_appointment_fixed }
+		rite = { rite_has_parameter = clerical_appointment_fixed }
 	}
 	NOR = {
 		has_council_position = councillor_spouse
@@ -117,7 +115,6 @@ can_be_spymaster_trigger = {
 	}
 	##### Changed from Vanilla ^^^^^
 }
-
 ##### Changed from Vanilla: Applied BP limitations
 
 # expect scope:councillor_liege, scope:councillor

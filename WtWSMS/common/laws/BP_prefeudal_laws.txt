@@ -14,6 +14,7 @@ prefeudal_authority_0 = {
 		parochial_opinion = 10
 		courtly_opinion = 5
 	}
+	flag = authority_level_0
 	can_keep = { realm_law_use_prefeudal_authority_trigger = yes }
 }
 
@@ -32,6 +33,7 @@ prefeudal_authority_1 = {
 		courtly_opinion = -5
 		minority_opinion = -10
 	}
+	flag = authority_level_1
 	flag = title_revocation_allowed
 	flag = can_have_tributaries
 	
@@ -99,6 +101,7 @@ prefeudal_authority_2 = {
 		zealot_opinion = -10
 		minority_opinion = -10
 	}
+	flag = authority_level_2
 	flag = vassal_retraction_allowed
 	
 	can_keep = { realm_law_use_prefeudal_authority_trigger = yes }
@@ -159,6 +162,8 @@ prefeudal_authority_3 = {
 		zealot_opinion = -10
 		minority_opinion = -10
 	}
+	flag = max_authority_level
+	flag = authority_level_3
 	flag = can_change_partition_succession_laws
 	flag = vassal_refusal_is_treason
 	
