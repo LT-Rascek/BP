@@ -13,6 +13,7 @@ tags={
 version = "0.4.0"
 supported_version="1.20.*"
 path = "mod/WtWSMS"
+replace_path="common/religion/holy_site_types"
 replace_path="history/characters"
 replace_path="history/cultures"
 replace_path="history/provinces"

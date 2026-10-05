@@ -10,14 +10,14 @@ tenet_consolamentum = {
 			triggered_desc = {
 				trigger = {
 					NOT = { rite_religion_tag = christianity_religion }
-					rite_has_parameter = liturgical_language_greek }
+					rite_has_parameter = liturgical_language_greek
 				}
 				desc = tenet_consolamentum_nonchristian_greek_name
 			}
 			triggered_desc = {
 				trigger = {
 					NOT = { rite_religion_tag = christianity_religion }
-					rite_has_parameter = liturgical_language_latin }
+					rite_has_parameter = liturgical_language_latin
 				}
 				desc = tenet_consolamentum_nonchristian_latin_name
 			}
@@ -62,8 +62,8 @@ tenet_consolamentum = {
 				trigger = {
 					NOT = { rite_religion_tag = christianity_religion }
 					OR = {
-						rite_has_parameter = liturgical_language_latin }
-						rite_has_parameter = liturgical_language_greek }
+						rite_has_parameter = liturgical_language_latin
+						rite_has_parameter = liturgical_language_greek
 					}
 				}
 				desc = tenet_consolamentum_nonchristian_latin_name

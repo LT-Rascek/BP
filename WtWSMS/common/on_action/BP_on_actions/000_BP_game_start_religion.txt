@@ -100,7 +100,7 @@ convert_christian_chars_to_rites = {
 		}
 		#Ethiopian Orthodox
 		change_ruler_and_court_rite_by_county_faith_effect = {
-			ORIG_FAITH = coptic
+			ORIG_FAITH = miaphysitism
 			NEW_RITE = ethiopian_rite
 		}
 		#Handle edge cases:
@@ -116,8 +116,11 @@ swap_tenets_based_on_dlc = {
 		}
 	}
 	effect = {
-		every_rite_type = {
-			limit = { rite_has_tenet = tenet_pursuit_of_power }
+		rite:roman_pagan = {
+			remove_rite_tenet = tenet_pursuit_of_power
+			add_rite_tenet = tenet_pursuit_of_power_dlc
+		}
+		rite:sol_invictus = {
 			remove_rite_tenet = tenet_pursuit_of_power
 			add_rite_tenet = tenet_pursuit_of_power_dlc
 		}
