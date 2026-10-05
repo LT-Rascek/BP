@@ -10,31 +10,6 @@
 	else = { change_government = tribal_government }
 }
 
-bp_propagate_ecumenism_effect = {
-	#Christian Faiths
-	if = {
-		limit = { scope:old_faith = { has_doctrine = special_doctrine_nicene_ecumenism } }
-		add_doctrine = special_doctrine_nicene_ecumenism
-	}
-	else_if = {
-		limit = { scope:old_faith = { has_doctrine = special_doctrine_alexandria_ecumenism } }
-		add_doctrine = special_doctrine_alexandria_ecumenism
-	}
-	else_if = {
-		limit = { scope:old_faith = { has_doctrine = special_doctrine_nestorian_ecumenism } }
-		add_doctrine = special_doctrine_nestorian_ecumenism
-	}
-	else_if = {
-		limit = { scope:old_faith = { has_doctrine = special_doctrine_nestorian_ecumenism } }
-		add_doctrine = special_doctrine_nestorian_ecumenism
-	}
-	#Legalized Faiths under Persian Aegis
-	else_if = {
-		limit = { scope:old_faith = { has_doctrine = special_doctrine_arian_ecumenism } }
-		add_doctrine = special_doctrine_arian_ecumenism
-	}
-}
-
 #Mostly for our game-start on action stuff
 change_faith_if_alive_effect = {
 	if = {

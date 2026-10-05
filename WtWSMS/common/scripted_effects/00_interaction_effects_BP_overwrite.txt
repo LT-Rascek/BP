@@ -3,21 +3,21 @@ revoke_title_interaction_effect = {
 	if = {
 		limit = {
 			scope:recipient = {
-				faith = scope:actor.faith
+				faith = scope:puppet_or_actor.faith
 				government_has_flag = government_is_theocracy
 			}
-			scope:actor != scope:actor.faith.religious_head #No loss if actor is head of faith themselves
+			scope:puppet_or_actor != scope:puppet_or_actor.faith.religious_head
 		}
-		scope:actor = {
+		scope:puppet_or_actor = {
 			add_piety = major_piety_loss
 		}
 		if = {
 			limit = {
-				exists = scope:actor.faith.religious_head
+				exists = scope:puppet_or_actor.faith.religious_head
 			}
-			scope:actor.faith.religious_head = {
+			scope:puppet_or_actor.faith.religious_head = {
 				add_opinion = {
-					target = scope:actor
+					target = scope:puppet_or_actor
 					modifier = impious_opinion
 					opinion = -20
 				}
@@ -26,10 +26,10 @@ revoke_title_interaction_effect = {
 	}
 	if = {
 		limit = {
-			exists = scope:actor.faith.religious_head
-			scope:recipient = scope:actor.faith.religious_head
+			exists = scope:puppet_or_actor.faith.religious_head
+			scope:recipient = scope:puppet_or_actor.faith.religious_head
 		}
-		scope:actor = {
+		scope:puppet_or_actor = {
 			add_piety_level = -2
 		}
 	}
@@ -40,7 +40,7 @@ revoke_title_interaction_effect = {
 				NOT = { government_has_flag = government_is_herder }
 			}
 		}
-		scope:actor = {
+		scope:puppet_or_actor = {
 			revocation_tyranny_effect = { VASSAL = scope:recipient }
 			title_revocation_stress_effect = { VASSAL = scope:recipient }
 			consume_revoke_title_reason = scope:recipient
@@ -68,14 +68,14 @@ revoke_title_interaction_effect = {
 					value = -30
 					if = {
 						limit = {
-							scope:recipient.culture != scope:actor.culture
+							scope:recipient.culture != scope:puppet_or_actor.culture
 							scope:recipient.culture = this.culture
 						}
 						multiply = 1.5
 					}
 					if = {
 						limit = {
-							scope:recipient.faith != scope:actor.faith
+							scope:recipient.faith != scope:puppet_or_actor.faith
 							scope:recipient.faith = this.faith
 						}
 						multiply = 1.5
@@ -86,16 +86,16 @@ revoke_title_interaction_effect = {
 
 		if = {
 			limit = {
-				scope:actor.culture = { has_cultural_parameter = penalty_for_revoking_titles_from_house_members }
-				exists = scope:actor.house
+				scope:puppet_or_actor.culture = { has_cultural_parameter = penalty_for_revoking_titles_from_house_members }
+				exists = scope:puppet_or_actor.house
 				exists = scope:recipient.house
-				scope:actor.house = scope:recipient.house
+				scope:puppet_or_actor.house = scope:recipient.house
 			}
 			if = {
 				limit = {
 					scope:landed_title.tier = tier_county
 				}
-				scope:actor = {
+				scope:puppet_or_actor = {
 					add_prestige = medium_prestige_loss
 				}
 			}
@@ -103,7 +103,7 @@ revoke_title_interaction_effect = {
 				limit = {
 					scope:landed_title.tier = tier_duchy
 				}
-				scope:actor = {
+				scope:puppet_or_actor = {
 					add_prestige = major_prestige_loss
 				}
 			}
@@ -111,7 +111,7 @@ revoke_title_interaction_effect = {
 				limit = {
 					scope:landed_title.tier = tier_kingdom
 				}
-				scope:actor = {
+				scope:puppet_or_actor = {
 					add_prestige = massive_prestige_loss
 				}
 			}
@@ -119,10 +119,10 @@ revoke_title_interaction_effect = {
 
 		if = {
 			limit = {
-				scope:actor.culture = { has_cultural_parameter = penalty_for_revoking_titles_from_close_family }
-				exists = scope:actor
+				scope:puppet_or_actor.culture = { has_cultural_parameter = penalty_for_revoking_titles_from_close_family }
+				exists = scope:puppet_or_actor
 				exists = scope:recipient
-				scope:actor = {
+				scope:puppet_or_actor = {
 					is_close_family_of = scope:recipient
 				}
 			}
@@ -130,7 +130,7 @@ revoke_title_interaction_effect = {
 				limit = {
 					scope:landed_title.tier = tier_county
 				}
-				scope:actor = {
+				scope:puppet_or_actor = {
 					add_prestige = medium_prestige_loss
 				}
 			}
@@ -138,7 +138,7 @@ revoke_title_interaction_effect = {
 				limit = {
 					scope:landed_title.tier = tier_duchy
 				}
-				scope:actor = {
+				scope:puppet_or_actor = {
 					add_prestige = major_prestige_loss
 				}
 			}
@@ -146,7 +146,7 @@ revoke_title_interaction_effect = {
 				limit = {
 					scope:landed_title.tier = tier_kingdom
 				}
-				scope:actor = {
+				scope:puppet_or_actor = {
 					add_prestige = massive_prestige_loss
 				}
 			}
@@ -154,16 +154,16 @@ revoke_title_interaction_effect = {
 
 		if = {
 			limit = {
-				scope:actor.culture = { has_cultural_parameter = piety_penalty_for_revoking_titles_from_house_members }
-				exists = scope:actor.house
+				scope:puppet_or_actor.culture = { has_cultural_parameter = piety_penalty_for_revoking_titles_from_house_members }
+				exists = scope:puppet_or_actor.house
 				exists = scope:recipient.house
-				scope:actor.house = scope:recipient.house
+				scope:puppet_or_actor.house = scope:recipient.house
 			}
 			if = {
 				limit = {
 					scope:landed_title.tier = tier_county
 				}
-				scope:actor = {
+				scope:puppet_or_actor = {
 					add_piety = medium_piety_loss
 				}
 			}
@@ -171,7 +171,7 @@ revoke_title_interaction_effect = {
 				limit = {
 					scope:landed_title.tier = tier_duchy
 				}
-				scope:actor = {
+				scope:puppet_or_actor = {
 					add_piety = major_piety_loss
 				}
 			}
@@ -179,7 +179,7 @@ revoke_title_interaction_effect = {
 				limit = {
 					scope:landed_title.tier = tier_kingdom
 				}
-				scope:actor = {
+				scope:puppet_or_actor = {
 					add_piety = massive_piety_loss
 				}
 			}
@@ -188,14 +188,14 @@ revoke_title_interaction_effect = {
 		# If we're a clan this interaction affects unity
 		if = {
 			limit = {
-				scope:actor = { government_has_flag = government_is_clan }
+				scope:puppet_or_actor = { government_has_flag = government_is_clan }
 				scope:recipient = { government_has_flag = government_is_clan }
-				exists = scope:actor.house
+				exists = scope:puppet_or_actor.house
 				exists = scope:recipient.house
-				scope:actor.house = scope:recipient.house
+				scope:puppet_or_actor.house = scope:recipient.house
 				scope:landed_title.tier >= tier_county
 			}
-			scope:actor.house = {
+			scope:puppet_or_actor.house = {
 				if = {
 					limit = {
 						scope:landed_title.tier = tier_county
@@ -226,7 +226,7 @@ revoke_title_interaction_effect = {
 				if = {
 					limit = { exists = scope:revoke_title_unity_loss }
 					add_clan_unity_interaction_effect = {
-						CHARACTER = scope:actor
+						CHARACTER = scope:puppet_or_actor
 						TARGET = scope:recipient
 						VALUE = scope:revoke_title_unity_loss
 						DESC = clan_unity_title_revoked.desc
@@ -262,7 +262,7 @@ revoke_title_interaction_effect = {
 				NOT = { exists = scope:revoke_title_interaction }
 			}
 			custom_tooltip = IS_ALLOWED_TO_REVOKE_TITLE_BARONY_DESC
-			scope:actor = {
+			scope:puppet_or_actor = {
 				if = {
 					limit = {
 						any_vassal = {
@@ -274,7 +274,7 @@ revoke_title_interaction_effect = {
 						every_vassal = {
 							vassal_stance = barons_and_minor_landholders
 							add_opinion = {
-								target = scope:actor
+								target = scope:puppet_or_actor
 								modifier = barons_and_minor_landholders_disapproves_baron_revocations_opinion
 							}
 						}
@@ -285,7 +285,7 @@ revoke_title_interaction_effect = {
 	}
 
 
-	scope:actor = {
+	scope:puppet_or_actor = {
 		if = {
 			limit = {
 				scope:hook = yes
@@ -296,7 +296,7 @@ revoke_title_interaction_effect = {
 		if = {
 			limit = {
 				scope:hook_liege ?= yes
-				scope:intermediary = { is_alive = yes }
+				scope:intermediary ?= { is_alive = yes }
 			}
 			use_hook = scope:intermediary
 		}
@@ -307,7 +307,7 @@ revoke_title_interaction_effect = {
 		}
 		scope:recipient = {
 			add_opinion = {
-				target = scope:actor
+				target = scope:puppet_or_actor
 				opinion = -10 # Herders don't care much
 				modifier = revoked_title
 			}
@@ -316,39 +316,39 @@ revoke_title_interaction_effect = {
 	else = {
 		scope:recipient = {
 			add_opinion = {
-				target = scope:actor
+				target = scope:puppet_or_actor
 				modifier = revoked_title
 			}
 			if = { #If they recently imprisoned you, or asked for your excommunication, they become your rival
 				limit = {
 					OR = {
 						has_opinion_modifier = {
-							target = scope:actor
+							target = scope:puppet_or_actor
 							modifier = released_from_prison
 						}
 						AND = {
 							exists = var:requested_my_excommunication
-							var:requested_my_excommunication = scope:actor
+							var:requested_my_excommunication = scope:puppet_or_actor
 						}
 					}
 					NOT = {
-						has_relation_rival = scope:actor
+						has_relation_rival = scope:puppet_or_actor
 					}
 				}
 				if = {
 					limit = {
-						has_relation_potential_rival = scope:actor
+						has_relation_potential_rival = scope:puppet_or_actor
 					}
-					remove_relation_potential_rival = scope:actor
+					remove_relation_potential_rival = scope:puppet_or_actor
 				}
 				set_relation_rival = {
-					target = scope:actor
+					target = scope:puppet_or_actor
 					reason = rival_revoked_title_reversed
 				}
 			}
 			else = {
 				progress_towards_rival_effect = {
-					CHARACTER = scope:actor
+					CHARACTER = scope:puppet_or_actor
 					REASON = rival_revoked_title_progress
 					OPINION = 0
 				}
@@ -356,12 +356,12 @@ revoke_title_interaction_effect = {
 			# HOUSE RELATION
 			house ?= {
 				if = {
-					limit = { NOT = { this = scope:actor.house } }
+					limit = { NOT = { this = scope:puppet_or_actor.house } }
 					change_house_relation_effect = {
-						HOUSE = scope:actor.house
+						HOUSE = scope:puppet_or_actor.house
 						VALUE = house_relation_damage_medium_value
 						REASON = title_revocation
-						CHAR = scope:actor
+						CHAR = scope:puppet_or_actor
 						TARGET_CHAR = scope:recipient
 						TITLE = scope:landed_title
 					}
@@ -382,7 +382,7 @@ revoke_title_interaction_effect = {
 				}
 			}
 		}
-		scope:actor = {
+		scope:puppet_or_actor = {
 			add_character_modifier = {
 				modifier = party_baron_ended_the_party_modifier
 				years = 10
@@ -396,21 +396,21 @@ revoke_title_interaction_effect = {
 	##### Changed from Vanilla vvvvv
 	if = { #If you are unlanding a (barony) Senator unjustly, the Senate is mad
 		limit = {
-			scope:actor = { title_revocation_is_tyrannical_trigger = { VASSAL = scope:recipient } }
+			scope:puppet_or_actor = { title_revocation_is_tyrannical_trigger = { VASSAL = scope:recipient } }
 			scope:recipient.primary_title.tier = tier_barony
 			scope:recipient = { has_trait = senator_west }
 			scope:recipient = { character_is_in_senate_west_trigger = yes }
-			scope:actor = { character_is_in_senate_west_trigger = yes }
+			scope:puppet_or_actor = { character_is_in_senate_west_trigger = yes }
 		}
 		senate_revoke_title_opinion_effect = { REGION = west }
 	}
 	if = { #If you are unlanding a (barony) Senator unjustly, the Senate is mad
 		limit = {
-			scope:actor = { title_revocation_is_tyrannical_trigger = { VASSAL = scope:recipient } }
+			scope:puppet_or_actor = { title_revocation_is_tyrannical_trigger = { VASSAL = scope:recipient } }
 			scope:recipient.primary_title.tier = tier_barony
 			scope:recipient = { has_trait = senator_east }
 			scope:recipient = { character_is_in_senate_east_trigger = yes }
-			scope:actor = { character_is_in_senate_east_trigger = yes }
+			scope:puppet_or_actor = { character_is_in_senate_east_trigger = yes }
 		}
 		senate_revoke_title_opinion_effect = { REGION = east }
 	}
@@ -528,11 +528,13 @@ revocation_tyranny_effect = {
 		}
 		else_if = {
 			limit = {
-				faith = {
+				rite = {
 					OR = {
-						has_doctrine_parameter = pluralism_righteous_revocation_tyranny_reduced
-						has_doctrine_parameter = pluralism_fundamentalist_revocation_tyranny_minimal
+						rite_has_parameter = pluralism_righteous_revocation_tyranny_reduced
+						rite_has_parameter = pluralism_fundamentalist_revocation_tyranny_minimal
 					}
+				}
+				faith = {
 					faith_hostility_level = {
 						target = scope:recipient.faith
 						value >= faith_hostile_level
@@ -541,8 +543,8 @@ revocation_tyranny_effect = {
 			}
 			if = {
 				limit = {
+					rite = { rite_has_parameter = pluralism_fundamentalist_revocation_tyranny_minimal }
 					faith = {
-						has_doctrine_parameter = pluralism_fundamentalist_revocation_tyranny_minimal
 						faith_hostility_level = {
 							target = scope:recipient.faith
 							value = faith_hostile_level
@@ -561,7 +563,7 @@ revocation_tyranny_effect = {
 				custom = INFIDEL_REVOCATION_OPINION
 				add_opinion = {
 					modifier = angry_opinion
-					target = scope:actor
+					target = scope:puppet_or_actor
 					opinion = {
 						value = revoke_title_tyranny_gain
 						multiply = -1
@@ -580,12 +582,12 @@ offer_vassalization_interaction_effect = {
 	}
 	scope:recipient = {
 		change_liege = {
-			liege = scope:actor
+			liege = scope:puppet_or_actor
 			change = scope:change
 		}
 		add_opinion = {
 			modifier = became_vassal
-			target = scope:actor
+			target = scope:puppet_or_actor
 			opinion = 10
 		}
 	}
@@ -601,7 +603,7 @@ offer_vassalization_interaction_effect = {
 				##### Changed from Vanilla ^^^^^
 			}
 			if = {
-				limit = { scope:high_obligations = yes }
+				limit = { scope:high_obligations ?= yes }
 				hidden_effect = {
 					if = {
 						limit = { top_liege != this } # To avoid errors during tooltip generation (prior to the contract being generated)
@@ -613,7 +615,7 @@ offer_vassalization_interaction_effect = {
 				custom_tooltip = high_obligations_levies
 			}
 			else_if = {
-				limit = { scope:low_obligations = yes }
+				limit = { scope:low_obligations ?= yes }
 				hidden_effect = {
 					if = {
 						limit = { top_liege != this } # To avoid errors during tooltip generation (prior to the contract being generated)
@@ -625,7 +627,7 @@ offer_vassalization_interaction_effect = {
 				custom_tooltip = low_obligations_levies
 			}
 			else_if = {
-				limit = { scope:religious_exemption = yes }
+				limit = { scope:religious_exemption ?= yes }
 				hidden_effect = {
 					if = {
 						limit = { top_liege != this } # To avoid errors during tooltip generation (prior to the contract being generated)
@@ -653,7 +655,7 @@ offer_vassalization_interaction_effect = {
 		else_if = {
 			limit = {
 				government_has_flag = government_is_clan
-				scope:religious_exemption_clan = yes
+				scope:religious_exemption_clan ?= yes
 			}
 			hidden_effect = {
 				if = {
@@ -668,7 +670,7 @@ offer_vassalization_interaction_effect = {
 	# Struggle catalysts.
 	hidden_effect = {
 		fp3_struggle_apply_independent_vassalage_catalyst_effect = {
-			NEW_LIEGE = scope:actor
+			NEW_LIEGE = scope:puppet_or_actor
 			NEW_VASSAL = scope:recipient
 		}
 	}
@@ -685,6 +687,11 @@ offer_vassalization_interaction_effect = {
 # $TRIBUTARY$ = the new tributary
 # $SUZERAIN$ = their suzerain
 start_tributary_interaction_effect = {
+	# Setup truces depending on how the tributary relationship was created
+	$TRIBUTARY$ = { save_scope_as = tributary_loc }
+	$SUZERAIN$ = { save_scope_as = suzerain_loc }
+
+	#Mandala Tributaries
 	if = {
 		limit = {
 			$SUZERAIN$ = { government_has_flag = government_is_centralized }

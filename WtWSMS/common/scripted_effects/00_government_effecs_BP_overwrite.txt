@@ -1,0 +1,189 @@
+﻿assign_new_government_effect = {
+	if = {
+		limit = {
+			exists = scope:new_capital
+			NOT = { exists = scope:capital_county }
+		}
+		scope:new_capital = { save_scope_as = capital_county }
+	}
+	save_scope_as = new_ruler
+	# Change our government according to the government of our liege.
+	
+	##### Changed from Vanilla vvvvv
+	
+	#Put before so that BP governments don't get dropped unnecessarily
+	if = { #Pre-Feudal
+		limit = {
+			OR = {
+				government_has_flag = government_is_prefeudal
+				scope:old_government ?= flag:prefeudal
+			}
+		}
+		change_government = prefeudal_government
+		add_realm_law = prefeudal_authority_0
+	}
+	else_if = { #Rajamandala
+		limit = {
+			OR = {
+				government_has_flag = government_is_rajamandala
+				scope:old_government ?= flag:rajamandala
+			}
+		}
+		change_government = rajamandala_government
+		add_realm_law = rajamandala_authority_0
+	}
+	else_if = { #Iran-Dynastic
+		limit = {
+			OR = {
+				government_has_flag = government_is_iranian_dynastic
+				scope:old_government ?= flag:iranian_dynastic
+			}
+		}
+		change_government = roman_dynastic_government
+		add_realm_law = roman_dynastic_authority_0
+	}
+	else_if = { #Sub-Roman Dynastic
+		limit = {
+			OR = {
+				government_has_flag = government_is_subroman_dynastic
+				scope:old_government ?= flag:sub_roman_dynastic
+			}
+		}
+		change_government = roman_dynastic_government
+		add_realm_law = roman_dynastic_authority_0
+	}
+	else_if = { #Roman Dynastic
+		limit = {
+			OR = {
+				government_has_flag = government_is_roman_dynastic
+				scope:old_government ?= flag:roman_dynastic
+			}
+		}
+		change_government = roman_dynastic_government
+		add_realm_law = roman_dynastic_authority_0
+	}
+	
+	else_if = { #Sub-Roman Administrative
+		limit = {
+			OR = {
+				government_has_flag = government_is_subroman_administrative
+				scope:old_government ?= flag:subroman_administrative
+			}
+		}
+		change_government_subroman_administrative_effect = yes
+		add_realm_law = imperial_bureaucracy_0
+	}
+	else_if = { #Roman Federate
+		limit = {
+			OR = {
+				government_has_flag = government_is_roman_federate
+				scope:old_government ?= flag:roman_federate
+			}
+		}
+		change_government_roman_federate_effect = yes
+		add_realm_law = imperial_bureaucracy_0
+	}
+	else_if = { #Roman Admin
+		limit = {
+			OR = {
+				government_has_flag = government_is_roman_administrative
+				scope:old_government ?= flag:roman_administrative
+			}
+		}
+		change_government_roman_administrative_effect = yes
+		add_realm_law = imperial_bureaucracy_0
+	}
+	
+	else_if = { #High-Tribal
+		limit = {
+			OR = {
+				government_has_flag = government_is_high_tribal
+				scope:old_government ?= flag:high_tribal
+			}
+		}
+		change_government = high_tribal_government
+		add_realm_law = high_tribal_organization_0
+	}
+	
+	## Nomad.
+	else_if = {
+	##### Changed from Vanilla ^^^^^
+		limit = {
+			scope:capital_county.title_province = {
+				OR = {
+					has_holding_type = nomad_holding
+					has_holding_type = herder_holding
+				}
+			}
+		}
+		hidden_effect = {
+			every_held_title = {
+				title_tier = county
+				limit = {
+					title_province ?= { has_holding_type = herder_holding }
+				}
+				title_province = { set_holding_type = nomad_holding }
+			}
+		}
+		change_government = nomad_government
+	}
+	## Wanua or Tribal.
+	else_if = {
+		limit = {
+			scope:capital_county.title_province = {
+				has_holding_type = tribal_holding
+			}
+		}
+		assign_tribal_governments_effect = yes
+	}
+	## Mandala.
+	else_if = {
+		limit = {
+			has_mandala_culture_trigger = yes
+			has_mandala_faith_trigger = yes
+			scope:capital_county.title_province = {
+				has_holding_type = temple_citadel_holding
+			}
+		}
+		change_government = mandala_government
+		#Sort out the House shenanigans
+		hidden_effect = {
+			if = {
+				limit = { is_house_head = no }
+				house = {
+					if = {
+						limit = {
+							house_head = {
+								is_landed = no
+								is_courtier_of = scope:new_ruler
+							}
+						}
+						set_house_head = scope:new_ruler
+					}
+				}
+			}
+			else = {
+				house ?= {
+					set_house_aspiration = { type = no_aspect }
+				}
+			}
+		}
+	}
+	## Administrative govs
+	else_if = {
+		limit = {
+			OR = {
+				government_has_mechanic = administrative
+				exists = scope:admin
+			}
+		}
+		change_to_administrative_effect = yes
+	}
+	# add check for non-playable govs?
+	else_if = {
+		limit = { exists = scope:old_government }
+		change_government = scope:old_government
+	}
+	## Else feudal.
+	else = { assign_feudal_governments_effect = yes }
+}

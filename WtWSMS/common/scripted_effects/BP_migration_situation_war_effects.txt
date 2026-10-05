@@ -152,7 +152,7 @@ migration_cb_title_and_modifier_application_effect = {
 				is_landless_type_title = no
 				this.tier = tier_county
 				this.culture = prev.culture
-				this.faith = prev.faith
+				this.rite = prev.rite
 			}
 			add_to_temporary_list = migration_source_counties
 		}
@@ -243,14 +243,14 @@ migration_cb_title_and_modifier_application_effect = {
 		create_character = {
 			location = scope:war_leader.location
 			culture = this.culture
-			faith = this.faith
+			rite = this.rite
 			gender_female_chance = {
 				if = {
-					limit = { this.faith = { has_doctrine = doctrine_gender_male_dominated } }
+					limit = { this.rite = { has_doctrine = doctrine_gender_male_dominated } }
 					value = 0
 				}
 				else_if = {
-					limit = { this.faith = { has_doctrine = doctrine_gender_female_dominated } }
+					limit = { this.rite = { has_doctrine = doctrine_gender_female_dominated } }
 					value = 100
 				}
 				else = { value = 50 }
@@ -278,14 +278,14 @@ migration_cb_title_and_modifier_application_effect = {
 		create_character = {
 			location = scope:war_leader.location
 			culture = this.culture
-			faith = this.faith
+			rite = this.rite
 			gender_female_chance = {
 				if = {
-					limit = { this.faith = { has_doctrine = doctrine_gender_male_dominated } }
+					limit = { this.rite = { has_doctrine = doctrine_gender_male_dominated } }
 					value = 0
 				}
 				else_if = {
-					limit = { this.faith = { has_doctrine = doctrine_gender_female_dominated } }
+					limit = { this.rite = { has_doctrine = doctrine_gender_female_dominated } }
 					value = 100
 				}
 				else = { value = 50 }
@@ -592,7 +592,7 @@ migration_war_white_peace_attacker_county_effect = {
 				is_landless_type_title = no
 				this.tier = tier_county
 				this.culture = prev.culture
-				this.faith = prev.faith
+				this.rite = prev.rite
 			}
 			add_to_temporary_list = migration_source_counties
 		}
@@ -630,7 +630,7 @@ migration_war_defeat_attacker_county_effect = {
 				is_landless_type_title = no
 				this.tier = tier_county
 				this.culture = prev.culture
-				this.faith = prev.faith
+				this.rite = prev.rite
 			}
 			add_to_temporary_list = migration_source_counties
 		}
@@ -695,10 +695,10 @@ migration_flip_holding_to_tribal_effect = {
 				purge_secondary_holdings = yes
 			}
 			$THE_COUNTY$.culture = { save_temporary_scope_as = the_culture }
-			$THE_COUNTY$.faith = { save_temporary_scope_as = the_faith }
+			$THE_COUNTY$.rite = { save_temporary_scope_as = the_faith }
 			
 			set_county_culture = $THE_ATTACKER$.culture
-			set_county_faith = $THE_ATTACKER$.faith
+			set_county_rite = $THE_ATTACKER$.rite
 			
 			random_list = {
 				60 = {
@@ -773,10 +773,10 @@ migration_flip_culture_faith_in_realm_effect = {
 				chance = migration_chance_of_flip_culture_faith
 				scope:the_county = {
 					scope:the_county.culture = { save_temporary_scope_as = the_culture }
-					scope:the_county.faith = { save_temporary_scope_as = the_faith }
+					scope:the_county.rite = { save_temporary_scope_as = the_faith }
 					
 					set_county_culture = $THE_ATTACKER$.culture
-					set_county_faith = $THE_ATTACKER$.faith
+					set_county_rite = $THE_ATTACKER$.rite
 					random_list = {
 						60 = {
 							add_culture_minority_effect = {
@@ -1126,7 +1126,7 @@ create_migratory_armies_effect = {
 					OR = {
 						this = $ATTACKER$.capital_county
 						this.culture = $ATTACKER$.culture
-						this.faith = $ATTACKER$.faith
+						this.rite = $ATTACKER$.rite
 					}
 				}
 				if = {

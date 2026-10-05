@@ -13,7 +13,7 @@ generic_animal_sacrifice_toast_something_effect = {
 		left_icon = ROOT
 		title = bp_animal_sacrifice.0036.something
 		if = { #Avoid Modifier Stacking
-			limit = { NOT = { root.faith = { has_doctrine_parameter = select_personal_god_active } } }
+			limit = { NOT = { root.rite = { rite_has_parameter = select_personal_god_active } } }
 			add_character_modifier = {
 				modifier = bp_animal_sacrifice_$DEITY$_blessing_$SIZE$
 				years = 5

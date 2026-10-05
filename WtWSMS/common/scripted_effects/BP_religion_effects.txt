@@ -1,98 +1,21 @@
-﻿bp_set_up_dynamic_spiritual_hof_title_effect = {
-	# Sort scopes & starting processes.
-	faith = { save_scope_as = my_faith }
-	create_dynamic_title = {
-		tier = duchy
-		name = REL_HEAD_TITLE_NAME
-	}
-	create_title_and_vassal_change = {
-		type = created
-		save_scope_as = change
-		add_claim_on_loss = no
-	}
-	# Nab a suitable character.
-	if = {
-		limit = {
-			any_theocratic_vassal = { faith = $CREATOR$.faith }
-		}
-		ordered_theocratic_vassal = {
-			limit = { faith = $CREATOR$.faith }
-			order_by = head_of_faith_selection_weight
-			save_scope_as = new_religious_head
-		}
-	}
-	else = {
-		create_character = {
-			location = $CREATOR$.capital_province
-			age = { 30 50 }
-			gender_female_chance = root_faith_clergy_gender_female_chance
-			trait = education_learning_4
-			faith = $CREATOR$.faith
-			culture = $CREATOR$.culture
-			learning = { 14 22 }
-			save_scope_as = new_religious_head
-		}
-	}
-	# Try to land the new title.
-	scope:my_faith = {
-		random_holy_site = {
-			limit = { county.holder = $CREATOR$ }
-			alternative_limit = { county.holder = { target_is_liege_or_above = $CREATOR$ } }
-			alternative_limit = {
-				county.holder = {
-					faith = $CREATOR$.faith
-					is_ai = yes
-				}
-			}
-			save_scope_as = holy_site
-		}
-		#For Autocephalous Churches without a holy site
-		if = {
-			limit = { NOT = { exists = scope:holy_site } }
-			root.capital_county = { save_scope_as = holy_site }
-		}
-	}
-	if = {
-		limit = { exists = scope:holy_site }
-		scope:new_title = { set_capital_county = scope:holy_site.county }
-	}
-	# Configure final effects.
-	hidden_effect = {
-		scope:new_title = {
-			set_landless_title = yes
-			set_destroy_if_invalid_heir = yes
-			set_no_automatic_claims = yes
-			set_definitive_form = yes
-			set_always_follows_primary_heir = yes
-			change_title_holder = {
-				holder = scope:new_religious_head
-				change = scope:change
-			}
-		}
-	}
-	resolve_title_and_vassal_change = scope:change
-	faith = { set_religious_head_title = scope:new_title }
-	scope:new_title = { generate_coa = religious_title }
-}
-
-bp_setup_priest_traits_effect = {
+﻿bp_setup_priest_traits_effect = {
 	if = { #Buddhists and Jains are always monastic holders
 		limit = {
-			faith = { has_doctrine_parameter = clergy_are_always_monks }
+			rite = { rite_has_parameter = clergy_are_always_monks }
 			NOT = { has_trait = devoted }
 		}
 		add_trait = devoted
 	}
 	if = { #Sacred Eunuchs
 		limit = {
-			faith = { has_doctrine_parameter = clergy_are_always_eunuchs }
+			rite = { rite_has_parameter = clergy_are_always_eunuchs }
 			NOT = { has_trait = eunuch }
 		}
 		add_trait = eunuch_1
 	}
 	if = { #Scythian Pagan Court Chaplains are Enarei trait
 		limit = {
-			faith = { has_doctrine_parameter = utilizes_enarei }
+			rite = { rite_has_parameter = utilizes_enarei }
 			is_male = yes
 			NOT = { has_trait = enarei }
 		}
@@ -100,7 +23,7 @@ bp_setup_priest_traits_effect = {
 	}
 	if = {
 		limit = {
-			faith = { has_doctrine_parameter = clerics_are_vegetarians }
+			rite = { rite_has_parameter = clerics_are_vegetarians }
 			NOT = { has_trait = vegetarian }
 		}
 		add_trait = vegetarian
@@ -112,83 +35,50 @@ bp_learn_liturgical_language_effect = {
 	#Christianity
 	if = {
 		limit = {
-			faith = { has_doctrine_parameter = liturgical_language_latin }
+			rite = { rite_has_parameter = liturgical_language_latin }
 			NOT = { knows_language = language_latin }
 		}
 		learn_language = language_latin
 	}
 	if = {
 		limit = {
-			faith = { has_doctrine_parameter = liturgical_language_greek }
+			rite = { rite_has_parameter = liturgical_language_greek }
 			NOT = { knows_language = language_greek }
 		}
 		learn_language = language_greek
 	}
 	if = {
 		limit = {
-			faith = { has_doctrine_parameter = liturgical_language_armenian }
+			rite = { rite_has_parameter = liturgical_language_armenian }
 			NOT = { knows_language = language_armenian }
 		}
 		learn_language = language_armenian
 	}
 	if = {
 		limit = {
-			faith = { has_doctrine_parameter = liturgical_language_coptic }
+			rite = { rite_has_parameter = liturgical_language_coptic }
 			NOT = { knows_language = language_coptic }
 		}
 		learn_language = language_coptic
 	}
 	if = {
 		limit = {
-			faith = { has_doctrine_parameter = liturgical_language_ethiopic }
+			rite = { rite_has_parameter = liturgical_language_ethiopic }
 			NOT = { knows_language = language_ethiopic }
 		}
 		learn_language = language_ethiopic
 	}
 	if = {
 		limit = {
-			faith = { has_doctrine_parameter = liturgical_language_aramaic }
+			rite = { rite_has_parameter = liturgical_language_aramaic }
 			NOT = { knows_language = language_aramaic }
 		}
 		learn_language = language_aramaic
 	}
-	#Latin west/Greek east split for Chalcedonian
-	if = {
-		limit = { faith = { has_doctrine_parameter = liturgical_language_latin_greek } }
-		if = {
-			limit = { exists = this.default_location }
-			
-			if = {
-				limit = {
-					default_location = {
-						OR = {
-							geographical_region = world_roman_empire_west
-							geographical_region = world_europe_west
-							geographical_region = world_europe_north
-						}
-					}
-				}
-				if = {
-				limit = { NOT = { knows_language = language_latin } }
-					learn_language = language_latin
-				}
-			}
-			else_if = {
-				limit = { NOT = { knows_language = language_greek } }
-				learn_language = language_greek
-			}
-		}
-		else = { #Fallback
-			if = {
-			limit = { NOT = { knows_language = language_latin } }
-				learn_language = language_latin
-			}
-		}
-	}
 	#Judaism
 	if = {
 		limit = {
-			faith = { has_doctrine_parameter = liturgical_language_israelite }
+			rite = { rite_has_parameter = liturgical_language_israelite }
 			NOT = { knows_language = language_israelite }
 		}
 		learn_language = language_israelite
@@ -196,7 +86,7 @@ bp_learn_liturgical_language_effect = {
 	#Zoroastrianism
 	if = {
 		limit = {
-			faith = { has_doctrine_parameter = liturgical_language_avestan }
+			rite = { rite_has_parameter = liturgical_language_avestan }
 			NOT = { knows_language = language_avestan }
 		}
 		learn_language = language_avestan
@@ -204,7 +94,7 @@ bp_learn_liturgical_language_effect = {
 	#Islam
 	if = {
 		limit = {
-			#faith = { has_doctrine_parameter = liturgical_language_arabic }
+			#rite = { rite_has_parameter = liturgical_language_arabic }
 			religion = religion:islam_religion #TODO: Add to teachings of the prophet special doctrine
 			NOT = { knows_language = language_arabic }
 		}
@@ -213,21 +103,21 @@ bp_learn_liturgical_language_effect = {
 	#Eastern
 	if = {
 		limit = {
-			faith = { has_doctrine_parameter = liturgical_language_sanskrit }
+			rite = { rite_has_parameter = liturgical_language_sanskrit }
 			NOT = { knows_language = language_sanskrit }
 		}
 		learn_language = language_sanskrit
 	}
 	if = {
 		limit = {
-			faith = { has_doctrine_parameter = liturgical_language_magadhan }
+			rite = { rite_has_parameter = liturgical_language_magadhan }
 			NOT = { knows_language = language_magadhan }
 		}
 		learn_language = language_magadhan
 	}
 	if = {
 		limit = {
-			faith = { has_doctrine_parameter = liturgical_language_chinese } #TODO: Add to sinitic religion special doctrine
+			rite = { rite_has_parameter = liturgical_language_chinese } #TODO: Add to sinitic religion special doctrine
 			NOT = { knows_language = language_chinese }
 		}
 		learn_language = language_chinese

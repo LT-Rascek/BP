@@ -2,9 +2,11 @@
 	#Adjust ethnic religions split across heritages
 	religion:proto_carpathian_religion = {
 		every_faith = {
-			swap_doctrine_if_it_has_it_effect = {
-				OLD_DOCTRINE = tenet_ethnic_religion
-				NEW_DOCTRINE = tenet_communal_identity
+			every_rite_type = {
+				swap_doctrine_if_it_has_it_effect = {
+					OLD_DOCTRINE = tenet_ethnic_religion
+					NEW_DOCTRINE = tenet_communal_identity
+				}
 			}
 		}
 	}

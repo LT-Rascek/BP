@@ -27,9 +27,9 @@ form_k_aures_effect = {
 
 ### Zoroastrian Events
 legalize_caucasian_christianity_global_effect = {
-	faith:armenian_apostolic = { add_doctrine = special_doctrine_legalized_faith_persia }
-	faith:georgian_orthodox = { add_doctrine = special_doctrine_legalized_faith_persia }
-	faith:albanian_apostolic = { add_doctrine = special_doctrine_legalized_faith_persia }
+	rite:armenian_apostolic = { add_doctrine = special_doctrine_legalized_faith_persia }
+	rite:georgian_rite = { add_doctrine = special_doctrine_legalized_faith_persia }
+	rite:albanian_apostolic = { add_doctrine = special_doctrine_legalized_faith_persia }
 }
 caucasian_christian_legalization_local_effect = {
 	legalize_caucasian_christianity_global_effect = yes
@@ -38,7 +38,7 @@ caucasian_christian_legalization_local_effect = {
 	every_vassal_or_below = {
 		limit = {
 			religion = religion:zoroastrianism_religion
-			faith = { has_doctrine = doctrine_major_branch_behdin }
+			rite = { rite_has_doctrine = doctrine_major_branch_behdin }
 		}
 		if = {
 			limit = { government_has_flag = government_is_theocracy }
@@ -54,7 +54,7 @@ caucasian_christian_legalization_local_effect = {
 		every_vassal_or_below = {
 			limit = {
 				religion = religion:zoroastrianism_religion
-				faith = { has_doctrine = doctrine_major_branch_behdin }
+				rite = { rite_has_doctrine = doctrine_major_branch_behdin }
 			}
 			every_councillor = {
 				limit = { has_council_position = councillor_court_chaplain }
@@ -72,9 +72,9 @@ caucasian_christian_legalization_local_effect = {
 		every_courtier_or_guest = {
 			limit = {
 				OR = {
-					faith = faith:armenian_apostolic
-					faith = faith:georgian_orthodox
-					faith = faith:albanian_apostolic
+					rite = rite:armenian_apostolic
+					rite = rite:georgian_rite
+					rite = rite:albanian_apostolic
 				}
 			}
 			add_opinion = {
@@ -87,9 +87,9 @@ caucasian_christian_legalization_local_effect = {
 			if = {
 				limit = {
 					OR = {
-						faith = faith:armenian_apostolic
-						faith = faith:georgian_orthodox
-						faith = faith:albanian_apostolic
+						rite = rite:armenian_apostolic
+						rite = rite:georgian_rite
+						rite = rite:albanian_apostolic
 					}
 				}
 				add_opinion = {
@@ -101,9 +101,9 @@ caucasian_christian_legalization_local_effect = {
 			every_courtier_or_guest = {
 				limit = {
 					OR = {
-						faith = faith:armenian_apostolic
-						faith = faith:georgian_orthodox
-						faith = faith:albanian_apostolic
+						rite = rite:armenian_apostolic
+						rite = rite:georgian_rite
+						rite = rite:albanian_apostolic
 					}
 				}
 				add_opinion = {
@@ -112,81 +112,6 @@ caucasian_christian_legalization_local_effect = {
 					target = root
 				}
 			}
-		}
-	}
-}
-
-### Create the Blot
-create_the_blot_effect = {
-	scope:blot_reformer.faith = { remove_doctrine = tenet_human_sacrifice }
-	scope:blot_reformer.faith = { add_doctrine = tenet_gruesome_festivals }
-	scope:blot_reformer = { add_prestige_level = 1 }
-}
-### Create human sacrifice
-establish_human_sacrifice_effect = {
-	if = {
-		limit = { scope:human_sacrifice_reformer.faith = faith:gothic_pagan }
-		scope:human_sacrifice_reformer.faith = {
-			remove_doctrine = tenet_ritual_celebrations
-			add_doctrine = tenet_human_sacrifice
-		}
-	}
-	if = {
-		limit = { scope:human_sacrifice_reformer.faith = faith:anglo_pagan }
-		scope:human_sacrifice_reformer.faith = {
-			remove_doctrine = tenet_ritual_celebrations
-			add_doctrine = tenet_human_sacrifice
-		}
-	}
-	if = {
-		limit = { scope:human_sacrifice_reformer.faith = faith:przeworsk_pagan }
-		scope:human_sacrifice_reformer.faith = {
-			remove_doctrine = tenet_ritual_celebrations
-			add_doctrine = tenet_human_sacrifice
-		}
-	}
-	if = {
-		limit = { scope:human_sacrifice_reformer.faith = faith:irimonic_pagan }
-		scope:human_sacrifice_reformer.faith = {
-			remove_doctrine = tenet_ritual_celebrations
-			add_doctrine = tenet_human_sacrifice
-		}
-	}
-	if = {
-		limit = { scope:human_sacrifice_reformer.faith = faith:frankish_pagan }
-		scope:human_sacrifice_reformer.faith = {
-			remove_doctrine = tenet_ritual_celebrations
-			add_doctrine = tenet_human_sacrifice
-		}
-	}
-	hidden_effect = {
-		scope:human_sacrifice_reformer.faith = {
-			set_variable = { name = human_sacrifice_added years = 100 }
-		}
-	}
-}
-
-### Create Warmonger Tenet
-establish_warmonger_effect = {
-	if = {
-		limit = { scope:warmonger_reformer.faith = faith:anglo_pagan }
-		scope:warmonger_reformer.faith = {
-			remove_doctrine = tenet_sanctity_of_nature #It's the most common Germanic Faith tenet, so ditch that instead
-			add_doctrine = tenet_warmonger
-		}
-	}
-	if = {
-		limit = { scope:warmonger_reformer.faith = faith:przeworsk_pagan }
-		scope:warmonger_reformer.faith = {
-			remove_doctrine = tenet_sanctity_of_nature #It's the most common Germanic Faith tenet, so ditch that instead
-			add_doctrine = tenet_warmonger
-		}
-	}
-	if = {
-		limit = { scope:warmonger_reformer.faith = faith:irimonic_pagan }
-		scope:warmonger_reformer.faith = {
-			remove_doctrine = tenet_unrelenting_faith
-			add_doctrine = tenet_warmonger
 		}
 	}
 }

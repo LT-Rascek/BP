@@ -131,9 +131,9 @@ bp_pax_romana_effect = {
 						}
 					}
 					AND = {
-						scope:attacker.faith = {
-							faith_hostility_level_comparison = {
-								prev.holder.faith <= scope:defender.faith
+						scope:attacker.rite = {
+							rite_hostility_level_comparison = {
+								prev.holder.rite <= scope:defender.rite
 							}
 						}
 						holder = {
@@ -158,9 +158,9 @@ bp_pax_romana_effect = {
 			if = {
 				limit = {
 					OR = {
-						scope:attacker.faith = {
-							faith_hostility_level_comparison = {
-								prev.holder.faith >= scope:defender.faith
+						scope:attacker.rite = {
+							rite_hostility_level_comparison = {
+								prev.holder.rite >= scope:defender.rite
 							}
 						}
 						holder.primary_title.tier >= scope:attacker.primary_title.tier
