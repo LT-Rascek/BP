@@ -24,7 +24,7 @@ BP_despoilation_legacy_track = {
 		OR = {
 			#Governments
 			AND = {
-				dynasty.dynast = { government_allows = administrative }
+				dynasty.dynast = { government_has_mechanic = administrative }
 				dynasty.dynast = { government_has_flag = government_is_quasi_feudal }
 			}
 			government_has_flag = government_is_tribal

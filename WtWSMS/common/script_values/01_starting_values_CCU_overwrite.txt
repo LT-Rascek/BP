@@ -14,6 +14,7 @@ culture_acceptance_baseline = {
 			scope:culture ?= {
 				trigger_if = {
 					limit = {
+						exists = scope:culture
 						culture_number_of_counties > 0
 					}
 					calc_culture_dominant_religion = { save_temporary_scope_as = their_religion }
@@ -22,6 +23,7 @@ culture_acceptance_baseline = {
 			}
 			trigger_if = {
 				limit = {
+					exists = root
 					culture_number_of_counties > 0
 				}
 				calc_culture_dominant_religion = { save_temporary_scope_as = our_religion }
@@ -195,19 +197,15 @@ culture_acceptance_baseline = {
 
 				any_culture_county = {
 					percent >= 0.5
-					title_province = {
-						religion = {
-							is_in_family = rf_eastern
-						}
+					religion = {
+						is_in_family = rf_eastern
 					}
 				}
 				scope:culture ?= {
 					any_culture_county = {
 						percent >= 0.5
-						title_province = {
-							religion = {
-								is_in_family = rf_eastern
-							}
+						religion = {
+							is_in_family = rf_eastern
 						}
 					}
 				}
