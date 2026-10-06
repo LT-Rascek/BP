@@ -330,6 +330,83 @@ tenet_literalism = {
 	}
 }
 
+##### Changed from Vanilla: Triggered Icon for Eastern Faiths
+
+# Ancestor Worship
+tenet_ancestor_worship = {
+	##### Changed from Vanilla vvvvv
+	icon = {
+		trigger = {
+			OR = {
+				has_doctrine = sinitic_hostility_doctrine
+				this = faith:baltic_pagan
+				this = faith:shinto_faith
+				this = faith:mu
+			}
+		}
+		
+		reference = "tenet_shrine_offerings"
+	}
+	icon = {
+		trigger = {
+			NOR = {
+				has_doctrine = sinitic_hostility_doctrine
+			}
+		}
+		
+		reference = "tenet_ancestor_worship"
+	}
+	##### Changed from Vanilla ^^^^^
+
+	piety_cost = {
+		value = faith_tenet_cost_low
+
+		# Multiplier for keeping same tenet
+		if = {
+			limit = { rite_has_tenet = tenet_ancestor_worship }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	can_pick = {
+		has_doctrine = pagan_hostility_doctrine
+	}
+
+	parameters = {
+		pilgrimage_decision_active
+		sanctify_artifacts_ancestral
+		tenet_ancestor_worship_renown_on_death
+		tenet_ancestor_worship_seek_ancestral_guidance
+	}
+
+	special_parameters = {
+		increased_dynasty_prestige_birth_mult = 1
+		increased_dynasty_prestige_marriage_mult = 1
+		increased_dynasty_prestige_long_reign_mult = 0.5
+	}
+
+	character_modifier = {
+		close_relative_opinion = 5
+	}
+
+	personal_tenet_modifier = {
+		monthly_dynasty_prestige = 0.1
+		stress_loss_mult = 0.15
+		stress_gain_mult = -0.15
+	}
+
+	traits = {
+		virtues = {
+			loyal = { weight = 10 scale = 1 }
+			humble = { weight = 10 scale = 1 }
+		}
+		sins = {
+			arrogant = { weight = 10 scale = 1 }
+		}
+	}
+}
+
+
 ##### Changed from Vanilla: simply unavailable
 tenet_household_gods = {
 	icon = tenet_household_gods

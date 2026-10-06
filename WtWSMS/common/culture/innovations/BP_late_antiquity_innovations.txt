@@ -36,6 +36,7 @@
 @roman_civil = "gfx/interface/icons/culture_innovations/roman_civil_innovations.dds"
 @roman_military = "gfx/interface/icons/culture_innovations/roman_military_innovations.dds"
 @ck2_bishop = "gfx/interface/icons/culture_innovations/ck2_bishop.dds"
+@innovation_persia = "gfx/interface/icons/culture_innovations/innovation_persia.dds"
 
 #Military Innovations
 innovation_bannus = {
@@ -283,7 +284,7 @@ innovation_deqhan = {
 	skill = learning
 	group = culture_group_civic
 	culture_era = culture_era_late_antiquity
-	icon = @administration_1
+	icon = @innovation_persia
 	
 	potential = { has_cultural_parameter = unlock_tax_obligation_deqhan }
 

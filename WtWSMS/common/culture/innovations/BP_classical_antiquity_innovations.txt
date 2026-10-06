@@ -46,6 +46,7 @@
 @roman_military = "gfx/interface/icons/culture_innovations/roman_military_innovations.dds"
 @ck2_bishop = "gfx/interface/icons/culture_innovations/ck2_bishop.dds"
 @ck2_china = "gfx/interface/icons/culture_innovations/ck2_china.dds"
+@antiquity_forts = "gfx/interface/icons/culture_innovations/innovation_fortifications_antiquity.dds"
 
 #Military Innovations
 innovation_metalurgy = { #Aka, Ironworking
@@ -126,7 +127,7 @@ innovation_muri = {
 	skill = stewardship
 	group = culture_group_military
 	culture_era = culture_era_classical_antiquity
-	icon = @civil_construction_2
+	icon = @antiquity_forts
 	
 	custom = unlocks_castle_01_for_advanced_governments
 	custom = unlocks_second_level_walls
