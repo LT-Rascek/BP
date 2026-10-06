@@ -1,0 +1,40 @@
+﻿temple_authority_messianic_doctrine = { # Messianic Jews
+	doctrine_group_type = doctrine_temple_authority
+	index = 4
+	divergence = 50
+
+	icon = "temple_authority_messianic_doctrine"
+
+	piety_cost = {
+		if = {
+			limit = { rite_has_doctrine = temple_authority_messianic_doctrine }
+			value = 0
+		}
+		else = {
+			value = faith_tenet_cost_mid
+		}
+	}
+	
+	special_parameters = {
+		hostility_level_override = {
+			temple_authority_rabbinic_doctrine = evil
+			temple_authority_toric_doctrine = evil
+			temple_authority_kohanim_doctrine = evil
+			temple_authority_samaritan_torah_doctrine = evil
+			special_doctrine_is_christian_faith = hostile
+			tenet_christian_syncretism = hostile
+		}
+		parameter_opinion_override = {
+			christian_syncretic_actor = 30
+		}
+	}
+	
+	traits = {
+		virtues = {
+			compassionate = { weight = 15 scale = 1 }
+		}
+		sins = {
+			sadistic = { weight = 10 scale = 1 }
+		}
+	}
+}

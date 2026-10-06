@@ -13,16 +13,19 @@ stopped and completed scripted_triggers
 
 - Let loc modders know about Trenkyanism
 - Ask PDX about Christology stuff; they make them all DLC dependent
+- Doctrines don't seem to be able to block tenet selection; let PDX know
 
 =======================
 First Order (AKA first sweep and impelmentation of plan):
 -----------------------
 - Unify Nastika Faiths
-- doctrine_right_to_rule_*
+
+- Catherine Wheel for Mastimani
+
 - nudity_doctrine_*
 - special_doctrine_arian_ecumenism
-- temple_authority_messianic_doctrine
-- doctrine_sacraments_early_christianity
+
+- Duplicate Rite issue
 
 Religion:
 - unique_christology_trigger needs overwrite
@@ -105,6 +108,7 @@ Game Start:
 - Remove `change_faith_if_alive_effect` via history cleanups
 
 Mechanics:
+- Need a new level for influence (if possible to add in)
 - Utilize the Preservation system to tie decreasing divergence tolerance to more scriptural basis
    - Needs to be advantages to doing this
    - Will need to tweak the defined baseline values also (increased scale, baseline set by script instead of define (by setting define to zero), &c.
@@ -156,6 +160,7 @@ Patron Deity Decisions:
    - select_personal_nat_decision - Review if needed
 
 Doctrines:
+- Icons for Liturgical Languages
 - Figure out how we're going to handle church structure doctrines; in the west it should be tending towards Papal Primacy and Collegiality in the East
 - Roman Polytheism should have some sort of Divergence/Heresy tolerance mechanic
 - Henotheism needed for Bhakti and Khuramazta
@@ -205,6 +210,8 @@ Custom Localization:
 - GetFaithSacredLanguageCharacter
 
 History:
+- Platonic Academy Issue within Hellenic Paganism
+- Helen, Mother of Constantine should be a saint, as should he
 - Basiliscus should start with Miaphysite Tenet
 
 Database:
@@ -224,6 +231,10 @@ Localizations:
 - Insular Celtic using St. Patrick? If so, fix.
 
 Religions:
+- Romans get ability to fold faiths into the faith (explains gallic paganism)
+- Game rule whether to apply Patristic interpretation on things like Messalian et al. or our more neutral version
+- Isopsephy Special Effect for Children
+- Unique Clerical Region type for Roman Faiths, to allow for Platonic Academy et al?
 - Add some special type of flag (possibly a straight GUI tenet lookup) to highlight different types of Tenets (Eucharistic, Soteriology, Christology) for easy user identification
 - Tweak Preservation doctrines so they are visible and selectable, with appropriate requirements
 - Total Depravity should get more benefits for positive fulfilment and more maluses for negative fulfilment

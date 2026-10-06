@@ -1,4 +1,10 @@
-﻿#Rituals
+﻿#Main
+right_to_rule_group = {
+	category = main_group
+	divergence = category
+	is_available_on_create = { NOT = { has_doctrine_parameter = unreformed } }
+}
+#Rituals
 vegetarianism_group = {
 	category = ritual
 	divergence = sequence
