@@ -173,10 +173,7 @@ portrait_steppe_clothing_spouse_trigger = {
 portrait_religious_orthodox_trigger = {
 	rite = {
 		OR = {
-			AND = {
-				has_western_liturgical_rite_trigger = no
-				religion = religion:christianity_religion
-			}
+			rite = { rite_has_parameter = uses_orthdox_liturgical_clothes }
 			portrait_religious_faith_or_foundational_trigger = { FAITH = rite:valentinianism }
 			portrait_religious_faith_or_foundational_trigger = { FAITH = rite:marcosianism }
 		}
@@ -185,7 +182,7 @@ portrait_religious_orthodox_trigger = {
 
 ##### Changed from Vanilla: Based on doctrine
 portrait_religious_catholic_trigger = {
-	rite = { has_western_liturgical_rite_trigger = yes }
+	rite = { rite_has_parameter = uses_catholic_liturgical_clothes }
 }
 
 ##### Changed from Vanilla: Removed magyar_religion reference

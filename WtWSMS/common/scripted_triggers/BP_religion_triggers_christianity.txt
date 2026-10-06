@@ -1,0 +1,160 @@
+﻿general_liturgical_rite_pick_trigger = {
+	trigger_if = {
+		limit = { scope:actor = { is_ai = yes } }
+		doctrine:$LITURGICAL_RITE$ = { is_in_list = selected_doctrines }
+	}
+	trigger_else = {
+		OR = {
+			#Your rite uses Latin, the main rite does, or you speak a Romance language
+			scope:actor.rite = { rite_has_parameter = $SIMILAR_RITE_TRIGGER$ }
+			scope:actor.rite.faith.main_rite = { rite_has_parameter = $SIMILAR_RITE_TRIGGER$ }
+			scope:actor.culture = { has_cultural_parameter = $LANGUAGE_GROUP$ }
+			#It is already selected (aka, at start)
+			doctrine:$LITURGICAL_RITE$ = { is_in_list = selected_doctrines }
+		}
+		custom_description = {
+			text = incompatible_tenet_ecstatic_prophecy_trigger
+			NOT = { tenet:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		}
+	}
+}
+
+#Actual Liturgical Rites
+latin_liturgical_rite_pick_trigger = {
+	general_liturgical_rite_pick_trigger = {
+		LITURGICAL_RITE = $LITURGICAL_RITE$
+		SIMILAR_RITE_TRIGGER = latin_rites_are_similar
+		LANGUAGE_GROUP = language_group_romance
+	}
+}
+greek_liturgical_rite_pick_trigger = {
+	trigger_if = {
+		limit = { scope:actor = { is_ai = yes } }
+		doctrine:$LITURGICAL_RITE$ = { is_in_list = selected_doctrines }
+	}
+	trigger_else = {
+		OR = {
+			scope:actor.culture = { has_cultural_parameter = language_branch_graeco_phrygian }
+			#It is already selected (aka, at start)
+			doctrine:$LITURGICAL_RITE$ = { is_in_list = selected_doctrines }
+		}
+		custom_description = {
+			text = incompatible_tenet_ecstatic_prophecy_trigger
+			NOT = { tenet:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		}
+	}
+}
+west_syriac_liturgical_rite_pick_trigger = {
+	trigger_if = {
+		limit = { scope:actor = { is_ai = yes } }
+		doctrine:$LITURGICAL_RITE$ = { is_in_list = selected_doctrines }
+	}
+	trigger_else = {
+		OR = {
+			scope:actor.culture = { has_cultural_parameter = language_group_northwest_semitic }
+			#It is already selected (aka, at start)
+			doctrine:$LITURGICAL_RITE$ = { is_in_list = selected_doctrines }
+		}
+		custom_description = {
+			text = incompatible_tenet_ecstatic_prophecy_trigger
+			NOT = { tenet:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		}
+	}
+}
+armenian_liturgical_rite_pick_trigger = {
+	trigger_if = {
+		limit = { scope:actor = { is_ai = yes } }
+		doctrine:$LITURGICAL_RITE$ = { is_in_list = selected_doctrines }
+	}
+	trigger_else = {
+		OR = {
+			scope:actor.culture = { has_cultural_parameter = language_branch_armenian }
+			#It is already selected (aka, at start)
+			doctrine:$LITURGICAL_RITE$ = { is_in_list = selected_doctrines }
+		}
+		custom_description = {
+			text = incompatible_tenet_ecstatic_prophecy_trigger
+			NOT = { tenet:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		}
+	}
+}
+alexandrian_liturgical_rite_pick_trigger = {
+	general_liturgical_rite_pick_trigger = {
+		LITURGICAL_RITE = $LITURGICAL_RITE$
+		SIMILAR_RITE_TRIGGER = alexandrian_rites_are_similar
+		LANGUAGE_GROUP = language_branch_egyptian
+	}
+}
+ethiopian_liturgical_rite_pick_trigger = {
+	trigger_if = {
+		limit = { scope:actor = { is_ai = yes } }
+		doctrine:$LITURGICAL_RITE$ = { is_in_list = selected_doctrines }
+	}
+	trigger_else = {
+		OR = {
+			scope:actor.rite = { rite_has_parameter = alexandrian_rites_are_similar }
+			scope:actor.rite.faith.main_rite = { rite_has_parameter = alexandrian_rites_are_similar }
+			scope:actor.culture = { has_cultural_pillar = language_ethiopic }
+			#It is already selected (aka, at start)
+			doctrine:$LITURGICAL_RITE$ = { is_in_list = selected_doctrines }
+		}
+		custom_description = {
+			text = incompatible_tenet_ecstatic_prophecy_trigger
+			NOT = { tenet:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		}
+	}
+}
+east_syriac_liturgical_rite_pick_trigger = {
+	trigger_if = {
+		limit = { scope:actor = { is_ai = yes } }
+		doctrine:$LITURGICAL_RITE$ = { is_in_list = selected_doctrines }
+	}
+	trigger_else = {
+		OR = {
+			scope:actor.culture = { has_cultural_parameter = language_group_northwest_semitic }
+			#It is already selected (aka, at start)
+			doctrine:$LITURGICAL_RITE$ = { is_in_list = selected_doctrines }
+		}
+		custom_description = {
+			text = incompatible_tenet_ecstatic_prophecy_trigger
+			NOT = { tenet:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		}
+	}
+}
+israelite_liturgical_rite_pick_trigger = {
+	trigger_if = {
+		limit = { scope:actor = { is_ai = yes } }
+		doctrine:$LITURGICAL_RITE$ = { is_in_list = selected_doctrines }
+	}
+	trigger_else = {
+		OR = {
+			scope:actor.culture = { has_cultural_pillar = language_israelite }
+			scope:actor.culture = { has_cultural_pillar = heritage_israelite }
+			doctrine:tenet_jewish_syncretism = { is_in_list = selected_doctrines }
+			#It is already selected (aka, at start)
+			doctrine:$LITURGICAL_RITE$ = { is_in_list = selected_doctrines }
+		}
+		custom_description = {
+			text = incompatible_tenet_ecstatic_prophecy_trigger
+			NOT = { tenet:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		}
+	}
+}
+gothic_liturgical_rite_pick_trigger = {
+	trigger_if = {
+		limit = { scope:actor = { is_ai = yes } }
+		doctrine:$LITURGICAL_RITE$ = { is_in_list = selected_doctrines }
+	}
+	trigger_else = {
+		OR = {
+			scope:actor.culture = { has_cultural_pillar = language_gothic }
+			scope:actor.culture = { has_cultural_pillar = heritage_gothic }
+			#It is already selected (aka, at start)
+			doctrine:$LITURGICAL_RITE$ = { is_in_list = selected_doctrines }
+		}
+		custom_description = {
+			text = incompatible_tenet_ecstatic_prophecy_trigger
+			NOT = { tenet:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		}
+	}
+}

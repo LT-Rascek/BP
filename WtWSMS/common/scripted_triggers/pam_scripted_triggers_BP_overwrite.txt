@@ -1,101 +1,22 @@
-﻿# The liturgical language triggers below only evaluate in a rite scope; call them through
-# main_rite from a faith and through rite from a character.
-# Pre-scripted rites skip the Head of Rite culture fallback. Slavic, Georgian, Antiochian,
-# heresies, and custom divergences keep that fallback.
-rite_has_pre_scripted_liturgical_language_trigger = {
-	OR = {
-		faith = faith:catholic
-		this = rite:roman_rite
-		this = rite:ambrosian_rite
-		#this = rite:beneventan_rite
-		this = rite:mozarabic_church
-		#this = rite:carolingian_christianity
-		faith = faith:orthodox
-		this = rite:byzantine_rite
-		this = rite:insular_celtic
-		this = rite:ethiopian_rite
-		this = rite:armenian_rite
-		this = rite:coptic_rite
-	}
-}
+﻿##### Changed from Vanilla: Integrated into WtWSMS language system
+rite_has_pre_scripted_liturgical_language_trigger = {}
 
 pam_latin_as_liturgical_language_trigger = {
-	OR = {
-		faith = faith:catholic
-		this = rite:roman_rite
-		this = rite:ambrosian_rite
-		#this = rite:beneventan_rite
-		this = rite:mozarabic_church
-		#this = rite:carolingian_christianity
-		AND = {
-			rite_has_pre_scripted_liturgical_language_trigger = no
-			head_of_rite.culture ?= {
-				OR = {
-					this = culture:italian
-					has_same_culture_language = culture:italian
-				}
-			}
-		}
-	}
+	this = { rite_has_parameter = liturgical_language_latin }
 }
 
 pam_greek_as_liturgical_language_trigger = {
-	OR = {
-		#faith = faith:orthodox
-		this = rite:byzantine_rite
-		AND = {
-			rite_has_pre_scripted_liturgical_language_trigger = no
-			head_of_rite.culture ?= {
-				OR = {
-					this = culture:greek
-					has_same_culture_language = culture:greek
-				}
-			}
-		}
-	}
+	this = { rite_has_parameter = liturgical_language_greek }
 }
 
 pam_irish_as_liturgical_language_trigger = {
-	OR = {
-		this = rite:insular_celtic
-		AND = {
-			rite_has_pre_scripted_liturgical_language_trigger = no
-			head_of_rite.culture ?= {
-				OR = {
-					this = culture:irish
-					has_same_culture_language = culture:irish
-				}
-			}
-		}
-	}
+	this = { rite_has_parameter = is_a_celtic_rite }
 }
 
 pam_ethiopic_as_liturgical_language_trigger = {
-	OR = {
-		this = rite:ethiopian_rite
-		AND = {
-			rite_has_pre_scripted_liturgical_language_trigger = no
-			head_of_rite.culture ?= {
-				OR = {
-					this = culture:ethiopian
-					has_same_culture_language = culture:ethiopian
-				}
-			}
-		}
-	}
+	this = { rite_has_parameter = liturgical_language_ethiopic }
 }
 
 pam_armenian_as_liturgical_language_trigger = {
-	OR = {
-		this = rite:armenian_rite
-		AND = {
-			rite_has_pre_scripted_liturgical_language_trigger = no
-			head_of_rite.culture ?= {
-				OR = {
-					this = culture:armenian
-					has_same_culture_language = culture:armenian
-				}
-			}
-		}
-	}
+	this = { rite_has_parameter = liturgical_language_armenian }
 }

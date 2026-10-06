@@ -45,16 +45,6 @@ cybelian_faith_trigger = {
 	}
 }
 
-uses_eucharistic_rite_trigger = {
-	custom_tooltip = {
-		text = has_a_eucharistic_rite
-		OR = {
-			doctrine:doctrine_christian_communion_transubstantiation = { is_in_list = selected_doctrines }
-			doctrine:doctrine_christian_communion_memorialism = { is_in_list = selected_doctrines }
-		}
-		NOT = { doctrine:doctrine_christian_communion_repudiation = { is_in_list = selected_doctrines } }
-	}
-}
 has_western_liturgical_rite_trigger = {
 	OR = {
 		rite_has_doctrine = doctrine_christian_liturgical_rite_imperial_rite

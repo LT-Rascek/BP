@@ -1,324 +1,147 @@
-﻿#Liturgical Rites
+﻿#Eventually: uses_catholic_liturgical_clothes
 
-### "Western" Rites
+#Liturgical Rites
 
-#For the period when the Greek and Latin Rites were not under significant deviation
-#(ca. 400s-600s, when the influx of Gallican and other rites influenced the structure
-#of the Western celebration).
+#Latin Rites (all related)
 doctrine_christian_liturgical_rite_latin = { #For Catholic
 	doctrine_group_type = christian_liturgirical_rites_group
 	index = 0
 	
 	divergence = 0
 	
-	piety_cost = {
-		if = {
-			limit = { has_western_liturgical_rite_trigger = yes }
-			value = christian_doctrine_cost_low
-		}
-		else_if = {
-			limit = { has_eastern_liturgical_rite_trigger = yes }
-			value = christian_doctrine_cost_mid
-		}
-		else_if = {
-			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
-			value = christian_doctrine_cost_high
-		}
-		else = { value = christian_doctrine_cost_massive }
-		
-		if = {
-			limit = { has_doctrine = doctrine_christian_liturgical_rite_latin }
-			multiply = christian_doctrine_unchanged_cost_mult
-		}
-	}
-	is_shown = { always = yes }
 	can_pick = {
-		uses_eucharistic_rite_trigger = yes
-		custom_description = {
-			text = incompatible_tenet_ecstatic_prophecy_trigger
-			NOT = { tenet:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		latin_liturgical_rite_pick_trigger = {
+			LITURGICAL_RITE = doctrine_christian_liturgical_rite_latin
 		}
 	}
+	
 	parameters = {
-		liturgical_language_latin = yes
-		allows_brewery = yes # Vanilla Catholic feature
+		liturgical_language_latin
+		latin_rites_are_similar
+		uses_orthdox_liturgical_clothes
 	}
-	traits = {}
 }
-doctrine_christian_liturgical_rite_greek = { #For Orthodox
+doctrine_christian_liturgical_rite_gallican_rite = {
 	doctrine_group_type = christian_liturgirical_rites_group
 	index = 1
 	
 	divergence = 0
-	
-	piety_cost = {
-		if = {
-			limit = { has_western_liturgical_rite_trigger = yes }
-			value = christian_doctrine_cost_low
-		}
-		else_if = {
-			limit = { has_eastern_liturgical_rite_trigger = yes }
-			value = christian_doctrine_cost_mid
-		}
-		else_if = {
-			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
-			value = christian_doctrine_cost_high
-		}
-		else = { value = christian_doctrine_cost_massive }
-		
-		if = {
-			limit = { has_doctrine = doctrine_christian_liturgical_rite_greek }
-			multiply = christian_doctrine_unchanged_cost_mult
-		}
-	}
-	is_shown = { always = yes }
-	can_pick = {
-		uses_eucharistic_rite_trigger = yes
-		custom_description = {
-			text = incompatible_tenet_ecstatic_prophecy_trigger
-			NOT = { tenet:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
-		}
-	}
-	parameters = {
-		liturgical_language_greek = yes
-	}
-	traits = {}
-}
 
-#Other Western Rites
-doctrine_christian_liturgical_rite_gallican_rite = {
+	can_pick = {
+		latin_liturgical_rite_pick_trigger = {
+			LITURGICAL_RITE = doctrine_christian_liturgical_rite_gallican_rite
+		}
+	}
+	
+	parameters = {
+		liturgical_language_latin
+		latin_rites_are_similar
+		uses_orthdox_liturgical_clothes
+	}
+}
+doctrine_christian_liturgical_rite_moazarbic_rite = {
 	doctrine_group_type = christian_liturgirical_rites_group
 	index = 2
 	
 	divergence = 0
 
-	piety_cost = {
-		if = {
-			limit = { has_western_liturgical_rite_trigger = yes }
-			value = christian_doctrine_cost_low
-		}
-		else_if = {
-			limit = { has_eastern_liturgical_rite_trigger = yes }
-			value = christian_doctrine_cost_mid
-		}
-		else_if = {
-			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
-			value = christian_doctrine_cost_high
-		}
-		else = { value = christian_doctrine_cost_massive }
-		
-		if = {
-			limit = { has_doctrine = doctrine_christian_liturgical_rite_gallican_rite }
-			multiply = christian_doctrine_unchanged_cost_mult
-		}
-	}
 	can_pick = {
-		uses_eucharistic_rite_trigger = yes
-		custom_description = {
-			text = incompatible_tenet_ecstatic_prophecy_trigger
-			NOT = { tenet:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		latin_liturgical_rite_pick_trigger = {
+			LITURGICAL_RITE = doctrine_christian_liturgical_rite_moazarbic_rite
 		}
 	}
+	
 	parameters = {
-		liturgical_language_latin = yes
-		latin_rites_are_similar = yes
+		liturgical_language_latin
+		latin_rites_are_similar
+		uses_orthdox_liturgical_clothes
 	}
-	traits = {}
 }
-doctrine_christian_liturgical_rite_moazarbic_rite = {
+doctrine_christian_liturgical_rite_celtic_rite = {
 	doctrine_group_type = christian_liturgirical_rites_group
 	index = 3
 	
 	divergence = 0
 
-	piety_cost = {
-		if = {
-			limit = { has_western_liturgical_rite_trigger = yes }
-			value = christian_doctrine_cost_low
-		}
-		else_if = {
-			limit = { has_eastern_liturgical_rite_trigger = yes }
-			value = christian_doctrine_cost_mid
-		}
-		else_if = {
-			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
-			value = christian_doctrine_cost_high
-		}
-		else = { value = christian_doctrine_cost_massive }
-		
-		if = {
-			limit = { has_doctrine = doctrine_christian_liturgical_rite_moazarbic_rite }
-			multiply = christian_doctrine_unchanged_cost_mult
-		}
-	}
 	can_pick = {
-		uses_eucharistic_rite_trigger = yes
-		custom_description = {
-			text = incompatible_tenet_ecstatic_prophecy_trigger
-			NOT = { tenet:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		latin_liturgical_rite_pick_trigger = {
+			LITURGICAL_RITE = doctrine_christian_liturgical_rite_celtic_rite
 		}
 	}
 	parameters = {
-		liturgical_language_latin = yes
-		latin_rites_are_similar = yes
+		liturgical_language_latin
+		latin_rites_are_similar
+		uses_orthdox_liturgical_clothes
+		is_a_celtic_rite #Hidden
 	}
-	traits = {}
 }
-doctrine_christian_liturgical_rite_celtic_rite = {
+doctrine_christian_liturgical_rite_african_rite = {
 	doctrine_group_type = christian_liturgirical_rites_group
 	index = 4
 	
 	divergence = 0
 
-	piety_cost = {
-		if = {
-			limit = { has_western_liturgical_rite_trigger = yes }
-			value = christian_doctrine_cost_low
-		}
-		else_if = {
-			limit = { has_eastern_liturgical_rite_trigger = yes }
-			value = christian_doctrine_cost_mid
-		}
-		else_if = {
-			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
-			value = christian_doctrine_cost_high
-		}
-		else = { value = christian_doctrine_cost_massive }
-		
-		if = {
-			limit = { has_doctrine = doctrine_christian_liturgical_rite_celtic_rite }
-			multiply = christian_doctrine_unchanged_cost_mult
-		}
-	}
 	can_pick = {
-		uses_eucharistic_rite_trigger = yes
-		custom_description = {
-			text = incompatible_tenet_ecstatic_prophecy_trigger
-			NOT = { tenet:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		latin_liturgical_rite_pick_trigger = {
+			LITURGICAL_RITE = doctrine_christian_liturgical_rite_african_rite
 		}
 	}
 	parameters = {
-		liturgical_language_latin = yes
-		latin_rites_are_similar = yes
+		liturgical_language_latin
+		latin_rites_are_similar
+		uses_orthdox_liturgical_clothes
 	}
-	traits = {}
 }
-doctrine_christian_liturgical_rite_african_rite = {
+##### Greek Rites
+doctrine_christian_liturgical_rite_greek = { #For Orthodox
 	doctrine_group_type = christian_liturgirical_rites_group
 	index = 5
 	
 	divergence = 0
-
-	piety_cost = {
-		if = {
-			limit = { has_western_liturgical_rite_trigger = yes }
-			value = christian_doctrine_cost_low
-		}
-		else_if = {
-			limit = { has_eastern_liturgical_rite_trigger = yes }
-			value = christian_doctrine_cost_mid
-		}
-		else_if = {
-			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
-			value = christian_doctrine_cost_high
-		}
-		else = { value = christian_doctrine_cost_massive }
-		
-		if = {
-			limit = { has_doctrine = doctrine_christian_liturgical_rite_african_rite }
-			multiply = christian_doctrine_unchanged_cost_mult
-		}
-	}
+	
 	can_pick = {
-		uses_eucharistic_rite_trigger = yes
-		custom_description = {
-			text = incompatible_tenet_ecstatic_prophecy_trigger
-			NOT = { tenet:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		greek_liturgical_rite_pick_trigger = {
+			LITURGICAL_RITE = doctrine_christian_liturgical_rite_greek
 		}
 	}
+	
 	parameters = {
-		liturgical_language_latin = yes
-		latin_rites_are_similar = yes
+		liturgical_language_greek
+		uses_orthdox_liturgical_clothes
 	}
-	traits = {}
 }
-
-### Eastern Rites (all use mid because they are noticeably different from one another)
+### Eastern Rites
 doctrine_christian_liturgical_rite_west_syriac_rite = { #aka, Antiochene Rite
 	doctrine_group_type = christian_liturgirical_rites_group
 	index = 6
 	
 	divergence = 0
 
-	piety_cost = {
-		if = {
-			limit = { has_western_liturgical_rite_trigger = yes }
-			value = christian_doctrine_cost_mid
-		}
-		else_if = {
-			limit = { has_eastern_liturgical_rite_trigger = yes }
-			value = christian_doctrine_cost_mid
-		}
-		else_if = {
-			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
-			value = christian_doctrine_cost_high
-		}
-		else = { value = christian_doctrine_cost_massive }
-		
-		if = {
-			limit = { has_doctrine = doctrine_christian_liturgical_rite_west_syriac_rite }
-			multiply = christian_doctrine_unchanged_cost_mult
-		}
-	}
 	can_pick = {
-		uses_eucharistic_rite_trigger = yes
-		custom_description = {
-			text = incompatible_tenet_ecstatic_prophecy_trigger
-			NOT = { tenet:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		west_syriac_liturgical_rite_pick_trigger = {
+			LITURGICAL_RITE = doctrine_christian_liturgical_rite_west_syriac_rite
 		}
 	}
+	
 	parameters = {
-		liturgical_language_aramaic = yes
+		liturgical_language_aramaic
 	}
-	traits = {}
 }
+
 doctrine_christian_liturgical_rite_armenian_rite = {
 	doctrine_group_type = christian_liturgirical_rites_group
 	index = 7
 	
 	divergence = 0
 	
-	piety_cost = {
-		if = {
-			limit = { has_western_liturgical_rite_trigger = yes }
-			value = christian_doctrine_cost_mid
-		}
-		else_if = {
-			limit = { has_eastern_liturgical_rite_trigger = yes }
-			value = christian_doctrine_cost_mid
-		}
-		else_if = {
-			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
-			value = christian_doctrine_cost_high
-		}
-		else = { value = christian_doctrine_cost_massive }
-		
-		if = {
-			limit = { has_doctrine = doctrine_christian_liturgical_rite_armenian_rite }
-			multiply = christian_doctrine_unchanged_cost_mult
-		}
-	}
 	can_pick = {
-		uses_eucharistic_rite_trigger = yes
-		custom_description = {
-			text = incompatible_tenet_ecstatic_prophecy_trigger
-			NOT = { tenet:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		armenian_liturgical_rite_pick_trigger = {
+			LITURGICAL_RITE = doctrine_christian_liturgical_rite_armenian_rite
 		}
 	}
 	parameters = {
-		liturgical_language_armenian = yes
+		liturgical_language_armenian
 	}
-	traits = {}
 }
 doctrine_christian_liturgical_rite_alexandrian_rite = {
 	doctrine_group_type = christian_liturgirical_rites_group
@@ -326,42 +149,15 @@ doctrine_christian_liturgical_rite_alexandrian_rite = {
 	
 	divergence = 0
 	
-	piety_cost = {
-		if = {
-			limit = { has_doctrine = doctrine_christian_liturgical_rite_ethiopian_rite }
-			value = christian_doctrine_cost_low
-		}
-		else_if = {
-			limit = { has_western_liturgical_rite_trigger = yes }
-			value = christian_doctrine_cost_mid
-		}
-		else_if = {
-			limit = { has_eastern_liturgical_rite_trigger = yes }
-			value = christian_doctrine_cost_mid
-		}
-		else_if = {
-			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
-			value = christian_doctrine_cost_high
-		}
-		else = { value = christian_doctrine_cost_massive }
-		
-		if = {
-			limit = { has_doctrine = doctrine_christian_liturgical_rite_alexandrian_rite }
-			multiply = christian_doctrine_unchanged_cost_mult
-		}
-	}
 	can_pick = {
-		uses_eucharistic_rite_trigger = yes
-		custom_description = {
-			text = incompatible_tenet_ecstatic_prophecy_trigger
-			NOT = { tenet:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		alexandrian_liturgical_rite_pick_trigger = {
+			LITURGICAL_RITE = doctrine_christian_liturgical_rite_alexandrian_rite
 		}
 	}
 	parameters = {
-		liturgical_language_coptic = yes
-		alexandrian_rites_are_similar = yes
+		liturgical_language_coptic
+		alexandrian_rites_are_similar
 	}
-	traits = {}
 }
 doctrine_christian_liturgical_rite_ethiopian_rite = {
 	doctrine_group_type = christian_liturgirical_rites_group
@@ -369,42 +165,15 @@ doctrine_christian_liturgical_rite_ethiopian_rite = {
 	
 	divergence = 0
 	
-	piety_cost = {
-		if = {
-			limit = { has_doctrine = doctrine_christian_liturgical_rite_alexandrian_rite }
-			value = christian_doctrine_cost_low
-		}
-		else_if = {
-			limit = { has_western_liturgical_rite_trigger = yes }
-			value = christian_doctrine_cost_mid
-		}
-		else_if = {
-			limit = { has_eastern_liturgical_rite_trigger = yes }
-			value = christian_doctrine_cost_mid
-		}
-		else_if = {
-			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
-			value = christian_doctrine_cost_high
-		}
-		else = { value = christian_doctrine_cost_massive }
-		
-		if = {
-			limit = { has_doctrine = doctrine_christian_liturgical_rite_ethiopian_rite }
-			multiply = christian_doctrine_unchanged_cost_mult
-		}
-	}
 	can_pick = {
-		uses_eucharistic_rite_trigger = yes
-		custom_description = {
-			text = incompatible_tenet_ecstatic_prophecy_trigger
-			NOT = { tenet:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		ethiopian_liturgical_rite_pick_trigger = {
+			LITURGICAL_RITE = doctrine_christian_liturgical_rite_ethiopian_rite
 		}
 	}
 	parameters = {
-		liturgical_language_ethiopic = yes
-		alexandrian_rites_are_similar = yes
+		liturgical_language_ethiopic
+		alexandrian_rites_are_similar
 	}
-	traits = {}
 }
 doctrine_christian_liturgical_rite_east_syriac_rite = { #aka Chaldean Rite
 	doctrine_group_type = christian_liturgirical_rites_group
@@ -412,62 +181,46 @@ doctrine_christian_liturgical_rite_east_syriac_rite = { #aka Chaldean Rite
 	
 	divergence = 0
 
-	piety_cost = {
-		if = {
-			limit = { has_western_liturgical_rite_trigger = yes }
-			value = christian_doctrine_cost_mid
-		}
-		else_if = {
-			limit = { has_eastern_liturgical_rite_trigger = yes }
-			value = christian_doctrine_cost_mid
-		}
-		else_if = {
-			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
-			value = christian_doctrine_cost_high
-		}
-		else = { value = christian_doctrine_cost_massive }
-		
-		if = {
-			limit = { has_doctrine = doctrine_christian_liturgical_rite_east_syriac_rite }
-			multiply = christian_doctrine_unchanged_cost_mult
-		}
-	}
 	can_pick = {
-		uses_eucharistic_rite_trigger = yes
-		custom_description = {
-			text = incompatible_tenet_ecstatic_prophecy_trigger
-			NOT = { tenet:tenet_ecstatic_prophecy = { is_in_list = selected_doctrines } }
+		east_syriac_liturgical_rite_pick_trigger = {
+			LITURGICAL_RITE = doctrine_christian_liturgical_rite_east_syriac_rite
 		}
 	}
 	parameters = {
-		liturgical_language_aramaic = yes
+		liturgical_language_aramaic
 	}
-	traits = {}
 }
-
-### Other cases
+### Other Rites
 doctrine_christian_liturgical_rite_israelite = { #At least the Nazoreans by the late Vth century
 	doctrine_group_type = christian_liturgirical_rites_group
 	index = 11
 	
 	divergence = 0
 	
-	piety_cost = {
-		value = christian_doctrine_cost_massive
-		
-		if = {
-			limit = { has_doctrine = doctrine_christian_liturgical_rite_israelite }
-			multiply = christian_doctrine_unchanged_cost_mult
+	can_pick = {
+		east_syriac_liturgical_rite_pick_trigger = {
+			LITURGICAL_RITE = doctrine_christian_liturgical_rite_israelite
 		}
 	}
+	parameters = {
+		liturgical_language_israelite
+	}
+}
+doctrine_christian_liturgical_rite_gothic = { #For Localization really
+	doctrine_group_type = christian_liturgirical_rites_group
+	index = 11
+	
+	divergence = 0
+	
 	can_pick = {
-		uses_eucharistic_rite_trigger = yes
+		gothic_liturgical_rite_pick_trigger = {
+			LITURGICAL_RITE = doctrine_christian_liturgical_rite_gothic
+		}
 	}
 	parameters = {
-		liturgical_language_israelite = yes
+		liturgical_language_gothic
+		uses_orthdox_liturgical_clothes
 	}
-	traits = {}
-	character_modifier = {}
 }
 doctrine_christian_liturgical_rite_local_rite = { #for various other faiths
 	doctrine_group_type = christian_liturgirical_rites_group
@@ -475,28 +228,8 @@ doctrine_christian_liturgical_rite_local_rite = { #for various other faiths
 	
 	divergence = 0
 	
-	piety_cost = {
-		if = {
-			limit = { has_western_liturgical_rite_trigger = yes }
-			value = christian_doctrine_cost_mid
-		}
-		else_if = {
-			limit = { has_eastern_liturgical_rite_trigger = yes }
-			value = christian_doctrine_cost_mid
-		}
-		else = { value = christian_doctrine_cost_massive }
-		
-		if = {
-			limit = { has_doctrine = doctrine_christian_liturgical_rite_local_rite }
-			multiply = christian_doctrine_unchanged_cost_mult
-		}
-	}
-	can_pick = { uses_eucharistic_rite_trigger = yes }
 	parameters = {}
-	traits = {}
-	character_modifier = {
-		county_opinion_add = 5
-	}
+	character_modifier = {}
 }
 doctrine_christian_liturgical_rite_none = { #For faiths that don't practice the Eucharist
 	doctrine_group_type = christian_liturgirical_rites_group
@@ -504,17 +237,10 @@ doctrine_christian_liturgical_rite_none = { #For faiths that don't practice the 
 	
 	divergence = 100 #Insta-Heresy between having a rite and not having one
 	
-	piety_cost = {
-		value = christian_doctrine_cost_massive
-		
-		if = {
-			limit = { has_doctrine = doctrine_christian_liturgical_rite_none }
-			multiply = christian_doctrine_unchanged_cost_mult
-		}
+	can_pick = { is_ai = no }
+	parameters = {
+		blocks_eucharistic_tenets
 	}
-	can_pick = { uses_eucharistic_rite_trigger = no }
-	parameters = {}
-	traits = {}
 	character_modifier = {
 		monthly_piety_gain_mult = 0.05
 	}

@@ -205,6 +205,7 @@ doctrine_is_early_christianity = {
 		hostility_level_override = {
 			doctrine_is_ante_nicene_christianity = astray
 			doctrine_is_post_nicene_christianity = astray
+			doctrine_is_early_jewish_christian_group = astray
 		}
 	}
 }
@@ -229,6 +230,17 @@ doctrine_is_post_nicene_christianity = {
 		hostility_level_override = {
 			doctrine_is_early_christianity = righteous
 			doctrine_is_ante_nicene_christianity = righteous
+		}
+	}
+}
+doctrine_is_early_jewish_christian_group + {
+	doctrine_group_type = jewish_christian_linkage_group
+	index = 0
+	visible = no
+	
+	special_parameters = {
+		hostility_level_override = {
+			doctrine_is_early_christianity = righteous
 		}
 	}
 }

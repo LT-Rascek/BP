@@ -4,11 +4,11 @@
 	name = {
 		first_valid = {
 			triggered_desc = {
-				trigger = { pam_latin_as_liturgical_language_trigger = yes }
+				trigger = { rite_has_parameter = liturgical_language_latin }
 				desc = tenet_dyophysitism_latin_name
 			}
 			triggered_desc = {
-				trigger = { pam_greek_as_liturgical_language_trigger = yes }
+				trigger = { rite_has_parameter = liturgical_language_greek }
 				desc = tenet_dyophysitism_greek_name
 			}
 			triggered_desc = {
@@ -22,11 +22,11 @@
 	desc = {
 		first_valid = {
 			triggered_desc = {
-				trigger = { pam_latin_as_liturgical_language_trigger = yes }
+				trigger = { rite_has_parameter = liturgical_language_latin }
 				desc = tenet_dyophysitism_latin_desc
 			}
 			triggered_desc = {
-				trigger = { pam_greek_as_liturgical_language_trigger = yes }
+				trigger = { rite_has_parameter = liturgical_language_greek }
 				desc = tenet_dyophysitism_greek_desc
 			}
 			triggered_desc = {
@@ -90,15 +90,11 @@ tenet_arianism = {
 	name = {
 		first_valid = {
 			triggered_desc = {
-				trigger = {
-					head_of_rite.culture ?= { has_cultural_parameter = language_group_east_germanic }
-				}
+				trigger = { rite_has_parameter = liturgical_language_gothic }
 				desc = tenet_arianism_gothic_name
 			}
 			triggered_desc = {
-				trigger = {
-					trigger = { rite_has_parameter = liturgical_language_latin }
-				}
+				trigger = { rite_has_parameter = liturgical_language_latin }
 				desc = tenet_arianism_latin_name
 			}
 			triggered_desc = {
@@ -112,9 +108,7 @@ tenet_arianism = {
 	desc = {
 		first_valid = {
 			triggered_desc = {
-				trigger = {
-					head_of_rite.culture ?= { has_cultural_parameter = language_group_east_germanic }
-				}
+				trigger = { rite_has_parameter = liturgical_language_gothic }
 				desc = tenet_arianism_gothic_desc
 			}
 			triggered_desc = {
