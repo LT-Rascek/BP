@@ -894,7 +894,7 @@ faction_demand.1001 = {
 		first_valid = {
 			triggered_desc = {
 				trigger = {
-					government_allows = state_faith
+					government_has_mechanic = state_faith
 					primary_title.state_faith != scope:peasant_leader.faith
 				}
 				desc = FACTION_DEMAND_POPULIST_DESC_ADMIN
@@ -966,7 +966,7 @@ faction_demand.1001 = {
 			faith.religious_head != root
 
 			# Option unavailable to realms with State Faith
-			NOT = { government_allows = state_faith }
+			NOT = { government_has_mechanic = state_faith }
 
 			###Restrictions to stop the AI converting quite so freely
 			trigger_if = {
@@ -1125,7 +1125,7 @@ faction_demand.1001 = {
 		name = FACTION_DEMAND_POPULIST_ACCEPT_CONVERT_STATE_FAITH
 
 		trigger = { # Only available if ruler fulfills the following:
-			government_allows = state_faith
+			government_has_mechanic = state_faith
 			primary_title.state_faith != scope:peasant_leader.faith
 			OR = { # You share religion OR faction leader's faith is the largest faith in the realm - This is to avoid flipping to a faith that doesn't make sense
 				religion = scope:peasant_leader.religion
@@ -1215,7 +1215,7 @@ faction_demand.1001 = {
 			# Only allow this option for governments with state faith it's a cultural populist faction
 			trigger_if = {
 				limit = {
-					government_allows = state_faith
+					government_has_mechanic = state_faith
 				}
 				primary_title.state_faith = scope:peasant_leader.faith
 				culture != scope:peasant_leader.culture
@@ -1346,7 +1346,7 @@ faction_demand.1001 = {
 					has_title = title:e_blue_horde
 					has_title = title:e_omnod_dalai_khanate
 					has_variable = conqueror
-					government_allows = state_faith
+					government_has_mechanic = state_faith
 				}
 			}
 		}
@@ -1359,7 +1359,7 @@ faction_demand.1001 = {
 				first_valid = {
 					triggered_desc = {
 						trigger = {
-							government_allows = state_faith
+							government_has_mechanic = state_faith
 							primary_title.state_faith != scope:peasant_leader.faith
 						}
 						desc = FACTION_DEMAND_POPULIST_REFUSE_ADMIN
@@ -3917,7 +3917,7 @@ faction_demand.9998 = {
 					has_title = title:e_omnod_dalai_khanate
 					has_title = title:e_byzantium
 					has_variable = conqueror
-					government_allows = state_faith
+					government_has_mechanic = state_faith
 				}
 			}
 			modifier = {

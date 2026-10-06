@@ -303,7 +303,7 @@ land_migration_tribal_kingdom = {
 			has_realm_law_flag = max_authority_level
 		}
 		trigger_if = {
-			limit = { NOT = { government_allows = administrative } }
+			limit = { NOT = { government_has_mechanic = administrative } }
 			custom_tooltip = {
 				text = powerful_vassals_think_highly_of_you
 				NOT = {

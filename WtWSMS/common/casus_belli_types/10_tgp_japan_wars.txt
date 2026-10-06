@@ -1113,7 +1113,7 @@ japan_demand_administrative_cb = {
 			if = {
 				limit = { is_independent_ruler = no }
 				if = {
-					limit = { government_allows = administrative }
+					limit = { government_has_mechanic = administrative }
 					change_influence = japan_demand_administrative_war_influence_value
 				}
 				else = { add_prestige_experience = japan_demand_administrative_war_prestige_value }
@@ -1439,7 +1439,7 @@ japan_imperial_expansion_cb = {
 			if = {
 				limit = { is_independent_ruler = no }
 				if = {
-					limit = { government_allows = administrative }
+					limit = { government_has_mechanic = administrative }
 					change_influence = japan_imperial_expansion_war_influence_value
 				}
 				else = { add_prestige_experience = japan_imperial_expansion_war_prestige_value }
@@ -1744,7 +1744,7 @@ japan_imperial_reconquest_cb = {
 			if = {
 				limit = { is_independent_ruler = no }
 				if = {
-					limit = { government_allows = administrative }
+					limit = { government_has_mechanic = administrative }
 					change_influence = japan_imperial_reconquest_war_influence_value
 				}
 				else = { add_prestige_experience = japan_imperial_reconquest_war_prestige_value }

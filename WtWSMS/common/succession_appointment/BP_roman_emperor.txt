@@ -451,8 +451,8 @@
 			if = {
 				limit = {
 					has_trait = deviant
-					exists = top_liege.primary_title.state_faith
-					trait_is_criminal_in_faith_trigger = { TRAIT = trait:deviant FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
+					exists = top_liege.primary_title.state_rite
+					trait_is_criminal_in_rite_trigger = { TRAIT = trait:deviant RITE = top_liege.primary_title.state_rite GENDER_CHARACTER = root }
 				}
 				add = {
 					value = -20
@@ -482,8 +482,8 @@
 			if = {
 				limit = {
 					has_trait = incestuous
-					exists = top_liege.primary_title.state_faith
-					trait_is_criminal_in_faith_trigger = { TRAIT = trait:incestuous FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
+					exists = top_liege.primary_title.state_rite
+					trait_is_criminal_in_rite_trigger = { TRAIT = trait:incestuous RITE = top_liege.primary_title.state_rite GENDER_CHARACTER = root }
 				}
 				add = {
 					value = -20
@@ -514,8 +514,8 @@
 			if = {
 				limit = {
 					has_trait = sodomite
-					exists = top_liege.primary_title.state_faith
-					trait_is_criminal_in_faith_trigger = { TRAIT = trait:sodomite FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
+					exists = top_liege.primary_title.state_rite
+					trait_is_criminal_in_rite_trigger = { TRAIT = trait:sodomite RITE = top_liege.primary_title.state_rite GENDER_CHARACTER = root }
 				}
 				add = {
 					value = -20
@@ -546,8 +546,8 @@
 			if = {
 				limit = {
 					has_trait = cannibal
-					exists = top_liege.primary_title.state_faith
-					trait_is_criminal_in_faith_trigger = { TRAIT = trait:cannibal FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
+					exists = top_liege.primary_title.state_rite
+					trait_is_criminal_in_rite_trigger = { TRAIT = trait:cannibal RITE = top_liege.primary_title.state_rite GENDER_CHARACTER = root }
 				}
 				add = {
 					value = -20
@@ -578,8 +578,8 @@
 			if = {
 				limit = {
 					has_trait = kinslayer_1
-					exists = top_liege.primary_title.state_faith
-					trait_is_criminal_in_faith_trigger = { TRAIT = trait:kinslayer_1 FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
+					exists = top_liege.primary_title.state_rite
+					trait_is_criminal_in_rite_trigger = { TRAIT = trait:kinslayer_1 RITE = top_liege.primary_title.state_rite GENDER_CHARACTER = root }
 				}
 				add = {
 					value = -20
@@ -610,8 +610,8 @@
 			if = {
 				limit = {
 					has_trait = kinslayer_2
-					exists = top_liege.primary_title.state_faith
-					trait_is_criminal_in_faith_trigger = { TRAIT = trait:kinslayer_2 FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
+					exists = top_liege.primary_title.state_rite
+					trait_is_criminal_in_rite_trigger = { TRAIT = trait:kinslayer_2 RITE = top_liege.primary_title.state_rite GENDER_CHARACTER = root }
 				}
 				add = {
 					value = -20
@@ -642,8 +642,8 @@
 			if = {
 				limit = {
 					has_trait = kinslayer_3
-					exists = top_liege.primary_title.state_faith
-					trait_is_criminal_in_faith_trigger = { TRAIT = trait:kinslayer_3 FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
+					exists = top_liege.primary_title.state_rite
+					trait_is_criminal_in_rite_trigger = { TRAIT = trait:kinslayer_3 RITE = top_liege.primary_title.state_rite GENDER_CHARACTER = root }
 				}
 				add = {
 					value = -20
@@ -674,8 +674,8 @@
 			if = {
 				limit = {
 					has_trait = witch
-					exists = top_liege.primary_title.state_faith
-					trait_is_criminal_in_faith_trigger = { TRAIT = trait:witch FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
+					exists = top_liege.primary_title.state_rite
+					trait_is_criminal_in_rite_trigger = { TRAIT = trait:witch RITE = top_liege.primary_title.state_rite GENDER_CHARACTER = root }
 				}
 				add = {
 					value = -20
@@ -706,8 +706,8 @@
 			if = {
 				limit = {
 					has_trait = adulterer
-					exists = top_liege.primary_title.state_faith
-					trait_is_criminal_in_faith_trigger = { TRAIT = trait:adulterer FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
+					exists = top_liege.primary_title.state_rite
+					trait_is_criminal_in_rite_trigger = { TRAIT = trait:adulterer RITE = top_liege.primary_title.state_rite GENDER_CHARACTER = root }
 				}
 				add = {
 					value = -20
@@ -738,8 +738,8 @@
 			if = {
 				limit = {
 					has_trait = fornicator
-					exists = top_liege.primary_title.state_faith
-					trait_is_criminal_in_faith_trigger = { TRAIT = trait:fornicator FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
+					exists = top_liege.primary_title.state_rite
+					trait_is_criminal_in_rite_trigger = { TRAIT = trait:fornicator RITE = top_liege.primary_title.state_rite GENDER_CHARACTER = root }
 				}
 				add = {
 					value = -20
@@ -906,13 +906,13 @@
 				}
 			}
 
-			# FAITH HOSTILITY
+			# RITE HOSTILITY
 			if = {
 				limit = {
-					top_liege.primary_title.state_faith ?= {
-						this != root.faith
-						faith_hostility_level = {
-							target = root.faith
+					top_liege.primary_title.state_rite ?= {
+						this != root.rite
+						rite_hostility_level = {
+							target = root.rite
 							value = faith_fully_accepted_level
 						}
 					}
@@ -945,7 +945,7 @@
 			}
 			else_if = {
 				limit = {
-					top_liege.primary_title.state_faith ?= {
+					top_liege.primary_title.state_rite ?= {
 						faith_hostility_level = {
 							target = root.faith
 							value = faith_astray_level
@@ -980,7 +980,7 @@
 			}
 			else_if = {
 				limit = {
-					top_liege.primary_title.state_faith ?= {
+					top_liege.primary_title.state_rite ?= {
 						faith_hostility_level = {
 							target = root.faith
 							value = faith_hostile_level
@@ -1015,7 +1015,7 @@
 			}
 			else_if = {
 				limit = {
-					top_liege.primary_title.state_faith ?= {
+					top_liege.primary_title.state_rite ?= {
 						faith_hostility_level = {
 							target = root.faith
 							value >= faith_evil_level

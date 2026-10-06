@@ -18,7 +18,7 @@ offer_foederatus_interaction = {
 
 	is_shown = {
 		scope:actor = {
-			NOT = { government_allows = administrative }
+			NOT = { government_has_mechanic = administrative }
 			is_independent_ruler = yes
 			culture = { has_innovation = innovation_roman_administration }
 			suzerain_can_have_federate_trigger = yes
@@ -353,7 +353,7 @@ offer_foederatus_interaction_administrative = {
 
 	is_shown = {
 		scope:actor = {
-			government_allows = administrative
+			government_has_mechanic = administrative
 			is_independent_ruler = yes
 			culture = { has_innovation = innovation_roman_administration }
 			suzerain_can_have_federate_trigger = yes

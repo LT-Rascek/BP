@@ -156,6 +156,7 @@ roman_administrative_themes = {
 			flag = admin_ai_is_builder
 			flag = admin_theme_civilian
 			flag = obligation_high_taxes
+			flag = province_civilian
 		}
 		roman_admin_theme_limitanei = {
 			is_shown = { scope:subject = { is_landed = yes } }
@@ -215,6 +216,7 @@ roman_administrative_themes = {
 			flag = admin_ai_is_warlike
 			flag = admin_theme_frontier
 			flag = admin_theme_can_raid
+			flag = province_military
 		}
 		roman_admin_theme_naval = {
 			is_shown = { scope:subject = { is_landed = yes } }
@@ -327,6 +329,7 @@ roman_administrative_themes = {
 			
 			flag = admin_tradeport_obligation_bonus
 			flag = admin_theme_naval
+			flag = province_military
 		}
 		##### Sub-Roman Themes
 		roman_admin_theme_military = {
@@ -382,6 +385,7 @@ roman_administrative_themes = {
 			flag = admin_theme_can_raid
 			flag = roman_admin_military_contract
 			flag = roman_landed_military_contract
+			flag = province_military
 		}
 	}
 }

@@ -434,11 +434,11 @@ task_conversion_valid_county_trigger = {
 		object = scope:councillor_liege
 		# The Shah has granted religious freedom to this faith, so holders are implicitly exempt
 		NAND = {
-			scope:councillor_liege.rite = { has_doctrine = doctrine_major_branch_dorustdin }
+			scope:councillor_liege.rite = { rite_has_doctrine = doctrine_major_branch_dorustdin }
 			holder ?= {
 				is_ruler = yes
 				is_independent_ruler = no
-				rite = { has_doctrine = special_doctrine_legalized_faith_persia }
+				rite = { rite_has_doctrine = special_doctrine_legalized_faith_persia }
 			}
 		}
 	}
@@ -471,10 +471,10 @@ task_conversion_valid_county_trigger = {
 	}
 	trigger_if = {
 		limit = {
-			scope:councillor_liege.rite = { has_doctrine = doctrine_major_branch_behdin }
-			exists = scope:councillor_liege.rite.religious_head.rite
+			scope:councillor_liege.rite = { rite_has_doctrine = doctrine_major_branch_behdin }
+			exists = scope:councillor_liege.faith.religious_head.rite
 		}
-		NOT = { this.rite.religious_head = scope:councillor_liege.rite.religious_head }
+		NOT = { this.faith.religious_head = scope:councillor_liege.faith.religious_head }
 	}
 	#Roman government minority rulers can't convert if they've aligned themselves with the Romans
 	trigger_if = {

@@ -90,6 +90,7 @@ doctrine_christian_liturgical_rite_african_rite = {
 		liturgical_language_latin
 		latin_rites_are_similar
 		uses_orthdox_liturgical_clothes
+		uses_term_lapsi #Hidden
 	}
 }
 ##### Greek Rites
@@ -237,7 +238,7 @@ doctrine_christian_liturgical_rite_none = { #For faiths that don't practice the 
 	
 	divergence = 100 #Insta-Heresy between having a rite and not having one
 	
-	can_pick = { is_ai = no }
+	can_pick = { scope:actor = { is_ai = no } }
 	parameters = {
 		blocks_eucharistic_tenets
 	}

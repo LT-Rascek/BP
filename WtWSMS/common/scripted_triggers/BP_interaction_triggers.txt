@@ -49,8 +49,8 @@ BP_demand_conversion_trigger = {
 			subject = scope:actor
 			object = scope:recipient
 			NOR = {
-				scope:actor.rite = { has_doctrine = doctrine_major_branch_behdin }
-				scope:actor = { any_liege_or_above = { this.rite = { has_doctrine = doctrine_major_branch_behdin } } }
+				scope:actor.rite = { rite_has_doctrine = doctrine_major_branch_behdin }
+				scope:actor = { any_liege_or_above = { this.rite = { rite_has_doctrine = doctrine_major_branch_behdin } } }
 			}
 		}
 	}

@@ -268,7 +268,7 @@ change_state_faith = {
 			##### Changed from Vanilla vvvvv
 			if = {
 				limit = {
-					top_liege.primary_title.state_rite = { has_doctrine_parameter = unreformed }
+					top_liege.primary_title.state_rite = { rite_has_parameter = unreformed }
 					NOT = { rite = { rite_has_parameter = unreformed } }
 				}
 				multiply = {
@@ -311,7 +311,7 @@ change_state_faith = {
 			##### Changed from Vanilla vvvvv
 			if = {
 				limit = {
-					top_liege.primary_title.state_rite = { has_doctrine_parameter = unreformed }
+					top_liege.primary_title.state_rite = { rite_has_parameter = unreformed }
 					NOT = { rite = { rite_has_parameter = unreformed } }
 				}
 				multiply = {

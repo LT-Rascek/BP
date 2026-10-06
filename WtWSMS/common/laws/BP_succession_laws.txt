@@ -25,7 +25,7 @@ roman_acclamation_succession_law = {
 	}
 	should_start_with = {
 		has_ep3_dlc_trigger = yes
-		government_allows = administrative
+		government_has_mechanic = administrative
 		OR = {
 			government_has_flag = government_is_subroman_administrative
 			government_has_flag = government_is_roman_administrative
@@ -55,7 +55,7 @@ roman_acclamation_succession_law = {
 		}
 	}
 	potential = {
-		government_allows = administrative
+		government_has_mechanic = administrative
 		is_independent_ruler = yes
 		OR = {
 			government_has_flag = government_is_subroman_administrative
@@ -87,7 +87,7 @@ roman_appointment_succession_law = {
 	}
 	should_start_with = {
 		has_ep3_dlc_trigger = yes
-		government_allows = administrative
+		government_has_mechanic = administrative
 		OR = {
 			government_has_flag = government_is_subroman_administrative
 			government_has_flag = government_is_roman_administrative
@@ -126,7 +126,7 @@ roman_appointment_succession_law = {
 		}
 	}
 	potential = {
-		government_allows = administrative
+		government_has_mechanic = administrative
 		is_independent_ruler = no
 		OR = {
 			government_has_flag = government_is_subroman_administrative

@@ -28,12 +28,12 @@ bp_federate_war_validity_trigger = {
 			#Case 2: Same Realm, but is not administrative
 			AND = {
 				scope:defender.top_liege = scope:attacker.top_liege
-				NOT = { scope:defender = { government_allows = administrative } }
+				NOT = { scope:defender = { government_has_mechanic = administrative } }
 			}
 			#Case 3: Same Realm, administrative but is a federate
 			AND = {
 				scope:defender.top_liege = scope:attacker.top_liege
-				scope:defender = { government_allows = administrative }
+				scope:defender = { government_has_mechanic = administrative }
 				scope:defender = { government_has_flag = government_is_quasi_feudal }
 			}
 		}

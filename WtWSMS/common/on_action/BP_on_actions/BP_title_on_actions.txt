@@ -263,7 +263,7 @@ BP_completely_landless_realm_vassal_change = {
 	trigger = {
 		scope:old_liege ?= {
 			is_independent_ruler = yes
-			government_allows = administrative
+			government_has_mechanic = administrative
 			is_landed = no
 			trigger_if = {
 				limit = { any_vassal = { count > 0 } }
@@ -301,7 +301,7 @@ BP_degrade_roman_government = {
 BP_cleanup_landless_chars_under_non_admin = {
 	trigger = {
 		root.top_liege != root
-		NOT = { root.top_liege ?= { government_allows = administrative } }
+		NOT = { root.top_liege ?= { government_has_mechanic = administrative } }
 		NOT = { any_held_title = { count > 0 is_landless_type_title = no } }
 		NOT = { any_held_title = { count > 0 is_head_of_faith = yes } }
 	}
@@ -365,7 +365,7 @@ on_title_lost = {
 BP_completely_landless_realm = {
 	trigger = {
 		is_independent_ruler = yes
-		government_allows = administrative
+		government_has_mechanic = administrative
 		is_landed = no
 		scope:title = { is_head_of_faith = no }
 		trigger_if = {
