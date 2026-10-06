@@ -1,7 +1,0 @@
-﻿ai_meaningful_celtic_presence_trigger = {
-	OR = {
-		any_vassal = { faith.religion ?= religion:celtic_religion }
-		any_sub_realm_county = { faith.religion ?= religion:celtic_religion }
-		any_neighboring_and_across_water_realm_owner = { faith.religion ?= religion:celtic_religion }
-	}
-}
