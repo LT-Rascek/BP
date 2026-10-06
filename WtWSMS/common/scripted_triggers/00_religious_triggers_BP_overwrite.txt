@@ -296,6 +296,24 @@ unique_christology_personal_trigger = {
 	}
 }
 
+#Changed from Vanilla: Extended to all WtWSMS Syncretisms
+unique_syncretism_trigger = {
+	custom_description = {
+		text = incompatible_tenet_other_syncretism_trigger
+		NOR = {
+			tenet:tenet_eastern_syncretism = { is_in_list = selected_doctrines }
+			tenet:tenet_unreformed_syncretism = { is_in_list = selected_doctrines }
+			tenet:tenet_christian_syncretism = { is_in_list = selected_doctrines }
+			tenet:tenet_islamic_syncretism = { is_in_list = selected_doctrines }
+			tenet:tenet_jewish_syncretism = { is_in_list = selected_doctrines }
+			tenet:tenet_sinitic_syncretism = { is_in_list = selected_doctrines }
+			##### Changed from Vanilla vvvvv
+			tenet:tenet_celtic_syncretism = { is_in_list = selected_doctrines }
+			##### Changed from Vanilla ^^^^^
+		}
+	}
+}
+
 ##### Changed from Vanilla: Tied into WtWSMS Mechanics
 can_create_rite_trigger = {
 

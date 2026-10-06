@@ -78,19 +78,42 @@ tenet_pursuit_of_power_dlc = {
 		}
 	}
 }
-tenet_isopsephy = {
-	icon = tenet_isopsephy
-	name = tenet_isopsephy_name
-	desc = tenet_isopsephy_desc
+tenet_numerology = {
+	icon = tenet_numerology
+
+	name = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { rite_has_parameter = liturgical_language_latin }
+				desc = tenet_numerology_latin_name
+			}
+			triggered_desc = {
+				trigger = { rite_has_parameter = liturgical_language_greek }
+				desc = tenet_numerology_greek_name
+			}
+			desc = tenet_numerology_name
+		}
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { rite_has_parameter = liturgical_language_latin }
+				desc = tenet_numerology_latin_desc
+			}
+			triggered_desc = {
+				trigger = { rite_has_parameter = liturgical_language_greek }
+				desc = tenet_numerology_greek_desc
+			}
+			desc = tenet_numerology_desc
+		}
+	}
 
 	is_shown = {}
-
-	can_pick = {
-		religion = religion:christianity_religion
-		unique_christology_trigger = yes
-	}
+	can_pick = {}
 	can_pick_as_personal_tenet = {
-		unique_christology_personal_trigger = yes
+		NOT = { has_personal_tenet = tenet_esotericism }
+		NOT = { has_personal_tenet = tenet_astrology }
 	}
 
 	piety_cost = {
@@ -98,28 +121,31 @@ tenet_isopsephy = {
 
 		# Multiplier for keeping same tenet
 		if = {
-			limit = { rite_has_tenet = tenet_isopsephy }
+			limit = { rite_has_tenet = tenet_numerology }
 			multiply = faith_unchanged_doctrine_cost_mult
 		}
 	}
 
-	divergence_multiplier = 1.5
+	divergence_multiplier = 1.0
 
-	character_modifier = {
-		different_faith_opinion = 15
+	character_modifier = {}
+
+	parameters = {
+		divine_the_stars_active
 	}
 
-	parameters = {}
+	personal_tenet_modifier = {}
 
-	personal_tenet_parameters = {}
+	personal_tenet_parameters = {
+		tenet_astrology_mystic_trait
+		tenet_esotericism_seek_spiritual_mysteries
+	}
 
 	traits = {
-		# Doctrinal fidelity to the one-united-nature formula vs. dissimulation under Chalcedonian pressure.
 		virtues = {
-			humble = { weight = 15 scale = 1 }
+			erudite = { weight = 10 scale = 1 }
+			lifestyle_mystic = { weight = 10 scale = 1 }
 		}
-		sins = {
-			arbitrary = { weight = 15 scale = 1 }
-		}
+		sins = {}
 	}
 }
