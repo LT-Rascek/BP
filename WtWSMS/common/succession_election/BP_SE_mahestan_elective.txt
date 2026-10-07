@@ -161,103 +161,143 @@ mahestan_elective = {
 	}
 	
 	electors = {
-		add = holder
-		add = {
-			type = title_dejure_vassals
-			limit = {
-				OR = { #1 or 2 tiers of difference for Electors.
-					scope:title = { tier = tier_county }
-					AND = {
-						scope:title = { tier = tier_duchy }
-						highest_held_title_tier >= tier_county
+		character_sets = {
+			mahestan_elective_elector_holder = { type = holder }
+			mahestan_elective_elector_de_jure_vassals = {
+				type = title_dejure_vassals
+				limit = {
+					OR = { #1 or 2 tiers of difference for Electors.
+						scope:title = { tier = tier_county }
+						AND = {
+							scope:title = { tier = tier_duchy }
+							highest_held_title_tier >= tier_county
+						}
+						AND = {
+							scope:title = { tier = tier_kingdom }
+							highest_held_title_tier >= tier_county
+						}
+						AND = {
+							scope:title = { tier = tier_empire }
+							highest_held_title_tier >= tier_duchy
+						}
 					}
-					AND = {
-						scope:title = { tier = tier_kingdom }
-						highest_held_title_tier >= tier_county
+					#Elector title must be a de jure vassal of the title being voted on; multi-Dukes
+					#(or similar) might have two duchies in multiple electoral domains, which they should
+					#be able to vote on. This is only valid for the highest-tier title (so a Duke-Elector
+					#who also owns a County which is an electoral title for another title does not get a
+					#vote from that county).
+					any_held_title = {
+						tier = root.highest_held_title_tier
+						exists = de_jure_liege
+						target_is_de_jure_liege_or_above = scope:title
 					}
-					AND = {
-						scope:title = { tier = tier_empire }
-						highest_held_title_tier >= tier_duchy
+					is_vassal_of = scope:holder
+					#Barbarians don't vote
+					OR = {
+						government_has_flag = government_is_tribal
+						government_has_flag = government_is_clan
 					}
+					#Must be of the faith
+					mahestan_elective_shared_faith_trigger = { TARGET_CHAR = scope:holder }
 				}
-				#Elector title must be a de jure vassal of the title being voted on; multi-Dukes
-				#(or similar) might have two duchies in multiple electoral domains, which they should
-				#be able to vote on. This is only valid for the highest-tier title (so a Duke-Elector
-				#who also owns a County which is an electoral title for another title does not get a
-				#vote from that county).
-				any_held_title = {
-					tier = root.highest_held_title_tier
-					exists = de_jure_liege
-					target_is_de_jure_liege_or_above = scope:title
-				}
-				is_vassal_of = scope:holder
-				#Barbarians don't vote
-				OR = {
-					government_has_flag = government_is_tribal
-					government_has_flag = government_is_clan
-				}
-				#Must be of the faith
-				mahestan_elective_shared_faith_trigger = { TARGET_CHAR = scope:holder }
 			}
-		}
-		add = {
-			type = holder_direct_vassals
-			limit = {
-				OR = { #1 or 2 tiers of difference for Electors.
-					scope:title = { tier = tier_county }
-					AND = {
-						scope:title = { tier = tier_duchy }
-						highest_held_title_tier >= 1
+			mahestan_elective_elector_de_jure_vassals = {
+				type = holder_direct_vassals
+				limit = {
+					OR = { #1 or 2 tiers of difference for Electors.
+						scope:title = { tier = tier_county }
+						AND = {
+							scope:title = { tier = tier_duchy }
+							highest_held_title_tier >= tier_county
+						}
+						AND = {
+							scope:title = { tier = tier_kingdom }
+							highest_held_title_tier >= tier_county
+						}
+						AND = {
+							scope:title = { tier = tier_empire }
+							highest_held_title_tier >= tier_duchy
+						}
 					}
-					AND = {
-						scope:title = { tier = tier_kingdom }
-						highest_held_title_tier >= 2
+					#Elector title must be a de jure vassal of the title being voted on; multi-Dukes
+					#(or similar) might have two duchies in multiple electoral domains, which they should
+					#be able to vote on. This is only valid for the highest-tier title (so a Duke-Elector
+					#who also owns a County which is an electoral title for another title does not get a
+					#vote from that county).
+					any_held_title = {
+						tier = root.highest_held_title_tier
+						exists = de_jure_liege
+						target_is_de_jure_liege_or_above = scope:title
 					}
-					AND = {
-						scope:title = { tier = tier_empire }
-						highest_held_title_tier >= 3
+					is_vassal_of = scope:holder
+					#Barbarians don't vote
+					OR = {
+						government_has_flag = government_is_tribal
+						government_has_flag = government_is_clan
 					}
+					#Must be of the faith
+					mahestan_elective_shared_faith_trigger = { TARGET_CHAR = scope:holder }
 				}
-				NOT = {
-					AND = {
-						scope:title = { tier = tier_duchy }
-						exists = primary_title.de_jure_liege.holder
-						primary_title.de_jure_liege.holder = scope:holder
+			}
+			mahestan_elective_elector_de_factor_vassals = {
+				type = holder_direct_vassals
+				limit = {
+					OR = { #1 or 2 tiers of difference for Electors.
+						scope:title = { tier = tier_county }
+						AND = {
+							scope:title = { tier = tier_duchy }
+							highest_held_title_tier >= 1
+						}
+						AND = {
+							scope:title = { tier = tier_kingdom }
+							highest_held_title_tier >= 2
+						}
+						AND = {
+							scope:title = { tier = tier_empire }
+							highest_held_title_tier >= 3
+						}
 					}
-					AND = {
-						scope:title = { tier = tier_kingdom }
-						highest_held_title_tier = tier_duchy
-						exists = primary_title.de_jure_liege.holder
-						primary_title.de_jure_liege.holder = scope:holder
+					NOT = {
+						AND = {
+							scope:title = { tier = tier_duchy }
+							exists = primary_title.de_jure_liege.holder
+							primary_title.de_jure_liege.holder = scope:holder
+						}
+						AND = {
+							scope:title = { tier = tier_kingdom }
+							highest_held_title_tier = tier_duchy
+							exists = primary_title.de_jure_liege.holder
+							primary_title.de_jure_liege.holder = scope:holder
+						}
+						AND = {
+							scope:title = { tier = tier_kingdom }
+							highest_held_title_tier = tier_county
+							exists = primary_title.de_jure_liege.de_jure_liege.holder
+							primary_title.de_jure_liege.de_jure_liege.holder = scope:holder
+						}
+						AND = {
+							scope:title = { tier = tier_empire }
+							highest_held_title_tier = tier_duchy
+							exists = primary_title.de_jure_liege.de_jure_liege.holder
+							primary_title.de_jure_liege.de_jure_liege.holder = scope:holder
+						}
+						AND = {
+							scope:title = { tier = tier_empire }
+							highest_held_title_tier = tier_kingdom
+							exists = primary_title.de_jure_liege.holder
+							primary_title.de_jure_liege.holder = scope:holder
+						}
 					}
-					AND = {
-						scope:title = { tier = tier_kingdom }
-						highest_held_title_tier = tier_county
-						exists = primary_title.de_jure_liege.de_jure_liege.holder
-						primary_title.de_jure_liege.de_jure_liege.holder = scope:holder
+					is_incapable = no
+					is_adult = yes
+					#Barbarians don't vote
+					OR = {
+						government_has_flag = government_is_tribal
+						government_has_flag = government_is_clan
 					}
-					AND = {
-						scope:title = { tier = tier_empire }
-						highest_held_title_tier = tier_duchy
-						exists = primary_title.de_jure_liege.de_jure_liege.holder
-						primary_title.de_jure_liege.de_jure_liege.holder = scope:holder
-					}
-					AND = {
-						scope:title = { tier = tier_empire }
-						highest_held_title_tier = tier_kingdom
-						exists = primary_title.de_jure_liege.holder
-						primary_title.de_jure_liege.holder = scope:holder
-					}
+					#Must be of the faith
+					mahestan_elective_shared_faith_trigger = { TARGET_CHAR = scope:holder }
 				}
-				is_incapable = no
-				is_adult = yes
-				#Barbarians don't vote
-				OR = {
-					government_has_flag = government_is_tribal
-					government_has_flag = government_is_clan
-				}
-				#Must be of the faith
-				mahestan_elective_shared_faith_trigger = { TARGET_CHAR = scope:holder }
 			}
 		}
 	}
@@ -285,9 +325,11 @@ mahestan_elective = {
 	
 	#scope:candidate = Candidate, scope:title = Title, scope:holder_candidate = Candidate currently selected by ruler.
 	candidates = {
-		add = {
-			type = holder_dynasty
-			limit = { mahestan_elective_potential_landless_dynastic_candidate_trigger = yes }
+		character_sets = {
+			mahestan_elective_candidates_dynasty = {
+				type = holder_dynasty
+				limit = { mahestan_elective_potential_landless_dynastic_candidate_trigger = yes }
+			}
 		}
 	}
 }

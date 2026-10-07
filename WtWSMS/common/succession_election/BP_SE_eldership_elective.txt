@@ -2,32 +2,30 @@
 
 eldership_elective = {
 	candidates = {
-		add = {
-			type = holder_dynasty
-			limit = {
-				feudal_elective_potential_landless_dynastic_candidate_trigger = yes
+		character_sets = {
+			eldership_elective_dynasty = {
+				type = holder_dynasty
+				limit = { feudal_elective_potential_landless_dynastic_candidate_trigger = yes }
 			}
 		}
 	}
 	electors = {
-		add = {
-			type = holder_direct_vassals
-			limit = {
-				is_incapable = no
-				is_adult = yes
-			}
-		}
-		add = {
-			type = title_dejure_vassals
-			limit = {
-				is_incapable = no
-				is_adult = yes
-				any_liege_or_above = { this = scope:holder }
-			}
-		}
-		add = holder
 		max = 8
-		priority = {
+		character_sets = {
+			eldership_electors_holder = {
+				type = holder
+				priority_value = { base = 10000 }
+			}
+			eldership_electors_dejure_vassals = {
+				type = title_dejure_vassals
+				limit = {
+					is_incapable = no
+					is_adult = yes
+					any_liege_or_above = { this = scope:holder }
+				}
+			}
+		}
+		priority_value = {
 			base = 1
 			modifier = {
 				add = 1
