@@ -70,7 +70,7 @@ update_rite_doctrines_and_tenets = {
 		#baltic_religion
 		rite:baltic_pagan = {
 			basic_unreformed_paganism_change_effect = yes
-			change_doctrine = special_doctrine_przeworsk_complex
+			change_rite_doctrine = special_doctrine_przeworsk_complex
 		}
 		#basque_religion
 		#biliku_religion
@@ -85,7 +85,7 @@ update_rite_doctrines_and_tenets = {
 		rite:bon = { set_rite_enabled = no }
 		rite:old_bon = {
 			basic_unreformed_paganism_change_effect = yes
-			change_doctrine = doctrine_ritual_vegetarianism_no_statement
+			change_rite_doctrine = doctrine_ritual_vegetarianism_no_statement
 			remove_rite_tenet = tenet_eastern_syncretism
 			add_rite_tenet = tenet_bhakti
 		}
@@ -101,7 +101,12 @@ update_rite_doctrines_and_tenets = {
 		rite:yogacara = { set_rite_enabled = no }
 		rite:lamaism = { set_rite_enabled = no }
 		rite:acharya = { set_rite_enabled = no }
+		rite:theravada = { change_rite_doctrine = special_doctrine_is_buddhist_faith }
+		rite:mahayana = { change_rite_doctrine = special_doctrine_is_buddhist_faith }
+		rite:vajrayana = { change_rite_doctrine = special_doctrine_is_buddhist_faith }
 		#christianity_religion
+		rite:apostolic_christianity = { set_rite_enabled = no }
+		rite:antenicene_christianity = { set_rite_enabled = no }
 		rite:catholic = { set_rite_enabled = no }
 		rite:lollard = { set_rite_enabled = no }
 		rite:cathar = { set_rite_enabled = no }
@@ -131,7 +136,7 @@ update_rite_doctrines_and_tenets = {
 		#finno_ugric_religion
 		rite:finnish_pagan = {
 			basic_unreformed_paganism_change_effect = yes
-			change_doctrine = doctrine_witchcraft_virtuous
+			change_rite_doctrine = doctrine_witchcraft_virtuous
 		}
 		#germanic_religion
 		#hantuism_religion
@@ -168,31 +173,31 @@ update_rite_doctrines_and_tenets = {
 		rite:druze = { set_rite_enabled = no }
 		#jainism_religion
 		rite:digambara = {
-			change_doctrine = special_doctrine_is_jainism_faith
-			change_doctrine = doctrine_theocracy_lay_clergy
-			change_doctrine = doctrine_pluralism_pluralistic
-			change_doctrine = doctrine_concubines
-			change_doctrine = nudity_doctrine_naked_priests
-			change_doctrine = doctrine_right_to_rule_rajadharma
-			change_doctrine = doctrine_ritual_vegetarianism_required
+			change_rite_doctrine = special_doctrine_is_jainism_faith
+			change_rite_doctrine = doctrine_theocracy_lay_clergy
+			change_rite_doctrine = doctrine_pluralism_pluralistic
+			change_rite_doctrine = doctrine_concubines
+			change_rite_doctrine = nudity_doctrine_naked_priests
+			change_rite_doctrine = doctrine_right_to_rule_rajadharma
+			change_rite_doctrine = doctrine_ritual_vegetarianism_required
 		}
 		rite:svetambara = {
-			change_doctrine = special_doctrine_is_jainism_faith
-			change_doctrine = doctrine_theocracy_lay_clergy
-			change_doctrine = doctrine_pluralism_pluralistic
-			change_doctrine = doctrine_concubines
-			change_doctrine = nudity_doctrine_no_naked_priests
-			change_doctrine = doctrine_right_to_rule_rajadharma
-			change_doctrine = doctrine_ritual_vegetarianism_required
+			change_rite_doctrine = special_doctrine_is_jainism_faith
+			change_rite_doctrine = doctrine_theocracy_lay_clergy
+			change_rite_doctrine = doctrine_pluralism_pluralistic
+			change_rite_doctrine = doctrine_concubines
+			change_rite_doctrine = nudity_doctrine_no_naked_priests
+			change_rite_doctrine = doctrine_right_to_rule_rajadharma
+			change_rite_doctrine = doctrine_ritual_vegetarianism_required
 		}
 		rite:yapaniya = {
-			change_doctrine = special_doctrine_is_jainism_faith
-			change_doctrine = doctrine_theocracy_lay_clergy
-			change_doctrine = doctrine_pluralism_pluralistic
-			change_doctrine = doctrine_concubines
-			change_doctrine = nudity_doctrine_naked_priests
-			change_doctrine = doctrine_right_to_rule_rajadharma
-			change_doctrine = doctrine_ritual_vegetarianism_required
+			change_rite_doctrine = special_doctrine_is_jainism_faith
+			change_rite_doctrine = doctrine_theocracy_lay_clergy
+			change_rite_doctrine = doctrine_pluralism_pluralistic
+			change_rite_doctrine = doctrine_concubines
+			change_rite_doctrine = nudity_doctrine_naked_priests
+			change_rite_doctrine = doctrine_right_to_rule_rajadharma
+			change_rite_doctrine = doctrine_ritual_vegetarianism_required
 		}
 		#judaism_religion
 		rite:karaism = { set_rite_enabled = no }
@@ -247,7 +252,7 @@ update_rite_doctrines_and_tenets = {
 		#west_african_religion
 		#west_african_roog_religion
 		#yazidi_religion
-		#TODO: Yazidi
+		rite:yazidi = { set_rite_enabled = no }
 		rite:meshefaresism = { set_rite_enabled = no }
 		rite:kitebacilweism = { set_rite_enabled = no }
 		#zoroastrianism_religion

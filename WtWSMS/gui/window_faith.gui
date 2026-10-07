@@ -2983,7 +2983,7 @@ types FaithWindow
 			icon_doctrine = {
 				name = "doctrine_icon_other"
 				##### Changed from Vanilla vvvvv
-				visible = "[And3( Not( DoctrineCategoryType.HasTag( 'main' ) ),Not( DoctrineCategoryType.HasTag( 'special' ) ),Not( DoctrineCategoryType.HasTag( 'ritual' ) ) )]"
+				visible = "[And4( Not( DoctrineCategoryType.HasTag( 'main' ) ),Not( DoctrineCategoryType.HasTag( 'special' ) ),Not( DoctrineCategoryType.HasTag( 'ritual' ) ), Not( DoctrineCategoryType.HasTag( 'religion_specific' ) ) )]"
 				##### Changed from Vanilla ^^^^^
 				texture = "[DoctrineType.GetGroup.GetIcon]"
 				size = { 40 40 }
@@ -3000,6 +3000,15 @@ types FaithWindow
 			icon_doctrine = {
 				name = "doctrine_icon_ritual"
 				visible = "[DoctrineCategoryType.HasTag( 'ritual' )]"
+				texture = "[DoctrineType.GetIcon]"
+				size = { 40 40 }
+			}
+			##### Changed from Vanilla ^^^^^
+
+			##### Changed from Vanilla vvvvv
+			icon_doctrine = {
+				name = "doctrine_icon_specific_to_religion"
+				visible = "[DoctrineCategoryType.HasTag( 'religion_specific' )]"
 				texture = "[DoctrineType.GetIcon]"
 				size = { 40 40 }
 			}

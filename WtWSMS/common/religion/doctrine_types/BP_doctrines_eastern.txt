@@ -63,8 +63,12 @@ special_doctrine_is_nastika_faith = {
 		reforging_artifacts_costs_piety = yes
 		destroying_artifacts_is_pious = yes
 		clergy_are_always_monks = yes
+		lowers_divergence
 	}
 	special_parameters = {
+		bonus_heresy_protection = 1
+		divergence_protection = 1
+		heresy_threshold = 20
 		hostility_levels = {
 			same_religion = righteous
 			same_family = astray

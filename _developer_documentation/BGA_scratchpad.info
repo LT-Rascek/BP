@@ -16,54 +16,44 @@ stopped and completed scripted_triggers
 - Doctrines don't seem to be able to block tenet selection; let PDX know
 
 =======================
-First Order (AKA first sweep and impelmentation of plan):
+First Order (AKA first sweep and implementation of plan):
 -----------------------
-- Unify Nastika Faiths
+- All Germans have Visclan Traditions doctrine [FIXED?]
+- Messianic Jews should view Apostolic Christianity as Righteous and viewed as astray by them [NOT FIXED]
+- Make unused faiths as unavailable; might be triggering the baseline issue [NOT QUITE FIXED; see Buddhists?]
+- nudity_doctrine_* [FIXED?]
 
+- Nestorian faith name
+- Shrautism missing icon
+- Buddhists are Theocrats, lots of visible buddhist faiths
 - Catherine Wheel for Mastimani
-
-- nudity_doctrine_*
+- Armenian Faith isn't hidden
 - special_doctrine_arian_ecumenism
+- Using wrong nake priests doctrine for jains (it's in the special doctrines category)
+
+- Religion specific doctrines aren't shown in the branch rite view
 
 - Duplicate Rite issue
 
 Religion:
-- unique_christology_trigger needs overwrite
-- Manicheans and Western Manicheans consider Christianity too good (astray/righteous)
-- Right to Rule Doctrines
-- Messianic Jews should view Apostolic Christianity as Righteous
-- Mystery naming hookup for Mystery Religion Tenet
-- Fixup existing localizations and resort
-- Revise Mainline Rites as Appropriate (size &c.)
-- Polytheistic Syncretism should have increased heresy/divergence effects
-   - Gives option for head of rites of polytheistic faiths to become hellenic (aka like Gallic)
+- Manicheans and Western Manicheans consider Christianity too good (astray for syncretics? Boo!)
 - Fundamentalism for the Celtiberians as they held out against Romanization
-- Rigorism should hate Adaptability, outlining the Africa-Dontaist Split
 - Additional Monasticism category for Clerics always being Monastics
-   - Applies for Christians as well as Cybelians
+   - Applies for some Christians as well as Cybelians
    - clergy_are_always_monks parameter - linked with monasticism doctrine
+- Doctrine for "Truly Hellenic" faiths for the truly_hellenic_faith_trigger
 
 Christian Borks:
-- Aquelianism is using the wrong localization for Dyophysitism
 - Revamp pam liturgical language stuff
-- pam_latin_as_liturgical_language_trigger and pam_greek_as_liturgical_language_trigger &c. need complete overhaul
-	- Christology Tenet name/desc triggers need fixup
 - Add rule blocks for Apostolic and Ante-Nicene Christianity
-- `uses_eucharistic_rite_trigger` unused
 - Ecumenism tenets are borked
 - Duplicated Rites:
    - Marcionism, Nestorianism
-- Remove otherwise non-existant Christian faiths in a way that's conformal with vanilla
 
-General Mechanics:
-- Theocratic Faiths should not have non-theocrats as head of rite
-
-- Replace `_early_christian` with `_debated` to be more properly general in doctrine type
 - Add in 2nd Temple and 1st Temple Judaism for full Jewish history
 
 History:
-- Get Rid of Gothic Patriarchate
-- Ephesus should be a Miaphysite center
+- Ephesus should be a Miaphysite center, with Miaphysite provinces
 - Add some Messalian provinces
 - Remove Mehrism and associated RICE on actions
 - Clerical Regions need overhaul
@@ -80,6 +70,9 @@ GUI:
 GFX:
 - Overwrite DLC music/start illustration object
 - Only B8G8R8A8_UNORM support so far. Texture file : gfx/interface/icons/faith/mfi_triskelion.dds 
+
+Final:
+- Revise Mainline Rites as Appropriate (size &c.)
 
 =======================
 Second Order Sweep (AKA after putting in all the chrome):
@@ -108,6 +101,7 @@ Game Start:
 - Remove `change_faith_if_alive_effect` via history cleanups
 
 Mechanics:
+- blocks_eucharistic_tenets needs to have an on action function
 - Need a new level for influence (if possible to add in)
 - Utilize the Preservation system to tie decreasing divergence tolerance to more scriptural basis
    - Needs to be advantages to doing this
@@ -130,7 +124,11 @@ Script Values:
 - `great_holy_war_target_kingdom_weight` for new religions
 - Court Chaplain Values need overhaul
 
+Subject Contracts:
+- Tax Slots might be working finally, so try splitting as appropriate for Iranian vs. Clan
+
 Minorities:
+- faith_conversion.0001: Large minority left over
 - window_county_view.gui (fervor box and faith linking)
 - BP_easter_egg_effects.txt
 - apply_minority_faith_promotion_effect
@@ -160,16 +158,16 @@ Patron Deity Decisions:
    - select_personal_nat_decision - Review if needed
 
 Doctrines:
+- Christian Liturgical Rites/Hellenic Liturgical Languages: Rework can_pick/is_shown values
+
 - Icons for Liturgical Languages
 - Figure out how we're going to handle church structure doctrines; in the west it should be tending towards Papal Primacy and Collegiality in the East
-- Roman Polytheism should have some sort of Divergence/Heresy tolerance mechanic
 - Henotheism needed for Bhakti and Khuramazta
 - Get Doctrines et al sorted, including Rite to Rule
 - Move Vegetarianism from Special group
 - Remove RICE buddhism doctrines
 - Add in Power Doctrine (main for now)
-- Add in Eastern Pagan,  Faith Doctrine (special)
-- Add Nastika Faith Doctrine, Naked Priests, Roman Polytheism
+- Add in Eastern Pagan, Faith Doctrine (special)
 - Persian Legalization
 
 History:
@@ -189,6 +187,9 @@ GFX:
 =======================
 Third Order Sweep (AKA additional chrome):
 -----------------------
+
+General Mechanics:
+- Theocratic Faiths should not have non-theocrats as head of rite?
 
 Activities:
 - Rework Dharma `buddhist_retreat_decision` into an activity
@@ -226,21 +227,28 @@ Governments:
 - Update government `possible_grant_vassal_governments` to tamp down on tribalistic madness
 
 Localizations:
+- Fixup existing religion localizations and resort
 - Literalist Debate needs customized localization for various things (Philosophy, Complex Exegesis, &c.)
 - Jewish faiths use Tzadik instead of Saint
 - Insular Celtic using St. Patrick? If so, fix.
 
 Religions:
+- Hindu doctrine needs icon (grab an Ohm and get cracking!)
+- Use RICE Nikaya and Pugadalavada icons to build new rite/faith icons
+- Review faith_creation_events.1001 for all new tenets
+- Dynamic religious clothes: Decouple clothing triggers from faiths
+- Dynamic liturgical language system to replace the various hard-coded systems
+- Hellenic Paganism Doctrine unlocks ability to shift faiths into the Hellenic milieu
+- Mystery naming hookup for Mystery Religion Tenet
 - Romans get ability to fold faiths into the faith (explains gallic paganism)
 - Game rule whether to apply Patristic interpretation on things like Messalian et al. or our more neutral version
-- Isopsephy Special Effect for Children
+- Numerology Special Effect for Children
 - Unique Clerical Region type for Roman Faiths, to allow for Platonic Academy et al?
 - Add some special type of flag (possibly a straight GUI tenet lookup) to highlight different types of Tenets (Eucharistic, Soteriology, Christology) for easy user identification
 - Tweak Preservation doctrines so they are visible and selectable, with appropriate requirements
 - Total Depravity should get more benefits for positive fulfilment and more maluses for negative fulfilment
 - Review the weights and scales for all virtues and sins
 - Remove old, outdated localizations
-- Doctrine for "Truly Hellenic" faiths for the truly_hellenic_faith_trigger
 
 General Review:
 - "Might want to rework existing religions (Peristani et al) since it's no longer strictly required
