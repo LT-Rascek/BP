@@ -1,4 +1,130 @@
-﻿##### Changed from Vanilla: Gave dynamic name and description
+﻿##### Changed from Vanilla: Not visible to Nastika
+
+# Aniconism / Iconomachia / Eikonomakhía
+tenet_aniconism = {
+	icon = tenet_aniconism
+
+	##### Changed from Vanilla vvvvv
+	is_shown = { NOT = { religion_tag = nastika_religion } }
+	##### Changed from Vanilla ^^^^^
+
+	name = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					has_pam_dlc_trigger = yes
+					pam_latin_as_liturgical_language_trigger = yes
+				}
+				desc = tenet_aniconism_latin_name
+			}
+			triggered_desc = {
+				trigger = {
+					has_pam_dlc_trigger = yes
+					pam_greek_as_liturgical_language_trigger = yes
+				}
+				desc = tenet_aniconism_greek_name
+			}		
+			triggered_desc = {
+				trigger = {
+					has_pam_dlc_trigger = yes
+					pam_greek_as_liturgical_language_trigger = no
+					pam_latin_as_liturgical_language_trigger = no
+				}
+				desc = tenet_aniconism_default_name
+			}
+			desc = tenet_aniconism_name
+		}
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					has_pam_dlc_trigger = yes
+					pam_latin_as_liturgical_language_trigger = yes
+				}
+				desc = tenet_aniconism_latin_desc
+			}
+			triggered_desc = {
+				trigger = {
+					has_pam_dlc_trigger = yes
+					pam_greek_as_liturgical_language_trigger = yes
+				}
+				desc = tenet_aniconism_greek_desc
+			}
+			triggered_desc = {
+				trigger = {
+					has_pam_dlc_trigger = yes
+					pam_greek_as_liturgical_language_trigger = no
+					pam_latin_as_liturgical_language_trigger = no
+				}
+				desc = tenet_aniconism_default_desc
+			}
+			desc = tenet_aniconism_desc
+		}
+	}
+
+	piety_cost = {
+		if = {
+			limit = {
+				OR = {
+					rite_religion_tag = christianity_religion
+					rite_religion_tag = judaism_religion
+					rite_religion_tag = islam_religion
+				}
+			}
+			value = faith_tenet_cost_low
+		}
+		else = {
+			value = faith_tenet_cost_mid
+		}
+
+		# Multiplier for keeping same tenet
+		if = {
+			limit = { rite_has_tenet = tenet_aniconism }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	can_pick = {
+		has_doctrine = abrahamic_hostility_doctrine
+		custom_description = {
+			text = incompatible_doctrine_mummification_trigger
+			NOT = { doctrine:doctrine_funeral_mummification = { is_in_list = selected_doctrines } }
+		}
+	}
+
+	divergence_multiplier = 1.5
+
+	character_modifier = {
+		church_holding_build_speed = -0.33
+		church_holding_build_gold_cost = -0.33
+		church_holding_holding_build_speed = -0.33
+		church_holding_holding_build_gold_cost = -0.33
+	}
+
+	parameters = {
+		reforging_artifacts_costs_piety
+		destroying_artifacts_is_pious
+		no_optional_cathedral_contributions
+		tenet_aniconism_siege_destruction_bonus
+	}
+
+	personal_tenet_parameters = {
+		tenet_aniconism_destruction_fulfillment
+	}
+
+	traits = {
+		virtues = {
+			humble = { weight = 15 scale = 1 }
+		}
+		sins = {
+			architect = { weight = 20 scale = 1 }
+		}
+	}
+}
+
+##### Changed from Vanilla: Gave dynamic name and description
 
 # Endura / Ritual Suicide / Consolamentum / Paráklēsis
 tenet_consolamentum = {

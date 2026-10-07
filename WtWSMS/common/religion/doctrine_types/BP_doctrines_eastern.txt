@@ -1,5 +1,5 @@
 ﻿special_doctrine_is_hinduism_faith = {
-	doctrine_group_type = special_tolerance
+	doctrine_group_type = hindu_special_doctrine_group
 	parameters = {
 		reincarnation_resistance_to_conversion = yes
 		reincarnation_events_active = yes
@@ -12,7 +12,12 @@
 	}
 }
 special_doctrine_is_jainism_faith = {
-	doctrine_group_type = special_tolerance
+	doctrine_group_type = sramana_special_doctrine_group
+	
+	icon = "special_doctrine_is_jain_faith"
+	
+	is_shown = { religion_tag = jainism_religion }
+	
 	parameters = {
 		reincarnation_events_active = yes
 		clergy_are_always_monks = yes
@@ -25,7 +30,12 @@ special_doctrine_is_jainism_faith = {
 	}
 }
 special_doctrine_is_buddhist_faith = {
-	doctrine_group_type = special_tolerance
+	doctrine_group_type = sramana_special_doctrine_group
+	
+	icon = "special_doctrine_is_buddhist_faith"
+	
+	is_shown = { religion_tag = buddhism_religion }
+	
 	parameters = {
 		reincarnation_events_active = yes
 		clergy_are_always_monks = yes
@@ -37,8 +47,10 @@ special_doctrine_is_buddhist_faith = {
 	}
 }
 special_doctrine_is_nastika_faith = {
-	doctrine_group_type = special_tolerance
+	doctrine_group_type = sramana_special_doctrine_group
 	icon = "special_doctrine_is_nastika_faith"
+	
+	is_shown = { religion_tag = nastika_religion }
 	
 	# Aniconism effects
 	character_modifier = {
@@ -70,5 +82,16 @@ special_doctrine_is_eastern_pagan_faith = {
 			eastern_hostility_doctrine = astray
 			special_doctrine_is_eastern_pagan_faith = astray
 		}
+	}
+}
+nudity_doctrine_no_naked_priests = {
+	doctrine_group_type = nudity_doctrine_group
+	icon = "nudity_doctrine_no_naked_priests"
+}
+nudity_doctrine_naked_priests = {
+	doctrine_group_type = nudity_doctrine_group
+	icon = "nudity_doctrine_naked_priests"
+	parameters = {
+		naked_priests_active = yes
 	}
 }

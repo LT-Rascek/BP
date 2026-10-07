@@ -26,11 +26,38 @@ jewish_christian_linkage_group = {
 	doctrine_lock = religion
 	is_available_on_create = { religion_tag = judaism_religion }
 }
+#Dharmic
+sramana_special_doctrine_group = {
+	category = specific_to_religion
+	#3 different categories that are only visible if you have the specific religion
+	is_available_on_create = {
+		OR = {
+			religion_tag = nastika_religion
+			religion_tag = buddhism_religion
+			religion_tag = jainism_religion
+		}
+	}
+}
+nudity_doctrine_group = {
+	category = specific_to_religion
+	OR = {
+		religion_tag = nastika_religion
+		religion_tag = jainism_religion
+	}
+}
+hindu_special_doctrine_group = {
+	category = specific_to_religion
+	is_available_on_create = { religion_tag = hinduism_religion }
+}
 #General Pagan
 archeology_complex_group = {
 	category = specific_to_religion
-	#Should go away on any reformation (you've now deviated too much)
+	#Should go away on any reformation (you've now deviated too much from ye old days!)
 	is_available_on_create = { always = no }
+}
+eastern_pagan_group = {
+	category = specific_to_religion
+	is_available_on_create = { has_doctrine = special_doctrine_is_eastern_pagan_faith }
 }
 #Hellenic
 hellenic_special_doctrine_group = {
