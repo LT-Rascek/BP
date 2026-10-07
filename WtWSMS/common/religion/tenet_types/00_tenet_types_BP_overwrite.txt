@@ -532,6 +532,96 @@ tenet_ancestor_worship = {
 	}
 }
 
+##### Changed from Vanilla: Made easier to pick in general, custom localization
+
+# Sun Worship
+tenet_sun_worship = {
+	icon = tenet_sun_worship
+
+	##### Changed from Vanilla vvvvv
+	name = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { rite_has_parameter = liturgical_language_latin }
+				desc = tenet_sun_worship_latin_name
+			}
+			triggered_desc = {
+				trigger = { rite_has_parameter = liturgical_language_greek }
+				desc = tenet_sun_worship_greek_name
+			}
+			desc = tenet_sun_worship_name
+		}
+	}
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { rite_has_parameter = liturgical_language_latin }
+				desc = tenet_sun_worship_latin_desc
+			}
+			triggered_desc = {
+				trigger = { rite_has_parameter = liturgical_language_greek }
+				desc = tenet_sun_worship_greek_desc
+			}
+			desc = tenet_sun_worship_desc
+		}
+	}
+	##### Changed from Vanilla ^^^^^
+
+	piety_cost = {
+		value = faith_tenet_cost_mid
+
+		# Multiplier for keeping same tenet
+		if = {
+			limit = { rite_has_tenet = tenet_sun_worship }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	can_pick = {
+		OR = {
+			religion = religion:zunism_religion
+			has_tenet = tenet_sun_worship #If you already have it
+			AND = {
+				religion = religion:hinduism_religion
+				this = faith:saura #If you're into Saurism
+			}
+			##### Changed from Vanilla vvvvv
+			scope:actor.rite = { rite_has_parameter = unreformed }
+			this.main_rite = { has_tenet = tenet_sun_worship }
+			##### Changed from Vanilla ^^^^^
+		}
+	}
+
+	parameters = {
+		summer_festivals_active
+		trial_by_sun_active
+		sanctify_artifacts_regal
+	}
+
+	personal_tenet_parameters = {
+		tenet_sun_worship_free_hikes
+		tenet_sun_worship_desert_pilgrim
+	}
+
+	character_modifier = {
+		desert_attrition_mult = -0.25
+		desert_mountains_attrition_mult = -0.25
+	}
+
+	personal_tenet_modifier = {
+		character_travel_speed_mult = 0.15
+	}
+
+	traits = {
+		virtues = {
+			honest = { weight = 15 scale = 1 }
+		}
+		sins = {
+			deceitful = { weight = 15 scale = 1 }
+		}
+	}
+}
+
 
 ##### Changed from Vanilla: simply unavailable
 tenet_household_gods = {
