@@ -14,7 +14,7 @@ eldership_elective = {
 		character_sets = {
 			eldership_electors_holder = {
 				type = holder
-				priority_value = { base = 10000 }
+				priority_value = { value = 10000 }
 			}
 			eldership_electors_dejure_vassals = {
 				type = title_dejure_vassals
@@ -25,7 +25,7 @@ eldership_elective = {
 				}
 			}
 		}
-		priority_value = {
+		priority = {
 			base = 1
 			modifier = {
 				add = 1

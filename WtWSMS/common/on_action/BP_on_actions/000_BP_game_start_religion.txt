@@ -9,9 +9,33 @@ on_game_start = {
 bp_game_start_religion = {
 	on_actions = {
 		#Religious Stuff
+		override_vanilla_names
 		convert_christian_chars_to_rites
 		swap_tenets_based_on_dlc
 		#set_ethnic_religion_flags
+	}
+}
+
+override_vanilla_names = {
+	effect = {
+		faith:hellenic_pagan = {
+			set_faith_name = {
+				name = hellenism_faith
+				desc = hellenism_faith_desc
+				adjective = hellenism_faith_adj
+				adherent = hellenism_faith_adherent
+				adherent_plural = hellenism_faith_adherent_plural
+			}
+		}
+		faith:norse_pagan = {
+			set_faith_name = {
+				name = germanic_faith
+				desc = germanic_faith_desc
+				adjective = germanic_faith_adj
+				adherent = germanic_faith_adherent
+				adherent_plural = germanic_faith_adherent_plural
+			}
+		}
 	}
 }
 

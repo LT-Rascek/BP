@@ -358,8 +358,8 @@
 				limit = {
 					top_liege.primary_title.state_rite ?= {
 						this != root.faith
-						faith_hostility_level = {
-							target = root.faith
+						rite_hostility_level = {
+							target = root.rite
 							value = faith_fully_accepted_level
 						}
 					}
@@ -372,8 +372,8 @@
 			else_if = {
 				limit = {
 					top_liege.primary_title.state_rite ?= {
-						faith_hostility_level = {
-							target = root.faith
+						rite_hostility_level = {
+							target = root.rite
 							value = faith_astray_level
 						}
 					}
@@ -386,8 +386,8 @@
 			else_if = {
 				limit = {
 					top_liege.primary_title.state_rite ?= {
-						faith_hostility_level = {
-							target = root.faith
+						rite_hostility_level = {
+							target = root.rite
 							value = faith_hostile_level
 						}
 					}
@@ -400,8 +400,8 @@
 			else_if = {
 				limit = {
 					top_liege.primary_title.state_rite ?= {
-						faith_hostility_level = {
-							target = root.faith
+						rite_hostility_level = {
+							target = root.rite
 							value >= faith_evil_level
 						}
 					}
