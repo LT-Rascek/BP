@@ -89,32 +89,32 @@ local_rites.1 = {
 		# Pick out possible locations
 		# First any Special Building Shrines
 		# If I am the Emperor of China I go to Mount Tai
-#		if = {
-#			limit = {
-#				#I am the emperor
-#				has_title = title:h_china
-#				#My dynasty did not perform this sacrifice before
-#				dynasty = {
-#					NOT = { has_variable = fengshan_performed }
-#				}
-#				#The Cycle is stable
-#				OR = {
-#					situation:dynastic_cycle = {
-#						situation_current_phase = situation_dynastic_cycle_phase_stability_expansion
-#					}
-#					situation:dynastic_cycle = {
-#						situation_current_phase = situation_dynastic_cycle_phase_stability_advancement
-#					}
-#				}
-#				title:b_xuchang = {
-#					this != root.capital_barony
-#					holder.top_liege = root
-#				}
-#			}
-#			title:b_xuchang = {
-#				title_province = { save_scope_as = mount_tai_location }
-#			}
-#		}
+		#if = {
+		#	limit = {
+		#		#I am the emperor
+		#		has_title = title:h_china
+		#		#My dynasty did not perform this sacrifice before
+		#		dynasty = {
+		#			NOT = { has_variable = fengshan_performed }
+		#		}
+		#		#The Cycle is stable
+		#		OR = {
+		#			situation:dynastic_cycle = {
+		#				situation_current_phase = situation_dynastic_cycle_phase_stability_expansion
+		#			}
+		#			situation:dynastic_cycle = {
+		#				situation_current_phase = situation_dynastic_cycle_phase_stability_advancement
+		#			}
+		#		}
+		#		title:b_qianfeng = {
+		#			this != root.capital_barony
+		#			holder.top_liege = root
+		#		}
+		#	}
+		#	title:b_qianfeng = {
+		#		title_province = { save_scope_as = mount_tai_location }
+		#	}
+		#}
 		# Everyone else
 		if = {
 			limit = {
@@ -311,16 +311,16 @@ local_rites.1 = {
 		trigger_event = local_rites.3 #When you sacrifice at home this is instant.
 	}
 
-#	# I am the Emperor Headed for Mt Tai
-#	option = {
-#		trigger = {
-#			exists = scope:mount_tai_location
-#			scope:mount_tai_location.barony = title:b_xuchang
-#		}
-#		name = local_rites.1.mount_tai
-#		local_shrine_at_location_effect = { SHRINE = mount_tai }
-#		custom_tooltip = local_rites.1.fengshan.tt
-#	}
+	## I am the Emperor Headed for Mt Tai
+	#option = {
+	#	trigger = {
+	#		exists = scope:mount_tai_location
+	#		scope:mount_tai_location.barony = title:b_qianfeng
+	#	}
+	#	name = local_rites.1.mount_tai
+	#	local_shrine_at_location_effect = { SHRINE = mount_tai }
+	#	custom_tooltip = local_rites.1.fengshan.tt
+	#}
 	# Visit Famous Shrine - High Impact, High Offering Expectation
 	option = {
 		trigger = { exists = scope:point_of_interest_location }
@@ -394,8 +394,11 @@ local_rites.5 = {
 				}
 				save_scope_as = companion
 			}
-			root.current_travel_plan ?= {
-				add_companion = scope:companion
+			if = {
+				limit = { exists = scope:companion }
+				current_travel_plan ?= {
+					add_companion = scope:companion
+				}
 			}
 		}
 	}
@@ -422,27 +425,19 @@ local_rites.3 = { #Destination - Making a Sacrifice
 	type = character_event
 	title = {
 		first_valid = {
-#			triggered_desc = {
-#				trigger = {
-#					has_title = title:h_china
-#					var:shrine_location.barony = title:b_xuchang
-#				}
-#				desc = local_rites.3.t.fengshan #Fang Shan
-#			}
+			#triggered_desc = {
+			#	trigger = {
+			#		has_title = title:h_china
+			#		var:shrine_location.barony = title:b_qianfeng
+			#	}
+			#	desc = local_rites.3.t.fengshan #Feng Shan
+			#}
 			triggered_desc = {
 				trigger = {
 					OR = {
 						OR = {
 							faith = { is_in_family = rf_sinitic }
-							faith = faith:pundarika
-							faith = faith:mantrayana
-							faith = faith:dhyana
-							faith = faith:sukhavati
-							faith = faith:avatamsaka
-							faith = faith:maitreya
-							faith = faith:vinaya
-							faith = faith:yogacara
-							faith = faith:acharya
+							faith = faith:mahayana_faith
 						}
 					}
 				}
@@ -457,13 +452,13 @@ local_rites.3 = { #Destination - Making a Sacrifice
 				trigger = { scope:at_home = yes }
 				desc = local_rites.3.desc_at_home
 			}
-#			triggered_desc = {
-#				trigger = {
-#					has_title = title:h_china
-#					var:shrine_location.barony = title:b_xuchang
-#				}
-#				desc = local_rites.3.desc_mt_tai_huangdi
-#			}
+			#triggered_desc = {
+			#	trigger = {
+			#		has_title = title:h_china
+			#		var:shrine_location.barony = title:b_qianfeng
+			#	}
+			#	desc = local_rites.3.desc_mt_tai_huangdi
+			#}
 			triggered_desc = {
 				trigger = {
 					var:shrine_location = {
@@ -519,13 +514,13 @@ local_rites.3 = { #Destination - Making a Sacrifice
 		}
 	}
 	theme = faith
-#	override_background = { #Fengshan
-#		trigger = {
-#			has_title = title:h_china
-#			var:shrine_location.barony = title:b_xuchang
-#		}
-#		reference = mpo_steppe_evening
-#	}
+	#override_background = { #Fengshan
+	#	trigger = {
+	#		has_title = title:h_china
+	#		var:shrine_location.barony = title:b_qianfeng
+	#	}
+	#	reference = mpo_steppe_evening
+	#}
 	override_background = {
 		trigger = {	scope:at_home = yes }
 		reference = tgp_temple_asia
@@ -650,100 +645,100 @@ local_rites.3 = { #Destination - Making a Sacrifice
 			}
 		}
 
-#		#Are we at Mt Tai? Am I the Emperor?
-#		if = {
-#			limit = {
-#				has_title = title:h_china
-#				var:shrine_location.barony = title:b_xuchang
-#			}
-#			hidden_effect = {
-#				dynasty = { set_variable = fengshan_performed }
-#			}
-#		}
+		##Are we at Mt Tai? Am I the Emperor?
+		#if = {
+		#	limit = {
+		#		has_title = title:h_china
+		#		var:shrine_location.barony = title:b_qianfeng
+		#	}
+		#	hidden_effect = {
+		#		dynasty = { set_variable = fengshan_performed }
+		#	}
+		#}
 	}
 
-#	option = {
-#		name = fengshan_option
-#		trigger = {
-#			has_title = title:h_china
-#			var:shrine_location.barony = title:b_xuchang
-#		}
-#		add_treasury = {
-#			value = major_treasury_value
-#			multiply = -1
-#		}
-#		add_prestige = massive_prestige_loss
-#		add_legitimacy = massive_legitimacy_gain
-#		add_piety = major_piety_gain
-#	}
-	option = {
-		name = local_rites.3.pay_gold
-		trigger = {
-			scope:at_home = no
-			NOR = {
-				has_title = title:h_china
-				#var:shrine_location.barony = title:b_xuchang
-			}
-		}
-		#Pay Gold - Get Piety
-		switch = {
-			trigger = exists
-			scope:hills_location = {
-				remove_short_term_gold = minor_gold_value
-				add_piety = medium_piety_gain
-			}
-			scope:mountains_location = {
-				remove_short_term_gold = minor_gold_value
-				add_piety = medium_piety_gain
-			}
-			scope:temple_holding_location = {
-				remove_short_term_gold = medium_gold_value
-				add_piety = major_piety_gain
-			}
-			scope:forest_location = {
-				remove_short_term_gold = minor_gold_value
-				add_piety = medium_piety_gain
-			}
-			scope:shrine_location = {
-				remove_short_term_gold = medium_gold_value
-				add_piety = major_piety_gain
-			}
-		}
-	}
-	option = {
-		name = local_rites.3.pay_prestige
-		trigger = {
-			scope:at_home = no
-			NOR = {
-				has_title = title:h_china
-				#var:shrine_location.barony = title:b_xuchang
-			}
-		}
-		#Pay Prestige - Get Piety
-		switch = {
-			trigger = exists
-			scope:hills_location = {
-				add_prestige = minor_prestige_loss
-				add_piety = medium_piety_gain
-			}
-			scope:mountains_location = {
-				add_prestige = minor_prestige_loss
-				add_piety = medium_piety_gain
-			}
-			scope:temple_holding_location = {
-				add_prestige = medium_prestige_loss
-				add_piety = major_piety_gain
-			}
-			scope:forest_location = {
-				add_prestige = minor_prestige_loss
-				add_piety = medium_piety_gain
-			}
-			scope:shrine_location = {
-				add_prestige = medium_prestige_loss
-				add_piety = major_piety_gain
-			}
-		}
-	}
+	#option = {
+	#	name = fengshan_option
+	#	trigger = {
+	#		has_title = title:h_china
+	#		var:shrine_location.barony = title:b_qianfeng
+	#	}
+	#	add_treasury = {
+	#		value = major_treasury_value
+	#		multiply = -1
+	#	}
+	#	add_prestige = massive_prestige_loss
+	#	add_legitimacy = massive_legitimacy_gain
+	#	add_piety = major_piety_gain
+	#}
+	#option = {
+	#	name = local_rites.3.pay_gold
+	#	trigger = {
+	#		scope:at_home = no
+	#		NOR = {
+	#			has_title = title:h_china
+	#			var:shrine_location.barony = title:b_qianfeng
+	#		}
+	#	}
+	#	#Pay Gold - Get Piety
+	#	switch = {
+	#		trigger = exists
+	#		scope:hills_location = {
+	#			remove_short_term_gold = minor_gold_value
+	#			add_piety = medium_piety_gain
+	#		}
+	#		scope:mountains_location = {
+	#			remove_short_term_gold = minor_gold_value
+	#			add_piety = medium_piety_gain
+	#		}
+	#		scope:temple_holding_location = {
+	#			remove_short_term_gold = medium_gold_value
+	#			add_piety = major_piety_gain
+	#		}
+	#		scope:forest_location = {
+	#			remove_short_term_gold = minor_gold_value
+	#			add_piety = medium_piety_gain
+	#		}
+	#		scope:shrine_location = {
+	#			remove_short_term_gold = medium_gold_value
+	#			add_piety = major_piety_gain
+	#		}
+	#	}
+	#}
+	#option = {
+	#	name = local_rites.3.pay_prestige
+	#	trigger = {
+	#		scope:at_home = no
+	#		NOR = {
+	#			has_title = title:h_china
+	#			var:shrine_location.barony = title:b_qianfeng
+	#		}
+	#	}
+	#	#Pay Prestige - Get Piety
+	#	switch = {
+	#		trigger = exists
+	#		scope:hills_location = {
+	#			add_prestige = minor_prestige_loss
+	#			add_piety = medium_piety_gain
+	#		}
+	#		scope:mountains_location = {
+	#			add_prestige = minor_prestige_loss
+	#			add_piety = medium_piety_gain
+	#		}
+	#		scope:temple_holding_location = {
+	#			add_prestige = medium_prestige_loss
+	#			add_piety = major_piety_gain
+	#		}
+	#		scope:forest_location = {
+	#			add_prestige = minor_prestige_loss
+	#			add_piety = medium_piety_gain
+	#		}
+	#		scope:shrine_location = {
+	#			add_prestige = medium_prestige_loss
+	#			add_piety = major_piety_gain
+	#		}
+	#	}
+	#}
 	option = {
 		name = local_rites.3.pay_at_home #So be it
 		trigger = {
@@ -756,7 +751,7 @@ local_rites.3 = { #Destination - Making a Sacrifice
 	}
 
 	after = {
-		stress_impact = { #Not the main purpose of the trip but the ritual comes with some stress relief
+		stress_and_fulfillment_impact = { #Not the main purpose of the trip but the ritual comes with some stress relief
 			base = minor_stress_impact_loss
 			zealous = minor_stress_impact_loss
 			cynical = minor_stress_impact_gain

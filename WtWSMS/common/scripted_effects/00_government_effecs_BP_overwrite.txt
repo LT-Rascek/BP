@@ -187,3 +187,61 @@
 	## Else feudal.
 	else = { assign_feudal_governments_effect = yes }
 }
+
+##### Changed from Vanilla: Added Feudal/Clan Blockers
+assign_feudal_governments_effect = {
+	if = {
+		limit = {
+			tgp_can_become_japanese_feudal_trigger = yes
+		}
+		change_government = japan_feudal_government
+	}
+	##### Changed from Vanilla vvvvv
+	else_if = {
+		limit = {
+			NAND = {
+				culture = { has_innovation = innovation_aristocracy }
+				culture = { has_innovation = innovation_hereditary_rule }
+				}
+			}
+		change_government = prefeudal_government
+	}
+	##### Changed from Vanilla ^^^^^
+	else_if = {
+		limit = {
+			ep3_is_clan_inclined_trigger = yes
+		}
+		change_government = clan_government
+	}
+	else = {
+		change_government = feudal_government
+	}
+}
+
+update_feudal_governments_by_religion_effect = {
+	##### Changed from Vanilla vvvvv
+	if = {
+		limit = {
+			NAND = {
+				culture = { has_innovation = innovation_aristocracy }
+				culture = { has_innovation = innovation_hereditary_rule }
+				}
+			}
+		change_government = prefeudal_government
+	}
+	else_if = {
+	##### Changed from Vanilla ^^^^^
+		limit = {
+			faith = { religion_tag = islam_religion }
+			government_has_flag = government_is_feudal
+		}
+		change_government = clan_government
+	}
+	else_if = {
+		limit = {
+			ep3_is_clan_inclined_trigger = no
+			government_has_flag = government_is_clan
+		}
+		change_government = feudal_government
+	}
+}

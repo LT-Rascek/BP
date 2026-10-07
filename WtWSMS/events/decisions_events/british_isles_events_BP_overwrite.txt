@@ -1,0 +1,128 @@
+﻿##### Changed from Vanilla: Replaced heritage_brythonic/heritage_goidelic with heritage_celtic
+namespace = british_isles
+
+# Players informed
+british_isles.0002 = {
+	##### Changed from Vanilla vvvvv
+	id_override_priority = 1
+	##### Changed from Vanilla ^^^^^
+	type = character_event
+	title = british_isles.0001.t
+	desc = british_isles.0002.desc
+	theme = realm
+	left_portrait = {
+		character = scope:reclaimer
+		animation = personality_honorable
+	}
+
+	option = { # Not celtic
+		name = british_isles.0002.a
+		trigger = {
+			NOR = {
+				culture = { has_cultural_pillar = heritage_goidelic }
+				culture = { has_cultural_pillar = heritage_brythonic }
+			}
+		}
+	}
+	option = { # Also celtic
+		name = british_isles.0002.b
+		trigger = {
+			OR = {
+				#culture = { has_cultural_pillar = heritage_goidelic }
+				#culture = { has_cultural_pillar = heritage_brythonic }
+				culture = { has_cultural_pillar = heritage_celtic }
+			}
+		}
+	}
+}
+
+british_isles.2001 = {
+	##### Changed from Vanilla vvvvv
+	id_override_priority = 1
+	##### Changed from Vanilla ^^^^^
+	type = character_event
+	title = british_isles.2001.t
+	desc = british_isles.2001.desc
+	theme = culture_change
+	left_portrait = {
+		character = scope:embracer
+		animation = personality_bold
+	}
+
+	immediate = {
+		save_scope_as = embracer
+		culture = { save_scope_as = embracer_former_culture }
+	}
+
+	option = {
+		name = british_isles.2001.a
+		embrace_english_culture_effect = yes
+		hidden_effect = { # Moved here from embrace_english_culture_decision
+			# Send event to other players
+			every_player = {
+				limit = {
+					this != root
+					OR = {
+						primary_title = {
+							OR = {
+								de_jure_liege = title:e_britannia
+								de_jure_liege.de_jure_liege = title:e_britannia
+								de_jure_liege.de_jure_liege.de_jure_liege = title:e_britannia
+							}
+						}
+						culture = { has_cultural_pillar = heritage_north_germanic }
+						culture = { has_cultural_pillar = heritage_central_germanic }
+						culture = { has_cultural_pillar = heritage_west_germanic }
+						#culture = { has_cultural_pillar = heritage_goidelic }
+						#culture = { has_cultural_pillar = heritage_brythonic }
+						culture = { has_cultural_pillar = heritage_celtic }
+					}
+				}
+				trigger_event = british_isles.2002
+			}
+		}
+	}
+}
+
+british_isles.3001 = {
+	##### Changed from Vanilla vvvvv
+	id_override_priority = 1
+	##### Changed from Vanilla ^^^^^
+	type = letter_event
+	opening = {
+		desc = british_isles.3001.t
+	}
+	desc = british_isles.3001.desc
+	sender = {
+		character = scope:scoped_pope
+		animation = personality_zealous
+	}
+
+	immediate = {
+		save_scope_as = scoped_ruler
+		root.faith.religious_head = {
+			save_scope_as = scoped_pope
+		}
+		house = {
+			add_house_modifier = {
+				modifier = ireland_laudabiliter_modifier
+				years = 100
+			}
+		}
+	}
+
+	option = { #Inform relevant players.
+		name = british_isles.3001.a
+		every_player = {
+			limit = {
+				this != root
+				OR = {
+					culture = { has_cultural_pillar = heritage_west_germanic }
+					#culture = { has_cultural_pillar = heritage_goidelic }
+					culture = { has_cultural_pillar = heritage_celtic }
+				}
+			}
+			trigger_event = british_isles.3002
+		}
+	}
+}

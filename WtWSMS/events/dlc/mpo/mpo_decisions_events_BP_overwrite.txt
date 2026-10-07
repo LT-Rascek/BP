@@ -1,0 +1,94 @@
+﻿##### Changed from Vanilla: Fixed innovation reference
+
+namespace = mpo_decisions_events
+
+# Pax Mongolica event
+mpo_decisions_events.0400 = {
+	##### Changed from Vanilla vvvvv
+	id_override_priority = 1
+	##### Changed from Vanilla ^^^^^
+	type = character_event
+	title = mpo_decisions_events.0400.t
+	desc = mpo_decisions_events.0400.desc
+	theme = nomads
+	override_background = { reference = mpo_city_steppe }
+
+	left_portrait = {
+		character = root
+		animation = horse_archer_idle
+		camera = camera_event_horse_left
+	}
+	
+	right_portrait = {
+		character = scope:courtier
+		animation = obsequious_bow
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				any_courtier = {
+					is_available_ai_adult = yes
+				}
+			}
+			ordered_courtier = {
+				limit = {
+					is_available_ai_adult = yes
+				}
+				order_by = stewardship
+				save_scope_as = courtier
+			}
+		}
+		else = {
+			create_character = {
+				location = root.capital_province
+				template = merchant_template
+				culture = root.location.culture
+				faith = root.location.faith
+				rite = root.location.rite
+				save_scope_as = merchant
+			}
+		}
+	}
+	
+	# Happy day
+	option = {
+		name = mpo_decisions_events.0400.a
+		add_character_modifier = {
+			modifier = pax_mongolica_ruler_modifier # Forever
+		}
+		custom_tooltip = pax_mongolica_every_county_in_steppe_tt
+		every_realm_county = {
+			limit = {
+				is_landless_type_title = no
+				any_county_situation = { this = situation:the_great_steppe }
+				holder.dynasty = root.dynasty
+			}
+			random_county_province = {
+				limit = { has_holding = no }
+				set_holding_type = city_holding
+			}
+		}
+		culture = {
+			if = {
+				limit = { 
+					NOT = { has_innovation = innovation_city_planning }
+				}
+				add_innovation = innovation_city_planning
+			}
+			else_if = {
+				limit = { 
+					NOT = { has_innovation = innovation_development_bp_01 }
+				}
+				add_innovation = innovation_development_bp_01
+			}
+			else = {
+				add_random_innovation = culture_group_civic
+			}
+		}
+		
+		ai_chance = {
+			base = 50
+		}
+	}
+}

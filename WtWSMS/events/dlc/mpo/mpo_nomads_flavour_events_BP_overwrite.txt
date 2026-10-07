@@ -1,0 +1,471 @@
+﻿##### Changed from Vanilla: Added blockers to nomad_events.0250
+
+namespace = nomad_events
+
+##### Changed from Vanilla vvvvv
+scripted_trigger wtwsms_nomd_conversion_event_trigger = {
+	#In WtWSMS, let's avoid having religions spread too readily across the steppe
+	OR = {
+		current_year >= 800
+		root.capital_county = {
+			any_neighboring_county = {
+				NOT = { this.faith = { has_doctrine_parameter = unreformed } }
+			}
+		}
+	}
+}
+##### Changed from Vanilla ^^^^^
+
+nomad_events.0250 = {
+	##### Changed from Vanilla vvvvv
+	id_override_priority = 1
+	##### Changed from Vanilla ^^^^^
+	type = character_event
+	title = nomad_events.0250.t
+	desc = nomad_events.0250.desc
+	theme = nomads
+	override_background = { reference = mpo_campfire_steppe }
+	cooldown = { years = 25 }
+	
+	left_portrait = {
+		character = root
+		animation = drink
+	}
+	right_portrait = {
+		character = scope:priest
+		animation = holding_staff
+	}
+	
+	trigger = {
+		##### Changed from Vanilla vvvvv
+		wtwsms_nomd_conversion_event_trigger = yes
+		##### Changed from Vanilla ^^^^^
+		has_mpo_dlc_trigger = yes
+		government_has_flag = government_is_nomadic
+		is_available_adult = yes
+	}
+	
+	weight_multiplier = {
+		base = 1
+		modifier = {
+			any_pool_character = {
+				province = root.location
+				nomad_events_0250_valid_priest = yes
+			}
+			factor = 2
+		}
+		modifier = {
+			faith = { has_doctrine_parameter = unreformed }
+			current_year > 1065
+			factor = 2
+		}
+		modifier = {
+			faith = { has_doctrine_parameter = unreformed }
+			current_year > 1150
+			factor = 2
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				any_pool_character = {
+					province = root.location
+					nomad_events_0250_valid_priest = yes
+				}
+			}
+			random_pool_character = {
+				province = root.location 
+				limit = {
+					nomad_events_0250_valid_priest = yes
+				}
+				weight = {
+					base = 1
+					modifier = {
+						has_trait = zealous
+						add = 5
+					}
+				}
+				save_scope_as = priest
+			}
+		}
+		else_if = {
+			limit = {
+				any_neighboring_top_liege_realm_owner = {
+					NOR = {
+						faith = root.faith
+						faith = { has_doctrine_parameter = unreformed }
+					}
+				}
+			}
+			random_neighboring_top_liege_realm_owner = {
+				limit = {
+					NOR = {
+						faith = root.faith
+						faith = { has_doctrine_parameter = unreformed }
+					}
+				}
+				save_scope_as = neighboring_ruler
+			}
+			create_character = {
+				location = root.location
+				template = priest_character_template
+				gender_female_chance = root_faith_clergy_gender_female_chance
+				faith = scope:neighboring_ruler.faith
+				rite = scope:neighboring_ruler.rite
+				culture = scope:neighboring_ruler.culture
+				save_scope_as = priest
+			}
+			scope:priest = {
+				save_scope_as = created_priest
+			}
+		}	
+		else = {
+			random_list = {
+				10 = {
+					trigger = {
+						NOT = { faith = faith:sunni }
+						NOT = { any_character_situation = { this = situation:game_rule_extra_nomads_sami } }
+					}
+					modifier = {
+						location = { geographical_region = world_steppe_west }
+						add = 25
+					}
+					create_character = {
+						location = root.location
+						template = priest_character_template
+						gender_female_chance = root_faith_clergy_gender_female_chance
+						faith = faith:sunni
+						culture = culture:bolghar
+						save_scope_as = priest
+					}
+				}
+				10 = {
+					trigger = {
+						NOT = { faith = faith:kabarism }
+						any_character_situation = { this = situation:the_great_steppe }
+					}
+					modifier = {
+						location = { geographical_region = world_steppe_west }
+						add = 5
+					}
+					create_character = {
+						location = root.location
+						template = priest_character_template
+						gender_female_chance = root_faith_clergy_gender_female_chance
+						faith = faith:kabarism
+						culture = culture:khazar
+						save_scope_as = priest
+					}
+				}
+				10 = {
+					trigger = {
+						NOT = { faith = faith:nestorian }
+						any_character_situation = { this = situation:the_great_steppe }
+					}
+					modifier = {
+						location = { geographical_region = world_steppe_east }
+						add = 25
+					}
+					create_character = {
+						location = root.location
+						template = priest_character_template
+						gender_female_chance = root_faith_clergy_gender_female_chance
+						faith = faith:nestorian
+						culture = culture:kerait
+						save_scope_as = priest
+					}
+				}
+				10 = {
+					trigger = {
+						NOT = { faith = faith:vajrayana_faith }
+						any_character_situation = { this = situation:the_great_steppe }
+					}
+					modifier = {
+						location = { geographical_region = world_steppe_east }
+						add = 25
+					}
+					create_character = {
+						location = root.location
+						template = priest_character_template
+						gender_female_chance = root_faith_clergy_gender_female_chance
+						faith = faith:vajrayana_faith
+						culture = culture:uyghur
+						save_scope_as = priest
+					}
+				}
+				10 = {
+					trigger = {
+					NOT = { faith = faith:manichaean_faith }
+					any_character_situation = { this = situation:the_great_steppe }
+				}
+				modifier = {
+					location = { geographical_region = world_steppe_east }
+					add = 25
+				}
+				create_character = {
+					location = root.location
+					template = priest_character_template
+					gender_female_chance = root_faith_clergy_gender_female_chance
+					faith = faith:manichaean_faith
+						culture = culture:uyghur
+						save_scope_as = priest
+					}
+				}
+				10 = {
+					trigger = {
+						location = { geographical_region = world_steppe_east }
+						NOT = { faith = faith:zhengyi }
+					}
+					create_character = {
+						location = root.location
+						template = priest_character_template
+						gender_female_chance = root_faith_clergy_gender_female_chance
+						faith = faith:zhengyi
+						culture = culture:uyghur
+						save_scope_as = priest
+					}
+				}
+				10 = {
+					trigger = {
+						NOT = { faith = faith:sunni }
+						NOT = { any_character_situation = { this = situation:game_rule_extra_nomads_sami } }
+					}
+					modifier = {
+						location = { geographical_region = world_steppe_central }
+						add = 25
+					}
+					create_character = {
+						location = root.location
+						template = priest_character_template
+						gender_female_chance = root_faith_clergy_gender_female_chance
+						faith = faith:sunni
+						rite = rite:hanafi
+						culture = culture:turkish
+						save_scope_as = priest
+					}
+				}
+				10 = {
+					trigger = {
+						NOT = { rite = rite:alevi }
+						any_character_situation = { this = situation:the_great_steppe }
+					}
+					modifier = {
+						location = { geographical_region = world_steppe_central }
+						add = 15
+					}
+					create_character = {
+						location = root.location
+						template = priest_character_template
+						gender_female_chance = root_faith_clergy_gender_female_chance
+						faith = faith:shia
+						rite = rite:alevi
+						culture = culture:turkish
+						save_scope_as = priest
+					}
+				}
+				10 = {
+					trigger = {
+						NOT = { rite = rite:ismaili }
+						NOT = { any_character_situation = { this = situation:game_rule_extra_nomads_sami } }
+					}
+					modifier = {
+						location = { geographical_region = world_steppe_central }
+						add = 5
+					}
+					create_character = {
+						location = root.location
+						template = priest_character_template
+						gender_female_chance = root_faith_clergy_gender_female_chance
+						faith = faith:shia
+						rite = rite:ismaili
+						culture = culture:persian
+						save_scope_as = priest
+					}
+				}
+				1 = { # Fallback, rare
+					trigger = {
+						NOT = { faith = faith:catholic }
+					}
+					modifier = {
+						any_character_situation = { this = situation:game_rule_extra_nomads_sami }
+						add = 5000
+					}
+					create_character = {
+						location = root.location
+						template = priest_character_template
+						gender_female_chance = root_faith_clergy_gender_female_chance
+						faith = faith:catholic
+						culture = culture:italian
+						save_scope_as = priest
+					}
+				}
+			}
+			scope:priest = {
+				save_scope_as = created_priest
+			}
+		}
+		scope:priest = {
+			set_variable = had_nomad_events_0250_var
+		}
+	}
+	
+	option = { # Convert
+		name = nomad_events.0250.a
+		set_character_faith = scope:priest.faith
+		domicile = { set_domicile_faith = scope:priest.faith }
+		add_character_modifier = chosen_by_the_heavens_modifier
+		every_held_title = {
+			limit = {
+				tier = tier_county
+				is_landless_type_title = no
+			}
+			set_county_faith = scope:priest.faith
+		}
+		add_piety_level = 1
+		stress_and_fulfillment_impact = {
+			zealous = massive_stress_impact_gain
+			cynical = minor_stress_impact_loss
+		}
+		ai_chance = {
+			base = 20
+			modifier = {
+				any_character_situation = { this = situation:the_great_steppe }
+				OR = {
+					scope:priest.faith = faith:orthodox
+					scope:priest.religion = religion:hinduism_religion
+				}
+				add = -30
+			}
+			modifier = {
+				highest_held_title_tier >= tier_kingdom
+				faith = {
+					has_doctrine_parameter = unreformed
+				}
+				factor = 4
+			}
+			modifier = {
+				current_year > 1065
+				factor = 2
+			}
+			modifier = {
+				current_year > 1150
+				factor = 2
+			}
+			modifier = {
+				scope:priest.faith = { has_doctrine_parameter = unreformed }
+				factor = 0
+			}
+			modifier = { # Non-steppe regions are stickier and convert less freely
+				faith = {
+					NOT = { has_doctrine_parameter = unreformed }
+				}
+				any_character_situation = {
+					OR = {
+						this = situation:game_rule_extra_nomads_arabs
+						this = situation:game_rule_extra_nomads_sahel
+						this = situation:game_rule_extra_nomads_horn
+						this = situation:game_rule_extra_nomads_sami
+						this = situation:game_rule_extra_nomads_tibet
+					}
+			  	}
+				factor = 0
+			}
+			modifier = {
+				has_trait = zealous
+				factor = 0
+			}
+		}
+	}
+	
+	option = { # Invite them to stay
+		name = nomad_events.0250.b
+		add_courtier = scope:priest
+		add_hook = {
+			type = obligation_hook
+			target = scope:priest
+		}
+		custom_tooltip = obligation_hook_tt
+		stress_and_fulfillment_impact = {
+			compassionate = medium_stress_impact_loss
+			gregarious = medium_stress_impact_loss
+			shy = medium_stress_impact_gain
+			paranoid = medium_stress_impact_gain
+			callous = medium_stress_impact_gain
+		}
+		ai_chance = {
+			base = 100
+			modifier = {
+				OR = {
+					has_trait = shy
+					has_trait = paranoid
+					has_trait = callous
+				}
+				factor = 0
+			}
+			modifier = {
+				OR = {
+					has_trait = compassionate
+					has_trait = gregarious
+				}
+				factor = 2
+			}
+		}
+	}
+	
+	option = { # Tell them to go away
+		name = nomad_events.0250.c
+		add_piety = minor_piety_gain
+		stress_and_fulfillment_impact = {
+			compassionate = medium_stress_impact_gain
+			gregarious = medium_stress_impact_gain
+			shy = medium_stress_impact_loss
+			paranoid = medium_stress_impact_loss
+			callous = medium_stress_impact_loss
+		}
+		ai_chance = {
+			base = 100
+			modifier = {
+				OR = {
+					has_trait = compassionate
+					has_trait = gregarious
+				}
+				factor = 0
+			}
+			modifier = {
+				OR = {
+					has_trait = shy
+					has_trait = callous
+					has_trait = paranoid
+				}
+				factor = 2
+			}
+		}
+	}
+	
+	after = {
+		if = {
+			limit = {
+				scope:priest = {
+					NOT = {
+						is_courtier_of = root
+					}
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						is_ai = no
+						exists = scope:created_priest
+					}
+					scope:priest = { move_to_pool = yes }
+				}
+				else = {
+					scope:priest = {
+						death = { death_reason = death_mysterious }
+					}
+				}
+			}
+		}
+	}
+}

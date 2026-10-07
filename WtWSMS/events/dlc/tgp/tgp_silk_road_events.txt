@@ -10,7 +10,7 @@ tgp_silk_road_events.0010 = {
 			triggered_desc = {
 				trigger = {
 					OR = {
-						##### scope:market_temp = title:c_jingzhao # Chang'an
+						scope:market_temp = title:c_jingzhao # Chang'an
 						scope:market_temp = title:c_shazhou # Dunhuang
 					}
 				}
@@ -156,7 +156,7 @@ tgp_silk_road_events.0010 = {
 					type = event_toast_effect_bad
 					left_icon = root
 				}
-				stress_impact = {
+				stress_and_fulfillment_impact = {
 					greedy = minor_stress_impact_gain
 				}
 			}
@@ -230,7 +230,7 @@ tgp_silk_road_events.0100 = {
 
 	trigger = {
 		OR = {
-			##### has_title = title:c_jingzhao # Chang'an
+			#has_title = title:c_jingzhao # Chang'an
 			has_title = title:c_lhasa # Lhasa
 			has_title = title:c_lahur # Lahur
 			has_title = title:c_shazhou # Dunhuang
@@ -244,7 +244,7 @@ tgp_silk_road_events.0100 = {
 		# Find market for yearly if relevant
 		if = {
 			limit = { NOT = { exists = scope:title } }
-			##### title:c_jingzhao = { add_to_list = potential_markets } # Chang'an
+			#title:c_jingzhao = { add_to_list = potential_markets } # Chang'an
 			title:c_lhasa = { add_to_list = potential_markets } # Lhasa
 			title:c_lahur = { add_to_list = potential_markets } # Lahur
 			title:c_shazhou = { add_to_list = potential_markets } # Dunhuang
