@@ -882,3 +882,8 @@ create_hephthalite_476_army_effect = {
 		location = province:$LOCATION$
 	}
 }
+basic_unreformed_paganism_change_effect = { #Rite Scope
+	change_rite_doctrine = doctrine_pluralism_pluralistic
+	change_rite_doctrine = doctrine_theocracy_lay_clergy
+	change_rite_doctrine = doctrine_ritual_vegetarianism_no_statement
+}

@@ -26,7 +26,13 @@ jewish_christian_linkage_group = {
 	doctrine_lock = religion
 	is_available_on_create = { religion_tag = judaism_religion }
 }
-#Others
+#General Pagan
+archeology_complex_group = {
+	category = specific_to_religion
+	#Should go away on any reformation (you've now deviated too much)
+	is_available_on_create = { always = no }
+}
+#Hellenic
 hellenic_special_doctrine_group = {
 	category = specific_to_religion
 	doctrine_lock = religion
