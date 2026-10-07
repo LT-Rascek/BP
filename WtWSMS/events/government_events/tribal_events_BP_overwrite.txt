@@ -2,7 +2,74 @@
 
 namespace = tribal
 
+scripted_effect tribal_1001_start_sce_bout_effect = {
+	custom_tooltip = challenge_to_single_combat_interaction.enter_non_lethal_bout.tt
+	random_list = {
+		100 = {
+			show_chance = no
+			trigger = { exists = scope:liege_champion }
+			desc = tribal.1001.a_champion_success
+			scope:challenger = { tribal_1001_challenger_lost_effect = yes }
+		}
+		100 = {
+			show_chance = no
+			trigger = { exists = scope:liege_champion }
+			desc = tribal.1001.a_champion_failure
+			scope:challenger = { tribal_1001_transfer_liege_title_effect = yes }
+		}
+		100 = {
+			show_chance = no
+			trigger = {
+				NOT = { exists = scope:liege_champion }
+				this = scope:liege_to_challenge
+			}
+			desc = tribal.1001.a_success
+			scope:challenger = { tribal_1001_challenger_lost_effect = yes }
+		}
+		100 = {
+			show_chance = no
+			trigger = {
+				NOT = { exists = scope:liege_champion }
+				this = scope:liege_to_challenge
+			}
+			desc = tribal.1001.a_failure
+			scope:challenger = { tribal_1001_transfer_liege_title_effect = yes }
+		}
+		100 = {
+			show_chance = no
+			trigger = {
+				NOT = { exists = scope:liege_champion }
+				this = scope:challenger
+			}
+			desc = tribal.1001.a_failure
+			scope:challenger = { tribal_1001_challenger_lost_effect = yes }
+		}
+		100 = {
+			show_chance = no
+			trigger = {
+				NOT = { exists = scope:liege_champion }
+				this = scope:challenger
+			}
+			desc = tribal.1001.a_success
+			scope:challenger = { tribal_1001_transfer_liege_title_effect = yes }
+		}
+	}
+}
+
+scripted_trigger tribal_1001_champion_check_trigger = {
+	this != scope:challenger
+	can_be_combatant_based_on_gender_trigger = { ARMY_OWNER = root }
+	is_available = yes
+	is_adult = yes
+	is_ai = yes
+	NOT = { has_relation_rival = root }
+	can_start_single_combat_trigger = yes
+}
+
 tribal.1001 = {
+	##### Changed from Vanilla vvvvv
+	id_override_priority = 1
+	##### Changed from Vanilla ^^^^^
 	type = character_event
 	title = tribal.1001.t
 	desc = {

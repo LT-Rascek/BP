@@ -1,6 +1,19 @@
 ﻿##### Changed from Vanilla: Removed references to c_yamashiro
 namespace = tgp_japan_decision
 
+scripted_effect tgp_establish_house_fief_save_scopes_effect = {
+	top_liege ?= { save_scope_as = regent }
+	save_scope_as = new_head
+	house = {
+		save_scope_as = old_house
+		house_head = { save_scope_as = old_head }
+	}
+	random_held_title = {
+		limit = { is_noble_family_title = yes }
+		save_scope_as = old_nf_title
+	}
+}
+
 tgp_japan_decision.9001 = { # CHOOSE HOUSE NAME EVENT - WITH WIDGET
 	##### Changed from Vanilla vvvvv
 	id_override_priority = 1
