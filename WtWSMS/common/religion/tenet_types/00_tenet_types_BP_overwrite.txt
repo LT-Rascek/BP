@@ -124,7 +124,7 @@ tenet_aniconism = {
 	}
 }
 
-##### Changed from Vanilla: Extended Jewish name trigger effects
+##### Changed from Vanilla: Extended Jewish name trigger effects, add Gothic Flavor
 
 # Communal Identity / Chosen People / Populus Dei / Laòs Theoũ
 tenet_communal_identity = {
@@ -176,6 +176,13 @@ tenet_communal_identity = {
 					}
 				}
 				desc = tenet_communal_identity_chosen_people_name
+			}
+			triggered_desc = {
+				trigger = {
+					rite_has_doctrine = abrahamic_hostility_doctrine
+					rite_has_parameter = liturgical_language_gothic
+				}
+				desc = tenet_communal_identity_gothic_name
 			}
 			##### Changed from Vanilla ^^^^^
 			desc = tenet_communal_identity_name
@@ -253,6 +260,96 @@ tenet_communal_identity = {
 		}
 		sins = {
 			disloyal = { weight = 10 scale = 1 }
+		}
+	}
+}
+
+##### Changed from Vanilla: Add Gothic Flavor
+
+# Communion
+tenet_communion = {
+	icon = tenet_communion
+
+	##### Changed from Vanilla vvvvv
+	name = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					rite_has_doctrine = abrahamic_hostility_doctrine
+					rite_has_parameter = liturgical_language_gothic
+				}
+				desc = tenet_communion_gothic_name
+			}
+			desc = tenet_communion_name
+		}
+	}
+	##### Changed from Vanilla ^^^^^
+
+	piety_cost = {
+		if = {
+			limit = {
+				OR = {
+					rite_religion_tag = christianity_religion
+					rite_religion_tag = judaism_religion
+				}
+			}
+			value = faith_tenet_cost_low
+		}
+		else_if = {
+			limit = {
+				rite_has_doctrine = pagan_hostility_doctrine
+			}
+			value = faith_tenet_cost_high
+		}
+		else = {
+			value = faith_tenet_cost_mid
+		}
+
+		# Multiplier for keeping same tenet
+		if = {
+			limit = { rite_has_tenet = tenet_communion }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	can_pick = {
+		custom_description = {
+			text = doctrine_requires_head_of_faith_trigger
+			NOT = {
+				doctrine:doctrine_no_head = { is_in_list = selected_doctrines }
+			}
+		}
+		custom_description = {
+			text = incompatible_tenet_sacred_shadows_trigger
+			NOT = {
+				tenet:tenet_sacred_shadows = { is_in_list = selected_doctrines }
+			}
+		}
+	}
+
+	parameters = {
+		tenet_communion_denied_sacrament
+	}
+
+	county_modifier = {
+		monthly_county_control_decline_at_war_factor = -0.2
+		same_rite_county_opinion_add = 5
+	}
+
+	personal_tenet_parameters = {
+		tenet_communion_shared_table
+	}
+
+	personal_tenet_modifier = {
+		levy_reinforcement_rate_same_faith = 0.25
+	}
+
+	traits = {
+		virtues = {
+			honest = { weight = 20 scale = 1 }
+		}
+		sins = {
+			deceitful = { weight = 20 scale = 1 }
 		}
 	}
 }

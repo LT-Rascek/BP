@@ -52,6 +52,12 @@ eastern_pagan_group = {
 	category = specific_to_religion
 	is_available_on_create = { has_doctrine = special_doctrine_is_eastern_pagan_faith }
 }
+scythian_pagan_group = {
+	category = specific_to_religion
+	doctrine_lock = faith
+	is_available_on_create = { this = faith:scythian_faith }
+}
+
 #Hellenic
 hellenic_special_doctrine_group = {
 	category = specific_to_religion
