@@ -1,6 +1,40 @@
 ﻿##### Changed from Vanilla: Added blocker for Rise of Islam
 namespace = fp1_yearly
 
+scripted_trigger suitable_islamic_realm_trigger = {
+	#First off, we need people who will consider root a savage.
+	NOR = {
+		government_has_flag = government_is_tribal
+		government_has_flag = government_is_nomadic
+	}
+	#Next, filter down to the correct religion.
+	religion = religion:islam_religion
+	#Making sure to only grab rulers from the Middle East.
+	capital_province = {
+		OR = {
+			geographical_region = world_asia_minor
+			geographical_region = world_middle_east_jerusalem
+			geographical_region = world_middle_east_arabia
+			geographical_region = world_middle_east_persia
+			geographical_region = world_india_rajastan
+		}
+	}
+	#And then misc checks to make sure that the tone is correct.
+	top_liege = {
+		NOR = {
+			#Such as the liege not having much contact with Germanic Paganism.
+			religion = religion:germanic_religion
+			any_vassal_or_below = { religion = religion:germanic_religion }
+			#The realm not being positioned next door to root.
+			character_is_realm_neighbor = root.top_liege
+			#And the realm generally not being inside the same (admittedly large) area.
+			any_realm_county = {
+				title_province = { geographical_region = dlc_fp1_region_russian_steppe }
+			}
+		}
+	}
+}
+
 #	An Islamic explorer stops by for a visit.
 fp1_yearly.0041 = {
 	##### Changed from Vanilla vvvvv

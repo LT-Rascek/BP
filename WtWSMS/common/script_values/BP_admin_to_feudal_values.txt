@@ -326,7 +326,7 @@ percent_of_subroman_dynastic_dukes_with_subroman_dynastic_aristocracy_law_level_
 		limit = {
 			primary_title.tier >= tier_duchy
 			bp_realm_law_use_subroman_dynastic_aristocracy_trigger = yes
-			has_realm_law_flag = subroman_dynastic_aristocracy_law_0
+			has_realm_law_flag = authority_level_0
 		}
 		add = 1
 	}
@@ -339,8 +339,8 @@ percent_of_subroman_dynastic_dukes_with_subroman_dynastic_aristocracy_law_level_
 			primary_title.tier >= tier_duchy
 			bp_realm_law_use_subroman_dynastic_aristocracy_trigger = yes
 			OR = {
-				has_realm_law_flag = subroman_dynastic_aristocracy_law_0
-				has_realm_law_flag = subroman_dynastic_aristocracy_law_1
+				has_realm_law_flag = authority_level_0
+				has_realm_law_flag = authority_level_1
 			}
 		}
 		add = 1
@@ -365,9 +365,9 @@ percent_of_subroman_dynastic_dukes_with_subroman_dynastic_aristocracy_law_level_
 			primary_title.tier >= tier_duchy
 			bp_realm_law_use_subroman_dynastic_aristocracy_trigger = yes
 			OR = {
-				has_realm_law_flag = subroman_dynastic_aristocracy_law_0
-				has_realm_law_flag = subroman_dynastic_aristocracy_law_1
-				has_realm_law_flag = subroman_dynastic_aristocracy_law_2
+				has_realm_law_flag = authority_level_0
+				has_realm_law_flag = authority_level_1
+				has_realm_law_flag = authority_level_2
 			}
 		}
 		add = 1
@@ -392,10 +392,10 @@ percent_of_subroman_dynastic_dukes_with_subroman_dynastic_aristocracy_law_level_
 			primary_title.tier >= tier_duchy
 			bp_realm_law_use_subroman_dynastic_aristocracy_trigger = yes
 			OR = {
-				has_realm_law_flag = subroman_dynastic_aristocracy_law_0
-				has_realm_law_flag = subroman_dynastic_aristocracy_law_1
-				has_realm_law_flag = subroman_dynastic_aristocracy_law_2
-				has_realm_law_flag = subroman_dynastic_aristocracy_law_3
+				has_realm_law_flag = authority_level_0
+				has_realm_law_flag = authority_level_1
+				has_realm_law_flag = authority_level_2
+				has_realm_law_flag = authority_level_3
 			}
 		}
 		add = 1
@@ -420,11 +420,11 @@ percent_of_subroman_dynastic_dukes_with_subroman_dynastic_aristocracy_law_level_
 			primary_title.tier >= tier_duchy
 			bp_realm_law_use_subroman_dynastic_aristocracy_trigger = yes
 			OR = {
-				has_realm_law_flag = subroman_dynastic_aristocracy_law_0
-				has_realm_law_flag = subroman_dynastic_aristocracy_law_1
-				has_realm_law_flag = subroman_dynastic_aristocracy_law_2
-				has_realm_law_flag = subroman_dynastic_aristocracy_law_3
-				has_realm_law_flag = subroman_dynastic_aristocracy_law_4
+				has_realm_law_flag = authority_level_0
+				has_realm_law_flag = authority_level_1
+				has_realm_law_flag = authority_level_2
+				has_realm_law_flag = authority_level_3
+				has_realm_law_flag = authority_level_4
 			}
 		}
 		add = 1

@@ -2177,7 +2177,7 @@ hellenic.519 = {
 			knows_language = language_latin
 		}
 		OR = {
-			has_trait = scholar
+			has_trait = erudite
 			has_trait = lifestyle_poet
 		}
 	}
@@ -2458,7 +2458,7 @@ scripted_trigger hellenic_523_aphrodite_trigger = {
 		has_trait = gregarious
 	}
 	NOR = {
-		has_trait = scholar
+		has_trait = erudite
 		has_trait = diligent
 		has_trait = just
 		has_trait = ambitious
@@ -2472,7 +2472,7 @@ scripted_trigger hellenic_523_hera_trigger = {
 		has_trait = ambitious
 	}
 	NOR = {
-		has_trait = scholar
+		has_trait = erudite
 		has_trait = diligent
 		has_trait = just
 		has_trait = gregarious
@@ -2482,7 +2482,7 @@ scripted_trigger hellenic_523_hera_trigger = {
 
 scripted_trigger hellenic_523_athena_trigger = {
 	OR = {
-		has_trait = scholar
+		has_trait = erudite
 		has_trait = diligent
 		has_trait = just
 	}
@@ -2697,7 +2697,7 @@ hellenic.523 = {
 		}
 		
 		stress_impact = {
-			scholar = minor_stress_impact_loss
+			erudite = minor_stress_impact_loss
 			diligent = minor_stress_impact_loss
 			just = minor_stress_impact_loss
 			lustful = minor_stress_impact_gain

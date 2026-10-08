@@ -1,6 +1,41 @@
 ﻿##### Changed from Vanilla: Extended effects to other Zealous Traditions, Extended to roman_acclamation_succession_law
 namespace = faction_demand
 
+scripted_trigger faction_target_can_attempt_to_bribe_with_co_emperorship_trigger = {
+	may_appoint_co_emperors_trigger = yes
+	has_active_diarchy = no
+}
+
+scripted_effect faction_demand_counter_offer_co_rule_start_diarchy_effect = {
+	custom_tooltip = {
+		text = faction_demand.0000.enter_co_rule_avoiding_worst_effects
+		try_start_diarchy = co_emperorship
+		set_diarch = scope:faction_leader
+		change_diarchy_swing = 30
+		reverse_add_opinion = {
+			target = scope:faction_leader
+			modifier = respect_opinion
+			opinion = 50
+		}
+	}
+}
+
+scripted_effect faction_demand_claimant_rejected_effect = {
+	# This effect should always be placed here, _before_ all the other effects in the block.
+	trigger_event = { on_action = on_faction_demand_rejected }
+	
+	show_as_tooltip = {
+		scope:faction = {
+			faction_start_war = { title = scope:target_title }
+			faction_spawn_member_county_armies_effect = {
+				FACTION = scope:faction
+				ARMY_OWNER = scope:faction_leader
+				PEASANT_ARMY_NAME = claimant_faction_event_troops
+			}
+		}
+	}
+}
+
 # Populist Faction Demand - Affected vassals choose their action
 faction_demand.0099 = {
 	##### Changed from Vanilla vvvvv

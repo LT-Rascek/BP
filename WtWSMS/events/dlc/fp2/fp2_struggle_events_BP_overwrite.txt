@@ -2,6 +2,17 @@
 ##### Changed from Vanilla: Tie fp2_struggle.1011 to berber languages rather than generic berber
 namespace = fp2_struggle
 
+scripted_trigger neighboring_ruler_proper_culture_trigger = {
+	OR = {
+		culture = culture:andalusian
+		culture = culture:bedouin
+		culture = culture:baranis 
+		culture = culture:butr
+		culture = culture:levantine 
+		culture = culture:sephardi 	
+	}
+}
+
 fp2_struggle.1002 = {
 	##### Changed from Vanilla vvvvv
 	id_override_priority = 1

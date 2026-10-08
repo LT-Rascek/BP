@@ -219,12 +219,12 @@ bp_viet.4001 = { #WTWSMS id: VIETmisc.4001
 				modifier = { add = { value = learning multiply = 2 } }
 			}
 			limit = { is_available_ai_adult = yes }
-			save_scope_as = scholar
+			save_scope_as = erudite
 		}
 	}
 	
 	left_portrait = {
-		character = scope:scholar
+		character = scope:erudite
 		animation = reading
 	}
 	right_portrait = {
@@ -967,7 +967,7 @@ bp_viet.4009 = { #WTWSMS id: VIETmisc.4009
 		base = 1
 		modifier = {
 			add = 0.2
-			has_trait = scholar
+			has_trait = erudite
 		}
 		modifier = {
 			add = 0.2
@@ -1904,7 +1904,7 @@ bp_viet.260 = { #WTWSMS id: VIETnam.260
 		}
 		modifier = {
 			add = 0.2
-			has_trait = scholar
+			has_trait = erudite
 		}
 	}
 	
@@ -2345,7 +2345,7 @@ bp_viet.264 = { #WTWSMS id: VIETnam.264
 		}
 		modifier = {
 			add = 0.2
-			has_trait = scholar
+			has_trait = erudite
 		}
 		modifier = {
 			add = -0.2
@@ -2362,7 +2362,7 @@ bp_viet.264 = { #WTWSMS id: VIETnam.264
 	}
 
 	left_portrait = {
-		character = scope:scholar
+		character = scope:erudite
 		animation = happy_teacher
 	}
 	right_portrait = {
@@ -2373,31 +2373,31 @@ bp_viet.264 = { #WTWSMS id: VIETnam.264
 	immediate = {
 		# Find a learned guest
 		random_courtier_or_guest = {
-			limit = { has_trait = scholar }
-			save_scope_as = scholar
+			limit = { has_trait = erudite }
+			save_scope_as = erudite
 		}
 		# If not, search for a wandering character
 		if = {
-			limit = { NOT = { exists = scope:scholar } }
+			limit = { NOT = { exists = scope:erudite } }
 			find_pool_characters_effect = yes
 			random_in_list = {
 				list = potential_pool_characters
-				limit = { has_trait = scholar }
-				save_scope_as = scholar
+				limit = { has_trait = erudite }
+				save_scope_as = erudite
 			}
 		}
 		# If still not, make one
 		if = {
-			limit = { NOT = { exists = scope:scholar } }
+			limit = { NOT = { exists = scope:erudite } }
 			create_character = {
 				location = root.capital_province
 				faith = root.capital_county.faith
 				culture = root.capital_county.culture
 				template = learning_scholarship_focus_friend_template
-				save_scope_as = scholar
+				save_scope_as = erudite
 			}
 		}
-		add_visiting_courtier = scope:scholar
+		add_visiting_courtier = scope:erudite
 	}
 
 	option = { #Interesting

@@ -97,14 +97,14 @@ get_paganify_faith_effect = {
 				faith.religion = { is_in_family = rf_sinitic }
 				
 				# Exclude historical minorities, gnostics
-				faith = faith:conversos
-				faith = faith:ebionite
-				faith = faith:kitebacilweism
-				faith = faith:ari
-				faith.religion = religion:nastika_religion
-				faith.religion = religion:dualism_religion
-				faith = { has_doctrine = tenet_ethnic_religion }
-				faith = { has_doctrine = doctrine_christian_soteriology_gnosis }
+				rite = rite:conversos
+				rite = rite:ebionite
+				rite = rite:kitebacilweism
+				rite = rite:ari
+				rite.religion = religion:nastika_religion
+				rite.religion = religion:dualism_religion
+				rite = { rite_has_doctrine = tenet_ethnic_religion }
+				rite = { rite_has_doctrine = doctrine_christian_soteriology_gnosis }
 				
 				# Israelites can be Jewish
 				AND = {
@@ -125,31 +125,31 @@ get_paganify_faith_effect = {
 		# African faiths
 		if = {
 			limit = { culture = { has_cultural_pillar = heritage_akan } }
-			set_variable = { value = faith:akom_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:akom_pagan name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = { culture = { has_cultural_pillar = heritage_bantu } }
-			set_variable = { value = faith:ngaiism_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:ngaiism_pagan name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = { culture = { has_cultural_pillar = heritage_central_african } }
-			set_variable = { value = faith:west_african_bori_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:west_african_bori_pagan name = paganify_faith days = 1 }
 		}
 		else_if = { # Ethiopian override
 			limit = { culture = culture:ethiopian }
-			set_variable = { value = faith:somali_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:somali_pagan name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = { culture = { has_cultural_pillar = heritage_east_african } }
-			set_variable = { value = faith:kushitism_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:kushitism_pagan name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = { culture = { has_cultural_pillar = heritage_senegambian } }
-			set_variable = { value = faith:west_african_roog_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:west_african_roog_pagan name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = { culture = { has_cultural_pillar = heritage_somalian } }
-			set_variable = { value = faith:waaqism_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:waaqism_pagan name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = {
@@ -158,25 +158,25 @@ get_paganify_faith_effect = {
 					culture = { has_cultural_pillar = heritage_sahelian }
 				}
 			}
-			set_variable = { value = faith:west_african_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:west_african_pagan name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = { culture = { has_cultural_pillar = heritage_yoruba } }
-			set_variable = { value = faith:west_african_orisha_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:west_african_orisha_pagan name = paganify_faith days = 1 }
 		}
 		
 		# Levantine faiths
 		else_if = {
 			limit = { culture = { has_cultural_pillar = heritage_arabic } }
-			set_variable = { value = faith:semitic_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:semitic_pagan name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = { culture = { has_cultural_pillar = heritage_egyptian } }
-			set_variable = { value = faith:egyptian_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:egyptian_pagan name = paganify_faith days = 1 }
 		}
 		else_if = { # Only if not Judaism
 			limit = { culture = { has_cultural_pillar = heritage_israelite } }
-			set_variable = { value = faith:ebionite name = paganify_faith days = 1 }
+			set_variable = { value = rite:ebionite name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = {
@@ -187,19 +187,19 @@ get_paganify_faith_effect = {
 					culture = { has_cultural_pillar = heritage_phoenician }
 				}
 			}
-			set_variable = { value = faith:mastimani name = paganify_faith days = 1 }
+			set_variable = { value = rite:mastimani name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = { culture = culture:libyan }
-			set_variable = { value = faith:gurzil name = paganify_faith days = 1 }
+			set_variable = { value = rite:gurzil name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = { culture = { has_cultural_pillar = heritage_berber } }
-			set_variable = { value = faith:berber_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:berber_pagan name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = { culture = culture:assyrian }
-			set_variable = { value = faith:assyrian_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:assyrian_pagan name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = {
@@ -208,17 +208,17 @@ get_paganify_faith_effect = {
 					culture = { has_cultural_pillar = heritage_elamite }
 				}
 			}
-			set_variable = { value = faith:mesopotamian_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:mesopotamian_pagan name = paganify_faith days = 1 }
 		}
 		
 		# Iranian faiths
 		else_if = {
 			limit = { culture = { has_cultural_pillar = heritage_peristani } }
-			set_variable = { value = faith:nuristani_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:nuristani_pagan name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = { culture = { has_cultural_parameter = heritage_kulturbund_scythian } }
-			set_variable = { value = faith:scythian_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:scythian_pagan name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = {
@@ -227,7 +227,7 @@ get_paganify_faith_effect = {
 					culture = culture:kurdish
 				}
 			}
-			set_variable = { value = faith:kitebacilweism name = paganify_faith days = 1 }
+			set_variable = { value = rite:kitebacilweism name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = {
@@ -235,25 +235,25 @@ get_paganify_faith_effect = {
 					culture = { has_cultural_pillar = heritage_tocharian }
 					AND = {
 						culture = { has_cultural_parameter = heritage_group_greater_iranian }
-						faith.religion = { is_in_family = rf_eastern }
+						rite.religion = { is_in_family = rf_eastern }
 					}
 				}
 			}
-			set_variable = { value = faith:khurmazta name = paganify_faith days = 1 }
+			set_variable = { value = rite:khurmazta name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = { culture = { has_cultural_parameter = heritage_group_greater_iranian } }
-			set_variable = { value = faith:afridunism name = paganify_faith days = 1 }
+			set_variable = { value = rite:afridunism name = paganify_faith days = 1 }
 		}
 		
 		# European faiths
 		else_if = {
 			limit = { culture = { has_cultural_pillar = heritage_baltic } }
-			set_variable = { value = faith:baltic_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:baltic_pagan name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = { culture = { has_cultural_pillar = heritage_vasconic } }
-			set_variable = { value = faith:basque_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:basque_pagan name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = {
@@ -262,11 +262,11 @@ get_paganify_faith_effect = {
 					culture = culture:corduenian
 				}
 			}
-			set_variable = { value = faith:urartuism name = paganify_faith days = 1 }
+			set_variable = { value = rite:urartuism name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = { culture = { has_cultural_pillar = heritage_caucasian } }
-			set_variable = { value = faith:georgian_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:georgian_pagan name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = {
@@ -275,7 +275,7 @@ get_paganify_faith_effect = {
 					culture = { has_cultural_pillar = heritage_mogyer }
 				}
 			}
-			set_variable = { value = faith:magyar_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:magyar_pagan name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = {
@@ -286,7 +286,7 @@ get_paganify_faith_effect = {
 					culture = { has_cultural_pillar = heritage_south_slavic }
 				}
 			}
-			set_variable = { value = faith:slavic_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:slavic_pagan name = paganify_faith days = 1 }
 		}
 		
 		# Celtic faiths
@@ -300,7 +300,7 @@ get_paganify_faith_effect = {
 					culture = { has_cultural_pillar = heritage_continental_celtic }
 				}
 			}
-			set_variable = { value = faith:romano_celtic_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:romano_celtic_pagan name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = {
@@ -309,7 +309,7 @@ get_paganify_faith_effect = {
 					culture = { has_cultural_parameter = heritage_group_celtic }
 				}
 			}
-			set_variable = { value = faith:celtic_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:celtic_pagan name = paganify_faith days = 1 }
 		}
 		
 		# Carpathian faiths
@@ -322,14 +322,14 @@ get_paganify_faith_effect = {
 					culture = { has_cultural_pillar = heritage_vlach }
 				}
 			}
-			set_variable = { value = faith:dacian_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:dacian_pagan name = paganify_faith days = 1 }
 		}
 		else_if = { # Basilicus and miaphysites
 			limit = {
 				culture = { has_cultural_pillar = heritage_latin }
-				faith = faith:coptic
+				rite = rite:coptic_rite
 			}
-			set_variable = { value = faith:sol_invictus name = paganify_faith days = 1 }
+			set_variable = { value = rite:sol_invictus name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = {
@@ -338,24 +338,24 @@ get_paganify_faith_effect = {
 					culture = culture:romano_thracian
 				}
 			}
-			set_variable = { value = faith:thracian_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:thracian_pagan name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = {
 				culture = { has_cultural_pillar = heritage_albanian }
 				NOT = { culture = culture:macedonian }
 			}
-			set_variable = { value = faith:illyrian_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:illyrian_pagan name = paganify_faith days = 1 }
 		}
 		
 		# Hellenic faiths
 		else_if = {
 			limit = { culture = culture:bosporan }
-			set_variable = { value = faith:bosporan_faith name = paganify_faith days = 1 }
+			set_variable = { value = rite:bosporan_faith name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = { culture = culture:phrygian }
-			set_variable = { value = faith:cybelian name = paganify_faith days = 1 }
+			set_variable = { value = rite:cybelian name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = {
@@ -366,7 +366,7 @@ get_paganify_faith_effect = {
 					culture = { has_cultural_parameter = heritage_group_romance }
 				}
 			}
-			set_variable = { value = faith:hellenic_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:hellenic_pagan name = paganify_faith days = 1 }
 		}
 		
 		# Germanic faiths
@@ -377,7 +377,7 @@ get_paganify_faith_effect = {
 					culture = { has_cultural_pillar = heritage_north_germanic }
 				}
 			}
-			set_variable = { value = faith:norse_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:norse_pagan name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = {
@@ -386,7 +386,7 @@ get_paganify_faith_effect = {
 					culture = { has_cultural_pillar = heritage_frankish }
 				}
 			}
-			set_variable = { value = faith:frankish_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:frankish_pagan name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = {
@@ -395,19 +395,19 @@ get_paganify_faith_effect = {
 					culture = { has_cultural_pillar = heritage_west_germanic }
 				}
 			}
-			set_variable = { value = faith:anglo_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:anglo_pagan name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = { culture = { has_cultural_pillar = heritage_saxon } }
-			set_variable = { value = faith:saxon_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:saxon_pagan name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = { culture = { has_cultural_pillar = heritage_suebic } }
-			set_variable = { value = faith:irimonic_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:irimonic_pagan name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = { culture = { has_cultural_pillar = heritage_przeworsk } }
-			set_variable = { value = faith:przeworsk_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:przeworsk_pagan name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = {
@@ -416,7 +416,7 @@ get_paganify_faith_effect = {
 					culture = { has_cultural_pillar = heritage_east_germanic }
 				}
 			}
-			set_variable = { value = faith:gothic_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:gothic_pagan name = paganify_faith days = 1 }
 		}
 		
 		# North Asian faiths
@@ -428,11 +428,11 @@ get_paganify_faith_effect = {
 					culture = { has_cultural_pillar = heritage_sami }
 				}
 			}
-			set_variable = { value = faith:finnish_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:finnish_pagan name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = { culture = { has_cultural_pillar = heritage_ugro_permian } }
-			set_variable = { value = faith:siberian_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:siberian_pagan name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = {
@@ -441,7 +441,7 @@ get_paganify_faith_effect = {
 					culture = { has_cultural_parameter = heritage_kulturbund_mongolic }
 				}
 			}
-			set_variable = { value = faith:tengri_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:tengri_pagan name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = {
@@ -450,17 +450,17 @@ get_paganify_faith_effect = {
 					culture = { has_cultural_pillar = heritage_nivkh }
 				}
 			}
-			set_variable = { value = faith:shamanism name = paganify_faith days = 1 }
+			set_variable = { value = rite:shamanism name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = { culture = { has_cultural_pillar = heritage_ainuic } }
-			set_variable = { value = faith:kamuyism_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:kamuyism_pagan name = paganify_faith days = 1 }
 		}
 		
 		# East Asian faiths
 		else_if = {
 			limit = { culture = { has_cultural_pillar = heritage_chinese } }
-			set_variable = { value = faith:jingxue name = paganify_faith days = 1 }
+			set_variable = { value = rite:jingxue name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = {
@@ -469,76 +469,76 @@ get_paganify_faith_effect = {
 					culture = { has_cultural_pillar = heritage_buyeo }
 				}
 			}
-			set_variable = { value = faith:mu name = paganify_faith days = 1 }
+			set_variable = { value = rite:mu name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = { culture = { has_cultural_pillar = heritage_hmongic } }
-			set_variable = { value = faith:dab_qhuas name = paganify_faith days = 1 }
+			set_variable = { value = rite:dab_qhuas name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = { culture = { has_cultural_pillar = heritage_japonic } }
-			set_variable = { value = faith:shinto name = paganify_faith days = 1 }
+			set_variable = { value = rite:shinto name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = { culture = culture:tangut }
-			set_variable = { value = faith:melieism name = paganify_faith days = 1 }
+			set_variable = { value = rite:melieism name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = { culture = { has_cultural_pillar = heritage_qiangic } }
-			set_variable = { value = faith:rrmeaism name = paganify_faith days = 1 }
+			set_variable = { value = rite:rrmeaism name = paganify_faith days = 1 }
 		}
 		
 		# South Asian ethnic religions
 		else_if = {
 			limit = { culture = culture:kirati }
-			set_variable = { value = faith:kiratism name = paganify_faith days = 1 }
+			set_variable = { value = rite:kiratism name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = { culture = culture:kachari }
-			set_variable = { value = faith:bathouism name = paganify_faith days = 1 }
+			set_variable = { value = rite:bathouism name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = { culture = culture:munda }
-			set_variable = { value = faith:munda_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:munda_pagan name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = { culture = culture:gond }
-			set_variable = { value = faith:gondi_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:gondi_pagan name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = { culture = culture:khasi }
-			set_variable = { value = faith:khasi_animism name = paganify_faith days = 1 }
+			set_variable = { value = rite:khasi_animism name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = { culture = culture:tani }
-			set_variable = { value = faith:donyipoloism name = paganify_faith days = 1 }
+			set_variable = { value = rite:donyipoloism name = paganify_faith days = 1 }
 		}
 		
 		# South Asian faiths
 		else_if = {
 			limit = { culture = { has_cultural_pillar = heritage_indo_aryan } }
-			set_variable = { value = faith:smartism name = paganify_faith days = 1 }
+			set_variable = { value = rite:smartism name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = {
 				culture = { has_cultural_pillar = heritage_dravidian }
 				NOR = {
-					faith = faith:srikula_shaktism
-					faith = faith:kalikula_shaktism
+					rite = rite:srikula_shaktism
+					rite = rite:kalikula_shaktism
 				}
 			}
-			set_variable = { value = faith:dravidian_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:dravidian_pagan name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = {
 				culture = { has_cultural_pillar = heritage_tibetan }
-				faith.religion = { is_in_family = rf_eastern }
+				rite.religion = { is_in_family = rf_eastern }
 			}
-			set_variable = { value = faith:bon name = paganify_faith days = 1 }
+			set_variable = { value = rite:bon name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = { culture = { has_cultural_pillar = heritage_tibetan } }
-			set_variable = { value = faith:old_bon name = paganify_faith days = 1 }
+			set_variable = { value = rite:old_bon name = paganify_faith days = 1 }
 		}
 		
 		# Southeast Asian faiths
@@ -549,15 +549,15 @@ get_paganify_faith_effect = {
 					culture = { has_cultural_pillar = heritage_mon_khmer }
 				}
 			}
-			set_variable = { value = faith:ari name = paganify_faith days = 1 }
+			set_variable = { value = rite:ari name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = { culture = { has_cultural_pillar = heritage_tai } }
-			set_variable = { value = faith:satsana_phi name = paganify_faith days = 1 }
+			set_variable = { value = rite:satsana_phi name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = { culture = { has_cultural_pillar = heritage_austronesian } }
-			set_variable = { value = faith:hantuism name = paganify_faith days = 1 }
+			set_variable = { value = rite:hantuism name = paganify_faith days = 1 }
 		}
 	}
 	# Override faiths that don't normally get converted
@@ -569,17 +569,17 @@ get_paganify_faith_effect = {
 		}
 		if = {
 			limit = {
-				faith.religion = religion:zoroastrianism_religion
+				rite.religion = religion:zoroastrianism_religion
 				culture = { has_cultural_pillar = heritage_caucasian }
 			}
-			set_variable = { value = faith:urartuism name = paganify_faith days = 1 }
+			set_variable = { value = rite:urartuism name = paganify_faith days = 1 }
 		}
 		else_if = {
 			limit = {
-				faith = faith:mesopotamian_pagan
+				rite = faith:mesopotamian_pagan
 				culture = culture:assyrian
 			}
-			set_variable = { value = faith:assyrian_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:assyrian_pagan name = paganify_faith days = 1 }
 		}
 		else_if = { # Western gnostics
 			limit = {
@@ -589,18 +589,18 @@ get_paganify_faith_effect = {
 					culture = { has_cultural_pillar = heritage_continental_celtic }
 				}
 				OR = {
-					faith.religion = religion:dualism_religion
-					faith = { has_doctrine = doctrine_christian_soteriology_gnosis }
+					rite.religion = religion:dualism_religion
+					rite = { has_doctrine = doctrine_christian_soteriology_gnosis }
 				}
 			}
-			set_variable = { value = faith:mithraic_pagan name = paganify_faith days = 1 }
+			set_variable = { value = rite:mithraic_pagan name = paganify_faith days = 1 }
 		}
 		else_if = { # Eastern gnostics
 			limit = {
 				culture = { has_cultural_parameter = heritage_group_balko_anatolian }
-				faith = { has_doctrine = doctrine_christian_soteriology_gnosis }
+				rite = { has_doctrine = doctrine_christian_soteriology_gnosis }
 			}
-			set_variable = { value = faith:orphism name = paganify_faith days = 1 }
+			set_variable = { value = rite:orphism name = paganify_faith days = 1 }
 		}
 	}
 }

@@ -2,6 +2,30 @@
 
 namespace = nomad_events
 
+scripted_trigger nomad_events_0250_valid_priest = {
+	is_available_ai_adult = yes
+	faith = {
+		NOR = {
+			this = root.faith
+			this = root.location.county.faith
+			has_doctrine_parameter = unreformed
+			this = faith:rabbinic_faith
+		}
+	}
+	trigger_if = {
+		limit = {
+			rite = { rite_has_parameter = clergy_must_be_male }
+		}
+		is_male = yes
+	}
+	trigger_else = {
+		is_male = no
+	}
+	NOT = { has_variable = had_nomad_events_0250_var }
+	NOT = { has_trait = cynical }
+	learning >= 8
+}
+
 ##### Changed from Vanilla vvvvv
 scripted_trigger wtwsms_nomd_conversion_event_trigger = {
 	#In WtWSMS, let's avoid having religions spread too readily across the steppe

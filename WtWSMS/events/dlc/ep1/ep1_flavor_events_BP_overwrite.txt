@@ -1,6 +1,38 @@
 ﻿##### Changed from Vanilla: Replaced heritage_goidelic with heritage_celtic
 namespace = ep1_flavor
 
+scripted_trigger ep1_flavor_2000_maa_scope_trigger = {
+	NAND = {
+		exists = scope:maa_type_1
+		scope:maa_type_1 = flag:$TYPE$
+	}
+	NAND = {
+		exists = scope:maa_type_2
+		scope:maa_type_2 = flag:$TYPE$
+	}
+}
+
+scripted_effect ep1_flavor_2000_maa_scope_effect = {
+	if = {
+		limit = {
+			NOT = { exists = scope:maa_type_1 }
+		}
+		save_scope_value_as = {
+			name = maa_type_1
+			value = flag:$TYPE$
+		}
+	}
+	else_if = {
+		limit = {
+			NOT = { exists = scope:maa_type_2 }
+		}
+		save_scope_value_as = {
+			name = maa_type_2
+			value = flag:$TYPE$
+		}
+	}
+}
+
 ep1_flavor.2000 = {
 	##### Changed from Vanilla vvvvv
 	id_override_priority = 1

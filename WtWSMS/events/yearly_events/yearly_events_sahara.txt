@@ -6,6 +6,15 @@
 
 namespace = yearly_saharan
 
+scripted_trigger appropriate_nomad_adjacent_county_trigger = {
+	#Located in an appropriate region.
+	title_province = { geographical_region = custom_sahara_proper }
+	is_landless_type_title = no
+
+	#Does not already have an appropriate nomad culture.
+	NOT = { culture = { has_cultural_tradition = tradition_saharan_nomads } }
+}
+
 #	#An appropriate local Saharan culture's nomads are flocking to one of your counties.
 #		by Ewan Cowhig Croft
 yearly_saharan.0021 = {

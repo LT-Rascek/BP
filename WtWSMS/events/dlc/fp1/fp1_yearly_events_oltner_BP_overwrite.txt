@@ -1,6 +1,19 @@
 ﻿##### Changed from Vanilla: Extended applicability of Berserker trait
 namespace = fp1_yearly
 
+scripted_effect court_berserkergang_effect = {
+	custom_tooltip = fp1_yearly.2200.fail.tt
+	hidden_effect = {
+		scope:potential_victim = {
+			increase_wounds_effect = { REASON = duel }
+		}
+	}
+	add_opinion = {
+		target = scope:new_berserker
+		modifier = hurt_someone_close_to_me_crime
+		years = 30
+	}
+}
 
 # Berserker rampages though court
 fp1_yearly.2200 = {
