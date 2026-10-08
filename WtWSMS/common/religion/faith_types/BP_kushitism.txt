@@ -35,8 +35,8 @@
 		{ name = "holy_order_bulls_of_montu" }
 	}
 }
-kushitism_pagan = {
-	main_rite = kushitism_pagan
+kushitism_pagan = { #The unreformed faiths; 
+	main_rite = reformed_kushitism_pagan
 	faith_details = {
 		religion = kushitism_religion
 		color = hsv { 0.15 1 0.7 }
@@ -46,11 +46,11 @@ kushitism_pagan = {
 
 	eminent_holy_sites = {
 		aswan
-		naqis
+		wadi_el_milk
 	}
 
 	holy_sites = {
-		wadi_el_milk
+		naqis
 		sennar
 		el_fasher
 	}

@@ -10,23 +10,57 @@
 	}
 
 	doctrines = {
-		doctrine_temporal_head
 		doctrine_consanguinity_unrestricted
+		#Special Doctrines
+		special_doctrine_is_egyptian_faith
 	}
 }
-kushitism_pagan = {
+reformed_kushitism_pagan = {
+	faith = kushitism_pagan
+
+	color = { 255 255 25 }
+
+	tenets = {
+		tenet_communal_identity
+		tenet_legalism #Revamped Maat
+		tenet_sun_worship
+	}
+
+	doctrines = {
+		doctrine_theocracy_lay_clergy
+	}
+}
+kushitism_pagan = { #The Blemmyes Faith
 	faith = kushitism_pagan
 
 	color = hsv { 0.15 1 0.7 }
 
 	tenets = {
-		tenet_esotericism
+		tenet_sun_worship
 		tenet_ancestor_worship
 		tenet_consolamentum
 	}
 
 	doctrines = {
 		unreformed_faith_doctrine
+		doctrine_oral_storytelling
+		doctrine_theocracy_lay_clergy
+	}
+}
+daju_pagan = { #The Daju Faith
+	faith = kushitism_pagan
+
+	color = hsv { 0.20 0.95 0.75 }
+
+	tenets = {
+		tenet_sun_worship
+		tenet_ancestor_worship
+		tenet_megaliths
+	}
+
+	doctrines = {
+		unreformed_faith_doctrine
+		doctrine_oral_storytelling
 		doctrine_theocracy_lay_clergy
 	}
 }
