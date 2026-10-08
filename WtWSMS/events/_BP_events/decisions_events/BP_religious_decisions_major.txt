@@ -21,9 +21,9 @@ BP_religious_decisions_major.0101 = {
 		random_realm_county = {
 			limit = {
 				OR = {
-					faith = faith:armenian_apostolic
-					faith = faith:georgian_orthodox
-					faith = faith:albanian_apostolic
+					rite = rite:armenian_rite
+					rite = rite:georgian_rite
+					rite = rite:albanian_apostolic
 				}
 			}
 			this.title_province = {
@@ -35,9 +35,9 @@ BP_religious_decisions_major.0101 = {
 			ordered_vassal_or_below = { #The other guy for the treaty; can probably use a better ordering scheme
 				limit = {
 					OR = {
-						faith = faith:armenian_apostolic
-						faith = faith:georgian_orthodox
-						faith = faith:albanian_apostolic
+						rite = rite:armenian_rite
+						rite = rite:georgian_rite
+						rite = rite:albanian_apostolic
 					}
 				}
 				order_by = { value = max_military_strength }

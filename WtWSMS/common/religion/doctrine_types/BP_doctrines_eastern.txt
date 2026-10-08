@@ -88,14 +88,12 @@ special_doctrine_is_eastern_pagan_faith = {
 		}
 	}
 }
-nudity_doctrine_no_naked_priests = {
-	doctrine_group_type = nudity_doctrine_group
-	icon = "nudity_doctrine_no_naked_priests"
+special_doctrine_no_naked_priests = {
+	doctrine_group_type = nudity_doctrine
+	icon = "special_doctrine_no_naked_priests"
 }
-nudity_doctrine_naked_priests = {
-	doctrine_group_type = nudity_doctrine_group
-	icon = "nudity_doctrine_naked_priests"
-	parameters = {
-		naked_priests_active = yes
-	}
+special_doctrine_naked_priests = {
+	doctrine_group_type = nudity_doctrine
+	icon = "special_doctrine_naked_priests"
+	parameters = { naked_priests_active }
 }

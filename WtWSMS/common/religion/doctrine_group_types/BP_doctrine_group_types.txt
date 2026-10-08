@@ -38,13 +38,6 @@ sramana_special_doctrine_group = {
 		}
 	}
 }
-nudity_doctrine_group = {
-	category = specific_to_religion
-	OR = {
-		religion_tag = nastika_religion
-		religion_tag = jainism_religion
-	}
-}
 hindu_special_doctrine_group = {
 	category = specific_to_religion
 	is_available_on_create = { religion_tag = hinduism_religion }

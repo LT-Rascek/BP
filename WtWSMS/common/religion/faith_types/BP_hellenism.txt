@@ -214,9 +214,6 @@ orphism = {
 		doctrine_clerical_succession_spiritual_appointment
 		doctrine_theocracy_temporal
 		
-		#Not really aligned with the Roman pantheon and unpopular with the Roman elite
-		doctrine_polytheist
-		
 		doctrine_hellenic_pagan_liturgical_language_greek
 	}
 	
@@ -231,5 +228,226 @@ orphism = {
 		HighGodNameAlternatePossessive = orphism_high_god_name_alternate_possessive
 		
 		ReligiousText = orphism_religious_text
+	}
+}
+bosporan_faith = {
+	main_rite = bosporan_faith
+
+	faith_details = {
+		religion = hellenism_religion
+		color = { 0.15 0.1 0.6 }
+		icon = bosporan_faith
+	}
+
+	eminent_holy_sites = {
+		oenoanda #The most "orthodox" of the Hypsisterian sites
+		tanais #Definitely more important center than Tanais
+	}
+
+	holy_sites = {
+		korchev
+		chersonesus
+		thrake
+	}
+
+	doctrines = {
+		#Main Group
+		doctrine_monotheist
+		doctrine_no_head
+		doctrine_gender_male_dominated
+		doctrine_pluralism_pluralistic
+		doctrine_theocracy_lay_clergy
+		doctrine_right_to_rule_divine
+		
+		#Marriage: From Hellenism
+		doctrine_monogamy
+		doctrine_divorce_allowed
+		doctrine_bastardry_legitimization
+		doctrine_consanguinity_aunt_nephew_and_uncle_niece
+		
+		#Crimes: From Hellenism
+		doctrine_homosexuality_accepted
+		doctrine_adultery_men_shunned
+		doctrine_adultery_women_crime
+		doctrine_kinslaying_close_kin_crime
+		doctrine_deviancy_shunned
+		doctrine_witchcraft_shunned
+		
+		#Clerical Functions
+		doctrine_clerical_function_taxation
+		doctrine_clerical_gender_male_only
+		doctrine_clerical_marriage_allowed
+		doctrine_clerical_succession_temporal_appointment
+		doctrine_monasticism_absent
+		doctrine_sacraments_absent
+		
+		#Ritual Doctrines
+		doctrine_pilgrimage_encouraged
+		doctrine_ritual_vegetarianism_no_statement
+		doctrine_funeral_stoic
+		
+		#Coronation tradition
+		doctrine_no_anointment
+	}
+
+	localization = {
+		#HighGodName
+		HighGodName = bosporan_high_god_name
+		HighGodName2 = bosporan_high_god_name
+		HighGodNamePossessive = bosporan_high_god_name_possessive
+		HighGodNameSheHe = CHARACTER_SHEHE_HE
+		HighGodHerselfHimself = CHARACTER_HIMSELF
+		HighGodHerHis = CHARACTER_HERHIS_HIS
+		HighGodNameAlternate = bosporan_high_god_alternate
+		HighGodNameAlternatePossessive = bosporan_high_god_alternate_possessive
+
+		#Creator
+		CreatorName = bosporan_high_god_name
+		CreatorNamePossessive = bosporan_hypsistos_name_possessive
+		CreatorSheHe = CHARACTER_SHEHE_HE
+		CreatorHerHis = CHARACTER_HERHIS_HIS
+		CreatorHerHim = CHARACTER_HERHIM_HIM
+	
+		#HealthGod
+		HealthGodName = bosporan_health_god_name
+		HealthGodNamePossessive = bosporan_health_god_name_possessive
+		HealthGodSheHe = CHARACTER_SHEHE_HE
+		HealthGodHerHis = CHARACTER_HERHIS_HIS
+		HealthGodHerHim = CHARACTER_HERHIM_HIM
+		
+		#FertilityGod
+		FertilityGodName = bosporan_the_three_mothers_name
+		FertilityGodNamePossessive = bosporan_the_three_mothers_name_possessive
+		FertilityGodSheHe = CHARACTER_SHEHE_THEY
+		FertilityGodHerHis = CHARACTER_HERHIS_THEIR
+		FertilityGodHerHim = CHARACTER_HERHIM_THEM
+	
+		#WealthGod
+		WealthGodName = bosporan_wealth_god_name
+		WealthGodNamePossessive = bosporan_wealth_god_name_possessive
+		WealthGodSheHe = CHARACTER_SHEHE_HE
+		WealthGodHerHis = CHARACTER_HERHIS_HIS
+		WealthGodHerHim = CHARACTER_HERHIM_HIM
+	
+		#HouseholdGod
+		HouseholdGodName = bosporan_the_three_mothers_name
+		HouseholdGodNamePossessive = bosporan_the_three_mothers_name_possessive
+		HouseholdGodSheHe = CHARACTER_SHEHE_THEY
+		HouseholdGodHerHis = CHARACTER_HERHIS_THEIR
+		HouseholdGodHerHim = CHARACTER_HERHIM_THEM
+	
+		#FateGod
+		FateGodName = bosporan_fate_god_name
+		FateGodNamePossessive = bosporan_fate_god_name_possessive
+		FateGodSheHe = CHARACTER_SHEHE_HE
+		FateGodHerHis = CHARACTER_HERHIS_HIS
+		FateGodHerHim = CHARACTER_HERHIM_HIM
+	
+		#KnowledgeGod
+		KnowledgeGodName = bosporan_knowledge_god_name
+		KnowledgeGodNamePossessive = bosporan_knowledge_god_name_possessive
+		KnowledgeGodSheHe = CHARACTER_SHEHE_HE
+		KnowledgeGodHerHis = CHARACTER_HERHIS_HIS
+		KnowledgeGodHerHim = CHARACTER_HERHIM_HIM
+	
+		#WarGod
+		WarGodName = bosporan_the_hero_god_name
+		WarGodNamePossessive = bosporan_the_hero_god_name_possessive
+		WarGodSheHe = CHARACTER_SHEHE_HE
+		WarGodHerHis = CHARACTER_HERHIS_HIS
+		WarGodHerHim = CHARACTER_HERHIM_HIM
+	
+		#TricksterGod
+		TricksterGodName = bosporan_trickster_god_name
+		TricksterGodNamePossessive = bosporan_trickster_god_name_possessive
+		TricksterGodSheHe = CHARACTER_SHEHE_SHE
+		TricksterGodHerHis = CHARACTER_HERHIS_HER
+		TricksterGodHerHim = CHARACTER_HERHIM_HER
+	
+		#NightGod
+		NightGodName = bosporan_night_god_name
+		NightGodNamePossessive = bosporan_night_god_name_possessive
+		NightGodSheHe = CHARACTER_SHEHE_HE
+		NightGodHerHis = CHARACTER_HERHIS_HIS
+		NightGodHerHim = CHARACTER_HERHIM_HIM
+	
+		#WaterGod
+		WaterGodName = bosporan_water_god_name
+		WaterGodNamePossessive = bosporan_water_god_name_possessive
+		WaterGodSheHe = CHARACTER_SHEHE_HE
+		WaterGodHerHis = CHARACTER_HERHIS_HIS
+		WaterGodHerHim = CHARACTER_HERHIM_HIM
+		
+		PantheonTerm = bosporan_high_god_name
+		PantheonTerm2 = bosporan_high_god_name
+		PantheonTerm3 = bosporan_high_god_name
+		PantheonTermHasHave = pantheon_term_has
+		GoodGodNames = {
+			bosporan_hypsistos_name
+			bosporan_the_most_high_god_name
+			bosporan_the_hero_god_name
+			bosporan_the_three_mothers_name
+		}
+		DevilName = bosporan_evil_god_name
+		DevilNamePossessive = bosporan_evil_god_name_possessive
+		DevilSheHe = CHARACTER_SHEHE_IT
+		DevilHerHis = CHARACTER_HERHIS_ITS
+		DevilHerselfHimself = CHARACTER_ITSELF
+		EvilGodNames = { bosporan_evil_god_name }
+		HouseOfWorship = bosporan_house_of_worship
+		HouseOfWorship2 = bosporan_house_of_worship
+		HouseOfWorship3 = bosporan_house_of_worship
+		HouseOfWorshipPlural = bosporan_house_of_worship_plural
+		ReligiousSymbol = bosporan_religious_text
+		ReligiousSymbol2 = bosporan_religious_text
+		ReligiousSymbol3 = bosporan_religious_text
+		ReligiousText = bosporan_religious_text
+		ReligiousText2 = bosporan_religious_text
+		ReligiousText3 = bosporan_religious_text
+		ReligiousHeadName = hellenism_religious_head_title
+		ReligiousHeadTitleName = dualism_religious_head_title_name
+		DevoteeMale = paganism_devotee
+		DevoteeMalePlural = paganism_devoteeplural
+		DevoteeFemale = paganism_devotee
+		DevoteeFemalePlural = paganism_devoteeplural
+		DevoteeNeuter = paganism_devotee
+		DevoteeNeuterPlural = paganism_devoteeplural
+		PriestMale = bosporan_priest
+		PriestMalePlural = bosporan_priest_plural
+		PriestFemale = bosporan_priest_female
+		PriestFemalePlural = bosporan_priest_female_plural
+		PriestNeuter = bosporan_priest
+		PriestNeuterPlural = bosporan_priest_plural
+		AltPriestTermPlural = bosporan_priest_plural
+		BishopMale = bosporan_priest
+		BishopMalePlural = bosporan_priest_plural
+		BishopFemale = bosporan_priest_female
+		BishopFemalePlural = bosporan_priest_female_plural
+		BishopNeuter = bosporan_priest
+		BishopNeuterPlural = bosporan_priest_plural
+		DivineRealm = hellenism_divine_realm
+		DivineRealm2 = hellenism_divine_realm_2
+		DivineRealm3 = hellenism_divine_realm_3
+		PositiveAfterLife = hellenism_death_deity_name
+		PositiveAfterLife2 = hellenism_death_deity_name_2
+		PositiveAfterLife3 = hellenism_death_deity_name_3
+		NegativeAfterLife = hellenism_death_deity_name
+		NegativeAfterLife2 = hellenism_death_deity_name_2
+		NegativeAfterLife3 = hellenism_death_deity_name_3
+		DeathDeityName = hellenism_death_deity_name
+		DeathDeityNamePossessive = hellenism_death_deity_name_possessive
+		DeathDeitySheHe = CHARACTER_SHEHE_HE
+		DeathDeityHerHis = CHARACTER_HERHIS_HIS
+		DeathDeityHerHim = CHARACTER_HERHIM_HIM
+		WitchGodName = judaism_witchgodname_raziel
+		WitchGodNamePossessive = judaism_witchgodname_raziel_possessive
+		WitchGodHerHis = CHARACTER_HERHIS_HIS
+		WitchGodSheHe = CHARACTER_SHEHE_HE
+		WitchGodHerHim = CHARACTER_HERHIM_HIM
+		WitchGodMistressMaster = master
+		WitchGodMotherFather = father
+		
+		GHWName = ghw_great_holy_war
+		GHWNamePlural = ghw_great_holy_wars
 	}
 }

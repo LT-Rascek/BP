@@ -48,3 +48,13 @@ doctrine_temple_authority = {
 	doctrine_lock = religion
 	is_available_on_create = { religion_tag = judaism_religion }
 }
+
+nudity_doctrine = {
+	category = specific_to_religion
+	is_available_on_create = {
+		OR = {
+			religion_tag = nastika_religion
+			religion_tag = jainism_religion
+		}
+	}
+}

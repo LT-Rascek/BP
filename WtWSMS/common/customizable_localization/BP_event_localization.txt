@@ -6,7 +6,7 @@
 		trigger = { this = scope:second }
 		localization_key = BP_religious_decision.0101.response.persian_emperor
 	}
-	#Persian Vassal Repsonses
+	#Persian Vassal Responses
 	text = { #Zoroastrian Vassal
 		trigger = {
 			this.top_liege = scope:second
@@ -19,9 +19,9 @@
 			this.top_liege = scope:second
 			this = {
 				OR = {
-					faith = faith:armenian_apostolic
-					faith = faith:georgian_orthodox
-					faith = faith:albanian_apostolic
+					rite = rite:armenian_apostolic
+					rite = rite:georgian_rite
+					rite = rite:albanian_apostolic
 				}
 			}
 		}
@@ -39,9 +39,9 @@
 			this.top_liege = scope:second
 			NAND = {
 				this.religion = religion:zoroastrianism_religion
-				faith = faith:armenian_apostolic
-				faith = faith:georgian_orthodox
-				faith = faith:albanian_apostolic
+				rite = rite:armenian_apostolic
+				rite = rite:georgian_rite
+				rite = rite:albanian_apostolic
 				this.faith = { has_doctrine = special_doctrine_nestorian_ecumenism }
 			}
 		}

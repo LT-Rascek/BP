@@ -450,3 +450,58 @@ orphism = {
 		ReligiousText = orphism_religious_text
 	}
 }
+bosporan_faith = {
+	name = bosporan_faith
+	desc = bosporan_faith_desc
+	faith = bosporan_faith
+
+	color = { 0.15 0.1 0.6 }
+
+	tenets = {
+		tenet_jewish_syncretism
+		tenet_ritual_celebrations
+		tenet_aniconism
+	}
+
+	doctrines = {
+		#Main Group
+		doctrine_monotheist
+		doctrine_no_head
+		doctrine_gender_male_dominated
+		doctrine_pluralism_pluralistic
+		doctrine_theocracy_lay_clergy
+		doctrine_right_to_rule_divine
+		
+		#Marriage: From Hellenism
+		doctrine_monogamy
+		doctrine_divorce_allowed
+		doctrine_bastardry_legitimization
+		doctrine_consanguinity_aunt_nephew_and_uncle_niece
+		
+		#Crimes: From Hellenism
+		doctrine_homosexuality_accepted
+		doctrine_adultery_men_shunned
+		doctrine_adultery_women_crime
+		doctrine_kinslaying_close_kin_crime
+		doctrine_deviancy_shunned
+		doctrine_witchcraft_accepted
+		
+		#Clerical Functions
+		doctrine_clerical_function_taxation
+		doctrine_clerical_gender_male_only
+		doctrine_clerical_marriage_allowed
+		doctrine_clerical_succession_temporal_appointment
+		doctrine_monasticism_absent
+		doctrine_sacraments_absent
+		
+		#Ritual Doctrines
+		doctrine_pilgrimage_encouraged
+		doctrine_ritual_vegetarianism_no_statement
+		doctrine_funeral_stoic
+		
+		#Coronation tradition
+		doctrine_no_anointment
+		
+		doctrine_hellenic_pagan_liturgical_language_greek
+	}
+}

@@ -26,7 +26,7 @@ legalize_caucasian_christianity = {
 		has_religion = religion:zoroastrianism_religion
 		NOT = { has_global_variable = persia_legalizes_caucasian_christianity }
 		NAND = {
-			rite:armenian_apostolic = { rite_has_doctrine = special_doctrine_legalized_faith_persia }
+			rite:armenian_rite = { rite_has_doctrine = special_doctrine_legalized_faith_persia }
 			rite:georgian_rite = { rite_has_doctrine = special_doctrine_legalized_faith_persia }
 			rite:albanian_apostolic = { rite_has_doctrine = special_doctrine_legalized_faith_persia }
 		}

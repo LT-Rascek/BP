@@ -18,24 +18,59 @@ stopped and completed scripted_triggers
 =======================
 First Order (AKA first sweep and implementation of plan):
 -----------------------
-- All Germans have Visclan Traditions doctrine [FIXED?]
-- Messianic Jews should view Apostolic Christianity as Righteous and viewed as astray by them [NOT FIXED]
-- Make unused faiths as unavailable; might be triggering the baseline issue [NOT QUITE FIXED; see Buddhists?]
-- nudity_doctrine_* [FIXED?]
+- Catherine Wheel for Mastimani [FIXED?]
 
-- Nestorian faith name
-- Shrautism missing icon
-- Buddhists are Theocrats, lots of visible buddhist faiths
-- Catherine Wheel for Mastimani
-- Armenian Faith isn't hidden
 - special_doctrine_arian_ecumenism
-- Using wrong nake priests doctrine for jains (it's in the special doctrines category)
 
-- Religion specific doctrines aren't shown in the branch rite view
+- Duplicate Rite issue:
+	- Cybelianism, Orphism, Mithraic Paganism, Nestorianism, Marcionism
 
-- Duplicate Rite issue
+Preservation/Attitude Doctrine Changes:
+- Preservation Doctrines:
+	- Oral Storytelling (75 divergence baseline) [Language Icon]:
+		- Unreformed Pagans
+		- Requires Unreformed
+		- No heresy risk
+		- Conversion Speed: -20%
+		- Rite Hybridization enabled (aka, how Slavic Paganism splits)
+	- Mythic (70 divergence baseline) [Hellenic Icon, Raven Icon, &c.]:
+		- Reformed Pagans, Hindus, Jains
+		- Requires Reformed
+		- Heresy Risk: -50%
+		- Hersey Rite Bonus: +1
+		- Conversion Speed: -20%
+	- Scriptural (65 Baseline) [RIte Book]:
+		- Buddhist, Confucian, Taoist, Mazdans
+		- Requires Formalized Rituals, Writing
+		- Hersey Risk: +25%
+		- Conversion Speed: +10%
+		- Revoke Evil Titles
+		- Faction Risk (Lesser)
+	- Canonical (60 Baseline) [Righteous Book]:
+		- Abrahamics, Dualists
+		- Requires State Religion, Formalized Rituals, Writing
+		- Conversion Speed: +20%
+		- Heresy Risk: +50%
+		- Revoke Hostile/Evil
+		- Faction Risk
+- Religious Attitude:
+	- Pluralist:
+		- Divergence Threshold: +10
+		- Easier New Rite Creation
+		- Conversion Speed: -10%
+		- Same Faith Conversion Speed: -25%
+		- Unlocks changing faith sort of mechanic (e.g., Caucasian, Georgian churches)
+	- Righteous:
+		- Unlocks changing faith sort of mechanic (e.g., Caucasian, Georgian churches)
+	- Fundamentalist:
+		- Divergence Threshold: -10
+		- Harder New Rite Creation
+		- Conversion Speed: +10%
+		- Same Faith Conversion Speed: +25%
 
 Religion:
+- Jewish Christian rite should require Judaism, speaking Israelite, or already having the doctrine
+- Christian Syncretism should be blocked for Jews
 - Manicheans and Western Manicheans consider Christianity too good (astray for syncretics? Boo!)
 - Fundamentalism for the Celtiberians as they held out against Romanization
 - Additional Monasticism category for Clerics always being Monastics
@@ -44,11 +79,7 @@ Religion:
 - Doctrine for "Truly Hellenic" faiths for the truly_hellenic_faith_trigger
 
 Christian Borks:
-- Revamp pam liturgical language stuff
-- Add rule blocks for Apostolic and Ante-Nicene Christianity
 - Ecumenism tenets are borked
-- Duplicated Rites:
-   - Marcionism, Nestorianism
 
 - Add in 2nd Temple and 1st Temple Judaism for full Jewish history
 
@@ -197,6 +228,21 @@ Activities:
 
 Triggers:
 - Overhaul buildings and triggers as they are borked
+
+Decisions:
+- Hellenism Syncretism
+	Requires:
+		- Rite is Polytheist
+		- You own most of the rite
+		- Rite head is your vassal
+	Effects:
+		- Faith changes to Hellenic faith
+		- Adopts lay clergy and no HOF
+		- Adopts Hellenic Faith doctrine
+		- Rite drops any tenet that's prohibited and adopts random permitted tenets
+		- If Has a head and Reformed:
+			- New Rite from original faith used instead (Egyptian, Syrian Paganism)
+			- Rulers get a chance to convert
 
 Vanilla Conformity:
 - Replace all instances of nicene with "christian_faith" for vanilla compat, and other rite equivalents

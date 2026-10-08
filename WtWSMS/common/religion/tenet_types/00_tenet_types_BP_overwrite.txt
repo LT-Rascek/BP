@@ -257,7 +257,6 @@ tenet_communal_identity = {
 	}
 }
 
-
 ##### Changed from Vanilla: Gave dynamic name and description
 
 # Endura / Ritual Suicide / Consolamentum / Paráklēsis
@@ -831,6 +830,92 @@ tenet_household_gods = {
 	}
 }
 
+##### Changed from Vanilla: Blocked for Jews (use Messianic Doctrine instead)
+
+# Christian Syncretism
+tenet_christian_syncretism = {
+	icon = tenet_christian_syncretism
+
+	piety_cost = {
+		if = {
+			limit = {
+				OR = {
+					rite_religion_tag = islam_religion
+					rite_religion_tag = dualism_religion
+				}
+			}
+			value = faith_tenet_cost_low
+		}
+		else = {
+			value = faith_tenet_cost_mid
+		}
+
+		# Multiplier for keeping same tenet
+		if = {
+			limit = { rite_has_parameter = christian_syncretic_actor }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	can_pick = {
+		##### Changed from Vanilla vvvvv
+		NOT = { religion = religion:judaism_religion }
+		##### Changed from Vanilla ^^^^^
+		NOT = { religion = religion:christianity_religion }
+		unique_syncretism_trigger = yes
+		trigger_if = {
+			limit = { scope:actor ?= { is_ai = yes } }
+			scope:actor = { pam_ai_meaningful_christian_presence_trigger = yes }
+		}
+	}
+
+	can_pick_as_personal_tenet = {
+		NOT = {
+			faith = { religion = religion:christianity_religion }
+		}
+		trigger_if = {
+			limit = { is_ai = yes }
+			pam_ai_meaningful_christian_presence_trigger = yes
+		}
+	}
+
+	personal_tenet_parameters = {
+		tenet_syncretism_invite_religious_exiles
+		tenet_syncretism_county_bonus
+		can_use_christian_artifacts
+		tenet_christian_syncretism_study_rite_bonus
+	}
+
+	parameters = {
+		can_use_christian_artifacts
+		# Actor opinion is delivered by special_parameters; the syncretic trigger checks the doctrine.
+		christian_syncretic_actor
+		tenet_christian_syncretism_study_rite_bonus
+		unreformed_syncretic_conversion_malus_active
+	}
+
+	special_parameters = {
+		hostility_level_override = {
+			special_doctrine_is_christian_faith = hostile
+		}
+		parameter_opinion_override = {
+			#Sync this to syncretic_mutual_opinion_bonus_value
+			christian_syncretic_recipient = 30
+		}
+	}
+
+	traits = {
+		virtues = { 
+			compassionate = { weight = 15 scale = 1 }
+		}
+		sins = { 
+			callous = { weight = 10 scale = 1 }
+			sadistic = { weight = 10 scale = 1 }
+		}
+	}
+}
+
+##### Changed from Vanilla: Overhauled entire tenet features
 tenet_pursuit_of_power = {
 	icon = tenet_pursuit_of_power
 

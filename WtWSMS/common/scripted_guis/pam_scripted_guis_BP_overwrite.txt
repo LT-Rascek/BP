@@ -9,6 +9,46 @@ pam_know_doctrine = {
 			has_perk = prophet_perk
 			##### Changed from Vanilla vvvvv
 			rite ?= { rite_has_parameter = unlock_prophet_perk_effect }
+			trigger_if = {
+				limit = {
+					root.religion = religion:christianity_religion
+					OR = {
+						scope:doctrine = doctrine:doctrine_christian_liturgical_rite_latin
+						scope:doctrine = doctrine:doctrine_christian_liturgical_rite_gallican_rite
+						scope:doctrine = doctrine:doctrine_christian_liturgical_rite_moazarbic_rite
+						scope:doctrine = doctrine:doctrine_christian_liturgical_rite_celtic_rite
+						scope:doctrine = doctrine:doctrine_christian_liturgical_rite_african_rite
+						scope:doctrine = doctrine:doctrine_christian_liturgical_rite_greek
+						scope:doctrine = doctrine:doctrine_christian_liturgical_rite_west_syriac_rite
+						scope:doctrine = doctrine:doctrine_christian_liturgical_rite_armenian_rite
+						scope:doctrine = doctrine:doctrine_christian_liturgical_rite_alexandrian_rite
+						scope:doctrine = doctrine:doctrine_christian_liturgical_rite_ethiopian_rite
+						scope:doctrine = doctrine:doctrine_christian_liturgical_rite_east_syriac_rite
+						scope:doctrine = doctrine:doctrine_christian_liturgical_rite_israelite
+						scope:doctrine = doctrine:doctrine_christian_liturgical_rite_gothic
+						scope:doctrine = doctrine:doctrine_christian_liturgical_rite_local_rite
+						scope:doctrine = doctrine:doctrine_christian_liturgical_rite_none
+					}
+				}
+				#Christian Liturgies don't require special knowledge
+				OR = {
+					scope:doctrine = doctrine:doctrine_christian_liturgical_rite_latin
+					scope:doctrine = doctrine:doctrine_christian_liturgical_rite_gallican_rite
+					scope:doctrine = doctrine:doctrine_christian_liturgical_rite_moazarbic_rite
+					scope:doctrine = doctrine:doctrine_christian_liturgical_rite_celtic_rite
+					scope:doctrine = doctrine:doctrine_christian_liturgical_rite_african_rite
+					scope:doctrine = doctrine:doctrine_christian_liturgical_rite_greek
+					scope:doctrine = doctrine:doctrine_christian_liturgical_rite_west_syriac_rite
+					scope:doctrine = doctrine:doctrine_christian_liturgical_rite_armenian_rite
+					scope:doctrine = doctrine:doctrine_christian_liturgical_rite_alexandrian_rite
+					scope:doctrine = doctrine:doctrine_christian_liturgical_rite_ethiopian_rite
+					scope:doctrine = doctrine:doctrine_christian_liturgical_rite_east_syriac_rite
+					scope:doctrine = doctrine:doctrine_christian_liturgical_rite_israelite
+					scope:doctrine = doctrine:doctrine_christian_liturgical_rite_gothic
+					scope:doctrine = doctrine:doctrine_christian_liturgical_rite_local_rite
+					scope:doctrine = doctrine:doctrine_christian_liturgical_rite_none
+				}
+			}
 			##### Changed from Vanilla ^^^^^
 		}
 	}
