@@ -55,6 +55,16 @@ override_vanilla_names = {
 				adherent_plural = nestorian_faith_adherent_plural
 			}
 		}
+		#Rites
+		rite:nestorian = {
+			set_rite_name = {
+				name = nestorian_rite
+				desc = nestorian_rite_desc
+				adjective = nestorian_rite_adj
+				adherent = nestorian_rite_adherent
+				adherent_plural = nestorian_rite_adherent_plural
+			}
+		}
 	}
 }
 
@@ -70,7 +80,7 @@ update_rite_doctrines_and_tenets = {
 		#baltic_religion
 		rite:baltic_pagan = {
 			basic_unreformed_paganism_change_effect = yes
-			change_rite_doctrine = special_doctrine_przeworsk_complex
+			change_rite_doctrine = special_doctrine_is_przeworsk_faith
 		}
 		#basque_religion
 		#biliku_religion
@@ -101,9 +111,18 @@ update_rite_doctrines_and_tenets = {
 		rite:yogacara = { set_rite_enabled = no }
 		rite:lamaism = { set_rite_enabled = no }
 		rite:acharya = { set_rite_enabled = no }
-		rite:theravada = { change_rite_doctrine = special_doctrine_is_buddhist_faith }
-		rite:mahayana = { change_rite_doctrine = special_doctrine_is_buddhist_faith }
-		rite:vajrayana = { change_rite_doctrine = special_doctrine_is_buddhist_faith }
+		rite:theravada = {
+			change_rite_doctrine = special_doctrine_is_buddhist_faith
+			change_rite_doctrine = doctrine_theocracy_lay_clergy
+		}
+		rite:mahayana = {
+			change_rite_doctrine = special_doctrine_is_buddhist_faith
+			change_rite_doctrine = doctrine_theocracy_lay_clergy
+		}
+		rite:vajrayana = {
+			change_rite_doctrine = special_doctrine_is_buddhist_faith
+			change_rite_doctrine = doctrine_theocracy_lay_clergy
+		}
 		#christianity_religion
 		rite:apostolic_christianity = { set_rite_enabled = no }
 		rite:antenicene_christianity = { set_rite_enabled = no }

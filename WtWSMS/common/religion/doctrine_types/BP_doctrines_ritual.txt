@@ -3,6 +3,8 @@ doctrine_ritual_vegetarianism_required = {
 	doctrine_group_type = vegetarianism_group
 	index = 3
 	
+	divergence = 0
+	
 	icon = "doctrine_ritual_vegetarianism_required"
 	piety_cost = {
 		if = {
@@ -58,6 +60,8 @@ doctrine_ritual_vegetarianism_required = {
 doctrine_ritual_vegetarianism_clerics = {
 	doctrine_group_type = vegetarianism_group
 	index = 2
+	
+	divergence = 2.5
 	
 	icon = "doctrine_ritual_vegetarianism_clerics"
 	piety_cost = {
@@ -115,6 +119,8 @@ doctrine_ritual_vegetarianism_partial = {
 	doctrine_group_type = vegetarianism_group
 	index = 1
 	
+	divergence = 5
+	
 	icon = "doctrine_ritual_vegetarianism_partial"
 	piety_cost = {
 		if = {
@@ -148,6 +154,8 @@ doctrine_ritual_vegetarianism_partial = {
 doctrine_ritual_vegetarianism_no_statement = {
 	doctrine_group_type = vegetarianism_group
 	index = 0
+	
+	divergence = 10
 	
 	icon = "doctrine_ritual_vegetarianism_no_statement"
 	piety_cost = {

@@ -255,6 +255,17 @@ nestorian = {
 		antioch
 	}
 
+	tenet_selection_pair = {
+		requires_dlc_flag = by_god_alone
+		tenet = tenet_divine_liturgy
+		fallback_tenet = tenet_communion
+	}
+
+	tenets = {
+		tenet_communal_identity
+		tenet_adaptive
+	}
+
 	doctrines = {
 		doctrine_monasticism_accepted
 		doctrine_pluralism_righteous

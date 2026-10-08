@@ -42,3 +42,9 @@ doctrine_zoroastrian_branches = {
 	category = specific_to_religion
 	is_available_on_create = { religion_tag = zoroastrianism_religion }
 }
+
+doctrine_temple_authority = {
+	category = specific_to_religion
+	doctrine_lock = religion
+	is_available_on_create = { religion_tag = judaism_religion }
+}

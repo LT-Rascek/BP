@@ -124,6 +124,140 @@ tenet_aniconism = {
 	}
 }
 
+##### Changed from Vanilla: Extended Jewish name trigger effects
+
+# Communal Identity / Chosen People / Populus Dei / Laòs Theoũ
+tenet_communal_identity = {
+	icon = tenet_communal_identity
+
+	piety_cost = {
+		if = {
+			limit = {
+				OR = {
+					rite_religion_tag = buddhism_religion
+					rite_religion_tag = jainism_religion
+				}
+			}
+			value = faith_tenet_cost_mid
+		}
+		else = {
+			value = faith_tenet_cost_low
+		}
+
+		# Multiplier for keeping same tenet
+		if = {
+			limit = { rite_has_tenet = tenet_communal_identity }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	name = {
+		first_valid = {
+			##### Changed from Vanilla vvvvv
+			triggered_desc = {
+				trigger = {
+					rite_has_doctrine = abrahamic_hostility_doctrine
+					rite_has_parameter = liturgical_language_latin
+				}
+				desc = tenet_communal_identity_latin_name
+			}
+			triggered_desc = {
+				trigger = {
+					rite_has_doctrine = abrahamic_hostility_doctrine
+					rite_has_parameter = liturgical_language_greek
+				}
+				desc = tenet_communal_identity_greek_name
+			}
+			triggered_desc = {
+				trigger = {
+					OR = {
+						rite_religion_tag = judaism_religion
+						rite_has_parameter = liturgical_language_israelite
+					}
+				}
+				desc = tenet_communal_identity_chosen_people_name
+			}
+			##### Changed from Vanilla ^^^^^
+			desc = tenet_communal_identity_name
+		}
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					has_pam_dlc_trigger = yes
+					pam_latin_as_liturgical_language_trigger = yes
+				}
+				desc = tenet_communal_identity_latin_desc
+			}
+			triggered_desc = {
+				trigger = {
+					has_pam_dlc_trigger = yes
+					pam_greek_as_liturgical_language_trigger = yes
+				}
+				desc = tenet_communal_identity_greek_desc
+			}
+			triggered_desc = {
+				trigger = {
+					has_pam_dlc_trigger = yes
+					pam_greek_as_liturgical_language_trigger = no
+					pam_latin_as_liturgical_language_trigger = no
+				}
+				desc = tenet_communal_identity_default_desc
+			}
+			triggered_desc = {
+				trigger = {
+					rite_religion_tag = judaism_religion
+				}
+				desc = tenet_communal_identity_chosen_people_desc
+			}
+			desc = tenet_communal_identity_desc
+		}
+	}
+
+	can_pick = {
+		always = yes
+	}
+
+	parameters = {
+		same_culture_conversion_bonus_active
+		same_faith_promote_culture_bonus_active
+		other_culture_conversion_penalty_active
+		sanctify_artifacts_communal
+	}
+
+	# These opinion keys are how others regard you, not vice versa
+	character_modifier = {
+		name = "tenet_communal_identity_opinion"
+		same_culture_opinion = 10
+		same_faith_different_rite_opinion = -20
+		same_faith_different_rite_county_opinion_add = -10
+	}
+
+	county_modifier = {
+		development_growth_factor = 0.1
+	}
+
+	personal_tenet_parameters = {
+		tenet_communal_identity_free_council_sway
+		tenet_communal_identity_sway_piety
+		tenet_communal_identity_language_devotion
+		tenet_communal_identity_language_reward
+	}
+
+	traits = {
+		virtues = {
+			trusting = { weight = 15 scale = 1 }
+			loyal = { weight = 10 scale = 1 }
+		}
+		sins = {
+			disloyal = { weight = 10 scale = 1 }
+		}
+	}
+}
+
+
 ##### Changed from Vanilla: Gave dynamic name and description
 
 # Endura / Ritual Suicide / Consolamentum / Paráklēsis
@@ -301,8 +435,18 @@ tenet_legalism = {
 				desc = tenet_legalism_maat_name
 			}
 			triggered_desc = {
-				trigger = { religion = religion:hellenism_religion }
+				trigger = {
+					religion = religion:hellenism_religion
+					rite_has_parameter = liturgical_language_greek
+				}
 				desc = tenet_legalism_dikaiosyne_name
+			}
+			triggered_desc = {
+				trigger = {
+					religion = religion:hellenism_religion
+					rite_has_parameter = liturgical_language_latin
+				}
+				desc = tenet_legalism_iustitia_name
 			}
 			desc = tenet_legalism_name
 		}
@@ -315,8 +459,18 @@ tenet_legalism = {
 				desc = tenet_legalism_maat_desc
 			}
 			triggered_desc = {
-				trigger = { religion = religion:hellenism_religion }
+				trigger = {
+					religion = religion:hellenism_religion
+					rite_has_parameter = liturgical_language_greek
+				}
 				desc = tenet_legalism_dikaiosyne_desc
+			}
+			triggered_desc = {
+				trigger = {
+					religion = religion:hellenism_religion
+					rite_has_parameter = liturgical_language_latin
+				}
+				desc = tenet_legalism_iustitia_desc
 			}
 			desc = tenet_legalism_desc
 		}
@@ -465,7 +619,6 @@ tenet_ancestor_worship = {
 		trigger = {
 			OR = {
 				has_doctrine = sinitic_hostility_doctrine
-				this = faith:baltic_pagan
 				this = faith:shinto_faith
 				this = faith:mu
 			}

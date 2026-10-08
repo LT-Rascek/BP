@@ -62,8 +62,8 @@ eastern_pagan_group = {
 #Hellenic
 hellenic_special_doctrine_group = {
 	category = specific_to_religion
-	doctrine_lock = religion
-	is_available_on_create = { religion_tag = hellenism_religion }
+	doctrine_lock = faith
+	is_available_on_create = { this = faith:hellenic_pagan }
 }
 hellenic_liturgical_languages_group = {
 	category = specific_to_religion
