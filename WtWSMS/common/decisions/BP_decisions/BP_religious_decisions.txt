@@ -9,7 +9,7 @@ raise_circumcellions_decision = {
 	selection_tooltip = raise_circumcellions_decision_tooltip
 	
 	is_shown = {
-		root.rite = { has_personal_tenet_flag = raise_circumcellions_decision }
+		has_personal_tenet_flag = raise_circumcellions_decision
 		is_ruler = yes
 		NOT = { government_has_flag = government_is_nomadic }
 		trigger_if = { #Available for high tribals, but not tribals
@@ -19,9 +19,17 @@ raise_circumcellions_decision = {
 	}
 	
 	is_valid = {
-		custom_description = {
-			text = recently_called_circumcellions
-			NOT = { has_character_flag = recently_called_circumcellions }
+		trigger_if = {
+			limit = { has_character_flag = recently_called_circumcellions }
+			custom_description = {
+				text = recently_called_circumcellions
+				NOT = { has_character_flag = recently_called_circumcellions }
+			}
+		}
+		custom_tooltip = {
+			text = at_least_on_county_is_your_rite
+			subject = root
+			any_sub_realm_county = { this.rite = root.rite }
 		}
 		piety_level >= 1
 		is_at_war = yes
@@ -53,50 +61,59 @@ raise_circumcellions_decision = {
 	cost = { piety = root.circumellion_piety_cost }
 	
 	effect = {
-		root = {
-			save_temporary_scope_as = the_ruler
-			ordered_character_war = {
-				order_by = given_war_other_side_max_military_strength
-				position = 0
-				save_scope_as = chosen_war
+		if = {
+			limit = { NOT = { any_sub_realm_county = { this.rite = root.rite } } }
+			custom_tooltip = {
+				text = no_effect
+				subject = root
 			}
 		}
-		every_realm_county = {
-			limit = {
-				this.holder = root
-				this.rite = root.rite
-			}
+		else = {
 			root = {
-				spawn_army = {
-					levies = 600
-					men_at_arms = {
-						type = light_footmen
-						stacks = 3
-					}
-					location = scope:the_ruler.capital_province
-					uses_supply = no
-					war = scope:chosen_war
-					inheritable = no
-					name = circumcellions_army_name
+				save_temporary_scope_as = the_ruler
+				ordered_character_war = {
+					order_by = given_war_other_side_max_military_strength
+					position = 0
+					save_scope_as = chosen_war
 				}
 			}
-			#The peasants are ~~revolting~~ fighting for us, sir.
-			change_county_control = -25
-			#And the impact sticks around for years
-			add_county_modifier = { modifier = county_raised_circumcellions years = 5 }
-		}
-		hidden_effect = {
-			root = { add_character_flag = { flag = recently_called_circumcellions years = 5 } }
-			root = { save_temporary_scope_as = circumellions_raiser }
-			every_character_war = {
-				every_war_participant = {
-					#limit = { NOT = { this = root } }
-					send_interface_message = {
-						type = event_generic_neutral
-						title = circumellions_raised_title
-						desc = circumellions_raised_desc
-						tooltip = circumellions_raised_tt
-						left_icon = root
+			every_realm_county = {
+				limit = {
+					this.holder = root
+					this.rite = root.rite
+				}
+				root = {
+					spawn_army = {
+						levies = 600
+						men_at_arms = {
+							type = light_footmen
+							stacks = 3
+						}
+						location = scope:the_ruler.capital_province
+						uses_supply = no
+						war = scope:chosen_war
+						inheritable = no
+						name = circumcellions_army_name
+					}
+				}
+				#The peasants are ~~revolting~~ fighting for us, sir.
+				change_county_control = -25
+				#And the impact sticks around for years
+				add_county_modifier = { modifier = county_raised_circumcellions years = 5 }
+			}
+			hidden_effect = {
+				root = { add_character_flag = { flag = recently_called_circumcellions years = 5 } }
+				root = { save_temporary_scope_as = circumellions_raiser }
+				every_character_war = {
+					every_war_participant = {
+						#limit = { NOT = { this = root } }
+						send_interface_message = {
+							type = event_generic_neutral
+							title = circumellions_raised_title
+							desc = circumellions_raised_desc
+							tooltip = circumellions_raised_tt
+							left_icon = root
+						}
 					}
 				}
 			}

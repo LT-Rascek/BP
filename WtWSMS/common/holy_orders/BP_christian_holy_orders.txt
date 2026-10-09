@@ -1,0 +1,29 @@
+﻿ho_maronite_movement = {
+
+	type = monastic
+	government = monastic_holy_order_government
+	title = d_maronite_movement
+	name = "holy_order_maronite_movement"
+	coat_of_arms = d_maronite_movement
+
+	trigger = {
+		always = no
+		#scope:leader.faith = faith:christian_faith
+		#scope:leader.culture = culture:syriac
+		#scope:province.county ?= title:c_hama
+	}
+
+	weight = {
+		value = 5
+		if = {
+			limit = {
+				years_from_game_start < 1
+
+				scope:leader.rite = rite:maronite_church
+			}
+			add = 10000
+		}
+	}
+
+	effect = {}
+}

@@ -1804,3 +1804,36 @@ d_bugeac = {
 	}
 }
 
+#Holy Orders
+d_maronite_movement = {
+	pattern="pattern_solid.dds"
+	color1=yellow
+	color2=black
+	color3=red
+	colored_emblem={
+		color1=black
+		color2=green
+		texture="ce_ordinary_cross_5.dds"
+	}
+	colored_emblem={
+		color1=black
+		color2=blue
+		texture="ce_cross_patty.dds"
+		instance={
+			position={ 0.265000 0.210000 }
+			scale={ 0.350000 0.350000 }
+		}
+		instance={
+			position={ 0.735000 0.210000 }
+			scale={ 0.350000 0.350000 }
+		}
+		instance={
+			position={ 0.735000 0.725000 }
+			scale={ 0.300000 0.300000 }
+		}
+		instance={
+			position={ 0.265000 0.725000 }
+			scale={ 0.300000 0.300000 }
+		}
+	}
+}

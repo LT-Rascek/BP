@@ -1,0 +1,454 @@
+﻿set_up_historical_monastic_orders_effect = {
+
+	#EASTERN CHRISTIAN GROUPINGS
+	##Studites
+	#The monks of Stoudios, the great monastery of Constantinople, at Selymbria to keep the capital county free
+	#Really came into prominence during the Acian Schism
+	if = {
+		limit = { current_year = 476 }
+		title:b_selymbria = { save_scope_as = monastic_barony }
+		character:studie_monk_476 = { save_scope_as = monastic_leader }
+		title:h_eastern_roman_empire.holder = {
+			save_scope_as = game_start_founder
+			set_variable = { name = studite_founder days = 10 }
+		}
+		scope:game_start_founder = {
+			set_variable = {
+				name = studite_founder
+				days = 10
+			}
+			create_holy_order_neutral_effect = {
+				LEADER = scope:monastic_leader
+				CAPITAL = scope:monastic_barony
+				NEW_HO_SCOPE = new_holy_order
+				FOUNDER = scope:game_start_founder
+				ORDER_TYPE = monastic
+			}
+			remove_variable = studite_founder
+		}
+		scope:monastic_leader = {
+			every_courtier = {
+				add_trait = devoted
+				add_trait_xp = {
+					trait = devoted
+					value = { 20 80 }
+				}
+			}
+		}
+		scope:new_holy_order ?= { set_order_tenet = tenet:tenet_dyophysitism }
+	}
+
+	##Athonite Hermits
+	#The hermits and lavras of the Holy Mountain
+	if = {
+		limit = { always = yes }
+		title:b_ierrisos = { save_scope_as = monastic_barony }
+		character:athos_monk_476 = { save_scope_as = monastic_leader }
+		title:d_thessalonika.holder = {
+			save_scope_as = game_start_founder
+			set_variable = { name = monastic_game_start_founder days = 10 }
+		}
+		scope:game_start_founder = {
+			set_variable = {
+				name = athonite_founder
+				days = 10
+			}
+			create_holy_order_neutral_effect = {
+				LEADER = scope:monastic_leader
+				CAPITAL = scope:monastic_barony
+				NEW_HO_SCOPE = new_holy_order
+				FOUNDER = scope:game_start_founder
+				ORDER_TYPE = monastic
+			}
+			remove_variable = athonite_founder
+		}
+		scope:monastic_leader = {
+			every_courtier = {
+				add_trait = devoted
+				add_trait_xp = {
+					trait = devoted
+					value = { 20 80 }
+				}
+			}
+		}
+		scope:new_holy_order ?= { set_order_tenet = tenet:tenet_anachoresis }
+	}
+
+	##Latros Hesychasts
+	#The hermits of Mount Latros above Miletus
+	if = {
+		limit = { always = yes }
+		title:b_iassus = { save_scope_as = monastic_barony }
+		character:latros_monk_476 = { save_scope_as = monastic_leader }
+		title:k_asia.holder = {
+			save_scope_as = game_start_founder
+			set_variable = {
+				name = monastic_game_start_founder
+				days = 10
+			}
+		}
+		scope:game_start_founder = {
+			set_variable = {
+				name = latros_founder
+				days = 10
+			}
+			create_holy_order_neutral_effect = {
+				LEADER = scope:monastic_leader
+				CAPITAL = scope:monastic_barony
+				NEW_HO_SCOPE = new_holy_order
+				FOUNDER = scope:game_start_founder
+				ORDER_TYPE = monastic
+			}
+			remove_variable = latros_founder
+		}
+		scope:monastic_leader = {
+			every_courtier = {
+				add_trait = devoted
+				add_trait_xp = {
+					trait = devoted
+					value = { 20 80 }
+				}
+			}
+			faith = {
+				random_faith_holy_order = {
+					limit = {
+						leader = scope:monastic_leader
+					}
+					save_scope_as = latros
+				}
+			}
+		}
+		scope:new_holy_order ?= { set_order_tenet = tenet:tenet_anachoresis }
+	}
+
+	##Sumelan Monks
+	#The monastery of Panagia Soumela in the Pontic mountains
+	if = {
+		limit = { always = yes }
+		title:b_rhizus = { save_scope_as = monastic_barony }
+		character:sumelan_monk_476 = { save_scope_as = monastic_leader }
+		title:d_armenia_prima.holder = {
+			save_scope_as = game_start_founder
+			set_variable = {
+				name = monastic_game_start_founder
+				days = 10
+			}
+		}
+		scope:game_start_founder = {
+			set_variable = {
+				name = sumelan_founder
+				days = 10
+			}
+			create_holy_order_neutral_effect = {
+				LEADER = scope:monastic_leader
+				CAPITAL = scope:monastic_barony
+				NEW_HO_SCOPE = new_holy_order
+				FOUNDER = scope:game_start_founder
+				ORDER_TYPE = monastic
+			}
+			remove_variable = sumelan_founder
+		}
+		scope:monastic_leader = {
+			every_courtier = {
+				add_trait = devoted
+				add_trait_xp = {
+					trait = devoted
+					value = { 20 80 }
+				}
+			}
+		}
+		scope:new_holy_order ?= { set_order_tenet = tenet:tenet_anachoresis }
+	}
+
+	##Georgian Monasteries
+	#The monastic communities of Kartli, Kakheti and Tao-Klarjeti
+	if = {
+		limit = { always = yes }
+		title:b_mtskheta = { save_scope_as = monastic_barony }
+		character:georgian_monk_476 = { save_scope_as = monastic_leader }
+		title:k_iberia.holder = {
+			save_scope_as = game_start_founder
+			set_variable = {
+				name = monastic_game_start_founder
+				days = 10
+			}
+		}
+		scope:game_start_founder = {
+			set_variable = {
+				name = georgian_monastic_founder
+				days = 10
+			}
+			create_holy_order_neutral_effect = {
+				LEADER = scope:monastic_leader
+				CAPITAL = scope:monastic_barony
+				NEW_HO_SCOPE = new_holy_order
+				FOUNDER = scope:game_start_founder
+				ORDER_TYPE = monastic
+			}
+			remove_variable = georgian_monastic_founder
+		}
+		scope:new_holy_order ?= { set_order_tenet = tenet:tenet_anachoresis }
+	}
+
+	##Bahitawi
+	#The hermit-monks of the Ethiopian highlands
+	if = {
+		limit = { always = yes }
+		title:b_shimazana = { save_scope_as = monastic_barony }
+		character:ethiopian_monk_476 = { save_scope_as = monastic_leader }
+		title:e_axum.holder = {
+			save_scope_as = game_start_founder
+			set_variable = {
+				name = monastic_game_start_founder
+				days = 10
+			}
+		}
+		scope:game_start_founder = {
+			set_variable = {
+				name = bahitawi_founder
+				days = 10
+			}
+			create_holy_order_neutral_effect = {
+				LEADER = scope:monastic_leader
+				CAPITAL = scope:monastic_barony
+				NEW_HO_SCOPE = new_holy_order
+				FOUNDER = scope:game_start_founder
+				ORDER_TYPE = monastic
+			}
+			remove_variable = bahitawi_founder
+		}
+		scope:monastic_leader = {
+			every_courtier = {
+				add_trait = devoted
+				add_trait_xp = {
+					trait = devoted
+					value = { 20 80 }
+				}
+			}
+		}
+		scope:new_holy_order ?= { set_order_tenet = tenet:tenet_anachoresis }
+	}
+
+	##Desert Fathers
+	#The monasteries of the Nitrian Desert, heirs of the first Christian monks
+	if = {
+		limit = { always = yes }
+		# grab from theocrat baron vassal
+		title:b_wadi_natrun = { holder.liege = { get_title = prev } save_scope_as = monastic_barony }
+		character:egyptian_monk_476 = { save_scope_as = monastic_leader }
+		title:d_alexandria.holder = {
+			save_scope_as = game_start_founder
+			set_variable = {
+				name = monastic_game_start_founder
+				days = 10
+			}
+		}
+		scope:game_start_founder = {
+			set_variable = {
+				name = desert_father_founder
+				days = 10
+			}
+			create_holy_order_neutral_effect = {
+				LEADER = scope:monastic_leader
+				CAPITAL = scope:monastic_barony
+				NEW_HO_SCOPE = new_holy_order
+				FOUNDER = scope:game_start_founder
+				ORDER_TYPE = monastic
+			}
+			remove_variable = desert_father_founder
+		}
+		scope:monastic_leader = {
+			every_courtier = {
+				add_trait = devoted
+				add_trait_xp = {
+					trait = devoted
+					value = { 20 80 }
+				}
+			}
+		}
+		scope:new_holy_order ?= { set_order_tenet = tenet:tenet_anachoresis }
+	}
+
+	##Monks of Hayk'
+	#The monastic communities of Greater Armenia
+	if = {
+		limit = { always = yes }
+		# grab from theocrat baron vassal
+		title:b_bagavan = { holder.liege = { get_title = prev } save_scope_as = monastic_barony }
+		character:armenian_monk_476 = { save_scope_as = monastic_leader }
+		create_holy_order = {
+			leader = scope:monastic_leader
+			capital = scope:monastic_barony
+			random_holy_order_type = monastic
+			coat_of_arms = ho_christian_monks_of_hayk
+			name = holy_order_monks_of_hayk
+			save_scope_as = new_holy_order
+		}
+		scope:monastic_leader = {
+			every_courtier = {
+				add_trait = devoted
+				add_trait_xp = {
+					trait = devoted
+					value = { 20 80 }
+				}
+			}
+		}
+		scope:new_holy_order ?= { set_order_tenet = tenet:tenet_anachoresis }
+	}
+
+	##Sons of the Covenant
+	#Syriac ascetics serving the Church of the East
+	if = {
+		limit = { always = yes }
+		title:b_fishabur = { holder.liege = { get_title = prev } save_scope_as = monastic_barony }
+		character:assyrian_monk_476 = { save_scope_as = monastic_leader }
+		create_holy_order = {
+			leader = scope:monastic_leader
+			capital = scope:monastic_barony
+			random_holy_order_type = monastic
+			coat_of_arms = ho_sons_of_the_covenant
+			name = holy_order_sons_of_the_covenant
+			save_scope_as = new_holy_order
+		}
+		scope:monastic_leader = {
+			every_courtier = {
+				add_trait = devoted
+				add_trait_xp = {
+					trait = devoted
+					value = { 20 80 }
+				}
+			}
+		}
+		scope:new_holy_order = {
+			title = { set_title_name = holy_order_sons_of_the_covenant }
+			set_order_tenet = tenet:tenet_anachoresis
+		}
+	}
+
+	##Rightful dayroye
+	#The monks of the Syriac Orthodox heartland
+	if = {
+		limit = { always = yes }
+		title:b_tall_bashir = { holder.liege = { get_title = prev } save_scope_as = monastic_barony }
+		character:syriac_monk_476 = { save_scope_as = monastic_leader }
+		create_holy_order = {
+			leader = scope:monastic_leader
+			capital = scope:monastic_barony
+			random_holy_order_type = monastic
+			coat_of_arms = ho_rightful_dayroye
+			name = holy_order_rightful_dayroye
+			save_scope_as = new_holy_order
+		}
+		scope:monastic_leader = {
+			every_courtier = {
+				add_trait = devoted
+				add_trait_xp = {
+					trait = devoted
+					value = { 20 80 }
+				}
+			}
+		}
+		scope:new_holy_order ?= {
+			title = { set_title_name = holy_order_rightful_dayroye }
+			set_order_tenet = tenet:tenet_anachoresis
+		}
+	}
+
+	#  ##Community of St Catherine
+	#  #The monks of Mount Sinai
+	#  if = {
+	#  	limit = { current_year > 565 }
+	#  	title:b_stcatherine = {
+	#  		holder.liege = { get_title = prev } # grab from theocrat baron vassal
+	#  		save_scope_as = monastic_barony
+	#  	}
+	#  	character:st_catherine_monk_476 = { save_scope_as = monastic_leader }
+	#  	title:c_sinai.holder = {
+	#  		save_scope_as = game_start_founder
+	#  		set_variable = {
+	#  			name = monastic_game_start_founder
+	#  			days = 10
+	#  		}
+	#  	}
+	#  	scope:game_start_founder = {
+	#  		set_variable = {
+	#  			name = community_of_st_catherine_founder
+	#  			days = 10
+	#  		}
+	#  		create_holy_order_neutral_effect = {
+	#  			LEADER = scope:monastic_leader
+	#  			CAPITAL = scope:monastic_barony
+	#  			NEW_HO_SCOPE = new_holy_order
+	#  			FOUNDER = scope:game_start_founder
+	#  			ORDER_TYPE = monastic
+	#  		}
+	#  		remove_variable = community_of_st_catherine_founder
+	#  	}
+	#  	scope:monastic_leader = {
+	#  		every_courtier = {
+	#  			add_trait = devoted
+	#  			add_trait_xp = {
+	#  				trait = devoted
+	#  				value = { 20 80 }
+	#  			}
+	#  		}
+	#  	}
+	#  	scope:new_holy_order ?= { set_order_tenet = tenet:tenet_anachoresis }
+	#  }
+
+	## Maronites
+	if = {
+		limit = { always = yes }
+		title:b_kafartab = {
+			holder.liege = { get_title = prev } # grab from theocrat baron vassal
+			save_scope_as = monastic_barony
+		}
+		character:maronite_monk_476 = {
+			save_scope_as = monastic_leader
+			save_scope_as = maronite_leader
+		}
+		title:d_syria_salutaris.holder = {
+			save_scope_as = game_start_founder
+			set_variable = {
+				name = monastic_game_start_founder
+				days = 10
+			}
+		}
+		create_holy_order = {
+			leader = scope:monastic_leader
+			capital = scope:monastic_barony
+			random_holy_order_type = monastic
+			coat_of_arms = d_maronite_movement
+			name = holy_order_maronite_movement
+			save_scope_as = new_holy_order
+		}
+		scope:monastic_leader = {
+			every_courtier = {
+				add_trait = devoted
+				add_trait_xp = {
+					trait = devoted
+					value = { 20 80 }
+				}
+			}
+		}
+		title:b_az-zabadani = { lease_out_to_holy_order = scope:new_holy_order }
+		scope:new_holy_order ?= { set_order_tenet = tenet:tenet_dyophysitism }
+	}
+
+	#Give all monastic leaders some monastic trait XP
+	every_religion_global = {
+		every_faith = {
+			limit = { any_faith_holy_order = { exists = this } }
+			every_faith_holy_order = {
+				limit = { leader ?= { has_trait = devoted } }
+				leader = {
+					add_trait_xp = {
+						trait = devoted
+						value = { 40 90 }
+					}
+				}
+			}
+		}
+	}
+}
+set_up_historical_military_orders_effect = {}
