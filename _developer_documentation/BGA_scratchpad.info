@@ -18,7 +18,11 @@ stopped and completed scripted_triggers
 =======================
 First Order (AKA first sweep and implementation of plan):
 -----------------------
-- Catherine Wheel for Mastimani [FIXED?]
+- Raise Agonistici decision is visible when it shouldn't be [FIXED?]
+	- Agnoistici decision listing is all screwed up (effects, triggers) [FIXED?]
+
+- CotE head is in Antioch...
+- CotE monks not getting any land
 
 - special_doctrine_arian_ecumenism
 
@@ -68,15 +72,16 @@ Preservation/Attitude Doctrine Changes:
 		- Conversion Speed: +10%
 		- Same Faith Conversion Speed: +25%
 
+Culture:
+- Replace Kushite with Nubian; give it a custom history highlighting Kushite + Nubian settlers
+
 Religion:
-- Jewish Christian rite should require Judaism, speaking Israelite, or already having the doctrine
+- Split Bavlim Jews and integrate with Exilarch somehow
+- Jewish Christian rite should require Jewish Syncretism, speaking Israelite, or already having the doctrine
 - Christian Syncretism should be blocked for Jews
-- Manicheans and Western Manicheans consider Christianity too good (astray for syncretics? Boo!)
 - Fundamentalism for the Celtiberians as they held out against Romanization
-- Additional Monasticism category for Clerics always being Monastics
-   - Applies for some Christians as well as Cybelians
-   - clergy_are_always_monks parameter - linked with monasticism doctrine
 - Doctrine for "Truly Hellenic" faiths for the truly_hellenic_faith_trigger
+- Scripted GUI trigger stuff for Hellenic linguistic artifacts
 
 Christian Borks:
 - Ecumenism tenets are borked
@@ -191,17 +196,23 @@ Patron Deity Decisions:
 Doctrines:
 - Christian Liturgical Rites/Hellenic Liturgical Languages: Rework can_pick/is_shown values
 
+Religion:
+- Augustinian Order, Severus should be a monastic in Noricum
+- Update Paganify Scripted effect for new rites
+- Additional Monasticism category for Clerics always being Monastics
+   - Applies for some Christians as well as Cybelians
+   - clergy_are_always_monks parameter - linked with monasticism doctrine
+
 - Icons for Liturgical Languages
 - Figure out how we're going to handle church structure doctrines; in the west it should be tending towards Papal Primacy and Collegiality in the East
 - Henotheism needed for Bhakti and Khuramazta
 - Get Doctrines et al sorted, including Rite to Rule
-- Move Vegetarianism from Special group
 - Remove RICE buddhism doctrines
-- Add in Power Doctrine (main for now)
 - Add in Eastern Pagan, Faith Doctrine (special)
 - Persian Legalization
 
 History:
+- Names of Antiochene, Maronite, Hayk Monks are incorrect
 - Add Wereka, Batwin, and Arius as Arian Saints
 - Add necessary founder clerical regions
 - Review all character rites (ugh)
@@ -214,6 +225,9 @@ Other:
 
 GFX:
 - GetGovernmentTypeIcon for 00_government_custom_loc.txt
+
+Localization:
+- Kushite Pagan Locs
 
 =======================
 Third Order Sweep (AKA additional chrome):
