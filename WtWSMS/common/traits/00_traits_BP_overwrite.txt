@@ -1,5 +1,5 @@
 ﻿##### Changed from Vanilla: Added "learning_education_less_valued" parameter
-
+monks_are_called_philosophers
 # LEARNING OUTCOMES
 education_learning_1 = {
 	minimum_age = 16
@@ -1190,4 +1190,222 @@ disloyal = {
 	compatibility = {
 
 	}
+}
+
+##### Changed from Vanilla: Philosophical faiths call it Philosophers
+
+# Monk for christian male, Nun for christian female. Devoted for others.
+devoted = {
+	category = fame
+	monthly_piety = 0.3
+	monthly_learning_lifestyle_xp_gain_mult = 0.1
+	same_faith_opinion = 5
+
+	culture_modifier = {
+		parameter = prowess_from_religious_traits
+		prowess = 3
+	}
+
+	culture_modifier = {
+		parameter = devoted_trait_bonuses
+		learning = 3
+	}
+
+	flag = can_not_marry
+	inheritance_blocker = secular
+
+	shown_in_ruler_designer = no
+	clergy = yes
+
+	ai_sociability = very_low_negative_ai_value
+
+	##### Changed from Vanilla vvvvv
+	name = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { NOT = { exists = this } }
+				desc = trait_devoted_male
+			}
+			triggered_desc = {
+				trigger = {
+					is_adult = no
+				}
+				desc = trait_devoted_child
+			}
+			triggered_desc = {
+				trigger = {
+					faith ?= {
+						faith:theravada_faith.religion ?= religion
+					}
+					culture ?= { has_cultural_pillar = language_japonic }
+					is_female = no
+				}
+				desc = trait_devoted_buddhism_japanese_male
+			}
+			triggered_desc = {
+				trigger = {
+					faith ?= {
+						faith:theravada_faith.religion ?= religion
+					}
+					culture ?= { has_cultural_pillar = language_japonic }
+					is_female = yes
+				}
+				desc = trait_devoted_buddhism_japanese_female
+			}
+			triggered_desc = {
+				trigger = {
+					exists = faith.religion
+					faith.religion = faith:theravada_faith.religion
+					is_female = no
+				}
+				desc = trait_devoted_buddhism_male
+			}
+			triggered_desc = {
+				trigger = {
+					exists = faith.religion
+					faith.religion = faith:theravada_faith.religion
+					is_female = yes
+				}
+				desc = trait_devoted_buddhism_female
+			}
+			triggered_desc = {
+				trigger = {
+					exists = faith.religion
+					faith.religion = faith:vaishnava_faith.religion
+					is_female = no
+				}
+				desc = trait_devoted_hinduism_male
+			}
+			triggered_desc = {
+				trigger = {
+					exists = faith.religion
+					faith.religion = faith:vaishnava_faith.religion
+					is_female = yes
+				}
+				desc = trait_devoted_hinduism_female
+			}
+			triggered_desc = {
+				trigger = {
+					exists = faith.religion
+					faith.religion = faith:jain_faith.religion
+					is_female = no
+				}
+				desc = trait_devoted_jainism_male
+			}
+			triggered_desc = {
+				trigger = {
+					exists = faith.religion
+					faith.religion = faith:jain_faith.religion
+					is_female = yes
+				}
+				desc = trait_devoted_jainism_female
+			}
+			triggered_desc = {
+				trigger = { is_female = yes }
+				desc = trait_devoted_female
+			}
+			##### Changed from Vanilla vvvvv
+			triggered_desc = {
+				trigger = {
+					exists = rite
+					rite = { rite_has_parameter = monks_are_called_philosophers }
+					rite = { rite_has_parameter = liturgical_language_latin }
+					is_female = no
+				}
+				desc = trait_devoted_philosophus
+			}
+			triggered_desc = {
+				trigger = {
+					exists = rite
+					rite = { rite_has_parameter = monks_are_called_philosophers }
+					rite = { rite_has_parameter = liturgical_language_latin }
+					is_female = yes
+				}
+				desc = trait_devoted_philosopha
+			}
+			triggered_desc = {
+				trigger = {
+					exists = rite
+					rite = { rite_has_parameter = monks_are_called_philosophers }
+					rite = { rite_has_parameter = liturgical_language_greek }
+					is_female = no
+				}
+				desc = trait_devoted_philosophos
+			}
+			triggered_desc = {
+				trigger = {
+					exists = rite
+					rite = { rite_has_parameter = monks_are_called_philosophers }
+					rite = { rite_has_parameter = liturgical_language_greek }
+					is_female = yes
+				}
+				desc = trait_devoted_philosophon
+			}
+			triggered_desc = {
+				trigger = {
+					exists = rite
+					rite = { rite_has_parameter = monks_are_called_philosophers }
+					is_female = no
+				}
+				desc = trait_devoted_philosopher
+			}
+			triggered_desc = {
+				trigger = {
+					exists = rite
+					rite = { rite_has_parameter = monks_are_called_philosophers }
+					is_female = no
+				}
+				desc = trait_devoted_philosopher_female
+			}
+			##### Changed from Vanilla ^^^^^
+			desc = trait_devoted_male
+		}
+	}
+	##### Changed from Vanilla ^^^^^
+
+	tracks = {
+		monastic = {
+			30 = {
+				character_spiritual_fulfillment_gain_mult = 0.1
+				character_spiritual_fulfillment_loss_mult = -0.1
+				stress_gain_mult = -0.04
+				health = 0.01
+				learning_mult = 0.05
+				monthly_piety = 0.1
+			}
+			65 = {
+				character_spiritual_fulfillment_gain_mult = 0.1
+				character_spiritual_fulfillment_loss_mult = -0.1
+				stress_gain_mult = -0.06
+				health = 0.05
+				learning_mult = 0.1
+				clergy_opinion = 10
+				monthly_piety = 0.2
+			}
+			100 = {
+				character_spiritual_fulfillment_gain_mult = 0.15
+				character_spiritual_fulfillment_loss_mult = -0.15
+				stress_gain_mult = -0.1
+				health = 0.1
+				learning_mult = 0.15
+				clergy_opinion = 15
+				monthly_piety = 0.4
+			}
+		}
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { NOT = { exists = this } }
+				desc = trait_devoted_desc
+			}
+			triggered_desc = {
+				trigger = { is_adult = no }
+				desc = trait_devoted_child_desc
+			}
+			desc = trait_devoted_character_desc
+		}
+	}
+	flag = gnostic_learning_piety_trait
 }

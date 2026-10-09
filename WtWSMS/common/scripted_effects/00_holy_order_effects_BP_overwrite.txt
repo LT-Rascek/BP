@@ -407,13 +407,6 @@
 			save_scope_as = monastic_leader
 			save_scope_as = maronite_leader
 		}
-		title:d_syria_salutaris.holder = {
-			save_scope_as = game_start_founder
-			set_variable = {
-				name = monastic_game_start_founder
-				days = 10
-			}
-		}
 		create_holy_order = {
 			leader = scope:monastic_leader
 			capital = scope:monastic_barony
@@ -434,6 +427,36 @@
 		title:b_az-zabadani = { lease_out_to_holy_order = scope:new_holy_order }
 		scope:new_holy_order ?= { set_order_tenet = tenet:tenet_dyophysitism }
 	}
+
+	#Platonic Academy
+	if = {
+		limit = { current_year < 529 }
+		character:168352 = { destroy_title = title:d_platonic_academy }
+		title:b_megara = { holder.liege = { get_title = prev } save_scope_as = monastic_barony }
+		character:168352 = { save_scope_as = monastic_leader }
+		create_holy_order = {
+			leader = scope:monastic_leader
+			capital = scope:monastic_barony
+			random_holy_order_type = monastic
+			coat_of_arms = d_platonic_academy
+			name = d_platonic_academy
+			save_scope_as = new_holy_order
+		}
+		scope:monastic_leader = {
+			every_courtier = {
+				add_trait = devoted
+				add_trait_xp = {
+					trait = devoted
+					value = { 20 80 }
+				}
+			}
+		}
+		scope:new_holy_order ?= {
+			title = { copy_title_history = title:d_platonic_academy }
+			set_order_tenet = tenet:tenet_philsophical_movement
+		}
+	}
+
 
 	#Give all monastic leaders some monastic trait XP
 	every_religion_global = {
