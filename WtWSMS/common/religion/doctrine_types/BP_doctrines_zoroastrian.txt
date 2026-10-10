@@ -1,5 +1,7 @@
 ﻿special_doctrine_is_zoroastrian_faith = {
-	doctrine_group_type = special_tolerance
+	doctrine_group_type = is_zoroastrian_faith
+	
+	icon = special_doctrine_faravahar
 	
 	parameters = {
 		liturgical_language_avestan = yes
@@ -17,9 +19,10 @@
 }
 #Not really ecumenism... but should be inherited as such
 special_doctrine_legalized_faith_persia = {
-	doctrine_group_type = special_tolerance
+	doctrine_group_type = legalized_faith_group
 	
 	icon = special_doctrine_faravahar
+	
 	parameters = {
 		general_religious_protection_from_zoroastrian_cults = yes
 	}

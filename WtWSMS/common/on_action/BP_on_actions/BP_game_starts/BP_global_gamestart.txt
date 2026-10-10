@@ -17,7 +17,6 @@ bp_global_setup = {
 		BP_update_culture_traditions_by_date
 		BP_set_culture_variables
 		BP_setup_realm_and_title_succession_laws_by_date
-		BP_set_religion_effects_by_date
 		BP_realm_capitals_by_date
 		BP_land_titles_by_date
 		BP_set_dynasty_names_by_date
@@ -170,38 +169,7 @@ BP_setup_realm_and_title_succession_laws_by_date = {
 		}
 	}
 }
-BP_set_religion_effects_by_date = {
-	effect = {
-		#Mazdakism as a strain of mainline Zoroastianism before Sukhra's death, so this is more Zaradushtism
-		#See Crone's "Kavad's Heresy and Mazdak's Revolt" for a thorough treatment
-		if = {
-			limit = { current_date <= 493.1.1 }
-			faith:mazdakism = {
-				#Was less ascetic and more "life is to be enjoyed" (although "Hedonistic" might be too far)
-				swap_doctrine_if_it_has_it_effect = {
-					OLD_DOCTRINE = tenet_asceticism
-					NEW_DOCTRINE = tenet_hedonistic
-				}
-				#Still priestly
-				swap_doctrine_if_it_has_it_effect = {
-					OLD_DOCTRINE = doctrine_theocracy_lay_clergy
-					NEW_DOCTRINE = doctrine_theocracy_temporal
-				}
-				#Male Dominated; more about not hoarding the women
-				swap_doctrine_if_it_has_it_effect = {
-					OLD_DOCTRINE = doctrine_gender_equal
-					NEW_DOCTRINE = doctrine_gender_male_dominated
-				}
-				#Still considered acceptable
-				swap_doctrine_if_it_has_it_effect = {
-					OLD_DOCTRINE = doctrine_heretic_branch_zandik
-					NEW_DOCTRINE = doctrine_major_branch_dorustdin
-				}
-				set_religious_head_title = title:d_mazdayasna
-			}
-		}
-	}
-}
+
 BP_realm_capitals_by_date = {
 	effect = {
 		#Capital changes for specific time periods

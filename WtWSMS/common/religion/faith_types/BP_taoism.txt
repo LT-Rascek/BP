@@ -1,0 +1,64 @@
+﻿shangqing_faith = {
+	# Scripted main Rite: shangqing (all start dates). Its core tenets and Rite-specific doctrines are defined on the Rite; faith-intrinsic doctrines remain inline.
+	main_rite = shangqing
+	faith_details = {
+		religion = taoism_religion
+		color = { 78 173 167 }
+		icon = shangqing
+	}
+
+	eminent_holy_sites = {
+		mount_wudang
+		mount_qingcheng
+	}
+
+	holy_sites = {
+		mount_mian
+		mount_qiyung
+		mount_heng
+	}
+
+	doctrines = {
+		doctrine_scriptural
+	}
+
+}
+
+zhengyi = {
+	main_rite = zhengyi
+	faith_details = {
+		religion = taoism_religion
+		color = { 8 140 131 }
+		icon = taoism
+	}
+
+	eminent_holy_sites = {
+		mount_longhu # Where Zhang Daoling had obtained the Tao
+		mount_qingcheng
+		luyi
+	}
+
+	holy_sites = {
+		mount_wudang
+		mount_tai
+	}
+
+	tenets = {
+		tenet_communion
+		tenet_esotericism
+		tenet_mendicant_preachers
+		doctrine_scriptural
+	}
+
+	doctrines = {
+		doctrine_sacraments_central
+		doctrine_spiritual_head
+		doctrine_pluralism_righteous
+		doctrine_adultery_men_crime
+		doctrine_adultery_women_crime
+		doctrine_deviancy_crime
+		doctrine_clerical_function_taxation
+		doctrine_clerical_marriage_disallowed
+		doctrine_clerical_succession_spiritual_fixed_appointment
+	}
+}

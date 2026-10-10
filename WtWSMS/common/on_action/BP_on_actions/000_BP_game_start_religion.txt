@@ -11,8 +11,10 @@ bp_game_start_religion = {
 		#Religious Stuff
 		override_vanilla_names
 		update_rite_doctrines_and_tenets
+		BP_set_religion_effects_by_date
 		convert_christian_chars_to_rites
 		swap_tenets_based_on_dlc
+		set_doctrines_by_date
 		#set_ethnic_religion_flags
 	}
 }
@@ -123,14 +125,17 @@ update_rite_doctrines_and_tenets = {
 		rite:theravada = {
 			change_rite_doctrine = special_doctrine_is_buddhist_faith
 			change_rite_doctrine = doctrine_theocracy_lay_clergy
+			change_rite_doctrine = doctrine_scriptural
 		}
 		rite:mahayana = {
 			change_rite_doctrine = special_doctrine_is_buddhist_faith
 			change_rite_doctrine = doctrine_theocracy_lay_clergy
+			change_rite_doctrine = doctrine_scriptural
 		}
 		rite:vajrayana = {
 			change_rite_doctrine = special_doctrine_is_buddhist_faith
 			change_rite_doctrine = doctrine_theocracy_lay_clergy
+			change_rite_doctrine = doctrine_scriptural
 		}
 		#christianity_religion
 		rite:apostolic_christianity = { set_rite_enabled = no }
@@ -289,8 +294,53 @@ update_rite_doctrines_and_tenets = {
 		#zoroastrianism_religion
 		rite:gayomarthianism = { set_rite_enabled = no }
 		rite:khurramism = { set_rite_enabled = no }
+		rite:afridunism = {
+			change_rite_doctrine = doctrine_mythic_literary
+			change_rite_doctrine = unreformed_faith_doctrine
+		}
 		#zunism_religion
 		rite:zun_pagan = { set_rite_enabled = no }
+	}
+}
+
+BP_set_religion_effects_by_date = {
+	effect = {
+		#Mazdakism as a strain of mainline Zoroastianism before Sukhra's death, so this is more Zaradushtism
+		#See Crone's "Kavad's Heresy and Mazdak's Revolt" for a thorough treatment
+		if = {
+			limit = { current_year < 493 }
+			rite:mazdakism = {
+				#Was less ascetic and more "life is to be enjoyed" (although "Hedonistic" might be too far)
+				change_rite_doctrine = doctrine_theocracy_temporal
+				change_rite_doctrine = doctrine_gender_male_dominated
+				change_rite_doctrine = doctrine_monogamy
+				change_rite_doctrine = doctrine_major_branch_dorustdin
+				change_rite_doctrine = doctrine_clerical_function_taxation
+				change_rite_doctrine = doctrine_ritual_vegetarianism_partial
+				change_rite_doctrine = doctrine_consanguinity_unrestricted #Mazdakism breaks without it
+				
+				remove_rite_tenet = tenet:tenet_asceticism
+				remove_rite_tenet = tenet:tenet_communal_possessions
+				remove_rite_tenet = tenet:tenet_pacifism
+				
+				add_rite_tenet = tenet:tenet_hedonistic
+				add_rite_tenet = tenet:tenet_communal_identity
+				add_rite_tenet = tenet:tenet_ritual_celebrations
+				
+				set_religious_head_title = title:d_mazdayasna
+				
+				this.faith = {
+					set_tenet_status = {
+						tenet = tenet:tenet_communal_possessions
+						status = unknown
+					}
+					set_tenet_status = {
+						tenet = tenet:tenet_pacifism
+						status = unknown
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -402,6 +452,15 @@ swap_tenets_based_on_dlc = {
 		rite:sol_invictus = {
 			remove_rite_tenet = tenet_pursuit_of_power
 			add_rite_tenet = tenet_pursuit_of_power_dlc
+		}
+	}
+}
+
+set_doctrines_by_date = {
+	effect = {
+		if = {
+			limit = { current_year >= 410 }
+			faith:nestorian = { add_doctrine = special_doctrine_legalized_faith_persia }
 		}
 	}
 }

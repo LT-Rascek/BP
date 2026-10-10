@@ -3,6 +3,21 @@
 	index = 0
 	icon = doctrine_oral_storytelling
 
+	can_pick = {
+		trigger_if = {
+			limit = { scope:actor = { is_ai = yes } }
+			doctrine:doctrine_hellenic_pagan_liturgical_language_greek = { is_in_list = selected_doctrines }
+		}
+		trigger_else = {
+			OR = {
+				#Your rite uses Latin, the main rite does, or you speak a Romance language
+				scope:actor.culture = { has_cultural_parameter = language_branch_graeco_phrygian }
+				#It is already selected (aka, at start)
+				doctrine:doctrine_hellenic_pagan_liturgical_language_greek = { is_in_list = selected_doctrines }
+			}
+		}
+	}
+
 	parameters = {
 		liturgical_language_greek
 	}
@@ -11,6 +26,21 @@ doctrine_hellenic_pagan_liturgical_language_latin = {
 	doctrine_group_type = hellenic_liturgical_languages_group
 	index = 1
 	icon = doctrine_oral_storytelling
+
+	can_pick = {
+		trigger_if = {
+			limit = { scope:actor = { is_ai = yes } }
+			doctrine:doctrine_hellenic_pagan_liturgical_language_latin = { is_in_list = selected_doctrines }
+		}
+		trigger_else = {
+			OR = {
+				#Your rite uses Latin, the main rite does, or you speak a Romance language
+				scope:actor.culture = { has_cultural_parameter = language_group_romance }
+				#It is already selected (aka, at start)
+				doctrine:doctrine_hellenic_pagan_liturgical_language_latin = { is_in_list = selected_doctrines }
+			}
+		}
+	}
 
 	parameters = {
 		liturgical_language_latin

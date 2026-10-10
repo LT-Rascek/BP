@@ -26,6 +26,16 @@ jewish_christian_linkage_group = {
 	doctrine_lock = religion
 	is_available_on_create = { religion_tag = judaism_religion }
 }
+#Zoroastrian
+legalized_faith_group = {
+	category = specific_to_religion
+	doctrine_lock = religion
+	is_available_on_create = { has_doctrine = special_doctrine_legalized_faith_persia }
+}
+is_zoroastrian_faith = {
+	category = special
+	is_available_on_create = { has_doctrine = special_doctrine_is_zoroastrian_faith }
+}
 #Dharmic
 sramana_special_doctrine_group = {
 	category = specific_to_religion
