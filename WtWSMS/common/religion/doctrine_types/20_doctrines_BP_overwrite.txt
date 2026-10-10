@@ -459,3 +459,605 @@ doctrine_imperial_anointment = {
 		has_ach_dlc_trigger = yes
 	}
 }
+
+
+##### Changed from Vanilla: Tied into baseline divergence values
+doctrine_canonical = {
+	doctrine_group_type = preservation
+	index = 0
+	icon = "doctrine_canonical"
+
+	can_pick = {
+		custom_description = {
+			text = has_formalized_rituals_innovation_trigger
+			scope:actor.culture = { has_innovation = innovation_formalized_rituals }
+		}
+		custom_description = {
+			text = has_writing_innovation_trigger
+			scope:actor.culture = { has_innovation = innovation_writing }
+		}
+		custom_description = {
+			text = has_state_religion_innovation_trigger
+			scope:actor.culture = { has_innovation = innovation_state_religion }
+		}
+	}
+
+	parameters = {
+		faith_coherence_high
+		full_monasticism_unlocked #Loc Only
+		sacrements_unlocked #Loc Only
+		fundamentalism_unlocked #Loc Only
+		head_of_faith_unlocked #Loc Only
+	}
+	special_parameters = {
+		heresy_threshold = -5
+	}
+}
+doctrine_scriptural = {
+	doctrine_group_type = preservation
+	index = 1
+	icon = "doctrine_scriptural"
+
+	can_pick = {
+		custom_description = {
+			text = has_formalized_rituals_innovation_trigger
+			scope:actor.culture = { has_innovation = innovation_formalized_rituals }
+		}
+		custom_description = {
+			text = has_writing_innovation_trigger
+			scope:actor.culture = { has_innovation = innovation_writing }
+		}
+	}
+
+	parameters = {
+		faith_coherence_high
+		full_monasticism_unlocked #Loc Only
+		fundamentalism_unlocked #Loc Only
+		head_of_faith_unlocked #Loc Only
+	}
+	special_parameters = {
+		heresy_threshold = 0
+		divergence_protection = 1
+	}
+}
+doctrine_mythic_literary = {
+	doctrine_group_type = preservation
+	index = 2
+	icon = "doctrine_mythic_literary"
+
+	can_pick = {
+		custom_description = {
+			text = has_formalized_rituals_innovation_trigger
+			scope:actor.culture = { has_innovation = innovation_formalized_rituals }
+		}
+	}
+
+	parameters = {
+		faith_coherence_normal
+		accepted_monasticism_enabled #Loc Only
+		head_of_faith_unlocked #Loc Only
+	}
+	special_parameters = {
+		heresy_threshold = 5
+		bonus_heresy_protection = 1
+		divergence_protection = 2
+	}
+}
+doctrine_oral_storytelling = {
+	doctrine_group_type = preservation
+	index = 3
+	icon = "doctrine_oral_storytelling"
+
+	parameters = {
+		can_only_be_learned_in_person
+		faith_coherence_low
+	}
+	special_parameters = {
+		heresy_threshold = 10
+		divergence_protection = 3
+	}
+	##### Changed from Vanilla vvvvv
+	can_pick = {
+		custom_description = {
+			text = only_valid_for_unreformed_faiths_trigger
+			OR = {
+				doctrine:unreformed_faith_doctrine = { is_in_list = selected_doctrines }
+				doctrine:west_african_unreformed_faith_doctrine = { is_in_list = selected_doctrines }
+				doctrine:doctrine_oral_storytelling = { is_in_list = selected_doctrines }
+			}
+		}
+	}
+	##### Changed from Vanilla ^^^^^
+}
+
+##### Changed from Vanilla: Added can_pick values
+doctrine_pluralism_fundamentalist = {
+	doctrine_group_type = doctrine_pluralism
+	index = 0
+	divergence = 0
+
+	icon = "doctrine_pluralism_fundamentalist"
+
+	##### Changed from Vanilla vvvvv
+	can_pick = {
+		custom_description = {
+			text = doctrine_requires_a_scripture_type_doctrine_trigger
+			OR = {
+				doctrine:doctrine_canonical = { is_in_list = selected_doctrines }
+				doctrine:doctrine_scriptural = { is_in_list = selected_doctrines }
+			}
+		}
+	}
+	##### Changed from Vanilla ^^^^^
+
+	piety_cost = {
+		value = faith_doctrine_cost_mid
+		if = {
+			limit = { rite_has_doctrine = doctrine_pluralism_fundamentalist }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+		else_if = {
+			limit = { rite_has_doctrine = doctrine_pluralism_pluralistic }
+			multiply = faith_changed_doctrine_cost_mult_two_step
+		}
+	}
+
+	parameters = {
+		pluralism_fundamentalist_proselytization_bonus
+		pluralism_fundamentalist_faction_join_chance
+		pluralism_fundamentalist_vulnerable_to_heresy
+		pluralism_fundamentalist_revocation_tyranny_minimal
+	}
+
+	special_parameters = {
+		hostility_towards_us_mult = 2
+		heresy_threshold = -5
+	}
+
+	character_modifier = {
+		minority_different_faith_opinion = -20
+	}
+}
+
+##### Changed from Vanilla: Made Tied into Preservation Doctrines
+doctrine_spiritual_head = {
+	doctrine_group_type = doctrine_head_of_faith
+	index = 1
+	divergence = 30
+
+	icon = "doctrine_spiritual_head"
+
+	visible = no
+
+	##### Changed from Vanilla vvvvv
+	can_pick = {
+		custom_description = {
+			text = doctrine_requires_scripture_or_myth_type_doctrine_trigger
+			OR = {
+				doctrine:doctrine_canonical = { is_in_list = selected_doctrines }
+				doctrine:doctrine_scriptural = { is_in_list = selected_doctrines }
+				doctrine:doctrine_mythic_literary = { is_in_list = selected_doctrines }
+			}
+		}
+	}
+	##### Changed from Vanilla ^^^^^
+
+	piety_cost = {
+		value = faith_doctrine_cost_high
+		if = {
+			limit = { rite_has_doctrine = doctrine_spiritual_head }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	parameters = {
+		spiritual_head_of_faith
+		spiritual_head_of_faith_claims
+		spiritual_head_of_faith_gold
+	}
+}
+doctrine_temporal_head = {
+	doctrine_group_type = doctrine_head_of_faith
+	index = 2
+	divergence = 10
+
+	icon = "doctrine_temporal_head"
+
+	visible = no
+
+	##### Changed from Vanilla vvvvv
+	can_pick = {
+		custom_description = {
+			text = doctrine_requires_a_scripture_type_doctrine_trigger
+			OR = {
+				doctrine:doctrine_canonical = { is_in_list = selected_doctrines }
+				doctrine:doctrine_scriptural = { is_in_list = selected_doctrines }
+				doctrine:doctrine_mythic_literary = { is_in_list = selected_doctrines }
+			}
+		}
+	}
+	##### Changed from Vanilla ^^^^^
+
+	piety_cost = {
+		value = faith_doctrine_cost_massive
+		if = {
+			limit = { rite_has_doctrine = doctrine_temporal_head }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	can_pick = {
+		custom_description = {
+			text = incompatible_doctrine_theocracy_temporal_trigger
+			NOT = { doctrine:doctrine_theocracy_temporal = { is_in_list = selected_doctrines } }
+		}
+		custom_description = {
+			text = incompatible_doctrine_spiritual_appointment_temporal_trigger
+			NOR = {
+				doctrine:doctrine_clerical_succession_spiritual_appointment = { is_in_list = selected_doctrines }
+				doctrine:doctrine_clerical_succession_spiritual_fixed_appointment = { is_in_list = selected_doctrines }
+			}
+		}
+	}
+
+	parameters = {
+		temporal_head_of_faith
+		temporal_head_of_faith_directed_holy_wars
+	}
+}
+
+##### Changed from Vanilla: Made Tied into Preservation Doctrines, updated desc, changed selection criteria
+doctrine_monasticism_encouraged = {
+	doctrine_group_type = monasticism_group
+	index = 0
+	divergence = 0
+
+	##### Changed from Vanilla vvvvv
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					religion_tag = christianity_religion
+					rite_has_parameter = liturgical_language_latin
+				}
+				desc = doctrine_christianity_monasticism_latin_desc
+			}
+			triggered_desc = {
+				trigger = {
+					religion_tag = christianity_religion
+					rite_has_parameter = liturgical_language_greek
+				}
+				desc = doctrine_christianity_monasticism_greek_desc
+			}
+			triggered_desc = {
+				trigger = { religion_tag = christianity_religion }
+				desc = doctrine_christianity_monasticism_default_desc
+			}
+			desc = doctrine_monasticism_encouraged_desc
+		}
+	}
+	##### Changed from Vanilla ^^^^^
+
+	piety_cost = {
+		if = {
+			limit = {
+				OR = {
+					rite_religion_tag = christianity_religion
+					rite_religion_tag = dualism_religion
+					rite_religion_tag = buddhism_religion
+					rite_religion_tag = jainism_religion
+				}
+			}
+			value = faith_tenet_cost_low
+		}
+		else_if = {
+			limit = {
+				OR = {
+					rite_religion_tag = zoroastrianism_religion
+					rite_has_doctrine = pagan_hostility_doctrine
+				}
+			}
+			value = faith_tenet_cost_high
+		}
+		else = {
+			value = faith_tenet_cost_mid
+		}
+
+		if = {
+			limit = { rite_has_doctrine = doctrine_monasticism_encouraged }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+		else_if = {
+			limit = {
+				OR = {
+					rite_has_doctrine = doctrine_monasticism_accepted
+					rite_has_doctrine = doctrine_monasticism_absent
+					rite_has_doctrine = doctrine_monasticism_forbidden
+				}
+			}
+			multiply = faith_changed_doctrine_cost_mult_two_step
+		}
+	}
+
+	parameters = {
+		take_vows_active
+	}
+
+	can_pick = {
+		custom_description = {
+			text = incompatible_tenet_hedonistic_trigger
+			NOT = { tenet:tenet_hedonistic = { is_in_list = selected_doctrines } }
+		}
+		##### Changed from Vanilla vvvvv
+		custom_description = {
+			text = doctrine_requires_a_scripture_type_doctrine_trigger
+			OR = {
+				doctrine:doctrine_canonical = { is_in_list = selected_doctrines }
+				doctrine:doctrine_scriptural = { is_in_list = selected_doctrines }
+			}
+		}
+		##### Changed from Vanilla ^^^^^
+	}
+
+	clergy_modifier = {
+		county_opinion_add_even_if_baron = 5
+	}
+
+	traits = {
+		virtues = {
+			temperate = { weight = 20 scale = 1 }
+			devoted = { weight = 30 scale = 1 }
+		}
+		sins = {
+			gluttonous = { weight = 10 scale = 1 }
+		}
+	}
+}
+doctrine_monasticism_accepted = {
+	doctrine_group_type = monasticism_group
+	index = 1
+	divergence = 1
+
+	desc = doctrine_monasticism_accepted_desc
+
+	piety_cost = {
+		value = faith_doctrine_cost_mid
+		if = {
+			limit = { rite_has_doctrine = doctrine_monasticism_accepted }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+		else_if = {
+			limit = {
+				OR = {
+					rite_has_doctrine = doctrine_monasticism_absent
+					rite_has_doctrine = doctrine_monasticism_forbidden
+				}
+			}
+			multiply = faith_changed_doctrine_cost_mult_two_step
+		}
+	}
+
+	parameters = {
+		take_vows_active
+	}
+
+	can_pick = {
+		custom_description = {
+			text = incompatible_tenet_hedonistic_trigger
+			NOT = { tenet:tenet_hedonistic = { is_in_list = selected_doctrines } }
+		}
+		##### Changed from Vanilla vvvvv
+		custom_description = {
+			text = doctrine_requires_scripture_or_myth_type_doctrine_trigger
+			OR = {
+				doctrine:doctrine_canonical = { is_in_list = selected_doctrines }
+				doctrine:doctrine_scriptural = { is_in_list = selected_doctrines }
+				doctrine:doctrine_mythic_literary = { is_in_list = selected_doctrines }
+			}
+		}
+		##### Changed from Vanilla ^^^^^
+	}
+
+	clergy_modifier = {
+		county_opinion_add_even_if_baron = 3
+	}
+
+	traits = {
+		virtues = {
+			temperate = { weight = 10 scale = 1 }
+		}
+		sins = {
+			gluttonous = { weight = 5 scale = 1 }
+		}
+	}
+}
+doctrine_monasticism_absent = {
+	doctrine_group_type = monasticism_group
+	index = 2
+	divergence = 3
+
+	desc = doctrine_monasticism_absent_desc
+
+	piety_cost = {
+		value = faith_doctrine_cost_mid
+		if = {
+			limit = { rite_has_doctrine = doctrine_monasticism_absent }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+		else_if = {
+			limit = {
+				OR = {
+					rite_has_doctrine = doctrine_monasticism_encouraged
+					rite_has_doctrine = doctrine_monasticism_accepted
+					rite_has_doctrine = doctrine_monasticism_forbidden
+				}
+			}
+			multiply = faith_changed_doctrine_cost_mult_two_step
+		}
+	}
+
+	can_pick = {
+		custom_description = {
+			text = incompatible_tenet_anachoresis_trigger
+			NOT = { tenet:tenet_anachoresis = { is_in_list = selected_doctrines } }
+		}
+		##### Changed from Vanilla vvvvv
+		custom_description = {
+			text = incompatible_faith_buddhist_jain_nastika_trigger
+			NOR = {
+				doctrine:special_doctrine_is_jainism_faith = { is_in_list = selected_doctrines }
+				doctrine:special_doctrine_is_buddhist_faith = { is_in_list = selected_doctrines }
+				doctrine:special_doctrine_is_nastika_faith = { is_in_list = selected_doctrines }
+			}
+		}
+		##### Changed from Vanilla ^^^^^
+	}
+}
+doctrine_monasticism_forbidden = {
+	doctrine_group_type = monasticism_group
+	index = 3
+	divergence = 5
+
+	desc = doctrine_monasticism_forbidden_desc
+
+	piety_cost = {
+		value = faith_doctrine_cost_mid
+		if = {
+			limit = { rite_has_doctrine = doctrine_monasticism_forbidden }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+		else_if = {
+			limit = {
+				OR = {
+					rite_has_doctrine = doctrine_monasticism_encouraged
+					rite_has_doctrine = doctrine_monasticism_accepted
+				}
+			}
+			multiply = faith_changed_doctrine_cost_mult_two_step
+		}
+	}
+
+	parameters = {
+		devoted_trait_criminal
+		cannot_take_the_vows
+	}
+
+	can_pick = {
+		custom_description = {
+			text = incompatible_tenet_anachoresis_trigger
+			NOT = { tenet:tenet_anachoresis = { is_in_list = selected_doctrines } }
+		}
+		##### Changed from Vanilla vvvvv
+		custom_description = {
+			text = incompatible_faith_buddhist_jain_nastika_trigger
+			NOR = {
+				doctrine:special_doctrine_is_jainism_faith = { is_in_list = selected_doctrines }
+				doctrine:special_doctrine_is_buddhist_faith = { is_in_list = selected_doctrines }
+				doctrine:special_doctrine_is_nastika_faith = { is_in_list = selected_doctrines }
+			}
+		}
+		##### Changed from Vanilla ^^^^^
+	}
+
+	traits = {
+		sins = {
+			devoted = { weight = 80 scale = 2 }
+		}
+	}
+}
+
+##### Changed from Vanilla: Made Tied into Preservation Doctrines
+doctrine_sacraments_central = {
+	doctrine_group_type = sacraments_group
+	index = 0
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					religion_tag = christianity_religion
+					rite_has_parameter = liturgical_language_latin
+				}
+				desc = doctrine_sacraments_central_latin_desc
+			}
+			triggered_desc = {
+				trigger = {
+					religion_tag = christianity_religion
+					rite_has_parameter = liturgical_language_greek
+				}
+				desc = doctrine_sacraments_central_greek_desc
+			}
+			desc = doctrine_sacraments_central_desc
+		}
+	}
+
+	piety_cost = {
+		if = {
+			limit = {
+				OR = {
+					rite_religion_tag = christianity_religion
+					rite_religion_tag = judaism_religion
+				}
+			}
+			value = faith_tenet_cost_low
+		}
+		else_if = {
+			limit = {
+				rite_has_doctrine = pagan_hostility_doctrine
+			}
+			value = faith_tenet_cost_high
+		}
+		else = {
+			value = faith_tenet_cost_mid
+		}
+
+		if = {
+			limit = { rite_has_doctrine = doctrine_sacraments_central }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+		else_if = {
+			limit = { rite_has_doctrine = doctrine_sacraments_absent }
+			multiply = faith_changed_doctrine_cost_mult_two_step
+		}
+	}
+
+	traits = {
+		virtues = {
+			honest = { weight = 20 scale = 1 }
+		}
+		sins = {
+			deceitful = { weight = 20 scale = 1 }
+		}
+	}
+
+	parameters = {
+		excommunication_active
+		last_rites_active
+		seek_indulgences_active
+	}
+}
+doctrine_sacraments_absent = {
+	doctrine_group_type = sacraments_group
+	index = 1
+
+	desc = doctrine_sacraments_absent_desc
+
+	piety_cost = {
+		value = faith_doctrine_cost_mid
+		if = {
+			limit = { rite_has_doctrine = doctrine_sacraments_absent }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+		else_if = {
+			limit = { rite_has_doctrine = doctrine_sacraments_central }
+			multiply = faith_changed_doctrine_cost_mult_two_step
+		}
+	}
+
+	can_pick = {
+		custom_description = {
+			text = incompatible_tenet_communion_trigger
+			NOT = { tenet:tenet_communion = { is_in_list = selected_doctrines } }
+		}
+	}
+}

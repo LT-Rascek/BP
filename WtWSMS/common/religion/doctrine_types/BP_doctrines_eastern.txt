@@ -19,9 +19,10 @@ special_doctrine_is_jainism_faith = {
 	is_shown = { religion_tag = jainism_religion }
 	
 	parameters = {
-		reincarnation_events_active = yes
-		clergy_are_always_monks = yes
-		liturgical_language_sanskrit = yes
+		reincarnation_events_active
+		clergy_are_always_monks
+		full_monasticism_enabled
+		liturgical_language_sanskrit
 	}
 	special_parameters = {
 		hostility_level_override = {
@@ -37,8 +38,9 @@ special_doctrine_is_buddhist_faith = {
 	is_shown = { religion_tag = buddhism_religion }
 	
 	parameters = {
-		reincarnation_events_active = yes
-		clergy_are_always_monks = yes
+		reincarnation_events_active
+		clergy_are_always_monks
+		full_monasticism_enabled
 	}
 	special_parameters = {
 		hostility_level_override = {
@@ -60,9 +62,10 @@ special_doctrine_is_nastika_faith = {
 		church_holding_holding_build_gold_cost = -0.33
 	}
 	parameters = {
-		reforging_artifacts_costs_piety = yes
-		destroying_artifacts_is_pious = yes
-		clergy_are_always_monks = yes
+		reforging_artifacts_costs_piety
+		destroying_artifacts_is_pious
+		clergy_are_always_monks
+		full_monasticism_enabled
 		lowers_divergence
 	}
 	special_parameters = {
