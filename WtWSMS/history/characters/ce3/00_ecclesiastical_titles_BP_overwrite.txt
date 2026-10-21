@@ -4749,474 +4749,665 @@ et_jerusalem_867_14 = {
 et_jerusalem_867_15 = {
 	name = "Amos"
 	rite = byzantine_rite
-	culture = greek
-	540.1.1 = { birth = yes }
-	601.1.1 = { death = yes }
-	trait = education_learning_4
+	culture = judean
+	530.1.1 = {
+		birth = yes
+	}
+	546.1.1 = {
+		trait = education_diplomacy_1
+	}
+	601.1.1 = {
+		death = yes
+	}
 }
 
 et_jerusalem_867_16 = {
 	name = "Ioannes"
 	rite = byzantine_rite
 	culture = greek
-	525.1.1 = { birth = yes }
-	594.1.1 = { death = yes }
-	trait = education_learning_4
+	trait = diligent
+	520.1.1 = {
+		birth = yes
+	}
+	536.1.1 = {
+		trait = education_learning_3
+	}
+	593.1.1 = {
+		death = yes
+	}
 }
 
 et_jerusalem_867_17 = {
 	name = "Eustochios"
 	rite = byzantine_rite
 	culture = greek
-	510.1.1 = { birth = yes }
-	575.1.1 = { death = yes }
-	trait = education_learning_4
+	trait = zealous
+	500.1.1 = { birth = yes }
+	516.1.1 = { trait = education_learning_3 }
+	570.1.1 = { death = yes }
 }
 
 et_jerusalem_867_18 = {
 	name = "Makarios"
 	rite = byzantine_rite
 	culture = greek
-	495.1.1 = { birth = yes }
-	575.6.1 = { death = yes }
-	trait = education_learning_4
+	500.1.1 = { birth = yes }
+	516.1.1 = { trait = education_learning_3 }
+	574.1.1 = { death = yes }
 }
 
 et_jerusalem_867_19 = {
 	name = "Petros"
 	rite = byzantine_rite
 	culture = greek
-	480.1.1 = { birth = yes }
+	trait = shrewd
+	470.1.1 = { birth = yes }
+	486.1.1 = { trait = education_learning_3 }
 	544.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_jerusalem_867_20 = {
 	name = "Ioannes"
 	rite = byzantine_rite
-	culture = greek
-	460.1.1 = { birth = yes }
-	524.1.1 = { death = yes }
-	trait = education_learning_4
+	culture = roman
+	father = 1301212
+	trait = zealous
+	450.1.1 = { birth = yes }
+	466.1.1 = { trait = education_learning_3 }
+	524.4.20 = { death = yes }
 }
 
 et_jerusalem_867_21 = {
 	name = "Elias"
 	rite = byzantine_rite
-	culture = greek
-	445.1.1 = { birth = yes }
-	516.1.1 = { death = yes }
-	trait = education_learning_4
+	culture = nabatean	# Arabic, not sure which Arabic culture he should get
+	trait = zealous
+	440.1.1 = {
+		birth = yes
+		employer = 161508		#Kyril I
+	}
+	444.1.1 = { employer = 1301147 } # Dioscorus I
+	#451.11.1 = { employer = 1301146 } # Proterius
+	456.1.1 = { trait = education_learning_3 }
+	457.1.1 = { employer = 1301210 } # Juvenal
+	458.1.1 = { employer = 1301206 } # Anastasius I
+	478.1.1 = { employer = 1301207 } # Martyrius
+	486.1.1 = { employer = 1301208 } # Sallustius
+	518.1.1 = { death = yes }
 }
 
 et_jerusalem_867_22 = {
 	name = "Salloustios"
 	rite = byzantine_rite
 	culture = greek
-	435.1.1 = { birth = yes }
-	494.1.1 = { death = yes }
-	trait = education_learning_4
+	420.1.1 = { birth = yes }
+	436.1.1 = { trait = education_learning_3 }
+	494.7.23 = { death = yes }
 }
 
 et_jerusalem_867_23 = {
 	name = "Martyrios"
 	rite = byzantine_rite
 	culture = greek
-	420.1.1 = { birth = yes }
+	420.1.1 = { birth = yes } # first half of the V century
+	436.1.1 = { trait = education_learning_3 }
 	486.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_jerusalem_867_24 = {
 	name = "Anastasios"
+	dynasty = anastasius_dynasty
+	name = "Anastasios"	# Patriarch of Jerusalem 458-478
 	rite = byzantine_rite
 	culture = greek
-	405.1.1 = { birth = yes }
+	410.1.1 = { birth = yes }
+	426.1.1 = { trait = education_learning_2 }
 	478.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_jerusalem_867_25 = {
 	name = "Iouvenalios"
 	rite = byzantine_rite
 	culture = greek
-	392.1.1 = { birth = yes }
-	458.1.1 = { death = yes }
-	trait = education_learning_4
+	trait = zealous
+	disallow_random_traits = yes
+	380.1.1 = { birth = yes }
+	396.1.1 = { trait = education_learning_3 }
+	#451.12.1 = { employer = 70586 }
+	458.1.1 = {
+		death = yes
+		trait = saint
+	}
 }
 
 et_jerusalem_867_26 = {
-	name = "Praulios"
+	name = "Praulios"	# Bishop of Jerusalem 417-422
 	rite = byzantine_rite
 	culture = greek
-	375.1.1 = { birth = yes }
-	422.1.1 = { death = yes }
-	trait = education_learning_4
+	trait = humble
+	disallow_random_traits = yes
+	350.1.1 = { birth = yes }
+	366.1.1 = { trait = education_learning_3 }
+	422.1.1 = {
+		death = yes
+		trait = saint
+	}
 }
 
 et_jerusalem_867_27 = {
-	name = "Ioannes"
+	name = "Ioannes"	# Bishop of Jerusalem 387-417
 	rite = byzantine_rite
 	culture = greek
+	trait = erudite
+	trait = honest
+	trait = patient
+	trait = just
+	disallow_random_traits = yes
 	356.1.1 = { birth = yes }
-	417.1.10 = { death = yes }
-	trait = education_learning_4
+	372.1.1 = { trait = education_learning_3 }
+	417.1.10 = {
+		death = yes
+		trait = saint
+	}
 }
 
 et_jerusalem_867_28 = {
-	name = "Kyrillos"
-	rite = byzantine_rite
+	name = Kyrillos
+	religion = antenicene_christianity
 	culture = greek
-	313.1.1 = { birth = yes }
-	386.1.1 = { death = yes }
 	trait = education_learning_4
+	trait = zealous
+	trait = erudite
+	trait = diligent
+	trait = theologian
+	disallow_random_traits = yes
+	313.1.1 = { birth = yes }
+	325.1.1 = { rite = byzantine_rite }
+	386.1.1 = {
+		death = yes
+		trait = saint
+	}
 }
 
 et_jerusalem_867_29 = {
-	name = "Maximos"
-	rite = byzantine_rite
+	name = Maximos
+	religion = antenicene_christianity
 	culture = greek
-	290.1.1 = { birth = yes }
-	350.1.1 = { death = yes }
-	trait = education_learning_4
+	trait = zealous
+	disallow_random_traits = yes
+	261.1.1 = { birth = yes }
+	325.1.1 = { rite = byzantine_rite }
+	347.1.1 = {
+		death = yes
+		trait = saint
+	}
 }
 
-et_jerusalem_867_30 = {
-	name = "Makarios"
-	rite = byzantine_rite
+#Remove et_jerusalem_867_30
+
+#Remove et_jerusalem_867_31
+
+et_jerusalem_867_32 = { #Marcarius I
+	name = Makarios
+	religion = antenicene_christianity
 	culture = greek
-	275.1.1 = { birth = yes }
-	333.1.1 = { death = yes }
-	trait = education_learning_4
+	trait = zealous
+	disallow_random_traits = yes
+	245.1.1 = { birth = yes }
+	325.1.1 = { rite = byzantine_rite }
+	333.1.1 = {
+		death = yes
+		trait = saint
+	}
 }
 
-et_jerusalem_867_31 = {
-	name = "Makarios"
-	rite = byzantine_rite
+et_jerusalem_867_patriarch38 = { #Ermon
+	name = Emon
+	religion = antenicene_christianity
 	culture = greek
-	260.1.1 = { birth = yes }
-	325.1.1 = { death = yes }
-	trait = education_learning_4
+	disallow_random_traits = yes
+	230.1.1 = { birth = yes }
+	314.1.1 = {
+		death = yes
+		trait = saint
+	}
 }
 
-et_jerusalem_867_32 = {
-	name = "Makarios"
-	rite = byzantine_rite
+et_jerusalem_867_33 = { #Zamudas
+	name = Zamoudas
+	religion = antenicene_christianity
 	culture = greek
-	255.1.1 = { birth = yes }
-	333.1.1 = { death = yes }
-	trait = education_learning_4
+	disallow_random_traits = yes
+	237.1.1 = { birth = yes }
+	283.1.1 = {
+		death = yes
+		trait = saint
+	}
 }
 
-et_jerusalem_867_33 = {
-	name = "Zamvdas"
-	rite = byzantine_rite
+et_jerusalem_867_patriarch36 = { #Imeneus
+	name = Imenios
+	religion = antenicene_christianity
 	culture = greek
-	235.1.1 = { birth = yes }
-	283.1.1 = { death = yes }
-	trait = education_learning_4
+	222.1.1 = { birth = yes }
+	276.1.1 = { death = yes }
+}
+
+et_jerusalem_867_patriarch35 = { #Mazabanis
+	name = Mazabanis
+	religion = antenicene_christianity
+	culture = nabatean #Presumed because of name not being Latin/Greek/judean
+	200.1.1 = { birth = yes }
+	260.1.1 = { death = yes }
 }
 
 et_jerusalem_867_34 = {
-	name = "Alexandros"
-	rite = byzantine_rite
+	name = Alexandros
+	religion = antenicene_christianity
 	culture = greek
-	190.1.1 = { birth = yes }
-	249.1.1 = { death = yes }
-	trait = education_learning_4
+	disallow_random_traits = yes
+	170.1.1 = { birth = yes }
+	249.1.1 = {
+		death = {
+			death_reason = death_execution
+			killer = 145258
+		}
+		trait = saint
+	}
 }
 
-et_jerusalem_867_35 = {
-	name = "Narkissos"
-	rite = byzantine_rite
+#Removed et_jerusalem_867_35
+
+et_jerusalem_867_patriarch33 = { #Gordius
+	name = Gordios
+	religion = antenicene_christianity
 	culture = greek
-	165.1.1 = { birth = yes }
-	231.1.1 = { death = yes }
-	trait = education_learning_4
+	150.1.1 = { birth = yes }
+	211.1.1 = { death = yes }
+}
+
+et_jerusalem_867_patriarch32 = { #Germanion
+	name = Germanion
+	religion = antenicene_christianity
+	culture = greek
+	140.1.1 = { birth = yes }
+	205.1.1 = { death = yes }
+}
+
+et_jerusalem_867_patriarch31 = { #Dius
+	name = Dius
+	religion = antenicene_christianity
+	culture = roman
+	130.1.1 = { birth = yes }
+	201.1.1 = { death = yes }
 }
 
 et_jerusalem_867_36 = {
-	name = "Narkissos"
-	rite = byzantine_rite
+	name = Narkissos
+	religion = apostolic_christianity
 	culture = greek
-	140.1.1 = { birth = yes }
-	211.1.1 = { death = yes }
-	trait = education_learning_4
+	trait = forgiving
+	trait = zealous
+	trait = compassionate
+	trait = devoted
+	disallow_random_traits = yes
+	99.3.1 = { birth = yes } #Reputed birth
+	216.1.1 = {
+		death = yes
+		trait = saint
+	}
 }
 
-et_jerusalem_867_37 = {
-	name = "Ioannes"
-	rite = byzantine_rite
-	culture = greek
-	126.1.1 = { birth = yes }
+et_jerusalem_867_patriarch29 = { #Dolichianus
+	name = Dolichianus
+	religion = antenicene_christianity
+	culture = roman
+	120.1.1 = { birth = yes }
 	185.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
-et_jerusalem_867_38 = {
-	name = "Zakchaios"
-	rite = byzantine_rite
+et_jerusalem_867_patriarch28 = { #Valens
+	name = Valens
+	religion = antenicene_christianity
+	culture = roman
+	110.1.1 = { birth = yes }
+	180.1.1 = { death = yes }
+}
+
+et_jerusalem_867_patriarch27 = { #Antonius
+	name = Antonios
+	religion = antenicene_christianity
 	culture = greek
+	110.1.1 = { birth = yes }
+	178.1.1 = { death = yes }
+}
+
+et_jerusalem_867_patriarch26 = { #Maximus
+	name = Maximos
+	religion = antenicene_christianity
+	culture = greek
+	110.1.1 = { birth = yes }
+	176.1.1 = { death = yes }
+}
+
+et_jerusalem_867_patriarch25 = { #Capion
+	name = Kapion
+	religion = antenicene_christianity
+	culture = greek
+	110.1.1 = { birth = yes }
+	174.1.1 = { death = yes }
+}
+
+et_jerusalem_867_patriarch24 = { #Julian II
+	name = Iulianos
+	religion = antenicene_christianity
+	culture = greek
+	110.1.1 = { birth = yes }
+	172.1.1 = { death = yes }
+}
+
+et_jerusalem_867_patriarch23 = { #Gaius II
+	name = Kaios
+	religion = antenicene_christianity
+	culture = greek
+	110.1.1 = { birth = yes }
+	170.1.1 = { death = yes }
+}
+
+et_jerusalem_867_patriarch22 = { #Symmachus
+	name = Symmachos
+	religion = antenicene_christianity
+	culture = greek
+	100.1.1 = { birth = yes }
+	168.1.1 = { death = yes }
+}
+
+et_jerusalem_867_patriarch21 = { #Gaius I
+	name = Kaios
+	religion = antenicene_christianity
+	culture = greek
+	100.1.1 = { birth = yes }
+	166.1.1 = { death = yes }
+}
+
+et_jerusalem_867_patriarch20 = { #Julian I
+	name = Iulianos
+	religion = antenicene_christianity
+	culture = greek
+	100.1.1 = { birth = yes }
+	164.1.1 = { death = yes }
+}
+
+et_jerusalem_867_patriarch19 = { #Maximus I
+	name = Maximos
+	religion = antenicene_christianity
+	culture = greek
+	100.1.1 = { birth = yes }
+	162.1.1 = { death = yes }
+}
+
+et_jerusalem_867_patriarch18 = { #Popilus
+	name = Popilos
+	religion = antenicene_christianity
+	culture = greek
+	100.1.1 = { birth = yes }
+	160.1.1 = { death = yes }
+}
+
+et_jerusalem_867_patriarch17 = { #Cassianus
+	name = Cassianos
+	religion = antenicene_christianity
+	culture = greek
+	100.1.1 = { birth = yes }
+	158.1.1 = { death = yes }
+}
+
+et_jerusalem_867_patriarch16 = { #Marcus
+	name = Markos
+	religion = apostolic_christianity
+	culture = greek
+	disallow_random_traits = yes
+	100.1.1 = { birth = yes }
+	156.1.1 = {
+		death = { death_reason = death_murder }
+		trait = saint
+	}
+}
+
+et_jerusalem_867_patriarch15 = { #Judas
+	name = Yehudah
+	religion = apostolic_christianity
+	culture = judean
+	father = JerusalemChurchSpecial001
+	disallow_random_traits = yes
 	70.1.1 = { birth = yes }
-	117.1.1 = { death = yes }
-	trait = education_learning_4
+	148.1.1 = {
+		death = yes
+		give_nickname = nick_kyriakos
+		trait = saint
+	}
 }
 
-et_jerusalem_867_39 = {
-	name = "Ioustos"
-	rite = byzantine_rite
-	culture = greek
+et_jerusalem_867_patriarch14 = { #Joeseph I
+	name = Yosef
+	religion = apostolic_christianity
+	culture = judean
+	disallow_random_traits = yes
+	70.1.1 = { birth = yes }
+	133.1.1 = {
+		death = yes
+		trait = saint
+	}
+}
+
+et_jerusalem_867_patriarch13 = { #Ephram
+	name = Efraim
+	religion = apostolic_christianity
+	culture = judean
+	disallow_random_traits = yes
+	70.1.1 = { birth = yes }
+	132.1.1 = {
+		death = yes
+		trait = saint
+	}
+}
+
+et_jerusalem_867_patriarch12 = { #Levis
+	name = Levi
+	religion = apostolic_christianity
+	culture = judean
+	disallow_random_traits = yes
+	70.1.1 = { birth = yes }
+	130.1.1 = {
+		death = yes
+		trait = saint
+	}
+}
+
+et_jerusalem_867_patriarch11 = { #Justus II
+	name = Justus
+	religion = apostolic_christianity
+	culture = judean
+	disallow_random_traits = yes
+	70.1.1 = { birth = yes }
+	128.1.1 = {
+		death = yes
+		give_nickname = nick_the_righteous
+		trait = saint
+	}
+}
+
+et_jerusalem_867_patriarch10 = { #Senecas
+	name = Senecas
+	religion = apostolic_christianity
+	culture = judean
+	disallow_random_traits = yes
+	70.1.1 = { birth = yes }
+	126.1.1 = {
+		death = yes
+		trait = saint
+	}
+}
+
+et_jerusalem_867_patriarch9 = { #Philip
+	name = Philippos
+	religion = apostolic_christianity
+	culture = judean
+	disallow_random_traits = yes
+	70.1.1 = { birth = yes }
+	124.1.1 = {
+		death = yes
+		trait = saint
+	}
+}
+
+et_jerusalem_867_patriarch8 = { #Matthias
+	name = Mattithyahu
+	religion = apostolic_christianity
+	culture = judean
+	disallow_random_traits = yes
+	50.1.1 = { birth = yes }
+	120.1.1 = {
+		death = yes
+		trait = saint
+	}
+}
+
+et_jerusalem_867_37 = { #John I
+	name = Yochanan
+	rite = rabbinism
+	culture = judean
+	trait = stubborn #Argued with Christians until he himself converted
+	trait = just
+	trait = zealous
+	disallow_random_traits = yes
 	60.1.1 = { birth = yes }
-	113.1.1 = { death = yes }
-	trait = education_learning_4
+	80.1.1 = { religion = apostolic_christianity } #Parents were Jews
+	119.1.1 = {
+		death = yes
+		trait = saint
+	}
 }
 
-et_jerusalem_867_40 = {
-	name = "Symeon"
-	rite = byzantine_rite
-	culture = greek
-	30.1.1 = { birth = yes }
-	107.1.1 = { death = yes }
-	trait = education_learning_4
+et_jerusalem_867_patriarch6 = { #Benjamin I
+	name = Binyamin
+	religion = apostolic_christianity
+	culture = judean
+	disallow_random_traits = yes
+	60.1.1 = { birth = yes }
+	118.1.1 = {
+		death = {
+			death_reason = death_execution
+			killer = 145278
+		}
+		trait = saint
+	}
 }
 
+et_jerusalem_867_patriarch5 = { #Tobias
+	name = Tovias
+	rite = rabbinism
+	culture = judean
+	disallow_random_traits = yes
+	40.1.1 = { birth = yes }
+	60.1.1 = { religion = apostolic_christianity } #Parents were Jews
+	116.6.1 = {
+		death = yes
+		trait = saint
+	}
+}
+
+et_jerusalem_867_38 = { #Zaccheus
+	name = Zaki
+	religion = apostolic_christianity
+	culture = judean
+	disallow_random_traits = yes
+	70.1.1 = { birth = yes }
+	116.1.1 = {
+		death = yes
+		trait = saint
+	}
+}
+
+et_jerusalem_867_39 = { #Justus I
+	name = Justus
+	religion = apostolic_christianity
+	culture = judean
+	father = JerusalemChurch000
+	disallow_random_traits = yes
+	50.1.1 = { birth = yes }
+	113.1.1 = {
+		death = yes
+		give_nickname = nick_the_righteous
+		trait = saint
+	}
+}
+
+et_jerusalem_867_40 = { #Simeon I
+	name = Shimon
+	rite = rabbinism
+	culture = judean
+	disallow_random_traits = yes
+	15.1.1 = { birth = yes } #Early first century
+	27.1.1 = { religion = apostolic_christianity }
+	107.1.1 = {
+		death = {
+			death_reason = death_execution
+			killer = 145279
+		}
+		trait = saint
+	}
+}
+
+JerusalemChurch000 = { #James the just
+	name = Yakov
+	rite = rabbinism
+	culture = judean
+	trait = education_learning_4
+	trait = zealous
+	trait = temperate
+	trait = just
+	disallow_random_traits = yes
+	10.1.1 = { birth = yes } #Early first century
+	27.1.1 = { religion = apostolic_christianity }
+	69.1.1 = {
+		death = { death_reason = death_murder }
+		give_nickname = nick_the_just
+		trait = saint
+		effect_even_if_dead = {
+			pam_canonize_saint_effect = {
+				CANONIZER = root
+				CANDIDATE = root
+				CONSECRATION_PROVINCE = province:1785 #Santiago
+				PRESET = yes
+			}
+			religion:christianity_religion = {
+				every_faith = {
+					limit = {
+						main_rite = { is_rite_enabled = yes }
+						NOT = { has_saint_character = root }
+					}
+					add_saint = { character = root }
+				}
+			}
+			faith:ebionite = { add_saint = { character = root } }
+		}
+	}
+}
+
+#Links between James the Just and Judas
+JerusalemChurchSpecial001 = { #St. Jude's (hypothetical) son
+	name = Yehudah
+	rite = rabbinism
+	culture = judean
+	father = JerusalemChurchSpecial000
+	32.1.1 = { birth = yes }
+	33.1.1 = { religion = apostolic_christianity }
+	90.1.1 = { death = yes }
+}
 
 ## Antioch
 # 867
-et_antioch_867_0 = {
-	name = "Nikolaos"
-	rite = byzantine_rite
-	culture = greek
-	830.1.1 = {
-		birth = yes
-	}
-	879.1.1 = {
-		death = yes
-	}
-	trait = education_learning_4
-}
-
-et_antioch_867_1 = {
-	name = "Theodosios"
-	rite = byzantine_rite
-	culture = greek
-	801.1.1 = {
-		birth = yes
-	}
-	860.1.1 = {
-		death = yes
-	}
-	trait = education_learning_4
-}
-
-et_antioch_867_2 = {
-	name = "Elias"
-	rite = byzantine_rite
-	culture = greek
-	778.1.1 = {
-		birth = yes
-	}
-	852.1.1 = {
-		death = yes
-	}
-	trait = education_learning_4
-}
-
-et_antioch_867_3 = {
-	name = "Symeon"
-	rite = byzantine_rite
-	culture = greek
-	769.1.1 = {
-		birth = yes
-	}
-	840.1.1 = {
-		death = yes
-	}
-	trait = education_learning_4
-}
-
-et_antioch_867_4 = {
-	name = "Nikolaos"
-	rite = byzantine_rite
-	culture = greek
-	760.1.1 = {
-		birth = yes
-	}
-	834.1.1 = {
-		death = yes
-	}
-	trait = education_learning_4
-}
-
-et_antioch_867_5 = {
-	name = "Job"
-	rite = byzantine_rite
-	culture = greek
-	746.1.1 = {
-		birth = yes
-	}
-	826.1.1 = {
-		death = yes
-	}
-	trait = education_learning_4
-}
-
-et_antioch_867_6 = {
-	name = "Ioannes"
-	rite = byzantine_rite
-	culture = greek
-	743.1.1 = {
-		birth = yes
-	}
-	810.1.1 = {
-		death = yes
-	}
-	trait = education_learning_4
-}
-
-et_antioch_867_7 = {
-	name = "Theodoros"
-	rite = byzantine_rite
-	culture = greek
-	726.1.1 = {
-		birth = yes
-	}
-	797.1.1 = {
-		death = yes
-	}
-	trait = education_learning_4
-}
-
-et_antioch_867_8 = {
-	name = "Theophylaktos"
-	rite = byzantine_rite
-	culture = greek
-	711.1.1 = {
-		birth = yes
-	}
-	767.1.1 = {
-		death = yes
-	}
-	trait = education_learning_4
-}
-
-et_antioch_867_9 = {
-	name = "Stephanos"
-	rite = byzantine_rite
-	culture = greek
-	687.1.1 = {
-		birth = yes
-	}
-	748.1.1 = {
-		death = yes
-	}
-	trait = education_learning_4
-}
-
-et_antioch_867_10 = {
-	name = "Alexandros"
-	rite = byzantine_rite
-	culture = greek
-	644.1.1 = {
-		birth = yes
-	}
-	702.1.1 = {
-		death = yes
-	}
-	trait = education_learning_4
-}
-
-et_antioch_867_11 = {
-	name = "Georgios"
-	rite = byzantine_rite
-	culture = greek
-	629.1.1 = {
-		birth = yes
-	}
-	695.1.1 = {
-		death = yes
-	}
-	trait = education_learning_4
-}
-
-et_antioch_867_12 = {
-	name = "Sebastianos"
-	rite = byzantine_rite
-	culture = greek
-	618.1.1 = {
-		birth = yes
-	}
-	690.1.1 = {
-		death = yes
-	}
-	trait = education_learning_4
-}
-
-et_antioch_867_13 = {
-	name = "Theophanes"
-	rite = byzantine_rite
-	culture = greek
-	612.1.1 = {
-		birth = yes
-	}
-	687.1.1 = {
-		death = yes
-	}
-	trait = education_learning_4
-}
-
-et_antioch_867_14 = {
-	name = "Makarios"
-	rite = byzantine_rite
-	culture = greek
-	606.1.1 = {
-		birth = yes
-	}
-	681.1.1 = {
-		death = yes
-	}
-	trait = education_learning_4
-}
-
-et_antioch_867_15 = {
-	name = "Georgios"
-	rite = byzantine_rite
-	culture = greek
-	596.1.1 = {
-		birth = yes
-	}
-	656.1.1 = {
-		death = yes
-	}
-	trait = education_learning_4
-}
-
-et_antioch_867_16 = {
-	name = "Makedonios"
-	rite = byzantine_rite
-	culture = greek
-	586.1.1 = {
-		birth = yes
-	}
-	640.1.1 = {
-		death = yes
-	}
-	trait = education_learning_4
-}
-
-et_antioch_867_17 = {
-	name = "Anastasios"
-	rite = byzantine_rite
-	culture = greek
-	557.1.1 = {
-		birth = yes
-	}
-	628.1.1 = {
-		death = yes
-	}
-	trait = education_learning_4
-}
-
 et_antioch_867_18 = {
 	name = "Gregorios"
 	rite = byzantine_rite
@@ -5234,11 +5425,15 @@ et_antioch_867_19 = {
 	name = "Anastasios"
 	rite = byzantine_rite
 	culture = greek
+	trait = zealous
+	trait = diligent
+	disallow_random_traits = yes
 	555.1.1 = {
 		birth = yes
 	}
-	610.1.1 = {
-		death = yes
+	609.12.21 = {
+		death = { death_reason = death_torn_to_pieces_by_mob }
+		trait = saint
 	}
 	trait = education_learning_4
 }
@@ -5247,26 +5442,26 @@ et_antioch_867_21 = {
 	name = "Gregorios"
 	rite = byzantine_rite
 	culture = greek
+	trait = zealous
 	523.1.1 = {
 		birth = yes
+	}
+	539.1.1 = {
+		trait = devoted
+		trait = education_learning_3
 	}
 	594.1.1 = {
 		death = yes
 	}
-	trait = education_learning_4
 }
 
 et_antioch_867_22 = {
 	name = "Anastasios"
 	rite = byzantine_rite
 	culture = greek
-	532.1.1 = {
-		birth = yes
-	}
-	599.1.1 = {
-		death = yes
-	}
-	trait = education_learning_4
+	530.1.1 = { birth = yes }
+	546.1.1 = { trait = education_learning_3 }
+	599.4.21 = { death = { death_reason = death_torn_to_pieces_by_mob } }
 }
 
 et_antioch_867_23 = {
@@ -5302,23 +5497,21 @@ et_antioch_867_25 = {
 	460.1.1 = {
 		birth = yes
 	}
-	526.1.1 = {
-		death = yes
-	}
-	trait = education_learning_4
+	476.1.1 = { trait = education_learning_3 }
+	526.5.20 = { death = { death_reason = death_accident } }
 }
 
 et_antioch_867_26 = {
 	name = "Paulos"
 	rite = byzantine_rite
 	culture = greek
-	448.1.1 = {
-		birth = yes
+	448.1.1 = { birth = yes }
+	464.1.1 = {
+		trait = education_learning_3
+		trait = administrator
 	}
-	521.1.1 = {
-		death = yes
-	}
-	trait = education_learning_4
+	519.1.1 = { give_nickname = nick_the_jew }
+	521.1.1 = { death = yes }
 }
 
 et_antioch_867_27 = {
@@ -5354,8 +5547,9 @@ et_antioch_867_29 = {
 	432.1.1 = {
 		birth = yes
 	}
-	505.1.1 = {
+	512.11.16 = {
 		death = yes
+		trait = saint
 	}
 	trait = education_learning_4
 }
@@ -5377,12 +5571,9 @@ et_antioch_867_31 = {
 	name = "Kallandion"
 	rite = byzantine_rite
 	culture = greek
-	426.1.1 = {
-		birth = yes
-	}
-	495.6.1 = {
-		death = yes
-	}
+	trait = zealous
+	426.1.1 = { birth = yes }
+	495.6.1 = { death = yes }
 	trait = education_learning_4
 }
 
@@ -5403,11 +5594,18 @@ et_antioch_867_33 = {
 	name = "Stephanos"
 	rite = byzantine_rite
 	culture = greek
+	#Traits to avoid sinful saints
+	trait = forgiving
+	trait = compassionate
+	trait = honest
+	disallow_random_traits = yes
 	424.1.1 = {
 		birth = yes
 	}
+	440.1.1 = { trait = education_learning_3 }
 	493.1.1 = {
-		death = yes
+		death = { death_reason = death_murder }
+		trait = saint
 	}
 	trait = education_learning_4
 }
@@ -5419,7 +5617,8 @@ et_antioch_867_34 = {
 	433.1.1 = {
 		birth = yes
 	}
-	490.1.1 = {
+	451.1.1 = { rite = byzantine_miaphysite_rite } #Council of Chalcedon
+	495.1.1 = {
 		death = yes
 	}
 	trait = education_learning_4
@@ -5440,14 +5639,22 @@ et_antioch_867_36 = {
 
 et_antioch_867_37 = {
 	name = "Petros"
+	dynasty = peter_the_fuller_dynasty
 	rite = byzantine_rite
-	culture = greek
-	401.1.1 = {
-		birth = yes
+	culture = phrygian #From Bithynia/Chalcedon (at least his initial monastic Akoimetoi)
+	trait = ambitious
+	trait = zealous
+	trait = deceitful #Used chicanery to elevate himself to Antiochean See
+	trait = gluttonous #Noted intemperate lifestyle by detractors
+	401.1.1 = { birth = yes }
+	417.1.1 = { #Managed to get himself installed as Patriarch through deceit
+		trait = education_intrigue_3
+		trait = devoted
+		give_nickname = nick_the_fuller
 	}
-	475.1.1 = {
-		death = yes
-	}
+	#Council of Chalcedon; he was firmly opposed to the conclusions of the council
+	451.11.1 = { rite = byzantine_miaphysite_rite }
+	488.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
@@ -5494,12 +5701,9 @@ et_antioch_867_41 = {
 	name = "Maximos"
 	rite = byzantine_rite
 	culture = greek
-	401.1.1 = {
-		birth = yes
-	}
-	455.1.1 = {
-		death = yes
-	}
+	trait = zealous
+	401.1.1 = { birth = yes }
+	455.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
@@ -5507,25 +5711,18 @@ et_antioch_867_42 = {
 	name = "Domnos"
 	rite = byzantine_rite
 	culture = greek
-	387.1.1 = {
-		birth = yes
-	}
-	450.1.1 = {
-		death = yes
-	}
+	trait = craven
+	387.1.1 = { birth = yes }
+	450.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_antioch_867_43 = {
 	name = "Ioannes"
 	rite = byzantine_rite
-	culture = greek
-	373.1.1 = {
-		birth = yes
-	}
-	443.1.1 = {
-		death = yes
-	}
+	culture = syriac
+	373.1.1 = { birth = yes }
+	443.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
@@ -5533,6 +5730,8 @@ et_antioch_867_44 = {
 	name = "Theodotos"
 	rite = byzantine_rite
 	culture = greek
+	trait = temperate
+	trait = compassionate
 	370.1.1 = {
 		birth = yes
 	}
@@ -5546,6 +5745,8 @@ et_antioch_867_45 = {
 	name = "Alexandros"
 	rite = byzantine_rite
 	culture = greek
+	trait = humble
+	trait = temperate
 	361.1.1 = {
 		birth = yes
 	}
@@ -5559,24 +5760,23 @@ et_antioch_867_46 = {
 	name = "Porphyros"
 	rite = byzantine_rite
 	culture = greek
-	343.1.1 = {
-		birth = yes
-	}
-	408.1.1 = {
-		death = yes
-	}
-	trait = education_learning_4
+	343.1.1 = { birth = yes }
+	359.1.1 = { trait = education_learning_3 }
+	408.1.1 = { death = yes }
 }
 
 et_antioch_867_47 = {
 	name = "Phlavion"
 	rite = byzantine_rite
 	culture = greek
+	trait = humble
+	disallow_random_traits = yes
 	337.1.1 = {
 		birth = yes
 	}
 	404.1.1 = {
 		death = yes
+		trait = saint
 	}
 	trait = education_learning_4
 }
@@ -5598,103 +5798,77 @@ et_antioch_867_49 = {
 	name = "Paulinos"
 	rite = byzantine_rite
 	culture = greek
-	318.1.1 = {
-		birth = yes
-	}
-	376.1.1 = {
-		death = yes
-	}
+	318.1.1 = { birth = yes }
+	388.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_antioch_867_50 = {
 	name = "Dorotheos"
-	rite = byzantine_rite
+	rite = arian
 	culture = greek
-	296.1.1 = {
-		birth = yes
-	}
-	371.1.1 = {
-		death = yes
-	}
+	296.1.1 = { birth = yes }
+	381.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_antioch_867_51 = {
 	name = "Euzoios"
-	rite = byzantine_rite
+	rite = arian
 	culture = greek
-	308.1.1 = {
-		birth = yes
-	}
-	370.1.1 = {
-		death = yes
-	}
+	308.1.1 = { birth = yes }
+	370.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_antioch_867_52 = {
 	name = "Annias"
-	rite = byzantine_rite
+	rite = arian
 	culture = greek
-	293.1.1 = {
-		birth = yes
-	}
-	360.1.1 = {
-		death = yes
-	}
+	293.1.1 = { birth = yes }
+	360.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
-et_antioch_867_53 = {
-	name = "Eudoxios"
-	rite = byzantine_rite
-	culture = greek
-	293.1.1 = {
-		birth = yes
-	}
-	357.1.1 = {
-		death = yes
-	}
-	trait = education_learning_4
-}
+#Removed: et_antioch_867_53 (duplicate of Constantinoplian Char)
 
 et_antioch_867_54 = {
 	name = "Meletios"
 	rite = byzantine_rite
 	culture = greek
-	279.1.1 = {
-		birth = yes
-	}
-	354.6.1 = {
+	trait = zealous
+	trait = temperate
+	trait = generous
+	disallow_random_traits = yes
+	279.1.1 = { birth = yes }
+	381.1.1 = {
 		death = yes
+		trait = saint
 	}
 	trait = education_learning_4
 }
 
 et_antioch_867_56 = {
 	name = "Leontios"
-	rite = byzantine_rite
+	rite = arian
 	culture = greek
-	284.1.1 = {
-		birth = yes
+	284.1.1 = { birth = yes }
+	300.1.1 = {
+		trait = education_learning_5 #Influential Arian theologian
+		trait = erudite #Influential Arian theologian
+		trait = zealous
 	}
-	350.1.1 = {
-		death = yes
-	}
-	trait = education_learning_4
+	350.1.1 = { death = yes }
+	
 }
 
 et_antioch_867_57 = {
 	name = "Stephanos"
-	rite = byzantine_rite
+	rite = arian
 	culture = greek
-	289.1.1 = {
-		birth = yes
-	}
-	345.1.1 = {
-		death = yes
-	}
+	trait = lustful #Deposed on account of a whore in his quarters
+	289.1.1 = { birth = yes }
+	345.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
@@ -5702,12 +5876,8 @@ et_antioch_867_58 = {
 	name = "Philaklos"
 	rite = byzantine_rite
 	culture = greek
-	282.1.1 = {
-		birth = yes
-	}
-	341.1.1 = {
-		death = yes
-	}
+	282.1.1 = { birth = yes }
+	341.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
@@ -5715,12 +5885,8 @@ et_antioch_867_59 = {
 	name = "Euphronios"
 	rite = byzantine_rite
 	culture = greek
-	281.1.1 = {
-		birth = yes
-	}
-	334.1.1 = {
-		death = yes
-	}
+	281.1.1 = { birth = yes }
+	334.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
@@ -5728,39 +5894,33 @@ et_antioch_867_60 = {
 	name = "Eulalios"
 	rite = byzantine_rite
 	culture = greek
-	284.1.1 = {
-		birth = yes
-	}
-	333.1.1 = {
-		death = yes
-	}
 	trait = education_learning_4
+	284.1.1 = { birth = yes }
+	333.1.1 = { death = yes }
 }
 
 et_antioch_867_61 = {
 	name = "Paulinos"
 	rite = byzantine_rite
 	culture = greek
-	264.1.1 = {
-		birth = yes
-	}
-	332.6.1 = {
-		death = yes
-	}
-	trait = education_learning_4
+	270.1.1 = { birth = yes } #Hypothetical
+	330.1.1 = { name = "Paulinus" }
+	331.1.1 = { death = yes }
 }
 
 et_antioch_867_62 = {
 	name = "Eustathios"
 	rite = byzantine_rite
 	culture = greek
-	272.1.1 = {
-		birth = yes
-	}
-	332.1.1 = {
+	trait = zealous
+	trait = temperate
+	trait = compassionate
+	disallow_random_traits = yes
+	280.1.1 = { birth = yes } #Hypothetical
+	360.1.1 = {
 		death = yes
+		trait = saint
 	}
-	trait = education_learning_4
 }
 
 et_antioch_867_63 = {
@@ -5777,6 +5937,202 @@ et_antioch_867_63 = {
 	trait = devoted
 }
 
+#Early Antiochenes
+AntiochChurch001 = {
+	name = "Evodius"
+	rite = hellenic_pagan
+	culture = romano_aramean
+	disallow_random_traits = yes
+	13.1.1 = { birth = yes } #Hypothetical
+	41.1.1 = { religion = apostolic_christianity } #Pagan convert
+	66.1.1 = {
+		death = { #Orthodox tradition
+			death_reason = death_execution
+			killer = 145287
+		}
+		trait = saint
+	}
+}
+AntiochChurch002 = {
+	name = "Ignatios"
+	rite = rabbinism
+	culture = greek
+	disallow_random_traits = yes
+	28.1.1 = { birth = yes } #Hypothetical
+	30.1.1 = { religion = apostolic_christianity } #A tradition holds he was a one of the Children Christ held and blessed
+	107.1.1 = {
+		death = { #Tradition holds he was a martyr
+			death_reason = death_execution
+			killer = 145279
+		}
+		trait = saint
+	}
+}
+AntiochChurch003 = {
+	name = "Herodion"
+	religion = apostolic_christianity
+	culture = greek
+	disallow_random_traits = yes
+	70.1.1 = { birth = yes } #Hypothetical
+	136.1.1 = {
+		death = yes
+		trait = saint
+	}
+}
+AntiochChurch004 = {
+	name = "Cornelius"
+	religion = apostolic_christianity
+	culture = roman #Assumed because of name
+	90.1.1 = { birth = yes } #Hypothetical
+	142.1.1 = { death = yes }
+}
+AntiochChurch005 = {
+	name = "Heron"
+	religion = antenicene_christianity
+	culture = roman #Assumed because of name
+	100.1.1 = { birth = yes } #Hypothetical
+	169.1.1 = { death = yes }
+}
+AntiochChurch006 = {
+	name = "Theophilos"
+	rite = hellenic_pagan
+	culture = greek #Assumed because of name; likely birth in the Tigris/Euphrates region
+	disallow_random_traits = yes
+	120.1.1 = { birth = yes } #Hypothetical
+	136.1.1 = { trait = education_learning_4 }
+	140.1.1 = { religion = antenicene_christianity } #Converted from Paganism
+	188.1.1 = {
+		death = yes
+		trait = saint
+	}
+}
+AntiochChurch007 = {
+	name = "Maximus"
+	religion = antenicene_christianity
+	culture = roman #Assumed because of name
+	150.1.1 = { birth = yes } #Hypothetical
+	191.1.1 = { death = yes }
+}
+AntiochChurch008 = {
+	name = "Serapion"
+	religion = antenicene_christianity
+	culture = greek #Assumed because of name
+	disallow_random_traits = yes
+	160.1.1 = { birth = yes } #Hypothetical
+	211.1.1 = {
+		death = yes
+		trait = saint
+	}
+}
+AntiochChurch009 = {
+	name = "Asklepiades"
+	religion = antenicene_christianity
+	culture = greek #Assumed because of name
+	disallow_random_traits = yes
+	170.1.1 = { birth = yes } #Hypothetical
+	217.1.1 = {
+		death = {
+			death_reason = death_execution
+			killer = 145268
+		}
+		trait = saint
+	}
+}
+AntiochChurch010 = {
+	name = "Philetos"
+	religion = antenicene_christianity
+	culture = greek #Assumed because of name
+	180.1.1 = { birth = yes } #Hypothetical
+	231.1.1 = { death = yes }
+}
+AntiochChurch011 = {
+	name = "Zebinnus"
+	religion = antenicene_christianity
+	culture = syriac
+	190.1.1 = { birth = yes } #Hypothetical
+	237.1.1 = { death = yes }
+}
+AntiochChurch012 = {
+	name = "Babylas"
+	religion = antenicene_christianity
+	culture = syriac
+	disallow_random_traits = yes
+	195.1.1 = { birth = yes } #Hypothetical
+	251.1.1 = {
+		death = { death_reason = death_dungeon }
+		trait = saint
+	}
+}
+AntiochChurch013 = {
+	name = "Fabius"
+	religion = antenicene_christianity
+	culture = roman #Assumed because of name
+	200.1.1 = { birth = yes } #Hypothetical
+	256.1.1 = { death = yes }
+}
+AntiochChurch014 = {
+	name = "Demetrius"
+	religion = antenicene_christianity
+	culture = roman #Assumed because of name
+	210.1.1 = { birth = yes } #Hypothetical
+	261.1.1 = { death = yes }
+}
+AntiochChurch015 = {
+	name = "Pavlos"
+	rite = antenicene_christianity #Monarchianism though...
+	culture = greek
+	210.1.1 = { birth = yes } #Hypothetical
+	272.1.1 = { death = yes }
+}
+AntiochChurch016 = {
+	name = "Domnos"
+	religion = antenicene_christianity
+	culture = greek
+	220.1.1 = { birth = yes } #Hypothetical
+	273.1.1 = { death = yes }
+}
+AntiochChurch017 = {
+	name = "Timaios"
+	religion = antenicene_christianity
+	culture = greek #Assumed because of name
+	220.1.1 = { birth = yes } #Hypothetical
+	280.1.1 = { death = yes }
+}
+AntiochChurch018 = {
+	name = "Kyrillos"
+	religion = antenicene_christianity
+	culture = greek #Assumed because of name
+	240.1.1 = { birth = yes } #Hypothetical
+	303.1.1 = { death = yes }
+}
+AntiochChurch019 = {
+	name = "Tyrannos"
+	religion = antenicene_christianity
+	culture = greek #Assumed because of name
+	260.1.1 = { birth = yes } #Hypothetical
+	314.1.1 = { death = yes }
+}
+AntiochChurch020 = {
+	name = "Vitalis"
+	religion = antenicene_christianity
+	culture = roman #Assumed because of name
+	265.1.1 = { birth = yes } #Hypothetical
+	320.1.1 = { death = yes }
+}
+AntiochChurch021 = {
+	name = "Philogonios"
+	religion = antenicene_christianity
+	culture = greek #Assumed because of name
+	trait = zealous
+	trait = temperate
+	trait = humble
+	disallow_random_traits = yes
+	270.1.1 = { birth = yes } #Hypothetical
+	324.1.1 = {
+		death = yes
+		trait = saint
+	}
+}
 
 ## Cyprus
 # 867

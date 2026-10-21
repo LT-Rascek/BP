@@ -1418,26 +1418,68 @@ d_et_constantinople = { # Eccumenical Patriarch
 
 # Asia
 d_et_jerusalem = { # Jerusalem
-	62.1.1 = {
-		holder = et_jerusalem_867_40 # Simeon
+	33.1.1 = {
+		holder = JerusalemChurch000 #Saint James the Just
 		government = ecclesiastical_government
 		clerical_region = bp_et_395_jerusalem_region
 	}
-	107.1.1 = { holder = et_jerusalem_867_39 } # Justus
+	62.1.1 = {
+		holder = et_jerusalem_867_40 # Simeon
+	}
+	107.1.1 = { holder = et_jerusalem_867_39 } # Justus I
 	113.1.1 = { holder = et_jerusalem_867_38 } # Zaccheus
+	116.1.1 = { holder = et_jerusalem_867_patriarch5 } #Tobias
+	116.6.1 = { holder = et_jerusalem_867_patriarch6 } #Benjamin
 	117.1.1 = { holder = et_jerusalem_867_37 } # John
-	185.1.1 = { holder = et_jerusalem_867_36 } # Narcissus
-	211.1.1 = { holder = et_jerusalem_867_35 } # Narcissus
+	119.1.1 = { holder = et_jerusalem_867_patriarch8 } #Matthias I
+	120.1.1 = { holder = et_jerusalem_867_patriarch9 } #Philip
+	124.1.1 = { holder = et_jerusalem_867_patriarch10 } #Senecas
+	#Dates Unknown
+	128.1.1 = { holder = et_jerusalem_867_patriarch11 } #Justus II
+	130.1.1 = { holder = et_jerusalem_867_patriarch12 } #Levis
+	132.1.1 = { holder = et_jerusalem_867_patriarch13 } #Ephram
+	133.1.1 = { holder = et_jerusalem_867_patriarch14 } #Joseph I
+	134.1.1 = { holder = et_jerusalem_867_patriarch15 } #Judas
+	##### Bishops of Aelia Capitolina #####
+	
+	#Dates Known
+	135.1.1 = { holder = et_jerusalem_867_patriarch16 } #Marcus
+	#Dates Unknown
+	156.1.1 = { holder = et_jerusalem_867_patriarch17 } #Cassianus
+	158.1.1 = { holder = et_jerusalem_867_patriarch18 } #Popilius
+	160.1.1 = { holder = et_jerusalem_867_patriarch19 } #Maximus I
+	162.1.1 = { holder = et_jerusalem_867_patriarch20 } #Julian I
+	164.1.1 = { holder = et_jerusalem_867_patriarch21 } #Gaius I
+	166.1.1 = { holder = et_jerusalem_867_patriarch22 } #Symmachus
+	168.1.1 = { holder = et_jerusalem_867_patriarch23 } #Gaius II
+	170.1.1 = { holder = et_jerusalem_867_patriarch24 } #Julian II
+	172.1.1 = { holder = et_jerusalem_867_patriarch25 } #Capion
+	174.1.1 = { holder = et_jerusalem_867_patriarch26 } #Maximus I
+	176.1.1 = { holder = et_jerusalem_867_patriarch27 } #Antonius
+	178.1.1 = { holder = et_jerusalem_867_patriarch28 } #Valens
+	180.1.1 = { holder = et_jerusalem_867_patriarch29 } #Dolichianus
+	#Dates Known
+	185.1.1 = { holder = et_jerusalem_867_36 } #Narcissus (First Time)
+	#Dates Unknown
+	193.1.1 = { holder = et_jerusalem_867_patriarch31 } #Dius
+	201.1.1 = { holder = et_jerusalem_867_patriarch32 } #Germanion
+	#Dates Knowns
+	205.1.1 = { holder = et_jerusalem_867_patriarch33 } #Goridus
+	211.1.1 = { holder = et_jerusalem_867_36 } #Narcissus (Second Time)
 	231.1.1 = { holder = et_jerusalem_867_34 } # Alexander
+	249.1.1 = { holder = et_jerusalem_867_patriarch35 } #Mazabanis
+	260.1.1 = { holder = et_jerusalem_867_patriarch36 } #Imeneus
 	276.1.1 = { holder = et_jerusalem_867_33 } # Zamudas
-	314.1.1 = { holder = et_jerusalem_867_32 } # Macarius
-	325.1.1 = { holder = et_jerusalem_867_31 } # Macarius
-	333.1.1 = { holder = et_jerusalem_867_30 } # Maximus
-	350.1.1 = { holder = et_jerusalem_867_29 } # Cyril
-	386.1.1 = { holder = et_jerusalem_867_28 } # John II
-	417.1.1 = { holder = et_jerusalem_867_27 } # Praulius
-	422.1.1 = { holder = et_jerusalem_867_26 } # Juvenal
-	451.1.1 = { holder = et_jerusalem_867_25 } # Juvenal
+	283.1.1 = { holder = et_jerusalem_867_patriarch38 } #Ermon
+	##### Bishops of Aelia Capitolina become Bishops of Jerusalem #####
+	314.1.1 = { holder = et_jerusalem_867_32 } # Macarius I
+	333.1.1 = { holder = et_jerusalem_867_29 } # Maximus
+	347.1.1 = { holder = 0 } #Interregnum
+	350.1.1 = { holder = et_jerusalem_867_28 } # Cyril
+	386.1.1 = { holder = et_jerusalem_867_27 } # John II
+	417.1.1 = { holder = et_jerusalem_867_26 } # Praulius
+	422.1.1 = { holder = et_jerusalem_867_25 } # Juvenal
+	########
 	458.1.1 = { holder = et_jerusalem_867_24 } # Anastasius I
 	478.1.1 = { holder = et_jerusalem_867_23 } # Martyrius
 	486.1.1 = { holder = et_jerusalem_867_22 } # Sallustius
@@ -1448,6 +1490,7 @@ d_et_jerusalem = { # Jerusalem
 	575.1.1 = { holder = et_jerusalem_867_17 } # Eustochius
 	575.6.1 = { holder = et_jerusalem_867_16 } # John IV
 	594.1.1 = { holder = et_jerusalem_867_15 } # Amos
+	#### PDX history beyond here
 	601.1.1 = { holder = et_jerusalem_867_14 } # Isaac
 	609.1.1 = { holder = et_jerusalem_867_13 } # Zacharias
 	632.1.1 = { holder = et_jerusalem_867_12 } # Modestus
@@ -1466,22 +1509,46 @@ d_et_jerusalem = { # Jerusalem
 }
 
 d_et_antioch = { # Antioch
-	### Chalcedonian (Greek)
-	325.1.1 = {
-		holder = et_antioch_867_62 # Eustathius
+	37.1.1 = {
 		government = ecclesiastical_government
 		clerical_region = bp_et_395_antioch_region
 	}
+	##### Bishop of Antioch #####
+	37.1.1 = { holder = 145292 } #Saint Peter
+	42.1.1 = { holder = AntiochChurch001 } #Evodius
+	66.1.1 = { holder = AntiochChurch002 } #Ignatius
+	107.1.1 = { holder = AntiochChurch003 } #Heron I
+	136.1.1 = { holder = AntiochChurch004 } #Cornelius
+	142.1.1 = { holder = AntiochChurch005 } #Heron II
+	169.1.1 = { holder = AntiochChurch006 } #Theophilus
+	188.1.1 = { holder = AntiochChurch007 } #Maximus I
+	191.1.1 = { holder = AntiochChurch008 } #Serapion
+	211.1.1 = { holder = AntiochChurch009 } #Asclepiades
+	217.1.1 = { holder = AntiochChurch010 } #Philetus
+	231.1.1 = { holder = AntiochChurch011 } #Zebinnus
+	237.1.1 = { holder = AntiochChurch012 } #Babylas
+	251.1.1 = { holder = AntiochChurch013 } #Fabius
+	256.1.1 = { holder = AntiochChurch014 } #Demetrius
+	261.1.1 = { holder = AntiochChurch015 } #Paul
+	272.1.1 = { holder = AntiochChurch016 } #Domnus I
+	273.1.1 = { holder = AntiochChurch017 } #Timaeus
+	303.1.1 = { holder = AntiochChurch018 } #Cyril
+	314.1.1 = { holder = AntiochChurch019 } #Tyrannion
+	320.1.1 = { holder = AntiochChurch020 } #Vitalis
+	##### Patriarchs of Antioch #####
+	324.1.1 = { holder = AntiochChurch021 } #Philogonius
+	325.1.1 = { holder = et_antioch_867_62 } # Eustathius
 	332.1.1 = { holder = et_antioch_867_61 } # Paulinus of Tyre
 	332.6.1 = { holder = et_antioch_867_60 } # Eulalios
 	333.1.1 = { holder = et_antioch_867_59 } # Euphronios
 	334.1.1 = { holder = et_antioch_867_58 } # Philaclus
 	341.1.1 = { holder = et_antioch_867_57 } # Stephen I
 	345.1.1 = { holder = et_antioch_867_56 } # Leontius
-	350.1.1 = { holder = et_antioch_867_53 } # Eudoxius (FIRST)
+	350.1.1 = { holder = 145059 } # Eudoxius (FIRST)
 	354.1.1 = { holder = et_antioch_867_54 } # Meletius
-	354.6.1 = { holder = et_antioch_867_53 } # Eudoxius (SECOND)
+	354.6.1 = { holder = 145059 } # Eudoxius (SECOND)
 	357.1.1 = { holder = et_antioch_867_52 } # Annias or Ammianus
+	##### Multiple Schisms that get comingled for regnal naming
 	360.1.1 = { holder = et_antioch_867_51 } # Euzoios
 	370.1.1 = { holder = et_antioch_867_50 } # Dorotheus
 	371.1.1 = { holder = et_antioch_867_49 } # Paulinus
@@ -1489,6 +1556,7 @@ d_et_antioch = { # Antioch
 	384.1.1 = { holder = et_antioch_867_47 } # Flavian I
 	404.1.1 = { holder = et_antioch_867_46 } # Porphyrus
 	408.1.1 = { holder = et_antioch_867_45 } # Alexander
+	##### Return to Unity #####
 	418.1.1 = { holder = et_antioch_867_44 } # Theodotus
 	427.1.1 = { holder = et_antioch_867_43 } # John I
 	443.1.1 = { holder = et_antioch_867_42 } # Domnus II
@@ -1498,82 +1566,29 @@ d_et_antioch = { # Antioch
 	461.1.1 = { holder = et_antioch_867_38 } # Martyrius
 	465.1.1 = { holder = et_antioch_867_37 } # Peter the Fuller (FIRST)
 	466.1.1 = { holder = et_antioch_867_36 } # Julian
-	474.1.1 = { holder = et_antioch_867_37 } # Peter the Fuller (SECOND)
-	475.1.1 = { holder = et_antioch_867_34 } # John II
-	490.1.1 = { holder = et_antioch_867_33 } # Stephen II
-	493.1.1 = { holder = et_antioch_867_32 } # Stephen III
-	495.1.1 = { holder = et_antioch_867_31 } # Callandion
-	495.6.1 = { holder = et_antioch_867_30 } # John III (Codonatus)
-	497.1.1 = { holder = et_antioch_867_29 } # Palladius
-	505.1.1 = { holder = et_antioch_867_28 } # Flavian II
-	513.1.1 = { holder = et_antioch_867_27 } # Severus
-	518.1.1 = { holder = et_antioch_867_26 } # Paul II
-	521.1.1 = { holder = et_antioch_867_25 } # Euphrasius
-	526.1.1 = { holder = et_antioch_867_24 } # Ephraim
-	546.1.1 = { holder = et_antioch_867_23 } # Domnus III
-	561.1.1 = { holder = et_antioch_867_22 } # Anastasius the Sinaite (1)
-	571.1.1 = { holder = et_antioch_867_21 } # Gregory (571–594)
-	594.1.1 = { holder = et_antioch_867_22 } # Anastasius the Sinaite ()
-	599.1.1 = { holder = et_antioch_867_19 } # Anastasius II
-	610.1.1 = { holder = et_antioch_867_18 } # Gregory II
-	620.1.1 = { holder = et_antioch_867_17 } # Anastasius III
-	628.1.1 = { holder = et_antioch_867_16 } # Macedonius
-####	# 637 Rashidun conquest from Byzantium
-####	637.1.1 = { holder = 0 }
-####	#640.1.1 = { holder = et_antioch_867_15 } # George I
-####	#656.1.1 = { holder = et_antioch_867_14 } # Macarius
-####	#681.1.1 = { holder = et_antioch_867_13 } # Theophanes
-####	#687.1.1 = { holder = et_antioch_867_12 } # Sebastian
-####	#690.1.1 = { holder = et_antioch_867_11 } # George II
-####	#695.1.1 = { holder = et_antioch_867_10 } # Alexander II
-####	#742.1.1 = { holder = et_antioch_867_9 }  # Stephen IV
-####	#748.1.1 = { holder = et_antioch_867_8 }  # Theophylact
-####	#767.1.1 = { holder = et_antioch_867_7 }  # Theodore I
-####	#797.1.1 = { holder = et_antioch_867_6 }  # John IV
-####	#810.1.1 = { holder = et_antioch_867_5 }  # Job I
-####	#826.1.1 = { holder = et_antioch_867_4 }  # Nicholas
-####	#834.1.1 = { holder = et_antioch_867_3 }  # Simeon
-####	#840.1.1 = { holder = et_antioch_867_2 }  # Elias
-####	### Miaphysite (Antiochian)
-####	846.1.1 = { holder = et_antioch_867_63 } # Yohannan IV (Mor Yuhanon)
-####	873.1.1 = { holder = 0 }
-####	### Orthodox (Greek)
-####	#852.1.1 = { holder = et_antioch_867_1 }  # Theodosius I
-####	#860.1.1 = { holder = et_antioch_867_0 }  # Nicholas
-####	# 1066
-####	#879.1.1 = { holder = et_antioch_1066_17 } # Michael
-####	#890.1.1 = { holder = et_antioch_1066_16 } # Zacharias
-####	#902.1.1 = { holder = et_antioch_1066_15 } # George III
-####	#917.1.1 = { holder = et_antioch_1066_14 } # Job II
-####	#939.1.1 = { holder = et_antioch_1066_13 } # Eustratius
-####	#960.1.1 = { holder = et_antioch_1066_12 } # Christopher
-####	#966.1.1 = { holder = et_antioch_1066_11 } # Theodorus II
-####	# 969 Byzantine reconquest
-####	969.1.1 = { holder = et_antioch_1066_11 } # Theodorus II
-####	977.1.1 = { holder = et_antioch_1066_10 } # Agapius
-####	995.1.1 = { holder = et_antioch_1066_9 } # John IV
-####	1000.1.1 = { holder = et_antioch_1066_8 } # Nicholas III
-####	1003.1.1 = { holder = et_antioch_1066_7 } # Elias II
-####	1010.1.1 = { holder = et_antioch_1066_6 } # George
-####	1015.1.1 = { holder = et_antioch_1066_5 } # Macarius
-####	1023.1.1 = { holder = et_antioch_1066_4 } # Eleutherius
-####	1028.1.1 = { holder = et_antioch_1066_3 } # Peter III
-####	### Orthodox (Greek)
-####	1051.1.1 = { holder = et_antioch_1066_2 } # John V
-####	1062.1.1 = { holder = et_antioch_1066_1 } # Aemilian
-####	# 1178
-####	1075.1.1 = { holder = et_antioch_1178_7 } # Theodosius II
-####	1084.1.1 = { holder = et_antioch_1178_6 } # Nicephorus
-####	1090.1.1 = { holder = et_antioch_1178_5 } # John VII the Oxite
-####	1118.1.1 = {
-####		clerical_region = et_1178_antioch_region
-####	}
-####	1155.1.1 = { holder = et_antioch_1178_4 } # John IX
-####	1159.1.1 = { holder = et_antioch_1178_3 } # Euthymius
-####	1164.1.1 = { holder = et_antioch_1178_2 } # Macarius II
-####	1166.1.1 = { holder = et_antioch_1178_1 } # Athanasius I
-####	### Catholic (Roman)
-####	1170.6.29 = { holder = et_antioch_1178_8 } # Aimery
+	475.1.1 = { holder = et_antioch_867_37 } # Peter the Fuller (SECOND)
+	477.1.1 = { holder = et_antioch_867_34 } # John II
+	477.6.1 = { holder = et_antioch_867_37 } # Peter the Fuller (THIRD)
+	477.9.1 = { holder = et_antioch_867_30 } # John III (Codonatus)
+	479.1.1 = { holder = et_antioch_867_33 } # Stephen II
+	480.1.1 = { holder = et_antioch_867_32 } # Stephen III
+	480.6.1 = { holder = et_antioch_867_31 } # Callandion
+	485.1.1 = { holder = et_antioch_867_37 } # Peter the Fuller (FOURTH)
+	488.1.1 = { holder = et_antioch_867_29 } # Palladius
+	498.1.1 = { holder = et_antioch_867_28 } # Flavian II
+	512.1.1 = { holder = et_antioch_867_27 } # Severus
+	518.1.1 = { holder = 0 }
+	#Gotta figure out what to do with Severus after 518
+	
+	#518.1.1 = { holder = et_antioch_867_26 } # Paul II
+	#521.1.1 = { holder = et_antioch_867_25 } # Euphrasius
+	#526.5.20 = { holder = et_antioch_867_24 } # Ephraim
+	#546.1.1 = { holder = et_antioch_867_23 } # Domnus III
+	#561.1.1 = { holder = et_antioch_867_22 } # Anastasius the Sinaite (1)
+	#571.1.1 = { holder = et_antioch_867_21 } # Gregory (571–594)
+	#594.1.1 = { holder = et_antioch_867_22 } # Anastasius the Sinaite ()
+	#599.4.21 = { holder = et_antioch_867_19 } # Anastasius II
+	#609.12.21 = { holder = et_antioch_867_18 } # Gregory II
 }
 
 d_et_cyprus = { # Cyprus
