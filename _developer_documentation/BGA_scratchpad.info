@@ -6,6 +6,10 @@
 First Order (AKA first sweep and implementation of plan):
 -----------------------
 TODO:
+History:
+- Siddonius Should not be a landed holder
+- Bishops should be under Sub-Roman Rulers
+
 - Egyptian Syncretism, Hellenic Syncretism, Pneumatomachianism
 - west_african_orisha_pagan, pugadalavada_faith
 
@@ -13,9 +17,12 @@ TODO:
 
 - CotE monks not getting any land, Georgian monks not getting any land
 
+- Update Description for splash event & rule number
+
+- Script location: file: common/customizable_localization/00_divinity_custom_loc.txt line: 1072 (GetActualBishopTitle)
+- Script location: file: common/customizable_localization/00_divinity_custom_loc.txt line: 1173 (GetActualBishopTitle)
+
 ------------------
-History:
-- Duplicate characters in various religious places: Reims, Aquelia, Antioch, Jerusalem
 
 GUI:
 - Update Religion GUI with minorities
@@ -65,13 +72,9 @@ Mechanics:
 - Powerful Family Attributes aren't available
 - blocks_eucharistic_tenets needs to have an on action function
 - Need a new level for influence (if possible to add in)
-- Utilize the Preservation system to tie decreasing divergence tolerance to more scriptural basis
-   - Needs to be advantages to doing this
-   - Will need to tweak the defined baseline values also (increased scale, baseline set by script instead of define (by setting define to zero), &c.
 - Overhaul land grants for Roman governments in light of new government hooks
-- Non-Roman Rule:
-	- Overhaul how "Roman Church" stuff interacts (with and without DLC)
 - Roman Religion vs. Non-Roman Rule
+	- Overhaul how "Roman Church" stuff interacts (with and without DLC)
 	- bp_county_has_roman_faith_trigger
 	- bp_protect_religion_specific_trigger
 	- Tie Populist Revolt blockers to be instead linked to Non-Roman Law

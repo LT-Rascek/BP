@@ -370,15 +370,45 @@
 	}
 }
 
-161518 = {
-	name = "Markos"	#I
-	religion = christian_faith
-	culture = copt
-	10.1.1 = {
-		birth = "10.1.1"
+161518 = { #Saint Mark
+	name = "Marcus"	#I
+	religion = apostolic_christianity
+	culture = romano_african #Coptic Tradition states he was a Roman of African descent
+	disallow_random_traits = yes
+	10.1.1 = { birth = yes }
+	26.1.1 = {
+		trait = diligent
+		trait = patient
+		trait = zealous
+		trait = education_learning_3
+	}
+	33.1.1 = { give_nickname = nick_the_evangelist }
+	60.1.1 = {
+		trait = erudite
+		trait = theologian
+		trait = journaller
 	}
 	68.1.1 = {
-		death = "68.1.1"
+		death = { death_reason = death_torn_to_pieces_by_mob }
+		trait = saint
+		effect_even_if_dead = {
+			pam_canonize_saint_effect = {
+				CANONIZER = root
+				CANDIDATE = root
+				CONSECRATION_PROVINCE = province:6053 #Alexandria
+				PRESET = yes
+			}
+			religion:christianity_religion = {
+				every_faith = {
+					limit = {
+						main_rite = { is_rite_enabled = yes }
+						NOT = { has_saint_character = root }
+					}
+					add_saint = { character = root }
+				}
+			}
+			faith:ebionite = { add_saint = { character = root } }
+		}
 	}
 }
 

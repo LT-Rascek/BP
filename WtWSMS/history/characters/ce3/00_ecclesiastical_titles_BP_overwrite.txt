@@ -1,9 +1,9 @@
 ﻿### Hispania
 ## Toledo
 et_toledo_867_0 = {
-	name = "Bonito"
+	name = "Bonitus"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	829.1.1 = { 
 		birth = yes
 	}
@@ -11,9 +11,9 @@ et_toledo_867_0 = {
 	trait = education_learning_4
 }
 et_toledo_867_1 = {
-	name = "Ellipando"
+	name = "Ellipandus"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	717.1.1 = { birth = yes }
 	805.1.1 = { death = yes }
 	trait = education_learning_4
@@ -24,7 +24,7 @@ et_toledo_867_1 = {
 et_toledo_867_2 = {
 	name = "Cixila"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	740.1.1 = { birth = yes }
 	783.1.1 = { death = yes }
 	trait = education_learning_4
@@ -48,7 +48,7 @@ et_toledo_867_4 = {
 et_toledo_867_5 = {
 	name = "Felix"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	660.1.1 = { birth = yes }
 	700.1.1 = { death = yes }
 	trait = education_learning_4
@@ -62,97 +62,108 @@ et_toledo_867_6 = {
 	trait = education_learning_4
 }
 et_toledo_867_7 = {
-	name = "Julian"
+	name = "Julianus"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	640.1.1 = { birth = yes }
 	690.3.6 = { death = yes }
 	trait = education_learning_4
 }
 et_toledo_867_8 = {
-	name = "Quirico"
+	name = "Quiricus"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	630.1.1 = { birth = yes }
 	679.1.1 = { death = yes }
 	trait = education_learning_4
 }
 et_toledo_867_9 = {
-	name = "Ildefonso"
+	name = "Hildefuns"
 	rite = mozarabic_church
 	culture = visigothic
 	607.9.8 = { birth = yes }
-	667.1.23 = { death = yes }
+	667.1.23 = {
+		death = yes
+		trait = saint
+	}
 	trait = education_learning_4
 }
 et_toledo_867_10 = {
-	name = "Eugene"
+	name = "Eugenius"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	620.1.1 = { birth = yes }
 	657.11.13 = { death = yes }
 	trait = education_learning_4
 }
 et_toledo_867_11 = {
-	name = "Eugene"
+	name = "Eugenius"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	600.1.1 = { birth = yes }
 	646.1.1 = { death = yes }
 	trait = education_learning_4
 }
 et_toledo_867_12 = {
-	name = "Justo"
+	name = "Justus"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	590.1.1 = { birth = yes }
 	636.2.1 = { death = yes }
 	trait = education_learning_4
 }
 et_toledo_867_13 = {
-	name = "Eladio"
+	name = "Eladius"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	570.1.1 = { birth = yes }
 	633.1.1 = { death = yes }
 	trait = education_learning_4
 }
 et_toledo_867_14 = {
-	name = "Aurasio"
+	name = "Aurasius"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	560.1.1 = { birth = yes }
 	615.1.1 = { death = yes }
 	trait = education_learning_4
 }
 et_toledo_867_15 = {
-	name = "Montano"
+	name = "Montanus"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	500.1.1 = { birth = yes }
 	531.1.1 = { death = yes }
 	trait = education_learning_4
 }
-et_toledo_867_16 = {
-	name = "Asturian"
+bp_et_toledo_1 = {
+	name = "Sinticius"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
+	420.1.1 = { birth = yes }
+	486.1.1 = { death = yes }
+	trait = education_learning_4
+}
+et_toledo_867_16 = {
+	name = "Austrius"
+	rite = mozarabic_church
+	culture = romano_hispanic
 	360.1.1 = { birth = yes }
 	412.1.1 = { death = yes }
 	trait = education_learning_4
 }
 et_toledo_867_17 = {
-	name = "Audencio"
+	name = "Audentius"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	350.1.1 = { birth = yes }
 	395.1.1 = { death = yes }
 	trait = education_learning_4
 }
 et_toledo_867_18 = {
-	name = "Patruino"
+	name = "Patruinus"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	300.1.1 = { birth = yes }
 	335.1.1 = { death = yes }
 	trait = education_learning_4
@@ -163,15 +174,15 @@ et_toledo_867_18 = {
 et_tarragona_867_1 = {
 	name = "Vera"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	653.1.1 = { birth = yes }
 	693.12.31 = { death = yes }
 	trait = education_learning_4
 }
 et_tarragona_867_2 = {
-	name = "Cebrian"
+	name = "Cyprianus"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	628.1.1 = { birth = yes }
 	688.1.1 = { death = yes }
 	trait = education_learning_4
@@ -179,23 +190,23 @@ et_tarragona_867_2 = {
 et_tarragona_867_3 = {
 	name = "Faluax"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	605.1.1 = { birth = yes }
 	668.1.1 = { death = yes }
 	trait = education_learning_4
 }
 et_tarragona_867_4 = {
-	name = "Protasio"
+	name = "Protagius"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	597.1.1 = { birth = yes }
 	646.1.1 = { death = yes }
 	trait = education_learning_4
 }
 et_tarragona_867_5 = {
-	name = "Selva"
+	name = "Silva"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	593.1.1 = { birth = yes }
 	635.1.1 = { death = yes }
 	trait = education_learning_4
@@ -203,55 +214,55 @@ et_tarragona_867_5 = {
 et_tarragona_867_6 = {
 	name = "Audax"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	592.1.1 = { birth = yes }
 	633.1.1 = { death = yes }
 	trait = education_learning_4
 }
 et_tarragona_867_7 = {
-	name = "Eusebio"
+	name = "Eusebius"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	570.1.1 = { birth = yes }
 	632.1.1 = { death = yes }
 	trait = education_learning_4
 }
 et_tarragona_867_8 = {
-	name = "Asiatic"
+	name = "Asiaticus"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	559.1.1 = { birth = yes }
 	610.1.1 = { death = yes }
 	trait = education_learning_4
 }
 et_tarragona_867_9 = {
-	name = "Artemio"
+	name = "Artemius"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	549.1.1 = { birth = yes }
 	599.1.1 = { death = yes }
 	trait = education_learning_4
 }
 et_tarragona_867_10 = {
-	name = "Tranquilli"
+	name = "Tranquilinus"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	520.1.1 = { birth = yes }
 	580.1.1 = { death = yes }
 	trait = education_learning_4
 }
 et_tarragona_867_11 = {
-	name = "Sergi"
+	name = "Sergius"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	480.1.1 = { birth = yes }
 	555.1.1 = { death = yes }
 	trait = education_learning_4
 }
 et_tarragona_867_12 = {
-	name = "Joan"
+	name = "Ioannes"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	445.1.1 = { birth = yes }
 	520.1.1 = { death = yes }
 	trait = education_learning_4
@@ -260,7 +271,7 @@ et_tarragona_867_12 = {
 # 867
 # VACANT AT START
 et_sevilla_867_1 = {
-	name = "Recafredo"
+	name = "Recafred"
 	rite = mozarabic_church
 	culture = visigothic
 	800.1.1 = { birth = yes }
@@ -269,7 +280,7 @@ et_sevilla_867_1 = {
 }
 
 et_sevilla_867_2 = {
-	name = "Oppas"
+	name = "Oppa"
 	rite = mozarabic_church
 	culture = visigothic
 	660.1.1 = { birth = yes }
@@ -280,74 +291,91 @@ et_sevilla_867_2 = {
 et_sevilla_867_3 = {
 	name = "Felix"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	640.1.1 = { birth = yes }
 	693.5.2 = { death = yes }
 	trait = education_learning_4
 }
 
 et_sevilla_867_4 = {
-	name = "Floresindo"
+	name = "Floresindus"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	620.1.1 = { birth = yes }
 	688.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_sevilla_867_5 = {
-	name = "Fugitivo"
+	name = "Fugitivus"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	600.1.1 = { birth = yes }
 	680.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_sevilla_867_6 = {
-	name = "Antonio"
+	name = "Antonius"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	585.1.1 = { birth = yes }
 	655.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_sevilla_867_7 = {
-	name = "Honorato"
+	name = "Honoratus"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	580.1.1 = { birth = yes }
 	641.11.12 = { death = yes }
 	trait = education_learning_4
 }
 
-et_sevilla_867_8 = {
-	name = "Isidoro"
+et_sevilla_867_8 = { #Isidore of Seville
+	name = "Isidorus"
+	dynasty = 1303077
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
+	father = 1310001
 	560.1.1 = { birth = yes }
-	636.4.4 = { death = yes }
-	trait = education_learning_4
+	576.1.1 = {
+		trait = education_learning_5
+	}
+	636.4.4 = {
+		death = yes
+		trait = saint
+	}
 }
 
 et_sevilla_867_9 = {
-	name = "Leandro"
+	name = "Leander"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	534.1.1 = { birth = yes }
 	600.3.13 = { death = yes }
 	trait = education_learning_4
 }
 
 et_sevilla_867_10 = {
-	name = "Laureano"
+	name = "Laureanus"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	480.1.1 = { birth = yes }
 	546.7.4 = { death = yes }
 	trait = education_learning_4
 }
+
+bp_et_sevilla_1 = {
+	name = "Zenon"
+	rite = mozarabic_church
+	culture = greek
+	420.1.1 = { birth = yes }
+	486.1.1 = { death = yes }
+	trait = education_learning_4
+}
+
 ## Braga
 # 867
 et_braga_867_0 = {
@@ -369,25 +397,25 @@ et_braga_867_1 = {
 }
 
 et_braga_867_2 = {
-	name = "Dulcidio"
+	name = "Dulcidius"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	780.1.1 = { birth = yes }
 	850.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_braga_867_3 = {
-	name = "Ferdizendo"
+	name = "Fridesindus"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	785.1.1 = { birth = yes }
 	842.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_braga_867_4 = {
-	name = "Ataulfo"
+	name = "Ataulf"
 	rite = mozarabic_church
 	culture = visigothic
 	770.1.1 = { birth = yes }
@@ -396,16 +424,16 @@ et_braga_867_4 = {
 }
 
 et_braga_867_5 = {
-	name = "Nostiano"
+	name = "Nostianus"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	780.1.1 = { birth = yes }
 	832.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_braga_867_6 = {
-	name = "Argimundo"
+	name = "Argimund"
 	rite = mozarabic_church
 	culture = visigothic
 	750.1.1 = { birth = yes }
@@ -414,7 +442,7 @@ et_braga_867_6 = {
 }
 
 et_braga_867_7 = {
-	name = "Ascarico"
+	name = "Ascaric"
 	rite = mozarabic_church
 	culture = visigothic
 	730.1.1 = { birth = yes }
@@ -441,7 +469,7 @@ et_braga_867_9 = {
 }
 
 et_braga_867_10 = {
-	name = "Hermenegildo"
+	name = "Hermenegild"
 	rite = mozarabic_church
 	culture = visigothic
 	700.1.1 = { birth = yes }
@@ -459,9 +487,9 @@ et_braga_867_11 = {
 }
 
 et_braga_867_12 = {
-	name = "Vitor"
+	name = "Victor"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	690.1.1 = { birth = yes }
 	736.1.1 = { death = yes }
 	trait = education_learning_4
@@ -470,25 +498,25 @@ et_braga_867_12 = {
 et_braga_867_13 = {
 	name = "Felix"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	670.1.1 = { birth = yes }
 	734.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_braga_867_14 = {
-	name = "Faustino"
+	name = "Faustinus"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	650.1.1 = { birth = yes }
 	693.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_braga_867_15 = {
-	name = "Quirico"
+	name = "Quiricus"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	640.1.1 = { birth = yes }
 	687.1.1 = { death = yes }
 	trait = education_learning_4
@@ -497,196 +525,202 @@ et_braga_867_15 = {
 et_braga_867_16 = {
 	name = "Liuva"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	630.1.1 = { birth = yes }
 	681.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_braga_867_17 = {
-	name = "Leodegisio"
+	name = "Leodecisius"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	620.1.1 = { birth = yes }
 	678.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_braga_867_18 = {
-	name = "Pancracio"
+	name = "Pancracius"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	600.1.1 = { birth = yes }
 	675.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_braga_867_19 = {
-	name = "Manucino"
+	name = "Manucinus"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	610.1.1 = { birth = yes }
 	661.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_braga_867_20 = {
-	name = "Frutuoso"
+	name = "Fructuosus"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	595.1.1 = { birth = yes }
-	660.1.1 = { death = yes }
+	660.1.1 = {
+		death = yes
+		trait = saint
+	}
 	trait = education_learning_4
 }
 
 et_braga_867_21 = {
-	name = "Potamio"
+	name = "Potamius"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	585.1.1 = { birth = yes }
 	656.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_braga_867_22 = {
-	name = "Juliao"
+	name = "Julius"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	570.1.1 = { birth = yes }
 	653.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_braga_867_23 = {
-	name = "Tolobeu"
+	name = "Tolobeus"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	555.1.1 = { birth = yes }
 	633.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_braga_867_24 = {
-	name = "Benigno"
+	name = "Benignus"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	540.1.1 = { birth = yes }
 	612.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_braga_867_25 = {
-	name = "Pantardo"
+	name = "Pantardus"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	525.1.1 = { birth = yes }
 	589.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_braga_867_26 = {
-	name = "Martinho"
+	name = "Martinus"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_pannonian
 	518.1.1 = { birth = yes }
-	579.3.20 = { death = yes }
+	579.3.20 = {
+		death = yes
+		trait = saint
+	}
 	trait = education_learning_4
 }
 
 et_braga_867_27 = {
-	name = "Lucrecio"
+	name = "Lucrecius"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	520.1.1 = { birth = yes }
 	562.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_braga_867_28 = {
-	name = "Eleuterio"
+	name = "Eleuterius"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	510.1.1 = { birth = yes }
 	561.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_braga_867_29 = {
-	name = "Profuturo"
+	name = "Profuturus"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	500.1.1 = { birth = yes }
 	550.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_braga_867_30 = {
-	name = "Juliao"
+	name = "Julius"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	495.1.1 = { birth = yes }
 	538.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_braga_867_31 = {
-	name = "Ausberto"
+	name = "Ausbertus"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	485.1.1 = { birth = yes }
 	537.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_braga_867_32 = {
-	name = "Valerio"
+	name = "Valerius"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	480.1.1 = { birth = yes }
 	527.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_braga_867_33 = {
-	name = "Castino"
+	name = "Castinus"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	475.1.1 = { birth = yes }
 	525.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_braga_867_34 = {
-	name = "Apolinario"
+	name = "Apolinarius"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	460.1.1 = { birth = yes }
 	524.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_braga_867_35 = {
-	name = "Idacio"
+	name = "Idacius"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	440.1.1 = { birth = yes }
 	518.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_braga_867_36 = {
-	name = "Valerio"
+	name = "Valerius"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	420.1.1 = { birth = yes }
 	494.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_braga_867_37 = {
-	name = "Balconio"
+	name = "Balconius"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	400.1.1 = { birth = yes }
 	456.1.1 = { death = yes }
 	trait = education_learning_4
@@ -694,92 +728,124 @@ et_braga_867_37 = {
 
 ## Merida
 et_merida_867_1 = {
-	name = "Arnulfo"
+	name = "Arnulf"
 	rite = mozarabic_church
-	culture = andalusian
+	culture = visigothic
 	800.1.1 = { birth = yes }
 	862.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_merida_867_2 = {
-	name = "Massimo"
+	name = "Maximus"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	650.1.1 = { birth = yes }
 	693.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_merida_867_3 = {
-	name = "Festo"
+	name = "Festus"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	630.1.1 = { birth = yes }
 	700.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_merida_867_4 = {
-	name = "Proficio"
+	name = "Profitius"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	620.1.1 = { birth = yes }
 	690.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_merida_867_5 = {
-	name = "Oronzo"
+	name = "Orontius"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	600.1.1 = { birth = yes }
 	653.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_merida_867_6 = {
-	name = "Stefano"
+	name = "Stephanus"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	595.1.1 = { birth = yes }
 	670.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_merida_867_7 = {
-	name = "Innocenzo"
+	name = "Innocentus"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = romano_hispanic
 	580.1.1 = { birth = yes }
 	650.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_merida_867_8 = {
-	name = "Masona"
-	rite = mozarabic_church
+	name = "Mausona" #African Berber Name
+	rite = arian
 	culture = visigothic
 	545.1.1 = { birth = yes }
-	606.1.1 = { death = yes }
+	579.1.1 = {
+		rite = mozarabic_church
+		trait = zealous
+	}
+	606.1.1 = {
+		death = yes
+		trait = saint
+	}
 	trait = education_learning_4
 }
 
 et_merida_867_9 = {
-	name = "Fedele"
+	name = "Phidelos"
 	rite = mozarabic_church
-	culture = visigothic
+	culture = greek
+	mother = 
 	520.1.1 = { birth = yes }
-	571.1.1 = { death = yes }
+	571.1.1 = {
+		death = yes
+		trait = saint
+	}
 	trait = education_learning_4
 }
 
-et_merida_867_10 = {
-	name = "Paolo"
+
+et_merida_867_10_father = {
+	name = "Pavlos"
 	rite = mozarabic_church
-	culture = visigothic
-	500.1.1 = { birth = yes }
+	culture = greek
+	470.1.1 = { birth = yes }
+	530.0.1.1 = { death = yes }
+}
+
+et_merida_867_10_sister = {
+	name = "Dorothea" #Anonymous sister; Paulos was Fidelis' Uncle
+	female = yes
+	rite = mozarabic_church
+	culture = greek
+	490.1.1 = { birth = yes }
 	560.1.1 = { death = yes }
+}
+
+et_merida_867_10 = {
+	name = "Pavlos"
+	rite = mozarabic_church
+	culture = greek
+	500.1.1 = { birth = yes }
+	560.1.1 = {
+		death = yes
+		trait = saint
+	}
 	trait = education_learning_4
 }
 
@@ -842,7 +908,7 @@ et_reims_867_5 = {
 
 et_reims_867_6 = {
 	name = "Milo"
-	rite = roman_rite
+	rite = gallican_church
 	culture = frankish
 	684.1.1 = { birth = yes }
 	751.1.1 = { rite = carolingian_christianity }
@@ -852,7 +918,7 @@ et_reims_867_6 = {
 
 et_reims_867_7 = {
 	name = "Rigobert"
-	rite = roman_rite
+	rite = gallican_church
 	culture = frankish
 	662.1.1 = { birth = yes }
 	733.1.1 = { death = yes }
@@ -861,7 +927,7 @@ et_reims_867_7 = {
 
 et_reims_867_8 = {
 	name = "Rieul"
-	rite = roman_rite
+	rite = gallican_church
 	culture = frankish
 	637.1.1 = { birth = yes }
 	695.1.1 = { death = yes }
@@ -870,7 +936,7 @@ et_reims_867_8 = {
 
 et_reims_867_9 = {
 	name = "Nivard"
-	rite = roman_rite
+	rite = gallican_church
 	culture = frankish
 	619.1.1 = { birth = yes }
 	673.9.1 = { death = yes }
@@ -879,8 +945,8 @@ et_reims_867_9 = {
 
 et_reims_867_10 = {
 	name = "Lando"
-	rite = roman_rite
-	culture = frankish
+	rite = gallican_church
+	culture = romano_gallic
 	602.1.1 = { birth = yes }
 	649.1.1 = { death = yes }
 	trait = education_learning_4
@@ -888,7 +954,7 @@ et_reims_867_10 = {
 
 et_reims_867_11 = {
 	name = "Anglebert"
-	rite = roman_rite
+	rite = gallican_church
 	culture = frankish
 	592.1.1 = { birth = yes }
 	646.1.1 = { death = yes }
@@ -897,7 +963,7 @@ et_reims_867_11 = {
 
 et_reims_867_12 = {
 	name = "Leudegisil"
-	rite = roman_rite
+	rite = gallican_church
 	culture = frankish
 	591.1.1 = { birth = yes }
 	641.1.1 = { death = yes }
@@ -905,18 +971,18 @@ et_reims_867_12 = {
 }
 
 et_reims_867_13 = {
-	name = "Sonnace"
-	rite = roman_rite
-	culture = frankish
+	name = "Sonnatius"
+	rite = gallican_church
+	culture = romano_gallic
 	557.1.1 = { birth = yes }
 	631.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_reims_867_14 = {
-	name = "Romulphe"
-	rite = roman_rite
-	culture = frankish
+	name = "Romulus"
+	rite = gallican_church
+	culture = romano_gallic
 	532.1.1 = { birth = yes }
 	593.1.1 = { death = yes }
 	trait = education_learning_4
@@ -924,17 +990,17 @@ et_reims_867_14 = {
 
 et_reims_867_15 = {
 	name = "Aegidius"
-	rite = roman_rite
-	culture = frankish
+	rite = gallican_church
+	culture = romano_gallic
 	518.1.1 = { birth = yes }
 	590.1.1 = { death = yes }
 	trait = education_learning_3
 }
 
 et_reims_867_16 = {
-	name = "Mapinius"
-	rite = roman_rite
-	culture = frankish
+	name = "Mappinus"
+	rite = gallican_church
+	culture = romano_gallic
 	501.1.1 = { birth = yes }
 	550.1.1 = { death = yes }
 	trait = education_learning_3
@@ -942,15 +1008,15 @@ et_reims_867_16 = {
 
 et_reims_867_17 = {
 	name = "Flavius"
-	rite = roman_rite
-	culture = frankish
+	rite = gallican_church
+	culture = romano_gallic
 	499.1.1 = { birth = yes }
 	550.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_reims_867_18 = {
-	name = "Romain"
+	name = "Romanus"
 	rite = gallican_church
 	culture = romano_gallic
 	480.1.1 = { birth = yes }
@@ -959,16 +1025,25 @@ et_reims_867_18 = {
 }
 
 et_reims_867_19 = {
-	name = "Remi"
+	name = "Remigius"
+	# AKA: Bishop of Reims
+	dynasty = 10424630
 	rite = gallican_church
-	culture = romano_gallic
+	culture = "romano_gallic"
+	father = 470049
 	437.1.1 = { birth = yes }
-	533.1.13 = { death = yes }
-	trait = education_learning_4
+	451.1.1 = {
+		trait = education_learning_4
+		trait = erudite
+	}
+	533.1.13 = {
+		#about 533, his dies natalis is 13 January
+		death = yes
+	}
 }
 
 et_reims_867_20 = {
-	name = "Bennage"
+	name = "Bennagius"
 	rite = gallican_church
 	culture = romano_gallic
 	405.1.1 = { birth = yes }
@@ -986,7 +1061,7 @@ et_reims_867_21 = {
 }
 
 et_reims_867_22 = {
-	name = "Baruche"
+	name = "Barucius"
 	rite = gallican_church
 	culture = romano_gallic
 	379.1.1 = { birth = yes }
@@ -995,7 +1070,7 @@ et_reims_867_22 = {
 }
 
 et_reims_867_23 = {
-	name = "Nicaise"
+	name = "Nicasius"
 	rite = gallican_church
 	culture = romano_gallic
 	330.1.1 = { birth = yes }
@@ -2108,7 +2183,7 @@ et_lyon_867_2 = {
 et_lyon_867_3 = {
 	name = "Agobard"
 	rite = carolingian_christianity
-	culture = frankish
+	culture = visigothic #Native of Spain, but name is Germanic
 	772.1.1 = { birth = yes }
 	840.1.1 = { death = yes }
 	trait = education_learning_4
@@ -2116,7 +2191,7 @@ et_lyon_867_3 = {
 
 et_lyon_867_4 = {
 	name = "Leidrad"
-	rite = roman_rite
+	rite = gallican_church
 	culture = frankish
 	750.1.1 = { birth = yes }
 	751.1.1 = { rite = carolingian_christianity }
@@ -2126,7 +2201,7 @@ et_lyon_867_4 = {
 
 et_lyon_867_5 = {
 	name = "Lambert"
-	rite = roman_rite
+	rite = gallican_church
 	culture = frankish
 	635.1.1 = { birth = yes }
 	688.1.1 = { death = yes }
@@ -2134,9 +2209,9 @@ et_lyon_867_5 = {
 }
 
 et_lyon_867_6 = {
-	name = "GenE_s"
-	rite = roman_rite
-	culture = frankish
+	name = "Genesius"
+	rite = gallican_church
+	culture = romano_gallic
 	620.1.1 = { birth = yes }
 	678.1.1 = { death = yes }
 	trait = education_learning_4
@@ -2144,7 +2219,7 @@ et_lyon_867_6 = {
 
 et_lyon_867_7 = {
 	name = "Annemund"
-	rite = roman_rite
+	rite = gallican_church
 	culture = frankish
 	592.1.1 = { birth = yes }
 	658.1.1 = { death = yes }
@@ -2153,7 +2228,7 @@ et_lyon_867_7 = {
 
 et_lyon_867_8 = {
 	name = "Canderic"
-	rite = roman_rite
+	rite = gallican_church
 	culture = frankish
 	591.1.1 = { birth = yes }
 	650.1.1 = { death = yes }
@@ -2162,7 +2237,7 @@ et_lyon_867_8 = {
 
 et_lyon_867_9 = {
 	name = "TE_trice"
-	rite = roman_rite
+	rite = gallican_church
 	culture = frankish
 	580.1.1 = { birth = yes }
 	627.1.1 = { death = yes }
@@ -2170,36 +2245,36 @@ et_lyon_867_9 = {
 }
 
 et_lyon_867_10 = {
-	name = "Arige"
-	rite = roman_rite
-	culture = frankish
+	name = "Aredius"
+	rite = gallican_church
+	culture = romano_gallic
 	560.1.1 = { birth = yes }
 	614.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_lyon_867_11 = {
-	name = "EthE_re"
-	rite = roman_rite
-	culture = frankish
+	name = "Etherius"
+	rite = gallican_church
+	culture = romano_gallic
 	545.1.1 = { birth = yes }
 	602.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_lyon_867_12 = {
-	name = "Prisque"
-	rite = roman_rite
-	culture = frankish
+	name = "Priscus"
+	rite = gallican_church
+	culture = romano_gallic
 	535.1.1 = { birth = yes }
 	585.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_lyon_867_13 = {
-	name = "Nizier"
-	rite = roman_rite
-	culture = frankish
+	name = "Nicetius"
+	rite = gallican_church
+	culture = romano_gallic
 	512.1.1 = { birth = yes }
 	573.4.2 = { death = yes }
 	trait = education_learning_4
@@ -2207,53 +2282,53 @@ et_lyon_867_13 = {
 
 et_lyon_867_14 = {
 	name = "Sacerdos"
-	rite = roman_rite
-	culture = frankish
+	rite = gallican_church
+	culture = romano_gallic
 	510.1.1 = { birth = yes }
 	552.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_lyon_867_15 = {
-	name = "Loup"
-	rite = roman_rite
-	culture = frankish
+	name = "Lupus"
+	rite = gallican_church
+	culture = romano_gallic
 	497.1.1 = { birth = yes }
 	549.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_lyon_867_16 = {
-	name = "Viventiole"
-	rite = roman_rite
-	culture = frankish
+	name = "Viventiolus"
+	rite = gallican_church
+	culture = romano_gallic
 	471.1.1 = { birth = yes }
 	523.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_lyon_867_17 = {
-	name = "Etienne"
-	rite = roman_rite
-	culture = frankish
+	name = "Stephanus"
+	rite = gallican_church
+	culture = romano_gallic
 	461.1.1 = { birth = yes }
 	512.2.13 = { death = yes }
 	trait = education_learning_4
 }
 
 et_lyon_867_18 = {
-	name = "Adelelme"
-	rite = roman_rite
-	culture = frankish
+	name = "Rusticus"
+	rite = gallican_church
+	culture = romano_gallic
 	454.1.1 = { birth = yes }
 	501.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_lyon_867_19 = {
-	name = "Lupicin"
-	rite = roman_rite
-	culture = frankish
+	name = "Lupincinus"
+	rite = gallican_church
+	culture = romano_gallic
 	451.1.1 = { birth = yes }
 	494.1.1 = { death = yes }
 	trait = education_learning_4
@@ -2264,12 +2339,15 @@ et_lyon_867_20 = {
 	rite = gallican_church
 	culture = romano_gallic
 	411.1.1 = { birth = yes }
-	491.1.1 = { death = yes }
+	491.1.1 = {
+		death = yes
+		trait = saint
+	}
 	trait = education_learning_4
 }
 
 et_lyon_867_21 = {
-	name = "Eucher"
+	name = "Eucherius"
 	rite = gallican_church
 	culture = romano_gallic
 	392.1.1 = { birth = yes }
@@ -2278,7 +2356,7 @@ et_lyon_867_21 = {
 }
 
 et_lyon_867_22 = {
-	name = "Sicaire"
+	name = "Sicairius"
 	rite = gallican_church
 	culture = romano_gallic
 	382.1.1 = { birth = yes }
@@ -2287,7 +2365,7 @@ et_lyon_867_22 = {
 }
 
 et_lyon_867_23 = {
-	name = "E_lpide"
+	name = "Elpidius"
 	rite = gallican_church
 	culture = romano_gallic
 	370.1.1 = { birth = yes }
@@ -2296,7 +2374,7 @@ et_lyon_867_23 = {
 }
 
 et_lyon_867_24 = {
-	name = "Antioche"
+	name = "Antiochus"
 	rite = gallican_church
 	culture = romano_gallic
 	360.1.1 = { birth = yes }
@@ -2314,7 +2392,7 @@ et_lyon_867_25 = {
 }
 
 et_lyon_867_26 = {
-	name = "Albin"
+	name = "Alpinus"
 	rite = gallican_church
 	culture = romano_gallic
 	350.1.1 = { birth = yes }
@@ -2323,7 +2401,7 @@ et_lyon_867_26 = {
 }
 
 et_lyon_867_27 = {
-	name = "Just"
+	name = "Justus"
 	rite = gallican_church
 	culture = romano_gallic
 	333.1.1 = { birth = yes }
@@ -2469,7 +2547,7 @@ et_vienne_867_4 = {
 
 et_vienne_867_5 = {
 	name = "Ursio"
-	rite = roman_rite
+	rite = gallican_church
 	culture = frankish
 	749.1.1 = { birth = yes }
 	751.1.1 = { rite = carolingian_christianity }
@@ -2479,7 +2557,7 @@ et_vienne_867_5 = {
 
 et_vienne_867_6 = {
 	name = "BertE_ric"
-	rite = roman_rite
+	rite = gallican_church
 	culture = frankish
 	726.1.1 = { birth = yes }
 	751.1.1 = { rite = carolingian_christianity }
@@ -2489,7 +2567,7 @@ et_vienne_867_6 = {
 
 et_vienne_867_7 = {
 	name = "Wilchar"
-	rite = roman_rite
+	rite = gallican_church
 	culture = frankish
 	701.1.1 = { birth = yes }
 	751.1.1 = { rite = carolingian_christianity }
@@ -2499,7 +2577,7 @@ et_vienne_867_7 = {
 
 et_vienne_867_8 = {
 	name = "Austrebert"
-	rite = roman_rite
+	rite = gallican_church
 	culture = frankish
 	676.1.1 = { birth = yes }
 	742.1.1 = { death = yes }
@@ -2508,7 +2586,7 @@ et_vienne_867_8 = {
 
 et_vienne_867_9 = {
 	name = "Bobolin"
-	rite = roman_rite
+	rite = gallican_church
 	culture = frankish
 	670.1.1 = { birth = yes }
 	718.1.1 = { death = yes }
@@ -2516,18 +2594,18 @@ et_vienne_867_9 = {
 }
 
 et_vienne_867_10 = {
-	name = "E_oalde"
-	rite = roman_rite
-	culture = frankish
+	name = "Edaluds"
+	rite = gallican_church
+	culture = romano_gallic
 	661.1.1 = { birth = yes }
 	715.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_vienne_867_11 = {
-	name = "Georges"
-	rite = roman_rite
-	culture = frankish
+	name = "Gregorius"
+	rite = gallican_church
+	culture = romano_gallic
 	636.1.1 = { birth = yes }
 	700.1.1 = { death = yes }
 	trait = education_learning_4
@@ -2535,7 +2613,7 @@ et_vienne_867_11 = {
 
 et_vienne_867_12 = {
 	name = "Syndulphe"
-	rite = roman_rite
+	rite = gallican_church
 	culture = frankish
 	580.1.1 = { birth = yes }
 	650.1.1 = { death = yes }
@@ -2543,99 +2621,99 @@ et_vienne_867_12 = {
 }
 
 et_vienne_867_13 = {
-	name = "Clarent"
-	rite = roman_rite
-	culture = frankish
+	name = "Clarentius"
+	rite = gallican_church
+	culture = romano_gallic
 	575.1.1 = { birth = yes }
 	625.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_vienne_867_14 = {
-	name = "Ethere"
-	rite = roman_rite
-	culture = frankish
+	name = "Etherius"
+	rite = gallican_church
+	culture = romano_gallic
 	582.1.1 = { birth = yes }
 	625.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_vienne_867_15 = {
-	name = "Didier"
-	rite = roman_rite
-	culture = frankish
+	name = "Desiderius"
+	rite = gallican_church
+	culture = romano_gallic
 	550.1.1 = { birth = yes }
 	603.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_vienne_867_16 = {
-	name = "Namat"
-	rite = roman_rite
-	culture = frankish
+	name = "Namatius"
+	rite = gallican_church
+	culture = romano_gallic
 	486.1.1 = { birth = yes }
 	559.11.17 = { death = yes }
 	trait = education_learning_4
 }
 
 et_vienne_867_17 = {
-	name = "Isice"
-	rite = roman_rite
-	culture = frankish
+	name = "Hesychius"
+	rite = gallican_church
+	culture = romano_gallic
 	501.1.1 = { birth = yes }
 	555.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_vienne_867_18 = {
-	name = "Pantagathe"
-	rite = roman_rite
-	culture = frankish
+	name = "Pantagathus"
+	rite = gallican_church
+	culture = romano_gallic
 	502.1.1 = { birth = yes }
 	549.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_vienne_867_19 = {
-	name = "Domnin"
-	rite = roman_rite
-	culture = frankish
+	name = "Domninus"
+	rite = gallican_church
+	culture = romano_gallic
 	472.1.1 = { birth = yes }
 	536.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_vienne_867_20 = {
-	name = "Julian"
-	rite = roman_rite
-	culture = frankish
+	name = "Julianus"
+	rite = gallican_church
+	culture = romano_gallic
 	479.1.1 = { birth = yes }
 	530.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_vienne_867_21 = {
-	name = "Avit"
-	rite = roman_rite
-	culture = frankish
+	name = "Avitus"
+	rite = gallican_church
+	culture = romano_gallic
 	450.1.1 = { birth = yes }
 	518.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_vienne_867_22 = {
-	name = "Mamert"
-	rite = roman_rite
-	culture = frankish
+	name = "Mamertus"
+	rite = gallican_church
+	culture = romano_gallic
 	415.1.1 = { birth = yes }
 	475.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_vienne_867_23 = {
-	name = "Nicetas"
-	rite = roman_rite
-	culture = frankish
+	name = "Nicetius"
+	rite = gallican_church
+	culture = romano_gallic
 	401.1.1 = { birth = yes }
 	463.1.1 = { death = yes }
 	trait = education_learning_4
@@ -2657,18 +2735,18 @@ et_eauze_867_1 = {
 }
 
 et_eauze_867_2 = {
-	name = "Scupilio"
-	rite = roman_rite
-	culture = frankish
+	name = "Scupilius"
+	rite = gallican_church
+	culture = romano_gallic
 	641.1.1 = { birth = yes }
 	690.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_eauze_867_3 = {
-	name = "Senoc"
-	rite = roman_rite
-	culture = frankish
+	name = "Senocus"
+	rite = gallican_church
+	culture = romano_gallic
 	596.1.1 = { birth = yes }
 	660.1.1 = { death = yes }
 	trait = education_learning_4
@@ -2676,8 +2754,8 @@ et_eauze_867_3 = {
 
 et_eauze_867_4 = {
 	name = "Palladius"
-	rite = roman_rite
-	culture = frankish
+	rite = gallican_church
+	culture = romano_gallic
 	570.1.1 = { birth = yes }
 	627.1.1 = { death = yes }
 	trait = education_learning_4
@@ -2685,26 +2763,26 @@ et_eauze_867_4 = {
 
 et_eauze_867_5 = {
 	name = "Leodomundus"
-	rite = roman_rite
-	culture = frankish
+	rite = gallican_church
+	culture = romano_gallic
 	561.1.1 = { birth = yes }
 	626.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_eauze_867_6 = {
-	name = "DE_sidE_re"
-	rite = roman_rite
-	culture = frankish
+	name = "Desiderius"
+	rite = gallican_church
+	culture = romano_gallic
 	545.1.1 = { birth = yes }
 	614.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_eauze_867_7 = {
-	name = "Mammertin"
-	rite = roman_rite
-	culture = frankish
+	name = "Mammertinus"
+	rite = gallican_church
+	culture = romano_gallic
 	268.1.1 = { birth = yes }
 	314.1.1 = { death = yes }
 	trait = education_learning_4
@@ -2745,7 +2823,7 @@ et_narbonne_867_3 = {
 
 et_narbonne_867_4 = {
 	name = "Nimfridius"
-	rite = roman_rite
+	rite = gallican_church
 	culture = frankish
 	750.1.1 = { birth = yes }
 	751.1.1 = { rite = carolingian_christianity }
@@ -2755,7 +2833,7 @@ et_narbonne_867_4 = {
 
 et_narbonne_867_5 = {
 	name = "Daniel"
-	rite = roman_rite
+	rite = gallican_church
 	culture = frankish
 	709.1.1 = { birth = yes }
 	751.1.1 = { rite = carolingian_christianity }
@@ -2765,7 +2843,7 @@ et_narbonne_867_5 = {
 
 et_narbonne_867_6 = {
 	name = "Sunifred"
-	rite = roman_rite
+	rite = gallican_church
 	culture = frankish
 	640.1.1 = { birth = yes }
 	688.1.1 = { death = yes }
@@ -2774,7 +2852,7 @@ et_narbonne_867_6 = {
 
 et_narbonne_867_7 = {
 	name = "Argebaud"
-	rite = roman_rite
+	rite = gallican_church
 	culture = frankish
 	627.1.1 = { birth = yes }
 	683.1.1 = { death = yes }
@@ -2783,8 +2861,8 @@ et_narbonne_867_7 = {
 
 et_narbonne_867_8 = {
 	name = "Selva"
-	rite = roman_rite
-	culture = frankish
+	rite = gallican_church
+	culture = romano_gallic
 	590.1.1 = { birth = yes }
 	638.1.1 = { death = yes }
 	trait = education_learning_4
@@ -2792,17 +2870,17 @@ et_narbonne_867_8 = {
 
 et_narbonne_867_9 = {
 	name = "Sergius"
-	rite = roman_rite
-	culture = frankish
+	rite = gallican_church
+	culture = romano_gallic
 	566.1.1 = { birth = yes }
 	615.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_narbonne_867_10 = {
-	name = "ME_gace"
-	rite = roman_rite
-	culture = frankish
+	name = "Migetius"
+	rite = gallican_church
+	culture = romano_gallic
 	540.1.1 = { birth = yes }
 	597.1.1 = { death = yes }
 	trait = education_learning_4
@@ -2810,7 +2888,7 @@ et_narbonne_867_10 = {
 
 et_narbonne_867_11 = {
 	name = "Athaloc"
-	rite = roman_rite
+	rite = arian
 	culture = visigothic
 	545.1.1 = { birth = yes }
 	600.1.1 = { death = yes }
@@ -2878,7 +2956,7 @@ et_besancon_867_2 = {
 
 et_besancon_867_3 = {
 	name = "Bernoin"
-	rite = roman_rite
+	rite = gallican_church
 	culture = frankish
 	750.1.1 = { birth = yes }
 	751.1.1 = { rite = carolingian_christianity }
@@ -2888,7 +2966,7 @@ et_besancon_867_3 = {
 
 et_besancon_867_4 = {
 	name = "Gervais"
-	rite = roman_rite
+	rite = gallican_church
 	culture = frankish
 	705.1.1 = { birth = yes }
 	751.1.1 = { rite = carolingian_christianity }
@@ -2897,9 +2975,9 @@ et_besancon_867_4 = {
 }
 
 et_besancon_867_5 = {
-	name = "Claude"
-	rite = roman_rite
-	culture = frankish
+	name = "Claudius"
+	rite = gallican_church
+	culture = romano_hispanic
 	647.1.1 = { birth = yes }
 	693.1.1 = { death = yes }
 	trait = education_learning_4
@@ -2907,17 +2985,17 @@ et_besancon_867_5 = {
 
 et_besancon_867_6 = {
 	name = "Gervase"
-	rite = roman_rite
-	culture = frankish
+	rite = gallican_church
+	culture = romano_hispanic
 	640.1.1 = { birth = yes }
 	685.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_besancon_867_7 = {
-	name = "Donat"
-	rite = roman_rite
-	culture = frankish
+	name = "Donatus"
+	rite = gallican_church
+	culture = romano_hispanic
 	585.1.1 = { birth = yes }
 	660.1.1 = { death = yes }
 	trait = education_learning_4
@@ -2956,45 +3034,45 @@ et_arles_867_3 = {
 }
 
 et_arles_867_4 = {
-	name = "Jean"
-	rite = roman_rite
-	culture = frankish
+	name = "Ioannes"
+	rite = gallican_church
+	culture = romano_gallic
 	610.1.1 = { birth = yes }
 	668.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_arles_867_5 = {
-	name = "Theodose"
-	rite = roman_rite
-	culture = frankish
+	name = "Theodosius"
+	rite = gallican_church
+	culture = romano_gallic
 	593.1.1 = { birth = yes }
 	650.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_arles_867_6 = {
-	name = "Florien"
-	rite = roman_rite
-	culture = frankish
+	name = "Florianus"
+	rite = gallican_church
+	culture = romano_gallic
 	569.1.1 = { birth = yes }
 	614.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_arles_867_7 = {
-	name = "Virgile"
-	rite = roman_rite
-	culture = frankish
+	name = "Virgilius"
+	rite = gallican_church
+	culture = romano_gallic
 	545.1.1 = { birth = yes }
 	601.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_arles_867_8 = {
-	name = "AurE_lien"
-	rite = roman_rite
-	culture = frankish
+	name = "Aurelianius"
+	rite = gallican_church
+	culture = romano_gallic
 	502.1.1 = { birth = yes }
 	551.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3002,53 +3080,53 @@ et_arles_867_8 = {
 
 et_arles_867_9 = {
 	name = "Auxianus"
-	rite = roman_rite
-	culture = frankish
+	rite = gallican_church
+	culture = romano_gallic
 	506.1.1 = { birth = yes }
 	546.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_arles_867_10 = {
-	name = "CE_saire"
-	rite = roman_rite
-	culture = frankish
+	name = "Caesarius"
+	rite = gallican_church
+	culture = romano_gallic
 	473.1.1 = { birth = yes }
 	542.8.27 = { death = yes }
 	trait = education_learning_4
 }
 
 et_arles_867_11 = {
-	name = "Hilaire"
-	rite = roman_rite
-	culture = frankish
+	name = "Hilarius"
+	rite = gallican_church
+	culture = romano_gallic
 	403.1.1 = { birth = yes }
 	449.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_arles_867_12 = {
-	name = "Honorat"
-	rite = roman_rite
-	culture = frankish
+	name = "Honorius"
+	rite = gallican_church
+	culture = romano_gallic
 	381.1.1 = { birth = yes }
 	429.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_arles_867_13 = {
-	name = "Hellade"
-	rite = roman_rite
-	culture = frankish
+	name = "Euladius"
+	rite = gallican_church
+	culture = romano_gallic
 	375.1.1 = { birth = yes }
 	426.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_arles_867_14 = {
-	name = "Patrocle"
-	rite = roman_rite
-	culture = frankish
+	name = "Patroclus"
+	rite = gallican_church
+	culture = romano_gallic
 	363.1.1 = { birth = yes }
 	426.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3058,9 +3136,9 @@ et_arles_867_14 = {
 ## Aix
 # 867
 et_aix_867_1 = {
-	name = "Honorat"
+	name = "Honoratus"
 	rite = carolingian_christianity
-	culture = french
+	culture = occitan
 	827.1.1 = { birth = yes }
 	878.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3069,7 +3147,7 @@ et_aix_867_1 = {
 et_aix_867_2 = {
 	name = "BenoI_t"
 	rite = carolingian_christianity
-	culture = frankish
+	culture = occitan
 	783.1.1 = { birth = yes }
 	848.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3085,9 +3163,9 @@ et_aix_867_3 = {
 }
 
 et_aix_867_4 = {
-	name = "Protais"
-	rite = roman_rite
-	culture = frankish
+	name = "Protasius"
+	rite = gallican_church
+	culture = romano_gallic
 	555.1.1 = { birth = yes }
 	636.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3095,37 +3173,46 @@ et_aix_867_4 = {
 
 et_aix_867_5 = {
 	name = "Pientius"
-	rite = roman_rite
-	culture = frankish
+	rite = gallican_church
+	culture = romano_gallic
 	545.1.1 = { birth = yes }
 	585.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_aix_867_6 = {
-	name = "Francon"
-	rite = roman_rite
-	culture = frankish
+	name = "Franco"
+	rite = gallican_church
+	culture = romano_gallic
 	522.1.1 = { birth = yes }
 	581.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_aix_867_7 = {
-	name = "Avole"
-	rite = roman_rite
-	culture = frankish
+	name = "Avolus"
+	rite = gallican_church
+	culture = romano_gallic
 	512.1.1 = { birth = yes }
 	554.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_aix_867_8 = {
-	name = "Maxime"
-	rite = roman_rite
-	culture = frankish
+	name = "Maximus"
+	rite = gallican_church
+	culture = romano_gallic
 	490.1.1 = { birth = yes }
 	541.1.1 = { death = yes }
+	trait = education_learning_4
+}
+
+bp_et_aix_1 = {
+	name = "Basilius"
+	rite = gallican_church
+	culture = romano_gallic
+	430.1.1 = { birth = yes }
+	494.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
@@ -3269,7 +3356,7 @@ et_milano_867_11 = {
 et_milano_867_12 = {
 	name = "Natalis"
 	rite = ambrosian_rite
-	culture = cisalpine
+	culture = roman
 	695.1.1 = { birth = yes }
 	747.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3278,16 +3365,16 @@ et_milano_867_12 = {
 et_milano_867_13 = {
 	name = "Theodorus"
 	rite = ambrosian_rite
-	culture = cisalpine
+	culture = roman
 	670.1.1 = { birth = yes }
 	746.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_milano_867_14 = {
-	name = "Benedict"
+	name = "Benedictus"
 	rite = ambrosian_rite
-	culture = cisalpine
+	culture = roman
 	650.1.1 = { birth = yes }
 	732.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3296,7 +3383,7 @@ et_milano_867_14 = {
 et_milano_867_15 = {
 	name = "Mansuetus"
 	rite = ambrosian_rite
-	culture = cisalpine
+	culture = roman
 	630.1.1 = { birth = yes }
 	685.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3305,7 +3392,7 @@ et_milano_867_15 = {
 et_milano_867_16 = {
 	name = "Ampelius"
 	rite = ambrosian_rite
-	culture = cisalpine
+	culture = roman
 	612.1.1 = { birth = yes }
 	676.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3314,7 +3401,7 @@ et_milano_867_16 = {
 et_milano_867_17 = {
 	name = "Maurilius"
 	rite = ambrosian_rite
-	culture = cisalpine
+	culture = roman
 	620.1.1 = { birth = yes }
 	671.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3323,25 +3410,26 @@ et_milano_867_17 = {
 et_milano_867_18 = {
 	name = "Antoninus"
 	rite = ambrosian_rite
-	culture = cisalpine
+	culture = roman
 	614.1.1 = { birth = yes }
 	671.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_milano_867_19 = {
-	name = "John"
+	name = "Ioannes"
 	rite = ambrosian_rite
-	culture = cisalpine
+	culture = roman
 	600.1.1 = { birth = yes }
+	641.1.1 = { give_nickname = nick_the_good }
 	669.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_milano_867_20 = {
-	name = "Forte"
+	name = "Fortus"
 	rite = ambrosian_rite
-	culture = cisalpine
+	culture = roman
 	592.1.1 = { birth = yes }
 	641.1.1 = {
 		give_nickname = nick_the_good
@@ -3353,7 +3441,7 @@ et_milano_867_20 = {
 et_milano_867_21 = {
 	name = "Asterius"
 	rite = ambrosian_rite
-	culture = cisalpine
+	culture = roman
 	589.1.1 = { birth = yes }
 	639.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3362,7 +3450,7 @@ et_milano_867_21 = {
 et_milano_867_22 = {
 	name = "Deodatus"
 	rite = ambrosian_rite
-	culture = cisalpine
+	culture = roman
 	576.1.1 = { birth = yes }
 	628.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3371,25 +3459,25 @@ et_milano_867_22 = {
 et_milano_867_23 = {
 	name = "Constantius"
 	rite = ambrosian_rite
-	culture = cisalpine
+	culture = roman
 	555.1.1 = { birth = yes }
 	600.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_milano_867_24 = {
-	name = "Lawrence"
+	name = "Laurentius"
 	rite = ambrosian_rite
-	culture = cisalpine
+	culture = roman
 	530.1.1 = { birth = yes }
 	592.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_milano_867_25 = {
-	name = "Frontone"
+	name = "Frontonus"
 	rite = ambrosian_rite
-	culture = cisalpine
+	culture = roman
 	521.1.1 = { birth = yes }
 	573.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3398,7 +3486,7 @@ et_milano_867_25 = {
 et_milano_867_26 = {
 	name = "Honoratus"
 	rite = ambrosian_rite
-	culture = cisalpine
+	culture = roman
 	521.1.1 = { birth = yes }
 	571.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3407,16 +3495,16 @@ et_milano_867_26 = {
 et_milano_867_27 = {
 	name = "Ausanus"
 	rite = ambrosian_rite
-	culture = cisalpine
+	culture = roman
 	512.1.1 = { birth = yes }
 	559.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_milano_867_28 = {
-	name = "Vitale"
+	name = "Vitalis"
 	rite = ambrosian_rite
-	culture = cisalpine
+	culture = roman
 	505.1.1 = { birth = yes }
 	555.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3425,7 +3513,7 @@ et_milano_867_28 = {
 et_milano_867_29 = {
 	name = "Dacius"
 	rite = ambrosian_rite
-	culture = cisalpine
+	culture = roman
 	489.1.1 = { birth = yes }
 	552.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3434,7 +3522,7 @@ et_milano_867_29 = {
 et_milano_867_30 = {
 	name = "Magnus"
 	rite = ambrosian_rite
-	culture = cisalpine
+	culture = roman
 	467.1.1 = { birth = yes }
 	530.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3443,16 +3531,16 @@ et_milano_867_30 = {
 et_milano_867_31 = {
 	name = "Eustorgius"
 	rite = ambrosian_rite
-	culture = cisalpine
+	culture = roman
 	459.1.1 = { birth = yes }
 	518.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_milano_867_32 = {
-	name = "Lawrence"
+	name = "Laurentius"
 	rite = ambrosian_rite
-	culture = cisalpine
+	culture = roman
 	465.1.1 = { birth = yes }
 	512.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3461,7 +3549,7 @@ et_milano_867_32 = {
 et_milano_867_33 = {
 	name = "Theodorus"
 	rite = ambrosian_rite
-	culture = cisalpine
+	culture = roman
 	435.1.1 = { birth = yes }
 	490.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3470,7 +3558,7 @@ et_milano_867_33 = {
 et_milano_867_34 = {
 	name = "Senator"
 	rite = ambrosian_rite
-	culture = cisalpine
+	culture = roman
 	430.1.1 = { birth = yes }
 	475.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3479,7 +3567,7 @@ et_milano_867_34 = {
 et_milano_867_35 = {
 	name = "Benignus"
 	rite = ambrosian_rite
-	culture = cisalpine
+	culture = roman
 	428.1.1 = { birth = yes }
 	472.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3488,7 +3576,7 @@ et_milano_867_35 = {
 et_milano_867_36 = {
 	name = "Gerontius"
 	rite = ambrosian_rite
-	culture = cisalpine
+	culture = roman
 	419.1.1 = { birth = yes }
 	465.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3497,7 +3585,7 @@ et_milano_867_36 = {
 et_milano_867_37 = {
 	name = "Eusebius"
 	rite = ambrosian_rite
-	culture = cisalpine
+	culture = roman
 	425.1.1 = { birth = yes }
 	462.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3506,7 +3594,7 @@ et_milano_867_37 = {
 et_milano_867_38 = {
 	name = "Lazarus"
 	rite = ambrosian_rite
-	culture = cisalpine
+	culture = roman
 	400.1.1 = { birth = yes }
 	449.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3515,7 +3603,7 @@ et_milano_867_38 = {
 et_milano_867_39 = {
 	name = "Glycerius"
 	rite = ambrosian_rite
-	culture = cisalpine
+	culture = roman
 	385.1.1 = { birth = yes }
 	438.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3524,7 +3612,7 @@ et_milano_867_39 = {
 et_milano_867_40 = {
 	name = "Martinianus"
 	rite = ambrosian_rite
-	culture = cisalpine
+	culture = roman
 	376.1.1 = { birth = yes }
 	435.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3533,7 +3621,7 @@ et_milano_867_40 = {
 et_milano_867_41 = {
 	name = "Marolus"
 	rite = ambrosian_rite
-	culture = cisalpine
+	culture = roman
 	365.1.1 = { birth = yes }
 	423.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3542,16 +3630,16 @@ et_milano_867_41 = {
 et_milano_867_42 = {
 	name = "Venerius"
 	rite = ambrosian_rite
-	culture = cisalpine
+	culture = roman
 	347.1.1 = { birth = yes }
 	408.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_milano_867_43 = {
-	name = "Simplician"
+	name = "Simplicianus"
 	rite = ambrosian_rite
-	culture = cisalpine
+	culture = roman
 	341.1.1 = { birth = yes }
 	400.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3618,7 +3706,7 @@ et_cagliari_867_6 = {
 }
 
 et_cagliari_867_7 = {
-	name = "Gianuario"
+	name = "Januarius"
 	rite = roman_rite
 	culture = sardinian
 	555.1.1 = { birth = yes }
@@ -3627,7 +3715,7 @@ et_cagliari_867_7 = {
 }
 
 et_cagliari_867_8 = {
-	name = "Gianuario"
+	name = "Januarius"
 	rite = roman_rite
 	culture = sardinian
 	489.1.1 = { birth = yes }
@@ -3636,7 +3724,7 @@ et_cagliari_867_8 = {
 }
 
 et_cagliari_867_9 = {
-	name = "Lucifero"
+	name = "Lucifer"
 	rite = roman_rite
 	culture = sardinian
 	447.1.1 = { birth = yes }
@@ -3649,7 +3737,7 @@ et_cagliari_867_9 = {
 # 867
 # VACANT AT START
 et_reggio_867_1 = {
-	name = "Giovanni"
+	name = "Ioannes"
 	rite = roman_rite
 	culture = greek
 	786.1.1 = { birth = yes }
@@ -3667,7 +3755,7 @@ et_reggio_867_2 = {
 }
 
 et_reggio_867_3 = {
-	name = "Costantino"
+	name = "Konstantios"
 	rite = roman_rite
 	culture = greek
 	740.1.1 = { birth = yes }
@@ -3676,7 +3764,7 @@ et_reggio_867_3 = {
 }
 
 et_reggio_867_4 = {
-	name = "Giovanni"
+	name = "Ioannes"
 	rite = roman_rite
 	culture = greek
 	665.1.1 = { birth = yes }
@@ -3685,7 +3773,7 @@ et_reggio_867_4 = {
 }
 
 et_reggio_867_5 = {
-	name = "Giovanni"
+	name = "Ioannes"
 	rite = roman_rite
 	culture = greek
 	636.1.1 = { birth = yes }
@@ -3694,7 +3782,7 @@ et_reggio_867_5 = {
 }
 
 et_reggio_867_6 = {
-	name = "Cristoforo"
+	name = "Christophoros"
 	rite = roman_rite
 	culture = greek
 	602.1.1 = { birth = yes }
@@ -3703,18 +3791,18 @@ et_reggio_867_6 = {
 }
 
 et_reggio_867_7 = {
-	name = "Bonifacio"
+	name = "Bonifatius"
 	rite = roman_rite
-	culture = greek
+	culture = roman
 	552.1.1 = { birth = yes }
 	603.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_reggio_867_8 = {
-	name = "Lucio"
+	name = "Lucius"
 	rite = roman_rite
-	culture = greek
+	culture = roman
 	529.1.1 = { birth = yes }
 	590.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3775,7 +3863,7 @@ et_ravenna_867_5 = {
 et_ravenna_867_6 = {
 	name = "Valerius"
 	rite = roman_rite
-	culture = cisalpine
+	culture = roman
 	736.1.1 = { birth = yes }
 	751.1.1 = { rite = carolingian_christianity }
 	815.1.1 = { death = yes }
@@ -3785,7 +3873,7 @@ et_ravenna_867_6 = {
 et_ravenna_867_7 = {
 	name = "Gratiosus"
 	rite = roman_rite
-	culture = cisalpine
+	culture = roman
 	744.1.1 = { birth = yes }
 	751.1.1 = { rite = carolingian_christianity }
 	795.1.1 = { death = yes }
@@ -3793,9 +3881,9 @@ et_ravenna_867_7 = {
 }
 
 et_ravenna_867_8 = {
-	name = "John"
+	name = "Ioannes"
 	rite = roman_rite
-	culture = cisalpine
+	culture = roman
 	733.1.1 = { birth = yes }
 	751.1.1 = { rite = carolingian_christianity }
 	805.1.1 = { death = yes }
@@ -3805,7 +3893,7 @@ et_ravenna_867_8 = {
 et_ravenna_867_9 = {
 	name = "Leo"
 	rite = roman_rite
-	culture = cisalpine
+	culture = roman
 	711.1.1 = { birth = yes }
 	751.1.1 = { rite = carolingian_christianity }
 	790.1.1 = { death = yes }
@@ -3815,7 +3903,7 @@ et_ravenna_867_9 = {
 et_ravenna_867_10 = {
 	name = "Sergius"
 	rite = roman_rite
-	culture = cisalpine
+	culture = roman
 	694.1.1 = { birth = yes }
 	751.1.1 = { rite = carolingian_christianity }
 	775.1.1 = { death = yes }
@@ -3823,9 +3911,9 @@ et_ravenna_867_10 = {
 }
 
 et_ravenna_867_11 = {
-	name = "John"
+	name = "Ioannes"
 	rite = roman_rite
-	culture = cisalpine
+	culture = roman
 	689.1.1 = { birth = yes }
 	750.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3834,7 +3922,7 @@ et_ravenna_867_11 = {
 et_ravenna_867_12 = {
 	name = "Felix"
 	rite = roman_rite
-	culture = cisalpine
+	culture = roman
 	665.1.1 = { birth = yes }
 	730.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3843,7 +3931,7 @@ et_ravenna_867_12 = {
 et_ravenna_867_13 = {
 	name = "Damian"
 	rite = roman_rite
-	culture = cisalpine
+	culture = roman
 	656.1.1 = { birth = yes }
 	720.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3852,7 +3940,7 @@ et_ravenna_867_13 = {
 et_ravenna_867_14 = {
 	name = "Theodorus"
 	rite = roman_rite
-	culture = cisalpine
+	culture = roman
 	642.1.1 = { birth = yes }
 	705.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3861,7 +3949,7 @@ et_ravenna_867_14 = {
 et_ravenna_867_15 = {
 	name = "Reparatus"
 	rite = roman_rite
-	culture = cisalpine
+	culture = roman
 	636.1.1 = { birth = yes }
 	690.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3870,7 +3958,7 @@ et_ravenna_867_15 = {
 et_ravenna_867_16 = {
 	name = "Maurus"
 	rite = roman_rite
-	culture = cisalpine
+	culture = roman
 	617.1.1 = { birth = yes }
 	675.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3879,52 +3967,52 @@ et_ravenna_867_16 = {
 et_ravenna_867_17 = {
 	name = "Bonus"
 	rite = roman_rite
-	culture = cisalpine
+	culture = roman
 	604.1.1 = { birth = yes }
 	660.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_ravenna_867_18 = {
-	name = "John"
+	name = "Ioannes"
 	rite = roman_rite
-	culture = cisalpine
+	culture = roman
 	593.1.1 = { birth = yes }
 	650.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_ravenna_867_19 = {
-	name = "John"
+	name = "Ioannes"
 	rite = roman_rite
-	culture = cisalpine
+	culture = roman
 	576.1.1 = { birth = yes }
 	640.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_ravenna_867_20 = {
-	name = "Mariniano"
+	name = "Marinianus"
 	rite = roman_rite
-	culture = cisalpine
+	culture = roman
 	569.1.1 = { birth = yes }
 	620.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_ravenna_867_21 = {
-	name = "John"
+	name = "Ioannes"
 	rite = roman_rite
-	culture = cisalpine
+	culture = roman
 	541.1.1 = { birth = yes }
 	595.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_ravenna_867_22 = {
-	name = "Peter"
+	name = "Petrus"
 	rite = roman_rite
-	culture = cisalpine
+	culture = roman
 	513.1.1 = { birth = yes }
 	578.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3933,7 +4021,7 @@ et_ravenna_867_22 = {
 et_ravenna_867_23 = {
 	name = "Agnellus"
 	rite = roman_rite
-	culture = cisalpine
+	culture = roman
 	520.1.1 = { birth = yes }
 	569.1.1 = { death = yes }
 	trait = education_learning_4
@@ -3942,25 +4030,25 @@ et_ravenna_867_23 = {
 et_ravenna_867_24 = {
 	name = "Maximianus"
 	rite = roman_rite
-	culture = cisalpine
+	culture = roman
 	500.1.1 = { birth = yes }
 	560.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_ravenna_867_25 = {
-	name = "John"
+	name = "Ioannes"
 	rite = roman_rite
-	culture = cisalpine
+	culture = roman
 	445.1.1 = { birth = yes }
 	494.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_ravenna_867_26 = {
-	name = "John"
+	name = "Ioannes"
 	rite = roman_rite
-	culture = cisalpine
+	culture = roman
 	381.1.1 = { birth = yes }
 	433.1.1 = { death = yes }
 	trait = education_learning_4
@@ -4024,7 +4112,7 @@ et_bari_867_5 = {
 }
 
 et_bari_867_6 = {
-	name = "Andrea"
+	name = "Andreas"
 	rite = byzantine_rite
 	culture = lombard
 	709.1.1 = { birth = yes }
@@ -4043,71 +4131,71 @@ et_bari_867_7 = {
 
 et_bari_867_8 = {
 	name = "Bursa"
-	rite = byzantine_rite
-	culture = lombard
+	rite = roman_rite
+	culture = roman
 	680.1.1 = { birth = yes }
 	753.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_bari_867_9 = {
-	name = "Rodecauto"
-	rite = byzantine_rite
-	culture = lombard
+	name = "Rodecautus"
+	rite = roman_rite
+	culture = roman
 	636.1.1 = { birth = yes }
 	694.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_bari_867_10 = {
-	name = "Trasmondo"
-	rite = byzantine_rite
-	culture = lombard
+	name = "Trasmondus"
+	rite = roman_rite
+	culture = roman
 	627.1.1 = { birth = yes }
 	688.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_bari_867_11 = {
-	name = "Ursone"
-	rite = byzantine_rite
-	culture = lombard
+	name = "Ursonus"
+	rite = roman_rite
+	culture = roman
 	622.1.1 = { birth = yes }
 	681.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_bari_867_12 = {
-	name = "Stefano"
-	rite = byzantine_rite
-	culture = lombard
+	name = "Stephanus"
+	rite = roman_rite
+	culture = roman
 	599.1.1 = { birth = yes }
 	653.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_bari_867_13 = {
-	name = "Giulio"
-	rite = byzantine_rite
-	culture = lombard
+	name = "Julius"
+	rite = roman_rite
+	culture = roman
 	582.1.1 = { birth = yes }
 	634.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_bari_867_14 = {
-	name = "Marco"
-	rite = byzantine_rite
-	culture = lombard
+	name = "Marcus"
+	rite = roman_rite
+	culture = roman
 	565.1.1 = { birth = yes }
 	610.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
 et_bari_867_15 = {
-	name = "Pietro"
-	rite = byzantine_rite
-	culture = lombard
+	name = "Petrus"
+	rite = roman_rite
+	culture = roman
 	486.1.1 = { birth = yes }
 	530.1.1 = { death = yes }
 	trait = education_learning_4
@@ -4119,298 +4207,302 @@ et_bari_867_15 = {
 et_aquileia_867_2 = {
 	name = "Venantius"
 	rite = aquileianism
-	culture = cisalpine
+	culture = roman
 	795.1.1 = { birth = yes }
+	811.1.1 = { trait = education_learning_4 }
 	867.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_aquileia_867_3 = {
 	name = "Andreas"
 	rite = aquileianism
-	culture = cisalpine
+	culture = roman
 	781.1.1 = { birth = yes }
+	797.1.1 = { trait = education_learning_4 }
 	844.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_aquileia_867_4 = {
 	name = "Maxentius"
 	rite = aquileianism
-	culture = cisalpine
+	culture = roman
 	772.1.1 = { birth = yes }
+	788.1.1 = { trait = education_learning_4 }
 	833.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_aquileia_867_5 = {
 	name = "Ursus"
 	rite = aquileianism
-	culture = cisalpine
+	culture = roman
 	748.1.1 = { birth = yes }
+	764.1.1 = { trait = education_learning_4 }
 	811.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_aquileia_867_6 = {
 	name = "Paulinus"
 	rite = aquileianism
-	culture = cisalpine
+	culture = roman
 	742.1.1 = { birth = yes }
+	758.1.1 = { trait = education_learning_4 }
 	802.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_aquileia_867_7 = {
 	name = "Siguald"
 	rite = aquileianism
-	culture = cisalpine
+	culture = lombard
 	731.1.1 = { birth = yes }
+	747.1.1 = { trait = education_learning_4 }
 	776.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_aquileia_867_8 = {
 	name = "Calixtus"
 	rite = aquileianism
-	culture = cisalpine
+	culture = roman
 	674.1.1 = { birth = yes }
+	690.1.1 = { trait = education_learning_4 }
 	734.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_aquileia_867_9 = {
 	name = "Serenus"
 	rite = aquileianism
-	culture = cisalpine
+	culture = roman
 	660.1.1 = { birth = yes }
+	676.1.1 = { trait = education_learning_4 }
 	723.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_aquileia_867_10 = {
 	name = "Petrus"
 	rite = aquileianism
-	culture = cisalpine
+	culture = roman
 	642.1.1 = { birth = yes }
+	658.1.1 = { trait = education_learning_4 }
 	700.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_aquileia_867_11 = {
-	name = "John"
+	name = "Ioannes"
 	rite = aquileianism
-	culture = cisalpine
+	culture = roman
 	640.1.1 = { birth = yes }
+	656.1.1 = { trait = education_learning_4 }
 	696.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_aquileia_867_12 = {
-	name = "Agathon"
+	name = "Agatho"
 	rite = aquileianism
-	culture = cisalpine
+	culture = roman
 	619.1.1 = { birth = yes }
+	635.1.1 = { trait = education_learning_4 }
 	680.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_aquileia_867_13 = {
-	name = "John"
+	name = "Ioannes"
 	rite = aquileianism
-	culture = cisalpine
+	culture = roman
 	618.1.1 = { birth = yes }
+	634.1.1 = { trait = education_learning_4 }
 	679.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_aquileia_867_14 = {
 	name = "Felix"
 	rite = aquileianism
-	culture = cisalpine
+	culture = roman
 	628.1.1 = { birth = yes }
+	644.1.1 = { trait = education_learning_4 }
 	668.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_aquileia_867_15 = {
 	name = "Fortunatus"
 	rite = aquileianism
-	culture = cisalpine
+	culture = roman
 	605.1.1 = { birth = yes }
+	621.1.1 = { trait = education_learning_4 }
 	663.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_aquileia_867_16 = {
 	name = "Marcianus"
 	rite = aquileianism
-	culture = cisalpine
+	culture = roman
 	576.1.1 = { birth = yes }
+	592.1.1 = { trait = education_learning_4 }
 	628.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_aquileia_867_17 = {
-	name = "John"
+	name = "Ioannes"
 	rite = aquileianism
-	culture = cisalpine
+	culture = roman
 	557.1.1 = { birth = yes }
+	573.1.1 = { trait = education_learning_4 }
 	606.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_aquileia_867_18 = {
 	name = "Severus"
 	rite = aquileianism
-	culture = cisalpine
+	culture = roman
+	trait = arbitrary
+	trait = craven
 	542.1.1 = { birth = yes }
+	558.1.1 = { trait = education_learning_4 }
 	606.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_aquileia_867_19 = {
-	name = "Elia"
+	name = "Elias"
 	rite = aquileianism
-	culture = cisalpine
+	culture = roman
+	trait = zealous
 	524.1.1 = { birth = yes }
+	540.1.1 = { trait = education_learning_4 }
 	586.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_aquileia_867_20 = {
 	name = "Probinus"
 	rite = aquileianism
-	culture = cisalpine
+	culture = roman
 	522.1.1 = { birth = yes }
+	538.1.1 = { trait = education_learning_4 }
 	570.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_aquileia_867_21 = {
 	name = "Paulinus"
 	rite = aquileianism
-	culture = cisalpine
+	culture = roman
 	514.1.1 = { birth = yes }
+	530.1.1 = { trait = education_learning_4 }
 	569.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_aquileia_867_22 = {
 	name = "Macedonius"
 	rite = aquileianism
-	culture = cisalpine
+	culture = roman
 	496.1.1 = { birth = yes }
+	512.1.1 = { trait = education_learning_4 }
 	556.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_aquileia_867_23 = {
 	name = "Laurentius"
 	rite = aquileianism
-	culture = cisalpine
+	culture = roman
 	481.1.1 = { birth = yes }
+	499.1.1 = { trait = education_learning_4 }
 	539.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_aquileia_867_24 = {
-	name = "Stephen"
+	name = "Stephenus"
 	rite = aquileianism
-	culture = cisalpine
+	culture = roman
 	487.1.1 = { birth = yes }
+	503.1.1 = { trait = education_learning_4 }
 	534.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_aquileia_867_25 = {
 	name = "Marcellinus"
 	rite = aquileianism
-	culture = cisalpine
+	culture = roman
 	465.1.1 = { birth = yes }
+	481.1.1 = { trait = education_learning_4 }
 	513.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_aquileia_867_26 = {
 	name = "Marcellianus"
 	rite = aquileianism
-	culture = cisalpine
+	culture = roman
 	458.1.1 = { birth = yes }
+	474.1.1 = { trait = education_learning_4 }
 	500.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_aquileia_867_27 = {
 	name = "Nicetas"
 	rite = aquileianism
-	culture = cisalpine
+	culture = roman
 	423.1.1 = { birth = yes }
+	439.1.1 = { trait = education_learning_4 }
 	485.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_aquileia_867_28 = {
 	name = "Secundus"
 	rite = aquileianism
-	culture = cisalpine
+	culture = roman
 	392.1.1 = { birth = yes }
+	408.1.1 = { trait = education_learning_4 }
 	452.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_aquileia_867_29 = {
-	name = "Januarius"
+	name = "Ianuarius"
 	rite = aquileianism
-	culture = cisalpine
+	culture = roman
 	395.1.1 = { birth = yes }
+	411.1.1 = { trait = education_learning_4 }
 	447.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_aquileia_867_30 = {
 	name = "Maximus"
 	rite = aquileianism
-	culture = cisalpine
+	culture = roman
 	383.1.1 = { birth = yes }
+	399.1.1 = { trait = education_learning_4 }
 	444.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_aquileia_867_31 = {
 	name = "Adelphus"
 	rite = aquileianism
-	culture = cisalpine
+	culture = roman
 	382.1.1 = { birth = yes }
+	398.1.1 = { trait = education_learning_4 }
 	442.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_aquileia_867_32 = {
 	name = "Augustinus"
 	rite = aquileianism
-	culture = cisalpine
+	culture = roman
 	376.1.1 = { birth = yes }
+	392.1.1 = { trait = education_learning_4 }
 	434.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_aquileia_867_33 = {
 	name = "Chromatius"
 	rite = aquileianism
-	culture = cisalpine
+	trait = zealous
+	culture = roman
 	351.1.1 = { birth = yes }
+	367.1.1 = { trait = education_learning_4 }
 	407.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 et_aquileia_867_34 = {
 	name = "Valerianus"
 	rite = aquileianism
-	culture = cisalpine
+	culture = roman
 	350.1.1 = { birth = yes }
+	366.1.1 = { trait = education_learning_4 }
 	388.1.1 = { death = yes }
-	trait = education_learning_4
 }
 
 
@@ -4488,7 +4580,7 @@ et_trier_867_5 = {
 }
 
 et_trier_867_6_wtwsms = {
-	name = "Richbod"
+	name = "Modestus"
 	rite = gallican_church
 	culture = romano_gallic
 	429.1.1 = { birth = yes }
@@ -4499,11 +4591,14 @@ et_trier_867_6_wtwsms = {
 ## Mainz
 # 867
 et_mainz_867_3 = {
-	name = "Maurus"
+	name = "Maurus" #Hrabanus Maurus Magentius
 	rite = carolingian_christianity
 	culture = franconian
 	805.1.1 = { birth = yes }
-	856.1.1 = { death = yes }
+	856.1.1 = {
+		death = yes
+		trait = saint
+	}
 	trait = education_learning_4
 }
 
@@ -4535,6 +4630,8 @@ et_mainz_867_6 = {
 	trait = education_learning_4
 }
 
+#####
+
 et_mainz_867_7_wtwsms = {
 	name = "Adalbald"
 	rite = gallican_church
@@ -4544,6 +4641,7 @@ et_mainz_867_7_wtwsms = {
 	trait = education_learning_4
 }
 
+#####
 
 ## Cologne
 # 867
@@ -4594,16 +4692,19 @@ et_cologne_867_6 = {
 	trait = education_learning_4
 }
 
+#####
+
 et_cologne_867_7_wtwsms = {
 	name = "Sunnovaeus"
 	rite = gallican_church
 	culture = old_frankish
 	440.1.1 = { birth = yes }
-	456.1.1 = { culture = romano_gallic } #Seems like a Romanized Frank
+	456.1.1 = { culture = romano_gallic } #Seems like a Romanized Frank...
 	500.1.1 = { death = yes }
 	trait = education_learning_4
 }
 
+#####
 
 ### ASIA
 ## Jerusalem
@@ -6285,7 +6386,10 @@ et_cyprus_867_17 = {
 	rite = byzantine_rite
 	culture = greek
 	310.1.1 = { birth = yes }
-	403.1.1 = { death = yes }
+	403.1.1 = {
+		death = yes
+		trait = saint
+	}
 	trait = education_learning_4
 }
 
@@ -6298,6 +6402,42 @@ et_cyprus_867_18 = {
 	trait = education_learning_4
 }
 
+CypriotChurch000 = { #St. Barnabas
+	name = Yosef
+	rite = rabbinism
+	culture = judean
+	trait = zealous
+	trait = diligent
+	trait = honest
+	disallow_random_traits = yes
+	5.1.1 = { birth = yes }
+	36.1.1 = {
+		religion = apostolic_christianity
+		name = "Barnabas"
+	}
+	65.6.11 = { #Roughly same time as Paul
+		death = { death_reason = death_murder } #Killed by a Mob
+		trait = saint
+		effect_even_if_dead = {
+			pam_canonize_saint_effect = {
+				CANONIZER = root
+				CANDIDATE = root
+				CONSECRATION_PROVINCE = province:5931 #Salamis
+				PRESET = yes
+			}
+			religion:christianity_religion = {
+				every_faith = {
+					limit = {
+						main_rite = { is_rite_enabled = yes }
+						NOT = { has_saint_character = root }
+					}
+					add_saint = { character = root }
+				}
+			}
+			faith:ebionite = { add_saint = { character = root } }
+		}
+	}
+}
 
 ##### Armenian Church
 
@@ -7624,24 +7764,6 @@ et_axum_867_4_wtwsms = {
 	trait = education_learning_4
 }
 
-## Baetica
-et_baetica_1 = {
-	name = "Zenon"
-	rite = mozarabic_church
-	culture = greek
-	420.1.1 = { birth = yes }
-	486.1.1 = { death = yes }
-	trait = education_learning_4
-}
-bp_et_toledo_1 = {
-	name = "Sinticius"
-	rite = mozarabic_church
-	culture = romano_hispanic
-	420.1.1 = { birth = yes }
-	486.1.1 = { death = yes }
-	trait = education_learning_4
-}
-
 #Sens
 bp_et_sens_1 = {
 	name = "Agroecius"
@@ -7665,16 +7787,6 @@ bp_et_eauze_1 = { #Fictional
 #Arles
 bp_et_arles_1 = { #Fictional
 	name = "Gaius"
-	rite = gallican_church
-	culture = romano_gallic
-	430.1.1 = { birth = yes }
-	494.1.1 = { death = yes }
-	trait = education_learning_4
-}
-
-#Aix
-bp_et_aix_1 = {
-	name = "Basilius"
 	rite = gallican_church
 	culture = romano_gallic
 	430.1.1 = { birth = yes }
