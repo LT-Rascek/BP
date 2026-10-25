@@ -573,6 +573,21 @@ send_bishops_to_employers_by_date = {
 				}
 			}
 		}
+		#Clermont
+		if = {
+			limit = {
+				current_year >= 470
+				current_year < 486
+			}
+			character:1900009 = { set_employer = title:d_aquitanica_prima.holder }
+			title:d_aquitanica_prima.holder = { #Victorius of Auvergene
+				assign_councillor_type = {
+					type = councillor_court_chaplain
+					target = character:1900009
+					remove_existing_councillor = yes
+				}
+			}
+		}
 	}
 }
 

@@ -6268,25 +6268,29 @@
 	name = "Ecdicius" #PLRE vol. 2 Ecdicius 3
 	# Ecdicius
 	dynasty = 1042298
-	religion = christian_faith
+	rite = gallican_church
 	culture = "romano_gallic"
-	trait = shrewd
-	trait = brave
-	trait = generous
-	trait = education_martial_4
 	father = 74403
 	442.1.1 = {
 		birth = yes
 	}
+	448.1.1 = { add_trait = rowdy } #6
+	451.1.1 = { add_trait = brave } #9
+	452.1.1 = { set_sexuality = heterosexual } #10
+	453.1.1 = { add_trait = generous } #11
+	455.1.1 = { add_trait = temperate } #13
+	458.1.1 = {
+		remove_trait = rowdy
+		add_trait = education_martial_4
+		add_trait = shrewd
+	}
 	456.10.17 = {
-		birth = yes
 		add_pressed_claim = title:h_western_roman_empire
 		add_pressed_claim = title:h_eastern_roman_empire
 		add_pressed_claim = title:h_italy
 	}
-	487.1.1 = {
-		death = yes
-	}
+	470.1.1 = { set_employer = character:1300589 } #Victorius 4
+	487.1.1 = { death = yes }
 }
 
 #36604 - available

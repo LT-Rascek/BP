@@ -908,5 +908,12 @@ create_extant_fictional_bishops_effect = {
 		}
 	}
 	resolve_title_and_vassal_change = scope:change
-	scope:new_bishop = { change_government = ecclesiastical_government }
+	if = {
+		limit = {
+			scope:new_bishop.religion = religion:christianity_religion
+			has_dlc_feature = by_god_alone
+		}
+		scope:new_bishop = { change_government = ecclesiastical_government }
+	}
+	else = { scope:new_bishop = { change_government = theocracy_government } }
 }

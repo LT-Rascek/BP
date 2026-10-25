@@ -158,7 +158,7 @@ scripted_effect tribal_1001_start_sce_bout_effect_BP_Overwrite = {
 	}
 }
 
-scripted_trigger tribal_1001_champion_check_trigger = {
+scripted_trigger tribal_1001_champion_check_trigger_BP_overwrite = {
 	this != scope:challenger
 	can_be_combatant_based_on_gender_trigger = { ARMY_OWNER = root }
 	is_available = yes
@@ -233,12 +233,12 @@ tribal.1001 = {
 				limit = {
 					any_court_position_holder = {
 						type = champion_court_position
-						tribal_1001_champion_check_trigger = yes
+						tribal_1001_champion_check_trigger_BP_overwrite = yes
 					}
 				}
 				every_court_position_holder = {
 					type = champion_court_position
-					limit = { tribal_1001_champion_check_trigger = yes }
+					limit = { tribal_1001_champion_check_trigger_BP_overwrite = yes }
 					add_to_list = champion_candidates
 				}
 			}
@@ -246,28 +246,28 @@ tribal.1001 = {
 				limit = {
 					any_relation = {
 						type = friend
-						tribal_1001_champion_check_trigger = yes
+						tribal_1001_champion_check_trigger_BP_overwrite = yes
 					}
 				}
 				every_relation = {
 					type = friend
-					limit = { tribal_1001_champion_check_trigger = yes }
+					limit = { tribal_1001_champion_check_trigger_BP_overwrite = yes }
 					add_to_list = champion_candidates
 				}
 			}
 			if = {
 				limit = {
 					exists = cp:councillor_marshal
-					cp:councillor_marshal = { tribal_1001_champion_check_trigger = yes }
+					cp:councillor_marshal = { tribal_1001_champion_check_trigger_BP_overwrite = yes }
 				}
 				cp:councillor_marshal = { add_to_list = champion_candidates }
 			}
 			if = {
 				limit = {
-					any_knight = { tribal_1001_champion_check_trigger = yes }
+					any_knight = { tribal_1001_champion_check_trigger_BP_overwrite = yes }
 				}
 				every_knight = {
-					limit = { tribal_1001_champion_check_trigger = yes }
+					limit = { tribal_1001_champion_check_trigger_BP_overwrite = yes }
 					add_to_list = champion_candidates
 				}
 			}
@@ -281,19 +281,19 @@ tribal.1001 = {
 				}
 				if = {
 					limit = {
-						any_vassal = { tribal_1001_champion_check_trigger = yes }
+						any_vassal = { tribal_1001_champion_check_trigger_BP_overwrite = yes }
 					}
 					every_vassal = {
-						limit = { tribal_1001_champion_check_trigger = yes }
+						limit = { tribal_1001_champion_check_trigger_BP_overwrite = yes }
 						add_to_list = champion_candidates
 					}
 				}
 				if = {
 					limit = {
-						any_courtier = { tribal_1001_champion_check_trigger = yes }
+						any_courtier = { tribal_1001_champion_check_trigger_BP_overwrite = yes }
 					}
 					every_courtier = {
-						limit = { tribal_1001_champion_check_trigger = yes }
+						limit = { tribal_1001_champion_check_trigger_BP_overwrite = yes }
 						add_to_list = champion_candidates
 					}
 				}
