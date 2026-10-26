@@ -150,7 +150,10 @@ odoacer_takeover_war = { #Cribbed from invasion wars
 		resolve_title_and_vassal_change = scope:change_vassals
 		every_in_list = { #Government resolution
 			list = vassals_taken
-			limit = { is_ruler = yes }
+			limit = {
+				is_ruler = yes
+				NOT = { government_has_flag = government_is_theocracy }
+			}
 			convert_to_subroman_government_ignore_tier_effect = yes
 			every_vassal_or_below = {
 				limit = {

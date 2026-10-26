@@ -383,7 +383,7 @@ court_chaplain_conversion_contextual_bonuses = {
 			exists = scope:county
 			scope:county.rite = { rite_has_parameter = general_religious_protection_from_zoroastrian_cults }
 		}
-		add = {
+		subtract = {
 			value = scope:councillor.conversion_doctrine_legalized_faith_malus
 			desc = COURT_CHAPLAIN_CONVERSION_DOCTRINE_LEGAL_FAITH_MALUS
 		}

@@ -265,6 +265,7 @@ BP_completely_landless_realm_vassal_change = {
 			is_independent_ruler = yes
 			government_has_mechanic = administrative
 			is_landed = no
+			NOT = { government_has_flag = government_is_theocracy }
 			trigger_if = {
 				limit = { any_vassal = { count > 0 } }
 				any_vassal_or_below = { count < 1 is_landed = yes primary_title.tier >= tier_county }
@@ -304,6 +305,7 @@ BP_cleanup_landless_chars_under_non_admin = {
 		NOT = { root.top_liege ?= { government_has_mechanic = administrative } }
 		NOT = { any_held_title = { count > 0 is_landless_type_title = no } }
 		NOT = { any_held_title = { count > 0 is_head_of_faith = yes } }
+		NOT = { government_has_flag = government_is_theocracy }
 	}
 	effect = {
 		if = {
@@ -366,6 +368,7 @@ BP_completely_landless_realm = {
 	trigger = {
 		is_independent_ruler = yes
 		government_has_mechanic = administrative
+		NOT = { government_has_flag = government_is_theocracy }
 		is_landed = no
 		scope:title = { is_head_of_faith = no }
 		trigger_if = {

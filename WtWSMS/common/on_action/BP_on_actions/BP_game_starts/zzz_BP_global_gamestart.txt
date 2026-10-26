@@ -3,6 +3,7 @@
 on_game_start_after_lobby = {
 	on_actions = {
 		establish_roman_premierships
+		temp_patch_of_bga_bugs
 	}
 	events = {}
 }
@@ -14,5 +15,23 @@ establish_roman_premierships = {
 			limit = { bp_has_access_to_roman_ministry_trigger = yes }
 			establish_premiership_if_necessary_effect = yes
 		}
+	}
+}
+
+temp_patch_of_bga_bugs = {
+	trigger = { has_dlc_feature = by_god_alone }
+	effect = {
+		create_title_and_vassal_change = {
+			type = created
+			save_scope_as = change
+		}
+		title:d_et_kartli = {
+			change_title_holder = {
+				holder = title:d_et_kartli.previous_holder
+				change = scope:change
+			}
+		}
+		resolve_title_and_vassal_change = scope:change
+		title:d_et_kartli.holder = { change_government = ecclesiastical_government }
 	}
 }

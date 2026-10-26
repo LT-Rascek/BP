@@ -8,6 +8,7 @@
 	395.1.1 = { holder = et_toledo_867_16 } # Asturian
 	#####
 	467.1.1 = { holder = bp_et_toledo_1 } #Sinticius
+	475.1.1 = { liege = k_visigoths }
 	#####
 	523.1.1 = { holder = et_toledo_867_15 } # Montano
 	603.1.1 = { holder = et_toledo_867_14 } # Aurasio
@@ -33,6 +34,7 @@ d_et_tarragona = { # Tarragona
 		government = ecclesiastical_government
 		clerical_region = bp_et_395_tarragona_region
 	}
+	472.1.1 = { liege = k_visigoths }
 	520.1.1 = { holder = et_tarragona_867_11 } # Sergi
 	560.1.1 = { holder = et_tarragona_867_10 } # Tranquilli
 	589.1.1 = { holder = et_tarragona_867_9 } # Artemio
@@ -52,6 +54,7 @@ d_et_sevilla = { # Sevilla
 		government = ecclesiastical_government
 		clerical_region = bp_et_395_sevilla_region
 	}
+	470.1.1 = { liege = k_visigoths }
 	476.1.1 = { holder = bp_et_sevilla_1 }
 	#####
 	522.1.1 = { holder = et_sevilla_867_10 } #Laureano
@@ -68,12 +71,15 @@ d_et_sevilla = { # Sevilla
 }
 
 d_et_braga = { # Braga
+	409.1.1 = { liege = k_suebia }
 	440.1.1 = {
 		holder = et_braga_867_37 # Balconio
 		government = ecclesiastical_government
 		clerical_region = bp_et_395_santiago_region
 	}
 	456.1.1 = { holder = et_braga_867_36 } # Valerio
+	457.1.1 = { liege = 0 }
+	464.1.1 = { liege = k_suebia }
 	494.1.1 = { holder = et_braga_867_35 } # Idacio
 	518.1.1 = { holder = et_braga_867_34 } # Apolinario
 	524.1.1 = { holder = et_braga_867_33 } # Castino
@@ -85,6 +91,7 @@ d_et_braga = { # Braga
 	561.1.1 = { holder = et_braga_867_27 } # Lucrecio
 	562.1.1 = { holder = et_braga_867_26 } # Martinho
 	580.1.1 = { holder = et_braga_867_25 } # Pantardo
+	585.1.1 = { liege = k_visigoths }
 	589.1.1 = { holder = et_braga_867_24 } # Benigno
 	612.1.1 = { holder = et_braga_867_23 } # Tolobeu
 	633.1.1 = { holder = et_braga_867_22 } # Juliao
@@ -118,6 +125,7 @@ d_et_merida = { # Merida
 		clerical_region = bp_et_395_merida_region
 	}
 	445.1.1 = { holder = et_merida_867_12 } # Antonino
+	470.1.1 = { liege = k_visigoths }
 	475.1.1 = { holder = et_merida_867_11 } # Zenone
 	530.1.1 = { holder = et_merida_867_10 } # Paolo
 	560.1.1 = { holder = et_merida_867_9 } # Fedele
@@ -316,6 +324,7 @@ d_et_bourges = { # Bourges
 	330.1.1 = {	holder = et_bourges_867_13 } # Marcel
 	337.1.1 = {	holder = et_bourges_867_12 } # Viator
 	472.1.1 = { holder = 1900115 } #Simplicius
+	475.1.1 = { liege = k_visigoths }
 	#####
 	549.1.1 = {	holder = et_bourges_867_11 } # Didier
 	584.1.1 = {	holder = et_bourges_867_10 } # Sulpice
@@ -339,6 +348,7 @@ d_et_bordeaux = { # Bordeaux
 	380.1.1 = {	holder = et_bordeaux_867_10 } # Delphin
 	404.1.1 = {	holder = et_bordeaux_867_8 } # Amand
 	410.1.1 = {	holder = et_bordeaux_867_9 } # Seurin
+	418.1.1 = { liege = k_visigoths }
 	420.1.1 = {	holder = et_bordeaux_867_8 } # Amand
 	475.1.1 = { holder = 1001109 } #Aemlius
 	#####
@@ -363,6 +373,7 @@ d_et_lyon = { # Lyon
 	410.1.1 = {	holder = et_lyon_867_23 } # Élpide
 	422.1.1 = {	holder = et_lyon_867_22 } # Sicaire
 	432.1.1 = {	holder = et_lyon_867_21 } # Eucher
+	443.1.1 = { liege = k_burgundians }
 	451.1.1 = {	holder = et_lyon_867_20 } # Patiens
 	491.1.1 = {	holder = et_lyon_867_19 } # Lupicin
 	494.1.1 = {	holder = et_lyon_867_18 } # Rustique
@@ -410,6 +421,7 @@ d_et_vienne = { # Vienne
 		clerical_region = bp_et_395_vienne_region
 	}
 	463.1.1 = {	holder = et_vienne_867_22 } # Mamert
+	463.1.1 = { liege = k_burgundians }
 	#####
 	475.1.1 = { holder = 1007001 } #Hesychius
 	#####
@@ -442,6 +454,7 @@ d_et_eauze = { # Eauze
 		government = ecclesiastical_government
 		clerical_region = bp_et_395_eauze_region
 	}
+	418.1.1 = { liege = k_visigoths }
 	476.1.1 = { holder = bp_et_eauze_1 } #Fictional
 	#####
 	585.1.1 = {	holder = et_eauze_867_6 } # Désidère
@@ -463,6 +476,7 @@ d_et_narbonne = { # Narbonne
 		clerical_region = bp_et_395_narbonne_region
 	}
 	462.1.1 = {	holder = et_narbonne_867_14 } # Hermes
+	475.1.1 = { liege = k_visigoths }
 	490.1.1 = {	holder = et_narbonne_867_13 } # Caprarius
 	###########
 	560.1.1 = {	holder = et_narbonne_867_12 } # Aquilin
@@ -484,6 +498,7 @@ d_et_besancon = { # Besançon
 		government = ecclesiastical_government
 		clerical_region = bp_et_395_besancon_region
 	}
+	443.1.1 = { liege = k_burgundians }
 	445.1.1 = { holder = 1001107 } #Antidius
 	#####
 	627.1.1 = { holder = et_besancon_867_7 } # Donat
@@ -1926,6 +1941,7 @@ d_et_sitifensis = {
 		government = ecclesiastical_government
 		clerical_region = bp_et_395_sitifensis_region
 	}
+	435.1.1 = { liege = k_vandalica }
 	475.1.1 = { holder = et_sitifensis_20 } #Novatus; last known holder
 	484.1.1 = { holder = 0 } #Novatus forced into exile
 }
@@ -1935,6 +1951,7 @@ d_et_mauretania = {
 		government = ecclesiastical_government
 		clerical_region = bp_et_395_mauretania_region
 	}
+	435.1.1 = { liege = k_vandalica }
 	475.1.1 = { holder = et_mauretania_20 } #Apocorius; last known holder
 	484.1.1 = { holder = 0 } #Apocorius forced into exile
 }
@@ -1995,6 +2012,7 @@ d_et_seleucia_ctesiphon = { # Seleucia-Ctesiphon
 		clerical_region = bp_et_395_seleucia_ctesiphon_region
 	}
 	410.1.1 = { clerical_region = bp_et_410_seleucia_ctesiphon_region }
+	410.1.1 = { liege = h_persia }
 	415.1.1 = { holder = 166254 }
 	420.1.1 = { holder = 166255 }
 	420.6.1 = { holder = 166256 }
@@ -2043,6 +2061,7 @@ d_et_beth_huzaye = {
 	410.1.1 = {
 		government = ecclesiastical_government
 		clerical_region = bp_et_410_beth_huzaye_region
+		liege = h_persia
 	}
 	#Fictional Holders; history created in effects
 }
@@ -2051,6 +2070,7 @@ d_et_nisbis = {
 	410.1.1 = {
 		government = ecclesiastical_government
 		clerical_region = bp_et_410_nisbis_region
+		liege = h_persia
 	}
 	#Fictional Holders; history created in effects
 }
@@ -2059,6 +2079,7 @@ d_et_meshan = {
 	410.1.1 = {
 		government = ecclesiastical_government
 		clerical_region = bp_et_410_meshan_region
+		liege = h_persia
 	}
 	#Fictional Holders; history created in effects
 }
@@ -2067,6 +2088,7 @@ d_et_erbil = {
 	410.1.1 = {
 		government = ecclesiastical_government
 		clerical_region = bp_et_410_erbil_region
+		liege = h_persia
 	}
 	#Fictional Holders; history created in effects
 }
@@ -2075,6 +2097,7 @@ d_et_beth_garami = {
 	410.1.1 = {
 		government = ecclesiastical_government
 		clerical_region = bp_et_410_beth_garami_region
+		liege = h_persia
 	}
 	#Fictional Holders; history created in effects
 }

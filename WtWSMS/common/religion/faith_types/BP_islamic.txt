@@ -1,0 +1,36 @@
+﻿##### Changed from Vanilla: Not Historical anymore
+qarmatian = {
+	# Scripted main Rite: qarmatian (all start dates). Its core tenets and Rite-specific doctrines are defined on the Rite; faith-intrinsic doctrines remain inline.
+	# No religious_head, as with quranist: the Rite's doctrine_no_head has the Qarmatians awaiting the seventh Imam rather than following a living one.
+	main_rite = qarmatian
+
+	faith_details = {
+		religion = islam_religion
+		color = { 0.1 0.8 0.1 }
+		icon = islam_khatim_filled_09
+	}
+
+	eminent_holy_sites = {
+		bahrein
+		kufa
+		mecca
+	}
+
+	holy_sites = {
+		medina
+		basra
+	}
+
+	doctrines = {
+		special_doctrine_jizya
+	}
+
+	localization = {
+		PriestMale = islam_shia_priest
+		PriestMalePlural = islam_shia_priest_plural
+		PriestFemale = islam_shia_priest
+		PriestFemalePlural = islam_shia_priest_plural
+		PriestNeuter = islam_shia_priest
+		PriestNeuterPlural = islam_shia_priest_plural
+	}
+}
