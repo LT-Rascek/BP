@@ -1,7 +1,6 @@
 ﻿##### Changed from Vanilla: Tied factors into migration
 ##### Changed from Vanilla: Added New Rule Effects
 ##### Changed from Vanilla: Updated targets, added new game rule effects
-##### Changed from Vanilla: integrated SEA minorities stuff
 task_promote_culture = {
 	position = councillor_steward
 
@@ -292,26 +291,12 @@ task_promote_culture = {
 				desc = BP_despoilation_legacy_4_culture_promotion_desc
 			}
 		}
-		#### Changed from Vanilla ^^^^^
-		
-		### Minorities stuff vvv
-		
-		# Because the task needs to complete 3 times with the minority system
-		multiply = 3
-
-		if = {
-			limit = { scope:county.culture = scope:councillor_liege.culture }
-			multiply = {
-				value = 0.5
-				desc = converting_minority_desc
-			}
-		}
-		### Minorities stuff ^^^
 		
 		min = {
-			value = 0.5 #Accounting for minorities....
+			value = 0.1
 			desc = minimum_promote_culture
 		}
+		#### Changed from Vanilla ^^^^^
 	}
 	#### Changed from Vanilla ^^^^^
 
@@ -319,20 +304,7 @@ task_promote_culture = {
 	potential_county = {
 		scope:county = {
 			is_landless_type_title = no
-			### Minority stuff; replaces Vanilla `NOT = { culture = scope:councillor_liege.culture }` ###
-			trigger_if = {
-				limit = {
-					culture = scope:councillor_liege.culture
-					scope:councillor_liege = { has_realm_law_flag = may_convert_culture }
-				}
-				custom_tooltip = {
-					text = "not_has_expel_minorities_unlocked"
-					county_has_different_heritage_minority_culture_trigger = { CULTURE = scope:councillor.culture }
-					scope:councillor_liege = { has_realm_law_flag = unlock_expel_cultural_minorities }
-				}
-			}
-			trigger_else = { NOT = { culture = scope:councillor_liege.culture } }
-			### End Minority stuff ###
+			culture != scope:councillor_liege.culture
 			trigger_if = {
 				limit = {
 					scope:councillor_liege = { has_variable = hold_court_8130_culture_block }
@@ -620,11 +592,10 @@ task_promote_culture = {
 	}
 	##### Changed from Vanilla ^^^^^
 
-	##### Changed from Vanilla vvvvv
 	on_finish_task_county = {
 		scope:councillor_liege = {
 			if = {
-				limit = {
+				limit = {	
 					NOT = {
 						culture = {
 							is_hybrid_culture = yes
@@ -640,65 +611,43 @@ task_promote_culture = {
 					}
 					add_character_flag = {
 						flag = no_ai_culture_convert
-						years = 20 #Down from 60 as we go 3× as fast
+						years = 60
 					}
 				}
 				else = {
 					add_character_flag = {
 						flag = no_ai_culture_convert
-						years = 10 #Down from 30 as we go 3× as fast
+						years = 30
 					}
 				}
 			}
 		}
-		### Minority stuff vvv
 		scope:county = {
 			if = {
-				limit = { scope:county.culture = scope:councillor_liege.culture }
-				demote_random_culture_minority_effect = yes
-				scope:councillor = { start_default_task = yes }
-			}
-			else = {
-				if = {
-					limit = {
-						NOT = {
-							scope:councillor_liege.culture = {
-								is_hybrid_culture = yes
-								any_parent_culture = { this = scope:county.culture }
+				limit = {
+					NOT = {
+						scope:councillor_liege.culture = {
+							is_hybrid_culture = yes
+							any_parent_culture = {
+								this = scope:county.culture
 							}
 						}
 					}
-					culture = {
-						change_cultural_acceptance = {
-							target = scope:councillor_liege.culture
-							value = culture_conversion_acceptance_impact
-							desc = cultural_acceptance_loss_promote_culture
-						}
-					}
 				}
-
-				#Set County culture is in here
-				promote_culture_minority_effect = { CULTURE = scope:councillor_liege.culture }
-				if = {
-					limit = {
-						scope:councillor_liege = {
-							has_personal_tenet_flag = tenet_ethnic_religion_culture_promotion_change
-						}
+				culture = {
+					change_cultural_acceptance = {
+						target = scope:councillor_liege.culture
+						value = culture_conversion_acceptance_impact
+						desc = cultural_acceptance_loss_promote_culture
 					}
-					set_county_rite = scope:councillor_liege.rite
-				}
-				if = {
-					limit = {
-						scope:county.culture = scope:councillor_liege.culture
-						scope:councillor_liege = { is_ai = no }
-					}
-					scope:councillor = { start_default_task = yes }
 				}
 			}
+			set_county_culture = scope:councillor_liege.culture
 		}
-		### Minority stuff ^^^
+		scope:councillor = {
+			start_default_task = yes
+		}
 	}
-	##### Changed from Vanilla ^^^^^
 
 	monthly_on_action = task_promote_culture_side_effects
 

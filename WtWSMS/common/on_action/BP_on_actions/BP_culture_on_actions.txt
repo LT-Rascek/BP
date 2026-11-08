@@ -316,16 +316,16 @@ historical_culture_ashkenazi = {
 				
 				# Add minorities and exiles (inviting Ashkenazim occurred historically)
 				scope:patron_culture.culture_head.capital_county = {
-					add_culture_minority_effect = {
-						CULTURE = culture:ashkenazi
-						SIZE = small
-						COUNTY = this
-					}
-					add_faith_minority_effect = {
-						FAITH = faith:rabbinic_faith
-						SIZE = small
-						COUNTY = this
-					}
+					#add_culture_minority_effect = {  #### SEA_MINS
+					#	CULTURE = culture:ashkenazi
+					#	SIZE = small
+					#	COUNTY = this
+					#}
+					#add_faith_minority_effect = {
+					#	FAITH = faith:rabbinic_faith
+					#	SIZE = small
+					#	COUNTY = this
+					#}
 					if = {
 						limit = { NOT = { faith.religion = religion:judaism_religion } }
 						
@@ -364,35 +364,35 @@ historical_culture_ashkenazi = {
 				}
 				
 				#Flip tzarfati minorities in counties that speak the same language
-				hidden_effect = {
-					every_county = {
-						limit = {
-							county_has_specific_minority_culture_trigger = { CULTURE = culture:tzarfati }
-							culture = { has_same_language_group_as_trigger = { TARGET = scope:patron_culture } }
-						}
-						if = {
-							limit = { county_has_specific_large_minority_culture_trigger = { CULTURE = culture:tzarfati } }
-							remove_list_variable = {
-								name = culture_minorities_large
-								target = culture:tzarfati
-							}
-							add_to_variable_list = {
-								name = culture_minorities_large
-								target = culture:ashkenazi
-							}
-						}
-						else = {
-							remove_list_variable = {
-								name = culture_minorities_small
-								target = culture:tzarfati
-							}
-							add_to_variable_list = {
-								name = culture_minorities_small
-								target = culture:ashkenazi
-							}
-						}
-					}
-				}
+				#hidden_effect = {  #### SEA_MINS
+				#	every_county = {
+				#		limit = {
+				#			county_has_specific_minority_culture_trigger = { CULTURE = culture:tzarfati }
+				#			culture = { has_same_language_group_as_trigger = { TARGET = scope:patron_culture } }
+				#		}
+				#		if = {
+				#			limit = { county_has_specific_large_minority_culture_trigger = { CULTURE = culture:tzarfati } }
+				#			remove_list_variable = {
+				#				name = culture_minorities_large
+				#				target = culture:tzarfati
+				#			}
+				#			add_to_variable_list = {
+				#				name = culture_minorities_large
+				#				target = culture:ashkenazi
+				#			}
+				#		}
+				#		else = {
+				#			remove_list_variable = {
+				#				name = culture_minorities_small
+				#				target = culture:tzarfati
+				#			}
+				#			add_to_variable_list = {
+				#				name = culture_minorities_small
+				#				target = culture:ashkenazi
+				#			}
+				#		}
+				#	}
+				#}
 				
 				every_ruler = {
 					limit = {
@@ -469,19 +469,19 @@ historical_culture_radhanite = {
 					get_all_innovations_from = scope:patron_culture
 					set_language_from = scope:patron_culture
 				}
-				# Add minorities
-				scope:patron_culture.culture_head.capital_county = {
-					add_culture_minority_effect = {
-						CULTURE = culture:radhanite
-						SIZE = small
-						COUNTY = this
-					}
-					add_faith_minority_effect = {
-						FAITH = faith:rabbinic_faith
-						SIZE = small
-						COUNTY = this
-					}
-				}
+				## Add minorities
+				#scope:patron_culture.culture_head.capital_county = {  #### SEA_MINS
+				#	add_culture_minority_effect = {
+				#		CULTURE = culture:radhanite
+				#		SIZE = small
+				#		COUNTY = this
+				#	}
+				#	add_faith_minority_effect = {
+				#		FAITH = faith:rabbinic_faith
+				#		SIZE = small
+				#		COUNTY = this
+				#	}
+				#}
 				
 				every_ruler = {
 					limit = {

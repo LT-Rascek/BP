@@ -668,39 +668,39 @@ scripted_effect change_original_culture_traditions_effect = {
 		add_random_peasant_culture_tradition = yes
 	}
 }
-scripted_effect cleanup_minority_cultures_effect = {
-	$COUNTY_SEARCH_TYPE$ = {
-		limit = {
-			trigger_if = {
-				limit = { always = $SEARCHING_EVENT_CHAR_REALM$ }
-				$EVENT_CHAR$ = { event_character_is_this_or_is_liege_or_above_trigger = yes }
-			}
-			trigger_else = {
-				NOT = { $EVENT_CHAR$ = { event_character_is_this_or_is_liege_or_above_trigger = yes } }
-			}
-			county_has_specific_minority_culture_trigger = { CULTURE = $OLD_CULTURE$ }
-		}
-		if = {
-			limit = {
-				county_has_specific_large_minority_culture_trigger = { CULTURE = $OLD_CULTURE$ }
-			}
-			delete_minority_effect = { CULTURE = $OLD_CULTURE$ }
-			add_culture_minority_effect = {
-				COUNTY = this
-				CULTURE = $NEW_CULTURE$
-				SIZE = large
-			}
-		}
-		else = {
-			delete_minority_effect = { CULTURE = $OLD_CULTURE$ }
-			add_culture_minority_effect = {
-				COUNTY = this
-				CULTURE = $NEW_CULTURE$
-				SIZE = small
-			}
-		}
-	}
-}
+#scripted_effect cleanup_minority_cultures_effect = { #### SEA_MINS
+#	$COUNTY_SEARCH_TYPE$ = {
+#		limit = {
+#			trigger_if = {
+#				limit = { always = $SEARCHING_EVENT_CHAR_REALM$ }
+#				$EVENT_CHAR$ = { event_character_is_this_or_is_liege_or_above_trigger = yes }
+#			}
+#			trigger_else = {
+#				NOT = { $EVENT_CHAR$ = { event_character_is_this_or_is_liege_or_above_trigger = yes } }
+#			}
+#			county_has_specific_minority_culture_trigger = { CULTURE = $OLD_CULTURE$ }
+#		}
+#		if = {
+#			limit = {
+#				county_has_specific_large_minority_culture_trigger = { CULTURE = $OLD_CULTURE$ }
+#			}
+#			delete_minority_effect = { CULTURE = $OLD_CULTURE$ }
+#			add_culture_minority_effect = {
+#				COUNTY = this
+#				CULTURE = $NEW_CULTURE$
+#				SIZE = large
+#			}
+#		}
+#		else = {
+#			delete_minority_effect = { CULTURE = $OLD_CULTURE$ }
+#			add_culture_minority_effect = {
+#				COUNTY = this
+#				CULTURE = $NEW_CULTURE$
+#				SIZE = small
+#			}
+#		}
+#	}
+#}
 
 scripted_trigger event_character_is_this_or_is_liege_or_above_trigger = {
 	OR = {
@@ -884,22 +884,22 @@ migration_situation_war.0200 = {
 			#Cleanup Minorities
 			if = { #You aren't the culture former; all counties but your realm flip minorities
 				limit = { NOT = { root = scope:culture_former } }
-				cleanup_minority_cultures_effect = {
-					EVENT_CHAR = root
-					OLD_CULTURE = scope:original_culture
-					NEW_CULTURE = scope:culture_former.culture
-					COUNTY_SEARCH_TYPE = every_county
-					SEARCHING_EVENT_CHAR_REALM = no
-				}
+				#cleanup_minority_cultures_effect = {
+				#	EVENT_CHAR = root
+				#	OLD_CULTURE = scope:original_culture
+				#	NEW_CULTURE = scope:culture_former.culture
+				#	COUNTY_SEARCH_TYPE = every_county
+				#	SEARCHING_EVENT_CHAR_REALM = no
+				#}
 			}
 			else = {
-				cleanup_minority_cultures_effect = {
-					EVENT_CHAR = root
-					OLD_CULTURE = scope:original_culture
-					NEW_CULTURE = scope:culture_former.culture
-					COUNTY_SEARCH_TYPE = every_realm_county
-					SEARCHING_EVENT_CHAR_REALM = yes
-				}
+				#cleanup_minority_cultures_effect = {
+				#	EVENT_CHAR = root
+				#	OLD_CULTURE = scope:original_culture
+				#	NEW_CULTURE = scope:culture_former.culture
+				#	COUNTY_SEARCH_TYPE = every_realm_county
+				#	SEARCHING_EVENT_CHAR_REALM = yes
+				#}
 			}
 			
 			recalculate_cultural_heads_of_type = domain

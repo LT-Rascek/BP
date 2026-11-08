@@ -137,19 +137,6 @@ task_conversion_valid_county_trigger = {
 			rite != scope:councillor_liege.rite
 		}
 	}
-	### Minority stuff ###
-	trigger_else_if = {
-		limit = {
-			rite = scope:councillor_liege.rite
-			scope:councillor_liege = { has_realm_law_flag = may_convert_faith }
-		}
-		custom_tooltip = {
-			text = "not_has_expel_minorities_unlocked"
-			county_has_minority_faith_trigger = yes
-			scope:councillor_liege = { has_realm_law_flag = unlock_expel_religious_minorities }
-		}
-	}
-	### End Minority stuff ###
 	trigger_else = {
 		custom_tooltip = {
 			text = task_conversion.tt.county_rite_already_matches_chaplain
@@ -484,6 +471,14 @@ task_conversion_valid_county_trigger = {
 			text = imperial_church_protected_state
 			bp_county_has_roman_faith_trigger = no
 		}
+	}
+	trigger_if = {
+		limit = {
+			scope:councillor_liege.rite = {
+				rite_has_parameter =  tenet_ethnic_religion_conversion_blocked
+			}
+		}
+		scope:county.culture = scope:councillor_liege.culture
 	}
 	##### Changed from Vanilla ^^^^^
 }

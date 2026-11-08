@@ -13,9 +13,21 @@ TODO:
 - Script location: file: common/customizable_localization/00_divinity_custom_loc.txt line: 1072 (GetActualBishopTitle)
 - Script location: file: common/customizable_localization/00_divinity_custom_loc.txt line: 1173 (GetActualBishopTitle)
 
-------------------
+Minorities:
 
-GUI:
+- faith_conversion.0001: Large minority left over
+- window_county_view.gui (fervor box and faith linking)
+- BP_easter_egg_effects.txt
+- apply_minority_faith_promotion_effect
+- sea_bp_minority_triggers.txt
+- sea_minority_triggers.txt
+- sea_minority_decisions.txt
+- sea_minority_religion_values.txt
+
+- Hook in faith culture mechanics so Jews do not disappear readily
+- Think how to hook in new religion structures into faith promotion and such
+- Integration with invite minorities *and* invite practitioners or whatever it is called
+
 - Update Religion GUI with minorities
 
 =======================
@@ -41,7 +53,6 @@ Decisions:
 - Reread all BP Decisions to fixup appropriately on faiths
 
 Laws:
-- Bavlim Jews need to be protected from Zoroastrianism
 - Clerical Authority Overhaul including in BP_law_effects.txt, BP_law_values.txt
 	- realm_law_use_clerical_influence_trigger with a realm law flag check
 - Review Succession law triggers in toto as they need cleanup (00_law_triggers and 00_legal_triggers)
@@ -79,19 +90,6 @@ Script Values:
 
 Subject Contracts:
 - Tax Slots might be working finally, so try splitting as appropriate for Iranian vs. Clan
-
-Minorities:
-- Readd councillor task hooks
-- Hook in faith culture mechanics so Jews do not disappear readily
-- Include reviewing the actual conversion/promotion activities if need be
-- faith_conversion.0001: Large minority left over
-- window_county_view.gui (fervor box and faith linking)
-- BP_easter_egg_effects.txt
-- apply_minority_faith_promotion_effect
-- sea_bp_minority_triggers.txt
-- sea_minority_triggers.txt
-- sea_minority_decisions.txt
-- sea_minority_religion_values.txt
 
 Heritage drift:
 - Review BP_culture_drift_effects.txt in light of religion changes

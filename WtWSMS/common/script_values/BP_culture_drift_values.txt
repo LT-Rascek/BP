@@ -36,27 +36,29 @@ drift_start_year_7_period = {
 	add = scope:drift_start_year
 }
 number_of_counties_with_minority = {
-  value = 0
-  every_culture_county = {
-    if = {
-      limit = { county_has_specific_minority_culture_trigger = { CULTURE = scope:check_minority_culture } }
-      add = 1
-    }
-  }
-}
-half_number_of_counties_with_minority = {
-  value = number_of_counties_with_minority
-  divide = 2
-  floor = yes
-}
-number_of_drift_culture_counties_with_minority = {
-  value = 0
-  scope:drift_culture = {
+	value = 0
 	every_culture_county = {
 		if = {
-		limit = { county_has_specific_minority_culture_trigger = { CULTURE = scope:check_minority_culture } }
-		add = 1
+			#limit = { county_has_specific_minority_culture_trigger = { CULTURE = scope:check_minority_culture } } #### SEA_MINS
+			limit = { always = no }
+			add = 1
 		}
-    }
-  }
+	}
+}
+half_number_of_counties_with_minority = {
+	value = number_of_counties_with_minority
+	divide = 2
+	floor = yes
+}
+number_of_drift_culture_counties_with_minority = {
+	value = 0
+	scope:drift_culture = {
+		every_culture_county = {
+			if = {
+				#limit = { county_has_specific_minority_culture_trigger = { CULTURE = scope:check_minority_culture } } #### SEA_MINS
+				limit = { always = no }
+				add = 1
+			}
+		}
+	}
 }

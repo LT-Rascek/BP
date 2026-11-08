@@ -4,7 +4,6 @@
 ##### Changed from Vanilla: Updated progress with various modifiers for BP
 ##### Changed from Vanilla: Updated targets, added new game rule effects
 ##### Changed from Vanilla: shared_hof_converts_counties_to_hof_religion effect
-##### Changed from Vanilla: integrated SEA minorities stuff
 task_conversion = {
 	position = councillor_court_chaplain
 
@@ -242,9 +241,7 @@ task_conversion = {
 		multiply = court_chaplain_conversion_factors
 
 		min = {
-			##### Changed from Vanilla vvvvv
-			value = 0.5 #Accounting for minorities....
-			##### Changed from Vanilla ^^^^^
+			value = 0.1
 			desc = minimum_conversion
 		}
 	}
@@ -253,16 +250,6 @@ task_conversion = {
 		scope:county = {
 			task_conversion_valid_county_trigger = yes
 		}
-		##### Changed from Vanilla vvvvv
-		trigger_if = {
-			limit = {
-				scope:councillor_liege.rite = {
-					rite_has_parameter =  tenet_ethnic_religion_conversion_blocked
-				}
-			}
-			scope:county.culture = scope:councillor_liege.culture
-		}
-		##### Changed from Vanilla ^^^^^
 	}
 
 	on_start_task_county = {
@@ -461,12 +448,6 @@ task_conversion = {
 				scope:councillor = {
 					has_council_position = councillor_court_chaplain
 				}
-				##### Changed from Vanilla vvvvv
-				
-				#Keep going if not an AI char
-				scope:county.rite = scope:councillor_liege.rite
-				scope:councillor_liege = { is_ai = yes }
-				##### Changed from Vanilla ^^^^^
 			}
 			scope:councillor = {
 				start_default_task = yes

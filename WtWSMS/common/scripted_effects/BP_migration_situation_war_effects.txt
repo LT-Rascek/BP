@@ -701,30 +701,30 @@ migration_flip_holding_to_tribal_effect = {
 			set_county_rite = $THE_ATTACKER$.rite
 			
 			random_list = {
-				60 = {
-					add_culture_minority_effect = {
-						COUNTY = this
-						CULTURE = scope:the_culture
-						SIZE = large
-					}
-					add_faith_minority_effect = {
-						COUNTY = this
-						FAITH = scope:the_faith
-						SIZE = large
-					}
-				}
-				30 = {
-					add_culture_minority_effect = {
-						COUNTY = this
-						CULTURE = scope:the_culture
-						SIZE = small
-					}
-					add_faith_minority_effect = {
-						COUNTY = this
-						FAITH = scope:the_faith
-						SIZE = small
-					}
-				}
+				#60 = {  #### SEA_MINS
+				#	add_culture_minority_effect = {
+				#		COUNTY = this
+				#		CULTURE = scope:the_culture
+				#		SIZE = large
+				#	}
+				#	add_faith_minority_effect = {
+				#		COUNTY = this
+				#		FAITH = scope:the_faith
+				#		SIZE = large
+				#	}
+				#}
+				#30 = {
+				#	add_culture_minority_effect = {
+				#		COUNTY = this
+				#		CULTURE = scope:the_culture
+				#		SIZE = small
+				#	}
+				#	add_faith_minority_effect = {
+				#		COUNTY = this
+				#		FAITH = scope:the_faith
+				#		SIZE = small
+				#	}
+				#}
 				10 = {}
 			}
 		}
@@ -777,31 +777,31 @@ migration_flip_culture_faith_in_realm_effect = {
 					
 					set_county_culture = $THE_ATTACKER$.culture
 					set_county_rite = $THE_ATTACKER$.rite
-					random_list = {
-						60 = {
-							add_culture_minority_effect = {
-								COUNTY = this
-								CULTURE = scope:the_culture
-								SIZE = large
-							}
-							add_faith_minority_effect = {
-								COUNTY = this
-								FAITH = scope:the_faith
-								SIZE = large
-							}
-						}
-						30 = {
-							add_culture_minority_effect = {
-								COUNTY = this
-								CULTURE = scope:the_culture
-								SIZE = small
-							}
-							add_faith_minority_effect = {
-								COUNTY = this
-								FAITH = scope:the_faith
-								SIZE = small
-							}
-						}
+					random_list = { #### SEA_MINS
+						#60 = {
+						#	add_culture_minority_effect = {
+						#		COUNTY = this
+						#		CULTURE = scope:the_culture
+						#		SIZE = large
+						#	}
+						#	add_faith_minority_effect = {
+						#		COUNTY = this
+						#		FAITH = scope:the_faith
+						#		SIZE = large
+						#	}
+						#}
+						#30 = {
+						#	add_culture_minority_effect = {
+						#		COUNTY = this
+						#		CULTURE = scope:the_culture
+						#		SIZE = small
+						#	}
+						#	add_faith_minority_effect = {
+						#		COUNTY = this
+						#		FAITH = scope:the_faith
+						#		SIZE = small
+						#	}
+						#}
 						10 = {}
 					}
 				}
