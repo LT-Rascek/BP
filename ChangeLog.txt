@@ -2,6 +2,7 @@
 -----------
 
 Major Tweaks:
+- Removed Minorities in preparation for Vanilla 1.21 Changes (Silk & Silver)
 - Overhauled entire religious system in light of BGA modifications
    - No faith or rite starts with Anointment
    - Most Pagan Faiths modified to be Rites of Singular (or much fewer in number) faiths
@@ -15,6 +16,7 @@ Add Doctrines:
 
 Overhauled Doctrines:
 - Overhauled the preservation Group of Doctrines
+- "Greek Rite", "Antiochene Rite", "Alexandrian Rite", "Assyrian Rite", and "Ge'ez Rite" unlock the "Commission Icon" decision, if not otherwise blocked
 - Overhauled the Theism Group of Doctrines:
    - Monotheism:
       - Unrelated faiths are evil
@@ -339,6 +341,7 @@ Decisions:
    - "Automutilation"
    - "Raise Agonisitci"
    - "Select Hindu Philosophy"
+   - "Commission Icon"
 
 Laws:
 - Remove Kurutlai Elective Succession, as it is overtaken by "Khans of the Steppe"
@@ -361,6 +364,7 @@ Tweaks:
 - Removed WtWSMS "Erudite" trait as Vanilla has overtaken it.
 
 Bugs:
+- Fixed bug with "Revoke Federate" interaction
 - Fixed up some inaccurate law applications during successful revolts
 - Fixed bug where High Tribal Organization would temporarily decline as a result of Civil Wars
 - Fixed up Temple Building related construction bugs

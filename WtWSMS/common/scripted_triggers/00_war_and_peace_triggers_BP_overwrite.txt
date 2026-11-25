@@ -28,3 +28,263 @@ using_de_jure_cb_trigger = {
 		##### Changed from Vanilla ^^^^^
 	}
 }
+
+allows_declaring_war_against_target_trigger = {
+	save_temporary_scope_as = attacker_check
+	$TARGET$ = { save_temporary_scope_as = defender_check }
+	custom_tooltip = {
+		text = sworn_peace_tt
+		NOT = { has_character_flag = sworn_peace }
+	}
+	is_incapable = no
+	trigger_if = {
+		limit = {
+			NOT = {
+				has_cb_on = {
+					target = scope:defender_check
+					casus_belli = pam_humiliation_cb
+				}
+			}
+		}
+		can_attack_in_hierarchy = scope:defender_check
+	}
+	trigger_if = {
+		limit = {
+			NOT = {
+				government_has_flag = can_start_war_with_raised_troops
+			}
+		}
+		has_raised_armies = no
+	}
+	trigger_else = {
+		custom_description = {
+			text = army_blocks_defender_army
+			NOT = {
+				any_army = {
+					location.county.holder ?= {
+						target_is_same_character_or_above = scope:defender_check
+					}
+				}
+			}
+		}
+	}
+	NOT = {
+		is_allied_in_war = scope:defender_check
+	}
+	custom_description = {
+		text = "is_not_bankrupt"
+		is_in_debt = no
+	}
+	is_in_activity = no
+	trigger_if = {
+		limit = {
+			culture = { has_cultural_parameter = cannot_attack_allies }
+		}
+		NOT = {
+			is_allied_to = scope:defender_check
+		}
+	}
+	trigger_if = {
+		limit = {
+			culture = { has_cultural_parameter = cannot_attack_truces }
+		}
+		NOT = {
+			has_truce = scope:defender_check
+		}
+	}
+	is_imprisoned = no
+	trigger_if = {
+		limit = {
+			has_variable_list = subjugation_offer_under_consideration
+		}
+		custom_description = {
+			text = is_not_considering_offer_of_subjugation
+			NOT = {
+				is_target_in_variable_list = {
+					name = subjugation_offer_under_consideration
+					target = scope:defender_check
+				}
+			}
+		}
+	}
+	scope:defender_check = {
+		custom_tooltip = {
+			text = is_a_herder_recipient_tt
+			NOT = { government_has_flag = government_is_herder } # herders can't fight
+		}
+		NOT = { is_tributary_of_suzerain_or_above = scope:attacker_check } # can't fight your tributaries or your tributaries' tributaries
+		NOT = { has_strong_hook = scope:attacker_check }
+		trigger_if = {
+			limit = { is_imprisoned = yes }
+			custom_tooltip = {
+				text = declare_war_target_is_your_prisoner_tt
+				imprisoner != scope:attacker_check
+			}
+		}
+	}
+	trigger_if = {
+		limit = { liege != this }
+		trigger_if = {
+			limit = {
+				government_has_mechanic = administrative
+			}
+			# internal war
+			trigger_if = {
+				limit = { top_liege = scope:defender_check.top_liege }
+				trigger_if = {
+					limit = {
+						scope:defender_check = { government_has_mechanic = administrative }
+						top_liege != scope:defender_check
+						##### Changed from Vanilla vvvvv
+						NOT = { scope:attacker_check = { government_has_flag = government_is_quasi_feudal } }
+						##### Changed from Vanilla ^^^^^
+					}
+					custom_tooltip = {
+						text = admin_cannot_declare_internal_wars
+						always = no
+					}
+				}
+			}
+			trigger_else = {
+				trigger_if = { # Admin - Laws prevent all vassals from declaring war
+					limit = {
+						top_liege = {
+							has_realm_law_flag = admin_vassal_wars_banned
+						}
+						##### Changed from Vanilla vvvvv
+						NOT = { scope:attacker_check = { government_has_flag = government_is_quasi_feudal } }
+						##### Changed from Vanilla ^^^^^
+					}
+					custom_tooltip = {
+						text = admin_all_vassal_wars_banned
+						always = no
+					}
+				}
+				trigger_else = {
+					trigger_if = { # Admin - Laws only allow frontier and naval themes to declare war
+						limit = {
+							top_liege = {
+								has_realm_law_flag = admin_vassal_wars_restricted
+							}
+						##### Changed from Vanilla vvvvv
+						NOT = { scope:attacker_check = { government_has_flag = government_is_quasi_feudal } }
+						##### Changed from Vanilla ^^^^^
+						}
+						custom_tooltip = {
+							text = admin_all_vassal_wars_banned
+							admin_governor_allows_declaring_war_trigger = yes
+						}
+					}
+					trigger_if = { # Admin - Laws only allow frontier and naval themes to declare war IF they have permission
+						limit = {
+							top_liege = {
+								has_realm_law_flag = admin_vassal_wars_permission_only
+							}
+						##### Changed from Vanilla vvvvv
+						NOT = { scope:attacker_check = { government_has_flag = government_is_quasi_feudal } }
+						##### Changed from Vanilla ^^^^^
+						}
+						custom_tooltip = {
+							text = admin_vassal_wars_permission_only_desc
+							has_variable = admin_permission_to_declare_war
+						}
+					}
+				}
+			}
+		}
+		trigger_else = {
+			trigger_if = {
+				limit = {
+					liege ?= {
+						has_realm_law_flag = vassal_all_wars_banned_permanent
+					}
+					NOT = {
+						top_participant_group:dynastic_cycle ?= {
+							has_participant_group_parameter = dynastic_cycle_vassal_internal_wars_allowed
+						}
+					}
+				}
+				custom_tooltip = {
+					text = admin_all_vassal_wars_banned
+					government_has_mechanic = administrative
+				}
+			}
+		}
+		trigger_if = {
+			limit = {
+				trigger_if = {
+					limit = { NOT = { exists = scope:recipient } }
+					scope:defender_check = {
+						save_temporary_scope_as = recipient
+					}
+				}
+				war_declarer_needs_hook_on_liege = yes
+			}
+			has_usable_hook = liege
+		}
+	}
+	trigger_if = {
+		limit = {
+			scope:defender_check = {
+				OR = {
+					has_subject_contract_group = tributary_celestial
+					has_subject_contract_group = tributary_hegemonic
+				}
+			}
+			is_independent_ruler = no # to avoid duplicating tooltips already applying to the top_liege
+		}
+		NOT = {
+			scope:defender_check = {
+				is_tributary_of = scope:attacker_check.top_liege
+			}
+		}
+	}
+	scope:attacker_check = {
+		trigger_if = {
+			limit = { has_government = landless_adventurer_government }
+			custom_tooltip = {
+				text = camp_located_in_defender_realm.tt
+				domicile.domicile_location.county.holder = {
+					NOT = {
+						target_is_same_character_or_above = scope:defender_check
+					}
+				}
+			}
+		}
+	}
+	trigger_if = {
+		limit = {
+			scope:attacker_check = {
+				is_confederation_member = yes
+			}
+		}
+		NOT = {
+			scope:defender_check = {
+				is_member_of_confederation = scope:attacker_check.confederation
+			}
+		}
+	}
+	##### Changed from Vanilla vvvvv
+	trigger_if = {
+		limit = {
+			scope:attacker_check = { government_has_flag = government_is_roman_federate }
+			exists = scope:defender_check
+		}
+		OR = {
+			#Case 1: Not of the same realm
+			scope:defender_check.top_liege != scope:attacker_check.top_liege
+			#Case 2: Same Realm, but is not administrative
+			AND = {
+				scope:defender_check.top_liege = scope:attacker_check.top_liege
+				NOT = { scope:defender_check = { government_has_mechanic = administrative } }
+			}
+			#Case 3: Same Realm, administrative but is a federate
+			AND = {
+				scope:defender_check.top_liege = scope:attacker_check.top_liege
+				scope:defender_check = { government_has_mechanic = administrative }
+				scope:defender_check = { government_has_flag = government_is_quasi_feudal }
+			}
+		}
+	}
+	##### Changed from Vanilla ^^^^^
+}

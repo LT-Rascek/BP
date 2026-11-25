@@ -6,68 +6,38 @@
 First Order (AKA first sweep and implementation of plan):
 -----------------------
 TODO:
-- Egyptian Syncretism, Hellenic Syncretism, Pneumatomachianism
+- Tenets:
+	Christology:  tenet_anomoeanism, tenet_apollinarism, tenet_eutychianism, tenet_nestorianism,
+		tenet_unitarianism, tenet_modalism, tenet_monothelitism
+		tenet_monophysitism_wtwsms, tenet_adoptionism_wtwsms, tenet_pneumatomachian
+	Eucharist: tenet_memorialism, tenet_repudiation
+	Syncretism: tenet_hellenic_syncretism, tenet_egyptian_syncretism, tenet_zoroastrian_syncretism
+	Other: tenet_fertility_cult, tenet_antinomianism
 
 - CotE monks not getting any land, Georgian monks not getting any land
-
-- Script location: file: common/customizable_localization/00_divinity_custom_loc.txt line: 1072 (GetActualBishopTitle)
-- Script location: file: common/customizable_localization/00_divinity_custom_loc.txt line: 1173 (GetActualBishopTitle)
-
-Minorities:
-
-- faith_conversion.0001: Large minority left over
-- window_county_view.gui (fervor box and faith linking)
-- BP_easter_egg_effects.txt
-- apply_minority_faith_promotion_effect
-- sea_bp_minority_triggers.txt
-- sea_minority_triggers.txt
-- sea_minority_decisions.txt
-- sea_minority_religion_values.txt
-
-- Hook in faith culture mechanics so Jews do not disappear readily
-- Think how to hook in new religion structures into faith promotion and such
-- Integration with invite minorities *and* invite practitioners or whatever it is called
-
-- Update Religion GUI with minorities
 
 =======================
 Second Order Sweep (AKA after putting in all the chrome):
 -----------------------
 Checks:
 - Make Sure landing tribals/churches doesn't bork for Roman Governments
-- declare_war_interaction might be borked for Federates
-- Federate interactions need review
+	- Overhaul land grants for Roman governments in light of new government hooks
 
 Localization:
 - Patriarchal Localization needs better restrictions
 
-Council Tasks:
-- Make sure Roman Values properly mirror default values
-
 CBs:
 - Add in Sub-Roman Transition check for claim wars...
-
-Decisions:
-- commission_icon_decision needs rework; either based on prohibited tenets or a new doctrine
-- Legalize Caucasian Christianity decision - Revampe and Rework
-- Reread all BP Decisions to fixup appropriately on faiths
 
 Laws:
 - Clerical Authority Overhaul including in BP_law_effects.txt, BP_law_values.txt
 	- realm_law_use_clerical_influence_trigger with a realm law flag check
 - Review Succession law triggers in toto as they need cleanup (00_law_triggers and 00_legal_triggers)
 
-Game Start:
-- Remove `change_faith_if_alive_effect` via history cleanups
-- Move cathedral domiciles to correct places
-
 Mechanics:
 - Masons required for cathedrals; need additional unlock to make working
 	- Really should only go to level 2
 - Powerful Family Attributes aren't available
-- blocks_eucharistic_tenets needs to have an on action function
-- Need a new level for influence (if possible to add in)
-- Overhaul land grants for Roman governments in light of new government hooks
 - Roman Religion vs. Non-Roman Rule
 	- Overhaul how "Roman Church" stuff interacts (with and without DLC)
 	- bp_county_has_roman_faith_trigger
@@ -231,6 +201,7 @@ Localizations:
 - Insular Celtic using St. Patrick? If so, fix.
 
 Religions:
+- convert_christian_chars_to_rites
 - Link "Find and Adherent" to minority mechanics
 - Servant of Assur mechanics
 - Antiochene vs. Alexandrian trait and mechanics (Basically like Chariot Teams)
@@ -254,3 +225,9 @@ General Review:
    to have everything in it's own file"
 - Split Berber Religion from North African as they are really distinct traditions
 - Remove the 00_*_Overwrite Religions where applicable and replace with at start doctrine modifications
+
+
+=======================
+MINORITIES:
+-----------------------
+#### SEA_MINS - things for which minorities should get integrated

@@ -38,7 +38,10 @@ caucasian_christian_legalization_local_effect = {
 	every_vassal_or_below = {
 		limit = {
 			religion = religion:zoroastrianism_religion
-			rite = { rite_has_doctrine = doctrine_major_branch_behdin }
+			OR = {
+				rite = { rite_has_doctrine = doctrine_major_branch_behdin }
+				rite = { rite_has_doctrine = doctrine_major_branch_dorustdin }
+			}
 		}
 		if = {
 			limit = { government_has_flag = government_is_theocracy }
@@ -54,7 +57,10 @@ caucasian_christian_legalization_local_effect = {
 		every_vassal_or_below = {
 			limit = {
 				religion = religion:zoroastrianism_religion
-				rite = { rite_has_doctrine = doctrine_major_branch_behdin }
+				OR = {
+					rite = { rite_has_doctrine = doctrine_major_branch_behdin }
+					rite = { rite_has_doctrine = doctrine_major_branch_dorustdin }
+				}
 			}
 			every_councillor = {
 				limit = { has_council_position = councillor_court_chaplain }

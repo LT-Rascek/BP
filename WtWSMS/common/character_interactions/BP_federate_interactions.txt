@@ -713,7 +713,10 @@ revoke_foderatus_interaction_adminstrative = { #TODO (BETA): Customize adventure
 	can_send_despite_rejection = yes
 
 	is_shown = {
-		scope:actor = { any_vassal = { government_has_flag = government_is_roman_federate } }
+		scope:actor = {
+			this = this.top_liege
+			any_vassal = { government_has_flag = government_is_roman_federate }
+		}
 		scope:recipient = { government_has_flag = government_is_roman_federate }
 	}
 

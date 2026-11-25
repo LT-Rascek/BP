@@ -475,3 +475,32 @@
 	}
 }
 set_up_historical_military_orders_effect = {}
+
+tmp_effect = {
+	if = {
+		limit = { always = yes }
+		title:b_fishabur = { holder.liege = { get_title = prev } save_scope_as = monastic_barony }
+		character:assyrian_monk_476 = { save_scope_as = monastic_leader }
+		create_holy_order = {
+			leader = scope:monastic_leader
+			capital = scope:monastic_barony
+			random_holy_order_type = monastic
+			coat_of_arms = ho_sons_of_the_covenant
+			name = holy_order_sons_of_the_covenant
+			save_scope_as = new_holy_order
+		}
+		scope:monastic_leader = {
+			every_courtier = {
+				add_trait = devoted
+				add_trait_xp = {
+					trait = devoted
+					value = { 20 80 }
+				}
+			}
+		}
+		scope:new_holy_order = {
+			title = { set_title_name = holy_order_sons_of_the_covenant }
+			set_order_tenet = tenet:tenet_anachoresis
+		}
+	}
+}
