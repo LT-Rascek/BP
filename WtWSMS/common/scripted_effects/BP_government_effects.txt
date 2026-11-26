@@ -198,6 +198,13 @@ convert_to_roman_federate_government_effect = {
 	if = {
 		limit = { BP_has_dlc_necessary_for_roman_admin_governments_trigger = yes }
 		change_government_roman_federate_effect = yes
+		if = {
+			limit = { any_held_title = { is_noble_family_title = yes } }
+			every_held_title = {
+				limit = { is_noble_family_title = yes }
+				prev = { destroy_title = prev }
+			}
+		}
 	}
 	else = { bp_devolve_roman_federate_effect = yes }
 }

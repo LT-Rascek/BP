@@ -73,7 +73,7 @@ BP_demand_conversion_trigger = {
 BP_block_ai_from_random_federate_generation_trigger = {
 	trigger_if = {
 		limit = {
-			is_ai = yes
+			scope:actor = { is_ai = yes }
 			OR = {
 				scope:actor = { government_has_flag = government_is_roman_administrative }
 				scope:actor = { government_has_flag = government_is_subroman_administrative }
