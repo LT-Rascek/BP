@@ -19,17 +19,6 @@ TODO:
 =======================
 Second Order Sweep (AKA after putting in all the chrome):
 -----------------------
-Localization:
-- Patriarchal Localization needs better restrictions
-
-CBs:
-- Add in Sub-Roman Transition check for claim wars...
-
-Laws:
-- Clerical Authority Overhaul including in BP_law_effects.txt, BP_law_values.txt
-	- realm_law_use_clerical_influence_trigger with a realm law flag check
-- Review Succession law triggers in toto as they need cleanup (00_law_triggers and 00_legal_triggers)
-
 Mechanics:
 - Masons required for cathedrals; need additional unlock to make working
 	- Really should only go to level 2
@@ -53,9 +42,6 @@ Script Values:
    - number_of_faith_counties_controlled_by_player
    - number_of_faith_counties_controlled_ratio
 - `great_holy_war_target_kingdom_weight` for new religions
-
-Subject Contracts:
-- Tax Slots might be working finally, so try splitting as appropriate for Iranian vs. Clan
 
 Heritage drift:
 - Review BP_culture_drift_effects.txt in light of religion changes
@@ -172,7 +158,11 @@ Vanilla Conformity:
 	- the_culture_or_parent_or_above_with_heritage_is_trigger
 - Make WtWSMS rites conformal name-wise with CK3 (use `_rite` instead of `_church`)
 
+Flavorization (20_pam_flavorization.txt):
+- Patriarchal Localization needs better restrictions
+
 Custom Localization:
+- PamFingerboneSaint
 - GetRiteEcumenismFullOrEmpty
 - GetGovernmentAuthority
 - GetFaithSacredLanguage
@@ -222,8 +212,11 @@ General Review:
 - Split Berber Religion from North African as they are really distinct traditions
 - Remove the 00_*_Overwrite Religions where applicable and replace with at start doctrine modifications
 
+CBs:
+- Add in Sub-Roman Transition check for claim wars???
 
 =======================
 MINORITIES:
 -----------------------
 #### SEA_MINS - things for which minorities should get integrated
+See about tax slot fixes

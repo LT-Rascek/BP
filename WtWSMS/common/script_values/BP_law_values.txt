@@ -5,9 +5,9 @@ righteous_realm_county_cost = {
 		save_temporary_scope_as = the_county
 		if = {
 			limit = {
-				this.faith = {
-					faith_hostility_level = {
-						target = scope:the_county.holder.top_liege.faith
+				this.rite = {
+					rite_hostility_level = {
+						target = scope:the_county.holder.top_liege.rite
 						value = 0
 					}
 				}
@@ -23,13 +23,13 @@ astray_realm_county_cost = {
 		save_temporary_scope_as = the_county
 		if = {
 			limit = {
-				this.faith = {
-					faith_hostility_level = {
-						target = scope:the_county.holder.top_liege.faith
+				this.rite = {
+					rite_hostility_level = {
+						target = scope:the_county.holder.top_liege.rite
 						value = 1
 					}
 				}
-				NOT = { this.faith = { has_doctrine = unreformed_faith_doctrine } }
+				NOT = { this.rite = { rite_has_doctrine = unreformed_faith_doctrine } }
 			}
 			add = 1
 		}
@@ -42,13 +42,13 @@ hostile_realm_county_cost = {
 		save_temporary_scope_as = the_county
 		if = {
 			limit = {
-				this.faith = {
-					faith_hostility_level = {
-						target = scope:the_county.holder.top_liege.faith
+				this.rite = {
+					rite_hostility_level = {
+						target = scope:the_county.holder.top_liege.rite
 						value = 2
 					}
 				}
-				NOT = { this.faith = { has_doctrine = unreformed_faith_doctrine } }
+				NOT = { this.rite = { rite_has_doctrine = unreformed_faith_doctrine } }
 			}
 			add = 1
 		}
@@ -61,13 +61,13 @@ evil_realm_county_cost = {
 		save_temporary_scope_as = the_county
 		if = {
 			limit = {
-				this.faith = {
-					faith_hostility_level = {
-						target = scope:the_county.holder.top_liege.faith
+				this.rite = {
+					rite_hostility_level = {
+						target = scope:the_county.holder.top_liege.rite
 						value = 3
 					}
 				}
-				NOT = { this.faith = { has_doctrine = unreformed_faith_doctrine } }
+				NOT = { this.rite = { rite_has_doctrine = unreformed_faith_doctrine } }
 			}
 			add = 1
 		}

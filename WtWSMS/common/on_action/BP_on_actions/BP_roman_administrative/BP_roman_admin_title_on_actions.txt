@@ -161,7 +161,7 @@ BP_grants_to_tribals_become_federate = {
 				}
 			}
 			if = {
-				limit = { no_longer_in_tribal_era_trigger = no }
+				limit = { culture = { no_longer_in_tribal_era_trigger = no } }
 				change_government = tribal_government
 			}
 			else = { change_government = high_tribal_government }
@@ -367,8 +367,10 @@ BP_remove_federate_nf_titles = {
 		government_has_flag = government_is_roman_federate
 		any_held_title = { is_noble_family_title = yes }
 	}
-	every_held_title = {
-		limit = { is_noble_family_title = yes }
-		prev = { destroy_title = prev }
+	effect = {
+		every_held_title = {
+			limit = { is_noble_family_title = yes }
+			prev = { destroy_title = prev }
+		}
 	}
 }

@@ -372,7 +372,7 @@ culture_emergence_events.0001 = {
 			hidden_effect = {
 				root = { set_variable = { name = dominant_culture value = root.culture } }
 				root.culture = { save_scope_as = ruler_culture }
-				trigger_event = { id = culture_emergence_events_bp_helpers.0002 }
+				trigger_event = { id = culture_emergence_events_bp_helpers.0001 }
 			}
 		}
 
@@ -408,7 +408,7 @@ culture_emergence_events.0001 = {
 			hidden_effect = {
 				root = { set_variable = { name = dominant_culture value = root.culture } }
 				root.culture = { save_scope_as = ruler_culture }
-				trigger_event = { id = culture_emergence_events.1003 }
+				trigger_event = { id = culture_emergence_events_bp_helpers.0002 }
 			}
 		}
 
