@@ -10,12 +10,6 @@ one_third_military_strength = {
 	divide = 3
 }
 
-## Autocephaly
-number_of_realm_counties_of_faith_ratio = {
-	value = number_of_faith_counties_controlled_by_player
-	divide = root.sub_realm_size
-}
-
 ## General Feature Counts
 
 #Culture
@@ -30,19 +24,6 @@ number_of_culture_counties_controlled_by_player = {
 number_of_culture_counties_controlled_ratio = {
 	value = number_of_culture_counties_controlled_by_player
 	divide = number_of_culture_counties_in_game
-}
-#Faith
-number_of_faith_counties_in_game = {
-	value = 0
-	every_county = { if = { limit = { faith = root.faith } add = 1 } }
-}
-number_of_faith_counties_controlled_by_player = {
-	value = 0
-	every_sub_realm_county = { if = { limit = { faith = root.faith } add = 1 } }
-}
-number_of_faith_counties_controlled_ratio = {
-	value = number_of_faith_counties_controlled_by_player
-	divide = number_of_faith_counties_in_game
 }
 #Holy Sites
 number_of_holy_sites_for_faith = {
