@@ -16,9 +16,7 @@ TODO:
 
 - CotE monks not getting any land, Georgian monks not getting any land
 
-- world_gamantes needs to be respelled
-- Moved Hepthalite faith to be a Steppe Faith (highly syncretic version)
-- Messalian should have no sacraments as doctrine if not already
+- Mehrist, Platonist icons blue-tinted
 
 =======================
 Second Order Sweep (AKA after putting in all the chrome):
@@ -34,10 +32,6 @@ Mechanics:
 	- Tie Populist Revolt blockers to be instead linked to Non-Roman Law
 - Interaction of Migration and faith vs. rite
 - Demand Conversion: Probably should be only fully blocked without Formalized Rituals and fully unblocked with State Religion
-
-GUI:
-- Duplicate Pursuit of Power is visible, fix?
-- Scripted GUI trigger to prevent doctrine selection issues into the Branched Rite GUI
 
 Heritage drift:
 - Review BP_culture_drift_effects.txt in light of religion changes
@@ -177,12 +171,16 @@ Game Concepts:
 Governments:
 - Update government `possible_grant_vassal_governments` to tamp down on tribalistic madness
 
+GUI:
+- Branched Rite GUI is using incorrect icons for ritual doctrines
+
 Localizations:
 - Fixup existing religion localizations and resort
 - Literalist Debate needs customized localization for various things (Philosophy, Complex Exegesis, &c.)
 - Insular Celtic using St. Patrick? If so, fix.
 
 Religions:
+- Move Hepthalite religoin to be a faith in the steppe religion? Highly Syncretized version perhaps.
 - convert_christian_chars_to_rites
 - Link "Find and Adherent" to minority mechanics
 - Servant of Assur mechanics

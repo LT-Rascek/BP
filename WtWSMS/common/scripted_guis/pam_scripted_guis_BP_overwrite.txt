@@ -50,6 +50,14 @@ pam_know_doctrine = {
 					scope:doctrine = doctrine:doctrine_christian_liturgical_rite_none
 				}
 			}
+			trigger_if = {
+				limit = { root.religion = religion:hellenism_religion }
+				OR = {
+					scope:doctrine = doctrine:doctrine_hellenic_pagan_liturgical_language_greek
+					scope:doctrine = doctrine:doctrine_hellenic_pagan_liturgical_language_latin
+					scope:doctrine = doctrine:doctrine_hellenic_pagan_liturgical_language_none
+				}
+			}
 			##### Changed from Vanilla ^^^^^
 		}
 	}

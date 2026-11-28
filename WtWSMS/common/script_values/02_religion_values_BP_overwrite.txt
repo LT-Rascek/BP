@@ -1616,6 +1616,34 @@ great_holy_war_target_kingdom_weight = {
 		add = ghw_target_fringe
 	}
 	
+	##### Hepthalite
+	
+	#Hepthalite heartlands
+	else_if = {
+		limit = {
+			scope:the_faith.religion = religion:hepthal_religion
+			title_capital_county.title_province = { geographical_region = ghw_region_hepthalite_heartlands }
+		}
+		add = ghw_target_heartlands
+	}
+	#Hepthalite frontier
+	else_if = {
+		limit = {
+			scope:the_faith.religion = religion:hepthal_religion
+			title_capital_county.title_province = { geographical_region = ghw_region_hepthalite_frontier }
+		}
+		add = ghw_target_frontier
+	}
+	#Hepthalite fringe
+	else_if = {
+		limit = {
+			scope:the_faith.religion = religion:hepthal_religion
+			title_capital_county.title_province = { geographical_region = ghw_region_hepthalite_fringe }
+		}
+		add = ghw_target_fringe
+	}
+	
+	
 	##### Changed from Vanilla ^^^^^
 
 
